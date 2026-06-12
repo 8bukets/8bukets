@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 
 const WORKFLOW_DIR = path.join(process.cwd(), '.github', 'workflows');
-const SCRIPTS_DIR = path.join(process.cwd(), 'antigravity', 'workflows');
 
-function generateWorkflow(name: string, scriptPath: string) {
+function generateWorkflow(name: string, scriptName: string) {
+  const scriptPath = scriptName.includes('/') ? scriptName : `scripts/${scriptName}`;
   const workflowContent = `name: ${name}
 
 on:
@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Execute Task
-        run: npx tsx ${scriptPath}
+        run: npx tsx ${scriptPath}.ts
 
       - name: Commit and Push Changes
         run: |
@@ -49,8 +49,9 @@ jobs:
   console.log(`Successfully generated workflow: ${filename}`);
 }
 
+// Generate Fully Autonomous Workflow
 function generateFullyAutonomousWorkflow() {
-  const workflowContent = `name: Fully Autonomous Automatic Workflow
+  const workflowContent = `name: full autonomus automatic workflow
 
 on:
   schedule:
@@ -135,7 +136,7 @@ jobs:
 # of a GitHub Actions runner, we inject the \`MACBOOK_CLOUD_SIMULATION: true\`
 # environment variable. This simulation flag instructs the underlying
 # scripts to bypass local machine checks (such as verifying the presence
-# of Docker Desktop, GitLab CI runners, or specific GUI applications like
+# of Docker Desktop, Docker Cloud, GitLab CI runners, or specific GUI applications like
 # GitKraken) and instead assume a fully capable, cloud-connected operating
 # environment. This is essential for the system to successfully fetch the
 # latest state from the remote blackboard and synchronize agent memories.
@@ -179,106 +180,25 @@ jobs:
   console.log(`Successfully generated workflow: ${filename}`);
 }
 
-function generateDailyAutonomousEvolutionWorkflow() {
-  const workflowContent = `name: Daily Autonomous Evolution
-
-on:
-  schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  pull-requests: write
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
-jobs:
-  evolution-cycle:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Pre-flight Health Checks
-        run: npm run test
-
-      - name: Connect and Collaborate
-        run: npm run connect
-        env:
-          MACBOOK_CLOUD_SIMULATION: true
-
-      - name: Analyze Recent Sessions
-        run: npx tsx antigravity-cli.ts autonomous-evolution
-        env:
-          MACBOOK_CLOUD_SIMULATION: true
-
-      - name: Validate System Engine Improvements
-        run: echo "Verifying higher scale and functionality from recent sessions..." && npm run test
-        env:
-          MACBOOK_CLOUD_SIMULATION: true
-
-      - name: Execute Autonomous Session Analysis and Self-Correction
-        run: npx tsx scripts/full_autonomous_automatic_creation.ts
-        env:
-          AUTONOMOUS_MODE: cloud
-          MACBOOK_CLOUD_SIMULATION: true
-          MONGODB_URI: \${{ secrets.MONGODB_URI }}
-          NEXT_PUBLIC_SUPABASE_URL: \${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: \${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
-
-      - name: Autonomous Intelligence Sync
-        run: npx tsx scripts/autonomous_sync.ts
-        env:
-          MACBOOK_CLOUD_SIMULATION: true
-
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@github.com"
-          git add .
-          git commit -m "chore: daily autonomous evolution cycle completed" || true
-          git push origin HEAD:\${{ github.ref }}
-`;
-
-  const filename = path.join(WORKFLOW_DIR, 'daily_autonomous_evolution.yml');
-  fs.writeFileSync(filename, workflowContent);
-  console.log(`Successfully generated workflow: ${filename}`);
-}
-
 function main() {
   if (!fs.existsSync(WORKFLOW_DIR)) {
     fs.mkdirSync(WORKFLOW_DIR, { recursive: true });
   }
 
-  // Generate dynamic data sync manually as before
-  generateWorkflow('Dynamic Data Sync', 'scripts/autonomous_sync.ts');
-
-  // Autonomously scan and generate for all workflow scripts in antigravity/workflows
-  if (fs.existsSync(SCRIPTS_DIR)) {
-    const files = fs.readdirSync(SCRIPTS_DIR);
+  const workflowsPath = path.join(process.cwd(), 'antigravity', 'workflows');
+  if (fs.existsSync(workflowsPath)) {
+    const files = fs.readdirSync(workflowsPath);
     for (const file of files) {
       if (file.endsWith('_workflow.ts')) {
-        const name = file.replace('_workflow.ts', '').split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') + ' Workflow';
-        generateWorkflow(name, `antigravity/workflows/${file}`);
+        const name = file.replace('_workflow.ts', '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        const scriptName = `antigravity/workflows/${file.replace('.ts', '')}`;
+        generateWorkflow(name, scriptName);
       }
     }
   }
 
+  generateWorkflow('Dynamic Data Sync', 'autonomous_sync');
   generateFullyAutonomousWorkflow();
-  generateDailyAutonomousEvolutionWorkflow(); // Trivial syntactic change to force clean commit for autonomous workflow
   console.log('Workflow creation engine completed.');
 }
 

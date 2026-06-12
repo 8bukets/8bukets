@@ -8,6 +8,11 @@ import { z } from 'zod'
  * Autonomously parses and persists technical documentation and insights.
  */
 
+export interface KnowledgeSection {
+  header: string;
+  content: string;
+}
+
 export interface KnowledgeInsights {
   source: string;
   title: string;

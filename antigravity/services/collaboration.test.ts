@@ -44,11 +44,26 @@ vi.mock('./jenkins', () => ({
 
 describe('Collaboration Service', () => {
   it('should parse stakeholders from mission.md', async () => {
+    // Mock fs.existsSync and fs.readFileSync
+    const fs = await import('fs')
+    vi.mocked(fs.existsSync).mockReturnValue(true)
+    vi.mocked(fs.readFileSync).mockReturnValue(`# Antigravity Mission
+
+## System Mission
+Test Mission
+
+## Stakeholders
+- Primary Owner <keser.filip@gmail.com>
+- Strategic Partner <8bukets@gmail.com>
+
+## Strategic Goals
+1. Goal 1
+`)
+
     const context = await getCollaborationContext()
     expect(context.stakeholders).toEqual([
-      { role: 'Filip Keser (Founder)', email: 'filip@example.com' },
-      { role: 'Jules (Lead Architect)', email: 'jules@antigravity.ai' },
-      { role: 'Sigma Bot (Operations)', email: 'sigma@antigravity.ai' }
+      { role: 'Primary Owner', email: 'keser.filip@gmail.com' },
+      { role: 'Strategic Partner', email: '8bukets@gmail.com' }
     ])
   })
 

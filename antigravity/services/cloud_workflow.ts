@@ -9,11 +9,40 @@ import { reactService } from './react'
 const execFileAsync = promisify(execFile)
 
 export class CloudWorkflowAgent {
+  /**
+   * Implements a "Cloud Takeover" protocol that heightens cloud activity
+   * when the primary node is offline.
+   */
   public async enforceCloudTakeover() {
-    console.log('🚀 [CloudWorkflowAgent] Enforcing Cloud Takeover protocol...');
-    const { workOrderService } = await import('./work_order');
-    await workOrderService.executePendingOrders();
-    console.log('✅ [CloudWorkflowAgent] Cloud Takeover protocol executed.');
+    console.log('⚖️ [CloudWorkflowAgent] Auditing for Cloud Takeover necessity...')
+
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    if (!isCloud) return { takeover: false, reason: 'not_in_cloud_env' }
+
+    const { onlinePresence } = await import('./presence')
+
+    // Establish current leadership status before audit
+    await onlinePresence.syncPresence()
+    const isLeader = onlinePresence.isLeader()
+
+    if (isLeader) {
+       console.log('🚀 [CloudWorkflowAgent] Cloud Node has Leadership. Enabling HIGH_INTENSITY mode.')
+
+       // Perform state recovery via bridge
+       const { edgeToCloudBridge } = await import('./edge_to_cloud_bridge')
+       const { workOrderService } = await import('./work_order')
+
+       const recoveredFiles = await edgeToCloudBridge.recoverCloudToLocal()
+       if (recoveredFiles.length > 0) {
+          console.log(`📦 [CloudWorkflowAgent] Recovered ${recoveredFiles.length} state files. Reloading work orders...`)
+          await workOrderService.reload()
+       }
+
+       console.log('⚡ [CloudWorkflowAgent] Cloud Takeover initiated. Sovereignty established.')
+       return { takeover: true, intensity: 'high', recoveredFiles }
+    }
+
+    return { takeover: false, reason: 'primary_node_online' }
   }
 
   public async evaluateTelemetry() {
@@ -33,15 +62,18 @@ export class CloudWorkflowAgent {
     const dockerMetrics = await checkDockerHealth()
     const gitlabMetrics = await getGitLabMetrics()
     const githubMetrics = await getGitHubMetrics()
+    const gitKrakenMetrics = await getGitKrakenMetrics()
 
-    // Mock GitKraken metrics based on memory context
-    const gitKrakenMetrics = { compatibilityScore: 85 }
+    const { healthCheck } = await import('../core')
+    const coreHealth = await healthCheck()
 
     return {
       docker: dockerMetrics,
       gitlab: gitlabMetrics,
       github: githubMetrics,
-      gitkraken: gitKrakenMetrics
+      gitkraken: gitKrakenMetrics,
+      supabase: { status: coreHealth.supabase },
+      mongodb: { status: coreHealth.mongodb }
     }
   }
 

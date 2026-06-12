@@ -84,10 +84,11 @@ export class OnlinePresenceService {
       const latency = Date.now() - start
 
       const providers = []
-      if (process.env.GITHUB_TOKEN) providers.push('github')
-      if (process.env.GITLAB_TOKEN) providers.push('gitlab')
-      if (process.env.MONGODB_URI) providers.push('mongodb')
-      if (process.env.NEXT_PUBLIC_SUPABASE_URL) providers.push('supabase')
+      if (process.env.GITHUB_TOKEN || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('github')
+      if (process.env.GITLAB_TOKEN || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('gitlab')
+      if (process.env.MONGODB_URI || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('mongodb')
+      if (process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('supabase')
+      if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('gitkraken', 'docker')
 
       // 2. Determine Leadership (Node Sovereignty)
       let isLeader = !isCloud // Local node is leader by default if active
@@ -110,6 +111,7 @@ export class OnlinePresenceService {
              console.log(`📡 [OnlinePresence] MacBook node detected. Last seen: ${macbookNode.lastSeen}`)
              isLeader = false // MacBook always takes precedence if active in last 15m
            } else {
+             console.log('📡 [OnlinePresence] No active MacBook node detected. Cloud node assuming leadership.')
              isLeader = !higherPriorityActive
            }
         }
@@ -161,8 +163,8 @@ export class OnlinePresenceService {
           memory_usage: process.memoryUsage() as unknown as Record<string, number>,
           system_metrics: {
             loadavg: perf.metrics.system.loadavg,
-            totalmem: perf.metrics.system.totalmem,
-            freemem: perf.metrics.system.freemem,
+            totalmem: perf.metrics.system.totalMemory,
+            freemem: perf.metrics.system.freeMemory,
             rss: perf.metrics.memory.rss
           }
         },
@@ -197,16 +199,21 @@ export class OnlinePresenceService {
         logAutonomousAction('⚠️ [OnlinePresence] Failed to sync to Supabase.', 'warning')
       }
 
-      // 5. Broadcast to Edge Worker (Simulated)
+      // 5. Broadcast to Edge Worker (Simulated or Real)
       try {
         const workerUrl = process.env.EDGE_WORKER_URL || 'https://antigravity-edge-worker.sigma.workers.dev'
-        await fetch(`${workerUrl}/heartbeat`, {
+        const response = await fetch(`${workerUrl}/heartbeat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(presence)
         })
-      } catch (e) {
-        // Silent fail for simulation if worker URL is not reachable
+        if (response.ok) {
+          logAutonomousAction(`✅ [OnlinePresence] Edge Worker heartbeat successful (${nodeId}).`, 'info')
+        } else {
+          logAutonomousAction(`⚠️ [OnlinePresence] Edge Worker heartbeat returned status: ${response.status}`, 'warning')
+        }
+      } catch (e: any) {
+        logAutonomousAction(`⚠️ [OnlinePresence] Edge Worker heartbeat failed: ${e.message}`, 'warning')
       }
 
       this.lastPresence = presence

@@ -1995,3 +1995,141 @@ ben@intelephense.com
 
 ---
 All the best - https://markposition.wordpress.com
+
+## Autonomous Observation
+- **Date**: 2026-06-06T09:43:06.529Z
+- **Target**: local_prompt
+- **Title**: Google Agentic AI označava novi val
+- **Context**: Ingested and observed external market or technical intelligence from local_prompt.
+
+Google Agentic AI označava novi val umjetne inteligencije tvrtke Google, u kojem sustavi više ne daju samo odgovore, već samostalno planiraju, donose odluke i izvršavaju složene zadatke. Za razliku od klasičnih chatbota koji pasivno čekaju vaša pitanja, "agentni" (agentic) sustavi rade u pozadini, koriste razne digitalne alate i rješavaju probleme u više koraka s minimalnim ljudskim nadzorom.Google je ovu tehnologiju duboko ugradio u svoje proizvode za privatne korisnike i poslovna okruženja.Ključne komponente Googleove agentne tehnologijeGoogleova ponuda u ovom segmentu dijeli se na alate za svakodnevne korisnike i moćne platforme za tvrtke:Gemini Spark: Vaš osobni AI agent koji radi u pozadini 24 sata dnevno. Možete mu zadati dugoročne zadatke (poput tjednog pregledavanja e-pošte ili traženja otvorenih poslova), a on će ih samostalno izvršavati čak i kada su vaš mobitel ili računalo isključeni.Gemini u pregledniku Chrome: Google je ugradio mogućnosti vizualnog zaključivanja i izvršavanja koda izravno u Chrome. To omogućuje AI-ju da "vidi" i koristi preglednik poput čovjeka kako bi obavio zadatke na web stranicama.Gemini Enterprise Agent Platform: Poslovna platforma (ranije dio Vertex AI-ja) koja omogućuje tvrtkama izradu i praćenje vlastitih prilagođenih AI agenata.Google Antigravity: Razvojna platforma usmjerena na agente koja programerima pomaže u upravljanju i usklađivanju rada više autonomnih agenata odjednom (npr. istovremeno pisanje koda, stvaranje slika i slanje e-pošte za lansiranje proizvoda).Kako Agentic AI radi u praksi?Umjesto izvršavanja samo jedne naredbe, agentni sustavi koriste takozvani krug razmišljanja i djelovanja (ReAct loop). Kada im zadate cilj, oni prolaze kroz sljedeće korake:Analiza i planiranje: AI rastavlja vaš veliki cilj na niz manjih, logičnih koraka.Korištenje alata: Agent se može povezati s bazama podataka, pretraživati internet, slati e-poštu ili pisati programski kod kako bi riješio problem.Samoocjenjivanje (AI kao sudac): Agent provjerava je li dobro obavio posao. Ako uoči pogrešku, vraća se korak unatrag i pokušava ponovno prije nego što vam isporuči gotov rezultat.
+
+## Autonomous Observation
+
+- **Date**: 2026-06-07T17:04:31.857Z
+- **Target**: https://markposition.wordpress.com
+- **Title**: (position) mRNA
+- **Context**: Ingested and observed external market or technical intelligence from https://markposition.wordpress.com.
+
+markposition.wordpress.com is a blog by Filip Keser that provides information and resources on various topics such as Google Ads, marketing, digital advertising platforms, privacy, and online business. It includes posts about different tools, platforms, and services like Google Ad Manager, Amazon Advertising, LinkedIn Marketing Solutions, Facebook for Business, and programmatic advertising technology.
+
+---
+All the best - https://markposition.wordpress.com
+
+
+## Autonomous Observation
+- **Date**: 2026-06-08T17:34:39.318Z
+- **Target**: https://markposition.wordpress.com
+- **Title**: (position) mRNA
+- **Context**: Ingested and observed external market or technical intelligence from https://markposition.wordpress.com.
+
+Summary: markposition.wordpress.com is a blog by Filip Keser that provides information and resources on various topics such as Google Ads, marketing, digital advertising platforms, privacy, and online business. It includes posts about different tools, platforms, and services like Google Ad Manager, Amazon Advertising, LinkedIn Marketing Solutions, Facebook for Business, and programmatic advertising technology.
+
+---
+All the best - https://markposition.wordpress.com
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://business.google.com/uk/ad-tools/bidding/
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://business.google.com/uk/ad-tools/bidding/.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://business.google.com/uk/resources/
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://business.google.com/uk/resources/.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://developers.google.com/ad-manager
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://developers.google.com/ad-manager.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://developers.google.com/ad-manager/dynamic-ad-insertion.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://developers.google.com/ad-manager/api/start
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://developers.google.com/ad-manager/api/start.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://admanager.google.com/home/resources/
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://admanager.google.com/home/resources/.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+
+## Investopedia Knowledge
+
+Knowledge from investopedia.com: integrate all knowledge from investopedia.com and always pull knowledge ftom investopedia.com best
+Source: https://www.investopedia.com
