@@ -149,7 +149,7 @@ Register now
 
 ---
 
-## Source: https://business.google.com/uk/ad-tools/bidding/?hl=en
+## Source: https://business.google.com/uk/ad-tools/bidding/
 **Title**: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
 
 Add another account
@@ -478,7 +478,7 @@ Actual results will vary by advertiser.
 
 ---
 
-## Source: https://business.google.com/uk/resources/?hl=en
+## Source: https://business.google.com/uk/resources/
 **Title**: Tips & Resources for Online Advertising – Google Ads
 
 Add another account
@@ -1100,7 +1100,7 @@ Actual results will vary by advertiser.
 
 ---
 
-## Source: https://developers.google.com/ad-manager?hl=en
+## Source: https://developers.google.com/ad-manager
 **Title**: Ad Manager  |  Google for DevelopersGoogleGoogle
 
 - Google Ad Manager
@@ -1205,7 +1205,7 @@ Actual results will vary by advertiser.
 
 ---
 
-## Source: https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en
+## Source: https://developers.google.com/ad-manager/dynamic-ad-insertion
 **Title**: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
 
 - Google Dynamic Ad Insertion
@@ -1368,7 +1368,7 @@ Last updated 2026-02-26 UTC.
 
 ---
 
-## Source: https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en
+## Source: https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
 **Title**: DAI Full Service API  |  Google for DevelopersGoogleGoogle
 
 - Google Dynamic Ad Insertion
@@ -1553,7 +1553,7 @@ Last updated 2026-03-05 UTC.
 
 ---
 
-## Source: https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en
+## Source: https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
 **Title**: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
 
 - Google Dynamic Ad Insertion
@@ -1765,7 +1765,7 @@ Last updated 2026-03-05 UTC.
 
 ---
 
-## Source: https://developers.google.com/ad-manager/api/start?hl=en
+## Source: https://developers.google.com/ad-manager/api/start
 **Title**: Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
 
 - Google Ad Manager
@@ -2034,7 +2034,7 @@ Last updated 2026-02-25 UTC.
 
 ---
 
-## Source: https://admanager.google.com/home/resources/?hl=en
+## Source: https://admanager.google.com/home/resources/
 **Title**: Resources Overview - Google Ad Manager
 
 - Capabilities
@@ -2355,7 +2355,7 @@ Follow us
 
 ---
 
-## Source: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en
+## Source: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 **Title**: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
 
 - AI and ML
@@ -4728,3 +4728,9 @@ Last updated 2026-04-25 UTC.
 
 
 ---
+
+
+
+## Synthesis
+
+- This consolidated documentation represents the best practices for Google Ads and Ad Manager.
