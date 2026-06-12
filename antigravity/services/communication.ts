@@ -172,16 +172,21 @@ export async function generateActionableBriefing(state: any, directives: Directi
     briefing += `- **Intelligence Directive:** "Ecosystem features ${deps} cross-service dependencies. Ensure that changes to core services are preceded by automated dependency impact analysis."\n`
   }
 
-  // Phase 13: Direct Coordination Matrix
+  // Phase 13: Strategic Coordination Matrix
   const clusters = state.intelligence.relationshipMap.functionalClusters || {}
   if (Object.keys(clusters).length > 0) {
-    briefing += `\n### 📊 Direct Coordination Matrix\n`
-    briefing += `| Functional Cluster | Involved Branches | Potential For Friction |\n`
-    briefing += `| :--- | :--- | :---: |\n`
+    briefing += `\n### 📊 Strategic Coordination Matrix\n`
+    briefing += `| Functional Cluster | Primary Stakeholders | Active Branches | Risk |\n`
+    briefing += `| :--- | :--- | :--- | :---: |\n`
 
     Object.entries(clusters).forEach(([cluster, branches]: [string, any]) => {
+      const stakeholders = state.stakeholders.filter((s: any) => {
+        const rolePrefix = s.role.toLowerCase().split(' ')[0]
+        return branches.some((b: string) => b.toLowerCase().includes(rolePrefix))
+      }).map((s: any) => s.role)
+
       const friction = branches.length > 5 ? '🔴 High' : (branches.length > 2 ? '🟡 Medium' : '🟢 Low')
-      briefing += `| \`${cluster}\` | ${branches.slice(0, 3).join(', ')}${branches.length > 3 ? ` (+${branches.length - 3})` : ''} | ${friction} |\n`
+      briefing += `| \`${cluster}\` | ${stakeholders.length > 0 ? stakeholders.join(', ') : 'Global Ops'} | ${branches.slice(0, 2).join(', ')}${branches.length > 2 ? ` (+${branches.length - 2})` : ''} | ${friction} |\n`
     })
   }
 
@@ -240,10 +245,10 @@ export async function generateActionableBriefing(state: any, directives: Directi
     briefing += `- No critical stakeholder decisions required at this time.\n`
   }
 
-  const stabilityIndex = synergies.length > 0
-    ? Math.max(0, 100 - (synergies.length * 5))
-    : 100
-  briefing += `\n---\n**Coordination Stability Index:** ${stabilityIndex}% | *Sentient Orchestration Active*\n`
+  const deps = state.intelligence.relationshipMap.resourceDependencies?.length || 0
+  const stabilityIndex = Math.max(0, 100 - (synergies.length * 4) - (Math.floor(deps / 10)))
+
+  briefing += `\n---\n**Coordination Stability Index:** ${stabilityIndex}% | **Architectural Drift:** ${synergies.length > 10 ? '⚠️ High' : '✅ Low'} | *Sentient Orchestration Active*\n`
 
   return briefing
 }

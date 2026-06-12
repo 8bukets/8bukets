@@ -176,6 +176,8 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: 'database', type: 'Database Schema', pattern: /\.sql$|\.json$/ },
     { path: 'bin', type: 'Binary/Executable', pattern: /.*/ },
     { path: 'terraform', type: 'Infrastructure', pattern: /\.tf$/ },
+    { path: '.github/workflows', type: 'CI/CD Workflow', pattern: /\.yml$/ },
+    { path: '.antigravity', type: 'System Config', pattern: /\.md$|\.json$/ },
     { path: 'public', type: 'Asset', pattern: /.*/ }
   ]
 
@@ -249,11 +251,18 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   // Correlate stakeholders to roles/branches
   stakeholders.forEach(s => {
+    const roleKeywords = s.role.toLowerCase().split(/[ \-]/).filter(w => w.length > 3)
     map.stakeholderEngagement[s.role] = {
       email: s.email,
       activeProjects: branches.filter(b => {
-        const branchName = b?.name || '';
-        return b.category === 'agent' || branchName.includes(s.role.toLowerCase().split(' ')[0]);
+        const branchName = (b?.name || '').toLowerCase()
+        const lastMsg = (b?.lastMessage || '').toLowerCase()
+        const domain = (b?.domain || '').toLowerCase()
+
+        // High fidelity matching: Category match or Role keyword proximity in branch/message/domain
+        return b.category === 'agent' ||
+               roleKeywords.some(kw => branchName.includes(kw) || lastMsg.includes(kw) || domain.includes(kw)) ||
+               branchName.includes(s.role.toLowerCase().split(' ')[0])
       }).map(b => b.name)
     }
   })
@@ -270,6 +279,22 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   const functionalClusters: Record<string, Set<string>> = {}
 
   branches.forEach(b => {
+    // Phase 13: Robust Functional Clustering
+    const domainsToClusters: Record<string, string> = {
+      'Services': 'core',
+      'Automation': 'workflow',
+      'UI/UX': 'interface',
+      'AI Agents': 'cognitive',
+      'Security': 'security',
+      'Documentation': 'knowledge'
+    }
+
+    if (b.domain && domainsToClusters[b.domain]) {
+      const cluster = domainsToClusters[b.domain]
+      if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
+      functionalClusters[cluster].add(b.name)
+    }
+
     if (b.changedFiles) {
       b.changedFiles.forEach((f: string) => {
         const matchedResource = map.resourceInventory.find((r: any) => r.path && f.includes(r.path))
@@ -278,7 +303,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           resourceUsage[matchedResource.name].add(b.name)
 
           // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
-          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration)/i)
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive)/i)
           if (clusterMatch) {
             const cluster = clusterMatch[0].toLowerCase()
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
@@ -561,7 +586,7 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
 
     // Improved deduplication: Check if this specific result or knowledge for this branch is already recorded
     const branchIdentifier = `- **Branch:** \`${b.name}\``;
-    const resultIdentifier = `  - **Result:** ${b.results}`;
+    const resultIdentifier = `  - **Result:** ${b.results || 'N/A'}`;
     const knowledgeIdentifier = b.knowledge ? `  - **Knowledge:** ${b.knowledge}` : '';
 
     if (existingContent.includes(branchIdentifier)) {
@@ -571,7 +596,7 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
           const branchSection = parts[i].split('##')[0];
           // Robust deduplication matching both results and knowledge nuggets
           const matchResult = branchSection.includes(resultIdentifier);
-          const matchKnowledge = !knowledgeIdentifier || branchSection.includes(knowledgeIdentifier);
+          const matchKnowledge = !knowledgeIdentifier || (branchSection.includes('Knowledge:') && branchSection.includes(knowledgeIdentifier));
           if (matchResult && matchKnowledge) {
               return false;
           }
