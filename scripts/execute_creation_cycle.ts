@@ -4,6 +4,7 @@ import { logAutonomousAction } from '../antigravity/core';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import * as fs from 'fs';
+import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import { jules } from '../antigravity/jules';
 
@@ -11,9 +12,9 @@ const execAsync = promisify(exec);
 
 async function applyEngineConfiguration() {
     const engineConfigPath = path.join(process.cwd(), 'data/engine_config.json');
-    if (fs.existsSync(engineConfigPath)) {
+    if (await fsPromises.access(engineConfigPath).then(() => true).catch(() => false)) {
         try {
-            const config = JSON.parse(fs.readFileSync(engineConfigPath, 'utf8'));
+            const config = JSON.parse(await fsPromises.readFile(engineConfigPath, 'utf8'));
             console.log(`⚙️ [Antigravity] Applying evolved System Engine configuration. Scale Factor: ${config.scaleFactor}`);
             if (config.features && config.features.includes('advanced_self_correction')) {
                  console.log(`🔧 [Antigravity] Advanced self-correction heuristics enabled.`);

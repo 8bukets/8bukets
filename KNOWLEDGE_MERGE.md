@@ -8,6 +8,10 @@ Overlapping identities between Antigravity, Project SOR, software-online-review.
 
 ## 📈 Latest Market Intelligence (Dynamic Merge)
 
+### Data Agent Kit
+- **Source**: data_agent_kit.md
+- **Link**: [data/knowledge/data_agent_kit.md](data/knowledge/data_agent_kit.md)
+
 ### Stripe Link CLI for AI Agents
 - **Source**: link.com/agents
 - **Link**: [data/knowledge/stripe_link_cli.md](data/knowledge/stripe_link_cli.md)

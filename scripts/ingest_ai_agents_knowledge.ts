@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import * as cheerio from 'cheerio';
 
@@ -164,8 +165,8 @@ async function scrapeAiAgentsKnowledge() {
         finalizeSection();
 
         const targetDir = "data/knowledge";
-        if (!fs.existsSync(targetDir)) {
-            fs.mkdirSync(targetDir, { recursive: true });
+        if (!await fsPromises.access(targetDir).then(() => true).catch(() => false)) {
+            await fsPromises.mkdir(targetDir, { recursive: true });
         }
 
         const jsonPath = path.join(targetDir, "ai_agents_knowledge.json");
@@ -174,9 +175,9 @@ async function scrapeAiAgentsKnowledge() {
         const manualKeys = ["react-agent-deployment-logic"];
         let existingKnowledge: Record<string, any> = {};
 
-        if (fs.existsSync(jsonPath)) {
+        if (await fsPromises.access(jsonPath).then(() => true).catch(() => false)) {
             try {
-                existingKnowledge = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+                existingKnowledge = JSON.parse(await fsPromises.readFile(jsonPath, 'utf8'));
             } catch(e) {}
         }
 
@@ -186,13 +187,13 @@ async function scrapeAiAgentsKnowledge() {
             }
         }
 
-        fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf8');
+        await fsPromises.writeFile(jsonPath, JSON.stringify(data, null, 4), 'utf8');
 
         const mdPath = "data/knowledge/ai_agents_knowledge.md";
         let originalMd = "";
 
-        if (fs.existsSync(mdPath)) {
-            originalMd = fs.readFileSync(mdPath, 'utf8');
+        if (await fsPromises.access(mdPath).then(() => true).catch(() => false)) {
+            originalMd = await fsPromises.readFile(mdPath, 'utf8');
         }
 
         let headerText = "## What are AI Agents?";
@@ -225,7 +226,7 @@ async function scrapeAiAgentsKnowledge() {
              }
         }
 
-        fs.writeFileSync(mdPath, mdContent, 'utf8');
+        await fsPromises.writeFile(mdPath, mdContent, 'utf8');
         console.log(`Updated knowledge files successfully.`);
 
         return true;

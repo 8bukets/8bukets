@@ -588,6 +588,19 @@
           ]
         }
       ]
+    },
+    {
+      "url": "data/knowledge/data_agent_kit.md",
+      "title": "The future of agentic development: Redefining the data practitioner lifecycle with Data Agent Kit",
+      "sections": [
+        {
+          "header": "Overview",
+          "content": [
+            "Data Agent Kit is a unified, open-source collection of data engineering and data science skills, tools and plugins that integrate directly into the environments practitioners already use.",
+            "It provides Agentic skills, Model Context Protocol (MCP) tools, and Plugins and extensions."
+          ]
+        }
+      ]
     }
   ]
 }

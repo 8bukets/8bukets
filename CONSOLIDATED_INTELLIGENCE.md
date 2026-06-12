@@ -13,6 +13,7 @@
 - **AI Agents Knowledge Integrated:** Yes (from Google Cloud Discover)
 
 ### 🤖 Recent AI Agent Insights
+- [Data Agent Kit](data/knowledge/data_agent_kit.md) - Redefining the data practitioner lifecycle with Data Agent Kit.
 - What is an AI agent?
 - Key features of an AI agent
 - What is the difference between AI agents, AI assistants, and bots?
