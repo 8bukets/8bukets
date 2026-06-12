@@ -171,9 +171,13 @@ export class Jules {
 
   public async syncCollaboration() {
     console.log('🤝 [Jules] Synchronizing collaboration context...')
-    const { syncCollaborationState } = await import('./services/collaboration')
-    await syncCollaborationState()
-    this.recordTask('Collaboration Sync: Exported system context and stakeholder data.')
+    const { syncCollaborationState, broadcastToStakeholders } = await import('./services/collaboration')
+    const state = await syncCollaborationState()
+
+    // Phase 12: Explicitly broadcast to stakeholders after sync
+    await broadcastToStakeholders(state)
+
+    this.recordTask('Collaboration Sync: Exported system context and stakeholder data. Broadcasted synergy alerts.')
 
     // Update Consolidated Intelligence Report
     const { generateConsolidatedReport } = await import('./services/intelligence')
@@ -185,7 +189,8 @@ export class Jules {
     const { getDockerStatus } = await import('./services/docker')
     const containers = await getDockerStatus()
     if (containers.length > 0) {
-      this.recordTask(`Docker Sovereignty: Found ${containers.length} active containers. Connectivity verified.`)
+      const names = containers.map(c => c.name).join(', ')
+      this.recordTask(`Docker Sovereignty: Found ${containers.length} active containers (${names}). Connectivity verified.`)
     } else {
       this.recordTask('Docker Sovereignty: No active containers found or Docker daemon unreachable.')
     }
