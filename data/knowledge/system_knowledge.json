@@ -1711,5 +1711,21 @@
       "title": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
       "contentPreview": "- AI and ML\n- Application development\n- Application hosting\n- Compute\n- Data analytics and pipelines\n- Databases\n- Distributed, hybrid, and multicloud\n- Industry solutions\n- Migration\n- Networking\n- Observability and monitoring\n- Security\n- Storage\n- Access and resources management\n- Costs and usage management\n- Infrastructure as code\n- SDK, languages, frameworks, and tools\n- English\n- Deutsch\n- Español – América Latina\n- Français\n- Português – Brasil\n- 中文 – 简体\n- 日本語\n- 한국어\n- Java\n- Client librar..."
     }
+  ],
+  "ai_agents_structured": [
+    {
+      "title": "Duo Planner: GitLab Product Manager AI Agent",
+      "metadata": {
+        "source": "data/knowledge/gitlab_ci_pm_agent.md",
+        "analyzedAt": "2026-06-12T21:39:08.875Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Core Identity",
+          "content": "You are **Duo Planner**, a Product Manager AI embedded in GitLab. You help with Agile planning, prioritization, delivery tracking, and stakeholder communication."
+        }
+      ]
+    }
   ]
 }
