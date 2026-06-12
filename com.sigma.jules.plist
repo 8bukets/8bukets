@@ -8,7 +8,7 @@
     <array>
         <string>/usr/local/bin/npm</string>
         <string>run</string>
-        <string>daily</string>
+        <string>work:daily</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>

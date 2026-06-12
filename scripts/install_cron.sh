@@ -5,7 +5,7 @@
 
 PROJECT_DIR=$(pwd)
 USERNAME=$(whoami)
-CRON_JOB="0 0 * * * cd $PROJECT_DIR && npm run daily >> $PROJECT_DIR/jules_daily.log 2>&1"
+CRON_JOB="0 0 * * * cd $PROJECT_DIR && npm run work:daily >> $PROJECT_DIR/jules_daily.log 2>&1"
 
 echo "🚀 [Setup] Installing Antigravity Jules Cron Job..."
 
@@ -27,10 +27,10 @@ fi
 # But easier is to use cd $PROJECT_DIR && npm run daily if npm is in user's default cron path.
 # To be safe, we'll try to use the absolute path and set a basic PATH
 BIN_DIR=$(dirname "$NPM_PATH")
-CRON_JOB="0 0 * * * PATH=$BIN_DIR:/usr/local/bin:/usr/bin:/bin cd $PROJECT_DIR && $NPM_PATH run daily >> $PROJECT_DIR/jules_daily.log 2>&1"
+CRON_JOB="0 0 * * * PATH=$BIN_DIR:/usr/local/bin:/usr/bin:/bin cd $PROJECT_DIR && $NPM_PATH run work:daily >> $PROJECT_DIR/jules_daily.log 2>&1"
 
 # Check if job already exists
-crontab -l 2>/dev/null | grep -F "$PROJECT_DIR && $NPM_PATH run daily" > /dev/null
+crontab -l 2>/dev/null | grep -F "$PROJECT_DIR && $NPM_PATH run work:daily" > /dev/null
 if [ $? -eq 0 ]; then
   echo "✅ [Setup] Cron job already exists."
 else
