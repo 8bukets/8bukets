@@ -1,15 +1,6 @@
 {
   "typescript_sections": [
     {
-      "title": "Web Insight",
-      "metadata": {
-        "source": "https://admanager.google.com/home/resources/",
-        "analyzedAt": "2026-06-12T04:54:10.348Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": []
-    },
-    {
       "title": "iCloud: 50ty.json",
       "metadata": {
         "source": "icloud://50ty.json",
@@ -1466,69 +1457,6 @@
       ]
     },
     {
-      "title": "2459326?hl=en&ref topic=10289453&sjid=5167206403107665975 EU",
-      "metadata": {
-        "source": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
-        "analyzedAt": "2026-06-12T04:54:07.764Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": []
-    },
-    {
-      "title": "ad manager",
-      "metadata": {
-        "source": "https://developers.google.com/ad-manager",
-        "analyzedAt": "2026-06-12T04:54:08.594Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": []
-    },
-    {
-      "title": "dynamic ad insertion",
-      "metadata": {
-        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
-        "analyzedAt": "2026-06-12T04:54:09.083Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": []
-    },
-    {
-      "title": "full service",
-      "metadata": {
-        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
-        "analyzedAt": "2026-06-12T04:54:09.332Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": []
-    },
-    {
-      "title": "pod serving",
-      "metadata": {
-        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
-        "analyzedAt": "2026-06-12T04:54:10.056Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": []
-    },
-    {
-      "title": "start",
-      "metadata": {
-        "source": "https://developers.google.com/ad-manager/api/start",
-        "analyzedAt": "2026-06-12T04:54:10.259Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": []
-    },
-    {
-      "title": "overview",
-      "metadata": {
-        "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
-        "analyzedAt": "2026-06-12T04:54:10.885Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": []
-    },
-    {
       "title": "iCloud: phase_14_anticipation.md",
       "metadata": {
         "source": "icloud://phase_14_anticipation.md",
@@ -1660,6 +1588,22 @@
       "contentPreview": "The best solution for cross-platform PHP intelligence and AI agents in Antigravity."
     }
   ],
+  "ai_agents_structured": [
+    {
+      "title": "Duo Planner: GitLab Product Manager AI Agent",
+      "metadata": {
+        "source": "data/knowledge/gitlab_ci_pm_agent.md",
+        "analyzedAt": "2026-06-12T21:39:08.875Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Core Identity",
+          "content": "You are **Duo Planner**, a Product Manager AI embedded in GitLab. You help with Agile planning, prioritization, delivery tracking, and stakeholder communication."
+        }
+      ]
+    }
+  ],
   "google_ads": [
     {
       "url": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
@@ -1710,22 +1654,6 @@
       "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
       "title": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
       "contentPreview": "- AI and ML\n- Application development\n- Application hosting\n- Compute\n- Data analytics and pipelines\n- Databases\n- Distributed, hybrid, and multicloud\n- Industry solutions\n- Migration\n- Networking\n- Observability and monitoring\n- Security\n- Storage\n- Access and resources management\n- Costs and usage management\n- Infrastructure as code\n- SDK, languages, frameworks, and tools\n- English\n- Deutsch\n- Español – América Latina\n- Français\n- Português – Brasil\n- 中文 – 简体\n- 日本語\n- 한국어\n- Java\n- Client librar..."
-    }
-  ],
-  "ai_agents_structured": [
-    {
-      "title": "Duo Planner: GitLab Product Manager AI Agent",
-      "metadata": {
-        "source": "data/knowledge/gitlab_ci_pm_agent.md",
-        "analyzedAt": "2026-06-12T21:39:08.875Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": [
-        {
-          "header": "Core Identity",
-          "content": "You are **Duo Planner**, a Product Manager AI embedded in GitLab. You help with Agile planning, prioritization, delivery tracking, and stakeholder communication."
-        }
-      ]
     }
   ]
 }
