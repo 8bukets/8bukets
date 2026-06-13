@@ -616,3 +616,69 @@ time="2026-06-13T08:27:11+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\
 time="2026-06-13T08:27:11+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
 unable to get image '8bukets-connect': failed to connect to the docker API at unix:///Users/filipkeser/.docker/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /Users/filipkeser/.docker/run/docker.sock: connect: no such file or directory
 ⚠️ [Jules] Git pull failed, checking for conflicts...
+ ❌ [Jules] Failed to merge add-google-edge-agent-9371392929328195231: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/work_orders.json
+	jules_daily.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/autonomous-cloud-knowledge-consolidation-6778083691317646306: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/work_orders.json
+	jules_daily.log
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/autonomous-creation-cycle-8889704769332571568: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/work_orders.json
+	jules_daily.log
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/autonomous-creation-cycle-stabilization-15042891493316655880: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/work_orders.json
+	jules_daily.log
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/boundary-integration-3444742037386565893: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/work_orders.json
+	jules_daily.log
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ⚠️ [Jules] Failed to prune branch autonomous-creation-cycle-1075943793736292428. It may have already been deleted.
+ ⚠️ [Jules] Failed to prune branch autonomous-daily-sync-refinement-17898063665932042144. It may have already been deleted.
+ ⚠️ [Jules] Failed to prune branch autonomous-evolution-command-15592904538658549663. It may have already been deleted.
+💥 [Antigravity Root] Execution failed: Error: Unknown system error -11: Unknown system error -11, scandir '/Users/filipkeser/Library/Mobile Documents/com~apple~CloudDocs/CodeBackups/Antigravity/Syra/AntigravityPrototype.xcodeproj'
+    at async readdirRecursive (node:internal/fs/promises:929:13)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:46:21)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'scandir',
+  path: '/Users/filipkeser/Library/Mobile Documents/com~apple~CloudDocs/CodeBackups/Antigravity/Syra/AntigravityPrototype.xcodeproj'
+}
+time="2026-06-13T08:28:30+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
+time="2026-06-13T08:28:30+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
+unable to get image '8bukets-app': failed to connect to the docker API at unix:///Users/filipkeser/.docker/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /Users/filipkeser/.docker/run/docker.sock: connect: no such file or directory
+⚠️ [Jules] Git pull failed, checking for conflicts...
