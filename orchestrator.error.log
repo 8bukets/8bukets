@@ -1009,3 +1009,52 @@ npm error errno -11
 npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
 npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_42_32_684Z-debug-0.log
 read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_42_43_240Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_42_53_882Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_43_04_538Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_43_15_198Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_43_25_847Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+sh: /Users/filipkeser/Documents/Antigravity/node_modules/.bin/tsx: Resource deadlock avoided
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+sh: /Users/filipkeser/Documents/Antigravity/node_modules/.bin/tsx: Resource deadlock avoided
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+sh: /Users/filipkeser/Documents/Antigravity/node_modules/.bin/tsx: Resource deadlock avoided
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+sh: /Users/filipkeser/Documents/Antigravity/node_modules/.bin/tsx: Resource deadlock avoided
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+sh: /Users/filipkeser/Documents/Antigravity/node_modules/.bin/tsx: Resource deadlock avoided
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+sh: /Users/filipkeser/Documents/Antigravity/node_modules/.bin/tsx: Resource deadlock avoided
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+sh: /Users/filipkeser/Documents/Antigravity/node_modules/.bin/tsx: Resource deadlock avoided
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+sh: /Users/filipkeser/Documents/Antigravity/node_modules/.bin/tsx: Resource deadlock avoided
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+sh: /Users/filipkeser/Documents/Antigravity/node_modules/.bin/tsx: Resource deadlock avoided
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+sh: /Users/filipkeser/Documents/Antigravity/node_modules/.bin/tsx: Resource deadlock avoided
