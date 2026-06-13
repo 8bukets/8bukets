@@ -46,12 +46,15 @@ export class ICloudObserver {
       const files = await fs.readdir(scanPath, { recursive: true }) as string[]
 
       for (const file of files) {
-        const fullPath = path.join(scanPath, file)
-        const stats = await fs.stat(fullPath)
+        if (file.includes('node_modules')) continue;
 
-        if (stats.isFile() && (file.endsWith('.md') || (file.endsWith('.json') && !file.includes('node_modules')))) {
-          try {
-            const content = await fs.readFile(fullPath, 'utf8')
+        const fullPath = path.join(scanPath, file)
+        try {
+          const stats = await fs.stat(fullPath)
+
+          if (stats.isFile() && (file.endsWith('.md') || file.endsWith('.json'))) {
+            try {
+              const content = await fs.readFile(fullPath, 'utf8')
             let knowledge;
 
             if (file.endsWith('.json')) {
@@ -81,6 +84,8 @@ export class ICloudObserver {
             console.error(` ❌ [iCloud Observer] Failed to process ${file}:`, err)
           }
         }
+      } catch (statErr) {
+        // Ignore files that disappeared during scan
       }
     }
 

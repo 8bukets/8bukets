@@ -1940,3 +1940,52 @@ time="2026-06-13T08:32:48+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\
 time="2026-06-13T08:32:48+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
 unable to get image '8bukets-connect': failed to connect to the docker API at unix:///Users/filipkeser/.docker/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /Users/filipkeser/.docker/run/docker.sock: connect: no such file or directory
 ⚠️ [Jules] Git pull failed, checking for conflicts...
+ ❌ [Jules] Failed to merge add-google-edge-agent-9371392929328195231: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	antigravity/services/icloud_observer.ts
+	data/work_orders.json
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/autonomous-creation-cycle-stabilization-15042891493316655880: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	antigravity/services/icloud_observer.ts
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/boundary-integration-3444742037386565893: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	antigravity/services/icloud_observer.ts
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/caio-intelligence-integration-11172055964198786485: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	antigravity/services/icloud_observer.ts
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/connect-docker-collaboration-10997916882350002599: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	antigravity/services/icloud_observer.ts
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+

@@ -9003,6 +9003,15 @@
           "content": "Copyright © 2016-2021 Brian Hough, Maximilian Stoiber, & Nik Graf. Licensed under the MIT License, see [LICENSE.md](LICENSE.md) for more information!"
         }
       ]
+    },
+    {
+      "title": "Web Insight",
+      "metadata": {
+        "source": "https://admanager.google.com/home/resources/",
+        "analyzedAt": "2026-06-13T06:33:48.702Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
     }
   ]
 }
