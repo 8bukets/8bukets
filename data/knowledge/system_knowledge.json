@@ -1,6 +1,189 @@
 {
   "ai_agents_structured": [
     {
+      "url": "https://markposition.wordpress.com",
+      "title": "(position) mRNA",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "markposition.wordpress.com is a blog by Filip Keser that provides information and resources on various topics such as Google Ads, marketing, digital advertising platforms, privacy, and online business. It includes posts about different tools, platforms, and services like Google Ad Manager, Amazon Advertising, LinkedIn Marketing Solutions, Facebook for Business, and programmatic advertising technology.",
+            "all the best - https://markposition.wordpress.com"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://business.google.com/uk/ad-tools/bidding/",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://business.google.com/uk/resources/",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://developers.google.com/ad-manager",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/api/start",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://admanager.google.com/home/resources/",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.investopedia.com",
+      "title": "Investopedia Knowledge",
+      "sections": [
+        {
+          "header": "Investopedia Knowledge",
+          "content": [
+            "Knowledge from investopedia.com: integrate all knowledge from investopedia.com and always pull knowledge ftom investopedia.com best"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "gemini_cli_subagents_docs.md",
+      "title": "Gemini CLI Subagents Docs",
+      "sections": [
+        {
+          "header": "Subagents",
+          "content": [
+            "Subagents are specialized agents that operate within your main Gemini CLI session. They are designed to handle specific, complex tasks—like deep codebase analysis, documentation lookup, or domain-specific reasoning—without cluttering the main agent’s context or toolset."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "link.com/agents",
+      "title": "Stripe Link CLI",
+      "sections": [
+        {
+          "header": "Link CLI",
+          "content": [
+            "Link CLI lets agents get secure, one-time-use payment credentials from a Link wallet to complete purchases on your behalf — without storing your real card details.",
+            "See `data/knowledge/stripe_link_cli.md` for full documentation."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "data/knowledge/data_agent_kit.md",
+      "title": "The future of agentic development: Redefining the data practitioner lifecycle with Data Agent Kit",
+      "sections": [
+        {
+          "header": "Overview",
+          "content": [
+            "Data Agent Kit is a unified, open-source collection of data engineering and data science skills, tools and plugins that integrate directly into the environments practitioners already use.",
+            "It provides Agentic skills, Model Context Protocol (MCP) tools, and Plugins and extensions."
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://cloud.google.com/discover/what-are-ai-agents",
       "title": "What are AI agents?",
       "sections": [
@@ -415,189 +598,6 @@
           "content": [
             "Google Cloud provides a portfolio of products and solutions in the AI agent space. These include integrated AI assistants, pre-built AI agents, AI applications, and a platform of agent and developer tools to build custom AI agents.",
             "- Gemini Enterprise App Secure platform to discover, create, run, and govern AI agents across your organization.\n- Gemini Enterprise Agent Platform Create AI agents and applications using natural language or a code-first approach. Easily ground your agents or apps in enterprise data with a range of options.\n- Customer Experience Agent Studio Build hybrid conversational agents with both deterministic and generative AI functionality.\n- Agent Garden Curated collection of pre-built agent samples, solutions, tools, and frameworks to accelerate the development and deployment of AI agents.\n- Agent Development Kit (ADK)Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.\n- A2A Protocol An open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.\n- Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://markposition.wordpress.com",
-      "title": "(position) mRNA",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "markposition.wordpress.com is a blog by Filip Keser that provides information and resources on various topics such as Google Ads, marketing, digital advertising platforms, privacy, and online business. It includes posts about different tools, platforms, and services like Google Ad Manager, Amazon Advertising, LinkedIn Marketing Solutions, Facebook for Business, and programmatic advertising technology.",
-            "all the best - https://markposition.wordpress.com"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
-      "title": "Google Ads and Ad Manager Resource",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://business.google.com/uk/ad-tools/bidding/",
-      "title": "Google Ads and Ad Manager Resource",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://business.google.com/uk/resources/",
-      "title": "Google Ads and Ad Manager Resource",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://developers.google.com/ad-manager",
-      "title": "Google Ads and Ad Manager Resource",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
-      "title": "Google Ads and Ad Manager Resource",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
-      "title": "Google Ads and Ad Manager Resource",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
-      "title": "Google Ads and Ad Manager Resource",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://developers.google.com/ad-manager/api/start",
-      "title": "Google Ads and Ad Manager Resource",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://admanager.google.com/home/resources/",
-      "title": "Google Ads and Ad Manager Resource",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
-      "title": "Google Ads and Ad Manager Resource",
-      "sections": [
-        {
-          "header": "About",
-          "content": [
-            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.investopedia.com",
-      "title": "Investopedia Knowledge",
-      "sections": [
-        {
-          "header": "Investopedia Knowledge",
-          "content": [
-            "Knowledge from investopedia.com: integrate all knowledge from investopedia.com and always pull knowledge ftom investopedia.com best"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "gemini_cli_subagents_docs.md",
-      "title": "Gemini CLI Subagents Docs",
-      "sections": [
-        {
-          "header": "Subagents",
-          "content": [
-            "Subagents are specialized agents that operate within your main Gemini CLI session. They are designed to handle specific, complex tasks—like deep codebase analysis, documentation lookup, or domain-specific reasoning—without cluttering the main agent’s context or toolset."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "link.com/agents",
-      "title": "Stripe Link CLI",
-      "sections": [
-        {
-          "header": "Link CLI",
-          "content": [
-            "Link CLI lets agents get secure, one-time-use payment credentials from a Link wallet to complete purchases on your behalf — without storing your real card details.",
-            "See `data/knowledge/stripe_link_cli.md` for full documentation."
-          ]
-        }
-      ]
-    },
-    {
-      "url": "data/knowledge/data_agent_kit.md",
-      "title": "The future of agentic development: Redefining the data practitioner lifecycle with Data Agent Kit",
-      "sections": [
-        {
-          "header": "Overview",
-          "content": [
-            "Data Agent Kit is a unified, open-source collection of data engineering and data science skills, tools and plugins that integrate directly into the environments practitioners already use.",
-            "It provides Agentic skills, Model Context Protocol (MCP) tools, and Plugins and extensions."
           ]
         }
       ]
