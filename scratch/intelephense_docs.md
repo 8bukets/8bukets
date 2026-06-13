@@ -18,7 +18,8 @@ The built-in VSCode PHP Language Features extension can cause excessive completi
 
 Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.
 
-Entering a licence key via the VS Code command palette
+![Entering a licence key via the VS Code command palette](https://intelephense.com/img/license_key.png)
+*Entering a licence key via the VS Code command palette*
 
 ### Other Editors
 Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.

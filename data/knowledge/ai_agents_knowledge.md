@@ -1,13 +1,13 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-13T06:43:54.651Z
+**System Analysis:** 2026-06-13T13:45:15.005Z
 
 ---
 
 # Intelephense Documentation
 
 > **Source:** https://intelephense.com/docs
-> **Analyzed At:** 2026-06-13T06:43:02.499Z
+> **Analyzed At:** 2026-06-13T13:45:14.894Z
 
 ## Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -29,7 +29,8 @@ Further configuration options are available in the `intelephense` section of set
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
 The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via it's configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
 Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.
-Entering a licence key via the VS Code command palette
+![Entering a licence key via the VS Code command palette](https://intelephense.com/img/license_key.png)
+*Entering a licence key via the VS Code command palette*
 
 ## Requirements
 [Node.js 12+](https://nodejs.org)

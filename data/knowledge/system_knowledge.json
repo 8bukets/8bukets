@@ -40,7 +40,7 @@
       "title": "Intelephense Documentation",
       "metadata": {
         "source": "https://intelephense.com/docs",
-        "analyzedAt": "2026-06-13T06:43:02.499Z",
+        "analyzedAt": "2026-06-13T13:45:14.894Z",
         "description": "Consolidated Intelephense documentation from local and remote sources."
       },
       "sections": [
@@ -50,7 +50,7 @@
         },
         {
           "header": "Visual Studio Code",
-          "content": "Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).\n1. Disable the built-in VSCode PHP Language Features.\n* Go to `Extensions`.\n* Search for `@builtin php`\n* Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.\nNote that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.\n2. Add glob patterns for non standard php file extensions to the `files.associations` setting.\n3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete\n-- `ctrl + shift + p` -- and searching for `Enter licence key`.\nFurther configuration options are available in the `intelephense` section of settings.\n\nVisual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.\nThe built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via it's configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.\nOptionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.\nEntering a licence key via the VS Code command palette"
+          "content": "Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.\n\nThe built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.\n\nOptionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.\n\n![Entering a licence key via the VS Code command palette](https://intelephense.com/img/license_key.png)\n*Entering a licence key via the VS Code command palette*"
         },
         {
           "header": "Requirements",
