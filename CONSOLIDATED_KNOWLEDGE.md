@@ -1,6 +1,6 @@
 # Consolidated Knowledge Base
 
-**Last Sync:** 2026-06-11T22:52:40.698Z
+**Last Sync:** 2026-06-12T23:06:49.415Z
 **System Version:** 1.94
 
 ## 🧩 Strategic Identity & Unified Model
@@ -5346,6 +5346,10 @@ By
 #### View more from Health
 - URL: https://blog.google/innovation-and-ai/technology/health/
 - Insight: The latest news about Google's health-related research and initiatives....
+
+#### How we're combatting AI scams with security, legislation and more
+- URL: https://blog.google/innovation-and-ai/technology/safety-security/combatting-ai-scams/
+- Insight: You’ve seen the texts: fake package alerts, urgent bank warnings, panicked messages about your compromised account. Behind them is an AI-powered cybercrime network built to steal your passwords and credit cards. Today, we’re fighting back.We’re filing a lawsuit to dismantle their infrastructure, coordinating with the FBI who will be taking law enforcement actions, and will continue to work with AT&T, T-Mobile and Verizon to block these texts before they reach you. Litigation alone won’t end this. So Google is also advocating for federal legislation to make these protections permanent.Dismantling the "Outsider Enterprise"Our civil lawsuit targets an organized cybercrime operation known as the "Outsider Enterprise." Based in China and coordinating through Telegram, this network distributes "phishing kits" that allow criminals to blast out fake text campaigns that look like they’re from Google and other trusted brands.The scale of the operation is massive:Hundreds of thousands of victims ...
 
 #### Our latest fraud and scams advisory
 - URL: https://blog.google/innovation-and-ai/technology/safety-security/fraud-scams-advisory-june-2026/

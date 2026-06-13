@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-11T22:52:40.698Z",
+    "generated_at": "2026-06-12T23:06:49.415Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-11T22:52:40.539Z"
+        "ingestedAt": "2026-06-12T23:06:49.248Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-11T22:52:40.561Z"
+        "ingestedAt": "2026-06-12T23:06:49.272Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-11T22:52:40.577Z"
+        "ingestedAt": "2026-06-12T23:06:49.288Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-11T22:52:40.591Z"
+        "ingestedAt": "2026-06-12T23:06:49.304Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-11T22:52:40.606Z"
+        "ingestedAt": "2026-06-12T23:06:49.320Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-11T22:52:40.628Z"
+        "ingestedAt": "2026-06-12T23:06:49.341Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-11T22:52:40.643Z"
+        "ingestedAt": "2026-06-12T23:06:49.358Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2173,7 +2173,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-11T22:52:40.659Z"
+        "ingestedAt": "2026-06-12T23:06:49.374Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2429,7 +2429,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-11T22:52:40.674Z"
+        "ingestedAt": "2026-06-12T23:06:49.390Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2615,6 +2615,10 @@
           "content": "- URL: https://blog.google/innovation-and-ai/technology/health/\n- Insight: The latest news about Google's health-related research and initiatives...."
         },
         {
+          "header": "How we're combatting AI scams with security, legislation and more",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/combatting-ai-scams/\n- Insight: You’ve seen the texts: fake package alerts, urgent bank warnings, panicked messages about your compromised account. Behind them is an AI-powered cybercrime network built to steal your passwords and credit cards. Today, we’re fighting back.We’re filing a lawsuit to dismantle their infrastructure, coordinating with the FBI who will be taking law enforcement actions, and will continue to work with AT&T, T-Mobile and Verizon to block these texts before they reach you. Litigation alone won’t end this. So Google is also advocating for federal legislation to make these protections permanent.Dismantling the \"Outsider Enterprise\"Our civil lawsuit targets an organized cybercrime operation known as the \"Outsider Enterprise.\" Based in China and coordinating through Telegram, this network distributes \"phishing kits\" that allow criminals to blast out fake text campaigns that look like they’re from Google and other trusted brands.The scale of the operation is massive:Hundreds of thousands of victims ..."
+        },
+        {
           "header": "Our latest fraud and scams advisory",
           "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/fraud-scams-advisory-june-2026/\n- Insight: Scams continue to be a persistent global challenge, fueled by sophisticated transnational crime groups who seek to exploit people online for financial gain. According to the NASDAQ Global Financial Crime Report, total global fraud losses are estimated at nearly $580 billion for 2025. Furthermore, global surveys indicate that approximately one in five adults fall victim to scams.At Google, our teams are committed to tracking these evolving tactics, sharing and acting on our observations to protect the public and the broader digital ecosystem. Our teams use the latest in AI capabilities to prevent, detect and respond against evolving scam tactics, and we regularly publish updates to share our observations with others.Our latest Scams Advisory describes both recent and seasonal scam trends identified by our analysts.1. Adversary-in-the-Middle (AITM)Traditional email phishing has evolved into sophisticated Adversary-in-the-Middle (AITM) and \"Quishing\" (QR code phishing) attacks. Despite in..."
         },
@@ -2797,7 +2801,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-11T22:52:40.689Z"
+        "ingestedAt": "2026-06-12T23:06:49.405Z"
       }
     }
   },
