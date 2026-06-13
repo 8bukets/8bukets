@@ -27,15 +27,39 @@ async function run() {
     // We continue even if sync fails to try the upload
   }
 
-  // 3. upload (git push)
+  // 3. Commit changes (if any)
+  console.log('📝 [commit] Checking for changes to commit...');
+  try {
+    const { stdout: status } = await execFileAsync('git', ['status', '--porcelain']);
+    if (status.trim()) {
+      console.log('➕ [commit] Staging changes...');
+      await execFileAsync('git', ['add', '.']);
+      console.log('💾 [commit] Committing changes...');
+      await execFileAsync('git', ['commit', '-m', '🤖 chore: daily autonomous sync and work update']);
+    } else {
+      console.log('✨ [commit] No changes to commit.');
+    }
+  } catch (err: any) {
+    console.warn('⚠️ [commit] Failed to commit changes.');
+    console.warn(err.stdout || err.message);
+  }
+
+  // 4. upload (git push)
   console.log('📤 [upload] Pushing changes to remote...');
   try {
     const { stdout } = await execFileAsync('git', ['push']);
     console.log(stdout);
     console.log('✅ [upload] Push successful.');
   } catch (err: any) {
-    console.warn('⚠️ [upload] Git push failed or nothing to push.');
-    console.warn(err.stdout || err.message);
+    console.log('🔄 [upload] Standard push failed, attempting with upstream set...');
+    try {
+      const { stdout } = await execFileAsync('git', ['push', '--set-upstream', 'origin', 'HEAD']);
+      console.log(stdout);
+      console.log('✅ [upload] Push with upstream successful.');
+    } catch (upstreamErr: any) {
+      console.warn('⚠️ [upload] Git push failed or restricted.');
+      console.warn(upstreamErr.stdout || upstreamErr.message);
+    }
   }
 
   console.log('🏆 [Antigravity] Daily work cycle complete.');
