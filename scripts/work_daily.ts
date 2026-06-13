@@ -5,6 +5,7 @@ import { syncToICloud } from '../antigravity/services/icloud';
 const execFileAsync = promisify(execFile);
 
 async function run() {
+  'use cache'
   console.log('🚀 [Antigravity] Starting daily work cycle...');
 
   // 1. pluu (git pull --rebase)
