@@ -178,26 +178,38 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: 'terraform', type: 'Infrastructure', pattern: /\.tf$/ },
     { path: '.github/workflows', type: 'CI/CD Workflow', pattern: /\.yml$/ },
     { path: '.antigravity', type: 'System Config', pattern: /\.md$|\.json$/ },
-    { path: 'public', type: 'Asset', pattern: /.*/ }
+    { path: 'public', type: 'Asset', pattern: /.*/ },
+    { path: 'data/knowledge', type: 'Knowledge Artifact', pattern: /\.json$|\.md$/ }
   ]
 
-  for (const dir of scanDirs) {
-    const fullPath = path.join(process.cwd(), dir.path)
-    if (await fs.promises.access(fullPath).then(() => true).catch(() => false)) {
-      try {
-        const files = await fs.promises.readdir(fullPath)
-        for (const file of files) {
-          if (!file.includes('.test.') && (dir.pattern.test(file))) {
+  const scanRecursive = async (dirPath: string, type: string, pattern: RegExp) => {
+    const fullPath = path.join(process.cwd(), dirPath)
+    if (!await fs.promises.access(fullPath).then(() => true).catch(() => false)) return
+
+    try {
+      const entries = await fs.promises.readdir(fullPath, { withFileTypes: true })
+      for (const entry of entries) {
+        const entryRelPath = path.join(dirPath, entry.name)
+        if (entry.isDirectory()) {
+          if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== '.next' && entry.name !== 'dist') {
+            await scanRecursive(entryRelPath, type, pattern)
+          }
+        } else if (entry.isFile()) {
+          if (!entry.name.includes('.test.') && pattern.test(entry.name)) {
             map.resourceInventory.push({
-              type: dir.type,
-              name: file.split('.')[0],
+              type: type,
+              name: entry.name.split('.')[0],
               status: 'Active',
-              path: `${dir.path}/${file}`
+              path: entryRelPath
             })
           }
         }
-      } catch (e) {}
-    }
+      }
+    } catch (e) {}
+  }
+
+  for (const dir of scanDirs) {
+    await scanRecursive(dir.path, dir.type, dir.pattern)
   }
 
   // Integrate autonomous knowledge into resource inventory
@@ -319,9 +331,10 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           resourceUsage[matchedResource.name].add(b.name)
 
           // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
-          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive)/i)
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation)/i)
           if (clusterMatch) {
-            const cluster = clusterMatch[0].toLowerCase()
+            let cluster = clusterMatch[0].toLowerCase()
+            if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation') cluster = 'security'
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
             functionalClusters[cluster].add(b.name)
           }
@@ -600,29 +613,27 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
     if (seenInsights.has(insightId)) return false;
     seenInsights.add(insightId);
 
-    // Improved deduplication: Check if this specific result or knowledge for this branch is already recorded
-    const branchIdentifier = `- **Branch:** \`${b.name}\``;
-    const resultIdentifier = `  - **Result:** ${b.results || 'N/A'}`;
-    const knowledgeIdentifier = b.knowledge ? `  - **Knowledge:** ${b.knowledge}` : '';
+    // Hardened deduplication: Check if this specific result or knowledge for this branch is already recorded
+    const branchMarker = `- **Branch:** \`${b.name}\``;
+    if (existingContent.includes(branchMarker)) {
+        const sections = existingContent.split(branchMarker);
+        for (let i = 1; i < sections.length; i++) {
+          const branchSection = sections[i].split('\n##')[0];
 
-    if (existingContent.includes(branchIdentifier)) {
-        // Isolate the section for this branch to avoid cross-branch false positives
-        const parts = existingContent.split(branchIdentifier)
-        for (let i = 1; i < parts.length; i++) {
-          const branchSection = parts[i].split('##')[0];
-          // Robust deduplication matching both results and knowledge nuggets
-          const matchResult = branchSection.includes(resultIdentifier);
-          const matchKnowledge = !knowledgeIdentifier || (branchSection.includes('Knowledge:') && branchSection.includes(knowledgeIdentifier));
-          if (matchResult && matchKnowledge) {
-              return false;
-          }
+          const cleanResult = (b.results || 'N/A').trim().toLowerCase();
+          const cleanKnowledge = (b.knowledge || '').trim().toLowerCase();
+
+          const hasResult = branchSection.toLowerCase().includes(cleanResult);
+          const hasKnowledge = !cleanKnowledge || branchSection.toLowerCase().includes(cleanKnowledge);
+
+          if (hasResult && hasKnowledge) return false;
         }
     }
 
     return true;
   })
 
-  if (relevantBranches.length === 0) return
+  if (relevantBranches.length === 0) return { nuggets: [] }
 
   // Phase 13: Group by Domain for higher strategic signal
   const domains: Record<string, any[]> = {}
@@ -679,10 +690,12 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
         newEntries += `  - **Knowledge:** ${b.knowledge}\n`
       }
       if (b.changedFiles && b.changedFiles.length > 0) {
-        newEntries += `  - **Artifacts:** ${b.changedFiles.length} files modified.\n`
-        const criticalFiles = b.changedFiles.filter((f: string) => f.includes('core.ts') || f.includes('jules.ts') || f.includes('collaboration.ts') || f.includes('evolution.ts') || f.includes('intelligence.ts'))
-        if (criticalFiles.length > 0) {
-          newEntries += `  - **Critical Impact:** Branch modifies core ecosystem files.\n`
+        const coreFiles = b.changedFiles.filter((f: string) =>
+          f.includes('core.ts') || f.includes('jules.ts') || f.includes('collaboration.ts') || f.includes('evolution.ts') || f.includes('intelligence.ts')
+        )
+        newEntries += `  - **Artifacts:** ${b.changedFiles.length} files modified${coreFiles.length > 0 ? ` (${coreFiles.length} core files)` : ''}.\n`
+        if (coreFiles.length > 0) {
+          newEntries += `  - **Strategic Impact:** Branch impacts core ecosystem architecture.\n`
         }
       }
     })
@@ -697,6 +710,7 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
 
   const domainCount = Object.keys(domains).length;
   console.log(`✅ [Collaboration] Merged ${relevantBranches.length} branch insights across ${domainCount} strategic domains.`)
+  return { nuggets: relevantBranches }
 }
 
 export async function mergeEcosystemInsights(branchIntelligence: any[], workOrders: any[]) {

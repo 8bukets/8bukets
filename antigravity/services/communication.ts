@@ -160,6 +160,13 @@ export async function generateActionableBriefing(state: any, directives: Directi
   const alignmentScore = Math.max(0, 100 - (state.intelligence.pendingTasks * 2))
   briefing += `- **Stewardship Directive:** "Current Strategic Alignment Score is **${alignmentScore}%**. ${alignmentScore < 80 ? 'Recommend immediate backlog grooming to restore focus.' : 'System remains highly focused on core mission goals.'}"\n`
 
+  const hasQuantumSynergy = state.intelligence.relationshipMap.synergies?.some((s: any) =>
+    s.resource.toLowerCase().includes('quantum') || s.resource.toLowerCase().includes('synergy')
+  )
+  if (hasQuantumSynergy) {
+    briefing += `- **Quantum Directive:** "Phase 13 Quantum Synergy detected in active relays. Ensure all cross-domain transactions utilize verified neural sync signatures."\n`
+  }
+
   // Phase 13: Data-Driven Cross-Domain Insight
   if (crossDomain.length > 0) {
     const topSynergy = crossDomain[0]
@@ -186,7 +193,8 @@ export async function generateActionableBriefing(state: any, directives: Directi
       }).map((s: any) => s.role)
 
       const friction = branches.length > 5 ? '🔴 High' : (branches.length > 2 ? '🟡 Medium' : '🟢 Low')
-      briefing += `| \`${cluster}\` | ${stakeholders.length > 0 ? stakeholders.join(', ') : 'Global Ops'} | ${branches.slice(0, 2).join(', ')}${branches.length > 2 ? ` (+${branches.length - 2})` : ''} | ${friction} |\n`
+      const risk = branches.some((bn: string) => bn.toLowerCase().includes('fix') || bn.toLowerCase().includes('sentinel')) ? '⚠️ Security' : '✅ Stable'
+      briefing += `| \`${cluster}\` | ${stakeholders.length > 0 ? stakeholders.join(', ') : 'Global Ops'} | ${branches.slice(0, 2).join(', ')}${branches.length > 2 ? ` (+${branches.length - 2})` : ''} | ${friction} / ${risk} |\n`
     })
   }
 
@@ -246,9 +254,9 @@ export async function generateActionableBriefing(state: any, directives: Directi
   }
 
   const deps = state.intelligence.relationshipMap.resourceDependencies?.length || 0
-  const stabilityIndex = Math.max(0, 100 - (synergies.length * 4) - (Math.floor(deps / 10)))
+  const stabilityIndex = Math.max(0, 100 - (synergies.length * 4) - (Math.floor(deps / 10)) - (state.docker.status !== 'optimal' ? 10 : 0))
 
-  briefing += `\n---\n**Coordination Stability Index:** ${stabilityIndex}% | **Architectural Drift:** ${synergies.length > 10 ? '⚠️ High' : '✅ Low'} | *Sentient Orchestration Active*\n`
+  briefing += `\n---\n**Coordination Stability Index:** ${stabilityIndex}% | **Architectural Drift:** ${synergies.length > 10 ? '⚠️ High' : '✅ Low'} | **Ecosystem Health:** ${state.docker.status.toUpperCase()} | *Sentient Orchestration Active*\n`
 
   return briefing
 }
