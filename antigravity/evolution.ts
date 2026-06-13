@@ -158,12 +158,12 @@ export async function evolve() {
           })
         }
 
-        // Rule 15: Project Omega Latency Compliance (Phase 13 Directive)
-        if (content.includes('sync') && !content.includes('latency < 30') && lines > 80) {
+        // Rule 15: Project Omega Latency Compliance (Phase 14 Directive)
+        if (content.includes('sync') && !content.includes('latency < 20') && lines > 80) {
            suggestions.push({
              file: fullPath.replace(process.cwd(), ''),
              complexity: lines,
-             suggestion: 'PROJECT_OMEGA_LATENCY_VIOLATION: Project Omega mandates <30ms latency for all synchronization operations. Explicit monitoring or optimization is missing.'
+             suggestion: 'PROJECT_OMEGA_LATENCY_VIOLATION: Project Omega Phase 14 mandates <20ms latency for all synchronization operations. Explicit monitoring or optimization is missing.'
            })
         }
 
@@ -178,11 +178,11 @@ export async function evolve() {
 
         // Rule 17: Legal Tech & Venture Readiness Audit (Phase 14 Wilson Sonsini Insight)
         if (content.includes('startup') || content.includes('ipo') || content.includes('venture')) {
-          if (!content.includes('legal-compliance') && !content.includes('IP-header')) {
+          if (!content.includes('legal-compliance') || !content.includes('IP-header')) {
             suggestions.push({
               file: fullPath.replace(process.cwd(), ''),
               complexity: lines,
-              suggestion: 'VENTURE_READINESS_VIOLATION: Venture-critical component detected without documented legal-compliance audit or IP-header protection.'
+              suggestion: 'VENTURE_READINESS_VIOLATION: Venture-critical component detected without mandatory legal-compliance audit AND IP-header protection.'
             })
           }
         }
@@ -205,6 +205,17 @@ export async function evolve() {
               file: fullPath.replace(process.cwd(), ''),
               complexity: lines,
               suggestion: 'COGNITIVE_SOVEREIGNTY_VIOLATION: Critical agent module detected without mandatory verifiedSignature in memory or configuration.'
+            })
+          }
+        }
+
+        // Rule 20: Localized Sovereignty Compliance (Phase 14 APAC Directive)
+        if (content.includes('edge') && (content.includes('singapore') || content.includes('tokyo'))) {
+          if (!content.includes('localized-sovereignty') && !content.includes('data-residency')) {
+            suggestions.push({
+              file: fullPath.replace(process.cwd(), ''),
+              complexity: lines,
+              suggestion: 'LOCALIZED_SOVEREIGNTY_VIOLATION: APAC edge node detected in Singapore or Tokyo without explicit localized-sovereignty or data-residency configuration.'
             })
           }
         }

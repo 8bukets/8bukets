@@ -2017,6 +2017,20 @@
           "content": "Market Intelligence Q3: Increased demand for sovereign AI clusters to ensure data residency and compliance."
         }
       ]
+    },
+    {
+      "title": "iCloud: phase_14_directives.md",
+      "metadata": {
+        "source": "icloud://phase_14_directives.md",
+        "analyzedAt": "2026-06-13T22:39:05.265Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Strategic Directive",
+          "content": "All agents must now incorporate legal-compliance and IP-header protection for venture-readiness.\nProject Omega target latency is now less than 20ms.\nAPAC expansion requires localized sovereignty in Singapore and Tokyo.\nActivate Phase 14 Anticipatory Intelligence protocols for all predictive core modules.\nVerify legal-venture synthesis alignment for startup lifecycle management."
+        }
+      ]
     }
   ]
 }

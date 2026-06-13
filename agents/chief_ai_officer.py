@@ -96,6 +96,28 @@ class ChiefAIOfficerAgent(BaseAgent):
             title = k.get("title", "")
             sections_str = str(k.get("sections", [])).lower()
 
+            # Phase 14 Specific Logic
+            if "Phase 14" in title or "phase 14" in sections_str:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 14 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_14_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_14_PROTOCOLS")
+
+                if "legal-venture synthesis" in sections_str or "venture-readiness" in sections_str:
+                    self.logger.info("CAIO [GOVERNANCE]: Legal-Venture Synthesis mandate detected. Issuing enforcement directive.")
+                    strategic_directives.append("ENFORCE_LEGAL_VENTURE_SYNTHESIS")
+
+                if "ip-header" in sections_str:
+                    self.logger.info("CAIO [SECURITY]: IP-header protection mandate detected. Issuing audit directive.")
+                    strategic_directives.append("AUDIT_IP_HEADER_PROTECTION")
+
+                if "less than 20ms" in sections_str or "latency < 20" in sections_str:
+                    self.logger.info("CAIO [PERF]: Project Omega Phase 14 latency target (<20ms) detected. Issuing optimization directive.")
+                    strategic_directives.append("OPTIMIZE_OMEGA_LATENCY_PHASE_14")
+
+                if "anticipatory intelligence" in sections_str:
+                    self.logger.info("CAIO [STRATEGY]: Anticipatory Intelligence mandate detected. Activating predictive clusters.")
+                    strategic_directives.append("ACTIVATE_ANTICIPATORY_CLUSTERS")
+
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
                 role_alignment_verified = True
