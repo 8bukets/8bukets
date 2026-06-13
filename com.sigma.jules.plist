@@ -25,10 +25,10 @@
         <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
     </dict>
     <key>WorkingDirectory</key>
-    <string>/Users/YOUR_USERNAME/Documents/Antigravity</string>
+    <string>/Users/filipkeser/8bukets</string>
     <key>StandardOutPath</key>
-    <string>/Users/YOUR_USERNAME/Documents/Antigravity/jules_daily.log</string>
+    <string>/Users/filipkeser/8bukets/jules_daily.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/YOUR_USERNAME/Documents/Antigravity/jules_daily.error.log</string>
+    <string>/Users/filipkeser/8bukets/jules_daily.error.log</string>
 </dict>
 </plist>

@@ -3,7 +3,7 @@
 # Antigravity Autonomous Ecosystem - Consolidated Master Ignition
 # Phase 14: Enterprise Sovereign Synthesis
 
-ROOT_DIR="/Users/filipkeser/Documents/Antigravity"
+ROOT_DIR="/Users/filipkeser/8bukets"
 echo "🚀 [Antigravity] Igniting Consolidated Sovereign Fleet in $ROOT_DIR..."
 
 cd "$ROOT_DIR"

@@ -1,9 +1,11 @@
 import fs from 'fs'
 import path from 'path'
-import { execFile } from 'child_process'
+import { execFile, exec } from 'child_process'
 import { promisify } from 'util'
+import { ConflictResolver } from './utils/conflict_resolver'
 
 const execFileAsync = promisify(execFile)
+const execAsync = promisify(exec)
 
 /**
  * JULES: THE COGNITIVE AGENT LAYER
@@ -83,6 +85,9 @@ export class Jules {
       { name: 'Cache Volatility Audit', action: () => this.recordTask('Cache profiles optimized.') },
       { name: 'Dependency Autopilot', action: () => this.auditDependencies() },
       { name: 'GitKraken Sync Prep', action: () => this.recordTask('Visual branch history cleaned.') },
+      { name: 'Intelephense Consolidation', action: () => this.consolidateIntelephense() },
+      { name: 'PR Rebase Automation', action: () => this.rebaseAllPRs() },
+      { name: 'Skill Synchronization', action: () => this.syncSkills() },
       { name: 'Edge Function Audit', action: () => this.recordTask('Edge function hello-world prepared for deployment.') },
       { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },
       { name: 'Collaboration Sync', action: () => this.syncCollaboration() },
@@ -138,13 +143,72 @@ export class Jules {
     }
   }
 
+  public async consolidateIntelephense() {
+    console.log('🧠 [Jules] Initiating Intelephense Documentation consolidation...')
+    const { intelephenseService } = await import('./services/intelephense_service')
+    await intelephenseService.consolidate()
+    this.recordTask('Intelephense: Consolidated local and GitHub documentation.')
+  }
+
+  public async rebaseAllPRs() {
+    console.log('🔄 [Jules] Initiating PR Rebase Automation...')
+    const scriptPath = path.join(process.cwd(), '../Documents/Antigravity/rebase-all-prs.sh')
+    if (fs.existsSync(scriptPath)) {
+        try {
+            await execFileAsync('bash', [scriptPath])
+            this.recordTask('PR Rebase: Successfully rebased all open PRs.')
+        } catch (err: any) {
+            console.error('❌ [Jules] PR Rebase failed:', err.message)
+            this.recordTask('PR Rebase: Automation failed (check logs).')
+        }
+    } else {
+        console.warn('⚠️ [Jules] rebase-all-prs.sh not found.')
+    }
+  }
+
+  public async syncSkills() {
+    console.log('🤹 [Jules] Synchronizing skills with MapAntigravity...')
+    const sourceDir = path.join(process.cwd(), '../mapantigravity')
+    const targetDir = path.join(process.cwd(), '../.agents/skills')
+    
+    if (fs.existsSync(sourceDir) && fs.existsSync(targetDir)) {
+        try {
+            // Simple rsync-like copy for skills
+            await execAsync(`cp -R ${sourceDir}/* ${targetDir}/`)
+            this.recordTask('Skill Sync: Synchronized MapAntigravity skills to .agents/skills.')
+        } catch (err: any) {
+            console.error('❌ [Jules] Skill sync failed:', err.message)
+        }
+    }
+  }
+
   public async gitPull() {
     console.log('📥 [Jules] Pulling latest changes from remote...')
     try {
       await execFileAsync('git', ['pull', '--rebase'])
       this.recordTask('Git Pull: Synchronized with remote.')
-    } catch (err) {
-      console.warn('⚠️ [Jules] Git pull failed. Continuing with local state.')
+    } catch (err: any) {
+      console.warn('⚠️ [Jules] Git pull failed, checking for conflicts...')
+      // Attempt to resolve conflicts autonomously
+      const { stdout: status } = await execFileAsync('git', ['status', '--porcelain'])
+      const conflictedFiles = status.split('\n')
+        .filter(line => line.startsWith('UU '))
+        .map(line => line.substring(3))
+
+      if (conflictedFiles.length > 0) {
+        console.log(`🔧 [Jules] Found ${conflictedFiles.length} conflicted files. Attempting resolution...`)
+        for (const file of conflictedFiles) {
+          await ConflictResolver.resolve(path.join(process.cwd(), file))
+          await execFileAsync('git', ['add', file])
+        }
+        try {
+          await execFileAsync('git', ['rebase', '--continue'], { env: { ...process.env, GIT_EDITOR: 'true' } })
+          this.recordTask('Git Pull: Resolved conflicts and completed rebase.')
+        } catch (rebaseErr) {
+          console.error('❌ [Jules] Autonomous rebase resolution failed.')
+          await execFileAsync('git', ['rebase', '--abort'])
+        }
+      }
     }
   }
 

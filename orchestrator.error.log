@@ -612,3 +612,7 @@ shell-init: error retrieving current directory: getcwd: cannot access parent dir
 /bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
 shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
 /bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
+time="2026-06-13T08:27:11+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
+time="2026-06-13T08:27:11+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
+unable to get image '8bukets-connect': failed to connect to the docker API at unix:///Users/filipkeser/.docker/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /Users/filipkeser/.docker/run/docker.sock: connect: no such file or directory
+⚠️ [Jules] Git pull failed, checking for conflicts...

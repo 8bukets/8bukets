@@ -7,7 +7,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/filipkeser/Documents/Antigravity/start_all.sh</string>
+        <string>/Users/filipkeser/8bukets/start_all.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
@@ -19,10 +19,10 @@
         <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
     </dict>
     <key>WorkingDirectory</key>
-    <string>/Users/filipkeser/Documents/Antigravity</string>
+    <string>/Users/filipkeser/8bukets</string>
     <key>StandardOutPath</key>
-    <string>/Users/filipkeser/Documents/Antigravity/orchestrator.log</string>
+    <string>/Users/filipkeser/8bukets/orchestrator.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/filipkeser/Documents/Antigravity/orchestrator.error.log</string>
+    <string>/Users/filipkeser/8bukets/orchestrator.error.log</string>
 </dict>
 </plist>
