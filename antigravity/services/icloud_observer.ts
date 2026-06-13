@@ -43,10 +43,15 @@ export class ICloudObserver {
       }
 
       console.log(`☁️ [iCloud Observer] Scanning path: ${scanPath}`)
-      const files = await fs.readdir(scanPath, { recursive: true }) as string[]
+      let files: string[] = []
+      try {
+        files = await fs.readdir(scanPath, { recursive: true }) as string[]
+      } catch (e) {
+        continue
+      }
 
       for (const file of files) {
-        if (file.includes('node_modules')) continue;
+        if (file.includes('node_modules')) continue
 
         const fullPath = path.join(scanPath, file)
         try {
@@ -55,37 +60,38 @@ export class ICloudObserver {
           if (stats.isFile() && (file.endsWith('.md') || file.endsWith('.json'))) {
             try {
               const content = await fs.readFile(fullPath, 'utf8')
-            let knowledge;
+              let knowledge;
 
-            if (file.endsWith('.json')) {
-              try {
-                const data = JSON.parse(content)
-                knowledge = {
-                  source: `icloud://${file}`,
-                  title: data.title || `iCloud: ${file}`,
-                  description: data.description || 'Extracted system knowledge from iCloud JSON',
-                  topKeywords: [],
-                  recentPosts: [],
-                  analyzedAt: new Date().toISOString(),
-                  sections: data.sections || [{ header: 'Content', content: JSON.stringify(data, null, 2) }]
-                }
-              } catch (e) { continue; }
-            } else {
-              knowledge = KnowledgeObserver.processContent(`iCloud: ${file}`, content, `icloud://${file}`)
-            }
+              if (file.endsWith('.json')) {
+                try {
+                  const data = JSON.parse(content)
+                  knowledge = {
+                    source: `icloud://${file}`,
+                    title: data.title || `iCloud: ${file}`,
+                    description: data.description || 'Extracted system knowledge from iCloud JSON',
+                    topKeywords: [],
+                    recentPosts: [],
+                    analyzedAt: new Date().toISOString(),
+                    sections: data.sections || [{ header: 'Content', content: JSON.stringify(data, null, 2) }]
+                  }
+                } catch (e) { continue }
+              } else {
+                knowledge = KnowledgeObserver.processContent(`iCloud: ${file}`, content, `icloud://${file}`)
+              }
 
-            if (knowledge) {
-              await this.observer.persistKnowledge(knowledge)
-              ingested.push(file)
-              logAutonomousAction(`[ICLOUD] Ingested ${file}`, 'cognitive')
-              console.log(` ✅ [iCloud Observer] Successfully ingested: ${file}`)
+              if (knowledge) {
+                await this.observer.persistKnowledge(knowledge)
+                ingested.push(file)
+                logAutonomousAction(`[ICLOUD] Ingested ${file}`, 'cognitive')
+                console.log(` ✅ [iCloud Observer] Successfully ingested: ${file}`)
+              }
+            } catch (err) {
+              console.error(` ❌ [iCloud Observer] Failed to process ${file}:`, err)
             }
-          } catch (err) {
-            console.error(` ❌ [iCloud Observer] Failed to process ${file}:`, err)
           }
+        } catch (statErr) {
+          // Ignore files that disappeared during scan
         }
-      } catch (statErr) {
-        // Ignore files that disappeared during scan
       }
     }
 

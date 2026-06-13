@@ -2007,3 +2007,71 @@ time="2026-06-13T08:33:50+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\
 time="2026-06-13T08:33:50+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
 unable to get image 'public.ecr.aws/docker/library/mongo:latest': failed to connect to the docker API at unix:///Users/filipkeser/.docker/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /Users/filipkeser/.docker/run/docker.sock: connect: no such file or directory
 ⚠️ [Jules] Git pull failed, checking for conflicts...
+ ❌ [Jules] Failed to merge add-google-edge-agent-9371392929328195231: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/work_orders.json
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/boundary-integration-3444742037386565893: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/caio-intelligence-integration-11172055964198786485: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/connect-docker-collaboration-10997916882350002599: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/connect-docker-collaboration-high-fidelity-sim-12659027097554184106: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ⚠️ [Jules] Failed to prune branch feat/autonomous-scale-improvements-3306739590977021046. It may have already been deleted.
+ ⚠️ [Jules] Failed to prune branch feat/autonomous-sync-orch-3205070913479590018. It may have already been deleted.
+ ⚠️ [Jules] Failed to prune branch feat/autonomous-workflow-creation-13764436247269423073. It may have already been deleted.
+ ⚠️ [Jules] Failed to prune branch feat/autonomous-workflow-creation-2438802251754427504. It may have already been deleted.
+ ⚠️ [Jules] Failed to prune branch feat/autonomous-workflow-creation-5168172668648031949. It may have already been deleted.
+ ⚠️ [Jules] Failed to prune branch feat/boundary-integration-3444742037386565893. It may have already been deleted.
+💥 [Antigravity Root] Execution failed: Error: Transform failed with 1 error:
+/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:96:7: ERROR: Expected ";" but found "const"
+    at failureErrorWithLog (/Users/filipkeser/8bukets/node_modules/tsx/node_modules/esbuild/lib/main.js:1748:15)
+    at /Users/filipkeser/8bukets/node_modules/tsx/node_modules/esbuild/lib/main.js:1017:50
+    at responseCallbacks.<computed> (/Users/filipkeser/8bukets/node_modules/tsx/node_modules/esbuild/lib/main.js:884:9)
+    at handleIncomingPacket (/Users/filipkeser/8bukets/node_modules/tsx/node_modules/esbuild/lib/main.js:939:12)
+    at Socket.readFromStdout (/Users/filipkeser/8bukets/node_modules/tsx/node_modules/esbuild/lib/main.js:862:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23) {
+  name: 'TransformError'
+}
+time="2026-06-13T08:34:50+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
+time="2026-06-13T08:34:50+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
+unable to get image '8bukets-connect': failed to connect to the docker API at unix:///Users/filipkeser/.docker/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /Users/filipkeser/.docker/run/docker.sock: connect: no such file or directory
+⚠️ [Jules] Git pull failed, checking for conflicts...
