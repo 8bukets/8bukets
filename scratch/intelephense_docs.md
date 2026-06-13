@@ -67,10 +67,8 @@ When initializationOptions properties are not provided by the client, the follow
 | :--- | :--- | :--- | :--- |
 | *nix | storagePath | $XDG_CONFIG_HOME/intelephense/workspace/ | $HOME/.config/intelephense/workspace/ |
 | *nix | globalStoragePath | $XDG_CONFIG_HOME/intelephense/global/ | $HOME/.config/intelephense/global/ |
-| *nix | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
 | Windows | storagePath | %AppData%/intelephense/workspace/ | %UserProfile%/intelephense/workspace/ |
 | Windows | globalStoragePath | %AppData%/intelephense/global/ | %UserProfile%/intelephense/global/ |
-| Windows | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
 
 If your LSP client does not expose initializationOptions then a licence key can be provided by placing (only) the key in a text file at the default licenceKey path listed above.
 
@@ -723,4 +721,3 @@ function setColourAttr(string $colour): void {}
  */
 function setColourDoc(string $colour): void {}
 setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
-```

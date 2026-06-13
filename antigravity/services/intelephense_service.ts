@@ -21,18 +21,7 @@ export class IntelephenseService {
 
     let allSections: { header: string; content: string }[] = []
 
-    // 1. Ingest from local scratch (most complete usually)
-    const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
-    try {
-      const localContent = await fs.promises.readFile(localPath, 'utf8')
-      console.log(' 📄 Ingesting local scratch docs...')
-      const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
-      allSections.push(...localKnowledge.sections)
-    } catch (err) {
-      // Local scratch may not exist in all environments, skip silently
-    }
-
-    // 2. Fetch and merge from GitHub
+    // 1. Fetch from GitHub first (source of truth for latest)
     for (const file of this.files) {
       try {
         console.log(` 📡 Fetching ${file} from GitHub...`)
@@ -46,6 +35,17 @@ export class IntelephenseService {
       } catch (err: any) {
         console.error(` ❌ Failed to fetch ${file} from GitHub (bmewburn/intelephense-docs):`, err.message || err)
       }
+    }
+
+    // 2. Ingest from local scratch (supplementary or manual overrides)
+    const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
+    try {
+      const localContent = await fs.promises.readFile(localPath, 'utf8')
+      console.log(' 📄 Ingesting local scratch docs...')
+      const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
+      allSections.push(...localKnowledge.sections)
+    } catch (err) {
+      // Local scratch may not exist in all environments, skip silently
     }
 
     if (allSections.length === 0) {
@@ -67,20 +67,21 @@ export class IntelephenseService {
           headerMap.set(trimmedHeader, { header: trimmedHeader, content: section.content })
         }
       } else {
-        // If header exists, merge content if the new content is different and not empty
-        if (section.content && section.content !== existing.content) {
-          const cleanExisting = existing.content.replace(/\s+/g, ' ').trim()
-          const cleanNew = section.content.replace(/\s+/g, ' ').trim()
+        // If header exists, prioritize the new content if it's longer or from a more trusted source.
+        // Since we process GitHub first, 'existing' is likely from GitHub.
+        // We only merge if the new content adds something unique.
 
-          if (cleanExisting.includes(cleanNew)) {
-            // New content is already a subset (ignoring whitespace), ignore
-          } else if (cleanNew.includes(cleanExisting)) {
-            // New content is more complete (ignoring whitespace), replace
-            existing.content = section.content
-          } else {
-            // Both have unique info, append
-            existing.content += '\n\n' + section.content
-          }
+        const cleanExisting = (existing.content || '').replace(/\s+/g, ' ').trim()
+        const cleanNew = (section.content || '').replace(/\s+/g, ' ').trim()
+
+        if (cleanExisting.includes(cleanNew)) {
+          // New content is already a subset, skip
+        } else if (cleanNew.includes(cleanExisting)) {
+          // New content is more complete, replace
+          existing.content = section.content
+        } else if (section.content) {
+          // Both have unique info, append unique parts
+          existing.content += '\n\n' + section.content
         }
       }
     }
