@@ -1658,6 +1658,20 @@
       "url": "data/knowledge/intelephense_integration.md",
       "title": "Intelephense Integration",
       "contentPreview": "The best solution for cross-platform PHP intelligence and AI agents in Antigravity."
+    },
+    {
+      "title": "Cloud Automation: Antigravity and GitHub Folder Intelligence",
+      "metadata": {
+        "source": "local_environment",
+        "analyzedAt": "2026-06-13T04:51:28.387Z",
+        "description": "Extracted intelligence to confirm system implementation of all knowledge from the antigravity folder and github folder on macbook to work in cloud and connected online."
+      },
+      "sections": [
+        {
+          "header": "MacBook Cloud Automation",
+          "content": "The system implements all knowledge from the antigravity folder and github folder on the macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox, to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale."
+        }
+      ]
     }
   ],
   "google_ads": [
