@@ -528,7 +528,9 @@ export class Jules {
             { key: 'omega', domain: 'Services', label: 'Ω Omega Latency' },
             { key: 'wilson sonsini', domain: 'Security', label: '⚖️ Legal Tech' },
             { key: 'phase 14', domain: 'General', label: '🔮 Phase 14 Anticipation' },
-            { key: 'synergy', domain: 'General', label: '⚡ Quantum Synergy' }
+            { key: 'synergy', domain: 'General', label: '⚡ Quantum Synergy' },
+            { key: 'anticipatory intelligence', domain: 'AI Agents', label: '🧠 Anticipatory Intelligence' },
+            { key: 'legal-venture synthesis', domain: 'Security', label: '⚖️ Legal-Venture Synthesis' }
           ]
 
           strategicKeywords.forEach(sk => {
@@ -573,8 +575,12 @@ export class Jules {
             else if (changedFiles.some(f => f.startsWith('docs/'))) domain = 'Documentation'
           }
 
+          const coreFiles = changedFiles.filter(f =>
+            f.includes('core.ts') || f.includes('jules.ts') || f.includes('collaboration.ts') || f.includes('evolution.ts') || f.includes('intelligence.ts')
+          )
+
           const results = changedFiles.length > 0
-            ? `${lastMessage} (${changedFiles.length} files changed in ${domain})`
+            ? `${lastMessage} (${changedFiles.length} files changed in ${domain}${coreFiles.length > 0 ? `, ${coreFiles.length} core files` : ''})`
             : (lastMessage && lastMessage !== 'N/A' ? `Commit: ${lastMessage}` : 'N/A')
 
           return {
