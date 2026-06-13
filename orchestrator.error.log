@@ -682,3 +682,944 @@ time="2026-06-13T08:28:30+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\
 time="2026-06-13T08:28:30+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
 unable to get image '8bukets-app': failed to connect to the docker API at unix:///Users/filipkeser/.docker/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /Users/filipkeser/.docker/run/docker.sock: connect: no such file or directory
 ⚠️ [Jules] Git pull failed, checking for conflicts...
+ ❌ [Jules] Failed to merge add-google-edge-agent-9371392929328195231: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/knowledge/ai_agents_knowledge.md
+	data/knowledge/system_knowledge.json
+	data/work_orders.json
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/autonomous-cloud-knowledge-consolidation-6778083691317646306: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/knowledge/ai_agents_knowledge.md
+	data/knowledge/system_knowledge.json
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/autonomous-creation-cycle-8889704769332571568: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/knowledge/ai_agents_knowledge.md
+	data/knowledge/system_knowledge.json
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/autonomous-creation-cycle-stabilization-15042891493316655880: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/knowledge/ai_agents_knowledge.md
+	data/knowledge/system_knowledge.json
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [Jules] Failed to merge feat/boundary-integration-3444742037386565893: Command failed: git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+	antigravity/.jules_memory.json
+	data/knowledge/ai_agents_knowledge.md
+	data/knowledge/system_knowledge.json
+	data/work_orders.json
+	orchestrator.error.log
+	orchestrator.log
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ ❌ [iCloud Observer] Failed to process MISSION_HANDOFF.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process README.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process autonomous_state.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process package-lock.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process package.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process tsconfig.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process my-app/AGENTS.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process my-app/package-lock.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process my-app/package.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process my-app/tsconfig.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/.jules_memory.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/AGENTS.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/CONSOLIDATED_INTELLIGENCE.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/CONSOLIDATED_KNOWLEDGE.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/CONTRIBUTING.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/JULES_CLI.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/JULES_CLI_2.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/JULES_TOOLS.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/KNOWLEDGE_INTEGRATION.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/KNOWLEDGE_MERGE.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/PACKAGE_OVERVIEW.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/PROJECT_OPINION.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/README.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/REPORT.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/REVIEW_STATUS.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/SOVEREIGN_INTELLIGENCE_REPORT.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/SYSTEM_EVOLUTION.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/SYSTEM_PATENT.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/WILSON_SONSINI.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/ai_agents_knowledge.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/ai_agents_knowledge.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/autonomous_state.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/autonomous_workflow.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/gemini_cli_ide_docs.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/gemini_cli_remote_agents.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/gemini_cli_subagents_docs.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/gemmafour_docs.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/gemmafour_docs.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/glossary.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/intelephense_docs.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/intelephense_docs.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/litert_docs.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/litert_docs.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/opentelemetry_repos.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/opentelemetry_repos.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/package-lock.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/package.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/stitch_docs.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/stitch_docs.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/tsconfig.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/vscode_intelephense_docs.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/vscode_intelephense_docs.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/wilson_sonsini.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/wilson_sonsini_docs.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/wilson_sonsini_docs.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/ADMIN_OPS.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/API_CONTRACT.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/CONTENT_AUDIT.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/COPY_GUIDE.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/DATA_MODEL.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/DEPLOYMENT.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/DEPLOY_HANDOFF.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/ENV_TEMPLATE.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/FIRST_10_SOFTWARE.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/GO_TO_MARKET.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/LAUNCH_CHECKLIST.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/LAUNCH_RUNBOOK.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/MIGRATION.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/OPEN_QUESTIONS.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/PITCH.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/PRODUCT.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/README.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/REPO_CLASSIFICATION.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/REVIEW_GUIDELINES.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/ROADMAP_BOARD.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/SECURITY_NOTES.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/SEED_CONTENT_PLAN.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/TEST_PLAN.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/frontend/package-lock.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/frontend/package.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/backend/package-lock.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/software-review-platform/backend/package.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/packages/gemini-cli-core/package.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/packages/gemini-cli/package.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/frontend/AGENTS.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/frontend/CLAUDE.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/frontend/README.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/frontend/package-lock.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/frontend/package.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/frontend/tsconfig.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/docs/gemini-local-dev-guide.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/docs/wilson_sonsini.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/config/evolution_params.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/config/owner_info.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process antigravity/intelligence/antigravity/.jules_memory.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process .pytest_cache/README.md: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+ ❌ [iCloud Observer] Failed to process .kilocode/package.json: Error: Unknown system error -11: Unknown system error -11, read
+    at async readFileHandle (node:internal/fs/promises:558:24)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:54:29)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -11,
+  code: 'Unknown system error -11',
+  syscall: 'read'
+}
+💥 [Antigravity Root] Execution failed: Error: ENOENT: no such file or directory, stat '/Users/filipkeser/Library/Mobile Documents/com~apple~CloudDocs/MapAntigravity/web-app/node_modules/.bin/mcp-server-filesystem'
+    at async Object.stat (node:internal/fs/promises:1040:18)
+    at async ICloudObserver.scan (/Users/filipkeser/8bukets/antigravity/services/icloud_observer.ts:50:23)
+    at async Jules.executeWorkCycle (/Users/filipkeser/8bukets/antigravity/jules.ts:372:28)
+    at async run (/Users/filipkeser/8bukets/antigravity/run_daily.ts:9:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/filipkeser/Library/Mobile Documents/com~apple~CloudDocs/MapAntigravity/web-app/node_modules/.bin/mcp-server-filesystem'
+}
+time="2026-06-13T08:30:30+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
+time="2026-06-13T08:30:30+02:00" level=warning msg="The \"SUPABASE_DATABASE_URL\" variable is not set. Defaulting to a blank string."
+unable to get image 'public.ecr.aws/docker/library/mongo:latest': failed to connect to the docker API at unix:///Users/filipkeser/.docker/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /Users/filipkeser/.docker/run/docker.sock: connect: no such file or directory
+⚠️ [Jules] Git pull failed, checking for conflicts...
