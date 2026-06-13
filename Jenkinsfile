@@ -97,6 +97,16 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/autonomous_infrastructure_graph_workflow.ts'
             }
         }
+        stage('Run Autonomous Legal-Venture Synthesis Audit') {
+            steps {
+                sh 'npx tsx antigravity/workflows/legal_venture_synthesis_audit_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Project Omega Latency Optimizer') {
+            steps {
+                sh 'npx tsx antigravity/workflows/project_omega_latency_optimizer_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {

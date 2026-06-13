@@ -463,9 +463,33 @@ export class Jules {
     const { explore } = await import('./explorer')
     await explore()
     await this.selfRepair()
+
+    // Phase 14: Strategic Consultation
+    console.log('🧠 [Jules] Consulting Chief AI Officer for strategic directives...')
+    const { workOrderService } = await import('./services/work_order')
+    const consultOrder = await workOrderService.createOrder(
+      'STRATEGIC_CONSULTATION',
+      'Obtain executive AI strategy and directives',
+      { parentOrderId },
+      parentOrderId ? [parentOrderId] : undefined
+    )
+
+    // Execute specifically this order to get immediate feedback
+    await workOrderService.updateOrderStatus(consultOrder.id, 'executing')
+    let directives: any = {}
+    try {
+      const result = await (workOrderService as any).dispatch(consultOrder)
+      await workOrderService.updateOrderStatus(consultOrder.id, 'completed', result)
+      directives = result
+      this.recordTask('Strategic Consultation: Obtained executive directives from CAIO.')
+    } catch (err: any) {
+      console.error('❌ [Jules] Strategic consultation failed, proceeding with baseline protocols.', err.message)
+      await workOrderService.updateOrderStatus(consultOrder.id, 'failed', undefined, err.message)
+    }
+
     // 3. Ideate (Synthesis)
     const { synthesize } = await import('./synthesis')
-    const ideas = await synthesize()
+    const ideas = await synthesize(directives)
     if (ideas.length > 0) {
       this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
 

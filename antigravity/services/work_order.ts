@@ -14,7 +14,8 @@ export const WorkOrderSchema = z.object({
     'KNOWLEDGE_INGESTION',
     'SYSTEM_SYNC',
     'CLOUD_INTELLIGENCE_MERGE',
-    'AUTONOMOUS_CREATION'
+    'AUTONOMOUS_CREATION',
+    'STRATEGIC_CONSULTATION'
   ]),
   goal: z.string(),
   payload: z.any(),
@@ -202,6 +203,21 @@ export class WorkOrderService {
         const { jules: julesA } = await import('../jules')
         await julesA.executeWorkCycle(order.id)
         return { status: 'autonomous_creation_executed' }
+
+      case 'STRATEGIC_CONSULTATION':
+        const { exec } = await import('child_process')
+        const { promisify: promisifyUtil } = await import('util')
+        const execAsync = promisifyUtil(exec)
+
+        console.log('🤖 [WorkOrder] Invoking Chief AI Officer for strategic consultation...')
+        try {
+          const { stdout } = await execAsync('python3 scripts/run_caio_agent.py')
+          const strategicResult = JSON.parse(stdout)
+          return strategicResult
+        } catch (err: any) {
+          console.error('❌ [WorkOrder] CAIO Consultation failed:', err.message)
+          throw new Error(`CAIO Consultation failed: ${err.message}`)
+        }
 
       default:
         throw new Error(`Unknown work order type: ${order.type}`)

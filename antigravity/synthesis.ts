@@ -12,11 +12,41 @@ interface SynthesizedIdea {
   complexity: 'Low' | 'Medium' | 'High'
 }
 
-export async function synthesize(): Promise<SynthesizedIdea[]> {
+export async function synthesize(directives?: any): Promise<SynthesizedIdea[]> {
   'use cache'
   console.log('🔮 [Antigravity Synthesis] Ideating new architectural features...')
   
   const ideas: SynthesizedIdea[] = []
+
+  // Integrate Directives (Phase 14)
+  if (directives && directives.strategic_directives) {
+    const sd = directives.strategic_directives as string[]
+
+    if (sd.includes('DEPLOY_APAC_EDGE_NODES')) {
+      ideas.push({
+        feature: 'APAC Edge Orchestrator',
+        rationale: 'Strategic mandate: Deploy and optimize Tokyo, Singapore, and Sydney edge nodes for Phase 13.',
+        complexity: 'High'
+      })
+    }
+
+    if (sd.includes('ENFORCE_LEGAL_VENTURE_SYNTHESIS')) {
+      ideas.push({
+        feature: 'Legal-Venture Synthesis Audit',
+        rationale: 'Strategic mandate: Ensure all venture-critical artifacts contain IP-headers and comply with startup lifecycle metrics.',
+        complexity: 'Medium'
+      })
+    }
+
+    if (sd.includes('OPTIMIZE_OMEGA_LATENCY_PHASE_14')) {
+      ideas.push({
+        feature: 'Project Omega Latency Optimizer',
+        rationale: 'Strategic mandate: Achieve <20ms ultra-low-latency synchronization for Phase 14.',
+        complexity: 'High'
+      })
+    }
+  }
+
   const servicesDir = path.join(process.cwd(), 'antigravity/services')
   const files = fs.readdirSync(servicesDir)
 

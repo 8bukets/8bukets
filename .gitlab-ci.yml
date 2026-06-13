@@ -162,3 +162,19 @@ run-autonomous-autonomous_infrastructure_graph:
     - npx tsx antigravity/workflows/autonomous_infrastructure_graph_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-legal_venture_synthesis_audit:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Legal-Venture Synthesis Audit"
+    - npx tsx antigravity/workflows/legal_venture_synthesis_audit_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-project_omega_latency_optimizer:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Project Omega Latency Optimizer"
+    - npx tsx antigravity/workflows/project_omega_latency_optimizer_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
