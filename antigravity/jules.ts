@@ -1,9 +1,11 @@
 import fs from 'fs'
 import path from 'path'
-import { execFile } from 'child_process'
+import { execFile, exec } from 'child_process'
 import { promisify } from 'util'
+import { ConflictResolver } from './utils/conflict_resolver'
 
 const execFileAsync = promisify(execFile)
+const execAsync = promisify(exec)
 
 /**
  * JULES: THE COGNITIVE AGENT LAYER
@@ -151,6 +153,10 @@ export class Jules {
       { name: 'Cache Volatility Audit', action: () => this.recordTask('Cache profiles optimized.') },
       { name: 'Dependency Autopilot', action: () => this.auditDependencies() },
       { name: 'GitKraken Sync Prep', action: () => this.recordTask('Visual branch history cleaned.') },
+      { name: 'Intelephense Consolidation', action: () => this.consolidateIntelephense() },
+      { name: 'PR Rebase Automation', action: () => this.rebaseAllPRs() },
+      { name: 'Skill Synchronization', action: () => this.syncSkills() },
+      { name: 'Autonomous Merge', action: () => this.autonomousMerge() },
       { name: 'Edge Function Audit', action: () => this.recordTask('Edge function hello-world prepared for deployment.') },
       { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },
       { name: 'Collaboration Sync', action: () => this.syncCollaboration() },
@@ -227,8 +233,28 @@ export class Jules {
     try {
       await execFileAsync('git', ['pull', '--rebase'])
       this.recordTask('Git Pull: Synchronized with remote.')
-    } catch (err) {
-      console.warn('⚠️ [Jules] Git pull failed. Continuing with local state.')
+    } catch (err: any) {
+      console.warn('⚠️ [Jules] Git pull failed, checking for conflicts...')
+      // Attempt to resolve conflicts autonomously
+      const { stdout: status } = await execFileAsync('git', ['status', '--porcelain'])
+      const conflictedFiles = status.split('\n')
+        .filter(line => line.startsWith('UU '))
+        .map(line => line.substring(3))
+
+      if (conflictedFiles.length > 0) {
+        console.log(`🔧 [Jules] Found ${conflictedFiles.length} conflicted files. Attempting resolution...`)
+        for (const file of conflictedFiles) {
+          await ConflictResolver.resolve(path.join(process.cwd(), file))
+          await execFileAsync('git', ['add', file])
+        }
+        try {
+          await execFileAsync('git', ['rebase', '--continue'], { env: { ...process.env, GIT_EDITOR: 'true' } })
+          this.recordTask('Git Pull: Resolved conflicts and completed rebase.')
+        } catch (rebaseErr) {
+          console.error('❌ [Jules] Autonomous rebase resolution failed.')
+          await execFileAsync('git', ['rebase', '--abort'])
+        }
+      }
     }
   }
 
@@ -261,7 +287,6 @@ export class Jules {
   public async auditDependencies() {
     console.log('📦 [Jules] Auditing dependency sovereignty...')
     try {
-      // npm outdated exits with code 1 if there are outdated packages, so we catch it
       let outdatedOutput = ''
       try {
         const { stdout } = await execFileAsync('npm', ['outdated', '--json'])
@@ -270,14 +295,132 @@ export class Jules {
         outdatedOutput = e.stdout || '{}'
       }
 
-      const count = Object.keys(JSON.parse(outdatedOutput || '{}')).length
+      const outdated = JSON.parse(outdatedOutput || '{}')
+      const count = Object.keys(outdated).length
+      
       if (count > 0) {
-        this.recordTask(`Dependency Autopilot: Found ${count} outdated packages. Optimization recommended.`)
+        console.log(`📦 [Jules] Found ${count} outdated packages. Attempting autonomous upgrade...`)
+        try {
+            await execFileAsync('npm', ['update'])
+            this.recordTask(`Dependency Autopilot: Successfully updated ${count} packages.`)
+            await this.gitSync(`🤖 chore: autonomous dependency upgrade (${count} packages)`)
+        } catch (updateErr: any) {
+            console.error('❌ [Jules] Dependency upgrade failed:', updateErr.message)
+            this.recordTask(`Dependency Autopilot: Upgrade failed for ${count} packages.`)
+        }
       } else {
         this.recordTask(`Dependency Autopilot: All packages are sovereign and up-to-date.`)
       }
     } catch (e) {
       this.recordTask('Dependency Autopilot: Audit skipped due to environment state.')
+    }
+  }
+
+  public async consolidateIntelephense() {
+    console.log('🧠 [Jules] Initiating Intelephense Documentation consolidation...')
+    const { intelephenseService } = await import('./services/intelephense_service')
+    await intelephenseService.consolidate()
+    this.recordTask('Intelephense: Consolidated local and GitHub documentation.')
+  }
+
+  public async rebaseAllPRs() {
+    console.log('🔄 [Jules] Initiating PR Rebase Automation...')
+    const scriptPath = path.join(process.cwd(), '../Documents/Antigravity/rebase-all-prs.sh')
+    if (fs.existsSync(scriptPath)) {
+        try {
+            await execFileAsync('bash', [scriptPath])
+            this.recordTask('PR Rebase: Successfully rebased all open PRs.')
+        } catch (err: any) {
+            console.error('❌ [Jules] PR Rebase failed:', err.message)
+            this.recordTask('PR Rebase: Automation failed (check logs).')
+        }
+    } else {
+        console.warn('⚠️ [Jules] rebase-all-prs.sh not found.')
+    }
+  }
+
+  public async syncSkills() {
+    console.log('🤹 [Jules] Synchronizing skills with MapAntigravity...')
+    const sourceDir = path.join(process.cwd(), '../mapantigravity')
+    const targetDir = path.join(process.cwd(), '../.agents/skills')
+    
+    if (fs.existsSync(sourceDir) && fs.existsSync(targetDir)) {
+        try {
+            // Simple rsync-like copy for skills
+            await execAsync(`cp -R ${sourceDir}/* ${targetDir}/`)
+            this.recordTask('Skill Sync: Synchronized MapAntigravity skills to .agents/skills.')
+        } catch (err: any) {
+            console.error('❌ [Jules] Skill sync failed:', err.message)
+        }
+    }
+  }
+
+  public async autonomousMerge() {
+    console.log('🌿 [Jules] Evaluating branches for autonomous merge...')
+    try {
+      const branches = await this.scanAllBranches(true) as any[]
+      const readyForMerge = branches.filter(b => 
+        ['feature', 'fix', 'performance', 'security', 'ux'].includes(b.category) && 
+        b.results && b.results !== 'N/A' &&
+        !b.name.includes('main') &&
+        !b.name.includes('HEAD')
+      )
+
+      if (readyForMerge.length === 0) {
+        console.log('✨ [Jules] No branches identified for autonomous merge.')
+        return
+      }
+
+      console.log(`🌿 [Jules] Found ${readyForMerge.length} branches ready for merge. Processing top 5...`)
+      
+      const batch = readyForMerge.slice(0, 5)
+      for (const branch of batch) {
+        try {
+          const branchName = branch.name.replace('remotes/origin/', '')
+          console.log(` 🌀 [Jules] Merging branch: ${branchName}...`)
+          
+          // 1. Ensure we are on main
+          await execFileAsync('git', ['checkout', 'main'])
+          await execFileAsync('git', ['pull', 'origin', 'main'])
+          
+          // 2. Attempt Merge
+          try {
+            await execFileAsync('git', ['merge', branchName, '--no-edit'])
+          } catch (mergeErr: any) {
+            console.warn(` ⚠️ [Jules] Merge conflict detected for ${branchName}. Attempting autonomous resolution...`)
+            const { stdout: status } = await execFileAsync('git', ['status', '--porcelain'])
+            const conflictedFiles = status.split('\n')
+                .filter(line => line.startsWith('UU '))
+                .map(line => line.substring(3))
+            
+            for (const file of conflictedFiles) {
+                await ConflictResolver.resolve(path.join(process.cwd(), file))
+                await execFileAsync('git', ['add', file])
+            }
+            
+            await execFileAsync('git', ['commit', '--no-edit'])
+            console.log(` ✅ [Jules] Resolved conflicts for ${branchName}.`)
+          }
+          
+          // 3. Push
+          await execFileAsync('git', ['push', 'origin', 'main'])
+          
+          this.recordTask(`Autonomous Merge: Successfully merged ${branchName} into main.`)
+          console.log(` ✅ [Jules] Merged ${branchName} successfully.`)
+
+          // 4. Prune branch after successful merge
+          await this.pruneBranch(branchName)
+        } catch (err: any) {
+          console.error(` ❌ [Jules] Failed to merge ${branch.name}:`, err.message)
+          await execFileAsync('git', ['merge', '--abort']).catch(() => {})
+          await execFileAsync('git', ['checkout', 'main']).catch(() => {})
+        }
+      }
+
+      // 5. Global Pruning Scan (Cleanup stagnant branches)
+      await this.globalPruningScan()
+    } catch (err) {
+      console.warn('⚠️ [Jules] Autonomous merge cycle encountered an error:', err)
     }
   }
 

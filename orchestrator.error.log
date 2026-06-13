@@ -612,3 +612,400 @@ shell-init: error retrieving current directory: getcwd: cannot access parent dir
 /bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
 shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
 /bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+node:internal/modules/esm/resolve:204
+  const resolvedOption = FSLegacyMainResolve(pkgPath, packageConfig.main, baseStringified);
+                         ^
+
+Error: Cannot find package '/Users/filipkeser/Documents/Antigravity/node_modules/tsx/node_modules/esbuild/index.js' imported from /Users/filipkeser/Documents/Antigravity/node_modules/tsx/dist/cli.mjs
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.12.0
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_39_53_218Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_40_03_763Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_40_14_391Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_40_25_086Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_40_35_726Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_40_46_354Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_40_56_999Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_41_07_634Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_41_18_270Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_41_28_869Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_41_39_508Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_41_50_144Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_42_00_787Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_42_11_416Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_42_22_036Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-13T06_42_32_684Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
