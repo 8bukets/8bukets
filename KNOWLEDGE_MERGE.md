@@ -13110,3 +13110,37 @@ merge integrate run workflow and observe knowledge
   - **Artifacts:** 4 files modified (1 core files).
   - **Strategic Impact:** Branch impacts core ecosystem architecture.
 
+
+
+## Knowledge Observation
+
+### Vercel Workflow SDK
+- **Category:** Durable Execution, AI Agents
+- **Core Package:** `workflow` (installed via `npm i workflow` or `npx skills add vercel/workflow --skill workflow-init`)
+
+**Key Features:**
+- Replace hand-rolled queues and retries with durable, resumable code.
+- Sleep for seconds, hours, or days without using compute resources (e.g. `await sleep("7 days");`).
+- Built-in automatic retries, state persistence, and observability (run inspection end-to-end).
+- Universal compatibility (works anywhere you run it, deeply integrated with AI SDK).
+
+**Core Directives:**
+- `"use workflow"` - marks an async function as durable and resumable.
+- `"use step"` - defines individual steps within a workflow (like sending an email).
+
+**Code Example (Workflow):**
+```typescript
+import { sleep } from "workflow";
+
+export async function handleUserSignup(email: string) {
+  "use workflow";
+
+  const user = await createUser(email);
+  await sendWelcomeEmail(user);
+
+  await sleep("5s");
+
+  await sendOnboardingEmail(user);
+  return { userId: user.id, status: "onboarded" };
+}
+```
