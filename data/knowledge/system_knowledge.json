@@ -485,5 +485,57 @@
         }
       ]
     }
+  ],
+  "google_ads": [
+    {
+      "url": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
+      "title": "Understanding bidding basics - Google Ads Help",
+      "contentPreview": "- Help Center TopicsStart advertisingCampaignsExplore featuresOptimize performanceAccount & billingFix issuesGoogle Partners\n- ...CampaignsDisplay campaignsSetup & management\n- Understanding bidding basics\n\n### Understanding bidding basics\n\nGoogle Ads gives you several ways to bid for your ads, depending on what matters most to you and your business. Most advertisers focus on clicks, impressions, conversions, or views (for video ads).\n\nNow that you're advertising on Google Ads, you probably have a clear goal in mind for your ads. If you sell coffee, maybe you want to get more people to visit your shop. If you run a hiking club, maybe you're aiming to get more people to sign up for your newsletter. And so on.\n\nKnowing what you want your ads to do will help you decide how to bid.\n\nGoogle Ads runs an auction every single time it has an ad space available -- on a search result, or on a blog, news site, or some other page. Each auction decides which ads will show at that moment in that spac..."
+    },
+    {
+      "url": "https://business.google.com/uk/ad-tools/bidding/",
+      "title": "Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend",
+      "contentPreview": "\n### Deliver better results with automated bidding\n\n\n### Set the right bids with Smart Bidding\n\n\n### Reach your audience at the right moment\n\n\n### Increase conversions with billions of combinations of signals\n\n\n### Bid towards conversion values to maximise your ROI\n\n\n### Bid for online and in-store sales\n\n\n### Grow your business with Google Ads\n\n- Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns 25% increase in purchases\n\n### Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns\n\n25% increase in purchases\n\n- Paycor finds new growth paths among mid-market businesses using Google solutions 105% increase in revenue\n\n### Paycor finds new growth paths among mid-market businesses using Google solutions\n\n105% increase in revenue\n\n- loveholidays earns more profit using Smart Bidding compared to its own solution 57% more profit\n\n### loveholidays earns more profit using Smart Bidding compared to its own solution\n\n\n### Partner w..."
+    },
+    {
+      "url": "https://business.google.com/uk/resources/",
+      "title": "Tips & Resources for Online Advertising – Google Ads",
+      "contentPreview": "\n### Find answers andinspiration\n\n\n### Filter by:\n\n\n### Product type\n\n\n### Campaign type\n\n\n### Content type\n\n\n### Industry\n\n\n### Marketing level\n\n\n### Marketing goal\n\n- Increase website traffic\n- Multiple marketing goals\n- Google Ads The Best Paid SEO Strategies for Businesses Article\n\n### The Best Paid SEO Strategies for Businesses\n\n- YouTube Ads ABCDs of effective video ads Article\n\n### ABCDs of effective video ads\n\n- Google Ads 10 tips for Google Ads budget management Article\n\n### 10 tips for Google Ads budget management\n\n- Google Ads How can you write successful online ads with Google? Article\n\n### How can you write successful online ads with Google?\n\n- Google Ads 5 ways to create better ad copy by utilising AI Article\n\n### 5 ways to create better ad copy by utilising AI\n\n- Google Ads How to make your products stand out to shoppers on Google Ads Article\n\n### How to make your products stand out to shoppers on Google Ads\n\n- Google Ads How assets can help you connect with valuable cus..."
+    },
+    {
+      "url": "https://developers.google.com/ad-manager",
+      "title": "Ad Manager  |  Google for Developers",
+      "contentPreview": "\n### A set of tools to manage your Google Ad Manager accounts and campaigns.\n\n\n### Ad Manager API (Beta)\n\n\n### Mobile Ads SDK\n\n\n### Dynamic Ad Insertion\n\n\n### Ad Manager SOAP API\n..."
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+      "title": "Dynamic Ad Insertion  |  Google for Developers",
+      "contentPreview": "\n### Dynamic ad insertion (DAI)\n\nDAI lets you monetize your video content, taking away the complexity of the ad request and ad response process from the SDK. This approach reduces the likelihood of client-side errors and produces a TV-like experience without latency or buffering between content and ads.\n\nWith DAI, you can target individual ads for livestreams and videos on demand programming, obtain multi-screen reach with broad device support, and take advantage of programmatic monetization across all devices with Ad Exchange for video. Regardless of the original format of your content, once it becomes digital, DAI lets you show targeted video ads within your content, based on the individual user viewing the content.\n\nDAI lets you perform these workflows through the Full service API and Pod serving API, along with supported SDK platforms.\n\nTo start using DAI, select one of the following integrations:\n\n\n### Full service DAI\n\n\n### Pod serving DAI\n\n\n### Supported platforms\n\n\n### Get Supp..."
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+      "title": "DAI Full Service API  |  Google for Developers",
+      "contentPreview": "\n### Full service DAI\n\n\n### With the IMA DAI SDK\n\n- The web page or app loads the IMA DAI SDK through: an embedded script tag for HTML5 a native app for Android, Google Cast, iOS, tvOS, or Roku\n- an embedded script tag for HTML5\n- a native app for Android, Google Cast, iOS, tvOS, or Roku\n- The SDK requests either a VOD stream or live stream from Google Ad Manager 360.\n- Ad Manager 360 responds with the video stream that includes inserted ad breaks.\n- The SDK parses the response, determines the correct media type based on environment, and delivers the video stream (and companion ads if needed) to the web page or app.\n- The video player negotiates the playback details with the SDK and plays the content.\n- The video player listens for instream metadata and passes it to the SDK for processing.\n- The SDK fires impression pings and tracking events as needed.\nFor detailed instructions on how to implement a client video player using the IMA DAI SDK, check out our SDK guides:\n\n\n### With the DAI..."
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+      "title": "DAI Pod Serving API  |  Google for Developers",
+      "contentPreview": "\n### DAI Pod Serving\n\nDynamic Ad Insertion (DAI) Pod Serving lets you request ad pods, from Google or third-party ad servers, for live and video-on-demand (VOD) streams. For more details, see Configure ad pods and break templates.\n\n- Pod serving redirect: lets you retrieve manifest segments to implement Server-Side Ad Insertion (SSAI). The segments are dynamic URLs, redirecting to either content or ad media files.\n- Pod serving manifest: lets you retrieve the complete manifest of the ad pods to implement Server-Side Ad Insertion (SSAI). For more details, see Server guided DAI.\nFor VOD, Google Ad Manager returns the complete ad pod manifests.\n\nDAI Pod serving offers the following supported platforms:\n\nFor details on livestream and VOD, see the following workflows:\n\n\n### Stitch ads into a livestream\n\n- To start a livestream session, make a stream registration request. Set ad tag parameters unique for the stream request to override the DAI ad tag's default values. For more details about a..."
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/api/start",
+      "title": "Get started  |  Ad Manager SOAP API  |  Google for Developers",
+      "contentPreview": "- Get access to an Ad Manager network\n- Create authentication credentials\n- Configure your Ad Manager network\nLooking for a REST API? The Ad Manager API (Beta) is now available.\n\n\n### Get started Stay organized with collections Save and categorize content based on your preferences.\n\n- Get access to an Ad Manager network\n- Create authentication credentials\n- Configure your Ad Manager network\n\n### Page Summary\n\n- The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.\nThe Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.\n\n- Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.\nClient libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.\n\n- To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure..."
+    },
+    {
+      "url": "https://admanager.google.com/home/resources/",
+      "title": "Resources Overview - Google Ad Manager",
+      "contentPreview": "\n### Learn more, do more.\n\nLearn how global publishers are using publisher provided Identifiers to increase programmatic revenue in browsers that no longer support third-party cookies.\n\nOur monthly newsletter puts the latest success stories, insights, and product news right into your inbox.\n\n\n### Filter by:\n\n- Topic Ad Formats Advanced TV Brand Safety Core Ad Serving Data and Insights Dynamic Ad Insertion Ecosystem Mobile App Privacy Video Yield Management\n- Type Feature Brief Guide Report White Paper\n\n### No matching results\n\n- Guide Publisher best practices for live sporting events Read more\n\n### Publisher best practices for live sporting events\n\n- Feature Brief Powering direct transactions: Investing in your growth Read more\n\n### Powering direct transactions: Investing in your growth\n\n- Report Building the future of live monetization Read more\n\n### Building the future of live monetization\n\n- Report Increase your revenue in browsers with limited signals Read more\n\n### Increase your r..."
+    },
+    {
+      "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
+      "title": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
+      "contentPreview": "- Use the Google Ad Manager API for JavaMavenGradleSBT\n- Which version ID should I get started with?Understanding Version ID and Library VersionsManaging Library VersionsChoosing the Right Version ID\n- Understanding Version ID and Library Versions\n- Managing Library Versions\n- Choosing the Right Version ID\n\n### ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.\n\n- Use the Google Ad Manager API for JavaMavenGradleSBT\n- Which version ID should I get started with?Understanding Version ID and Library VersionsManaging Library VersionsChoosing the Right Version ID\n- Understanding Version ID and Library Versions\n- Managing Library Versions\n- Choosing the Right Version ID\n\n### Key Reference Links\n\nGoogle Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.\n\n\n### Getting Started\n\nIn order to use this library, you first need to..."
+    }
   ]
 }
