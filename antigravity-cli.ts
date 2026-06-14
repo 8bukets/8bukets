@@ -3,6 +3,7 @@
 import { Command } from 'commander';
 import { observeKnowledge } from './antigravity/services/knowledge';
 import { Jules } from './antigravity/jules';
+import { searchConsoleAuditor } from './antigravity/services/search_console_auditor';
 
 const program = new Command();
 
@@ -102,6 +103,20 @@ program
       console.log(`✅ Successfully observed: ${result.title}`);
     } catch (err) {
       console.error(`❌ Observation failed: ${err}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('search-console-audit')
+  .description('Perform Deep-Skill SEO Audit for software-online-review.com (Search Console Mastery)')
+  .action(async () => {
+    console.log('🔍 Initiating Search Console SEO Audit...');
+    try {
+      const result = await searchConsoleAuditor.runAudit();
+      console.log(`✅ SEO Audit Complete: ${result.totalClicks} clicks, ${result.totalImpressions} impressions.`);
+    } catch (err) {
+      console.error(`❌ SEO Audit failed: ${err}`);
       process.exit(1);
     }
   });
