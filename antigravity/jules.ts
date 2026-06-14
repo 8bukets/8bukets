@@ -530,6 +530,12 @@ export class Jules {
     ])
     this.recordTask('Sentient Orchestration: Coordinated Phase 13 deployment intents.')
 
+    // SEO Audit (Phase 13 Mastery)
+    console.log('🔍 [Jules] Initiating Search Console Audit...')
+    const { searchConsoleAuditor } = await import('./services/search_console_auditor')
+    await searchConsoleAuditor.runAudit()
+    this.recordTask('SEO Audit: Performed Deep-Skill Search Console audit for software-online-review.com.')
+
     // Knowledge Observation
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
@@ -624,6 +630,17 @@ export class Jules {
       const { getAutonomousDiscoveryEngineData } = await import('./services/autonomous_discovery_engine')
       const discoveryData = await getAutonomousDiscoveryEngineData()
       report += `- **Discovery Engine:** ${discoveryData.status} (Last run: ${discoveryData.lastRun})\n`
+
+      // Search Console Integration
+      const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
+      if (fs.existsSync(knowledgePath)) {
+        const k = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+        const seoData = k.typescript_sections?.find((s: any) => s.title.includes('Search Console Mastery'))
+        if (seoData) {
+          const metrics = seoData.sections?.find((sec: any) => sec.header === 'Search Performance Metrics')
+          report += `- **Search Console:** ${seoData.metadata?.analyzedAt || 'N/A'}${metrics ? ` (${metrics.content.split('\n')[0]})` : ''}\n`
+        }
+      }
     } catch (e) {
       console.warn('⚠️ [Jules] Failed to fetch extended service insights.')
     }

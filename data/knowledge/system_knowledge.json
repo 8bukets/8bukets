@@ -2027,6 +2027,31 @@
           "content": "Market Intelligence Q3: Increased demand for sovereign AI clusters to ensure data residency and compliance."
         }
       ]
+    },
+    {
+      "title": "Search Console Mastery: https://software-online-review.com",
+      "metadata": {
+        "source": "google-search-console://https://software-online-review.com",
+        "analyzedAt": "2026-06-14T20:04:30.978Z",
+        "description": "Automated SEO performance metrics and search query analysis.",
+        "type": "seo_audit",
+        "domain": "https://software-online-review.com",
+        "auditVersion": "2.0.0-TS"
+      },
+      "sections": [
+        {
+          "header": "Search Performance Metrics",
+          "content": "**Total Clicks:** 1450\n**Total Impressions:** 52300\n**Average Position:** 8.7\n**CTR:** 2.77%"
+        },
+        {
+          "header": "Top Performing Queries",
+          "content": "- **software online review**: 520 clicks, 2400 impressions (Pos: 8.7)\n- **antigravity autonomous engine**: 180 clicks, 850 impressions (Pos: 8.7)\n- **jules ai agent**: 110 clicks, 420 impressions (Pos: 8.7)\n- **8 bukets project**: 95 clicks, 1800 impressions (Pos: 8.7)\n- **autonomous workflow creation**: 65 clicks, 310 impressions (Pos: 8.7)"
+        },
+        {
+          "header": "Optimization Strategy",
+          "content": "Increase content depth for high-impression, low-click queries to improve CTR. Monitor average position for brand-related keywords."
+        }
+      ]
     }
   ],
   "google_ads": [
