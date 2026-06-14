@@ -118,6 +118,22 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [STRATEGY]: Anticipatory Intelligence mandate detected. Activating predictive clusters.")
                     strategic_directives.append("ACTIVATE_ANTICIPATORY_CLUSTERS")
 
+            # Phase 15 Specific Logic
+            if "Phase 15" in title or "phase 15" in sections_str:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 15 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_15_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_15_PROTOCOLS")
+
+            if "dilithium" in sections_str or "kyber" in sections_str or "quantum-secure" in sections_str:
+                if "ENFORCE_POST_QUANTUM_SECURITY" not in strategic_directives:
+                    self.logger.info("CAIO [SECURITY]: Post-Quantum Security mandate detected. Issuing enforcement directive.")
+                    strategic_directives.append("ENFORCE_POST_QUANTUM_SECURITY")
+
+            if "lattice-based cryptography" in sections_str:
+                if "IMPLEMENT_LATTICE_CRYPTO_SYNC" not in strategic_directives:
+                    self.logger.info("CAIO [SECURITY]: Lattice-based cryptography mandate detected. Issuing implementation directive.")
+                    strategic_directives.append("IMPLEMENT_LATTICE_CRYPTO_SYNC")
+
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
                 role_alignment_verified = True

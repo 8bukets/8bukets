@@ -85,6 +85,22 @@ export async function synthesize(directives?: any): Promise<SynthesizedIdea[]> {
         complexity: 'Medium'
       })
     }
+
+    if (sd.includes('ACTIVATE_PHASE_15_PROTOCOLS') && !files.some(f => f.includes('quantum_sovereignty'))) {
+      ideas.push({
+        feature: 'Quantum Sovereignty Service',
+        rationale: 'Strategic mandate: Implement Dilithium and Kyber protocols for Phase 15 Quantum Sovereignty.',
+        complexity: 'High'
+      })
+    }
+
+    if (sd.includes('IMPLEMENT_LATTICE_CRYPTO_SYNC') && !files.some(f => f.includes('lattice_sync'))) {
+      ideas.push({
+        feature: 'Lattice Crypto Sync',
+        rationale: 'Strategic mandate: Implement lattice-based cryptography for internal state synchronization.',
+        complexity: 'High'
+      })
+    }
   }
 
   // Gap Analysis 1: Real-time Notifications

@@ -5284,3 +5284,25 @@ function setColourAttr(string $colour): void {}
 function setColourDoc(string $colour): void {}
 setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
 
+---
+
+# iCloud: agent_protocols.md
+
+> **Source:** icloud://agent_protocols.md
+> **Analyzed At:** 2026-06-14T04:57:03.408Z
+
+## Dilithium Integration
+All agents must use Dilithium signatures for high-risk autonomous actions to ensure quantum resistance.
+
+## Lattice-based Cryptography
+Implement lattice-based cryptography for internal state synchronization across APAC and EMEA nodes.
+
+---
+
+# Phase 15: Quantum Sovereignty
+
+> **Source:** icloud://phase15_strategy.json
+> **Analyzed At:** 2026-06-14T04:57:03.445Z
+
+## Quantum Sovereignty
+Phase 15 mandates the integration of Dilithium and Kyber for all neural relay communication. All nodes must be quantum-secure by Q4 2026.
