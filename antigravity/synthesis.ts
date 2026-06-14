@@ -18,11 +18,19 @@ export async function synthesize(directives?: any): Promise<SynthesizedIdea[]> {
   
   const ideas: SynthesizedIdea[] = []
 
+  const servicesDir = path.join(process.cwd(), 'antigravity/services')
+  try {
+    await fs.promises.access(servicesDir)
+  } catch {
+    await fs.promises.mkdir(servicesDir, { recursive: true })
+  }
+  const files = await fs.promises.readdir(servicesDir)
+
   // Integrate Directives (Phase 14)
   if (directives && directives.strategic_directives) {
     const sd = directives.strategic_directives as string[]
 
-    if (sd.includes('DEPLOY_APAC_EDGE_NODES')) {
+    if (sd.includes('DEPLOY_APAC_EDGE_NODES') && !files.some(f => f.includes('apac_edge'))) {
       ideas.push({
         feature: 'APAC Edge Orchestrator',
         rationale: 'Strategic mandate: Deploy and optimize Tokyo, Singapore, and Sydney edge nodes for Phase 13.',
@@ -30,7 +38,7 @@ export async function synthesize(directives?: any): Promise<SynthesizedIdea[]> {
       })
     }
 
-    if (sd.includes('ENFORCE_LEGAL_VENTURE_SYNTHESIS')) {
+    if (sd.includes('ENFORCE_LEGAL_VENTURE_SYNTHESIS') && !files.some(f => f.includes('legal_venture'))) {
       ideas.push({
         feature: 'Legal-Venture Synthesis Audit',
         rationale: 'Strategic mandate: Ensure all venture-critical artifacts contain IP-headers and comply with startup lifecycle metrics.',
@@ -38,17 +46,46 @@ export async function synthesize(directives?: any): Promise<SynthesizedIdea[]> {
       })
     }
 
-    if (sd.includes('OPTIMIZE_OMEGA_LATENCY_PHASE_14')) {
+    if (sd.includes('OPTIMIZE_OMEGA_LATENCY_PHASE_14') && !files.some(f => f.includes('omega_latency'))) {
       ideas.push({
         feature: 'Project Omega Latency Optimizer',
         rationale: 'Strategic mandate: Achieve <20ms ultra-low-latency synchronization for Phase 14.',
         complexity: 'High'
       })
     }
-  }
 
-  const servicesDir = path.join(process.cwd(), 'antigravity/services')
-  const files = fs.readdirSync(servicesDir)
+    if (sd.includes('ACTIVATE_ANTICIPATORY_CLUSTERS') && !files.some(f => f.includes('anticipatory_intelligence'))) {
+      ideas.push({
+        feature: 'Anticipatory Intelligence Cluster',
+        rationale: 'Strategic mandate: Deploy and manage predictive clusters for Phase 14 anticipatory intelligence.',
+        complexity: 'High'
+      })
+    }
+
+    if (sd.includes('AUDIT_IP_HEADER_PROTECTION') && !files.some(f => f.includes('ip_header_audit'))) {
+      ideas.push({
+        feature: 'IP-Header Audit Service',
+        rationale: 'Strategic mandate: Ensure all venture-critical artifacts are protected by required IP-headers.',
+        complexity: 'Medium'
+      })
+    }
+
+    if (sd.includes('SCOUT_LINKEDIN_FOR_CAIO_OPENINGS') && !files.some(f => f.includes('linkedin_role'))) {
+      ideas.push({
+        feature: 'LinkedIn Role Scouter',
+        rationale: 'Strategic mandate: Scout LinkedIn for CAIO roles and market alignment.',
+        complexity: 'Medium'
+      })
+    }
+
+    if (sd.includes('AUDIT_COURSERA_AI_CERTIFICATIONS') && !files.some(f => f.includes('coursera_certification'))) {
+      ideas.push({
+        feature: 'Coursera Certification Auditor',
+        rationale: 'Strategic mandate: Audit Coursera for executive AI leadership certifications.',
+        complexity: 'Medium'
+      })
+    }
+  }
 
   // Gap Analysis 1: Real-time Notifications
   if (!files.some(f => f.includes('notification'))) {
@@ -168,7 +205,7 @@ export async function synthesize(directives?: any): Promise<SynthesizedIdea[]> {
   }
 
   // Gap Analysis 13: Proactive Scalability
-  if (!files.some(f => f.includes('scalability_service'))) {
+  if (!files.some(f => f.includes('scalability'))) {
     ideas.push({
       feature: 'Proactive Scalability Service',
       rationale: 'Predicts traffic spikes and pre-warms cloud worker instances before demand increases.',
