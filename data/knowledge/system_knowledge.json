@@ -484,6 +484,38 @@
           "content": "A function accepts a specific set of string literals as arguments. We want to provide language intelligence based on the allowed string literals\n- **Using PHPStorm attributes**:\n```php\n#[\\JetBrains\\PhpStorm\\ExpectedValues(values: ['red', 'blue', 'green'])]\nfunction setColourAttr(string $colour): void {}\n```\n- **Using PHPDoc annotations**:\n```php\n/**\n * @param 'red'|'blue'|'green' $colour\n * @return void\n */\nfunction setColourDoc(string $colour): void {}\nsetColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'\n"
         }
       ]
+    },
+    {
+      "title": "iCloud: agent_protocols.md",
+      "metadata": {
+        "source": "icloud://agent_protocols.md",
+        "analyzedAt": "2026-06-14T04:57:03.408Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Dilithium Integration",
+          "content": "All agents must use Dilithium signatures for high-risk autonomous actions to ensure quantum resistance."
+        },
+        {
+          "header": "Lattice-based Cryptography",
+          "content": "Implement lattice-based cryptography for internal state synchronization across APAC and EMEA nodes."
+        }
+      ]
+    },
+    {
+      "title": "Phase 15: Quantum Sovereignty",
+      "metadata": {
+        "source": "icloud://phase15_strategy.json",
+        "analyzedAt": "2026-06-14T04:57:03.445Z",
+        "description": "Strategic roadmap for Phase 15 focusing on Post-Quantum Security and Lattice-based cryptography."
+      },
+      "sections": [
+        {
+          "header": "Quantum Sovereignty",
+          "content": "Phase 15 mandates the integration of Dilithium and Kyber for all neural relay communication. All nodes must be quantum-secure by Q4 2026."
+        }
+      ]
     }
   ]
 }
