@@ -79,6 +79,8 @@ export class Jules {
       const hasCognitiveSovereignty = checkKnowledge('cognitive sovereignty')
       const hasLegalVentureSynthesis = checkKnowledge('legal-venture synthesis')
       const hasAnticipatory = checkKnowledge('anticipatory intelligence')
+      const hasPhase15 = checkKnowledge('Phase 15')
+      const hasDilithium = checkKnowledge('Dilithium')
 
       if (hasQuantum && !this.memory.preferredPatterns.includes('crystals-kyber')) {
         suggestions.push('Integrate Crystals-Kyber for Quantum-resistant security as per latest strategy.')
@@ -103,6 +105,9 @@ export class Jules {
       }
       if (hasAnticipatory) {
         suggestions.push('Deploy Phase 14 Anticipatory Intelligence clusters to Singapore and Tokyo edge nodes.')
+      }
+      if (hasPhase15 || hasDilithium) {
+        suggestions.push('Integrate Dilithium signatures and Lattice-based cryptography for Phase 15 Quantum Sovereignty.')
       }
     }
 
