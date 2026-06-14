@@ -1,10 +1,123 @@
 {
   "typescript_sections": [
     {
+      "title": "Phase 13 & 14 Strategic Mandates",
+      "metadata": {
+        "source": "internal_strategy",
+        "analyzedAt": "2026-06-13T23:45:00.000Z",
+        "description": "Strategic mandates for Phase 13 and Phase 14 expansion."
+      },
+      "sections": [
+        {
+          "header": "Phase 13 APAC Expansion",
+          "content": "Phase 13 focuses on Asia-Pacific expansion, zero-latency neural synchronization (<50ms), and autonomous edge node deployment in Singapore, Tokyo, and Sydney. Requires 95% ROI efficiency mandate and activate_quantum_synergy."
+        },
+        {
+          "header": "Phase 14 Anticipatory Intelligence",
+          "content": "Phase 14 mandates require Project Omega target latency < 20ms, Legal-Venture Synthesis (including IP-header protection), and localized sovereignty for APAC expansion in Singapore and Tokyo nodes. Activate anticipatory intelligence clusters."
+        },
+        {
+          "header": "Governance",
+          "content": "Enforce ISO 42001 compliance across all AI systems."
+        }
+      ]
+    },
+    {
+      "title": "Chief AI Officer (CAIO) Role",
+      "metadata": {
+        "source": "internal_role_docs",
+        "analyzedAt": "2026-06-13T23:45:00.000Z",
+        "description": "Detailed CAIO role definition."
+      },
+      "sections": [
+        {
+          "header": "Responsibilities",
+          "content": "Implementation & tech stacking, cross-department training, ethics & governance, strategy & vision, performance tracking. Coordination with CTO and CDO. Research available roles on LinkedIn Jobs and leadership certifications on Coursera. Government-issued professional license not required."
+        }
+      ]
+    },
+    {
+      "title": "Market Intelligence Q3",
+      "metadata": {
+        "source": "market_report",
+        "analyzedAt": "2026-06-13T23:45:00.000Z",
+        "description": "Q3 Market Intelligence report."
+      },
+      "sections": [
+        {
+          "header": "Trends",
+          "content": "Increasing demand for sovereign AI clusters in the APAC region."
+        }
+      ]
+    },
+    {
+      "title": "software online review.com",
+      "metadata": {
+        "source": "https://software-online-review.com",
+        "analyzedAt": "2026-06-14T00:20:28.054Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "2459326?hl=en&ref topic=10289453&sjid=5167206403107665975 EU",
+      "metadata": {
+        "source": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
+        "analyzedAt": "2026-06-14T00:20:28.651Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
       "title": "Web Insight",
       "metadata": {
         "source": "https://admanager.google.com/home/resources/",
-        "analyzedAt": "2026-06-13T23:34:31.925Z",
+        "analyzedAt": "2026-06-14T00:20:32.013Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "ad manager",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager",
+        "analyzedAt": "2026-06-14T00:20:29.175Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "dynamic ad insertion",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+        "analyzedAt": "2026-06-14T00:20:29.646Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "full service",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+        "analyzedAt": "2026-06-14T00:20:30.105Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "pod serving",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+        "analyzedAt": "2026-06-14T00:20:31.106Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "start",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/api/start",
+        "analyzedAt": "2026-06-14T00:20:31.916Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -13,7 +126,7 @@
       "title": "overview",
       "metadata": {
         "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
-        "analyzedAt": "2026-06-13T23:34:32.575Z",
+        "analyzedAt": "2026-06-14T00:20:32.826Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -22,7 +135,7 @@
       "title": "Intelephense Documentation",
       "metadata": {
         "source": "https://intelephense.com/docs",
-        "analyzedAt": "2026-06-13T23:34:33.064Z",
+        "analyzedAt": "2026-06-14T00:20:33.344Z",
         "description": "Consolidated Intelephense documentation from local and remote sources."
       },
       "sections": [

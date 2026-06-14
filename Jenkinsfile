@@ -107,6 +107,26 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/project_omega_latency_optimizer_workflow.ts'
             }
         }
+        stage('Run Autonomous Anticipatory Intelligence Cluster') {
+            steps {
+                sh 'npx tsx antigravity/workflows/anticipatory_intelligence_cluster_workflow.ts'
+            }
+        }
+        stage('Run Autonomous IP-Header Audit Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/ip_header_audit_workflow.ts'
+            }
+        }
+        stage('Run Autonomous LinkedIn Role Scouter') {
+            steps {
+                sh 'npx tsx antigravity/workflows/linkedin_role_scouter_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Coursera Certification Auditor') {
+            steps {
+                sh 'npx tsx antigravity/workflows/coursera_certification_auditor_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {

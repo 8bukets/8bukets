@@ -178,3 +178,35 @@ run-autonomous-project_omega_latency_optimizer:
     - npx tsx antigravity/workflows/project_omega_latency_optimizer_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-anticipatory_intelligence_cluster:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Anticipatory Intelligence Cluster"
+    - npx tsx antigravity/workflows/anticipatory_intelligence_cluster_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-ip_header_audit:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for IP-Header Audit Service"
+    - npx tsx antigravity/workflows/ip_header_audit_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-linkedin_role_scouter:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for LinkedIn Role Scouter"
+    - npx tsx antigravity/workflows/linkedin_role_scouter_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-coursera_certification_auditor:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Coursera Certification Auditor"
+    - npx tsx antigravity/workflows/coursera_certification_auditor_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
