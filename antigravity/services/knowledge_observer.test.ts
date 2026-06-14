@@ -69,6 +69,35 @@ Some details here.`
     expect(systemKnowledge.typescript_sections[0].title).toBe('Persist Test')
   })
 
+  it('should preserve mathematical symbols and generics while stripping HTML', () => {
+    const raw = `
+# Symbols Test
+The latency must be < 20ms for optimal performance.
+Generics like ArrayAccess<TKey, TValue> and Map<string, number> should be preserved.
+Logical comparisons like (a < b && c > d) are also important.
+But <script>alert('bad')</script> and <div class="hidden">secret</div> should be stripped.
+`
+    const result = KnowledgeObserver.processContent('Symbols Test', raw, 'test-source')
 
+    const content = result.sections[0].content
+
+    // Should preserve these
+    expect(content).toContain('< 20ms')
+    expect(content).toContain('ArrayAccess<TKey, TValue>')
+    expect(content).toContain('Map<string, number>')
+    expect(content).toContain('(a < b && c > d)')
+
+    // Should strip these tags
+    expect(content).not.toContain('<script>')
+    expect(content).not.toContain('</script>')
+    expect(content).not.toContain('<div')
+    expect(content).not.toContain('</div>')
+
+    // Content of script should be gone due to cleanRaw pre-filter
+    expect(content).not.toContain('alert')
+
+    // Content of div is typically preserved (standard for tag stripping)
+    expect(content).toContain('secret')
+  })
 
 })

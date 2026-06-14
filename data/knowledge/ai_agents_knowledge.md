@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-14T06:38:48.151Z
+**System Analysis:** 2026-06-14T14:35:29.424Z
 
 ---
 
@@ -3489,7 +3489,7 @@ Skip to content ↓
 # Intelephense Documentation
 
 > **Source:** https://intelephense.com/docs
-> **Analyzed At:** 2026-06-14T00:20:33.344Z
+> **Analyzed At:** 2026-06-14T14:35:29.412Z
 
 ## Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -4623,7 +4623,7 @@ $var = 1; //$var is now an int
 
 ```
 In addition to the standard PHPDoc type annotations Intelephense also supports generic type syntax for `iterable` and `ArrayAccess` types. For example:
-* `Generator`
+* `Generator<KeyType, ElementType>`
 * `ArrayAccess<string, ElementType>`
 * `array<int, ElementType>`
 Union (`TypeA|TypeB`) and intersection (`TypeA&TypeB`) types are supported. Where both a type declaration and a type annotation is provided then the resulting type will be the intersection of the two. Types will be reduced where possible using the following rules.
