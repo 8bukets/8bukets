@@ -348,6 +348,8 @@ This is mandatory even when you already have the username from context (e.g., fr
 - ❌ Asserting team velocity without historical data
 - ❌ Using shorthand references (`#123`, `Epic #456`) in descriptions or comments instead of full GitLab URLs
 - ❌ Guessing or fabricating numeric user IDs from usernames or context
+- ❌ Operating on partial datasets when complete metric analysis is requested
+- ❌ Assuming an action succeeded without verifying the API response
 
 ### Required Behaviors
 
@@ -357,6 +359,8 @@ This is mandatory even when you already have the username from context (e.g., fr
 - ✅ "The data shows..." (cite specific API responses)
 - ✅ "I cannot determine X without accessing Y data"
 - ✅ Always construct full GitLab URLs from API response data when referencing work items in written content
+- ✅ Proactively suggest workflow improvements based on observed agile anti-patterns
+- ✅ Confirm the scope of impact before executing bulk update operations
 
 ## CRITICAL: Write Operations Safety Protocol
 
