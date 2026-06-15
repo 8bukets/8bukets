@@ -138,7 +138,9 @@ export class KnowledgeObserver {
       const trimmedLine = line.trim();
 
       // Skip lines that look like minified CSS or JS remnants if not in code block
-      if (!inCodeBlock && (trimmedLine.includes('{') && trimmedLine.includes('}') && trimmedLine.length > 50)) {
+      // Technical documentation often uses braces for types/shapes, so we check for signs of code/styles
+      const isLikelyJunk = !trimmedLine.includes(' ') && trimmedLine.includes('{') && trimmedLine.includes('}') && trimmedLine.length > 50;
+      if (!inCodeBlock && isLikelyJunk) {
         return;
       }
 
