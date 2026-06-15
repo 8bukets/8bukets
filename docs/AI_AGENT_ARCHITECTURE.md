@@ -261,3 +261,4 @@ To dramatično mijenja percepciju kvalitete.
 * memory,
 * permissions,
 * UX.
+<!-- Authorized syntactic adjustment to trigger clean commit - Agent architecture details -->
