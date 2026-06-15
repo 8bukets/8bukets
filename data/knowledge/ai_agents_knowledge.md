@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-15T06:22:24.534Z
+**System Analysis:** 2026-06-15T07:03:20.180Z
 
 ---
 
@@ -3489,7 +3489,7 @@ Skip to content ↓
 # Intelephense Documentation
 
 > **Source:** https://intelephense.com/docs
-> **Analyzed At:** 2026-06-14T14:35:29.412Z
+> **Analyzed At:** 2026-06-15T07:03:20.163Z
 
 ## Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -3497,17 +3497,6 @@ When paired with an LSP capable editor it provides an essential set of code inte
 This is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to all current and future features can be obtained by purchasing a licence key at https://intelephense.com.
 
 ## Visual Studio Code
-Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).
-1. Disable the built-in VSCode PHP Language Features.
-* Go to `Extensions`.
-* Search for `@builtin php`
-* Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.
-Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.
-2. Add glob patterns for non standard php file extensions to the `files.associations` setting.
-3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete
--- `ctrl + shift + p` -- and searching for `Enter licence key`.
-Further configuration options are available in the `intelephense` section of settings.
-
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
 The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via it's configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
 Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.
