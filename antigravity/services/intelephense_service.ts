@@ -67,20 +67,29 @@ export class IntelephenseService {
           headerMap.set(trimmedHeader, { header: trimmedHeader, content: section.content })
         }
       } else {
-        // If header exists, prioritize the new content if it's longer or from a more trusted source.
-        // Since we process GitHub first, 'existing' is likely from GitHub.
-        // We only merge if the new content adds something unique.
-
+        // Deduplication Logic: Prioritize local overrides if they contain images or more detail.
         const cleanExisting = (existing.content || '').replace(/\s+/g, ' ').trim()
         const cleanNew = (section.content || '').replace(/\s+/g, ' ').trim()
 
-        if (cleanExisting.includes(cleanNew)) {
+        // Heuristic: If new content has an image tag and existing doesn't, or if new is significantly longer
+        const hasImage = (text: string) => /!\[.*\]\(.*\)/.test(text)
+
+        if (cleanExisting === cleanNew) {
+          continue;
+        }
+
+        if (hasImage(section.content) && !hasImage(existing.content)) {
+          existing.content = section.content
+        } else if (cleanExisting.includes(cleanNew)) {
           // New content is already a subset, skip
         } else if (cleanNew.includes(cleanExisting)) {
           // New content is more complete, replace
           existing.content = section.content
+        } else if (section.content && section.content.length > existing.content.length * 1.5) {
+          // Significantly longer content usually means more detail
+          existing.content = section.content
         } else if (section.content) {
-          // Both have unique info, append unique parts
+          // Both have unique info, append unique parts if not already similar
           existing.content += '\n\n' + section.content
         }
       }
