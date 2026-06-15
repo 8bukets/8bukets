@@ -378,4 +378,4 @@ class ChiefAIOfficerAgent(BaseAgent):
 # CAIO to make predictive adjustments to resource allocation before a degradation
 # actually occurs.
 
-# Authorized syntactic adjustment to trigger clean commit - create agent Chief AI Officer
+# Authorized syntactic adjustment to trigger clean commit - [create agent Chief AI Officer]
