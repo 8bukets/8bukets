@@ -822,6 +822,26 @@ export class Jules {
       return raw ? [] : '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
     }
   }
+
+  private async pruneBranch(name: string) {
+    console.log(` 🧹 [Jules] Pruning branch ${name}...`)
+    try {
+      // Use execFileAsync from the top level scope if available
+      const { execFile } = await import('child_process');
+      const { promisify } = await import('util');
+      const execFileAsync = promisify(execFile);
+
+      await execFileAsync('git', ['branch', '-d', name])
+      await execFileAsync('git', ['push', 'origin', '--delete', name]).catch(() => {})
+    } catch (e: any) {
+      console.warn(` ⚠️ [Jules] Could not prune branch ${name}:`, e.message)
+    }
+  }
+
+  private async globalPruningScan() {
+    console.log(' 🔍 [Jules] Running global pruning scan...')
+    // Autonomous logic for cleanup of stagnant branches could go here
+  }
 }
 
 export const jules = new Jules()
