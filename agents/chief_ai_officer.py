@@ -134,6 +134,24 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [SECURITY]: Lattice-based cryptography mandate detected. Issuing implementation directive.")
                     strategic_directives.append("IMPLEMENT_LATTICE_CRYPTO_SYNC")
 
+            # Phase 16 Specific Logic
+            if "Phase 16" in title or "phase 16" in sections_str:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 16 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_16_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_16_PROTOCOLS")
+
+                if "swarm-based self-replication" in sections_str or "implement_swarm_heartbeat" in sections_str:
+                    self.logger.info("CAIO [SWARM]: Swarm heartbeat mandate detected. Issuing implementation directive.")
+                    strategic_directives.append("IMPLEMENT_SWARM_HEARTBEAT")
+
+                if "neural stability index" in sections_str or "enforce_neural_stability_index" in sections_str:
+                    self.logger.info("CAIO [PERF]: Neural stability index mandate detected. Issuing enforcement directive.")
+                    strategic_directives.append("ENFORCE_NEURAL_STABILITY_INDEX")
+
+                if "cross-shard cognition" in sections_str or "activate_cross_shard_cognition" in sections_str:
+                    self.logger.info("CAIO [COGNITION]: Cross-shard cognition mandate detected. Issuing activation directive.")
+                    strategic_directives.append("ACTIVATE_CROSS_SHARD_COGNITION")
+
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
                 role_alignment_verified = True

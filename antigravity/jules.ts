@@ -81,6 +81,8 @@ export class Jules {
       const hasAnticipatory = checkKnowledge('anticipatory intelligence')
       const hasPhase15 = checkKnowledge('Phase 15')
       const hasDilithium = checkKnowledge('Dilithium')
+      const hasPhase16 = checkKnowledge('Phase 16')
+      const hasSwarm = checkKnowledge('swarm-based')
 
       if (hasQuantum && !this.memory.preferredPatterns.includes('crystals-kyber')) {
         suggestions.push('Integrate Crystals-Kyber for Quantum-resistant security as per latest strategy.')
@@ -108,6 +110,9 @@ export class Jules {
       }
       if (hasPhase15 || hasDilithium) {
         suggestions.push('Integrate Dilithium signatures and Lattice-based cryptography for Phase 15 Quantum Sovereignty.')
+      }
+      if (hasPhase16 || hasSwarm) {
+        suggestions.push('Activate Phase 16 Swarm Heartbeat and Cross-Shard Cognition for cognitive transcendence.')
       }
     }
 

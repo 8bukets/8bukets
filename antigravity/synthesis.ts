@@ -101,6 +101,22 @@ export async function synthesize(directives?: any): Promise<SynthesizedIdea[]> {
         complexity: 'High'
       })
     }
+
+    if (sd.includes('IMPLEMENT_SWARM_HEARTBEAT') && !files.some(f => f.includes('swarm_heartbeat'))) {
+      ideas.push({
+        feature: 'Swarm Heartbeat Monitor',
+        rationale: 'Strategic mandate: Ensure all replicated agents report to the root node every 5s for Phase 16 Swarm Integrity.',
+        complexity: 'Medium'
+      })
+    }
+
+    if (sd.includes('ACTIVATE_CROSS_SHARD_COGNITION') && !files.some(f => f.includes('cross_shard_memory'))) {
+      ideas.push({
+        feature: 'Cross-Shard Memory Bridge',
+        rationale: 'Strategic mandate: Facilitate shared agent memory across distributed MongoDB shards for Phase 16 Cognitive Transcendence.',
+        complexity: 'High'
+      })
+    }
   }
 
   // Gap Analysis 1: Real-time Notifications
