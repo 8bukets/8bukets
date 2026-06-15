@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-13T23:18:17.242Z",
+    "generated_at": "2026-06-15T07:57:18.797Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-13T23:18:17.084Z"
+        "ingestedAt": "2026-06-15T07:57:18.631Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-13T23:18:17.103Z"
+        "ingestedAt": "2026-06-15T07:57:18.651Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-13T23:18:17.119Z"
+        "ingestedAt": "2026-06-15T07:57:18.668Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-13T23:18:17.135Z"
+        "ingestedAt": "2026-06-15T07:57:18.691Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-13T23:18:17.150Z"
+        "ingestedAt": "2026-06-15T07:57:18.707Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-13T23:18:17.171Z"
+        "ingestedAt": "2026-06-15T07:57:18.724Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-13T23:18:17.188Z"
+        "ingestedAt": "2026-06-15T07:57:18.741Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2173,7 +2173,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-13T23:18:17.203Z"
+        "ingestedAt": "2026-06-15T07:57:18.756Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2429,7 +2429,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-13T23:18:17.218Z"
+        "ingestedAt": "2026-06-15T07:57:18.775Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2616,192 +2616,12 @@
         },
         {
           "header": "How we're combatting AI scams with security, legislation and more",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/combatting-ai-scams/\n- Insight: You’ve seen the texts: fake package alerts, urgent bank warnings, panicked messages about your compromised account. Behind them is an AI-powered cybercrime network built to steal your passwords and credit cards. Today, we’re fighting back.We’re filing a lawsuit to dismantle their infrastructure, coordinating with the FBI who will be taking law enforcement actions, and will continue to work with AT&T, T-Mobile and Verizon to block these texts before they reach you. Litigation alone won’t end this. So Google is also advocating for federal legislation to make these protections permanent.Dismantling the \"Outsider Enterprise\"Our civil lawsuit targets an organized cybercrime operation known as the \"Outsider Enterprise.\" Based in China and coordinating through Telegram, this network distributes \"phishing kits\" that allow criminals to blast out fake text campaigns that look like they’re from Google and other trusted brands.The scale of the operation is massive:Hundreds of thousands of victims ..."
-        },
-        {
-          "header": "Our latest fraud and scams advisory",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/fraud-scams-advisory-june-2026/\n- Insight: Scams continue to be a persistent global challenge, fueled by sophisticated transnational crime groups who seek to exploit people online for financial gain. According to the NASDAQ Global Financial Crime Report, total global fraud losses are estimated at nearly $580 billion for 2025. Furthermore, global surveys indicate that approximately one in five adults fall victim to scams.At Google, our teams are committed to tracking these evolving tactics, sharing and acting on our observations to protect the public and the broader digital ecosystem. Our teams use the latest in AI capabilities to prevent, detect and respond against evolving scam tactics, and we regularly publish updates to share our observations with others.Our latest Scams Advisory describes both recent and seasonal scam trends identified by our analysts.1. Adversary-in-the-Middle (AITM)Traditional email phishing has evolved into sophisticated Adversary-in-the-Middle (AITM) and \"Quishing\" (QR code phishing) attacks. Despite in..."
-        },
-        {
-          "header": "We’re announcing a new data center and energy investments in Gray and Roberts Counties, Texas.",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/meitner-energy-center/\n- Insight: Google and Intersect are announcing construction of the Meitner Energy Center, which includes a new data center co-located with new energy generation in Gray and Roberts Counties, Texas. Co-location means the data center will come online alongside dedicated clean power that will help meet its demand while reducing the need for new power supply on the local grid.This investment is built on a commitment to deliver data centers the right way, through responsibly increasing local energy capacity, using air cooling to limit water consumption, and supporting thousands of jobs in the region. The data center will join Google’s global network that powers services people and businesses rely on every day, including Search, Gmail, Maps, Cloud, online banking and 911 systems.For more information, read our press release...."
-        },
-        {
-          "header": "Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/\n- Insight: Since releasing Gemma 4 two months ago, we've been continuously working to expand its capabilities. First, we introduced Multi-Token Prediction (MTP) to accelerate inference, and just a couple of days ago, we released a 12B model to bridge the gap between our E4B and 26B MOE models.Today, we are releasing new checkpoints optimized with Quantization-Aware Training (QAT) to make Gemma 4 even more efficient, so you can run models locally on everyday edge devices and consumer GPUs.By simulating quantization during training, QAT minimizes quality loss when the model is compressed. This release includes QAT checkpoints for the popular Q4_0 quantization format as well as a novel quantization format specialized for mobile use cases. Using this mobile format, we’ve reduced the memory footprint of Gemma 4 E2B to 1GB. Together, these dramatically reduce memory requirements while preserving the capabilities and quality you expect from Gemma 4.Keeping model quality while making them smallerQuantiza..."
-        },
-        {
-          "header": "Gemini Embedding 2 is now generally available.",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/\n- Insight: When we first introduced Gemini Embedding 2, we invited developers and enterprises to enable deeper intelligence for their projects using natively multimodal embeddings. During its preview phase, we saw users create remarkable prototypes, from advanced e-commerce discovery engines to efficient video analysis tools. These projects demonstrated the need for systems that can search and reason across text, image, video and audio data, which previously required complex, fragmented pipelines.Now, we’re offering the stability and optimizations required to move these multimodal projects into production with the general availability of Gemini Embedding 2 via the Gemini API and Gemini Enterprise Agent Platform.As a core technology powering many Google products, we are excited to share these research breakthroughs with the developer community...."
-        },
-        {
-          "header": "Our new study explores how AI can reduce the climate impact of air travel.",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/\n- Insight: In 2023, Google partnered with American Airlines to show that pilots using AI-based forecasts could reduce contrails on a small set of test flights. A 54% reduction across 70 flights marked the industry's first proof point that commercial flights could verifiably reduce their contrail impact — but identifying the right flights still required hours of manual coordination.Our new study shows what happens when contrail avoidance is built directly into the tools airlines already use. Google's AI contrail forecasts were integrated into American Airline’s flight planning software and used in a trial of 2,400 transatlantic flights that were part of the airline’s standard schedule. For the flights that successfully flew the contrail avoidance plans, there was a 62% reduction in contrail formation rate compared to the control group.We're excited to scale this work and continue our research and partnership with the industry to automate contrail avoidance, a solution that offers a scalable and co..."
-        },
-        {
-          "header": "Kaggle is making AI benchmark creation effortless",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/build-kaggle--benchmarks-locally/\n- Insight: As AI models evolve from simple chatbots into reasoning agents that write code, use tools and solve complex problems, traditional benchmarks are no longer enough. The community needs dynamic, rigorous evaluations — built by the people who use these models in the real-world.That’s why we launched Kaggle Benchmarks. Since then, the global AI community has created more than 10,000 evaluation tasks, creating the trustworthy, transparent public leaderboards that help labs measure and accelerate AI progress.Today, we are taking the next step by launching local development for Kaggle Benchmarks.Use Kaggle Benchmarks from your local development environmentUntil now, creating evaluation tasks meant working exclusively in Kaggle's web-based notebook editor, instead of developers’ preferred stack to build with.Our new update enables developers to create, validate, push, run and download tasks directly from their local development environments like Antigravity, VSCode, Cursor and coding agents. Th..."
-        },
-        {
-          "header": "We’re introducing new ways to design in real time with Stitch.",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/"
-        },
-        {
-          "header": "New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/"
-        },
-        {
-          "header": "Pomelli adds new ways to build brand content and design websites.",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-agentic-capabilities/"
-        },
-        {
-          "header": "Our new initiative to apply quantum science and AI to the life sciences",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/repliqa-quantum-computing-life-sciences/"
-        },
-        {
-          "header": "Answering your trending questions on World Quantum Day",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/"
-        },
-        {
-          "header": "Quantum frontiers may be closer than they appear",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/"
-        },
-        {
-          "header": "Introducing Gemma 4 12B: a unified, encoder-free multimodal model",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/"
-        },
-        {
-          "header": "Making it easier to understand how content was created and edited",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/"
-        },
-        {
-          "header": "Take our I/O 2026 quiz, vibe coded in Google AI Studio.",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/"
-        },
-        {
-          "header": "Blue, yellow and green: Google invests in its new data center in Sweden.",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/blue-yellow-and-green-google-invests-in-its-first-data-center-in-sweden/"
-        },
-        {
-          "header": "We’re announcing the first Texas Energy Impact Fund recipients.",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/"
-        },
-        {
-          "header": "Google Flow Music and Believe bring next-gen tools to artists",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/"
-        },
-        {
-          "header": "We’re announcing new community investments in Missouri.",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/"
-        },
-        {
-          "header": "AI Products",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/"
-        },
-        {
-          "header": "LinkedIn",
-          "content": "- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research"
-        },
-        {
-          "header": "LinkedIn",
-          "content": "- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/&title=Innovation%20%26%20AI"
-        },
-        {
-          "header": "See all",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/"
-        },
-        {
-          "header": "Gemini app",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/gemini-app/"
-        },
-        {
-          "header": "See all",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/"
-        },
-        {
-          "header": "See all",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/"
-        },
-        {
-          "header": "Deep Research Max: a step change for autonomous research agents",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/"
-        },
-        {
-          "header": "Introducing Managed Agents in the Gemini API",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/"
-        },
-        {
-          "header": "The Gemini app becomes more agentic, delivering proactive, 24/7 help",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/"
-        },
-        {
-          "header": "Gemini 3.1 Flash TTS: the next generation of expressive AI speech",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/"
-        },
-        {
-          "header": "Gemini 3.1 Flash Live: Making audio AI more natural and reliable",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/"
-        },
-        {
-          "header": "Gemini Robotics ER-1.6 enhances reasoning to help robots navigate real-world tasks.",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-1-6/"
-        },
-        {
-          "header": "3 creative tips from our Flow Sessions artists",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-sessions-artists-lessons/"
-        },
-        {
-          "header": "Stitch’s DESIGN.md format is now open-source so you can use it across platforms.",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-design-md/"
-        },
-        {
-          "header": "Google brings Pomelli in English to small businesses in Europe.",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-in-europe/"
-        },
-        {
-          "header": "Evolving expectations of what’s possibleKent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026.",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/"
-        },
-        {
-          "header": "Find out how AlphaEvolve has gone from research to solving real-life problems.",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/alphaevolve-updates/"
-        },
-        {
-          "header": "The latest AI news we announced in April 2026",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/"
-        },
-        {
-          "header": "Join the new AI Agents Vibe Coding Course from Google and Kaggle",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026/"
-        },
-        {
-          "header": "Digitize your paper notes with Gemini.",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/gemini-app/digitize-notes-gemini-study-guide/"
-        },
-        {
-          "header": "Gemini API File Search is now multimodal: build efficient, verifiable RAG",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/expanded-gemini-api-file-search-multimodal-rag/"
-        },
-        {
-          "header": "Accelerating Gemma 4: faster inference with  multi-token prediction drafters",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/multi-token-prediction-gemma-4/"
-        },
-        {
-          "header": "Read our new report on AI-powered threats and our latest defenses.",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-threat-intelligence-group-report/"
-        },
-        {
-          "header": "Bring any idea to life: Google AI Studio at I/O 2026",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/google-ai-studio-io-2026/"
-        },
-        {
-          "header": "Blackstone will create a new TPU cloud in a joint venture with Google.",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/blackstone-tpu-cloud/\n\n\nAll the best - https://markposition.wordpress.com"
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/combatting-ai-scams/\n- Insight: You’ve seen the texts: fake package alerts, urgent bank warnings, panicked messages about your compromised account. Behind them is an AI-powered cybercrime network built to steal your passwords and credit cards. Today, we’re fighting back.We’re filing a lawsuit to dismantle their infrastructure, coordinating with the FBI who will be taking law enforcement actions, and will continue to work with AT&T, T-Mobile and Verizon to block these texts before they reach you. Litigation alone won’t end this. So Google is also advocating for federal legislation to make these protections permanent.Dismantling the \"Outsider Enterprise\"Our civil lawsuit targets an organized cybercrime operation known as the \"Outsider Enterprise.\" Based in China and coordinating through Telegram, this network distributes \"phishing kits\" that allow criminals to blast out fake text campaigns that look like they’re from Google and other trusted brands.The scale of the operation is massive:Hundreds of thousands of victims ...\n\n\nAll the best - https://markposition.wordpress.com"
         }
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-13T23:18:17.232Z"
+        "ingestedAt": "2026-06-15T07:57:18.790Z"
       }
     }
   },
