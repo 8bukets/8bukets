@@ -30072,3 +30072,93 @@ npm error errno -11
 npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
 npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_45_47_376Z-debug-0.log
 read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_47_22_407Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_47_33_037Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_47_43_689Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_47_54_288Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_48_04_861Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_48_15_476Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_48_26_081Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_48_36_664Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_48_47_390Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_48_58_015Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_49_08_600Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_49_19_230Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_49_29_826Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_49_40_425Z-debug-0.log
+read /Users/filipkeser/Documents/Antigravity/docker-compose.yml: resource deadlock avoided
+npm error code Unknown system error -11
+npm error syscall read
+npm error errno -11
+npm error Could not read package.json: Error: Unknown system error -11: Unknown system error -11, read
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-06-16T12_49_51_026Z-debug-0.log
