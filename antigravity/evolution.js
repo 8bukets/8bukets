@@ -1,0 +1,145 @@
+import * as fs from 'fs';
+import * as path from 'path';
+import { logAutonomousAction } from './core';
+export async function evolve() {
+    logAutonomousAction('🧠 [Antigravity Evolution] Commencing cognitive analysis...', 'info');
+    const suggestions = [];
+    const scanDirs = [
+        path.join(process.cwd(), 'antigravity'),
+        path.join(process.cwd(), 'software-review-platform')
+    ];
+    // Recursive scan to find "bloated" or unoptimized patterns
+    function scan(dir) {
+        if (!fs.existsSync(dir))
+            return;
+        const files = fs.readdirSync(dir);
+        for (const file of files) {
+            const fullPath = path.join(dir, file);
+            if (fs.statSync(fullPath).isDirectory()) {
+                scan(fullPath);
+            }
+            else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
+                const content = fs.readFileSync(fullPath, 'utf8');
+                const lines = content.split('\n').length;
+                // Phase 12 Directive: Skip components with 'use cache'
+                if (content.includes("'use cache'") || content.includes('"use cache"')) {
+                    return;
+                }
+                // Rule 2: Detect large files that should be refactored
+                if (lines > 150) {
+                    suggestions.push({
+                        file: fullPath.replace(process.cwd(), ''),
+                        complexity: lines,
+                        suggestion: 'ARCHITECTURAL_DRIFT: File exceeds complexity limits.'
+                    });
+                }
+                // Rule 3: Detect Sync Access to Params (Next.js 16 Violation)
+                if (content.includes('params.') && !content.includes('await params') && !content.includes('resolve(params)')) {
+                    suggestions.push({
+                        file: fullPath.replace(process.cwd(), ''),
+                        complexity: lines,
+                        suggestion: 'SYNC_PROP_VIOLATION: Direct access to params detected. Must be awaited in Next.js 16.'
+                    });
+                }
+                // Rule 4: Detect console.log in production-like files
+                if (content.includes('console.log') && !fullPath.includes('.test.') && !fullPath.includes('jules.ts')) {
+                    suggestions.push({
+                        file: fullPath.replace(process.cwd(), ''),
+                        complexity: lines,
+                        suggestion: 'LOGGING_VIOLATION: console.log detected in production path. Use logAutonomousAction.'
+                    });
+                }
+                // Rule 5: Detect "any" type usage (Type safety)
+                if (content.includes(': any') || content.includes('as any')) {
+                    suggestions.push({
+                        file: fullPath.replace(process.cwd(), ''),
+                        complexity: lines,
+                        suggestion: 'TYPE_SAFETY_VIOLATION: usage of "any" type detected.'
+                    });
+                }
+                // Rule 5: Async Hygiene - Detect sync fs in async contexts
+                if (content.includes('async function') && (content.includes('fs.readFileSync') || content.includes('fs.writeFileSync') || content.includes('fs.existsSync'))) {
+                    suggestions.push({
+                        file: fullPath.replace(process.cwd(), ''),
+                        complexity: lines,
+                        suggestion: 'ASYNC_HYGIENE_VIOLATION: Synchronous fs operation detected inside an asynchronous function. This blocks the event loop. Refactor to use fs.promises.'
+                    });
+                }
+                // Phase 13: Quantum Synergy Compliance
+                if (content.includes('synergy') && !content.includes('quantum') && !content.includes('Phase 13')) {
+                    suggestions.push({
+                        file: fullPath.replace(process.cwd(), ''),
+                        complexity: lines,
+                        suggestion: 'QUANTUM_SYNERGY_VIOLATION: Synergy pattern detected without Phase 13 Quantum-resistant orchestration.'
+                    });
+                }
+            }
+        }
+    }
+    for (const dir of scanDirs) {
+        scan(dir);
+    }
+    logAutonomousAction(`✨ [Evolution Report]: Found ${suggestions.length} potential optimizations.`, 'info');
+    return suggestions;
+}
+/**
+ * applyFixes: Autonomous Autocorrection
+ * Programmatically fixes common architectural drift issues.
+ */
+export async function applyFixes(suggestions) {
+    logAutonomousAction('🛠️ [Antigravity Evolution] Applying autonomous fixes...', 'info');
+    for (const s of suggestions) {
+        const fullPath = path.join(process.cwd(), s.file);
+        let content = fs.readFileSync(fullPath, 'utf8');
+        // Phase 12 Directive: Upgrade Phase 9 references
+        if (content.includes('Phase 9')) {
+            logAutonomousAction(` - Upgrading Phase 9 references in ${s.file} to Phase 12`, 'info');
+            content = content.replace(/Phase 9/g, 'Phase 12');
+            fs.writeFileSync(fullPath, content);
+        }
+        if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {
+            fs.writeFileSync(fullPath, content);
+        }
+        if (s.suggestion.startsWith('SYNC_PROP_VIOLATION')) {
+            logAutonomousAction(` - Fixing ${s.file}: Wrapping params in resolve()`, 'info');
+            // Add the import if missing
+            if (!content.includes('import {') || !content.includes('@/antigravity/core')) {
+                content = "import { resolve } from '@/antigravity/core'\n" + content;
+            }
+            else if (!content.includes('resolve')) {
+                content = content.replace(/import \{(.*?)\} from '@\/antigravity\/core'/, "import {$1, resolve} from '@/antigravity/core'");
+            }
+            // Attempt to wrap params usages
+            content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then");
+            fs.writeFileSync(fullPath, content);
+        }
+        // Phase 13 Fix: Apply Quantum Synergy Orchestration
+        if (s.suggestion.startsWith('QUANTUM_SYNERGY_VIOLATION')) {
+            logAutonomousAction(` - Fixing ${s.file}: Injecting Phase 13 Quantum Synergy markers`, 'info');
+            // Surgical replacement: Replace 'synergy' only if not preceded by 'quantum '
+            // Using a capture group for non-quantum word boundary to be safer
+            content = content.replace(/(\b(?<!quantum\s))synergy\b/g, '$1quantum synergy (Phase 13 Orchestrated)');
+            fs.writeFileSync(fullPath, content);
+        }
+        // Rule 4 Fix: Replace console.log with logAutonomousAction
+        if (s.suggestion.startsWith('LOGGING_VIOLATION')) {
+            logAutonomousAction(` - Fixing ${s.file}: Replacing console.log with logAutonomousAction`, 'info');
+            // Calculate relative path to core.ts
+            const fileDir = path.dirname(fullPath);
+            const corePath = path.join(process.cwd(), 'antigravity/core');
+            let relativeCorePath = path.relative(fileDir, corePath);
+            if (!relativeCorePath.startsWith('.'))
+                relativeCorePath = './' + relativeCorePath;
+            if (!content.includes('logAutonomousAction')) {
+                content = `import { logAutonomousAction } from '${relativeCorePath}'\n` + content;
+            }
+            content = content.replace(/console\.log\((.*?)\)/g, "logAutonomousAction($1, 'info')");
+            fs.writeFileSync(fullPath, content);
+        }
+        // Additional autocorrection logic can be added here
+    }
+    logAutonomousAction('✅ [Antigravity Evolution] Autocorrection complete.', 'info');
+}
+// if (require.main === module) {
+//   evolve().catch(console.error)
+// }
