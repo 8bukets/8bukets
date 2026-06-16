@@ -14,8 +14,14 @@ async function run() {
     const { stdout } = await execFileAsync('git', ['pull', '--rebase']);
     console.log(stdout);
   } catch (err: any) {
-    console.warn('⚠️ [pluu] Git pull failed or restricted. Continuing...');
-    console.warn(err.stdout || err.message);
+    const isNetworkError = err.message.includes('Could not resolve host') || err.message.includes('Connection refused');
+    if (isNetworkError) {
+      console.warn('⚠️ [pluu] Network issue during git pull. Continuing with local state...');
+    } else {
+      console.error('❌ [pluu] Git pull failed critically.');
+      console.error(err.stdout || err.message);
+      process.exit(1);
+    }
   }
 
   // 2. sync to icloud
@@ -25,7 +31,7 @@ async function run() {
     console.log(`✅ [sync] iCloud synchronization successful: ${syncResult.target}`);
   } else {
     console.error(`❌ [sync] iCloud synchronization failed: ${syncResult.error}`);
-    // We continue even if sync fails to try the upload
+    process.exit(1); // Critical failure for the requested workflow
   }
 
   // 3. Commit changes (if any)
@@ -58,8 +64,9 @@ async function run() {
       console.log(stdout);
       console.log('✅ [upload] Push with upstream successful.');
     } catch (upstreamErr: any) {
-      console.warn('⚠️ [upload] Git push failed or restricted.');
-      console.warn(upstreamErr.stdout || upstreamErr.message);
+      console.error('❌ [upload] Git push failed critically.');
+      console.error(upstreamErr.stdout || upstreamErr.message);
+      process.exit(1);
     }
   }
 
