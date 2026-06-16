@@ -23,21 +23,23 @@ class AnalyzeAgent(BaseAgent):
             self.log("No data to analyze.")
             return
 
-        # 1. Domain Analysis
-        domains = [self.get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-        domain_counts = Counter(domains).most_common(10)
-
-        # 2. Category Analysis
+        domains = []
         all_categories = []
+        dates = []
+        authors = []
+
         for p in data:
+            # 1. Domain Analysis
+            ext_link = p.get('external_link')
+            if ext_link:
+                domains.append(self.get_domain(ext_link))
+
+            # 2. Category Analysis
             cats = p.get('categories', [])
             if cats:
                 all_categories.extend(cats)
-        category_counts = Counter(all_categories).most_common(10)
 
-        # 3. Date Analysis
-        dates = []
-        for p in data:
+            # 3. Date Analysis
             dt_str = p.get('datetime')
             if dt_str:
                 try:
@@ -45,6 +47,14 @@ class AnalyzeAgent(BaseAgent):
                     dates.append(dt)
                 except ValueError:
                     pass
+
+            # 4. Author Analysis
+            author = p.get('author')
+            if author:
+                authors.append(author)
+
+        domain_counts = Counter(domains).most_common(10)
+        category_counts = Counter(all_categories).most_common(10)
 
         date_stats = {}
         if dates:
@@ -58,8 +68,6 @@ class AnalyzeAgent(BaseAgent):
             date_stats["end"] = "N/A"
             date_stats["year_counts"] = []
 
-        # 4. Author Analysis
-        authors = [p.get('author') for p in data if p.get('author')]
         author_counts = Counter(authors).most_common()
 
         # Store in context

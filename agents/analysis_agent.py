@@ -14,13 +14,19 @@ class AnalysisAgent(BaseAgent):
         self.logger.info("Running Analysis...")
 
         total_posts = len(data)
-        domains = [d for p in data if (d := p.get('domain'))]
-        domain_counts = analytics.Counter(domains).most_common(10)
-
+        domains = []
         categories = []
+
         for p in data:
-            if p.get('categories'):
-                categories.extend(p.get('categories'))
+            domain = p.get('domain')
+            if domain:
+                domains.append(domain)
+
+            cats = p.get('categories')
+            if cats:
+                categories.extend(cats)
+
+        domain_counts = analytics.Counter(domains).most_common(10)
         category_counts = analytics.Counter(categories).most_common(10)
 
         # Telemetry for "Ad Ads Advertise"
