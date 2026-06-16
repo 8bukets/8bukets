@@ -32,6 +32,13 @@ async function main() {
   console.log('⚙️ [Jules] Processing pending collaboration tasks...');
   await jules.processPendingTasks();
 
+  // Phase 16: Activate swarm monitoring and quantum-secure state sync
+  console.log('🐝 [Jules] Activating Phase 16 Swarm Heartbeat...');
+  await jules.activateSwarmHeartbeat();
+
+  console.log('⚛️ [Jules] Executing Phase 16 Quantum-Secure State Sync...');
+  await jules.performQuantumSecureSync();
+
   console.log('✅ [Antigravity] Connection and Collaboration Sync Finished.');
 }
 
