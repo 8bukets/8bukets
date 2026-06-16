@@ -65,7 +65,8 @@ export async function syncToICloud() {
       '.DS_Store',
       '.vscode',
       'logs',
-      'scratch'
+      'scratch',
+      '.env'
     ]
 
     const args = ['-av', ...excludes.map(e => `--exclude=${e}`), `${sourcePath}/`, `${targetPath}/`]
