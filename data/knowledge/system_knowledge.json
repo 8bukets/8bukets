@@ -3644,6 +3644,32 @@
           "content": "Enable lattice-based cryptography for APAC-EMEA cross-regional state synchronization."
         }
       ]
+    },
+    {
+      "title": "iCloud: phase_16_directives.md",
+      "metadata": {
+        "source": "icloud://phase_16_directives.md",
+        "analyzedAt": "2026-06-16T11:27:53.791Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Swarm Heartbeat (High Priority)",
+          "content": "- **Mandate:** All replicated nodes must report their heartbeat to the root node every 5 seconds.\n- **Implementation:** Use a lightweight `/api/v1/heartbeat` endpoint or a dedicated `SwarmHeartbeat` service.\n- **Payload:** `{ \"nodeId\": string, \"timestamp\": ISO8601, \"status\": \"active\" | \"degraded\", \"stabilityIndex\": number }`\n- **Enforcement:** Evolution Engine Rule 22."
+        },
+        {
+          "header": "Neural Stability Index (NS-Index)",
+          "content": "- **Mandate:** Maintain a system-wide NS-Index > 0.98.\n- **Calculation:** `NS-Index = 1 - (ErrorRate * 0.7 + LatencyPenalty * 0.3)`.\n- **Action:** If NS-Index < 0.98, Jules must halt mutation and initiate \"Core Consolidation\".\n- **Enforcement:** Evolution Engine Rule 23."
+        },
+        {
+          "header": "Cross-Shard Cognition",
+          "content": "- **Mandate:** Enable shared agent memory across distributed MongoDB shards.\n- **Implementation:** Utilize a global `cognitive_memory` collection with a unified `shardKey` based on `agentId`.\n- **Requirement:** Agents must be able to \"recall\" experiences from other shards to ensure global intelligence parity.\n- **Enforcement:** Evolution Engine Rule 24."
+        },
+        {
+          "header": "Quantum Sovereignty (Phase 15/16)",
+          "content": "- **Mandate:** Implement Dilithium and Kyber protocols for all internal neural relay communications.\n- **Security:** CRYSTALS-Kyber for key encapsulation and CRYSTALS-Dilithium for digital signatures.\n- **Goal:** Ensure the ecosystem is resilient against future quantum-computing based decryption attempts.\n- **Enforcement:** Evolution Engine Rule 21."
+        }
+      ]
     }
   ],
   "google_ads": [

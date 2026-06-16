@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-16T09:50:08.594Z
+**System Analysis:** 2026-06-16T11:27:53.859Z
 
 ---
 
@@ -8799,3 +8799,34 @@ All internal RPC calls must now use Dilithium-5 for identity verification to ens
 
 ## Lattice-Based State Sync
 Enable lattice-based cryptography for APAC-EMEA cross-regional state synchronization.
+
+---
+
+# iCloud: phase_16_directives.md
+
+> **Source:** icloud://phase_16_directives.md
+> **Analyzed At:** 2026-06-16T11:27:53.791Z
+
+## Swarm Heartbeat (High Priority)
+- **Mandate:** All replicated nodes must report their heartbeat to the root node every 5 seconds.
+- **Implementation:** Use a lightweight `/api/v1/heartbeat` endpoint or a dedicated `SwarmHeartbeat` service.
+- **Payload:** `{ "nodeId": string, "timestamp": ISO8601, "status": "active" | "degraded", "stabilityIndex": number }`
+- **Enforcement:** Evolution Engine Rule 22.
+
+## Neural Stability Index (NS-Index)
+- **Mandate:** Maintain a system-wide NS-Index > 0.98.
+- **Calculation:** `NS-Index = 1 - (ErrorRate * 0.7 + LatencyPenalty * 0.3)`.
+- **Action:** If NS-Index < 0.98, Jules must halt mutation and initiate "Core Consolidation".
+- **Enforcement:** Evolution Engine Rule 23.
+
+## Cross-Shard Cognition
+- **Mandate:** Enable shared agent memory across distributed MongoDB shards.
+- **Implementation:** Utilize a global `cognitive_memory` collection with a unified `shardKey` based on `agentId`.
+- **Requirement:** Agents must be able to "recall" experiences from other shards to ensure global intelligence parity.
+- **Enforcement:** Evolution Engine Rule 24.
+
+## Quantum Sovereignty (Phase 15/16)
+- **Mandate:** Implement Dilithium and Kyber protocols for all internal neural relay communications.
+- **Security:** CRYSTALS-Kyber for key encapsulation and CRYSTALS-Dilithium for digital signatures.
+- **Goal:** Ensure the ecosystem is resilient against future quantum-computing based decryption attempts.
+- **Enforcement:** Evolution Engine Rule 21.
