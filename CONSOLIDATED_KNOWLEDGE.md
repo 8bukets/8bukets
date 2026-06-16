@@ -5,7 +5,11 @@
 ## 🤖 AI Agents Knowledge (Latest)
 See `data/knowledge/ai_agents_knowledge.md` for full details on Google AI Agents.
 
-**System Version:** 1
+### 🧠 AI-Driven Knowledge Management
+Intelligent, context-aware systems for semantic search, automated content organization, and preservation of tacit knowledge.
+- **Reference**: [data/knowledge/ai_driven_knowledge_management.md](data/knowledge/ai_driven_knowledge_management.md)
+
+**System Version:** 1.1
 
 ## 🧩 Strategic Identity & Unified Model
 # Glossary

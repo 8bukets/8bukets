@@ -1,0 +1,60 @@
+{
+  "ai_driven_knowledge_management": {
+    "url": "local://data/knowledge/ai_driven_knowledge_management.md",
+    "title": "AI-Driven Knowledge Management",
+    "sections": [
+      {
+        "header": "Overview",
+        "content": [
+          "AI-driven knowledge management replaces basic keyword searches with intelligent, context-aware systems.",
+          "By integrating organizational data with machine learning, it allows employees and customers to resolve queries through conversational interfaces, while instantly surfacing synthesized answers with verifiable citations."
+        ]
+      },
+      {
+        "header": "Core Capabilities",
+        "content": [
+          "Semantic Search: Unlike traditional search engines that require exact phrasing, semantic AI understands context and intent.",
+          "Automated Content Organization: Machine learning models autonomously classify, tag, and structure large document repositories.",
+          "Personalized Insights: Systems learn from user roles, behavior patterns, and previous interactions to proactively suggest relevant documents.",
+          "Smart Content Creation: Generative AI assists in creating how-to guides, repurposing onboarding documents, and summarizing long threads."
+        ]
+      },
+      {
+        "header": "Primary Benefits",
+        "content": [
+          "Faster Decision-Making: Workers spend less time searching for information and more time on high-value, strategic tasks.",
+          "Reduced Support Costs: AI-driven chatbots and centralized knowledge bases empower users to find their own solutions.",
+          "Preservation of Expertise: AI systems help capture 'tacit' human knowledge before experts leave the organization."
+        ]
+      },
+      {
+        "header": "Platform Comparisons",
+        "content": [
+          "Zendesk: Best for Customer Support Teams with native ticketing integration.",
+          "Tettra: Best for Small-to-Medium Teams using Slack, focuses on internal knowledge verification.",
+          "Bloomfire: Best for Enterprise Teams with AI-powered video/audio indexing and community Q&A."
+        ]
+      },
+      {
+        "header": "Tacit Knowledge Strategies",
+        "content": [
+          "Automated Documentation of Interactions: Summarizing meetings, emails, and chat threads.",
+          "Community Q&A and Crowdsourcing: Indexing expert responses to recurring questions.",
+          "SME Knowledge Harvesting: AI transcription and summarization of expert interviews.",
+          "Learning from Action: Modeling expert problem-solving patterns.",
+          "Expert Routing: Using AI to match questions with internal subject matter experts."
+        ]
+      },
+      {
+        "header": "Security and Privacy",
+        "content": [
+          "Data Minimization: Implementation of short retention windows and automated purging.",
+          "Access Controls: Granular RBAC and respecting existing file permissions.",
+          "Enterprise Platforms: Using private AI instances (Vertex AI, Azure OpenAI) that do not train on customer data.",
+          "PII Masking: Detecting and masking sensitive data before processing.",
+          "Regular Monitoring: Auditing AI API usage for anomalies and security threats."
+        ]
+      }
+    ]
+  }
+}
