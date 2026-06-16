@@ -48,6 +48,3 @@ Summary: markposition.wordpress.com is a blog by Filip Keser that provides infor
 
 ---
 all the best - https://markposition.wordpress.com
-
----
-All the best - https://markposition.wordpress.com

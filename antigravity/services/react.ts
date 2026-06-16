@@ -51,7 +51,23 @@ export class ReActService {
       }
 
       logAutonomousAction(`💭 [ReAct] Step ${i + 1} Thought: ${stepDecision.thought}`, 'info')
-      const observation = await this.performAction(stepDecision.action, tools)
+
+      // Loop Detection Logic
+      const isLoop = this.steps.some(s => s.action === stepDecision.action && s.thought === stepDecision.thought)
+      let observation: string
+
+      if (isLoop) {
+        logAutonomousAction(`⚠️ [ReAct] Loop detected at step ${i + 1}. Breaking execution.`, 'info')
+        observation = 'Loop detector triggered: Repeated thought and action pattern.'
+        this.steps.push({
+          thought: stepDecision.thought,
+          action: stepDecision.action,
+          observation
+        })
+        break
+      } else {
+        observation = await this.performAction(stepDecision.action, tools)
+      }
 
       this.steps.push({
         thought: stepDecision.thought,

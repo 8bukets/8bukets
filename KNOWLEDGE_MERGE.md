@@ -266,11 +266,3 @@ URL: gemini_cli_subagents_docs.md
 
 ### Subagents
 Subagents are specialized agents that operate within your main Gemini CLI session. They are designed to handle specific, complex tasks—like deep codebase analysis, documentation lookup, or domain-specific reasoning—without cluttering the main agent’s context or toolset.
-
-## 🧠 NotebookLM & Grounded AI Intelligence
-- **Principle**: Source-grounded AI for self-development.
-- **Integration**: Merging external knowledge to evolve the Antigravity engine with zero hallucinations.
-- **Feature**: Grounding system evolution in local intelligence and trusted sources.
-
----
-All the best - https://markposition.wordpress.com
