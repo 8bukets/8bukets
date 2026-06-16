@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-16T09:32:37.451Z
+**System Analysis:** 2026-06-16T09:50:08.594Z
 
 ---
 
@@ -3489,7 +3489,7 @@ Skip to content ↓
 # Intelephense Documentation
 
 > **Source:** https://intelephense.com/docs
-> **Analyzed At:** 2026-06-16T09:32:37.368Z
+> **Analyzed At:** 2026-06-16T09:50:08.523Z
 
 ## Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
