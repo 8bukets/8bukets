@@ -13,6 +13,7 @@
     "connect": "tsx scripts/connect_and_collaborate.ts",
     "daily": "tsx scripts/run_daily.ts",
     "ingest:sor": "tsx scripts/ingest_software_online_review.ts https://software-online-review.com/ https://www.investopedia.com/",
+    "ingest:knowledge": "tsx scripts/update_all_knowledge.ts",
     "sync-all": "tsx scripts/sync_all_branches.ts",
     "daily-tasks": "gemini @daily-tasks",
     "ignite": "npm run daily -- --continuous",

@@ -132,6 +132,12 @@
         "content": "Google I/O 2026 was all about how we’re making AI helpful for everyone in new ways. But we didn’t just make announcements about our innovations in AI at I/O — we used those tools to bring I/O to life, too.It’s both a strange and exciting moment to be building anything. We're living through an incredible shift where AI tools are getting better each month, effectively rewriting the rules of what we can create.This year, we challenged ourselves to use the same AI we were putting on stage to out-innovate, out-create and out-efficient ourselves.We moved faster than ever and prototyped in real-time — blending human artistry with experimental technology — with no better example than the \"Timmy TPU\" film.But the reward is showing how these tools unlock creativity and offload the mundane tasks, giving the team their best hours back for the parts they are uniquely suited to do. When done right, the event is amazing on its own, and, as a viewer, you stop thinking about how AI was used. That shift..."
     },
     {
+        "title": "Reservations are open for XREAL AURA — plus, see more news from AWE 2026.",
+        "url": "https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/",
+        "snippet": "",
+        "content": "At AWE 2026, we’re showcasing how the Android XR ecosystem is growing alongside our partners. In today’s joint keynote, we announced that reservations are now open for XREAL AURA, coming this fall. AURA is XREAL's first wired XR glasses powered by Android XR and using the Snapdragon® Reality Elite Platform.Beyond the main stage, we kicked off the week with a developer hackathon and hands-on technical workshops. You can visit the Qualcomm booth on the show floor during the show for live demonstrations of Samsung Galaxy XR, XREAL AURA and intelligent eyewear. And don't miss our developer keynote, the Android Enterprise panel or the Auggie Awards, where we’ll celebrate breakthroughs in our community.Ready to shape the future of computing? Reserve your XREAL AURA at xreal.com/aura and start building with Android XR today...."
+    },
+    {
         "title": "DiffusionGemma: 4x faster text generation",
         "url": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
         "snippet": "",
@@ -148,12 +154,6 @@
         "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/",
         "snippet": "",
         "content": "We recently released Gemma 4, our most capable open models to date. Since then, they have been downloaded more than 150 million times, and we’ve been expanding the family’s capabilities. We introduced Multi-Token Prediction (MTP) to accelerate inference, and recently released the 12B Unified model and Quantization-Aware-Training (QAT) checkpoints. Released under an Apache 2.0 license, Gemma 4 gives builders and organizations flexibility to fine-tune and deploy models across a variety of environments, from edge devices to local workstations.Many builders are sharing what they’ve created with Gemma 4, showcasing how the models’ capabilities translate into real-world applications. Here are three highlights of what people and companies are creating.Build low-latency, on-device apps.The team at the app building company HubX used Gemma 4 to build BetterSpeak, an offline AI English tutoring platform. BetterSpeak uses the edge-optimized Gemma 4 E2B (effective 2B parameters) model as the reason..."
-    },
-    {
-        "title": "Bringing the latest Gemini models to Apple developers",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/bringing-gemini-models-to-apple-developers/",
-        "snippet": "",
-        "content": "Updated June 9, 2026Apple’s Worldwide Developers Conference (WWDC) kicked off this week, and we’re excited to share that Apple developers can now securely call cloud-hosted Gemini models using the Foundation Models framework, and access Gemini in Xcode. This announcement gives Apple developers seamless access to Gemini models to deliver dynamic experiences for their end users and increase their own development velocity.Call Gemini models directly from the Foundation Models frameworkAt WWDC, Apple announced that it's opening its Foundation Models framework to third-party cloud model providers. Starting with iOS 27, macOS 27, iPadOS 27, visionOS 27 and watchOS 27, model providers can implement the new public LanguageModel protocol to provide a common interface for model inference. We've made Gemini models available to the Foundation Models framework through the Firebase Apple SDK.This provides a fully native development experience — cloud-hosted Gemini models can plug directly into the F..."
     },
     {
         "title": "We’re strengthening our presence in Alabama through new investments and community support.",
@@ -202,6 +202,12 @@
         "url": "https://blog.google/innovation-and-ai/products/notebooklm/",
         "snippet": "",
         "content": ""
+    },
+    {
+        "title": "Bringing the latest Gemini models to Apple developers",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/bringing-gemini-models-to-apple-developers/",
+        "snippet": "",
+        "content": "Updated June 9, 2026Apple’s Worldwide Developers Conference (WWDC) kicked off this week, and we’re excited to share that Apple developers can now securely call cloud-hosted Gemini models using the Foundation Models framework, and access Gemini in Xcode. This announcement gives Apple developers seamless access to Gemini models to deliver dynamic experiences for their end users and increase their own development velocity.Call Gemini models directly from the Foundation Models frameworkAt WWDC, Apple announced that it's opening its Foundation Models framework to third-party cloud model providers. Starting with iOS 27, macOS 27, iPadOS 27, visionOS 27 and watchOS 27, model providers can implement the new public LanguageModel protocol to provide a common interface for model inference. We've made Gemini models available to the Foundation Models framework through the Firebase Apple SDK.This provides a fully native development experience — cloud-hosted Gemini models can plug directly into the F..."
     },
     {
         "title": "7 highlights from Google Cloud Next ‘26",
