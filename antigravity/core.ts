@@ -11,11 +11,11 @@ import { z } from 'zod'
 
 // --- 1. CONFIGURATION & TYPES ---
 
-const MONGODB_URI = process.env.MONGODB_URI
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
-const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/my-app'
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder'
 
-if (!MONGODB_URI || !SUPABASE_URL || !SUPABASE_KEY) {
+if (!process.env.MONGODB_URI || !process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
   console.warn('⚠️ [Autonomous Core] Missing production credentials. System running in limited observability mode.')
 }
 

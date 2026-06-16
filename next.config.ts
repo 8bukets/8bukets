@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
   },
   // Boost: Turbopack specific optimizations
   turbopack: {
+    root: '.',
     // Resolve alias fallback to silence Node.js native module errors in browser
     resolveAlias: {
     },

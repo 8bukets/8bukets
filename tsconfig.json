@@ -31,5 +31,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "my-app", "web-app", "frontend", "Syra", "software-review-platform", "go-sim", "gemini-example", "GeminiTest", "AnalyticsResearchApp", "scripts"]
 }

@@ -71,5 +71,11 @@ export async function runSecurityAudit(): Promise<SecurityAudit> {
 
   } catch (err) {
     console.error('[Evolution Autocorrect] Unhandled error:', err);
+    return {
+      status: 'critical',
+      issuesFound: 0,
+      lastAudit: new Date().toISOString(),
+      scannedFiles: 0
+    }
   }
 }

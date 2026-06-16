@@ -19,7 +19,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   trackROI('IntelligenceService', 0.98)
 
   const metadata = await getMissionMetadata()
-  const branches = branchIntelligence || await jules.scanAllBranches(true)
+  const branches = (branchIntelligence || await jules.scanAllBranches(true)) as any[]
   const health = await healthCheck()
   const workOrders = await workOrderService.getPendingOrders()
 

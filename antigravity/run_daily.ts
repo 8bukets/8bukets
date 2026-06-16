@@ -1,4 +1,4 @@
-import { jules } from './jules.ts';
+import { jules } from './jules';
 
 const isContinuous = process.argv.includes('--continuous');
 

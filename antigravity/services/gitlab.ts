@@ -3,7 +3,7 @@ import path from 'path'
 
 export async function getGitLabMetrics() {
   console.log('🦊 [GitLabEvolutionAgent] Evaluating GitLab metrics...')
-  let pipelineStages = []
+  let pipelineStages: string[] = []
 
   try {
     const gitlabYamlPath = path.join(process.cwd(), '.gitlab-ci.yml')

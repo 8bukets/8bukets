@@ -49,8 +49,9 @@ export class CloudWorkflowAgent {
     const telemetry = await this.evaluateTelemetry()
 
     // Evaluate if fluent
-    const isDockerTolerable = telemetry.docker.status === 'optimal' || telemetry.docker.status === 'simulated' || telemetry.docker.status === 'degraded' || telemetry.docker.status === 'recovering'
-    const isGitKrakenTolerable = telemetry.gitkraken.compatibilityScore >= 80
+    const dockerStatus = typeof telemetry.docker === 'object' ? telemetry.docker.status : (telemetry.docker ? 'optimal' : 'failed')
+    const isDockerTolerable = ['optimal', 'simulated', 'degraded', 'recovering'].includes(dockerStatus)
+    const isGitKrakenTolerable = (typeof telemetry.gitkraken === 'object' ? telemetry.gitkraken.compatibilityScore : 0) >= 80
 
     const isFluent = isDockerTolerable && isGitKrakenTolerable
 

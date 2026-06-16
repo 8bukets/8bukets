@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { githubDocsObserver } from './github_docs_observer'
-import { KnowledgeObserver, Knowledge } from './knowledge_observer'
+import { KnowledgeObserver, KnowledgeInsights } from './knowledge_observer'
 
 /**
  * INTELEPHENSE SERVICE
@@ -31,7 +31,9 @@ export class IntelephenseService {
         const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)
 
         // Add these sections to our consolidated list
-        allSections.push(...knowledge.sections)
+        if (knowledge.sections) {
+          allSections.push(...knowledge.sections)
+        }
       } catch (err: any) {
         console.error(` ❌ Failed to fetch ${file} from GitHub (bmewburn/intelephense-docs):`, err.message || err)
       }
@@ -43,7 +45,9 @@ export class IntelephenseService {
       const localContent = await fs.promises.readFile(localPath, 'utf8')
       console.log(' 📄 Ingesting local scratch docs...')
       const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
-      allSections.push(...localKnowledge.sections)
+      if (localKnowledge.sections) {
+        allSections.push(...localKnowledge.sections)
+      }
     } catch (err) {
       // Local scratch may not exist in all environments, skip silently
     }
@@ -143,3 +147,4 @@ export class IntelephenseService {
 }
 
 export const intelephenseService = new IntelephenseService()
+

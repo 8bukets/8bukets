@@ -17,26 +17,30 @@ export type AppStats = z.infer<typeof AppStatsSchema>
  */
 export async function getAppStats(): Promise<AppStats> {
   try {
-
-  return predictiveFetch(
-    'system-stats',
-    AppStatsSchema,
-    async () => {
-      'use cache'
-      // Autonomous self-diagnostic health check
-      const health = await healthCheck()
-      
-      // Combine multiple autonomous signals into a single output
-      return {
-        mongoStatus: health.mongodb,
-        supabaseStatus: health.supabase,
-        activeUsers: 1240, // Simulated active signal
-        lastUpdated: health.timestamp,
+    return await predictiveFetch(
+      'system-stats',
+      AppStatsSchema,
+      async () => {
+        'use cache'
+        // Autonomous self-diagnostic health check
+        const health = await healthCheck()
+        
+        // Combine multiple autonomous signals into a single output
+        return {
+          mongoStatus: health.mongodb,
+          supabaseStatus: health.supabase,
+          activeUsers: 1240, // Simulated active signal
+          lastUpdated: health.timestamp,
+        }
       }
-    }
-  )
-
+    )
   } catch (err) {
-    console.error('[Evolution Autocorrect] Unhandled error:', err);
+    console.error('[App Stats] Unhandled error:', err);
+    return {
+        mongoStatus: 'error',
+        supabaseStatus: 'error',
+        activeUsers: 0,
+        lastUpdated: new Date().toISOString()
+    }
   }
 }

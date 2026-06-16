@@ -442,6 +442,41 @@ export class Jules {
       console.warn('⚠️ [Jules] Autonomous merge cycle encountered an error:', err)
     }
   }
+public async observeKnowledge(url?: string) {
+  console.log('👁️ [Jules] Initiating Knowledge Observation...')
+  const { observeKnowledge: observe, persistKnowledge } = await import('./services/knowledge_observer')
+
+  const urlsToObserve = url ? [url] : [
+    'https://software-online-review.com',
+    "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
+    "https://business.google.com/uk/ad-tools/bidding/",
+    "https://business.google.com/uk/resources/",
+    "https://developers.google.com/ad-manager",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+    "https://developers.google.com/ad-manager/api/start",
+    "https://admanager.google.com/home/resources/",
+    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
+  ]
+
+  for (const targetUrl of urlsToObserve) {
+    try {
+      const knowledgeInsights = await observe(targetUrl)
+      if (knowledgeInsights) {
+        this.recordTask(`Knowledge Observation: Extracted concepts from ${knowledgeInsights.source}`)
+        await persistKnowledge(knowledgeInsights)
+      }
+    } catch (err) {
+      console.error(`❌ [Jules] Knowledge observation failed for ${targetUrl}:`, err)
+    }
+  }
+}
+  public async syncToICloud() {
+    const { syncToICloud } = await import('./services/icloud')
+    await syncToICloud()
+    this.recordTask('iCloud Sync: Synchronized local state to iCloud.')
+  }
 
   public async startConsciousnessLoop() {
     console.log('👁️ [Jules] Initiating Continuous Consciousness Loop...');
@@ -831,7 +866,7 @@ export class Jules {
     }
   }
 
-  private async pruneBranch(name: string) {
+  public async pruneBranch(name: string) {
     console.log(` 🧹 [Jules] Pruning branch ${name}...`)
     try {
       // Use execFileAsync from the top level scope if available
@@ -846,7 +881,7 @@ export class Jules {
     }
   }
 
-  private async globalPruningScan() {
+  public async globalPruningScan() {
     console.log(' 🔍 [Jules] Running global pruning scan...')
     // Autonomous logic for cleanup of stagnant branches could go here
   }

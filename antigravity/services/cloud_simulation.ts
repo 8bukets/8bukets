@@ -23,7 +23,9 @@ export class SandboxCloudSimulation {
       const health = await isDockerHealthy();
       const telemetry = await cloudWorkflowAgent.evaluateTelemetry();
 
-      const isOnline = telemetry.docker?.fullyOnline && telemetry.gitlab?.fullyOnline;
+      const isOnline = !!(telemetry.docker && (telemetry.docker as any).fullyOnline) && 
+                       !!(telemetry.gitlab && (telemetry.gitlab as any).fullyOnline);
+
 
       return {
         online: isOnline,

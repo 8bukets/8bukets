@@ -33,7 +33,7 @@ class SentientOrchestrationEngine {
     const processed = newIntents.map(intent => ({
       ...intent,
       id: `intent_${Math.random().toString(36).substring(2, 11)}`,
-      status: intent.priority === 'Critical' ? 'approved' : 'pending' as const,
+      status: (intent.priority === 'Critical' ? 'approved' : 'pending') as any,
       timestamp: new Date().toISOString()
     }))
 
