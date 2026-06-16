@@ -133,6 +133,14 @@ Available Tools: ${params.availableTools.join(', ')}
     history: ReActStep[],
     availableTools: string[]
   ): Promise<{ thought: string; action: string }> {
+    // Loop detection test case
+    if (goal === 'test loop') {
+      return {
+        thought: "I am stuck in a loop for testing purposes.",
+        action: 'stuck'
+      }
+    }
+
     // Basic heuristic-based reasoning simulation
     if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' && stepIndex === 0) {
       if (goal.includes('Audit and merge PR')) {
