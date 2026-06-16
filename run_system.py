@@ -117,6 +117,10 @@ async def run_scraper():
         # OpenTelemetry Repos Scraper
         scrape_opentelemetry_repos()
 
+        # LLM Knowledge Ingestion
+        proc_llm = await asyncio.create_subprocess_exec("npm", "run", "ingest:llm")
+        await proc_llm.wait()
+
         # Stitch Documentation Scraper
         await scrape_stitch_docs()
 

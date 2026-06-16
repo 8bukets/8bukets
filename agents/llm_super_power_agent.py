@@ -1,3 +1,5 @@
+import os
+import json
 from .base_agent import BaseAgent, Blackboard
 
 class LLMSuperPowerAgent(BaseAgent):
@@ -5,20 +7,42 @@ class LLMSuperPowerAgent(BaseAgent):
     LLMSuperPowerAgent: An agent designed to understand and optimize LLM operations.
     Its 'super power' is deep knowledge of Transformer architectures, tokenization,
     and training processes, which it uses to optimize agentic workflows.
+    Dynamically loads knowledge from the system's consolidated intelligence.
     """
     def __init__(self):
         super().__init__("LLMSuperPowerAgent", provides=["llm_optimization_insights"])
-        self.llm_knowledge = {
+        self.knowledge_file = "system_knowledge.json"
+        self.llm_knowledge = self._load_dynamic_knowledge()
+
+    def _load_dynamic_knowledge(self):
+        """Loads knowledge from system_knowledge.json or falls back to defaults."""
+        default_knowledge = {
             "architecture": "Transformer (Self-Attention Mechanism)",
             "processing": "Tokenization & Embeddings",
             "training": "Unsupervised Pre-training & Alignment (SFT/RLHF)",
             "frontiers": "Context Window (FlashAttention/RoPE) & Agentic Workflows"
         }
 
+        if os.path.exists(self.knowledge_file):
+            try:
+                with open(self.knowledge_file, 'r') as f:
+                    data = json.load(f)
+                    if "llm_knowledge" in data:
+                        self.log("Dynamic LLM knowledge loaded successfully.")
+                        return data["llm_knowledge"]
+            except Exception as e:
+                self.log(f"Error loading dynamic knowledge: {e}")
+
+        self.log("Using default LLM knowledge.")
+        return default_knowledge
+
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.log("Activating LLM Super Power... Analyzing system for agentic optimization.")
 
-        # Insights derived from the provided LLM knowledge
+        # Refresh knowledge in case it was updated during the cycle
+        self.llm_knowledge = self._load_dynamic_knowledge()
+
+        # Insights derived from the ingested LLM knowledge
         insights = [
             "Optimization: Utilize FlashAttention-style reasoning to manage context window efficiency.",
             "Strategy: Implement multi-step agentic workflows to move beyond single-turn response limitations.",
@@ -26,8 +50,10 @@ class LLMSuperPowerAgent(BaseAgent):
             "Alignment: Apply SFT-inspired curation to agent prompts for improved instruction following."
         ]
 
-        # In a real scenario, this agent would inspect the blackboard to see how other agents are performing
-        # and provide specific tuning parameters.
+        # Add dynamic insights if available in knowledge
+        if isinstance(self.llm_knowledge, dict) and "frontiers" in self.llm_knowledge:
+            for frontier in self.llm_knowledge["frontiers"]:
+                insights.append(f"Frontier Opportunity: Explore {frontier} implementation for system evolution.")
 
         self.log("Super Power analysis complete. Insights generated.")
 
