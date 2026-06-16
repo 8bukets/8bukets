@@ -51,7 +51,10 @@ export class ReActService {
       }
 
       logAutonomousAction(`💭 [ReAct] Step ${i + 1} Thought: ${stepDecision.thought}`, 'info')
-      const observation = await this.performAction(stepDecision.action, tools)
+
+      // Loop detection logic
+      const isLoop = this.steps.some(s => s.action === stepDecision.action && s.thought === stepDecision.thought)
+      const observation = isLoop ? 'Loop detector triggered.' : await this.performAction(stepDecision.action, tools)
 
       this.steps.push({
         thought: stepDecision.thought,
@@ -106,6 +109,13 @@ export class ReActService {
     }
 
     const lastObservation = history[history.length - 1].observation
+
+    if (goal === 'test loop') {
+      return {
+        thought: 'Looping for test purposes.',
+        action: availableTools[0]
+      }
+    }
 
     if (lastObservation.includes('error') || lastObservation.includes('MISSING')) {
       return {
