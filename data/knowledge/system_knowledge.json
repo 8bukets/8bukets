@@ -602,5 +602,48 @@
         }
       ]
     }
+  ],
+  "notebooklm": [
+    {
+      "title": "NotebookLM: AI-Powered Research and Learning Assistant",
+      "url": "https://workspace.google.com/products/notebooklm/",
+      "timestamp": "2026-06-16T14:23:29.969Z",
+      "sections": [
+        {
+          "header": "Grounded AI",
+          "content": [
+            "NotebookLM is an AI research and thinking partner that is grounded in the specific information you provide. Unlike general AI, it only uses your trusted sources to provide answers, reducing hallucinations."
+          ]
+        },
+        {
+          "header": "Source-Based Intelligence",
+          "content": [
+            "Users can upload documents, websites, and even YouTube videos. The AI becomes an expert on those specific materials, providing citations for every claim it makes."
+          ]
+        },
+        {
+          "header": "Audio Overviews",
+          "content": [
+            "A key feature is the ability to generate deep-dive audio discussions (podcasts) between two AI hosts based on your uploaded sources."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NotebookLM (Croatian Interface)",
+      "url": "https://notebooklm.google/?hl=hr",
+      "timestamp": "2026-06-16T14:23:29.969Z",
+      "sections": [
+        {
+          "header": "Global Availability",
+          "content": [
+            "NotebookLM is available in multiple languages, including Croatian, bringing grounded AI capabilities to researchers worldwide."
+          ]
+        }
+      ]
+    }
+  ],
+  "core_principles": [
+    "Grounded AI (NotebookLM Principle)"
   ]
 }
