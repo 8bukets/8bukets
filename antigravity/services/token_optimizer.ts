@@ -16,22 +16,43 @@ export class TokenOptimizer {
 
   /**
    * Compresses an object into a custom delimiter-separated string.
-   * This reduces the "JSON token tax" by removing syntax overhead.
+   * Enhanced to handle nested objects recursively.
    */
   public static compressStructuredData(data: Record<string, any>, delimiter: string = '|'): string {
-    return Object.entries(data)
-      .map(([key, value]) => `${key}:${value}`)
-      .join(delimiter)
+    const flatten = (obj: any, prefix = ''): string[] => {
+      return Object.entries(obj).reduce((acc: string[], [key, value]) => {
+        const fullKey = prefix ? `${prefix}.${key}` : key
+        if (value && typeof value === 'object' && !Array.isArray(value)) {
+          acc.push(...flatten(value, fullKey))
+        } else {
+          acc.push(`${fullKey}:${value}`)
+        }
+        return acc
+      }, [])
+    }
+    return flatten(data).join(delimiter)
   }
 
   /**
    * Decompresses a custom delimiter-separated string back into an object.
    */
-  public static decompressStructuredData(compressed: string, delimiter: string = '|'): Record<string, string> {
-    const result: Record<string, string> = {}
+  public static decompressStructuredData(compressed: string, delimiter: string = '|'): Record<string, any> {
+    const result: Record<string, any> = {}
     compressed.split(delimiter).forEach(pair => {
-      const [key, value] = pair.split(':')
-      if (key && value) result[key] = value
+      const [keyPath, value] = pair.split(':')
+      if (!keyPath || value === undefined) return
+
+      const keys = keyPath.split('.')
+      let current = result
+      for (let i = 0; i < keys.length; i++) {
+        const key = keys[i]
+        if (i === keys.length - 1) {
+          current[key] = value
+        } else {
+          current[key] = current[key] || {}
+          current = current[key]
+        }
+      }
     })
     return result
   }

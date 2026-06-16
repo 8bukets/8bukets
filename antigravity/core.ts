@@ -13,10 +13,22 @@ let cacheLife: any = () => {},
     connection: any = async () => {};
 
 try {
-  // Use dynamic require/import for Next.js internal modules if available
-  // This prevents SyntaxErrors in non-Next environments
+  // Use dynamic require for Next.js internal modules if available
+  // This prevents SyntaxErrors in non-Next environments (e.g. CLI or plain Node)
+  if (typeof require !== 'undefined') {
+    const nextCache = require('next/cache')
+    if (nextCache) {
+      cacheLife = nextCache.unstable_cacheLife || cacheLife
+      cacheTag = nextCache.unstable_cacheTag || cacheTag
+      revalidateTag = nextCache.revalidateTag || revalidateTag
+    }
+    const nextHeaders = require('next/headers')
+    if (nextHeaders) {
+      connection = nextHeaders.connection || connection
+    }
+  }
 } catch (e) {
-  // Fallback to no-op for CLI
+  // Fallback to no-op for CLI/Non-Next environments
 }
 
 export { cacheLife, cacheTag, revalidateTag, updateTag, connection }
