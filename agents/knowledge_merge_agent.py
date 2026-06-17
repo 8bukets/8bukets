@@ -1,6 +1,7 @@
 from .base_agent import BaseAgent, Blackboard
 import json
 import os
+import re
 from datetime import datetime
 from typing import Dict, Any, List, Union
 
@@ -154,10 +155,58 @@ class KnowledgeMergeAgent(BaseAgent):
             except Exception as e:
                 self.logger.error(f"Failed to read strategic source {self.strategic_source}: {e}")
 
-        # 5. Generate Human-Readable Markdown
+        # 5. Dynamic Knowledge Merge (into KNOWLEDGE_MERGE.md and CONSOLIDATED_INTELLIGENCE.md)
+        await self._dynamic_knowledge_merge(consolidated)
+
+        # 6. Generate Human-Readable Markdown
         self._generate_markdown(consolidated)
 
         return {"consolidated_knowledge": consolidated}
+
+    async def _dynamic_knowledge_merge(self, knowledge: dict):
+        self.logger.info("🤖 [KnowledgeMergeAgent] Dynamically merging knowledge from system_knowledge.json...")
+
+        markdown_context = ''
+        market_data = knowledge.get('market_data', {})
+        recent_entries = market_data.get('recent_entries', [])
+
+        if recent_entries:
+            markdown_context += '\n## 📈 Latest Market Intelligence (Dynamic Merge)\n\n'
+            for e in recent_entries[:5]:
+                markdown_context += f"### {e.get('title', 'Untitled Signal')}\n"
+                markdown_context += f"- **Source**: {e.get('domain') or 'Markposition'}\n"
+                markdown_context += f"- **Link**: [Post Link]({e.get('post_url')})\n\n"
+
+        signature = "All the best - https://markposition.wordpress.com"
+        target_files = ['KNOWLEDGE_MERGE.md', 'CONSOLIDATED_INTELLIGENCE.md']
+
+        for file in target_files:
+            file_path = os.path.join(os.getcwd(), file)
+            if os.path.exists(file_path):
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        file_content = f.read()
+
+                    escaped_signature = re.escape(signature)
+                    sig_regex = re.compile(rf"\n*---\n*{escaped_signature}\n*|\n*{escaped_signature}\n*", re.IGNORECASE)
+
+                    file_content = sig_regex.sub('\n\n', file_content)
+                    file_content = file_content.strip()
+
+                    # Append dynamic context if not already present
+                    if markdown_context and 'Latest Market Intelligence (Dynamic Merge)' not in file_content:
+                         file_content += '\n' + markdown_context
+                         self.logger.info(f"✅ [KnowledgeMergeAgent] Appended dynamic knowledge merge to {file}")
+                    else:
+                         self.logger.info(f"✨ [KnowledgeMergeAgent] Dynamic knowledge merge already exists or no new data for {file}")
+
+                    # Append signature back
+                    file_content += '\n\n---\n' + signature + '\n'
+
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        f.write(file_content)
+                except Exception as e:
+                    self.logger.error(f"Failed to perform dynamic merge for {file}: {e}")
 
     def _merge_ai_agents(self, consolidated: dict, new_agents_data: Union[List[dict], dict]):
         """Deep merge logic for AI agents, similar to merge_knowledge.py"""
