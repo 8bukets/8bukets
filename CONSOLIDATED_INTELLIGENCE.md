@@ -3144,3 +3144,18 @@ Synergy achieved across 2550 branches. Detailed knowledge and results consolidat
 
 ---
 **Collaboration Health Index:** 70% | *Phase 12 Synergy Protocol Active*
+
+## Agent Architecture Blueprint (Ingested)
+Comprehensive breakdown of an AI coding agent architecture into specific layers.
+- **Agent - Behavior Logic**: The 'brain workflow' where the agent decides what to do, in what order, whether to use a tool, whether to iterate, and whether to fix an error.
+- **Harness - Execution/Runtime Layer**: The 'operating environment' that calls tools, executes commands, manages memory, provides context to the model, controls the loop, manages retries, sandboxes the system, and tracks task state.
+- **Tooling Layer**: Concrete capability adapters with deep integration to the terminal, git, file system, test runners, package managers, editors, and shell.
+- **Context Engineering**: The critical layer where the system decides which files to load, what to summarize, what to discard, how to package the repo, how to compress history, and what to show to the model.
+- **Prompt Orchestration**: Multi-layered prompt systems including system prompts, hidden chain structures, task decomposition prompts, reflection prompts, and self-check prompts.
+- **Autonomy Loop**: The core execution cycle: Analyze -> Make change -> Run -> See error -> Fix -> Retry -> Validate -> Continue.
+- **Repo Indexing / Retrieval System**: Sophisticated system to determine what to open vs. ignore, including semantic search, dependency graph, file relevance ranking, and a retrieval pipeline.
+- **Diff / Edit Engine**: Crucial engine for safely modifying code, handling patching mechanisms, diff merging, corruption avoidance, formatting preservation, and partial edits.
+- **Verification Layer**: Checks if build passes, tests pass, lint passes, and runtime errors exist to prevent confident hallucinations.
+- **Memory System**: Allows long-term operation without context loss using session memory, task memory, repo memory, and preference memory.
+- **Safety / Permission System**: Decides what the agent is allowed to execute, when it must ask the user, what is dangerous, and what is read-only.
+- **UX Layer**: Ensures output looks meaningful, the agent explains its actions, the flow feels natural, and the terminal UX is well-designed.
