@@ -22,12 +22,22 @@ from agents.ads_agent import AdsAgent
 from agents.bid_agent import BidAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 
+from logger_utils import ColorFormatter
+
 # Configure Logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+# Configure Root Logging to apply colors globally
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+
+# Create console handler for root
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+ch.setFormatter(ColorFormatter(include_name=True))
+
+# Avoid adding multiple handlers if reloaded
+if not root_logger.handlers:
+    root_logger.addHandler(ch)
+
 logger = logging.getLogger("SystemOrchestrator")
 
 def run_scraper():
