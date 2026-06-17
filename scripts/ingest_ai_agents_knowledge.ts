@@ -90,7 +90,7 @@ async function scrapeAiAgentsKnowledge() {
             if (stopScraping) return;
 
             const $el = $(el);
-            const tagName = el.name.toLowerCase();
+            const tagName = (el as any).name?.toLowerCase() || (el as any).tagName?.toLowerCase() || '';
 
             if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
                 const title = $el.text().trim();
@@ -171,9 +171,8 @@ async function scrapeAiAgentsKnowledge() {
 
         const jsonPath = path.join(targetDir, "ai_agents_knowledge.json");
 
-        // Preserve manual keys (e.g., react-agent-deployment-logic)
-        const manualKeys = ["react-agent-deployment-logic"];
-        let existingKnowledge: Record<string, any> = {};
+        // Load existing knowledge to preserve non-scraped data
+        let existingKnowledge: Record<string, Section> = {};
 
         if (await fsPromises.access(jsonPath).then(() => true).catch(() => false)) {
             try {
@@ -181,28 +180,28 @@ async function scrapeAiAgentsKnowledge() {
             } catch(e) {}
         }
 
-        for (const mKey of manualKeys) {
-            if (existingKnowledge[mKey]) {
-                 data[mKey] = existingKnowledge[mKey];
-            }
-        }
+        // Merge: scraped data takes precedence for matching keys
+        const mergedKnowledge = { ...existingKnowledge, ...data };
 
-        await fsPromises.writeFile(jsonPath, JSON.stringify(data, null, 4), 'utf8');
+        await fsPromises.writeFile(jsonPath, JSON.stringify(mergedKnowledge, null, 4), 'utf8');
 
         const mdPath = "data/knowledge/ai_agents_knowledge.md";
         let mdContent = `# What are AI Agents?\n\nScraped from [${URL}](${URL})\n\n`;
 
+        // Add scraped sections first in order
         for (const key of orderedScrapedKeys) {
-            if (data[key]) {
-                mdContent += `## ${data[key].title}\n\n${data[key].content}\n\n`;
+            if (mergedKnowledge[key]) {
+                mdContent += `## ${mergedKnowledge[key].title}\n\n${mergedKnowledge[key].content}\n\n`;
             }
         }
 
-        // Preserve manual sections
-        for (const mKey of manualKeys) {
-             if (data[mKey]) {
-                 mdContent += `## ${data[mKey].title}\n\n${data[mKey].content}\n\n`;
-             }
+        // Add non-scraped (manual) sections
+        const manualKeys = Object.keys(mergedKnowledge).filter(key => !orderedScrapedKeys.includes(key));
+        if (manualKeys.length > 0) {
+            mdContent += `All the best - ${URL}\n---\n\n# Manual Knowledge Additions\n\n`;
+            for (const key of manualKeys) {
+                mdContent += `## ${mergedKnowledge[key].title}\n\n${mergedKnowledge[key].content}\n\n`;
+            }
         }
 
         await fsPromises.writeFile(mdPath, mdContent, 'utf8');
