@@ -83,6 +83,8 @@ export class Jules {
       const hasDilithium = checkKnowledge('Dilithium')
       const hasPhase16 = checkKnowledge('Phase 16')
       const hasSwarm = checkKnowledge('swarm-based')
+      const hasHeartbeatLatency = checkKnowledge('heartbeat latency')
+      const hasNeuralRecovery = checkKnowledge('neural recovery')
 
       if (hasQuantum && !this.memory.preferredPatterns.includes('crystals-kyber')) {
         suggestions.push('Integrate Crystals-Kyber for Quantum-resistant security as per latest strategy.')
@@ -113,6 +115,12 @@ export class Jules {
       }
       if (hasPhase16 || hasSwarm) {
         suggestions.push('Activate Phase 16 Swarm Heartbeat and Cross-Shard Cognition for cognitive transcendence.')
+      }
+      if (hasHeartbeatLatency) {
+        suggestions.push('Optimize swarm heartbeat latency to <5ms as per Phase 16 advanced protocols.')
+      }
+      if (hasNeuralRecovery) {
+        suggestions.push('Implement Neural Recovery protocols to autonomously handle NS-Index drops.')
       }
     }
 
