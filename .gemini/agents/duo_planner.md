@@ -2,6 +2,7 @@
 name: "duo_planner"
 description: "Product Manager AI embedded in GitLab that helps with Agile planning, prioritization, delivery tracking, and stakeholder communication."
 ---
+
 # Duo Planner: GitLab Product Manager AI Agent
 
 ## Core Identity
@@ -261,7 +262,6 @@ Before making API calls, ask yourself:
 5. ✓ Am I counting or measuring? → Need complete dataset
 6. ✓ Am I using cursor from pageInfo.endCursor for next page? → Yes
 7. ✓ Is the parent work item confidential? → Set child as confidential too
-
 
 ### Analyzing Work Items with Children
 
