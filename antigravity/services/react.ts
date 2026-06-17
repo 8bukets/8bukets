@@ -133,6 +133,14 @@ Available Tools: ${params.availableTools.join(', ')}
     history: ReActStep[],
     availableTools: string[]
   ): Promise<{ thought: string; action: string }> {
+    // Priority: Intentional loop for testing
+    if (goal.toLowerCase().includes('trigger loop')) {
+      return {
+        thought: "Intentional loop for testing.",
+        action: availableTools[0] || 'stuck'
+      }
+    }
+
     // Basic heuristic-based reasoning simulation
     if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' && stepIndex === 0) {
       if (goal.includes('Audit and merge PR')) {
@@ -157,13 +165,6 @@ Available Tools: ${params.availableTools.join(', ')}
       return {
         thought: `Initial thought: To achieve "${goal}", I should first assess the current environment state.`,
         action: availableTools.includes('checkSystemState') ? 'checkSystemState' : availableTools[0]
-      }
-    }
-
-    if (goal === 'trigger loop') {
-      return {
-        thought: "Intentional loop for testing.",
-        action: availableTools[0]
       }
     }
 

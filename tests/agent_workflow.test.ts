@@ -12,15 +12,15 @@ describe('Agent Workflow & Token Optimization', () => {
 
   it('ReActService should detect and break loops', async () => {
     const tools = {
-      stuck: vi.fn().mockResolvedValue('same observation')
+      loopTool: vi.fn().mockResolvedValue('same observation')
     }
 
-    // We need to trick the reasoner to keep calling 'stuck'
-    // Since our reasoner is mock, we can just observe it hits the limit or loop detector
-    // Use the specially implemented 'trigger loop' goal to force repetition
+    // We need to trick the reasoner to keep calling 'loopTool'
+    // Since our reasoner is mock, we use the specially implemented 'trigger loop' goal to force repetition
     const steps = await reactService.executeCycle('trigger loop', tools, 5)
 
-    // If it hit the loop detector, it should have a 'Loop detector triggered' observation
+    // If it hit the loop detector, it should have a 'Loop detector triggered.' observation
+    // Note the exact string matching requirement in the implementation
     const loopStep = steps.find(s => s.observation === 'Loop detector triggered.')
     expect(loopStep).toBeDefined()
   })

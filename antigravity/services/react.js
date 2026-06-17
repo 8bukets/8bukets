@@ -1,9 +1,7 @@
 import { logAutonomousAction } from '../core';
 export class ReActService {
-    constructor() {
-        this.steps = [];
-        this.actionHistory = new Set();
-    }
+    steps = [];
+    actionHistory = new Set();
     /**
      * Execute a ReAct cycle for a given goal and tools.
      */
@@ -88,6 +86,13 @@ Available Tools: ${params.availableTools.join(', ')}
      * Determines the next Thought and Action based on the goal and execution history.
      */
     async reasonNextStep(goal, stepIndex, history, availableTools) {
+        // Priority: Intentional loop for testing
+        if (goal.toLowerCase().includes('trigger loop')) {
+            return {
+                thought: "Intentional loop for testing.",
+                action: availableTools[0] || 'stuck'
+            };
+        }
         // Basic heuristic-based reasoning simulation
         if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' && stepIndex === 0) {
             if (goal.includes('Audit and merge PR')) {
