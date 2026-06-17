@@ -6,15 +6,16 @@ class HealthAgent:
         self.filepath = filepath
         self.robots_path = robots_path
 
-    def check_integrity(self):
+    def check_integrity(self, soup=None):
         """Check the integrity of the main HTML file."""
         print("[HealthAgent] Performing system integrity check...")
-        if not os.path.exists(self.filepath):
-            print(f"[HealthAgent] CRITICAL: {self.filepath} missing!")
-            return False
+        if soup is None:
+            if not os.path.exists(self.filepath):
+                print(f"[HealthAgent] CRITICAL: {self.filepath} missing!")
+                return False
 
-        with open(self.filepath, 'r') as f:
-            soup = BeautifulSoup(f, 'html.parser')
+            with open(self.filepath, 'r') as f:
+                soup = BeautifulSoup(f, 'html.parser')
 
         required_tags = ['html', 'head', 'body', 'header', 'main', 'footer']
         missing = [tag for tag in required_tags if not soup.find(tag)]
@@ -48,8 +49,8 @@ class HealthAgent:
             f.write("User-agent: *\nAllow: /\n")
         print("[HealthAgent] Autonomously created robots.txt.")
 
-    def run_diagnostics(self):
-        integrity = self.check_integrity()
+    def run_diagnostics(self, soup=None):
+        integrity = self.check_integrity(soup=soup)
         robots = self.check_robots()
 
         if integrity and robots:

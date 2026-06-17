@@ -47,11 +47,14 @@ class ContentAgent:
         """
         return html
 
-    def publish(self):
+    def publish(self, soup=None):
         """Inject content into the website."""
-        if not os.path.exists(self.filepath):
-            print(f"[ContentAgent] Error: {self.filepath} not found.")
-            return
+        should_save = False
+        if soup is None:
+            if not os.path.exists(self.filepath):
+                print(f"[ContentAgent] Error: {self.filepath} not found.")
+                return
+            should_save = True
 
         # 20% chance to generate a Deep Dive (Curiosity/Intelligence)
         if random.random() < 0.2:
@@ -61,8 +64,9 @@ class ContentAgent:
             topic_data = self.research()
             new_content = self.create_content(topic_data)
 
-        with open(self.filepath, 'r') as f:
-            soup = BeautifulSoup(f, 'html.parser')
+        if soup is None:
+            with open(self.filepath, 'r') as f:
+                soup = BeautifulSoup(f, 'html.parser')
 
         # Find the article list container
         article_list = soup.find(id='article-list')
@@ -72,8 +76,9 @@ class ContentAgent:
             # Prepend to the list (show as newest)
             article_list.insert(0, new_tag)
 
-            with open(self.filepath, 'w') as f:
-                f.write(str(soup))
+            if should_save:
+                with open(self.filepath, 'w') as f:
+                    f.write(str(soup))
             print("[ContentAgent] Successfully published new article.")
         else:
             print("[ContentAgent] Error: #article-list container not found.")

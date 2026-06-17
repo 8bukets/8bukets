@@ -33,11 +33,14 @@ class CreativeAgent:
         print(f"[CreativeAgent] Generated Idea: {idea['title']} ({idea['type']})")
         return idea
 
-    def implement_idea(self):
+    def implement_idea(self, soup=None):
         """Code and integrate the idea into the system."""
-        if not os.path.exists(self.filepath):
-            print(f"[CreativeAgent] Error: {self.filepath} not found.")
-            return
+        should_save = False
+        if soup is None:
+            if not os.path.exists(self.filepath):
+                print(f"[CreativeAgent] Error: {self.filepath} not found.")
+                return
+            should_save = True
 
         idea = self.brainstorm()
 
@@ -60,8 +63,9 @@ class CreativeAgent:
             </div>
             """
 
-        with open(self.filepath, 'r') as f:
-            soup = BeautifulSoup(f, 'html.parser')
+        if soup is None:
+            with open(self.filepath, 'r') as f:
+                soup = BeautifulSoup(f, 'html.parser')
 
         sidebar = soup.find('aside', class_='sidebar')
         if sidebar:
@@ -72,8 +76,9 @@ class CreativeAgent:
             # Append new feature
             sidebar.append(BeautifulSoup(html_content, 'html.parser'))
 
-            with open(self.filepath, 'w') as f:
-                f.write(str(soup))
+            if should_save:
+                with open(self.filepath, 'w') as f:
+                    f.write(str(soup))
             print("[CreativeAgent] Idea successfully coded and integrated into the sidebar.")
         else:
             print("[CreativeAgent] Error: Sidebar not found.")

@@ -30,17 +30,21 @@ class AdAgent:
         print(f"[AdAgent] Optimizing ad targeting for audience segment: Sports Enthusiasts")
         return winner['content']
 
-    def place_ad(self):
+    def place_ad(self, soup=None):
         """Inject the winning ad into the page."""
-        if not os.path.exists(self.filepath):
-            print(f"[AdAgent] Error: {self.filepath} not found.")
-            return
+        should_save = False
+        if soup is None:
+            if not os.path.exists(self.filepath):
+                print(f"[AdAgent] Error: {self.filepath} not found.")
+                return
+            should_save = True
 
         winner = self.run_auction()
         ad_content = self.optimize_targeting(winner)
 
-        with open(self.filepath, 'r') as f:
-            soup = BeautifulSoup(f, 'html.parser')
+        if soup is None:
+            with open(self.filepath, 'r') as f:
+                soup = BeautifulSoup(f, 'html.parser')
 
         ad_slot = soup.find(id='ad-slot-top')
         if ad_slot:
@@ -63,8 +67,9 @@ class AdAgent:
             else:
                 ad_slot['style'] = 'display: block;'
 
-            with open(self.filepath, 'w') as f:
-                f.write(str(soup))
+            if should_save:
+                with open(self.filepath, 'w') as f:
+                    f.write(str(soup))
             print("[AdAgent] Ad placement successful.")
         else:
             print("[AdAgent] Error: Ad slot #ad-slot-top not found.")
