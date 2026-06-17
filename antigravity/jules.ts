@@ -1,5 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
+import { swarmHeartbeat } from './services/swarm_heartbeat'
+import { crossShardMemory } from './services/cross_shard_memory'
 
 /**
  * JULES: THE COGNITIVE AGENT LAYER
@@ -95,6 +97,25 @@ export class Jules {
       suggestions.push('Expand preferred patterns to include Taint API and View Transitions.')
     }
     return { status: 'learning', suggestions, memorySize: JSON.stringify(this.memory).length }
+  }
+
+  public async ingestExperience(experience: any) {
+    await this.ensureInitialized()
+    const goal = `Ingested Cross-Shard Experience: ${experience.agent || 'unknown'}`
+
+    // Deduplication check
+    const isDuplicate = this.memory.autonomousTasks.some(t => t.goal === goal && Math.abs(new Date().getTime() - new Date(this.memory.lastOptimization).getTime()) < 10000)
+    if (isDuplicate) return
+
+    this.memory.autonomousTasks.push({
+      id: Math.random().toString(36).substr(2, 9),
+      status: 'completed',
+      goal
+    })
+    if (experience.insight && !this.memory.preferredPatterns.includes(experience.insight)) {
+       this.memory.preferredPatterns.push(experience.insight)
+    }
+    await this.save()
   }
 
   public async recordTask(goal: string) {
@@ -413,6 +434,9 @@ export class Jules {
   public async executeWorkCycle() {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+
+    // Phase 16: Cross-Shard Cognition Sync
+    await crossShardMemory.syncMemory()
 
     // Phase 14: Autonomous Self-Repair & Evolution
     await this.selfRepair()
