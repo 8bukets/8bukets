@@ -156,7 +156,8 @@ export class KnowledgeObserver {
         if (!inCodeBlock) {
            // Strip tags but preserve common PHP/TypeScript generics and comparisons.
            // We explicitly exclude sequences starting with space, numbers, or common generic/type patterns.
-           contentLine = contentLine.replace(/<(?!\s|[0-9]|<=|>=)(?!\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|K|V|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false|ElementType|TKey|TValue|TObject|TStart|TResume|TReturn|TSuspend|TDate|TEnd))[^>]*>?/gim, '');
+           // We also preserve a standalone '<' if it's at the end of a line or followed by space.
+           contentLine = contentLine.replace(/<(?!\s|$|[0-9]|<=|>=)(?!\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|K|V|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false|ElementType|TKey|TValue|TObject|TStart|TResume|TReturn|TSuspend|TDate|TEnd))[^>]*>?/gim, '');
         }
 
         if (contentLine || inCodeBlock) {
