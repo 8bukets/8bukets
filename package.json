@@ -21,10 +21,11 @@
     "ingest:sor": "tsx --env-file=.env scripts/ingest_software_online_review.ts",
     "ingest:project-sor": "tsx --env-file=.env scripts/ingest_project_sor.ts",
     "ingest:terraform": "tsx --env-file=.env scripts/ingest_terraform_knowledge.ts",
+    "ingest:companylink": "tsx --env-file=.env scripts/ingest_companylink_knowledge.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'",
     "validate:license": "tsx --env-file=.env scripts/validate_license.ts",
-    "ingest:knowledge": "npm run ingest:sor && npm run ingest:project-sor && npm run ingest:terraform && tsx --env-file=.env scripts/ingest_markposition_knowledge.ts && tsx --env-file=.env scripts/ingest_ads_knowledge.ts && tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts && tsx --env-file=.env scripts/ingest_knowledge_merge.ts && tsx --env-file=.env scripts/ingest_multi_day_agent_knowledge.ts"
+    "ingest:knowledge": "npm run ingest:sor && npm run ingest:project-sor && npm run ingest:terraform && npm run ingest:companylink && tsx --env-file=.env scripts/ingest_markposition_knowledge.ts && tsx --env-file=.env scripts/ingest_ads_knowledge.ts && tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts && tsx --env-file=.env scripts/ingest_knowledge_merge.ts && tsx --env-file=.env scripts/ingest_multi_day_agent_knowledge.ts"
   },
   "dependencies": {
     "@google/genai": "^2.5.0",
