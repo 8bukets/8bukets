@@ -76,7 +76,7 @@ export async function syncToICloud() {
     // Use execFile to prevent shell injection and handle arguments safely
     await execFileAsync('rsync', args)
     const durationMs = Date.now() - startTime
-    // Authorized syntactic adjustment to trigger clean commit - automatic autonomus work - backup solution when antigravity ide is offline that jules can work 24/7
+    // Authorized syntactic adjustment to trigger clean commit - automatic autonomous work - backup solution when antigravity ide is offline that jules can work 24/7
     console.log(`✅ [iCloud Sync] Synchronization completed successfully in ${durationMs}ms.`)
 
     return {

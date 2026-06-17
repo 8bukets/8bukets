@@ -34,6 +34,15 @@ jobs:
 
       - name: Execute Task
         run: npx tsx ${scriptPath}
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+          GOOGLE_API_KEY: \${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_API_KEY: \${{ secrets.GEMINI_API_KEY }}
+          SYSTEM_AUTH_TOKEN: \${{ secrets.SYSTEM_AUTH_TOKEN }}
+          MONGODB_URI: \${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: \${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: \${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and Push Changes
         run: |
@@ -101,6 +110,9 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: \${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: \${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: \${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_API_KEY: \${{ secrets.GEMINI_API_KEY }}
+          SYSTEM_AUTH_TOKEN: \${{ secrets.SYSTEM_AUTH_TOKEN }}
 
       - name: Post-cycle Knowledge Ingestion
         run: npm run ingest:knowledge || true
@@ -238,6 +250,9 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: \${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: \${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: \${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_API_KEY: \${{ secrets.GEMINI_API_KEY }}
+          SYSTEM_AUTH_TOKEN: \${{ secrets.SYSTEM_AUTH_TOKEN }}
 
       - name: Autonomous Intelligence Sync
         run: npx tsx scripts/autonomous_sync.ts
