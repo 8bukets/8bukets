@@ -160,6 +160,13 @@ Available Tools: ${params.availableTools.join(', ')}
       }
     }
 
+    if (goal === 'trigger loop') {
+      return {
+        thought: "Intentional loop for testing.",
+        action: availableTools[0]
+      }
+    }
+
     const lastObservation = history[history.length - 1].observation
 
     if (lastObservation.includes('error') || lastObservation.includes('MISSING')) {
