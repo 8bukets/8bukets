@@ -15,7 +15,19 @@ async function run() {
     console.log(stdout);
   } catch (err: any) {
     const isNetworkError = err.message.includes('Could not resolve host') || err.message.includes('Connection refused');
-    if (isNetworkError) {
+    const isNoTracking = err.message.includes('There is no tracking information');
+
+    if (isNoTracking) {
+      console.log('🔄 [pluu] No tracking information found, attempting to pull from origin/main...');
+      try {
+        const { stdout } = await execFileAsync('git', ['pull', '--rebase', 'origin', 'main']);
+        console.log(stdout);
+      } catch (fallbackErr: any) {
+        console.error('❌ [pluu] Fallback git pull from origin main failed.');
+        console.error(fallbackErr.stdout || fallbackErr.message);
+        process.exit(1);
+      }
+    } else if (isNetworkError) {
       console.warn('⚠️ [pluu] Network issue during git pull. Continuing with local state...');
     } else {
       console.error('❌ [pluu] Git pull failed critically.');
