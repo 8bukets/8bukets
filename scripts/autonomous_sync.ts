@@ -62,7 +62,12 @@ async function main() {
 
     // 6. Execute Jules Work Cycle (TypeScript Engine)
     console.log('🌟 [AutonomousSync] Executing Jules (TypeScript) work cycle...');
-    await jules.executeWorkCycle();
+    const isLeader = onlinePresence.isLeader();
+    if (isLeader || !isCloud) {
+       await jules.executeWorkCycle();
+    } else {
+       console.log('📡 [AutonomousSync] Node is subordinate. Skipping work cycle to avoid conflicts.');
+    }
 
     // 7. Execute Python Ecosystem Cycle
     console.log('🐍 [AutonomousSync] Running Python Ecosystem Autonomous Cycle...');
