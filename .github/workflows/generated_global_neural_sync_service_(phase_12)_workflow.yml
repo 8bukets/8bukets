@@ -27,6 +27,15 @@ jobs:
 
       - name: Execute Task
         run: npx tsx antigravity/workflows/global_neural_sync_service_(phase_12)_workflow.ts
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN }}
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and Push Changes
         run: |

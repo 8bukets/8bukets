@@ -94,10 +94,20 @@ class ChiefAIOfficerAgent(BaseAgent):
 
         for k in knowledge.get("typescript_sections", []):
             title = k.get("title", "")
-            sections_str = str(k.get("sections", [])).lower()
+            title_lower = title.lower()
+            sections_list = k.get("sections", [])
+            sections_str = json.dumps(sections_list).lower()
+
+            # Extract content from sections into a single searchable string
+            sections_content = " ".join([s.get("content", "").lower() for s in sections_list])
+
+            # Normalized checks for Phase detection
+            has_phase_14 = "phase 14" in title_lower or "phase 14" in sections_str or "phase_14" in title_lower
+            has_phase_15 = "phase 15" in title_lower or "phase 15" in sections_str or "phase_15" in title_lower
+            has_phase_16 = "phase 16" in title_lower or "phase 16" in sections_str or "phase_16" in title_lower
 
             # Phase 14 Specific Logic
-            if "Phase 14" in title or "phase 14" in sections_str:
+            if has_phase_14:
                 self.logger.info(f"CAIO [STRATEGY]: Phase 14 strategic mandate detected: {title}")
                 if "ACTIVATE_PHASE_14_PROTOCOLS" not in strategic_directives:
                     strategic_directives.append("ACTIVATE_PHASE_14_PROTOCOLS")
@@ -119,7 +129,7 @@ class ChiefAIOfficerAgent(BaseAgent):
                     strategic_directives.append("ACTIVATE_ANTICIPATORY_CLUSTERS")
 
             # Phase 15 Specific Logic
-            if "Phase 15" in title or "phase 15" in sections_str:
+            if has_phase_15:
                 self.logger.info(f"CAIO [STRATEGY]: Phase 15 strategic mandate detected: {title}")
                 if "ACTIVATE_PHASE_15_PROTOCOLS" not in strategic_directives:
                     strategic_directives.append("ACTIVATE_PHASE_15_PROTOCOLS")
@@ -135,7 +145,7 @@ class ChiefAIOfficerAgent(BaseAgent):
                     strategic_directives.append("IMPLEMENT_LATTICE_CRYPTO_SYNC")
 
             # Phase 16 Specific Logic
-            if "Phase 16" in title or "phase 16" in sections_str:
+            if has_phase_16:
                 self.logger.info(f"CAIO [STRATEGY]: Phase 16 strategic mandate detected: {title}")
                 if "ACTIVATE_PHASE_16_PROTOCOLS" not in strategic_directives:
                     strategic_directives.append("ACTIVATE_PHASE_16_PROTOCOLS")
@@ -151,6 +161,14 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "cross-shard cognition" in sections_str or "activate_cross_shard_cognition" in sections_str:
                     self.logger.info("CAIO [COGNITION]: Cross-shard cognition mandate detected. Issuing activation directive.")
                     strategic_directives.append("ACTIVATE_CROSS_SHARD_COGNITION")
+
+                if "heartbeat latency" in sections_content or "less than 5ms" in sections_content:
+                    self.logger.info("CAIO [PERF]: Advanced heartbeat latency mandate detected (<5ms). Issuing enforcement directive.")
+                    strategic_directives.append("ENFORCE_HEARTBEAT_LATENCY")
+
+                if "neural recovery" in sections_content:
+                    self.logger.info("CAIO [RECOVERY]: Neural Recovery protocol mandate detected. Issuing activation directive.")
+                    strategic_directives.append("ACTIVATE_NEURAL_RECOVERY")
 
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
