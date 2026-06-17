@@ -50,7 +50,7 @@ def test_ingest_markposition_logic(tmp_path):
 
         assert updated_knowledge["market_data"]["total_entries"] > 0
         assert updated_knowledge["market_data"]["all_entries"][0]["title"] == "Test Post"
-        assert "markposition.wordpress.com" in updated_knowledge["metadata"]["sources_processed"]
+        assert updated_knowledge["metadata"]["sources_processed"] == ["markposition.wordpress.com"]
 
         assert os.path.exists("MARKPOSITION_REPORT.md")
 
