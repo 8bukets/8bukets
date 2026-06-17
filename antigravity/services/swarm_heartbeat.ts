@@ -48,7 +48,7 @@ export class SwarmHeartbeatService {
       latency: this.latency,
       lastPulse: new Date(this.lastPulse).toISOString(),
       active: !!this.interval,
-      target_latency: 5
+      target_latency: 500
     }
   }
 }

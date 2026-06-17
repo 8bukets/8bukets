@@ -6,6 +6,8 @@ import { logAutonomousAction, getMongoClient } from '../core'
  */
 
 export class CrossShardMemoryService {
+  private lastSync: string = new Date(Date.now() - 60 * 60 * 1000).toISOString() // Default to last 1h
+
   /**
    * Synchronizes shared memory across agent shards.
    */
@@ -16,12 +18,13 @@ export class CrossShardMemoryService {
       const client = await getMongoClient()
       const db = client.db()
 
-      // Fetch shared experiences from other agents
-      const sharedExperiences = await db.collection('agent_memory').find({
-        agent: { $ne: 'Jules' }
+      // Fetch shared experiences from other agents created after last sync
+      const sharedExperiences = await db.collection('shared_experiences').find({
+        agent: { $ne: 'Jules' },
+        timestamp: { $gt: this.lastSync }
       }).toArray()
 
-      logAutonomousAction(`✅ [CrossShardMemory] Synchronized with ${sharedExperiences.length} external agent shards.`, 'info')
+      logAutonomousAction(`✅ [CrossShardMemory] Synchronized with ${sharedExperiences.length} new external agent experiences.`, 'info')
 
       // Integrate into Jules memory
       if (sharedExperiences.length > 0) {
@@ -29,11 +32,12 @@ export class CrossShardMemoryService {
         for (const exp of sharedExperiences) {
           await jules.ingestExperience(exp)
         }
+        this.lastSync = new Date().toISOString()
       }
 
       return {
         shardsSynced: sharedExperiences.length,
-        timestamp: new Date().toISOString(),
+        timestamp: this.lastSync,
         status: 'coherent'
       }
     } catch (err: any) {

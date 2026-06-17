@@ -1,6 +1,7 @@
 import { jules } from '../antigravity/jules';
 import { cloudConvergence } from '../antigravity/services/cloud_convergence';
 import { onlinePresence } from '../antigravity/services/presence';
+import { swarmHeartbeat } from '../antigravity/services/swarm_heartbeat';
 import { globalNeuralSync } from '../antigravity/services/global_neural_sync_service_phase_12';
 import { exec } from 'child_process';
 import { promisify } from 'util';
@@ -19,8 +20,9 @@ async function main() {
   const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true');
 
   try {
-    // 1. Initial Presence Heartbeat
-    console.log('📡 [AutonomousSync] Broadcasting initial presence heartbeat...');
+    // 1. Initial Presence Heartbeat & Swarm Activation
+    console.log('📡 [AutonomousSync] Activating Swarm Heartbeat and initial presence...');
+    swarmHeartbeat.start();
     await onlinePresence.syncPresence();
 
     // 2. Proactive iCloud Sync Fix (if local)
