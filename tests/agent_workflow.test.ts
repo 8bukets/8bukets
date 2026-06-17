@@ -17,7 +17,8 @@ describe('Agent Workflow & Token Optimization', () => {
 
     // We need to trick the reasoner to keep calling 'stuck'
     // Since our reasoner is mock, we can just observe it hits the limit or loop detector
-    const steps = await reactService.executeCycle('test loop', tools, 5)
+    // Use the specially implemented 'trigger loop' goal to force repetition
+    const steps = await reactService.executeCycle('trigger loop', tools, 5)
 
     // If it hit the loop detector, it should have a 'Loop detector triggered' observation
     const loopStep = steps.find(s => s.observation === 'Loop detector triggered.')
