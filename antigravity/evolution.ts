@@ -263,6 +263,17 @@ export async function evolve() {
              })
           }
         }
+
+        // Rule 25: Heartbeat Latency Compliance (Phase 16 Advanced Protocol)
+        if (content.includes('swarmHeartbeat') || content.includes('heartbeatInterval')) {
+          if (!content.includes('latency < 5') && !content.includes('LATENCY_THRESHOLD')) {
+            suggestions.push({
+              file: fullPath.replace(process.cwd(), ''),
+              complexity: lines,
+              suggestion: 'HEARTBEAT_LATENCY_UNOPTIMIZED: Phase 16 mandates <5ms latency for heartbeat reporting.'
+            })
+          }
+        }
       }
     }
   }
@@ -380,6 +391,14 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
            content = "import { crossShardMemory } from '@/antigravity/services/cross_shard_memory'\n" + content
         }
         content = "/** PHASE 16 COMPLIANCE: cross-shard-cognition (enabled) **/\n" + content
+        await fs.promises.writeFile(fullPath, content)
+      }
+    }
+
+    if (s.suggestion.startsWith('HEARTBEAT_LATENCY_UNOPTIMIZED')) {
+      console.log(` - Fixing ${s.file}: Injecting Phase 16 heartbeat latency targets.`)
+      if (!content.includes('latency < 5')) {
+        content = "/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/\n" + content
         await fs.promises.writeFile(fullPath, content)
       }
     }

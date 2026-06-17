@@ -3670,6 +3670,24 @@
           "content": "- **Mandate:** Implement Dilithium and Kyber protocols for all internal neural relay communications.\n- **Security:** CRYSTALS-Kyber for key encapsulation and CRYSTALS-Dilithium for digital signatures.\n- **Goal:** Ensure the ecosystem is resilient against future quantum-computing based decryption attempts.\n- **Enforcement:** Evolution Engine Rule 21."
         }
       ]
+    },
+    {
+      "title": "iCloud: phase_16_advanced_protocols.md",
+      "metadata": {
+        "source": "icloud://phase_16_advanced_protocols.md",
+        "analyzedAt": "2026-06-17T07:26:45.292Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Heartbeat Latency Targets",
+          "content": "Strategic mandate: To ensure swarm integrity, all heartbeat reporting must maintain a latency of less than 5ms. Any node exceeding this target must be flagged for re-routing or consolidation."
+        },
+        {
+          "header": "Neural Recovery Protocols",
+          "content": "Mandate: In the event of a Neural Stability Index (NS-Index) drop below the 0.98 threshold, the system must immediately activate Neural Recovery Protocols. This includes flushing non-critical caches and re-initializing the cognitive shard links."
+        }
+      ]
     }
   ],
   "google_ads": [
