@@ -90,6 +90,9 @@ async def run_scraper():
         logger.info("Running Google Research Scraper...")
         subprocess.run(["python3", "google_research_scraper.py"], check=True)
 
+        logger.info("Running Markposition Knowledge Scraper...")
+        subprocess.run(["python3", "scripts/ingest_markposition_knowledge.py"], check=True)
+
         logger.info("Running AI Agents Knowledge Scraper...")
         # Prefer the TypeScript version if it exists, otherwise fallback to Python
         if os.path.exists("scripts/ingest_ai_agents_knowledge.ts"):

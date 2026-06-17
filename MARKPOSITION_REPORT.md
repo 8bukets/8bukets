@@ -1,6 +1,6 @@
 # 📈 Markposition Intelligence Report
 
-Generated on: 2026-05-29T16:42:51.024Z
+Generated on: 2026-06-17T16:14:40.721345
 
 ## Recent Market Intelligence
 
@@ -9,7 +9,7 @@ Generated on: 2026-05-29T16:42:51.024Z
 - **Domain**: advertising.amazon.com
 - **Link**: [https://advertising.amazon.com/](https://advertising.amazon.com/)
 
-### Drive Advertising Revenue with Google Ad Manager : Google
+### Drive Advertising Revenue with Google Ad Manager : Google
 - **Date**: September 26, 2022
 - **Domain**: skillshop.exceedlms.com
 - **Link**: [https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager](https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager)
@@ -34,72 +34,72 @@ Generated on: 2026-05-29T16:42:51.024Z
 - **Domain**: myaccount.google.com
 - **Link**: [https://myaccount.google.com/data-and-personalization](https://myaccount.google.com/data-and-personalization)
 
-### The Privacy Sandbox: Technology for a More Private Web.
+### The Privacy Sandbox: Technology for a More Private Web.
 - **Date**: September 20, 2022
 - **Domain**: privacysandbox.com
 - **Link**: [https://privacysandbox.com/intl/home#home-hero](https://privacysandbox.com/intl/home#home-hero)
 
-### Digital Experience Platform & Enterprise CMS | Crownpeak
+### Digital Experience Platform & Enterprise CMS | Crownpeak
 - **Date**: September 16, 2022
 - **Domain**: crownpeak.com
 - **Link**: [https://www.crownpeak.com/](https://www.crownpeak.com/)
 
-### About Performance Max campaigns – Google Ads
+### About Performance Max campaigns – Google Ads
 - **Date**: September 1, 2022
 - **Domain**: support.google.com
 - **Link**: [https://support.google.com/google-ads/answer/10724817?hl=en](https://support.google.com/google-ads/answer/10724817?hl=en)
 
-### About Smart Bidding – Google Ads
+### About Smart Bidding – Google Ads
 - **Date**: September 1, 2022
 - **Domain**: support.google.com
 - **Link**: [https://support.google.com/google-ads/answer/7065882?hl=en](https://support.google.com/google-ads/answer/7065882?hl=en)
 
-### About Maximize conversion value bidding – Google Ads
+### About Maximize conversion value bidding – Google Ads
 - **Date**: September 1, 2022
 - **Domain**: support.google.com
 - **Link**: [https://support.google.com/google-ads/answer/7684216?hl=en](https://support.google.com/google-ads/answer/7684216?hl=en)
 
-### About automated bidding – Google Ads Help
+### About automated bidding – Google Ads Help
 - **Date**: September 1, 2022
 - **Domain**: support.google.com
 - **Link**: [https://support.google.com/google-ads/answer/2979071?hl=en](https://support.google.com/google-ads/answer/2979071?hl=en)
 
-### About Target CPA bidding – Google Ads Help
+### About Target CPA bidding – Google Ads Help
 - **Date**: September 1, 2022
 - **Domain**: support.google.com
 - **Link**: [https://support.google.com/google-ads/answer/6268632?hl=en](https://support.google.com/google-ads/answer/6268632?hl=en)
 
-### About Maximize conversions bidding – Google Ads Help
+### About Maximize conversions bidding – Google Ads Help
 - **Date**: September 1, 2022
 - **Domain**: support.google.com
 - **Link**: [https://support.google.com/google-ads/answer/7381968?hl=en](https://support.google.com/google-ads/answer/7381968?hl=en)
 
-### About Target ROAS bidding – Google Ads Help
+### About Target ROAS bidding – Google Ads Help
 - **Date**: September 1, 2022
 - **Domain**: support.google.com
 - **Link**: [https://support.google.com/google-ads/answer/6268637?hl=en](https://support.google.com/google-ads/answer/6268637?hl=en)
 
-### Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help
+### Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help
 - **Date**: September 1, 2022
 - **Domain**: support.google.com
 - **Link**: [https://support.google.com/google-ads/answer/11189316?hl=en](https://support.google.com/google-ads/answer/11189316?hl=en)
 
-### Coalition for Better Ads
+### Coalition for Better Ads
 - **Date**: August 31, 2022
 - **Domain**: betterads.org
 - **Link**: [https://www.betterads.org/](https://www.betterads.org/)
 
-### ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions
+### ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions
 - **Date**: August 20, 2022
 - **Domain**: N/A
 - **Link**: [Post Link](https://sharethis.com/)
 
-### How To Create Quality Video Ads – YouTube Advertising
+### How To Create Quality Video Ads – YouTube Advertising
 - **Date**: August 16, 2022
 - **Domain**: youtube.com
 - **Link**: [https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/](https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/)
 
-### Business Data Responsibility – Your Data Protection & Privacy
+### Business Data Responsibility – Your Data Protection & Privacy
 - **Date**: August 15, 2022
 - **Domain**: business.safety.google
 - **Link**: [https://business.safety.google/](https://business.safety.google/)
