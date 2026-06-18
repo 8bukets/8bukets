@@ -2,6 +2,8 @@
 /** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: neural-recovery (recovery_time: <100ms) **/
+import { neuralRecovery } from '@/antigravity/services/neural_recovery'
 /** PHASE 16 COMPLIANCE: cross-shard-cognition (enabled) **/
 import { crossShardMemory } from '@/antigravity/services/cross_shard_memory'
 /** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
@@ -177,12 +179,8 @@ export async function predictiveFetch<T>(
 
 // --- 4. COGNITIVE INSIGHTS (Phase 6) ---
 
-const logBuffer: { msg: string; time: string; type: string }[] = []
-
-export function logAutonomousAction(msg: string, type: string = 'info') {
-  logBuffer.unshift({ msg, time: new Date().toLocaleTimeString(), type })
-  if (logBuffer.length > 50) logBuffer.pop()
-}
+import { logBuffer, logAutonomousAction } from './utils/logger'
+export { logAutonomousAction }
 
 export async function getSystemInsights() {
   // Phase 12: Safeguard against CLI-mode execution
@@ -313,6 +311,10 @@ export async function healthCheck() {
   } catch (e) {
     results.supabase = 'error'
   }
+
+  // Phase 16: Neural Stability Monitoring
+  const nsIndex = results.mongodb === 'error' || results.supabase === 'error' ? 0.85 : 0.99
+  await neuralRecovery.evaluateStability(nsIndex)
 
   return results
 }

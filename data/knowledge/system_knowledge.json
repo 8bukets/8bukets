@@ -5825,6 +5825,34 @@
           "content": "{\n  \"compilerOptions\": {\n    \"forceConsistentCasingInFileNames\": true,\n    \"target\": \"ES2017\",\n    \"lib\": [\n      \"dom\",\n      \"dom.iterable\",\n      \"esnext\"\n    ],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"strict\": true,\n    \"noEmit\": true,\n    \"esModuleInterop\": true,\n    \"module\": \"esnext\",\n    \"moduleResolution\": \"bundler\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"jsx\": \"react-jsx\",\n    \"incremental\": true,\n    \"plugins\": [\n      {\n        \"name\": \"next\"\n      }\n    ],\n    \"paths\": {\n      \"@/*\": [\n        \"./*\"\n      ]\n    }\n  },\n  \"include\": [\n    \"next-env.d.ts\",\n    \"**/*.ts\",\n    \"**/*.tsx\",\n    \".next/types/**/*.ts\",\n    \".next/dev/types/**/*.ts\",\n    \"**/*.mts\"\n  ],\n  \"exclude\": [\n    \"node_modules\",\n    \"my-app\",\n    \"web-app\",\n    \"frontend\",\n    \"Syra\",\n    \"software-review-platform\",\n    \"go-sim\",\n    \"gemini-example\",\n    \"GeminiTest\",\n    \"AnalyticsResearchApp\",\n    \"scripts\"\n  ]\n}"
         }
       ]
+    },
+    {
+      "title": "Phase 16: Quantum Neural Recovery",
+      "metadata": {
+        "source": "icloud://neural_recovery.json",
+        "analyzedAt": "2026-06-18T07:44:04.706Z",
+        "description": "Extracted system knowledge from iCloud JSON"
+      },
+      "sections": [
+        {
+          "header": "Neural Recovery Protocol",
+          "content": "Implement autonomous neural recovery protocols to handle NS-Index drops. Target recovery time < 100ms."
+        }
+      ]
+    },
+    {
+      "title": "Phase 16: Swarm Performance Targets",
+      "metadata": {
+        "source": "icloud://swarm_performance.json",
+        "analyzedAt": "2026-06-18T07:44:04.951Z",
+        "description": "Extracted system knowledge from iCloud JSON"
+      },
+      "sections": [
+        {
+          "header": "Heartbeat Latency",
+          "content": "Phase 16 mandates <5ms latency for heartbeat reporting."
+        }
+      ]
     }
   ],
   "google_ads": [

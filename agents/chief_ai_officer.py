@@ -162,7 +162,7 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [COGNITION]: Cross-shard cognition mandate detected. Issuing activation directive.")
                     strategic_directives.append("ACTIVATE_CROSS_SHARD_COGNITION")
 
-                if "heartbeat latency" in sections_content or "less than 5ms" in sections_content:
+                if "heartbeat latency" in sections_content or "less than 5ms" in sections_content or "heartbeat latency" in sections_str:
                     self.logger.info("CAIO [PERF]: Advanced heartbeat latency mandate detected (<5ms). Issuing enforcement directive.")
                     strategic_directives.append("ENFORCE_HEARTBEAT_LATENCY")
 

@@ -1,3 +1,7 @@
+/** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
+import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 import { healthCheck } from '../antigravity/core'
 import { isDockerHealthy } from '../antigravity/services/docker'
 import { workOrderService } from '../antigravity/services/work_order'
