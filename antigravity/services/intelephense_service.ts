@@ -118,39 +118,44 @@ export class IntelephenseService {
       analyzedAt: new Date().toISOString()
     }
 
-    // 4. Persist consolidated knowledge
-    const observer = new KnowledgeObserver()
-    await observer.persistKnowledge(consolidatedKnowledge)
-
-    // 5. Purge redundant legacy entries (Post-persist to avoid data loss if write fails)
+    // 4. Pre-purge redundant or polluted entries from JSON store to ensure clean MD generation
     const storageDir = path.join(process.cwd(), 'data/knowledge')
     const jsonStore = path.join(storageDir, 'system_knowledge.json')
 
     try {
-      const data = await fs.promises.readFile(jsonStore, 'utf8')
-      const systemKnowledge = JSON.parse(data)
+      if (fs.existsSync(jsonStore)) {
+        const data = await fs.promises.readFile(jsonStore, 'utf8')
+        const systemKnowledge = JSON.parse(data)
 
-      if (systemKnowledge.typescript_sections) {
-        const originalCount = systemKnowledge.typescript_sections.length
-        const filtered = systemKnowledge.typescript_sections.filter((k: any) => {
-          // Purge legacy "Intelephense: file" titles but KEEP the new "Intelephense Documentation"
-          const isLegacyIntelephense = k.title.startsWith('Intelephense') && k.title !== 'Intelephense Documentation'
-          const isLocalFilename = k.title === 'intelephense_docs.md'
-          return !isLegacyIntelephense && !isLocalFilename
-        })
+        if (systemKnowledge.typescript_sections) {
+          const originalCount = systemKnowledge.typescript_sections.length
+          const filtered = systemKnowledge.typescript_sections.filter((k: any) => {
+            // Purge legacy "Intelephense: file" titles but KEEP the new "Intelephense Documentation"
+            const isLegacyIntelephense = k.title.startsWith('Intelephense') && k.title !== 'Intelephense Documentation'
+            const isLocalFilename = k.title === 'intelephense_docs.md'
 
-        if (filtered.length !== originalCount) {
-          console.log(` 🧹 Purged ${originalCount - filtered.length} redundant Intelephense entries.`)
-          await fs.promises.writeFile(jsonStore, JSON.stringify({ ...systemKnowledge, typescript_sections: filtered }, null, 2))
+            // SURGICAL FIX: Prevent pollution from unrelated scrapers
+            const isUnrelatedPollution = k.metadata?.source?.includes('news.blog') || k.metadata?.source?.includes('business.blog')
+
+            return !isLegacyIntelephense && !isLocalFilename && !isUnrelatedPollution
+          })
+
+          if (filtered.length !== originalCount) {
+            console.log(` 🧹 Pre-purged ${originalCount - filtered.length} redundant or polluted entries.`)
+            await fs.promises.writeFile(jsonStore, JSON.stringify({ ...systemKnowledge, typescript_sections: filtered }, null, 2))
+          }
         }
       }
     } catch (err) {
-      // Silently handle if file is missing or unparseable
+      console.warn(' ⚠️ Failed to pre-purge knowledge store:', err)
     }
+
+    // 5. Persist consolidated knowledge (This will now generate a clean MD)
+    const observer = new KnowledgeObserver()
+    await observer.persistKnowledge(consolidatedKnowledge)
 
     console.log('✅ Intelephense consolidation complete.')
   }
 }
 
 export const intelephenseService = new IntelephenseService()
-
