@@ -1,6 +1,6 @@
 # Google Ads and Ad Manager Documentation
 
-## Source: https://support.google.com/google-ads/answer/2459326
+## Source: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
 **Title**: Understanding bidding basics - Google Ads Help
 
 - Help Center
@@ -4733,7 +4733,7 @@ Last updated 2026-04-25 UTC.
 
 ## Google Ads Knowledge Ingestion
 
-### Source: https://support.google.com/google-ads/answer/2459326
+### Source: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
 **Title**: Understanding bidding basics - Google Ads Help
 
 - Help Center TopicsStart advertisingCampaignsExplore featuresOptimize performanceAccount & billingFix issuesGoogle Partners
