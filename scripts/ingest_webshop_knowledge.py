@@ -18,7 +18,7 @@ def scrape_webshop():
         html = response.text
         soup = BeautifulSoup(html, 'html.parser')
 
-        title = soup.title.string.strip() if soup.title else "Webshop & Market Intelligence"
+        title = soup.title.string.strip() if soup.title else "webshop – online"
 
         sections = []
 

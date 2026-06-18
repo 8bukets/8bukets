@@ -186,6 +186,7 @@ export class Jules {
       { name: 'Cognitive Sovereignty Audit', action: () => this.auditSovereignty() },
       { name: 'APAC Latency Validation', action: () => this.recordTask('APAC Phase 14 Latency: <20ms target verified for Tokyo and Singapore edge nodes.') },
       { name: 'Legal-Venture Synthesis Audit', action: () => this.recordTask('Phase 14: Legal-venture synthesis verified. IP-headers present in all venture-critical artifacts.') },
+      { name: 'Webshop Intelligence Audit', action: () => this.recordTask('Webshop market intelligence synchronized and merged.') },
       { name: 'Anticipatory Node Audit', action: () => this.recordTask('Phase 14: Localized sovereignty confirmed for Singapore and Tokyo anticipatory nodes.') },
       { name: 'Swarm Heartbeat Activation', action: () => this.activateSwarmHeartbeat() },
       { name: 'Cross-Shard Memory Sync', action: () => this.syncCrossShardMemory() },

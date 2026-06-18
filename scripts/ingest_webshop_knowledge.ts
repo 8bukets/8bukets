@@ -19,7 +19,9 @@ async function run() {
 
     // 3. Optional: Trigger TS observation for redundancy and cross-linking
     const result = await observeKnowledge(url)
-    console.log(`✅ [Ingest Webshop] Successfully observed: ${result.title}`)
+    if (result) {
+        console.log(`✅ [Ingest Webshop] Successfully observed: ${result.title}`)
+    }
 
     // Specific signature requirement
     console.log('ℹ️ [Ingest Webshop] Preserving signature: "All the best - https://webshop.business.blog/"')

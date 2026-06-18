@@ -36,7 +36,15 @@ async function run() {
     }
   }
 
-  // 2. sync to icloud
+  // 2. ingest knowledge
+  console.log('👁️ [ingest] Ingesting webshop market intelligence...');
+  try {
+    await execFileAsync('npm', ['run', 'ingest:webshop']);
+  } catch (err: any) {
+    console.warn('⚠️ [ingest] Webshop ingestion failed, continuing...');
+  }
+
+  // 3. sync to icloud
   console.log('☁️ [sync] Synchronizing project to iCloud...');
   const syncResult = await syncToICloud();
   if (syncResult.status === 'success') {
