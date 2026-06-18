@@ -1,45 +1,21 @@
 [
     {
-        "title": "Google DeepMind",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
-        "snippet": "",
-        "content": "News from Google DeepMind about how we're building AI responsibly to benefit everyone...."
-    },
-    {
-        "title": "Google Research",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/",
-        "snippet": "",
-        "content": ""
-    },
-    {
-        "title": "Google Labs",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
-        "snippet": "",
-        "content": "News about Google Labs, Google's home for the latest AI experiments and technology...."
-    },
-    {
-        "title": "Gemini models",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
-        "snippet": "",
-        "content": ""
-    },
-    {
-        "title": "Quantum computing",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/",
-        "snippet": "",
-        "content": "News from Google Quantum AI about how we're building quantum computing for unsolvable problems...."
-    },
-    {
-        "title": "Developer tools",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/",
-        "snippet": "",
-        "content": ""
-    },
-    {
         "title": "Global network",
         "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/",
         "snippet": "",
         "content": "News about how Google is building infrastructure for the 21st century...."
+    },
+    {
+        "title": "We’re strengthening our presence in Alabama through new investments and community support.",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/",
+        "snippet": "",
+        "content": "Google has announced a $1.5 billion investment for 2026 and 2027 to expand its data center campus in Jackson County, Alabama. Operating since 2019 on a repurposed former coal-plant site, the facility powers essential digital services while driving long-term regional growth.As part of this expansion, Google is funding 100% of its own power and infrastructure costs. The company also announced a $2 million Energy Impact Fund in partnership with the TVA and CAANEAL to support local energy efficiency and weatherization programs.Furthering our community commitment, we’re donating $550,000 to provide STEM kits for local fourth-to-eighth graders. These initiatives build on Google’s long-term local impact, which includes supporting water stewardship in the Paint Rock River Watershed, training over 130,000 Alabamians in digital skills and generating hundreds of full-time and construction jobs.Read our full announcement...."
+    },
+    {
+        "title": "Our new community investments in Virginia support local jobs and expand energy affordability.",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/",
+        "snippet": "",
+        "content": "Virginia has been a home for Google for more than a decade, with an office in Reston and data centers in Loudoun and Prince William Counties. Today, we’re deepening our commitment to the Commonwealth with new community investments that will support thousands of local jobs, prepare the next-generation workforce and expand energy affordability.To prepare Virginians for skilled jobs created by infrastructure growth across the state, we’re funding the electrical training ALLIANCE (etA) to support local electrical apprenticeship training facilities. With this funding, they aim to increase training capacity to support an additional 2,741 apprentices by 2030. This builds on our existing local support and is part of a national commitment from Google.org to prepare over 300,000 skilled tradespeople.As we responsibly build data centers in Virginia, we have invested in over 500 megawatts of new energy capacity, collaborating with partners to bring more power to the grid. To support energy afforda..."
     },
     {
         "title": "Google Cloud",
@@ -48,10 +24,40 @@
         "content": "Google Cloud helps companies empower their employees, serve their customers and build what’s next for their business...."
     },
     {
-        "title": "Safety & Security",
-        "url": "https://blog.google/innovation-and-ai/technology/safety-security/",
+        "title": "Cloud Next ‘26: Momentum and innovation at Google scale",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/",
         "snippet": "",
-        "content": "We're committed to your privacy and security. Get news on what we're doing to keep you safe...."
+        "content": "The pace of technological change since last year’s Cloud Next has never been faster, and Google Cloud has incredible momentum.Our first-party models now process more than 16 billion tokens per minute via direct API use by our customers, up from 10 billion last quarter. To support and drive this growth, in 2026, just over half of our overall machine learning compute investment is expected to go towards the Cloud business to benefit our cloud customers and partners.You can read all about our momentum and the extraordinary range of partnerships and innovations we’re announcing at Cloud Next.I want to highlight just four key areas.1. We’re firmly in the agentic Gemini eraLast fall we introduced Gemini Enterprise, the end-to-end system for the agentic era — the connective tissue between your data, your people and your goals.It has great momentum: In Q1, we saw 40% growth in paid monthly active users quarter-over-quarter.Through this rapid growth, we’ve seen how every employee in every organ..."
+    },
+    {
+        "title": "7 highlights from Google Cloud Next ‘26",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-cloud-next-26-recap/",
+        "snippet": "",
+        "content": "When we gathered at Google Cloud Next a year ago, we talked about how generative AI was beginning to change the way we work. This week in Vegas, we showcased how AI is not only transforming work, it’s running at scale.We’ve officially entered the agentic era. AI is becoming an active partner — an agent that can actually do the work for you safely and autonomously. At Next ‘26, we shared everything you need to build your own helpful, intelligent agents and use them to grow your business. Here are the highlights.1. The new Gemini Enterprise Agent Platform is here.For the technical teams building the future, we’re introducing the Gemini Enterprise Agent Platform. It’s a complete, end-to-end workspace to build, govern and scale your AI agents with the world's best models at your fingertips.We’re providing direct access to Gemini 3.1 Pro, our most capable model yet for handling complex workflows, alongside Gemini 3.1 Flash Image (also known as Nano Banana 2) for creating stunning visual ass..."
+    },
+    {
+        "title": "View the collection",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/how-google-does-it-security-series/",
+        "snippet": "",
+        "content": "In our Google Cloud series “How Google Does It,” we share exclusive, behind-the-scenes looks at how Google approaches some of today's most pressing security topics, challenges and concerns, straight from Google experts. Learn about how we modernize threat detection, build AI agents to boost defenders, apply SRE to cybersecurity and more...."
+    },
+    {
+        "title": "View the collection",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/next-2026/",
+        "snippet": "",
+        "content": "Agentic technology is revolutionizing how we work. Today, nearly 75% of Google Cloud customers are using our AI products to power their businesses, with 330 Google Cloud customers processing over a trillion tokens each in the past 12 months. And the agentic enterprise transformation is accelerating: Our models now process more than 16 billion tokens per minute via direct API use by our customers, up from 10 billion last quarter. We’re seeing customer success across every industry.Transformation to an agentic enterprise is the future of every organization. At Cloud Next ‘26, we’re showcasing the roadmap for how we can help you make the transition, from the new Gemini Enterprise Agent Platform to our eighth-generation Tensor Processing Units and beyond.Here are the highlights from Cloud Next ‘26...."
+    },
+    {
+        "title": "Gemini models",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
+        "snippet": "",
+        "content": ""
+    },
+    {
+        "title": "Gemini 3.5: frontier intelligence with action",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+        "snippet": "",
+        "content": "Today, we’re introducing Gemini 3.5, our latest family of models combining frontier intelligence with action. This represents a major leap forward in building more capable, intelligent agents. We’re kicking off the series by releasing 3.5 Flash. It delivers frontier performance for agents and coding, excelling at complex long-horizon tasks that deliver real-world utility.3.5 Flash is available today to billions of people globally:For everyone via the Gemini app and AI Mode in Google SearchFor developers in our agent-first development platform Google Antigravity and Gemini API in Google AI Studio and Android StudioFor enterprises in Gemini Enterprise Agent Platform and Gemini Enterprise.We’re also hard at work on 3.5 Pro. It's already being used internally, and we look forward to rolling it out next month.3.5 Flash: frontier performance for agents and codingGemini 3.5 Flash delivers intelligence that rivals large flagship models on multiple dimensions, at the speeds you have come to exp..."
     },
     {
         "title": "Fluid, natural voice translation with Gemini 3.5 Live Translate",
@@ -72,14 +78,62 @@
         "content": "Last year, Nano Banana brought Gemini's intelligence to image generation and editing. Since then, it’s helped millions of people restore old photos, design from sketches and visualize ideas in ways that weren’t possible before. From the start we built Gemini to be natively multimodal from the ground up, and now we’re taking the next step.We’re introducing Gemini Omni, where Gemini’s ability to reason meets the ability to create. Omni is our new model that can create anything from any input — starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.Today, we’re rolling out the first model in the Omni family: Gemini Omni Flash, to the Gemini app, Google Flow and YouTube Shorts. In time we will support output modalities like image and audio. Here’s some of what makes Omni special:Edit your videos through conversationGemini Omni..."
     },
     {
-        "title": "Gemini 3.5: frontier intelligence with action",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+        "title": "Google DeepMind",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
         "snippet": "",
-        "content": "Today, we’re introducing Gemini 3.5, our latest family of models combining frontier intelligence with action. This represents a major leap forward in building more capable, intelligent agents. We’re kicking off the series by releasing 3.5 Flash. It delivers frontier performance for agents and coding, excelling at complex long-horizon tasks that deliver real-world utility.3.5 Flash is available today to billions of people globally:For everyone via the Gemini app and AI Mode in Google SearchFor developers in our agent-first development platform Google Antigravity and Gemini API in Google AI Studio and Android StudioFor enterprises in Gemini Enterprise Agent Platform and Gemini Enterprise.We’re also hard at work on 3.5 Pro. It's already being used internally, and we look forward to rolling it out next month.3.5 Flash: frontier performance for agents and codingGemini 3.5 Flash delivers intelligence that rivals large flagship models on multiple dimensions, at the speeds you have come to exp..."
+        "content": "News from Google DeepMind about how we're building AI responsibly to benefit everyone...."
+    },
+    {
+        "title": "We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/",
+        "snippet": "",
+        "content": "The Asia-Pacific region is a global engine for economic growth, but it's also highly vulnerable to climate change. While green technologies are gaining momentum, a recent report shows they aren’t scaling fast enough to keep up with the region’s rising environmental risks.To help innovators tackle these environmental challenges, we’re launching an inaugural Google DeepMind Accelerator program in APAC focused on “AI for the Planet.”This three-month program is designed for startups, research teams and nonprofits across the region to use frontier AI to solve problems in nature, climate, agriculture, energy and more. Selected organizations will receive expert mentorship, tailored support and help integrating frontier AI and science AI models from Google AI experts into their projects or products.If you're working on climate solutions, we want to help you scale your work. The program kicks off with an in-person bootcamp in Singapore, and you can learn more and register your interest today...."
+    },
+    {
+        "title": "Simulate real-world places with Project Genie and Street View",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/",
+        "snippet": "",
+        "content": "Genie is our general-purpose world model capable of generating diverse, interactive environments. Since launching, Genie has become a foundational tool for research, enabling agents to learn and reason in complex virtual settings and even helping Waymo simulate hyper-realistic road environments.Now, we’re taking a leap forward by connecting Genie’s generative power with the real-world imagery of Google Street View, allowing our models to anchor themselves in reality. This expansion of Genie’s capabilities can provide a virtual environment for AI agents or robots to navigate and interact with the complexities of the real world.Today, we’re launching this new Street View grounding capability within Project Genie, our experimental prototype. With this upgrade, you'll be able to leverage real-world imagery to explore your favorite spots, or reimagine them with a creative twist. We’re also expanding access to Project Genie to more people around the globe.Select the “Ocean World” style to sc..."
+    },
+    {
+        "title": "Running Guide agent: A step towards running unbounded",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/",
+        "snippet": "",
+        "content": "For blind and low-vision (BLV) athletes, running has traditionally required a physical tether — whether it’s a human guide or a painted track line. Today, we are excited to share how we’re taking steps towards changing that with the Running Guide agent, an accessibility agent that uses real-time environmental understanding to help low-vision athletes run. It marks a massive leap from simple path-following to advanced, real-time spatial reasoning. As we work to perfect this technology, our goal is simple: unassisted independence for every runner.A hybrid architecture for uncompromising safetyBuilding on our previous work with Project Guideline, the Running Guide agent uses a chest-mounted Pixel 10 Pro smartphone to view the path ahead and guide the user via auditory feedback. Because high-speed activities demand high trust, we built a hybrid, dual-path architecture:On-device segmentation: Running entirely offline on the Pixel 10’s custom silicon, this model guarantees ultra-low latency ..."
+    },
+    {
+        "title": "Google Labs",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
+        "snippet": "",
+        "content": "News about Google Labs, Google's home for the latest AI experiments and technology...."
+    },
+    {
+        "title": "Meet Dreambeans, an app that connects you with what matters",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/dreambeans/",
+        "snippet": "",
+        "content": "In a world of endless scrolling and digital noise, Google Labs is introducing our latest experiment: Dreambeans. It uses Google’s latest AI capabilities, like Personal Intelligence and Nano Banana 2, to proactively dream up personalized daily stories that cut through the clutter and connect you to what matters.Get a daily dose of inspiration, brewed fresh for youWith your permission, Dreambeans uses Personal Intelligence to connect information from your Google apps, including Gmail, Calendar, Photos, YouTube and Search history to curate stories that inspire and delight you. The goal is not to scroll forever, it’s a finite collection of stories designed to spark new ideas and allow you to focus on what matters to you.For example, I got a Gmail confirmation that my puppy’s treats were delivered and Dreambeans surfaced training tips for using them. It also referenced the Google Calendar reminder I have of my friend coming to town and provided recommendations of dog-friendly restaurants ne..."
+    },
+    {
+        "title": "New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/",
+        "snippet": "",
+        "content": "On last year’s I/O stage, we introduced Google Flow, built with and for filmmakers. Since then we expanded Flow into an AI creative studio, with new capabilities in video and image generation and editing, and launched in over 140 countries around the world. Earlier this year we added a new tool to our Google Flow family, Google Flow Music, which brings Google’s newest music model, Lyria 3 Pro, to artists, producers and songwriters. We’re now bringing an agent for every step of the creative process, a new AI model that offers precise video editing, the ability to “vibe code” bespoke workflows and mobile applications for on-the-go creation.Let’s take a closer look at what’s new in Google Flow and Google Flow Music. 1 What’s new for Google FlowWe're taking Google Flow to a new level with Gemini Omni, a new agentic experience and custom tools.Use the full potential of Gemini Omni: Gemini Omni Flash is a model that can create anything from any input, starting with video. It combines G..."
+    },
+    {
+        "title": "Pomelli adds new ways to build brand content and design websites.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-agentic-capabilities/",
+        "snippet": "",
+        "content": "Last year we introduced Pomelli in Google Labs to help small and medium-sized businesses create on-brand content. Since then, we’ve seen millions of professional product shots, social campaigns and ads come to life.Today, we’re making it even easier to create content for your business with new agentic capabilities. The Pomelli Agent helps you build your Business DNA or brand identity. Whether you have existing materials or are starting from scratch, you can upload product docs and photos, or chat with the agent to build your brand identity.Once your Business DNA is defined, you can also use two new features:Brand books: Generate comprehensive guides featuring your brand's custom images, fonts and colors.Websites: Design and stand up a complete website in just a few clicks.Visit Google Labs to try Pomelli today.Introducing Pomelli agent.Create a brand book.Generate a website...."
+    },
+    {
+        "title": "We’re introducing new ways to design in real time with Stitch.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/",
+        "snippet": "",
+        "content": "Today at I/O, we announced new ways to vibe design with Stitch, transforming your design experience into a live, collaborative partnership with the Stitch Agent — allowing you to design, stream and steer iterations in real time.Whether you start with a text prompt, use your voice or bring existing codebase and design files, designing with Stitch is now a more natural and intuitive collaboration. Describe what you want through text, or say it aloud, and Stitch works alongside you to build out and reflow your ideas.When you’re ready, you can instantly generate a shareable link via Google AI Studio. And when it’s time to move to production, you can export your screens into Google Antigravity to easily plug in your backend logic, or publish your work to the web directly with Netlify.These updates are available to global users starting today.Stitch now streams its work straight to the canvas, and you can see it working in real time.The Stitch Agent allows you to steer iterations before the ..."
     },
     {
         "title": "Google Research",
-        "url": "https://blog.google/innovation-and-ai/technology/research/",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/",
         "snippet": "",
         "content": ""
     },
@@ -90,46 +144,28 @@
         "content": "Giving a diagnosis is the first step in treating a patient. Once a diagnosis is established, the challenge becomes managing a health condition over time — tracking symptoms across multiple appointments, parsing guidelines as they’re updated and fine-tuning medications.Research published today in “Nature” shows the capabilities of the Articulate Medical Intelligence Explorer (AMIE), our best-in-class research AI system for medical reasoning and conversations, evolving from one-off diagnostic conversations to long-term disease management using drug formularies and clinical guidelines.Using the long-context capabilities of Gemini models, AMIE for disease management features an empathetic dialogue agent for real-time patient conversations and a deep-thinking management reasoning agent that cross-references hundreds of pages of authoritative clinical knowledge. In this blinded study with patient actors, specialist physicians compared AMIE with 21 primary care doctors. AMIE matched clinician..."
     },
     {
-        "title": "The latest AI news we announced in May 2026",
-        "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/",
-        "snippet": "",
-        "content": "For more than 20 years, we’ve invested in machine learning and AI research, tools and infrastructure to build products that make everyday life better for more people. Teams across Google are working on ways to unlock AI’s benefits in fields as wide-ranging as healthcare, crisis response and education. To keep you posted on our progress, we're doing a regular roundup of Google's most recent AI news.Here’s a look back at some of our AI announcements from May.May 2026 was packed with AI news. At Google I/O 2026, we officially entered the agentic Gemini era with the launch of Gemini 3.5 — which delivers frontier intelligence for agents and coding — and Gemini Omni, where Gemini’s ability to reason meets the ability to create. The Android Show set the stage with brand-new hardware built specifically for these tools, including the Googlebook from our hardware partners. We also broadened our personal wellness tools with the new Google Health app and Fitbit Air, and launched an initiative to a..."
-    },
-    {
-        "title": "Running Guide agent: A step towards running unbounded",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/",
-        "snippet": "",
-        "content": "For blind and low-vision (BLV) athletes, running has traditionally required a physical tether — whether it’s a human guide or a painted track line. Today, we are excited to share how we’re taking steps towards changing that with the Running Guide agent, an accessibility agent that uses real-time environmental understanding to help low-vision athletes run. It marks a massive leap from simple path-following to advanced, real-time spatial reasoning. As we work to perfect this technology, our goal is simple: unassisted independence for every runner.A hybrid architecture for uncompromising safetyBuilding on our previous work with Project Guideline, the Running Guide agent uses a chest-mounted Pixel 10 Pro smartphone to view the path ahead and guide the user via auditory feedback. Because high-speed activities demand high trust, we built a hybrid, dual-path architecture:On-device segmentation: Running entirely offline on the Pixel 10’s custom silicon, this model guarantees ultra-low latency ..."
-    },
-    {
-        "title": "4 ways researchers are collaborating with Co-Scientist to solve big problems",
-        "url": "https://blog.google/innovation-and-ai/technology/research/co-scientist-research-problems/",
-        "snippet": "",
-        "content": "We recently published our latest research on Co-Scientist, a collaborative AI designed for structured scientific thinking to help researchers develop new hypotheses in life sciences and beyond.The system is made up of a coalition of specialized agents that work together in three distinct phases. First, Co-Scientist generates ideas through agents that propose hypotheses and explore a wide variety of research avenues. Next, it debates ideas, with one agent that acts as a virtual peer reviewer before another pits vetted ideas against each other in an “idea tournament.” Finally, it evolves ideas, with agents that refine, combine and improve the best hypotheses, as well as agents that synthesize the research for a human scientist. A supervisor agent ties the system together, breaking down high-level research goals into individual tasks, allocating resources and coordinating specialized agents to work in parallel.Since sharing early research last year, we’ve been developing and testing the s..."
-    },
-    {
         "title": "A new experiment brings better group meetings to Google Beam",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/",
         "snippet": "",
         "content": "While video conferencing tools keep us connected, users can still struggle to feel included in the conversation. Trying to read subtle emotions in a sea of tiny boxes may leave remote participants feeling like observers rather than engaged participants. Google Beam, our true-to-life video communication platform, helps you solve this problem by turning your meetings into a more active exchange.Today, we’re sharing a new experiment that brings better group meetings to Google Beam across more devices. Using HP Dimension’s immersive display, Google Beam renders participants joining from non-Beam devices in their true size, positioned as if they were sitting around a table with you. Paired with spatial audio that anchors each voice directly to the person speaking, colleagues look, sound, and feel more like they are in the same room.This optimization happens automatically, whether you join a meeting from home or the office. Our research suggests approaches like these help close the hybrid 'i..."
     },
     {
-        "title": "Gemini for Science: AI experiments and tools for a new era of discovery",
-        "url": "https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/",
+        "title": "Quantum computing",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/",
         "snippet": "",
-        "content": "For centuries, the scientific method has been the greatest engine of human progress. At Google, our mission is deeply rooted in building tools to accelerate it. We believe that a new era of discovery won’t come from narrow, specialized models, but general agents that empower researchers across every scientific field.That’s why we are introducing Gemini for Science, a collection of science tools and experiments designed to expand the scale and precision of scientific exploration.A force multiplier for human ingenuityToday science faces a paradox: our collective knowledge is growing so fast that it’s becoming harder for individual scientists to see the full picture. Scientific breakthroughs often rely upon making creative connections between data, but the time required to do this manually can take weeks or even months. AI can help eliminate this bottleneck and serve as a force multiplier for scientific work by handling complex tasks. This allows researchers to focus on identifying and ta..."
+        "content": "News from Google Quantum AI about how we're building quantum computing for unsolvable problems...."
     },
     {
-        "title": "Reservations are open for XREAL AURA — plus, see more news from AWE 2026.",
-        "url": "https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/",
+        "title": "Our new initiative to apply quantum science and AI to the life sciences",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/repliqa-quantum-computing-life-sciences/",
         "snippet": "",
-        "content": "At AWE 2026, we’re showcasing how the Android XR ecosystem is growing alongside our partners. In today’s joint keynote, we announced that reservations are now open for XREAL AURA, coming this fall. AURA is XREAL's first wired XR glasses powered by Android XR and using the Snapdragon® Reality Elite Platform.Beyond the main stage, we kicked off the week with a developer hackathon and hands-on technical workshops. You can visit the Qualcomm booth on the show floor during the show for live demonstrations of Samsung Galaxy XR, XREAL AURA and intelligent eyewear. And don't miss our developer keynote, the Android Enterprise panel or the Auggie Awards, where we’ll celebrate breakthroughs in our community.Ready to shape the future of computing? Reserve your XREAL AURA at xreal.com/aura and start building with Android XR today...."
+        "content": "Understanding human biology and health at the molecular level is one of science’s greatest challenges. To help tackle this, we’re launching the Research Program at the Intersection of the Life Sciences and Quantum AI (REPLIQA).REPLIQA is an effort by Google Quantum AI and Google.org to apply advanced quantum science and AI to the life sciences field. Part of this effort is a commitment of $10 million from Google.org to advance research at five leading academic institutions.The quantum advantage in biologyBiological processes, like how a protein folds or how a cell reacts to a new drug, involve incredibly complex interactions at the atomic level. Classical computers often struggle to accurately simulate these interactions. Quantum technologies, however, operate using the very same quantum mechanics that govern these molecules.For example, quantum sensors can now observe biological processes with unprecedented precision. Recent experiments even suggest that quantum spin — the way subatom..."
     },
     {
-        "title": "DiffusionGemma: 4x faster text generation",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
+        "title": "Answering your trending questions on World Quantum Day",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/",
         "snippet": "",
-        "content": "Today, we’re introducing DiffusionGemma, an experimental open model that explores text diffusion, an exceptionally fast approach to text generation. Released under an Apache 2.0 license, this 26B Mixture of Experts (MoE) model moves beyond the sequential token-by-token processing of typical autoregressive Large Language Models (LLMs). Instead, it generates entire blocks of text simultaneously, delivering up to 4x faster text generation on GPUs.Built upon the industry-leading intelligence-per-parameter of our Gemma 4 family and cutting-edge Gemini Diffusion research, DiffusionGemma integrates a novel diffusion head designed to maximize generation speed. While autoregressive Gemma 4 models remain the standard for high-quality production outputs, DiffusionGemma is designed for researchers and developers exploring speed-critical, interactive local workflows such as in-line editing, rapid iteration, and generating non-linear text structures.Unlocking new value for developersDevelopers build..."
+        "content": "The discovery of quantum mechanics fundamentally changed how we understand the natural world. In 1981, physicist Richard Feynman famously observed that because nature is quantum, we would eventually need to build computers that operate on those same principles to truly understand it. Building these computers remains one of the greatest engineering challenges of our era.At Google Quantum AI, our mission is to develop quantum computing for these complex, currently unsolvable problems. We believe large-scale, error-corrected quantum computers will be the key to unlocking certain solutions for real-world problems — from discovering more sustainable materials to accelerating drug discovery — that are beyond the reach of classical computers today.Our focus remains on the long-term journey: moving from experimental physics to the reliable, stable systems necessary to provide these breakthroughs for everyone.Visualizing the state of the qubitToday’s Google Doodle marks World Quantum Day by inc..."
     },
     {
         "title": "Save time and grow your business with new Gemini tools",
@@ -138,34 +174,10 @@
         "content": "Small businesses are the true engine of the global economy, yet entrepreneurs often find themselves stretched thin, playing the roles of CEO, CMO and customer service team all before lunch. AI holds incredible promise to act as an extension of your team, but to be truly helpful, it needs to remember your brand voice and context so you don't have to re-explain your goals every time you log in.Building on the new Google AI capabilities we announced in May, we’re excited to share what’s next for Gemini and Google Business Profile users. Today on stage at Google for Brazil, we introduced new Gemini app features specifically designed for business owners everywhere.Rolling out globally this month, these updates transform Gemini into a deeply knowledgeable, in-pocket partner that natively understands your business and helps you get more done.Connect your Google Business Profile to GeminiYour Google Business Profile serves as your digital storefront, helping you stand out on Google Search and ..."
     },
     {
-        "title": "See what 3 builders are making with Gemma 4",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/",
+        "title": "View more from NotebookLM",
+        "url": "https://blog.google/innovation-and-ai/products/notebooklm/",
         "snippet": "",
-        "content": "We recently released Gemma 4, our most capable open models to date. Since then, they have been downloaded more than 150 million times, and we’ve been expanding the family’s capabilities. We introduced Multi-Token Prediction (MTP) to accelerate inference, and recently released the 12B Unified model and Quantization-Aware-Training (QAT) checkpoints. Released under an Apache 2.0 license, Gemma 4 gives builders and organizations flexibility to fine-tune and deploy models across a variety of environments, from edge devices to local workstations.Many builders are sharing what they’ve created with Gemma 4, showcasing how the models’ capabilities translate into real-world applications. Here are three highlights of what people and companies are creating.Build low-latency, on-device apps.The team at the app building company HubX used Gemma 4 to build BetterSpeak, an offline AI English tutoring platform. BetterSpeak uses the edge-optimized Gemma 4 E2B (effective 2B parameters) model as the reason..."
-    },
-    {
-        "title": "We’re strengthening our presence in Alabama through new investments and community support.",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/",
-        "snippet": "",
-        "content": "Google has announced a $1.5 billion investment for 2026 and 2027 to expand its data center campus in Jackson County, Alabama. Operating since 2019 on a repurposed former coal-plant site, the facility powers essential digital services while driving long-term regional growth.As part of this expansion, Google is funding 100% of its own power and infrastructure costs. The company also announced a $2 million Energy Impact Fund in partnership with the TVA and CAANEAL to support local energy efficiency and weatherization programs.Furthering our community commitment, we’re donating $550,000 to provide STEM kits for local fourth-to-eighth graders. These initiatives build on Google’s long-term local impact, which includes supporting water stewardship in the Paint Rock River Watershed, training over 130,000 Alabamians in digital skills and generating hundreds of full-time and construction jobs.Read our full announcement...."
-    },
-    {
-        "title": "Our new community investments in Virginia support local jobs and expand energy affordability.",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/",
-        "snippet": "",
-        "content": "Virginia has been a home for Google for more than a decade, with an office in Reston and data centers in Loudoun and Prince William Counties. Today, we’re deepening our commitment to the Commonwealth with new community investments that will support thousands of local jobs, prepare the next-generation workforce and expand energy affordability.To prepare Virginians for skilled jobs created by infrastructure growth across the state, we’re funding the electrical training ALLIANCE (etA) to support local electrical apprenticeship training facilities. With this funding, they aim to increase training capacity to support an additional 2,741 apprentices by 2030. This builds on our existing local support and is part of a national commitment from Google.org to prepare over 300,000 skilled tradespeople.As we responsibly build data centers in Virginia, we have invested in over 500 megawatts of new energy capacity, collaborating with partners to bring more power to the grid. To support energy afforda..."
-    },
-    {
-        "title": "Catch up on 12 major I/O 2026 moments",
-        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
-        "snippet": "",
-        "content": "Our biggest, boldest new developments took center stage at Google I/O 2026. We announced technical breakthroughs, like Gemini Omni’s ability to create anything from any input, starting with video. And we shared product updates to help you day-to-day, like the brand new, intelligent Search box that will let you search across modalities, using text, images, files, videos or Chrome tabs as inputs. (And with plenty of other big I/O announcements, there’s a lot more where that came from!)In case you missed it, here are some of our most exciting I/O keynote reveals this year.1. Gemini OmniGemini Omni is our new model that can create anything from any input — starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.First, we’re launching the first model in the Omni family: Gemini Omni Flash. Gemini Omni Flash is rolling out to all ..."
-    },
-    {
-        "title": "I/O 2026: Welcome to the agentic Gemini era",
-        "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-        "snippet": "",
-        "content": "Editor’s note: Below is an edited transcript of Google CEO Sundar Pichai’s remarks at Google I/O 2026, adapted to include more of what was announced on stage. See all the announcements in our collection.It’s been an extraordinary year since our last I/O, a period of relentless shipping, technology advances and hyper progress. We’re now in the part of the AI cycle where people want to see the value in the products they use every day. We’ve been really focused on that, and you’ll see that in the products and features we’re announcing today at I/O.Ten years since we pivoted the company to be AI-first, we still see AI as the most profound way to advance our mission and improve people’s lives at scale. That’s why we’ve been taking a differentiated, full-stack approach to AI innovation, from our custom silicon and secure foundation, to our world-class research and models, to our products and platforms that touch billions of people. This approach enables us to iterate and innovate faster in w..."
+        "content": ""
     },
     {
         "title": "Do better research with NotebookLM",
@@ -174,20 +186,50 @@
         "content": "Three years ago we launched NotebookLM as an experimental AI product from Google Labs to help you understand anything. Millions of people and organizations turn to NotebookLM as a collaborative knowledge and research partner because it helps them organize their thinking, identify deeper connections across their documents and spark new ideas. Today we’re introducing across the board upgrades to NotebookLM that deliver new agentic capabilities in chat and more advanced reasoning to tackle the most complex research projects.An upgraded, more thoughtful chat experienceFirst, we’re upgrading NotebookLM to run on Gemini 3.5 and Antigravity providing even more accurate and reliable information along with better visibility into the thinking process.Each notebook is now equipped with a secure cloud computer, enabling NotebookLM to write and run code useful for helping you perform deeper research and more complex analysis. The system includes more than 100 curated software skills, unlocking a wi..."
     },
     {
-        "title": "Dive deeper into I/O 2026 with NotebookLM.",
-        "url": "https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/",
-        "snippet": "",
-        "content": "Google I/O is always jam-packed with announcements, demos and launches — and this year was no exception. Whether you’re looking to dive into the details of a new product or just want to catch up on news you might have missed, you can see it all in the notebook we’ve created using Google NotebookLM.This notebook has tons of info: YouTube videos of keynote speeches and product demonstrations, blog posts and more. Here’s how you can use our notebook on web or mobile:Listen to an Audio Overview to catch up in less than two minutes.Read through a Slide Deck to learn more about the biggest launches.Explore our highlights through an Infographic.Revisit some of our biggest announcements in a Video Overview.Ask your own questions about a new product or launch. (“What are the top updates to Search?”)(NotebookLM is grounded in provided sources and responses have citations, but remember, like all AI, NotebookLM can generate inaccuracies.)Still want more? Review the 100 things we announced this yea..."
-    },
-    {
         "title": "Generate your own Cinematic Video Overviews in NotebookLM.",
         "url": "https://blog.google/innovation-and-ai/products/notebooklm/generate-your-own-cinematic-video-overviews-in-notebooklm/",
         "snippet": "",
         "content": "NotebookLM is introducing Cinematic Video Overviews, a major update to its AI-powered video creation capabilities. This new feature moves beyond narrated slides in Video Overviews to create unique, immersive videos tailored to you.Using a combination of our advanced AI models, including Gemini 3, Nano Banana Pro and Veo 3, Cinematic Video Overviews generate fluid animations and rich, detailed visuals to help you learn and engage with the topics you care about. Gemini now acts as a creative director, making hundreds of structural and stylistic decisions to best tell the story with your sources. It determines the best narrative, visual style and format, and even refines its own work to ensure consistency.Cinematic Video Overviews are available in English starting today for Google AI Ultra subscribers (18+) on web and mobile...."
     },
     {
-        "title": "View more from NotebookLM",
-        "url": "https://blog.google/innovation-and-ai/products/notebooklm/",
+        "title": "Dive deeper into I/O 2026 with NotebookLM.",
+        "url": "https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/",
+        "snippet": "",
+        "content": "Google I/O is always jam-packed with announcements, demos and launches — and this year was no exception. Whether you’re looking to dive into the details of a new product or just want to catch up on news you might have missed, you can see it all in the notebook we’ve created using Google NotebookLM.This notebook has tons of info: YouTube videos of keynote speeches and product demonstrations, blog posts and more. Here’s how you can use our notebook on web or mobile:Listen to an Audio Overview to catch up in less than two minutes.Read through a Slide Deck to learn more about the biggest launches.Explore our highlights through an Infographic.Revisit some of our biggest announcements in a Video Overview.Ask your own questions about a new product or launch. (“What are the top updates to Search?”)(NotebookLM is grounded in provided sources and responses have citations, but remember, like all AI, NotebookLM can generate inaccuracies.)Still want more? Review the 100 things we announced this yea..."
+    },
+    {
+        "title": "Ask a Techspert: What is vibe coding?",
+        "url": "https://blog.google/innovation-and-ai/products/techspert-what-is-vibe-coding/",
+        "snippet": "",
+        "content": "You’ve heard of coding, and you’ve definitely heard of vibes. But what do they have to do with each other? Vibe coding is an emerging field of development, thanks to AI. It’s helping people build websites, apps and more. To get a better idea of how vibe coding works, why it’s becoming increasingly popular and what you can do with it, we talked to product director Kelly Schaefer, who leads a portfolio of AI-powered products in Google Labs.What do you do at Google?My teams and I build what we call “future of” products, which focus on the future of design, writing and even software development. In the software arena, we’re thinking about how to democratize building products. It’s not just engineers who will be building in the future!And vibe coding can help with that democratization. What’s your definition of vibe coding?Vibe coding lets you build what you envisioned in your head even if you don't have traditional coding skills. It’s a process where, for example, you can use an AI tool an..."
+    },
+    {
+        "title": "I/O 2026: Welcome to the agentic Gemini era",
+        "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+        "snippet": "",
+        "content": "Editor’s note: Below is an edited transcript of Google CEO Sundar Pichai’s remarks at Google I/O 2026, adapted to include more of what was announced on stage. See all the announcements in our collection.It’s been an extraordinary year since our last I/O, a period of relentless shipping, technology advances and hyper progress. We’re now in the part of the AI cycle where people want to see the value in the products they use every day. We’ve been really focused on that, and you’ll see that in the products and features we’re announcing today at I/O.Ten years since we pivoted the company to be AI-first, we still see AI as the most profound way to advance our mission and improve people’s lives at scale. That’s why we’ve been taking a differentiated, full-stack approach to AI innovation, from our custom silicon and secure foundation, to our world-class research and models, to our products and platforms that touch billions of people. This approach enables us to iterate and innovate faster in w..."
+    },
+    {
+        "title": "The latest AI news we announced in May 2026",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/",
+        "snippet": "",
+        "content": "For more than 20 years, we’ve invested in machine learning and AI research, tools and infrastructure to build products that make everyday life better for more people. Teams across Google are working on ways to unlock AI’s benefits in fields as wide-ranging as healthcare, crisis response and education. To keep you posted on our progress, we're doing a regular roundup of Google's most recent AI news.Here’s a look back at some of our AI announcements from May.May 2026 was packed with AI news. At Google I/O 2026, we officially entered the agentic Gemini era with the launch of Gemini 3.5 — which delivers frontier intelligence for agents and coding — and Gemini Omni, where Gemini’s ability to reason meets the ability to create. The Android Show set the stage with brand-new hardware built specifically for these tools, including the Googlebook from our hardware partners. We also broadened our personal wellness tools with the new Google Health app and Fitbit Air, and launched an initiative to a..."
+    },
+    {
+        "title": "How we used Gemini to build Google I/O 2026",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
+        "snippet": "",
+        "content": "Google I/O 2026 was all about how we’re making AI helpful for everyone in new ways. But we didn’t just make announcements about our innovations in AI at I/O — we used those tools to bring I/O to life, too.It’s both a strange and exciting moment to be building anything. We're living through an incredible shift where AI tools are getting better each month, effectively rewriting the rules of what we can create.This year, we challenged ourselves to use the same AI we were putting on stage to out-innovate, out-create and out-efficient ourselves.We moved faster than ever and prototyped in real-time — blending human artistry with experimental technology — with no better example than the \"Timmy TPU\" film.But the reward is showing how these tools unlock creativity and offload the mundane tasks, giving the team their best hours back for the parts they are uniquely suited to do. When done right, the event is amazing on its own, and, as a viewer, you stop thinking about how AI was used. That shift..."
+    },
+    {
+        "title": "Catch up on 12 major I/O 2026 moments",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
+        "snippet": "",
+        "content": "Our biggest, boldest new developments took center stage at Google I/O 2026. We announced technical breakthroughs, like Gemini Omni’s ability to create anything from any input, starting with video. And we shared product updates to help you day-to-day, like the brand new, intelligent Search box that will let you search across modalities, using text, images, files, videos or Chrome tabs as inputs. (And with plenty of other big I/O announcements, there’s a lot more where that came from!)In case you missed it, here are some of our most exciting I/O keynote reveals this year.1. Gemini OmniGemini Omni is our new model that can create anything from any input — starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.First, we’re launching the first model in the Omni family: Gemini Omni Flash. Gemini Omni Flash is rolling out to all ..."
+    },
+    {
+        "title": "Developer tools",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/",
         "snippet": "",
         "content": ""
     },
@@ -198,70 +240,22 @@
         "content": "Updated June 9, 2026Apple’s Worldwide Developers Conference (WWDC) kicked off this week, and we’re excited to share that Apple developers can now securely call cloud-hosted Gemini models using the Foundation Models framework, and access Gemini in Xcode. This announcement gives Apple developers seamless access to Gemini models to deliver dynamic experiences for their end users and increase their own development velocity.Call Gemini models directly from the Foundation Models frameworkAt WWDC, Apple announced that it's opening its Foundation Models framework to third-party cloud model providers. Starting with iOS 27, macOS 27, iPadOS 27, visionOS 27 and watchOS 27, model providers can implement the new public LanguageModel protocol to provide a common interface for model inference. We've made Gemini models available to the Foundation Models framework through the Firebase Apple SDK.This provides a fully native development experience — cloud-hosted Gemini models can plug directly into the F..."
     },
     {
-        "title": "7 highlights from Google Cloud Next ‘26",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-cloud-next-26-recap/",
+        "title": "DiffusionGemma: 4x faster text generation",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
         "snippet": "",
-        "content": "When we gathered at Google Cloud Next a year ago, we talked about how generative AI was beginning to change the way we work. This week in Vegas, we showcased how AI is not only transforming work, it’s running at scale.We’ve officially entered the agentic era. AI is becoming an active partner — an agent that can actually do the work for you safely and autonomously. At Next ‘26, we shared everything you need to build your own helpful, intelligent agents and use them to grow your business. Here are the highlights.1. The new Gemini Enterprise Agent Platform is here.For the technical teams building the future, we’re introducing the Gemini Enterprise Agent Platform. It’s a complete, end-to-end workspace to build, govern and scale your AI agents with the world's best models at your fingertips.We’re providing direct access to Gemini 3.1 Pro, our most capable model yet for handling complex workflows, alongside Gemini 3.1 Flash Image (also known as Nano Banana 2) for creating stunning visual ass..."
+        "content": "Today, we’re introducing DiffusionGemma, an experimental open model that explores text diffusion, an exceptionally fast approach to text generation. Released under an Apache 2.0 license, this 26B Mixture of Experts (MoE) model moves beyond the sequential token-by-token processing of typical autoregressive Large Language Models (LLMs). Instead, it generates entire blocks of text simultaneously, delivering up to 4x faster text generation on GPUs.Built upon the industry-leading intelligence-per-parameter of our Gemma 4 family and cutting-edge Gemini Diffusion research, DiffusionGemma integrates a novel diffusion head designed to maximize generation speed. While autoregressive Gemma 4 models remain the standard for high-quality production outputs, DiffusionGemma is designed for researchers and developers exploring speed-critical, interactive local workflows such as in-line editing, rapid iteration, and generating non-linear text structures.Unlocking new value for developersDevelopers build..."
     },
     {
-        "title": "View the collection",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/next-2026/",
+        "title": "See what 3 builders are making with Gemma 4",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/",
         "snippet": "",
-        "content": "Agentic technology is revolutionizing how we work. Today, nearly 75% of Google Cloud customers are using our AI products to power their businesses, with 330 Google Cloud customers processing over a trillion tokens each in the past 12 months. And the agentic enterprise transformation is accelerating: Our models now process more than 16 billion tokens per minute via direct API use by our customers, up from 10 billion last quarter. We’re seeing customer success across every industry.Transformation to an agentic enterprise is the future of every organization. At Cloud Next ‘26, we’re showcasing the roadmap for how we can help you make the transition, from the new Gemini Enterprise Agent Platform to our eighth-generation Tensor Processing Units and beyond.Here are the highlights from Cloud Next ‘26...."
+        "content": "We recently released Gemma 4, our most capable open models to date. Since then, they have been downloaded more than 150 million times, and we’ve been expanding the family’s capabilities. We introduced Multi-Token Prediction (MTP) to accelerate inference, and recently released the 12B Unified model and Quantization-Aware-Training (QAT) checkpoints. Released under an Apache 2.0 license, Gemma 4 gives builders and organizations flexibility to fine-tune and deploy models across a variety of environments, from edge devices to local workstations.Many builders are sharing what they’ve created with Gemma 4, showcasing how the models’ capabilities translate into real-world applications. Here are three highlights of what people and companies are creating.Build low-latency, on-device apps.The team at the app building company HubX used Gemma 4 to build BetterSpeak, an offline AI English tutoring platform. BetterSpeak uses the edge-optimized Gemma 4 E2B (effective 2B parameters) model as the reason..."
     },
     {
-        "title": "Cloud Next ‘26: Momentum and innovation at Google scale\n                          \n                          \n                        \n                        \n                          \n                            \n                              By\n                              Sundar Pichai",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/",
+        "title": "Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/",
         "snippet": "",
-        "content": "The pace of technological change since last year’s Cloud Next has never been faster, and Google Cloud has incredible momentum.Our first-party models now process more than 16 billion tokens per minute via direct API use by our customers, up from 10 billion last quarter. To support and drive this growth, in 2026, just over half of our overall machine learning compute investment is expected to go towards the Cloud business to benefit our cloud customers and partners.You can read all about our momentum and the extraordinary range of partnerships and innovations we’re announcing at Cloud Next.I want to highlight just four key areas.1. We’re firmly in the agentic Gemini eraLast fall we introduced Gemini Enterprise, the end-to-end system for the agentic era — the connective tissue between your data, your people and your goals.It has great momentum: In Q1, we saw 40% growth in paid monthly active users quarter-over-quarter.Through this rapid growth, we’ve seen how every employee in every organ..."
-    },
-    {
-        "title": "View the collection",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/how-google-does-it-security-series/",
-        "snippet": "",
-        "content": "In our Google Cloud series “How Google Does It,” we share exclusive, behind-the-scenes looks at how Google approaches some of today's most pressing security topics, challenges and concerns, straight from Google experts. Learn about how we modernize threat detection, build AI agents to boost defenders, apply SRE to cybersecurity and more...."
-    },
-    {
-        "title": "Simulate real-world places with Project Genie and Street View",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/",
-        "snippet": "",
-        "content": "Genie is our general-purpose world model capable of generating diverse, interactive environments. Since launching, Genie has become a foundational tool for research, enabling agents to learn and reason in complex virtual settings and even helping Waymo simulate hyper-realistic road environments.Now, we’re taking a leap forward by connecting Genie’s generative power with the real-world imagery of Google Street View, allowing our models to anchor themselves in reality. This expansion of Genie’s capabilities can provide a virtual environment for AI agents or robots to navigate and interact with the complexities of the real world.Today, we’re launching this new Street View grounding capability within Project Genie, our experimental prototype. With this upgrade, you'll be able to leverage real-world imagery to explore your favorite spots, or reimagine them with a creative twist. We’re also expanding access to Project Genie to more people around the globe.Select the “Ocean World” style to sc..."
-    },
-    {
-        "title": "We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks.",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/",
-        "snippet": "",
-        "content": "The Asia-Pacific region is a global engine for economic growth, but it's also highly vulnerable to climate change. While green technologies are gaining momentum, a recent report shows they aren’t scaling fast enough to keep up with the region’s rising environmental risks.To help innovators tackle these environmental challenges, we’re launching an inaugural Google DeepMind Accelerator program in APAC focused on “AI for the Planet.”This three-month program is designed for startups, research teams and nonprofits across the region to use frontier AI to solve problems in nature, climate, agriculture, energy and more. Selected organizations will receive expert mentorship, tailored support and help integrating frontier AI and science AI models from Google AI experts into their projects or products.If you're working on climate solutions, we want to help you scale your work. The program kicks off with an in-person bootcamp in Singapore, and you can learn more and register your interest today...."
-    },
-    {
-        "title": "Meet Dreambeans, an app that connects you with what matters",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/dreambeans/",
-        "snippet": "",
-        "content": "In a world of endless scrolling and digital noise, Google Labs is introducing our latest experiment: Dreambeans. It uses Google’s latest AI capabilities, like Personal Intelligence and Nano Banana 2, to proactively dream up personalized daily stories that cut through the clutter and connect you to what matters.Get a daily dose of inspiration, brewed fresh for youWith your permission, Dreambeans uses Personal Intelligence to connect information from your Google apps, including Gmail, Calendar, Photos, YouTube and Search history to curate stories that inspire and delight you. The goal is not to scroll forever, it’s a finite collection of stories designed to spark new ideas and allow you to focus on what matters to you.For example, I got a Gmail confirmation that my puppy’s treats were delivered and Dreambeans surfaced training tips for using them. It also referenced the Google Calendar reminder I have of my friend coming to town and provided recommendations of dog-friendly restaurants ne..."
-    },
-    {
-        "title": "How we used Gemini to build Google I/O 2026",
-        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
-        "snippet": "",
-        "content": "Google I/O 2026 was all about how we’re making AI helpful for everyone in new ways. But we didn’t just make announcements about our innovations in AI at I/O — we used those tools to bring I/O to life, too.It’s both a strange and exciting moment to be building anything. We're living through an incredible shift where AI tools are getting better each month, effectively rewriting the rules of what we can create.This year, we challenged ourselves to use the same AI we were putting on stage to out-innovate, out-create and out-efficient ourselves.We moved faster than ever and prototyped in real-time — blending human artistry with experimental technology — with no better example than the \"Timmy TPU\" film.But the reward is showing how these tools unlock creativity and offload the mundane tasks, giving the team their best hours back for the parts they are uniquely suited to do. When done right, the event is amazing on its own, and, as a viewer, you stop thinking about how AI was used. That shift..."
-    },
-    {
-        "title": "An update on our mental health work",
-        "url": "https://blog.google/innovation-and-ai/technology/health/mental-health-updates/",
-        "snippet": "",
-        "content": "Mental health is one of the most significant public health challenges today, impacting over one billion people around the world. For many years, Google has been committed to helping people find high-quality information and crisis support in the moments they need it most. Our work on mental health has always been rooted in research and clinical best practices. We realize that AI tools can pose new challenges, but as they improve and more people use them as part of their daily lives, we believe that responsible AI can play a positive role for people’s mental well-being.Today, we’re sharing an update on our mental health work, including some new changes to better connect people with the right information, resources, and human support at the right time.1. Providing better access to crisis supportWe're updating Gemini to streamline the path to support for those who need it. When a conversation might signal a user may need information about mental health Gemini will surface a redesigned \"Hel..."
-    },
-    {
-        "title": "Announcing the winners of the MedGemma Impact Challenge",
-        "url": "https://blog.google/innovation-and-ai/technology/health/med-gemma-impact-challenge/",
-        "snippet": "",
-        "content": "Launched in late 2024, Google’s Health AI Developer Foundations (HAI-DEF) program was created to provide global developers with open weight models, subject to the HAI-DEF Terms of Use, to solve complex healthcare challenges. Following the addition of MedGemma, Google's most capable open model for Health AI development, we introduced MedGemma 1.5 this past January and launched the MedGemma Impact Challenge in collaboration with Kaggle.The entries from over 850 teams demonstrate HAI-DEF’s potential to transform global health. We saw developers tackle diverse challenges that previously would have required much more resource intensive, ground-up development. Today, we are thrilled to announce the winners.EpiCast is a mobile-first demo solution built to bridge a critical gap within the Economic Community of West African States. By using a fine-tuned MedGemma model alongside MedSigLIP and HeAR, the system enables community health workers to transform unstructured clinical observations in loc..."
-    },
-    {
-        "title": "A more personal digital health experience for people in Europe",
-        "url": "https://blog.google/innovation-and-ai/technology/health/google-docmorris-partnership/",
-        "snippet": "",
-        "content": "From understanding symptoms to managing prescriptions, navigating healthcare isn't always straightforward. Technology can help make it simpler and more personal. That's why we're partnering with DocMorris, one of Europe’s leading online pharmacies, to help build a more intuitive and supportive digital health experience.We’re using our technology to support DocMorris in their AI-first transformation, with the goal of creating a true digital health companion for millions of people together. This means combining DocMorris' deep healthcare and pharmaceutical expertise with a range of Google's tools - from the AI capabilities in our Gemini models and the secure foundation of Google Cloud to the helpfulness of Google Ads and Google for Health.Making healthcare easier, from start to finishOur work will focus on making everyday health needs simpler and more accessible. Key areas will include:A personal health guide: Using our AI tools, DocMorris is developing a digital companion to help people..."
+        "content": "Since releasing Gemma 4 two months ago, we've been continuously working to expand its capabilities. First, we introduced Multi-Token Prediction (MTP) to accelerate inference, and just a couple of days ago, we released a 12B model to bridge the gap between our E4B and 26B MOE models.Today, we are releasing new checkpoints optimized with Quantization-Aware Training (QAT) to make Gemma 4 even more efficient, so you can run models locally on everyday edge devices and consumer GPUs.By simulating quantization during training, QAT minimizes quality loss when the model is compressed. This release includes QAT checkpoints for the popular Q4_0 quantization format as well as a novel quantization format specialized for mobile use cases. Using this mobile format, we’ve reduced the memory footprint of Gemma 4 E2B to 1GB. Together, these dramatically reduce memory requirements while preserving the capabilities and quality you expect from Gemma 4.Keeping model quality while making them smallerQuantiza..."
     },
     {
         "title": "View more from Health",
@@ -270,15 +264,87 @@
         "content": "The latest news about Google's health-related research and initiatives...."
     },
     {
-        "title": "How we're combatting AI scams with security, legislation and more",
-        "url": "https://blog.google/innovation-and-ai/technology/safety-security/combatting-ai-scams/",
+        "title": "A more personal digital health experience for people in Europe",
+        "url": "https://blog.google/innovation-and-ai/technology/health/google-docmorris-partnership/",
         "snippet": "",
-        "content": "You’ve seen the texts: fake package alerts, urgent bank warnings, panicked messages about your compromised account. Behind them is an AI-powered cybercrime network built to steal your passwords and credit cards. Today, we’re fighting back.We’re filing a lawsuit to dismantle their infrastructure, coordinating with the FBI who will be taking law enforcement actions, and will continue to work with AT&T, T-Mobile and Verizon to block these texts before they reach you. Litigation alone won’t end this. So Google is also advocating for federal legislation to make these protections permanent.Dismantling the \"Outsider Enterprise\"Our civil lawsuit targets an organized cybercrime operation known as the \"Outsider Enterprise.\" Based in China and coordinating through Telegram, this network distributes \"phishing kits\" that allow criminals to blast out fake text campaigns that look like they’re from Google and other trusted brands.The scale of the operation is massive:Hundreds of thousands of victims ..."
+        "content": "From understanding symptoms to managing prescriptions, navigating healthcare isn't always straightforward. Technology can help make it simpler and more personal. That's why we're partnering with DocMorris, one of Europe’s leading online pharmacies, to help build a more intuitive and supportive digital health experience.We’re using our technology to support DocMorris in their AI-first transformation, with the goal of creating a true digital health companion for millions of people together. This means combining DocMorris' deep healthcare and pharmaceutical expertise with a range of Google's tools - from the AI capabilities in our Gemini models and the secure foundation of Google Cloud to the helpfulness of Google Ads and Google for Health.Making healthcare easier, from start to finishOur work will focus on making everyday health needs simpler and more accessible. Key areas will include:A personal health guide: Using our AI tools, DocMorris is developing a digital companion to help people..."
+    },
+    {
+        "title": "Announcing the winners of the MedGemma Impact Challenge",
+        "url": "https://blog.google/innovation-and-ai/technology/health/med-gemma-impact-challenge/",
+        "snippet": "",
+        "content": "Launched in late 2024, Google’s Health AI Developer Foundations (HAI-DEF) program was created to provide global developers with open weight models, subject to the HAI-DEF Terms of Use, to solve complex healthcare challenges. Following the addition of MedGemma, Google's most capable open model for Health AI development, we introduced MedGemma 1.5 this past January and launched the MedGemma Impact Challenge in collaboration with Kaggle.The entries from over 850 teams demonstrate HAI-DEF’s potential to transform global health. We saw developers tackle diverse challenges that previously would have required much more resource intensive, ground-up development. Today, we are thrilled to announce the winners.EpiCast is a mobile-first demo solution built to bridge a critical gap within the Economic Community of West African States. By using a fine-tuned MedGemma model alongside MedSigLIP and HeAR, the system enables community health workers to transform unstructured clinical observations in loc..."
+    },
+    {
+        "title": "An update on our mental health work",
+        "url": "https://blog.google/innovation-and-ai/technology/health/mental-health-updates/",
+        "snippet": "",
+        "content": "Mental health is one of the most significant public health challenges today, impacting over one billion people around the world. For many years, Google has been committed to helping people find high-quality information and crisis support in the moments they need it most. Our work on mental health has always been rooted in research and clinical best practices. We realize that AI tools can pose new challenges, but as they improve and more people use them as part of their daily lives, we believe that responsible AI can play a positive role for people’s mental well-being.Today, we’re sharing an update on our mental health work, including some new changes to better connect people with the right information, resources, and human support at the right time.1. Providing better access to crisis supportWe're updating Gemini to streamline the path to support for those who need it. When a conversation might signal a user may need information about mental health Gemini will surface a redesigned \"Hel..."
+    },
+    {
+        "title": "Google Research",
+        "url": "https://blog.google/innovation-and-ai/technology/research/",
+        "snippet": "",
+        "content": ""
+    },
+    {
+        "title": "4 ways researchers are collaborating with Co-Scientist to solve big problems",
+        "url": "https://blog.google/innovation-and-ai/technology/research/co-scientist-research-problems/",
+        "snippet": "",
+        "content": "We recently published our latest research on Co-Scientist, a collaborative AI designed for structured scientific thinking to help researchers develop new hypotheses in life sciences and beyond.The system is made up of a coalition of specialized agents that work together in three distinct phases. First, Co-Scientist generates ideas through agents that propose hypotheses and explore a wide variety of research avenues. Next, it debates ideas, with one agent that acts as a virtual peer reviewer before another pits vetted ideas against each other in an “idea tournament.” Finally, it evolves ideas, with agents that refine, combine and improve the best hypotheses, as well as agents that synthesize the research for a human scientist. A supervisor agent ties the system together, breaking down high-level research goals into individual tasks, allocating resources and coordinating specialized agents to work in parallel.Since sharing early research last year, we’ve been developing and testing the s..."
+    },
+    {
+        "title": "Gemini for Science: AI experiments and tools for a new era of discovery",
+        "url": "https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/",
+        "snippet": "",
+        "content": "For centuries, the scientific method has been the greatest engine of human progress. At Google, our mission is deeply rooted in building tools to accelerate it. We believe that a new era of discovery won’t come from narrow, specialized models, but general agents that empower researchers across every scientific field.That’s why we are introducing Gemini for Science, a collection of science tools and experiments designed to expand the scale and precision of scientific exploration.A force multiplier for human ingenuityToday science faces a paradox: our collective knowledge is growing so fast that it’s becoming harder for individual scientists to see the full picture. Scientific breakthroughs often rely upon making creative connections between data, but the time required to do this manually can take weeks or even months. AI can help eliminate this bottleneck and serve as a force multiplier for scientific work by handling complex tasks. This allows researchers to focus on identifying and ta..."
     },
     {
         "title": "Building superconducting and neutral atom quantum computers",
         "url": "https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/",
         "snippet": "",
         "content": "At Google Quantum AI, our mission has always been clear: build quantum computing for otherwise unsolvable problems. For over a decade, we have pioneered the development of superconducting quantum bits (qubits), achieving milestones like beyond-classical performance, error correction and verifiable quantum advantage that once seemed decades away. We are now increasingly confident that commercially relevant quantum computers based on superconducting technology will become available by the end of this decade.Today, we are excited to share that Google Quantum AI is expanding our quantum computing effort to include neutral atom quantum computing, which uses individual atoms as qubits.Two promising approaches to quantum computingGoogle will accelerate our timeline to near-term milestones and broaden our impact by exploiting the complementary strengths of two modalities. Superconducting qubits have already scaled to circuits with millions of gate and measurement cycles, where each cycle takes..."
+    },
+    {
+        "title": "Safety & Security",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/",
+        "snippet": "",
+        "content": "We're committed to your privacy and security. Get news on what we're doing to keep you safe...."
+    },
+    {
+        "title": "How we're combatting AI scams with security, legislation and more",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/combatting-ai-scams/",
+        "snippet": "",
+        "content": "You’ve seen the texts: fake package alerts, urgent bank warnings, panicked messages about your compromised account. Behind them is an AI-powered cybercrime network built to steal your passwords and credit cards. Today, we’re fighting back.We’re filing a lawsuit to dismantle their infrastructure, coordinating with the FBI who will be taking law enforcement actions, and will continue to work with AT&T, T-Mobile and Verizon to block these texts before they reach you. Litigation alone won’t end this. So Google is also advocating for federal legislation to make these protections permanent.Dismantling the \"Outsider Enterprise\"Our civil lawsuit targets an organized cybercrime operation known as the \"Outsider Enterprise.\" Based in China and coordinating through Telegram, this network distributes \"phishing kits\" that allow criminals to blast out fake text campaigns that look like they’re from Google and other trusted brands.The scale of the operation is massive:Hundreds of thousands of victims ..."
+    },
+    {
+        "title": "Quantum frontiers may be closer than they appear",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/",
+        "snippet": "",
+        "content": "Google’s introducing a 2029 timeline to secure the quantum era with post-quantum cryptography (PQC) migration.Last month, we called to secure the quantum era before a future quantum computer can break current encryption. This new timeline reflects migration needs for the PQC era in light of progress on quantum computing hardware development, quantum error correction, and quantum factoring resource estimates.As a pioneer in both quantum and PQC, it’s our responsibility to lead by example and share an ambitious timeline. By doing this, we hope to provide the clarity and urgency needed to accelerate digital transitions not only for Google, but also across the industry.Quantum computers will pose a significant threat to current cryptographic standards, and specifically to encryption and digital signatures. The threat to encryption is relevant today with store-now-decrypt-later attacks, while digital signatures are a future threat that require the transition to PQC prior to a Cryptographica..."
+    },
+    {
+        "title": "Our latest fraud and scams advisory",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/fraud-scams-advisory-june-2026/",
+        "snippet": "",
+        "content": "Scams continue to be a persistent global challenge, fueled by sophisticated transnational crime groups who seek to exploit people online for financial gain. According to the NASDAQ Global Financial Crime Report, total global fraud losses are estimated at nearly $580 billion for 2025. Furthermore, global surveys indicate that approximately one in five adults fall victim to scams.At Google, our teams are committed to tracking these evolving tactics, sharing and acting on our observations to protect the public and the broader digital ecosystem. Our teams use the latest in AI capabilities to prevent, detect and respond against evolving scam tactics, and we regularly publish updates to share our observations with others.Our latest Scams Advisory describes both recent and seasonal scam trends identified by our analysts.1. Adversary-in-the-Middle (AITM)Traditional email phishing has evolved into sophisticated Adversary-in-the-Middle (AITM) and \"Quishing\" (QR code phishing) attacks. Despite in..."
+    },
+    {
+        "title": "Our fight against fraud: 5 ways we’re keeping you safer",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/scams-fraud-protection/",
+        "snippet": "",
+        "content": "Online fraud is highly disruptive, and can have a painful financial and emotional impact on people. Google is committed to tackling this challenge head-on. As part of that effort, this week, experts from across government, technology, consumer groups and academia are gathering in Zurich for the second EMEA Anti-Scams and Fraud Summit, hosted by the Google Safety Engineering Center (GSEC). The goal is simple but ambitious: Strengthen the collective action needed to disrupt today’s sophisticated scams.To support this mission, we’re building AI-driven protections into the products you use every day and collaborating across the industry and with the authorities to stay ahead of fraudsters. Here are five ways we are working to keep you safer from scams and fraud:1. Using AI-powered tools as the first line of defenseWhile scammers are using AI for nefarious purposes, we’re using it for good. Long before a scam reaches you, our AI-powered defenses are working to block it:We stop more than 99...."
+    },
+    {
+        "title": "Android XR lights up Sphere in Las Vegas for CES.",
+        "url": "https://blog.google/innovation-and-ai/technology/xr-ar/android-xr-sphere-ces-2026/",
+        "snippet": "",
+        "content": "Since introducing Android XR, our operating system for next generation headsets and glasses, we’ve begun moving from vision to reality. Samsung recently launched the Galaxy XR and we just previewed upcoming devices on The Android Show | XR Edition.Combining Gemini with an awareness of your surroundings, Android XR brings you new ways to experience apps. Your AI assistant provides real-time help, whether you're building a virtual workspace or diving into a game.Today, we’re bringing Android XR to the Las Vegas skyline by turning the outside of Sphere into an immersive portal of imagination. Watch as our Android bot discovers what’s possible with an Android XR headset: soaring through space, painting mid-air, getting help while gaming and more. It’s a larger-than-life look at how Gemini transforms the way you watch, explore and create in XR.Check out The Android Show | XR Edition to learn more and see what’s coming...."
+    },
+    {
+        "title": "Reservations are open for XREAL AURA — plus, see more news from AWE 2026.",
+        "url": "https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/",
+        "snippet": "",
+        "content": "At AWE 2026, we’re showcasing how the Android XR ecosystem is growing alongside our partners. In today’s joint keynote, we announced that reservations are now open for XREAL AURA, coming this fall. AURA is XREAL's first wired XR glasses powered by Android XR and using the Snapdragon® Reality Elite Platform.Beyond the main stage, we kicked off the week with a developer hackathon and hands-on technical workshops. You can visit the Qualcomm booth on the show floor during the show for live demonstrations of Samsung Galaxy XR, XREAL AURA and intelligent eyewear. And don't miss our developer keynote, the Android Enterprise panel or the Auggie Awards, where we’ll celebrate breakthroughs in our community.Ready to shape the future of computing? Reserve your XREAL AURA at xreal.com/aura and start building with Android XR today...."
     }
 ]
