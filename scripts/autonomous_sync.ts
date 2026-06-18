@@ -66,6 +66,11 @@ async function main() {
     console.log('🌟 [AutonomousSync] Executing Jules (TypeScript) work cycle...');
     const isLeader = onlinePresence.isLeader();
     if (isLeader || !isCloud) {
+       // Phase 16 Cloud Sovereignty: Ensure autonomous merging is active in cloud cycles
+       if (isCloud) {
+         console.log('🤖 [AutonomousSync] Cloud leadership active. Triggering autonomous PR audit and merge cycle...');
+         await jules.autonomousPrAudit();
+       }
        await jules.executeWorkCycle();
     } else {
        console.log('📡 [AutonomousSync] Node is subordinate. Skipping work cycle to avoid conflicts.');
