@@ -2564,5 +2564,61 @@
       "title": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
       "contentPreview": "- Use the Google Ad Manager API for JavaMavenGradleSBT\n- Which version ID should I get started with?Understanding Version ID and Library VersionsManaging Library VersionsChoosing the Right Version ID\n- Understanding Version ID and Library Versions\n- Managing Library Versions\n- Choosing the Right Version ID\n\n### ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.\n\n- Use the Google Ad Manager API for JavaMavenGradleSBT\n- Which version ID should I get started with?Understanding Version ID and Library VersionsManaging Library VersionsChoosing the Right Version ID\n- Understanding Version ID and Library Versions\n- Managing Library Versions\n- Choosing the Right Version ID\n\n### Key Reference Links\n\nGoogle Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.\n\n\n### Getting Started\n\nIn order to use this library, you first need to..."
     }
+  ],
+  "ai_agents_structured": [
+    {
+      "url": "user_input_agent_architecture_blueprint",
+      "title": "Agent Architecture Blueprint",
+      "sections": [
+        {
+          "header": "Agent - Behavior Logic",
+          "content": "The 'brain workflow' where the agent decides what to do, in what order, whether to use a tool, whether to iterate, and whether to fix an error."
+        },
+        {
+          "header": "Harness - Execution/Runtime Layer",
+          "content": "The 'operating environment' that calls tools, executes commands, manages memory, provides context to the model, controls the loop, manages retries, sandboxes the system, and tracks task state."
+        },
+        {
+          "header": "Tooling Layer",
+          "content": "Concrete capability adapters with deep integration to the terminal, git, file system, test runners, package managers, editors, and shell."
+        },
+        {
+          "header": "Context Engineering",
+          "content": "The critical layer where the system decides which files to load, what to summarize, what to discard, how to package the repo, how to compress history, and what to show to the model."
+        },
+        {
+          "header": "Prompt Orchestration",
+          "content": "Multi-layered prompt systems including system prompts, hidden chain structures, task decomposition prompts, reflection prompts, and self-check prompts."
+        },
+        {
+          "header": "Autonomy Loop",
+          "content": "The core execution cycle: Analyze -> Make change -> Run -> See error -> Fix -> Retry -> Validate -> Continue."
+        },
+        {
+          "header": "Repo Indexing / Retrieval System",
+          "content": "Sophisticated system to determine what to open vs. ignore, including semantic search, dependency graph, file relevance ranking, and a retrieval pipeline."
+        },
+        {
+          "header": "Diff / Edit Engine",
+          "content": "Crucial engine for safely modifying code, handling patching mechanisms, diff merging, corruption avoidance, formatting preservation, and partial edits."
+        },
+        {
+          "header": "Verification Layer",
+          "content": "Checks if build passes, tests pass, lint passes, and runtime errors exist to prevent confident hallucinations."
+        },
+        {
+          "header": "Memory System",
+          "content": "Allows long-term operation without context loss using session memory, task memory, repo memory, and preference memory."
+        },
+        {
+          "header": "Safety / Permission System",
+          "content": "Decides what the agent is allowed to execute, when it must ask the user, what is dangerous, and what is read-only."
+        },
+        {
+          "header": "UX Layer",
+          "content": "Ensures output looks meaningful, the agent explains its actions, the flow feels natural, and the terminal UX is well-designed."
+        }
+      ]
+    }
   ]
 }
