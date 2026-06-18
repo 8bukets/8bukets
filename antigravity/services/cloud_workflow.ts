@@ -29,6 +29,11 @@ export class CloudWorkflowAgent {
        console.log('🚀 [CloudWorkflowAgent] Cloud Node has Leadership. Enabling HIGH_INTENSITY mode.')
 
        try {
+         // Phase 16: Re-verify tool connectivity upon takeover
+         const { healthCheck } = await import('../core')
+         const coreHealth = await healthCheck()
+         console.log(`📡 [CloudWorkflowAgent] Sovereignty Health Check: MongoDB=${coreHealth.mongodb}, Supabase=${coreHealth.supabase}`)
+
          // Perform state recovery via bridge
          const { edgeToCloudBridge } = await import('./edge_to_cloud_bridge')
          const { workOrderService } = await import('./work_order')

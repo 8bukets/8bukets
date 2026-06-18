@@ -107,7 +107,7 @@ export class OnlinePresenceService {
         const otherNodes = await db.collection('agent_presence').find({
            agent: 'Jules',
            'telemetry.node_id': { $ne: nodeId },
-           lastSeen: { $gt: new Date(Date.now() - 15 * 60 * 1000).toISOString() } // Active in last 15m
+           lastSeen: { $gt: new Date(Date.now() - 5 * 60 * 1000).toISOString() } // Active in last 5m (Phase 16 Optimization)
         }).toArray()
 
         if (isCloud) {
@@ -119,15 +119,15 @@ export class OnlinePresenceService {
              const lastSeen = new Date(macbookNode.lastSeen).getTime()
              const diffMinutes = (Date.now() - lastSeen) / (1000 * 60)
 
-             if (diffMinutes < 15) {
+             if (diffMinutes < 5) {
                console.log(`📡 [OnlinePresence] MacBook node is ACTIVE (seen ${diffMinutes.toFixed(1)}m ago). Cloud node yielding leadership.`)
                isLeader = false
              } else {
-               console.log(`📡 [OnlinePresence] MacBook node STALE (seen ${diffMinutes.toFixed(1)}m ago). Cloud node assuming leadership.`)
+               logAutonomousAction(`🌩️ [OnlinePresence] MacBook node STALE (seen ${diffMinutes.toFixed(1)}m ago). Cloud node assuming SOVEREIGN leadership.`, 'info')
                isLeader = !higherPriorityActive
              }
            } else {
-             console.log('📡 [OnlinePresence] No active MacBook node detected in ecosystem. Cloud node assuming leadership.')
+             logAutonomousAction('📡 [OnlinePresence] No active MacBook node detected. Cloud node assuming SOVEREIGN leadership.', 'info')
              isLeader = !higherPriorityActive
            }
         } else {
