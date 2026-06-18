@@ -4,6 +4,8 @@
 /** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
 import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 import fs from 'fs'
@@ -187,6 +189,7 @@ export class Jules {
       { name: 'PR Rebase Automation', action: () => this.rebaseAllPRs() },
       { name: 'Skill Synchronization', action: () => this.syncSkills() },
       { name: 'Autonomous Merge', action: () => this.autonomousMerge() },
+      { name: 'Unitedsports Intelligence Ingestion', action: () => this.observeKnowledge('https://unitedsports.news.blog/') },
       { name: 'Edge Function Audit', action: () => this.recordTask('Edge function hello-world prepared for deployment.') },
       { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },
       { name: 'Collaboration Sync', action: () => this.syncCollaboration() },

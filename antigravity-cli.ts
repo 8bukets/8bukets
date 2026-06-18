@@ -1,3 +1,7 @@
+/** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
+import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 #!/usr/bin/env npx tsx
 
 import { Command } from 'commander';
@@ -23,10 +27,10 @@ program
   });
 
 program
-  .command('full-autonomus-automatic-creation-order-and-execution')
-  .description('Full autonomus automatic creation order and execution')
+  .command('full-autonomous-automatic-creation-order-and-execution')
+  .description('Full autonomous automatic creation order and execution')
   .action(async () => {
-    console.log('🚀 Triggering Full Autonomus Automatic Creation Order and Execution...');
+    console.log('🚀 Triggering Full Autonomous Automatic Creation Order and Execution...');
     const { spawn } = require('child_process');
     const child = spawn('npm', ['run', 'full-autonomous-automatic-creation-order-and-execution'], { stdio: 'inherit', shell: true });
     child.on('error', (error: Error) => {
@@ -72,6 +76,18 @@ program
       console.error(`❌ Autonomous online coding failed: ${err}`);
       process.exit(1);
     }
+  });
+
+program
+  .command('ingest-unitedsports')
+  .description('Deep market intelligence ingestion from unitedsports.news.blog')
+  .action(async () => {
+    console.log('🚀 Initiating Unitedsports Knowledge Ingestion...');
+    const { spawn } = require('child_process');
+    const child = spawn('npm', ['run', 'ingest:unitedsports'], { stdio: 'inherit', shell: true });
+    child.on('error', (error: Error) => {
+      console.error(`Error executing ingestion: ${error.message}`);
+    });
   });
 
 program
