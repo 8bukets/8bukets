@@ -140,9 +140,6 @@ Google Agentic AI označava novi val umjetne inteligencije tvrtke Google, u koje
 
 markposition.wordpress.com is a blog by Filip Keser that provides information and resources on various topics such as Google Ads, marketing, digital advertising platforms, privacy, and online business. It includes posts about different tools, platforms, and services like Google Ad Manager, Amazon Advertising, LinkedIn Marketing Solutions, Facebook for Business, and programmatic advertising technology.
 
----
-all the best - https://markposition.wordpress.com
-
 ## Autonomous Observation
 - **Date**: 2026-06-08T17:34:39.316Z
 - **Target**: https://markposition.wordpress.com
@@ -150,9 +147,6 @@ all the best - https://markposition.wordpress.com
 - **Context**: Ingested and observed external market or technical intelligence from https://markposition.wordpress.com.
 
 Summary: markposition.wordpress.com is a blog by Filip Keser that provides information and resources on various topics such as Google Ads, marketing, digital advertising platforms, privacy, and online business. It includes posts about different tools, platforms, and services like Google Ad Manager, Amazon Advertising, LinkedIn Marketing Solutions, Facebook for Business, and programmatic advertising technology.
-
----
-all the best - https://markposition.wordpress.com
 
 ## Autonomous Observation
 - **Date**: 2026-06-09T04:22:43.196Z

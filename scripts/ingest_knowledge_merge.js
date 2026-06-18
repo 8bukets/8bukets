@@ -24,7 +24,7 @@ export async function ingestKnowledgeMerge() {
         if (await fsPromises.access(filePath).then(() => true).catch(() => false)) {
             let fileContent = await fsPromises.readFile(filePath, 'utf8');
             const escapedSignature = signature.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-            const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'g');
+            const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'gi');
             fileContent = fileContent.replace(sigRegex, () => '\n\n');
             fileContent = fileContent.trim();
             // Append dynamic context if not already present
@@ -41,6 +41,8 @@ export async function ingestKnowledgeMerge() {
         }
     }
 }
-if (require.main === module) {
+import { fileURLToPath } from 'url';
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
     ingestKnowledgeMerge().catch(console.error);
 }
