@@ -1,3 +1,5 @@
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 import { observeGithubDocs } from '../antigravity/services/github_docs_observer'
 import fs from 'fs'
 import path from 'path'

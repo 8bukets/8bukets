@@ -23,6 +23,18 @@ program
   });
 
 program
+  .command('full-autonomus-automatic-creation-order-and-execution')
+  .description('Full autonomus automatic creation order and execution')
+  .action(async () => {
+    console.log('🚀 Triggering Full Autonomus Automatic Creation Order and Execution...');
+    const { spawn } = require('child_process');
+    const child = spawn('npm', ['run', 'full-autonomous-automatic-creation-order-and-execution'], { stdio: 'inherit', shell: true });
+    child.on('error', (error: Error) => {
+      console.error(`Error executing cycle: ${error.message}`);
+    });
+  });
+
+program
   .command('full-autonomous-creation')
   .description('Trigger the full autonomous creation and execution cycle')
   .action(async () => {

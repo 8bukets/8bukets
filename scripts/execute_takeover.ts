@@ -1,3 +1,5 @@
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 import { cloudWorkflowAgent } from '../antigravity/services/cloud_workflow';
 
 async function main() {

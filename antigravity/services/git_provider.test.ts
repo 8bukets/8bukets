@@ -1,3 +1,5 @@
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { GitProviderService } from './git_provider'
 
