@@ -42,7 +42,17 @@ async function run() {
     }
   }
 
-  // 2. sync to icloud
+  // 2. Knowledge Ingestion
+  console.log('🧠 [knowledge] Ingesting market intelligence...');
+  try {
+    const { stdout } = await execFileAsync('npm', ['run', 'ingest:knowledge']);
+    console.log(stdout);
+  } catch (err: any) {
+    console.warn('⚠️ [knowledge] Knowledge ingestion failed, proceeding with sync...');
+    console.warn(err.stdout || err.message);
+  }
+
+  // 3. sync to icloud
   console.log('☁️ [sync] Synchronizing project to iCloud...');
   const syncResult = await syncToICloud();
   if (syncResult.status === 'success') {
@@ -52,7 +62,7 @@ async function run() {
     process.exit(1); // Critical failure for the requested workflow
   }
 
-  // 3. Commit changes (if any)
+  // 4. Commit changes (if any)
   console.log('📝 [commit] Checking for changes to commit...');
   try {
     const { stdout: status } = await execFileAsync('git', ['status', '--porcelain']);
@@ -69,7 +79,7 @@ async function run() {
     console.warn(err.stdout || err.message);
   }
 
-  // 4. upload (git push)
+  // 5. upload (git push)
   console.log('📤 [upload] Pushing changes to remote...');
   try {
     const { stdout } = await execFileAsync('git', ['push']);

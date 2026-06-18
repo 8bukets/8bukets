@@ -187,6 +187,7 @@ export class Jules {
       { name: 'PR Rebase Automation', action: () => this.rebaseAllPRs() },
       { name: 'Skill Synchronization', action: () => this.syncSkills() },
       { name: 'Autonomous Merge', action: () => this.autonomousMerge() },
+      { name: 'Market Intelligence Ingestion', action: () => this.observeKnowledge() },
       { name: 'Edge Function Audit', action: () => this.recordTask('Edge function hello-world prepared for deployment.') },
       { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },
       { name: 'Collaboration Sync', action: () => this.syncCollaboration() },
