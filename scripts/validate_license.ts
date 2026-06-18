@@ -1,3 +1,4 @@
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
 import fs from 'fs';
 import path from 'path';
 

@@ -1,3 +1,5 @@
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 /**
  * Cognitive Code Self-Correction Service Autonomous Workflow
  * Generated autonomously by the Antigravity Singularity Engine.

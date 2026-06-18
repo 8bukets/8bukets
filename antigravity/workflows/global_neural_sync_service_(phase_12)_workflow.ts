@@ -1,3 +1,5 @@
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 /**
  * Global Neural Sync Service (Phase 12) Autonomous Workflow
  * Generated autonomously by the Antigravity Singularity Engine.

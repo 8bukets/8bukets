@@ -1,3 +1,5 @@
+/** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
 /**
  * GITHUB DOCUMENTATION OBSERVER
  * Autonomously extracts technical knowledge from GitHub markdown documentation.

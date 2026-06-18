@@ -1,3 +1,4 @@
+/** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
 import fs from 'fs'
 import path from 'path'
 

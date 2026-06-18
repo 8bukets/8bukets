@@ -18,6 +18,7 @@
     "upload": "git push",
     "sync:icloud": "tsx --env-file=.env scripts/sync_icloud.ts",
     "autonomous-creation": "tsx --env-file=.env scripts/full_autonomous_automatic_creation.ts",
+    "full-autonomous-automatic-creation-order-and-execution": "tsx --env-file=.env scripts/full_autonomous_automatic_creation.ts",
     "ingest:sor": "tsx --env-file=.env scripts/ingest_software_online_review.ts",
     "ingest:project-sor": "tsx --env-file=.env scripts/ingest_project_sor.ts",
     "ingest:terraform": "tsx --env-file=.env scripts/ingest_terraform_knowledge.ts",
