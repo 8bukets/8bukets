@@ -3,35 +3,35 @@ stages:
   - test
   - deploy
 
-variables:
-  IMAGE_NAME: getanant/sor
-  TAG: latest
-
-build-docker:
-  stage: build
-  image: docker:24.0.5
-  services:
-    - docker:24.0.5-dind
-  variables:
-    DOCKER_TLS_CERTDIR: "/certs"
+default:
   before_script:
-    - apk add --no-cache make bash
-  script:
-    - make docker-build
-    - if [ -n "$DOCKER_USERNAME" ] && [ -n "$DOCKER_PASSWORD" ]; then make docker-push; else echo "Skipping push, DOCKER_USERNAME or DOCKER_PASSWORD not set"; fi
+    - echo "Starting job..."
+  after_script:
+    - echo "Job finished."
+
+cache:
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - node_modules/
 
 build-job:
   stage: build
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
+    - echo "Building..." > build_output.txt
+  artifacts:
+    paths:
+      - build_output.txt
 
 test-job1:
   stage: test
+  needs: ["build-job"]
   script:
     - echo "This job tests something"
 
 test-job2:
   stage: test
+  needs: ["build-job"]
   script:
     - echo "This job tests something, but takes more time than test-job1."
     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
@@ -40,173 +40,9 @@ test-job2:
 
 deploy-prod:
   stage: deploy
+  needs: ["test-job1", "test-job2"]
   script:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
-
-run-autonomous-feedback_analysis:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Feedback Analysis Service"
-    - npx tsx antigravity/workflows/feedback_analysis_workflow.ts
   rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-performance_monitoring:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Performance Monitoring Service"
-    - npx tsx antigravity/workflows/performance_monitoring_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-cognitive_security:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Cognitive Security Service"
-    - npx tsx antigravity/workflows/cognitive_security_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-visual_neural_relay:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Visual Neural Relay"
-    - npx tsx antigravity/workflows/visual_neural_relay_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-feature_scaling_coordinator:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Feature Scaling Coordinator"
-    - npx tsx antigravity/workflows/feature_scaling_coordinator_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-autonomous_resource_optimizer:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Autonomous Resource Optimizer"
-    - npx tsx antigravity/workflows/autonomous_resource_optimizer_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-proactive_scalability:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Proactive Scalability Service"
-    - npx tsx antigravity/workflows/proactive_scalability_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-market-analysis:
-  stage: test
-  script:
-    - npm run ingest:sor
-    - npm run ingest:forbes
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-daily-tasks:
-  stage: test
-  script:
-    - npm run daily
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-autonomous-evolution:
-  stage: test
-  script:
-    - npm run test
-    - npx tsx scripts/execute_creation_cycle.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-autonomous_neural_cache_bridge:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Autonomous Neural Cache Bridge"
-    - npx tsx antigravity/workflows/autonomous_neural_cache_bridge_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-autonomous_performance_auditor:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Autonomous Performance Auditor"
-    - npx tsx antigravity/workflows/autonomous_performance_auditor_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-autonomous_ethics_auditor:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Autonomous Ethics Auditor"
-    - npx tsx antigravity/workflows/autonomous_ethics_auditor_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-apac_edge_orchestrator:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for APAC Edge Orchestrator"
-    - npx tsx antigravity/workflows/apac_edge_orchestrator_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-autonomous_infrastructure_graph:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Autonomous Infrastructure Graph"
-    - npx tsx antigravity/workflows/autonomous_infrastructure_graph_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-legal_venture_synthesis_audit:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Legal-Venture Synthesis Audit"
-    - npx tsx antigravity/workflows/legal_venture_synthesis_audit_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-project_omega_latency_optimizer:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Project Omega Latency Optimizer"
-    - npx tsx antigravity/workflows/project_omega_latency_optimizer_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-anticipatory_intelligence_cluster:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Anticipatory Intelligence Cluster"
-    - npx tsx antigravity/workflows/anticipatory_intelligence_cluster_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-ip_header_audit:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for IP-Header Audit Service"
-    - npx tsx antigravity/workflows/ip_header_audit_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-linkedin_role_scouter:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for LinkedIn Role Scouter"
-    - npx tsx antigravity/workflows/linkedin_role_scouter_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-coursera_certification_auditor:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Coursera Certification Auditor"
-    - npx tsx antigravity/workflows/coursera_certification_auditor_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
