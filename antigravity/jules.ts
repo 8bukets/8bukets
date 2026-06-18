@@ -186,6 +186,7 @@ export class Jules {
       { name: 'Intelephense Consolidation', action: () => this.consolidateIntelephense() },
       { name: 'PR Rebase Automation', action: () => this.rebaseAllPRs() },
       { name: 'Skill Synchronization', action: () => this.syncSkills() },
+      { name: 'Infogadgettech Ingestion', action: () => this.observeKnowledge('https://infogadgettech.wordpress.com/') },
       { name: 'Autonomous Merge', action: () => this.autonomousMerge() },
       { name: 'Edge Function Audit', action: () => this.recordTask('Edge function hello-world prepared for deployment.') },
       { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },

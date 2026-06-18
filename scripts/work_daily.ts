@@ -42,6 +42,16 @@ async function run() {
     }
   }
 
+  // 1.5. Ingest Infogadgettech market intelligence
+  console.log('🚀 [Ingest] Ingesting Infogadgettech market intelligence...');
+  try {
+    await execFileAsync('python3', ['scripts/ingest_infogadgettech.py']);
+    await execFileAsync('python3', ['-m', 'agents.knowledge_merge_agent']);
+    console.log('✅ [Ingest] Infogadgettech intelligence integrated.');
+  } catch (err: any) {
+    console.warn('⚠️ [Ingest] Failed to ingest Infogadgettech intelligence. Continuing...');
+  }
+
   // 2. sync to icloud
   console.log('☁️ [sync] Synchronizing project to iCloud...');
   const syncResult = await syncToICloud();
