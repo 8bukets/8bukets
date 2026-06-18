@@ -46,8 +46,27 @@ Subagents are specialized agents that operate within your main Gemini CLI sessio
 
 Summary: markposition.wordpress.com is a blog by Filip Keser that provides information and resources on various topics such as Google Ads, marketing, digital advertising platforms, privacy, and online business. It includes posts about different tools, platforms, and services like Google Ad Manager, Amazon Advertising, LinkedIn Marketing Solutions, Facebook for Business, and programmatic advertising technology.
 
----
-all the best - https://markposition.wordpress.com
+## 📈 Latest Market Intelligence (Dynamic Merge)
+
+### advertising.amazon
+- **Source**: advertising.amazon.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2022/10/05/advertising-amazon/)
+
+### Drive Advertising Revenue with Google Ad Manager : Google
+- **Source**: skillshop.exceedlms.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2022/09/26/drive-advertising-revenue-with-google-ad-manager-google-5/)
+
+### https://marketingplatform.google.com/about/search-ads-360/
+- **Source**: Markposition
+- **Link**: [Post Link](https://markposition.wordpress.com/2022/03/10/https-marketingplatform-google-com-about-search-ads-360-2/)
+
+### Analytics Academy
+- **Source**: analytics.google.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2022/09/20/analytics-academy/)
+
+### Adssettings google
+- **Source**: adssettings.google.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2022/09/20/adssettings-google/)
 
 ---
 All the best - https://markposition.wordpress.com

@@ -25,13 +25,25 @@ export async function scrapeMarkpositionKnowledge(maxPages: number = 3) {
             const url = page === 1 ? BASE_URL : `${BASE_URL}page/${page}/`;
             console.log(` - Scraping page ${page}: ${url}`);
 
-            const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+            let response;
+            try {
+                response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+            } catch (fetchError: any) {
+                if (fetchError.name === 'AbortError') {
+                    console.error(` ❌ [Ingest] Timeout fetching page ${page}: ${url}`);
+                } else {
+                    console.error(` ❌ [Ingest] Network error fetching page ${page}: ${fetchError.message}`);
+                }
+                break;
+            }
+
             if (!response.ok) {
                 if (response.status === 404) {
-                    console.log(` ✨ [Ingest] Page ${page} not found. Ending pagination.`);
+                    console.log(` ✨ [Ingest] Page ${page} not found (404). Ending pagination.`);
                     break;
                 }
-                throw new Error(`HTTP error! status: ${response.status}`);
+                console.error(` ❌ [Ingest] Failed to fetch page ${page}: HTTP ${response.status} ${response.statusText}`);
+                break;
             }
             const html = await response.text();
             const $ = cheerio.load(html);

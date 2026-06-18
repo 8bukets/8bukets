@@ -32,7 +32,7 @@ export async function ingestKnowledgeMerge() {
             let fileContent = await fsPromises.readFile(filePath, 'utf8');
 
             const escapedSignature = signature.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-            const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'g');
+            const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'gi');
 
             fileContent = fileContent.replace(sigRegex, () => '\n\n');
             fileContent = fileContent.trim();
