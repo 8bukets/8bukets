@@ -5825,6 +5825,2802 @@
           "content": "{\n  \"compilerOptions\": {\n    \"forceConsistentCasingInFileNames\": true,\n    \"target\": \"ES2017\",\n    \"lib\": [\n      \"dom\",\n      \"dom.iterable\",\n      \"esnext\"\n    ],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"strict\": true,\n    \"noEmit\": true,\n    \"esModuleInterop\": true,\n    \"module\": \"esnext\",\n    \"moduleResolution\": \"bundler\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"jsx\": \"react-jsx\",\n    \"incremental\": true,\n    \"plugins\": [\n      {\n        \"name\": \"next\"\n      }\n    ],\n    \"paths\": {\n      \"@/*\": [\n        \"./*\"\n      ]\n    }\n  },\n  \"include\": [\n    \"next-env.d.ts\",\n    \"**/*.ts\",\n    \"**/*.tsx\",\n    \".next/types/**/*.ts\",\n    \".next/dev/types/**/*.ts\",\n    \"**/*.mts\"\n  ],\n  \"exclude\": [\n    \"node_modules\",\n    \"my-app\",\n    \"web-app\",\n    \"frontend\",\n    \"Syra\",\n    \"software-review-platform\",\n    \"go-sim\",\n    \"gemini-example\",\n    \"GeminiTest\",\n    \"AnalyticsResearchApp\",\n    \"scripts\"\n  ]\n}"
         }
       ]
+    },
+    {
+      "title": "marketing",
+      "metadata": {
+        "source": "https://marketing1usa.wordpress.com/",
+        "analyzedAt": "2026-06-18T08:46:25.445108Z",
+        "description": "Market intelligence and company news updates extracted from marketing1usa.wordpress.com."
+      },
+      "sections": [
+        {
+          "header": "nike",
+          "content": "https://www.nike.com/\nhttps://www.nike.com/jordan"
+        },
+        {
+          "header": "cinestarcinemas",
+          "content": "https://cinestarcinemas.hr/"
+        },
+        {
+          "header": "instagram",
+          "content": "https://www.instagram.com/"
+        },
+        {
+          "header": "McDonalds 🍔",
+          "content": "https://mcdonalds.hr/"
+        },
+        {
+          "header": "Zaručničko & Vjenčano prstenje Zrin Nakit",
+          "content": "https://www.zrin-nakit.hr/"
+        },
+        {
+          "header": "Samsung Hrvatska | Mobiteli, TV, perilice rublja i kućanski uređaji",
+          "content": "https://www.samsung.com/hr/"
+        },
+        {
+          "header": "Viva Wallet – Viva Wallet",
+          "content": "https://www.vivawallet.com/hr_hr/"
+        },
+        {
+          "header": "Booking.com | Službena stranica | Najbolji hoteli, letovi, najam auta i smještaj",
+          "content": "https://www.booking.com/"
+        },
+        {
+          "header": "Rimac Automobili",
+          "content": "https://www.rimac-automobili.com/"
+        },
+        {
+          "header": "HBO Max | Nevjerojatno iskustvo streaminga",
+          "content": "https://www.hbomax.com/hr/hr"
+        },
+        {
+          "header": "KLIK.HR – Sve vijesti na jednom mjestu",
+          "content": "https://klik.hr/"
+        },
+        {
+          "header": "United Sports News",
+          "content": "https://unitedsports.news.blog/"
+        },
+        {
+          "header": "spa",
+          "content": "Spa.hr"
+        },
+        {
+          "header": "Dior official website | DIOR",
+          "content": "Subscribe to continue reading\nSubscribe to get access to the rest of this post and other subscriber-only content.\nType your email…\nSubscribe\nAlready a subscriber?"
+        },
+        {
+          "header": "Subscribe to continue reading",
+          "content": "Subscribe to continue reading\nSubscribe to get access to the rest of this post and other subscriber-only content.\nType your email…\nSubscribe\nAlready a subscriber?"
+        },
+        {
+          "header": "ecc-softpos",
+          "content": "https://www.erstecardclub.hr/hr/za-prodajna-mjesta/usluge/ecc-softpos\nhttps://www.erstecardclub.hr/"
+        },
+        {
+          "header": "croatialuxuryrent",
+          "content": "https://www.croatialuxuryrent.com/hr"
+        },
+        {
+          "header": "zaba",
+          "content": "https://www.zaba.hr/"
+        },
+        {
+          "header": "tuplex",
+          "content": "https://tuplex.hr/hr"
+        },
+        {
+          "header": "mirakul",
+          "content": "Home"
+        },
+        {
+          "header": "zenskirecenziraj",
+          "content": "https://www.zenskirecenziraj.com/hr/"
+        },
+        {
+          "header": "unikopetshop",
+          "content": "UNiKO"
+        },
+        {
+          "header": "lama",
+          "content": "https://www.lama.hr/hr/"
+        },
+        {
+          "header": "mypos",
+          "content": "https://www.mypos.com/hr"
+        },
+        {
+          "header": "televio",
+          "content": "https://televio.hr/ott/welcome"
+        },
+        {
+          "header": "infokom",
+          "content": "https://www.infokom-obrt.com/"
+        },
+        {
+          "header": "erstecardclub/za-prodajna-mjesta/usluge/ecc-softpos",
+          "content": "https://www.erstecardclub.hr/hr/za-prodajna-mjesta/usluge/ecc-softpos"
+        },
+        {
+          "header": "dnb",
+          "content": "https://www.dnb.com/hr-hr/"
+        },
+        {
+          "header": "mastercard",
+          "content": "https://www.mastercard.hr/"
+        },
+        {
+          "header": "koruska",
+          "content": "https://www.koruska.com"
+        },
+        {
+          "header": "daruvarske-toplice",
+          "content": "https://www.daruvarske-toplice.hr/"
+        },
+        {
+          "header": "lumini",
+          "content": "https://www.lumini.hr/"
+        },
+        {
+          "header": "reebok",
+          "content": "https://www.reebok.com/us"
+        },
+        {
+          "header": "minihotel",
+          "content": "https://minihotel.io/hr/"
+        },
+        {
+          "header": "baumit",
+          "content": "https://baumit.hr/"
+        },
+        {
+          "header": "irobot",
+          "content": "https://www.irobot.hr/"
+        },
+        {
+          "header": "kik",
+          "content": "https://poduzece.kik.hr/"
+        },
+        {
+          "header": "Pastor",
+          "content": "https://www.pastor.hr/"
+        },
+        {
+          "header": "Ciak",
+          "content": "https://webshop.ciak-auto.hr/"
+        },
+        {
+          "header": "residence-grupa",
+          "content": "Naslovna"
+        },
+        {
+          "header": "poslovni",
+          "content": "Naslovnica"
+        },
+        {
+          "header": "royaldubrovnik",
+          "content": "https://www.royaldubrovnik.com/hr/"
+        },
+        {
+          "header": "Cityisland",
+          "content": "https://cityisland.hr/"
+        },
+        {
+          "header": "germaniasport",
+          "content": "https://www.germaniasport.hr/"
+        },
+        {
+          "header": "Multipluscard",
+          "content": "https://www.multipluscard.hr/"
+        },
+        {
+          "header": "Starbucks® Coffee At Home | Nestlé HR",
+          "content": "https://www.nestle.hr/starbucks-home"
+        },
+        {
+          "header": "Nestlé Hrvatska | Službena web stranica",
+          "content": "https://www.nestle.hr/"
+        },
+        {
+          "header": "Hrvatski judo savez",
+          "content": "https://judo.hr/"
+        },
+        {
+          "header": "Fidelio Tailored Clothing",
+          "content": "https://www.fideliotailor.com/"
+        },
+        {
+          "header": "Darojković | Prijevoznik, jednodnevni izleti, najam autobusa",
+          "content": "https://darojkovic.hr/"
+        },
+        {
+          "header": "Emmezeta webshop – sigurna online trgovina | Emmezeta webshop – sigurna online trgovina",
+          "content": "https://www.emmezeta.hr/"
+        },
+        {
+          "header": "Cvjetni",
+          "content": "http://www.centarcvjetni.hr/"
+        },
+        {
+          "header": "DIOR",
+          "content": "https://www.dior.com/en_hr/fashion"
+        },
+        {
+          "header": "Terme Sveti Martin",
+          "content": "https://www.termesvetimartin.com/hr/"
+        },
+        {
+          "header": "tvoja, BIPA",
+          "content": "https://www.bipa.hr/"
+        },
+        {
+          "header": "Naslovna – Eksa Grupa",
+          "content": "https://www.eksagrupa.hr/"
+        },
+        {
+          "header": "Tommy – Dućan na dlanu!",
+          "content": "https://www.tommy.hr/"
+        },
+        {
+          "header": "LONCI&POKLOPCI by Bajde – Za vrhunsko kulinarsko iskustvo | LONCI&POKLOPCI by Bajde",
+          "content": "https://www.lonciipoklopci.hr/"
+        },
+        {
+          "header": "Visor – Industrial Vision Solutions",
+          "content": "https://visor.hr/"
+        },
+        {
+          "header": "Poslovni program PANTHEON – Poslovni program PANTHEON – PANTHEON – Datalab",
+          "content": "https://www.datalab.hr/"
+        },
+        {
+          "header": "Fanta® | Delicious Fruit Flavored Sodas",
+          "content": "https://www.fanta.com/"
+        },
+        {
+          "header": "Kaufland",
+          "content": "https://www.kaufland.hr/"
+        },
+        {
+          "header": "Za ljepši pogled na život! | Optika Anda",
+          "content": "https://optika-anda.com/"
+        },
+        {
+          "header": "Links.hr: Informatika i oprema, Sport, Dronovi i Roboti, Bijela tehnika i Kućanski aparati",
+          "content": "https://www.links.hr/hr/"
+        },
+        {
+          "header": "Pevex Webshop | Pevex",
+          "content": "https://pevex.hr/"
+        },
+        {
+          "header": "Aling d.o.o. – protupožarni i sigurnosni sustavi",
+          "content": "http://www.aling.hr/"
+        },
+        {
+          "header": "STRABAG Hrvatska – STRABAG Hrvatska",
+          "content": "https://www.strabag.hr/"
+        },
+        {
+          "header": "Restoran Kaptolska klet, Zagreb – Vrhunski restoran u Zagrebu",
+          "content": "http://www.kaptolska-klet.eu/"
+        },
+        {
+          "header": "Končar MES – Dobrodošli!",
+          "content": "https://koncar-mes.hr/hr/"
+        },
+        {
+          "header": "Casino | Najbolji Online Casino u Hrvatskoj | SuperSport | SuperCasino",
+          "content": "https://mcasino.supersport.hr/"
+        },
+        {
+          "header": "Moj digitalni ured ‐ Hrvatski Telekom",
+          "content": "https://www.hrvatskitelekom.hr/poslovni/moj-digitalni-ured"
+        },
+        {
+          "header": "Osiguranje vozila – Izračunaj cijenu police u par minuta| LAQO",
+          "content": "https://www.laqo.hr/osiguranje-vozila/"
+        },
+        {
+          "header": "Schwarzkopf",
+          "content": "https://www.schwarzkopf.com"
+        },
+        {
+          "header": "BestsellerTV",
+          "content": "https://www.bestsellertv.com/"
+        },
+        {
+          "header": "Panasonic Hrvatska",
+          "content": "https://www.panasonic.com/hr/"
+        },
+        {
+          "header": "McDonalds",
+          "content": "https://www.mcdonaldsapps.com/"
+        },
+        {
+          "header": "Rudex sauna",
+          "content": "https://rudex-sauna.hr/"
+        },
+        {
+          "header": "Tenzorsbs.hr – integracija naprednih tehničkih sustava",
+          "content": "https://www.tenzorsbs.hr/"
+        },
+        {
+          "header": "douglas",
+          "content": "https://www.douglas.hr/"
+        },
+        {
+          "header": "VESKI ltd.",
+          "content": "https://www.veski.hr/"
+        },
+        {
+          "header": "Hoću knjigu – Naslovnica",
+          "content": "https://www.hocuknjigu.hr/"
+        },
+        {
+          "header": "MARSUPIA Novi zabavni park. Your Day is About to Get Awesome",
+          "content": "https://marsupia.hr/"
+        },
+        {
+          "header": "Metalne police HR – Besplatna dostava – Uredite i organizirajte svoj prostor",
+          "content": "https://www.metalnepolice.hr/"
+        },
+        {
+          "header": "Automatska vrata, staklene pregradne stijene – Pin Tehnika",
+          "content": "https://www.pin-tehnika.hr/"
+        },
+        {
+          "header": "1Klik – ID rješenja",
+          "content": "https://1klik.com.hr/"
+        },
+        {
+          "header": "ASUS Hrvatska :: AsusPlus",
+          "content": "https://www.asusplus.hr/"
+        },
+        {
+          "header": "Naslovnica – Texel | Računovodstvo, savjetovanje i pravna pomoć",
+          "content": "https://texel.hr/"
+        },
+        {
+          "header": "O nama – Mehrzer Web Trgovina",
+          "content": "https://mehrzer.hr/o-nama/"
+        },
+        {
+          "header": "CampZagreb | Napravi pauzu u kampu Zagreb",
+          "content": "https://www.campzagreb.com/"
+        },
+        {
+          "header": "Kampovi & Mobilne kućice – Pula & Medulin – Istra, Hrvatska – Arena Campsites",
+          "content": "https://www.arenacampsites.com/hr"
+        },
+        {
+          "header": "Insider",
+          "content": "https://www.businessinsider.com/"
+        },
+        {
+          "header": "TOYOTA u Hrvatskoj. Saznajte sve o Toyota modelima.",
+          "content": "https://www.toyota.hr/"
+        },
+        {
+          "header": "Datacol Hrvatska",
+          "content": "https://www.datacol.hr/datacol/"
+        },
+        {
+          "header": "Knjižnice grada Zagreba",
+          "content": "https://www.kgz.hr/hr"
+        },
+        {
+          "header": "Artronic – Digital Proof of Delivery, Vehicle and fleet status monitoring, Fleet management, Route planning, Cost-To-Serve Analysis",
+          "content": "https://www.artronic.hr/en/"
+        },
+        {
+          "header": "Apartmansko-hotelski i channel manager sustav",
+          "content": "https://minihotel.io/hr/"
+        },
+        {
+          "header": "Digitalna agencija Markething – Markething Digitalna agencija",
+          "content": "https://www.markething.hr/"
+        },
+        {
+          "header": "Moj-eRačun – servis za slanje elektroničkih računa – e-računa – naslovna",
+          "content": "https://portal.moj-eracun.hr/"
+        },
+        {
+          "header": "e-Plati",
+          "content": "https://e-plati.hr/"
+        },
+        {
+          "header": "Terranovastyle",
+          "content": "https://www.terranovastyle.com/"
+        },
+        {
+          "header": "Dacia.hr – ponuda",
+          "content": "https://www.dacia.hr/"
+        },
+        {
+          "header": "Šminka, Njega kože, Za muškarce i Proizvodi za kosu – L’Oréal Paris",
+          "content": "https://www.loreal-paris.hr/"
+        },
+        {
+          "header": "CineStar – Max City",
+          "content": "https://maxcity.hr/en/entertainment/cinestar-kina/"
+        },
+        {
+          "header": "Max City – Najveći shopping centar u Puli!",
+          "content": "https://maxcity.hr/en/entertainment/cinestar-kina/"
+        },
+        {
+          "header": "CineStar Cinemas – kina s pet zvjezdica",
+          "content": "https://www.blitz-cinestar.hr/"
+        },
+        {
+          "header": "AZ – Mirovinski Fondovi",
+          "content": "https://www.azfond.hr/"
+        },
+        {
+          "header": "Rotor autoškola | Najbolja autoškola u Hrvatskoj Zagreb",
+          "content": "https://autoskola-rotor.hr/"
+        },
+        {
+          "header": "PAN-PEK",
+          "content": "https://panpek.hr/"
+        },
+        {
+          "header": "Terme Olimia, Podčetrtek, Slovenija",
+          "content": "https://www.terme-olimia.com/hr"
+        },
+        {
+          "header": "Elgrad",
+          "content": "https://www.elgrad.hr/"
+        },
+        {
+          "header": "KONČAR D&ST",
+          "content": "https://koncar-dst.hr/"
+        },
+        {
+          "header": "Perutnina Ptuj",
+          "content": "https://www.perutnina.com/"
+        },
+        {
+          "header": "Žitoproizvod · Karla · Pekarski proizvodi · Svježa tjestenina · Mlinski proizvodi · Suha tjestenina · Od 1946.",
+          "content": "https://www.zitoproizvod.hr/"
+        },
+        {
+          "header": "ulaznice.hr",
+          "content": "https://www.ulaznice.hr/web/"
+        },
+        {
+          "header": "Mobilmedia | Brza i pouzdana dostava‎",
+          "content": "https://mobilmedia.hr/"
+        },
+        {
+          "header": "Fur Clothing for Women – Made of 100% Real Fur – Aria Moda",
+          "content": "https://aria-moda.com/"
+        },
+        {
+          "header": "Land Rover Hrvatska | Land Rover Croatia",
+          "content": "https://croatia.landrover.com/"
+        },
+        {
+          "header": "Ljevak škole ǀ Učenje bez granica ǀ Učimo zajedno ǀ Naklada Ljevak",
+          "content": "https://www.ljevakskole.hr/naslovnica"
+        },
+        {
+          "header": "Cafe",
+          "content": "https://www.cafe.hr/"
+        },
+        {
+          "header": "Sony Hrvatska | Najnovije vijesti iz područja tehnologije | Elektronika | Zabava",
+          "content": "https://www.sony.hr/"
+        },
+        {
+          "header": "DAZN",
+          "content": "https://www.dazn.com/"
+        },
+        {
+          "header": "Top Lista | Official",
+          "content": "https://www.top-lista.hr/www/"
+        },
+        {
+          "header": "Rtl",
+          "content": "https://www.rtl.hr/"
+        },
+        {
+          "header": "Netflix Hrvatska – gledaj serije na mreži, gledaj filmove na mreži",
+          "content": "https://www.netflix.com/hr/"
+        },
+        {
+          "header": "Milka",
+          "content": "https://www.milka.hr/"
+        },
+        {
+          "header": "ARENA – Vrhunska stomatološka poliklinika u Zagrebu",
+          "content": "https://arenapoliklinika.hr/"
+        },
+        {
+          "header": "Hrvatski Telekom webshop – Kupujte sigurno online i plaćajte na rate – Hrvatski Telekom",
+          "content": "https://www.hrvatskitelekom.hr/"
+        },
+        {
+          "header": "VELPRO – partner za profesionalce",
+          "content": "https://www.velpro.hr/"
+        },
+        {
+          "header": "Meblo Trade webshop – veliki izbor za uređenje doma",
+          "content": "https://www.meblo.hr/"
+        },
+        {
+          "header": "Scitec Hrvatska",
+          "content": "https://scitec.hr/"
+        },
+        {
+          "header": "Agrolaguna",
+          "content": "https://agrolaguna.hr/"
+        },
+        {
+          "header": "Plodine",
+          "content": "https://www.plodine.hr/"
+        },
+        {
+          "header": "ID90",
+          "content": "http://www.id90.hr/"
+        },
+        {
+          "header": "Apple",
+          "content": "https://www.apple.com/"
+        },
+        {
+          "header": "Nacional Radio",
+          "content": "https://radio.nacional.hr/"
+        },
+        {
+          "header": "Razvoj, implementacija, održavanje informacijskih sustava – Infosistem – Početna",
+          "content": "https://www.infosistem.hr/"
+        },
+        {
+          "header": "Proizvodi i usluge erste",
+          "content": "https://www.ersteprivatebanking.hr/hr/proizvodi-i-usluge"
+        },
+        {
+          "header": "Erste banka #vjerujusebe",
+          "content": "https://www.erstebank.hr/hr/gradjanstvo"
+        },
+        {
+          "header": "Erste digitalni alati",
+          "content": "https://www.erstebank.hr/hr/poslovni-klijenti/erste-digitalni-alati"
+        },
+        {
+          "header": "Securus sustavi zaštite – Videonadzor Kontrola pristupa Protuprovala Vatrodojava Perimetarska zaštita",
+          "content": "https://securus.hr/"
+        },
+        {
+          "header": "Astrologija | Horoskop | horoskopski znaci :: Astrolook",
+          "content": "https://www.astrolook.com/"
+        },
+        {
+          "header": "Never Settle – OnePlus (Hrvatska)",
+          "content": "https://www.oneplus.com/hr"
+        },
+        {
+          "header": "AquaPark Pula, Verudela Beach | AquaPark",
+          "content": "https://www.aquapark-pula.com/"
+        },
+        {
+          "header": "Karting Arena Zagreb – Najmodernija Karting Staza u Hrvatskoj",
+          "content": "https://www.karting-arena.com/"
+        },
+        {
+          "header": "HBO Max",
+          "content": "https://www.hbomax.com/"
+        },
+        {
+          "header": "Naslovnica – Microlab d.o.o.",
+          "content": "http://www.microlab.hr/"
+        },
+        {
+          "header": "iOS & Android Recipe App | Yummly",
+          "content": "https://www.yummly.com/mobile"
+        },
+        {
+          "header": "Cookbook Recipes",
+          "content": "https://cookbook.ai/"
+        },
+        {
+          "header": "Juhuhu",
+          "content": "https://juhuhu.hrt.hr/"
+        },
+        {
+          "header": "Smještaji za odmor i kondominiji – Airbnb – Airbnb",
+          "content": "https://hr.airbnb.com/"
+        },
+        {
+          "header": "Vitapur.hr online trgovina – Vitapur",
+          "content": "https://www.vitapur.hr/"
+        },
+        {
+          "header": "Online Ljekarne Prima Farmacia",
+          "content": "https://ljekarne-prima-farmacia.hr/"
+        },
+        {
+          "header": "Neutra03 – vrhunske pločice, kupaonice i sanitarna oprema",
+          "content": "https://neutra03.hr/"
+        },
+        {
+          "header": "Smoobu ᐅ The Short-Term & Vacation Rental Software",
+          "content": "https://www.smoobu.com/en/"
+        },
+        {
+          "header": "Jedini softver kojeg trebate za upravljanje hotelom | RoomRaccoon",
+          "content": "https://roomraccoon.hr/"
+        },
+        {
+          "header": "Your Yacht Charter Expert | Goolets",
+          "content": "https://www.goolets.net/"
+        },
+        {
+          "header": "Yacht charter Croatia – bareboat or crewed boat rental",
+          "content": "https://www.ultra-sailing.hr/"
+        },
+        {
+          "header": "generali",
+          "content": "http://www.generali.hr/"
+        },
+        {
+          "header": "Adriaticmc",
+          "content": "http://www.adriaticdmc.hr/"
+        },
+        {
+          "header": "Heineken",
+          "content": "https://heineken.hr/"
+        },
+        {
+          "header": "ALCA – Ravno k najboljima",
+          "content": "https://www.alca.hr/"
+        },
+        {
+          "header": "MÜLLER Hrvatska",
+          "content": "https://www.mueller.hr/"
+        },
+        {
+          "header": "Homepage – Marinus Beach Hotel, Marina, Croatia",
+          "content": "https://www.hotelmarinus.com/en"
+        },
+        {
+          "header": "UHY in Croatia",
+          "content": "https://www.uhyincroatia.com/"
+        },
+        {
+          "header": "Poslovni korisnici ‐ Hrvatski Telekom",
+          "content": "https://www.hrvatskitelekom.hr/poslovni"
+        },
+        {
+          "header": "Digitalno poslovanje",
+          "content": "https://www.hrvatskitelekom.hr/poslovni/digitalno-poslovanje"
+        },
+        {
+          "header": "iSTYLE | Tvoj Apple Premium Reseller",
+          "content": "https://istyle.hr/"
+        },
+        {
+          "header": "Jutarnji",
+          "content": "https://online.jutarnji.hr/"
+        },
+        {
+          "header": "LePremier – Boutique Hotel",
+          "content": "https://www.lepremier.hr/"
+        },
+        {
+          "header": "Beko",
+          "content": "https://www.beko.com/hr-hr"
+        },
+        {
+          "header": "schrack",
+          "content": "https://www.schrack.hr/"
+        },
+        {
+          "header": "Kolpa Saloni",
+          "content": "https://salon.kolpasan.si/hr"
+        },
+        {
+          "header": "Profitiraj.hr",
+          "content": "https://profitiraj.hr/"
+        },
+        {
+          "header": "Dekorativni umjetni kamen – Rustik kamen d.o.o. proizvodnja i prodaja",
+          "content": "https://rustik-kamen.hr/"
+        },
+        {
+          "header": "Kamgrad – sinonim za kvalitetnu gradnju",
+          "content": "https://www.kamgrad.hr/"
+        },
+        {
+          "header": "Tisak na Majicu po Želji – Online Kreator | Puppynator.hr",
+          "content": "https://www.puppynator.hr/"
+        },
+        {
+          "header": "Prvi izbor u komunikaciji, mobiteli, mobilne tarife, internet i televizija | A1 Hrvatska",
+          "content": "https://www.a1.hr/"
+        },
+        {
+          "header": "Nexe crijep » Br. 1 u kategoriji crjepova",
+          "content": "https://nexe-crijep.hr/"
+        },
+        {
+          "header": "Garmin International | Home",
+          "content": "https://www.garmin.com/en-US/"
+        },
+        {
+          "header": "KTM – READY TO RACE",
+          "content": "https://www.ktm.com/en-hr.html"
+        },
+        {
+          "header": "Kućanski aparati, elektronika i poslovna rješenja | LG Hrvatska",
+          "content": "https://www.lg.com/hr"
+        },
+        {
+          "header": "ZGportal Zagreb – Zagrebački informativni portal",
+          "content": "https://www.zgportal.com/"
+        },
+        {
+          "header": "Nokumo",
+          "content": "https://nokumo.net/"
+        },
+        {
+          "header": "Oriflame Cosmetics | Oriflame Cosmetics",
+          "content": "https://oriflame.com/"
+        },
+        {
+          "header": "Helios Faros – Stari Grad – Hvar",
+          "content": "https://heliosfaros.hr/"
+        },
+        {
+          "header": "fermendi",
+          "content": "https://www.fermendi.com/"
+        },
+        {
+          "header": "admiral",
+          "content": "https://www.admiral.hr/"
+        },
+        {
+          "header": "Djoraj.com | Raj za razmjenu",
+          "content": "https://djoraj.com/"
+        },
+        {
+          "header": "Leanpay: online plaćanje na rate bez kamata",
+          "content": "https://www.leanpay.hr/"
+        },
+        {
+          "header": "Bazzar.hr – postani prodavac",
+          "content": "https://bazzar.hr/pages/become-seller"
+        },
+        {
+          "header": "100al",
+          "content": "https://100al.hr/"
+        },
+        {
+          "header": "Brokerski poslovi | PBZ",
+          "content": "https://www.pbz.hr/velika-poduzeca/Brokerski-poslovi.html"
+        },
+        {
+          "header": "PBZ | Građani",
+          "content": "https://www.pbz.hr/gradjani"
+        },
+        {
+          "header": "Ajmo!",
+          "content": "https://ajmo.hr/"
+        },
+        {
+          "header": "Naslovnica | Marina Frapa",
+          "content": "https://www.marinafrapa.hr/"
+        },
+        {
+          "header": "Konzum",
+          "content": "https://www.konzum.hr/"
+        },
+        {
+          "header": "Nakit i mirisni medaljoni | Lykke",
+          "content": "https://www.lykke.hr/"
+        },
+        {
+          "header": "Svi Panasonic Proizvodi – Panasonic",
+          "content": "https://www.panasonic.com/hr/consumer/all-products.html"
+        },
+        {
+          "header": "Jet Set Magazin | Magazin s kraljevskom krunom",
+          "content": "https://www.jetset-magazin.com/"
+        },
+        {
+          "header": "Torterie Macaron | Najfinije torte, macaroni, sladoled i druge slastice",
+          "content": "https://www.torterie-macaron.com/"
+        },
+        {
+          "header": "Torta po tvom – Torterie Macaron",
+          "content": "https://www.torterie-macaron.com/proizvod/torta-po-tvom/"
+        },
+        {
+          "header": "Satovi i Nakit – Poznati brendovi – Heta 1892 Webshop",
+          "content": "https://heta.hr/"
+        },
+        {
+          "header": "Dinamo Zagreb",
+          "content": "https://www.gnkdinamo.hr/"
+        },
+        {
+          "header": "DOBRO | Naslovnica",
+          "content": "https://dobro.hr/novosti/"
+        },
+        {
+          "header": "Amazon.com. Spend less. Smile more.",
+          "content": "https://www.amazon.com/"
+        },
+        {
+          "header": "SVIJET SKUTERA",
+          "content": "https://www.skuteri.hr/"
+        },
+        {
+          "header": "Građani – Nova hrvatska banka d.d.",
+          "content": "https://www.novahrvatskabanka.hr/gradjani/"
+        },
+        {
+          "header": "Renault Hrvatska – Otkrijte Renault vozila",
+          "content": "https://www.renault.hr/"
+        },
+        {
+          "header": "Konfigurator Renault MEGANE E-TECH 100% ELECTRIC – Renault vozila",
+          "content": "https://www.renault.hr/elektricna-vozila/megane-etech-electric/konfigurator.html"
+        },
+        {
+          "header": "Pepsi.com",
+          "content": "https://www.pepsi.com/"
+        },
+        {
+          "header": "Krokoteks | Čisto jednostavno!",
+          "content": "https://www.krokoteks.hr/"
+        },
+        {
+          "header": "MY_CASINO | Admiral online casino",
+          "content": "https://www.admiral.hr/app/casino/my_casino"
+        },
+        {
+          "header": "Kupujte u dm online shopu | dm Hrvatska",
+          "content": "https://www.dm.hr/"
+        },
+        {
+          "header": "RONIS – Pokreni svoja osjetila. Hi-Fi, car audio, televizori, IT oprema",
+          "content": "https://www.ronis.hr/"
+        },
+        {
+          "header": "Apple (Hrvatska)",
+          "content": "https://www.apple.com/hr/"
+        },
+        {
+          "header": "Izrada web stranica i web shop rješenja – 20 g. iskustva, 27 nagrada – programiranje po mjeri svakog klijenta",
+          "content": "https://www.webmarketing.hr/"
+        },
+        {
+          "header": "Online Casino",
+          "content": "https://lp.psk.hr/online-casino"
+        },
+        {
+          "header": "La Turka Shop – Best Baklava in Europe",
+          "content": "https://www.laturka.eu/"
+        },
+        {
+          "header": "Greyp G12s eHYPERBIKE | Greyp Bikes",
+          "content": "https://www.greyp.com/ehyperbike/"
+        },
+        {
+          "header": "HOK digital – HOK osiguranje | Nova generacija osiguranja",
+          "content": "https://www.hok-osiguranje.hr/hok-digital/"
+        },
+        {
+          "header": "HOK Osiguranje | Auto | Kasko | Imovina | Putno zdravstveno",
+          "content": "https://www.hok-osiguranje.hr/"
+        },
+        {
+          "header": "HOK digital",
+          "content": "https://digital.hok-osiguranje.hr/"
+        },
+        {
+          "header": "Online trgovina namještaja – kupite namještaj u Lesnini XXXL – xxxlesnina.hr",
+          "content": "https://www.xxxlesnina.hr/"
+        },
+        {
+          "header": "Cruises & Cruise Deals | Plan Your Cruise Holiday | NCL",
+          "content": "https://www.ncl.com/fr/en/"
+        },
+        {
+          "header": "Renault Hrvatska – električna i hibridna vozila",
+          "content": "https://www.renault.hr/elektricna-vozila.html"
+        },
+        {
+          "header": "Sneaker News – Jordans, Yeezys, release dates & more.",
+          "content": "https://sneakernews.com/"
+        },
+        {
+          "header": "Teen Vogue: Fashion, Beauty, Entertainment News for Teens | Teen Vogue",
+          "content": "https://www.teenvogue.com/"
+        },
+        {
+          "header": "PC CHIP",
+          "content": "https://pcchip.hr/"
+        },
+        {
+          "header": "YouTube",
+          "content": "https://youtube.com/"
+        },
+        {
+          "header": "Spadent dentalni studio Zagreb · dentalni turizam u Hrvatskoj SPADENT",
+          "content": "https://spadent.hr/"
+        },
+        {
+          "header": "Vanelli – Ljepota | Lifestyle | Zdravi recepti",
+          "content": "https://vanelli.hr/"
+        },
+        {
+          "header": "Tvornica snova",
+          "content": "https://tvornicasnova.hr/"
+        },
+        {
+          "header": "Eucerin",
+          "content": "https://www.eucerin.hr/"
+        },
+        {
+          "header": "Roxanich Winery and Design Hotel | Motovun Istria",
+          "content": "https://hr.roxanich.com/"
+        },
+        {
+          "header": "Kult Plave Kamenice | Gastronomija kako je još niste vidjeli",
+          "content": "https://plavakamenica.hr/"
+        },
+        {
+          "header": "Vina Fakin",
+          "content": "https://fakinwines.com/"
+        },
+        {
+          "header": "Mondo Travel turistička agencija, najpovoljnija putovanja, last i first minute ponude",
+          "content": "https://www.mondotravel.hr/"
+        },
+        {
+          "header": "Foodie – Foodie",
+          "content": "https://foodie.hr/"
+        },
+        {
+          "header": "Leggiero – Godišnji usred dana",
+          "content": "https://www.leggiero.hr/"
+        },
+        {
+          "header": "Idealna scenografija za vjenčanje iz snova – The Loft | Zagreb",
+          "content": "https://theloft.hr/"
+        },
+        {
+          "header": "Dobrodošli u Gyotaku sushi bar u Zagrebu – sushi za pristupačnu cijenu",
+          "content": "https://gyotaku.hr/"
+        },
+        {
+          "header": "Poslovni dnevnik",
+          "content": "https://www.poslovni.hr/"
+        },
+        {
+          "header": "Visodent dentalna medicina i estetika lica",
+          "content": "https://visodent.com/"
+        },
+        {
+          "header": "American Express Credit Cards, Rewards & Banking",
+          "content": "https://www.americanexpress.com/"
+        },
+        {
+          "header": "Luceed – Jedan sustav, manje administracije.",
+          "content": "https://www.tomsoft.hr/"
+        },
+        {
+          "header": "BuzzFeed",
+          "content": "https://www.buzzfeed.com/"
+        },
+        {
+          "header": "Penguin Random House",
+          "content": "https://www.penguinrandomhouse.com/"
+        },
+        {
+          "header": "ZOO CITY – web shop za kućne ljubimce",
+          "content": "https://www.zoocity.hr/"
+        },
+        {
+          "header": "Tifon",
+          "content": "https://tifon.hr/hr/"
+        },
+        {
+          "header": "Family Mall",
+          "content": "https://familymall.hr/"
+        },
+        {
+          "header": "Pevex Webshop",
+          "content": "https://pevex.hr/"
+        },
+        {
+          "header": "BAUHAUS Hrvatska",
+          "content": "https://www.bauhaus.hr/"
+        },
+        {
+          "header": "Enterprise Rent-A-Car Hrvatska – jeftin najam automobila | Enterprise Rent-A-Car",
+          "content": "https://www.enterprise.hr/hr/pocetna.html"
+        },
+        {
+          "header": "Lider Media",
+          "content": "https://lidermedia.hr/"
+        },
+        {
+          "header": "Klix.ba",
+          "content": "https://www.klix.ba/"
+        },
+        {
+          "header": "Žene i novac – portal, konferencija i radionice",
+          "content": "https://zeneinovac.com/"
+        },
+        {
+          "header": "Nissan™ Hrvatska | Otkrijte vozila Nissan",
+          "content": "https://www.nissan.hr/"
+        },
+        {
+          "header": "Jamnica",
+          "content": "https://www.jamnica.hr/hr/naslovnica/"
+        },
+        {
+          "header": "RACING.COM – YOUR RACING CONNECTION",
+          "content": "https://www.racing.com/"
+        },
+        {
+          "header": "Dizajnirajte svoj Volvo | Volvo Cars",
+          "content": "https://www.volvocars.com/hr/build"
+        },
+        {
+          "header": "MALL.HR | Sigurna i povoljna online kupnja",
+          "content": "https://www.mall.hr/"
+        },
+        {
+          "header": "Stomatološka Poliklinika Ars Salutaris Zagreb",
+          "content": "https://dental-cro.com/"
+        },
+        {
+          "header": "tesla",
+          "content": "https://www.tesla.com/"
+        },
+        {
+          "header": "Vile s bazenom za najam u Istri – Istria home",
+          "content": "https://www.istria-home.com/hr/vile-sa-bazenom"
+        },
+        {
+          "header": "Kuće za odmor, vile i apartmani u Istri – Istria home",
+          "content": "https://www.istria-home.com/hr"
+        },
+        {
+          "header": "Barcaffe",
+          "content": "https://www.barcaffe.hr/"
+        },
+        {
+          "header": "Croatia osiguranje d.d.",
+          "content": "https://crosig.hr/"
+        },
+        {
+          "header": "Poslovni korisnici Croatia Osiguranje",
+          "content": "https://crosig.hr/poslovni-korisnici/"
+        },
+        {
+          "header": "Pixar Animation Studios",
+          "content": "https://www.pixar.com/"
+        },
+        {
+          "header": "Fiskalizacija ‐ Hrvatski Telekom",
+          "content": "https://www.hrvatskitelekom.hr/poslovni/ict/fiskalizacija"
+        },
+        {
+          "header": "Microsoft Download Center: Windows, Office, Xbox & More",
+          "content": "https://www.microsoft.com/en-us/download/"
+        },
+        {
+          "header": "Sportske novosti",
+          "content": "https://sportske.jutarnji.hr/sn"
+        },
+        {
+          "header": "Naslovna / 2022 / ZAGREBDOX Međunarodni festival dokumentarnog filma",
+          "content": "http://zagrebdox.net/hr"
+        },
+        {
+          "header": "Kaufland.de – Angebote entdecken & günstig kaufen",
+          "content": "https://www.kaufland.de/"
+        },
+        {
+          "header": "Moje voćno stablo",
+          "content": "https://vocke.hr/"
+        },
+        {
+          "header": "Stomatološka poliklinika Medikadent – Poliklinika Medikadent je privatni specijalistički stomatološki centar temeljen na stručnom i motiviranom osoblju te najsuvremenijim tehnologijama u dentalnoj medicini uz prisustvo najkvalitetnijih materijala na svjetskom nivou.",
+          "content": "https://medikadent.com/"
+        },
+        {
+          "header": "Salon InArt",
+          "content": "https://www.salon-inart.com/hr/"
+        },
+        {
+          "header": "Imperium Immobiliare – Agencija za nekretnine u Zagrebu, Istri, Dalmaciji.",
+          "content": "http://imperium-immobiliare.hr/"
+        },
+        {
+          "header": "OTPetica – Program vjernosti OTP banke | OTP banka d.d.",
+          "content": "https://www.otpbanka.hr/otpetica"
+        },
+        {
+          "header": "OTP e-start fond | OTP banka d.d.",
+          "content": "https://www.otpbanka.hr/gradani/otp-e-start-fond"
+        },
+        {
+          "header": "OTP Asistencija – Pomoć u kući | OTP banka d.d.",
+          "content": "https://www.otpbanka.hr/gradani/otp-asistencija-pomoc-u-kuci"
+        },
+        {
+          "header": "Visa Gold charge kartica | OTP banka d.d.",
+          "content": "https://www.otpbanka.hr/gradani/visa-gold-charge-kartica"
+        },
+        {
+          "header": "Investicijski fondovi OTP Investa | OTP banka d.d.",
+          "content": "https://www.otpbanka.hr/gradani/investicijski-fondovi"
+        },
+        {
+          "header": "OTP banka d.d. – Online otvaranje studentskog paketa e-Indeks",
+          "content": "https://www.otpbanka.hr/digitalni-paket/e-indeks/"
+        },
+        {
+          "header": "OTP banka d.d.",
+          "content": "https://www.otpbanka.hr/gradani"
+        },
+        {
+          "header": "OTP banka d.d. – Online otvaranje tekućeg računa",
+          "content": "https://www.otpbanka.hr/digitalni-paket/"
+        },
+        {
+          "header": "Centar za restrukturiranje i prodaju – Naslovna",
+          "content": "http://www.cerp.hr/"
+        },
+        {
+          "header": "Središnje klirinško depozitarno društvo",
+          "content": "https://www.skdd.hr/"
+        },
+        {
+          "header": "PBZ Investor – Građani | PBZ",
+          "content": "https://www.pbz.hr/gradjani/pbz-investor.html"
+        },
+        {
+          "header": "SPAR i INTERSPAR Hrvatska: mi smo tu za Vas",
+          "content": "https://www.spar.hr/"
+        },
+        {
+          "header": "Mlinar",
+          "content": "https://mlinar.hr/"
+        },
+        {
+          "header": "Encyclopedia Britannica | Britannica",
+          "content": "https://www.britannica.com/"
+        },
+        {
+          "header": "Amazon.co.uk: Low Prices in Electronics, Books, Sports Equipment & more",
+          "content": "https://www.amazon.co.uk/"
+        },
+        {
+          "header": "Infovodice",
+          "content": "https://www.infovodice.com/"
+        },
+        {
+          "header": "Agrosavjet",
+          "content": "https://agrosavjet.com/#"
+        },
+        {
+          "header": "Mandis Pharm Ljekarne",
+          "content": "https://mandispharmljekarne.hr/"
+        },
+        {
+          "header": "Electronics, Cars, Fashion, Collectibles & More | eBay",
+          "content": "https://www.ebay.com/"
+        },
+        {
+          "header": "Lutrija – Hrvatska Lutrija | Loto | Eurojackpot | dobitak | Igraj online",
+          "content": "http://www.lutrija.hr/hl/lutrija"
+        },
+        {
+          "header": "Auto Krešo – Online trgovina autodijelovima",
+          "content": "https://www.autokreso.hr/"
+        },
+        {
+          "header": "Prepaid kartice | OTP banka d.d.",
+          "content": "https://www.otpbanka.hr/gradani/prepaid-kartice"
+        },
+        {
+          "header": "Mastercard prepaid kartica | OTP banka d.d.",
+          "content": "https://www.otpbanka.hr/gradani/mastercard-prepaid-kartica"
+        },
+        {
+          "header": "Jutarnji list",
+          "content": "https://www.jutarnji.hr/"
+        },
+        {
+          "header": "Tower Center Rijeka – Magazin",
+          "content": "https://tower-center-rijeka.hr/magazin"
+        },
+        {
+          "header": "SumUp: Istražite naše čitače kartica i rješenja za plaćanje | SumUp",
+          "content": "https://sumup.hr/"
+        },
+        {
+          "header": "Koncertna dvorana Vatroslava Lisinskog | Produkcija i organizacija vrhunskih glazbenih priredbi",
+          "content": "https://www.lisinski.hr/hr/"
+        },
+        {
+          "header": "Pošalji paket | GLS Hrvatska",
+          "content": "https://gls-group.eu/HR/hr/privatni-korisnici/posalji-paket"
+        },
+        {
+          "header": "Marli – Marli",
+          "content": "https://marli.hr/"
+        },
+        {
+          "header": "Swiss luxury watches | IWC Schaffhausen",
+          "content": "https://www.iwc.com/en/home.html"
+        },
+        {
+          "header": "EKOTAXI",
+          "content": "https://www.ekotaxi.hr/"
+        },
+        {
+          "header": "seo izrada web stranica",
+          "content": "https://www.pintardesign.hr/"
+        },
+        {
+          "header": "Educentar – edukacija – tečajevi, seminari i ostali edukativni programi",
+          "content": "https://www.educentar.net/"
+        },
+        {
+          "header": "Početna – Poliklinika i laboratorij Breyer",
+          "content": "https://breyer.hr/"
+        },
+        {
+          "header": "Drinks",
+          "content": "https://drinks.hr/"
+        },
+        {
+          "header": "KEKS Pay – aplikacija za brzo, sigurno i besplatno slanje i primanje novca",
+          "content": "https://www.kekspay.hr/"
+        },
+        {
+          "header": "Dr. PIGLEY | Okus djetinjstva",
+          "content": "https://drpigley.hr/"
+        },
+        {
+          "header": "Recepttura – Fini recepti za svaki dan",
+          "content": "https://recepttura.com/"
+        },
+        {
+          "header": "Sjedeće garniture Natuzzi",
+          "content": "https://www.natuzzi.hr/hr/"
+        },
+        {
+          "header": "StoryBook – Autentičan. Provokativan. Priča za sebe.",
+          "content": "https://storybook.story.hr/"
+        },
+        {
+          "header": "Tola – Industrijska i garažna vrata",
+          "content": "https://www.tola.hr/"
+        },
+        {
+          "header": "Dom, kuhinja, ljepota, zdravlje, fitness… | BCTV",
+          "content": "https://www.bctv.hr/"
+        },
+        {
+          "header": "Laboratoriji Vichy: kozmetika, proizvodi za ljepotu, njega lica i tijela",
+          "content": "https://www.vichy.hr/"
+        },
+        {
+          "header": "UREDSKI-SHOP – Otaner 25 d.o.o.",
+          "content": "https://www.uredski-shop.com.hr/Default.aspx"
+        },
+        {
+          "header": "Centar Zlata | Prodaja i otkup investicijskog zlata i srebra",
+          "content": "https://www.centarzlata.com/"
+        },
+        {
+          "header": "STYLE DOOR – kvalitetna protuprovalna i protupožarna vrata",
+          "content": "https://styledoor.hr/"
+        },
+        {
+          "header": "Nike. Just Do It. Nike HR",
+          "content": "https://www.nike.com/hr/"
+        },
+        {
+          "header": "Kedo",
+          "content": "https://www.kedo.hr/"
+        },
+        {
+          "header": "Velik izbor knjiga ǀ Naručite online ǀ Knjižara Ljevak",
+          "content": "https://www.ljevak.hr/"
+        },
+        {
+          "header": "Očna poliklinika Optical Express",
+          "content": "https://www.opticalexpress.hr/"
+        },
+        {
+          "header": "NEXE – regionalni proizvođač građevinskog materijala",
+          "content": "https://www.nexe.hr/"
+        },
+        {
+          "header": "Lancôme | Luksuzni mirisi, njega kože i make-up",
+          "content": "https://www.lancome.hr/"
+        },
+        {
+          "header": "Fragrance & Beauty | DIOR",
+          "content": "https://www.dior.com/en_hr/beauty"
+        },
+        {
+          "header": "Ograde – metalna vrata – paneli – Jurval |",
+          "content": "https://www.jurval-ograde.hr/"
+        },
+        {
+          "header": "Cedevita: Vitaminski napitak za svaku priliku",
+          "content": "https://www.cedevita.com/"
+        },
+        {
+          "header": "Super1 – Lifestyle pokret stvarnih žena",
+          "content": "https://super1.telegram.hr/"
+        },
+        {
+          "header": "Psychology Junkie – Personality Tests And Articles",
+          "content": "https://www.psychologyjunkie.com/"
+        },
+        {
+          "header": "Signature",
+          "content": "All the best - https://marketing1usa.wordpress.com/"
+        }
+      ]
+    },
+    {
+      "title": "Company & news – #news",
+      "metadata": {
+        "source": "https://companylink.business.blog/",
+        "analyzedAt": "2026-06-17T19:02:32.860411Z",
+        "description": "Market intelligence and company news updates extracted from companylink.business.blog."
+      },
+      "sections": [
+        {
+          "header": "Fendi",
+          "content": "https://www.fendi.com/hr/gift-ideas/gifts/for-her/for-her-view-all"
+        },
+        {
+          "header": "Online Learning & Training Platform for Organizations | LinkedIn Learning",
+          "content": "https://learning.linkedin.com/"
+        },
+        {
+          "header": "Daily Stock Market Overview, Data Updates, Reports & News | Nasdaq",
+          "content": "https://www.nasdaq.com/"
+        },
+        {
+          "header": "Stock Images, Photos, Vectors, Video, and Music | Shutterstock",
+          "content": "https://www.shutterstock.com/"
+        },
+        {
+          "header": "The New York Stock Exchange | NYSE",
+          "content": "https://www.nyse.com/index"
+        },
+        {
+          "header": "Investor’s Business Daily | Stock News & Stock Market Analysis – IBD",
+          "content": "https://www.investors.com/"
+        },
+        {
+          "header": "Tiffany & Co. Official | Luxury Jewelry, Gifts & Accessories Since 1837",
+          "content": "https://www.tiffany.com/"
+        },
+        {
+          "header": "Ford®",
+          "content": "https://www.ford.com/"
+        },
+        {
+          "header": "StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches",
+          "content": "https://stockx.com/"
+        },
+        {
+          "header": "Top Scholarships for Studying Abroad: Your Guide",
+          "content": "https://studyabroadaide.com\nhttps://globalscholarships.com/"
+        },
+        {
+          "header": "swfinstitute",
+          "content": "https://www.swfinstitute.org/"
+        },
+        {
+          "header": "TrustedSite Certification | Shop with confidence.",
+          "content": "https://www.trustedsite.com/for-consumers"
+        },
+        {
+          "header": "LinkedIn Campaign Manager",
+          "content": "https://www.linkedin.com/campaignmanager/new-advertiser"
+        },
+        {
+          "header": "Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions",
+          "content": "https://business.linkedin.com/marketing-solutions"
+        },
+        {
+          "header": "Launch, monetize, and scale with Xsolla tools and services | Xsolla",
+          "content": "https://xsolla.com/"
+        },
+        {
+          "header": "Crossclip | The Easiest Way to Convert Your Twitch Clips",
+          "content": "https://crossclip.com/"
+        },
+        {
+          "header": "Tiltify – Made for Fundraisers",
+          "content": "https://tiltify.com/"
+        },
+        {
+          "header": "Discount Designer Fashion | Sale Up To 70% Off At THE OUTNET",
+          "content": "https://www.theoutnet.com/en-hr/"
+        },
+        {
+          "header": "Luxury consignment sales. Shop for pre-owned designer handbags, shoes, jewelry and more | The RealReal",
+          "content": "https://www.therealreal.com/"
+        },
+        {
+          "header": "HyperC – Process Optimization Platform – HyperC",
+          "content": "https://hyperc.com/"
+        },
+        {
+          "header": "AWS Marketplace",
+          "content": "https://aws.amazon.com/marketplace/b/eLearning/6297422083"
+        },
+        {
+          "header": "Swiss-made Swatch watch collections. | Swatch AM",
+          "content": "https://www.swatch.com/en-us/choosecountry"
+        },
+        {
+          "header": "Najpovoljniji Krediti i Osiguranja | Moj Bankar",
+          "content": "https://www.moj-bankar.hr/Kreditna-kartica/Pbz/American-express-start-card-za-studente/12"
+        },
+        {
+          "header": "Looking for a hotel in the Opatija Riviera Croatia? Visit us! | Liburnia",
+          "content": "https://www.liburnia.hr/"
+        },
+        {
+          "header": "Europsko tržište rabljenih i novih automobila – AutoScout24",
+          "content": "https://www.autoscout24.hr/"
+        },
+        {
+          "header": "Igračke za pse ǀ Oprema za pse ǀ Zvjerinjak.hr",
+          "content": "https://zvjerinjak.hr/kategorija-proizvoda/psi/igracke-za-pse/"
+        },
+        {
+          "header": "Budicool najpovoljniji webshop u Hrvatskoj",
+          "content": "https://www.budicool.hr/"
+        },
+        {
+          "header": "Mercedes-Benz GLA: istaknuta obilježja",
+          "content": "https://www.mercedes-benz.hr/osobna-vozila/mercedes-benz-vozila/modeli/gla/gla-h247/explore.html"
+        },
+        {
+          "header": "Consent Management Platform (CMP) | Usercentrics",
+          "content": "https://usercentrics.com/"
+        },
+        {
+          "header": "Diagnose and code your car | Carly OBD",
+          "content": "https://www.mycarly.com/"
+        },
+        {
+          "header": "Consent Management Platform (CMP) | Usercentrics",
+          "content": "https://usercentrics.com/"
+        },
+        {
+          "header": "Compute Engine: Virtual Machines (VMs)  | Google Cloud",
+          "content": "https://cloud.google.com/compute?hl=hr"
+        },
+        {
+          "header": "Redragon | Keyboards, Mice, and more – Official Site‎ – REDRAGON ZONE",
+          "content": "https://www.redragonzone.com/"
+        },
+        {
+          "header": "ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions",
+          "content": "https://sharethis.com/"
+        },
+        {
+          "header": "Women’s Fur Coats – Fur Clothing for Women – Aria Moda",
+          "content": "https://aria-moda.com/category/fur-coats/"
+        },
+        {
+          "header": "Fur Clothing for Women – Made of 100% Real Fur – Aria Moda",
+          "content": "https://aria-moda.com/"
+        },
+        {
+          "header": "Partner Inbound",
+          "content": "https://www.letsdeel.com/partner-program"
+        },
+        {
+          "header": "SSL Digital Certificate Authority – Encryption & Authentication",
+          "content": "https://www.digicert.com/"
+        },
+        {
+          "header": "Kwanko – Your Performance Marketing Partner",
+          "content": "https://www.kwanko.com/"
+        },
+        {
+          "header": "Programmatic advertising | BidTheatre Demand Side Platform",
+          "content": "https://www.bidtheatre.com/"
+        },
+        {
+          "header": "Digital Advertising Platform | Criteo",
+          "content": "https://www.criteo.com/technology/advertising-platform/"
+        },
+        {
+          "header": "Joom. Easy shopping, fast shipping",
+          "content": "https://www.joom.com/en"
+        },
+        {
+          "header": "Computer Accessories & Software | Lenovo US",
+          "content": "https://www.lenovo.com/us/en/accessories-and-software"
+        },
+        {
+          "header": "Lenovo Official US Site | Laptops, PCs, Tablets & Data Center | Lenovo US",
+          "content": "https://www.lenovo.com/us/en/"
+        },
+        {
+          "header": "Trustpilot Reviews: Experience the power of customer reviews",
+          "content": "https://www.trustpilot.com/"
+        },
+        {
+          "header": "Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft Surface",
+          "content": "https://www.microsoft.com/en-us/surface/devices/surface-duo"
+        },
+        {
+          "header": "Learn computer programming | Online courses from JetBrains Academy",
+          "content": "https://www.jetbrains.com/academy/"
+        },
+        {
+          "header": "Školska knjiga – vaša najveća online knjižara",
+          "content": "https://shop.skolskaknjiga.hr/"
+        },
+        {
+          "header": "Total TV – Bogat TV program",
+          "content": "https://totaltv.hr/"
+        },
+        {
+          "header": "Internet-Filiale – Sparkasse Dillingen-Nördlingen",
+          "content": "https://www.spk-dlg-noe.de/de/home.html"
+        },
+        {
+          "header": "Video Games Reviews & News – GameSpot",
+          "content": "https://www.gamespot.com/"
+        },
+        {
+          "header": "LoyaltyLobby – Making sense of travel loyalty programs.",
+          "content": "https://loyaltylobby.com/"
+        },
+        {
+          "header": "NACIONAL.HR – online izdanje najutjecajnijeg političkog tjednika",
+          "content": "https://www.nacional.hr/"
+        },
+        {
+          "header": "GamesRadar+",
+          "content": "https://www.gamesradar.com/uk/"
+        },
+        {
+          "header": "Vodnikova – škola stranih jezika – Naslovnica",
+          "content": "https://www.vodnikova.hr/hr/"
+        },
+        {
+          "header": "Business HTZ",
+          "content": "https://www.htz.hr/hr-HR"
+        },
+        {
+          "header": "Checkaso — ASO Tool | App Store Optimization for iOS & Android",
+          "content": "https://checkaso.io/"
+        },
+        {
+          "header": "AWS Certification – Validate AWS Cloud Skills – Get AWS Certified",
+          "content": "https://aws.amazon.com/certification/"
+        },
+        {
+          "header": "Welcome | AWS Training & Certification",
+          "content": "https://www.aws.training/"
+        },
+        {
+          "header": "AWS Certified Security – Specialty",
+          "content": "https://aws.amazon.com/certification/certified-security-specialty/"
+        },
+        {
+          "header": "AWS Academy",
+          "content": "https://aws.amazon.com/training/awsacademy/"
+        },
+        {
+          "header": "AWS re/Start",
+          "content": "https://aws.amazon.com/training/restart/"
+        },
+        {
+          "header": "Naslovnica – tportal",
+          "content": "https://www.tportal.hr/"
+        },
+        {
+          "header": "Official HP® Store | Laptops, Desktops, Monitors & Printers – HP Store UK",
+          "content": "https://www.hp.com/gb-en/shop/"
+        },
+        {
+          "header": "Welcome | AWS Training & Certification",
+          "content": "https://www.aws.training/"
+        },
+        {
+          "header": "Tom’s Guide | Tech Product Reviews, Top Picks and How To",
+          "content": "https://www.tomsguide.com/"
+        },
+        {
+          "header": "Northern Illinois University – Your Future. Our Focus.",
+          "content": "https://www.niu.edu/index.shtml"
+        },
+        {
+          "header": "RONIS – hifi, smart tv, car audio, mobiteli i računala",
+          "content": "https://www.ronis.hr/"
+        },
+        {
+          "header": "Links.hr: Informatika i oprema, Sport, Dronovi i Roboti, Bijela tehnika i Kućanski aparati",
+          "content": "https://www.links.hr/hr/"
+        },
+        {
+          "header": "Linker – Content Discovery Platform",
+          "content": "https://linker.hr/"
+        },
+        {
+          "header": "Acer | Channel Portal",
+          "content": "https://partner.acer.com"
+        },
+        {
+          "header": "ASUS USA",
+          "content": "https://www.asus.com/us/"
+        },
+        {
+          "header": "ROG – Republic of Gamers｜Global | For Those Who Dare",
+          "content": "https://rog.asus.com/"
+        },
+        {
+          "header": "Epic Games Store | Download & Play PC Games, Mods, DLC & More – Epic Games",
+          "content": "https://www.epicgames.com/store/en-US/"
+        },
+        {
+          "header": "Science news, expert analysis, covid coronavirus research, space tech",
+          "content": "https://cosmosmagazine.com/"
+        },
+        {
+          "header": "Acer Predator – moćna računala za igranje",
+          "content": "https://www.acer.com/ac/hr/HR/content/predator-home"
+        },
+        {
+          "header": "Sancta Domenica Webshop | Top Brandovi na jednom mjestu‎",
+          "content": "https://www.sancta-domenica.hr/"
+        },
+        {
+          "header": "ArtStation – Learning",
+          "content": "https://www.artstation.com/learning"
+        },
+        {
+          "header": "gol.hr – Sportske vijesti i rezultati",
+          "content": "https://gol.dnevnik.hr/"
+        },
+        {
+          "header": "FAMILY PAKET za 2 odrasle osobe i 1 ili 2 djece do 12 godina u Obiteljskom Resortu Urania u Baškoj Vodi uz 2 ili 3 noćenja na bazi Polupansiona, poklon dobrodošlice i uslugu čuvanja za mališane! – Crno Jaje",
+          "content": "https://www.crnojaje.hr/"
+        },
+        {
+          "header": "Vocal media",
+          "content": "https://vocal.media/vocal-plus?via=filip"
+        },
+        {
+          "header": "Science news, expert analysis, covid coronavirus research, space tech",
+          "content": "https://cosmosmagazine.com/"
+        },
+        {
+          "header": "Luxury Hotel in Zagreb :: Esplanade Zagreb Hotel",
+          "content": "https://www.esplanade.hr/"
+        },
+        {
+          "header": "Online marketing. Simplified | Adzooma",
+          "content": "https://www.adzooma.com/"
+        },
+        {
+          "header": "Physical and Virtual Visa Commercial Cards vol.2 | Payhawk | Payhawk",
+          "content": "https://payhawk.com/start/visa-cards/"
+        },
+        {
+          "header": "Payhawk | The Financial System of Tomorrow with NextGen Visa Cards",
+          "content": "https://payhawk.com/"
+        },
+        {
+          "header": "StreamElements | The Ultimate Streamer Platform",
+          "content": "https://streamelements.com/"
+        },
+        {
+          "header": "Razer United States | For Gamers. By Gamers.",
+          "content": "https://www.razer.com/"
+        },
+        {
+          "header": "Adobe products: desktop, web, and mobile applications | Adobe",
+          "content": "https://www.adobe.com/products/catalog.html"
+        },
+        {
+          "header": "LinkedIn Campaign Manager",
+          "content": "https://www.linkedin.com/campaignmanager/new-advertiser"
+        },
+        {
+          "header": "Find leads and close deals | LinkedIn Sales Solutions",
+          "content": "https://business.linkedin.com/sales-solutions"
+        },
+        {
+          "header": "Mercury | Banking built for startups",
+          "content": "https://mercury.com/"
+        },
+        {
+          "header": "Razer United States | For Gamers. By Gamers.",
+          "content": "https://www.razer.com/"
+        },
+        {
+          "header": "Adobe products: desktop, web, and mobile applications | Adobe",
+          "content": "https://www.adobe.com/products/catalog.html"
+        },
+        {
+          "header": "StreamElements | The Ultimate Streamer Platform",
+          "content": "https://streamelements.com/"
+        },
+        {
+          "header": "StreamElements | The Ultimate Streamer Platform",
+          "content": "https://streamelements.com/"
+        },
+        {
+          "header": "Cyber Security Leader | Imperva, Inc.",
+          "content": "https://www.imperva.com/"
+        },
+        {
+          "header": "id.me",
+          "content": "https://www.id.me/"
+        },
+        {
+          "header": "ibisPaint – Draw and Paint App",
+          "content": "https://ibispaint.com/"
+        },
+        {
+          "header": "smart facing holder|tws earbuds|smart shooting phone holder|dancing robot|Earbuds manufacturers|Topjoy",
+          "content": "https://www.topjoyint.com/"
+        },
+        {
+          "header": "Mobilmedia | Brza i pouzdana dostava‎",
+          "content": "https://mobilmedia.hr/"
+        },
+        {
+          "header": "Dealify | The Number One Lifetime Deals Platform for Growth Hackers",
+          "content": "https://www.dealify.com/"
+        },
+        {
+          "header": "Projektna rješenja za online trgovinu – Moja-Trgovina.Net",
+          "content": "https://www.moja-trgovina.net/"
+        },
+        {
+          "header": "Se-Mark",
+          "content": "https://www.se-mark.hr/"
+        },
+        {
+          "header": "Joppy – Recruitment platform for developers by developers",
+          "content": "https://www.joppy.me/"
+        },
+        {
+          "header": "Omaze",
+          "content": "https://www.omaze.com/"
+        },
+        {
+          "header": "Premium Bootstrap Themes and Templates: Download @ Creative Tim",
+          "content": "https://www.creative-tim.com/"
+        },
+        {
+          "header": "Premium Bootstrap Themes and Templates: Download @ Creative Tim",
+          "content": "https://www.creative-tim.com/"
+        },
+        {
+          "header": "Kleap – Create a mobile first website – For free & on mobile",
+          "content": "https://kleap.co/"
+        },
+        {
+          "header": "Gorilla Experiment Builder » Create online behavioural experiments easily",
+          "content": "https://gorilla.sc/"
+        },
+        {
+          "header": "D.Franklin® | Sunglasses and Accessories | Official Web",
+          "content": "https://www.dfranklincreation.com/"
+        },
+        {
+          "header": "Gorilla Experiment Builder » Create online behavioural experiments easily",
+          "content": "https://gorilla.sc/"
+        },
+        {
+          "header": "MicroAcquire – #1 Startup acquisition marketplace",
+          "content": "https://microacquire.com/"
+        },
+        {
+          "header": "Hublock.io & Data-sharing layer for logistics",
+          "content": "https://www.hublock.io/"
+        },
+        {
+          "header": "Dobro došli – Visoka škola “Logos centar” Mostar",
+          "content": "https://www.logos-centar.com/#"
+        },
+        {
+          "header": "Sifted | Startup Europe explored through grown up reporting.",
+          "content": "https://sifted.eu/"
+        },
+        {
+          "header": "Microverse | Learn How To Code Online",
+          "content": "https://www.microverse.org/"
+        },
+        {
+          "header": "Platforms | Profitlevel",
+          "content": "https://profitlevel.com/en/trading/platforms"
+        },
+        {
+          "header": "Pushwoosh – №1 push notification and cross-channel marketing service",
+          "content": "https://www.pushwoosh.com/"
+        },
+        {
+          "header": "WordPress VIP – OneSignal",
+          "content": "https://onesignal.com/integrations/wordpress-vip"
+        },
+        {
+          "header": "Google Ads – privucite više korisnika jednostavnim online oglašavanjem",
+          "content": "https://ads.google.com"
+        },
+        {
+          "header": "Cross-Channel Marketing Platform to Improve Customer Experiences – Iterable",
+          "content": "https://iterable.com/"
+        },
+        {
+          "header": "LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions",
+          "content": "https://business.linkedin.com/marketing-solutions/ads"
+        },
+        {
+          "header": "Home | Scrum Guides",
+          "content": "https://scrumguides.org/"
+        },
+        {
+          "header": "Home | Scrum.org",
+          "content": "https://www.scrum.org/index"
+        },
+        {
+          "header": "What is Scrum?",
+          "content": "https://www.scrum.org/resources/what-is-scrum"
+        },
+        {
+          "header": "Partner Inbound",
+          "content": "https://www.letsdeel.com/partner-program"
+        },
+        {
+          "header": "Explore Remote partner programs. | Remote",
+          "content": "https://partners.remote.com/partners"
+        },
+        {
+          "header": "Laravel – The PHP Framework For Web Artisans",
+          "content": "https://laravel.com/"
+        },
+        {
+          "header": "Road & Track",
+          "content": "https://www.roadandtrack.com/"
+        },
+        {
+          "header": "Instagram | About | Official Site",
+          "content": "https://about.instagram.com/"
+        },
+        {
+          "header": "World’s Favorite Instagram Marketing Platform | Later",
+          "content": "https://later.com/"
+        },
+        {
+          "header": "MOHITO – Posljednji ženstveni trendovi | Kupi online!",
+          "content": "https://www.mohito.com/hr/hr/"
+        },
+        {
+          "header": "Run your EU company online or invoice without one | Xolo",
+          "content": "https://www.xolo.io/zz-en"
+        },
+        {
+          "header": "Setupad.com – Monetization Partner – Setupad",
+          "content": "https://setupad.com/"
+        },
+        {
+          "header": "Shipito For Business",
+          "content": "https://www.shipito.com/en/shipito-for-business"
+        },
+        {
+          "header": "Knowledge Base Software That Scales With Your Product-Document360",
+          "content": "https://document360.com/"
+        },
+        {
+          "header": "Spryker Academy",
+          "content": "https://academy.spryker.com/learn"
+        },
+        {
+          "header": "Run your EU company online or invoice without one | Xolo",
+          "content": "https://www.xolo.io/zz-en"
+        },
+        {
+          "header": "Cryptocurrency Exchange Software | Blockchain software | White label Exchange Software – ChainUP",
+          "content": "https://www.chainup.com/en-US/"
+        },
+        {
+          "header": "Spryker Documentation",
+          "content": "https://documentation.spryker.com/docs/"
+        },
+        {
+          "header": "Firebase",
+          "content": "https://firebase.google.com/?hl=hr"
+        },
+        {
+          "header": "Integrations Directory – OneSignal",
+          "content": "https://onesignal.com/integrations"
+        },
+        {
+          "header": "Facebook for Business: Marketing on Facebook",
+          "content": "https://web.facebook.com/business"
+        },
+        {
+          "header": "Front – Customer Communication Platform | Team Email",
+          "content": "https://front.com/"
+        },
+        {
+          "header": "Customer Success and Product Experience Software | Gainsight",
+          "content": "https://www.gainsight.com/"
+        },
+        {
+          "header": "MoEngage: Insights-led Customer Engagement Platform",
+          "content": "https://www.moengage.com/"
+        },
+        {
+          "header": "Pendo.io – Product Experience and Digital Adoption Solutions",
+          "content": "https://www.pendo.io/"
+        },
+        {
+          "header": "RudderStack – The Customer Data Platform for Developers",
+          "content": "https://rudderstack.com/"
+        },
+        {
+          "header": "Cloud Object Storage | Store & Retrieve Data Anywhere | Amazon Simple Storage Service (S3)",
+          "content": "https://aws.amazon.com/s3/"
+        },
+        {
+          "header": "Home",
+          "content": "https://www.mparticle.com/"
+        },
+        {
+          "header": "Integrations · Hightouch",
+          "content": "https://hightouch.io/integrations"
+        },
+        {
+          "header": "Physical and Virtual Visa Commercial Cards vol.2 | Payhawk | Payhawk",
+          "content": "https://payhawk.com/start/visa-cards/"
+        },
+        {
+          "header": "Modne kolekcije na jednom mjestu – GLAMI.hr",
+          "content": "https://www.glami.hr/"
+        },
+        {
+          "header": "Buy online! Reserved & Shop Online",
+          "content": "https://www.reserved.com/gr/en/"
+        },
+        {
+          "header": "Joom. Easy shopping, fast shipping",
+          "content": "https://www.joom.com/en"
+        },
+        {
+          "header": "F-IQ",
+          "content": "https://f-iq.app/"
+        },
+        {
+          "header": "Knowledge Base Software That Scales With Your Product-Document360",
+          "content": "https://document360.com/"
+        },
+        {
+          "header": "Payhawk | The Financial System of Tomorrow with NextGen Visa Cards",
+          "content": "https://payhawk.com/"
+        },
+        {
+          "header": "Online payment processing for internet businesses – Stripe",
+          "content": "https://stripe.com/"
+        },
+        {
+          "header": "Send Money, Pay Online or Set Up a Merchant Account – PayPal",
+          "content": "https://www.paypal.com"
+        },
+        {
+          "header": "BillDesk – All Your Payments. Single Location.",
+          "content": "https://www.billdesk.com/"
+        },
+        {
+          "header": "Financial Services for Emerging Markets | PayU Global",
+          "content": "https://corporate.payu.com/"
+        },
+        {
+          "header": "Global HR Solutions for Distributed Teams | Remote",
+          "content": "https://remote.com/"
+        },
+        {
+          "header": "For Startups – letsdeel",
+          "content": "https://www.letsdeel.com/for-startups"
+        },
+        {
+          "header": "Stocard – Your mobile wallet",
+          "content": "https://stocardapp.com/en/de"
+        },
+        {
+          "header": "Payroll & Compliance for International Teams | Deel",
+          "content": "https://www.letsdeel.com/"
+        },
+        {
+          "header": "Lifewire: Tech News, Reviews, Help & How-Tos",
+          "content": "https://www.lifewire.com/"
+        },
+        {
+          "header": "Partner Inbound",
+          "content": "https://www.letsdeel.com/partner-program"
+        },
+        {
+          "header": "Payroll & Compliance for International Teams | Deel",
+          "content": "https://www.letsdeel.com/"
+        },
+        {
+          "header": "Play DivX files. Free Video Software to play, convert and cast video.",
+          "content": "https://www.divx.com/"
+        },
+        {
+          "header": "GDPR, ePrivacy and CCPA compliant cookies | Cookiebot CMP",
+          "content": "https://www.cookiebot.com/en/"
+        },
+        {
+          "header": "Venture Capital Definition",
+          "content": "https://www.investopedia.com/terms/v/venturecapital.asp"
+        },
+        {
+          "header": "Capital Markets Definition",
+          "content": "https://www.investopedia.com/terms/c/capitalmarkets.asp"
+        },
+        {
+          "header": "Bond Market Definition",
+          "content": "https://www.investopedia.com/terms/b/bondmarket.asp"
+        },
+        {
+          "header": "Stock Market Definition",
+          "content": "https://www.investopedia.com/terms/s/stockmarket.asp"
+        },
+        {
+          "header": "Global HR Solutions for Distributed Teams | Remote",
+          "content": "https://remote.com/"
+        },
+        {
+          "header": "Y2Mate Youtube Downloader",
+          "content": "https://en.y2mate.guru/10/"
+        },
+        {
+          "header": "The New York Times – Breaking News, US News, World News and Videos",
+          "content": "https://www.nytimes.com/"
+        },
+        {
+          "header": "Movieweb: Movie News, Movie Trailers, New Movies, Movie Reviews",
+          "content": "https://movieweb.com/"
+        },
+        {
+          "header": "New Movies, TV Shows | Celebrity News & Gossip | CINEMABLEND",
+          "content": "https://www.cinemablend.com/"
+        },
+        {
+          "header": "DOBA Fakultet: Odaberite program za razvoj svoje karijere",
+          "content": "https://www.doba.hr/"
+        },
+        {
+          "header": "Best Products: Product Reviews, Deals, and More",
+          "content": "https://www.bestproducts.com/"
+        },
+        {
+          "header": "Movieweb: Movie News, Movie Trailers, New Movies, Movie Reviews",
+          "content": "https://movieweb.com/"
+        },
+        {
+          "header": "Download Instagram Video, Photos, IGTV & Reels",
+          "content": "https://igram.io/"
+        },
+        {
+          "header": "Instagram Downloader, Download Video, Photo, Reels, IGTV online – SnapInsta",
+          "content": "https://snapinsta.app/"
+        },
+        {
+          "header": "Harvard Business School Online Courses & Learning Platforms",
+          "content": "https://online.hbs.edu/"
+        },
+        {
+          "header": "Academic Programs – About – Harvard Business School",
+          "content": "https://www.hbs.edu/about/academic-programs/Pages/default.aspx"
+        },
+        {
+          "header": "MBA – Harvard Business School",
+          "content": "https://www.hbs.edu/mba/Pages/default.aspx"
+        },
+        {
+          "header": "Harvard Business Review – Ideas and Advice for Leaders",
+          "content": "https://hbr.org/"
+        },
+        {
+          "header": "Subscribe to HBR – Digital & Print",
+          "content": "https://hbr.org/subscriptions"
+        },
+        {
+          "header": "World’s Most Affordable Push Notifications Services | Truepush",
+          "content": "https://www.truepush.com/"
+        },
+        {
+          "header": "Save S$1,080 on one year of Accounting and Tax with Osome and OCBC Bank",
+          "content": "https://osome.com/sg/start-digital/"
+        },
+        {
+          "header": "Online Accounting Software | Small Business Accounting | Xero US",
+          "content": "https://www.xero.com/us/accounting-software/"
+        },
+        {
+          "header": "Tumblr",
+          "content": "https://www.tumblr.com/"
+        },
+        {
+          "header": "RAPTOR fleet – GPS nadzor vozila – gps tracking, nadzor vozila",
+          "content": "https://raptor-fleet.com/"
+        },
+        {
+          "header": "Buy and Sell Online Businesses, Websites, Apps & Domains – Flippa",
+          "content": "https://flippa.com/"
+        },
+        {
+          "header": "Researcher | An App For Academics",
+          "content": "https://www.researcher-app.com/"
+        },
+        {
+          "header": "Google Cloud Platform Webinars",
+          "content": "https://cloudonair.withgoogle.com/"
+        },
+        {
+          "header": "Home – Google Cloud Startup Summit",
+          "content": "https://cloudonair.withgoogle.com/events/startup"
+        },
+        {
+          "header": "Google Cloud Platform Webinars",
+          "content": "https://cloudonair.withgoogle.com/#cert_prep"
+        },
+        {
+          "header": "IBAN Checker: International Bank Account Number validation",
+          "content": "https://www.iban.com/"
+        },
+        {
+          "header": "Build for everyone – Google Careers",
+          "content": "https://careers.google.com/"
+        },
+        {
+          "header": "Start a Business, Grow Your Business – Shopify 14-Day Free Trial",
+          "content": "https://www.shopify.com/"
+        },
+        {
+          "header": "Petrokemija d.d.",
+          "content": "https://petrokemija.hr/hr-hr/"
+        },
+        {
+          "header": "Event Management Technology & Hospitality Solutions | Cvent",
+          "content": "https://www.cvent.com/"
+        },
+        {
+          "header": "Alfa Vision Optika – dioptrijski i sunčani okviri",
+          "content": "https://alfavision-optika.hr/hr/"
+        },
+        {
+          "header": "Fiat Hrvatska",
+          "content": "https://www.fiat.hr/"
+        },
+        {
+          "header": "Product Hunt – The best new products in tech.",
+          "content": "https://www.producthunt.com/"
+        },
+        {
+          "header": "Candis – Women’s Magazine – Family, Health, Competitions & Savings",
+          "content": "https://www.candis.co.uk/"
+        },
+        {
+          "header": "DSG bicikli – prodaja i servis bicikla",
+          "content": "https://dsg.hr/"
+        },
+        {
+          "header": "JetBrains: Essential tools for software developers and teams",
+          "content": "https://www.jetbrains.com/"
+        },
+        {
+          "header": "Kite – Free AI Coding Assistant and Code Auto-Complete Plugin",
+          "content": "https://www.kite.com/"
+        },
+        {
+          "header": "Startups.com | Courses, Expert Advice & Software for Startup Founders",
+          "content": "https://www.startups.com/"
+        },
+        {
+          "header": "SalesAI Powered Copywriting – ClosersCopy",
+          "content": "https://www.closerscopy.com/"
+        },
+        {
+          "header": "PyCharm: the Python IDE for Professional Developers by JetBrains",
+          "content": "https://www.jetbrains.com/pycharm/"
+        },
+        {
+          "header": "Integrations | Parabola",
+          "content": "https://parabola.io/integrations"
+        },
+        {
+          "header": "Kylie Cosmetics | Kylie Cosmetics by Kylie Jenner",
+          "content": "https://kyliecosmetics.com"
+        },
+        {
+          "header": "Formative for Schools",
+          "content": "https://goformative.com/schools"
+        },
+        {
+          "header": "Automobili Lamborghini – Official Website | Lamborghini.com",
+          "content": "https://www.lamborghini.com/en-en"
+        },
+        {
+          "header": "The World’s Luxury Marketplace: Homes, Cars, Yachts & Jets for Sale | JamesEdition",
+          "content": "https://www.jamesedition.com/"
+        },
+        {
+          "header": "Formative",
+          "content": "https://goformative.com/schools"
+        },
+        {
+          "header": "Where to Pay Later with Zip",
+          "content": "https://zip.co/"
+        },
+        {
+          "header": "Muške majice i majice bez rukava| 60 757 komada na jednom mjestu – GLAMI.hr",
+          "content": "https://www.glami.hr/muske-majice-i-majce-bez-rukava/"
+        },
+        {
+          "header": "Stockwatch",
+          "content": "https://www.stockwatch.com/"
+        },
+        {
+          "header": "Automobili Lamborghini – Official Website | Lamborghini.com",
+          "content": "https://www.lamborghini.com/en-en"
+        },
+        {
+          "header": "Classic Cars for Sale. Comps, Alerts and More. – CLASSIC.COM",
+          "content": "https://www.classic.com/"
+        },
+        {
+          "header": "Road & Track",
+          "content": "https://www.roadandtrack.com/"
+        },
+        {
+          "header": "Classic Driver | The classic car & lifestyle market and magazine",
+          "content": "https://www.classicdriver.com/en"
+        },
+        {
+          "header": "Mercedes-AMG CLA Coupé",
+          "content": "https://www.mercedes-benz.hr/osobna-vozila/mercedes-benz-vozila/modeli/cla/coupe-c118/amg.html"
+        },
+        {
+          "header": "Svaka šalica ima svoju priču",
+          "content": "https://www.franck.eu/hr/"
+        },
+        {
+          "header": "Snogoo",
+          "content": "https://snogoo.hr/"
+        },
+        {
+          "header": "Where to Pay Later with Zip",
+          "content": "https://zip.co/"
+        },
+        {
+          "header": "MERLE WOOD & ASSOCIATES | LUXURY YACHT SPECIALISTS",
+          "content": "https://www.merlewood.com/"
+        },
+        {
+          "header": "Kera-Term Početna – Kera Term Trgovina",
+          "content": "https://kera-term.hr/"
+        },
+        {
+          "header": "Mime et Moi",
+          "content": "https://mimemoi.com/int/en/"
+        },
+        {
+          "header": "Never Settle – OnePlus (Hrvatska)",
+          "content": "https://www.oneplus.com/hr"
+        },
+        {
+          "header": "The World’s First Fully Convertible High Heels | Pashion Footwear",
+          "content": "https://pashionfootwear.com/"
+        },
+        {
+          "header": "Alfa Elmas | nekretnine Krk, Malinska, apartmani , kuće, vikendice, vile",
+          "content": "https://alfaelmas.com/"
+        },
+        {
+          "header": "Finest Apothecary Skincare – Kiehl’s",
+          "content": "https://www.kiehls.hr/"
+        },
+        {
+          "header": "Tematske torte – Torterie Macaron",
+          "content": "https://www.torterie-macaron.com/tematske-torte/"
+        },
+        {
+          "header": "Foodie – Foodie",
+          "content": "https://foodie.hr/"
+        },
+        {
+          "header": "Wolt – Otkrij i naruči sjajnu hranu.",
+          "content": "https://wolt.com/hr/"
+        },
+        {
+          "header": "Torterie Macaron | Najfinije torte, macaroni, sladoled i druge slastice",
+          "content": "https://www.torterie-macaron.com/"
+        },
+        {
+          "header": "Influencer Marketing | #1 Platform, Agency & Influencer Resources",
+          "content": "https://influencermarketinghub.com/"
+        },
+        {
+          "header": "VEKA HR",
+          "content": "https://veka.hr/"
+        },
+        {
+          "header": "Nekretnine Hrvatska – RealEstateCroatia.com – Portal za nekretnine u Hrvatskoj",
+          "content": "https://www.realestatecroatia.com/hrv/default.asp"
+        },
+        {
+          "header": "Smart invest nekretnine Opatija, Rijeka | Stanovi, kuće, poslovni prostori, zemljišta, prodaja i najam",
+          "content": "http://www.smart-invest.hr/"
+        },
+        {
+          "header": "The Fastest Off-Road E-bikes – 10,000 (Watt) Power | VectorEbike.com",
+          "content": "https://vectorebike.com/"
+        },
+        {
+          "header": "Electrek – EV and Tesla News, Green Energy, Ebikes, and more",
+          "content": "https://electrek.co/"
+        },
+        {
+          "header": "eROCKIT – The Human Hybrid",
+          "content": "https://www.erockit.de/en/home-2/"
+        },
+        {
+          "header": "Finest Apothecary Skincare – Kiehl’s",
+          "content": "https://www.kiehls.hr/"
+        },
+        {
+          "header": "Blog Tool, Publishing Platform, and CMS — WordPress.org",
+          "content": "https://wordpress.org/"
+        },
+        {
+          "header": "Bolt Food",
+          "content": "https://food.bolt.eu/hr-hr/"
+        },
+        {
+          "header": "Official Rosetta Stone® – Language Learning – Learn a Language",
+          "content": "https://www.rosettastone.eu/"
+        },
+        {
+          "header": "HUAWEI Hrvatska",
+          "content": "https://consumer.huawei.com/hr/"
+        },
+        {
+          "header": "Author Media – Innovative Book Promotion For Writers",
+          "content": "https://www.authormedia.com/"
+        },
+        {
+          "header": "Agrotrgovina.hr by Kokot Agro / – Vodeća agrotrgovina u Hrvatskoj",
+          "content": "https://www.agrotrgovina.hr/"
+        },
+        {
+          "header": "Consent Management Platform – GDPR Compliance, CCPA Compliance Consent Management Solution, Privacy Manager",
+          "content": "https://www.uniconsent.com/"
+        },
+        {
+          "header": "Tricent Compliance Tool",
+          "content": "https://www.tricent.com/"
+        },
+        {
+          "header": "Designrr PRO Flash Sale",
+          "content": "https://go.designrr.io/special-pro-upgrade-special2yx"
+        },
+        {
+          "header": "PINK PANDA – Šminka, kozmetika, make up i još svašta ;)",
+          "content": "https://www.pinkpanda.hr/"
+        },
+        {
+          "header": "Home | LibreOffice – Free Office Suite – Based on OpenOffice – Compatible with Microsoft",
+          "content": "https://www.libreoffice.org/"
+        },
+        {
+          "header": "Moj-eRačun – servis za slanje elektroničkih računa – e-računa – naslovna",
+          "content": "https://www.moj-eracun.hr/cms/naslovna/"
+        },
+        {
+          "header": "Apache OpenOffice – Official Site – The Free and Open Productivity Suite",
+          "content": "http://www.openoffice.org/"
+        },
+        {
+          "header": "Prevent Cybersecurity Breaches | Comodo Cybersecurity",
+          "content": "https://www.comodo.com/"
+        },
+        {
+          "header": "Yippee",
+          "content": "https://www.yippee.tv/"
+        },
+        {
+          "header": "DiviCo | Gadgets on line",
+          "content": "https://www.divico.hr/"
+        },
+        {
+          "header": "Upwork | The World’s Work Marketplace for Freelancing",
+          "content": "https://www.upwork.com/"
+        },
+        {
+          "header": "Bimi Boo – Bimi Boo – Educational toys, cartoons and apps for kids",
+          "content": "https://bimiboo.com/"
+        },
+        {
+          "header": "TechSmith Software, Services, and Apps | TechSmith",
+          "content": "https://www.techsmith.com/products.html"
+        },
+        {
+          "header": "Traverse Legal",
+          "content": "https://www.traverselegal.com/"
+        },
+        {
+          "header": "Amazon.co.uk Sign up for Prime Video",
+          "content": "https://www.amazon.co.uk/gp/video/offers"
+        },
+        {
+          "header": "Tom’s Guide | Tech Product Reviews, Top Picks and How To",
+          "content": "https://www.tomsguide.com/"
+        },
+        {
+          "header": "Amazon.com: Amazon Prime",
+          "content": "https://www.amazon.com/amazonprime"
+        },
+        {
+          "header": "Iznajmljivači.hr – Portal za iznajmljivače privatnog smještaja",
+          "content": "https://www.xn--iznajmljivai-yrb.hr/"
+        },
+        {
+          "header": "Carmel Valley Hotels | Quail Lodge & Golf Club – Home | Monterey Peninsula Hotels",
+          "content": "https://www.quaillodge.com/"
+        },
+        {
+          "header": "Amazon.de: Günstige Preise für Elektronik & Foto, Filme, Musik, Bücher, Games, Spielzeug & mehr",
+          "content": "https://www.amazon.de/"
+        },
+        {
+          "header": "Carmel Valley Hotels | Quail Lodge & Golf Club – Home | Monterey Peninsula Hotels",
+          "content": "https://www.quaillodge.com/"
+        },
+        {
+          "header": "Home | Global | Siemens Energy Global",
+          "content": "https://www.siemens-energy.com/global/en.html"
+        },
+        {
+          "header": "Bluetooth gamepad and apple peripheral accessories full range of product models-Ten excellent brands of Bluetooth gamepad",
+          "content": "http://m.ipega.hk/product.html"
+        },
+        {
+          "header": "No compromise cloud performance | IONOS Cloud",
+          "content": "https://cloud.ionos.com/"
+        },
+        {
+          "header": "Automatic Code Review, Testing, Inspection & Auditing | SonarCloud",
+          "content": "https://sonarcloud.io/"
+        },
+        {
+          "header": "⚡️ Download APK for Android (Free) – Fastest!",
+          "content": "https://apkcombo.com/"
+        },
+        {
+          "header": "Nintendo Life – Nintendo Switch, eShop & Retro, News, Videos and Reviews",
+          "content": "https://www.nintendolife.com/"
+        },
+        {
+          "header": "Free Online Courses – Business e Learning and Training | Shopify Compass",
+          "content": "https://www.shopify.com/learn"
+        },
+        {
+          "header": "List Your Website for Sale | Buy and Sell Businesses",
+          "content": "https://exchangemarketplace.com/create-a-listing"
+        },
+        {
+          "header": "Ecommerce Websites & Businesses for Sale | Buy and Sell Online Sites",
+          "content": "https://exchangemarketplace.com/"
+        },
+        {
+          "header": "Free Stock Photos: High-Res Images for Websites & Commercial Use",
+          "content": "https://burst.shopify.com/"
+        },
+        {
+          "header": "Free Stock Photos: High-Res Images for Websites & Commercial Use",
+          "content": "https://burst.shopify.com/"
+        },
+        {
+          "header": "Free Online Courses – Business e Learning and Training | Shopify Compass",
+          "content": "https://www.shopify.com/learn"
+        },
+        {
+          "header": "Start a Business, Grow Your Business – Shopify 14-Day Free Trial",
+          "content": "https://www.shopify.com/"
+        },
+        {
+          "header": "Debutify – World’s Smartest Shopify Theme. Free 14-day Trial",
+          "content": "https://debutify.com/"
+        },
+        {
+          "header": "Tenjin – Free attribution, Ad Revenue LTV, Cost and ad revenue aggregation, Automation APIs, Internal BI on demand",
+          "content": "https://tenjin.com/"
+        },
+        {
+          "header": "Online Courses – Learn Anything, On Your Schedule | Udemy",
+          "content": "https://www.udemy.com/"
+        },
+        {
+          "header": "99000mah Solar Power Bank Wireless Fast Charger With SOS LED Light Portable Charging External Battery For Xiaomi Iphone Samsung",
+          "content": "99000mah Solar Power Bank Wireless Fast Charger With SOS LED Light Portable Charging External Battery For Xiaomi Iphone Samsung\nhttps://a.aliexpress.com/_mPruSwF"
+        },
+        {
+          "header": "Dignet",
+          "content": "https://dignet.hr/home"
+        },
+        {
+          "header": "Naslovna – UNIQA osiguranje",
+          "content": "https://www.uniqa.hr/"
+        },
+        {
+          "header": "Sportsko učilište PESG Zagreb",
+          "content": "https://pesg.hr/"
+        },
+        {
+          "header": "WordPress — jekyll-import • Import your old & busted site to Jekyll",
+          "content": "https://import.jekyllrb.com/docs/wordpress/"
+        },
+        {
+          "header": "StarMaker: Bring out the singer in you!",
+          "content": "https://starmakerstudios.com/"
+        },
+        {
+          "header": "SpeedBike 72V 7000W Dual Engine Electric Scooter with double Motors drive good suspention E Scooter",
+          "content": "SpeedBike 72V 7000W Dual Engine Electric Scooter with double Motors drive good suspention E Scooter\nhttps://a.aliexpress.com/_mrR8NPv"
+        },
+        {
+          "header": "Svi sportski događaji na jednom mjestu | SuperSport",
+          "content": "https://m.supersport.hr/sport"
+        },
+        {
+          "header": "MyWallSt – Investing For Everyone",
+          "content": "https://mywallst.com/"
+        },
+        {
+          "header": "Giga d.o.o. | Htz Oprema",
+          "content": "https://giga.hr/"
+        },
+        {
+          "header": "Ford Hrvatska",
+          "content": "https://ford.hr/"
+        },
+        {
+          "header": "Novi Mustang Mach-E",
+          "content": "https://ford.hr/mustang-mach-e"
+        },
+        {
+          "header": "Naslovnica – ZŠEM",
+          "content": "https://zsem.hr/"
+        },
+        {
+          "header": "Edukacija – ZŠEM – Poslovna akademija – Cjeloživotno učenje",
+          "content": "https://www.zsemakademija.hr/"
+        },
+        {
+          "header": "Prikaži katalog – ebook024",
+          "content": "https://www.ebook024.com/catalog"
+        },
+        {
+          "header": "Knowing market history can help you weather volatility | Chase.com",
+          "content": "https://www.chase.com/personal/investments/learning-and-insights/article/investing-is-a-marathon-not-a-sprint"
+        },
+        {
+          "header": "HIF – HRVATSKI INSTITUT ZA FINANCIJE",
+          "content": "https://hif.hr/"
+        },
+        {
+          "header": "Apple Trade In – Apple",
+          "content": "https://www.apple.com/shop/trade-in"
+        },
+        {
+          "header": "Apple Store Online – Apple",
+          "content": "https://www.apple.com/store"
+        },
+        {
+          "header": "Apple Card – Apple",
+          "content": "https://www.apple.com/apple-card/"
+        },
+        {
+          "header": "App Store – Apple",
+          "content": "https://www.apple.com/app-store/"
+        },
+        {
+          "header": "Apple",
+          "content": "https://www.apple.com/"
+        },
+        {
+          "header": "‎Sketch Pad – My Drawing Board on the App Store",
+          "content": "https://apps.apple.com/us/app/sketch-pad-my-drawing-board/id1048919894"
+        },
+        {
+          "header": "Drazba.hr – Javne dražbe iz Hrvatske i inozemstva",
+          "content": "https://www.drazba.hr/"
+        },
+        {
+          "header": "Citi Personal Wealth Management",
+          "content": "https://investments.citi.com/nxi/login"
+        },
+        {
+          "header": "Disneyland® Official Site",
+          "content": "https://disneyland.disney.go.com/"
+        },
+        {
+          "header": "Apple Music",
+          "content": "https://music.apple.com/us/browse"
+        },
+        {
+          "header": "shopDisney | Official Site for Disney Merchandise",
+          "content": "https://www.shopdisney.com/"
+        },
+        {
+          "header": "Marvel Clothing, T Shirts, Sweatshirts & More | shopDisney",
+          "content": "https://www.shopdisney.com/franchises/marvel/clothing/"
+        },
+        {
+          "header": "Disney Visa Card | shopDisney",
+          "content": "https://www.sfcc-stg.shopdisney.com/disney-visa-card.html"
+        },
+        {
+          "header": "shopDisney | Official Site for Disney Merchandise",
+          "content": "https://www.shopdisney.com/"
+        },
+        {
+          "header": "Chase Refer a Friend Checking: Earn up to $500 Cash | Chase",
+          "content": "https://accounts.chase.com/raf/landing"
+        },
+        {
+          "header": "Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com",
+          "content": "https://www.chase.com/"
+        },
+        {
+          "header": "Shop Official Marvel Merchandise | shopDisney",
+          "content": "https://www.shopdisney.com/marvel-content/"
+        },
+        {
+          "header": "Drag Racing 1/4 Mile times – DragTimes.com",
+          "content": "http://www.dragtimes.com/"
+        },
+        {
+          "header": "Global Investment Bank and Financial Services | Citi",
+          "content": "https://www.citigroup.com/citi/index.htm"
+        },
+        {
+          "header": "Moja idealna veza | Terrakom",
+          "content": "https://www.terrakom.hr/"
+        },
+        {
+          "header": "Check VIN | Decoder | VIN | autoDNA",
+          "content": "https://www.autodna.com/"
+        },
+        {
+          "header": "Stock Images, Royalty-Free Pictures, Illustrations & Videos – iStock",
+          "content": "https://www.istockphoto.com/"
+        },
+        {
+          "header": "Download TikTok Video Without Watermark | sssTikTok.io",
+          "content": "https://ssstik.io/"
+        },
+        {
+          "header": "IKEA.com – International homepage – IKEA",
+          "content": "https://www.ikea.com/"
+        },
+        {
+          "header": "Namještaj i dekoracije za tvoj dom – IKEA",
+          "content": "https://www.ikea.com/hr/hr/"
+        },
+        {
+          "header": "Welcome to STAEDTLER",
+          "content": "https://www.staedtler.com/intl/en/"
+        },
+        {
+          "header": "Sketch.IO – The Maker of Sketchpad",
+          "content": "https://sketch.io/"
+        },
+        {
+          "header": "Online program",
+          "content": "https://americanacademy.com/online/"
+        },
+        {
+          "header": "Online program – americanacademy",
+          "content": "https://americanacademy.com/online/"
+        },
+        {
+          "header": "American Academy",
+          "content": "https://americanacademy.com/"
+        },
+        {
+          "header": "Hollywood Story: Fashion Star | Nanobit – Put Extra Into Ordinary",
+          "content": "https://www.nanobit.com/games/hollywood-story-fashion-star/"
+        },
+        {
+          "header": "Amazon.com. Spend less. Smile more.",
+          "content": "https://www.amazon.com/"
+        },
+        {
+          "header": "Sketchpad – Draw, Create, Share!",
+          "content": "https://sketch.io/sketchpad/"
+        },
+        {
+          "header": "Span.eu – IT partner kojem ćete vjerovati godinama",
+          "content": "https://www.span.eu/hr/"
+        },
+        {
+          "header": "Empowering kids and adults through hands-on STEM experience – Circuitmess",
+          "content": "https://circuitmess.com/"
+        },
+        {
+          "header": "Get Qualified, Study 100% Online with VU | VU Online",
+          "content": "https://online.vu.edu.au/study-online"
+        },
+        {
+          "header": "Online Courses | VU Online",
+          "content": "https://online.vu.edu.au/online-courses"
+        },
+        {
+          "header": "Online MBA – Master of Business Administration | VU Online",
+          "content": "https://online.vu.edu.au/online-courses/mba"
+        },
+        {
+          "header": "Suncani Hvar Hotels | Best hotels in Hvar Croatia | Official website",
+          "content": "https://www.suncanihvar.com/"
+        },
+        {
+          "header": "HOAKA SWIMWEAR – HOAKA SWIMWEAR INTERNATIONAL",
+          "content": "https://international.hoakaswimwear.com/"
+        },
+        {
+          "header": "Tabou Stories: Love Episodes | Nanobit – Put Extra Into Ordinary",
+          "content": "https://www.nanobit.com/games/tabou-stories-love-episodes/"
+        },
+        {
+          "header": "My Story: Choose Your Own Path | Nanobit – Put Extra Into Ordinary",
+          "content": "https://www.nanobit.com/games/my-story-choose-your-own-path/"
+        },
+        {
+          "header": "Hollywood Story: Fashion Star | Nanobit – Put Extra Into Ordinary",
+          "content": "https://www.nanobit.com/games/hollywood-story-fashion-star/"
+        },
+        {
+          "header": "Germania :: Naslovna stranica",
+          "content": "https://www.germaniasport.hr/hr#/"
+        },
+        {
+          "header": "autoevolution.com: automotive news and vehicle specifications",
+          "content": "https://www.autoevolution.com/"
+        },
+        {
+          "header": "Signature",
+          "content": "All the best - https://companylink.business.blog/"
+        }
+      ]
     }
   ],
   "google_ads": [

@@ -465,6 +465,7 @@ public async observeKnowledge(url?: string) {
   const urlsToObserve = url ? [url] : [
     'https://software-online-review.com',
     'https://companylink.business.blog/',
+    'https://marketing1usa.wordpress.com/',
     "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
     "https://business.google.com/uk/ad-tools/bidding/",
     "https://business.google.com/uk/resources/",
@@ -603,6 +604,7 @@ public async observeKnowledge(url?: string) {
       'https://informaticmagazine.data.blog',
       'https://software-online-review.com',
       'https://companylink.business.blog/',
+      'https://marketing1usa.wordpress.com/',
       "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
       "https://business.google.com/uk/ad-tools/bidding/",
       "https://business.google.com/uk/resources/",
