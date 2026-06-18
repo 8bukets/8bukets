@@ -463,6 +463,7 @@ public async observeKnowledge(url?: string) {
   const { observeKnowledge: observe, persistKnowledge } = await import('./services/knowledge_observer')
 
   const urlsToObserve = url ? [url] : [
+    'https://infogadgettech.wordpress.com/',
     'https://software-online-review.com',
     'https://companylink.business.blog/',
     "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
@@ -600,6 +601,7 @@ public async observeKnowledge(url?: string) {
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
     const urlsToObserve = [
+      'https://infogadgettech.wordpress.com/',
       'https://informaticmagazine.data.blog',
       'https://software-online-review.com',
       'https://companylink.business.blog/',
