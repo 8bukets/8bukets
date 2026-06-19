@@ -23,10 +23,10 @@ program
   });
 
 program
-  .command('full-autonomus-automatic-creation-order-and-execution')
-  .description('Full autonomus automatic creation order and execution')
+  .command('full-autonomous-automatic-creation-order-and-execution')
+  .description('Full autonomous automatic creation order and execution')
   .action(async () => {
-    console.log('🚀 Triggering Full Autonomus Automatic Creation Order and Execution...');
+    console.log('🚀 Triggering Full Autonomous Automatic Creation Order and Execution...');
     const { spawn } = require('child_process');
     const child = spawn('npm', ['run', 'full-autonomous-automatic-creation-order-and-execution'], { stdio: 'inherit', shell: true });
     child.on('error', (error: Error) => {
