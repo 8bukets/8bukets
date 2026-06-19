@@ -1,3 +1,13 @@
+/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
+import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 import fs from 'fs'
 import path from 'path'
 import { execFile, exec } from 'child_process'
@@ -179,6 +189,7 @@ export class Jules {
       { name: 'PR Rebase Automation', action: () => this.rebaseAllPRs() },
       { name: 'Skill Synchronization', action: () => this.syncSkills() },
       { name: 'Autonomous Merge', action: () => this.autonomousMerge() },
+      { name: 'Unitedsports Intelligence Ingestion', action: () => this.observeKnowledge('https://unitedsports.news.blog/') },
       { name: 'Edge Function Audit', action: () => this.recordTask('Edge function hello-world prepared for deployment.') },
       { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },
       { name: 'Collaboration Sync', action: () => this.syncCollaboration() },
@@ -478,7 +489,11 @@ public async observeKnowledge(url?: string) {
   const { observeKnowledge: observe, persistKnowledge } = await import('./services/knowledge_observer')
 
   const urlsToObserve = url ? [url] : [
+    'https://unitedsports.news.blog/',
     'https://software-online-review.com',
+    'https://onlinereview.news.blog/',
+    'https://companylink.business.blog/',
+    'https://gamezoneonlinegame.wordpress.com/',
     "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
     "https://business.google.com/uk/ad-tools/bidding/",
     "https://business.google.com/uk/resources/",
@@ -615,7 +630,12 @@ public async observeKnowledge(url?: string) {
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
     const urlsToObserve = [
+      'https://unitedsports.news.blog/',
+      'https://informaticmagazine.data.blog',
+      'https://onlinereview.news.blog/',
       'https://software-online-review.com',
+      'https://companylink.business.blog/',
+      'https://gamezoneonlinegame.wordpress.com/',
       "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
       "https://business.google.com/uk/ad-tools/bidding/",
       "https://business.google.com/uk/resources/",

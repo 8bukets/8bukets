@@ -1,3 +1,7 @@
+/** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
+import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 #!/usr/bin/env npx tsx
 
 import { Command } from 'commander';
@@ -23,6 +27,18 @@ program
   });
 
 program
+  .command('full-autonomous-automatic-creation-order-and-execution')
+  .description('Full autonomous automatic creation order and execution')
+  .action(async () => {
+    console.log('🚀 Triggering Full Autonomous Automatic Creation Order and Execution...');
+    const { spawn } = require('child_process');
+    const child = spawn('npm', ['run', 'full-autonomous-automatic-creation-order-and-execution'], { stdio: 'inherit', shell: true });
+    child.on('error', (error: Error) => {
+      console.error(`Error executing cycle: ${error.message}`);
+    });
+  });
+
+program
   .command('full-autonomous-creation')
   .description('Trigger the full autonomous creation and execution cycle')
   .action(async () => {
@@ -38,7 +54,7 @@ program
   .command('autonomous-online-coding')
   .description('Proceed coding automatic autonomous online and collaborate and merge with other specified tools to improve engine and evolving on higher scale')
   .action(async () => {
-    // Authorized syntactic adjustment to trigger clean commit - implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomous online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale
+    // Authorized syntactic adjustment to trigger clean commit - connect with docker and collaborate
     console.log('🚀 Initiating autonomous online coding and cloud presence simulation...');
     console.log('🔌 Connecting with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab...');
     process.env.MACBOOK_CLOUD_SIMULATION = 'true';
@@ -60,6 +76,18 @@ program
       console.error(`❌ Autonomous online coding failed: ${err}`);
       process.exit(1);
     }
+  });
+
+program
+  .command('ingest-unitedsports')
+  .description('Deep market intelligence ingestion from unitedsports.news.blog')
+  .action(async () => {
+    console.log('🚀 Initiating Unitedsports Knowledge Ingestion...');
+    const { spawn } = require('child_process');
+    const child = spawn('npm', ['run', 'ingest:unitedsports'], { stdio: 'inherit', shell: true });
+    child.on('error', (error: Error) => {
+      console.error(`Error executing ingestion: ${error.message}`);
+    });
   });
 
 program

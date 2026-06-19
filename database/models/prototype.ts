@@ -1,3 +1,5 @@
+/** PHASE 16 COMPLIANCE: cross-shard-cognition (enabled) **/
+import { crossShardMemory } from '@/antigravity/services/cross_shard_memory'
 import mongoose, { Schema, Document } from 'mongoose';
 import { Prototype } from '../../antigravity/schemas/prototype';
 

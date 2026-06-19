@@ -1,95 +1,142 @@
-import json
 import os
+import json
+import logging
 from datetime import datetime
+from .base_agent import BaseAgent, Blackboard
 
-class KnowledgeMergeAgent:
+class KnowledgeMergeAgent(BaseAgent):
+    """
+    KnowledgeMergeAgent
+
+    This agent is responsible for consolidating market intelligence from various
+    scraped sources into the unified system knowledge base.
+    """
     def __init__(self):
-        self.knowledge_merge_path = "KNOWLEDGE_MERGE.md"
-        self.signature = "[INTELLIGENCE-PARITY-SIGNATURE: MOKAPOKACHI]"
+        super().__init__("KnowledgeMergeAgent",
+                         dependencies=["scraped_data"],
+                         provides=["consolidated_knowledge"])
+        self.knowledge_dir = os.path.join(os.getcwd(), 'data/knowledge')
+        self.system_knowledge_path = os.path.join(self.knowledge_dir, 'system_knowledge.json')
+        self.knowledge_merge_md_path = os.path.join(os.getcwd(), 'KNOWLEDGE_MERGE.md')
 
-    def merge_mokapokacool_knowledge(self):
-        source_path = "data/knowledge/mokapokacool.json"
-        if not os.path.exists(source_path):
-            print(f"⚠️ [MergeAgent] Source file not found: {source_path}")
-            return
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
+        self.logger.info("🚀 [KnowledgeMergeAgent] Starting knowledge consolidation pulse...")
 
-        with open(source_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+        if not os.path.exists(self.knowledge_dir):
+            os.makedirs(self.knowledge_dir, exist_ok=True)
 
-        if not data:
-            print("⚠️ [MergeAgent] No data to merge.")
-            return
+        # 1. Load existing system knowledge
+        system_knowledge = {"typescript_sections": []}
+        if os.path.exists(self.system_knowledge_path):
+            try:
+                with open(self.system_knowledge_path, 'r', encoding='utf-8') as f:
+                    system_knowledge = json.load(f)
+            except Exception as e:
+                self.logger.error(f"❌ Failed to load existing system knowledge: {e}")
 
-        # Prepare summary info
-        categories = set()
-        for entry in data:
-            categories.update(entry.get('categories', []))
+        # 2. Identify all knowledge sources in the directory
+        source_files = [f for f in os.listdir(self.knowledge_dir) if f.endswith('_knowledge.json') and f != 'system_knowledge.json']
 
-        summary = f"Ingested {len(data)} market intelligence nodes across {len(categories)} categories."
-        top_categories = list(categories)[:5]
+        consolidated_count = 0
+        new_observations = []
 
-        new_observation = f"""
+        for source_file in source_files:
+            source_path = os.path.join(self.knowledge_dir, source_file)
+            try:
+                with open(source_path, 'r', encoding='utf-8') as f:
+                    source_data = json.load(f)
+
+                title = source_data.get('title', 'Unknown Source')
+                url = source_data.get('source', '')
+
+                # Check if this source already exists in system_knowledge
+                existing_idx = -1
+                for i, section in enumerate(system_knowledge.get('typescript_sections', [])):
+                    if section.get('title') == title or (section.get('metadata') and section.get('metadata').get('source') == url):
+                        existing_idx = i
+                        break
+
+                new_section = {
+                    "title": title,
+                    "metadata": {
+                        "source": url,
+                        "analyzedAt": source_data.get('analyzedAt', datetime.utcnow().isoformat() + "Z"),
+                        "description": source_data.get('description', '')
+                    },
+                    "sections": source_data.get('sections', [])
+                }
+
+                if existing_idx != -1:
+                    system_knowledge['typescript_sections'][existing_idx] = new_section
+                    self.logger.info(f"🔄 Updated knowledge from: {title}")
+                else:
+                    system_knowledge.setdefault('typescript_sections', []).append(new_section)
+                    self.logger.info(f"➕ Added new knowledge from: {title}")
+
+                consolidated_count += 1
+
+                # Prepare observation entry for KNOWLEDGE_MERGE.md
+                sections = source_data.get('sections', [])
+                top_headers = [s.get('header') for s in sections[:3]]
+                summary_info = f" Extracted key topics: {', '.join(top_headers)}..." if top_headers else ""
+
+                observation = f"""
 ## Autonomous Observation
-- **Date**: {datetime.now().isoformat()}
-- **Target**: https://mokapokacool.art.blog/
-- **Title**: Mokapokacool Market Intelligence
-- **Signature**: {self.signature}
-- **Relationship Map**: Confirmed relationship with mokapokacool.art.blog as a primary market intelligence source. {summary} Top categories: {', '.join(top_categories)}...
+- **Date**: {datetime.utcnow().isoformat() + "Z"}
+- **Target**: {url}
+- **Title**: {title}
+- **Relationship Map**: Confirmed relationship with {url} (Title: {title}) as an intelligence source.{summary_info} (Content Length: {len(str(sections))} chars)
 """
+                new_observations.append(observation)
 
-        existing_content = ""
-        if os.path.exists(self.knowledge_merge_path):
-            with open(self.knowledge_merge_path, 'r', encoding='utf-8') as f:
-                existing_content = f.read()
+            except Exception as e:
+                self.logger.error(f"❌ Failed to process source file {source_file}: {e}")
+
+        # 3. Save updated system knowledge
+        with open(self.system_knowledge_path, 'w', encoding='utf-8') as f:
+            json.dump(system_knowledge, f, indent=2, ensure_ascii=False)
+
+        # 4. Update KNOWLEDGE_MERGE.md
+        if new_observations:
+            self._update_knowledge_merge_md(new_observations)
+
+        self.logger.info(f"✅ [KnowledgeMergeAgent] Consolidation complete. Processed {consolidated_count} sources.")
+        return {"consolidated_count": consolidated_count, "status": "SUCCESS"}
+
+    def _update_knowledge_merge_md(self, new_observations):
+        content = ""
+        if os.path.exists(self.knowledge_merge_md_path):
+            with open(self.knowledge_merge_md_path, 'r', encoding='utf-8') as f:
+                content = f.read()
         else:
-            existing_content = "# Market Intelligence Matrix\n"
+            content = "# Market Intelligence Matrix\n"
 
-        # Check if already present and replace or append
-        target_indicator = "- **Target**: https://mokapokacool.art.blog/"
-        if target_indicator in existing_content:
-            # Simple replacement logic for this specific source
-            # Find the block
-            lines = existing_content.split('\n')
-            start_idx = -1
-            end_idx = -1
-            for i, line in enumerate(lines):
-                if target_indicator in line:
-                    # Find start of block
-                    for j in range(i, -1, -1):
-                        if "## Autonomous Observation" in lines[j]:
-                            start_idx = j
-                            break
-                    # Find end of block
-                    for j in range(i + 1, len(lines)):
-                        if j + 1 < len(lines) and lines[j+1].startswith("## "):
-                            end_idx = j + 1
-                            break
-                    if end_idx == -1:
-                        end_idx = len(lines)
-                    break
+        for obs in new_observations:
+            # Check if this target is already observed to avoid duplicate sections
+            # Extract target URL from observation
+            target_line = [line for line in obs.split('\n') if '- **Target**:' in line]
+            if target_line:
+                target_url = target_line[0].split(': ')[1].strip()
+                target_indicator = f"- **Target**: {target_url}"
 
-            if start_idx != -1:
-                print(f"🔄 [MergeAgent] Updating existing entry for mokapokacool.")
-                new_lines = lines[:start_idx] + new_observation.strip().split('\n') + lines[end_idx:]
-                updated_content = '\n'.join(new_lines)
+                if target_indicator in content:
+                    # Basic replacement of existing block for that target
+                    # In a production scenario, we'd use more robust parsing
+                    self.logger.info(f"ℹ️ Knowledge for {target_url} already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.")
+                    continue
+
+            # Prepend new observations after the main header
+            if "# Market Intelligence Matrix" in content:
+                content = content.replace("# Market Intelligence Matrix", "# Market Intelligence Matrix\n" + obs)
             else:
-                updated_content = existing_content + new_observation
-        else:
-            print(f"🆕 [MergeAgent] Appending new entry for mokapokacool.")
-            # Append before the FIRST Ecosystem Knowledge Consolidation if exists
-            # Using split with maxsplit=1 to avoid discarding other parts
-            eco_header = "## Ecosystem Knowledge Consolidation"
-            if eco_header in existing_content:
-                parts = existing_content.split(eco_header, 1)
-                updated_content = parts[0] + new_observation + "\n" + eco_header + parts[1]
-            else:
-                updated_content = existing_content + new_observation
+                content = obs + "\n" + content
 
-        with open(self.knowledge_merge_path, 'w', encoding='utf-8') as f:
-            f.write(updated_content.strip() + "\n")
-
-        print(f"✅ [MergeAgent] KNOWLEDGE_MERGE.md updated with signature {self.signature}.")
+        with open(self.knowledge_merge_md_path, 'w', encoding='utf-8') as f:
+            f.write(content)
 
 if __name__ == "__main__":
+    # For testing
+    import asyncio
+    logging.basicConfig(level=logging.INFO)
     agent = KnowledgeMergeAgent()
-    agent.merge_mokapokacool_knowledge()
+    asyncio.run(agent.run([], {}))

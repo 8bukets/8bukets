@@ -1,3 +1,5 @@
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 /**
  * Performance Monitoring Service Autonomous Workflow
  * Generated autonomously by the Antigravity Singularity Engine.

@@ -1,6 +1,8 @@
 import { healthCheck } from '../antigravity/core'
 import { isDockerHealthy } from '../antigravity/services/docker'
 import { workOrderService } from '../antigravity/services/work_order'
+import { jules } from '../antigravity/jules'
+import { onlinePresenceService } from '../antigravity/services/presence'
 import fs from 'fs'
 import path from 'path'
 
@@ -8,11 +10,13 @@ import path from 'path'
  * FULL AUTONOMOUS AUTOMATIC CREATION ORDER AND EXECUTION (IMPROVED)
  *
  * This script unifies the entire Antigravity lifecycle:
- * 1. Pre-flight Health Checks (DB, Cloud, Docker)
- * 2. State Purge (Clean existing pending orders)
- * 3. Root Order Generation (AUTONOMOUS_CREATION)
- * 4. Recursive Execution Pulse (Synthesis -> Bootstrap -> Smoke Test -> Deployment)
- * 5. Detailed Final Reporting
+ * 1. Cloud Simulation Setup (Phase 12-16 Readiness)
+ * 2. Pre-flight Health Checks (DB, Cloud, Docker)
+ * 3. Online Presence & Sovereignty Activation (Phase 12 & 16)
+ * 4. State Purge (Clean existing pending orders)
+ * 5. Root Order Generation (AUTONOMOUS_CREATION)
+ * 6. Recursive Execution Pulse (Synthesis -> Bootstrap -> Smoke Test -> Deployment)
+ * 7. Detailed Final Reporting
  */
 
 async function main() {
@@ -20,7 +24,12 @@ async function main() {
   'use cache'
   console.log('🚀 [Antigravity] Starting Full Autonomous Automatic Creation Pulse...')
 
-  // Step 1: Pre-flight Health Checks
+  // Step 1: Cloud Simulation Setup
+  process.env.MACBOOK_CLOUD_SIMULATION = 'true'
+  process.env.AUTONOMOUS_MODE = 'cloud'
+  console.log('☁️ [Antigravity] Cloud simulation mode enabled.')
+
+  // Step 2: Pre-flight Health Checks
   console.log('🔍 [Antigravity] Performing pre-flight health checks...')
   const coreHealth = await healthCheck()
   const dockerHealthy = await isDockerHealthy()
@@ -34,11 +43,19 @@ async function main() {
     process.exit(1)
   }
 
-  // Step 2: State Purge
+  // Step 3: Online Presence & Sovereignty Activation
+  console.log('📡 [Antigravity] Activating Online Presence & Phase 16 Sovereignty...')
+  await onlinePresenceService.broadcastTelemetry()
+  await jules.activateSwarmHeartbeat()
+  await jules.syncCrossShardMemory()
+  await jules.performQuantumSecureSync()
+  console.log('✅ [Antigravity] Ecosystem connectivity and Phase 16 protocols active.')
+
+  // Step 4: State Purge
   console.log('🧹 [Antigravity] Purging stale pending orders...')
   await workOrderService.clearPendingOrders()
 
-  // Step 3: Root Order Generation
+  // Step 5: Root Order Generation
   console.log('📝 [Antigravity] Generating root AUTONOMOUS_CREATION order...')
   const rootOrder = await workOrderService.createOrder(
     'AUTONOMOUS_CREATION',
@@ -51,11 +68,11 @@ async function main() {
   )
   console.log(`✅ [Antigravity] Root order created: ${rootOrder.id}`)
 
-  // Step 4: Recursive Execution Pulse
+  // Step 6: Recursive Execution Pulse
   console.log('⚡ [Antigravity] Beginning recursive execution pulse...')
   await workOrderService.executePendingOrders()
 
-  // Step 5: Detailed Final Reporting
+  // Step 7: Detailed Final Reporting
   // create agent Chief AI Officer
   console.log('\n📊 [Antigravity] Final Execution Report:')
   const storagePath = path.join(process.cwd(), 'data/work_orders.json')
