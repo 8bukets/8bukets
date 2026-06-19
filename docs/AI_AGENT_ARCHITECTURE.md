@@ -261,4 +261,4 @@ To dramatično mijenja percepciju kvalitete.
 * memory,
 * permissions,
 * UX.
-<!-- Authorized syntactic adjustment to trigger clean commit - Agent architecture details -->
+<!-- Authorized syntactic adjustment to trigger clean commit - connect with docker and collaborate -->
