@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import * as cheerio from 'cheerio';
 
@@ -51,12 +52,12 @@ async function scrapeLocalhostTools() {
 
         // Ensure data directory exists
         const dataDir = path.join(process.cwd(), 'data/knowledge');
-        if (!fs.existsSync(dataDir)) {
-            fs.mkdirSync(dataDir, { recursive: true });
+        if (!await fsPromises.access(dataDir).then(() => true).catch(() => false)) {
+            await fsPromises.mkdir(dataDir, { recursive: true });
         }
 
         const jsonPath = path.join(dataDir, "localhost_tools_docs.json");
-        fs.writeFileSync(jsonPath, JSON.stringify(categories, null, 4), 'utf8');
+        await fsPromises.writeFile(jsonPath, JSON.stringify(categories, null, 4), 'utf8');
         console.log(`Saved LocalHost.Co tools knowledge to ${jsonPath}`);
 
         // Save to Markdown
@@ -72,7 +73,7 @@ async function scrapeLocalhostTools() {
             }
         }
 
-        fs.writeFileSync(mdPath, mdContent, 'utf8');
+        await fsPromises.writeFile(mdPath, mdContent, 'utf8');
         console.log(`Saved LocalHost.Co tools knowledge to ${mdPath}`);
 
         return true;

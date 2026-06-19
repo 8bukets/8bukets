@@ -46,6 +46,8 @@ from agents.google_edge_agent import GoogleEdgeAgent
 from agents.google_models_research_agent import GoogleModelsResearchAgent
 from agents.google_innovation_ai_agent import GoogleInnovationAIAgent
 from agents.rag_agent import RagAgent
+from agents.llm_super_power_agent import LLMSuperPowerAgent
+from agents.dream_builder_agent import DreamBuilderAgent
 from agents.knowledge_agent import KnowledgeAgent
 from agents.knowledge_merge_agent import KnowledgeMergeAgent
 from agents.intelephense_agent import IntelephenseAgent
@@ -88,6 +90,9 @@ async def run_scraper():
 
         logger.info("Running Google Research Scraper...")
         subprocess.run(["python3", "google_research_scraper.py"], check=True)
+
+        logger.info("Running Markposition Knowledge Scraper...")
+        subprocess.run(["python3", "scripts/ingest_markposition_knowledge.py"], check=True)
 
         logger.info("Running AI Agents Knowledge Scraper...")
         # Prefer the TypeScript version if it exists, otherwise fallback to Python
@@ -249,7 +254,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         ReActAgent(), RagAgent(), AutonomousIntelligenceAgent(),
 
         # Strategy & Execution
-        ArchitectAgent(), ChiefAIOfficerAgent(), TargetingAgent(), CreativityAgent(), AdsAgent(),
+        ArchitectAgent(), ChiefAIOfficerAgent(), LLMSuperPowerAgent(), DreamBuilderAgent(), TargetingAgent(), CreativityAgent(), AdsAgent(),
         BidAgent(), MonetizationAgent(), ContentAgent(), SixSigmaAgent(),
 
         # DevOps & Evolution

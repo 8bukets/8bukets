@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import * as cheerio from 'cheerio';
 
@@ -24,13 +25,25 @@ export async function scrapeMarkpositionKnowledge(maxPages: number = 3) {
             const url = page === 1 ? BASE_URL : `${BASE_URL}page/${page}/`;
             console.log(` - Scraping page ${page}: ${url}`);
 
-            const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+            let response;
+            try {
+                response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+            } catch (fetchError: any) {
+                if (fetchError.name === 'AbortError') {
+                    console.error(` ❌ [Ingest] Timeout fetching page ${page}: ${url}`);
+                } else {
+                    console.error(` ❌ [Ingest] Network error fetching page ${page}: ${fetchError.message}`);
+                }
+                break;
+            }
+
             if (!response.ok) {
                 if (response.status === 404) {
-                    console.log(` ✨ [Ingest] Page ${page} not found. Ending pagination.`);
+                    console.log(` ✨ [Ingest] Page ${page} not found (404). Ending pagination.`);
                     break;
                 }
-                throw new Error(`HTTP error! status: ${response.status}`);
+                console.error(` ❌ [Ingest] Failed to fetch page ${page}: HTTP ${response.status} ${response.statusText}`);
+                break;
             }
             const html = await response.text();
             const $ = cheerio.load(html);
@@ -108,8 +121,8 @@ export async function scrapeMarkpositionKnowledge(maxPages: number = 3) {
 
         // Update system_knowledge.json
         const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json');
-        if (fs.existsSync(knowledgePath)) {
-            const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'));
+        if (await fsPromises.access(knowledgePath).then(() => true).catch(() => false)) {
+            const knowledge = JSON.parse(await fsPromises.readFile(knowledgePath, 'utf8'));
 
             if (!knowledge.market_data) {
                 knowledge.market_data = { total_entries: 0, recent_entries: [], all_entries: [] };
@@ -137,7 +150,7 @@ export async function scrapeMarkpositionKnowledge(maxPages: number = 3) {
                 }
                 knowledge.metadata.generated_at = new Date().toISOString();
 
-                fs.writeFileSync(knowledgePath, JSON.stringify(knowledge, null, 4), 'utf8');
+                await fsPromises.writeFile(knowledgePath, JSON.stringify(knowledge, null, 4), 'utf8');
                 console.log(`✅ [Ingest] Merged ${newEntries.length} new entries into system_knowledge.json.`);
             } else {
                 console.log(`✨ [Ingest] No new entries found.`);
@@ -157,7 +170,7 @@ export async function scrapeMarkpositionKnowledge(maxPages: number = 3) {
         });
 
         mdContent += `\n---\nAll the best - https://markposition.wordpress.com\n`;
-        fs.writeFileSync(reportPath, mdContent, 'utf8');
+        await fsPromises.writeFile(reportPath, mdContent, 'utf8');
         console.log(`✅ [Ingest] Generated report at ${reportPath}`);
 
     } catch (error) {

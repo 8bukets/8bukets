@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import * as cheerio from 'cheerio';
 
@@ -89,7 +90,7 @@ async function scrapeAiAgentsKnowledge() {
             if (stopScraping) return;
 
             const $el = $(el);
-            const tagName = el.name.toLowerCase();
+            const tagName = (el as any).name?.toLowerCase() || (el as any).tagName?.toLowerCase() || '';
 
             if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
                 const title = $el.text().trim();
@@ -164,70 +165,87 @@ async function scrapeAiAgentsKnowledge() {
         finalizeSection();
 
         const targetDir = "data/knowledge";
-        if (!fs.existsSync(targetDir)) {
-            fs.mkdirSync(targetDir, { recursive: true });
+        if (!await fsPromises.access(targetDir).then(() => true).catch(() => false)) {
+            await fsPromises.mkdir(targetDir, { recursive: true });
         }
 
         const jsonPath = path.join(targetDir, "ai_agents_knowledge.json");
 
-        // Preserve manual keys (e.g., react-agent-deployment-logic)
-        const manualKeys = ["react-agent-deployment-logic"];
-        let existingKnowledge: Record<string, any> = {};
+        // Load existing knowledge to preserve non-scraped data
+        let existingKnowledge: Record<string, Section> = {};
 
-        if (fs.existsSync(jsonPath)) {
+        if (await fsPromises.access(jsonPath).then(() => true).catch(() => false)) {
             try {
-                existingKnowledge = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+                existingKnowledge = JSON.parse(await fsPromises.readFile(jsonPath, 'utf8'));
             } catch(e) {}
         }
 
-        for (const mKey of manualKeys) {
-            if (existingKnowledge[mKey]) {
-                 data[mKey] = existingKnowledge[mKey];
-            }
-        }
+        // Merge: scraped data takes precedence for matching keys
+        const mergedKnowledge = { ...existingKnowledge, ...data };
 
-        fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf8');
+        await fsPromises.writeFile(jsonPath, JSON.stringify(mergedKnowledge, null, 4), 'utf8');
 
         const mdPath = "data/knowledge/ai_agents_knowledge.md";
-        let originalMd = "";
+        let mdContent = `# What are AI Agents?\n\nScraped from [${URL}](${URL})\n\n`;
 
-        if (fs.existsSync(mdPath)) {
-            originalMd = fs.readFileSync(mdPath, 'utf8');
-        }
-
-        let headerText = "## What are AI Agents?";
-        let newContentIndex = originalMd.indexOf(headerText);
-
-        let existingPrefix = "";
-        if (newContentIndex !== -1) {
-            existingPrefix = originalMd.substring(0, newContentIndex);
-        } else {
-            existingPrefix = originalMd;
-        }
-
-        let mdContent = existingPrefix;
-        if (!mdContent.endsWith("\n\n")) {
-            mdContent += "\n\n";
-        }
-
-        mdContent += `${headerText}\n\nScraped from [${URL}](${URL})\n\n`;
-
+        // Add scraped sections first in order
         for (const key of orderedScrapedKeys) {
-            if (data[key]) {
-                mdContent += `## ${data[key].title}\n\n${data[key].content}\n\n`;
+            if (mergedKnowledge[key]) {
+                mdContent += `## ${mergedKnowledge[key].title}\n\n${mergedKnowledge[key].content}\n\n`;
             }
         }
 
-        // Preserve manual sections
-        for (const mKey of manualKeys) {
-             if (data[mKey]) {
-                 mdContent += `## ${data[mKey].title}\n\n${data[mKey].content}\n\n`;
-             }
+        // Add non-scraped (manual) sections
+        const manualKeys = Object.keys(mergedKnowledge).filter(key => !orderedScrapedKeys.includes(key));
+        if (manualKeys.length > 0) {
+            mdContent += `All the best - ${URL}\n---\n\n# Manual Knowledge Additions\n\n`;
+            for (const key of manualKeys) {
+                mdContent += `## ${mergedKnowledge[key].title}\n\n${mergedKnowledge[key].content}\n\n`;
+            }
         }
 
-        fs.writeFileSync(mdPath, mdContent, 'utf8');
-        console.log(`Updated knowledge files successfully.`);
+        await fsPromises.writeFile(mdPath, mdContent, 'utf8');
 
+        // DIRECT INTEGRATION WITH system_knowledge.json
+        const systemKnowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json');
+        if (await fsPromises.access(systemKnowledgePath).then(() => true).catch(() => false)) {
+            try {
+                const systemKnowledge = JSON.parse(await fsPromises.readFile(systemKnowledgePath, 'utf8'));
+
+                if (!systemKnowledge.ai_agents_structured) {
+                    systemKnowledge.ai_agents_structured = [];
+                }
+
+                // Remove existing entry for this URL to avoid duplication
+                systemKnowledge.ai_agents_structured = systemKnowledge.ai_agents_structured.filter(
+                    (item: any) => item.url !== URL
+                );
+
+                const newEntry = {
+                    url: URL,
+                    title: "What are AI agents?",
+                    sections: [
+                        ...orderedScrapedKeys.map(key => ({
+                            header: data[key].title,
+                            content: data[key].content.split('\n\n')
+                        })),
+                        ...manualKeys.filter(k => data[k]).map(key => ({
+                            header: data[key].title,
+                            content: data[key].content.split('\n\n')
+                        }))
+                    ]
+                };
+
+                systemKnowledge.ai_agents_structured.push(newEntry);
+
+                await fsPromises.writeFile(systemKnowledgePath, JSON.stringify(systemKnowledge, null, 2), 'utf8');
+                console.log(`✅ [Ingest] Integrated AI agents knowledge into system_knowledge.json`);
+            } catch (e) {
+                console.error(`❌ [Ingest] Failed to integrate with system_knowledge.json:`, e);
+            }
+        }
+
+        console.log(`Updated knowledge files successfully.`);
         return true;
     } catch (error) {
         console.error("Failed to scrape AI Agent knowledge:", error);

@@ -29,6 +29,11 @@ export class CloudWorkflowAgent {
        console.log('🚀 [CloudWorkflowAgent] Cloud Node has Leadership. Enabling HIGH_INTENSITY mode.')
 
        try {
+         // Phase 16: Re-verify tool connectivity upon takeover
+         const { healthCheck } = await import('../core')
+         const coreHealth = await healthCheck()
+         console.log(`📡 [CloudWorkflowAgent] Sovereignty Health Check: MongoDB=${coreHealth.mongodb}, Supabase=${coreHealth.supabase}`)
+
          // Perform state recovery via bridge
          const { edgeToCloudBridge } = await import('./edge_to_cloud_bridge')
          const { workOrderService } = await import('./work_order')
@@ -39,7 +44,11 @@ export class CloudWorkflowAgent {
             await workOrderService.reload()
          }
 
-         console.log('⚡ [CloudWorkflowAgent] Cloud Takeover initiated. Sovereignty established.')
+         // Immediate Execution Pulse upon takeover
+         console.log('⚡ [CloudWorkflowAgent] Executing pending work orders under Cloud Sovereignty...')
+         await workOrderService.executePendingOrders()
+
+         console.log('✅ [CloudWorkflowAgent] Cloud Takeover initiated. Sovereignty established.')
          return { takeover: true, intensity: 'high', recoveredFiles }
        } catch (recoveryErr: any) {
          console.error(`❌ [CloudWorkflowAgent] Cloud Takeover recovery failed: ${recoveryErr.message}`)
@@ -85,11 +94,15 @@ export class CloudWorkflowAgent {
   public async ensureFluentStatus() {
     const telemetry = await this.evaluateTelemetry()
 
+    // Phase 22: Fluent On Air Check (Cloud Resilience)
+    const isMongoHealthy = telemetry.mongodb.status === 'healthy' || telemetry.mongodb.status === 'simulated'
+    const isSupabaseHealthy = telemetry.supabase.status === 'healthy' || telemetry.supabase.status === 'simulated' || telemetry.supabase.status === 'connected'
+
     // Evaluate if fluent
     const isDockerTolerable = telemetry.docker.status === 'optimal' || telemetry.docker.status === 'simulated' || telemetry.docker.status === 'degraded' || telemetry.docker.status === 'recovering'
     const isGitKrakenTolerable = telemetry.gitkraken.compatibilityScore >= 80
 
-    const isFluent = isDockerTolerable && isGitKrakenTolerable
+    const isFluent = isDockerTolerable && isGitKrakenTolerable && isMongoHealthy && isSupabaseHealthy
 
     if (isFluent) {
       console.log('✅ [CloudWorkflowAgent] System is in FLUENT_ON_AIR mode.')

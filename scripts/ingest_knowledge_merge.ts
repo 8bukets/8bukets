@@ -1,16 +1,17 @@
 import fs from 'fs';
+import fsPromises from 'fs/promises';
 import path from 'path';
 
 export async function ingestKnowledgeMerge() {
     console.log('🤖 [Ingest] Dynamically merging knowledge from system_knowledge.json...');
 
     const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json');
-    if (!fs.existsSync(knowledgePath)) {
+    if (!await fsPromises.access(knowledgePath).then(() => true).catch(() => false)) {
         console.warn('⚠️ [Ingest] system_knowledge.json not found. Skipping dynamic merge.');
         return;
     }
 
-    const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'));
+    const knowledge = JSON.parse(await fsPromises.readFile(knowledgePath, 'utf8'));
     let markdownContext = '';
 
     if (knowledge.market_data && knowledge.market_data.recent_entries) {
@@ -27,11 +28,11 @@ export async function ingestKnowledgeMerge() {
 
     for (const file of targetFiles) {
         const filePath = path.join(process.cwd(), file);
-        if (fs.existsSync(filePath)) {
-            let fileContent = fs.readFileSync(filePath, 'utf8');
+        if (await fsPromises.access(filePath).then(() => true).catch(() => false)) {
+            let fileContent = await fsPromises.readFile(filePath, 'utf8');
 
             const escapedSignature = signature.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-            const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'g');
+            const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'gi');
 
             fileContent = fileContent.replace(sigRegex, () => '\n\n');
             fileContent = fileContent.trim();
@@ -47,7 +48,7 @@ export async function ingestKnowledgeMerge() {
             // Append signature back
             fileContent += '\n\n---\n' + signature + '\n';
 
-            fs.writeFileSync(filePath, fileContent, 'utf8');
+            await fsPromises.writeFile(filePath, fileContent, 'utf8');
         }
     }
 }

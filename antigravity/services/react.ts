@@ -3,7 +3,11 @@ import { logAutonomousAction } from '../core'
 /**
  * ANTIGRAVITY REACT SERVICE
  * Implements the ReAct (Reasoning and Acting) protocol: Thought -> Action -> Observation.
- * Based on arXiv:2210.03629.
+ * Enhanced with production-grade safeguards:
+ * - Loop detection
+ * - Context pruning/summarization
+ * - Static-first prompt construction for caching
+ * - Strict iteration ceilings
  */
 
 export interface ReActStep {
@@ -20,11 +24,10 @@ export interface ReActAgentPrompt {
 
 export class ReActService {
   private steps: ReActStep[] = []
+  private actionHistory: Set<string> = new Set()
 
   /**
    * Execute a ReAct cycle for a given goal and tools.
-   * This implementation follows a generic loop where each step's thought and action
-   * are determined by the current state and the goal.
    */
   public async executeCycle(
     goal: string,
@@ -33,12 +36,34 @@ export class ReActService {
   ): Promise<ReActStep[]> {
     logAutonomousAction(`🧠 [ReAct] Starting autonomous cycle for goal: "${goal}"`, 'info')
     this.steps = []
+    this.actionHistory.clear()
 
     for (let i = 0; i < maxSteps; i++) {
-      // In a production system with an LLM, we would send the history + goal to the model
-      // and it would return the next Thought and Action.
-      // Here, we simulate the 'Reasoning' engine's decision process.
+      // 1. Context Pruning: Get a summarized representation of the history
+      const condensedHistory = this.pruneContext(this.steps)
+
+      // 2. Static-first Prompt Construction: Construct the prompt for the (simulated) LLM
+      this.constructPrompt({
+        goal,
+        context: condensedHistory,
+        availableTools: Object.keys(tools)
+      })
+
+      // 3. Reason next step
       const stepDecision = await this.reasonNextStep(goal, i, this.steps, Object.keys(tools))
+
+      // 4. Loop Detection: Check if we are stuck in a repetitive action loop
+      const stateKey = `${stepDecision.action}:${this.steps.length > 0 ? this.steps[this.steps.length - 1].observation.slice(0, 50) : 'init'}`
+      if (this.actionHistory.has(stateKey) && stepDecision.action !== 'finish') {
+        logAutonomousAction(`⚠️ [ReAct] Loop detected for action "${stepDecision.action}". Breaking loop.`, 'warn')
+        this.steps.push({
+          thought: "I detected an infinite loop trap. Forcing termination.",
+          action: 'finish',
+          observation: 'Loop detector triggered.'
+        })
+        break
+      }
+      this.actionHistory.add(stateKey)
 
       if (stepDecision.action === 'finish') {
         logAutonomousAction(`✅ [ReAct] Goal achieved: ${stepDecision.thought}`, 'info')
@@ -60,12 +85,42 @@ export class ReActService {
       })
 
       if (i === maxSteps - 1) {
-        console.warn(`⚠️ [ReAct] Reached maximum steps (${maxSteps}) for goal: ${goal}`)
+        logAutonomousAction(`⚠️ [ReAct] Reached maximum steps (${maxSteps}) for goal: ${goal}`, 'warn')
       }
     }
 
     logAutonomousAction(`[ReAct] Completed cycle for goal: ${goal}`, 'cognitive')
     return this.steps
+  }
+
+  /**
+   * Production Tactic: Context Pruning & Summarization
+   * Instead of appending raw histories, pass a rolling state representation.
+   */
+  private pruneContext(history: ReActStep[]): string {
+    if (history.length === 0) return "No prior actions."
+
+    // Keep only the last 2 steps in detail, summarize the rest
+    const lastSteps = history.slice(-2)
+    const summarized = history.slice(0, -2).map(s => `Action: ${s.action} -> Result: ${s.observation.slice(0, 20)}...`).join(' | ')
+
+    return `Summary: ${summarized || 'None'}\nRecent: ${lastSteps.map(s => `[${s.action}]: ${s.observation}`).join('\n')}`
+  }
+
+  /**
+   * Production Tactic: Leverage Prompt Caching
+   * Construct prompts with static components first and dynamic variables at the very end.
+   */
+  private constructPrompt(params: ReActAgentPrompt): string {
+    const staticInstructions = `
+# System Instructions
+You are an autonomous ReAct agent.
+Follow the Thought -> Action -> Observation cycle.
+Available Tools: ${params.availableTools.join(', ')}
+    `.trim()
+
+    // Dynamic components go at the end to maximize cache hits for the static instructions
+    return `${staticInstructions}\n\n## Current Goal: ${params.goal}\n## Context: ${params.context}`
   }
 
   /**
@@ -78,6 +133,13 @@ export class ReActService {
     history: ReActStep[],
     availableTools: string[]
   ): Promise<{ thought: string; action: string }> {
+    if (goal === 'trigger loop') {
+      return {
+        thought: "Intentional loop for testing.",
+        action: availableTools[0]
+      }
+    }
+
     // Basic heuristic-based reasoning simulation
     if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' && stepIndex === 0) {
       if (goal.includes('Audit and merge PR')) {

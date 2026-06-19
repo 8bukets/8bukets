@@ -1,4 +1,5 @@
 import fs from 'fs';
+import fsPromises from 'fs/promises';
 import path from 'path';
 
 async function ingestMacBookCloudKnowledge() {
@@ -19,25 +20,25 @@ async function ingestMacBookCloudKnowledge() {
 `;
 
     const knowledgePath = 'KNOWLEDGE_MERGE.md';
-    if (fs.existsSync(knowledgePath)) {
-      let content = fs.readFileSync(knowledgePath, 'utf-8');
+    if (await fsPromises.access(knowledgePath).then(() => true).catch(() => false)) {
+      let content = await fsPromises.readFile(knowledgePath, 'utf-8');
       const insertPointRegex = /(## Autonomous Observation\n)/;
       if (insertPointRegex.test(content)) {
          content = content.replace(insertPointRegex, (match) => `${match}${newObservation}\n`);
       } else {
          content += '\n## Autonomous Observation\n' + newObservation;
       }
-      fs.writeFileSync(knowledgePath, content, 'utf-8');
+      await fsPromises.writeFile(knowledgePath, content, 'utf-8');
       console.log(`Successfully ingested and updated ${knowledgePath}.`);
     } else {
       console.warn(`${knowledgePath} not found.`);
     }
 
     const consolidatedPath = 'CONSOLIDATED_INTELLIGENCE.md';
-    if (fs.existsSync(consolidatedPath)) {
-       let content = fs.readFileSync(consolidatedPath, 'utf-8');
+    if (await fsPromises.access(consolidatedPath).then(() => true).catch(() => false)) {
+       let content = await fsPromises.readFile(consolidatedPath, 'utf-8');
        content += `\n## 🚀 MacBook Cloud Simulation & Online Presence Intelligence\n- **Ingested on:** ${now}\n- **Source:** Local Environment\n- **Summary:** The system is fully capable of autonomous cloud execution using MACBOOK_CLOUD_SIMULATION=true, integrating with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab to ensure a continuous online presence and evolutionary coding capabilities.\n`;
-       fs.writeFileSync(consolidatedPath, content, 'utf-8');
+       await fsPromises.writeFile(consolidatedPath, content, 'utf-8');
        console.log(`Successfully ingested and updated ${consolidatedPath}.`);
     } else {
        console.warn(`${consolidatedPath} not found.`);

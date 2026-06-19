@@ -64,7 +64,7 @@ class AgentOrchestrator:
         try:
             result = await agent.run(data, self.blackboard)
             if result:
-                await self.blackboard.update(agent.name, result)
+                await self.blackboard.async_update(agent.name, result)
         except Exception as e:
             logger.error(f"Error in agent {agent.name}: {e}", exc_info=True)
 
@@ -79,4 +79,4 @@ class AgentOrchestrator:
                 logger.info(f"Review from {agent.name}: {review_findings}")
                 peer_review_log.extend([f"[{agent.name}] {r}" for r in review_findings])
 
-        await self.blackboard.update("Orchestrator", {"peer_review_log": peer_review_log})
+        await self.blackboard.async_update("Orchestrator", {"peer_review_log": peer_review_log})
