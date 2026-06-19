@@ -93,9 +93,26 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🤖 [Jules] Analyzing current system state for improvements...')
     const suggestions = []
+
+    // Phase 16: Knowledge-based improvement suggestion
     if (this.memory.preferredPatterns.length < 5) {
       suggestions.push('Expand preferred patterns to include Taint API and View Transitions.')
     }
+
+    // Scan integrated knowledge for Phase 14-16 keywords
+    const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
+    if (fs.existsSync(knowledgePath)) {
+      const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const allText = JSON.stringify(knowledge).toLowerCase()
+
+      if (allText.includes('heartbeat latency') && !this.memory.preferredPatterns.includes('Enforce Heartbeat Latency < 5ms')) {
+        suggestions.push('Integrate Phase 16 Heartbeat Latency enforcement (< 5ms).')
+      }
+      if (allText.includes('neural recovery') && !this.memory.preferredPatterns.includes('Activate Neural Recovery')) {
+        suggestions.push('Activate Phase 16 Neural Recovery protocols for NS-Index stability.')
+      }
+    }
+
     return { status: 'learning', suggestions, memorySize: JSON.stringify(this.memory).length }
   }
 
@@ -435,6 +452,9 @@ export class Jules {
   public async executeWorkCycle() {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+
+    // Phase 16: Swarm Heartbeat Activation
+    swarmHeartbeat.start()
 
     // Phase 16: Cross-Shard Cognition Sync
     await crossShardMemory.syncMemory()
