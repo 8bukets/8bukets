@@ -69,11 +69,17 @@ async function scrapeGoogleBlog(url: string): Promise<Article[]> {
 
             // Target specific title classes
             const heroTitle = $(el).find('.featured-article-cat-subcat-hero__title').text().trim();
-            const nupTitle = $(el).find('.uni-nup__header').text().trim();
+            const nupTitle = $(el).find('.uni-nup__header, .uni-nup__title').text().trim();
             const directTitle = $(el).text().trim();
 
-            const title = heroTitle || nupTitle || directTitle;
-            const isNotNav = !['Home', 'Innovation & AI', 'Products & platforms', 'Company news', 'Feed', 'Subscribe', 'See all'].includes(title);
+            let title = (heroTitle || nupTitle || directTitle).replace(/\s+/g, ' ').trim();
+
+            // Specifically handle the "By Author" noise often found in Google Blog links
+            if (title.includes(' By ')) {
+                title = title.split(' By ')[0].trim();
+            }
+
+            const isNotNav = !['Home', 'Innovation & AI', 'Products & platforms', 'Company news', 'Feed', 'Subscribe', 'See all', 'See All Categories', 'View the collection', 'View more from Health'].includes(title);
 
             if (title && title.length > 10 && isNotNav && !articleMap.has(fullUrl)) {
                 articleMap.set(fullUrl, {
@@ -84,7 +90,7 @@ async function scrapeGoogleBlog(url: string): Promise<Article[]> {
             }
         }
 
-        const articles = Array.from(articleMap.values()).slice(0, 20); // Expanded limit for deeper ingestion
+        const articles = Array.from(articleMap.values()).slice(0, 40); // Increased limit
         for (const art of articles) {
             art.content = await scrapeArticleContent(art.url);
         }
@@ -123,11 +129,14 @@ async function main() {
     const uniqueMap = new Map<string, Article>();
     [...allArticles, ...existingArticles].forEach(art => {
         const existing = uniqueMap.get(art.url);
-        if (!existing || (!existing.content && art.content)) {
+        // Prioritize articles with content and clean titles
+        if (!existing || (!existing.content && art.content) || (existing.title.length > art.title.length && art.title.length > 10)) {
             uniqueMap.set(art.url, art);
         }
     });
-    const finalArticles = Array.from(uniqueMap.values());
+
+    // Sort by URL to maintain stable order and reduce Git noise
+    const finalArticles = Array.from(uniqueMap.values()).sort((a, b) => a.url.localeCompare(b.url));
 
     // Save to JSON
     fs.writeFileSync(jsonPath, JSON.stringify(finalArticles, null, 4), 'utf8');
