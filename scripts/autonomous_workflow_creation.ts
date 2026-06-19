@@ -51,7 +51,7 @@ jobs:
 
 // Generate Fully Autonomous Workflow
 function generateFullyAutonomousWorkflow() {
-  const workflowContent = `name: full autonomus automatic workflow
+  const workflowContent = `name: full autonomous automatic workflow
 
 on:
   schedule:

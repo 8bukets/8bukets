@@ -421,8 +421,9 @@ export class Jules {
     while (true) {
       try {
         await this.executeWorkCycle();
-        const delay = 60 * 60 * 1000; // 1 hour between full cycles
-        console.log(`💤 [Jules] Cycle complete. Next autonomous pulse in 1h...`);
+        // Phase 16 Acceleration: Reducing pulse delay for high-intensity evolution
+        const delay = 15 * 60 * 1000; // 15 minutes between full cycles
+        console.log(`💤 [Jules] Cycle complete. Next autonomous pulse in 15m...`);
         await new Promise(resolve => setTimeout(resolve, delay));
       } catch (err) {
         console.error('💥 [Jules] Loop error, restarting in 60s...', err);
