@@ -124,6 +124,17 @@ async def run_scraper():
         # Stitch Documentation Scraper
         await scrape_stitch_docs()
 
+        # Knowledge Merge (Dynamic Report Updating)
+        logger.info("Running Knowledge Merge...")
+        if os.path.exists("scripts/ingest_knowledge_merge.ts"):
+            try:
+                proc_merge = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_knowledge_merge.ts")
+                await proc_merge.wait()
+            except Exception:
+                subprocess.run(["node", "scripts/ingest_knowledge_merge.js"], check=True)
+        else:
+            subprocess.run(["node", "scripts/ingest_knowledge_merge.js"], check=True)
+
         logger.info("Scrapers finished successfully.")
         return True
     except Exception as e:
