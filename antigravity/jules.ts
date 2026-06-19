@@ -461,8 +461,31 @@ export class Jules {
       console.warn('⚠️ [Jules] Autonomous merge cycle encountered an error:', err)
     }
   }
+  public async ingestMokaPokaCool() {
+    console.log('👁️ [Jules] Initiating Mokapokacool Knowledge Ingestion...')
+    try {
+      const { exec } = await import('child_process')
+      const { promisify } = await import('util')
+      const execAsync = promisify(exec)
+
+      console.log(' 🐍 [Jules] Running Python scraper and KnowledgeMergeAgent...')
+      await execAsync('npm run ingest:moka')
+
+      this.recordTask('Knowledge Ingestion: Integrated mokapokacool.art.blog via Python scraper and KnowledgeMergeAgent.')
+      console.log(' ✅ [Jules] Mokapokacool ingestion complete.')
+    } catch (err: any) {
+      console.error(' ❌ [Jules] Mokapokacool ingestion failed:', err.message)
+    }
+  }
+
 public async observeKnowledge(url?: string) {
   console.log('👁️ [Jules] Initiating Knowledge Observation...')
+
+    // Ingest Mokapokacool specifically
+    if (!url || url === 'https://mokapokacool.art.blog/') {
+      await this.ingestMokaPokaCool()
+    }
+
   const { observeKnowledge: observe, persistKnowledge } = await import('./services/knowledge_observer')
 
   const urlsToObserve = url ? [url] : [
@@ -484,6 +507,7 @@ public async observeKnowledge(url?: string) {
   ]
 
   for (const targetUrl of urlsToObserve) {
+      if (targetUrl === 'https://mokapokacool.art.blog/') continue; // Already handled
     try {
       const knowledgeInsights = await observe(targetUrl)
       if (knowledgeInsights) {
