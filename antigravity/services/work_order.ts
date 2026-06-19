@@ -134,6 +134,10 @@ export class WorkOrderService {
     return this.orders.filter(o => o.status === 'pending')
   }
 
+  public getAllOrders(): WorkOrder[] {
+    return [...this.orders]
+  }
+
   public async updateOrderStatus(id: string, status: WorkOrder['status'], result?: any, error?: string) {
     await this.ensureLoaded()
     const order = this.orders.find(o => o.id === id)
