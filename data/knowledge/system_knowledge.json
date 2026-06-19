@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-18T23:04:59.865Z",
+    "generated_at": "2026-06-19T22:54:32.983Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-18T23:04:59.692Z"
+        "ingestedAt": "2026-06-19T22:54:32.792Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-18T23:04:59.713Z"
+        "ingestedAt": "2026-06-19T22:54:32.820Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-18T23:04:59.730Z"
+        "ingestedAt": "2026-06-19T22:54:32.839Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-18T23:04:59.754Z"
+        "ingestedAt": "2026-06-19T22:54:32.858Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-18T23:04:59.771Z"
+        "ingestedAt": "2026-06-19T22:54:32.877Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-18T23:04:59.789Z"
+        "ingestedAt": "2026-06-19T22:54:32.897Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-18T23:04:59.806Z"
+        "ingestedAt": "2026-06-19T22:54:32.917Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -1800,7 +1800,7 @@
         },
         {
           "header": "Google Cloud Tools",
-          "content": "- Infrastructure & cloud\n- Gemini\n\n---"
+          "content": "- Infrastructure & cloud\n- Gemini\n- Gemma\n\n---"
         },
         {
           "header": "[Infrastructure & Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)",
@@ -1819,15 +1819,7 @@
           "content": "- Gemini\n\n---"
         },
         {
-          "header": "[Google announces new community investments in Missouri](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/)",
-          "content": ""
-        },
-        {
-          "header": "Google Cloud Tools",
-          "content": "- Gemini\n\n---"
-        },
-        {
-          "header": "[Google announces first Texas Energy Impact Fund recipients](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/)",
+          "header": "[Google expands Alabama data center campus, funds community efforts](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/)",
           "content": ""
         },
         {
@@ -1903,12 +1895,16 @@
           "content": ""
         },
         {
-          "header": "Definitions",
-          "content": "- **Introducing Gemini Omni**: Introducing Gemini Omni, which allows you to create anything from any input and edit naturally using conversational language."
+          "header": "Google Cloud Tools",
+          "content": "- Gemini\n\n---"
+        },
+        {
+          "header": "[Fluid, natural voice translation with Gemini 3.5 Live Translate](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/)",
+          "content": ""
         },
         {
           "header": "Google Cloud Tools",
-          "content": "- Gemini\n\n---"
+          "content": "- Gemini\n- SynthID\n\n---"
         },
         {
           "header": "[Introducing Gemini Omni](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)",
@@ -1920,7 +1916,7 @@
         },
         {
           "header": "Google Cloud Tools",
-          "content": "- Gemini\n- Kaggle\n- Nano Banana\n- Google Flow\n- YouTube Shorts\n- YouTube Create App\n- SynthID\n- Avatars\n\n---"
+          "content": "- Gemini\n- Nano Banana\n- Google Flow\n- YouTube Shorts\n- YouTube Create App\n- SynthID\n- Avatars\n\n---"
         },
         {
           "header": "[Deep Research Max: a step change for autonomous research agents](https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/)",
@@ -1940,7 +1936,7 @@
         },
         {
           "header": "Google Cloud Tools",
-          "content": "- Gemini models\n- Gemini\n- Model Context Protocol"
+          "content": "- Gemini models\n- Gemini\n- Gemma\n- Model Context Protocol"
         },
         {
           "header": "- MCP",
@@ -1963,14 +1959,6 @@
           "content": "- Gemini\n\n---"
         },
         {
-          "header": "[Simulate real-world places with Project Genie and Street View](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/)",
-          "content": ""
-        },
-        {
-          "header": "Google Cloud Tools",
-          "content": "- Gemini\n\n---"
-        },
-        {
           "header": "[Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/)",
           "content": ""
         },
@@ -1979,28 +1967,20 @@
           "content": "- Gemini\n- Kaggle\n- Nano Banana\n\n---"
         },
         {
-          "header": "[Running Guide agent: A step towards running unbounded](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/)",
-          "content": ""
-        },
-        {
-          "header": "Google Cloud Tools",
-          "content": "- Gemini\n- Gemma\n\n---"
-        },
-        {
           "header": "[Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)",
           "content": ""
         },
         {
           "header": "Google Cloud Tools",
-          "content": "- Gemini\n- Google Flow\n\n---"
+          "content": "- Gemini\n\n---"
         },
         {
-          "header": "[New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music](https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/)",
+          "header": "[Meet Dreambeans, an app that connects you with what matters](https://blog.google/innovation-and-ai/models-and-research/google-labs/dreambeans/)",
           "content": ""
         },
         {
           "header": "Google Cloud Tools",
-          "content": "- Gemini\n- Nano Banana\n- Google Flow\n\n---"
+          "content": "- Gemini\n- Nano Banana\n\n---"
         },
         {
           "header": "[Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/rss/)",
@@ -2019,7 +1999,7 @@
           "content": "- Gemini\n\n---"
         },
         {
-          "header": "[A new experiment brings better group meetings to Google Beam](https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/)",
+          "header": "[Google advances its AMIE research medical AI from diagnosis to treatment](https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/)",
           "content": ""
         },
         {
@@ -2043,12 +2023,20 @@
           "content": "- Gemini\n\n---"
         },
         {
-          "header": "[Products](https://blog.google/innovation-and-ai/products/)",
+          "header": "[Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/rss/)",
           "content": ""
         },
         {
           "header": "Google Cloud Tools",
           "content": "- Gemini\n\n---"
+        },
+        {
+          "header": "[Products](https://blog.google/innovation-and-ai/products/)",
+          "content": ""
+        },
+        {
+          "header": "Google Cloud Tools",
+          "content": "- Gemini\n- Gemma\n\n---"
         },
         {
           "header": "[Gemini App](https://blog.google/innovation-and-ai/products/gemini-app/)",
@@ -2059,24 +2047,20 @@
           "content": "- Gemini\n\n---"
         },
         {
-          "header": "[The Gemini app becomes more agentic, delivering proactive, 24/7 help](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)",
+          "header": "[Save time and grow your business with new Gemini tools](https://blog.google/innovation-and-ai/products/gemini-app/gemini-features-for-businesses/)",
           "content": ""
         },
         {
-          "header": "Google Cloud Tools",
-          "content": "- Gemini"
+          "header": "Definitions",
+          "content": "- **General summary**: You can now connect your Google Business Profile to Gemini to get a personalized AI assistant that understands your brand and customer data. Use the new Business notebooks feature to organize your workflows, track critical tasks, and generate content based on your specific business context. Look for these updates rolling out globally this month to help you save time and manage your operations more effectively.\n- **Basic explainer**: Google is adding new features to Gemini to help small business owners save time. You can now connect your business profile so the AI understands your brand and helps you reply to customers. It also includes a new notebook tool to keep your projects and data organized in one place. These updates make Gemini act like a smart assistant that knows exactly how to help your business grow."
         },
         {
-          "header": "- MCP",
-          "content": "---"
-        },
-        {
-          "header": "[Making it easier to understand how content was created and edited](https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/)",
-          "content": ""
+          "header": "Benefits",
+          "content": "- **Bullet points**: \"Save time and grow your business with new Gemini tools\" helps entrepreneurs work smarter. Connect your Google Business Profile to Gemini for a smarter, personalized AI assistant. Use Gemini to analyze performance data and draft quick responses to customer reviews. Organize your workflows and business data in one place with new Business notebooks. These tools help you manage daily tasks and grow your business more efficiently."
         },
         {
           "header": "Google Cloud Tools",
-          "content": "- Gemini\n- SynthID\n- Gemini Enterprise Agent Platform\n\n---"
+          "content": "- Gemini\n\n---"
         },
         {
           "header": "[NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)",
@@ -2085,18 +2069,6 @@
         {
           "header": "Google Cloud Tools",
           "content": "- Gemini\n\n---"
-        },
-        {
-          "header": "[I/O 2026: Welcome to the agentic Gemini era](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)",
-          "content": ""
-        },
-        {
-          "header": "Google Cloud Tools",
-          "content": "- Infrastructure supporting innovation at scale\n- Gemini"
-        },
-        {
-          "header": "- MCP",
-          "content": "- Nano Banana\n- Google Flow\n- YouTube Shorts\n- SynthID\n\n---"
         },
         {
           "header": "[Technology](https://blog.google/innovation-and-ai/technology/)",
@@ -2112,7 +2084,19 @@
         },
         {
           "header": "Google Cloud Tools",
-          "content": "- Gemini\n\n---"
+          "content": "- Gemini\n- Gemma\n\n---"
+        },
+        {
+          "header": "[The latest AI news we announced in May 2026](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/)",
+          "content": ""
+        },
+        {
+          "header": "Definitions",
+          "content": "- **General summary**: Google’s May 2026 updates center on the new \"agentic\" era, featuring the Gemini 3.5 model and Gemini Omni for advanced reasoning and creation. You can now use proactive tools like the updated Gemini app, Universal Cart for shopping, and the new Google Health app to manage your daily tasks more efficiently. Explore these features across new hardware, including the Googlebook and Fitbit Air, to see how these intelligent systems can simplify your workflow and personal wellness."
+        },
+        {
+          "header": "Google Cloud Tools",
+          "content": "- Gemini\n- Google Flow\n\n---"
         },
         {
           "header": "[Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)",
@@ -2120,15 +2104,35 @@
         },
         {
           "header": "Google Cloud Tools",
-          "content": "- Gemini\n\n---"
+          "content": "- Gemini\n- Gemma\n\n---"
         },
         {
-          "header": "[Introducing Managed Agents in the Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/)",
+          "header": "[DiffusionGemma: 4x faster text generation](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/)",
+          "content": ""
+        },
+        {
+          "header": "Use Cases",
+          "content": "- **Unlocking new value for developers**: Developers building real-time interactive AI applications often struggle with the latency bottlenecks of local inference. DiffusionGemma addresses these challenges directly, with some key trade-offs: Blazing fast inference: By shifting the decode bottleneck from memory-bandwidth to compute, DiffusionGemma generates up to 4x faster token output on dedicated GPUs. (1000+ tokens per second on a single NVIDIA H100, 700+ tokens per second on NVIDIA GeForce RTX 5090). 1 Accessible hardware footprint: Operating as a 26B total Mixture of Experts (MoE) model that activates only 3.8B parameters during inference, DiffusionGemma fits comfortably within 18GB VRAM limits of high-end dedicated consumer GPUs when quantized. Bi-directional attention : Generating 256 tokens in parallel with each forward pass allows every token to attend to all others. This provides significant advantages for non-linear domains such as in-line editing, code infilling, amino acid sequences or mathematical graphs. Intelligent self-correction: The model iteratively refines its own output, allowing it to evaluate the entire text block at once to fix mistakes in real-time. Experimental status & production recommendations: Because it prioritizes speed and parallel layout generation, DiffusionGemma’s overall output quality is lower than standard Gemma 4. For applications that demand maximum quality, we recommend deploying standard Gemma 4."
+        },
+        {
+          "header": "Benefits",
+          "content": "- **Why diffusion for text?**: While the AI research community has explored diffusion-based text generation for years, applying it to large models has remained a challenge. DiffusionGemma changes this by shifting how models use hardware."
+        },
+        {
+          "header": "Google Cloud Tools",
+          "content": "- Gemini\n- Gemma\n- Hugging Face\n- Kaggle\n- vLLM"
+        },
+        {
+          "header": "- MLX",
+          "content": "- Gemini Enterprise Agent Platform\n\n---"
+        },
+        {
+          "header": "[See what 3 builders are making with Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/)",
           "content": ""
         },
         {
           "header": "Google Cloud Tools",
-          "content": "- Get access to Google's agent infrastructure\n- Reason, plan and call tools using the harness\n- Execute code and manage files in an isolated Linux sandbox\n- Browse the web to fetch and process live data\n- Gemini\n- Gemma\n- Interactions API\n- Gemini Enterprise Agent Platform\n\n---"
+          "content": "- Gemini\n- Gemma\n- Kaggle\n\n---"
         },
         {
           "header": "[Health](https://blog.google/innovation-and-ai/technology/health/)",
@@ -2141,6 +2145,18 @@
         {
           "header": "[Research](https://blog.google/innovation-and-ai/technology/research/)",
           "content": ""
+        },
+        {
+          "header": "Google Cloud Tools",
+          "content": "- Gemini\n\n---"
+        },
+        {
+          "header": "[4 ways researchers are collaborating with Co-Scientist to solve big problems](https://blog.google/innovation-and-ai/technology/research/co-scientist-research-problems/)",
+          "content": ""
+        },
+        {
+          "header": "Definitions",
+          "content": "- **General summary**: Researchers are now using Co-Scientist, an artificial intelligence system designed to help solve complex problems in the life sciences. The tool uses specialized agents to generate, debate, and refine new hypotheses, acting as a virtual partner for scientific discovery. You can explore how this technology accelerates research by visiting the Google DeepMind blog or testing the new experimental tool."
         },
         {
           "header": "Google Cloud Tools",
@@ -2168,12 +2184,20 @@
         },
         {
           "header": "Google Cloud Tools",
+          "content": "- Gemini\n\n---"
+        },
+        {
+          "header": "[XREAL AURA and more Android XR news from AWE 2026](https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/)",
+          "content": ""
+        },
+        {
+          "header": "Google Cloud Tools",
           "content": "- Gemini\n\n---\n\n\nAll the best - https://markposition.wordpress.com"
         }
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-18T23:04:59.822Z"
+        "ingestedAt": "2026-06-19T22:54:32.936Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2429,7 +2453,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-18T23:04:59.842Z"
+        "ingestedAt": "2026-06-19T22:54:32.958Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2673,7 +2697,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-18T23:04:59.858Z"
+        "ingestedAt": "2026-06-19T22:54:32.972Z"
       }
     }
   },

@@ -7,6 +7,7 @@ Synthesized from Google Innovation & AI Blog
 ### Google Cloud Tools
 - Infrastructure & cloud
 - Gemini
+- Gemma
 
 ---
 
@@ -27,14 +28,7 @@ Synthesized from Google Innovation & AI Blog
 
 ---
 
-## [Google announces new community investments in Missouri](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Google announces first Texas Energy Impact Fund recipients](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/)
+## [Google expands Alabama data center campus, funds community efforts](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/)
 
 ### Google Cloud Tools
 - Gemini
@@ -110,11 +104,16 @@ Synthesized from Google Innovation & AI Blog
 
 ## [Gemini Models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)
 
-### Definitions
-- **Introducing Gemini Omni**: Introducing Gemini Omni, which allows you to create anything from any input and edit naturally using conversational language.
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Fluid, natural voice translation with Gemini 3.5 Live Translate](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/)
 
 ### Google Cloud Tools
 - Gemini
+- SynthID
 
 ---
 
@@ -128,7 +127,6 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Kaggle
 - Nano Banana
 - Google Flow
 - YouTube Shorts
@@ -155,6 +153,7 @@ Synthesized from Google Innovation & AI Blog
 ### Google Cloud Tools
 - Gemini models
 - Gemini
+- Gemma
 - Model Context Protocol
 - MCP
 - Interactions API
@@ -180,13 +179,6 @@ Synthesized from Google Innovation & AI Blog
 
 ---
 
-## [Simulate real-world places with Project Genie and Street View](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
 ## [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/)
 
 ### Google Cloud Tools
@@ -196,28 +188,18 @@ Synthesized from Google Innovation & AI Blog
 
 ---
 
-## [Running Guide agent: A step towards running unbounded](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/)
-
-### Google Cloud Tools
-- Gemini
-- Gemma
-
----
-
 ## [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)
 
 ### Google Cloud Tools
 - Gemini
-- Google Flow
 
 ---
 
-## [New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music](https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/)
+## [Meet Dreambeans, an app that connects you with what matters](https://blog.google/innovation-and-ai/models-and-research/google-labs/dreambeans/)
 
 ### Google Cloud Tools
 - Gemini
 - Nano Banana
-- Google Flow
 
 ---
 
@@ -237,7 +219,7 @@ Synthesized from Google Innovation & AI Blog
 
 ---
 
-## [A new experiment brings better group meetings to Google Beam](https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/)
+## [Google advances its AMIE research medical AI from diagnosis to treatment](https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/)
 
 ### Google Cloud Tools
 - Gemini
@@ -259,10 +241,18 @@ Synthesized from Google Innovation & AI Blog
 
 ---
 
+## [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/rss/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
 ## [Products](https://blog.google/innovation-and-ai/products/)
 
 ### Google Cloud Tools
 - Gemini
+- Gemma
 
 ---
 
@@ -273,20 +263,17 @@ Synthesized from Google Innovation & AI Blog
 
 ---
 
-## [The Gemini app becomes more agentic, delivering proactive, 24/7 help](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)
+## [Save time and grow your business with new Gemini tools](https://blog.google/innovation-and-ai/products/gemini-app/gemini-features-for-businesses/)
+
+### Definitions
+- **General summary**: You can now connect your Google Business Profile to Gemini to get a personalized AI assistant that understands your brand and customer data. Use the new Business notebooks feature to organize your workflows, track critical tasks, and generate content based on your specific business context. Look for these updates rolling out globally this month to help you save time and manage your operations more effectively.
+- **Basic explainer**: Google is adding new features to Gemini to help small business owners save time. You can now connect your business profile so the AI understands your brand and helps you reply to customers. It also includes a new notebook tool to keep your projects and data organized in one place. These updates make Gemini act like a smart assistant that knows exactly how to help your business grow.
+
+### Benefits
+- **Bullet points**: "Save time and grow your business with new Gemini tools" helps entrepreneurs work smarter. Connect your Google Business Profile to Gemini for a smarter, personalized AI assistant. Use Gemini to analyze performance data and draft quick responses to customer reviews. Organize your workflows and business data in one place with new Business notebooks. These tools help you manage daily tasks and grow your business more efficiently.
 
 ### Google Cloud Tools
 - Gemini
-- MCP
-
----
-
-## [Making it easier to understand how content was created and edited](https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/)
-
-### Google Cloud Tools
-- Gemini
-- SynthID
-- Gemini Enterprise Agent Platform
 
 ---
 
@@ -294,19 +281,6 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-
----
-
-## [I/O 2026: Welcome to the agentic Gemini era](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)
-
-### Google Cloud Tools
-- Infrastructure supporting innovation at scale
-- Gemini
-- MCP
-- Nano Banana
-- Google Flow
-- YouTube Shorts
-- SynthID
 
 ---
 
@@ -322,6 +296,18 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
+- Gemma
+
+---
+
+## [The latest AI news we announced in May 2026](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/)
+
+### Definitions
+- **General summary**: Google’s May 2026 updates center on the new "agentic" era, featuring the Gemini 3.5 model and Gemini Omni for advanced reasoning and creation. You can now use proactive tools like the updated Gemini app, Universal Cart for shopping, and the new Google Health app to manage your daily tasks more efficiently. Explore these features across new hardware, including the Googlebook and Fitbit Air, to see how these intelligent systems can simplify your workflow and personal wellness.
+
+### Google Cloud Tools
+- Gemini
+- Google Flow
 
 ---
 
@@ -329,20 +315,35 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
+- Gemma
 
 ---
 
-## [Introducing Managed Agents in the Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/)
+## [DiffusionGemma: 4x faster text generation](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/)
+
+### Use Cases
+- **Unlocking new value for developers**: Developers building real-time interactive AI applications often struggle with the latency bottlenecks of local inference. DiffusionGemma addresses these challenges directly, with some key trade-offs: Blazing fast inference: By shifting the decode bottleneck from memory-bandwidth to compute, DiffusionGemma generates up to 4x faster token output on dedicated GPUs. (1000+ tokens per second on a single NVIDIA H100, 700+ tokens per second on NVIDIA GeForce RTX 5090). 1 Accessible hardware footprint: Operating as a 26B total Mixture of Experts (MoE) model that activates only 3.8B parameters during inference, DiffusionGemma fits comfortably within 18GB VRAM limits of high-end dedicated consumer GPUs when quantized. Bi-directional attention : Generating 256 tokens in parallel with each forward pass allows every token to attend to all others. This provides significant advantages for non-linear domains such as in-line editing, code infilling, amino acid sequences or mathematical graphs. Intelligent self-correction: The model iteratively refines its own output, allowing it to evaluate the entire text block at once to fix mistakes in real-time. Experimental status & production recommendations: Because it prioritizes speed and parallel layout generation, DiffusionGemma’s overall output quality is lower than standard Gemma 4. For applications that demand maximum quality, we recommend deploying standard Gemma 4.
+
+### Benefits
+- **Why diffusion for text?**: While the AI research community has explored diffusion-based text generation for years, applying it to large models has remained a challenge. DiffusionGemma changes this by shifting how models use hardware.
 
 ### Google Cloud Tools
-- Get access to Google's agent infrastructure
-- Reason, plan and call tools using the harness
-- Execute code and manage files in an isolated Linux sandbox
-- Browse the web to fetch and process live data
 - Gemini
 - Gemma
-- Interactions API
+- Hugging Face
+- Kaggle
+- vLLM
+- MLX
 - Gemini Enterprise Agent Platform
+
+---
+
+## [See what 3 builders are making with Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/)
+
+### Google Cloud Tools
+- Gemini
+- Gemma
+- Kaggle
 
 ---
 
@@ -354,6 +355,16 @@ Synthesized from Google Innovation & AI Blog
 ---
 
 ## [Research](https://blog.google/innovation-and-ai/technology/research/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [4 ways researchers are collaborating with Co-Scientist to solve big problems](https://blog.google/innovation-and-ai/technology/research/co-scientist-research-problems/)
+
+### Definitions
+- **General summary**: Researchers are now using Co-Scientist, an artificial intelligence system designed to help solve complex problems in the life sciences. The tool uses specialized agents to generate, debate, and refine new hypotheses, acting as a virtual partner for scientific discovery. You can explore how this technology accelerates research by visiting the Google DeepMind blog or testing the new experimental tool.
 
 ### Google Cloud Tools
 - Gemini
@@ -376,6 +387,13 @@ Synthesized from Google Innovation & AI Blog
 ---
 
 ## [Quantum frontiers may be closer than they appear](https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [XREAL AURA and more Android XR news from AWE 2026](https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/)
 
 ### Google Cloud Tools
 - Gemini
