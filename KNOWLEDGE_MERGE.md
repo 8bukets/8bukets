@@ -36,6 +36,17 @@ Overlapping identities between Antigravity, Project SOR, software-online-review.
 - **Source**: about.google
 - **Link**: [Post Link](https://markposition.wordpress.com/2021/04/05/google-about-google-our-culture-company-news/)
 
+### DBCode - The database IDE for VS Code
+- **Source**: https://dbcode.io/
+- **Link**: [data/knowledge/dbcode_knowledge.md](data/knowledge/dbcode_knowledge.md)
+
+
+## Autonomous Observation
+- **Date**: 2026-06-20T15:10:00.000Z
+- **Target**: https://dbcode.io/
+- **Title**: DBCode - SQL & Database Client for VS Code
+- **Context**: Ingested technical intelligence for DBCode database client integration.
+- **Summary**: DBCode is a modern database client for VS Code, Cursor, and Windsurf with Copilot and MCP integration. It supports 80+ databases and provides visual editing, AI queries, ERDs, and notebooks.
 
 ## Autonomous Observation
 - **Date**: 2026-06-10T02:52:06.827Z

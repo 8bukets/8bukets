@@ -554,6 +554,18 @@ export class Jules {
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
     await this.observeKnowledge()
 
+    // DBCode Knowledge Ingestion
+    console.log('🤖 [Jules] Ingesting DBCode Technical Intelligence...')
+    try {
+      const { exec } = await import('child_process')
+      const { promisify } = await import('util')
+      const execAsync = promisify(exec)
+      await execAsync('python3 scripts/ingest_dbcode_knowledge.py')
+      this.recordTask('DBCode Ingestion: Synchronized technical database client intelligence.')
+    } catch (err: any) {
+      console.warn('⚠️ [Jules] DBCode ingestion failed:', err.message)
+    }
+
     // Markposition Market Intelligence Ingestion
     console.log('🤖 [Jules] Ingesting Markposition Market Intelligence...')
     try {
