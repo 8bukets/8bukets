@@ -151,10 +151,17 @@ export class Jules {
 
   public async observeKnowledge() {
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
-    const knowledgeInsights = await observeKnowledge('https://software-online-review.com')
-    if (knowledgeInsights) {
-      this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
-      persistKnowledge(knowledgeInsights)
+    const urlsToObserve = [
+      'https://software-online-review.com',
+      'https://dbcode.io'
+    ]
+
+    for (const url of urlsToObserve) {
+      const knowledgeInsights = await observeKnowledge(url)
+      if (knowledgeInsights) {
+        this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
+        persistKnowledge(knowledgeInsights)
+      }
     }
   }
 
@@ -565,6 +572,25 @@ export class Jules {
       this.recordTask('Markposition Ingestion: Synchronized latest market intelligence.')
     } catch (err: any) {
       console.warn('⚠️ [Jules] Markposition ingestion failed:', err.message)
+    }
+
+    // DBCode Documentation Ingestion
+    console.log('🤖 [Jules] Ingesting DBCode Documentation...')
+    try {
+      const { exec } = await import('child_process')
+      const { promisify } = await import('util')
+      const execAsync = promisify(exec)
+
+      try {
+        // We use npx tsx to ensure proper execution of the script
+        await execAsync('npx tsx scripts/ingest_dbcode.ts')
+      } catch (scriptErr) {
+        console.warn('⚠️ [Jules] Native TS DBCode ingestion failed, falling back to Python:', (scriptErr as any).message)
+        await execAsync('python3 scripts/ingest_dbcode.py')
+      }
+      this.recordTask('DBCode Ingestion: Synchronized latest documentation.')
+    } catch (err: any) {
+      console.warn('⚠️ [Jules] DBCode ingestion failed:', err.message)
     }
 
     // Knowledge Merge
