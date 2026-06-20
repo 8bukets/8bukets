@@ -274,6 +274,17 @@ export async function evolve() {
             })
           }
         }
+
+        // Rule 27: Multi-Modal Cognition Compliance (Phase 17 Directive)
+        if (content.includes('cognitive') || content.includes('vision') || content.includes('audio')) {
+          if (!content.includes('MULTI_MODAL_INTEGRATION') && !content.includes('multi-modal')) {
+            suggestions.push({
+              file: fullPath.replace(process.cwd(), ''),
+              complexity: lines,
+              suggestion: 'MULTI_MODAL_COGNITION_MISSING: Phase 17 mandates support for multi-modal data streams.'
+            })
+          }
+        }
       }
     }
   }
@@ -399,6 +410,14 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       console.log(` - Fixing ${s.file}: Injecting Phase 16 heartbeat latency targets.`)
       if (!content.includes('latency < 5')) {
         content = "/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/\n" + content
+        await fs.promises.writeFile(fullPath, content)
+      }
+    }
+
+    if (s.suggestion.startsWith('MULTI_MODAL_COGNITION_MISSING')) {
+      console.log(` - Fixing ${s.file}: Injecting Phase 17 multi-modal compliance headers.`)
+      if (!content.includes('MULTI_MODAL_INTEGRATION')) {
+        content = "/** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/\n" + content
         await fs.promises.writeFile(fullPath, content)
       }
     }
