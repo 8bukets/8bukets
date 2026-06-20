@@ -127,7 +127,8 @@ class KnowledgeMergeAgent(BaseAgent):
 
             # Prepend new observations after the main header
             if "# Market Intelligence Matrix" in content:
-                content = content.replace("# Market Intelligence Matrix", "# Market Intelligence Matrix\n" + obs)
+                parts = content.split("# Market Intelligence Matrix", 1)
+                content = parts[0] + "# Market Intelligence Matrix\n" + obs + parts[1]
             else:
                 content = obs + "\n" + content
 
