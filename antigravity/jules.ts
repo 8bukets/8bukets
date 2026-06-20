@@ -453,6 +453,19 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
+    // Phase 22: Sovereignty Pulse (Cloud-Online Verification)
+    try {
+       const { cloudConvergence } = await import('./services/cloud_convergence')
+       const audit = await cloudConvergence.sovereigntyAudit()
+       if (audit.fullyOnline) {
+          this.recordTask('Sovereignty Pulse: System is FULLY ONLINE and CONNECTED.')
+       } else {
+          console.warn('⚠️ [Jules] Sovereignty Pulse detected degradation:', audit.status)
+       }
+    } catch (e) {
+       console.warn('⚠️ [Jules] Sovereignty Pulse failed, skipping verification.')
+    }
+
     // Phase 16: Swarm Heartbeat Activation
     swarmHeartbeat.start()
 
