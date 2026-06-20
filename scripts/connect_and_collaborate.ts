@@ -14,19 +14,31 @@ async function main() {
     timestamp: new Date().toISOString(),
     dockerInfo: null,
     dockerPs: null,
+    sovereignty: 'unknown'
   };
 
-  try {
-    console.log('Running docker info...');
-    const { stdout: infoOutput } = await execAsync('docker info');
-    state.dockerInfo = infoOutput;
+  const isSimulated = process.env.MACBOOK_CLOUD_SIMULATION === 'true';
 
-    console.log('Running docker ps...');
-    const { stdout: psOutput } = await execAsync('docker ps');
-    state.dockerPs = psOutput;
-  } catch (error: any) {
-    console.warn('⚠️ [Jules] Docker not running or inaccessible:', error.message);
-    state.dockerInfo = state.dockerInfo || ('Error: ' + error.message);
+  if (isSimulated) {
+    console.log('🧪 [Jules] MacBook Cloud Simulation active. Bypassing native Docker audit.');
+    state.dockerInfo = 'Simulated Docker Engine (Cloud Mode)';
+    state.dockerPs = 'Up 2 hours | antigravity-engine:latest | autonomous_engine';
+    state.sovereignty = 'simulated';
+  } else {
+    try {
+      console.log('Running docker info...');
+      const { stdout: infoOutput } = await execAsync('docker info');
+      state.dockerInfo = infoOutput;
+
+      console.log('Running docker ps...');
+      const { stdout: psOutput } = await execAsync('docker ps');
+      state.dockerPs = psOutput;
+      state.sovereignty = 'native';
+    } catch (error: any) {
+      console.warn('⚠️ [Jules] Docker not running or inaccessible:', error.message);
+      state.dockerInfo = state.dockerInfo || ('Error: ' + error.message);
+      state.sovereignty = 'degraded';
+    }
   }
 
   // 2. Synchronize presence and collaboration context
