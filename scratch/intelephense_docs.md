@@ -173,13 +173,13 @@ In the list of supported types below, some can only be used in PHPDoc as documen
 Additional types used in other static analysis engines that are not listed here are not fully supported. Intelephense attempts to fallback to an appropriate alternative in this situation.
 
 #### Top Type
-- **mixed** - The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both intelephense.diagnostics.relaxedTypeCheck and intelephense.diagnostics.noMixedTypeCheck to false.
+- **mixed** - The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
 
 #### Bottom Type
 - **never** - The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
 
 #### Scalar Types
-Any of these types can be assigned to the other unless the declare(strict_types=1) directive is used in the file or intelephense.diagnostics.strictTypes is true.
+Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.
 - **int**
 - **float**
 - **bool**
@@ -199,36 +199,36 @@ Any of these types can be assigned to the other unless the declare(strict_types=
 #### Object Types
 - **object**
 - **\MyNs\MyClass** - Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
-- **object{name: string, optional?: string}*** - Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a ? at the end of the name.
+- **object{name: string, optional?: string}*** - Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.
 - **static**
 - **self**
 - **$this***
 
 #### Array Types
 - **array**
-- **array<TKey, TValue>*** - Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to array<string|int, TValue>.
-- **TValue[]*** - Represents a numeric indexed array where the element type is TValue.
-- **array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}*** - Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a ? at the end of the key. Unspecified extra elements can be declared by adding an element of form ...<TKey, TValue>. Keys are optional and default to numerically indexed. For example a two element tuple would be array{Type0, Type1}. A mix of keyed and unkeyed elements is not supported.
+- **array<TKey, TValue>*** - Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array<string|int, TValue>`.
+- **TValue[]*** - Represents a numeric indexed array where the element type is `TValue`.
+- **array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}*** - Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported.
 
 #### Callable Types
-- **callable** - Base callable type that represents a callable string, callable array or a class that implements __invoke.
-- **callable(TParamA $a, TParamB $b): TReturn*** - Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. Closure can be used instead of callable for a more specific type.
+- **callable** - Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
+- **callable(TParamA $a, TParamB $b): TReturn*** - Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type.
 
 #### Alias Types
-- **iterable** - Alias for Traversable|array.
-- **?A** - Nullable type that is shorthand for null|A. Cannot be used as part of a union or intersection type.
+- **iterable** - Alias for `Traversable|array`.
+- **?A** - Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
 
 #### Union Types
-- **A|B|C** - A type which may have multiple atomic type representations. For example, a type constraint of A|B can be assigned type A or B.
+- **A|B|C** - A type which may have multiple atomic type representations. For example, a type constraint of `A|B` can be assigned type `A` or `B`.
 
 #### Intersection Types
-- **A&B&C** - A composite type which consists of multiple atomic types. For example, a type of A&B can be assigned to type A and to type B.
+- **A&B&C** - A composite type which consists of multiple atomic types. For example, a type of `A&B` can be assigned to type `A` and to type `B`.
 
 #### DNF Types
 - **A|B|(C&D&E)** - When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
 
 #### Generic Types
-- **MyType<TypeArg1, TypeArg2>*** - A generic type can be declared using one or many @template PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the @template declarations. The following built-in types are templated:
+- **MyType<TypeArg1, TypeArg2>*** - A generic type can be declared using one or many `@template` PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the `@template` declarations. The following built-in types are templated:
   - `iterable<TKey, TValue>`
   - `Traversable<TKey, TValue>`
   - `array<TKey, TValue>`
@@ -254,7 +254,7 @@ Any of these types can be assigned to the other unless the declare(strict_types=
   - `SplObjectStorage<TObject, TValue>`
 
 #### Conditional Return Type
-- **(TSubject is TCompare ? TTrue : TFalse)*** - Sometimes the return type of a function may depend on the type of a parameter. A conditional type can be used without templates too by using the parameter name. For example, ($myParam is string ? string : null). Conditional types must be wrapped in parentheses. Conditional types may also be nested.
+- **(TSubject is TCompare ? TTrue : TFalse)*** - Sometimes the return type of a function may depend on the type of a parameter. A conditional type can be used without templates too by using the parameter name. For example, `($myParam is string ? string : null)`. Conditional types must be wrapped in parentheses. Conditional types may also be nested.
 
 #### Array Key Type
 - **key-of<TArray>*** - This type will resolve to a union of the keys of an array shape.
@@ -263,7 +263,7 @@ Any of these types can be assigned to the other unless the declare(strict_types=
 - **value-of<TArray>*** - This type will resolve to a union of the values of an array shape.
 
 #### Index Access Type
-- **TArray[TKey]*** - This type will resolve to the type of the value at index TKey in TArray. It is particularly useful in conjunction with key-of<TArray> and shape types for mapping the return type when accessing container items with arbitrary strings. For example:
+- **TArray[TKey]*** - This type will resolve to the type of the value at index `TKey` in `TArray`. It is particularly useful in conjunction with `key-of<TArray>` and shape types for mapping the return type when accessing container items with arbitrary strings. For example:
 
 ```php
 <?php
@@ -287,14 +287,14 @@ $item = $container->get('item'); //$item is MyContainerItem
 
 #### Miscellaneous Types
 - **resource***
-- **class-string<T>*** - A string where the value is the name of class T.
+- **class-string<T>*** - A string where the value is the name of class `T`.
 
 ## PHPDoc Annotations
 Intelephense supports standard PHPDoc annotations as well as non-standard annotations which have been popularised by other static analysis tools such as Psalm and PHPStan. The below list describes the non-standard annotations that Intelephense supports. For further information on standard PHPDoc annotations, please see the PHP_FIG and phpDocumentor references.
 
 Some libraries or projects that have adopted static analysis tools such as Psalm or PHPStan may prefix some annotations with the tool name to avoid conflicts with other tools.
 
-To make Intelephense prefer these prefixed annotations over the un-prefixed ones, you can set the intelephense.compatibility.preferPsalmPhpstanPrefixedAnnotations setting to true. Intelephense does not aim to support all types and features of these tools but will attempt to fallback to appropriate alternatives where possible.
+To make Intelephense prefer these prefixed annotations over the un-prefixed ones, you can set the `intelephense.compatibility.preferPsalmPhpstanPrefixedAnnotations` setting to `true`. Intelephense does not aim to support all types and features of these tools but will attempt to fallback to appropriate alternatives where possible.
 
 ### @template
 ```php
@@ -306,25 +306,25 @@ This annotation is used to declare a type argument of a generic type, function o
 ```php
 /** @template-extends ParentType<TypeArg1, TypeArg2> */
 ```
-This annotation is used to declare the type arguments supplied to a generic parent type. It can be used on classes and interfaces when extending a parent class or interface. The alias @extends is also supported.
+This annotation is used to declare the type arguments supplied to a generic parent type. It can be used on classes and interfaces when extending a parent class or interface. The alias `@extends` is also supported.
 
 ### @template-implements
 ```php
 /** @template-implements InterfaceType<TypeArg1, TypeArg2> */
 ```
-This annotation is used to declare the type arguments supplied to a generic interface. It can be used on classes and enums when implementing an interface. The alias @implements is also supported.
+This annotation is used to declare the type arguments supplied to a generic interface. It can be used on classes and enums when implementing an interface. The alias `@implements` is also supported.
 
 ### @template-use
 ```php
 /** @template-use TraitType<TypeArg1, TypeArg2> */
 ```
-This annotation is used to declare the type arguments supplied to a generic trait. It can be used on classes, traits and enums when using a trait. The alias @use is also supported.
+This annotation is used to declare the type arguments supplied to a generic trait. It can be used on classes, traits and enums when using a trait. The alias `@use` is also supported.
 
 ### @param-closure-this
 ```php
 /** @param-closure-this Type $parameter */
 ```
-This annotation is used to declare the type of the $this variable inside a closure that is passed as a parameter to a function or method. An example of a standard PHP method that benefits internally from this annotation is Closure::bind().
+This annotation is used to declare the type of the `$this` variable inside a closure that is passed as a parameter to a function or method. An example of a standard PHP method that benefits internally from this annotation is `Closure::bind()`.
 
 ### @param-out
 ```php
@@ -349,25 +349,25 @@ Similar to above but for functions or methods that have a boolean return type. T
 ```php
 /** @mixin ClassName */
 ```
-This annotation is used to declare that the members of the specified class are mixed in to the current class via __call, __callStatic, __get or __set magic methods. Only available with a licence in Intelephense Premium.
+This annotation is used to declare that the members of the specified class are mixed in to the current class via `__call`, `__callStatic`, `__get` or `__set` magic methods. Only available with a licence in Intelephense Premium.
 
 ### @disregard
 ```php
 /** @disregard PXXXX */
 ```
-This annotation is used to suppress a specific diagnostic at the statement following the annotation. For example, @disregard P1010 would suppress the diagnostic with code P1010. This can be useful when you have a specific case where you want to allow something that Intelephense would normally report as an issue.
+This annotation is used to suppress a specific diagnostic at the statement following the annotation. For example, `@disregard P1010` would suppress the diagnostic with code `P1010`. This can be useful when you have a specific case where you want to allow something that Intelephense would normally report as an issue.
 
 ### @type-alias
 ```php
 /** @type-alias TypeName = Type */
 ```
-This annotation is used to declare a type alias. A type alias allows you to create a new name for an existing type, which can be useful for improving code readability or for creating more meaningful type names. It functions the same as @phpstan-type and @psalm-type annotations which are also recognised. Intelephense type aliases follow normal PHP namespace rules.
+This annotation is used to declare a type alias. A type alias allows you to create a new name for an existing type, which can be useful for improving code readability or for creating more meaningful type names. It functions the same as `@phpstan-type` and `@psalm-type` annotations which are also recognised. Intelephense type aliases follow normal PHP namespace rules.
 
 ### @import-type
 ```php
 /** @import-type TypeName as OptionalAlias */
 ```
-This annotation is used to import a type alias that has been declared in another file. It functions similarly to @phpstan-import-type and @psalm-import-type and both these annotations may also be used. However, type aliases are not bound to classes in Intelephense and as such the from ClassName specifier is unnecessary but still supported. Type aliases in Intelephense follow normal PHP namespace rules.
+This annotation is used to import a type alias that has been declared in another file. It functions similarly to `@phpstan-import-type` and `@psalm-import-type` and both these annotations may also be used. However, type aliases are not bound to classes in Intelephense and as such the `from ClassName` specifier is unnecessary but still supported. Type aliases in Intelephense follow normal PHP namespace rules.
 
 ## Features
 Intelephense provides a variety of features to enhance the development experience when working with PHP code. Many of these features are provided for free while others require a Premium licence to access. All images and videos in this section are taken from the VS Code client. The features are available to all LSP clients that support the relevant LSP methods. Keybindings listed for each feature are the defaults for the VS Code client.
@@ -377,10 +377,10 @@ The following features are available to all users of Intelephense. A licence is 
 
 #### Workspace Symbols
 - **Availability**: FREE
-- **LSP**: workspace/symbol
-- **Keybinding**: Ctrl+T
+- **LSP**: `workspace/symbol`
+- **Keybinding**: `Ctrl+T`
 
-This feature allows you to search for symbols in your workspace and navigate to their definitions. It is particularly useful for finding and navigating to symbols that are not directly referenced in the current file. When the query contains alphanumeric characters only, the search is performed on the unqualified name of the symbol. You can narrow your search to a specific symbol by using a query containing characters found in the Fully Qualified Structural Element Name (FQSEN) of the symbol. For example, a query of m\pt:u( would find the method with FQSEN App\Models\Post::user().
+This feature allows you to search for symbols in your workspace and navigate to their definitions. It is particularly useful for finding and navigating to symbols that are not directly referenced in the current file. When the query contains alphanumeric characters only, the search is performed on the unqualified name of the symbol. You can narrow your search to a specific symbol by using a query containing characters found in the Fully Qualified Structural Element Name (FQSEN) of the symbol. For example, a query of `m\pt:u(` would find the method with FQSEN `App\Models\Post::user()`.
 
 Unfortunately, VS Code has a current issue where it will discard results if the query contains a backslash. This means that you cannot search on the namespace part of a type.
 
@@ -388,8 +388,8 @@ Unfortunately, VS Code has a current issue where it will discard results if the 
 
 #### Document Symbols
 - **Availability**: FREE
-- **LSP**: textDocument/documentSymbol
-- **Keybinding**: Ctrl+Shift+O
+- **LSP**: `textDocument/documentSymbol`
+- **Keybinding**: `Ctrl+Shift+O`
 
 This feature lists all symbols in the current document, providing an overview of the structure of the file. A client can use this information to provide a document outline view, breadcrumb navigation, and a symbol search specific to the current file.
 
@@ -397,8 +397,8 @@ This feature lists all symbols in the current document, providing an overview of
 
 #### Go to Definition
 - **Availability**: FREE
-- **LSP**: textDocument/definition
-- **Keybinding**: F12 | right-click context menu
+- **LSP**: `textDocument/definition`
+- **Keybinding**: `F12` | right-click context menu
 
 This feature allows you to navigate to the definition of a symbol when invoked on a reference to that symbol in the current file. Multiple definitions may sometimes be found for a symbol. For example, invoking the feature on the type name in a new expression may find both the constructor method and the class declaration as definitions. It is up to the client to decide how to present multiple definitions to the user. For example a peek definitions window may open or the user may simply be navigated to the first definition in the list.
 
@@ -406,8 +406,8 @@ This feature allows you to navigate to the definition of a symbol when invoked o
 
 #### Hover
 - **Availability**: FREE
-- **LSP**: textDocument/hover
-- **Keybinding**: Ctrl+K Ctrl+I | mouse-over
+- **LSP**: `textDocument/hover`
+- **Keybinding**: `Ctrl+K Ctrl+I` | mouse-over
 
 This feature provides information about a symbol when hovering over a reference to that symbol in the current file. The information provided can include the type of the symbol, it's signature if it is a function or method, and any associated documentation.
 
@@ -415,7 +415,7 @@ This feature provides information about a symbol when hovering over a reference 
 
 #### Highlight
 - **Availability**: FREE
-- **LSP**: textDocument/documentHighlight
+- **LSP**: `textDocument/documentHighlight`
 - **Keybinding**: Displayed automatically at the cursor position
 
 This feature highlights all references to the symbol at the cursor position in the current file. This can be useful for quickly identifying all usages of a symbol in the current file. Read and write contexts will be identified if applicable and the client can choose to highlight them differently if desired.
@@ -424,9 +424,9 @@ This feature highlights all references to the symbol at the cursor position in t
 
 #### Code Completion
 - **Availability**: FREE
-- **LSP**: textDocument/completion
-- **Keybinding**: Ctrl+Space
-- **Trigger characters**: $ > : \ / ' " * . <
+- **LSP**: `textDocument/completion`
+- **Keybinding**: `Ctrl+Space`
+- **Trigger characters**: `$ > : \ / ' " * . <`
 
 This feature provides a list of context appropriate completion suggestions for a symbol at the cursor position in the current file. The completions can include variables, functions, methods, classes, and other symbols. Where appropriate, additional edits are provided to automatically import a symbol.
 
@@ -434,9 +434,9 @@ This feature provides a list of context appropriate completion suggestions for a
 
 #### Signature Help
 - **Availability**: FREE
-- **LSP**: textDocument/signatureHelp
-- **Keybinding**: Ctrl+Shift+Space
-- **Trigger characters**: ( , :
+- **LSP**: `textDocument/signatureHelp`
+- **Keybinding**: `Ctrl+Shift+Space`
+- **Trigger characters**: `( , :`
 
 This feature provides information about the signature of a function or method when the cursor is within the argument list of a function or method call. The information provided can include the types of the parameters, the return type, and any associated documentation.
 
@@ -444,8 +444,8 @@ This feature provides information about the signature of a function or method wh
 
 #### Find All References
 - **Availability**: FREE
-- **LSP**: textDocument/references
-- **Keybinding**: Shift+F12 | right-click context menu
+- **LSP**: `textDocument/references`
+- **Keybinding**: `Shift+F12` | right-click context menu
 
 This feature provides a list of all references to a symbol in the current file or workspace. The references can include variables, functions, methods, classes, and other symbols. When there is a hierarchy of types, references to a type member will be determined relative to the initial base members.
 
@@ -453,10 +453,10 @@ This feature provides a list of all references to a symbol in the current file o
 
 #### Formatting
 - **Availability**: FREE
-- **LSP**: textDocument/formatting
-- **Keybinding**: Ctrl+Shift+I (format document)
-- **LSP**: textDocument/rangeFormatting
-- **Keybinding**: Ctrl+K Ctrl+F (format selection)
+- **LSP**: `textDocument/formatting`
+- **Keybinding**: `Ctrl+Shift+I` (format document)
+- **LSP**: `textDocument/rangeFormatting`
+- **Keybinding**: `Ctrl+K Ctrl+F` (format selection)
 
 This feature provides formatting of a whole document or a selected range within a document. The Intelephense formatter is opinionated and aims to comply with PHP-FIG coding standards. Limited configuration options are available to allow some customisation of brace style.
 
@@ -464,29 +464,29 @@ This feature provides formatting of a whole document or a selected range within 
 
 #### Diagnostics
 - **Availability**: FREE
-- **LSP**: textDocument/publishDiagnostics
-- **Keybinding**: Published automatically onType or onSave | F8 (next) | Shift+F8 (previous)
+- **LSP**: `textDocument/publishDiagnostics`
+- **Keybinding**: Published automatically `onType` or `onSave` | `F8` (next) | `Shift+F8` (previous)
 
 This feature provides diagnostics for the currently opened files. Diagnostics include syntax errors, type errors, language constraints and other issues detected by Intelephense. Intelephense aims to provide rapid diagnostics that are aligned with the PHP engine where possible.
 
 Performance and minimising false positives are prioritised over exhaustiveness. It should not be used as a substitute for testing your code. The diagnostics emitted can be configured in the settings to be more or less thorough or ignored altogether depending on your preferences and the codebase you are working with.
 
-If you need fine grain control over which diagnostics are shown, try the intelephense.diagnostics.exclude setting. This setting allows you to map a file glob to an array of diagnostic codes to exclude from diagnostics. A full list of diagnostic codes can be found in the vscode-intelephense repository.
+If you need fine grain control over which diagnostics are shown, try the `intelephense.diagnostics.exclude` setting. This setting allows you to map a file glob to an array of diagnostic codes to exclude from diagnostics. A full list of diagnostic codes can be found in the `vscode-intelephense` repository.
 
 By default, Intelephense performs type checking on declared types only and in a relaxed mode in order to reduce false positives. In a hierarchy of types, a sub-type satisfies a super-type constraint. Intelephense also permits the reverse. That is, a super-type or wider type can be assigned to a sub-type or narrower type constraint. This default behaviour has been chosen due to inherent limitations in static analysis, the lack of syntax in PHP or PHPDoc to enable a developer to inline cast an expression or variable, and due to the variable quality of type information in some codebases.
 
 To make type checks more thorough, there are several settings available.
 
-- intelephense.diagnostics.relaxedTypeCheck controls whether to emit diagnostics when a super-type (excluding mixed) is assigned to a sub-type constraint.
-- intelephense.diagnostics.noMixedTypeCheck controls whether to emit diagnostics when mixed is assigned to narrower type constraints.
-- intelephense.diagnostics.strictTypes is a global equivalent to adding declare(strict_types=1); to the top of each file.
-- intelephense.diagnostics.typeCheckDocumentedTypes controls whether documented types are included in type checking.
+- `intelephense.diagnostics.relaxedTypeCheck` controls whether to emit diagnostics when a super-type (excluding `mixed`) is assigned to a sub-type constraint.
+- `intelephense.diagnostics.noMixedTypeCheck` controls whether to emit diagnostics when `mixed` is assigned to narrower type constraints.
+- `intelephense.diagnostics.strictTypes` is a global equivalent to adding `declare(strict_types=1);` to the top of each file.
+- `intelephense.diagnostics.typeCheckDocumentedTypes` controls whether documented types are included in type checking.
 
 *Diagnostics panel showing PHP type errors and warnings inline in the editor. Diagnostics surface type errors and other issues either as you type or on save depending on your settings.*
 
 #### Inline Values
 - **Availability**: FREE
-- **LSP**: textDocument/inlineValues
+- **LSP**: `textDocument/inlineValues`
 - **Keybinding**: Displayed automatically during a debug session
 
 This feature provides ranges and text for variables in a file that may be relevant for a debugger to display inline values for during a debugging session. To see this feature in action in VS Code, install the official Xdebug extension.
@@ -503,8 +503,8 @@ The following features require a licence to access. A licence can be purchased a
 
 #### Rename
 - **Availability**: PREMIUM
-- **LSP**: textDocument/rename
-- **Keybinding**: F2 | right-click context menu
+- **LSP**: `textDocument/rename`
+- **Keybinding**: `F2` | right-click context menu
 
 This feature allows you to rename a symbol and all references to that symbol in the current file or workspace. This differs from a simple text find and replace in that it is aware of the syntax and semantics of the code, and will only rename the specific symbol.
 
@@ -516,17 +516,17 @@ Renaming a namespace in a file updates imports and FQN references for the file s
 
 #### Code Folding
 - **Availability**: PREMIUM
-- **LSP**: textDocument/foldingRange
-- **Keybinding**: Ctrl+Shift+[ (fold) | Ctrl+Shift+] (unfold) | left-click editor gutter | right-click context menu
+- **LSP**: `textDocument/foldingRange`
+- **Keybinding**: `Ctrl+Shift+[` (fold) | `Ctrl+Shift+]` (unfold) | left-click editor gutter | right-click context menu
 
-This feature allows you to fold and unfold regions of code in the current file. Intelephense provides folding ranges for symbol definition bodies, control structures, comments, imports, and custom regions identified by #region and #endregion comments. The folding provider is syntax tree driven and is more reliable than indent based folding providers such as the default provider in VS Code.
+This feature allows you to fold and unfold regions of code in the current file. Intelephense provides folding ranges for symbol definition bodies, control structures, comments, imports, and custom regions identified by `#region` and `#endregion` comments. The folding provider is syntax tree driven and is more reliable than indent based folding providers such as the default provider in VS Code.
 
 *Code Folding collapses and expands regions based on the syntax tree*
 
 #### Find All Implementations
 - **Availability**: PREMIUM
-- **LSP**: textDocument/implementation
-- **Keybinding**: Ctrl+F12 | right-click context menu
+- **LSP**: `textDocument/implementation`
+- **Keybinding**: `Ctrl+F12` | right-click context menu
 
 This feature provides a list of all implementations of a method or interface when invoked on a reference. This functions similar to go to definition but differs in that it will find the classes that implement the interface or methods that implement an abstract method declaration.
 
@@ -534,7 +534,7 @@ This feature provides a list of all implementations of a method or interface whe
 
 #### Go to Type Definition
 - **Availability**: PREMIUM
-- **LSP**: textDocument/typeDefinition
+- **LSP**: `textDocument/typeDefinition`
 - **Keybinding**: Right-click context menu
 
 This feature allows you to navigate to the type definition of a variable. Similar to go to definition but differs in that it will navigate to the type definition rather than the variable declaration itself.
@@ -543,7 +543,7 @@ This feature allows you to navigate to the type definition of a variable. Simila
 
 #### Go to Declaration
 - **Availability**: PREMIUM
-- **LSP**: textDocument/declaration
+- **LSP**: `textDocument/declaration`
 - **Keybinding**: Right-click context menu
 
 This feature allows you to navigate to the initial declaration of a symbol. Similar to go to definition, and depending on the context may function the same, it differs in that it will navigate to the initial declaration of a symbol in a hierarchy of types. For example, invoking this feature on a sub-type method reference will navigate to the initial declaration of the method in a super-type rather than the sub-type method declaration itself.
@@ -552,8 +552,8 @@ This feature allows you to navigate to the initial declaration of a symbol. Simi
 
 #### Smart Select
 - **Availability**: PREMIUM
-- **LSP**: textDocument/selectionRange
-- **Keybinding**: Shift+Alt+→ (expand) | Shift+Alt+← (shrink)
+- **LSP**: `textDocument/selectionRange`
+- **Keybinding**: `Shift+Alt+→` (expand) | `Shift+Alt+←` (shrink)
 
 This feature allows you to expand and shrink the current selection in the current file based on the syntax tree of the code. For example, if the cursor is on a variable name, the first expansion would select the variable name, the second expansion would select the whole variable declaration, the third expansion would select the whole statement, the fourth expansion would select the whole block, and so on. Being syntax tree driven, it is more precise than regex or indent based selection providers such as the default provider in VS Code.
 
@@ -561,7 +561,7 @@ This feature allows you to expand and shrink the current selection in the curren
 
 #### Type Hierarchy
 - **Availability**: PREMIUM
-- **LSP**: textDocument/typeHierarchy
+- **LSP**: `textDocument/typeHierarchy`
 - **Keybinding**: Right-click context menu
 
 This feature provides a type hierarchy for a class, interface, trait or enum when invoked on a reference to the type. It is useful for understanding the inheritance structure of a type and for quick navigation to types in the hierarchy.
@@ -570,10 +570,10 @@ This feature provides a type hierarchy for a class, interface, trait or enum whe
 
 #### Code Lens
 - **Availability**: PREMIUM
-- **LSP**: textDocument/codeLens
+- **LSP**: `textDocument/codeLens`
 - **Keybinding**: Rendered inline above declarations | activated by left-clicking
 
-This feature provides additional information and navigation for symbol declarations in the current file. Several lenses are provided by Intelephense. They are disabled by default to reduce visual clutter, see the intelephense.codeLens settings to enable them.
+This feature provides additional information and navigation for symbol declarations in the current file. Several lenses are provided by Intelephense. They are disabled by default to reduce visual clutter, see the `intelephense.codeLens` settings to enable them.
 
 - **References**: shows the number of references to a symbol in the workspace and provides a link to view those references.
 - **Implementations**: shows the number of implementations of an interface or abstract method and provides a link to view those implementations.
@@ -585,10 +585,10 @@ This feature provides additional information and navigation for symbol declarati
 
 #### Inlay Hints
 - **Availability**: PREMIUM
-- **LSP**: textDocument/inlayHint
+- **LSP**: `textDocument/inlayHint`
 - **Keybinding**: Displayed inline automatically
 
-This feature provides additional type and parameter information in the form of hints that are displayed inline with the code in the current file. Intelephense provides several types of inlay hints. They are enabled by default. See the intelephense.inlayHints settings to configure them.
+This feature provides additional type and parameter information in the form of hints that are displayed inline with the code in the current file. Intelephense provides several types of inlay hints. They are enabled by default. See the `intelephense.inlayHints` settings to configure them.
 
 - **Parameter Name**: shows the name of a parameter for a function or method argument.
 - **Parameter Type**: shows the inferred type of a parameter in a closure that is an argument to another function or method when it has not been explicitly declared.
@@ -598,19 +598,19 @@ This feature provides additional type and parameter information in the form of h
 
 #### Document Links
 - **Availability**: PREMIUM
-- **LSP**: textDocument/documentLink
-- **Keybinding**: Ctrl+Click | mouse-over
+- **LSP**: `textDocument/documentLink`
+- **Keybinding**: `Ctrl+Click` | mouse-over
 
-This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in require and include statements, and to local files referenced in @see annotations.
+This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in require and include statements, and to local files referenced in `@see` annotations.
 
-If your require statements are relative or you reference $_SERVER['DOCUMENT_ROOT'], you may need to configure the intelephense.environment.documentRoot setting to the correct path for the links to work. Intelephense will fallback to the workspace folder path if this setting has no value.
+If your require statements are relative or you reference `$_SERVER['DOCUMENT_ROOT']`, you may need to configure the `intelephense.environment.documentRoot` setting to the correct path for the links to work. Intelephense will fallback to the workspace folder path if this setting has no value.
 
 *Document Links showing clickable require and include paths in a PHP file. Document Links make require/include paths and @see annotations clickable*
 
 #### Code Actions
 - **Availability**: PREMIUM
-- **LSP**: textDocument/codeAction
-- **Keybinding**: Ctrl+. | left-click lightbulb
+- **LSP**: `textDocument/codeAction`
+- **Keybinding**: `Ctrl+.` | left-click lightbulb
 
 This feature provides a list of context appropriate actions that can be performed at the cursor position in the current file. VS Code will show a lightbulb icon on the current line when code actions are available. Intelephense provides several code actions.
 
@@ -627,7 +627,7 @@ Intelephense aims to support all PHP frameworks and libraries but does not imple
 
 1. Declares symbols at runtime via bootstrapping code or configuration.
 2. Uses interfaces heavily but encourages calling methods only declared on implementations.
-3. Uses __get,__call, or __callStatic magic heavily without corresponding @property or @method annotations.
+3. Uses `__get`,`__call`, or `__callStatic` magic heavily without corresponding `@property` or `@method` annotations.
 4. Has insufficient or incorrect type declarations/annotations.
 
 In such cases you may notice a lack of completion suggestions, trouble jumping to definitions or undefined symbol diagnostics may appear even though the code may work when executed.
@@ -708,7 +708,7 @@ interface View
 
 If classes, interfaces, traits, or enums have override definitions then Intelephense will treat them as partial types and merge them with the vendor declared types. Type overrides should either not use extends or implements clauses, or, alternatively keep them the same as the real type because implements and extends values are not merged.
 
-There are also packages that provide or generate IDE helper files that may improve the experience when using various frameworks and libraries. For example: laravel-ide-helper.
+There are also packages that provide or generate IDE helper files that may improve the experience when using various frameworks and libraries. For example: `laravel-ide-helper`.
 
 ### PHPDoc Instead of PHPStorm Metadata/Attributes
 PHPStorm provides a way to override or express types using metadata and custom attributes in order to provide better language intelligence for code that is difficult to analyse statically, and to address limitations in the PHP language.
@@ -720,7 +720,7 @@ Intelephense does not support PHPStorm attributes and provides only limited supp
 The following examples show how to express types using PHPDoc types instead of PHPStorm metadata and attributes.
 
 #### Problem 1: Return Specific Type Based on Input Type
-A function accepts string|object and returns this type after performing some operation. We want to return a string if a string is passed or a specific object if an object is passed, not a string|object.
+A function accepts `string|object` and returns this type after performing some operation. We want to return a string if a string is passed or a specific object if an object is passed, not a `string|object`.
 
 - **Using PHPStorm metadata**:
 ```php
