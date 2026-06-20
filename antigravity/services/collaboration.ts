@@ -203,12 +203,17 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           }
         } else if (entry.isFile()) {
           if (!entry.name.includes('.test.') && pattern.test(entry.name)) {
-            map.resourceInventory.push({
-              type: type,
-              name: entry.name.split('.')[0],
-              status: 'Active',
-              path: entryRelPath
-            })
+            const name = entry.name.split('.')[0]
+            // Deduplicate same-named resources in the same category (e.g. .py and .md for agent)
+            const exists = map.resourceInventory.some((r: any) => r.name === name && r.type === type)
+            if (!exists) {
+              map.resourceInventory.push({
+                type: type,
+                name: name,
+                status: 'Active',
+                path: entryRelPath
+              })
+            }
           }
         }
       }
