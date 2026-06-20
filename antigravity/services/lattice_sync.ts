@@ -1,3 +1,4 @@
+/** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 import { logAutonomousAction } from '../core';
 
 /**

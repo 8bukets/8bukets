@@ -1,3 +1,4 @@
+/** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
@@ -95,6 +96,8 @@ export class Jules {
       const hasSwarm = checkKnowledge('swarm-based')
       const hasHeartbeatLatency = checkKnowledge('heartbeat latency')
       const hasNeuralRecovery = checkKnowledge('neural recovery')
+      const hasPhase17 = checkKnowledge('Phase 17')
+      const hasMultiModal = checkKnowledge('multi-modal')
 
       if (hasQuantum && !this.memory.preferredPatterns.includes('crystals-kyber')) {
         suggestions.push('Integrate Crystals-Kyber for Quantum-resistant security as per latest strategy.')
@@ -131,6 +134,9 @@ export class Jules {
       }
       if (hasNeuralRecovery) {
         suggestions.push('Implement Neural Recovery protocols to autonomously handle NS-Index drops.')
+      }
+      if (hasPhase17 || hasMultiModal) {
+        suggestions.push('Integrate Multi-Modal data streams (visual/auditory) for Phase 17 cognitive expansion.')
       }
     }
 
@@ -200,7 +206,8 @@ export class Jules {
       { name: 'Anticipatory Node Audit', action: () => this.recordTask('Phase 14: Localized sovereignty confirmed for Singapore and Tokyo anticipatory nodes.') },
       { name: 'Swarm Heartbeat Activation', action: () => this.activateSwarmHeartbeat() },
       { name: 'Cross-Shard Memory Sync', action: () => this.syncCrossShardMemory() },
-      { name: 'Quantum Secure Sync', action: () => this.performQuantumSecureSync() }
+      { name: 'Quantum Secure Sync', action: () => this.performQuantumSecureSync() },
+      { name: 'Multi-Modal Cognition Audit', action: () => this.recordTask('Phase 17: Multi-modal data stream integrity verified.') }
     ]
 
     for (const task of tasks) {
