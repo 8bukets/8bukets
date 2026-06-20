@@ -537,8 +537,18 @@ export class Jules {
     // Markposition Market Intelligence Ingestion
     console.log('🤖 [Jules] Ingesting Markposition Market Intelligence...')
     try {
-      const { scrapeMarkpositionKnowledge } = await import('../scripts/ingest_markposition_knowledge')
-      await scrapeMarkpositionKnowledge(2) // Scrape first 2 pages autonomously
+      // Robust fallback: try native import (may fail due to tsx/esbuild issues), then fallback to Python
+      const { exec } = await import('child_process')
+      const { promisify } = await import('util')
+      const execAsync = promisify(exec)
+
+      try {
+        const { scrapeMarkpositionKnowledge } = await import('../scripts/ingest_markposition_knowledge')
+        await scrapeMarkpositionKnowledge(2) // Scrape first 2 pages autonomously
+      } catch (importErr) {
+        console.warn('⚠️ [Jules] Native TS Markposition ingestion failed, falling back to Python:', (importErr as any).message)
+        await execAsync('python3 scripts/ingest_markposition_knowledge.py')
+      }
       this.recordTask('Markposition Ingestion: Synchronized latest market intelligence.')
     } catch (err: any) {
       console.warn('⚠️ [Jules] Markposition ingestion failed:', err.message)
@@ -547,8 +557,18 @@ export class Jules {
     // Knowledge Merge
     console.log('🔄 [Jules] Performing Knowledge Merge...')
     try {
-      const { ingestKnowledgeMerge } = await import('../scripts/ingest_knowledge_merge')
-      await ingestKnowledgeMerge()
+      // Robust fallback: try native import, then fallback to Node with .js version
+      const { exec } = await import('child_process')
+      const { promisify } = await import('util')
+      const execAsync = promisify(exec)
+
+      try {
+        const { ingestKnowledgeMerge } = await import('../scripts/ingest_knowledge_merge')
+        await ingestKnowledgeMerge()
+      } catch (importErr) {
+        console.warn('⚠️ [Jules] Native TS Knowledge Merge failed, falling back to JS version:', (importErr as any).message)
+        await execAsync('node scripts/ingest_knowledge_merge.js')
+      }
       this.recordTask('Knowledge Merge: Consolidated intelligence into reports.')
     } catch (err: any) {
       console.warn('⚠️ [Jules] Knowledge merge failed:', err.message)
