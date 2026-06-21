@@ -11,14 +11,30 @@ import { getGitLabMetrics } from './gitlab'
 import { getGitHubMetrics } from './github_evolution'
 import { getGitKrakenMetrics } from './gitkraken_metrics' // We will mock this or implement later
 import { reactService } from './react'
+import { edgeToCloudBridge } from './edge_to_cloud_bridge'
+import { cloudConvergence } from './cloud_convergence'
 
 const execFileAsync = promisify(execFile)
 
 export class CloudWorkflowAgent {
+  /**
+   * Phase 16: Cloud Takeover Protocol
+   * Ensures that when a cloud node becomes leader, it recovers state,
+   * resolves conflicts, and executes pending work orders immediately.
+   */
   public async enforceCloudTakeover() {
     console.log('🚀 [CloudWorkflowAgent] Enforcing Cloud Takeover protocol...');
+
+    // 1. Recover state via EdgeToCloudBridge
+    await edgeToCloudBridge.recoverState()
+
+    // 2. Resolve multi-cloud conflicts
+    await cloudConvergence.resolveConflicts()
+
+    // 3. Execute all pending work orders immediately
     const { workOrderService } = await import('./work_order');
     await workOrderService.executePendingOrders();
+
     console.log('✅ [CloudWorkflowAgent] Cloud Takeover protocol executed.');
   }
 
