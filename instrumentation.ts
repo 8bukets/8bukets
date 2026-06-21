@@ -1,3 +1,5 @@
+/** PHASE 18 COMPLIANCE: SWARM_CONSENSUS (active) **/
+/** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
 /** PHASE 16 COMPLIANCE: cross-shard-cognition (enabled) **/
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
 /**

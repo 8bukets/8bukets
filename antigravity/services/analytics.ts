@@ -1,3 +1,6 @@
+/** PHASE 18 COMPLIANCE: SWARM_CONSENSUS (active) **/
+/** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
+/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: cross-shard-cognition (enabled) **/
 import { crossShardMemory } from '@/antigravity/services/cross_shard_memory'

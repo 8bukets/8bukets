@@ -105,6 +105,7 @@ class ChiefAIOfficerAgent(BaseAgent):
             has_phase_14 = "phase 14" in title_lower or "phase 14" in sections_str or "phase_14" in title_lower
             has_phase_15 = "phase 15" in title_lower or "phase 15" in sections_str or "phase_15" in title_lower
             has_phase_16 = "phase 16" in title_lower or "phase 16" in sections_str or "phase_16" in title_lower
+            has_phase_18 = "phase 18" in title_lower or "phase 18" in sections_str or "phase_18" in title_lower
 
             # Phase 14 Specific Logic
             if has_phase_14:
@@ -169,6 +170,20 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "neural recovery" in sections_content:
                     self.logger.info("CAIO [RECOVERY]: Neural Recovery protocol mandate detected. Issuing activation directive.")
                     strategic_directives.append("ACTIVATE_NEURAL_RECOVERY")
+
+            # Phase 18 Specific Logic
+            if has_phase_18:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 18 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_18_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_18_PROTOCOLS")
+
+                if "swarm consensus" in sections_str or "swarm_consensus" in sections_str:
+                    self.logger.info("CAIO [SWARM]: Swarm Consensus mandate detected. Issuing activation directive.")
+                    strategic_directives.append("ACTIVATE_SWARM_CONSENSUS")
+
+                if "sovereign trust" in sections_str or "sovereign_trust" in sections_str:
+                    self.logger.info("CAIO [SWARM]: Sovereign Trust mandate detected. Issuing enforcement directive.")
+                    strategic_directives.append("ENFORCE_SOVEREIGN_TRUST")
 
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:

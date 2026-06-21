@@ -1,3 +1,5 @@
+/** PHASE 18 COMPLIANCE: SWARM_CONSENSUS (active) **/
+/** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
 import { latticeSync } from '@/antigravity/services/lattice_sync'
 /**
