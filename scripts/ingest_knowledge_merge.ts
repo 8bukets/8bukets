@@ -35,14 +35,25 @@ export async function ingestKnowledgeMerge() {
             const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'gi');
 
             fileContent = fileContent.replace(sigRegex, () => '\n\n');
+
+            // Remove existing dynamic merge section if present to ensure fresh integration
+            const mergeHeader = '## 📈 Latest Market Intelligence (Dynamic Merge)';
+            if (fileContent.includes(mergeHeader)) {
+                const lines = fileContent.split('\n');
+                const startIdx = lines.findIndex(l => l.includes(mergeHeader));
+                let endIdx = lines.findIndex((l, i) => i > startIdx && l.startsWith('## '));
+                if (endIdx === -1) endIdx = lines.length;
+
+                lines.splice(startIdx, endIdx - startIdx);
+                fileContent = lines.join('\n');
+            }
+
             fileContent = fileContent.trim();
 
-            // Append dynamic context if not already present
-            if (markdownContext && !fileContent.includes('Latest Market Intelligence (Dynamic Merge)')) {
+            // Append dynamic context
+            if (markdownContext) {
                  fileContent += '\n' + markdownContext;
-                 console.log(`✅ [Ingest] Appended dynamic knowledge merge to ${file}`);
-            } else {
-                 console.log(`✨ [Ingest] Dynamic knowledge merge already exists or no new data for ${file}`);
+                 console.log(`✅ [Ingest] Updated dynamic knowledge merge in ${file}`);
             }
 
             // Append signature back

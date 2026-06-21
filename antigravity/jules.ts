@@ -153,7 +153,8 @@ export class Jules {
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
     const urlsToObserve = [
       'https://software-online-review.com',
-      'https://dbcode.io'
+      'https://dbcode.io',
+      'https://markposition.wordpress.com'
     ]
 
     for (const url of urlsToObserve) {
@@ -569,17 +570,18 @@ export class Jules {
     // Markposition Market Intelligence Ingestion
     console.log('🤖 [Jules] Ingesting Markposition Market Intelligence...')
     try {
-      // Robust fallback: try native import (may fail due to tsx/esbuild issues), then fallback to Python
       const { exec } = await import('child_process')
       const { promisify } = await import('util')
       const execAsync = promisify(exec)
 
+      // We prefer Python for Markposition because it has verified dependencies in this environment
       try {
-        const { scrapeMarkpositionKnowledge } = await import('../scripts/ingest_markposition_knowledge')
-        await scrapeMarkpositionKnowledge(2) // Scrape first 2 pages autonomously
-      } catch (importErr) {
-        console.warn('⚠️ [Jules] Native TS Markposition ingestion failed, falling back to Python:', (importErr as any).message)
         await execAsync('python3 scripts/ingest_markposition_knowledge.py')
+        console.log(' ✅ [Jules] Markposition ingestion successful via Python.')
+      } catch (pyErr) {
+        console.warn('⚠️ [Jules] Python Markposition ingestion failed, trying native TS:', (pyErr as any).message)
+        const { scrapeMarkpositionKnowledge } = await import('../scripts/ingest_markposition_knowledge')
+        await scrapeMarkpositionKnowledge(2)
       }
       this.recordTask('Markposition Ingestion: Synchronized latest market intelligence.')
     } catch (err: any) {
