@@ -561,6 +561,11 @@ public async observeKnowledge(url?: string) {
 
   public async executeWorkCycle(parentOrderId?: string) {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+
+    // Phase 22 Sovereignty Pulse
+    const { cloudConvergence } = await import('./services/cloud_convergence')
+    await cloudConvergence.sovereigntyAudit()
+
     await this.gitPull()
     const { explore } = await import('./explorer')
     await explore()
