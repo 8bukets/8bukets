@@ -1,3 +1,5 @@
+/** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
+import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 /**
  * ANTIGRAVITY CONNECT & COLLABORATE
  *
@@ -11,6 +13,7 @@ import { jules } from '@/antigravity/jules';
 import { sandboxCloudSimulation } from '@/antigravity/services/cloud_simulation';
 
 async function main() {
+  'use cache'
   // Agent - Logika ponašanja
 // Agent odlučuje:
 // * što napraviti,

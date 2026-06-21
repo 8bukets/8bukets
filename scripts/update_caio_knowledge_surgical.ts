@@ -9,7 +9,7 @@ const KNOWLEDGE_PATH = path.join(process.cwd(), 'data/knowledge/system_knowledge
 const CAIO_SECTIONS = [
   {
     "header": "Chief AI Officer (CAIO) Role Description (2025/2026 Update)",
-    "content": "A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. As AI adoption accelerates, the CAIO has evolved from a 'nice-to-have' to a critical executive position, with 73% of Fortune 500 companies planning to hire one by the end of 2026. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Artificial Intelligence, Data Science, or an MBA."
+    "content": "A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera. The role bridges the gap between advanced technical execution and bottom-line business outcomes. As AI adoption accelerates, the CAIO has evolved from a 'nice-to-have' to a critical executive position, with 73% of Fortune 500 companies planning to hire one by the end of 2026. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Artificial Intelligence, Data Science, or an MBA."
   },
   {
     "header": "Core Job Description",
@@ -34,6 +34,10 @@ const CAIO_SECTIONS = [
   {
     "header": "CAIO vs. Other C-Suite Tech Roles",
     "content": "- **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.\n- **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.\n- **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done."
+  },
+  {
+    "header": "Phase 16 Advanced Mandates",
+    "content": "As part of Phase 16: Autonomous Super-Intelligence, the CAIO mandates **heartbeat latency** optimization to less than 5ms and the activation of **neural recovery** protocols to ensure cognitive stability across all shards. This includes cross-shard cognition and swarm-based self-replication."
   }
 ]
 
