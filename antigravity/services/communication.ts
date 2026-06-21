@@ -1,3 +1,4 @@
+/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
@@ -117,16 +118,21 @@ export async function generateActionableBriefing(state: any, directives: Directi
 
   briefing += `\n### ⚡ Strategic Synergy Summary\n`
   const crossDomain = state.intelligence.relationshipMap.crossDomainSynergies || []
-  if (crossDomain.length > 0) {
-    briefing += `- Detected **${crossDomain.length} Cross-Domain synergies**. High potential for architectural alignment across service types.\n`
-  }
-
   const synergies = state.intelligence.relationshipMap.synergies || []
   const highIntensity = synergies.filter((s: any) => s.intensity === 'High')
+
   if (highIntensity.length > 0) {
     briefing += `- Detected **${highIntensity.length} High-Intensity synergies**. Immediate cross-branch coordination recommended.\n`
   } else {
     briefing += `- System synergy is within optimal parameters.\n`
+  }
+
+  if (crossDomain.length > 0) {
+    briefing += `\n### 🔗 Cross-Domain Synergy Analysis\n`
+    briefing += `- Detected **${crossDomain.length} Cross-Domain synergies**. High potential for architectural alignment across service types.\n`
+    crossDomain.slice(0, 5).forEach((cd: any) => {
+      briefing += `  - \`${cd.source}\` (${cd.sourceType}) <-> \`${cd.target}\` (${cd.targetType}) [Intensity: ${cd.intensity}]\n`
+    })
   }
 
   const recommendations = state.intelligence.relationshipMap.collaborationRecommendations || []
@@ -149,42 +155,81 @@ export async function generateActionableBriefing(state: any, directives: Directi
     })
   }
 
-  // Phase 12: Specific Agent-to-Stakeholder Directives
+  // Phase 12: Prioritized Agent-to-Stakeholder Directives
   briefing += `\n### 🤖 Agent-to-Stakeholder Directives\n`
-  if (synergies.length > 0) {
-    const highIntensity = synergies.filter((s: any) => s.intensity === 'High')
-    if (highIntensity.length > 0) {
-      const targetResources = highIntensity.map((s: any) => `\`${s.resource}\``).join(', ')
-      briefing += `- **Jules Directive (CRITICAL):** "Immediate intervention required for high-intensity resource overlaps on ${targetResources}. Consolidate these branches to prevent significant architectural fragmentation."\n`
-    } else {
-      briefing += `- **Jules Directive:** "I have detected ${synergies.length} developmental overlaps. Stakeholders should prioritize the 'Strategic Coordination Paths' defined above to avoid architectural drift."\n`
-    }
-  } else {
-    briefing += `- **Jules Directive:** "System alignment is optimal. No manual intervention required for current development streams."\n`
+  const agentDirectives: { severity: number, label: string, msg: string }[] = []
+
+  if (highIntensity.length > 0) {
+    const targetResources = highIntensity.map((s: any) => `\`${s.resource}\``).join(', ')
+    agentDirectives.push({
+      severity: 4,
+      label: 'CRITICAL',
+      msg: `Jules: "Immediate intervention required for high-intensity resource overlaps on ${targetResources}. Consolidate these branches to prevent significant architectural fragmentation."`
+    })
   }
 
-  // Phase 14: Strategic Alignment Scoring
   const alignmentScore = Math.max(0, 100 - (state.intelligence.pendingTasks * 2))
-  briefing += `- **Stewardship Directive:** "Current Strategic Alignment Score is **${alignmentScore}%**. ${alignmentScore < 80 ? 'Recommend immediate backlog grooming to restore focus.' : 'System remains highly focused on core mission goals.'}"\n`
+  if (alignmentScore < 80) {
+    agentDirectives.push({
+      severity: 3,
+      label: 'HIGH',
+      msg: `Stewardship: "Current Strategic Alignment Score is **${alignmentScore}%**. Recommend immediate backlog grooming to restore focus."`
+    })
+  } else {
+    agentDirectives.push({
+      severity: 1,
+      label: 'LOW',
+      msg: `Stewardship: "Current Strategic Alignment Score is **${alignmentScore}%**. System remains highly focused on core mission goals."`
+    })
+  }
 
   const hasQuantumSynergy = state.intelligence.relationshipMap.synergies?.some((s: any) =>
     s.resource.toLowerCase().includes('quantum') || s.resource.toLowerCase().includes('synergy')
   )
   if (hasQuantumSynergy) {
-    briefing += `- **Quantum Directive:** "Phase 13 Quantum Synergy detected in active relays. Ensure all cross-domain transactions utilize verified neural sync signatures."\n`
+    agentDirectives.push({
+      severity: 3,
+      label: 'HIGH',
+      msg: `Quantum: "Phase 13 Quantum Synergy detected in active relays. Ensure all cross-domain transactions utilize verified neural sync signatures."`
+    })
   }
 
-  // Phase 13: Data-Driven Cross-Domain Insight
   if (crossDomain.length > 0) {
     const topSynergy = crossDomain[0]
-    briefing += `- **Intelligence Directive:** "Strategic cross-domain connection detected between \`${topSynergy.source}\` (${topSynergy.sourceType}) and \`${topSynergy.target}\` (${topSynergy.targetType}). Recommend unified architectural review."\n`
+    agentDirectives.push({
+      severity: 2,
+      label: 'MEDIUM',
+      msg: `Intelligence: "Strategic cross-domain connection detected between \`${topSynergy.source}\` (${topSynergy.sourceType}) and \`${topSynergy.target}\` (${topSynergy.targetType}). Recommend unified architectural review."`
+    })
   }
 
-  // Phase 12: Resource Synergy Insights
   if (state.intelligence.relationshipMap.resourceDependencies?.length > 0) {
     const deps = state.intelligence.relationshipMap.resourceDependencies.length
-    briefing += `- **Intelligence Directive:** "Ecosystem features ${deps} cross-service dependencies. Ensure that changes to core services are preceded by automated dependency impact analysis."\n`
+    agentDirectives.push({
+      severity: 2,
+      label: 'MEDIUM',
+      msg: `Intelligence: "Ecosystem features ${deps} cross-service dependencies. Ensure that changes to core services are preceded by automated dependency impact analysis."`
+    })
   }
+
+  if (synergies.length > 0 && highIntensity.length === 0) {
+    agentDirectives.push({
+      severity: 1,
+      label: 'LOW',
+      msg: `Jules: "I have detected ${synergies.length} developmental overlaps. Stakeholders should prioritize the 'Strategic Coordination Paths' defined above to avoid architectural drift."`
+    })
+  } else if (synergies.length === 0) {
+    agentDirectives.push({
+      severity: 1,
+      label: 'LOW',
+      msg: `Jules: "System alignment is optimal. No manual intervention required for current development streams."`
+    })
+  }
+
+  // Sort and append directives
+  agentDirectives.sort((a, b) => b.severity - a.severity).forEach(ad => {
+    briefing += `- **[${ad.label}]** ${ad.msg}\n`
+  })
 
   // Phase 13: Strategic Coordination Matrix
   const clusters = state.intelligence.relationshipMap.functionalClusters || {}

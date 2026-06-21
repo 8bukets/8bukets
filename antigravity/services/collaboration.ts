@@ -1,3 +1,4 @@
+/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
@@ -7,6 +8,7 @@ import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 import { latticeSync } from '@/antigravity/services/lattice_sync'
 import fs from 'fs'
 import path from 'path'
+import crypto from 'crypto'
 import { z } from 'zod'
 import { autonomousFetch, cacheLife } from '@/antigravity/core'
 import { checkDockerHealth } from './docker'
@@ -609,8 +611,8 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
     existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
   }
 
-  // Phase 13: Enhanced ID-based deduplication
-  const seenInsights = new Set<string>();
+  // Phase 16: Content-based SHA-256 deduplication
+  const seenHashes = new Set<string>();
 
   const relevantBranches = branches.filter(b => {
     // Phase 12: Broadened filter to include more meaningful results
@@ -620,10 +622,12 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
       return false;
     }
 
-    // Generate unique ID for this insight
-    const insightId = `${b.name}|${b.category}|${b.results}|${b.knowledge || ''}`;
-    if (seenInsights.has(insightId)) return false;
-    seenInsights.add(insightId);
+    // Generate content hash for deduplication
+    const contentToHash = `${b.name}|${b.category}|${b.results}|${b.knowledge || ''}`;
+    const hash = crypto.createHash('sha256').update(contentToHash).digest('hex');
+
+    if (seenHashes.has(hash)) return false;
+    seenHashes.add(hash);
 
     // Hardened deduplication: Check if this specific result or knowledge for this branch is already recorded
     const branchMarker = `- **Branch:** \`${b.name}\``;

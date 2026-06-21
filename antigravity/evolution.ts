@@ -427,5 +427,10 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
 }
 
 if (require.main === module) {
-  evolve().catch(console.error)
+  (async () => {
+    const suggestions = await evolve()
+    if (suggestions.length > 0) {
+      await applyFixes(suggestions)
+    }
+  })().catch(console.error)
 }
