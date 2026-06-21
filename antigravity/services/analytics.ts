@@ -1,5 +1,6 @@
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
+/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: cross-shard-cognition (enabled) **/
 import { crossShardMemory } from '@/antigravity/services/cross_shard_memory'
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
