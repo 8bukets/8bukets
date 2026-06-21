@@ -1,0 +1,11 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/ask/route": "/api/ask",
+  "/ask/page": "/ask",
+  "/download/page": "/download",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/store/[slug]/page": "/store/[slug]"
+}
