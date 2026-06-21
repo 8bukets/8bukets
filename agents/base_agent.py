@@ -160,6 +160,9 @@ class BaseAgent(ABC):
             return agent_mem.get("episodic", [])
         return default
 
+    def log(self, message: str):
+        self.logger.info(message)
+
     @abstractmethod
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         """

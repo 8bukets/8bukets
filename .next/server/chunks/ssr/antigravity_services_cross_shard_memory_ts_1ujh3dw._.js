@@ -1,0 +1,3 @@
+module.exports=[70518,a=>{"use strict";var b=a.i(4968);class c{static instance;static getInstance(){return c.instance||(c.instance=new c),c.instance}async recall(a,b){return console.log(`🧠 [Cross-Shard] Recalling experiences for agent ${a} on shard ${b}`),[]}async store(a){console.log(`💾 [Cross-Shard] Storing experience for agent ${a.agentId} on shard ${a.shardKey}`),(0,b.logAutonomousAction)(`[COGNITION] Stored experience across shards for ${a.agentId}`,"cognitive")}}let d=c.getInstance();a.s(["crossShardMemory",0,d])}];
+
+//# sourceMappingURL=antigravity_services_cross_shard_memory_ts_1ujh3dw._.js.map

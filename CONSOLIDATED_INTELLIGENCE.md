@@ -1,43 +1,72 @@
-# CONSOLIDATED INTELLIGENCE REPORT
+# CONSOLIDATED INTELLIGENCE REPORT (FALLBACK)
 
-*Generated: 2026-05-20T10:24:41.908Z*
+*Generated: 2026-06-08T11:40:37.240472*
 
 ## 🎯 Mission Statement
-> Autonomous Evolution
+> Maintain system sovereignty and autonomous evolution.
 
 ## 🏥 System Sovereignty
-- **Execution Environment:** Local
+- **Execution Environment:** Local (Fallback Scraper)
 - **Mode:** standard
-- **MongoDB:** error
-- **Supabase:** connected
-- **Jenkins Pipeline:** optimal (HIGHLY_OPTIMIZED)
-- **Docker Status:** recovering (0 containers)
-- **Open PRs/MRs:** 0
-- **Total Branches:** 1886
 
-## 🌿 Branch Intelligence (Recent Activity)
-- **jules-3059408130568618537-dcf320fb**: [ROADMAP:PHASE-12] 🤖 fix: autonomous self-repair of 2698 issues (CRITICAL) (*2026-05-20T10:24:26.000Z*)
-- **remotes/origin/feat/ingest-google-cloud-ai-agents-knowledge-10482240976459445252**: feat: ingest Google Cloud AI Agents knowledge (*2026-05-20T08:56:56.000Z*)
-- **remotes/origin/oracle-google-cloud-agents-15432798509012982749**: fix: modify oracle AI scraper to output flat JSON schema (#1890) (*2026-05-20T08:45:15.000Z*)
-- **remotes/origin/jules-fix-oracle-scraper-schema-6080803583651507344**: fix: modify oracle AI scraper to output flat JSON schema (*2026-05-20T07:59:39.000Z*)
-- **remotes/origin/main**: Merge pull request #1889 from 8bukets/feat/add-first-gitlab-pipeline-16997691605119051204 (*2026-05-20T07:52:01.000Z*)
-- **remotes/origin/feat/add-first-gitlab-pipeline-16997691605119051204**: ci: configure first gitlab ci/cd pipeline (*2026-05-20T07:51:44.000Z*)
-- **remotes/origin/add-chief-ai-officer-agent-9719417263665099785**: feat: orchestrate Chief AI Officer agent in Jules cycle (*2026-05-20T07:50:47.000Z*)
-- **remotes/origin/add-google-ads-knowledge-4095321584408330018**: feat(knowledge): add google ads and ad manager documentation (*2026-05-20T07:48:34.000Z*)
-- **jules/scraper-markposition-17752547678215960211**: feat(knowledge): add google ads and ad manager documentation\n\n- Fix locale fetching issue in ingest script\n- Add google_ads source to knowledge merge agent\n- Regenerate system knowledge artifacts (#1887) (*2026-05-20T07:13:18.000Z*)
-- **remotes/origin/jules/scraper-markposition-17752547678215960211**: feat(knowledge): add google ads and ad manager documentation\n\n- Fix locale fetching issue in ingest script\n- Add google_ads source to knowledge merge agent\n- Regenerate system knowledge artifacts (#1887) (*2026-05-20T07:13:18.000Z*)
+## 🧠 Cognitive State
+- **AI Agents Knowledge Integrated:** Yes (from Google Cloud Discover)
 
-## 🛠️ Cognitive State
-- **Pending Work Orders:** 0
-  - No pending orders. System is optimal.
-- **System Load:** 0.26
-- **Memory RSS:** 280MB
-- **Autonomous Feedback:** 0 errors, 0 warnings detected.
-
-## 🤖 Python Ecosystem Intelligence
-- **Market Data:** 350 entries analyzed.
-- **Autonomous Reports:** 4 generated.
-- **Latest Report:** DAILY_REPORT_2026-05-19.md
+### 🤖 Recent AI Agent Insights
+- [Data Agent Kit](data/knowledge/data_agent_kit.md) - Redefining the data practitioner lifecycle with Data Agent Kit.
+- What is an AI agent?
+- Key features of an AI agent
+- What is the difference between AI agents, AI assistants, and bots?
+- Key differences
+- How do AI agents work?
+- [Stripe Link CLI](data/knowledge/stripe_link_cli.md) - Secure, one-time-use payment credentials from a Link wallet.
 
 ## 👥 Stakeholders
+- **Chief AI Officer**: caio@antigravity.internal
+- **Technical Lead**: jules@antigravity.internal
 
+## 🚀 MacBook Cloud Simulation & Online Presence Intelligence
+- **Ingested on:** 2026-06-10T02:52:06.827Z
+- **Source:** Local Environment
+- **Summary:** The system is fully capable of autonomous cloud execution using MACBOOK_CLOUD_SIMULATION=true, integrating with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab to ensure a continuous online presence and evolutionary coding capabilities.
+
+
+## Gemini CLI Subagents Docs
+URL: gemini_cli_subagents_docs.md
+
+### Subagents
+Subagents are specialized agents that operate within your main Gemini CLI session. They are designed to handle specific, complex tasks—like deep codebase analysis, documentation lookup, or domain-specific reasoning—without cluttering the main agent’s context or toolset.
+
+
+## Autonomous Observation
+- **Date**: 2026-06-10T16:31:19.787Z
+- **Target**: https://markposition.wordpress.com
+- **Title**: (position) mRNA
+- **Context**: Ingested and observed external market or technical intelligence from https://markposition.wordpress.com.
+
+Summary: markposition.wordpress.com is a blog by Filip Keser that provides information and resources on various topics such as Google Ads, marketing, digital advertising platforms, privacy, and online business. It includes posts about different tools, platforms, and services like Google Ad Manager, Amazon Advertising, LinkedIn Marketing Solutions, Facebook for Business, and programmatic advertising technology.
+
+## 📈 Latest Market Intelligence (Dynamic Merge)
+
+### advertising.amazon
+- **Source**: advertising.amazon.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2022/10/05/advertising-amazon/)
+
+### Drive Advertising Revenue with Google Ad Manager : Google
+- **Source**: skillshop.exceedlms.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2022/09/26/drive-advertising-revenue-with-google-ad-manager-google-5/)
+
+### https://marketingplatform.google.com/about/search-ads-360/
+- **Source**: Markposition
+- **Link**: [Post Link](https://markposition.wordpress.com/2022/03/10/https-marketingplatform-google-com-about-search-ads-360-2/)
+
+### Analytics Academy
+- **Source**: analytics.google.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2022/09/20/analytics-academy/)
+
+### Adssettings google
+- **Source**: adssettings.google.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2022/09/20/adssettings-google/)
+
+---
+All the best - https://markposition.wordpress.com

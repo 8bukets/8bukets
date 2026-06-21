@@ -1,5 +1,7 @@
 # Markposition Scraper & Analytics
 
+Maintained by Filip Keser (ORCID: [https://orcid.org/0000-0003-2645-2585](https://orcid.org/0000-0003-2645-2585))
+
 A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.
 
 ## Supabase Configuration
@@ -106,6 +108,12 @@ python3 analytics.py
 You can manually pull or upload core repository folders (`antigravity/` and `.github/`) to a folder named `8bukets` in your iCloud Drive. This is useful for maintaining the system across devices like an iPhone.
 
 Make sure `APPLE_ID` and `APPLE_PASSWORD` (use your primary Apple ID password) are set in your `.env` file.
+
+**Troubleshooting NSFileProviderErrorDomain error -5009:**
+If you encounter the "NSFileProviderErrorDomain error -5009" (or "Postupak se ne može dovršiti") in macOS Finder, it means the iCloud background sync services have become stuck. You can automatically restart these services and resolve the error by running:
+```bash
+npm run fix:icloud
+```
 
 **To upload files to iCloud:**
 ```bash

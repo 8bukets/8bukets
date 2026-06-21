@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "headers": {
+    "link": "</_next/static/media/797e433ab948586e-s.p.0r6juujl39pe6.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/page,_N_T_/,_N_T_/index"
+  },
+  "postponed": "2070:[1,{\"nextSegmentId\":2,\"rootFormatContext\":{\"insertionMode\":0,\"selectedValue\":null,\"tagScope\":0,\"viewTransition\":null},\"progressiveChunkSize\":12800,\"resumableState\":{\"idPrefix\":\"\",\"nextFormID\":0,\"streamingFormat\":0,\"instructions\":96,\"hasBody\":true,\"hasHtml\":true,\"unknownResources\":{\"font\":{\"/_next/static/media/797e433ab948586e-s.p.0r6juujl39pe6.woff2\":[],\"/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2\":[]}},\"dnsResources\":{},\"connectResources\":{\"default\":{},\"anonymous\":{},\"credentials\":{}},\"imageResources\":{},\"styleResources\":{\"/_next/static/chunks/3ht8w4t9_6_1l.css\":null},\"scriptResources\":{\"/_next/static/chunks/0rb62bq_-1ywb.js\":null,\"/_next/static/chunks/0r7-qojel-owb.js\":null,\"/_next/static/chunks/0wpwz7m45uwdp.js\":null,\"/_next/static/chunks/2rzd04nw2itco.js\":null,\"/_next/static/chunks/turbopack-202vury7ka-sk.js\":null,\"/_next/static/chunks/3r1rprffbc666.js\":null,\"/_next/static/chunks/1-thsxt_881k1.js\":null,\"/_next/static/chunks/3t2otdhah958b.js\":null},\"moduleUnknownResources\":{},\"moduleScriptResources\":{\"/_next/static/chunks/0rb62bq_-1ywb.js\":null}},\"replayNodes\":[[\"iN\",0,[[\"Context\",0,[[\"Context\",0,[[\"ServerInsertedHTMLProvider\",0,[[\"Context\",0,[[\"aE\",0,[[\"at\",0,[[\"ae\",0,[[\"n7\",0,[[\"aw\",0,[[\"Fragment\",0,[[\"Context\",2,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"at\",0,[[\"ae\",0,[[\"n7\",0,[[\"nD\",0,[[\"nj\",0,[[\"__next_root_layout_boundary__\",1,[[\"Fragment\",\"c\",[[\"html\",1,[[\"body\",0,[[\"Suspense\",0,[[null,0,[[\"Activity\",\"__PAGE__\",[[\"Context\",\"__PAGE__\",[[null,2,[[\"Fragment\",0,[[\"L\",0,[[\"K\",0,[[\"n\",0,[[\"Fragment\",0,[[\"N\",0,[[\"Fragment\",0,[[null,0,[[\"h\",0,[[\"x\",0,[[\"w\",0,[[\"M\",0,[[\"Context\",0,[[\"Fragment\",\"c\",[],{\"0\":1}]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null,[\"Suspense Fallback\",0,[],null],0]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],\"replaySlots\":null}]null",
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 160,
+        "slots": null
+      }
+    }
+  }
+}

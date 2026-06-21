@@ -1,0 +1,3 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["chunks/_0o_tvsk._.js",10977,e=>{"use strict";async function t(e,t){console.error(`[Request Error] ${t.method} ${t.url}:`,e)}e.s(["onRequestError",0,t])},59858,(e,t,r)=>{self._ENTRIES||={};let n=Promise.resolve().then(()=>e.i(10977));n.catch(()=>{}),self._ENTRIES.middleware_instrumentation=new Proxy(n,{get(e,t){if("then"===t)return(t,r)=>e.then(t,r);let r=(...r)=>e.then(e=>(0,e[t])(...r));return r.then=(r,n)=>e.then(e=>e[t]).then(r,n),r}})}]);
+
+//# sourceMappingURL=_0o_tvsk._.js.map

@@ -63,6 +63,13 @@ export class AdaptiveRecoveryService {
        }
     }
 
+    if (errorMsg.includes('NSFileProviderErrorDomain') || errorMsg.includes('-5009') || errorMsg.includes('iCloud') || errorMsg.includes('fileproviderd')) {
+       return {
+         type: 'ICLOUD_SYNC_FIX',
+         plan: 'iCloud File Provider sync issue detected. Restarting background daemons to restore fluid workflow.'
+       }
+    }
+
     // Generic "creative" fallback
     return {
       type: 'HEURISTIC_BYPASS',
@@ -86,6 +93,14 @@ export class AdaptiveRecoveryService {
       if (global.gc) {
           global.gc();
       }
+    } else if (solution.type === 'ICLOUD_SYNC_FIX') {
+      const { exec } = await import('child_process');
+      const { promisify } = await import('util');
+      const execAsync = promisify(exec);
+      try {
+        await execAsync('bash scripts/fix_icloud_sync.sh');
+        await new Promise(resolve => setTimeout(resolve, 3000)); // Give daemons time to restart
+      } catch (e) {}
     } else {
        // HEURISTIC_BYPASS - we just log and allow the system to proceed without the failing component
        await new Promise(resolve => setTimeout(resolve, 1000));

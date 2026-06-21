@@ -79,4 +79,4 @@ class AgentOrchestrator:
                 logger.info(f"Review from {agent.name}: {review_findings}")
                 peer_review_log.extend([f"[{agent.name}] {r}" for r in review_findings])
 
-        await self.blackboard.update("Orchestrator", {"peer_review_log": peer_review_log})
+        await self.blackboard.async_update("Orchestrator", {"peer_review_log": peer_review_log})

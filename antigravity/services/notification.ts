@@ -34,6 +34,14 @@ export async function sendNotification(payload: Omit<Notification, 'id' | 'times
 }
 
 export async function getNotifications(): Promise<Notification[]> {
-  // Use 'inventory' profile for frequent updates
   return notifications
+}
+
+export async function dispatchExecutiveBriefing(title: string, content: string) {
+  console.log(`[EXECUTIVE BRIEFING] ${title}\n${content}`)
+  return await sendNotification({
+    type: 'evolution',
+    message: title,
+    severity: 'info'
+  })
 }

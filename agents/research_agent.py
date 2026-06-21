@@ -1,7 +1,6 @@
-from .base_agent import BaseAgent, Blackboard
-from agents.telemetry import telemetry_manager
-import asyncio
-import aiohttp
+from agents.base_agent import BaseAgent
+from scraper import WordpressScraperAsync, DEFAULT_BASE_URL
+import os
 
 class ResearchAgent(BaseAgent):
     """
@@ -9,81 +8,51 @@ class ResearchAgent(BaseAgent):
     of external domains identified during analysis.
     """
     def __init__(self):
-        super().__init__("ResearchAgent", dependencies=["analysis_stats"], provides=["research_data"])
+        super().__init__("Research")
 
-    async def run(self, data: list, blackboard: Blackboard) -> dict:
-        self.logger.info("Running Real-World Autonomous Research & Domain Investigation...")
+    async def run(self, context: dict):
+        self.log("Starting research...")
 
-        analysis = blackboard.get("analysis_stats", {})
-        top_domains = list(analysis.get("top_domains", {}).keys())
+        url = context.get("url", DEFAULT_BASE_URL)
+        limit = context.get("limit", 5) # Default limit for testing
+        json_file = "links.json"
+        csv_file = "links.csv"
+        txt_file = "unique_links.txt"
 
-        research_results = {
-            "market_trends": [],
-            "competitor_analysis": {},
-            "external_investigations": [],
-            "synchronization_status": "REAL_TIME_SYNC"
+        scraper = WordpressScraperAsync(
+            base_url=url,
+            output_json=json_file,
+            output_csv=csv_file,
+            output_txt=txt_file,
+            max_pages=limit,
+            concurrency=5
+        )
+
+        # Apply compliance rules if available
+        compliance = context.get("compliance", {})
+        disallowed = compliance.get("disallowed_paths", [])
+        if disallowed:
+            self.log(f"Applying {len(disallowed)} disallowed paths from compliance check.")
+            scraper.set_disallowed_paths(disallowed)
+
+        # Run the scrape
+        await scraper.scrape()
+
+        # Update context with file paths
+        context["data_files"] = {
+            "json": json_file,
+            "csv": csv_file,
+            "txt": txt_file
         }
 
-        async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=10)) as session:
-            tasks = [self._investigate_domain(session, domain) for domain in top_domains]
-            investigations = await asyncio.gather(*tasks)
-
-        for investigation in investigations:
-            domain = investigation["domain"]
-            status = investigation["status"]
-
-            research_results["external_investigations"].append(investigation)
-
-            relevance = "High" if "google" in domain or "amazon" in domain else "Medium"
-
-            detail = {
-                "domain": domain,
-                "relevance": relevance,
-                "status": status,
-                "findings": investigation["findings"]
-            }
-            research_results["competitor_analysis"][domain] = detail
-
-            if relevance == "High" and status == "ACCESSIBLE":
-                research_results["market_trends"].append(f"Dominance of {domain} in current dataset.")
-
-        self.logger.info(f"Research and World Investigation completed for {len(top_domains)} domains.")
-        return {"research_data": research_results}
-
-    async def _investigate_domain(self, session: aiohttp.ClientSession, domain: str) -> dict:
-        """Perform a real asynchronous HEAD request to check domain accessibility."""
-        url = f"https://{domain}"
-        self.logger.info(f"Investigating {url}...")
-
+        # Load raw data into context for other agents
         try:
-            async with session.head(url, allow_redirects=True) as response:
-                status = "ACCESSIBLE" if response.status < 400 else "RESTRICTED"
-                findings = f"Structural scan of {domain} completed with status {response.status}."
-
-                if "google" in domain:
-                    telemetry_manager.record_event(self.name, "EXTERNAL_INVESTIGATION", {
-                        "domain": domain,
-                        "insight": f"Confirmed core Google node accessibility (HTTP {response.status}).",
-                        "status": status
-                    }, market_ref="GOOGLE_WORLD")
-
-                return {
-                    "domain": domain,
-                    "status": status,
-                    "http_code": response.status,
-                    "findings": findings
-                }
+            import json
+            with open(json_file, 'r', encoding='utf-8') as f:
+                context["raw_data"] = json.load(f)
+            self.log(f"Scraped {len(context['raw_data'])} items.")
         except Exception as e:
-            self.logger.warning(f"Failed to reach {url}: {e}")
-            return {
-                "domain": domain,
-                "status": "UNREACHABLE",
-                "error": str(e),
-                "findings": f"Domain {domain} was unreachable during investigation."
-            }
+            self.log(f"Failed to load scraped data: {e}")
+            context["raw_data"] = []
 
-    async def review(self, blackboard: Blackboard):
-        intelligence = blackboard.get("intelligence_insights", [])
-        if not intelligence:
-            return ["Intelligence insights are missing for peer review."]
-        return ["Research data and Google World investigations are fully synchronized."]
+        self.log("Research complete.")

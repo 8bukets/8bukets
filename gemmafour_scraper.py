@@ -13,7 +13,7 @@ def scrape_gemmafour_docs():
         print(f"Error fetching URL: {e}")
         return
 
-    soup = BeautifulSoup(resp.content, "html.parser")
+    soup = BeautifulSoup(resp.content, "lxml")
 
     # The main container for the content is typically the main article or div.
     # In this case, we can iterate over h2 tags directly.
@@ -82,6 +82,7 @@ def scrape_gemmafour_docs():
         for section_id, section_data in data.items():
             f.write(f"## {section_data['title']}\n\n")
             f.write(f"{section_data['content']}\n\n")
+        f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
     print(f"Saved Markdown data to {md_path}")
 
 if __name__ == "__main__":

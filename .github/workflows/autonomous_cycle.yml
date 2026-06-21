@@ -23,7 +23,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 22
         cache: 'npm'
 
     - name: Install Dependencies
@@ -54,7 +54,8 @@ jobs:
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
         NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
         NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        AUTONOMOUS_MODE: cloud
         MACBOOK_CLOUD_SIMULATION: true
       run: |
-        # Executing full autonomous system including scrapers (e.g. GoogleEdgeAgent)
-        python3 run_system.py
+        # Executing full autonomous system via TypeScript unified cycle
+        npm run daily

@@ -4,7 +4,7 @@ import { evolve } from './evolution'
 import { jules } from './jules'
 import { synthesize } from './synthesis'
 import chokidar from 'chokidar'
-import path from 'path'
+import * as path from 'path'
 
 /**
  * ANTIGRAVITY AUTONOMOUS EXPLORER

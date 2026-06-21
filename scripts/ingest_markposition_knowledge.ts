@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import * as cheerio from 'cheerio';
 
@@ -15,19 +16,41 @@ interface MarketEntry {
     post_url: string;
 }
 
-async function scrapeMarkpositionKnowledge() {
-    console.log(`🤖 [Ingest] Fetching market intelligence from ${BASE_URL}...`);
+export async function scrapeMarkpositionKnowledge(maxPages: number = 3) {
+    console.log(`🤖 [Ingest] Fetching market intelligence from ${BASE_URL} (max ${maxPages} pages)...`);
     try {
-        const response = await fetch(BASE_URL, { signal: AbortSignal.timeout(20000) });
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const html = await response.text();
-        const $ = cheerio.load(html);
+        const allEntries: MarketEntry[] = [];
 
-        const entries: MarketEntry[] = [];
+        for (let page = 1; page <= maxPages; page++) {
+            const url = page === 1 ? BASE_URL : `${BASE_URL}page/${page}/`;
+            console.log(` - Scraping page ${page}: ${url}`);
 
-        $('article.post').each((_, el) => {
+            let response;
+            try {
+                response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+            } catch (fetchError: any) {
+                if (fetchError.name === 'AbortError') {
+                    console.error(` ❌ [Ingest] Timeout fetching page ${page}: ${url}`);
+                } else {
+                    console.error(` ❌ [Ingest] Network error fetching page ${page}: ${fetchError.message}`);
+                }
+                break;
+            }
+
+            if (!response.ok) {
+                if (response.status === 404) {
+                    console.log(` ✨ [Ingest] Page ${page} not found (404). Ending pagination.`);
+                    break;
+                }
+                console.error(` ❌ [Ingest] Failed to fetch page ${page}: HTTP ${response.status} ${response.statusText}`);
+                break;
+            }
+            const html = await response.text();
+            const $ = cheerio.load(html);
+
+            const pageEntries: MarketEntry[] = [];
+
+            $('article.post').each((_, el) => {
             const $el = $(el);
             const titleHeader = $el.find('h1.entry-title');
             const titleTag = titleHeader.find('a');
@@ -70,24 +93,36 @@ async function scrapeMarkpositionKnowledge() {
                 } catch (e) {}
             }
 
-            entries.push({
-                title,
-                date,
-                datetime,
-                author,
-                categories,
-                external_link,
-                domain,
-                post_url
+                pageEntries.push({
+                    title,
+                    date,
+                    datetime,
+                    author,
+                    categories,
+                    external_link,
+                    domain,
+                    post_url
+                });
             });
-        });
 
-        console.log(`✅ [Ingest] Parsed ${entries.length} entries.`);
+            if (pageEntries.length === 0) {
+                console.log(` ✨ [Ingest] No entries found on page ${page}. Ending pagination.`);
+                break;
+            }
+
+            allEntries.push(...pageEntries);
+            console.log(` ✅ [Ingest] Parsed ${pageEntries.length} entries from page ${page}.`);
+
+            // Avoid rate limiting
+            if (page < maxPages) await new Promise(resolve => setTimeout(resolve, 500));
+        }
+
+        console.log(`✅ [Ingest] Total entries parsed: ${allEntries.length}`);
 
         // Update system_knowledge.json
         const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json');
-        if (fs.existsSync(knowledgePath)) {
-            const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'));
+        if (await fsPromises.access(knowledgePath).then(() => true).catch(() => false)) {
+            const knowledge = JSON.parse(await fsPromises.readFile(knowledgePath, 'utf8'));
 
             if (!knowledge.market_data) {
                 knowledge.market_data = { total_entries: 0, recent_entries: [], all_entries: [] };
@@ -95,9 +130,17 @@ async function scrapeMarkpositionKnowledge() {
 
             // Merge logic: avoid duplicates based on post_url
             const existingUrls = new Set(knowledge.market_data.all_entries.map((e: any) => e.post_url));
-            const newEntries = entries.filter(e => !existingUrls.has(e.post_url));
+            const newEntries = allEntries.filter(e => !existingUrls.has(e.post_url));
 
             if (newEntries.length > 0) {
+                // Flattening check during ingest
+                if (knowledge.sections && knowledge.sections.market_data) {
+                    console.log("📦 [Ingest] Migrating nested market_data to flat structure...");
+                    knowledge.market_data = knowledge.sections.market_data;
+                    delete knowledge.sections.market_data;
+                    if (Object.keys(knowledge.sections).length === 0) delete knowledge.sections;
+                }
+
                 knowledge.market_data.all_entries = [...newEntries, ...knowledge.market_data.all_entries];
                 knowledge.market_data.recent_entries = knowledge.market_data.all_entries.slice(0, 20);
                 knowledge.market_data.total_entries = knowledge.market_data.all_entries.length;
@@ -107,7 +150,7 @@ async function scrapeMarkpositionKnowledge() {
                 }
                 knowledge.metadata.generated_at = new Date().toISOString();
 
-                fs.writeFileSync(knowledgePath, JSON.stringify(knowledge, null, 4), 'utf8');
+                await fsPromises.writeFile(knowledgePath, JSON.stringify(knowledge, null, 4), 'utf8');
                 console.log(`✅ [Ingest] Merged ${newEntries.length} new entries into system_knowledge.json.`);
             } else {
                 console.log(`✨ [Ingest] No new entries found.`);
@@ -119,7 +162,7 @@ async function scrapeMarkpositionKnowledge() {
         let mdContent = `# 📈 Markposition Intelligence Report\n\nGenerated on: ${new Date().toISOString()}\n\n`;
         mdContent += `## Recent Market Intelligence\n\n`;
 
-        entries.slice(0, 10).forEach(e => {
+        allEntries.slice(0, 20).forEach(e => {
             mdContent += `### ${e.title}\n`;
             mdContent += `- **Date**: ${e.date}\n`;
             mdContent += `- **Domain**: ${e.domain || 'N/A'}\n`;
@@ -127,7 +170,7 @@ async function scrapeMarkpositionKnowledge() {
         });
 
         mdContent += `\n---\nAll the best - https://markposition.wordpress.com\n`;
-        fs.writeFileSync(reportPath, mdContent, 'utf8');
+        await fsPromises.writeFile(reportPath, mdContent, 'utf8');
         console.log(`✅ [Ingest] Generated report at ${reportPath}`);
 
     } catch (error) {
@@ -135,4 +178,6 @@ async function scrapeMarkpositionKnowledge() {
     }
 }
 
-scrapeMarkpositionKnowledge();
+if (require.main === module) {
+    scrapeMarkpositionKnowledge();
+}

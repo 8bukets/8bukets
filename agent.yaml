@@ -1,6 +1,14 @@
+models:
+  optimized-oracle:
+    provider: anthropic
+    model: claude-3-5-sonnet-20241022
+    provider_opts:
+      speculative_decoding: true
+      architecture: SSM/Mamba-Accelerated
+
 agents:
   root:
-    model: anthropic/claude-sonnet-4-5
+    model: optimized-oracle
     instruction: You are a helpful assistant
     toolsets:
       - type: a2a

@@ -1,0 +1,3 @@
+module.exports=[14737,a=>{"use strict";var b=a.i(4968),c=a.i(18558);a.s(["autonomousFetch",()=>b.autonomousFetch,"cacheLife",()=>c.cacheLife,"cacheTag",()=>c.cacheTag,"getMongoClient",()=>b.getMongoClient,"getPredictiveProfile",()=>b.getPredictiveProfile,"getRuntimeEnv",()=>b.getRuntimeEnv,"getSystemInsights",()=>b.getSystemInsights,"healthCheck",()=>b.healthCheck,"logAutonomousAction",()=>b.logAutonomousAction,"predictiveFetch",()=>b.predictiveFetch,"recordUpdate",()=>b.recordUpdate,"resolve",()=>b.resolve,"revalidateTag",()=>c.revalidateTag,"supabase",()=>b.supabase,"trackROI",()=>b.trackROI,"updateTag",()=>c.updateTag])}];
+
+//# sourceMappingURL=antigravity_core_ts_03ohuco._.js.map

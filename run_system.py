@@ -88,6 +88,9 @@ async def run_scraper():
         logger.info("Running Google Research Scraper...")
         subprocess.run(["python3", "google_research_scraper.py"], check=True)
 
+        logger.info("Running Markposition Knowledge Scraper...")
+        subprocess.run(["python3", "scripts/ingest_markposition_knowledge.py"], check=True)
+
         logger.info("Running AI Agents Knowledge Scraper...")
         # Prefer the TypeScript version if it exists, otherwise fallback to Python
         if os.path.exists("scripts/ingest_ai_agents_knowledge.ts"):
@@ -117,6 +120,17 @@ async def run_scraper():
 
         # Stitch Documentation Scraper
         await scrape_stitch_docs()
+
+        # Knowledge Merge (Dynamic Report Updating)
+        logger.info("Running Knowledge Merge...")
+        if os.path.exists("scripts/ingest_knowledge_merge.ts"):
+            try:
+                proc_merge = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_knowledge_merge.ts")
+                await proc_merge.wait()
+            except Exception:
+                subprocess.run(["node", "scripts/ingest_knowledge_merge.js"], check=True)
+        else:
+            subprocess.run(["node", "scripts/ingest_knowledge_merge.js"], check=True)
 
         logger.info("Scrapers finished successfully.")
         return True
@@ -240,7 +254,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         WorkOrderAgent(),
 
         # Intelligence & Research
-        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), KnowledgeAgent(),
+        ThinkingAgent(), AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), KnowledgeAgent(),
         KnowledgeMergeAgent(), GoogleEdgeAgent(), GoogleModelsResearchAgent(),
         GoogleInnovationAIAgent(),
         ReActAgent(), RagAgent(), AutonomousIntelligenceAgent(),

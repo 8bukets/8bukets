@@ -1,18 +1,19 @@
 import * as fs from 'fs';
+import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import * as cheerio from 'cheerio';
 
 const URLS = [
     "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
-    "https://business.google.com/uk/ad-tools/bidding/?hl=en",
-    "https://business.google.com/uk/resources/?hl=en",
-    "https://developers.google.com/ad-manager?hl=en",
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
-    "https://developers.google.com/ad-manager/api/start?hl=en",
-    "https://admanager.google.com/home/resources/?hl=en",
-    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en"
+    "https://business.google.com/uk/ad-tools/bidding/",
+    "https://business.google.com/uk/resources/",
+    "https://developers.google.com/ad-manager",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+    "https://developers.google.com/ad-manager/api/start",
+    "https://admanager.google.com/home/resources/",
+    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
 ];
 
 interface Section {
@@ -32,11 +33,15 @@ async function scrapeGoogleAdsDocs() {
     let mdContent = "# Google Ads & Ad Manager Documentation\n\n";
 
     for (const url of URLS) {
-        console.log(`Fetching Google Ads docs from ${url}...`);
+        const parsedUrl = new URL(url);
+        parsedUrl.searchParams.set('hl', 'en');
+        const fetchUrl = parsedUrl.toString();
+
+        console.log(`Fetching Google Ads docs from ${fetchUrl}...`);
         try {
-            const response = await fetch(url, { signal: AbortSignal.timeout(10000) });
+            const response = await fetch(fetchUrl, { signal: AbortSignal.timeout(10000) });
             if (!response.ok) {
-                console.error(`Error fetching ${url}: HTTP ${response.status}`);
+                console.error(`Error fetching ${fetchUrl}: HTTP ${response.status}`);
                 continue;
             }
 
@@ -74,7 +79,7 @@ async function scrapeGoogleAdsDocs() {
 
             elements.each((_, elem) => {
                 const $elem = $(elem);
-                const tagName = elem.name.toLowerCase();
+                const tagName = (elem as any).name?.toLowerCase() || (elem as any).tagName?.toLowerCase();
 
                 if (tagName === 'a') {
                     const href = $elem.attr('href');
@@ -98,7 +103,8 @@ async function scrapeGoogleAdsDocs() {
                         heading: text,
                         content: []
                     };
-                    const mdPrefix = '#'.repeat(parseInt(tagName[1]));
+                    const level = parseInt(tagName.substring(1)) || 2;
+                    const mdPrefix = '#'.repeat(level);
                     mdContent += `${mdPrefix} ${text}\n\n`;
                 } else if (tagName === 'p') {
                     mdContent += `${text}\n\n`;
@@ -117,17 +123,50 @@ async function scrapeGoogleAdsDocs() {
             mdContent += "\n---\n\n";
 
         } catch (error) {
-             console.error(`Error fetching ${url}:`, error);
+             console.error(`Error fetching ${fetchUrl}:`, error);
         }
     }
 
-    const jsonPath = "google_ads_docs.json";
-    fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf-8');
+    const jsonPath = "data/knowledge/google_ads_docs.json";
+    const dirPath = path.dirname(jsonPath);
+    if (!await fsPromises.access(dirPath).then(() => true).catch(() => false)) {
+        await fsPromises.mkdir(dirPath, { recursive: true });
+    }
+    await fsPromises.writeFile(jsonPath, JSON.stringify(data, null, 4), 'utf-8');
     console.log(`Saved Google Ads docs JSON to ${jsonPath}`);
 
-    const mdPath = "google_ads_docs.md";
-    fs.writeFileSync(mdPath, mdContent, 'utf-8');
+    const mdPath = "data/knowledge/google_ads_docs.md";
+    await fsPromises.writeFile(mdPath, mdContent, 'utf-8');
     console.log(`Saved Google Ads docs Markdown to ${mdPath}`);
+
+    // Update system_knowledge.json
+    const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json');
+    if (await fsPromises.access(knowledgePath).then(() => true).catch(() => false)) {
+        try {
+            const knowledge = JSON.parse(await fsPromises.readFile(knowledgePath, 'utf8'));
+
+            // Flattening check during ingest
+            if (knowledge.sections && knowledge.sections.google_ads) {
+                console.log("📦 [Ingest] Migrating nested google_ads to flat structure...");
+                knowledge.google_ads = knowledge.sections.google_ads;
+                delete knowledge.sections.google_ads;
+                if (Object.keys(knowledge.sections).length === 0) delete knowledge.sections;
+            }
+
+            knowledge.google_ads = data;
+
+            if (!knowledge.metadata) knowledge.metadata = { sources_processed: [] };
+            if (!knowledge.metadata.sources_processed.includes("google_ads_docs.json")) {
+                knowledge.metadata.sources_processed.push("google_ads_docs.json");
+            }
+            knowledge.metadata.generated_at = new Date().toISOString();
+
+            await fsPromises.writeFile(knowledgePath, JSON.stringify(knowledge, null, 4), 'utf8');
+            console.log(`✅ [Ingest] Merged Google Ads docs into system_knowledge.json.`);
+        } catch (e) {
+            console.error('❌ [Ingest] Failed to update system_knowledge.json:', e);
+        }
+    }
 }
 
 scrapeGoogleAdsDocs().catch(console.error);
