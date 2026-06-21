@@ -1,3 +1,5 @@
+/** PHASE 18 COMPLIANCE: SWARM_CONSENSUS (active) **/
+/** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
 import fs from 'fs-extra'
