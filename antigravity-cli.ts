@@ -53,9 +53,9 @@ program
 
 program
   .command('deploy-react-agents-improve')
-  .description('Authorized syntactic adjustment to trigger clean commit')
+  .description('make processing easyer and smarter and cooperate with github gitlab gitkraken and docker cloud to make decisions and workflow on the air fluent and always available ')
   .action(async () => {
-    console.log('🚀 Authorized syntactic adjustment to trigger clean commit...');
+    console.log('🚀 make processing easyer and smarter and cooperate with github gitlab gitkraken and docker cloud to make decisions and workflow on the air fluent and always available ...');
     const { reactService } = require('./antigravity/services/react');
     const tools = {
       verifyDeployLogic: () => 'Deploy logic verified successfully.',
