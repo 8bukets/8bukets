@@ -6,41 +6,6 @@ This document merges the key concepts currently spread across Antigravity, Proje
 ## executive Summary
 Overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com form one evolving asset.
 
-## 📈 Latest Market Intelligence (Dynamic Merge)
-
-### Data Agent Kit
-- **Source**: data_agent_kit.md
-- **Link**: [data/knowledge/data_agent_kit.md](data/knowledge/data_agent_kit.md)
-
-### Stripe Link CLI for AI Agents
-- **Source**: link.com/agents
-- **Link**: [data/knowledge/stripe_link_cli.md](data/knowledge/stripe_link_cli.md)
-
-### Facebook Ads vs. Google Ads: Which Is Better? | WordStream
-- **Source**: wordstream.com
-- **Link**: [Post Link](https://markposition.wordpress.com/2021/04/10/facebook-ads-vs-google-ads-which-is-better-wordstream/)
-
-### WordStream: Online Advertising Made Easy
-- **Source**: wordstream.com
-- **Link**: [Post Link](https://markposition.wordpress.com/2021/04/10/wordstream-online-advertising-made-easy-2/)
-
-### YouTube Select: Make the best of YouTube yours – YouTube Advertising
-- **Source**: youtube.com
-- **Link**: [Post Link](https://markposition.wordpress.com/2021/04/07/youtube-select-make-the-best-of-youtube-yours-youtube-advertising/)
-
-### Google Finance – cijene s burzi, kotacije u stvarnom vremenu i poslovne vijesti
-- **Source**: google.com
-- **Link**: [Post Link](https://markposition.wordpress.com/2021/04/05/google-finance-cijene-s-burzi-kotacije-u-stvarnom-vremenu-i-poslovne-vijesti/)
-
-### Google – About Google, Our Culture & Company News
-- **Source**: about.google
-- **Link**: [Post Link](https://markposition.wordpress.com/2021/04/05/google-about-google-our-culture-company-news/)
-
-### DBCode - The database IDE for VS Code
-- **Source**: https://dbcode.io/
-- **Link**: [data/knowledge/dbcode_knowledge.md](data/knowledge/dbcode_knowledge.md)
-
-
 ## Autonomous Observation
 - **Date**: 2026-06-20T15:10:00.000Z
 - **Target**: https://dbcode.io/
@@ -277,5 +242,43 @@ Subagents are specialized agents that operate within your main Gemini CLI sessio
 - **Integration**: Merging external knowledge to evolve the Antigravity engine with zero hallucinations.
 - **Feature**: Grounding system evolution in local intelligence and trusted sources.
 
+## 📈 Latest Market Intelligence (Dynamic Merge)
+
+### 🌐 advertising.amazon.com
+- [advertising.amazon](https://markposition.wordpress.com/2022/10/05/advertising-amazon/)
+
+### 🌐 skillshop.exceedlms.com
+- [Drive Advertising Revenue with Google Ad Manager : Google](https://markposition.wordpress.com/2022/09/26/drive-advertising-revenue-with-google-ad-manager-google-5/)
+
+### 🌐 General Intelligence
+- [https://marketingplatform.google.com/about/search-ads-360/](https://markposition.wordpress.com/2022/03/10/https-marketingplatform-google-com-about-search-ads-360-2/)
+
+### 🌐 analytics.google.com
+- [Analytics Academy](https://markposition.wordpress.com/2022/09/20/analytics-academy/)
+
+### 🌐 adssettings.google.com
+- [Adssettings google](https://markposition.wordpress.com/2022/09/20/adssettings-google/)
+
+### 🌐 myaccount.google.com
+- [Data google](https://markposition.wordpress.com/2022/09/20/data-google/)
+
+### 🌐 privacysandbox.com
+- [The Privacy Sandbox: Technology for a More Private Web.](https://markposition.wordpress.com/2022/09/20/the-privacy-sandbox-technology-for-a-more-private-web/)
+
+### 🌐 crownpeak.com
+- [Digital Experience Platform & Enterprise CMS | Crownpeak](https://markposition.wordpress.com/2022/09/16/digital-experience-platform-enterprise-cms-crownpeak-2/)
+
+### 🌐 support.google.com
+- [About Performance Max campaigns – Google Ads](https://markposition.wordpress.com/2022/09/01/about-performance-max-campaigns-google-ads/)
+- [About Smart Bidding – Google Ads](https://markposition.wordpress.com/2022/09/01/about-smart-bidding-google-ads/)
+
+
+
 ---
 All the best - https://markposition.wordpress.com
+
+---
+All the best - https://software-online-review.com/
+
+---
+All the best - https://dbcode.io/

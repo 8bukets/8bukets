@@ -153,8 +153,7 @@ export class Jules {
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
     const urlsToObserve = [
       'https://software-online-review.com',
-      'https://dbcode.io',
-      'https://markposition.wordpress.com'
+      'https://dbcode.io'
     ]
 
     for (const url of urlsToObserve) {
