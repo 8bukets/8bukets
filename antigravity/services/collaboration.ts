@@ -190,24 +190,33 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: '.github/workflows', type: 'CI/CD Workflow', pattern: /\.yml$/ },
     { path: '.antigravity', type: 'System Config', pattern: /\.md$|\.json$/ },
     { path: 'public', type: 'Asset', pattern: /.*/ },
-    { path: 'data/knowledge', type: 'Knowledge Artifact', pattern: /\.json$|\.md$/ }
+    { path: 'data/knowledge', type: 'Knowledge Artifact', pattern: /\.json$|\.md$/ },
+    { path: '.', type: 'Core Configuration', pattern: /^\.env|Dockerfile|package\.json|README\.md|AGENTS\.md|CONSOLIDATED_INTELLIGENCE\.md|KNOWLEDGE_MERGE\.md$/ }
   ]
 
-  const scanRecursive = async (dirPath: string, type: string, pattern: RegExp) => {
+  const scanRecursive = async (dirPath: string, type: string, pattern: RegExp, depth: number = 0) => {
+    if (depth > 5) return // Prevent excessive recursion
+
     const fullPath = path.join(process.cwd(), dirPath)
     if (!await fs.promises.access(fullPath).then(() => true).catch(() => false)) return
 
     try {
       const entries = await fs.promises.readdir(fullPath, { withFileTypes: true })
       for (const entry of entries) {
-        const entryRelPath = path.join(dirPath, entry.name)
+        const entryRelPath = path.join(dirPath, entry.name).replace(/^\.\//, '')
         if (entry.isDirectory()) {
-          if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== '.next' && entry.name !== 'dist') {
-            await scanRecursive(entryRelPath, type, pattern)
+          // Avoid scanning subdirectories when scanning root, unless it's a specific scanDir
+          if (dirPath === '.' && !scanDirs.some(sd => sd.path === entry.name)) {
+             // Only recurse into known scanDirs if we are in root
+             continue
+          }
+
+          if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== '.next' && entry.name !== 'dist' && entry.name !== '.npm-cache') {
+            await scanRecursive(entryRelPath, type, pattern, depth + 1)
           }
         } else if (entry.isFile()) {
           if (!entry.name.includes('.test.') && pattern.test(entry.name)) {
-            const name = entry.name.split('.')[0]
+            const name = entry.name.split('.')[0] || entry.name
             // Deduplicate same-named resources in the same category (e.g. .py and .md for agent)
             const exists = map.resourceInventory.some((r: any) => r.name === name && r.type === type)
             if (!exists) {
@@ -364,13 +373,13 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   map.crossDomainSynergies = []
 
   // Phase 12: Resource Dependency Tracking (Expanded Static Analysis)
-  const trackableResources = map.resourceInventory.filter((r: any) => ['Service', 'UI Component', 'Automation Script', 'AI Agent'].includes(r.type))
+  const trackableResources = map.resourceInventory.filter((r: any) => ['Service', 'UI Component', 'Automation Script', 'AI Agent', 'Core Configuration'].includes(r.type))
   for (const resource of trackableResources) {
     if (!resource.path) continue
     try {
       const content = await fs.promises.readFile(path.join(process.cwd(), resource.path), 'utf8')
       // Improved regex to handle various import/require styles including optional spaces and dynamic imports
-      const importRegex = /(?:import|from|require\s*\(|import\s*\(|import)\s*.*?['"](@\/antigravity\/services\/|@\/antigravity\/|\.\/|\.\.\/services\/|\.\.\/)(.*?)['"]/g;
+      const importRegex = /(?:import|from|require\s*\(|import\s*\(|import)\s*.*?['"](@\/antigravity\/services\/|@\/antigravity\/|\.\/|\.\.\/services\/|\.\.\/|@\/)(.*?)['"]/g;
 
       let match;
       while ((match = importRegex.exec(content)) !== null) {
@@ -382,7 +391,8 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
         const target = map.resourceInventory.find((s: any) =>
           s.name === depName ||
           (s.path && s.path.includes(depPathPart)) ||
-          (s.path && depPathPart.includes(s.name))
+          (s.path && depPathPart.includes(s.name)) ||
+          (depPathPart.startsWith('antigravity/') && s.path && s.path.includes(depPathPart))
         );
 
         if (target && target.name !== resource.name) {
@@ -399,12 +409,13 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
             // Phase 13: Cross-Domain Synergy Detection
             if (resource.type !== target.type) {
+              const intensity = (resource.type === 'Service' && target.type === 'AI Agent') || (resource.type === 'AI Agent' && target.type === 'Service') ? 'High' : 'Medium';
               map.crossDomainSynergies.push({
                 source: resource.name,
                 sourceType: resource.type,
                 target: target.name,
                 targetType: target.type,
-                intensity: 'Medium'
+                intensity
               });
             }
           }

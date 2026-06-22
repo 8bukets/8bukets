@@ -132,13 +132,13 @@ export async function generateActionableBriefing(state: any, directives: Directi
   if (crossDomain.length > 0) {
     briefing += `\n### 🔗 Cross-Domain Synergy Analysis\n`
     briefing += `- Detected **${crossDomain.length} Cross-Domain synergies**. High potential for architectural alignment across service types.\n`
-    crossDomain.slice(0, 5).forEach((cd: any) => {
+    crossDomain.slice(0, 8).forEach((cd: any) => {
       briefing += `  - \`${cd.source}\` (${cd.sourceType}) <-> \`${cd.target}\` (${cd.targetType}) [Intensity: ${cd.intensity}]\n`
     })
   }
 
   const recommendations = state.intelligence.relationshipMap.collaborationRecommendations || []
-  const criticalRecs = recommendations.filter((r: any) => r.priority === 'Critical')
+  const criticalRecs = recommendations.filter((r: any) => r.priority === 'Critical' || (r.priority === 'Routine' && r.branches.length > 5))
 
   if (criticalRecs.length > 0) {
     briefing += `\n### 🤝 Direct Coordination Paths\n`
@@ -148,7 +148,8 @@ export async function generateActionableBriefing(state: any, directives: Directi
         ? r.rationale.split('Urgent coordination required between:')[1].trim()
         : 'Cross-team architectural review required.'
 
-      briefing += `- **Resource Conflict/Synergy:** \`${r.resource}\`\n`
+      const riskLabel = r.priority === 'Critical' ? '🚨 CRITICAL' : '🟡 MODERATE';
+      briefing += `- **Resource Conflict/Synergy [${riskLabel}]:** \`${r.resource}\`\n`
       briefing += `  - **Strategic Pathway:** ${coordinationPath}\n`
       briefing += `  - **Action Item:** ${r.action}\n`
       if (r.branches && Array.isArray(r.branches)) {
@@ -197,7 +198,7 @@ export async function generateActionableBriefing(state: any, directives: Directi
   }
 
   if (crossDomain.length > 0) {
-    const topSynergy = crossDomain[0]
+    const topSynergy = crossDomain.find((cd: any) => cd.intensity === 'High') || crossDomain[0]
     agentDirectives.push({
       severity: 2,
       label: 'MEDIUM',
@@ -256,13 +257,12 @@ export async function generateActionableBriefing(state: any, directives: Directi
   const impactful = state.intelligence.relationshipMap.impactfulBranches || []
   if (impactful.length > 0) {
     briefing += `\n### 📊 Strategic Priority Matrix\n`
-    briefing += `| Strategic Initiative | Impact Score | Estimated Effort | Priority |\n`
+    briefing += `| Strategic Initiative | Impact Score | Domain | Priority |\n`
     briefing += `| :--- | :---: | :---: | :---: |\n`
 
-    impactful.slice(0, 8).forEach((b: any) => {
-      const effort = b.score > 80 ? 'High' : (b.score > 40 ? 'Medium' : 'Low')
+    impactful.slice(0, 10).forEach((b: any) => {
       const priority = b.score > 60 ? 'Critical' : 'Routine'
-      briefing += `| \`${b.name}\` | ${b.score} | ${effort} | ${priority} |\n`
+      briefing += `| \`${b.name}\` | ${b.score} | ${b.domain || 'General'} | ${priority} |\n`
     })
   }
 
@@ -272,11 +272,11 @@ export async function generateActionableBriefing(state: any, directives: Directi
     briefing += `\n### 🔗 Strategic Dependency Matrix\n`
     briefing += `| Source Service | Target Dependency | Connection Type |\n`
     briefing += `| :--- | :--- | :---: |\n`
-    dependencies.slice(0, 10).forEach((d: any) => {
+    dependencies.slice(0, 15).forEach((d: any) => {
       briefing += `| \`${d.source}\` | \`${d.target}\` | ${d.type} |\n`
     })
-    if (dependencies.length > 10) {
-      briefing += `\n*...and ${dependencies.length - 10} more cross-agent dependencies.*\n`
+    if (dependencies.length > 15) {
+      briefing += `\n*...and ${dependencies.length - 15} more cross-agent dependencies.*\n`
     }
   }
 
