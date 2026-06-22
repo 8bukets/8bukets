@@ -174,11 +174,29 @@ def run_knowledge_scraper():
     print(f"Found {len(article_urls)} potential articles. Diving in...")
 
     json_path = "data/ai_agents_knowledge.json"
-    existing_knowledge = []
+    existing_knowledge_list = []
     if os.path.exists(json_path):
         try:
             with open(json_path, "r", encoding="utf-8") as f:
-                existing_knowledge = json.load(f)
+                content = json.load(f)
+                if isinstance(content, list):
+                    existing_knowledge_list = content
+                elif isinstance(content, dict):
+                    # Migration logic for old dict-style knowledge
+                    for k, v in content.items():
+                        if isinstance(v, dict):
+                            item = {
+                                "url": k,
+                                "title": k,
+                                "definitions": [],
+                                "use_cases": [],
+                                "benefits": [],
+                                "google_cloud_tools": []
+                            }
+                            if "content" in v:
+                                # Try to extract definitions from raw content
+                                item["definitions"] = [{"term": "General summary", "text": v["content"]}]
+                            existing_knowledge_list.append(item)
         except Exception as e:
             print(f"Error reading existing knowledge: {e}")
 
@@ -190,7 +208,7 @@ def run_knowledge_scraper():
             new_knowledge.append(k)
 
     # Merge logic
-    merged_dict = {item["url"]: item for item in existing_knowledge if isinstance(item, dict) and "url" in item}
+    merged_dict = {item["url"]: item for item in existing_knowledge_list if isinstance(item, dict) and "url" in item}
     for new_item in new_knowledge:
         url = new_item["url"]
         if url in merged_dict:

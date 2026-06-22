@@ -2,6 +2,13 @@
 
 Synthesized from Google Innovation & AI Blog
 
+## [test](test)
+
+### Definitions
+- **General summary**: test content
+
+---
+
 ## [Innovation & AI](https://blog.google/innovation-and-ai/)
 
 ### Google Cloud Tools
