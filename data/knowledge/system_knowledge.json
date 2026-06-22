@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-21T23:33:36.224Z",
+    "generated_at": "2026-06-22T22:43:04.603Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-21T23:33:36.156Z"
+        "ingestedAt": "2026-06-22T22:43:04.512Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-21T23:33:36.162Z"
+        "ingestedAt": "2026-06-22T22:43:04.523Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-21T23:33:36.168Z"
+        "ingestedAt": "2026-06-22T22:43:04.531Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-21T23:33:36.175Z"
+        "ingestedAt": "2026-06-22T22:43:04.541Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-21T23:33:36.181Z"
+        "ingestedAt": "2026-06-22T22:43:04.550Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-21T23:33:36.187Z"
+        "ingestedAt": "2026-06-22T22:43:04.560Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-21T23:33:36.195Z"
+        "ingestedAt": "2026-06-22T22:43:04.570Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2205,7 +2205,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-21T23:33:36.202Z"
+        "ingestedAt": "2026-06-22T22:43:04.581Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2461,7 +2461,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-21T23:33:36.211Z"
+        "ingestedAt": "2026-06-22T22:43:04.591Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2529,6 +2529,10 @@
         {
           "header": "We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks.",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/\n- Insight: The Asia-Pacific region is a global engine for economic growth, but it's also highly vulnerable to climate change. While green technologies are gaining momentum, a recent report shows they aren’t scaling fast enough to keep up with the region’s rising environmental risks.To help innovators tackle these environmental challenges, we’re launching an inaugural Google DeepMind Accelerator program in APAC focused on “AI for the Planet.”This three-month program is designed for startups, research teams and nonprofits across the region to use frontier AI to solve problems in nature, climate, agriculture, energy and more. Selected organizations will receive expert mentorship, tailored support and help integrating frontier AI and science AI models from Google AI experts into their projects or products.If you're working on climate solutions, we want to help you scale your work. The program kicks off with an in-person bootcamp in Singapore, and you can learn more and register your interest today...."
+        },
+        {
+          "header": "Google DeepMind and A24 announce first-of-its-kind research partnership",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/deepmind-a24-research-partnership/\n- Insight: Today, Google DeepMind and A24 are announcing a first-of-its-kind partnership focused on research. The collaboration pairs a world-leading research lab with the industry’s most filmmaker-forward studio to help artists develop new workflows and techniques. This ensures the tools of the future are shaped by the creators who use them.This partnership creates a deep research and development collaboration between A24 and Google DeepMind spanning multiple projects over time. By anchoring Google DeepMind's innovations directly within the creative process, A24 and its filmmakers can help shape new technology in service of their vision and expand their storytelling possibilities. This hands-on collaboration provides Google DeepMind with invaluable feedback and guidance from leading artists. In addition, Google has made an investment in A24.Looking ahead, the partnership represents the beginning of a collaborative journey, one rooted in research and shared curiosity. While the initial focus is o..."
         },
         {
           "header": "Simulate real-world places with Project Genie and Street View",
@@ -2639,6 +2643,10 @@
           "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/\n- Insight: We recently released Gemma 4, our most capable open models to date. Since then, they have been downloaded more than 150 million times, and we’ve been expanding the family’s capabilities. We introduced Multi-Token Prediction (MTP) to accelerate inference, and recently released the 12B Unified model and Quantization-Aware-Training (QAT) checkpoints. Released under an Apache 2.0 license, Gemma 4 gives builders and organizations flexibility to fine-tune and deploy models across a variety of environments, from edge devices to local workstations.Many builders are sharing what they’ve created with Gemma 4, showcasing how the models’ capabilities translate into real-world applications. Here are three highlights of what people and companies are creating.Build low-latency, on-device apps.The team at the app building company HubX used Gemma 4 to build BetterSpeak, an offline AI English tutoring platform. BetterSpeak uses the edge-optimized Gemma 4 E2B (effective 2B parameters) model as the reason..."
         },
         {
+          "header": "Interactions API: our primary interface for Gemini models and agents",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/\n- Insight: Today we're announcing that the Interactions API has reached general availability and is now our primary API for interacting with Gemini models and agents. We launched its public beta in December 2025, and it has quickly become developers’ favorite way to build applications with Gemini.With this GA release, the API now has a stable schema and we also added major new capabilities that developers asked for, including Managed Agents, background execution, Gemini Omni (soon) and more. All of our documentation now defaults to Interactions API and we are working with ecosystem partners to make it the default interface across 3P SDKs and Libraries.The simplest way to build with GeminiWhether you're calling a model or running an agent, the Interactions API gets you there in a few lines of code. Pass a model ID for inference, an agent ID for autonomous tasks, set background=True for anything long-running.Key updates since DecemberManaged Agents: A single API call provisions a remote Linux sandb..."
+        },
+        {
           "header": "Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency",
           "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/\n- Insight: Since releasing Gemma 4 two months ago, we've been continuously working to expand its capabilities. First, we introduced Multi-Token Prediction (MTP) to accelerate inference, and just a couple of days ago, we released a 12B model to bridge the gap between our E4B and 26B MOE models.Today, we are releasing new checkpoints optimized with Quantization-Aware Training (QAT) to make Gemma 4 even more efficient, so you can run models locally on everyday edge devices and consumer GPUs.By simulating quantization during training, QAT minimizes quality loss when the model is compressed. This release includes QAT checkpoints for the popular Q4_0 quantization format as well as a novel quantization format specialized for mobile use cases. Using this mobile format, we’ve reduced the memory footprint of Gemma 4 E2B to 1GB. Together, these dramatically reduce memory requirements while preserving the capabilities and quality you expect from Gemma 4.Keeping model quality while making them smallerQuantiza..."
         },
@@ -2705,7 +2713,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-21T23:33:36.221Z"
+        "ingestedAt": "2026-06-22T22:43:04.600Z"
       }
     }
   },

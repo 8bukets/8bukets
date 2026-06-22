@@ -90,6 +90,12 @@
         "content": "The Asia-Pacific region is a global engine for economic growth, but it's also highly vulnerable to climate change. While green technologies are gaining momentum, a recent report shows they aren’t scaling fast enough to keep up with the region’s rising environmental risks.To help innovators tackle these environmental challenges, we’re launching an inaugural Google DeepMind Accelerator program in APAC focused on “AI for the Planet.”This three-month program is designed for startups, research teams and nonprofits across the region to use frontier AI to solve problems in nature, climate, agriculture, energy and more. Selected organizations will receive expert mentorship, tailored support and help integrating frontier AI and science AI models from Google AI experts into their projects or products.If you're working on climate solutions, we want to help you scale your work. The program kicks off with an in-person bootcamp in Singapore, and you can learn more and register your interest today...."
     },
     {
+        "title": "Google DeepMind and A24 announce first-of-its-kind research partnership",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/deepmind-a24-research-partnership/",
+        "snippet": "",
+        "content": "Today, Google DeepMind and A24 are announcing a first-of-its-kind partnership focused on research. The collaboration pairs a world-leading research lab with the industry’s most filmmaker-forward studio to help artists develop new workflows and techniques. This ensures the tools of the future are shaped by the creators who use them.This partnership creates a deep research and development collaboration between A24 and Google DeepMind spanning multiple projects over time. By anchoring Google DeepMind's innovations directly within the creative process, A24 and its filmmakers can help shape new technology in service of their vision and expand their storytelling possibilities. This hands-on collaboration provides Google DeepMind with invaluable feedback and guidance from leading artists. In addition, Google has made an investment in A24.Looking ahead, the partnership represents the beginning of a collaborative journey, one rooted in research and shared curiosity. While the initial focus is o..."
+    },
+    {
         "title": "Simulate real-world places with Project Genie and Street View",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/",
         "snippet": "",
@@ -250,6 +256,12 @@
         "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/",
         "snippet": "",
         "content": "We recently released Gemma 4, our most capable open models to date. Since then, they have been downloaded more than 150 million times, and we’ve been expanding the family’s capabilities. We introduced Multi-Token Prediction (MTP) to accelerate inference, and recently released the 12B Unified model and Quantization-Aware-Training (QAT) checkpoints. Released under an Apache 2.0 license, Gemma 4 gives builders and organizations flexibility to fine-tune and deploy models across a variety of environments, from edge devices to local workstations.Many builders are sharing what they’ve created with Gemma 4, showcasing how the models’ capabilities translate into real-world applications. Here are three highlights of what people and companies are creating.Build low-latency, on-device apps.The team at the app building company HubX used Gemma 4 to build BetterSpeak, an offline AI English tutoring platform. BetterSpeak uses the edge-optimized Gemma 4 E2B (effective 2B parameters) model as the reason..."
+    },
+    {
+        "title": "Interactions API: our primary interface for Gemini models and agents",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/",
+        "snippet": "",
+        "content": "Today we're announcing that the Interactions API has reached general availability and is now our primary API for interacting with Gemini models and agents. We launched its public beta in December 2025, and it has quickly become developers’ favorite way to build applications with Gemini.With this GA release, the API now has a stable schema and we also added major new capabilities that developers asked for, including Managed Agents, background execution, Gemini Omni (soon) and more. All of our documentation now defaults to Interactions API and we are working with ecosystem partners to make it the default interface across 3P SDKs and Libraries.The simplest way to build with GeminiWhether you're calling a model or running an agent, the Interactions API gets you there in a few lines of code. Pass a model ID for inference, an agent ID for autonomous tasks, set background=True for anything long-running.Key updates since DecemberManaged Agents: A single API call provisions a remote Linux sandb..."
     },
     {
         "title": "Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency",
