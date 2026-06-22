@@ -208,6 +208,10 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [ROLE]: Performance Tracking responsibility identified. Issuing measurement directive.")
                     strategic_directives.append("MEASURE_AI_BUSINESS_IMPACT")
 
+                if "boost productivity" in sections_str or "enter new markets" in sections_str or "competitive edge" in sections_str:
+                    self.logger.info("CAIO [STRATEGY]: Competitive advantage keywords identified. Issuing optimization directive.")
+                    strategic_directives.append("OPTIMIZE_FOR_COMPETITIVE_ADVANTAGE")
+
                 if re.search(r'\bcto\b|\bcdo\b', sections_str):
                     self.logger.info("CAIO [ROLE]: Coordination with CTO/CDO identified. Issuing technical leadership coordination directive.")
                     strategic_directives.append("COORDINATE_WITH_TECHNICAL_LEADERSHIP")
