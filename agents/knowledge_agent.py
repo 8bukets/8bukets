@@ -126,9 +126,14 @@ class KnowledgeAgent(BaseAgent):
             if tools_content:
                 for line in tools_content.split("\n"):
                     if line.startswith("- "):
-                        match = re.search(r"^- ([\w\s\(\)-]{1,60}?)(?:\s+(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel|Description)|$)", line)
+                        match = re.search(r"^- ([^:]+)", line)
                         if match:
                             tool_name = match.group(1).strip()
+                            # Clean up descriptions if they were included due to lack of colon
+                            description_keywords = ["Secure platform", "Create AI", "Build hybrid", "Build Google-quality", "Curated collection", "Open-source", "An AI", "A fully managed", "Provides a", "Unified", "Single", "End-to-end", "Speech", "Language", "Custom", "Omnichannel", "Description"]
+                            for kw in description_keywords:
+                                if kw in tool_name:
+                                    tool_name = tool_name.split(kw)[0].strip()
                             if tool_name.endswith('App'):
                                 tool_name = tool_name[:-3].strip()
                             if tool_name.endswith('Platform'):
