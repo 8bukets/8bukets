@@ -53,9 +53,9 @@ program
 
 program
   .command('deploy-react-agents-improve')
-  .description('prepare and integrate knowledge and workflow run improve for logic deploy react agents improve')
+  .description('Authorized syntactic adjustment to trigger clean commit')
   .action(async () => {
-    console.log('🚀 Preparing and integrating knowledge and workflow run improve for logic deploy react agents improve...');
+    console.log('🚀 Authorized syntactic adjustment to trigger clean commit...');
     const { reactService } = require('./antigravity/services/react');
     const tools = {
       verifyDeployLogic: () => 'Deploy logic verified successfully.',
