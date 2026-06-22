@@ -113,7 +113,7 @@ export class IntelephenseService {
     const consolidatedKnowledge: any = {
       title: 'Intelephense Documentation',
       sections: uniqueSections,
-      source: 'https://intelephense.com/docs',
+      source: 'https://github.com/bmewburn/intelephense-docs',
       description: 'Consolidated Intelephense documentation from local and remote sources.',
       topKeywords: ['intelephense', 'php', 'lsp', 'types', 'completion'],
       recentPosts: [],
@@ -136,14 +136,11 @@ export class IntelephenseService {
             const isLegacyIntelephense = k.title.startsWith('Intelephense') && k.title !== 'Intelephense Documentation'
             const isLocalFilename = k.title === 'intelephense_docs.md'
 
-            // SURGICAL FIX: Prevent pollution from unrelated scrapers
-            const isUnrelatedPollution = k.metadata?.source?.includes('news.blog') || k.metadata?.source?.includes('business.blog')
-
-            return !isLegacyIntelephense && !isLocalFilename && !isUnrelatedPollution
+            return !isLegacyIntelephense && !isLocalFilename
           })
 
           if (filtered.length !== originalCount) {
-            console.log(` 🧹 Pre-purged ${originalCount - filtered.length} redundant or polluted entries.`)
+            console.log(` 🧹 Pre-purged ${originalCount - filtered.length} redundant entries.`)
             await fs.promises.writeFile(jsonStore, JSON.stringify({ ...systemKnowledge, typescript_sections: filtered }, null, 2))
           }
         }
