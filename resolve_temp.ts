@@ -5,7 +5,8 @@ import path from 'path';
 import fs from 'fs';
 
 async function main() {
-    const files = await fs.promises.readFile('conflicted_files.txt', 'utf8').split('\n').filter(Boolean);
+    const content = await fs.promises.readFile('conflicted_files.txt', 'utf8');
+    const files = content.split('\n').filter(Boolean);
     for (const file of files) {
         await ConflictResolver.resolve(path.join(process.cwd(), file));
     }

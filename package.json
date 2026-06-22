@@ -31,6 +31,8 @@
     "ingest:knowledge": "npm run ingest:sor && npm run ingest:project-sor && npm run ingest:terraform && npm run ingest:companylink && npm run ingest:onlinereview && tsx --env-file=.env scripts/ingest_markposition_knowledge.ts && tsx --env-file=.env scripts/ingest_ads_knowledge.ts && tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts && tsx --env-file=.env scripts/ingest_knowledge_merge.ts && tsx --env-file=.env scripts/ingest_multi_day_agent_knowledge.ts"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.83",
+    "@ai-sdk/react": "^3.0.210",
     "@google/genai": "^2.5.0",
     "@google/generative-ai": "^0.24.1",
     "@supabase/supabase-js": "^2",
