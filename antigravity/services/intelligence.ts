@@ -64,19 +64,23 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   })
 
   report += `## 📦 Resource Ecosystem\n`
-  Object.entries(categorizedResources).forEach(([type, items]) => {
-    report += `- **${type}s:** ${items.length} active\n`
+  report += `| Resource Type | Count | Status |\n`
+  report += `| :--- | :---: | :---: |\n`
+  Object.entries(categorizedResources).sort((a, b) => b[1].length - a[1].length).forEach(([type, items]) => {
+    report += `| ${type} | ${items.length} | ✅ Active |\n`
   })
   report += `\n`
 
   // Phase 12: Resource Dependency Matrix
   if (relationshipMap.resourceDependencies && relationshipMap.resourceDependencies.length > 0) {
     report += `## 🔗 Resource Dependency Matrix\n`
-    relationshipMap.resourceDependencies.slice(0, 15).forEach((d: any) => {
-      report += `- \`${d.source}\` --[${d.type}]--> \`${d.target}\` \n`
+    report += `| Source Resource | Target Dependency | Connection |\n`
+    report += `| :--- | :--- | :---: |\n`
+    relationshipMap.resourceDependencies.slice(0, 20).forEach((d: any) => {
+      report += `| \`${d.source}\` | \`${d.target}\` | ${d.type} |\n`
     })
-    if (relationshipMap.resourceDependencies.length > 15) {
-      report += `- _...and ${relationshipMap.resourceDependencies.length - 15} more dependencies._\n`
+    if (relationshipMap.resourceDependencies.length > 20) {
+      report += `\n*...and ${relationshipMap.resourceDependencies.length - 20} more cross-resource dependencies.*\n`
     }
     report += `\n`
   }
@@ -289,13 +293,19 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     resourceToBranches[s.resource].push(...s.branches)
   })
 
-  Object.entries(resourceToBranches).forEach(([res, brs]) => {
+  // Group by Cluster for better visualization
+  Object.entries(resourceToBranches).sort().forEach(([res, brs]) => {
     const uniqueBrs = Array.from(new Set(brs))
-    report += `### 📦 ${res}\n`
-    uniqueBrs.forEach((b, idx) => {
-      const prefix = idx === uniqueBrs.length - 1 ? '└──' : '├──'
+    const isCluster = res.startsWith('Cluster:')
+    report += `### ${isCluster ? '📂' : '📦'} ${res}\n`
+    uniqueBrs.slice(0, 15).forEach((b, idx) => {
+      const isLast = idx === Math.min(uniqueBrs.length, 15) - 1
+      const prefix = isLast ? '└──' : '├──'
       report += `${prefix} 🌿 \`${b}\`\n`
     })
+    if (uniqueBrs.length > 15) {
+      report += `└── ⋯ (+${uniqueBrs.length - 15} more branches)\n`
+    }
     report += `\n`
   })
 
@@ -321,18 +331,18 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🚀 Prioritized Action Items\n`
-  if (!isMongoOptimal) report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
-  if (workOrders.length > 5) report += `- [HIGH] Process backlog of ${workOrders.length} pending work orders.\n`
+  if (!isMongoOptimal) report += `- **[CRITICAL]** Restore MongoDB Atlas connectivity (Status: ${health.mongodb}).\n`
+  if (workOrders.length > 5) report += `- **[HIGH]** Process backlog of ${workOrders.length} pending work orders.\n`
 
   const highIntensitySynergies = relationshipMap.synergies.filter((s: any) => s.intensity === 'High')
   highIntensitySynergies.forEach((s: any) => {
     const coordinator = metadata.stakeholders.find(sh => relationshipMap.stakeholderEngagement[sh.role]?.activeProjects.includes(s.branches[0]))
-    const coordinationMsg = coordinator ? ` (Coordinate with ${coordinator.role})` : ''
-    report += `- [MEDIUM] Resolve High-Intensity synergy on resource: \`${s.resource}\`${coordinationMsg}.\n`
+    const coordinationMsg = coordinator ? ` (Lead: ${coordinator.role})` : ''
+    report += `- **[MEDIUM]** Resolve High-Intensity synergy on \`${s.resource}\`${coordinationMsg}.\n`
   })
 
-  if (branches.length > 1500) report += `- [LOW] Prune or merge stagnant ecosystem branches (Total: ${branches.length}).\n`
-  report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n`
+  if (branches.length > 2000) report += `- **[LOW]** Execute branch pruning protocol (Total: ${branches.length} branches detected).\n`
+  report += `- **[INFO]** Autonomous knowledge ingestion active for real-time market intelligence.\n`
 
   const collaborationHealth = relationshipMap.synergies.length > 0
     ? Math.max(0, 100 - (relationshipMap.synergies.length * 5))
