@@ -1,6 +1,6 @@
 name = "sor8bukets"
 main = "src/index.js"
-compatibility_date = "2026-06-22"
+compatibility_date = "2023-01-01"
 
 # Restored routes, disabling custom_domain for sandbox/preview build stability
 routes = [
