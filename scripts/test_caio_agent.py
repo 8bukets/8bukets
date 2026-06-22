@@ -47,6 +47,7 @@ async def test_caio_agent():
     assert "COORDINATE_WITH_TECHNICAL_LEADERSHIP" in result["strategic_directives"]
     assert "ANALYZE_MARKET_AI_ROLES" in result["strategic_directives"]
     assert "RESEARCH_AI_LEADERSHIP_CERTIFICATIONS" in result["strategic_directives"]
+    assert "OPTIMIZE_FOR_COMPETITIVE_ADVANTAGE" in result["strategic_directives"]
     assert "ENFORCE_HEARTBEAT_LATENCY" in result["strategic_directives"]
     assert "ACTIVATE_NEURAL_RECOVERY" in result["strategic_directives"]
 
