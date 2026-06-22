@@ -1,10 +1,7 @@
 name = "antigravity-edge-worker"
 main = "index.js"
-compatibility_date = "2024-03-29"
+compatibility_date = "2026-06-22"
 
-# [vars]
-# MY_VARIABLE = "production_value"
-
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+[[kv_namespaces]]
+binding = "PRESENCE_KV"
+id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
