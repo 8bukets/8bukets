@@ -1,43 +1,54 @@
 /**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Learn more at https://developers.cloudflare.com/workers/
+ * ANTIGRAVITY EDGE WORKER
+ * Coordinates real-time presence and heartbeat synchronization for the 8Bukets ecosystem.
  */
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    // 1. Heartbeat Ingestion
     if (request.method === 'POST' && url.pathname === '/heartbeat') {
       try {
         const payload = await request.json();
-        // In a real worker, we would use env.PRESENCE_KV.put(payload.node_id, JSON.stringify(payload))
-        // For simulation, we just acknowledge the heartbeat.
+
+        // In Cloudflare Workers, we would persist this to KV for ecosystem-wide visibility
+        if (env.PRESENCE_KV) {
+           await env.PRESENCE_KV.put(`presence:${payload.telemetry?.node_id || 'unknown'}`, JSON.stringify({
+             ...payload,
+             edge_received_at: new Date().toISOString()
+           }), { expirationTtl: 600 }); // 10 minute TTL
+        }
+
         return new Response(JSON.stringify({
           status: 'received',
           node_id: payload.telemetry?.node_id,
+          leadership: payload.leadership_status || 'subordinate',
           timestamp: new Date().toISOString()
         }), {
-          headers: { 'content-type': 'application/json' },
+          headers: {
+            'content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          },
         });
       } catch (e) {
-        return new Response('Invalid heartbeat payload', { status: 400 });
+        return new Response(JSON.stringify({ error: 'Invalid heartbeat payload' }), {
+          status: 400,
+          headers: { 'content-type': 'application/json' }
+        });
       }
     }
 
+    // 2. Health & Sovereignty Audit
     if (url.pathname === '/health') {
-      // High-availability status check
       const status = {
         status: 'online',
         agent: 'Jules',
-        version: '1.4.0-alpha',
+        version: '1.6.0-alpha',
         worker: 'antigravity-edge-worker',
         timestamp: new Date().toISOString(),
-        manifest: 'Cloud-Native Autonomous Presence'
+        capabilities: ['edge-presence', 'heartbeat-sync', 'sovereign-routing'],
+        manifest: 'Cloud-Native Autonomous Presence (Phase 22)'
       };
 
       return new Response(JSON.stringify(status, null, 2), {
@@ -48,16 +59,19 @@ export default {
       });
     }
 
+    // 3. Ecosystem Presence Report
     if (url.pathname === '/presence') {
       return new Response(JSON.stringify({
         agent: 'Jules',
-        mode: 'cloud-active',
+        mode: 'cloud-sovereign',
         presence: 'always-on',
         ecosystem: 'Antigravity 8Bukets',
+        active_providers: ['docker', 'github', 'gitlab', 'gitkraken', 'supabase', 'mongodb'],
         nodes: [
-          { id: 'macbook-primary-01', status: 'online_monitored' },
-          { id: 'cloud-relay-01', status: 'active_standby' }
-        ]
+          { id: 'macbook-primary-01', status: 'monitored', priority: 100 },
+          { id: 'cloud-relay-01', status: 'active_standby', priority: 10 }
+        ],
+        sovereignty: 'established'
       }), {
         headers: {
           'content-type': 'application/json',
@@ -66,7 +80,8 @@ export default {
       });
     }
 
-    return new Response('ANTIGRAVITY CLOUD PRESENCE ACTIVE: 🤖 Jules is working autonomously.', {
+    // 4. Default Sovereign Response
+    return new Response('🤖 ANTIGRAVITY CLOUD SOVEREIGNTY ACTIVE: Jules is working autonomously in the cloud.', {
       headers: { 'content-type': 'text/plain' },
     });
   },

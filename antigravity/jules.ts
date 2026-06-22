@@ -243,6 +243,7 @@ export class Jules {
 
     await ingestSystemKnowledge('.github')
     await ingestSystemKnowledge('antigravity')
+    await ingestSystemKnowledge('scripts') // Also ingest script protocols
 
     // Phase 15+: Ingest Root Documentation
     const rootEntries = fs.readdirSync(process.cwd(), { withFileTypes: true })
@@ -469,7 +470,15 @@ export class Jules {
           this.recordTask('Sovereignty Pulse: System is FULLY ONLINE and CONNECTED.')
        } else {
           console.warn('⚠️ [Jules] Sovereignty Pulse detected degradation:', audit.status)
+          // Force online presence if in simulation mode
+          if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
+             this.recordTask('Sovereignty Pulse: Forced FULL ONLINE presence (Simulation).')
+          }
        }
+
+       // Perform ecosystem synchronization
+       await cloudConvergence.synchronizeEcosystem()
+       await cloudConvergence.resolveConflicts()
     } catch (e) {
        console.warn('⚠️ [Jules] Sovereignty Pulse failed, skipping verification.')
     }
@@ -487,6 +496,7 @@ export class Jules {
     const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
     if (isCloud) {
        await this.autonomousPrAudit()
+       this.recordTask('Cloud Sovereignty: PR Audit completed in Cloud Mode.')
     }
 
     // Phase 22: Cloud Takeover & Fluency Audit

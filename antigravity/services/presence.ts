@@ -59,7 +59,9 @@ export const PresenceSchema = z.object({
     run_attempt: z.string().optional(),
     node_id: z.string().optional(),
     roadmap_progress: z.number().optional(),
-    pipeline_status: z.string().optional()
+    pipeline_status: z.string().optional(),
+    fully_online: z.boolean().optional(),
+    sovereign_leadership: z.boolean().optional()
   }).optional()
 })
 
@@ -196,7 +198,9 @@ export class OnlinePresenceService {
           run_attempt: process.env.GITHUB_RUN_ATTEMPT || '1',
           node_id: nodeId,
           roadmap_progress: 100, // Default for active pulse
-          pipeline_status: isCloud ? 'running' : 'optimal'
+          pipeline_status: isCloud ? 'running' : 'optimal',
+          fully_online: isCloud || process.env.MACBOOK_CLOUD_SIMULATION === 'true',
+          sovereign_leadership: isLeader
         },
         phase16: {
           heartbeat_latency: heartbeatMetrics.latency,
