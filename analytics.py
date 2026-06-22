@@ -37,6 +37,12 @@ def get_domain(url):
     except:
         return None
 
+def create_ascii_bar(count, max_count, length=20):
+    if max_count == 0:
+        return ""
+    bar_chars = int((count / max_count) * length)
+    return "█" * bar_chars
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
