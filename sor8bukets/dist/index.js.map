@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../src/index.js"],
+  "sourceRoot": "dist",
+  "sourcesContent": ["/**\n * SOR8BUKETS WORKER\n * Standard ecosystem worker for Antigravity intelligence distribution.\n */\n\nexport default {\n  async fetch(request, env, ctx) {\n    const url = new URL(request.url);\n\n    if (url.pathname === '/health') {\n      return new Response(JSON.stringify({\n        status: 'online',\n        agent: 'Jules',\n        worker: 'sor8bukets',\n        timestamp: new Date().toISOString()\n      }), {\n        headers: { 'content-type': 'application/json' }\n      });\n    }\n\n    return new Response('\uD83E\uDD16 Hello World from sor8bukets sovereign worker! Antigravity is active.', {\n      headers: { 'content-type': 'text/plain' },\n    });\n  },\n};\n"],
+  "mappings": ";AAKA,IAAO,gBAAQ;AAAA,EACb,MAAM,MAAM,SAAS,KAAK,KAAK;AAC7B,UAAM,MAAM,IAAI,IAAI,QAAQ,GAAG;AAE/B,QAAI,IAAI,aAAa,WAAW;AAC9B,aAAO,IAAI,SAAS,KAAK,UAAU;AAAA,QACjC,QAAQ;AAAA,QACR,OAAO;AAAA,QACP,QAAQ;AAAA,QACR,YAAW,oBAAI,KAAK,GAAE,YAAY;AAAA,MACpC,CAAC,GAAG;AAAA,QACF,SAAS,EAAE,gBAAgB,mBAAmB;AAAA,MAChD,CAAC;AAAA,IACH;AAEA,WAAO,IAAI,SAAS,kFAA2E;AAAA,MAC7F,SAAS,EAAE,gBAAgB,aAAa;AAAA,IAC1C,CAAC;AAAA,EACH;AACF;",
+  "names": []
+}
