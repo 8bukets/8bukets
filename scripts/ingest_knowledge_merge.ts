@@ -16,14 +16,30 @@ export async function ingestKnowledgeMerge() {
 
     if (knowledge.market_data && knowledge.market_data.recent_entries) {
         markdownContext += '\n## 📈 Latest Market Intelligence (Dynamic Merge)\n\n';
-        knowledge.market_data.recent_entries.slice(0, 5).forEach((e: any) => {
-            markdownContext += `### ${e.title || 'Untitled Signal'}\n`;
-            markdownContext += `- **Source**: ${e.domain || 'Markposition'}\n`;
-            markdownContext += `- **Link**: [Post Link](${e.post_url})\n\n`;
+
+        // Group by domain
+        const grouped: Record<string, any[]> = {};
+        knowledge.market_data.recent_entries.slice(0, 10).forEach((e: any) => {
+            const domain = e.domain || 'General Intelligence';
+            if (!grouped[domain]) grouped[domain] = [];
+            grouped[domain].push(e);
         });
+
+        for (const [domain, entries] of Object.entries(grouped)) {
+            markdownContext += `### 🌐 ${domain}\n`;
+            entries.forEach((e: any) => {
+                markdownContext += `- [${e.title || 'Untitled Signal'}](${e.post_url})\n`;
+            });
+            markdownContext += '\n';
+        }
     }
 
-    const signature = "All the best - https://markposition.wordpress.com";
+    const signatures = [
+        "All the best - https://markposition.wordpress.com",
+        "All the best - https://software-online-review.com/",
+        "All the best - https://dbcode.io/"
+    ];
+
     const targetFiles = ['KNOWLEDGE_MERGE.md', 'CONSOLIDATED_INTELLIGENCE.md'];
 
     for (const file of targetFiles) {
@@ -31,17 +47,19 @@ export async function ingestKnowledgeMerge() {
         if (await fsPromises.access(filePath).then(() => true).catch(() => false)) {
             let fileContent = await fsPromises.readFile(filePath, 'utf8');
 
-            const escapedSignature = signature.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-            const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'gi');
-
-            fileContent = fileContent.replace(sigRegex, () => '\n\n');
+            // Remove existing signatures to prevent duplicates
+            for (const sig of signatures) {
+                const escapedSignature = sig.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+                const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'gi');
+                fileContent = fileContent.replace(sigRegex, () => '\n\n');
+            }
 
             // Remove existing dynamic merge section if present to ensure fresh integration
             const mergeHeader = '## 📈 Latest Market Intelligence (Dynamic Merge)';
             if (fileContent.includes(mergeHeader)) {
                 const lines = fileContent.split('\n');
                 const startIdx = lines.findIndex(l => l.includes(mergeHeader));
-                let endIdx = lines.findIndex((l, i) => i > startIdx && l.startsWith('## '));
+                let endIdx = lines.findIndex((l, i) => i > startIdx && (l.startsWith('## ') || l.startsWith('---')));
                 if (endIdx === -1) endIdx = lines.length;
 
                 lines.splice(startIdx, endIdx - startIdx);
@@ -56,8 +74,9 @@ export async function ingestKnowledgeMerge() {
                  console.log(`✅ [Ingest] Updated dynamic knowledge merge in ${file}`);
             }
 
-            // Append signature back
-            fileContent += '\n\n---\n' + signature + '\n';
+            // Append signatures back
+            fileContent += '\n\n---\n';
+            fileContent += signatures.join('\n\n---\n') + '\n';
 
             await fsPromises.writeFile(filePath, fileContent, 'utf8');
         }

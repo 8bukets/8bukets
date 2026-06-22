@@ -12,7 +12,7 @@ def clean_text(text):
         return ""
     return " ".join(text.split())
 
-def scrape_markposition_knowledge(max_pages=3):
+def scrape_markposition_knowledge(max_pages=5):
     print(f"🤖 [Ingest] Fetching market intelligence from {BASE_URL} (max {max_pages} pages)...")
     all_entries = []
 

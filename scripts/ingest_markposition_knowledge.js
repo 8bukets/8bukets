@@ -2,7 +2,7 @@ import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import * as cheerio from 'cheerio';
 const BASE_URL = "https://markposition.wordpress.com/";
-export async function scrapeMarkpositionKnowledge(maxPages = 3) {
+export async function scrapeMarkpositionKnowledge(maxPages = 5) {
     console.log(`🤖 [Ingest] Fetching market intelligence from ${BASE_URL} (max ${maxPages} pages)...`);
     try {
         const allEntries = [];
@@ -130,6 +130,7 @@ export async function scrapeMarkpositionKnowledge(maxPages = 3) {
         console.error(`❌ [Ingest] Failed to ingest Markposition knowledge:`, error);
     }
 }
-if (require.main === module) {
+import { fileURLToPath } from 'url';
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
     scrapeMarkpositionKnowledge();
 }
