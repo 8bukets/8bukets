@@ -1,42 +1,38 @@
-# Markposition Analytics Report
+# Wordpress Blog Analytics Report
 
-**Generated on:** 2025-12-13 12:59:36
+**Generated on:** 2026-02-05 19:08:24
 
 ## General Statistics
-- **Total Posts:** 679
-- **Date Range:** 2020-05-19 to 2022-10-05
-- **Unique Domains Linked:** 367
+- **Total Posts:** 391
+- **Date Range:** 2020-06-10 to 2023-06-25
+- **Unique Domains Linked:** 194
 
 ## Top 10 Referenced Domains
-| Domain | Count |
-| :--- | :---: |
-| skillshop.exceedlms.com | 23 |
-| support.google.com | 21 |
-| youtube.com | 18 |
-| advertising.amazon.com | 16 |
-| en.wikipedia.org | 14 |
-| google.com | 13 |
-| web.facebook.com | 12 |
-| developers.google.com | 11 |
-| trustarc.com | 11 |
-| ads.google.com | 10 |
+| Domain | Count | Distribution |
+| :--- | :---: | :--- |
+| youtube.com | 74 | ████████████████████ |
+| music.youtube.com | 34 | █████████░░░░░░░░░░░ |
+| epidemicsound.com | 10 | ██░░░░░░░░░░░░░░░░░░ |
+| music.apple.com | 7 | █░░░░░░░░░░░░░░░░░░░ |
+| billboard.com | 7 | █░░░░░░░░░░░░░░░░░░░ |
+| artists.spotify.com | 6 | █░░░░░░░░░░░░░░░░░░░ |
+| spotify.com | 5 | █░░░░░░░░░░░░░░░░░░░ |
+| open.spotify.com | 5 | █░░░░░░░░░░░░░░░░░░░ |
+| soundcloud.com | 5 | █░░░░░░░░░░░░░░░░░░░ |
+| artistrepublik.com | 4 | █░░░░░░░░░░░░░░░░░░░ |
 
 ## Top 10 Categories
-| Category | Count |
-| :--- | :---: |
-| Ad Ads Advertise | 660 |
-| Promotion | 14 |
-| Ads | 4 |
-| Advertise | 3 |
-| Advertising | 3 |
-| Online | 2 |
+| Category | Count | Distribution |
+| :--- | :---: | :--- |
+| Music | 391 | ████████████████████ |
 
 ## Posts by Year
-| Year | Count |
-| :--- | :---: |
-| 2022 | 235 |
-| 2021 | 190 |
-| 2020 | 254 |
+| Year | Count | Distribution |
+| :--- | :---: | :--- |
+| 2023 | 9 | █░░░░░░░░░░░░░░░░░░░ |
+| 2022 | 170 | ████████████████████ |
+| 2021 | 166 | ███████████████████░ |
+| 2020 | 46 | █████░░░░░░░░░░░░░░░ |
 
 ## Authors
-- Filip Keser: 679 posts
+- Filip Keser: 391 posts

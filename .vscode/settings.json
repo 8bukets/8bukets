@@ -1,0 +1,5 @@
+{
+  "php.suggest.basic": false,
+  "intelephense.licenceKey": "0028PYHDVTUNLF0",
+  "intelephense.files.maxSize": 5000000
+}
