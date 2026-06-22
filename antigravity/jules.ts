@@ -243,14 +243,19 @@ export class Jules {
 
   public async auditDocker() {
     console.log('🐳 [Jules] Auditing Docker sovereignty...')
-    const { getDockerStatus } = await import('./services/docker')
+    const { getDockerStatus, isDockerHealthy } = await import('./services/docker')
     const containers = await getDockerStatus()
+    const healthy = await isDockerHealthy()
+    const composeExists = fs.existsSync(path.join(process.cwd(), 'docker-compose.yml'))
+
+    let report = `Docker Sovereignty: Status=${healthy ? 'Healthy' : 'Degraded'}, Containers=${containers.length}, Compose=${composeExists ? 'Available' : 'Missing'}.`
+
     if (containers.length > 0) {
       const names = containers.map(c => c.name).join(', ')
-      this.recordTask(`Docker Sovereignty: Found ${containers.length} active containers (${names}). Connectivity verified.`)
-    } else {
-      this.recordTask('Docker Sovereignty: No active containers found or Docker daemon unreachable.')
+      report += ` Active: ${names}.`
     }
+
+    this.recordTask(report)
   }
 
   public async auditSovereignty() {
