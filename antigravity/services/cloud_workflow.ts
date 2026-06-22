@@ -1,5 +1,6 @@
 import { execFile } from 'child_process'
 import { promisify } from 'util'
+import { logAutonomousAction } from '../core'
 import { checkDockerHealth } from './docker'
 import { getGitLabMetrics } from './gitlab'
 import { getGitHubMetrics } from './github_evolution'
@@ -27,6 +28,7 @@ export class CloudWorkflowAgent {
 
     if (isLeader) {
        console.log('🚀 [CloudWorkflowAgent] Cloud Node has Leadership. Enabling HIGH_INTENSITY mode.')
+       logAutonomousAction('🚀 [CloudWorkflowAgent] Cloud Node has Leadership. Enabling HIGH_INTENSITY mode.', 'info')
 
        try {
          // Phase 16: Re-verify tool connectivity upon takeover
@@ -46,9 +48,16 @@ export class CloudWorkflowAgent {
 
          // Immediate Execution Pulse upon takeover
          console.log('⚡ [CloudWorkflowAgent] Executing pending work orders under Cloud Sovereignty...')
+         logAutonomousAction('⚡ [CloudWorkflowAgent] Executing pending work orders under Cloud Sovereignty...', 'info')
          await workOrderService.executePendingOrders()
 
+         // Phase 22: High-Intensity Evolution Pulse
+         const { jules } = await import('../jules')
+         console.log('🧠 [CloudWorkflowAgent] Triggering high-intensity evolution pulse...')
+         await jules.improve()
+
          console.log('✅ [CloudWorkflowAgent] Cloud Takeover initiated. Sovereignty established.')
+         logAutonomousAction('✅ [CloudWorkflowAgent] Cloud Takeover initiated. Sovereignty established.', 'info')
          return { takeover: true, intensity: 'high', recoveredFiles }
        } catch (recoveryErr: any) {
          console.error(`❌ [CloudWorkflowAgent] Cloud Takeover recovery failed: ${recoveryErr.message}`)

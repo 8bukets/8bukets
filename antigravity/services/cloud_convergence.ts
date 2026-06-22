@@ -17,7 +17,9 @@ export const CloudConvergenceStateSchema = z.object({
   sync_metrics: z.object({
     mongo_records: z.number(),
     supabase_presence: z.boolean(),
-    git_status: z.string()
+    git_status: z.string(),
+    docker_sovereignty: z.boolean().optional(),
+    fully_online: z.boolean().optional()
   })
 })
 
@@ -76,6 +78,8 @@ export class CloudConvergenceService {
     if (process.env.NEXT_PUBLIC_SUPABASE_URL) providers.push('supabase')
 
     try {
+      const sovereignty = await this.sovereigntyAudit()
+
       // 1. Core State Retrieval & Bidirectional Sync
       let workOrderCount = 0
       try {
@@ -156,7 +160,9 @@ export class CloudConvergenceService {
         sync_metrics: {
           mongo_records: workOrderCount,
           supabase_presence: supabasePresence,
-          git_status: gitStatus
+          git_status: gitStatus,
+          docker_sovereignty: sovereignty.fullyOnline,
+          fully_online: sovereignty.fullyOnline
         }
       }
 
