@@ -13,52 +13,86 @@ def update_knowledge():
         knowledge = json.load(f)
 
     # New/Updated content from https://cloud.google.com/discover/what-are-ai-agents
+    # Refined for maximum intelligence value
     gcp_knowledge = {
         "what-is-an-ai-agent": {
             "title": "What is an AI agent?",
-            "content": "AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They show reasoning, planning, and memory and have a level of autonomy to make decisions, learn, and adapt.\n\nTheir capabilities are made possible in large part by the multimodal capacity of generative AI and AI foundation models. AI agents can process multimodal information like text, voice, video, audio, code, and more simultaneously; can converse, reason, learn, and make decisions. They can learn over time and facilitate transactions and business processes. Agents can work with other agents to coordinate and perform more complex workflows."
+            "content": "AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They exhibit reasoning, planning, and memory, and possess a degree of autonomy to make decisions, learn, and adapt. Their capabilities are primarily driven by the multimodal capacity of generative AI and foundation models, allowing them to process text, voice, video, and code simultaneously."
         },
         "key-features-of-an-ai-agent": {
             "title": "Key features of an AI agent",
-            "content": "The key features of an AI agent have evolved beyond reasoning and acting (ReAct Framework):\n\n- Reasoning: Using logic and information to draw conclusions and solve problems.\n- Acting: Taking action or performing tasks based on decisions or plans.\n- Observing: Gathering information about the environment through perception (vision, NLP, sensors).\n- Planning: Developing strategic steps to achieve goals, anticipating future states.\n- Collaborating: Working with humans or other agents via communication and coordination.\n- Self-refining: Learning from experience and feedback to continuously enhance performance."
+            "content": "Modern AI agents have evolved to include several core cognitive and operational features:\n\n- **Reasoning**: Using logic and available information to draw conclusions and solve problems.\n- **Acting**: The ability to perform digital (sending messages, updating data) or physical (embodied AI) actions.\n- **Observing**: Gathering environmental information through perception (computer vision, NLP, sensors).\n- **Planning**: Developing strategic steps to achieve goals, including anticipating future states.\n- **Collaborating**: Working effectively with humans or other agents via communication and coordination.\n- **Self-refining**: Learning from experience and feedback to continuously enhance performance over time."
         },
         "what-is-the-difference-between-ai-agents-ai-assistants-and-bots": {
-            "title": "What is the difference between AI agents, AI assistants, and bots?",
-            "content": "AI assistants are designed to collaborate directly with users, responding to requests and recommending actions, but decision-making remains with the user. Bots automate simple, rule-based tasks.\n\n| Feature | AI Agent | AI Assistant | Bot |\n| :--- | :--- | :--- | :--- |\n| **Purpose** | Autonomously perform tasks | Assisting users with tasks | Automating simple tasks |\n| **Capabilities** | Complex actions, learns/adapts | Responds to prompts, recommends | Pre-defined rules, limited learning |\n| **Interaction** | Proactive; goal-oriented | Reactive; user-triggered | Reactive; trigger-based |"
-        },
-        "key-differences-autonomy-complexity-learning": {
-            "title": "Key differences: Autonomy, Complexity, Learning",
-            "content": "- Autonomy: AI agents have the highest degree, making independent decisions. Assistants require direction; bots follow rules.\n- Complexity: AI agents handle complex workflows; assistants and bots handle simpler tasks.\n- Learning: AI agents employ machine learning to adapt over time. Assistants have some learning; bots have little to none."
+            "title": "Difference between AI Agents, AI Assistants, and Bots",
+            "content": "The primary distinctions lie in autonomy and complexity:\n\n- **AI Agents**: Highest autonomy; proactive and goal-oriented; can perform complex multi-step actions and make independent decisions.\n- **AI Assistants**: Moderate autonomy; reactive to user prompts; assist with tasks while decision-making remains with the user.\n- **Bots**: Lowest autonomy; follow pre-defined rules; limited learning; automate simple, repetitive tasks."
         },
         "how-do-ai-agents-work": {
             "title": "How do AI agents work?",
-            "content": "Agents are built on four main pillars:\n\n- Persona: A defined role, personality, and communication style.\n- Memory: Equipped with short-term (immediate), long-term (historical), episodic (past interactions), and consensus (shared) memory.\n- Memory Type: Short term memory for immediate interactions, long-term memory for historical data and conversations, episodic memory for past interactions, and consensus memory for shared information among agents.\n- Tools: Functions or resources used to interact with the environment (API, physical, graphical).\n- Model: LLMs serve as the 'brain', enabling understanding, reasoning, and action."
+            "content": "AI agents are built on four functional pillars:\n\n- **Persona**: A defined role, personality, and communication style that evolves with experience.\n- **Memory**: Includes short-term (immediate interaction), long-term (historical), episodic (past events), and consensus (shared among agents) memory.\n- **Tools**: External resources (APIs, UI-based tools) that allow agents to interact with and manipulate their environment.\n- **Model**: LLMs act as the 'brain', providing the underlying understanding and reasoning capacity."
         },
         "what-are-the-types-of-agents-in-ai": {
-            "title": "What are the types of agents in AI?",
-            "content": "Categorized by interaction or number:\n\n- Interactive Partners (Surface Agents): Directly assist users (e.g., customer service, healthcare).\n- Autonomous Background Processes (Background Agents): Work behind the scenes to automate workflows and optimize processes.\n- Single Agent: Operates independently for well-defined tasks.\n- Multi-agent: Multiple agents collaborate or compete, leveraging diverse roles for complex objectives."
+            "title": "Types of agents in AI",
+            "content": "Agents can be categorized by interaction or scale:\n\n- **Surface Agents (Interactive Partners)**: Engage in direct conversation to assist with customer service, education, or healthcare.\n- **Background Agents (Autonomous Processes)**: Work behind the scenes to automate workflows and optimize processes with limited human interaction.\n- **Single Agent**: Operates independently to achieve a specific goal using a single foundation model.\n- **Multi-agent**: Multiple agents collaborate or compete, potentially using different foundation models for diverse roles."
         },
         "benefits-of-using-ai-agents": {
             "title": "Benefits of using AI agents",
-            "content": "- Efficiency & Productivity: Increased output via task division, simultaneous execution, and automation.\n- Improved Decision-making: Collaboration, adaptability, and robust reasoning through feedback.\n- Enhanced Capabilities: Complex problem-solving, natural language communication, and tool use.\n- Social Interaction: Realistic simulations and emergent behavior."
+            "content": "- **Efficiency**: Increased output through simultaneous execution and repetitive task automation.\n- **Decision-making**: Robust reasoning through collaboration and adaptable strategies.\n- **Social Interaction**: Emergent social behaviors and realistic simulations.\n- **Problem Solving**: Complex problem-solving by combining agent strengths."
         },
         "challenges-with-using-ai-agents": {
             "title": "Challenges with using AI agents",
-            "content": "- Emotional Intelligence: Struggle with deep empathy or nuanced human social dynamics.\n- Ethical Stakes: Lack a moral compass for complex ethical judgment (law, healthcare, judicial).\n- Unpredictable Environments: Struggle in dynamic physical environments requiring real-time adaptation (surgery, disaster response).\n- Resource Intensity: Computationally expensive to develop and deploy."
+            "content": "- **Empathy**: Struggle with deep emotional intelligence and nuanced social dynamics.\n- **Ethical Stakes**: Lack a moral compass for high-stakes decisions (e.g., legal, medical).\n- **Physical Environments**: Difficulty adapting to unpredictable physical tasks requiring complex motor skills.\n- **Resource Intensity**: Computationally expensive to develop and deploy at scale."
         },
         "deploy-ai-agents-for-scale-and-efficiency-with-cloud-run": {
-            "title": "Deploy AI agents with Cloud Run",
-            "content": "Cloud Run provides a scalable, serverless platform for agent deployment:\n\n- Scalability: Auto-scales to meet demand and scales to zero when idle.\n- Orchestration: Logic runs as a service with stable HTTPS endpoints.\n- A2A Support: Integrates with Agent Development Kit (ADK) for multi-agent systems."
-        },
-        "use-cases-for-ai-agents": {
-            "title": "Use cases for AI agents",
-            "content": "Organizations have been deploying agents across six key categories:\n\n- Customer Agents: Personalized experiences across channels (web, mobile, voice).\n- Employee Agents: Streamline processes, manage repetitive tasks, translate content.\n- Creative Agents: Generate content/images, assist with design and personalization.\n- Data Agents: Complex data analysis with factual integrity.\n- Code Agents: Accelerate development with code generation and assistance.\n- Security Agents: Mitigate attacks, increase investigation speed (prevention, detection, response)."
+            "title": "Deploying AI agents with Cloud Run",
+            "content": "Cloud Run is a serverless platform ideal for deploying scalable AI agents:\n\n- **Scalability**: Auto-scales container instances and can scale to zero when idle to minimize costs.\n- **Orchestration**: Logic runs as a service providing stable HTTPS endpoints for API access.\n- **A2A Integration**: Seamlessly works with the Agent Development Kit (ADK) for multi-agent systems."
         },
         "google-cloud-and-ai-agents": {
-            "title": "Google Cloud and AI agents portfolio",
-            "content": "- Gemini Enterprise App: Discover, create, and govern AI agents.\n- Gemini Enterprise Agent Platform: Build agents grounded in enterprise data.\n- Customer Experience Agent Studio (Dialogflow): Build hybrid conversational agents.\n- Agent Garden: Curated collection of pre-built agent samples.\n- Agent Development Kit (ADK): Open-source Python SDK for multi-agent systems.\n- A2A Protocol: Interoperable framework for building AI agents.\n- Cloud Run: Fully managed serverless platform for containerized agents."
+            "title": "Google Cloud AI Agents Portfolio",
+            "content": "Google Cloud provides a comprehensive set of tools for agent development:\n\n- **Gemini Enterprise App**: Secure platform to govern AI agents across an organization.\n- **Gemini Enterprise Agent Platform**: Build agents grounded in enterprise data using natural language or code.\n- **Customer Experience Agent Studio (Dialogflow)**: Build hybrid conversational agents.\n- **Agent Garden**: A curated collection of pre-built agent samples and tools.\n- **Agent Development Kit (ADK)**: Open-source Python SDK for building sophisticated multi-agent systems.\n- **A2A Protocol**: Open-source framework for interoperable agent-to-agent communication.\n- **Cloud Run**: Fully managed serverless platform for deploying containerized agents."
+        },
+        "customer-agents": {
+            "title": "Customer agents",
+            "content": "Customer agents deliver personalized customer experiences by understanding customer needs, answering questions, resolving customer issues, or recommending the right products and services. They work seamlessly across multiple channels including the web, mobile, or point of sale, and can be integrated into product experiences with voice or video."
+        },
+        "employee-agents": {
+            "title": "Employee agents",
+            "content": "Employee agents boost productivity by streamlining processes, managing repetitive tasks, answering employee questions, as well as editing and translating critical content and communications."
+        },
+        "creative-agents": {
+            "title": "Creative agents",
+            "content": "Creative agents supercharge the design and creative process by generating content, images, and ideas, assisting with design, writing, personalization, and campaigns."
+        },
+        "data-agents": {
+            "title": "Data agents",
+            "content": "Data agents are built for complex data analysis. They have the potential to find and act on meaningful insights from data, all while ensuring the factual integrity of their results."
+        },
+        "code-agents": {
+            "title": "Code agents",
+            "content": "Code agents accelerate software development with AI-enabled code generation and coding assistance, and to ramp up on new languages and code bases. Many organizations are seeing significant gains in productivity, leading to faster deployment and cleaner, clearer code."
+        },
+        "security-agents": {
+            "title": "Security agents",
+            "content": "Security agents strengthen security posture by mitigating attacks or increasing the speed of investigations. They can oversee security across various surfaces and stages of the security life cycle: prevention, detection, and response."
         }
     }
+
+    # Redundant/Legacy slugs to remove (kept the ones needed by KnowledgeAgent)
+    redundant_slugs = [
+        "key-differences",
+        "based-on-interaction",
+        "based-on-number-of-agents",
+        "efficiency-and-productivity",
+        "improved-decision-making",
+        "enhanced-capabilities",
+        "social-interaction-and-simulation",
+        "use-cases-for-ai-agents",
+        "key-differences-autonomy-complexity-learning"
+    ]
+
+    for slug in redundant_slugs:
+        if slug in knowledge:
+            del knowledge[slug]
 
     # Update/Add to JSON
     for slug, data in gcp_knowledge.items():
@@ -68,13 +102,9 @@ def update_knowledge():
         json.dump(knowledge, f, indent=4, ensure_ascii=False)
 
     # Sync to Markdown
-    # We'll regenerate the markdown from the JSON to ensure they are in sync
-    # and follow the existing format (slugs as ### headers)
     with open(md_path, "w", encoding="utf-8") as f:
         f.write("# AI Agents Knowledge base\n\n")
-        # Sort by slug or title? Usually they are appended.
-        # Let's keep it sorted by title for better readability
-        sorted_keys = sorted(knowledge.keys(), key=lambda x: knowledge[x].get('title', x))
+        sorted_keys = sorted(knowledge.keys())
         for slug in sorted_keys:
             item = knowledge[slug]
             f.write(f"### {item.get('title', slug)}\n\n")
@@ -83,7 +113,7 @@ def update_knowledge():
                 f.write(f"*Source: {item['source']}*\n\n")
             f.write("---\n\n")
 
-    print(f"Successfully updated {json_path} and {md_path} with GCP AI Agents knowledge.")
+    print(f"Successfully updated {json_path} and {md_path} with refined GCP AI Agents knowledge.")
 
 if __name__ == "__main__":
     update_knowledge()
