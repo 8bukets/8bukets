@@ -1,7 +1,6 @@
 # Intelephense Documentation
 
 ## Getting Started
-
 ### About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
 
@@ -10,7 +9,6 @@ When paired with an LSP capable editor it provides an essential set of code tool
 The Intelephense server is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key.
 
 ## Installation
-
 ### Visual Studio Code
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
 
@@ -31,13 +29,11 @@ npm i intelephense -g
 Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found [here](https://microsoft.github.io/language-server-protocol/implementors/editors/). Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
 
 To start the intelephense server:
-
 ```bash
 intelephense {transport}
 ```
 
 Where {transport} is one of:
-
 - `--node-ipc`
 - `--stdio`
 - `--socket={number}`
@@ -586,7 +582,7 @@ This feature provides additional type and parameter information in the form of h
 - **Availability**: PREMIUM
 - **LSP**: `textDocument/documentLink`
 - **Keybinding**: `Ctrl+Click` | mouse-over
-This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in `require` and `include` statements, and to local files referenced in `@see` annotations.
+This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in `require` and `include` statements, and to local files referenced in @see annotations.
 
 If your `require` statements are relative or you reference `$_SERVER['DOCUMENT_ROOT']`, you may need to configure the `intelephense.environment.documentRoot` setting to the correct path for the links to work. Intelephense will fallback to the workspace folder path if this setting has no value.
 
@@ -607,7 +603,6 @@ This feature provides a list of context appropriate actions that can be performe
 *Code Actions offer quick-fix and refactoring options at the cursor position*
 
 ## Appendix
-
 ### Compatibility With Frameworks and Libraries
 Intelephense aims to support all PHP frameworks and libraries but does not implement specific solutions for these. Limited or unexpected language intelligence can sometimes be provided if the package:
 
