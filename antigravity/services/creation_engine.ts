@@ -2,14 +2,24 @@ import { synthesize } from '../synthesis';
 import { workOrderService } from './work_order';
 import { logAutonomousAction } from '../core';
 import { sentientOrchestration } from './sentient_orchestration';
+import { zkpTrust } from './zkp_trust';
 
 /**
- * ANTIGRAVITY AUTONOMOUS CREATION ENGINE
+ * ANTIGRAVITY AUTONOMOUS CREATION ENGINE (Phase 19 Sovereign Swarm Evolution)
  * Orchestrates the full lifecycle of feature creation from synthesis to deployment.
+ * Implements Phase 19 Recursive Self-Improvement Loops and ZKP Sovereign Trust.
  */
 export class AutonomousCreationEngine {
   public async runCycle() {
-    logAutonomousAction('🚀 [CreationEngine] Starting full autonomous creation cycle...', 'info');
+    logAutonomousAction('🚀 [CreationEngine] Starting Phase 19 autonomous creation cycle...', 'info');
+
+    // Phase 19: Sovereign Trust Verification
+    const proof = await zkpTrust.generateProof();
+    const verified = await zkpTrust.verifyProof(zkpTrust.getIdentity(), proof);
+
+    if (!verified) {
+      throw new Error('❌ [CreationEngine] Phase 19 Sovereign Trust Verification failed. Aborting cycle.');
+    }
 
     // Phase 21: Sentient Orchestration - Register Creation Intent
     await sentientOrchestration.registerIntent({
@@ -17,7 +27,7 @@ export class AutonomousCreationEngine {
       agent: 'CreationEngine',
       action: 'runCycle',
       priority: 2, // Higher than general work cycle
-      context: { cycle: 'autonomous_creation' },
+      context: { cycle: 'autonomous_creation_phase_19' },
       timestamp: new Date().toISOString()
     });
 
@@ -27,6 +37,16 @@ export class AutonomousCreationEngine {
 
     if (ideas.length === 0) {
       logAutonomousAction('✨ [CreationEngine] No new gaps identified. System state is optimal.', 'info');
+
+      // Phase 19: Recursive Self-Improvement Pulse (Improve even when "optimal")
+      logAutonomousAction('🔄 [CreationEngine] Initiating Phase 19 Recursive Self-Improvement pulse...', 'info');
+      const { evolve, applyFixes } = await import('../evolution');
+      const suggestions = await evolve();
+      if (suggestions.length > 0) {
+        await applyFixes(suggestions);
+        logAutonomousAction(`✅ [CreationEngine] Recursive pulse applied ${suggestions.length} optimizations.`, 'info');
+      }
+
       return { status: 'optimal', features: [] };
     }
 
@@ -86,7 +106,13 @@ export class AutonomousCreationEngine {
     logAutonomousAction('⚡ [CreationEngine] Triggering execution of dependency chains...', 'info');
     await workOrderService.executePendingOrders();
 
-    logAutonomousAction('✅ [CreationEngine] Autonomous creation cycle complete.', 'info');
+    // Phase 19: Recursive Self-Improvement Loop (Final Pass)
+    logAutonomousAction('🔄 [CreationEngine] Executing recursive self-improvement pass post-creation...', 'info');
+    const { evolve: evolvePost, applyFixes: applyPost } = await import('../evolution');
+    const finalSuggestions = await evolvePost();
+    await applyPost(finalSuggestions);
+
+    logAutonomousAction('✅ [CreationEngine] Phase 19 autonomous creation cycle complete.', 'info');
 
     // Clear intent after completion
     sentientOrchestration.clearIntents();
