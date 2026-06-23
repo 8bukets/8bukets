@@ -27,7 +27,7 @@
       "title": "Intelephense Documentation",
       "metadata": {
         "source": "https://github.com/bmewburn/intelephense-docs",
-        "analyzedAt": "2026-06-23T04:13:32.564Z",
+        "analyzedAt": "2026-06-23T09:07:30.054Z",
         "description": "Consolidated Intelephense documentation from local and remote sources."
       },
       "sections": [
@@ -477,6 +477,121 @@
         "source": "grounded_research_2026",
         "ingestedAt": "2026-06-23T06:14:10.044Z"
       }
+    },
+    {
+      "title": "Search Console Mastery: https://software-online-review.com",
+      "metadata": {
+        "source": "google-search-console://https://software-online-review.com",
+        "analyzedAt": "2026-06-23T09:07:24.761Z",
+        "description": "Automated SEO performance metrics and search query analysis.",
+        "type": "seo_audit",
+        "domain": "https://software-online-review.com",
+        "auditVersion": "2.0.0-TS"
+      },
+      "sections": [
+        {
+          "header": "Search Performance Metrics",
+          "content": "**Total Clicks:** 1450\n**Total Impressions:** 52300\n**Average Position:** 8.7\n**CTR:** 2.77%"
+        },
+        {
+          "header": "Top Performing Queries",
+          "content": "- **software online review**: 520 clicks, 2400 impressions (Pos: 8.7)\n- **antigravity autonomous engine**: 180 clicks, 850 impressions (Pos: 8.7)\n- **jules ai agent**: 110 clicks, 420 impressions (Pos: 8.7)\n- **8 bukets project**: 95 clicks, 1800 impressions (Pos: 8.7)\n- **autonomous workflow creation**: 65 clicks, 310 impressions (Pos: 8.7)"
+        },
+        {
+          "header": "Optimization Strategy",
+          "content": "Increase content depth for high-impression, low-click queries to improve CTR. Monitor average position for brand-related keywords."
+        }
+      ]
+    },
+    {
+      "title": "Web Insight",
+      "metadata": {
+        "source": "https://admanager.google.com/home/resources/",
+        "analyzedAt": "2026-06-23T09:07:28.902Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "informaticmagazine.data.blog",
+      "metadata": {
+        "source": "https://informaticmagazine.data.blog",
+        "analyzedAt": "2026-06-23T09:07:25.290Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "software online review.com",
+      "metadata": {
+        "source": "https://software-online-review.com",
+        "analyzedAt": "2026-06-23T09:07:25.822Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "2459326?hl=en&ref topic=10289453&sjid=5167206403107665975 EU",
+      "metadata": {
+        "source": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
+        "analyzedAt": "2026-06-23T09:07:27.055Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "ad manager",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager",
+        "analyzedAt": "2026-06-23T09:07:27.546Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "dynamic ad insertion",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+        "analyzedAt": "2026-06-23T09:07:28.084Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "full service",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+        "analyzedAt": "2026-06-23T09:07:28.329Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "pod serving",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+        "analyzedAt": "2026-06-23T09:07:28.667Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "start",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/api/start",
+        "analyzedAt": "2026-06-23T09:07:28.863Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "overview",
+      "metadata": {
+        "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
+        "analyzedAt": "2026-06-23T09:07:29.338Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
     }
   ]
 }

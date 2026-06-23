@@ -1,21 +1,14 @@
-/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 19 COMPLIANCE: RECURSIVE_SELF_IMPROVEMENT (enabled) **/
 /** PHASE 19 COMPLIANCE: ZKP_TRUST (verified) **/
 /** PHASE 19 COMPLIANCE: HEARTBEAT_LATENCY (target: <2ms) **/
 /** PHASE 19 COMPLIANCE: NEURAL_RECOVERY (active) **/
-/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 18 COMPLIANCE: SWARM_CONSENSUS (active) **/
 /** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
-/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
-/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
-/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
-/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 16 COMPLIANCE: cross-shard-cognition (enabled) **/
 import { crossShardMemory } from '@/antigravity/services/cross_shard_memory'
-/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
 import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
