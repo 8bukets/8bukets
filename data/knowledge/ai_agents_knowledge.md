@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-23T09:07:30.059Z
+**System Analysis:** 2026-06-23T11:16:41.472Z
 
 ---
 
@@ -29,7 +29,7 @@ heartbeat latency < 2ms
 # Intelephense Documentation
 
 > **Source:** https://github.com/bmewburn/intelephense-docs
-> **Analyzed At:** 2026-06-23T09:07:30.054Z
+> **Analyzed At:** 2026-06-23T11:16:41.465Z
 
 ## Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -1693,7 +1693,7 @@ This feature provides additional type and parameter information in the form of h
 - **Availability**: PREMIUM
 - **LSP**: `textDocument/documentLink`
 - **Keybinding**: `Ctrl+Click` | mouse-over
-This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in `require` and `include` statements, and to local files referenced in `@see` annotations.
+This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in `require` and `include` statements, and to local files referenced in @see annotations.
 If your `require` statements are relative or you reference `$_SERVER['DOCUMENT_ROOT']`, you may need to configure the `intelephense.environment.documentRoot` setting to the correct path for the links to work. Intelephense will fallback to the workspace folder path if this setting has no value.
 ![Document Links in VS Code](https://intelephense.com/img/document_link.png)
 *Document Links make require/include paths and @see annotations clickable*
