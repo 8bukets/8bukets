@@ -849,7 +849,15 @@ public async observeKnowledge(url?: string) {
             { key: 'phase 14', domain: 'General', label: '🔮 Phase 14 Anticipation' },
             { key: 'synergy', domain: 'General', label: '⚡ Quantum Synergy' },
             { key: 'anticipatory intelligence', domain: 'AI Agents', label: '🧠 Anticipatory Intelligence' },
-            { key: 'legal-venture synthesis', domain: 'Security', label: '⚖️ Legal-Venture Synthesis' }
+            { key: 'legal-venture synthesis', domain: 'Security', label: '⚖️ Legal-Venture Synthesis' },
+            { key: 'swarm', domain: 'AI Agents', label: '🐝 Swarm Intelligence' },
+            { key: 'heartbeat', domain: 'Services', label: '💓 System Vitality' },
+            { key: 'consensus', domain: 'Security', label: '🤝 Swarm Consensus' },
+            { key: 'sovereign', domain: 'General', label: '🛡️ Cognitive Sovereignty' },
+            { key: 'multi-modal', domain: 'AI Agents', label: '👁️ Multi-Modal Integration' },
+            { key: 'recursive', domain: 'Services', label: '🔄 Self-Improvement' },
+            { key: 'zkp', domain: 'Security', label: '🤫 ZKP Trust' },
+            { key: 'singularity', domain: 'Core', label: '🌌 Singularity Orchestration' }
           ]
 
           strategicKeywords.forEach(sk => {

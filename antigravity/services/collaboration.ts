@@ -187,7 +187,9 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: 'agents', type: 'AI Agent', pattern: /\.md$|\.py$/ },
     { path: 'docs', type: 'Documentation', pattern: /\.md$/ },
     { path: 'app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
-    { path: 'web-app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
+    { path: 'Syra', type: 'Enterprise Service', pattern: /\.ts$|\.go$/ },
+    { path: 'GeminiTest', type: 'Experimental', pattern: /\.ts$|\.py$/ },
+    { path: 'AnalyticsResearchApp', type: 'Research App', pattern: /\.swift$|\.ts$/ },
     { path: 'database', type: 'Database Schema', pattern: /\.sql$|\.json$/ },
     { path: 'bin', type: 'Binary/Executable', pattern: /.*/ },
     { path: 'terraform', type: 'Infrastructure', pattern: /\.tf$/ },
@@ -360,10 +362,11 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           resourceUsage[matchedResource.name].add(b.name)
 
           // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
-          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation)/i)
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum)/i)
           if (clusterMatch) {
             let cluster = clusterMatch[0].toLowerCase()
-            if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation') cluster = 'security'
+            if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation' || cluster === 'quantum') cluster = 'security'
+            if (cluster === 'enterprise' || cluster === 'research') cluster = 'core'
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
             functionalClusters[cluster].add(b.name)
           }
@@ -377,13 +380,13 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   map.crossDomainSynergies = []
 
   // Phase 12: Resource Dependency Tracking (Expanded Static Analysis)
-  const trackableResources = map.resourceInventory.filter((r: any) => ['Service', 'UI Component', 'Automation Script', 'AI Agent', 'Core Configuration'].includes(r.type))
+  const trackableResources = map.resourceInventory.filter((r: any) => ['Service', 'UI Component', 'Automation Script', 'AI Agent', 'Core Configuration', 'Enterprise Service'].includes(r.type))
   for (const resource of trackableResources) {
     if (!resource.path) continue
     try {
       const content = await fs.promises.readFile(path.join(process.cwd(), resource.path), 'utf8')
-      // Improved regex to handle various import/require styles including optional spaces and dynamic imports
-      const importRegex = /(?:import|from|require\s*\(|import\s*\(|import)\s*.*?['"](@\/antigravity\/services\/|@\/antigravity\/|\.\/|\.\.\/services\/|\.\.\/|@\/)(.*?)['"]/g;
+      // Improved regex to handle various import/require styles including optional spaces, aliased paths, and dynamic imports
+      const importRegex = /(?:import|from|require\s*\(|import\s*\(|import)\s*.*?['"](@\/antigravity\/services\/|@\/antigravity\/|@\/components\/|@\/lib\/|\.\/|\.\.\/services\/|\.\.\/|@\/)(.*?)['"]/g;
 
       let match;
       while ((match = importRegex.exec(content)) !== null) {
@@ -485,7 +488,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   })
 
   // Phase 13: Strategic Impact Scoring
-  map.impactfulBranches = branches.map(b => {
+  const allScoredBranches = branches.map(b => {
     let score = 0;
 
     // 1. Category Priority
@@ -524,12 +527,18 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     }
 
     return {
-      name: b.name,
-      category: b.category,
-      score,
-      results: b.results
+      ...b,
+      score
     };
-  }).sort((a, b) => b.score - a.score).slice(0, 25);
+  }).sort((a, b) => b.score - a.score);
+
+  map.scoredBranches = allScoredBranches;
+  map.impactfulBranches = allScoredBranches.slice(0, 25).map(b => ({
+    name: b.name,
+    category: b.category,
+    score: b.score,
+    results: b.results
+  }));
 
   // Integrate branch results into resources (Expanded categories)
   const resultCategories = ['feature', 'fix', 'performance', 'security', 'ux']
@@ -673,7 +682,10 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
   relevantBranches.forEach(b => {
     const domain = b.domain || 'General'
     if (!domains[domain]) domains[domain] = []
-    domains[domain].push(b)
+
+    // Look up score if available in relationshipMap
+    const scored = relationshipMap?.scoredBranches?.find((sb: any) => sb.name === b.name);
+    domains[domain].push(scored || b)
   })
 
   let newEntries = `\n## Ecosystem Knowledge Consolidation (${new Date().toISOString()})\n`
@@ -712,8 +724,9 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
 
   Object.entries(domains).sort((a, b) => b[1].length - a[1].length).forEach(([domain, branchList]) => {
     newEntries += `### 🌐 Strategic Domain: ${domain}\n`
-    branchList.forEach(b => {
-      newEntries += `- **Branch:** \`${b.name}\`\n`
+    branchList.sort((a, b) => (b.score || 0) - (a.score || 0)).forEach(b => {
+      const scoreTag = b.score ? ` [Impact Score: ${b.score}]` : '';
+      newEntries += `- **Branch:** \`${b.name}\`${scoreTag}\n`
       newEntries += `  - **Category:** ${b.category?.toUpperCase()}\n`
       newEntries += `  - **Result:** ${b.results || b.result || 'N/A'}\n`
       if (b.lastSeen) {

@@ -72,7 +72,7 @@ export async function dispatchExecutiveBriefing(summary: string, details?: strin
   }).join('\n') : ''
 
   const fullMessage = details
-    ? `╔═══════════════════════════════════════════╗\n║         🔔 EXECUTIVE BRIEFING           ║\n╚═══════════════════════════════════════════╝\n\nPOSTURE: ${summary}\n${formattedDetails}`
+    ? `╔═══════════════════════════════════════════╗\n║         🔔 EXECUTIVE BRIEFING           ║\n╚═══════════════════════════════════════════╝\n\n**POSTURE:** ${summary}\n\n**SYSTEM KPIs:**\n- Synergy Stability: Optimal\n- Cognitive Alignment: High\n- Autonomous Pulse: Active\n${formattedDetails}`
     : `🔔 EXECUTIVE BRIEFING: ${summary}`
 
   const briefing: Notification = {
