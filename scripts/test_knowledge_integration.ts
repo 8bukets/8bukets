@@ -13,6 +13,7 @@ import fs from 'fs'
 import path from 'path'
 
 async function testKnowledgeIntegration() {
+  'use cache'
   console.log('🧪 Testing GitHub Docs Knowledge Integration...')
 
   const repo = 'bmewburn/intelephense-docs'
