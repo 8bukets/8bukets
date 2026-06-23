@@ -106,6 +106,7 @@ class ChiefAIOfficerAgent(BaseAgent):
             has_phase_15 = "phase 15" in title_lower or "phase 15" in sections_str or "phase_15" in title_lower
             has_phase_16 = "phase 16" in title_lower or "phase 16" in sections_str or "phase_16" in title_lower
             has_phase_18 = "phase 18" in title_lower or "phase 18" in sections_str or "phase_18" in title_lower
+            has_phase_19 = "phase 19" in title_lower or "phase 19" in sections_str or "phase_19" in title_lower
 
             # Phase 14 Specific Logic
             if has_phase_14:
@@ -184,6 +185,28 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "sovereign trust" in sections_str or "sovereign_trust" in sections_str:
                     self.logger.info("CAIO [SWARM]: Sovereign Trust mandate detected. Issuing enforcement directive.")
                     strategic_directives.append("ENFORCE_SOVEREIGN_TRUST")
+
+            # Phase 19 Specific Logic
+            if has_phase_19:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 19 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_19_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_19_PROTOCOLS")
+
+                if "recursive self-improvement" in sections_str or "recursive_self_improvement" in sections_str:
+                    self.logger.info("CAIO [EVOLUTION]: Recursive Self-Improvement mandate detected. Issuing activation directive.")
+                    strategic_directives.append("ACTIVATE_RECURSIVE_SELF_IMPROVEMENT")
+
+                if "zkp" in sections_str or "zero-knowledge proof" in sections_str:
+                    self.logger.info("CAIO [TRUST]: ZKP-based trust mandate detected. Issuing enforcement directive.")
+                    strategic_directives.append("ENFORCE_ZKP_TRUST")
+
+                if "heartbeat latency" in sections_content or "less than 2ms" in sections_content or "1.5ms" in sections_content:
+                    self.logger.info("CAIO [PERF]: Phase 19 heartbeat latency mandate detected (<2ms). Issuing optimization directive.")
+                    strategic_directives.append("OPTIMIZE_HEARTBEAT_LATENCY_PHASE_19")
+
+                if "neural recovery" in sections_content or "cross-shard neural recovery" in sections_content:
+                    self.logger.info("CAIO [RECOVERY]: Phase 19 Neural Recovery mandate detected. Issuing activation directive.")
+                    strategic_directives.append("ACTIVATE_NEURAL_RECOVERY_PROTOCOL")
 
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
