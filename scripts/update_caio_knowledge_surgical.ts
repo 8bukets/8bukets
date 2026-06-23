@@ -47,6 +47,10 @@ const CAIO_STRATEGIC_MANDATES = [
   {
     "header": "Advanced Strategic Mandates",
     "content": "- **ISO 42001 Compliance:** Enforce enterprise-wide compliance with ISO/IEC 42001 standards.\n- **Quantum Synergy:** Activate quantum-secure synchronization and synergetic multi-cloud orchestration.\n- **ROI Optimization:** Maintain 95% ROI efficiency across all AI workloads (roi_directive_95).\n- **Phase 16 Mandates:** Heartbeat latency < 5ms and neural recovery protocol activation."
+  },
+  {
+    "header": "Phase 13: Decentralized Edge Orchestration",
+    "content": "- **Asia-Pacific Expansion:** Deploy decentralized edge nodes across the Asia-Pacific region.\n- **Regional Compliance:** Enforce Asia-Pacific Regional Compliance for all sovereign data clusters."
   }
 ]
 
