@@ -238,6 +238,28 @@ export async function generateActionableBriefing(state: any, directives: Directi
     briefing += `- **[${ad.label}]** ${ad.msg}\n`
   })
 
+  // Strategic Advice & Risk Mitigation
+  briefing += `\n### 💡 Strategic Advice\n`
+  const advices = [
+    { cond: synergies.length > 5, msg: "Ecosystem contention is increasing. Prioritize merging stable features before starting new architectural changes." },
+    { cond: state.intelligence.branches > 2500, msg: "Cognitive overhead from excessive branches detected. Execute a project-wide branch pruning cycle." },
+    { cond: !state.docker || state.docker.status !== 'optimal', msg: "Docker infrastructure is sub-optimal. Review container health logs and consider horizontal scaling." },
+    { cond: true, msg: "Ensure all new cognitive artifacts include appropriate IP headers and verified signatures for sovereign trust." }
+  ].filter(a => a.cond)
+  advices.forEach(a => briefing += `- ${a.msg}\n`)
+
+  briefing += `\n### 🛡️ Risk Mitigation\n`
+  const risks = [
+    { cond: highIntensity.length > 0, msg: "High risk of merge conflicts in core services. Suggest establishing lock-step coordination for identified clusters." },
+    { cond: state.intelligence.pendingTasks > 10, msg: "Pending work orders are accumulating. Potential delay in autonomous feature delivery." },
+    { cond: alignmentScore < 85, msg: "Strategic drift detected. Re-align active development streams with mission goals defined in AGENTS.md." }
+  ].filter(r => r.cond)
+  if (risks.length > 0) {
+    risks.forEach(r => briefing += `- ${r.msg}\n`)
+  } else {
+    briefing += `- No critical risks identified in the current system posture.\n`
+  }
+
   // Phase 13: Strategic Coordination Matrix
   const clusters = state.intelligence.relationshipMap.functionalClusters || {}
   if (Object.keys(clusters).length > 0) {
