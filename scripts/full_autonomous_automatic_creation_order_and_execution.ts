@@ -7,22 +7,27 @@ import { crossShardMemory } from '../antigravity/services/cross_shard_memory';
 import { creationReportingService } from '../antigravity/services/creation_reporting';
 import { logAutonomousAction, healthCheck } from '../antigravity/core';
 import { cloudWorkflowAgent } from '../antigravity/services/cloud_workflow';
+import { zkpTrust } from '../antigravity/services/zkp_trust';
 
 /**
- * FULL AUTONOMOUS AUTOMATIC CREATION ORDER AND EXECUTION (Phase 16 Unified)
+ * FULL AUTONOMOUS AUTOMATIC CREATION ORDER AND EXECUTION (Phase 19 Sovereign Swarm Evolution)
  * Orchestrates a recursive autonomous lifecycle: Synthesis -> Bootstrap -> Smoke Test -> Deployment.
- * Integrates Swarm Heartbeat, Quantum-Secure Sync, and Cross-Shard Memory.
+ * Integrates Swarm Heartbeat (< 2ms), ZKP Sovereign Trust, and Recursive Self-Improvement.
  */
 async function main() {
   const pulseId = `pulse_${Math.random().toString(36).substring(2, 11)}`;
-  console.log(`🚀 [Phase 16] Starting Unified Autonomous Creation Cycle (Pulse: ${pulseId})...`);
-  logAutonomousAction(`🚀 [Phase 16] Initiating full autonomous creation cycle: ${pulseId}`, 'info');
+  console.log(`🚀 [Phase 19] Starting Unified Autonomous Creation Cycle (Pulse: ${pulseId})...`);
+  logAutonomousAction(`🚀 [Phase 19] Initiating full autonomous creation cycle: ${pulseId}`, 'info');
 
   try {
-    // 1. Activate Phase 16 Protocols
-    console.log('📡 [Protocols] Activating Swarm Heartbeat and Cognitive Parity...');
+    // 1. Activate Phase 19 Protocols
+    console.log('📡 [Protocols] Activating Phase 19 Swarm Heartbeat and ZKP Sovereign Trust...');
     swarmHeartbeat.start();
     await crossShardMemory.syncMemory();
+
+    // Generate and verify Sovereign Trust proof
+    const proof = await zkpTrust.generateProof();
+    await zkpTrust.verifyProof(zkpTrust.getIdentity(), proof);
 
     // 2. Online Presence & Leadership Sync
     console.log('🌍 [Presence] Synchronizing online presence and establishing sovereignty...');
@@ -50,35 +55,43 @@ async function main() {
     console.log('🤝 [Collaboration] Synchronizing Jules collaborative context...');
     await jules.syncCollaboration();
 
-    // 7. Work Order Execution
-    console.log('📝 [Orders] Creating root creation order...');
+    // 7. Work Order Execution (Triggers Recursive CreationEngine)
+    console.log('📝 [Orders] Creating root Phase 19 creation order...');
     const rootOrder = await workOrderService.createOrder(
       'AUTONOMOUS_CREATION',
-      'Execute Phase 16 Unified Creation Loop',
+      'Execute Phase 19 Sovereign Swarm Creation Loop',
       { pulseId, timestamp: new Date().toISOString() }
     );
 
     console.log('⚡ [Execution] Dispatching work order queue...');
     await workOrderService.executePendingOrders();
 
-    // 8. Reporting
+    // 8. Recursive Self-Improvement Pulse (System-wide)
+    console.log('🔄 [Recursive] Executing system-wide self-improvement pulse...');
+    const { evolve, applyFixes } = await import('../antigravity/evolution');
+    const suggestions = await evolve();
+    await applyFixes(suggestions);
+
+    // 9. Reporting
     console.log('📊 [Reporting] Generating creation pulse execution record...');
     const allOrders = workOrderService.getAllOrders();
     await creationReportingService.generateReport(pulseId, allOrders);
 
-    // 9. Final Sync & Heartbeat
+    // 10. Final Sync & Heartbeat Shutdown
     await onlinePresence.syncPresence();
-    console.log(`🏆 [Phase 16] Autonomous Creation Cycle Complete (Pulse: ${pulseId}).`);
-    logAutonomousAction(`🏆 [Phase 16] Autonomous Creation Cycle Complete: ${pulseId}`, 'info');
+    swarmHeartbeat.stop();
+    console.log(`🏆 [Phase 19] Autonomous Creation Cycle Complete (Pulse: ${pulseId}).`);
+    logAutonomousAction(`🏆 [Phase 19] Autonomous Creation Cycle Complete: ${pulseId}`, 'info');
 
   } catch (error: any) {
-    console.error(`💥 [Phase 16] Fatal cycle error: ${error.message}`);
-    logAutonomousAction(`💥 [Phase 16] Fatal cycle error: ${error.message}`, 'error');
+    console.error(`💥 [Phase 19] Fatal cycle error: ${error.message}`);
+    logAutonomousAction(`💥 [Phase 19] Fatal cycle error: ${error.message}`, 'error');
+    swarmHeartbeat.stop();
     process.exit(1);
   }
 }
 
 main().catch(err => {
-  console.error('💥 [Phase 16] Unhandled orchestration error:', err);
+  console.error('💥 [Phase 19] Unhandled orchestration error:', err);
   process.exit(1);
 });
