@@ -1,0 +1,8 @@
+{
+  "name": "antigravity-edge-worker",
+  "version": "1.6.0-alpha",
+  "description": "Cloudflare Worker for Antigravity Edge - Presence Coordination",
+  "devDependencies": {
+    "wrangler": "^3.60.0"
+  }
+}

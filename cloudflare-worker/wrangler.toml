@@ -1,6 +1,6 @@
 name = "antigravity-edge-worker"
 main = "index.js"
-compatibility_date = "2026-06-22"
+compatibility_date = "2026-06-23"
 
 # [vars]
 # MY_VARIABLE = "production_value"
