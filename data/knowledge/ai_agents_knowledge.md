@@ -2,18 +2,18 @@
 
 ### Benefits of using AI agents
 
-- **Efficiency**: Increased output through simultaneous execution and repetitive task automation.
-- **Decision-making**: Robust reasoning through collaboration and adaptable strategies.
-- **Social Interaction**: Emergent social behaviors and realistic simulations.
-- **Problem Solving**: Complex problem-solving by combining agent strengths.
+- **Efficiency and productivity**: Increased output through simultaneous execution and repetitive task automation.
+- **Improved decision-making**: Robust reasoning through collaboration and adaptable strategies.
+- **Enhanced capabilities**: Complex problem-solving by combining agent strengths and natural language communication.
+- **Social interaction and simulation**: Emergent social behaviors and realistic simulations.
 
 ---
 
 ### Challenges with using AI agents
 
-- **Empathy**: Struggle with deep emotional intelligence and nuanced social dynamics.
-- **Ethical Stakes**: Lack a moral compass for high-stakes decisions (e.g., legal, medical).
-- **Physical Environments**: Difficulty adapting to unpredictable physical tasks requiring complex motor skills.
+- **Empathy**: Struggle with deep emotional intelligence and nuanced social dynamics (e.g., therapy, conflict resolution).
+- **Ethical Stakes**: Lack a moral compass for high-stakes decisions (e.g., law enforcement, judicial decision-making).
+- **Physical Environments**: Difficulty adapting to unpredictable physical tasks requiring complex motor skills (e.g., surgery, disaster response).
 - **Resource Intensity**: Computationally expensive to develop and deploy at scale.
 
 ---
@@ -80,8 +80,8 @@ Data agents are built for complex data analysis. They have the potential to find
 Cloud Run is a serverless platform ideal for deploying scalable AI agents:
 
 - **Scalability**: Auto-scales container instances and can scale to zero when idle to minimize costs.
-- **Orchestration**: Logic runs as a service providing stable HTTPS endpoints for API access.
-- **A2A Integration**: Seamlessly works with the Agent Development Kit (ADK) for multi-agent systems.
+- **Orchestration**: Core agent logic runs as a service providing stable HTTPS endpoints for API access.
+- **A2A Integration**: Frameworks like the Agent Development Kit (ADK) are designed to integrate seamlessly with Cloud Run.
 
 ---
 
@@ -914,12 +914,14 @@ Subagents are enabled by default. To disable them, set `enableAgents` to `false`
 Google Cloud provides a comprehensive set of tools for agent development:
 
 - **Gemini Enterprise App**: Secure platform to govern AI agents across an organization.
-- **Gemini Enterprise Agent Platform**: Build agents grounded in enterprise data using natural language or code.
-- **Customer Experience Agent Studio (Dialogflow)**: Build hybrid conversational agents.
+- **Gemini Enterprise Agent Platform**: Create agents grounded in enterprise data using natural language or code.
+- **Customer Experience Agent Studio (Dialogflow)**: Build hybrid conversational agents with both deterministic and generative AI.
 - **Agent Garden**: A curated collection of pre-built agent samples and tools.
 - **Agent Development Kit (ADK)**: Open-source Python SDK for building sophisticated multi-agent systems.
 - **A2A Protocol**: Open-source framework for interoperable agent-to-agent communication.
 - **Cloud Run**: Fully managed serverless platform for deploying containerized agents.
+- **Agent Search**: Build Google-quality search for enterprise apps and experiences.
+- **Agentic SOC**: Delivering better security outcomes with AI agents.
 
 ---
 
@@ -999,7 +1001,7 @@ Agents can be categorized by interaction or scale:
 
 ### What is an AI agent?
 
-AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They exhibit reasoning, planning, and memory, and possess a degree of autonomy to make decisions, learn, and adapt. Their capabilities are primarily driven by the multimodal capacity of generative AI and foundation models, allowing them to process text, voice, video, and code simultaneously.
+AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They exhibit reasoning, planning, and memory, and possess a degree of autonomy to make decisions, learn, and adapt. Their capabilities are primarily driven by the multimodal capacity of generative AI and foundation models, allowing them to process text, voice, video, audio, code, and more simultaneously.
 
 ---
 

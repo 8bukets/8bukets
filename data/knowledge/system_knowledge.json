@@ -244,7 +244,7 @@
                     "header": "What is an AI agent?",
                     "content": [
                         "AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They exhibit reasoning, planning, and memory, and possess a degree of autonomy to make decisions, learn, and adapt.",
-                        "Their capabilities are primarily driven by the multimodal capacity of generative AI and foundation models, allowing them to process text, voice, video, and code simultaneously."
+                        "Their capabilities are primarily driven by the multimodal capacity of generative AI and foundation models, allowing them to process text, voice, video, audio, code, and more simultaneously."
                     ]
                 },
                 {
@@ -261,9 +261,9 @@
                 {
                     "header": "Difference between AI Agents, AI Assistants, and Bots",
                     "content": [
-                        "AI Agents: Highest autonomy; proactive and goal-oriented; can perform complex multi-step actions and make independent decisions.",
-                        "AI Assistants: Moderate autonomy; reactive to user prompts; assist with tasks while decision-making remains with the user.",
-                        "Bots: Lowest autonomy; follow pre-defined rules; limited learning; automate simple, repetitive tasks."
+                        "- AI Agents: Highest autonomy; proactive and goal-oriented; can perform complex multi-step actions and make independent decisions.",
+                        "- AI Assistants: Moderate autonomy; reactive to user prompts; assist with tasks while decision-making remains with the user.",
+                        "- Bots: Lowest autonomy; follow pre-defined rules; limited learning; automate simple, repetitive tasks."
                     ]
                 },
                 {
@@ -285,28 +285,41 @@
                     ]
                 },
                 {
-                    "header": "Benefits and Challenges of AI Agents",
+                    "header": "Benefits of using AI agents",
                     "content": [
-                        "Benefits: Efficiency (increased output), Decision-making (robust reasoning), Social Interaction (emergent behaviors), and Problem Solving (combining strengths).",
-                        "Challenges: Empathy (struggle with nuanced social dynamics), Ethical Stakes (lack of moral compass), Physical Environments (difficulty adapting), and Resource Intensity (computationally expensive)."
+                        "- Efficiency and productivity: Increased output through simultaneous execution and repetitive task automation.",
+                        "- Improved decision-making: Robust reasoning through collaboration and adaptable strategies.",
+                        "- Enhanced capabilities: Complex problem-solving by combining agent strengths and natural language communication.",
+                        "- Social interaction and simulation: Emergent social behaviors and realistic simulations."
+                    ]
+                },
+                {
+                    "header": "Challenges with using AI agents",
+                    "content": [
+                        "- Empathy: Struggle with deep emotional intelligence and nuanced social dynamics (e.g., therapy, conflict resolution).",
+                        "- Ethical Stakes: Lack a moral compass for high-stakes decisions (e.g., law enforcement, judicial decision-making).",
+                        "- Physical Environments: Difficulty adapting to unpredictable physical tasks requiring complex motor skills (e.g., surgery, disaster response).",
+                        "- Resource Intensity: Computationally expensive to develop and deploy at scale."
                     ]
                 },
                 {
                     "header": "Deploying AI agents with Cloud Run",
                     "content": [
-                        "Cloud Run is a serverless platform ideal for deploying scalable AI agents, offering auto-scaling (including scale to zero), stable HTTPS endpoints for orchestration, and A2A integration via the Agent Development Kit (ADK)."
+                        "Cloud Run is a serverless platform ideal for deploying scalable AI agents. It auto-scales container instances (including scale to zero), and the core agent logic runs as a service providing stable HTTPS endpoints. Frameworks like the Agent Development Kit (ADK) integrate seamlessly."
                     ]
                 },
                 {
                     "header": "Google Cloud AI Agents Portfolio",
                     "content": [
-                        "- Gemini Enterprise App: Secure platform to govern AI agents.",
-                        "- Gemini Enterprise Agent Platform: Build agents grounded in enterprise data.",
-                        "- Customer Experience Agent Studio: Build hybrid conversational agents.",
-                        "- Agent Garden: Collection of pre-built agent samples.",
-                        "- Agent Development Kit (ADK): SDK for multi-agent systems.",
-                        "- A2A Protocol: Framework for interoperable agent communication.",
-                        "- Cloud Run: Platform for containerized agents."
+                        "- Gemini Enterprise App: Secure platform to govern AI agents across an organization.",
+                        "- Gemini Enterprise Agent Platform: Create agents grounded in enterprise data using natural language or code.",
+                        "- Customer Experience Agent Studio (Dialogflow): Build hybrid conversational agents with both deterministic and generative AI.",
+                        "- Agent Garden: Curated collection of pre-built agent samples and tools.",
+                        "- Agent Development Kit (ADK): Open-source Python SDK for building sophisticated multi-agent systems.",
+                        "- A2A Protocol: Open-source framework for interoperable agent-to-agent communication.",
+                        "- Cloud Run: Fully managed serverless platform for deploying containerized agents.",
+                        "- Agent Search: Build Google-quality search for enterprise apps and experiences.",
+                        "- Agentic SOC: Delivering better security outcomes with AI agents."
                     ]
                 }
             ]
