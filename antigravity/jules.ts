@@ -852,7 +852,14 @@ public async observeKnowledge(url?: string) {
             { key: 'multi-modal', domain: 'AI Agents', label: '👁️ Multi-Modal Integration' },
             { key: 'recursive', domain: 'Services', label: '🔄 Self-Improvement' },
             { key: 'zkp', domain: 'Security', label: '🤫 ZKP Trust' },
-            { key: 'singularity', domain: 'Core', label: '🌌 Singularity Orchestration' }
+            { key: 'singularity', domain: 'Core', label: '🌌 Singularity Orchestration' },
+            { key: 'lattice', domain: 'Security', label: '🕸️ Lattice Sync' },
+            { key: 'dilithium', domain: 'Security', label: '💎 Dilithium' },
+            { key: 'kyber', domain: 'Security', label: '🛡️ Kyber' },
+            { key: 'neural stability', domain: 'Core', label: '🧠 Neural Stability' },
+            { key: 'sovereign swarm', domain: 'AI Agents', label: '🐝 Sovereign Swarm' },
+            { key: 'proof-of-sovereignty', domain: 'Security', label: '🛡️ Proof-of-Sovereignty' },
+            { key: 'inter-shard', domain: 'Services', label: '🌐 Inter-Shard Trust' }
           ]
 
           strategicKeywords.forEach(sk => {
