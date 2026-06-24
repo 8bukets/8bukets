@@ -71,9 +71,11 @@ export async function dispatchExecutiveBriefing(summary: string, details?: strin
     return section
   }).join('\n') : ''
 
+  const urgencySign = summary.includes('CRITICAL') || (details && details.includes('🚨 CRITICAL')) ? '🔴 [URGENT]' : '🔔';
+
   const fullMessage = details
-    ? `╔═══════════════════════════════════════════╗\n║         🔔 EXECUTIVE BRIEFING           ║\n╚═══════════════════════════════════════════╝\n\n**POSTURE:** ${summary}\n\n**SYSTEM KPIs:**\n- Synergy Stability: Optimal\n- Cognitive Alignment: High\n- Autonomous Pulse: Active\n${formattedDetails}`
-    : `🔔 EXECUTIVE BRIEFING: ${summary}`
+    ? `╔═══════════════════════════════════════════╗\n║         ${urgencySign} EXECUTIVE BRIEFING           ║\n╚═══════════════════════════════════════════╝\n\n**POSTURE:** ${summary}\n\n**SYSTEM KPIs:**\n- Synergy Stability: Optimal\n- Cognitive Alignment: High\n- Autonomous Pulse: Active\n${formattedDetails}`
+    : `${urgencySign} EXECUTIVE BRIEFING: ${summary}`
 
   const briefing: Notification = {
     id: Math.random().toString(36).substr(2, 9),

@@ -238,6 +238,34 @@ export async function generateActionableBriefing(state: any, directives: Directi
     briefing += `- **[${ad.label}]** ${ad.msg}\n`
   })
 
+  // Mandatory Strategic Action Items
+  briefing += `\n### 🚀 Strategic Action Items\n`
+  const actionItems: string[] = []
+
+  if (highIntensity.length > 0) {
+    actionItems.push(`[IMMEDIATE] Consolidate high-intensity overlapping branches on: ${highIntensity.map((s: any) => `\`${s.resource}\``).join(', ')}.`)
+  }
+
+  if (criticalRecs.length > 0) {
+    criticalRecs.forEach((r: any) => {
+      actionItems.push(`[REQUIRED] ${r.action} (Rationale: ${r.rationale.split('.')[0]}.).`)
+    })
+  }
+
+  const results = state.intelligence.relationshipMap.impactfulBranches || []
+  const highScoreResults = results.filter((r: any) => r.score > 80)
+  if (highScoreResults.length > 0) {
+    highScoreResults.slice(0, 3).forEach((r: any) => {
+      actionItems.push(`[MISSION IMPACT] Leverage successful result from \`${r.name}\`: ${r.results}.`)
+    })
+  }
+
+  if (actionItems.length > 0) {
+    actionItems.forEach(item => briefing += `- ${item}\n`)
+  } else {
+    briefing += `- No urgent strategic actions identified. Continue monitoring autonomous evolution.\n`
+  }
+
   // Strategic Advice & Risk Mitigation
   briefing += `\n### 💡 Strategic Advice\n`
   const advices = [

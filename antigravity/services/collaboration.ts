@@ -183,6 +183,10 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   // Phase 12: Dynamic Resource Discovery (Expanded)
   const scanDirs = [
     { path: 'antigravity/services', type: 'Service', pattern: /\.ts$/ },
+    { path: 'antigravity/utils', type: 'Utility', pattern: /\.ts$/ },
+    { path: 'antigravity/workflows', type: 'Workflow', pattern: /\.ts$/ },
+    { path: 'antigravity/schemas', type: 'Schema', pattern: /\.ts$/ },
+    { path: 'antigravity/actions', type: 'Action', pattern: /\.ts$/ },
     { path: 'scripts', type: 'Automation Script', pattern: /\.ts$|\.sh$/ },
     { path: 'agents', type: 'AI Agent', pattern: /\.md$|\.py$/ },
     { path: 'docs', type: 'Documentation', pattern: /\.md$/ },
@@ -362,11 +366,14 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           resourceUsage[matchedResource.name].add(b.name)
 
           // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
-          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum)/i)
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum|swarm|heartbeat|sovereign|zkp|singularity|lattice|dilithium|kyber|multi-modal|recursive)/i)
           if (clusterMatch) {
             let cluster = clusterMatch[0].toLowerCase()
-            if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation' || cluster === 'quantum') cluster = 'security'
-            if (cluster === 'enterprise' || cluster === 'research') cluster = 'core'
+            if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation' || cluster === 'quantum' || cluster === 'zkp' || cluster === 'sovereign' || cluster === 'lattice' || cluster === 'dilithium' || cluster === 'kyber') cluster = 'security'
+            else if (cluster === 'enterprise' || cluster === 'research' || cluster === 'singularity') cluster = 'core'
+            else if (cluster === 'swarm' || cluster === 'multi-modal') cluster = 'cognitive'
+            else if (cluster === 'heartbeat' || cluster === 'recursive') cluster = 'vitality'
+
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
             functionalClusters[cluster].add(b.name)
           }
