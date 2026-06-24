@@ -17,7 +17,7 @@ def update_knowledge():
     gcp_knowledge = {
         "what-is-an-ai-agent": {
             "title": "What is an AI agent?",
-            "content": "AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They exhibit reasoning, planning, and memory, and possess a degree of autonomy to make decisions, learn, and adapt. Their capabilities are primarily driven by the multimodal capacity of generative AI and foundation models, allowing them to process text, voice, video, and code simultaneously."
+            "content": "AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They exhibit reasoning, planning, and memory, and possess a degree of autonomy to make decisions, learn, and adapt. Their capabilities are primarily driven by the multimodal capacity of generative AI and foundation models, allowing them to process text, voice, video, audio, code, and more simultaneously."
         },
         "key-features-of-an-ai-agent": {
             "title": "Key features of an AI agent",
@@ -37,19 +37,19 @@ def update_knowledge():
         },
         "benefits-of-using-ai-agents": {
             "title": "Benefits of using AI agents",
-            "content": "- **Efficiency**: Increased output through simultaneous execution and repetitive task automation.\n- **Decision-making**: Robust reasoning through collaboration and adaptable strategies.\n- **Social Interaction**: Emergent social behaviors and realistic simulations.\n- **Problem Solving**: Complex problem-solving by combining agent strengths."
+            "content": "- **Efficiency and productivity**: Increased output through simultaneous execution and repetitive task automation.\n- **Improved decision-making**: Robust reasoning through collaboration and adaptable strategies.\n- **Enhanced capabilities**: Complex problem-solving by combining agent strengths and natural language communication.\n- **Social interaction and simulation**: Emergent social behaviors and realistic simulations."
         },
         "challenges-with-using-ai-agents": {
             "title": "Challenges with using AI agents",
-            "content": "- **Empathy**: Struggle with deep emotional intelligence and nuanced social dynamics.\n- **Ethical Stakes**: Lack a moral compass for high-stakes decisions (e.g., legal, medical).\n- **Physical Environments**: Difficulty adapting to unpredictable physical tasks requiring complex motor skills.\n- **Resource Intensity**: Computationally expensive to develop and deploy at scale."
+            "content": "- **Empathy**: Struggle with deep emotional intelligence and nuanced social dynamics (e.g., therapy, conflict resolution).\n- **Ethical Stakes**: Lack a moral compass for high-stakes decisions (e.g., law enforcement, judicial decision-making).\n- **Physical Environments**: Difficulty adapting to unpredictable physical tasks requiring complex motor skills (e.g., surgery, disaster response).\n- **Resource Intensity**: Computationally expensive to develop and deploy at scale."
         },
         "deploy-ai-agents-for-scale-and-efficiency-with-cloud-run": {
             "title": "Deploying AI agents with Cloud Run",
-            "content": "Cloud Run is a serverless platform ideal for deploying scalable AI agents:\n\n- **Scalability**: Auto-scales container instances and can scale to zero when idle to minimize costs.\n- **Orchestration**: Logic runs as a service providing stable HTTPS endpoints for API access.\n- **A2A Integration**: Seamlessly works with the Agent Development Kit (ADK) for multi-agent systems."
+            "content": "Cloud Run is a serverless platform ideal for deploying scalable AI agents:\n\n- **Scalability**: Auto-scales container instances and can scale to zero when idle to minimize costs.\n- **Orchestration**: Core agent logic runs as a service providing stable HTTPS endpoints for API access.\n- **A2A Integration**: Frameworks like the Agent Development Kit (ADK) are designed to integrate seamlessly with Cloud Run."
         },
         "google-cloud-and-ai-agents": {
             "title": "Google Cloud AI Agents Portfolio",
-            "content": "Google Cloud provides a comprehensive set of tools for agent development:\n\n- **Gemini Enterprise App**: Secure platform to govern AI agents across an organization.\n- **Gemini Enterprise Agent Platform**: Build agents grounded in enterprise data using natural language or code.\n- **Customer Experience Agent Studio (Dialogflow)**: Build hybrid conversational agents.\n- **Agent Garden**: A curated collection of pre-built agent samples and tools.\n- **Agent Development Kit (ADK)**: Open-source Python SDK for building sophisticated multi-agent systems.\n- **A2A Protocol**: Open-source framework for interoperable agent-to-agent communication.\n- **Cloud Run**: Fully managed serverless platform for deploying containerized agents."
+            "content": "Google Cloud provides a comprehensive set of tools for agent development:\n\n- **Gemini Enterprise App**: Secure platform to govern AI agents across an organization.\n- **Gemini Enterprise Agent Platform**: Create agents grounded in enterprise data using natural language or code.\n- **Customer Experience Agent Studio (Dialogflow)**: Build hybrid conversational agents with both deterministic and generative AI.\n- **Agent Garden**: A curated collection of pre-built agent samples and tools.\n- **Agent Development Kit (ADK)**: Open-source Python SDK for building sophisticated multi-agent systems.\n- **A2A Protocol**: Open-source framework for interoperable agent-to-agent communication.\n- **Cloud Run**: Fully managed serverless platform for deploying containerized agents.\n- **Agent Search**: Build Google-quality search for enterprise apps and experiences.\n- **Agentic SOC**: Delivering better security outcomes with AI agents."
         },
         "customer-agents": {
             "title": "Customer agents",
