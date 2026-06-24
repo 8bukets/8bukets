@@ -16,6 +16,10 @@ import { jules } from '../antigravity/jules'
 import { onlinePresenceService } from '../antigravity/services/presence'
 import { cloudConvergence } from '../antigravity/services/cloud_convergence'
 import { generateCreationReport } from '../antigravity/services/creation_reporting'
+import { exec } from 'child_process'
+import { promisify } from 'util'
+
+const execAsync = promisify(exec)
 
 /**
  * FULL AUTONOMOUS AUTOMATIC CREATION ORDER AND EXECUTION (PHASE 19)
@@ -70,6 +74,18 @@ async function main() {
 
   await jules.syncCrossShardMemory()
   await jules.performQuantumSecureSync()
+
+  // Step 4.5: Market Intelligence Ingestion (Markposition & Dynamic Merge)
+  console.log('👁️ [Antigravity] Triggering specialized market intelligence ingestion...')
+  try {
+    await execAsync('npx tsx scripts/ingest_markposition_knowledge.ts')
+    console.log('✅ [Antigravity] Markposition intelligence ingested.')
+    await execAsync('npx tsx scripts/ingest_knowledge_merge.ts')
+    console.log('✅ [Antigravity] Dynamic knowledge merge completed.')
+  } catch (err: any) {
+    console.warn('⚠️ [Antigravity] Market intelligence ingestion encountered issues:', err.message)
+  }
+
   console.log('✅ [Antigravity] Phase 19 Sovereign Swarm protocols engaged.')
 
   // Step 5: State Purge
