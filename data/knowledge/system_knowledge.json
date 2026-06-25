@@ -377,7 +377,7 @@
       "title": "Chief AI Officer (CAIO) Role",
       "metadata": {
         "source": "user_input://caio_user_input.md",
-        "analyzedAt": "2026-06-24T11:24:04.089Z",
+        "analyzedAt": "2026-06-25T10:07:41.653Z",
         "description": "Extracted system knowledge"
       },
       "sections": [
@@ -407,7 +407,7 @@
       "title": "Chief AI Officer (CAIO) Market Intelligence",
       "metadata": {
         "source": "user_input://caio_market_intelligence_2026.md",
-        "analyzedAt": "2026-06-24T11:24:04.139Z",
+        "analyzedAt": "2026-06-25T10:07:41.671Z",
         "description": "Extracted system knowledge"
       },
       "sections": [
@@ -475,7 +475,8 @@
       ],
       "metadata": {
         "source": "grounded_research_2026",
-        "ingestedAt": "2026-06-23T06:14:10.044Z"
+        "ingestedAt": "2026-06-23T06:14:10.044Z",
+        "updatedAt": "2026-06-25T10:07:01.468Z"
       }
     },
     {
