@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-22T22:43:04.603Z",
+    "generated_at": "2026-06-25T02:29:37.613Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-22T22:43:04.512Z"
+        "ingestedAt": "2026-06-25T02:29:37.529Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-22T22:43:04.523Z"
+        "ingestedAt": "2026-06-25T02:29:37.540Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-22T22:43:04.531Z"
+        "ingestedAt": "2026-06-25T02:29:37.547Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-22T22:43:04.541Z"
+        "ingestedAt": "2026-06-25T02:29:37.556Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-22T22:43:04.550Z"
+        "ingestedAt": "2026-06-25T02:29:37.564Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-22T22:43:04.560Z"
+        "ingestedAt": "2026-06-25T02:29:37.572Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-22T22:43:04.570Z"
+        "ingestedAt": "2026-06-25T02:29:37.581Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2205,7 +2205,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-22T22:43:04.581Z"
+        "ingestedAt": "2026-06-25T02:29:37.595Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2461,7 +2461,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-22T22:43:04.591Z"
+        "ingestedAt": "2026-06-25T02:29:37.602Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2521,6 +2521,10 @@
         {
           "header": "Introducing Gemini Omni",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/\n- Insight: Last year, Nano Banana brought Gemini's intelligence to image generation and editing. Since then, it’s helped millions of people restore old photos, design from sketches and visualize ideas in ways that weren’t possible before. From the start we built Gemini to be natively multimodal from the ground up, and now we’re taking the next step.We’re introducing Gemini Omni, where Gemini’s ability to reason meets the ability to create. Omni is our new model that can create anything from any input — starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.Today, we’re rolling out the first model in the Omni family: Gemini Omni Flash, to the Gemini app, Google Flow and YouTube Shorts. In time we will support output modalities like image and audio. Here’s some of what makes Omni special:Edit your videos through conversationGemini Omni..."
+        },
+        {
+          "header": "Introducing computer use in Gemini 3.5 Flash",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/\n- Insight: Computer use is now a built-in tool supported in Gemini 3.5 Flash, delivering our best performance yet for agentic computer use tasks. Previously only available as a standalone Gemini 2.5 computer use model, computer use is now integrated natively in the main Gemini Flash model. Gemini already excels at function calling and using built-in tools like Search and Maps grounding. With built-in computer use capability, developers can now use 3.5 Flash to reliably build custom agents that can see, reason and take action across browser, mobile and desktop environments. This unlocks improved performance for long-horizon and enterprise automation tasks like continuous software testing and knowledge work across professional applications.Developers and enterprises can start using computer use in 3.5 Flash via the Gemini API and Gemini Enterprise Agent Platform.3.5 Flash uses computer use to analyse the Gemini app and return a categorized list of features.3.5 Flash with computer use audits its own..."
         },
         {
           "header": "Google DeepMind",
@@ -2679,6 +2683,10 @@
           "content": "- URL: https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/\n- Insight: For centuries, the scientific method has been the greatest engine of human progress. At Google, our mission is deeply rooted in building tools to accelerate it. We believe that a new era of discovery won’t come from narrow, specialized models, but general agents that empower researchers across every scientific field.That’s why we are introducing Gemini for Science, a collection of science tools and experiments designed to expand the scale and precision of scientific exploration.A force multiplier for human ingenuityToday science faces a paradox: our collective knowledge is growing so fast that it’s becoming harder for individual scientists to see the full picture. Scientific breakthroughs often rely upon making creative connections between data, but the time required to do this manually can take weeks or even months. AI can help eliminate this bottleneck and serve as a force multiplier for scientific work by handling complex tasks. This allows researchers to focus on identifying and ta..."
         },
         {
+          "header": "Towards a world where no one is surprised by a natural disaster",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/research/helping-communities-prepare-for-natural-disasters/\n- Insight: The world is experiencing a dramatic rise in extreme weather events and natural disasters, devastating communities. Over the past decade, our teams at Google have worked to make helpful information available to people at times of crises — often when they need it most.We’ve advanced AI-based breakthrough research and progressed from providing timely information to forecasting and detecting natural disasters such as wildfires, floods, earthquakes and extreme weather. We’ve made critical information accessible via Google products that are used by billions, and partnered with governments and organizations around the world to help communities prepare for and respond to these crises.Actionable information in times of crises can help save lives and livelihoods: our north star for our crisis resilience efforts is that no one should be surprised by a natural disaster.At today’s AI for the Planet event, we shared how we’re making progress towards this vision, putting AI-powered tools and insight..."
+        },
+        {
           "header": "Building superconducting and neutral atom quantum computers",
           "content": "- URL: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/\n- Insight: At Google Quantum AI, our mission has always been clear: build quantum computing for otherwise unsolvable problems. For over a decade, we have pioneered the development of superconducting quantum bits (qubits), achieving milestones like beyond-classical performance, error correction and verifiable quantum advantage that once seemed decades away. We are now increasingly confident that commercially relevant quantum computers based on superconducting technology will become available by the end of this decade.Today, we are excited to share that Google Quantum AI is expanding our quantum computing effort to include neutral atom quantum computing, which uses individual atoms as qubits.Two promising approaches to quantum computingGoogle will accelerate our timeline to near-term milestones and broaden our impact by exploiting the complementary strengths of two modalities. Superconducting qubits have already scaled to circuits with millions of gate and measurement cycles, where each cycle takes..."
         },
@@ -2713,7 +2721,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-22T22:43:04.600Z"
+        "ingestedAt": "2026-06-25T02:29:37.610Z"
       }
     }
   },
