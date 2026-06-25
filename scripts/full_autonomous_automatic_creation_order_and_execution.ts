@@ -39,6 +39,7 @@ const execAsync = promisify(exec)
  */
 
 async function main() {
+  // full autonomous automatic creation order and execution
   console.log('🌌 [Antigravity] Initiating Phase 19 Sovereign Swarm Evolution Pulse...')
 
   // Step 1: Activation
@@ -112,6 +113,8 @@ async function main() {
   // Step 8: Final Intelligence Reporting
   console.log('📊 [Antigravity] Compiling final creation intelligence report...')
   await generateCreationReport(rootOrder.id)
+
+  swarmHeartbeat.stop()
 
   console.log('\n🏆 [Antigravity] Phase 19 Sovereign Swarm Evolution Pulse completed successfully.')
 }
