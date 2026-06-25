@@ -1,6 +1,7 @@
 # Intelephense Documentation
 
 ## Getting Started
+
 ### About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
 
@@ -9,6 +10,7 @@ When paired with an LSP capable editor it provides an essential set of code tool
 The Intelephense server is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key.
 
 ## Installation
+
 ### Visual Studio Code
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
 
@@ -17,7 +19,7 @@ The built-in VSCode PHP Language Features extension can cause excessive completi
 Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.
 
 ![Entering a licence key via the VS Code command palette](https://intelephense.com/img/license_key.png)
-*A screen capture showing how to enter your intelephense licence key into VSCode. Entering a licence key via the VS Code command palette*
+*Entering a licence key via the VS Code command palette*
 
 ### Other Editors
 Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.
@@ -29,11 +31,13 @@ npm i intelephense -g
 Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found [here](https://microsoft.github.io/language-server-protocol/implementors/editors/). Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
 
 To start the intelephense server:
+
 ```bash
 intelephense {transport}
 ```
 
 Where {transport} is one of:
+
 - `--node-ipc`
 - `--stdio`
 - `--socket={number}`
@@ -169,12 +173,10 @@ In the list of supported types below, some can only be used in PHPDoc as documen
 Additional types used in other static analysis engines that are not listed here are not fully supported. Intelephense attempts to fallback to an appropriate alternative in this situation.
 
 #### Top Type
-- `mixed`
-The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
+- `mixed`: The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
 
 #### Bottom Type
-- `never`
-The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
+- `never`: The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
 
 #### Scalar Types
 Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.
@@ -197,7 +199,7 @@ Any of these types can be assigned to the other unless the `declare(strict_types
 
 #### Object Types
 - `object`
-- `\MyNs\MyClass` Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
+- `\MyNs\MyClass`: Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
 - `object{name: string, optional?: string}`* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.
 - `static`
 - `self`
@@ -210,24 +212,21 @@ Any of these types can be assigned to the other unless the `declare(strict_types
 - `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}`* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported.
 
 #### Callable Types
-- `callable` Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
+- `callable`: Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
 - `callable(TParamA $a, TParamB $b): TReturn`* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type.
 
 #### Alias Types
-- `iterable` Alias for `Traversable|array`.
-- `?A` Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
+- `iterable`: Alias for `Traversable|array`.
+- `?A`: Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
 
 #### Union Types
-- `A|B|C`
-A type which may have multiple atomic type representations. For example, a type constraint of `A|B` can be assigned type `A` or `B`.
+- `A|B|C`: A type which may have multiple atomic type representations. For example, a type constraint of `A|B` can be assigned type `A` or `B`.
 
 #### Intersection Types
-- `A&B&C`
-A composite type which consists of multiple atomic types. For example, a type of `A&B` can be assigned to type `A` and to type `B`.
+- `A&B&C`: A composite type which consists of multiple atomic types. For example, a type of `A&B` can be assigned to type `A` and to type `B`.
 
 #### DNF Types
-- `A|B|(C&D&E)`
-When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
+- `A|B|(C&D&E)`: When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
 
 #### Generic Types
 - `MyType<TypeArg1, TypeArg2>`*
@@ -350,7 +349,7 @@ This annotation is used to declare a type alias. A type alias allows you to crea
 
 ### @import-type
 `/** @import-type TypeName as OptionalAlias */`
-This annotation is used to import a type alias that has been declared in another file. It functions similarly to `@phpstan-import-type` and `@psalm-import-type` and both these annotations may also be used. However, type aliases are not bound to classes in Intelephense and as such the `from ClassName` specifier is unnecessary but still supported. Type aliases in Intelephense follow normal PHP namespace rules.
+This annotation is used to import a type alias that has been declared in another file. It functions similarly to `@phpstan-import-type` and `@psalm-import-type` and both these annotations may also be used. However, type aliases are not bound to classes in Intelephense and as such the from `ClassName` specifier is unnecessary but still supported. Type aliases in Intelephense follow normal PHP namespace rules.
 
 ## Features
 Intelephense provides a variety of features to enhance the development experience when working with PHP code. Many of these features are provided for free while others require a Premium licence to access. All images and videos in this section are taken from the VS Code client. The features are available to all LSP clients that support the relevant LSP methods. Keybindings listed for each feature are the defaults for the VS Code client.
@@ -375,7 +374,7 @@ Unfortunately, VS Code has a current issue where it will discard results if the 
 - **Keybinding**: `Ctrl+Shift+O`
 This feature lists all symbols in the current document, providing an overview of the structure of the file. A client can use this information to provide a document outline view, breadcrumb navigation, and a symbol search specific to the current file.
 
-![Document Symbols outline panel in VS Code](https://intelephense.com/img/document_symbols.png)
+![Document Symbols outline panel](https://intelephense.com/img/document_symbols.png)
 *Document symbols provide an outline of the current file's structure*
 
 #### Go to Definition
@@ -384,7 +383,7 @@ This feature lists all symbols in the current document, providing an overview of
 - **Keybinding**: `F12` | right-click context menu
 This feature allows you to navigate to the definition of a symbol when invoked on a reference to that symbol in the current file. Multiple definitions may sometimes be found for a symbol. For example, invoking the feature on the type name in a new expression may find both the constructor method and the class declaration as definitions. It is up to the client to decide how to present multiple definitions to the user. For example a peek definitions window may open or the user may simply be navigated to the first definition in the list.
 
-![Go to Definition in VS Code](https://intelephense.com/img/go_to_definition.png)
+![Go to Definition](https://intelephense.com/img/go_to_definition.png)
 *Go to Definition navigates directly to a symbol's definition*
 
 #### Hover
@@ -393,7 +392,7 @@ This feature allows you to navigate to the definition of a symbol when invoked o
 - **Keybinding**: `Ctrl+K Ctrl+I` | mouse-over
 This feature provides information about a symbol when hovering over a reference to that symbol in the current file. The information provided can include the type of the symbol, it's signature if it is a function or method, and any associated documentation.
 
-![Hover tooltip in VS Code](https://intelephense.com/img/hover.png)
+![Hover tooltip](https://intelephense.com/img/hover.png)
 *Hover shows type information and documentation for a symbol*
 
 #### Highlight
@@ -402,7 +401,7 @@ This feature provides information about a symbol when hovering over a reference 
 - **Keybinding**: Displayed automatically at the cursor position
 This feature highlights all references to the symbol at the cursor position in the current file. This can be useful for quickly identifying all usages of a symbol in the current file. Read and write contexts will be identified if applicable and the client can choose to highlight them differently if desired.
 
-![Document Highlight in VS Code](https://intelephense.com/img/document_highlight.png)
+![Document Highlight](https://intelephense.com/img/document_highlight.png)
 *Document Highlight marks all references to the symbol under the cursor. Read and write contexts are coloured differently.*
 
 #### Code Completion
@@ -412,7 +411,7 @@ This feature highlights all references to the symbol at the cursor position in t
 - **Trigger characters**: `$ > : \ / ' " * . <`
 This feature provides a list of context appropriate completion suggestions for a symbol at the cursor position in the current file. The completions can include variables, functions, methods, classes, and other symbols. Where appropriate, additional edits are provided to automatically import a symbol.
 
-![Code Completion dropdown in VS Code](https://intelephense.com/img/code_completion.png)
+![Code Completion dropdown](https://intelephense.com/img/code_completion.png)
 *Code Completion provides context-aware suggestions as you type*
 
 #### Signature Help
@@ -422,7 +421,7 @@ This feature provides a list of context appropriate completion suggestions for a
 - **Trigger characters**: `( , :`
 This feature provides information about the signature of a function or method when the cursor is within the argument list of a function or method call. The information provided can include the types of the parameters, the return type, and any associated documentation.
 
-![Signature Help popup in VS Code](https://intelephense.com/img/signature_help.png)
+![Signature Help popup](https://intelephense.com/img/signature_help.png)
 *Signature Help displays parameter information for the current function call*
 
 #### Find All References
@@ -431,7 +430,7 @@ This feature provides information about the signature of a function or method wh
 - **Keybinding**: `Shift+F12` | right-click context menu
 This feature provides a list of all references to a symbol in the current file or workspace. The references can include variables, functions, methods, classes, and other symbols. When there is a hierarchy of types, references to a type member will be determined relative to the initial base members.
 
-![Find All References panel in VS Code](https://intelephense.com/img/find_all_references.png)
+![Find All References panel](https://intelephense.com/img/find_all_references.png)
 *Find All References lists every usage of a symbol across the workspace*
 
 #### Formatting
@@ -440,7 +439,7 @@ This feature provides a list of all references to a symbol in the current file o
 - **LSP**: `textDocument/rangeFormatting` (**Keybinding**: `Ctrl+K Ctrl+F`)
 This feature provides formatting of a whole document or a selected range within a document. The Intelephense formatter is opinionated and aims to comply with PHP-FIG coding standards. Limited configuration options are available to allow some customisation of brace style.
 
-![Formatter in VS Code](https://intelephense.com/img/formatting.png)
+![Formatter](https://intelephense.com/img/formatting.png)
 *Formatter applies PHP-FIG coding standards to the document*
 
 #### Diagnostics
@@ -462,7 +461,7 @@ To make type checks more thorough, there are several settings available.
 - `intelephense.diagnostics.strictTypes` is a global equivalent to adding `declare(strict_types=1);` to the top of each file.
 - `intelephense.diagnostics.typeCheckDocumentedTypes` controls whether documented types are included in type checking.
 
-![Diagnostics panel in VS Code](https://intelephense.com/img/diagnostics.png)
+![Diagnostics panel](https://intelephense.com/img/diagnostics.png)
 *Diagnostics surface type errors and other issues either as you type or on save depending on your settings.*
 
 #### Inline Values
@@ -471,13 +470,13 @@ To make type checks more thorough, there are several settings available.
 - **Keybinding**: Displayed automatically during a debug session
 This feature provides ranges and text for variables in a file that may be relevant for a debugger to display inline values for during a debugging session. To see this feature in action in VS Code, install the official Xdebug extension.
 
-![Inline Values in VS Code](https://intelephense.com/img/inline_values.png)
+![Inline Values](https://intelephense.com/img/inline_values.png)
 *Inline Values display variable states during a debug session*
 
 #### Embedded Languages
 Intelephense presumes that text outside of PHP tags is HTML. Basic language intelligence is provided for HTML and embedded CSS and JavaScript within HTML.
 
-![Embedded languages in VS Code](https://intelephense.com/img/embedded_languages.png)
+![Language intelligence for HTML and CSS](https://intelephense.com/img/embedded_languages.png)
 *Language intelligence for HTML, CSS, and JavaScript within PHP files*
 
 ### Premium Features
@@ -493,7 +492,7 @@ Intelephense will prefer to limit renames to the current file if possible. For e
 
 Renaming a namespace in a file updates imports and FQN references for the file symbols in that namespace through the workspace. If using PSR-4 style folder structures then renaming the namespace of a class is also the equivalent of a move class to file operation. Intelephense will return file rename instructions to the client in such cases.
 
-![Rename refactoring in VS Code](https://intelephense.com/img/rename.png)
+![Rename refactors a symbol](https://intelephense.com/img/rename.png)
 *Rename refactors a symbol and all its references across the workspace*
 
 #### Code Folding
@@ -502,7 +501,7 @@ Renaming a namespace in a file updates imports and FQN references for the file s
 - **Keybinding**: `Ctrl+Shift+[` (fold) | `Ctrl+Shift+]` (unfold) | left-click editor gutter | right-click context menu
 This feature allows you to fold and unfold regions of code in the current file. Intelephense provides folding ranges for symbol definition bodies, control structures, comments, imports, and custom regions identified by `#region` and `#endregion` comments. The folding provider is syntax tree driven and is more reliable than indent based folding providers such as the default provider in VS Code.
 
-![Code Folding in VS Code](https://intelephense.com/img/folding.png)
+![Code Folding collapses and expands regions](https://intelephense.com/img/folding.png)
 *Code Folding collapses and expands regions based on the syntax tree*
 
 #### Find All Implementations
@@ -511,7 +510,7 @@ This feature allows you to fold and unfold regions of code in the current file. 
 - **Keybinding**: `Ctrl+F12` | right-click context menu
 This feature provides a list of all implementations of a method or interface when invoked on a reference. This functions similar to go to definition but differs in that it will find the classes that implement the interface or methods that implement an abstract method declaration.
 
-![Find All Implementations in VS Code](https://intelephense.com/img/implementation.png)
+![Find All Implementations listing concrete classes](https://intelephense.com/img/implementation.png)
 *Find All Implementations lists all concrete implementations of an interface or abstract method*
 
 #### Go to Type Definition
@@ -520,7 +519,7 @@ This feature provides a list of all implementations of a method or interface whe
 - **Keybinding**: Right-click context menu
 This feature allows you to navigate to the type definition of a variable. Similar to go to definition but differs in that it will navigate to the type definition rather than the variable declaration itself.
 
-![Go to Type Definition in VS Code](https://intelephense.com/img/type_definition.png)
+![Go to Type Definition](https://intelephense.com/img/type_definition.png)
 *Go to Type Definition navigates to the type of a variable*
 
 #### Go to Declaration
@@ -529,7 +528,7 @@ This feature allows you to navigate to the type definition of a variable. Simila
 - **Keybinding**: Right-click context menu
 This feature allows you to navigate to the initial declaration of a symbol. Similar to go to definition, and depending on the context may function the same, it differs in that it will navigate to the initial declaration of a symbol in a hierarchy of types. For example, invoking this feature on a sub-type method reference will navigate to the initial declaration of the method in a super-type rather than the sub-type method declaration itself.
 
-![Go to Declaration in VS Code](https://intelephense.com/img/go_to_declaration.png)
+![Go to Declaration](https://intelephense.com/img/go_to_declaration.png)
 *Go to Declaration navigates to the initial declaration in a type hierarchy*
 
 #### Smart Select
@@ -538,7 +537,7 @@ This feature allows you to navigate to the initial declaration of a symbol. Simi
 - **Keybinding**: `Shift+Alt+→` (expand) | `Shift+Alt+←` (shrink)
 This feature allows you to expand and shrink the current selection in the current file based on the syntax tree of the code. For example, if the cursor is on a variable name, the first expansion would select the variable name, the second expansion would select the whole variable declaration, the third expansion would select the whole statement, the fourth expansion would select the whole block, and so on. Being syntax tree driven, it is more precise than regex or indent based selection providers such as the default provider in VS Code.
 
-![Smart Select in VS Code](https://intelephense.com/img/smart_select.png)
+![Smart Select expands or shrinks the selection](https://intelephense.com/img/smart_select.png)
 *Smart Select expands or shrinks the selection based on the syntax tree*
 
 #### Type Hierarchy
@@ -547,7 +546,7 @@ This feature allows you to expand and shrink the current selection in the curren
 - **Keybinding**: Right-click context menu
 This feature provides a type hierarchy for a class, interface, trait or enum when invoked on a reference to the type. It is useful for understanding the inheritance structure of a type and for quick navigation to types in the hierarchy.
 
-![Type Hierarchy in VS Code](https://intelephense.com/img/type_hierarchy.png)
+![Type Hierarchy panel](https://intelephense.com/img/type_hierarchy.png)
 *Type Hierarchy shows the inheritance structure of a type*
 
 #### Code Lens
@@ -562,7 +561,7 @@ This feature provides additional information and navigation for symbol declarati
 - **Parent**: shows whether a method overrides a parent method and provides a link to view the parent method.
 - **Usages**: shows the number of types that use a trait and provides a link to view those usages.
 
-![Code Lens in VS Code](https://intelephense.com/img/code_lens.png)
+![Code Lens displaying reference counts](https://intelephense.com/img/code_lens.png)
 *Code Lens displays reference counts and navigation links above declarations*
 
 #### Inlay Hints
@@ -575,18 +574,18 @@ This feature provides additional type and parameter information in the form of h
 - **Parameter Type**: shows the inferred type of a parameter in a closure that is an argument to another function or method when it has not been explicitly declared.
 - **Return Type**: shows the inferred return type of a function or method when it has not been explicitly declared.
 
-![Inlay Hints in VS Code](https://intelephense.com/img/inlay_hint.png)
+![Inlay Hints showing inferred parameter names](https://intelephense.com/img/inlay_hint.png)
 *Inlay Hints show inferred parameter names and return types inline*
 
 #### Document Links
 - **Availability**: PREMIUM
 - **LSP**: `textDocument/documentLink`
 - **Keybinding**: `Ctrl+Click` | mouse-over
-This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in `require` and `include` statements, and to local files referenced in @see annotations.
+This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in `require` and `include` statements, and to local files referenced in `@see` annotations.
 
 If your `require` statements are relative or you reference `$_SERVER['DOCUMENT_ROOT']`, you may need to configure the `intelephense.environment.documentRoot` setting to the correct path for the links to work. Intelephense will fallback to the workspace folder path if this setting has no value.
 
-![Document Links in VS Code](https://intelephense.com/img/document_link.png)
+![Document Links showing clickable require and include paths](https://intelephense.com/img/document_link.png)
 *Document Links make require/include paths and @see annotations clickable*
 
 #### Code Actions
@@ -599,10 +598,11 @@ This feature provides a list of context appropriate actions that can be performe
 - **Add PHPDoc**: Generate PHPDoc for functions, classes, and methods.
 - **Implement All Abstract Methods**: Generate method stubs for all abstract methods that have not been implemented in a class.
 
-![Code Actions in VS Code](https://intelephense.com/img/code_action.png)
+![Code Actions offer quick-fix](https://intelephense.com/img/code_action.png)
 *Code Actions offer quick-fix and refactoring options at the cursor position*
 
 ## Appendix
+
 ### Compatibility With Frameworks and Libraries
 Intelephense aims to support all PHP frameworks and libraries but does not implement specific solutions for these. Limited or unexpected language intelligence can sometimes be provided if the package:
 
@@ -669,7 +669,7 @@ customView()->customViewMethod();
 #### Solutions that do not form part of the project executable code
 This involves creating a file with alternate symbol declarations and placing it in your workspace folder (not in vendor). Intelephense will prioritise user declared symbols over vendor declared symbols.
 
-The advantage here is that it can be retrofitted easily to existing code, applies to all usages of the symbol and executable code remains untouched. The disadvantage is that it could suppress an actual error that Intelephense would otherwise detect.
+The advantage here is that it can be retrofitted easily to existing code, applies to all usages of the symbol and executable code remains untouched. The disadvantage is it could suppress an actual error that Intelephense would otherwise detect.
 
 ```php
 <?php
