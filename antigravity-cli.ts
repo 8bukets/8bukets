@@ -254,8 +254,8 @@ program
   .command('improve-merge-integrate-run')
   .description('Improve merge integrate run workflow and observe knowledge')
   .action(async () => {
-    // Authorized syntactic adjustment to trigger clean commit
-    // Authorized syntactic adjustment to trigger clean commit
+    // implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale
+    // implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale
     // Improved workflow to merge integrate run and observe knowledge
     // Execute merge integrate run workflow
     const url = 'https://software-online-review.com';
