@@ -25,6 +25,41 @@ export class IntelephenseService {
   private readonly files = ['README.md', 'installation.md', 'gettingStarted.md', 'features.md', 'support.md', 'LICENSE.txt']
 
   /**
+   * discoverRepositoryFiles: Dynamically identifies documentation files from the GitHub repository.
+   * Uses the GitHub Contents API to list files.
+   */
+  private async discoverRepositoryFiles(): Promise<string[]> {
+    console.log(` 🔍 Discovering documentation files in ${this.owner}/${this.repo}...`)
+    try {
+      const apiUrl = `https://api.github.com/repos/${this.owner}/${this.repo}/contents/`
+      const headers: Record<string, string> = {
+        'Accept': 'application/vnd.github+json',
+        'User-Agent': 'Antigravity-Agent'
+      }
+
+      if (process.env.GITHUB_TOKEN) {
+        headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`
+      }
+
+      const response = await fetch(apiUrl, { headers })
+      if (!response.ok) {
+        throw new Error(`GitHub API returned ${response.status}: ${response.statusText}`)
+      }
+
+      const contents = await response.json() as any[]
+      const discoveredFiles = contents
+        .filter((item: any) => item.type === 'file' && (item.name.endsWith('.md') || item.name.endsWith('.txt')))
+        .map((item: any) => item.name)
+
+      console.log(` ✨ Discovered ${discoveredFiles.length} files: ${discoveredFiles.join(', ')}`)
+      return discoveredFiles
+    } catch (err: any) {
+      console.error(` ❌ Failed to discover files from GitHub:`, err.message || err)
+      return []
+    }
+  }
+
+  /**
    * consolidate: Fetches, merges, and persists Intelephense knowledge.
    */
   public async consolidate(): Promise<void> {
@@ -32,8 +67,15 @@ export class IntelephenseService {
 
     let allSections: { header: string; content: string }[] = []
 
-    // 1. Fetch from GitHub first (source of truth for latest)
-    for (const file of this.files) {
+    // 1. Discover files dynamically or use hardcoded fallback
+    let filesToFetch = await this.discoverRepositoryFiles()
+    if (filesToFetch.length === 0) {
+      console.log(' ⚠️ Falling back to hardcoded file list.')
+      filesToFetch = this.files
+    }
+
+    // 2. Fetch from GitHub first (source of truth for latest)
+    for (const file of filesToFetch) {
       try {
         console.log(` 📡 Fetching ${file} from GitHub...`)
         const result = await githubDocsObserver.fetchDoc(this.owner, this.repo, file)

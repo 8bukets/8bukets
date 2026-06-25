@@ -100,7 +100,11 @@ export class Jules {
       const hasMultiModal = checkKnowledge('multi-modal')
       const hasPhase18 = checkKnowledge('Phase 18')
       const hasSwarmConsensus = checkKnowledge('swarm consensus')
+      const hasIntelephense = checkKnowledge('intelephense')
 
+      if (hasIntelephense) {
+        suggestions.push('Optimize PHP language server performance by aligning with latest Intelephense LSP protocols.')
+      }
       if (hasQuantum && !this.memory.preferredPatterns.includes('crystals-kyber')) {
         suggestions.push('Integrate Crystals-Kyber for Quantum-resistant security as per latest strategy.')
       }
