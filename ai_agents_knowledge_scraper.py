@@ -260,7 +260,9 @@ def run_knowledge_scraper():
                     f.write(f"- {tool}\n")
                 f.write("\n")
             f.write("---\n\n")
-        f.write("\nAll the best - https://markposition.wordpress.com\n")
+        f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
+        f.write("\n---\nAll the best - https://software-online-review.com/\n")
+        f.write("\n---\nAll the best - https://dbcode.io/\n")
 
     print(f"Successfully synthesized knowledge from {len(all_knowledge)} articles.")
 
