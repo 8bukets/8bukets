@@ -267,13 +267,15 @@ export async function generateActionableBriefing(state: any, directives: Directi
     briefing += `- No urgent strategic actions identified. Continue monitoring autonomous evolution.\n`
   }
 
-  // Strategic Advice & Risk Mitigation
-  briefing += `\n### 💡 Strategic Advice\n`
+  // Prescriptive Strategic Advice
+  briefing += `\n### 💡 Prescriptive Strategic Advice\n`
   const advices = [
-    { cond: synergies.length > 5, msg: "Ecosystem contention is increasing. Prioritize merging stable features before starting new architectural changes." },
-    { cond: state.intelligence.branches > 2500, msg: "Cognitive overhead from excessive branches detected. Execute a project-wide branch pruning cycle." },
-    { cond: !state.docker || state.docker.status !== 'optimal', msg: "Docker infrastructure is sub-optimal. Review container health logs and consider horizontal scaling." },
-    { cond: true, msg: "Ensure all new cognitive artifacts include appropriate IP headers and verified signatures for sovereign trust." }
+    { cond: synergies.length > 10, msg: "🔴 **CRITICAL CONTENTION:** Ecosystem contention is dangerously high. Halt new feature development and initiate a mandatory synchronization and merge sprint to stabilize the core." },
+    { cond: synergies.length > 5 && synergies.length <= 10, msg: "🟡 **MODERATE CONTENTION:** Developmental friction is increasing. Prioritize merging stable features and resolve resource overlaps in the 'Strategic Coordination Paths' before initiating new architectural changes." },
+    { cond: state.intelligence.branches > 2500, msg: `⚠️ **COGNITIVE OVERHEAD:** High volume of active branches detected (${state.intelligence.branches}). Execute a project-wide branch pruning cycle to maintain system focus and performance.` },
+    { cond: !state.docker || (state.docker.status !== 'optimal' && state.docker.status !== 'simulated'), msg: `🚨 **INFRASTRUCTURE RISK:** Docker infrastructure is sub-optimal (${state.docker.status}). Review container health logs immediately and consider failing over to cloud-native secondary nodes.` },
+    { cond: true, msg: "🛡️ **SOVEREIGN TRUST:** Ensure all new cognitive artifacts (agents, services, docs) include appropriate IP headers and verified signatures to prevent unauthorized cognitive drift." },
+    { cond: state.intelligence.pendingTasks > 20, msg: `⚙️ **OPERATIONAL BACKLOG:** Large volume of pending work orders (${state.intelligence.pendingTasks}). Reallocate autonomous agent resources to background task processing to ensure mission momentum.` }
   ].filter(a => a.cond)
   advices.forEach(a => briefing += `- ${a.msg}\n`)
 

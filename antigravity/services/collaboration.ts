@@ -201,7 +201,12 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: '.antigravity', type: 'System Config', pattern: /\.md$|\.json$/ },
     { path: 'public', type: 'Asset', pattern: /.*/ },
     { path: 'data/knowledge', type: 'Knowledge Artifact', pattern: /\.json$|\.md$/ },
-    { path: '.', type: 'Core Configuration', pattern: /^\.env|Dockerfile|package\.json|README\.md|AGENTS\.md|CONSOLIDATED_INTELLIGENCE\.md|KNOWLEDGE_MERGE\.md$/ }
+    { path: 'cloudflare-worker', type: 'Edge Worker', pattern: /\.ts$|\.js$|\.toml$/ },
+    { path: 'sor8bukets', type: 'Cloud Storage', pattern: /\.toml$|\.js$/ },
+    { path: 'go-sim', type: 'Simulation Engine', pattern: /\.go$/ },
+    { path: 'hcp-packer-tutorial', type: 'Infrastructure Tutorial', pattern: /\.pkr\.hcl$/ },
+    { path: 'my-app', type: 'Frontend App', pattern: /\.tsx$|\.ts$|\.css$/ },
+    { path: '.', type: 'Core Configuration', pattern: /^\.env|Dockerfile|package\.json|README\.md|AGENTS\.md|CONSOLIDATED_INTELLIGENCE\.md|KNOWLEDGE_MERGE\.md|USAGE\.md|MISSION_HANDOFF.*\.md$/ }
   ]
 
   const scanRecursive = async (dirPath: string, type: string, pattern: RegExp, depth: number = 0) => {
@@ -349,7 +354,9 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
       'UI/UX': 'interface',
       'AI Agents': 'cognitive',
       'Security': 'security',
-      'Documentation': 'knowledge'
+      'Documentation': 'knowledge',
+      'Infrastructure': 'devops',
+      'Research App': 'innovation'
     }
 
     if (b.domain && domainsToClusters[b.domain]) {
@@ -366,13 +373,14 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           resourceUsage[matchedResource.name].add(b.name)
 
           // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
-          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum|swarm|heartbeat|sovereign|zkp|singularity|lattice|dilithium|kyber|multi-modal|recursive)/i)
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum|swarm|heartbeat|sovereign|zkp|singularity|lattice|dilithium|kyber|multi-modal|recursive|performance|monitoring|scaling)/i)
           if (clusterMatch) {
             let cluster = clusterMatch[0].toLowerCase()
             if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation' || cluster === 'quantum' || cluster === 'zkp' || cluster === 'sovereign' || cluster === 'lattice' || cluster === 'dilithium' || cluster === 'kyber') cluster = 'security'
-            else if (cluster === 'enterprise' || cluster === 'research' || cluster === 'singularity') cluster = 'core'
-            else if (cluster === 'swarm' || cluster === 'multi-modal') cluster = 'cognitive'
-            else if (cluster === 'heartbeat' || cluster === 'recursive') cluster = 'vitality'
+            else if (cluster === 'enterprise' || cluster === 'research' || cluster === 'singularity' || cluster === 'innovation') cluster = 'core'
+            else if (cluster === 'swarm' || cluster === 'multi-modal' || cluster === 'cognitive') cluster = 'intelligence'
+            else if (cluster === 'heartbeat' || cluster === 'recursive' || cluster === 'vitality') cluster = 'health'
+            else if (cluster === 'performance' || cluster === 'scaling' || cluster === 'monitoring') cluster = 'ops'
 
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
             functionalClusters[cluster].add(b.name)
