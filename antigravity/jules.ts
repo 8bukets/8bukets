@@ -767,7 +767,7 @@ export class Jules {
 
   public async scanAllBranches(raw: true): Promise<any[]>
   public async scanAllBranches(raw: false): Promise<string>
-  public async scanAllBranches(raw: boolean = false): Promise<string | any[]> {
+  public async scanAllBranches(raw?: boolean): Promise<string | any[]> {
     console.log('🌿 [Jules] Scanning all project branches for knowledge...')
     const { execSync } = await import('child_process')
     try {

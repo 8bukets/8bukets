@@ -24,7 +24,16 @@ export class CloudConnectedIntegrationService {
       // 3. Validate Ecosystem Sovereignty
       await this.validateEcosystemSovereignty()
 
-      // 4. Synchronize Ecosystem & Resolve Conflicts
+      // 4. Cloud Takeover Enforcement (Phase 22/23 Leadership Shift)
+      logAutonomousAction('🌩️ [CloudConnected] Enforcing cloud takeover protocol...', 'info')
+      const takeover = await cloudWorkflowAgent.enforceCloudTakeover()
+      if (takeover.takeover) {
+        logAutonomousAction('✅ [CloudConnected] Cloud node has assumed leadership.', 'info')
+      } else {
+        logAutonomousAction(`ℹ️ [CloudConnected] Takeover status: ${takeover.reason}`, 'info')
+      }
+
+      // 5. Synchronize Ecosystem & Resolve Conflicts
       await cloudConvergence.synchronizeEcosystem()
       await cloudConvergence.resolveConflicts()
 
