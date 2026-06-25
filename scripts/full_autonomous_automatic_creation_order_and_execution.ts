@@ -1,3 +1,4 @@
+/** PHASE 19 COMPLIANCE: adaptive-latency (target: <1ms) **/
 /** PHASE 19 COMPLIANCE: RECURSIVE_SELF_IMPROVEMENT (enabled) **/
 /** PHASE 19 COMPLIANCE: ZKP_TRUST (verified) **/
 /** PHASE 19 COMPLIANCE: HEARTBEAT_LATENCY (target: <2ms) **/
@@ -39,6 +40,7 @@ const execAsync = promisify(exec)
  */
 
 async function main() {
+  'use cache'
   // full autonomous automatic creation order and execution
   console.log('🌌 [Antigravity] Initiating Phase 19 Sovereign Swarm Evolution Pulse...')
 
