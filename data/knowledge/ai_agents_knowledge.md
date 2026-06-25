@@ -1,26 +1,42 @@
 # AI Agents Knowledge base
 
+Scraped from: https://cloud.google.com/discover/what-are-ai-agents
+
+### Based on interaction
+
+- **Interactive partners (Surface agents)**: Assist with tasks like customer service and education through personalized support and Q&A.
+- **Autonomous background processes (Background agents)**: Automate routine tasks, analyze data, and optimize processes behind the scenes (e.g., workflow agents).
+
+---
+
+### Based on number of agents
+
+- **Single agent**: Best for well-defined tasks using a single foundation model and external tools.
+- **Multi-agent**: Multiple agents collaborating/competing for complex tasks, leveraging diverse roles and multiple foundation models.
+
+---
+
 ### Benefits of using AI agents
 
-- **Efficiency and productivity**: Increased output through simultaneous execution and repetitive task automation.
-- **Improved decision-making**: Robust reasoning through collaboration and adaptable strategies.
-- **Enhanced capabilities**: Complex problem-solving by combining agent strengths and natural language communication.
-- **Social interaction and simulation**: Emergent social behaviors and realistic simulations.
+- **Efficiency**: Increased output through simultaneous execution and automation.
+- **Improved Decision-making**: Adaptable strategies and robust reasoning through collaboration.
+- **Enhanced Capabilities**: Complex problem-solving and natural language communication.
+- **Social Interaction**: Realistic simulations and emergent social behaviors.
 
 ---
 
 ### Challenges with using AI agents
 
-- **Empathy**: Struggle with deep emotional intelligence and nuanced social dynamics (e.g., therapy, conflict resolution).
-- **Ethical Stakes**: Lack a moral compass for high-stakes decisions (e.g., law enforcement, judicial decision-making).
-- **Physical Environments**: Difficulty adapting to unpredictable physical tasks requiring complex motor skills (e.g., surgery, disaster response).
-- **Resource Intensity**: Computationally expensive to develop and deploy at scale.
+- **Empathy**: Difficulty with deep emotional intelligence and nuanced social dynamics.
+- **Ethics**: Lack a moral compass for high-stakes decisions.
+- **Unpredictable Environments**: Struggles in highly dynamic physical environments.
+- **Resources**: Computationally expensive development and deployment.
 
 ---
 
 ### Code agents
 
-Code agents accelerate software development with AI-enabled code generation and coding assistance, and to ramp up on new languages and code bases. Many organizations are seeing significant gains in productivity, leading to faster deployment and cleaner, clearer code.
+Accelerate software development with AI-enabled code generation and assistance, leading to faster deployment and cleaner code.
 
 ---
 
@@ -59,29 +75,29 @@ To compile means to gather information from various sources and arrange it into 
 
 ### Creative agents
 
-Creative agents supercharge the design and creative process by generating content, images, and ideas, assisting with design, writing, personalization, and campaigns.
+Supercharge design by generating content, images, and ideas, and assisting with writing and personalization.
 
 ---
 
 ### Customer agents
 
-Customer agents deliver personalized customer experiences by understanding customer needs, answering questions, resolving customer issues, or recommending the right products and services. They work seamlessly across multiple channels including the web, mobile, or point of sale, and can be integrated into product experiences with voice or video.
+Deliver personalized customer experiences across multiple channels (web, mobile, POS) using voice or video integration.
 
 ---
 
 ### Data agents
 
-Data agents are built for complex data analysis. They have the potential to find and act on meaningful insights from data, all while ensuring the factual integrity of their results.
+Built for complex data analysis, finding and acting on meaningful insights while ensuring factual integrity.
 
 ---
 
 ### Deploying AI agents with Cloud Run
 
-Cloud Run is a serverless platform ideal for deploying scalable AI agents:
+Cloud Run provides a serverless platform for scalable AI agents:
 
-- **Scalability**: Auto-scales container instances and can scale to zero when idle to minimize costs.
-- **Orchestration**: Core agent logic runs as a service providing stable HTTPS endpoints for API access.
-- **A2A Integration**: Frameworks like the Agent Development Kit (ADK) are designed to integrate seamlessly with Cloud Run.
+- **Scalability**: Auto-scaling (including scale to zero) ensures cost-efficiency.
+- **Orchestration**: Core agent logic runs as a service with stable HTTPS endpoints.
+- **A2A Integration**: Frameworks like the Agent Development Kit (ADK) integrate seamlessly.
 
 ---
 
@@ -167,7 +183,7 @@ The Docker Hub mcp namespace (for MCP servers built by Docker).
 
 ### Employee agents
 
-Employee agents boost productivity by streamlining processes, managing repetitive tasks, answering employee questions, as well as editing and translating critical content and communications.
+Boost productivity by streamlining processes, managing repetitive tasks, and editing/translating critical communications.
 
 ---
 
@@ -911,17 +927,14 @@ Subagents are enabled by default. To disable them, set `enableAgents` to `false`
 
 ### Google Cloud AI Agents Portfolio
 
-Google Cloud provides a comprehensive set of tools for agent development:
-
-- **Gemini Enterprise App**: Secure platform to govern AI agents across an organization.
-- **Gemini Enterprise Agent Platform**: Create agents grounded in enterprise data using natural language or code.
-- **Customer Experience Agent Studio (Dialogflow)**: Build hybrid conversational agents with both deterministic and generative AI.
-- **Agent Garden**: A curated collection of pre-built agent samples and tools.
-- **Agent Development Kit (ADK)**: Open-source Python SDK for building sophisticated multi-agent systems.
-- **A2A Protocol**: Open-source framework for interoperable agent-to-agent communication.
-- **Cloud Run**: Fully managed serverless platform for deploying containerized agents.
-- **Agent Search**: Build Google-quality search for enterprise apps and experiences.
-- **Agentic SOC**: Delivering better security outcomes with AI agents.
+- **Gemini Enterprise App**: Discover, create, and govern agents.
+- **Gemini Enterprise Agent Platform**: Create agents grounded in enterprise data.
+- **Customer Experience Agent Studio**: Build conversational agents via Dialogflow.
+- **Agent Garden**: Curated collection of pre-built samples and tools.
+- **Agent Development Kit (ADK)**: Open-source Python/TS SDK for multi-agent systems.
+- **A2A Protocol**: Open-source framework for interoperable agent communication.
+- **Cloud Run**: Fully managed serverless platform for deployment.
+- **Agent Search**: Google-quality search for enterprise applications.
 
 ---
 
@@ -929,10 +942,10 @@ Google Cloud provides a comprehensive set of tools for agent development:
 
 AI agents are built on four functional pillars:
 
-- **Persona**: A defined role, personality, and communication style that evolves with experience.
-- **Memory**: Includes short-term (immediate interaction), long-term (historical), episodic (past events), and consensus (shared among agents) memory.
-- **Tools**: External resources (APIs, UI-based tools) that allow agents to interact with and manipulate their environment.
-- **Model**: LLMs act as the 'brain', providing the underlying understanding and reasoning capacity.
+- **Persona**: Defined role, personality, and communication style.
+- **Memory**: Includes Short-term (immediate), Long-term (historical), Episodic (past interactions), and Consensus (shared information among agents).
+- **Tools**: External resources (APIs, UI-based tools) categorized as physical, graphical, or program-based. Tool learning is essential for effective use.
+- **Model**: LLMs serve as the 'brain', facilitating reason and action.
 
 ---
 
@@ -957,14 +970,14 @@ Think of Jules Tools as both a command surface and a dashboard for your coding a
 
 ### Key features of an AI agent
 
-Modern AI agents have evolved to include several core cognitive and operational features:
+Modern AI agents utilize the ReAct (Reasoning and Acting) framework and have evolved to include:
 
-- **Reasoning**: Using logic and available information to draw conclusions and solve problems.
-- **Acting**: The ability to perform digital (sending messages, updating data) or physical (embodied AI) actions.
-- **Observing**: Gathering environmental information through perception (computer vision, NLP, sensors).
-- **Planning**: Developing strategic steps to achieve goals, including anticipating future states.
-- **Collaborating**: Working effectively with humans or other agents via communication and coordination.
-- **Self-refining**: Learning from experience and feedback to continuously enhance performance over time.
+- **Reasoning**: Using logic and information to draw conclusions and solve problems.
+- **Acting**: Digital or physical actions based on decisions and plans.
+- **Observing**: Gathering environmental info through computer vision, NLP, or sensors.
+- **Planning**: Developing strategic steps and anticipating future states.
+- **Collaborating**: Working with humans and other agents via communication.
+- **Self-refining**: Continuous performance enhancement through experience and feedback.
 
 ---
 
@@ -984,34 +997,35 @@ The react agent deployment logic is responsible for verifying the deployment of 
 
 ### Security agents
 
-Security agents strengthen security posture by mitigating attacks or increasing the speed of investigations. They can oversee security across various surfaces and stages of the security life cycle: prevention, detection, and response.
+Strengthen security posture by mitigating attacks and increasing the speed of investigations across the lifecycle.
 
 ---
 
 ### Types of agents in AI
 
-Agents can be categorized by interaction or scale:
+Agents are categorized by interaction style and scale:
 
-- **Surface Agents (Interactive Partners)**: Engage in direct conversation to assist with customer service, education, or healthcare.
-- **Background Agents (Autonomous Processes)**: Work behind the scenes to automate workflows and optimize processes with limited human interaction.
-- **Single Agent**: Operates independently to achieve a specific goal using a single foundation model.
-- **Multi-agent**: Multiple agents collaborate or compete, potentially using different foundation models for diverse roles.
+- **Surface Agents (Interactive Partners)**: Direct conversation (customer service, healthcare).
+- **Background Agents (Autonomous Processes)**: Routine task automation and data analysis without direct user input.
+- **Single Agent**: Operates independently with one foundation model.
+- **Multi-agent**: Collaboration or competition among multiple agents, each potentially using different models.
 
 ---
 
 ### What is an AI agent?
 
-AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They exhibit reasoning, planning, and memory, and possess a degree of autonomy to make decisions, learn, and adapt. Their capabilities are primarily driven by the multimodal capacity of generative AI and foundation models, allowing them to process text, voice, video, audio, code, and more simultaneously.
+AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They show reasoning, planning, and memory and have a level of autonomy to make decisions, learn, and adapt. Their capabilities are enabled by the multimodal capacity of generative AI and foundation models (processing text, voice, video, audio, code simultaneously). They can coordinate with other agents for complex workflows.
 
 ---
 
 ### Difference between AI Agents, AI Assistants, and Bots
 
-The primary distinctions lie in autonomy and complexity:
+The primary distinctions lie in autonomy, complexity, and learning:
 
-- **AI Agents**: Highest autonomy; proactive and goal-oriented; can perform complex multi-step actions and make independent decisions.
-- **AI Assistants**: Moderate autonomy; reactive to user prompts; assist with tasks while decision-making remains with the user.
-- **Bots**: Lowest autonomy; follow pre-defined rules; limited learning; automate simple, repetitive tasks.
+- **AI Agents**: Highest autonomy; proactive and goal-oriented; handle complex workflows; employ machine learning to improve.
+- **AI Assistants**: Moderate autonomy; reactive to user prompts; embedded in products; decision-making remains with the user.
+- **Bots**: Lowest autonomy; follow pre-defined rules; basic interactions; limited or no learning.
 
 ---
 
+All the best - https://cloud.google.com/discover/what-are-ai-agents
