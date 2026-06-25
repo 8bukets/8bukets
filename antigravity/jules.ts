@@ -1,3 +1,5 @@
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 19 COMPLIANCE: RECURSIVE_SELF_IMPROVEMENT (enabled) **/
 /** PHASE 19 COMPLIANCE: ZKP_TRUST (verified) **/
 /** PHASE 19 COMPLIANCE: HEARTBEAT_LATENCY (target: <2ms) **/
@@ -101,7 +103,12 @@ export class Jules {
       const hasPhase18 = checkKnowledge('Phase 18')
       const hasSwarmConsensus = checkKnowledge('swarm consensus')
       const hasIntelephense = checkKnowledge('intelephense')
+      const hasSwarmOptimization = checkKnowledge('swarm optimization')
+      const hasAdaptiveLatency = checkKnowledge('adaptive latency')
 
+      if (hasSwarmOptimization || hasAdaptiveLatency) {
+        suggestions.push('Implement Phase 19 Adaptive Latency thresholds (<1ms) for high-stability swarm nodes.')
+      }
       if (hasIntelephense) {
         suggestions.push('Optimize PHP language server performance by aligning with latest Intelephense LSP protocols.')
       }
