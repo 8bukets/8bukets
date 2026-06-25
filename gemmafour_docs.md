@@ -6,8 +6,8 @@ Scraped from [https://ai.google.dev/gemma/docs/core/model_card_4](https://ai.goo
 
 Gemma 4 models are designed to deliver frontier-level performance at each size,
 targeting deployment scenarios from mobile and edge devices (E2B, E4B) to
-consumer GPUs and workstations (26B A4B, 31B). They are well-suited for
-reasoning, agentic workflows, coding, and multimodal understanding.
+consumer GPUs and workstations (12B, 26B A4B, 31B). They are well-suited
+for reasoning, agentic workflows, coding, and multimodal understanding.
 
 The models employ a hybrid attention mechanism that interleaves local sliding
 window attention with full global attention, ensuring the final layer is always
@@ -18,15 +18,15 @@ layers feature unified Keys and Values, and apply Proportional RoPE (p-RoPE).
 
 ### Dense Models
 
-Property | E2B | E4B | 31B Dense
-Total Parameters | 2.3B effective (5.1B with embeddings) | 4.5B effective (8B with embeddings) | 30.7B
-Layers | 35 | 42 | 60
-Sliding Window | 512 tokens | 512 tokens | 1024 tokens
-Context Length | 128K tokens | 128K tokens | 256K tokens
-Vocabulary Size | 262K | 262K | 262K
-Supported Modalities | Text, Image, Audio | Text, Image, Audio | Text, Image
-Vision Encoder Parameters | ~150M | ~150M | ~550M
-Audio Encoder Parameters | ~300M | ~300M | No Audio
+Property | E2B | E4B | 12B Unified | 31B Dense
+Total Parameters | 2.3B effective (5.1B with embeddings) | 4.5B effective (8B with embeddings) | 11.95B | 30.7B
+Layers | 35 | 42 | 48 | 60
+Sliding Window | 512 tokens | 512 tokens | 1024 tokens | 1024 tokens
+Context Length | 128K tokens | 128K tokens | 256K tokens | 256K tokens
+Vocabulary Size | 262K | 262K | 262K | 262K
+Supported Modalities | Text, Image, Audio | Text, Image, Audio | Text, Image, Audio | Text, Image
+Vision Encoder Parameters | ~150M | ~150M | - | ~550M
+Audio Encoder Parameters | ~300M | ~300M | - | No Audio
 
 The "E" in E2B and E4B stands for "effective" parameters. The smaller models
 incorporate Per-Layer Embeddings (PLE) to maximize parameter efficiency in
@@ -34,6 +34,14 @@ on-device deployments. Rather than adding more layers or parameters to the
 model, PLE gives each decoder layer its own small embedding for every token.
 These embedding tables are large but are only used for quick lookups, which is
 why the effective parameter count is much smaller than the total.
+
+The "Unified" in Gemma 4 12B Unified refers to its encoder-free architecture.
+Other Gemma 4 models use dedicated encoders to process multimodal data before
+passing it to the LLM. Gemma 4 12B eliminates these encoders entirely,
+projecting raw image patches and audio waveforms directly into the LLM's
+embedding space through lightweight linear layers. This unified approach means
+all modalities flow straight into a single decoder-only transformer, reducing
+multimodal latency and allowing the entire model to be fine-tuned in one pass.
 
 ### Mixture-of-Experts (MoE) Model
 
@@ -61,27 +69,27 @@ These models were evaluated against a large collection of different datasets and
 metrics to cover different aspects of text generation. Evaluation results marked
 in the table are for instruction-tuned models.
 
- | Gemma 4  31B | Gemma 4  26B A4B | Gemma 4  E4B | Gemma 4  E2B | Gemma 3  27B (no think)
-MMLU Pro | 85.2% | 82.6% | 69.4% | 60.0% | 67.6%
-AIME 2026 no tools | 89.2% | 88.3% | 42.5% | 37.5% | 20.8%
-LiveCodeBench v6 | 80.0% | 77.1% | 52.0% | 44.0% | 29.1%
-Codeforces ELO | 2150 | 1718 | 940 | 633 | 110
-GPQA Diamond | 84.3% | 82.3% | 58.6% | 43.4% | 42.4%
-Tau2 (average over 3) | 76.9% | 68.2% | 42.2% | 24.5% | 16.2%
-HLE no tools | 19.5% | 8.7% | - | - | -
-HLE with search | 26.5% | 17.2% | - | - | -
-BigBench Extra Hard | 74.4% | 64.8% | 33.1% | 21.9% | 19.3%
-MMMLU | 88.4% | 86.3% | 76.6% | 67.4% | 70.7%
-Vision |  |  |  |  |
-MMMU Pro | 76.9% | 73.8% | 52.6% | 44.2% | 49.7%
-OmniDocBench 1.5 (average edit distance, lower is better) | 0.131 | 0.149 | 0.181 | 0.290 | 0.365
-MATH-Vision | 85.6% | 82.4% | 59.5% | 52.4% | 46.0%
-MedXPertQA MM | 61.3% | 58.1% | 28.7% | 23.5% | -
-Audio |  |  |  |  |
-CoVoST | - | - | 35.54 | 33.47 | -
-FLEURS (lower is better) | - | - | 0.08 | 0.09 | -
-Long Context |  |  |  |  |
-MRCR v2 8 needle 128k (average) | 66.4% | 44.1% | 25.4% | 19.1% | 13.5%
+ | Gemma 4  31B | Gemma 4  26B A4B | Gemma 4  12B Unified | Gemma 4  E4B | Gemma 4  E2B | Gemma 3  27B (no think)
+MMLU Pro | 85.2% | 82.6% | 77.2% | 69.4% | 60.0% | 67.6%
+AIME 2026 no tools | 89.2% | 88.3% | 77.5% | 42.5% | 37.5% | 20.8%
+LiveCodeBench v6 | 80.0% | 77.1% | 72.0% | 52.0% | 44.0% | 29.1%
+Codeforces ELO | 2150 | 1718 | 1659 | 940 | 633 | 110
+GPQA Diamond | 84.3% | 82.3% | 78.8% | 58.6% | 43.4% | 42.4%
+Tau2 (average over 3) | 76.9% | 68.2% | 69.0% | 42.2% | 24.5% | 16.2%
+HLE no tools | 19.5% | 8.7% | 5.2% | - | - | -
+HLE with search | 26.5% | 17.2% | - | - | - | -
+BigBench Extra Hard | 74.4% | 64.8% | 53.0% | 33.1% | 21.9% | 19.3%
+MMMLU | 88.4% | 86.3% | 83.4% | 76.6% | 67.4% | 70.7%
+Vision |  |  |  |  |  |
+MMMU Pro | 76.9% | 73.8% | 69.1% | 52.6% | 44.2% | 49.7%
+OmniDocBench 1.5 (average edit distance, lower is better) | 0.131 | 0.149 | 0.164 | 0.181 | 0.290 | 0.365
+MATH-Vision | 85.6% | 82.4% | 79.7% | 59.5% | 52.4% | 46.0%
+MedXPertQA MM | 61.3% | 58.1% | 48.7% | 28.7% | 23.5% | -
+Audio |  |  |  |  |  |
+CoVoST | - | - | 38.5 | 35.54 | 33.47 | -
+FLEURS (lower is better) | - | - | 0.069 | 0.08 | 0.09 | -
+Long Context |  |  |  |  |  |
+MRCR v2 8 needle 128k (average) | 66.4% | 44.1% | 43.4% | 25.4% | 19.1% | 13.5%
 
 ## Core Capabilities
 
@@ -92,7 +100,7 @@ capabilities include:
 step-by-step before answering.
 
 - Long Context– Context windows of up to 128K tokens (E2B/E4B) and 256K
-tokens (26B A4B/31B).
+tokens (12B/26B A4B/31B).
 
 - Image Understanding– Object detection, Document/PDF parsing, screen and
 UI understanding, chart comprehension, OCR (including multilingual),
@@ -112,7 +120,7 @@ agentic workflows.
 - Multilingual– Out-of-the-box support for 35+ languages, pre-trained on
 140+ languages.
 
-- Audio(E2B and E4B only) – Automatic speech recognition (ASR) and
+- Audio(E2B, E4B, and 12B Unified only) – Automatic speech recognition (ASR) and
 speech-to-translated-text translation across multiple languages.
 
 ## Best Practices
@@ -157,8 +165,11 @@ begins.
 
 ### 4. Modality order
 
-- For optimal performance with multimodal inputs, place image and/or audio
-contentbeforethe text in your prompt.
+For optimal performance with multimodal inputs, place:
+
+- Image contentbeforethe text in your prompt.
+
+- Audio contentafterthe text in your prompt.
 
 ### 5. Variable Image Resolution
 
@@ -192,10 +203,10 @@ When formatting the answer, first output the transcription in {SOURCE_LANGUAGE},
 
 ### 7. Audio and Video Length
 
-All models support image inputs and can process videos as frames whereas the E2B
-and E4B models also support audio inputs. Audio supports a maximum length of 30
-seconds. Video supports a maximum of 60 seconds assuming the images are
-processed at one frame per second.
+All models support image inputs and can process videos as frames whereas the
+E2B, E4B, and 12B models also support audio inputs. Audio supports a maximum
+length of 30 seconds. Video supports a maximum of 60 seconds assuming the images
+are processed at one frame per second.
 
 ## Model Data
 
@@ -296,7 +307,7 @@ creators considered as part of model training and development.
 formats such as poems, scripts, code, marketing copy, and email drafts.Chatbots and Conversational AI: Power conversational interfaces for
 customer service, virtual assistants, or interactive applications.Text Summarization: Generate concise summaries of a text corpus,
 research papers, or reports.Image Data Extraction: These models can be used to extract,
-interpret, and summarize visual data for text communications.Audio Processing and Interaction: The smaller models (E2B and E4B)
+interpret, and summarize visual data for text communications.Audio Processing and Interaction: The E2B, E4B, and 12B models
 can analyze and interpret audio inputs, enabling voice-driven
 interactions and transcriptions.
 
@@ -304,9 +315,9 @@ interactions and transcriptions.
 serve as a foundation for researchers to experiment with VLM and NLP
 techniques, develop algorithms, and contribute to the advancement of the
 field.Language Learning Tools: Support interactive language learning
-experiences, aiding in grammar correction or providing writing practice.Knowledge Exploration: Assist researchers in exploring large
-bodies of text by generating summaries or answering questions about
-specific topics.
+experiences, aiding in grammar correction or providing writing practice.Knowledge Exploration: Assist researchers in exploring large bodies
+of text by generating summaries or answering questions about specific
+topics.
 
 ### Limitations
 
@@ -375,3 +386,7 @@ techniques during model training, fine-tuning, and other use cases.
 At the time of release, this family of models provides high-performance open
 vision-language model implementations designed from the ground up for
 responsible AI development compared to similarly sized models.
+
+
+---
+All the best - https://markposition.wordpress.com
