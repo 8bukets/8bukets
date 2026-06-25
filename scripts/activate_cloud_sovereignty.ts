@@ -1,13 +1,11 @@
 import { jules } from '../antigravity/jules'
-import { onlinePresence } from '../antigravity/services/presence'
-import { cloudConvergence } from '../antigravity/services/cloud_convergence'
-import { cloudWorkflowAgent } from '../antigravity/services/cloud_workflow'
+import { cloudConnectedIntegrationService } from '../antigravity/services/cloud_connected_integration'
 import { logAutonomousAction } from '../antigravity/core'
 
 /**
  * CLOUD SOVEREIGNTY ACTIVATOR
  * Forces the system into "Full Online" autonomous mode.
- * Orchestrates connectivity audits, presence broadcasting, and takeover protocols.
+ * Orchestrates connectivity audits, presence broadcasting, and takeover protocols via Phase 23 Pulse.
  */
 async function main() {
   console.log('🚀 [CloudSovereignty] Activating Full Cloud Sovereignty...')
@@ -19,30 +17,15 @@ async function main() {
       console.log('🧪 [CloudSovereignty] MacBook Cloud Simulation is ACTIVE.')
     }
 
-    // 2. High-Intensity Sovereignty Audit
-    console.log('⚖️ [CloudSovereignty] Performing sovereignty audit...')
-    const audit = await cloudConvergence.sovereigntyAudit()
-    console.log(`📡 [CloudSovereignty] Audit Status: ${audit.status} (Fully Online: ${audit.fullyOnline})`)
+    // 2. Execute Phase 23 Pulse (Audit, Presence, Convergence)
+    console.log('📡 [CloudSovereignty] Executing Phase 23 Cloud-Native Pulse...')
+    await cloudConnectedIntegrationService.executePhase23Pulse()
 
-    // 3. Synchronize Presence
-    console.log('📡 [CloudSovereignty] Synchronizing online presence...')
-    await onlinePresence.syncPresence()
+    // 3. Initial Engine Evolution
+    console.log('🧬 [CloudSovereignty] Triggering initial engine evolution...')
+    await cloudConnectedIntegrationService.triggerEngineEvolution()
 
-    // 4. Ecosystem Convergence
-    console.log('🌐 [CloudSovereignty] Converging ecosystem state...')
-    await cloudConvergence.synchronizeEcosystem()
-    await cloudConvergence.resolveConflicts()
-
-    // 5. Cloud Takeover Enforcement
-    console.log('🌩️ [CloudSovereignty] Enforcing cloud takeover protocol...')
-    const takeover = await cloudWorkflowAgent.enforceCloudTakeover()
-    if (takeover.takeover) {
-      console.log('✅ [CloudSovereignty] Cloud node has assumed leadership.')
-    } else {
-      console.log(`ℹ️ [CloudSovereignty] Takeover status: ${takeover.reason}`)
-    }
-
-    // 6. Initial Work Cycle
+    // 4. Initial Work Cycle
     console.log('🌟 [CloudSovereignty] Executing initial autonomous work cycle...')
     await jules.executeWorkCycle()
 

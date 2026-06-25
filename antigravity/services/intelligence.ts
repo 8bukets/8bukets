@@ -16,7 +16,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   logAutonomousAction('📊 [Intelligence] Generating consolidated system report...', 'info')
 
   const metadata = await getMissionMetadata()
-  const branches = branchIntelligence || await jules.scanAllBranches()
+  const branches = branchIntelligence || await jules.scanAllBranches(true)
   const health = await healthCheck()
   const workOrders = await workOrderService.getPendingOrders()
 

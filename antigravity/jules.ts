@@ -461,25 +461,14 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
-    // Phase 22: Sovereignty Pulse (Cloud-Online Verification)
+    // Phase 23: Cloud-Native Pulse & High-Scale Engine Evolution
     try {
-       const { cloudConvergence } = await import('./services/cloud_convergence')
-       const audit = await cloudConvergence.sovereigntyAudit()
-       if (audit.fullyOnline) {
-          this.recordTask('Sovereignty Pulse: System is FULLY ONLINE and CONNECTED.')
-       } else {
-          console.warn('⚠️ [Jules] Sovereignty Pulse detected degradation:', audit.status)
-          // Force online presence if in simulation mode
-          if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
-             this.recordTask('Sovereignty Pulse: Forced FULL ONLINE presence (Simulation).')
-          }
-       }
-
-       // Perform ecosystem synchronization
-       await cloudConvergence.synchronizeEcosystem()
-       await cloudConvergence.resolveConflicts()
+      const { cloudConnectedIntegrationService } = await import('./services/cloud_connected_integration')
+      await cloudConnectedIntegrationService.executePhase23Pulse()
+      await cloudConnectedIntegrationService.triggerEngineEvolution()
+      this.recordTask('Phase 23 Pulse: Full Online posture enforced and engine evolution triggered.')
     } catch (e) {
-       console.warn('⚠️ [Jules] Sovereignty Pulse failed, skipping verification.')
+      console.warn('⚠️ [Jules] Phase 23 Pulse failed:', e)
     }
 
     // Phase 16: Swarm Heartbeat Activation

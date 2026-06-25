@@ -1,5 +1,5 @@
 import { jules } from '../antigravity/jules';
-import { cloudConvergence } from '../antigravity/services/cloud_convergence';
+import { cloudConnectedIntegrationService } from '../antigravity/services/cloud_connected_integration';
 import { onlinePresence } from '../antigravity/services/presence';
 import { swarmHeartbeat } from '../antigravity/services/swarm_heartbeat';
 import { globalNeuralSync } from '../antigravity/services/global_neural_sync_service_phase_12';
@@ -20,10 +20,10 @@ async function main() {
   const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true');
 
   try {
-    // 1. Initial Presence Heartbeat & Swarm Activation
-    console.log('📡 [AutonomousSync] Activating Swarm Heartbeat and initial presence...');
+    // 1. Phase 23 Cloud-Native Pulse & Swarm Activation
+    console.log('📡 [AutonomousSync] Executing Phase 23 Pulse and activating swarm heartbeat...');
     swarmHeartbeat.start();
-    await onlinePresence.syncPresence();
+    await cloudConnectedIntegrationService.executePhase23Pulse();
 
     // 2. Proactive iCloud Sync Fix (if local)
     if (!isCloud) {
@@ -39,9 +39,9 @@ async function main() {
     console.log('🧠 [AutonomousSync] Performing global neural convergence...');
     await globalNeuralSync.convergeState();
 
-    // 4. Cloud Ecosystem Convergence
-    console.log('🌐 [AutonomousSync] Synchronizing multi-cloud ecosystem state...');
-    await cloudConvergence.synchronizeEcosystem();
+    // 4. High-Scale Engine Evolution
+    console.log('🧬 [AutonomousSync] Triggering high-scale engine evolution...');
+    await cloudConnectedIntegrationService.triggerEngineEvolution();
 
     // 5. Execute Technical Knowledge Scrapers
     console.log('📚 [AutonomousSync] Updating technical knowledge base...');
