@@ -5,9 +5,7 @@
 /** PHASE 18 COMPLIANCE: SWARM_CONSENSUS (active) **/
 /** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
-/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
-/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 import { logAutonomousAction } from '../core';
 
 /**
@@ -63,6 +61,10 @@ export class SwarmHeartbeat {
       clearInterval(this.interval);
       this.interval = null;
     }
+  }
+
+  public stop() {
+    this.stopMonitoring();
   }
 }
 
