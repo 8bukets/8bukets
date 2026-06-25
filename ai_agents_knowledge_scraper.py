@@ -190,7 +190,11 @@ def run_knowledge_scraper():
             new_knowledge.append(k)
 
     # Merge logic
-    merged_dict = {item["url"]: item for item in existing_knowledge}
+    if isinstance(existing_knowledge, dict):
+        # Handle cases where existing knowledge is a dict instead of list
+        merged_dict = {v["url"]: v for k, v in existing_knowledge.items() if isinstance(v, dict) and "url" in v}
+    else:
+        merged_dict = {item["url"]: item for item in existing_knowledge if isinstance(item, dict) and "url" in item}
     for new_item in new_knowledge:
         url = new_item["url"]
         if url in merged_dict:
@@ -256,7 +260,9 @@ def run_knowledge_scraper():
                     f.write(f"- {tool}\n")
                 f.write("\n")
             f.write("---\n\n")
-        f.write("\nAll the best - https://markposition.wordpress.com\n")
+        f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
+        f.write("\n---\nAll the best - https://software-online-review.com/\n")
+        f.write("\n---\nAll the best - https://dbcode.io/\n")
 
     print(f"Successfully synthesized knowledge from {len(all_knowledge)} articles.")
 

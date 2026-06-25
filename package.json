@@ -21,7 +21,7 @@
     "ingest:notebooklm": "tsx --env-file=.env scripts/ingest_notebooklm_knowledge.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'",
-    "ingest:knowledge": "npm run ingest:sor && npm run ingest:dbcode && npm run ingest:terraform && npm run ingest:notebooklm && tsx --env-file=.env scripts/ingest_localhost_tools_knowledge.ts && (python3 scripts/ingest_markposition_knowledge.py || tsx --env-file=.env scripts/ingest_markposition_knowledge.ts) && tsx --env-file=.env scripts/ingest_render_docs.ts && tsx --env-file=.env scripts/ingest_ai_agents_knowledge.ts && tsx --env-file=.env scripts/ingest_ads_knowledge.ts && tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts && (node scripts/ingest_knowledge_merge.js || tsx --env-file=.env scripts/ingest_knowledge_merge.ts) && npm run ingest:gemini-cli-subagents",
+    "ingest:knowledge": "npm run ingest:sor && npm run ingest:dbcode && npm run ingest:terraform && npm run ingest:notebooklm && tsx --env-file=.env scripts/ingest_localhost_tools_knowledge.ts && (python3 scripts/ingest_markposition_knowledge.py || tsx --env-file=.env scripts/ingest_markposition_knowledge.ts) && tsx --env-file=.env scripts/ingest_render_docs.ts && tsx --env-file=.env scripts/ingest_ai_agents_knowledge.ts && tsx --env-file=.env scripts/ingest_ads_knowledge.ts && tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts && (node scripts/ingest_knowledge_merge.js || tsx --env-file=.env scripts/ingest_knowledge_merge.ts) && npm run ingest:gemini-cli-subagents && python3 gemmafour_scraper.py && python3 litert_scraper.py && python3 intelephense_scraper.py",
     "ingest:gemini-cli-subagents": "tsx --env-file=.env scripts/ingest_gemini_cli_subagents.ts"
   },
   "dependencies": {
@@ -69,6 +69,7 @@
     "tailwindcss": "^4",
     "tsx": "^4.22.1",
     "typescript": "^5",
-    "vitest": "^4.1.7"
+    "vitest": "^4.1.7",
+    "wrangler": "^3.60.0"
   }
 }

@@ -6,6 +6,8 @@ Scraped from [https://ai.google.dev/edge/litert/overview](https://ai.google.dev/
 
 - Home
 
+- Products
+
 - Google AI Edge
 
 - LiteRT
@@ -39,6 +41,16 @@ chipset providers. See NPU acceleration documentation .
 
 LiteRT delivers high-performance deployment for Generative AI models across
 mobile, desktop, and web platforms. See GenAI deployment documentation .
+
+## Bindings for Multiple Languages
+
+- C++ , including Prebuilt LiteRT C++ Binary
+
+- Kotlin
+
+- Python
+
+- Rust crate
 
 ## Broad ML framework support
 
@@ -169,3 +181,7 @@ LiteRT-Samples GitHub Repo for more LiteRT sample apps.
 For existing users of TensorFlow Lite , see migration guide .
 
 LiteRT Tools page for performance, profiling, error reporting etc.
+
+
+---
+All the best - https://markposition.wordpress.com

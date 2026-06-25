@@ -1,8 +1,8 @@
-name = "sor8bukets"
+name = "8bukets"
 main = "src/index.js"
-compatibility_date = "2026-06-25"
+compatibility_date = "2024-01-01"
 
-# Restored routes, disabling custom_domain for sandbox/preview build stability
-routes = [
-  { pattern = "sor8bukets.example.com", custom_domain = false }
-]
+# Disable routes for CI build stability in restricted environments
+# routes = [
+#   { pattern = "sor8bukets.example.com", custom_domain = false }
+# ]

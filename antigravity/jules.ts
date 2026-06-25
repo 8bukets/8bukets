@@ -650,6 +650,14 @@ export class Jules {
        // Gracefully skip if native iCloud sync service is not available in current environment
     }
 
+    // Final Knowledge Merge and Report Generation
+    try {
+      const { ingestKnowledgeMerge } = await import('../scripts/ingest_knowledge_merge');
+      await ingestKnowledgeMerge();
+    } catch (e: any) {
+      console.warn('⚠️ [Jules] Final knowledge merge failed during work cycle:', e.message);
+    }
+
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     this.save()

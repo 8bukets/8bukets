@@ -1,7 +1,7 @@
 {
     "Overview": {
         "title": "Overview",
-        "content": "- Home\n\n- Google AI Edge\n\n- LiteRT\n\nLiteRT is Google's on-device framework for high-performance ML & GenAI\ndeployment on edge platforms, using efficient conversion, runtime, and\noptimization.\n\nThe latest LiteRT 2.x release introduces the CompiledModel API,\na modern runtime interface designed to maximize hardware acceleration. While the Interpreter API (formerly TensorFlow Lite) remains available for backward\ncompatibility, the CompiledModel API is the recommended choice for developers\nseeking state-of-the-art performance in on-device AI applications."
+        "content": "- Home\n\n- Products\n\n- Google AI Edge\n\n- LiteRT\n\nLiteRT is Google's on-device framework for high-performance ML & GenAI\ndeployment on edge platforms, using efficient conversion, runtime, and\noptimization.\n\nThe latest LiteRT 2.x release introduces the CompiledModel API,\na modern runtime interface designed to maximize hardware acceleration. While the Interpreter API (formerly TensorFlow Lite) remains available for backward\ncompatibility, the CompiledModel API is the recommended choice for developers\nseeking state-of-the-art performance in on-device AI applications."
     },
     "Streamline development with LiteRT": {
         "title": "Streamline development with LiteRT",
@@ -18,6 +18,10 @@
     "Superior LLM Support": {
         "title": "Superior LLM Support",
         "content": "LiteRT delivers high-performance deployment for Generative AI models across\nmobile, desktop, and web platforms. See GenAI deployment documentation ."
+    },
+    "Bindings for Multiple Languages": {
+        "title": "Bindings for Multiple Languages",
+        "content": "- C++ , including Prebuilt LiteRT C++ Binary\n\n- Kotlin\n\n- Python\n\n- Rust crate"
     },
     "Broad ML framework support": {
         "title": "Broad ML framework support",

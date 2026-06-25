@@ -46,11 +46,7 @@ async function main() {
     // 5. Execute Technical Knowledge Scrapers
     console.log('📚 [AutonomousSync] Updating technical knowledge base...');
     const scrapers = [
-      'python3 gemmafour_scraper.py',
-      'python3 litert_scraper.py',
-      'python3 intelephense_scraper.py',
-      'python3 ai_agents_knowledge_scraper.py',
-      'python3 scripts/ingest_markposition_knowledge.py || node scripts/ingest_markposition_knowledge.js'
+      'npm run ingest:knowledge'
     ];
 
     for (const scraper of scrapers) {

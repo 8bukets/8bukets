@@ -39,7 +39,7 @@ export async function ingestKnowledgeMerge() {
         "All the best - https://dbcode.io/"
     ];
 
-    const targetFiles = ['KNOWLEDGE_MERGE.md', 'CONSOLIDATED_INTELLIGENCE.md'];
+    const targetFiles = ['KNOWLEDGE_MERGE.md', 'CONSOLIDATED_INTELLIGENCE.md', 'CONSOLIDATED_KNOWLEDGE.md'];
 
     for (const file of targetFiles) {
         const filePath = path.join(process.cwd(), file);
