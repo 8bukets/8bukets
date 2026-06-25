@@ -4,6 +4,7 @@ import os
 def update_knowledge():
     json_path = "data/knowledge/ai_agents_knowledge.json"
     md_path = "data/knowledge/ai_agents_knowledge.md"
+    system_json_path = "data/knowledge/system_knowledge.json"
 
     if not os.path.exists(json_path):
         print(f"Error: {json_path} not found.")
@@ -12,87 +13,77 @@ def update_knowledge():
     with open(json_path, "r", encoding="utf-8") as f:
         knowledge = json.load(f)
 
-    # New/Updated content from https://cloud.google.com/discover/what-are-ai-agents
-    # Refined for maximum intelligence value
+    # Enhanced content from https://cloud.google.com/discover/what-are-ai-agents
     gcp_knowledge = {
         "what-is-an-ai-agent": {
             "title": "What is an AI agent?",
-            "content": "AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They exhibit reasoning, planning, and memory, and possess a degree of autonomy to make decisions, learn, and adapt. Their capabilities are primarily driven by the multimodal capacity of generative AI and foundation models, allowing them to process text, voice, video, audio, code, and more simultaneously."
+            "content": "AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They show reasoning, planning, and memory and have a level of autonomy to make decisions, learn, and adapt. Their capabilities are enabled by the multimodal capacity of generative AI and foundation models (processing text, voice, video, audio, code simultaneously). They can coordinate with other agents for complex workflows."
         },
         "key-features-of-an-ai-agent": {
             "title": "Key features of an AI agent",
-            "content": "Modern AI agents have evolved to include several core cognitive and operational features:\n\n- **Reasoning**: Using logic and available information to draw conclusions and solve problems.\n- **Acting**: The ability to perform digital (sending messages, updating data) or physical (embodied AI) actions.\n- **Observing**: Gathering environmental information through perception (computer vision, NLP, sensors).\n- **Planning**: Developing strategic steps to achieve goals, including anticipating future states.\n- **Collaborating**: Working effectively with humans or other agents via communication and coordination.\n- **Self-refining**: Learning from experience and feedback to continuously enhance performance over time."
+            "content": "Modern AI agents utilize the ReAct (Reasoning and Acting) framework and have evolved to include:\n\n- **Reasoning**: Using logic and information to draw conclusions and solve problems.\n- **Acting**: Digital or physical actions based on decisions and plans.\n- **Observing**: Gathering environmental info through computer vision, NLP, or sensors.\n- **Planning**: Developing strategic steps and anticipating future states.\n- **Collaborating**: Working with humans and other agents via communication.\n- **Self-refining**: Continuous performance enhancement through experience and feedback."
         },
         "what-is-the-difference-between-ai-agents-ai-assistants-and-bots": {
             "title": "Difference between AI Agents, AI Assistants, and Bots",
-            "content": "The primary distinctions lie in autonomy and complexity:\n\n- **AI Agents**: Highest autonomy; proactive and goal-oriented; can perform complex multi-step actions and make independent decisions.\n- **AI Assistants**: Moderate autonomy; reactive to user prompts; assist with tasks while decision-making remains with the user.\n- **Bots**: Lowest autonomy; follow pre-defined rules; limited learning; automate simple, repetitive tasks."
+            "content": "The primary distinctions lie in autonomy, complexity, and learning:\n\n- **AI Agents**: Highest autonomy; proactive and goal-oriented; handle complex workflows; employ machine learning to improve.\n- **AI Assistants**: Moderate autonomy; reactive to user prompts; embedded in products; decision-making remains with the user.\n- **Bots**: Lowest autonomy; follow pre-defined rules; basic interactions; limited or no learning."
         },
         "how-do-ai-agents-work": {
             "title": "How do AI agents work?",
-            "content": "AI agents are built on four functional pillars:\n\n- **Persona**: A defined role, personality, and communication style that evolves with experience.\n- **Memory**: Includes short-term (immediate interaction), long-term (historical), episodic (past events), and consensus (shared among agents) memory.\n- **Tools**: External resources (APIs, UI-based tools) that allow agents to interact with and manipulate their environment.\n- **Model**: LLMs act as the 'brain', providing the underlying understanding and reasoning capacity."
+            "content": "AI agents are built on four functional pillars:\n\n- **Persona**: Defined role, personality, and communication style.\n- **Memory**: Includes Short-term (immediate), Long-term (historical), Episodic (past interactions), and Consensus (shared information among agents).\n- **Tools**: External resources (APIs, UI-based tools) categorized as physical, graphical, or program-based. Tool learning is essential for effective use.\n- **Model**: LLMs serve as the 'brain', facilitating reason and action."
         },
         "what-are-the-types-of-agents-in-ai": {
             "title": "Types of agents in AI",
-            "content": "Agents can be categorized by interaction or scale:\n\n- **Surface Agents (Interactive Partners)**: Engage in direct conversation to assist with customer service, education, or healthcare.\n- **Background Agents (Autonomous Processes)**: Work behind the scenes to automate workflows and optimize processes with limited human interaction.\n- **Single Agent**: Operates independently to achieve a specific goal using a single foundation model.\n- **Multi-agent**: Multiple agents collaborate or compete, potentially using different foundation models for diverse roles."
+            "content": "Agents are categorized by interaction style and scale:\n\n- **Surface Agents (Interactive Partners)**: Direct conversation (customer service, healthcare).\n- **Background Agents (Autonomous Processes)**: Routine task automation and data analysis without direct user input.\n- **Single Agent**: Operates independently with one foundation model.\n- **Multi-agent**: Collaboration or competition among multiple agents, each potentially using different models."
+        },
+        "based-on-interaction": {
+            "title": "Based on interaction",
+            "content": "- **Interactive partners (Surface agents)**: Assist with tasks like customer service and education through personalized support and Q&A.\n- **Autonomous background processes (Background agents)**: Automate routine tasks, analyze data, and optimize processes behind the scenes (e.g., workflow agents)."
+        },
+        "based-on-number-of-agents": {
+            "title": "Based on number of agents",
+            "content": "- **Single agent**: Best for well-defined tasks using a single foundation model and external tools.\n- **Multi-agent**: Multiple agents collaborating/competing for complex tasks, leveraging diverse roles and multiple foundation models."
         },
         "benefits-of-using-ai-agents": {
             "title": "Benefits of using AI agents",
-            "content": "- **Efficiency and productivity**: Increased output through simultaneous execution and repetitive task automation.\n- **Improved decision-making**: Robust reasoning through collaboration and adaptable strategies.\n- **Enhanced capabilities**: Complex problem-solving by combining agent strengths and natural language communication.\n- **Social interaction and simulation**: Emergent social behaviors and realistic simulations."
+            "content": "- **Efficiency**: Increased output through simultaneous execution and automation.\n- **Improved Decision-making**: Adaptable strategies and robust reasoning through collaboration.\n- **Enhanced Capabilities**: Complex problem-solving and natural language communication.\n- **Social Interaction**: Realistic simulations and emergent social behaviors."
         },
         "challenges-with-using-ai-agents": {
             "title": "Challenges with using AI agents",
-            "content": "- **Empathy**: Struggle with deep emotional intelligence and nuanced social dynamics (e.g., therapy, conflict resolution).\n- **Ethical Stakes**: Lack a moral compass for high-stakes decisions (e.g., law enforcement, judicial decision-making).\n- **Physical Environments**: Difficulty adapting to unpredictable physical tasks requiring complex motor skills (e.g., surgery, disaster response).\n- **Resource Intensity**: Computationally expensive to develop and deploy at scale."
+            "content": "- **Empathy**: Difficulty with deep emotional intelligence and nuanced social dynamics.\n- **Ethics**: Lack a moral compass for high-stakes decisions.\n- **Unpredictable Environments**: Struggles in highly dynamic physical environments.\n- **Resources**: Computationally expensive development and deployment."
         },
         "deploy-ai-agents-for-scale-and-efficiency-with-cloud-run": {
             "title": "Deploying AI agents with Cloud Run",
-            "content": "Cloud Run is a serverless platform ideal for deploying scalable AI agents:\n\n- **Scalability**: Auto-scales container instances and can scale to zero when idle to minimize costs.\n- **Orchestration**: Core agent logic runs as a service providing stable HTTPS endpoints for API access.\n- **A2A Integration**: Frameworks like the Agent Development Kit (ADK) are designed to integrate seamlessly with Cloud Run."
+            "content": "Cloud Run provides a serverless platform for scalable AI agents:\n\n- **Scalability**: Auto-scaling (including scale to zero) ensures cost-efficiency.\n- **Orchestration**: Core agent logic runs as a service with stable HTTPS endpoints.\n- **A2A Integration**: Frameworks like the Agent Development Kit (ADK) integrate seamlessly."
         },
         "google-cloud-and-ai-agents": {
             "title": "Google Cloud AI Agents Portfolio",
-            "content": "Google Cloud provides a comprehensive set of tools for agent development:\n\n- **Gemini Enterprise App**: Secure platform to govern AI agents across an organization.\n- **Gemini Enterprise Agent Platform**: Create agents grounded in enterprise data using natural language or code.\n- **Customer Experience Agent Studio (Dialogflow)**: Build hybrid conversational agents with both deterministic and generative AI.\n- **Agent Garden**: A curated collection of pre-built agent samples and tools.\n- **Agent Development Kit (ADK)**: Open-source Python SDK for building sophisticated multi-agent systems.\n- **A2A Protocol**: Open-source framework for interoperable agent-to-agent communication.\n- **Cloud Run**: Fully managed serverless platform for deploying containerized agents.\n- **Agent Search**: Build Google-quality search for enterprise apps and experiences.\n- **Agentic SOC**: Delivering better security outcomes with AI agents."
+            "content": "- **Gemini Enterprise App**: Discover, create, and govern agents.\n- **Gemini Enterprise Agent Platform**: Create agents grounded in enterprise data.\n- **Customer Experience Agent Studio**: Build conversational agents via Dialogflow.\n- **Agent Garden**: Curated collection of pre-built samples and tools.\n- **Agent Development Kit (ADK)**: Open-source Python/TS SDK for multi-agent systems.\n- **A2A Protocol**: Open-source framework for interoperable agent communication.\n- **Cloud Run**: Fully managed serverless platform for deployment.\n- **Agent Search**: Google-quality search for enterprise applications."
         },
         "customer-agents": {
             "title": "Customer agents",
-            "content": "Customer agents deliver personalized customer experiences by understanding customer needs, answering questions, resolving customer issues, or recommending the right products and services. They work seamlessly across multiple channels including the web, mobile, or point of sale, and can be integrated into product experiences with voice or video."
+            "content": "Deliver personalized customer experiences across multiple channels (web, mobile, POS) using voice or video integration."
         },
         "employee-agents": {
             "title": "Employee agents",
-            "content": "Employee agents boost productivity by streamlining processes, managing repetitive tasks, answering employee questions, as well as editing and translating critical content and communications."
+            "content": "Boost productivity by streamlining processes, managing repetitive tasks, and editing/translating critical communications."
         },
         "creative-agents": {
             "title": "Creative agents",
-            "content": "Creative agents supercharge the design and creative process by generating content, images, and ideas, assisting with design, writing, personalization, and campaigns."
+            "content": "Supercharge design by generating content, images, and ideas, and assisting with writing and personalization."
         },
         "data-agents": {
             "title": "Data agents",
-            "content": "Data agents are built for complex data analysis. They have the potential to find and act on meaningful insights from data, all while ensuring the factual integrity of their results."
+            "content": "Built for complex data analysis, finding and acting on meaningful insights while ensuring factual integrity."
         },
         "code-agents": {
             "title": "Code agents",
-            "content": "Code agents accelerate software development with AI-enabled code generation and coding assistance, and to ramp up on new languages and code bases. Many organizations are seeing significant gains in productivity, leading to faster deployment and cleaner, clearer code."
+            "content": "Accelerate software development with AI-enabled code generation and assistance, leading to faster deployment and cleaner code."
         },
         "security-agents": {
             "title": "Security agents",
-            "content": "Security agents strengthen security posture by mitigating attacks or increasing the speed of investigations. They can oversee security across various surfaces and stages of the security life cycle: prevention, detection, and response."
+            "content": "Strengthen security posture by mitigating attacks and increasing the speed of investigations across the lifecycle."
         }
     }
-
-    # Redundant/Legacy slugs to remove (kept the ones needed by KnowledgeAgent)
-    redundant_slugs = [
-        "key-differences",
-        "based-on-interaction",
-        "based-on-number-of-agents",
-        "efficiency-and-productivity",
-        "improved-decision-making",
-        "enhanced-capabilities",
-        "social-interaction-and-simulation",
-        "use-cases-for-ai-agents",
-        "key-differences-autonomy-complexity-learning"
-    ]
-
-    for slug in redundant_slugs:
-        if slug in knowledge:
-            del knowledge[slug]
 
     # Update/Add to JSON
     for slug, data in gcp_knowledge.items():
@@ -103,7 +94,8 @@ def update_knowledge():
 
     # Sync to Markdown
     with open(md_path, "w", encoding="utf-8") as f:
-        f.write("# AI Agents Knowledge base\n\n")
+        url = "https://cloud.google.com/discover/what-are-ai-agents"
+        f.write(f"# AI Agents Knowledge base\n\nScraped from: {url}\n\n")
         sorted_keys = sorted(knowledge.keys())
         for slug in sorted_keys:
             item = knowledge[slug]
@@ -113,7 +105,33 @@ def update_knowledge():
                 f.write(f"*Source: {item['source']}*\n\n")
             f.write("---\n\n")
 
-    print(f"Successfully updated {json_path} and {md_path} with refined GCP AI Agents knowledge.")
+        f.write(f"All the best - {url}\n")
+
+    # Update system_knowledge.json
+    if os.path.exists(system_json_path):
+        with open(system_json_path, "r", encoding="utf-8") as f:
+            system_knowledge = json.load(f)
+
+        if "ai_agents_structured" not in system_knowledge:
+            system_knowledge["ai_agents_structured"] = []
+
+        url = "https://cloud.google.com/discover/what-are-ai-agents"
+        # Remove old entry
+        system_knowledge["ai_agents_structured"] = [e for e in system_knowledge["ai_agents_structured"] if e.get("url") != url]
+
+        new_entry = {
+            "url": url,
+            "title": "What are AI agents? (GCP Discovery)",
+            "sections": [
+                {"header": data["title"], "content": [data["content"]]} for slug, data in gcp_knowledge.items()
+            ]
+        }
+        system_knowledge["ai_agents_structured"].append(new_entry)
+
+        with open(system_json_path, "w", encoding="utf-8") as f:
+            json.dump(system_knowledge, f, indent=2, ensure_ascii=False)
+
+    print(f"Successfully updated {json_path}, {md_path}, and {system_json_path} with comprehensive GCP AI Agents knowledge.")
 
 if __name__ == "__main__":
     update_knowledge()
