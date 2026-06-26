@@ -17,7 +17,11 @@ async function main() {
       console.log('🧪 [CloudSovereignty] MacBook Cloud Simulation is ACTIVE.')
     }
 
-    // 2. Execute Phase 23 Pulse (Audit, Presence, Convergence)
+    // 2. Detailed Sovereignty Validation
+    console.log('⚖️ [CloudSovereignty] Validating initial toolset sovereignty...')
+    await cloudConnectedIntegrationService.validateEcosystemSovereignty()
+
+    // 3. Execute Phase 23 Pulse (Audit, Presence, Convergence)
     console.log('📡 [CloudSovereignty] Executing Phase 23 Cloud-Native Pulse...')
     await cloudConnectedIntegrationService.executePhase23Pulse()
 
