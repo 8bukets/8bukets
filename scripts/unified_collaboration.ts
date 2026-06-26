@@ -3,6 +3,7 @@ import { latticeSync } from '@/antigravity/services/lattice_sync'
 import { jules } from '../antigravity/jules'
 import { syncCollaborationState, broadcastToStakeholders } from '../antigravity/services/collaboration'
 import { generateConsolidatedReport } from '../antigravity/services/intelligence'
+import { orchestrationEngine } from '../antigravity/services/sentient_orchestration'
 
 /**
  * UNIFIED COLLABORATION ORCHESTRATOR
@@ -21,11 +22,18 @@ async function main() {
     console.log('🧠 Synchronizing autonomous state and merging relationship maps...')
     const state = await syncCollaborationState(branches)
 
-    // 3. Stakeholder Communication
+    // 3. Sentient Orchestration (Intent Alignment)
+    console.log('🧠 Coordinating autonomous agent intents for collaboration alignment...')
+    await orchestrationEngine.coordinateIntents([
+      { agent: 'UnifiedCollaboration', action: 'MERGE_ECOSYSTEM_KNOWLEDGE', priority: 'High' },
+      { agent: 'UnifiedCollaboration', action: 'BROADCAST_SYNERGY_ALERTS', priority: 'Medium' }
+    ])
+
+    // 4. Stakeholder Communication
     console.log('📢 Broadcasting synergy alerts to stakeholders...')
     await broadcastToStakeholders(state)
 
-    // 4. Intelligence Reporting
+    // 5. Intelligence Reporting
     console.log('📊 Generating consolidated strategic report...')
     await generateConsolidatedReport(branches)
 

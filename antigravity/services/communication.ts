@@ -365,7 +365,22 @@ export async function generateActionableBriefing(state: any, directives: Directi
   }
 
   const deps = state.intelligence.relationshipMap.resourceDependencies?.length || 0
+  const crossDomainDeps = state.intelligence.relationshipMap.crossDomainSynergies?.length || 0
   const stabilityIndex = Math.max(0, 100 - (synergies.length * 4) - (Math.floor(deps / 10)) - (state.docker.status !== 'optimal' ? 10 : 0))
+
+  // Phase 12: Synergy Score Calculation
+  const synergyScore = Math.min(100, (crossDomainDeps * 5) + (synergies.length * 10));
+
+  briefing += `\n### 💎 Strategic Recommendations (Synergy Score: ${synergyScore}%)\n`;
+  if (synergyScore > 80) {
+    briefing += `- **IMMEDIATE:** Execute ecosystem-wide convergence sprint. The high synergy score indicates extreme developmental overlap.\n`;
+    briefing += `- **CRITICAL:** Activate inter-shard consensus protocols to ensure atomic commits across cluster boundaries.\n`;
+  } else if (synergyScore > 50) {
+    briefing += `- **ROUTINE:** Conduct cross-domain architectural reviews for identified functional clusters.\n`;
+    briefing += `- **ADVISORY:** Monitor developmental friction in high-intensity synergy zones.\n`;
+  } else {
+    briefing += `- **CONTINUE:** Maintain current autonomous evolution pace. Ecosystem remains highly modular and decoupled.\n`;
+  }
 
   briefing += `\n---\n**Coordination Stability Index:** ${stabilityIndex}% | **Architectural Drift:** ${synergies.length > 10 ? '⚠️ High' : '✅ Low'} | **Ecosystem Health:** ${state.docker.status.toUpperCase()} | *Sentient Orchestration Active*\n`
 
