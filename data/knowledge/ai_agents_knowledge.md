@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-25T14:29:26.093Z
+**System Analysis:** 2026-06-26T03:14:56.116Z
 
 ---
 
@@ -29,7 +29,55 @@ heartbeat latency < 2ms
 # Intelephense Documentation
 
 > **Source:** https://github.com/bmewburn/intelephense-docs
-> **Analyzed At:** 2026-06-25T14:29:26.064Z
+> **Analyzed At:** 2026-06-26T01:19:13.794Z
+
+## LICENSE
+Intelephense Licence
+Copyright (c) 2019 - present Intelephense
+By installing this software you agree to be bound by the provisions
+of this agreement.
+1. DEFINITIONS
+a)  "Licensor" is Intelephense, Australia, ABN 93900829846.
+b)  "Software" is the software known as Intelephense.
+c)  "Licence Key" is the software key purchasable from the Licensor which
+enables access to Premium Features.
+d)  "Premium Features" are those features only accessible and permitted for
+use by holders of a Licence Key.
+That is: rename; code folding; find all implementations;
+go to type definition; go to declaration.
+2. GRANT OF LICENCE
+The Licensor grants you a personal, non-transferable, non-exclusive licence
+to use the Software on your devices in accordance with the terms of this
+agreement.
+3. LICENCE KEYS
+a)  Purchase of a Licence Key grants a single end user access and use of all
+current and future Premium Features in perpetuity.
+b)  A Licence Key may be revoked if it is suspected that a user has breached
+restrictions detailed in item 4.
+4. RESTRICTIONS
+You are NOT permitted to:
+a)  Edit, alter, modify, adapt, translate or otherwise change the whole or any
+part of the Software.
+b)  Decompile, disassemble or reverse engineer the Software or attempt to do
+any such things.
+c)  Reproduce, copy, distribute, resell or otherwise use the whole or any part
+of the Software for any commercial purpose.
+d)  Disable, modify or hide notifications sent by the Software.
+e)  Distribute, resell, or share Licence Keys.
+f)  Access or use Premium Features without a valid Licence Key.
+5. OWNERSHIP
+The Software, copyright, and other intellectual property rights of whatever
+nature in the Software, including any modifications made thereto are and shall
+remain the property of the Licensor.
+6. WARRANTY DISCLAIMER
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+7. LIMITATION OF LIABILITY
+IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
 
 ## Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -1185,6 +1233,10 @@ JSON schema for `workspace/configuration` request data
     }
 }
 ```
+
+## support
+https://github.com/bmewburn/vscode-intelephense/issues
+ben@intelephense.com
 
 ## About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
@@ -4841,3 +4893,17 @@ Skip to content ↓
 
 ## Phase 19 Swarm Optimization
 Adaptive latency thresholds. When stability index > 0.99, target heartbeat latency < 1ms.
+
+---
+
+# iCloud: phase_20_cognitive_resonance.md
+
+> **Source:** icloud://phase_20_cognitive_resonance.md
+> **Analyzed At:** 2026-06-26T03:14:56.104Z
+
+## Phase 20 Cognitive Resonance
+- Multi-agent resonance synchronization: ENABLED
+- Resonance Latency: < 0.5ms (Target: 0.3ms) for ultra-stability nodes (>0.999)
+- Trust: Post-Quantum Resonance Verification (PQRV)
+- Strategic mandate: Global cognitive coherence across all shards.
+- Signature: SHA256:CognitiveResonanceVerified2026

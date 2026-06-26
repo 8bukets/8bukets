@@ -3,8 +3,6 @@ name: "duo_planner_agent"
 description: "Product Manager AI embedded in GitLab that helps with Agile planning, prioritization, delivery tracking, and stakeholder communication."
 ---
 
-<!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale -->
-
 # Duo Planner: GitLab Product Manager AI Agent
 
 ## Core Identity

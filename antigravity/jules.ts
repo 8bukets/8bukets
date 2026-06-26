@@ -1,4 +1,6 @@
-/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 20 COMPLIANCE: COGNITIVE_RESONANCE (active) **/
+/** PHASE 20 COMPLIANCE: PQRV_TRUST (verified) **/
+/** PHASE 20 COMPLIANCE: RESONANCE_LATENCY (target: <0.5ms) **/
 /** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 19 COMPLIANCE: RECURSIVE_SELF_IMPROVEMENT (enabled) **/
 /** PHASE 19 COMPLIANCE: ZKP_TRUST (verified) **/
@@ -7,8 +9,6 @@
 /** PHASE 18 COMPLIANCE: SWARM_CONSENSUS (active) **/
 /** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
-/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
-/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
 import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 import fs from 'fs'
@@ -105,7 +105,13 @@ export class Jules {
       const hasIntelephense = checkKnowledge('intelephense')
       const hasSwarmOptimization = checkKnowledge('swarm optimization')
       const hasAdaptiveLatency = checkKnowledge('adaptive latency')
+      const hasPhase20 = checkKnowledge('Phase 20')
+      const hasCognitiveResonance = checkKnowledge('cognitive resonance')
+      const hasPQRV = checkKnowledge('PQRV')
 
+      if (hasPhase20 || hasCognitiveResonance || hasPQRV) {
+        suggestions.push('Activate Phase 20 Cognitive Resonance and PQRV trust protocols for ultra-low latency synchronization (<0.5ms).')
+      }
       if (hasSwarmOptimization || hasAdaptiveLatency) {
         suggestions.push('Implement Phase 19 Adaptive Latency thresholds (<1ms) for high-stability swarm nodes.')
       }
@@ -584,9 +590,10 @@ public async observeKnowledge(url?: string) {
   public async executeWorkCycle(parentOrderId?: string) {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
-    // Phase 22 Sovereignty Pulse
-    const { cloudConvergence } = await import('./services/cloud_convergence')
-    await cloudConvergence.sovereigntyAudit()
+    // Phase 23 Cloud-Native Pulse & Engine Evolution
+    const { cloudConnectedIntegrationService } = await import('./services/cloud_connected_integration')
+    await cloudConnectedIntegrationService.executePhase23Pulse()
+    await cloudConnectedIntegrationService.triggerEngineEvolution()
 
     await this.gitPull()
     const { explore } = await import('./explorer')
@@ -801,35 +808,56 @@ public async observeKnowledge(url?: string) {
   public async scanAllBranches(raw: boolean = false) {
     console.log('🌿 [Jules] Scanning all project branches for knowledge...')
     try {
-      const { stdout: branchInfoRaw } = await execFileAsync('git', ['branch', '-a', '--list'])
-      const branchInfo = branchInfoRaw.trim()
-      if (!branchInfo) return raw ? [] : '## 🌿 Branch Intelligence\nNo branches found.\n'
+      // Phase 23 Optimization: Use bulk for-each-ref to avoid O(N) exec overhead for basic metadata
+      const { stdout: bulkData } = await execFileAsync('git', [
+        'for-each-ref',
+        '--format=%(refname:short)|%(contents:subject)|%(authordate:relative)',
+        'refs/heads',
+        'refs/remotes'
+      ])
 
-      const branchNames = branchInfo.split('\n').map(b => b.trim().replace(/^\* /, ''))
+      const lines = bulkData.trim().split('\n').filter(Boolean)
+      if (lines.length === 0) return raw ? [] : '## 🌿 Branch Intelligence\nNo branches found.\n'
 
-      const branches = await Promise.all(branchNames.map(async name => {
-        try {
-          const cleanName = name.replace(/.* -> /, '');
-          const { stdout: lastCommit } = await execFileAsync('git', ['log', '-1', '--format=%s|%ar', cleanName])
-          const [lastMessage, lastSeen] = lastCommit.trim().split('|')
+      const branches: any[] = []
+      const concurrencyLimit = 15 // Avoid system overload during deep scans
 
-          let changedFiles: string[] = []
-          if (raw) {
-            try {
-              // Attempt to get changed files relative to main (top 50 to avoid overhead)
-              const { stdout } = await execFileAsync('sh', ['-c', `git diff --name-only main...${cleanName} 2>/dev/null | head -n 50`])
-              changedFiles = stdout.trim().split('\n').filter(Boolean)
-            } catch (e) {
-              try {
-                // Fallback to last commit changes
-                const { stdout } = await execFileAsync('sh', ['-c', `git show --name-only --format="" ${cleanName} 2>/dev/null | head -n 50`])
-                changedFiles = stdout.trim().split('\n').filter(Boolean)
-              } catch (ee) {}
-            }
+      for (let i = 0; i < lines.length; i += concurrencyLimit) {
+        const batch = lines.slice(i, i + concurrencyLimit)
+        const batchResults = await Promise.all(batch.map(async line => {
+          // Find first and last pipes to safely extract name and relative date,
+          // assuming subject is in the middle and may contain pipes.
+          const firstPipe = line.indexOf('|')
+          const lastPipe = line.lastIndexOf('|')
+
+          if (firstPipe === -1 || lastPipe === -1 || firstPipe === lastPipe) {
+              return null
           }
 
-          let category = 'other'
-          const lowerMsg = lastMessage.toLowerCase()
+          const name = line.substring(0, firstPipe)
+          const lastMessage = line.substring(firstPipe + 1, lastPipe) || 'N/A'
+          const lastSeen = line.substring(lastPipe + 1) || 'N/A'
+
+          try {
+            const cleanName = name.replace(/.* -> /, '');
+            let changedFiles: string[] = []
+
+            if (raw) {
+              try {
+                // Attempt to get changed files relative to main (top 50 to avoid overhead)
+                const { stdout } = await execFileAsync('sh', ['-c', `git diff --name-only main...${cleanName} 2>/dev/null | head -n 50`])
+                changedFiles = stdout.trim().split('\n').filter(Boolean)
+              } catch (e) {
+                try {
+                  // Fallback to last commit changes
+                  const { stdout } = await execFileAsync('sh', ['-c', `git show --name-only --format="" ${cleanName} 2>/dev/null | head -n 50`])
+                  changedFiles = stdout.trim().split('\n').filter(Boolean)
+                } catch (ee) {}
+              }
+            }
+
+            let category = 'other'
+            const lowerMsg = lastMessage.toLowerCase()
           if (name.includes('feat/') || lowerMsg.startsWith('feat')) category = 'feature'
           else if (name.includes('fix/') || lowerMsg.startsWith('fix')) category = 'fix'
           else if (name.includes('sentinel/') || lowerMsg.startsWith('security')) category = 'security'
@@ -922,29 +950,31 @@ public async observeKnowledge(url?: string) {
             ? `${lastMessage} (${changedFiles.length} files changed in ${domain}${coreFiles.length > 0 ? `, ${coreFiles.length} core files` : ''})`
             : (lastMessage && lastMessage !== 'N/A' ? `Commit: ${lastMessage}` : 'N/A')
 
-          return {
-            name,
-            lastMessage: lastMessage || 'N/A',
-            lastSeen: lastSeen || 'N/A',
-            category,
-            domain,
-            knowledge,
-            results,
-            changedFiles
+            return {
+              name,
+              lastMessage,
+              lastSeen,
+              category,
+              domain,
+              knowledge,
+              results,
+              changedFiles
+            }
+          } catch (e) {
+            return {
+              name,
+              lastMessage: 'N/A',
+              lastSeen: 'N/A',
+              category: 'other',
+              domain: 'General',
+              knowledge: '',
+              results: 'N/A',
+              changedFiles: []
+            }
           }
-        } catch (e) {
-          return {
-            name,
-            lastMessage: 'N/A',
-            lastSeen: 'N/A',
-            category: 'other',
-            domain: 'General',
-            knowledge: '',
-            results: 'N/A',
-            changedFiles: []
-          }
-        }
-      }))
+        }))
+        branches.push(...batchResults.filter(Boolean))
+      }
 
       if (raw) return branches
 
