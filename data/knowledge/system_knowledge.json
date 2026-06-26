@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-26T22:49:39.372Z",
+    "generated_at": "2026-06-26T23:02:29.430Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-26T22:49:39.262Z"
+        "ingestedAt": "2026-06-26T23:02:29.306Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-26T22:49:39.276Z"
+        "ingestedAt": "2026-06-26T23:02:29.332Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-26T22:49:39.286Z"
+        "ingestedAt": "2026-06-26T23:02:29.344Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-26T22:49:39.297Z"
+        "ingestedAt": "2026-06-26T23:02:29.356Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-26T22:49:39.307Z"
+        "ingestedAt": "2026-06-26T23:02:29.368Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-26T22:49:39.319Z"
+        "ingestedAt": "2026-06-26T23:02:29.379Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-26T22:49:39.330Z"
+        "ingestedAt": "2026-06-26T23:02:29.391Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2205,7 +2205,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-26T22:49:39.343Z"
+        "ingestedAt": "2026-06-26T23:02:29.402Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2461,7 +2461,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-26T22:49:39.354Z"
+        "ingestedAt": "2026-06-26T23:02:29.413Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2725,7 +2725,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-26T22:49:39.365Z"
+        "ingestedAt": "2026-06-26T23:02:29.424Z"
       }
     }
   },
