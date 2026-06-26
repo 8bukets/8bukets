@@ -34,6 +34,8 @@ export class GithubDocsObserver {
 
     // Split by markdown headers
     const parts = markdown.split(/^(?=#+\s+)/m)
+    let fileIntro = ''
+
     for (const part of parts) {
       if (!part.trim()) continue
       const headerMatch = part.match(/^(#+)\s+(.*)/)
@@ -43,7 +45,19 @@ export class GithubDocsObserver {
         if (title) {
           sections.push({ title, content })
         }
+      } else {
+        // Text before the first header
+        fileIntro += (fileIntro ? '\n' : '') + part.trim()
       }
+    }
+
+    if (fileIntro && sections.length > 0) {
+      // Prepend intro text to the first section (usually the main title)
+      sections[0].content = fileIntro + '\n\n' + sections[0].content
+    } else if (fileIntro && sections.length === 0) {
+      // No headers found, create a virtual section using the filename
+      const title = file.split('/').pop()?.replace(/\.[^/.]+$/, '') || 'Content'
+      sections.push({ title, content: fileIntro })
     }
 
     return {
