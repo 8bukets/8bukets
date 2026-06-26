@@ -10,6 +10,7 @@ export class SwarmHeartbeatService {
   private interval: NodeJS.Timeout | null = null
   private lastPulse: number = Date.now()
   private latency: number = 0
+  private stabilityIndex: number = 1.0 // Phase 19 Stability Metric
 
   /**
    * Starts the 5-second swarm heartbeat pulse.
@@ -26,10 +27,11 @@ export class SwarmHeartbeatService {
         this.latency = Date.now() - start
         this.lastPulse = Date.now()
 
-        // Phase 19 Mandate: Heartbeat latency < 2ms (Target)
-        // Relaxing warning threshold to 5ms for environmental stability
-        if (this.latency > 5) {
-           logAutonomousAction(`⚠️ [SwarmHeartbeat] Heartbeat latency exceeds stability threshold: ${this.latency}ms (Target: 2ms)`, 'warning')
+        // Phase 19 Compliance (Rule 30): Adaptive Latency Targets
+        const targetThreshold = this.stabilityIndex > 0.99 ? 1 : 5
+
+        if (this.latency > targetThreshold) {
+           logAutonomousAction(`⚠️ [SwarmHeartbeat] Heartbeat latency exceeds stability threshold: ${this.latency}ms (Target: ${targetThreshold}ms, Stability: ${this.stabilityIndex})`, 'warning')
         }
       } catch (err: any) {
         logAutonomousAction(`❌ [SwarmHeartbeat] Pulse failed: ${err.message}`, 'error')

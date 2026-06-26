@@ -51,22 +51,29 @@ export class CloudConnectedIntegrationService {
     const telemetry = await cloudWorkflowAgent.evaluateTelemetry()
 
     const report = {
-      docker: telemetry.docker.status === 'simulated' || telemetry.docker.status === 'optimal',
-      github: telemetry.github.fullyOnline,
-      gitlab: telemetry.gitlab.fullyOnline,
-      gitkraken: telemetry.gitkraken.fullyOnline,
-      supabase: telemetry.supabase.status === 'healthy' || telemetry.supabase.status === 'connected',
-      mongodb: telemetry.mongodb.status === 'healthy' || telemetry.mongodb.status === 'simulated'
+      docker: { status: telemetry.docker.status, sovereign: telemetry.docker.status === 'simulated' || telemetry.docker.status === 'optimal' || telemetry.docker.status === 'cloud-active' },
+      github: { status: telemetry.github.fullyOnline ? 'online' : 'offline', sovereign: telemetry.github.fullyOnline },
+      gitlab: { status: telemetry.gitlab.fullyOnline ? 'online' : 'offline', sovereign: telemetry.gitlab.fullyOnline },
+      gitkraken: { status: telemetry.gitkraken.fullyOnline ? 'online' : 'offline', sovereign: telemetry.gitkraken.fullyOnline },
+      supabase: { status: telemetry.supabase.status, sovereign: telemetry.supabase.status === 'healthy' || telemetry.supabase.status === 'connected' },
+      mongodb: { status: telemetry.mongodb.status, sovereign: telemetry.mongodb.status === 'healthy' || telemetry.mongodb.status === 'simulated' }
     }
 
-    const allSovereign = Object.values(report).every(v => v === true)
+    const allSovereign = Object.values(report).every(v => v.sovereign === true)
 
     if (allSovereign) {
       logAutonomousAction('🚀 [CloudConnected] Ecosystem sovereignty verified for Docker, GitHub, GitLab, Supabase, MongoDB, and GitKraken.', 'info')
     } else {
-      const missing = Object.entries(report).filter(([_, v]) => !v).map(([k]) => k).join(', ')
+      const missing = Object.entries(report).filter(([_, v]) => !v.sovereign).map(([k]) => k).join(', ')
       logAutonomousAction(`⚠️ [CloudConnected] Sovereignty gaps detected: ${missing}`, 'warning')
     }
+
+    // Detailed reporting for Phase 23 compliance
+    console.log('--- SOVEREIGNTY STATUS REPORT ---')
+    Object.entries(report).forEach(([tool, data]) => {
+      console.log(`${tool.toUpperCase()}: ${data.status} [${data.sovereign ? 'SOVEREIGN' : 'GAPPED'}]`)
+    })
+    console.log('--------------------------------')
 
     return report
   }

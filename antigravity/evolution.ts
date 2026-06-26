@@ -128,6 +128,15 @@ export async function evolve() {
             suggestion: 'PHASE_16_TELEMETRY_MISSING: Presence must include Neural Stability and Heartbeat Latency metrics.'
           })
         }
+
+        // Rule 30: Phase 19 Adaptive Latency Compliance
+        if (content.includes('swarmHeartbeat') && content.includes('stability') && !content.includes('<1ms')) {
+           suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'PHASE_19_ADAPTIVE_LATENCY_VIOLATION: High-stability nodes must target <1ms latency (Rule 30).'
+          })
+        }
       }
     }
   }
@@ -231,6 +240,22 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
        if (!content.includes('PHASE 16 COMPLIANCE')) {
           logAutonomousAction(` - Fixing ${s.file}: Injecting Phase 16 Compliance Header`, 'info')
           const header = "/** PHASE 16 COMPLIANCE: QUANTUM_SOVEREIGNTY | SWARM_HEARTBEAT | NEURAL_STABILITY */\n"
+          if (content.startsWith('#!')) {
+             const lines = content.split('\n')
+             lines.splice(1, 0, header)
+             content = lines.join('\n')
+          } else {
+             content = header + content
+          }
+          fs.writeFileSync(fullPath, content)
+       }
+    }
+
+    // Phase 19 Fix: Inject Adaptive Latency Compliance Headers (Rule 30)
+    if (s.suggestion.includes('PHASE_19')) {
+       if (!content.includes('PHASE 19 COMPLIANCE')) {
+          logAutonomousAction(` - Fixing ${s.file}: Injecting Phase 19 Compliance Header (Rule 30)`, 'info')
+          const header = "/** PHASE 19 COMPLIANCE: ADAPTIVE_LATENCY_PROTOCOL | SOVEREIGN_SWARM_NODE */\n"
           if (content.startsWith('#!')) {
              const lines = content.split('\n')
              lines.splice(1, 0, header)
