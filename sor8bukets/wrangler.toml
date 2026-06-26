@@ -1,0 +1,8 @@
+name = "8bukets"
+main = "src/index.js"
+compatibility_date = "2026-06-26"
+
+# Disable routes for CI build stability in restricted environments
+# routes = [
+#   { pattern = "sor8bukets.example.com", custom_domain = false }
+# ]
