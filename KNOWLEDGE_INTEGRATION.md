@@ -955,70 +955,9 @@ The Docker Hub mcp namespace (for MCP servers built by Docker).
 ## best value of knowledge integration
 
 <!-- Authorized syntactic adjustment to trigger clean commit -->
-<!-- CI failed -->
-<!--  -->
-<!-- # Priority: GitHub CI Check Suite Failure Detected -->
-<!-- Your goal now is to analyze the provided check run details, annotations, and logs from GitHub Actions, identify the root cause of the failure, and make a fix. -->
-<!--  -->
-<!-- ## Key Information Sources That May Be Available -->
-<!-- 1. **Annotations**: Structured error info with file paths and line numbers -->
-<!-- 2. **Job Logs**: Full execution logs showing commands and errors -->
-<!-- 3. **Output Summary**: High-level error description from the check run -->
-<!--  -->
-<!-- ## Be Resourceful -->
-<!-- Remember to use your `google_search` tool to search for specific error messages if needed. -->
-<!--  -->
-<!-- ## ⚠️ Important: Verify Before Submitting -->
-<!-- Try to run the relevant tests or build locally to verify your fix works before submitting. -->
-<!--  -->
-<!-- See check run details below: -->
-<!--  -->
-<!-- ## Failed Check Run 1: Workers Builds: young-snow-dfac -->
-<!-- Conclusion: failure -->
-<!-- Title: Workers Builds: young-snow-dfac -->
-<!-- Summary: -->
-<!--  -->
-<!-- Build ID: [4e6cad61-b16a-47ae-92e8-0d5392e18c10](https://dash.cloudflare.com/7af62bd44b83a86e7156915f5791402d/workers/services/view/young-snow-dfac/production/builds/4e6cad61-b16a-47ae-92e8-0d5392e18c10) -->
-<!-- Script: [young-snow-dfac](https://dash.cloudflare.com/7af62bd44b83a86e7156915f5791402d/workers/services/view/young-snow-dfac/production) -->
-<!--  -->
-<!-- URL: https://github.com/8bukets/8bukets/runs/83566054712 -->
-<!--  -->
-<!-- No annotations available for this check run. -->
-<!--  -->
-<!-- No job logs available for this check run. -->
-<!--  -->
-<!-- ## Failed Check Run 2: Workers Builds: 8bukets -->
-<!-- Conclusion: failure -->
-<!-- Title: Workers Builds: 8bukets -->
-<!-- Summary: -->
-<!--  -->
-<!-- Build ID: [412ae3c6-655c-44fb-91ad-4dde1ad782db](https://dash.cloudflare.com/7af62bd44b83a86e7156915f5791402d/workers/services/view/8bukets/production/builds/412ae3c6-655c-44fb-91ad-4dde1ad782db) -->
-<!-- Script: [8bukets](https://dash.cloudflare.com/7af62bd44b83a86e7156915f5791402d/workers/services/view/8bukets/production) -->
-<!--  -->
-<!-- URL: https://github.com/8bukets/8bukets/runs/83566121351 -->
-<!--  -->
-<!-- No annotations available for this check run. -->
-<!--  -->
-<!-- No job logs available for this check run. -->
-<!--  -->
-<!-- ## Failed Check Run 3: Workers Builds: purple-poetry-aace -->
-<!-- Conclusion: failure -->
-<!-- Title: Workers Builds: purple-poetry-aace -->
-<!-- Summary: -->
-<!--  -->
-<!-- Build ID: [17afcdef-183a-4071-bf38-69880efdd479](https://dash.cloudflare.com/7af62bd44b83a86e7156915f5791402d/workers/services/view/purple-poetry-aace/production/builds/17afcdef-183a-4071-bf38-69880efdd479) -->
-<!-- Script: [purple-poetry-aace](https://dash.cloudflare.com/7af62bd44b83a86e7156915f5791402d/workers/services/view/purple-poetry-aace/production) -->
-<!--  -->
-<!-- URL: https://github.com/8bukets/8bukets/runs/83566191793 -->
-<!--  -->
-<!-- No annotations available for this check run. -->
-<!--  -->
-<!-- No job logs available for this check run. -->
-<!--  -->
-<!-- Your task is to analyze the above information and fix the errors causing these CI failures. Use the information above to identify the exact files and line numbers where the issues occurred, then make the necessary code changes to resolve them so that the CI checks pass on the next run. -->
-<!--  -->
-<!-- Carefully consider the request and update the plan with `set_plan` tool if needed. -->
-<!-- prepare best value of knowledge integration - To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.Key Definitions of CompileGathering Information: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).Creating Works: To produce a book, anthology, or database from various materials.Computing: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.Usage Examples"She is compiling a list of clients for the newsletter.""It took years to compile the dictionary.""The developer needs to compile the code before running the application."SynonymsAssembleCollectGatherComposeAccumulateOrganizeSynthesizeContextual UsageGeneral: Focuses on the act of assembling information or materials (e.g., compile a report).Computing: Focuses on the automatic transformation of code using a tool known as a compiler. -->
+
+prepare best value of knowledge integration - To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.Key Definitions of CompileGathering Information: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).Creating Works: To produce a book, anthology, or database from various materials.Computing: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.Usage Examples"She is compiling a list of clients for the newsletter.""It took years to compile the dictionary.""The developer needs to compile the code before running the application."SynonymsAssembleCollectGatherComposeAccumulateOrganizeSynthesizeContextual UsageGeneral: Focuses on the act of assembling information or materials (e.g., compile a report).Computing: Focuses on the automatic transformation of code using a tool known as a compiler.
+
 <!-- integrate  -->
 <!-- implement and connect jenkins into engine system and collaborate and integrate , create pipeline  -->
 
