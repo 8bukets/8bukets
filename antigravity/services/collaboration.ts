@@ -379,11 +379,12 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum|swarm|heartbeat|sovereign|zkp|singularity|lattice|dilithium|kyber|multi-modal|recursive|performance|monitoring|scaling)/i)
           if (clusterMatch) {
             let cluster = clusterMatch[0].toLowerCase()
-            if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation' || cluster === 'quantum' || cluster === 'zkp' || cluster === 'sovereign' || cluster === 'lattice' || cluster === 'dilithium' || cluster === 'kyber') cluster = 'security'
+            if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation' || cluster === 'quantum' || cluster === 'zkp' || cluster === 'sovereign' || cluster === 'lattice' || cluster === 'dilithium' || cluster === 'kyber') cluster = 'security-mesh'
             else if (cluster === 'enterprise' || cluster === 'research' || cluster === 'singularity' || cluster === 'innovation') cluster = 'core'
             else if (cluster === 'swarm' || cluster === 'multi-modal' || cluster === 'cognitive') cluster = 'intelligence'
             else if (cluster === 'heartbeat' || cluster === 'recursive' || cluster === 'vitality') cluster = 'health'
             else if (cluster === 'performance' || cluster === 'scaling' || cluster === 'monitoring') cluster = 'ops'
+            else if (cluster === 'db' || cluster === 'database' || cluster === 'data') cluster = 'data-mesh'
 
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
             functionalClusters[cluster].add(b.name)
@@ -740,9 +741,16 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
     newEntries += `\n`
   }
 
-  Object.entries(domains).sort((a, b) => b[1].length - a[1].length).forEach(([domain, branchList]) => {
+  // Phase 12: Knowledge Nugget Deduplication & Refinement
+  const seenInsights = new Set<string>();
+
+  Object.entries(domains).sort((a, b) => a[0].localeCompare(b[0])).forEach(([domain, branchList]) => {
     newEntries += `### 🌐 Strategic Domain: ${domain}\n`
     branchList.sort((a, b) => (b.score || 0) - (a.score || 0)).forEach(b => {
+      const insight = b.knowledge || b.results || b.result || 'N/A';
+      if (seenInsights.has(insight)) return;
+      seenInsights.add(insight);
+
       const scoreTag = b.score ? ` [Impact Score: ${b.score}]` : '';
       newEntries += `- **Branch:** \`${b.name}\`${scoreTag}\n`
       newEntries += `  - **Category:** ${b.category?.toUpperCase()}\n`
