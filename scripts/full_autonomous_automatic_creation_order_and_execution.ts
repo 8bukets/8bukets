@@ -62,10 +62,13 @@ async function main() {
     await jules.syncCollaboration();
 
     // 7. Work Order Execution (Triggers Recursive CreationEngine)
-    console.log('📝 [Orders] Creating root Phase 19 creation order...');
+    console.log('🧹 [Cleanup] Purging stale pending work orders for a clean creation state...');
+    await workOrderService.clearPendingOrders();
+
+    console.log('📝 [Orders] Creating root Phase 23 creation order...');
     const rootOrder = await workOrderService.createOrder(
       'AUTONOMOUS_CREATION',
-      'Execute Phase 19 Sovereign Swarm Creation Loop',
+      'Execute Phase 23 Sovereign Swarm Creation Loop',
       { pulseId, timestamp: new Date().toISOString() }
     );
 
