@@ -8,21 +8,27 @@ import { creationReportingService } from '../antigravity/services/creation_repor
 import { logAutonomousAction, healthCheck } from '../antigravity/core';
 import { cloudWorkflowAgent } from '../antigravity/services/cloud_workflow';
 import { zkpTrust } from '../antigravity/services/zkp_trust';
+import { cloudConnectedIntegrationService } from '../antigravity/services/cloud_connected_integration';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+
+const execAsync = promisify(exec);
 
 /**
- * FULL AUTONOMOUS AUTOMATIC CREATION ORDER AND EXECUTION (Phase 19 Sovereign Swarm Evolution)
+ * FULL AUTONOMOUS AUTOMATIC CREATION ORDER AND EXECUTION (Phase 23 Cloud-Native Sovereign Swarm)
  * Orchestrates a recursive autonomous lifecycle: Synthesis -> Bootstrap -> Smoke Test -> Deployment.
- * Integrates Swarm Heartbeat (< 2ms), ZKP Sovereign Trust, and Recursive Self-Improvement.
+ * Integrates Phase 23 Cloud-Native Pulse, High-Scale Engine Evolution, and Python Ecosystem.
  */
 async function main() {
   const pulseId = `pulse_${Math.random().toString(36).substring(2, 11)}`;
-  console.log(`🚀 [Phase 19] Starting Unified Autonomous Creation Cycle (Pulse: ${pulseId})...`);
-  logAutonomousAction(`🚀 [Phase 19] Initiating full autonomous creation cycle: ${pulseId}`, 'info');
+  console.log(`🚀 [Phase 23] Starting Unified Autonomous Creation Cycle (Pulse: ${pulseId})...`);
+  logAutonomousAction(`🚀 [Phase 23] Initiating full autonomous creation cycle: ${pulseId}`, 'info');
 
   try {
-    // 1. Activate Phase 19 Protocols
-    console.log('📡 [Protocols] Activating Phase 19 Swarm Heartbeat and ZKP Sovereign Trust...');
+    // 1. Activate Phase 23 Protocols (Cloud-Native Pulse)
+    console.log('📡 [Protocols] Activating Phase 23 Cloud-Native Pulse and Swarm Heartbeat...');
     swarmHeartbeat.start();
+    await cloudConnectedIntegrationService.executePhase23Pulse();
     await crossShardMemory.syncMemory();
 
     // Generate and verify Sovereign Trust proof
@@ -66,32 +72,40 @@ async function main() {
     console.log('⚡ [Execution] Dispatching work order queue...');
     await workOrderService.executePendingOrders();
 
-    // 8. Recursive Self-Improvement Pulse (System-wide)
-    console.log('🔄 [Recursive] Executing system-wide self-improvement pulse...');
-    const { evolve, applyFixes } = await import('../antigravity/evolution');
-    const suggestions = await evolve();
-    await applyFixes(suggestions);
+    // 8. High-Scale Engine Evolution (Phase 23)
+    console.log('🧬 [Recursive] Triggering Phase 23 High-Scale Engine Evolution...');
+    await cloudConnectedIntegrationService.triggerEngineEvolution();
 
-    // 9. Reporting
+    // 9. Python Ecosystem Cycle Integration
+    console.log('🐍 [Ecosystem] Running Python Autonomous Engine...');
+    try {
+      const token = process.env.SYSTEM_AUTH_TOKEN || 'default_dev_token';
+      const { stdout } = await execAsync(`python3 autonomous_engine.py --token ${token}`);
+      console.log(stdout);
+    } catch (e: any) {
+      console.warn(`⚠️ [Ecosystem] Python engine encountered an error: ${e.message}`);
+    }
+
+    // 10. Reporting
     console.log('📊 [Reporting] Generating creation pulse execution record...');
     const allOrders = workOrderService.getAllOrders();
     await creationReportingService.generateReport(pulseId, allOrders);
 
-    // 10. Final Sync & Heartbeat Shutdown
+    // 11. Final Sync & Heartbeat Shutdown
     await onlinePresence.syncPresence();
     swarmHeartbeat.stop();
-    console.log(`🏆 [Phase 19] Autonomous Creation Cycle Complete (Pulse: ${pulseId}).`);
-    logAutonomousAction(`🏆 [Phase 19] Autonomous Creation Cycle Complete: ${pulseId}`, 'info');
+    console.log(`🏆 [Phase 23] Autonomous Creation Cycle Complete (Pulse: ${pulseId}).`);
+    logAutonomousAction(`🏆 [Phase 23] Autonomous Creation Cycle Complete: ${pulseId}`, 'info');
 
   } catch (error: any) {
-    console.error(`💥 [Phase 19] Fatal cycle error: ${error.message}`);
-    logAutonomousAction(`💥 [Phase 19] Fatal cycle error: ${error.message}`, 'error');
+    console.error(`💥 [Phase 23] Fatal cycle error: ${error.message}`);
+    logAutonomousAction(`💥 [Phase 23] Fatal cycle error: ${error.message}`, 'error');
     swarmHeartbeat.stop();
     process.exit(1);
   }
 }
 
 main().catch(err => {
-  console.error('💥 [Phase 19] Unhandled orchestration error:', err);
+  console.error('💥 [Phase 23] Unhandled orchestration error:', err);
   process.exit(1);
 });
