@@ -19,7 +19,7 @@ export async function ingestKnowledgeMerge() {
 
         // Group by domain
         const grouped: Record<string, any[]> = {};
-        knowledge.market_data.recent_entries.slice(0, 10).forEach((e: any) => {
+        knowledge.market_data.recent_entries.slice(0, 15).forEach((e: any) => {
             const domain = e.domain || 'General Intelligence';
             if (!grouped[domain]) grouped[domain] = [];
             grouped[domain].push(e);
@@ -29,9 +29,21 @@ export async function ingestKnowledgeMerge() {
             markdownContext += `### 🌐 ${domain}\n`;
             entries.forEach((e: any) => {
                 markdownContext += `- [${e.title || 'Untitled Signal'}](${e.post_url})\n`;
+                if (e.date) markdownContext += `  - *Date*: ${e.date}\n`;
             });
             markdownContext += '\n';
         }
+    }
+
+    if (knowledge.ai_agents_structured) {
+        markdownContext += '## 🤖 AI Agent Intelligence\n\n';
+        knowledge.ai_agents_structured.slice(0, 5).forEach((agent: any) => {
+            markdownContext += `### ${agent.title}\n`;
+            if (agent.sections && agent.sections[0] && Array.isArray(agent.sections[0].content)) {
+                markdownContext += `${agent.sections[0].content.join(' ')}\n\n`;
+            }
+            markdownContext += `- **Source**: [${agent.url}](${agent.url})\n\n`;
+        });
     }
 
     const signatures = [
@@ -59,6 +71,17 @@ export async function ingestKnowledgeMerge() {
             if (fileContent.includes(mergeHeader)) {
                 const lines = fileContent.split('\n');
                 const startIdx = lines.findIndex(l => l.includes(mergeHeader));
+                let endIdx = lines.findIndex((l, i) => i > startIdx && (l.startsWith('## ') || l.startsWith('---')));
+                if (endIdx === -1) endIdx = lines.length;
+
+                lines.splice(startIdx, endIdx - startIdx);
+                fileContent = lines.join('\n');
+            }
+
+            const aiHeader = '## 🤖 AI Agent Intelligence';
+            if (fileContent.includes(aiHeader)) {
+                const lines = fileContent.split('\n');
+                const startIdx = lines.findIndex(l => l.includes(aiHeader));
                 let endIdx = lines.findIndex((l, i) => i > startIdx && (l.startsWith('## ') || l.startsWith('---')));
                 if (endIdx === -1) endIdx = lines.length;
 
