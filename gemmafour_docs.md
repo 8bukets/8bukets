@@ -86,10 +86,12 @@ OmniDocBench 1.5 (average edit distance, lower is better) | 0.131 | 0.149 | 0.16
 MATH-Vision | 85.6% | 82.4% | 79.7% | 59.5% | 52.4% | 46.0%
 MedXPertQA MM | 61.3% | 58.1% | 48.7% | 28.7% | 23.5% | -
 Audio |  |  |  |  |  |
-CoVoST | - | - | 38.5 | 35.54 | 33.47 | -
-FLEURS (lower is better) | - | - | 0.069 | 0.08 | 0.09 | -
+CoVoST | - | - | 38.5* | 35.54 | 33.47 | -
+FLEURS (lower is better) | - | - | 0.069* | 0.08 | 0.09 | -
 Long Context |  |  |  |  |  |
 MRCR v2 8 needle 128k (average) | 66.4% | 44.1% | 43.4% | 25.4% | 19.1% | 13.5%
+
+* Excluding Chinese language.
 
 ## Core Capabilities
 

@@ -15,13 +15,13 @@
     "ignite": "tsx --env-file=.env antigravity/run_daily.ts --continuous",
     "autonomous-creation": "tsx --env-file=.env scripts/full_autonomous_automatic_creation.ts",
     "full-autonomous-automatic-creation-order-and-execution": "tsx --env-file=.env scripts/full_autonomous_automatic_creation_order_and_execution.ts",
-    "ingest:sor": "tsx --env-file=.env scripts/ingest_software_online_review.ts",
-    "ingest:dbcode": "tsx --env-file=.env scripts/ingest_dbcode.ts",
-    "ingest:terraform": "tsx --env-file=.env scripts/ingest_terraform_knowledge.ts",
-    "ingest:notebooklm": "tsx --env-file=.env scripts/ingest_notebooklm_knowledge.ts",
+    "ingest:sor": "(tsx --env-file=.env scripts/ingest_software_online_review.ts || node scripts/ingest_software_online_review.js || true)",
+    "ingest:dbcode": "(tsx --env-file=.env scripts/ingest_dbcode.ts || node scripts/ingest_dbcode.js || true)",
+    "ingest:terraform": "(tsx --env-file=.env scripts/ingest_terraform_knowledge.ts || node scripts/ingest_terraform_knowledge.js || true)",
+    "ingest:notebooklm": "(tsx --env-file=.env scripts/ingest_notebooklm_knowledge.ts || node scripts/ingest_notebooklm_knowledge.js || true)",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'",
-    "ingest:knowledge": "npm run ingest:sor && npm run ingest:dbcode && npm run ingest:terraform && npm run ingest:notebooklm && tsx --env-file=.env scripts/ingest_localhost_tools_knowledge.ts && (python3 scripts/ingest_markposition_knowledge.py || tsx --env-file=.env scripts/ingest_markposition_knowledge.ts) && tsx --env-file=.env scripts/ingest_render_docs.ts && tsx --env-file=.env scripts/ingest_ai_agents_knowledge.ts && tsx --env-file=.env scripts/ingest_ads_knowledge.ts && tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts && (node scripts/ingest_knowledge_merge.js || tsx --env-file=.env scripts/ingest_knowledge_merge.ts) && npm run ingest:gemini-cli-subagents && python3 gemmafour_scraper.py && python3 litert_scraper.py && python3 intelephense_scraper.py",
+    "ingest:knowledge": "npm run ingest:sor && npm run ingest:dbcode && npm run ingest:terraform && npm run ingest:notebooklm && (tsx --env-file=.env scripts/ingest_localhost_tools_knowledge.ts || node scripts/ingest_localhost_tools_knowledge.js || true) && (python3 scripts/ingest_markposition_knowledge.py || tsx --env-file=.env scripts/ingest_markposition_knowledge.ts || node scripts/ingest_markposition_knowledge.js) && (tsx --env-file=.env scripts/ingest_render_docs.ts || node scripts/ingest_render_docs.js || true) && (tsx --env-file=.env scripts/ingest_ai_agents_knowledge.ts || node scripts/ingest_ai_agents_knowledge.js || true) && (tsx --env-file=.env scripts/ingest_ads_knowledge.ts || node scripts/ingest_ads_knowledge.js || true) && (tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts || node scripts/ingest_macbook_cloud_knowledge.js || true) && (node scripts/ingest_knowledge_merge.js || tsx --env-file=.env scripts/ingest_knowledge_merge.ts) && (npm run ingest:gemini-cli-subagents || true) && (python3 gemmafour_scraper.py || true) && (python3 litert_scraper.py || true) && (python3 intelephense_scraper.py || true)",
     "ingest:gemini-cli-subagents": "tsx --env-file=.env scripts/ingest_gemini_cli_subagents.ts"
   },
   "dependencies": {
