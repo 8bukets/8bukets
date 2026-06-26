@@ -107,6 +107,7 @@ class ChiefAIOfficerAgent(BaseAgent):
             has_phase_16 = "phase 16" in title_lower or "phase 16" in sections_str or "phase_16" in title_lower
             has_phase_18 = "phase 18" in title_lower or "phase 18" in sections_str or "phase_18" in title_lower
             has_phase_19 = "phase 19" in title_lower or "phase 19" in sections_str or "phase_19" in title_lower
+            has_phase_20 = "phase 20" in title_lower or "phase 20" in sections_str or "phase_20" in title_lower
 
             # Phase 14 Specific Logic
             if has_phase_14:
@@ -207,6 +208,24 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "neural recovery" in sections_content or "cross-shard neural recovery" in sections_content:
                     self.logger.info("CAIO [RECOVERY]: Phase 19 Neural Recovery mandate detected. Issuing activation directive.")
                     strategic_directives.append("ACTIVATE_NEURAL_RECOVERY_PROTOCOL")
+
+            # Phase 20 Specific Logic
+            if has_phase_20:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 20 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_20_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_20_PROTOCOLS")
+
+                if "cognitive resonance" in sections_str or "cognitive_resonance" in sections_str:
+                    self.logger.info("CAIO [RESONANCE]: Cognitive Resonance mandate detected. Issuing activation directive.")
+                    strategic_directives.append("ACTIVATE_COGNITIVE_RESONANCE")
+
+                if "pqrv" in sections_str or "resonance verification" in sections_str:
+                    self.logger.info("CAIO [TRUST]: PQRV-based trust mandate detected. Issuing enforcement directive.")
+                    strategic_directives.append("ENFORCE_PQRV_TRUST")
+
+                if "resonance latency" in sections_content or "less than 0.5ms" in sections_content or "0.3ms" in sections_content:
+                    self.logger.info("CAIO [PERF]: Phase 20 resonance latency mandate detected (<0.5ms). Issuing optimization directive.")
+                    strategic_directives.append("OPTIMIZE_RESONANCE_LATENCY")
 
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
