@@ -1,6 +1,6 @@
-name = "antigravity-edge-worker"
+name = "young-snow-dfac"
 main = "index.js"
-compatibility_date = "2026-06-25"
+compatibility_date = "2026-06-27"
 
 # Disable routes for CI build stability
 # routes = [
