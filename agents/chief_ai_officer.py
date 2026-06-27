@@ -227,6 +227,25 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [PERF]: Phase 20 resonance latency mandate detected (<0.5ms). Issuing optimization directive.")
                     strategic_directives.append("OPTIMIZE_RESONANCE_LATENCY")
 
+            # Phase 23 Specific Logic
+            has_phase_23 = "phase 23" in title_lower or "phase 23" in sections_str or "phase_23" in title_lower
+            if has_phase_23:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 23 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_23_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_23_PROTOCOLS")
+
+                if "cloud-native sovereign organism" in sections_str or "cloud_native_integration" in sections_str:
+                    self.logger.info("CAIO [CLOUD]: Cloud-Native Sovereignty mandate detected. Issuing activation directive.")
+                    strategic_directives.append("ACTIVATE_CLOUD_NATIVE_SOVEREIGNTY")
+
+                if "sovereign pulse synchronization" in sections_str or "sovereignty_pulse" in sections_str:
+                    self.logger.info("CAIO [SYNC]: Sovereign Pulse mandate detected. Issuing enforcement directive.")
+                    strategic_directives.append("ENFORCE_SOVEREIGN_PULSE_SYNC")
+
+                if "resonance latency" in sections_content or "less than 0.2ms" in sections_content:
+                    self.logger.info("CAIO [PERF]: Phase 23 resonance latency mandate detected (<0.2ms). Issuing optimization directive.")
+                    strategic_directives.append("OPTIMIZE_RESONANCE_LATENCY_PHASE_23")
+
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
                 role_alignment_verified = True
