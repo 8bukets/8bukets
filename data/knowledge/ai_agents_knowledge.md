@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-27T03:35:44.756Z
+**System Analysis:** 2026-06-27T12:12:25.279Z
 
 ---
 
@@ -1921,27 +1921,27 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
 # Chief AI Officer (CAIO) Role
 
 > **Source:** user_input://caio_user_input.md
-> **Analyzed At:** 2026-06-25T10:07:41.653Z
+> **Analyzed At:** 2026-06-27T12:12:21.940Z
 
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera.
 The role bridges the gap between advanced technical execution and bottom-line business outcomes. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Data Science, Computer Science, or an MBA.
 
-## Core Job Description
+### Core Job Description
 A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
 
-## Key Responsibilities
+### Key Responsibilities
 - **Strategy & Vision:** Align AI initiatives with the company’s overall business goals.
 - **Ethics & Governance:** Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations.
 - **Implementation & Tech Stacking:** Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors.
 - **Cross-Department Training:** Educate the board, executives, and general workforce on how to leverage AI safely and effectively.
 - **Performance Tracking:** Measure the return on investment (ROI) and overall business impact of deployed AI projects.
 
-## Qualifications & Requirements
+### Qualifications & Requirements
 - **Education:** A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role.
 - **Experience:** 8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
 - **Skillset:** A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
 
-## CAIO vs. Other C-Suite Tech Roles
+### CAIO vs. Other C-Suite Tech Roles
 - **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
 - **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
 - **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done.
@@ -1951,15 +1951,15 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # Chief AI Officer (CAIO) Market Intelligence
 
 > **Source:** user_input://caio_market_intelligence_2026.md
-> **Analyzed At:** 2026-06-25T10:07:41.671Z
+> **Analyzed At:** 2026-06-27T12:12:22.862Z
 
-## Market Landscape & Role Prevalence
+### Market Landscape & Role Prevalence
 As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-suite for organizations prioritizing digital transformation.
 - **Adoption Rate:** Approximately 76% of firms have now appointed a CAIO or equivalent executive lead for AI, up from 60% in early 2025.
 - **Industry Focus:** Highest adoption rates are observed in Technology, Healthcare, Finance, and Manufacturing sectors.
 - **Strategic Intersection:** The role sits at the intersection of business strategy, technology/data architecture, risk/ethics, and cultural transformation.
 
-## Real-World Openings & Recruitment (LinkedIn Jobs)
+### Real-World Openings & Recruitment (LinkedIn Jobs)
 - **Platforms:** LinkedIn Jobs remains the primary platform for executive AI recruitment.
 - **Notable Organizations with CAIOs (2024-2025):**
 - **USDA:** Christopher Alvares, Chief AI Officer.
@@ -1973,34 +1973,34 @@ As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-su
 - Deep experience in auditing AI workflows and aligning predictive models with revenue streams.
 - Ability to lead cross-functional "AI Ethics Boards."
 
-## Executive AI Leadership Certifications (Coursera & Academic)
+### Executive AI Leadership Certifications (Coursera & Academic)
 To meet licensure-equivalent standards for executive roles, the following programs are highly recognized in 2026:
 
-## 1. The Chief AI Officer's Handbook (Coursera / Packt)
+#### 1. The Chief AI Officer's Handbook (Coursera / Packt)
 - **Content:** Develop and execute AI strategy as a CAIO, ensuring ethical compliance. Master agile AI project management and design/implement AI agents for autonomous system optimization.
 
-## 2. Executive AI Leadership Mastery Specialization (Coursera)
+#### 2. Executive AI Leadership Mastery Specialization (Coursera)
 - **Courses:** How to Build an Enterprise AI Strategy, Change Management for GenAI Integration, CEO Playbook: Generative AI.
 
-## 3. AI for Executives & Strategy (Coursera / AI CERTs)
+#### 3. AI for Executives & Strategy (Coursera / AI CERTs)
 - **Focus:** Reshaping markets with AI and strategic certification for business leaders.
 
-## 4. Chief AI Officer Specialization (Coursera)
+#### 4. Chief AI Officer Specialization (Coursera)
 - **Target:** Mid-level managers and aspiring executives.
 - **Curriculum:** Practical application of AI governance and strategy.
 
-## 5. University-Led Executive Programs
+#### 5. University-Led Executive Programs
 - **Duke University (Fuqua):** Chief AI Officer (CAIO) Program – Focuses on AI strategy and leadership for C-Suite executives.
 - **UPenn (Wharton):** Executive Data Analyst & AI Strategy – Focuses on the financial impact of AI.
 - **MIT xPRO:** AI Strategy and Leadership – Focuses on implementation and data strategy.
 - **Stanford Online:** AI-Driven Leadership – Covers AI-driven decision making and business objectives.
 
-## Salary Benchmarks (2026 Targets)
+### Salary Benchmarks (2026 Targets)
 - **National Median Base Salary:** ~$350,000+
 - **Total Compensation (Fortune 500):** $1.2M - $2.5M+ (including bonus and equity).
 - **Core Metric:** Performance is increasingly tied to "AI-Driven ROI" and "Governance Compliance Scores."
 
-## Trends
+### Trends
 Market Intelligence Q3: Increased demand for sovereign AI clusters to ensure data residency and compliance.
 
 ---
@@ -4948,33 +4948,33 @@ A massive structural transition has occurred across global enterprise ecosystems
 # Chief AI Officer (CAIO) Executive Intelligence 2026
 
 > **Source:** local://caio_executive_intelligence_2026.md
-> **Analyzed At:** 2026-06-26T09:11:51.141Z
+> **Analyzed At:** 2026-06-27T12:12:25.107Z
 
-## 1. Executive Role Definition
+### 1. Executive Role Definition
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes.
 
-## Core Job Description
+#### Core Job Description
 The CAIO directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
 
-## Key Responsibilities
+#### Key Responsibilities
 - **Strategy & Vision:** Align AI initiatives with the company’s overall business goals.
 - **Ethics & Governance:** Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations.
 - **Implementation & Tech Stacking:** Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors.
 - **Cross-Department Training:** Educate the board, executives, and general workforce on how to leverage AI safely and effectively.
 - **Performance Tracking:** Measure the return on investment (ROI) and overall business impact of deployed AI projects (Targeting >95% ROI efficiency).
 
-## 2. Qualifications & Requirements
+### 2. Qualifications & Requirements
 - **Education:** A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role.
 - **Licensure:** Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor).
 - **Experience:** 8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
 - **Skillset:** A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
 
-## 3. C-Suite Comparative Analysis
+### 3. C-Suite Comparative Analysis
 - **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
 - **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
 - **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done.
 
-## 4. Market Landscape & Adoption (2025-2026)
+### 4. Market Landscape & Adoption (2025-2026)
 As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-suite for organizations prioritizing digital transformation.
 - **76% Adoption Rate:** According to the IBM Institute for Business Value 2026 CEO Study, the share of organizations with a designated CAIO climbed to 76%, a massive surge from 26% in 2025.
 - **Industry Focus:** Highest adoption rates are observed in Technology, Healthcare, Finance, and Manufacturing sectors.
@@ -4990,35 +4990,35 @@ As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-su
 - **IBM:** Early adopter, focusing on watsonx platform strategy and AI ethics.
 - **Accenture & PwC:** Focus on enterprise-wide AI adoption and responsible AI governance for clients.
 
-## 5. Executive AI Leadership Certifications
+### 5. Executive AI Leadership Certifications
 The market prioritizes technical literacy combined with executive business acumen. The following programs are recognized benchmarks for meeting licensure-equivalent standards in 2026:
 
-## 1. The Chief AI Officer's Handbook (Coursera / Packt)
+#### 1. The Chief AI Officer's Handbook (Coursera / Packt)
 Develop and execute AI strategy as a CAIO, ensuring ethical compliance. Master agile AI project management and design/implement AI agents for autonomous system optimization.
 
-## 2. Executive AI Leadership Mastery Specialization (Coursera)
+#### 2. Executive AI Leadership Mastery Specialization (Coursera)
 Courses: How to Build an Enterprise AI Strategy, Change Management for GenAI Integration, CEO Playbook: Generative AI.
 
-## 3. AI for Executives & Strategy (Coursera / AI CERTs)
+#### 3. AI for Executives & Strategy (Coursera / AI CERTs)
 Focus: Reshaping markets with AI and strategic certification for business leaders.
 
-## 4. Chief AI Officer Specialization (Coursera)
+#### 4. Chief AI Officer Specialization (Coursera)
 Target: Mid-level managers and aspiring executives. Curriculum: Practical application of AI governance and strategy.
 
-## 5. University-Led Executive Programs
+#### 5. University-Led Executive Programs
 - **Duke University (Fuqua):** Chief AI Officer (CAIO) Program – Focuses on AI strategy and leadership for C-Suite executives.
 - **UPenn (Wharton):** Executive Data Analyst & AI Strategy – Focuses on the financial impact of AI.
 - **MIT xPRO:** AI Strategy and Leadership – Focuses on implementation and data strategy.
 - **Stanford Online:** AI-Driven Leadership – Covers AI-driven decision making and business objectives.
 - **UC Berkeley:** Executive Data Strategy – Focuses on maintaining a competitive advantage through data-driven AI.
 
-## 6. Compensation Benchmarks (2026 Targets)
+### 6. Compensation Benchmarks (2026 Targets)
 - **National Median Base Salary:** ~$351,519
 - **75th Percentile:** $492,127
 - **Total Compensation (Fortune 500):** $1.2M - $2.5M+ (including bonus and equity).
 - **Core Metric:** Performance is increasingly tied to "AI-Driven ROI" and "Governance Compliance Scores."
 
-## 7. Strategic Trends
+### 7. Strategic Trends
 - **Sovereign AI Clusters:** Increased demand for private AI infrastructure to ensure data residency and compliance.
 - **Agentic Sovereignty:** Focus on building and managing autonomous AI agent fleets.
 - **Workflow Auditing:** Moving beyond "surface-level dashboards" to deep technical auditing of AI workflows.
@@ -17796,503 +17796,245 @@ Synergy achieved across 2741 branches. Detailed knowledge and results consolidat
 - **Branch:** `origin/cloud-workflow-adjustment-5939480137317015972`
 - **Category:** ORIGIN
 - **Result:** Commit: Authorized syntactic adjustment to trigger clean commit
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. -->
-<!--  -->
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. -->
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.
+//
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.
 - **Activity:** Last active 6 days ago
 - **Branch:** `origin/jules-15893609708930771382-b8878fd9`
 - **Category:** ORIGIN
@@ -18317,503 +18059,245 @@ To dramatično mijenja percepciju kvalitete.
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. -->
-<!--  -->
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. --> with the requested string
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.
+//
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.
 - **Activity:** Last active 3 days ago
 - **Branch:** `origin/remove-unauthorized-signature-9051442489718351903`
 - **Category:** ORIGIN
@@ -82812,1005 +82296,489 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
         {
           "name": "origin/cloud-workflow-adjustment-5939480137317015972",
           "lastMessage": "Authorized syntactic adjustment to trigger clean commit
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. -->
-<!--  -->
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. -->",
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.
+//
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.",
           "lastSeen": "6 days ago",
           "category": "origin",
           "domain": "Security",
           "knowledge": "",
           "results": "Commit: Authorized syntactic adjustment to trigger clean commit
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. -->
-<!--  -->
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. -->",
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.
+//
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.",
           "changedFiles": [],
           "score": 0
         },
@@ -85896,1005 +84864,489 @@ To dramatično mijenja percepciju kvalitete.
         {
           "name": "origin/jules-synthetic-adjustment-2956436375149232394",
           "lastMessage": "Replace Authorized syntactic adjustment to trigger clean commit
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. -->
-<!--  -->
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. --> with the requested string",
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.
+//
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.",
           "lastSeen": "3 days ago",
           "category": "origin",
           "domain": "Security",
           "knowledge": "",
           "results": "Commit: Replace Authorized syntactic adjustment to trigger clean commit
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. -->
-<!--  -->
-<!-- Tutorial: Create and run your first GitLab CI/CD pipeline -->
-<!--  -->
-<!-- Tier: Free, Premium, Ultimate -->
-<!-- Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated -->
-<!-- This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. -->
-<!--  -->
-<!-- If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. -->
-<!--  -->
-<!-- Prerequisites -->
-<!--  -->
-<!-- Before you start, make sure you have: -->
-<!--  -->
-<!-- A project in GitLab that you would like to use CI/CD for. -->
-<!-- The Maintainer or Owner role for the project. -->
-<!-- If you don’t have a project, you can create a public project for free on https://gitlab.com. -->
-<!--  -->
-<!-- Steps -->
-<!--  -->
-<!-- To create and run your first pipeline: -->
-<!--  -->
-<!-- Ensure you have runners available to run your jobs. -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!-- Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs. -->
-<!-- When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline. -->
-<!--  -->
-<!-- Ensure you have runners available -->
-<!--  -->
-<!-- In GitLab, runners are agents that run your CI/CD jobs. -->
-<!--  -->
-<!-- If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you. -->
-<!--  -->
-<!-- To view available runners: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Settings > CI/CD. -->
-<!-- Expand Runners. -->
-<!-- As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs. -->
-<!--  -->
-<!-- If you don’t have access to these settings, contact your GitLab administrator. -->
-<!--  -->
-<!-- If you don’t have a runner -->
-<!--  -->
-<!-- If you don’t have a runner: -->
-<!--  -->
-<!-- Install GitLab Runner on your local machine. -->
-<!-- Register the runner for your project. Choose the shell executor. -->
-<!-- When your CI/CD jobs run, in a later step, they will run on your local machine. -->
-<!--  -->
-<!-- Create a .gitlab-ci.yml file -->
-<!--  -->
-<!-- Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD. -->
-<!--  -->
-<!-- In this file, you define: -->
-<!--  -->
-<!-- The structure and order of jobs that the runner should execute. -->
-<!-- The decisions the runner should make when specific conditions are encountered. -->
-<!-- To create a .gitlab-ci.yml file in your project: -->
-<!--  -->
-<!-- In the top bar, select Search or go to and find your project. -->
-<!-- In the left sidebar, select Code > Repository. -->
-<!-- Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file: -->
-<!-- The new file button to create a file in the current folder. -->
-<!-- For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code: -->
-<!-- yaml -->
-<!-- build-job: -->
-<!--   stage: build -->
-<!--   script: -->
-<!--     - echo "Hello, $GITLAB_USER_LOGIN!" -->
-<!--  -->
-<!-- test-job1: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something" -->
-<!--  -->
-<!-- test-job2: -->
-<!--   stage: test -->
-<!--   script: -->
-<!--     - echo "This job tests something, but takes more time than test-job1." -->
-<!--     - echo "After the echo commands complete, it runs the sleep command for 20 seconds" -->
-<!--     - echo "which simulates a test that runs 20 seconds longer than test-job1" -->
-<!--     - sleep 20 -->
-<!--  -->
-<!-- deploy-prod: -->
-<!--   stage: deploy -->
-<!--   script: -->
-<!--     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch." -->
-<!--   environment: production -->
-<!-- This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run. -->
-<!-- Select Commit changes. -->
-<!-- The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- View the status of your pipeline and jobs -->
-<!--  -->
-<!-- Now take a look at your pipeline and the jobs within. -->
-<!--  -->
-<!-- Go to Build > Pipelines. A pipeline with three stages should be displayed: -->
-<!-- The pipeline list shows a running pipeline with 3 stages -->
-<!-- View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): -->
-<!-- The pipeline graph shows each job, its status, and its dependencies across all stages. -->
-<!-- View details of a job by selecting the job name. For example, deploy-prod: -->
-<!-- The job details page shows the current status, timing information, and the output of the job log. -->
-<!-- You have successfully created your first CI/CD pipeline in GitLab. Congratulations! -->
-<!--  -->
-<!-- Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs. -->
-<!--  -->
-<!-- .gitlab-ci.yml tips -->
-<!--  -->
-<!-- Here are some tips to get started working with the .gitlab-ci.yml file. -->
-<!--  -->
-<!-- For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference. -->
-<!--  -->
-<!-- Use the pipeline editor to edit your .gitlab-ci.yml file. -->
-<!-- Each job contains a script section and belongs to a stage: -->
-<!-- stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel. -->
-<!-- Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency. -->
-<!-- You can set additional configuration to customize how your jobs and stages perform: -->
-<!-- Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job. -->
-<!-- Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job. -->
-<!-- Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job. --> with the requested string",
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
-<!--
-Agent - Logika ponašanja
-Agent odlučuje:
-* što napraviti,
-* kojim redoslijedom,
-* treba li koristiti alat,
-* treba li iterirati,
-* treba li popraviti grešku.
-To je “brain workflow”.
-
-Harness - Execution/runtime layer
-* poziva alate,
-* izvršava komande,
-* upravlja memoryjem,
-* daje modelu context,
-* kontrolira loop,
-* upravlja retryjima,
-* sandboxa sustav,
-* prati stanje taska.
-To je “operating environment”.
-
-Tooling layer - vrlo bitno. ima duboku integraciju s:
-* terminalom,
-* gitom,
-* file systemom,
-* test runnerima,
-* package managerima,
-* editorima,
-* shellom.
-To nije isto što i harness.
-To su konkretni capability adapteri.
-
-Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
-* koje fileove učitati,
-* što sažeti,
-* što odbaciti,
-* kako pakirati repo,
-* kako komprimirati history,
-* što pokazati modelu.
-
-To je ogromna razlika između:
-
-* “AI razumije projekt”
-    i
-* “AI je izgubljen”.
-
-Prompt orchestration -  ima:
-* system promptove,
-* hidden chain strukture,
-* task decomposition promptove,
-* reflection promptove,
-* self-check promptove.
-To su višeslojni prompt sistemi, ne jedan prompt.
-
-Autonomy loop -  ovo je posebno bitno. Loop izgleda:
-* analiziraj,
-* napravi promjenu,
-* pokreni,
-* vidi grešku,
-* popravi,
-* retry,
-* validiraj,
-* nastavi.
-Kvaliteta tog loopa jako određuje kvalitetu agenta.
-
-Repo indexing / retrieval system - sigurno ima sofisticirani:
-* semantic search,
-* dependency graph,
-* file relevance ranking,
-* retrieval pipeline.
-Da bi znao:
-* koje fileove otvoriti,
-* koje ignorirati.
-
-Diff / edit engine -  vrlo podcijenjeno. Nije isto:
-
-* generirati kod
-    i
-* sigurno editirati postojeći repo.
-
-Bitno je:
-* kako radi patching,
-* kako spaja diffove,
-* kako izbjegava corruption,
-* kako čuva formatting,
-* kako radi partial edits.
-
-Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
-* build prolazi li,
-* testovi prolaze li,
-* lint prolazi li,
-* runtime errori postoje li.
-Bez toga agent često “samouvjereno halucinira”.
-
-Memory system - može biti:
-* session memory,
-* task memory,
-* repo memory,
-* preference memory.
-To omogućuje dugotrajan rad bez gubitka konteksta.
-
-Safety / permission system - vrlo bitno za autonomne agente.
-Sustav odlučuje:
-* što agent smije izvršiti,
-* kada mora pitati korisnika,
-* što je opasno,
-* što je readonly.
-
-UX layer - djeluje dobro i zato što:
-* output izgleda smisleno,
-* agent objašnjava što radi,
-* flow djeluje prirodno,
-* terminal UX je dobro dizajniran.
-To dramatično mijenja percepciju kvalitete.
-
-
-* model,
-* agent logic,
-* harness/runtime,
-* tooling,
-* context system,
-* retrieval engine,
-* prompting architecture,
-* autonomy engine,
-* verification system,
-* memory,
-* permissions,
-* UX.
--->
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.
+//
+// Tutorial: Create and run your first GitLab CI/CD pipeline
+//
+// Tier: Free, Premium, Ultimate
+// Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated
+// This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.
+//
+// If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.
+//
+// Prerequisites
+//
+// Before you start, make sure you have:
+//
+// A project in GitLab that you would like to use CI/CD for.
+// The Maintainer or Owner role for the project.
+// If you don’t have a project, you can create a public project for free on https://gitlab.com.
+//
+// Steps
+//
+// To create and run your first pipeline:
+//
+// Ensure you have runners available to run your jobs.
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+// Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.
+// When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.
+//
+// Ensure you have runners available
+//
+// In GitLab, runners are agents that run your CI/CD jobs.
+//
+// If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.
+//
+// To view available runners:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Settings > CI/CD.
+// Expand Runners.
+// As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.
+//
+// If you don’t have access to these settings, contact your GitLab administrator.
+//
+// If you don’t have a runner
+//
+// If you don’t have a runner:
+//
+// Install GitLab Runner on your local machine.
+// Register the runner for your project. Choose the shell executor.
+// When your CI/CD jobs run, in a later step, they will run on your local machine.
+//
+// Create a .gitlab-ci.yml file
+//
+// Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.
+//
+// In this file, you define:
+//
+// The structure and order of jobs that the runner should execute.
+// The decisions the runner should make when specific conditions are encountered.
+// To create a .gitlab-ci.yml file in your project:
+//
+// In the top bar, select Search or go to and find your project.
+// In the left sidebar, select Code > Repository.
+// Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon (  ) and New file:
+// The new file button to create a file in the current folder.
+// For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:
+// yaml
+// build-job:
+//   stage: build
+//   script:
+//     - echo "Hello, $GITLAB_USER_LOGIN!"
+//
+// test-job1:
+//   stage: test
+//   script:
+//     - echo "This job tests something"
+//
+// test-job2:
+//   stage: test
+//   script:
+//     - echo "This job tests something, but takes more time than test-job1."
+//     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+//     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+//     - sleep 20
+//
+// deploy-prod:
+//   stage: deploy
+//   script:
+//     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+//   environment: production
+// This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.
+// Select Commit changes.
+// The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.
+//
+// View the status of your pipeline and jobs
+//
+// Now take a look at your pipeline and the jobs within.
+//
+// Go to Build > Pipelines. A pipeline with three stages should be displayed:
+// The pipeline list shows a running pipeline with 3 stages
+// View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example):
+// The pipeline graph shows each job, its status, and its dependencies across all stages.
+// View details of a job by selecting the job name. For example, deploy-prod:
+// The job details page shows the current status, timing information, and the output of the job log.
+// You have successfully created your first CI/CD pipeline in GitLab. Congratulations!
+//
+// Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.
+//
+// .gitlab-ci.yml tips
+//
+// Here are some tips to get started working with the .gitlab-ci.yml file.
+//
+// For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
+//
+// Use the pipeline editor to edit your .gitlab-ci.yml file.
+// Each job contains a script section and belongs to a stage:
+// stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
+// Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
+// You can set additional configuration to customize how your jobs and stages perform:
+// Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.
+// Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.
+// Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.",
           "changedFiles": [],
           "score": 0
         },
