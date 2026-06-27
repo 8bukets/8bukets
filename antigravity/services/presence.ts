@@ -62,7 +62,8 @@ export const PresenceSchema = z.object({
     pipeline_status: z.string().optional(),
     fully_online: z.boolean().optional(),
     sovereign_leadership: z.boolean().optional()
-  }).optional()
+  }).optional(),
+  sovereignty_report: z.record(z.any()).optional()
 })
 
 export type Presence = z.infer<typeof PresenceSchema>
@@ -85,7 +86,9 @@ export class OnlinePresenceService {
       const nodeId = isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
       const nodePriority = isCloud ? 10 : 100 // MacBook (local) has higher priority by default
 
-      // 1. Fetch component health
+      // 1. Fetch component health & Telemetry
+      const { cloudWorkflowAgent } = await import('./cloud_workflow')
+      const sovereigntyReport = await cloudWorkflowAgent.evaluateTelemetry()
       const dockerHealth = await checkDockerHealth()
       const prs = await gitProvider.listPullRequests()
 
@@ -114,14 +117,15 @@ export class OnlinePresenceService {
 
         if (isCloud) {
            // Cloud node only becomes leader if no higher priority node (MacBook) is active
-           const macbookNode = otherNodes.find(n => (n.telemetry?.node_id || n['telemetry']?.node_id) === 'macbook-primary-01')
+           const macbookNode = otherNodes.find(n => (n.telemetry?.node_id || n['telemetry']?.node_id || n.node_id) === 'macbook-primary-01')
            const higherPriorityActive = otherNodes.some(n => (n.node_priority || 0) > nodePriority)
 
            if (macbookNode) {
              const lastSeen = new Date(macbookNode.lastSeen).getTime()
-             const diffMinutes = (Date.now() - lastSeen) / (1000 * 60)
+             const diffMs = Date.now() - lastSeen
+             const diffMinutes = diffMs / (1000 * 60)
 
-             if (diffMinutes < 5) {
+             if (diffMs < 300000) { // < 5 minutes
                console.log(`📡 [OnlinePresence] MacBook node is ACTIVE (seen ${diffMinutes.toFixed(1)}m ago). Cloud node yielding leadership.`)
                isLeader = false
              } else {
@@ -202,6 +206,7 @@ export class OnlinePresenceService {
           fully_online: isCloud || process.env.MACBOOK_CLOUD_SIMULATION === 'true',
           sovereign_leadership: isLeader
         },
+        sovereignty_report: sovereigntyReport,
         phase16: {
           heartbeat_latency: heartbeatMetrics.latency,
           neural_stability: 0.99, // Phase 16 Target: > 0.98
