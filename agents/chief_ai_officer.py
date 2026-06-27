@@ -433,7 +433,9 @@ class ChiefAIOfficerAgent(BaseAgent):
         for k in knowledge.get("typescript_sections", []):
             if "Market Intelligence" in k.get("title", ""):
                 for section in k.get("sections", []):
-                    if section.get("header") == "Trends":
+                    # Check for "Trends" header, accommodating markdown characters
+                    header = section.get("header", "")
+                    if header == "Trends" or header.strip("# ").strip() == "Trends":
                         market_trends += f" {section.get('content')}"
 
         summary = ""
