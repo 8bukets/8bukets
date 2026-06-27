@@ -955,6 +955,7 @@ The Docker Hub mcp namespace (for MCP servers built by Docker).
 ## best value of knowledge integration
 
 <!-- Authorized syntactic adjustment to trigger clean commit -->
+<!-- scan fix improve integrate connect sync -->
 <!-- resolve in git hub to make it work -->
 <!-- make processing easyer and smarter and cooperate with github gitlab gitkraken and docker cloud to make decisions and workflow on the air fluent and always available -->
 <!-- integrate  -->
