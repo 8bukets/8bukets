@@ -80,7 +80,11 @@ export class IntelephenseService {
         console.log(` 📡 Fetching ${file} from GitHub...`)
         const result = await githubDocsObserver.fetchDoc(this.owner, this.repo, file)
         const title = `Intelephense: ${file.replace('.md', '')}`
-        const rawContent = result.sections.map((s: any) => `# ${s.title}\n${s.content}`).join('\n\n')
+        // Map sections while preserving header level (re-prefixing with '#' for processContent)
+        const rawContent = result.sections.map((s: any) => {
+          const prefix = '#'.repeat(s.level || 1)
+          return `${prefix} ${s.title}\n${s.content}`
+        }).join('\n\n')
         const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)
 
         // Add these sections to our consolidated list

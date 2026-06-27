@@ -36,9 +36,9 @@ describe('KnowledgeObserver', () => {
 
     expect(result.title).toBe('Test Title')
     expect(result.sections).toHaveLength(2)
-    expect(result.sections[0].header).toBe('Header 1')
+    expect(result.sections[0].header).toBe('# Header 1')
     expect(result.sections[0].content).toBe('Content 1 is long enough to pass filter')
-    expect(result.sections[1].header).toBe('Header 2')
+    expect(result.sections[1].header).toBe('# Header 2')
     expect(result.sections[1].content).toBe('Content 2 is also long enough')
   })
 
@@ -47,8 +47,8 @@ describe('KnowledgeObserver', () => {
     const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
 
     expect(result.sections).toHaveLength(2)
-    expect(result.sections[0].header).toBe('Introduction')
-    expect(result.sections[1].header).toBe('Getting Started')
+    expect(result.sections[0].header).toBe('# Introduction')
+    expect(result.sections[1].header).toBe('# Getting Started')
   })
 
   it('should handle uppercase headers and skip code blocks', () => {
@@ -62,8 +62,8 @@ Some details here.`
     const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
 
     expect(result.sections).toHaveLength(2)
-    expect(result.sections[0].header).toBe('INTRODUCTION')
-    expect(result.sections[1].header).toBe('DETAILS')
+    expect(result.sections[0].header).toBe('# INTRODUCTION')
+    expect(result.sections[1].header).toBe('# DETAILS')
     // Ensure the PHP class didn't become a header
     expect(result.sections.find(s => s.header === 'class SkipMe {}')).toBeUndefined()
   })

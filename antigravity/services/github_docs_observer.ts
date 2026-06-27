@@ -14,7 +14,7 @@
 export interface GithubDocInsight {
   source: string;
   file: string;
-  sections: { title: string; content: string }[];
+  sections: { title: string; content: string; level?: number }[];
   analyzedAt: string;
   rawUrl: string;
 }
@@ -40,10 +40,11 @@ export class GithubDocsObserver {
       if (!part.trim()) continue
       const headerMatch = part.match(/^(#+)\s+(.*)/)
       if (headerMatch) {
+        const level = headerMatch[1].length
         const title = headerMatch[2].trim()
         const content = part.substring(headerMatch[0].length).trim()
         if (title) {
-          sections.push({ title, content })
+          sections.push({ title, content, level })
         }
       } else {
         // Text before the first header
