@@ -17796,6 +17796,264 @@ Synergy achieved across 2741 branches. Detailed knowledge and results consolidat
 - **Branch:** `origin/cloud-workflow-adjustment-5939480137317015972`
 - **Category:** ORIGIN
 - **Result:** Commit: Authorized syntactic adjustment to trigger clean commit
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
 - **Activity:** Last active 6 days ago
 - **Branch:** `origin/jules-15893609708930771382-b8878fd9`
 - **Category:** ORIGIN
@@ -17820,6 +18078,264 @@ Synergy achieved across 2741 branches. Detailed knowledge and results consolidat
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit with the requested string
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
 - **Activity:** Last active 3 days ago
 - **Branch:** `origin/remove-unauthorized-signature-9051442489718351903`
 - **Category:** ORIGIN
@@ -81818,11 +82334,527 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
         {
           "name": "origin/cloud-workflow-adjustment-5939480137317015972",
           "lastMessage": "Authorized syntactic adjustment to trigger clean commit",
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
           "lastSeen": "6 days ago",
           "category": "origin",
           "domain": "Security",
           "knowledge": "",
           "results": "Commit: Authorized syntactic adjustment to trigger clean commit",
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
           "changedFiles": [],
           "score": 0
         },
@@ -83908,11 +84940,527 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
         {
           "name": "origin/jules-synthetic-adjustment-2956436375149232394",
           "lastMessage": "Replace Authorized syntactic adjustment to trigger clean commit with the requested string",
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
           "lastSeen": "3 days ago",
           "category": "origin",
           "domain": "Security",
           "knowledge": "",
           "results": "Commit: Replace Authorized syntactic adjustment to trigger clean commit with the requested string",
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
+<!--
+Agent - Logika ponašanja
+Agent odlučuje:
+* što napraviti,
+* kojim redoslijedom,
+* treba li koristiti alat,
+* treba li iterirati,
+* treba li popraviti grešku.
+To je “brain workflow”.
+
+Harness - Execution/runtime layer
+* poziva alate,
+* izvršava komande,
+* upravlja memoryjem,
+* daje modelu context,
+* kontrolira loop,
+* upravlja retryjima,
+* sandboxa sustav,
+* prati stanje taska.
+To je “operating environment”.
+
+Tooling layer - vrlo bitno. ima duboku integraciju s:
+* terminalom,
+* gitom,
+* file systemom,
+* test runnerima,
+* package managerima,
+* editorima,
+* shellom.
+To nije isto što i harness.
+To su konkretni capability adapteri.
+
+Context engineering - ovo je danas možda najvažniji tajni sloj. Sustav odlučuje:
+* koje fileove učitati,
+* što sažeti,
+* što odbaciti,
+* kako pakirati repo,
+* kako komprimirati history,
+* što pokazati modelu.
+
+To je ogromna razlika između:
+
+* “AI razumije projekt”
+    i
+* “AI je izgubljen”.
+
+Prompt orchestration -  ima:
+* system promptove,
+* hidden chain strukture,
+* task decomposition promptove,
+* reflection promptove,
+* self-check promptove.
+To su višeslojni prompt sistemi, ne jedan prompt.
+
+Autonomy loop -  ovo je posebno bitno. Loop izgleda:
+* analiziraj,
+* napravi promjenu,
+* pokreni,
+* vidi grešku,
+* popravi,
+* retry,
+* validiraj,
+* nastavi.
+Kvaliteta tog loopa jako određuje kvalitetu agenta.
+
+Repo indexing / retrieval system - sigurno ima sofisticirani:
+* semantic search,
+* dependency graph,
+* file relevance ranking,
+* retrieval pipeline.
+Da bi znao:
+* koje fileove otvoriti,
+* koje ignorirati.
+
+Diff / edit engine -  vrlo podcijenjeno. Nije isto:
+
+* generirati kod
+    i
+* sigurno editirati postojeći repo.
+
+Bitno je:
+* kako radi patching,
+* kako spaja diffove,
+* kako izbjegava corruption,
+* kako čuva formatting,
+* kako radi partial edits.
+
+Verification layer - vrlo važan dio modernih agenata. Sustav provjerava:
+* build prolazi li,
+* testovi prolaze li,
+* lint prolazi li,
+* runtime errori postoje li.
+Bez toga agent često “samouvjereno halucinira”.
+
+Memory system - može biti:
+* session memory,
+* task memory,
+* repo memory,
+* preference memory.
+To omogućuje dugotrajan rad bez gubitka konteksta.
+
+Safety / permission system - vrlo bitno za autonomne agente.
+Sustav odlučuje:
+* što agent smije izvršiti,
+* kada mora pitati korisnika,
+* što je opasno,
+* što je readonly.
+
+UX layer - djeluje dobro i zato što:
+* output izgleda smisleno,
+* agent objašnjava što radi,
+* flow djeluje prirodno,
+* terminal UX je dobro dizajniran.
+To dramatično mijenja percepciju kvalitete.
+
+
+* model,
+* agent logic,
+* harness/runtime,
+* tooling,
+* context system,
+* retrieval engine,
+* prompting architecture,
+* autonomy engine,
+* verification system,
+* memory,
+* permissions,
+* UX.
+-->
           "changedFiles": [],
           "score": 0
         },
