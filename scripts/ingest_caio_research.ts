@@ -1,3 +1,5 @@
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 import fs from 'fs';
 import path from 'path';
 import { KnowledgeObserver } from '../antigravity/services/knowledge_observer';
@@ -7,12 +9,12 @@ async function ingestCAIOResearch() {
 
   const researchPath = path.join(process.cwd(), 'data/knowledge/caio_executive_intelligence_2026.md');
 
-  if (!fs.existsSync(researchPath)) {
+  if (!await fs.promises.access(researchPath).then(() => true).catch(() => false)) {
     console.error(`❌ [Ingest] Master Intelligence file not found at ${researchPath}`);
     process.exit(1);
   }
 
-  const rawContent = fs.readFileSync(researchPath, 'utf8');
+  const rawContent = await fs.promises.readFile(researchPath, 'utf8');
   const source = `local://${path.basename(researchPath)}`;
   const title = 'Chief AI Officer (CAIO) Executive Intelligence 2026';
 

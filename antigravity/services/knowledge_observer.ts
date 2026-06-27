@@ -98,7 +98,11 @@ export class KnowledgeObserver {
         }
 
         k.sections.forEach((s: any) => {
-          const cleanHeader = (s.header || 'Details').replace(/^#+\s*/, '').trim() || 'Details';
+          const rawHeader = s.header || '## Details';
+          const cleanHeader = rawHeader.replace(/^#+\s*/, '').trim();
+          const headerLevelMatch = rawHeader.match(/^(#+)/);
+          const level = headerLevelMatch ? headerLevelMatch[1].length : 2;
+
           const cleanContent = (s.content || '').trim();
 
           if (cleanContent.length > 5) {
@@ -106,8 +110,11 @@ export class KnowledgeObserver {
             if (cleanHeader.toLowerCase() === k.title.toLowerCase()) {
               mdContent += `${cleanContent}\n\n`;
             } else {
-              // Use ## for internal sections
-              mdContent += `## ${cleanHeader}\n${cleanContent}\n\n`;
+              // Use appropriate header level for internal sections, shifting by topic title if needed
+              // Topic is #, so sections start at ##
+              const adjustedLevel = Math.max(2, level + (rawHeader.startsWith('#') ? 1 : 0));
+              const prefix = '#'.repeat(adjustedLevel);
+              mdContent += `${prefix} ${cleanHeader}\n${cleanContent}\n\n`;
             }
           }
         });
@@ -152,11 +159,12 @@ export class KnowledgeObserver {
         return;
       }
 
-      const headerMatch = !inCodeBlock && line.match(/^#+\s*(.*)/);
+      const headerMatch = !inCodeBlock && line.match(/^(#+)\s*(.*)/);
 
       if (headerMatch && !line.includes('<?php') && !line.startsWith('//') && !line.includes('#[')) {
         if (currentSection) sections.push(currentSection);
-        currentSection = { header: headerMatch[1].trim(), content: '' };
+        // Preserving header level by keeping the '#' prefix
+        currentSection = { header: headerMatch[0].trim(), content: '' };
       } else if (currentSection) {
         // Only strip HTML tags if we're not in a code block and it looks like a real tag
         // Simple heuristic: allow generics like <T>, <TKey, TValue>, <string, int> and mathematical comparisons like < 20ms
@@ -246,7 +254,11 @@ export async function observeKnowledge(url: string) {
     }
 
     // Use the URL as the title if it's a generic "Web Insight" to prevent collisions
-    const title = url.split('/').pop()?.replace(/[-_]/g, ' ') || 'Web Insight';
+    // Robust title extraction: filter empty segments and use the last meaningful one or the hostname.
+    const urlObj = new URL(url);
+    const pathSegments = urlObj.pathname.split('/').filter(Boolean);
+    const title = pathSegments.pop()?.replace(/[-_]/g, ' ') || urlObj.hostname || 'Web Insight';
+
     return KnowledgeObserver.processContent(title, html, url);
   } catch (error: any) {
     if (error.name === 'AbortError') {

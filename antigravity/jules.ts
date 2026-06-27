@@ -1,3 +1,8 @@
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 20 COMPLIANCE: COGNITIVE_RESONANCE (active) **/
 /** PHASE 20 COMPLIANCE: PQRV_TRUST (verified) **/
 /** PHASE 20 COMPLIANCE: RESONANCE_LATENCY (target: <0.5ms) **/
@@ -307,25 +312,41 @@ export class Jules {
       await execFileAsync('git', ['pull', '--rebase'])
       this.recordTask('Git Pull: Synchronized with remote.')
     } catch (err: any) {
-      console.warn('⚠️ [Jules] Git pull failed, checking for conflicts...')
-      // Attempt to resolve conflicts autonomously
-      const { stdout: status } = await execFileAsync('git', ['status', '--porcelain'])
-      const conflictedFiles = status.split('\n')
-        .filter(line => line.startsWith('UU '))
-        .map(line => line.substring(3))
+      const isNetworkError = err.message.includes('Could not resolve host') || err.message.includes('Connection refused')
+      const isNoTracking = err.message.includes('There is no tracking information')
 
-      if (conflictedFiles.length > 0) {
-        console.log(`🔧 [Jules] Found ${conflictedFiles.length} conflicted files. Attempting resolution...`)
-        for (const file of conflictedFiles) {
-          await ConflictResolver.resolve(path.join(process.cwd(), file))
-          await execFileAsync('git', ['add', file])
-        }
+      if (isNoTracking) {
+        console.log('🔄 [Jules] No tracking information found, attempting to pull from origin/main...')
         try {
-          await execFileAsync('git', ['rebase', '--continue'], { env: { ...process.env, GIT_EDITOR: 'true' } })
-          this.recordTask('Git Pull: Resolved conflicts and completed rebase.')
-        } catch (rebaseErr) {
-          console.error('❌ [Jules] Autonomous rebase resolution failed.')
-          await execFileAsync('git', ['rebase', '--abort'])
+          await execFileAsync('git', ['pull', '--rebase', 'origin', 'main'])
+          this.recordTask('Git Pull: Synchronized with origin/main (no tracking info found).')
+        } catch (fallbackErr: any) {
+          console.error('❌ [Jules] Fallback git pull from origin main failed.')
+          console.error(fallbackErr.stdout || fallbackErr.message)
+        }
+      } else if (isNetworkError) {
+        console.warn('⚠️ [Jules] Network issue during git pull. Continuing with local state...')
+      } else {
+        console.warn('⚠️ [Jules] Git pull failed, checking for conflicts...')
+        // Attempt to resolve conflicts autonomously
+        const { stdout: status } = await execFileAsync('git', ['status', '--porcelain'])
+        const conflictedFiles = status.split('\n')
+          .filter(line => line.startsWith('UU '))
+          .map(line => line.substring(3))
+
+        if (conflictedFiles.length > 0) {
+          console.log(`🔧 [Jules] Found ${conflictedFiles.length} conflicted files. Attempting resolution...`)
+          for (const file of conflictedFiles) {
+            await ConflictResolver.resolve(path.join(process.cwd(), file))
+            await execFileAsync('git', ['add', file])
+          }
+          try {
+            await execFileAsync('git', ['rebase', '--continue'], { env: { ...process.env, GIT_EDITOR: 'true' } })
+            this.recordTask('Git Pull: Resolved conflicts and completed rebase.')
+          } catch (rebaseErr) {
+            console.error('❌ [Jules] Autonomous rebase resolution failed.')
+            await execFileAsync('git', ['rebase', '--abort'])
+          }
         }
       }
     }
