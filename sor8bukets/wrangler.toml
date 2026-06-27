@@ -1,6 +1,6 @@
 name = "8bukets"
 main = "src/index.js"
-compatibility_date = "2026-06-25"
+compatibility_date = "2026-06-27"
 
 # Disable routes for CI build stability in restricted environments
 # routes = [
