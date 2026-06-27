@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-26T23:02:29.430Z",
+    "generated_at": "2026-06-27T22:53:17.909Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-26T23:02:29.306Z"
+        "ingestedAt": "2026-06-27T22:53:17.815Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-26T23:02:29.332Z"
+        "ingestedAt": "2026-06-27T22:53:17.826Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-26T23:02:29.344Z"
+        "ingestedAt": "2026-06-27T22:53:17.834Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-26T23:02:29.356Z"
+        "ingestedAt": "2026-06-27T22:53:17.843Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-26T23:02:29.368Z"
+        "ingestedAt": "2026-06-27T22:53:17.852Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-26T23:02:29.379Z"
+        "ingestedAt": "2026-06-27T22:53:17.861Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-26T23:02:29.391Z"
+        "ingestedAt": "2026-06-27T22:53:17.871Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2205,7 +2205,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-26T23:02:29.402Z"
+        "ingestedAt": "2026-06-27T22:53:17.880Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2461,7 +2461,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-26T23:02:29.413Z"
+        "ingestedAt": "2026-06-27T22:53:17.890Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2720,12 +2720,60 @@
         },
         {
           "header": "Reservations are open for XREAL AURA — plus, see more news from AWE 2026.",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/\n- Insight: At AWE 2026, we’re showcasing how the Android XR ecosystem is growing alongside our partners. In today’s joint keynote, we announced that reservations are now open for XREAL AURA, coming this fall. AURA is XREAL's first wired XR glasses powered by Android XR and using the Snapdragon® Reality Elite Platform.Beyond the main stage, we kicked off the week with a developer hackathon and hands-on technical workshops. You can visit the Qualcomm booth on the show floor during the show for live demonstrations of Samsung Galaxy XR, XREAL AURA and intelligent eyewear. And don't miss our developer keynote, the Android Enterprise panel or the Auggie Awards, where we’ll celebrate breakthroughs in our community.Ready to shape the future of computing? Reserve your XREAL AURA at xreal.com/aura and start building with Android XR today....\n\n\nAll the best - https://markposition.wordpress.com"
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/\n- Insight: At AWE 2026, we’re showcasing how the Android XR ecosystem is growing alongside our partners. In today’s joint keynote, we announced that reservations are now open for XREAL AURA, coming this fall. AURA is XREAL's first wired XR glasses powered by Android XR and using the Snapdragon® Reality Elite Platform.Beyond the main stage, we kicked off the week with a developer hackathon and hands-on technical workshops. You can visit the Qualcomm booth on the show floor during the show for live demonstrations of Samsung Galaxy XR, XREAL AURA and intelligent eyewear. And don't miss our developer keynote, the Android Enterprise panel or the Auggie Awards, where we’ll celebrate breakthroughs in our community.Ready to shape the future of computing? Reserve your XREAL AURA at xreal.com/aura and start building with Android XR today...."
+        },
+        {
+          "header": "See all product updates",
+          "content": "- URL: https://blog.google/products-and-platforms/"
+        },
+        {
+          "header": "Chromebooks",
+          "content": "- URL: https://blog.google/products-and-platforms/devices/chromebooks/\n- Insight: The latest news about Chromebook...."
+        },
+        {
+          "header": "Google Nest",
+          "content": "- URL: https://blog.google/products-and-platforms/devices/google-nest/\n- Insight: News and updates about Google Nest...."
+        },
+        {
+          "header": "Intelligent eyewear is coming this fall",
+          "content": "- URL: https://blog.google/products-and-platforms/platforms/android/android-xr-io-2026/\n- Insight: This is an exciting time for Android XR, the platform we’ve built with Samsung and Qualcomm, as Gemini continues to unlock new experiences across headsets, glasses and everything in between.Today at Google I/O 2026, we shared more about intelligent eyewear: glasses that deliver help in the moment without taking you out of it. There will be two types of intelligent eyewear: audio glasses that offer spoken help in your ear, and display glasses that show you the information you need, right when you need it. Both let you stay hands-free and heads up, and get you help from Gemini just by asking.Audio glasses are launching first, coming later this fall. Let’s take a closer look.Stylish on the outsideAudio glasses can only deliver all-day help if they’re stylish and comfortable. That’s why we partnered with Samsung and eyewear brands Gentle Monster and Warby Parker to create eyewear you’ll happily wear all day. Today, we gave a sneak peek at two of the first designs that will launch as part o..."
+        },
+        {
+          "header": "Google Play",
+          "content": "- URL: https://blog.google/products-and-platforms/platforms/google-play/\n- Insight: News about Google Play, home to millions of the latest apps, games, music, movies, TV shows, books and magazines you can enjoy and share...."
+        },
+        {
+          "header": "Learning & Education",
+          "content": "- URL: https://blog.google/products-and-platforms/products/education/\n- Insight: The official source for information about Google’s learning and education-related efforts...."
+        },
+        {
+          "header": "NotebookLM is transforming student success at FSU",
+          "content": "- URL: https://blog.google/products-and-platforms/products/education/florida-state-university-notebooklm/\n- Insight: At Florida State University, we believe technology should move students from passive consumers to active learners. While we expect every new innovation to meet this standard, we are specifically seeking solutions that raise the bar entirely. We are inspired by advancements like Google NotebookLM, an AI-powered research assistant and thinking partner, grounded in trusted sources and designed to help our students, faculty and staff understand anything.When we launched our AI pilot with Google for Education, our goal was simple: put secure, accessible AI capabilities directly into the hands of our campus community to see if we could truly move the needle on academic success. What we didn't expect was just how quickly our campus would embrace it.The power of a personalized study toolIn higher education, we talk a lot about success metrics, but the real impact is measured in individual breakthroughs. Shortly after introducing NotebookLM on campus, we watched students who were struggling wit..."
+        },
+        {
+          "header": "Gemini models",
+          "content": "- URL: https://blog.google/products-and-platforms/products/gemini/\n- Insight: The latest news about Gemini. Chat to start writing, planning, learning and more with Google AI...."
+        },
+        {
+          "header": "Try these 3 Google AI tools to help find your next job.",
+          "content": "- URL: https://blog.google/products-and-platforms/products/gemini/find-job-with-google-ai-tools/\n- Insight: Job hunting can be a slog. But with a few Google AI tools, you can simplify the process from start to finish.Career Dreamer: The first step in landing a job is finding one worth applying to. Using Career Dreamer, you can brainstorm different roles to pursue based on your interests and experiences.NotebookLM: Ensure you stand out in a pool of applicants by fine-tuning your resume and cover letter. NotebookLM can help you workshop your application materials, turning past experiences into a coherent narrative to pitch to potential employers.Gemini Live: Nail face-to-face interactions by asking Gemini Live for help with interview prep. Practice answering sample interview questions, and ask it for live feedback on your responses.Watch the video below to learn more about how to use these tools in your job hunt...."
+        },
+        {
+          "header": "View more from XR and AR",
+          "content": "- URL: https://blog.google/products-and-platforms/products/google-ar-vr/"
+        },
+        {
+          "header": "Google Health",
+          "content": "- URL: https://blog.google/products-and-platforms/products/google-health/\n- Insight: A new relationship with your health...."
+        },
+        {
+          "header": "Google Workspace",
+          "content": "- URL: https://blog.google/products-and-platforms/products/workspace/\n- Insight: News about Google Workspace — the best way to create, communicate and collaborate....\n\n\nAll the best - https://markposition.wordpress.com"
         }
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-26T23:02:29.424Z"
+        "ingestedAt": "2026-06-27T22:53:17.905Z"
       }
     }
   },
