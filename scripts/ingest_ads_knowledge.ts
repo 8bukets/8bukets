@@ -3,7 +3,7 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 
 async function ingestAdsKnowledge() {
-  const baseUrls = [
+    const URLS = [
     'https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU',
     'https://business.google.com/uk/ad-tools/bidding/',
     'https://business.google.com/uk/resources/',
@@ -267,7 +267,7 @@ async function ingestAdsKnowledge() {
 
 // create agent Chief AI Officer
 
-  console.log(`Starting ingestion of ${baseUrls.length} URLs...`);
+  console.log(`Starting ingestion of ${URLS.length} URLs...`);
 
   let mdContentTotal = '\n## Google Ads Knowledge Ingestion\n\n';
   const jsonResults = [];
@@ -277,7 +277,7 @@ async function ingestAdsKnowledge() {
       args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
-  for (let rawUrl of baseUrls) {
+  for (let rawUrl of URLS) {
     console.log(`Fetching ${rawUrl}...`);
     try {
       const page = await browser.newPage();
