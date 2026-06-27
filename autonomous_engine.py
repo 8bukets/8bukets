@@ -207,16 +207,6 @@ def create_autonomous_orders():
             "created_at": datetime.now().isoformat()
         })
 
-    # Add knowledge merge
-    if not any(o["type"] == "KNOWLEDGE_MERGE" and o["status"] == "pending" for o in orders):
-        new_orders.append({
-            "id": f"AUTO_KNOWLEDGE_MERGE_{datetime.now().strftime('%H%M%S')}",
-            "type": "KNOWLEDGE_MERGE",
-            "description": "Consolidate all autonomous intelligence",
-            "status": "pending",
-            "created_at": datetime.now().isoformat()
-        })
-
     if new_orders:
         orders.extend(new_orders)
         with open(orders_file, 'w') as f:
