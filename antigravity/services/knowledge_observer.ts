@@ -254,7 +254,11 @@ export async function observeKnowledge(url: string) {
     }
 
     // Use the URL as the title if it's a generic "Web Insight" to prevent collisions
-    const title = url.split('/').pop()?.replace(/[-_]/g, ' ') || 'Web Insight';
+    // Robust title extraction: filter empty segments and use the last meaningful one or the hostname.
+    const urlObj = new URL(url);
+    const pathSegments = urlObj.pathname.split('/').filter(Boolean);
+    const title = pathSegments.pop()?.replace(/[-_]/g, ' ') || urlObj.hostname || 'Web Insight';
+
     return KnowledgeObserver.processContent(title, html, url);
   } catch (error: any) {
     if (error.name === 'AbortError') {
