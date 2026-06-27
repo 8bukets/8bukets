@@ -20,10 +20,9 @@ async function main() {
   const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true');
 
   try {
-    // 1. Phase 23 Cloud-Native Pulse & Swarm Activation
-    console.log('📡 [AutonomousSync] Executing Phase 23 Pulse and activating swarm heartbeat...');
+    // 1. Phase 23 Swarm Activation
+    console.log('📡 [AutonomousSync] Activating swarm heartbeat...');
     swarmHeartbeat.start();
-    await cloudConnectedIntegrationService.executePhase23Pulse();
 
     // 2. Proactive iCloud Sync Fix (if local)
     if (!isCloud) {
@@ -39,11 +38,7 @@ async function main() {
     console.log('🧠 [AutonomousSync] Performing global neural convergence...');
     await globalNeuralSync.convergeState();
 
-    // 4. High-Scale Engine Evolution
-    console.log('🧬 [AutonomousSync] Triggering high-scale engine evolution...');
-    await cloudConnectedIntegrationService.triggerEngineEvolution();
-
-    // 5. Execute Technical Knowledge Scrapers
+    // 4. Execute Technical Knowledge Scrapers
     console.log('📚 [AutonomousSync] Updating technical knowledge base...');
     const scrapers = [
       'npm run ingest:knowledge'
@@ -58,21 +53,25 @@ async function main() {
       }
     }
 
-    // 6. Execute Jules Work Cycle (TypeScript Engine)
+    // 5. Execute Jules Work Cycle (TypeScript Engine)
     console.log('🌟 [AutonomousSync] Executing Jules (TypeScript) work cycle...');
+    // Initial presence sync to establish leadership
+    await onlinePresence.syncPresence();
     const isLeader = onlinePresence.isLeader();
+
     if (isLeader || !isCloud) {
        // Phase 16 Cloud Sovereignty: Ensure autonomous merging is active in cloud cycles
        if (isCloud) {
          console.log('🤖 [AutonomousSync] Cloud leadership active. Triggering autonomous PR audit and merge cycle...');
          await jules.autonomousPrAudit();
        }
+       // executeWorkCycle already performs Phase 23 Pulse and Engine Evolution
        await jules.executeWorkCycle();
     } else {
        console.log('📡 [AutonomousSync] Node is subordinate. Skipping work cycle to avoid conflicts.');
     }
 
-    // 7. Execute Python Ecosystem Cycle
+    // 6. Execute Python Ecosystem Cycle
     console.log('🐍 [AutonomousSync] Running Python Ecosystem Autonomous Cycle...');
     try {
       const token = process.env.SYSTEM_AUTH_TOKEN || 'default_dev_token';
@@ -91,6 +90,9 @@ async function main() {
   } catch (error: any) {
     console.error('💥 [AutonomousSync] Fatal orchestration error:', error.message);
     process.exit(1);
+  } finally {
+    // Phase 19: Cleanly stop heartbeat to prevent CI process hangs
+    swarmHeartbeat.stop();
   }
 }
 
