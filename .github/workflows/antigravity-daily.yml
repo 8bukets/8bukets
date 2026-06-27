@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Execute Autonomous Work Cycle
-        run: npx tsx -e "import { jules } from './antigravity/jules'; jules.executeWorkCycle()"
+        run: npm run work:daily
         env:
           MACBOOK_CLOUD_SIMULATION: true
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
