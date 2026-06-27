@@ -376,7 +376,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           resourceUsage[matchedResource.name].add(b.name)
 
           // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
-          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum|swarm|heartbeat|sovereign|zkp|singularity|lattice|dilithium|kyber|multi-modal|recursive|performance|monitoring|scaling)/i)
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum|swarm|heartbeat|sovereign|zkp|singularity|lattice|dilithium|kyber|multi-modal|recursive|performance|monitoring|scaling|compliance|audit)/i)
           if (clusterMatch) {
             let cluster = clusterMatch[0].toLowerCase()
             if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation' || cluster === 'quantum' || cluster === 'zkp' || cluster === 'sovereign' || cluster === 'lattice' || cluster === 'dilithium' || cluster === 'kyber') cluster = 'security-mesh'
@@ -385,6 +385,8 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
             else if (cluster === 'heartbeat' || cluster === 'recursive' || cluster === 'vitality') cluster = 'health'
             else if (cluster === 'performance' || cluster === 'scaling' || cluster === 'monitoring') cluster = 'ops'
             else if (cluster === 'db' || cluster === 'database' || cluster === 'data') cluster = 'data-mesh'
+            else if (cluster === 'sync' || cluster === 'collaboration' || cluster === 'workflow') cluster = 'orchestration-mesh'
+            else if (cluster === 'compliance' || cluster === 'audit') cluster = 'governance-mesh'
 
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
             functionalClusters[cluster].add(b.name)

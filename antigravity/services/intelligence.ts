@@ -177,8 +177,27 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   // Phase 12: Integrate Global Neural Network Status
   const { broadcastPulse } = await import('./neural')
   const { getRelayState } = await import('./relay')
+  const { orchestrationEngine } = await import('./sentient_orchestration')
   const pulse = await broadcastPulse()
   const relay = await getRelayState()
+  const intents = orchestrationEngine.getIntents()
+
+  // Phase 12: Multi-Agent Intent Synchronization
+  report += `## 🧠 Multi-Agent Intent Synchronization\n`
+  if (intents.length > 0) {
+    report += `| Agent | Action | Priority | Status |\n`
+    report += `| :--- | :--- | :---: | :---: |\n`
+    intents.slice(-10).reverse().forEach(intent => {
+      const statusIcon = intent.status === 'executed' ? '✅' : (intent.status === 'approved' ? '🟡' : '⏳')
+      report += `| ${intent.agent} | ${intent.action} | ${intent.priority} | ${statusIcon} ${intent.status.toUpperCase()} |\n`
+    })
+    if (intents.length > 10) {
+      report += `\n*...and ${intents.length - 10} more coordinated intents.*\n`
+    }
+  } else {
+    report += `_No active coordinated intents detected._\n`
+  }
+  report += `\n`
 
   report += `## 🌌 Global Neural Network\n`
   report += `- **Cognitive Origin:** \`${pulse.origin}\`\n`
@@ -277,11 +296,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `*No autonomous knowledge ingested yet.*\n\n`
   }
 
-  report += `## 🏆 Results Summary\n`
-  const resultBranches = branches.filter(b => b.results && b.results !== 'N/A' && b.results !== b.lastMessage).slice(0, 5)
-  if (resultBranches.length > 0) {
-    resultBranches.forEach(b => {
-      report += `- **${b.name}**: ${b.results}\n`
+  report += `## 🏆 Top Impactful Results\n`
+  const impactful = relationshipMap.impactfulBranches || []
+  if (impactful.length > 0) {
+    impactful.slice(0, 10).forEach((b: any) => {
+      report += `- **[Score: ${b.score}]** \`${b.name}\`: ${b.results}\n`
     })
   } else {
     report += `- No explicit results extracted from recent history.\n`

@@ -76,6 +76,10 @@ class SentientOrchestrationEngine {
     const approved = this.intents.filter(i => i.status === 'approved' || i.status === 'executed').length
     return approved / this.intents.length
   }
+
+  public getIntents(): Intent[] {
+    return this.intents
+  }
 }
 
 export const orchestrationEngine = new SentientOrchestrationEngine()
