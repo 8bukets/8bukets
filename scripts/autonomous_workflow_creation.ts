@@ -113,7 +113,7 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
 
       - name: Execute Fully Autonomous Creation Cycle
-        run: npx tsx scripts/full_autonomous_automatic_creation.ts
+        run: npx tsx scripts/full_autonomous_automatic_creation_order_and_execution.ts
         env:
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
@@ -165,7 +165,7 @@ jobs:
 #
 # Following the initial connection phase, the workflow proceeds to the
 # primary execution stage: "Execute Fully Autonomous Creation Cycle".
-# Here, we invoke \`npx tsx scripts/full_autonomous_automatic_creation.ts\`. This
+# Here, we invoke \`npx tsx scripts/full_autonomous_automatic_creation_order_and_execution.ts\`. This
 # script is the heart of the generative process, orchestrating the actions
 # of multiple specialized sub-agents. It requires several key environment
 # variables to operate securely and effectively:
@@ -253,7 +253,7 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
 
       - name: Execute Autonomous Session Analysis and Self-Correction
-        run: npx tsx scripts/full_autonomous_automatic_creation.ts
+        run: npx tsx scripts/full_autonomous_automatic_creation_order_and_execution.ts
         env:
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
@@ -306,6 +306,7 @@ function main() {
   generateFullyAutonomousWorkflow();
   generateDailyAutonomousEvolutionWorkflow(); // implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale
 // Authorized syntactic adjustment to trigger clean commit
+// full autonomus automatic workflow creation
 // connect with docker and collaborate
 // Tutorial: Create and run your first GitLab CI/CD pipeline
 //
