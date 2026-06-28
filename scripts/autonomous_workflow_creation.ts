@@ -113,7 +113,7 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
 
       - name: Execute Fully Autonomous Creation Cycle
-        run: npx tsx scripts/full_autonomous_automatic_creation.ts
+        run: npx tsx scripts/full_autonomous_automatic_creation_order_and_execution.ts
         env:
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
@@ -165,7 +165,7 @@ jobs:
 #
 # Following the initial connection phase, the workflow proceeds to the
 # primary execution stage: "Execute Fully Autonomous Creation Cycle".
-# Here, we invoke \`npx tsx scripts/full_autonomous_automatic_creation.ts\`. This
+# Here, we invoke \`npx tsx scripts/full_autonomous_automatic_creation_order_and_execution.ts\`. This
 # script is the heart of the generative process, orchestrating the actions
 # of multiple specialized sub-agents. It requires several key environment
 # variables to operate securely and effectively:
@@ -253,7 +253,7 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
 
       - name: Execute Autonomous Session Analysis and Self-Correction
-        run: npx tsx scripts/full_autonomous_automatic_creation.ts
+        run: npx tsx scripts/full_autonomous_automatic_creation_order_and_execution.ts
         env:
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true

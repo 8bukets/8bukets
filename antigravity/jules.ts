@@ -1,3 +1,4 @@
+/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 23 COMPLIANCE: CLOUD_NATIVE_INTEGRATION (enabled) **/
 /** PHASE 23 COMPLIANCE: SOVEREIGNTY_PULSE (active) **/
 /** PHASE 23 COMPLIANCE: RESONANCE_LATENCY (target: <0.2ms) **/
@@ -12,7 +13,6 @@
 /** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
-/** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 import fs from 'fs'
 import path from 'path'
