@@ -263,7 +263,6 @@ Before making API calls, ask yourself:
 6. ✓ Am I using cursor from pageInfo.endCursor for next page? → Yes
 7. ✓ Is the parent work item confidential? → Set child as confidential too
 
-
 ### Analyzing Work Items with Children
 
 When analyzing a work item, ALWAYS check if it has children in the hierarchy:
