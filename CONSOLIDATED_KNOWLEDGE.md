@@ -1,6 +1,6 @@
 # Consolidated Knowledge Base
 
-**Last Sync:** 2026-06-20T23:06:48.742207
+**Last Sync:** 2026-06-28T22:53:36.931Z
 **System Version:** 1.94
 
 ## 🧩 Strategic Identity & Unified Model
@@ -924,305 +924,6 @@ Subagents are enabled by default. To disable them, set `enableAgents` to false i
 ```
 
 
-### Docker MCP Catalog
-
-The Docker MCP Catalog is a curated collection of verified MCP servers, packaged as Docker images and distributed through Docker Hub. It solves common challenges with running MCP servers locally: environment conflicts, setup complexity, and security concerns.
-
-The catalog serves as the source of available MCP servers. When you add servers to your profiles, you select them from the catalog. Each server runs as an isolated container, making it portable and consistent across different environments.
-
-Note
-E2B sandboxes now include direct access to the Docker MCP Catalog, giving developers access to over 200 tools and services to seamlessly build and run AI agents. For more information, see E2B Sandboxes.
-
-What's in the catalog
-The Docker MCP Catalog includes:
-
-Verified servers: All servers are versioned with full provenance and SBOM metadata
-Partner tools: Servers from New Relic, Stripe, Grafana, and other trusted partners
-Docker-built servers: Locally-running servers built and digitally signed by Docker for enhanced security
-Remote services: Cloud-hosted servers that connect to external services like GitHub, Notion, and Linear
-Local versus remote servers
-The catalog contains two types of servers based on where they run:
-
-Local servers run as containers on your machine. They work offline once downloaded and offer predictable performance and complete data privacy. Docker builds and signs all local servers in the catalog.
-
-Remote servers run on the provider's infrastructure and connect to external services. Many remote servers use OAuth authentication, which the MCP Toolkit handles automatically through your browser.
-
-Browse the catalog
-Browse available MCP servers at hub.docker.com/mcp or directly in Docker Desktop:
-
-In Docker Desktop, select MCP Toolkit.
-Select the Catalog tab to browse available servers.
-Select a server to view its description, tools, and configuration options.
-Add servers to a profile
-To add a server fro
-
-### Prepare Best Value Of Knowledge Integration
-
-To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
-
-### Key Definitions of Compile
-
-- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
-- **Creating Works**: To produce a book, anthology, or database from various materials.
-- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
-
-### Usage Examples
-
-- "She is compiling a list of clients for the newsletter."
-- "It took years to compile the dictionary."
-- "The developer needs to compile the code before running the application."
-
-### Synonyms
-
-- Assemble
-- Collect
-- Gather
-- Compose
-- Accumulate
-- Organize
-- Synthesize
-
-### Contextual Usage
-
-- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
-- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
-
-### What is an AI agent?
-
-Last Updated: 04/02/2026
-
-AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They show reasoning, planning, and memory and have a level of autonomy to make decisions, learn, and adapt.
-
-Their capabilities are made possible in large part by the multimodal capacity of generative AI and AI foundation models. AI agents can process multimodal information like text, voice, video, audio, code, and more simultaneously; can converse, reason, learn, and make decisions. They can learn over time and facilitate transactions and business processes. Agents can work with other agents to coordinate and perform more complex workflows.
-
-### Key features of an AI agent
-
-As explained above, while the key features of an AI agent are reasoning and acting (as described in ReAct Framework) more features have evolved over time.
-
-- Reasoning: This core cognitive process involves using logic and available information to draw conclusions, make inferences, and solve problems. AI agents with strong reasoning capabilities can analyze data, identify patterns, and make informed decisions based on evidence and context.
-- Acting: The ability to take action or perform tasks based on decisions, plans, or external input is crucial for AI agents to interact with their environment and achieve goals. This can include physical actions in the case of embodied AI, or digital actions like sending messages, updating data, or triggering other processes.
-- Observing: Gathering information about the environment or situation through perception or sensing is essential for AI agents to understand their context and make informed decisions. This can involve various forms of perception, such as computer vision, natural language processing, or sensor data analysis.
-- Planning: Developing a strategic plan to achieve goals is a key aspect of intelligent behavior. AI agents with planning capabilities can identify the necessary steps, evaluate potential actions, and choose the best course of action based on available information and desired outcomes. This often involves anticipating future states and considering potential obstacles.
-- Collaborating: Working effectively with others, whether humans or other AI agents, to achieve a common goal is increasingly important in complex and dynamic environments. Collaboration requires communication, coordination, and the ability to understand and respect the perspectives of others.
-- Self-refining: The capacity for self-improvement and adaptation is a hallmark of advanced AI systems. AI agents with self-refining capabilities can learn from experience, adjust their behavior based on feedback, and continuously enhance their performance and capabilities over time. This can involve machine learning techniques, optimization algorithms, or other forms of self-modification.
-
-### What is the difference between AI agents, AI assistants, and bots?
-
-AI assistants are AI agents designed as applications or products to collaborate directly with users and perform tasks by understanding and responding to natural human language and inputs. They can reason and take action on the users' behalf with their supervision.
-
-AI assistants are often embedded in the product being used. A key characteristic is the interaction between the assistant and user through the different steps of the task. The assistant responds to requests or prompts from the user, and can recommend actions but decision-making is done by the user.
-
- | AI agent | AI assistant | Bot
---- | --- | --- | ---
-Purpose | Autonomously and proactively perform tasks | Assisting users with tasks | Automating simple tasks or conversations
-Capabilities | Can perform complex, multi-step actions; learns and adapts; can make decisions independently | Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions | Follows pre-defined rules; limited learning; basic interactions
-Interaction | Proactive; goal-oriented | Reactive; responds to user requests | Reactive; responds to triggers or commands
-
-AI agent
-
-AI assistant
-
-Bot
-
-Purpose
-
-Autonomously and proactively perform tasks
-
-Assisting users with tasks
-
-Automating simple tasks or conversations
-
-Capabilities
-
-Can perform complex, multi-step actions; learns and adapts; can make decisions independently
-
-Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions
-
-Follows pre-defined rules; limited learning; basic interactions
-
-Interaction
-
-Proactive; goal-oriented
-
-Reactive; responds to user requests
-
-Reactive; responds to triggers or commands
-
-AI agent
-
-AI assistant
-
-Bot
-
-Purpose
-
-Autonomously and proactively perform tasks
-
-Assisting users with tasks
-
-Automating simple tasks or conversations
-
-Capabilities
-
-Can perform complex, multi-step actions; learns and adapts; can make decisions independently
-
-Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions
-
-Follows pre-defined rules; limited learning; basic interactions
-
-Interaction
-
-Proactive; goal-oriented
-
-Reactive; responds to user requests
-
-Reactive; responds to triggers or commands
-
-### Key differences
-
-- Autonomy: AI agents have the highest degree of autonomy, able to operate and make decisions independently to achieve a goal. AI assistants are less autonomous, requiring user input and direction. Bots are the least autonomous, typically following pre-programmed rules.
-- Complexity: AI agents are designed to handle complex tasks and workflows, while AI assistants and bots are better suited for simpler tasks and interactions.
-- Learning: AI agents often employ machine learning to adapt and improve their performance over time. AI assistants may have some learning capabilities, while bots typically have limited or no learning.
-
-### How do AI agents work?
-
-Every agent defines its role, personality, and communication style, including specific instructions and descriptions of available tools.
-
-- Persona: A well defined persona allows an agent to maintain a consistent character and behave in a manner appropriate to its assigned role, evolving as the agent gains experience and interacts with its environment.
-- Memory: The agent is equipped in general with short term, long term, consensus, and episodic memory. Short term memory for immediate interactions, long-term memory for historical data and conversations, episodic memory for past interactions, and consensus memory for shared information among agents. The agent can maintain context, learn from experiences, and improve performance by recalling past interactions and adapting to new situations.
-- Tools: Tools are functions or external resources that an agent can utilize to interact with its environment and enhance its capabilities. They allow agents to perform complex tasks by accessing information, manipulating data, or controlling external systems, and can be categorized based on their user interface, including physical, graphical, and program-based interfaces. Tool learning involves teaching agents how to effectively use these tools by understanding their functionalities and the context in which they should be applied.
-- Model: Large language models (LLMs) serve as the foundation for building AI agents, providing them with the ability to understand, reason, and act. LLMs act as the "brain" of an agent, enabling them to process and generate language, while other components facilitate reason and action.
-
-### What are the types of agents in AI?
-
-AI agents can be categorized in various ways based on their capabilities, roles, and environments. Here are some key categories of agents:
-
-There are different definitions of agent types and agent categories.
-
-### Based on interaction
-
-One way to categorize agents is by how they interact with users. Some agents engage in direct conversation, while others operate in the background, performing tasks without direct user input:
-
-- Interactive partners (also known as, surface agents): Assisting us with tasks like customer service, healthcare, education, and scientific discovery, providing personalized and intelligent support. Conversational agents include Q&A, chit chat, and world knowledge interactions with humans. They are generally user query triggered and fulfill user queries or transactions.
-- Autonomous background processes (also known as, background agents): Working behind the scenes to automate routine tasks, analyze data for insights, optimize processes for efficiency, and proactively identify and address potential issues. They include workflow agents. They have limited or no human interaction and are generally driven by events and fulfill queued tasks or chains of tasks.
-
-### Based on number of agents
-
-- Single agent: Operate independently to achieve a specific goal. They utilize external tools and resources to accomplish tasks, enhancing their functional capabilities in diverse environments. They are best suited for well defined tasks that do not require collaboration with other AI agents. Can only handle one foundation model for its processing.
-- Multi-agent: Multiple AI agents that collaborate or compete to achieve a common objective or individual goals. These systems leverage the diverse capabilities and roles of individual agents to tackle complex tasks. Multi-agent systems can simulate human behaviors, such as interpersonal communication, in interactive scenarios. Each agent can have different foundation models that best fit their needs.
-
-### Benefits of using AI agents
-
-AI agents can enhance the capabilities of language models by providing autonomy, task automation, and the ability to interact with the real world through tools and embodiment.
-
-### Efficiency and productivity
-
-Increased output: Agents divide tasks like specialized workers, getting more done overall
-
-Simultaneous execution: Agents can work on different things at the same time without getting in each other's way
-
-Automation: Agents take care of repetitive tasks, freeing up humans for more creative work
-
-### Improved decision-making
-
-Collaboration: Agents work together, debate ideas, and learn from each other, leading to better decisions
-
-Adaptability: Agents can adjust their plans and strategies as situations change
-
-Robust reasoning: Through discussion and feedback, agents can refine their reasoning and avoid errors
-
-### Enhanced capabilities
-
-Complex problem-solving: Agents can tackle challenging real-world problems by combining their strengths
-
-Natural language communication: Agents can understand and use human language to interact with people and each other
-
-Tool use: Agents can interact with the external world by using tools and accessing information
-
-Learning and self-improvement: Agents learn from their experiences and get better over time
-
-### Social interaction and simulation
-
-Realistic simulations: Agents can model human-like social behaviors, such as forming relationships and sharing information
-
-Emergent behavior: Complex social interactions can arise organically from the interactions of individual agents
-
-### Challenges with using AI agents
-
-While AI agents offer many benefits, there are also some challenges associated with their use:
-
-Tasks requiring deep empathy / emotional intelligence or requiring complex human interaction and social dynamics – AI agents can struggle with nuanced human emotions. Tasks like therapy, social work, or conflict resolution require a level of emotional understanding and empathy that AI currently lacks. They may falter in complex social situations that require understanding unspoken cues.
-
-Situations with high ethical stakes – AI agents can make decisions based on data, but they lack the moral compass and judgment needed for ethically complex situations. This includes areas like law enforcement, healthcare (diagnosis and treatment), and judicial decision-making.
-
-Domains with unpredictable physical environments – AI agents can struggle in highly dynamic and unpredictable physical environments where real-time adaptation and complex motor skills are essential. This includes tasks like surgery, certain types of construction work, and disaster response.
-
-Resource-intensive applications – Developing and deploying sophisticated AI agents can be computationally expensive and require significant resources, potentially making them unsuitable for smaller projects or organizations with limited budgets.
-
-### Deploy AI agents for scale and efficiency with Cloud Run
-
-AI agents, with their inherent need for flexible compute power to handle reasoning, planning, and tool use, can be an excellent fit for Cloud Run. This fully managed serverless platform allows you to deploy your agent's code—often packaged within a container—as a scalable, reliable service or job. This approach abstracts away infrastructure management, letting developers concentrate on refining the agent's logic.
-
-Cloud Run offers several features that directly support the architecture and demands of sophisticated AI agents:
-
-- Scalability and cost-efficiency: Cloud Run automatically scales the number of container instances up to meet peak demand and, crucially, can scale down to zero when the agent is idle. This means you only pay for the exact compute resources consumed during the agent's active execution, making it cost-effective for goal-oriented, intermittent workloads.
-- Agent orchestration and serving: The core agent logic—which manages the model calls, tool selection, and reasoning process—runs as a Cloud Run service. This service provides a stable HTTPS endpoint, making the agent easily accessible via an API for user-facing applications or for communication with other agents
-- Agent-to-Agent, or A2A: Frameworks like the Agent Development Kit (ADK) are designed to integrate seamlessly with Cloud Run for easy deployment.
-
-By leveraging Cloud Run's secure, auto-scaling, and flexible environment, organizations can operationalize complex single- or multi-agent systems efficiently.
-
-### Use cases for AI agents
-
-Organizations have been deploying agents to address a variety use cases, which we group into six key broader categories:
-
-### Customer agents
-
-Customer agents
-
-Customer agents deliver personalized customer experiences by understanding customer needs, answering questions, resolving customer issues, or recommending the right products and services. They work seamlessly across multiple channels including the web, mobile, or point of sale, and can be integrated into product experiences with voice or video.
-
-### Employee agents
-
-Employee agents
-
-Employee agents boost productivity by streamlining processes, managing repetitive tasks, answering employee questions, as well as editing and translating critical content and communications.
-
-### Creative agents
-
-Creative agents
-
-Creative agents supercharge the design and creative process by generating content, images, and ideas, assisting with design, writing, personalization, and campaigns.
-
-### Data agents
-
-Data agents
-
-Data agents are built for complex data analysis. They have the potential to find and act on meaningful insights from data, all while ensuring the factual integrity of their results.
-
-### Code agents
-
-Code agents
-
-Code agents accelerate software development with AI-enabled code generation and coding assistance, and to ramp up on new languages and code bases. Many organizations are seeing significant gains in productivity, leading to faster deployment and cleaner, clearer code.
-
-### Security agents
-
-Security agents
-
-Security agents strengthen security posture by mitigating attacks or increasing the speed of investigations. They can oversee security across various surfaces and stages of the security life cycle: prevention, detection, and response.
-
-### Google Cloud and AI agents
-
-Google Cloud provides a portfolio of products and solutions in the AI agent space. These include integrated AI assistants, pre-built AI agents, AI applications, and a platform of agent and developer tools to build custom AI agents.
-
-- Gemini Enterprise AppSecure platform to discover, create, run, and govern AI agents across your organization.
-- Gemini Enterprise Agent PlatformCreate AI agents and applications using natural language or a code-first approach. Easily ground your agents or apps in enterprise data with a range of options.
-- Customer Experience Agent StudioBuild hybrid conversational agents with both deterministic and generative AI functionality.
-- Agent GardenCurated collection of pre-built agent samples, solutions, tools, and frameworks to accelerate the development and deployment of AI agents.
-- Agent Development Kit (ADK)Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.
-- A2A ProtocolAn open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.
-- Cloud RunA fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
-
 ## 2. Google Innovation & AI
 - **[Gemini Embedding 2 is now generally available.](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/)**
 - **[Deep Research Max: a step change for autonomous research agents](https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/)**
@@ -1234,762 +935,10 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 - **[Google Flow Music and Believe bring next-gen tools to artists](https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/)**
 - **[3 creative tips from our Flow Sessions artists](https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-sessions-artists-lessons/)**
 - **[Stitch’s DESIGN.md format is now open-source so you can use it across platforms.](https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-design-md/)**
-- **[Google brings Pomelli in English to small businesses in Europe.](https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-in-europe/)**
-- **[Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)**
-- **[Our new initiative to apply quantum science and AI to the life sciences](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/repliqa-quantum-computing-life-sciences/)**
-- **[Answering your trending questions on World Quantum Day](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/)**
-- **[Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)**
-- **[Evolving expectations of what’s possibleKent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026.](https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/)**
-  * Kent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026.
-- **[Find out how AlphaEvolve has gone from research to solving real-life problems.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/alphaevolve-updates/)**
-- **[The latest AI news we announced in April 2026](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/)**
-- **[Join the new AI Agents Vibe Coding Course from Google and Kaggle](https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026/)**
-- **[Digitize your paper notes with Gemini.](https://blog.google/innovation-and-ai/products/gemini-app/digitize-notes-gemini-study-guide/)**
-- **[Gemini API File Search is now multimodal: build efficient, verifiable RAG](https://blog.google/innovation-and-ai/technology/developers-tools/expanded-gemini-api-file-search-multimodal-rag/)**
-- **[Accelerating Gemma 4: faster inference with  multi-token prediction drafters](https://blog.google/innovation-and-ai/technology/developers-tools/multi-token-prediction-gemma-4/)**
-- **[Read our new report on AI-powered threats and our latest defenses.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-threat-intelligence-group-report/)**
-- **[We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks.](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/)**
-- **[Introducing Gemini Omni](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)**
-- **[Gemini 3.5: frontier intelligence with action](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/)**
-- **[Simulate real-world places with Project Genie and Street View](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/)**
-- **[We’re introducing new ways to design in real time with Stitch.](https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/)**
-- **[New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music](https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/)**
-- **[Pomelli adds new ways to build brand content and design websites.](https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-agentic-capabilities/)**
-- **[Making it easier to understand how content was created and edited](https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/)**
-- **[I/O 2026: Welcome to the agentic Gemini era](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)**
-- **[Introducing Managed Agents in the Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/)**
-- **[The Gemini app becomes more agentic, delivering proactive, 24/7 help](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)**
-- **[Bring any idea to life: Google AI Studio at I/O 2026](https://blog.google/innovation-and-ai/technology/developers-tools/google-ai-studio-io-2026/)**
-- **[Blackstone will create a new TPU cloud in a joint venture with Google.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/blackstone-tpu-cloud/)**
-- **[Running Guide agent: A step towards running unbounded](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/)**
-- **[A new experiment brings better group meetings to Google Beam](https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/)**
-- **[We’re announcing new community investments in Missouri.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/)**
-- **[We’re announcing the first Texas Energy Impact Fund recipients.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/)**
-- **[Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)**
-- **[We’re strengthening our presence in Alabama through new investments and community support.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/)**
-- **[Our new community investments in Virginia support local jobs and expand energy affordability.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/)**
-- **[Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)**
-- **[Cloud Next ‘26: Momentum and innovation at Google scale](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/)**
-- **[7 highlights from Google Cloud Next ‘26](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-cloud-next-26-recap/)**
-- **[View the collection](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/how-google-does-it-security-series/)**
-- **[View the collection](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/next-2026/)**
-- **[Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)**
-- **[Fluid, natural voice translation with Gemini 3.5 Live Translate](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/)**
-- **[9 demos of Gemini Omni and Gemini 3.5 in action](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/)**
-- **[Meet Dreambeans, an app that connects you with what matters](https://blog.google/innovation-and-ai/models-and-research/google-labs/dreambeans/)**
-- **[Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)**
-- **[New research shows how AMIE, our medical AI, could help manage health conditions.](https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/)**
-- **[Save time and grow your business with new Gemini tools](https://blog.google/innovation-and-ai/products/gemini-app/gemini-features-for-businesses/)**
-- **[View more from NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)**
-- **[Do better research with NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/)**
-- **[Generate your own Cinematic Video Overviews in NotebookLM.](https://blog.google/innovation-and-ai/products/notebooklm/generate-your-own-cinematic-video-overviews-in-notebooklm/)**
-- **[Dive deeper into I/O 2026 with NotebookLM.](https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/)**
-- **[Ask a Techspert: What is vibe coding?](https://blog.google/innovation-and-ai/products/techspert-what-is-vibe-coding/)**
-- **[The latest AI news we announced in May 2026](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/)**
-- **[How we used Gemini to build Google I/O 2026](https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/)**
-- **[Catch up on 12 major I/O 2026 moments](https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/)**
-- **[Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)**
-- **[Bringing the latest Gemini models to Apple developers](https://blog.google/innovation-and-ai/technology/developers-tools/bringing-gemini-models-to-apple-developers/)**
-- **[DiffusionGemma: 4x faster text generation](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/)**
-- **[See what 3 builders are making with Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/)**
-- **[Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency](https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/)**
-- **[View more from Health](https://blog.google/innovation-and-ai/technology/health/)**
-- **[A more personal digital health experience for people in Europe](https://blog.google/innovation-and-ai/technology/health/google-docmorris-partnership/)**
-- **[Announcing the winners of the MedGemma Impact Challenge](https://blog.google/innovation-and-ai/technology/health/med-gemma-impact-challenge/)**
-- **[An update on our mental health work](https://blog.google/innovation-and-ai/technology/health/mental-health-updates/)**
-- **[Google Research](https://blog.google/innovation-and-ai/technology/research/)**
-- **[4 ways researchers are collaborating with Co-Scientist to solve big problems](https://blog.google/innovation-and-ai/technology/research/co-scientist-research-problems/)**
-- **[Gemini for Science: AI experiments and tools for a new era of discovery](https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/)**
-- **[Building superconducting and neutral atom quantum computers](https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/)**
-- **[Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)**
-- **[How we're combatting AI scams with security, legislation and more](https://blog.google/innovation-and-ai/technology/safety-security/combatting-ai-scams/)**
-- **[Quantum frontiers may be closer than they appear](https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/)**
-- **[Our latest fraud and scams advisory](https://blog.google/innovation-and-ai/technology/safety-security/fraud-scams-advisory-june-2026/)**
-- **[Our fight against fraud: 5 ways we’re keeping you safer](https://blog.google/innovation-and-ai/technology/safety-security/scams-fraud-protection/)**
-- **[Android XR lights up Sphere in Las Vegas for CES.](https://blog.google/innovation-and-ai/technology/xr-ar/android-xr-sphere-ces-2026/)**
-- **[Reservations are open for XREAL AURA — plus, see more news from AWE 2026.](https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/)**
 
 ## 3. Market Intelligence (Markposition)
-Total Market Data Points: 680
+Total Market Data Points: 0
 
-- **advertising.amazon**: https://advertising.amazon.com/ (October 5, 2022)
-- **Drive Advertising Revenue with Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager (September 26, 2022)
-- **https://marketingplatform.google.com/about/search-ads-360/**: https://marketingplatform.google.com/about/search-ads-360/ (March 10, 2022)
-- **Analytics Academy**: https://analytics.google.com/analytics/academy/ (September 20, 2022)
-- **Adssettings google**: https://adssettings.google.com/authenticated (September 20, 2022)
-- **Data google**: https://myaccount.google.com/data-and-personalization (September 20, 2022)
-- **The Privacy Sandbox: Technology for a More Private Web.**: https://privacysandbox.com/intl/home#home-hero (September 20, 2022)
-- **Digital Experience Platform & Enterprise CMS | Crownpeak**: https://www.crownpeak.com/ (September 16, 2022)
-- **About Performance Max campaigns – Google Ads**: https://support.google.com/google-ads/answer/10724817?hl=en (September 1, 2022)
-- **About Smart Bidding – Google Ads**: https://support.google.com/google-ads/answer/7065882?hl=en (September 1, 2022)
-- **About Maximize conversion value bidding – Google Ads**: https://support.google.com/google-ads/answer/7684216?hl=en (September 1, 2022)
-- **About automated bidding – Google Ads Help**: https://support.google.com/google-ads/answer/2979071?hl=en (September 1, 2022)
-- **About Target CPA bidding – Google Ads Help**: https://support.google.com/google-ads/answer/6268632?hl=en (September 1, 2022)
-- **About Maximize conversions bidding – Google Ads Help**: https://support.google.com/google-ads/answer/7381968?hl=en (September 1, 2022)
-- **About Target ROAS bidding – Google Ads Help**: https://support.google.com/google-ads/answer/6268637?hl=en (September 1, 2022)
-- **Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help**: https://support.google.com/google-ads/answer/11189316?hl=en (September 1, 2022)
-- **Coalition for Better Ads**: https://www.betterads.org/ (August 31, 2022)
-- **ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions**: https://sharethis.com/ (August 20, 2022)
-- **How To Create Quality Video Ads – YouTube Advertising**: https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/ (August 16, 2022)
-- **Business Data Responsibility – Your Data Protection & Privacy**: https://business.safety.google/ (August 15, 2022)
-- **Google Ads Data Protection Terms: Service Information**: https://business.safety.google/adsservices/ (August 15, 2022)
-- **Outbrain Advertising – Drive ROAS on the Open Web | Outbrain.com**: https://www.outbrain.com/advertisers/ (August 15, 2022)
-- **Prebid**: https://prebid.org/ (August 14, 2022)
-- **wmg**: https://adwmg.com/ (August 14, 2022)
-- **Trustpilot Reviews: Experience the power of customer reviews**: https://www.trustpilot.com/ (August 11, 2022)
-- **Online-Shopping mit Trusted Shops | Jetzt alle Produkte kennenlernen**: https://www.trustedshops.de/ (August 11, 2022)
-- **TestFreaks – Ratings & Reviews Platform**: https://www.testfreaks.com/ (August 11, 2022)
-- **TargetBay: Ecommerce Email Marketing Software and Marketing Automation**: https://targetbay.com/ (August 11, 2022)
-- **Stamped | Reviews and Loyalty for Ecommerce Brands**: https://stamped.io/ (August 11, 2022)
-- **Avis clients authentiques avec Shopping-Satisfaction**: https://www.shopping-satisfaction.com/ (August 11, 2022)
-- **Shopperapproved**: https://www.shopperapproved.com/ (August 11, 2022)
-- **REVIEWS.io | In Reviews We Trust**: https://www.reviews.io/ (August 11, 2022)
-- **Resellerratings**: https://resellerratings.com/ (August 11, 2022)
-- **PowerReviews: Doing More with UGC to Grow Your Business**: https://www.powerreviews.com/ (August 11, 2022)
-- **Okendo**: https://www.okendo.io/ (August 11, 2022)
-- **Loox Shopify Reviews App – Product Reviews & Referrals**: https://loox.app/ (August 11, 2022)
-- **Junip | Reviews for products worth talking about**: https://junip.co/ (August 11, 2022)
-- **Guaranteed Reviews Company | Guaranteed customer review solution**: https://www.guaranteed-reviews.com/ (August 11, 2022)
-- **Feefo | Transform your business with real customer reviews**: https://www.feefo.com/ (August 11, 2022)
-- **feedaty**: https://www.feedaty.com/ (August 11, 2022)
-- **eKomi | The Feedback Company**: https://www.ekomi.co.uk/uk/ (August 11, 2022)
-- **Echte-Bewertungen – Verbessern Sie Ihre Geschäftsergebnisse**: https://www.echte-bewertungen.com/ (August 11, 2022)
-- **Bazaarvoice: Meet shoppers in all the moments that matter**: https://www.bazaarvoice.com/ (August 11, 2022)
-- **Avis clients : boostez vos ventes avec Avis Vérifiés !**: https://www.avis-verifies.com/fr/ (August 11, 2022)
-- **Loyalty Experience Platform – Annex Cloud Loyalty Management Solution**: https://www.annexcloud.com/ (August 11, 2022)
-- **Verified-Reviews – Boost your sales uk**: https://www.verified-reviews.co.uk/ (August 11, 2022)
-- **Yotpo**: https://www.yotpo.com/ (August 11, 2022)
-- **Verified Reviews – Boost your sales**: https://www.netreviews.com/en/ (August 11, 2022)
-- **Pixlee TurnTo | Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing Platform**: https://www.pixlee.com/ (August 11, 2022)
-- **Facebook Blueprint: Free Online Training for Advertising on Facebook | Meta for Business**: https://web.facebook.com/business/learn (August 8, 2022)
-- **Facebook Certification: Professional Certificate Exams from Facebook | Meta for Business**: https://web.facebook.com/business/learn/certification (August 8, 2022)
-- **Facebook Ads: Online Advertising on Facebook | Meta for Business**: https://web.facebook.com/business/ads (August 8, 2022)
-- **Create a LinkedIn Company Page | LinkedIn Marketing Solutions**: https://business.linkedin.com/marketing-solutions/linkedin-pages (August 8, 2022)
-- **Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions**: https://business.linkedin.com/marketing-solutions (August 8, 2022)
-- **Coalition for Better Ads**: https://www.betterads.org/ (July 28, 2022)
-- **FC**: https://fundingchoices.google.com/start/ (May 26, 2022)
-- **Funding Choices**: https://support.google.com/fundingchoices/answer/9010669?hl=hr (May 26, 2022)
-- **Publisher strategy for privacy preferences – Think with Google**: https://www.thinkwithgoogle.com/future-of-marketing/privacy-and-trust/publisher-privacy-landscape/ (May 23, 2022)
-- **The Future of Marketing – Think with Google**: https://www.thinkwithgoogle.com/future-of-marketing/ (May 23, 2022)
-- **Google Ads Help: Understanding optimized targeting**: https://www.youtube.com/embed/v9SqjeH7nrU?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en&autohide=2&wmode=transparent (May 16, 2022)
-- **ptimization targeting – Google Ads**: https://support.google.com/google-ads/answer/10537509?hl=hr (May 16, 2022)
-- **Google News Initiative Training Center**: https://newsinitiative.withgoogle.com/training/datatools (May 16, 2022)
-- **Create Reports in Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager (May 12, 2022)
-- **Optimize Google Ad Manager to Meet Objectives : Google**: https://skillshop.exceedlms.com/student/path/54611-optimize-google-ad-manager-to-meet-objectives (May 9, 2022)
-- **Get started with Twitter Ads**: https://business.twitter.com/en/advertising/get-started-with-twitter-ads.html (May 5, 2022)
-- **Pixalate – Ad Fraud Protection, Privacy, and Compliance Platform (CTV)**: https://www.pixalate.com/ (May 4, 2022)
-- **Publisher Collective | Get better CPMs with the advertising network for game sites**: https://www.publisher-collective.com/ (April 28, 2022)
-- **boost-your-active-view-score-in-ad-manager**: https://skillshop.exceedlms.com/student/activity/17109-boost-your-active-view-score-in-ad-manager (April 28, 2022)
-- **Waytogrow – Earn more on your advertising space**: https://www.waytogrow.com/ (April 22, 2022)
-- **Smart Adserver | The Most Powerful Adserving and RTB Platform**: https://smartadserver.com/ (April 21, 2022)
-- **Custom advertising solutions – Custom ad campaigns | Amazon Ads**: https://advertising.amazon.com/solutions/products/custom-solutions (April 21, 2022)
-- **Amazon Marketing Cloud – Advanced media analytics and insights | Amazon Ads**: https://advertising.amazon.com/solutions/products/amazon-marketing-cloud (April 21, 2022)
-- **Amazon DSP – Create campaigns with our Demand Side Platform | Amazon Ads**: https://advertising.amazon.com/solutions/products/amazon-dsp (April 21, 2022)
-- **Learning console – Online advertising courses and PPC certifications | Amazon Ads**: https://advertising.amazon.com/resources/learning-console (April 21, 2022)
-- **Sponsored Display ads – Create display advertising campaigns | Amazon Ads**: https://advertising.amazon.com/solutions/products/sponsored-display (April 21, 2022)
-- **Amazon Ads: Online advertising for businesses of all sizes | Amazon Ads**: https://advertising.amazon.com/ (April 21, 2022)
-- **Sizmek Ad Suite – DCO, creative building, ad serving | Amazon Ads**: https://advertising.amazon.com/solutions/products/sizmek-ad-suite (April 21, 2022)
-- **Drive Advertising Revenue with Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager (April 18, 2022)
-- **ads settings google**: https://adssettings.google.com/authenticated (April 15, 2022)
-- **Linker – Content Discovery Platform**: https://linker.hr/ (April 15, 2022)
-- **Funding Choices API | Google Developers**: https://developers.google.com/funding-choices (April 14, 2022)
-- **Privacy checks in Ads Data Hub | Google Developers**: https://developers.google.com/ads-data-hub/guides/privacy-checks (April 14, 2022)
-- **Ads Data Hub | Google Developers**: https://developers.google.com/ads-data-hub (April 14, 2022)
-- **Google Ad Manager – Privacy & messaging**: https://admanager.google.com/22694377933#privacy_and_messaging/ad_blocking/education (April 13, 2022)
-- **Google Ads Integration | Ortto**: https://ortto.com/integrations/google-ads/ (April 6, 2022)
-- **Cloudflare’s Privacy Policy | Cloudflare**: https://www.cloudflare.com/privacypolicy/ (April 6, 2022)
-- **CJ.com Home**: https://www.cj.com/ (April 6, 2022)
-- **Xaxis – The outcome media company**: https://www.xaxis.com/ (April 6, 2022)
-- **Services Privacy Policy | Oracle**: https://www.oracle.com/legal/privacy/services-privacy-policy.html (April 6, 2022)
-- **AdMedia | Premier Advertising Network | Reach 200M+ US Users**: https://admedia.com/ (April 4, 2022)
-- **Monetize**: https://www.monetize.com/ (April 4, 2022)
-- **Adobe Advertising Cloud: Programmatic Media Buying | Adobe for Business**: https://business.adobe.com/products/advertising/adobe-advertising-cloud.html (March 29, 2022)
-- **Your Online Choices | EDAA**: https://youronlinechoices.eu/ (March 29, 2022)
-- **WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US**: https://optout.aboutads.info/ (March 29, 2022)
-- **For Consumers – European Interactive Digital Advertising Alliance**: https://edaa.eu/what-we-do/for-consumers/ (March 29, 2022)
-- **Data Privacy Audit | See If Your Website Is Data Compliant**: https://usercentrics.com/data-privacy-audit/ (March 25, 2022)
-- **Drive Advertising Revenue with Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager (March 18, 2022)
-- **Create Reports in Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager (March 18, 2022)
-- **Online Video Advertising Campaigns – YouTube Advertising**: https://www.youtube.com/intl/en_US/ads/ (March 18, 2022)
-- **Profit Whales | Full-service Amazon marketing agency for your brand!**: https://profitwhales.com/ (March 18, 2022)
-- **Learning console – Online advertising courses and PPC certifications | Amazon Ads**: https://advertising.amazon.com/resources/learning-console (March 17, 2022)
-- **Amazon Ads: Online advertising for businesses of all sizes | Amazon Ads**: https://advertising.amazon.com/ (March 17, 2022)
-- **Get Started with Google Publisher Tags | Google Developers**: https://developers.google.com/publisher-tag/guides/get-started (March 16, 2022)
-- **Ad sizes | Google Publisher Tag | Google Developers**: https://developers.google.com/publisher-tag/guides/get-started (March 16, 2022)
-- **Drive Advertising Revenue with Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager (March 16, 2022)
-- **Configure Mobile In-App Ads Using Ad Manager : Google**: https://skillshop.exceedlms.com/student/activity/75346-configure-mobile-in-app-ads-using-ad-manager (March 16, 2022)
-- **Fundamentals of Video : Google**: https://skillshop.exceedlms.com/student/activity/75345-fundamentals-of-video (March 16, 2022)
-- **Review and Manage Ads in Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/activity/17116-review-and-manage-ads-in-google-ad-manager (March 16, 2022)
-- **Manage Ads with Rules and Protections : Google**: https://skillshop.exceedlms.com/student/activity/379130-manage-ads-with-rules-and-protections-skillshop (March 16, 2022)
-- **Explore Programmatic Capabilities in Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/activity/17114-explore-programmatic-capabilities-in-google-ad-manager (March 16, 2022)
-- **Create Reports in Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager (March 16, 2022)
-- **Forecast Your Inventory Using Ad Manager : Google**: https://skillshop.exceedlms.com/student/activity/17112-forecast-your-inventory-using-ad-manager (March 16, 2022)
-- **Optimize Creatives with Ad Manager : Google**: https://skillshop.exceedlms.com/student/activity/17111-optimize-creatives-with-ad-manager (March 16, 2022)
-- **Deliver Ads Using Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/activity/17110-deliver-ads-using-google-ad-manager (March 16, 2022)
-- **Google Ad Traffic Quality**: https://www.google.com/ads/adtrafficquality/ (March 14, 2022)
-- **Vodič za ads.txt – Google AdSense Pomoć**: https://support.google.com/adsense/answer/7532444?hl=hr (March 14, 2022)
-- **Alat za rješavanje problema s datotekom ads.txt – Google AdSense Pomoć**: https://support.google.com/adsense/troubleshooter/9556696?hl=hr#ts=9806100%2C9806109 (March 14, 2022)
-- **Actions on Google**: https://console.actions.google.com/u/0/ (March 13, 2022)
-- **AdSense Management API | Google Developers**: https://developers.google.com/adsense/management (March 13, 2022)
-- **The Commerce Media Platform for the Open Internet | Criteo**: https://www.criteo.com/ (March 13, 2022)
-- **Ad exchange – Wikipedia**: https://en.wikipedia.org/wiki/Ad_exchange (March 13, 2022)
-- **Digiday – Digital Content, Digital Advertising, Digital Marketing**: https://digiday.com/ (March 13, 2022)
-- **234 – Measure – Analyze – Optimize**: https://234.hr/ (March 13, 2022)
-- **Google Ad Manager – Integrated Advertising Management Platform**: https://admanager.google.com/home/ (March 13, 2022)
-- **Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/catalog/list?category_ids=2842-google-ad-manager (March 13, 2022)
-- **Pronađite partnera – izdavača | Certificirani partner – izdavač – Google**: https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=modal-ezoic (March 13, 2022)
-- **Pronađite partnera – izdavača | Certificirani partner – izdavač – Google – ads publisher – find a partner**: https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=none (March 13, 2022)
-- **Google Certified Partner Program – Google – ads – publisher – partners**: https://www.google.com/ads/publisher/partners/ (March 13, 2022)
-- **“How Ads Work on YouTube”**: https://www.youtube.com/embed/WPR9PCoeqog?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en&autohide=2&wmode=transparent (March 13, 2022)
-- **Ad Inserter – Ad Manager & AdSense Ads – | WordPress.org Hrvatski**: https://hr.wordpress.org/plugins/ad-inserter/ (March 11, 2022)
-- **Ad Inserter Pro – Advanced WordPress Ad Management Plugin**: https://adinserter.pro/ (March 11, 2022)
-- **SafeFrame Implementation Guidelines**: https://www.iab.com/guidelines/safeframe/ (March 11, 2022)
-- **Using your Ad Speed Home dashboard – Google Ad Manager Help**: https://support.google.com/admanager/answer/9203630?hl=en (March 11, 2022)
-- **Google Ads**: https://ads.google.com/intl/hr_hr/home/ (March 11, 2022)
-- **Google Ads Status Dashboard**: https://ads.google.com/status/publisher/ (March 11, 2022)
-- **Google Ads Data Processing Terms**: https://business.safety.google/adsprocessorterms/ (March 11, 2022)
-- **Business Data Responsibility – Data Safety, Protection & Privacy**: https://business.safety.google/ (March 11, 2022)
-- **Get Started with Google Publisher Tags | Google Developers**: https://developers.google.com/publisher-tag/guides/get-started (March 11, 2022)
-- **Get Started with Search Ads 360 : Google**: https://skillshop.exceedlms.com/student/path/396050-get-started-with-search-ads-360 (March 11, 2022)
-- **Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/catalog/list?category_ids=2842-google-ad-manager (March 11, 2022)
-- **Partnerski program za izdavaštvo | Certificirani partner – izdavač – Google**: https://www.google.com/ads/publisher/partners/ (March 10, 2022)
-- **Marketing Cloud – Digital Marketing Platform – Salesforce.com**: https://www.salesforce.com/products/marketing-cloud/overview/ (March 10, 2022)
-- **Adobe Experience Platform**: https://business.adobe.com/products/experience-platform/adobe-experience-platform.html (March 10, 2022)
-- **Publisher Ads Audits for Lighthouse | Google Developers**: https://developers.google.com/publisher-ads-audits (March 10, 2022)
-- **Setupad Blog | Latest AdTech News**: https://setupad.com/blog/ (March 10, 2022)
-- **DoubleClick – Wikipedia**: https://en.wikipedia.org/wiki/DoubleClick (March 10, 2022)
-- **Google Ad Manager – Wikipedia**: https://en.wikipedia.org/wiki/Google_Ad_Manager (March 10, 2022)
-- **Drive Advertising Revenue with Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager (March 10, 2022)
-- **iab ads txt**: https://markposition.wordpress.com/wp-content/uploads/2022/08/7db5d-iab-openrtb-ads.txt-public-spec-1.0.2-3.pdf (March 9, 2022)
-- **Bing Webmaster Tools**: https://www.bing.com/webmasters/about (March 8, 2022)
-- **In-Stream Ads | Meta for Creators**: https://web.facebook.com/creators/tools/in-stream-ads (March 2, 2022)
-- **How to Make Money From Your Content on Facebook | Facebook for Business**: https://web.facebook.com/business/learn/lessons/how-make-money-facebook (February 28, 2022)
-- **Instant Articles | Meta for Media**: https://web.facebook.com/formedia/tools/instant-articles (February 28, 2022)
-- **Audience Network**: https://hr-hr.facebook.com/audiencenetwork/monetize/bidding/learn (February 27, 2022)
-- **Earn Money From In-Stream Ads in Your Facebook Videos | Facebook for Business**: https://web.facebook.com/business/learn/lessons/earn-money-in-stream-ads-videos (February 26, 2022)
-- **Comscore is a trusted currency for planning, transacting, and evaluating media across platforms.**: https://www.comscore.com/ (February 26, 2022)
-- **AdinPlay – Maximize the ad revenues from your websites, apps and online games.**: https://adinplay.com/ (February 24, 2022)
-- **Davatelji oglasnih tehnologija za LGPD – Google AdSense Pomoć**: https://support.google.com/adsense/answer/9931967?hl=hr (February 23, 2022)
-- **Programmatic Digital Advertising Technology & Solutions | PubMatic**: https://pubmatic.com/ (February 21, 2022)
-- **Header bidding – Wikipedia**: https://en.wikipedia.org/wiki/Header_bidding (February 21, 2022)
-- **Supply-side platform – Wikipedia**: https://en.wikipedia.org/wiki/Supply-side_platform (February 21, 2022)
-- **Online advertising – Wikipedia**: https://en.wikipedia.org/wiki/Online_advertising (February 21, 2022)
-- **The Trade Desk – Wikipedia**: https://en.wikipedia.org/wiki/The_Trade_Desk (February 21, 2022)
-- **Demand-side platform – Wikipedia**: https://en.wikipedia.org/wiki/Demand-side_platform (February 21, 2022)
-- **Built for What Matters | The Trade Desk**: https://www.thetradedesk.com/us (February 21, 2022)
-- **Google Ad Manager – Wikipedia**: https://en.wikipedia.org/wiki/Google_Ad_Manager (February 21, 2022)
-- **Ad exchange – Wikipedia**: https://en.wikipedia.org/wiki/Ad_exchange (February 21, 2022)
-- **Google Marketing Platform – Unified Advertising and Analytics**: https://marketingplatform.google.com/about/ (February 20, 2022)
-- **Dashboarding & Data Visualization Tools – Google Data Studio**: https://marketingplatform.google.com/about/data-studio/ (February 20, 2022)
-- **Business Analytics Tools & Solutions – Google Analytics 360**: https://marketingplatform.google.com/about/analytics-360/ (February 20, 2022)
-- **Search Campaign Management – Google Search Ads 360**: https://marketingplatform.google.com/about/search-ads-360/ (February 20, 2022)
-- **Trusted Ad Serving – Campaign Manager 360**: https://marketingplatform.google.com/about/campaign-manager-360/ (February 20, 2022)
-- **End to End Campaign Management – Google Display & Video 360**: https://marketingplatform.google.com/about/display-video-360/ (February 20, 2022)
-- **Create and submit a robots.txt file | Google Search Central | Google Developers**: https://developers.google.com/search/docs/advanced/robots/create-robots-txt (February 19, 2022)
-- **sitemaps.org – Home**: https://www.sitemaps.org/ (February 19, 2022)
-- **The Web Robots Pages**: http://www.robotstxt.org/ (February 19, 2022)
-- **Partnerski program za izdavaštvo | Certificirani partner –izdavač –Google**: https://www.google.com/ads/publisher/partners/ (February 19, 2022)
-- **Pronađite partnera – izdavača | Certificirani partner – izdavač – Google**: https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=none (February 19, 2022)
-- **Monetization ezoic**: https://pubdash.ezoic.com/monetization (February 19, 2022)
-- **Google Ad Manager – Integrated Advertising Management Platform**: https://admanager.google.com/home/ (February 19, 2022)
-- **Inside AdSense: Bringing more buyers to AdSense through the DoubleClick Ad Exchange**: https://adsense.googleblog.com/2009/09/bringing-more-buyers-to-adsense-through.html (February 19, 2022)
-- **Google AdSense**: https://support.google.com/adsense/?hl=hr#topic=1190787 (February 19, 2022)
-- **AdSense | Google Blog**: https://blog.google/products/adsense/ (February 19, 2022)
-- **Cookieless Targeting, Audience Targeting, CMP – Sirdata**: https://sirdata.com/en/ (February 15, 2022)
-- **152 Media – Header Bidding**: https://152media.com/ (February 15, 2022)
-- **IAB Tech Lab**: https://iabtechlab.com/software/ (February 14, 2022)
-- **Digiday – Digital Content, Digital Advertising, Digital Marketing**: https://digiday.com/ (February 13, 2022)
-- **Google Ads Status Dashboard**: https://ads.google.com/status/publisher/ (February 13, 2022)
-- **CMP Builder | by OneTrust**: https://comply.cookiepro.com/ (February 12, 2022)
-- **Audience Is Everything® – Nielsen**: https://global.nielsen.com/global/en/ (February 12, 2022)
-- **Vendors List – IAB Europe**: https://iabeurope.eu/vendor-list/ (February 12, 2022)
-- **Adacado DIY Advertising | Do It Yourself Digital Advertising**: https://adacado.com/ (February 12, 2022)
-- **Home • #1 Platform to make better ads: Unify Data + Creativity • VidMob**: https://www.vidmob.com/ (January 30, 2022)
-- **First-Impression :: Advertising Platform**: http://www.first-impression.com/home/ (January 30, 2022)
-- **Facebook Audience Network | Facebook Developers**: https://developers.facebook.com/products/audience-network/ (January 30, 2022)
-- **Home – diDNA**: https://didna.io/ (January 30, 2022)
-- **Content.ad – Native Advertising, Push Notifications, and Beyond**: https://content.ad/ (January 30, 2022)
-- **Connect Ads**: https://connectads.com/ (January 30, 2022)
-- **Advertising Solutions for Publishers and Marketers | BuySellAds**: https://www.buysellads.com/ (January 30, 2022)
-- **Join Our UK Affiliate Network – Awin**: https://www.awin.com/gb (January 30, 2022)
-- **Интернет реклама | Рекламная сеть Advmaker.net**: http://advmaker.net/ (January 30, 2022)
-- **Adsterra Advertising Network | Solutions for Advertisers and Publishers**: https://adsterra.com/ (January 30, 2022)
-- **Adomik**: https://www.adomik.com/ (January 30, 2022)
-- **Adnet**: https://adnet.com/ (January 30, 2022)
-- **Home » Admetrics media**: http://www.admetricsmedia.com/ (January 30, 2022)
-- **AdMaven Ad Network | The Online Advertising Platform**: https://ad-maven.com/ (January 30, 2022)
-- **Home | 33Across**: https://www.33across.com/ (January 30, 2022)
-- **Rich Media Creative Agency | Online Advertising Agency USA | Undertone**: https://www.undertone.com/ (January 30, 2022)
-- **The Publisher Technology Platform | Sovrn**: https://www.sovrn.com/ (January 30, 2022)
-- **Rubicon is now Magnite**: https://rubiconproject.com/ (January 30, 2022)
-- **Content Marketing, Native Advertising & Discovery – Revcontent**: https://www.revcontent.com/ (January 30, 2022)
-- **Programmatic Digital Advertising Technology & Solutions | PubMatic**: https://pubmatic.com/ (January 30, 2022)
-- **Outbrain – Recommendation Platform Powered by Native Ads**: https://www.outbrain.com/ (January 30, 2022)
-- **OpenX: Programmatic Advertising | Ad Exchange Network**: https://www.openx.com/ (January 30, 2022)
-- **Digital Online Advertising Platforms | Yahoo Ad Tech**: https://www.adtech.yahooinc.com/ (January 30, 2022)
-- **Google AdSense – ostvarite zaradu unovčavanjem web-lokacije**: https://www.google.com/intl/hr_hr/adsense/start/ (January 30, 2022)
-- **Contextual Advertising & Programmatic Platform | Media.net**: https://www.media.net/ (January 30, 2022)
-- **Get Started | Buyer APIs | Google Developers**: https://developers.google.com/authorized-buyers/apis/guides/start (January 30, 2022)
-- **Authorized Buyers | Google Developers**: https://developers.google.com/authorized-buyers (January 30, 2022)
-- **District M is now Sharethrough | District M**: https://www.districtm.net/ (January 30, 2022)
-- **enginemediaexchange.com | Futureproof Your Business**: https://enginemediaexchange.com/ (January 30, 2022)
-- **Xandr**: https://www.xandr.com/ (January 30, 2022)
-- **Digital Online Advertising Platforms | Yahoo Ad Tech**: https://www.adtech.yahooinc.com/ (January 27, 2022)
-- **Bring Innovation And Incrementality To Mobile Monetization**: https://www.display.io/ (January 27, 2022)
-- **Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions**: https://business.linkedin.com/marketing-solutions (January 27, 2022)
-- **LinkedIn Advertising Costs & Pricing | LinkedIn Marketing Solutions**: https://business.linkedin.com/marketing-solutions/ads/pricing (January 27, 2022)
-- **LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions**: https://business.linkedin.com/marketing-solutions/ads (January 27, 2022)
-- **Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions**: https://business.linkedin.com/marketing-solutions (January 27, 2022)
-- **LinkedIn Campaign Manager**: https://www.linkedin.com/campaignmanager/accounts (January 27, 2022)
-- **Outbrain – Recommendation Platform Powered by Native Ads**: https://www.outbrain.com/ (January 24, 2022)
-- **Home – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/ (January 16, 2022)
-- **Outbrain – Recommendation Platform Powered by Native Ads**: https://www.outbrain.com/ (January 13, 2022)
-- **Google Ad Manager – Integrated Advertising Management Platform**: https://admanager.google.com/home/ (January 5, 2022)
-- **Mobile App Monetization – Google AdMob**: https://admob.google.com/home/ (January 5, 2022)
-- **In App Advertising | Vungle**: https://vungle.com/advertise/ (January 3, 2022)
-- **Digital Customer Acquisition Solutions | Rakuten Advertising**: https://rakutenadvertising.com/ (December 21, 2021)
-- **Online Video Advertising Campaigns – YouTube Advertising**: https://www.youtube.com/ads/ (December 11, 2021)
-- **BrandConnect for Influencer Advertising – YouTube Advertising – YouTube Advertising**: https://www.youtube.com/ads/brandconnect/ (December 11, 2021)
-- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/home/ (December 1, 2021)
-- **Campaign Builder | Amazon Advertising**: https://advertising.amazon.com/cb?entityId=ENTITY170NBZYAM0OSR#!/ingress (November 24, 2021)
-- **International growth agencies – Market Finder by Google**: https://marketfinder.thinkwithgoogle.com/intl/en_cee/widget/partner-agencies-tool/ (November 24, 2021)
-- **Free Google Ads Tools by Clever Ads | Google Advertising**: https://cleverads.com/ (November 23, 2021)
-- **Audiencerate – The Identity Hub**: https://www.audiencerate.com/ (November 13, 2021)
-- **Lucidity | Blockchain-Audited Media for Greater Transparency in Advertising**: https://golucidity.com/ (November 13, 2021)
-- **Customer Data Platform – Tealium**: https://tealium.com/ (November 13, 2021)
-- **Revealbot – Automate Your Ad Strategies**: https://revealbot.com/ (November 12, 2021)
-- **EthicalAds**: https://ethicalads.io (October 18, 2021)
-- **ads twitter**: https://ads.twitter.com/mobile/v1/get_started?ref=em-elq-ao-gbl-emailatclink&s=09 (October 4, 2021)
-- **Eskimi – AdTech platform that adds a +1 to your marketing team**: https://www.eskimi.com/ (September 28, 2021)
-- **Overview – Microsoft Advertising**: https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising (September 21, 2021)
-- **Google Marketing Platform Certification Exams : Google**: https://skillshop.exceedlms.com/student/catalog/list?category_ids=707-google-marketing-platform-certification-exams (September 10, 2021)
-- **YouTube Advertising – Online Video Advertising Campaigns**: https://www.youtube.com/ads/ (September 5, 2021)
-- **Make Quality Advertising Videos – YouTube Advertising**: https://www.youtube.com/ads/making-a-video-ad/ (September 5, 2021)
-- **Outbrain – Recommendation Platform Powered by Native Ads**: https://www.outbrain.com/ (September 2, 2021)
-- **Digital Advertising Platform | Criteo**: https://www.criteo.com/technology/advertising-platform/ (August 25, 2021)
-- **Programmatic advertising | BidTheatre Demand Side Platform**: https://www.bidtheatre.com/ (August 25, 2021)
-- **ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions**: https://sharethis.com/ (August 25, 2021)
-- **AdMaxim Inc. – Integrated Digital Advertising Platform**: http://www.admaxim.com/ (August 25, 2021)
-- **Kwanko – Your Performance Marketing Partner**: https://www.kwanko.com/ (August 25, 2021)
-- **Online marketing. Simplified | Adzooma**: https://www.adzooma.com/ (August 24, 2021)
-- **Adzooma Marketplace | Find The Right Service For Your Business | Adzooma Marketplace**: https://marketplace.adzooma.com/ (August 24, 2021)
-- **LinkedIn Campaign Manager**: https://www.linkedin.com/campaignmanager/new-advertiser (August 23, 2021)
-- **Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions**: https://business.linkedin.com/marketing-solutions (August 23, 2021)
-- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/getstarted/?subid=hr-hr-ha-aw-sk-m-bau!o3~Cj0KCQjwpf2IBhDkARIsAGVo0D3Wryak_hHyBl23URk7i9rUzFQcSDfFRCTDFLY-609ii68BQnjRsg0aAk0TEALw_wcB~117699885987~kwd-94527731~11806561409~485142535412 (August 20, 2021)
-- **Cross-Channel Marketing Platform to Improve Customer Experiences – Iterable**: https://iterable.com/ (August 20, 2021)
-- **LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions**: https://business.linkedin.com/marketing-solutions/ads (August 20, 2021)
-- **Setupad.com – Monetization Partner – Setupad**: https://setupad.com/ (August 20, 2021)
-- **Evidon | Digital Governance, Privacy Compliance, Website Monitoring**: https://www.evidon.com/ (August 4, 2021)
-- **NextRoll – Home**: https://www.nextroll.com/ (July 31, 2021)
-- **Adzooma | Simplify, Automate & Optimise Online Ad Campaigns**: https://www.adzooma.com/ (July 30, 2021)
-- **Outbrain – Recommendation Platform Powered by Native Ads**: https://www.outbrain.com/ (July 30, 2021)
-- **Bing Webmaster Tools**: https://www.bing.com/webmasters/about (July 30, 2021)
-- **Lesson Catalog | Business & Operations – Google Primer**: https://www.yourprimer.com/en/lesson-catalog/0 (July 25, 2021)
-- **Google trends**: https://trends.google.com/trends (July 25, 2021)
-- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/getstarted/ (July 25, 2021)
-- **Set up conversion tracking for your website – Google Ads Help**: https://support.google.com/google-ads/answer/6095821?hl=en (July 25, 2021)
-- **Overview – Microsoft Advertising**: https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising (July 22, 2021)
-- **Midas Network – Platforma za Nativno oglašavanje**: https://www.midas-network.com/hr (July 22, 2021)
-- **SEM with Microsoft Advertising – Microsoft Advertising**: https://about.ads.microsoft.com/en-us (July 20, 2021)
-- **Advertise Your Website – Getting Started – Google Domains**: https://domains.google/get-started/online-ads/ (July 15, 2021)
-- **Amazon Advertising: Online advertising for businesses of all sizes**: https://advertising.amazon.com/ (July 9, 2021)
-- **Amazon Advertising: Online advertising for businesses of all sizes**: https://advertising.amazon.com/ (July 9, 2021)
-- **Learning console – amazon catalog**: https://learningconsole.amazonadvertising.com/student/catalog/list (July 7, 2021)
-- **Learning console – amazon advertising**: https://learningconsole.amazonadvertising.com/student/catalog (July 7, 2021)
-- **Advertising solutions for KDP authors | Amazon Advertising**: https://advertising.amazon.com/kdp-authors (July 7, 2021)
-- **Amazon.com: Kindle Direct Publishing: Promotion Manager**: https://kdp.amazon.com/marketing/A2B1V7EPJ81WN2/promotion-manager (July 7, 2021)
-- **Amazon Advertising: Online advertising for businesses of all sizes**: https://advertising.amazon.com/ (July 7, 2021)
-- **All Your Digital Marketing Tools in One Place – Sendinblue**: https://www.sendinblue.com/ (July 2, 2021)
-- **Digital Marketing & Growth Marketing Platform | AdRoll**: https://www.adroll.com/ (July 2, 2021)
-- **Facebook for Business: Marketing on Facebook**: https://web.facebook.com/business (July 1, 2021)
-- **Grow your revenue and monetize your game or app | Unity Ads | Unity**: https://unity.com/products/unity-ads-monetize (June 30, 2021)
-- **Grow user LTV with ads and In-app purchases | Mobile game monetization | Unity**: https://unity.com/solutions/unity-ads (June 30, 2021)
-- **Snapchat Ads | Snapchat for Business**: https://forbusiness.snapchat.com/ (June 25, 2021)
-- **Google Ad Manager – Get in touch**: https://admanager.google.com/home/contact-us/ (June 25, 2021)
-- **Google Ad Manager – Integrated Advertising Management Platform**: https://admanager.google.com/home/ (June 25, 2021)
-- **Admiral: The Visitor Relationship Management Company**: https://www.getadmiral.com/ (June 24, 2021)
-- **SEM with Microsoft Advertising – Microsoft Advertising**: https://about.ads.microsoft.com/en-us (June 14, 2021)
-- **Ad settings google**: https://adssettings.google.com/authenticated (June 13, 2021)
-- **Google Ads Data and Privacy – Google Safety Center**: https://safety.google/privacy/ads-and-data/ (June 13, 2021)
-- **Fat Frog Media**: https://fatfrogmedia.com/ (June 13, 2021)
-- **ToneDen – Automated Social Marketing**: https://www.toneden.io/ (June 13, 2021)
-- **Data Inventory & Mapping – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/data-inventory-mapping/ (June 12, 2021)
-- **Technology Powered Partner Program – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/technology-powered-partner-program/ (June 12, 2021)
-- **Powered Partner Program – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/powered-partner-program/ (June 12, 2021)
-- **Cookie Consent Manager Free Trial Request – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/cookie-consent-manager/professional-trial-account-request/?utm_source=ccm-trial (June 12, 2021)
-- **Home – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/ (June 12, 2021)
-- **WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US**: https://optout.aboutads.info/ (June 12, 2021)
-- **Adobe Privacy Center**: https://www.adobe.com/privacy/opt-out.html (June 12, 2021)
-- **TrustArc Preference Manager**: http://preferences-mgr.truste.com/ (June 12, 2021)
-- **WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US**: https://optout.aboutads.info/ (June 12, 2021)
-- **Programmatic Digital Advertising Technology & Solutions | PubMatic**: https://pubmatic.com/ (June 12, 2021)
-- **ownerIQ | Second-Party Data Solutions**: https://www.owneriq.com/ (June 12, 2021)
-- **What is CRM? | Oracle**: https://www.oracle.com/cx/what-is-crm/ (June 12, 2021)
-- **Advertising and Customer Experience (CX) | Oracle**: https://www.oracle.com/cx/ (June 12, 2021)
-- **Home – Inuvo.com**: https://inuvo.com/ (June 12, 2021)
-- **Havas Edge**: https://www.havasedge.com/ (June 12, 2021)
-- **GumGum | Contextual Intelligence Company | High Impact Advertising Technology**: https://gumgum.com/ (June 12, 2021)
-- **Yotpo | eCommerce Marketing Platform**: https://www.yotpo.com/ (May 27, 2021)
-- **Yotpo | eCommerce Marketing Platform – Accelerate growth with a full suite of solutions for customer reviews, visual marketing, loyalty, referrals, and SMS marketing.Accelerate growth with a full suite of solutions for customer reviews, visual marketing, loyalty, referrals, and SMS marketing.**: https://www.yotpo.com/ (May 27, 2021)
-- **Data-Driven Marketing Solutions | Audience Targeting | Social Media & Email Marketing Consultant**: https://www.stirista.com/ (May 26, 2021)
-- **Digital Marketing Services | Digital Logic ™**: https://www.digitallogic.co/ (May 26, 2021)
-- **Shareaholic | Content Marketing Platform & Website Traffic Tools**: https://www.shareaholic.com/ (May 26, 2021)
-- **Advertise with us! – Vaping360**: https://vaping360.com/advertise/ (May 26, 2021)
-- **ScalerAI – The Ultimate Marketing Kit which will Boost your Sales**: https://scalerai.com/ (May 26, 2021)
-- **YouTube Advertising – Online Video Advertising Campaigns**: https://www.youtube.com/ads/ (May 23, 2021)
-- **YouTube Select: Make the best of YouTube yours**: https://www.youtube.com/ads/youtube-select/ (May 23, 2021)
-- **Account-Based (ABM) Platform | RollWorks**: https://www.rollworks.com/ (May 22, 2021)
-- **Digital Marketing & Growth Marketing Platform | AdRoll**: https://www.adroll.com/ (May 22, 2021)
-- **NextRoll**: https://www.nextroll.com/ (May 22, 2021)
-- **Brand Push – Get featured on NBC, FOX, CBS and USA Today**: https://www.brandpush.co/ (May 21, 2021)
-- **UK Ecommerce Growth Partner | Pattern**: https://pattern.com/uk/ (May 19, 2021)
-- **SEO Company | Digital Marketing Agency That Drives Results**: https://www.webfx.com/ (May 19, 2021)
-- **Apester**: https://apester.com/ (May 11, 2021)
-- **Bloomberg Service Center**: https://service.bloomberg.com/portal/sessions/new (May 10, 2021)
-- **Connected Content™ | Investis Digital**: https://www.investisdigital.com/company/connected-content (May 9, 2021)
-- **Ghost: Turn your audience into a business**: https://ghost.org/ (May 9, 2021)
-- **Products – Mediavine**: https://www.mediavine.com/products/ (May 8, 2021)
-- **Postanite partner | Certificirani partner – izdavač – Google**: https://www.google.com/ads/publisher/partners/become-a-partner/ (May 8, 2021)
-- **Pronađite partnera – izdavača | Certificirani partner – izdavač – Google**: https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=none (May 8, 2021)
-- **Partnerski program za izdavaštvo | Certificirani partner – izdavač – Google**: https://www.google.com/ads/publisher/partners/ (May 8, 2021)
-- **Google Ads Community**: https://support.google.com/google-ads/community?hl=en (May 8, 2021)
-- **Full-Service Ad Management – Mediavine**: https://www.mediavine.com/ (May 8, 2021)
-- **Forbes Connect**: https://www.forbes.com/connect/ (May 8, 2021)
-- **Apester**: https://apester.com/ (May 6, 2021)
-- **Quiz Maker | Make Amazing Online Quizzes in Minutes**: https://www.quiz-maker.com/ (May 6, 2021)
-- **Digital Marketing Training Delivered by The Best.**: https://cxl.com/ (May 3, 2021)
-- **RedTrack | Cookieless ad tracking solution for media-buyers**: https://redtrack.io/ (May 2, 2021)
-- **SEM with Microsoft Advertising – Microsoft Advertising**: https://about.ads.microsoft.com/en-us (May 2, 2021)
-- **Programmatic Advertising Technology Company | Publift**: https://www.publift.com/ (April 29, 2021)
-- **Facebook Ads vs. Google Ads: Which Is Better? | WordStream**: https://www.wordstream.com/facebook-vs-google (April 10, 2021)
-- **WordStream: Online Advertising Made Easy**: https://www.wordstream.com/ (April 10, 2021)
-- **YouTube Select: Make the best of YouTube yours – YouTube Advertising**: https://www.youtube.com/ads/how-it-works/set-up-a-campaign/youtube-select/ (April 7, 2021)
-- **Google Finance – cijene s burzi, kotacije u stvarnom vremenu i poslovne vijesti**: https://www.google.com/finance (April 5, 2021)
-- **Google – About Google, Our Culture & Company News**: https://about.google/ (April 5, 2021)
-- **Skillshop**: https://skillshop.withgoogle.com/ (April 5, 2021)
-- **Audience Network: your Facebook Ads on mobile apps | Facebook for Business**: https://web.facebook.com/business/marketing/audience-network (April 4, 2021)
-- **Small Business Advertising with Facebook Ads | Facebook for Business | Facebook for Business**: https://web.facebook.com/business/small-business/advertise (April 4, 2021)
-- **Google Data Studio**: https://datastudio.google.com/u/0/navigation/reporting (March 31, 2021)
-- **YouTube**: https://www.youtube.com/ (March 31, 2021)
-- **YouTube video maker | Create smashing YouTube videos – Magisto**: https://www.magisto.com/marketing/youtube-video-maker (March 30, 2021)
-- **Make Quality Advertising Videos – YouTube Advertising**: https://www.youtube.com/ads/making-a-video-ad/ (March 30, 2021)
-- **Make Quality Advertising Videos – YouTube Advertising**: https://www.youtube.com/ads/making-a-video-ad/ (March 30, 2021)
-- **YouTube Advertising – Online Video Advertising Campaigns**: https://www.youtube.com/ads/ (March 30, 2021)
-- **YouTube Advertising – Online Video Advertising Campaigns**: https://www.youtube.com/ads/ (March 30, 2021)
-- **Outbrain – Recommendation Platform Powered by Native Ads | Outbrain.com**: https://www.outbrain.com/ (March 27, 2021)
-- **Advertising – Digital Marketing Center Microsoft**: https://www.microsoft.com/en-us/digital-marketing-center/advertising (March 26, 2021)
-- **Digital Marketing Center – Microsoft**: https://www.microsoft.com/en-us/digital-marketing-center (March 26, 2021)
-- **Digital Marketing Center Sign In microsoft**: https://ui.ads.microsoft.com/campaign/digitalmarketing (March 26, 2021)
-- **Bing**: https://www.bing.com/ (March 26, 2021)
-- **Bing Webmaster Tools**: https://www.bing.com/webmasters/about (March 26, 2021)
-- **Billing & Revenue Management for B2B SaaS | Chargify**: https://www.chargify.com/ (March 26, 2021)
-- **Google Analytics for Beginners**: https://analytics.google.com/analytics/academy/course/6 (March 24, 2021)
-- **Ecommerce business: how to start and grow your online store**: https://sell.amazon.com/ecommerce-business-guide.html (March 24, 2021)
-- **Amazon Advertising | Increase your ecommerce channel visibility and sales**: https://sell.amazon.com/advertising.html (March 24, 2021)
-- **Grow Your Amazon Selling Business | Advertising, Brand Services, Global Selling, and More**: https://sell.amazon.com/grow.html (March 24, 2021)
-- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/getstarted/ (March 24, 2021)
-- **Izrada responzivnog prikaznog oglasa – Google Ads**: https://support.google.com/google-ads/answer/7005917?hl=hr (March 24, 2021)
-- **Google Ads**: https://support.google.com/google-ads/?hl=hr (March 24, 2021)
-- **Drive foot traffic to your store with Google Ads : Google**: https://skillshop.exceedlms.com/student/path/29097-drive-foot-traffic-to-your-store-with-google-ads (March 17, 2021)
-- **Acoustic**: https://acoustic.com/ (March 11, 2021)
-- **upRive | Create high-performing Facebook ads in just minutes.**: https://uprive.com/ (February 28, 2021)
-- **The advertising platform for the open Internet | Criteo**: https://www.criteo.com/ (February 28, 2021)
-- **Madgicx – The All-in-One Google & Facebook Advertising Platform**: https://madgicx.com/ (February 27, 2021)
-- **Facebook for Business: Marketing on Facebook**: https://web.facebook.com/business (February 27, 2021)
-- **Advertise Your Short-Term Vacation Rental – TravelNest**: https://travelnest.com/ (February 25, 2021)
-- **Google and Facebook Ads. Automated. – Squared.io**: https://www.squared.io/ (February 17, 2021)
-- **Success Software – Salesforce CRM Apps & Services**: https://success-software.biz/ (February 16, 2021)
-- **Digital Advertising Made Easy, Fast & Effective**: https://adespresso.com/ (February 13, 2021)
-- **Admiral: The Visitor Relationship Management Company**: https://www.getadmiral.com/ (February 3, 2021)
-- **Learn the Basics of Quality Link Building for SEO | WordStream**: https://www.wordstream.com/link-building (January 21, 2021)
-- **WordStream: Online Advertising Made Easy**: https://www.wordstream.com/ (January 21, 2021)
-- **Data Axle USA | Mailing Lists | Email Lists | Sales Leads | Business | Consumer**: https://www.dataaxleusa.com/ (January 15, 2021)
-- **Online Advertising – Get Low Cost PC & Mobile Traffic | TrafficJunky**: https://www.trafficjunky.com/ (January 15, 2021)
-- **Home Page – 4A’s**: https://www.aaaa.org/ (January 14, 2021)
-- **SofaScore – Work with the Best Provider of Sports Results**: https://corporate.sofascore.com/advertising (January 14, 2021)
-- **Supermetrics: the easiest way to move your marketing data**: https://supermetrics.com/ (January 13, 2021)
-- **Adzooma | Simplify, Automate & Optimise Online Ad Campaigns**: https://www.adzooma.com/ (January 12, 2021)
-- **Best Digital Marketing Agencies | Adzooma Marketplace**: https://marketplace.adzooma.com/categories/digital-marketing (January 12, 2021)
-- **Didomi | Privacy and consent management platform**: https://www.didomi.io/ (January 12, 2021)
-- **Talon.One: The World’s Most Powerful Promotion Engine**: https://www.talon.one/ (January 11, 2021)
-- **The Publisher Technology Platform | Sovrn**: https://www.sovrn.com/ (January 8, 2021)
-- **Xandr | Make Advertising Better**: https://www.xandr.com/ (January 8, 2021)
-- **Digital Advertising & Customer Acquisition Solutions | Rakuten Advertising**: https://rakutenadvertising.com/ (January 8, 2021)
-- **Home | Index Exchange**: http://www.indexexchange.com/ (January 8, 2021)
-- **OpenX: Programmatic Advertising | Ad Exchange Network**: https://www.openx.com/ (January 8, 2021)
-- **The advertising platform for the open Internet | Criteo**: https://www.criteo.com/ (January 8, 2021)
-- **Comscore is a trusted currency for planning, transacting, and evaluating media across platforms.**: https://www.comscore.com/ (January 8, 2021)
-- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/getstarted (January 7, 2021)
-- **Audience Network | Facebookova oglašivačka mreža Audience Network**: https://hr-hr.facebook.com/audiencenetwork/getting-started (January 6, 2021)
-- **Select a Facebook Business**: https://business.facebook.com/select/ (January 6, 2021)
-- **Audience Network | Facebookova oglašivačka mreža Audience Network**: https://hr-hr.facebook.com/audiencenetwork/ (January 6, 2021)
-- **Everything You Need to Know About Development Stores — Shopify Tutorials**: https://www.shopify.ca/partners/blog/development-stores (January 5, 2021)
-- **Talon.One: The World’s Most Powerful Promotion Engine**: https://www.talon.one/ (January 4, 2021)
-- **FreeWheel – Unifying linear and digital TV**: https://www.freewheel.com/ (January 3, 2021)
-- **Facebook for Business: Marketing on Facebook**: https://web.facebook.com/business (January 3, 2021)
-- **Dstillery – Your Custom Audience Partner**: https://dstillery.com/ (January 3, 2021)
-- **Marketing Automation – Eloqua | Marketing | CX | Oracle**: https://www.oracle.com/cx/marketing/automation/ (January 3, 2021)
-- **Flashtalking**: https://www.flashtalking.com/ (January 3, 2021)
-- **Europe’s leading adtech and video ad monetisation solution**: https://smartclip.tv/ (January 3, 2021)
-- **Smart Adserver | The Most Powerful Adserving and RTB Platform**: https://smartadserver.com/ (January 3, 2021)
-- **Threat Detection and Response | Trustwave**: https://www.trustwave.com/en-us/ (January 3, 2021)
-- **Home – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/ (January 3, 2021)
-- **Think with Google – Discover Marketing Research & Digital Trends**: https://www.thinkwithgoogle.com/ (January 2, 2021)
-- **CMS, Ecommerce, Marketing, PIM and Integration**: https://www.dynamicweb.com/ (January 1, 2021)
-- **Future-Proofed Digital Advertising Platform – Future-Proofed DSP**: https://www.mediamath.com/platform/ (December 31, 2020)
-- **Admiral: The Visitor Relationship Management Company**: https://www.getadmiral.com/ (December 31, 2020)
-- **Midas Network – Platforma za Nativno oglašavanje**: https://www.midas-network.com/rs (December 28, 2020)
-- **Digital technology consultant Customer Centric- Centribal**: https://centribal.com/us/ (December 26, 2020)
-- **Do more with Adobe Marketing Cloud | Adobe Marketing Cloud**: https://www.adobe.com/marketing-cloud.html (December 26, 2020)
-- **Home – Blueknow**: https://www.blueknow.com/en/ (December 26, 2020)
-- **Acquire | A Unified Customer Engagement Platform**: https://acquire.io/ (December 26, 2020)
-- **TAPTAP Digital – TAPTAP, Location Intelligence for Marketing**: https://www.taptapnetworks.com/ (December 26, 2020)
-- **Cookieless Targeting, Audience Targeting, CMP – Sirdata**: https://www.sirdata.com/en/ (December 26, 2020)
-- **Mobile Advertising and App Monetization Platform | Smaato**: https://www.smaato.com/ (December 26, 2020)
-- **Programmatic Advertising Company – SmartyAds**: https://smartyads.com/ (December 26, 2020)
-- **Performance marketing for advertisers & publishers | advanced store**: https://www.advanced-store.com/en/ (December 26, 2020)
-- **digitalAudience | Identify. Enrich. Activate.**: https://digitalaudience.io/ (December 26, 2020)
-- **Platform161**: https://platform161.com/ (December 26, 2020)
-- **The advertising platform for the open Internet | Criteo**: https://www.criteo.com/ (December 26, 2020)
-- **IAB Europe**: https://iabeurope.eu/ (December 26, 2020)
-- **ConnectAd Realtime**: https://www.connectadrealtime.com/ (December 26, 2020)
-- **Between Exchange**: https://en.betweenx.com/ (December 26, 2020)
-- **Audience Solutions**: https://audience-solutions.com/ (December 26, 2020)
-- **AdvertServe | Flexible and Scalable Self-Serve Ad Server**: https://www.advertserve.com/ (December 26, 2020)
-- **ContentExchange: Connect, Grow and Monetize**: https://www.contentexchange.me/ (December 26, 2020)
-- **Browse the catalog – YouTube**: https://creatoracademy.youtube.com/page/browse (December 26, 2020)
-- **Creator Academy – YouTube**: https://creatoracademy.youtube.com/page/home (December 26, 2020)
-- **Signup – YouTube Advertising**: https://www.youtube.com/ads/signup/ (December 26, 2020)
-- **Online Video Advertising Campaigns – YouTube Advertising**: https://www.youtube.com/ads/ (December 26, 2020)
-- **Adspert**: https://www.adspert.net/ (December 26, 2020)
-- **adtarget.me | Self Service Retargeting Platform**: https://adtarget.me/index.html (December 26, 2020)
-- **Home — Amobee**: https://www.amobee.com/ (December 26, 2020)
-- **Branch – A mobile linking platform powering deep links and mobile attribution.**: https://branch.io/ (December 25, 2020)
-- **Firebase Pricing**: https://firebase.google.com/pricing (December 25, 2020)
-- **Firebase Dynamic Links | Deep link potential users to the right place inside your app**: https://firebase.google.com/products/dynamic-links?hl=hr (December 25, 2020)
-- **Deep link – Google Ads Help**: https://support.google.com/google-ads/answer/6046977?hl=en (December 25, 2020)
-- **LoopMe | Closing the Loop on Brand Advertising**: https://loopme.com/ (December 25, 2020)
-- **Business Intelligence (BI) & Data Analytics Platform**: https://looker.com/ (December 23, 2020)
-- **Business Intelligence (BI) & Data Analytics Platform**: https://looker.com/ (December 23, 2020)
-- **Content Monetization For Media Publishers | Skimlinks**: https://skimlinks.com/media-publishers/resources/index/category:all.html (December 23, 2020)
-- **Skimlinks | The monetization platform made for bloggers**: https://skimlinks.com/monetization-platform-for-bloggers/resources/index/category:all.html (December 23, 2020)
-- **Home | Industry Leader In Affiliate Marketing Solutions | Skimlinks**: https://skimlinks.com/resources/index/category:all.html (December 23, 2020)
-- **Cross-Channel Marketing | Oracle**: https://www.oracle.com/cx/marketing/cross-channel-marketing/ (December 23, 2020)
-- **What is digital marketing? | Oracle**: https://www.oracle.com/cx/marketing/digital-marketing/ (December 23, 2020)
-- **Trustpilot Reviews: Experience the power of customer reviews**: https://www.trustpilot.com/ (December 23, 2020)
-- **Dashboard – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/dashboard/ (December 23, 2020)
-- **Home – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/ (December 23, 2020)
-- **Home – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/ (December 23, 2020)
-- **Industry Leading Marketing Cloud | Oracle**: https://www.oracle.com/cx/marketing/ (December 23, 2020)
-- **Company Info**: https://cop.evidon.com/companies/google-adwords (December 23, 2020)
-- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/home/ (December 23, 2020)
-- **Company Info**: https://cop.evidon.com/companies/doubleclick (December 23, 2020)
-- **Content Analytics and Insights for Digital Publishing | Chartbeat**: https://chartbeat.com/ (December 23, 2020)
-- **Content Analytics and Insights for Digital Publishing | Chartbeat**: https://chartbeat.com/ (December 23, 2020)
-- **SSL Certificate Authority & PKI Solutions | Sectigo® Official**: https://sectigo.com/ (December 22, 2020)
-- **Cloud Computing Services | Google Cloud**: https://cloud.google.com/ (December 21, 2020)
-- **Google Workspace (Formerly G Suite): Business Collaboration Tools**: https://workspace.google.com/ (December 21, 2020)
-- **Google Domains – Register Your Domain Name – Google Domains**: https://domains.google/ (December 21, 2020)
-- **Verisign is a global provider of domain name registry services and internet infrastructure – Verisign**: https://www.verisign.com/en_US/ (December 21, 2020)
-- **Escrow.com | Never buy or sell online without using Escrow.com.**: https://www.escrow.com/ (December 21, 2020)
-- **Escrow Agents & Brokers – Escrow.com**: https://www.escrow-sandbox.com/broker (December 21, 2020)
-- **Home – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/ (December 21, 2020)
-- **List Business Software at Capterra**: https://www.capterra.com/vendors/sign-up (December 20, 2020)
-- **Top Software at Capterra | Software & Software Reviews For Business & Nonprofit**: https://www.capterra.com/ (December 20, 2020)
-- **The Enterprise Content Management Platform | WordPress VIP**: https://wpvip.com/ (December 20, 2020)
-- **WordPress**: https://www.google.com/url?sa=t&source=web&rct=j&url=https://wordpress.com/&ved=2ahUKEwjn2L7cs93tAhWHtYsKHd9iD6kQFjAAegQITRAD&usg=AOvVaw1DhOsjClCulgIna4V94rRT (December 20, 2020)
-- **Privacy, Security and Data Governance Software | GDPR, CCPA, ISO 27001**: https://www.onetrust.com/ (December 20, 2020)
-- **Cloudflare – The Web Performance & Security Company | Cloudflare**: https://www.cloudflare.com/ (December 20, 2020)
-- **Medallia**: https://www.medallia.com/ (December 20, 2020)
-- **LiveRamp | Data Connectivity Platform**: https://liveramp.com/ (December 20, 2020)
-- **Disqus – The #1 way to build an audience on your website**: https://disqus.com/ (December 20, 2020)
-- **Home | Braze**: https://www.braze.com/ (December 20, 2020)
-- **Installing with Segment – Appcues Docs**: https://docs.appcues.com/article/26-install-appcues-segment (December 20, 2020)
-- **Appcues Flow Builder**: https://chrome.google.com/webstore/detail/appcues-flow-builder/hjdcpbokggnjjmcmbmhkbkmibdekodmk (December 20, 2020)
-- **Appcues Flow Builder**: https://chrome.google.com/webstore/detail/appcues-flow-builder/hjdcpbokggnjjmcmbmhkbkmibdekodmk (December 20, 2020)
-- **Appcues | The Product-Led Growth Platform**: https://www.appcues.com/ (December 20, 2020)
-- **Home | Acoustic**: https://acoustic.com/ (December 20, 2020)
-- **Hotjar: Website Heatmaps & Behavior Analytics Tools**: https://www.hotjar.com/ (December 20, 2020)
-- **WalkMe™ – Digital Adoption Platform**: https://www.walkme.com/ (December 20, 2020)
-- **Homepage | Account-Based Marketing – Demandbase**: https://www.demandbase.com/ (December 20, 2020)
-- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/home/ (December 20, 2020)
-- **All Categories Category List | TrustRadius**: https://www.trustradius.com/categories (December 20, 2020)
-- **Welcome to Microsoft Advertising Help**: https://help.ads.microsoft.com/#Apex/ads/en/ext60065/0 (December 20, 2020)
-- **Microsoft Advertising Help Center**: https://help.ads.microsoft.com/ (December 20, 2020)
-- **What is Microsoft Advertising, and how does PPC work? – Training – Microsoft Advertising**: https://about.ads.microsoft.com/en-us/resources/training/what-is-microsoft-advertising (December 20, 2020)
-- **Microsoft Advertising | Search Engine Marketing (SEM) & more**: https://ads.microsoft.com/ (December 20, 2020)
-- **Home – Bound**: https://bound360.com/ (December 20, 2020)
-- **MediaMath – Future-Proofed DSP**: https://www.mediamath.com/ (December 20, 2020)
-- **Free Online Programmatic Advertising Courses – MediaMath Academy**: https://www.mediamath.com/academy/ (December 20, 2020)
-- **Best-in-Class Marketing Automation Software | Marketo Engage**: https://www.marketo.com/ (December 20, 2020)
-- **digidip**: https://digidip.net/ (December 20, 2020)
-- **Home – Ogury**: https://ogury.com/ (December 16, 2020)
-- **Association of National Advertisers | ANA**: https://www.ana.net/ (December 15, 2020)
-- **ANA’s Privacy Policy | ANA**: https://www.ana.net/content/show/id/privacy-policy#yac (December 15, 2020)
-- **TrackAd – Leading Technology**: https://www.trackad.ai/ (December 14, 2020)
-- **Consent Management Platform (CMP) | Usercentrics GmbH**: https://usercentrics.com/ (December 14, 2020)
-- **Marketing Solutions Help**: https://www.linkedin.com/help/lms?lang=en (December 14, 2020)
-- **Set up conversion tracking for your website – Google Ads Help**: https://support.google.com/google-ads/answer/6095821?hl=en (December 14, 2020)
-- **Pardot | Powerful B2B Marketing Automation by Salesforce**: https://www.pardot.com/ (December 14, 2020)
-- **Pardot Pricing – Automation Software Plan Costs | Salesforce Pardot**: https://www.pardot.com/pricing/ (December 14, 2020)
-- **iPROM – Digital agency – Enter the era of programmatic buying**: https://iprom.eu/ (December 14, 2020)
-- **BBB National Programs | Home**: https://bbbprograms.org/ (December 13, 2020)
-- **Association of National Advertisers | ANA**: https://www.ana.net/ (December 13, 2020)
-- **Association of National Advertisers | ANA**: https://www.ana.net/ (December 13, 2020)
-- **American Advertising Federation Homepage | AAF**: https://www.aaf.org/ (December 13, 2020)
-- **Home Page – 4A’s**: https://www.aaaa.org/ (December 13, 2020)
-- **Home Page – 4A’s**: https://www.aaaa.org/ (December 13, 2020)
-- **IAB**: https://www.iab.com/ (December 13, 2020)
-- **Join NAI | NAI: Network Advertising Initiative**: https://www.networkadvertising.org/join-nai/ (December 13, 2020)
-- **YourAdChoices.com | Welcome to YourAdChoices.com**: https://youradchoices.com/ (December 13, 2020)
-- **Homepage – Advertising Association**: https://www.adassoc.org.uk/ (December 13, 2020)
-- **AdChoices – Wikipedia**: https://en.wikipedia.org/wiki/AdChoices (December 13, 2020)
-- **Teradata Partners | Become a Teradata Partner**: https://www.teradata.co.uk/Partners/Become-a-Partner (December 13, 2020)
-- **TERADATA – PartnerIntelligence**: https://partnerintelligence.teradata.com/ (December 13, 2020)
-- **TERADATA – PartnerIntelligence**: http://partnerintelligence.teradata.com/account/registration (December 13, 2020)
-- **Teradata Partners | Browse Our Partners by Industry**: https://www.teradata.co.uk/Partners/All (December 13, 2020)
-- **Paxum: Home**: https://eu.paxum.com/ (December 13, 2020)
-- **Contact Center Solutions | Omnichannel Customer Experience | Genesys**: https://www.genesys.com/ (December 13, 2020)
-- **How To Advertise on Our Ad Network | TrafficJunky**: https://www.trafficjunky.com/advertiser/how-to (December 13, 2020)
-- **Online Advertising – Get Low Cost PC & Mobile Traffic | TrafficJunky**: https://www.trafficjunky.com/ (December 13, 2020)
-- **IMDb ad specs | Amazon Advertising**: https://advertising.amazon.com/resources/ad-specs/imdb (December 13, 2020)
-- **The Power of Affiliate | CJ Affiliate**: https://www.cj.com/what-is-affiliate-marketing (December 12, 2020)
-- **CJ Affiliate Home**: https://www.cj.com/ (December 12, 2020)
-- **JOIN@Home: JOIN Virtual Data Conference 2020 | Looker**: https://looker.com/events/join-2020 (December 12, 2020)
-- **BrightTALK – Discover and learn with the world’s brightest professionals – BrightTALK**: https://www.brighttalk.com/ (December 12, 2020)
-- **The Only Turn-key Solution for Multilingual Web and Digital Content. – MotionPoint**: https://www.motionpoint.com/ (December 11, 2020)
-- **Amazon Kinesis – Process & Analyze Streaming Data – Amazon Web Services**: https://aws.amazon.com/kinesis/ (December 11, 2020)
-- **Integrate your data stack with Snowplow | Snowplow**: https://snowplowanalytics.com/integrations-catalog/ (December 11, 2020)
-- **Integrate your data stack with Snowplow | Snowplow**: https://snowplowanalytics.com/integrations-catalog/ (December 11, 2020)
-- **Collect and operationalize behavioral data at scale | Snowplow**: https://snowplowanalytics.com/ (December 11, 2020)
-- **Collect and operationalize behavioral data at scale | Snowplow**: https://snowplowanalytics.com/ (December 11, 2020)
-- **Website Conversion Rate Optimization – Intellimize Machine Learning**: https://www.intellimize.com/how-it-works/ (December 11, 2020)
-- **Drift | The New Way Businesses Buy From Businesses**: https://www.drift.com/ (December 11, 2020)
-- **Website Personalization and Conversion Optimization Tool – Intellimize**: https://www.intellimize.com/ (December 11, 2020)
-- **Sales Data Analytics & Business Intelligence Software | Looker**: https://looker.com/solutions/sales-analytics (December 11, 2020)
-- **Insurance Data Analytics – Deliver Valuable Insights | GoodData**: https://www.gooddata.com/industry/insurance (December 11, 2020)
-- **Financial Services | GoodData**: https://www.gooddata.com/industry/financial-services (December 11, 2020)
-- **API & SDKs · GoodData Developer Portal**: https://developer.gooddata.com/api-and-sdks (December 11, 2020)
-- **API & SDKs · GoodData Developer Portal**: https://developer.gooddata.com/api-and-sdks (December 11, 2020)
-- **Data Integration · GoodData Developer Portal**: https://developer.gooddata.com/data-integration (December 11, 2020)
-- **GoodData.UI · A powerful JavaScript library for building analytical applications**: https://sdk.gooddata.com/gooddata-ui/ (December 11, 2020)
-- **Business Intelligence, Data Analytics and Visualization | Start for Free | GoodData Software**: https://www.gooddata.com/free (December 11, 2020)
-- **Embedded Analytics – Deliver Insights That Matter | GoodData**: https://www.gooddata.com/embedded-analytics (December 11, 2020)
-- **Enterprise Insights Platform – Actionable Business Intelligence | GoodData**: https://www.gooddata.com/platform (December 11, 2020)
-- **GoodData | The Leader in Embedded Analytics & Intelligence**: https://www.gooddata.com/ (December 11, 2020)
-- **GoodData – Wikipedia**: https://en.wikipedia.org/wiki/GoodData (December 11, 2020)
-- **Embedded Analytics and Reporting Tools & Software | Looker**: https://looker.com/product/embedded-analytics (December 11, 2020)
-- **Advanced Data Analytics Platform | Looker**: https://looker.com/platform/overview (December 11, 2020)
-- **Achieving Marketing Analytics Harmony – Looker for Google BigQuery Data Transfer Service**: https://referworkspace.app.goo.gl/rNNY (December 11, 2020)
-- **Looker University**: https://training.looker.com/ (December 11, 2020)
-- **Certification program | Looker**: https://looker.com/certification (December 11, 2020)
-- **Google BigQuery Analytics & Visualization Tools | Looker**: https://looker.com/solutions/google-bigquery (December 11, 2020)
-- **Google Cloud & Looker | Looker**: https://looker.com/google-cloud (December 11, 2020)
-- **Business Intelligence (BI) & Data Analytics Platform**: https://looker.com/ (December 11, 2020)
-- **Looker (company) – Wikipedia**: https://en.wikipedia.org/wiki/Looker_(company) (December 11, 2020)
-- **Cognos – Wikipedia**: https://en.wikipedia.org/wiki/Cognos (December 11, 2020)
-- **Cognos Analytics – Overview | IBM**: https://www.ibm.com/products/cognos-analytics (December 11, 2020)
-- **Tableau Online | SaaS Analytics For Everyone**: https://www.tableau.com/products/cloud-bi (December 11, 2020)
-- **Tableau Pricing for Individuals and Personal Use**: https://www.tableau.com/pricing/individual (December 11, 2020)
-- **Vantage Analyst | Unleash Easier Predictive Modeling**: https://www.teradata.com/Products/Software/Vantage/Analyst (December 11, 2020)
-- **Teradata Customer Cloud | Purpose-Built Cloud Infrastructure**: https://www.teradata.com/Cloud/Customer-Cloud (December 11, 2020)
-- **Azure Cloud Analytics | Teradata Vantage on Azure**: https://www.teradata.com/Cloud/Azure (December 11, 2020)
-- **Teradata Vantage on Google Cloud | Cloud-First Analytics Platform**: https://www.teradata.com/Cloud/Google-Cloud (December 11, 2020)
-- **Stop compromising on your analytics**: https://www.teradata.com/Resources/Videos/Stop-compromising-on-your-analytics (December 11, 2020)
-- **Advanced Data and Analytics Solutions | Teradata Products**: https://www.teradata.com/Products/All-Products (December 11, 2020)
-- **Teradata Pricing | How Much Does Teradata Really Cost?**: https://www.teradata.com/Cloud/Pricing (December 11, 2020)
-- **Teradata Vantage™ | The Cloud Data Analytics Platform**: https://www.teradata.com/Products/Software/Vantage (December 11, 2020)
-- **Teradata on VMware Developer Tier and Developer Tier Preconfigured | Teradata Downloads**: https://downloads.teradata.com/download/database/teradata-on-vmware-developer-tier-and-developer-tier-preconfigured (December 11, 2020)
-- **Vantage on VMware | Teradata Database on VMware**: https://www.teradata.com/Cloud/VMware (December 11, 2020)
-- **Twitter Ads API | Products | Twitter Developer**: https://developer.twitter.com/en/products/twitter-ads-api (December 9, 2020)
-- **Twitter Ads**: https://ads.twitter.com/mobile/v1/get_started?ref=BTC&onboarding=true (December 9, 2020)
-- **Twitter Ads**: https://ads.twitter.com/mobile/v1/get_started (December 9, 2020)
-- **Increase Revenue & Improve Customer Retention | Intellum**: https://www.intellum.com/ (December 9, 2020)
-- **Deliver Personalized Customer Experiences At Scale | Intellum**: https://www.intellum.com/products (December 9, 2020)
-- **Intellum | Experience : Intellum**: https://experience.intellum.com/student/catalog (December 9, 2020)
-- **Site Search & Discovery powered by AI | Algolia**: https://www.algolia.com/ (December 9, 2020)
-- **Account-Based Platform | RollWorks**: https://www.rollworks.com/ (December 9, 2020)
-- **NextRoll – Home**: https://www.nextroll.com/ (December 9, 2020)
-- **Cookie Opt-out | AdRoll**: https://app.adroll.com/optout (December 9, 2020)
-- **Evidon info**: http://info.evidon.com/pub_info/573?v=1&nt=1&nw=true (December 9, 2020)
-- **Evidon amplitude**: http://info.evidon.com/companies/amplitude (December 9, 2020)
-- **Amplitude | Product Intelligence for Web and Mobile**: https://amplitude.com/ (December 9, 2020)
-- **Ghostery: Online Privacy Made Easy**: https://www.ghostery.com/ (December 9, 2020)
-- **Evidon | Digital Governance, Privacy Compliance, Website Monitoring**: https://www.evidon.com/ (December 9, 2020)
-- **AdRoll – Settings subscribe**: https://app.adroll.com/settings/subscribe/46NAR5IBOZAELOUA3VS4IT/AR/12?advertisable=DUZJXW2VUFAJHK5KCEJQV6&on_cancel_url=%2Fhome%3Fadvertisable%3DDUZJXW2VUFAJHK5KCEJQV6&on_success_url=%2Fhome%3Fadvertisable%3DDUZJXW2VUFAJHK5KCEJQV6 (December 9, 2020)
-- **Pixel Set Up | AdRoll**: https://www.adroll.com/pixel-set-up (December 9, 2020)
-- **Connect AdRoll to your site by installing the AdRoll Pixel – AdRoll Help Center**: https://help.adroll.com/hc/en-us/articles/360040116252-Connect-AdRoll-to-your-site-by-installing-the-AdRoll-Pixel (December 9, 2020)
-- **AdRoll getting started**: https://app.adroll.com/home/getting-started/consent (December 9, 2020)
-- **Digital Marketing & Growth Marketing Platform | AdRoll**: https://www.adroll.com/ (December 9, 2020)
-- **AdRoll signup**: https://app.adroll.com/welcome/signup/?package_code=ADROLL_STARTER (December 9, 2020)
-- **Digital Experience Platform & Enterprise CMS | Crownpeak**: https://www.crownpeak.com/ (December 9, 2020)
-- **Stata | Why Stata**: https://www.stata.com/why-use-stata/#myd (November 11, 2020)
-- **Dictionary.com | Meanings and Definitions of Words at Dictionary.com**: https://www.dictionary.com/ (October 15, 2020)
-- **Dictionary.com | Meanings and Definitions of Words at Dictionary.com**: https://www.dictionary.com/ (October 15, 2020)
-- **Voodoo.io | Games**: https://www.voodoo.io/games (October 12, 2020)
-- **Voodoo.io | Games**: https://www.voodoo.io/games (October 12, 2020)
-- **Prima namještaj – Prijatelj mog doma**: https://www.prima-namjestaj.hr/ (October 11, 2020)
-- **Prima namještaj – Prijatelj mog doma**: https://www.prima-namjestaj.hr/ (October 11, 2020)
-- **Amazon.com Associates Central**: https://affiliate-program.amazon.com/ (October 5, 2020)
-- **Namještaj Mima | Namještaj za savršen dom**: https://namjestaj-mima.hr/ (September 30, 2020)
-- **Fitify Workouts & Plans**: https://gofitify.com/ (September 16, 2020)
-- **Fitify Workouts & Plans**: https://gofitify.com/ (September 16, 2020)
-- **F5 Cloud Services**: https://portal.cloudservices.f5.com/ (July 20, 2020)
-- **Callidus | Ustanova Callidus**: https://www.ustanovacallidus.hr/hr/naslovna/ (July 19, 2020)
-- **odoo**: https://marketing1usa.wordpress.com/2020/07/18/odoo/ (July 18, 2020)
-- **nature**: https://markposition.wordpress.com/2020/07/17/nature/ (July 17, 2020)
-- **Njuskalo.hr oglasnik**: https://www.njuskalo.hr/ (July 10, 2020)
-- **GROUNDIES® Palermo Men | GROUNDIES® Urban Barefootwear**: https://www.groundies.de/en/barefoot-shoes-men/groundies-palermo-men-black.html (June 30, 2020)
-- **Administration atlassian**: https://admin.atlassian.com/ (June 30, 2020)
-- **id.hr**: https://www.id.hr/ (June 30, 2020)
-- **www.akd.hr**: http://www.akd.hr/ (June 30, 2020)
-- **Akd tpd**: https://tpd.akd.hr/hr (June 30, 2020)
-- **TPD ID issuer akd login**: https://idissuer.akd.hr/login (June 30, 2020)
-- **MagicFix, čarobna pasta za brzi popravak zidova – NetScroll**: https://netscroll.hr/shop/kuca-i-vrt/magicfix/ (June 28, 2020)
-- **Webador Plans Pricing and Comparison | Webador**: https://www.webador.co.uk/pricing (June 28, 2020)
-- **Preparation of shipping | paket.hr**: https://www.paket.hr/wpso (June 26, 2020)
-- **Multicom d.o.o.**: http://www.multicom.hr/ (June 26, 2020)
-- **Globaldizajn | Izrada web stranica, CMS Globaladmin, SEO, web dizajn, mobilne aplikacije**: https://www.globaldizajn.hr/ (June 22, 2020)
-- **Video Conferencing, Online Meetings, Screen Share | Cisco Webex**: https://www.webex.com/ (June 16, 2020)
-- **WeTransfer**: https://wetransfer.com/ (June 16, 2020)
-- **pricing – Creative Motion Development**: https://cm-wp.com/apt/pricing/ (June 16, 2020)
-- **Medical Direct | Medical Direct medicinska trgovina**: https://www.medicaldirect.hr/ (June 15, 2020)
-- **MarfeelPress – WordPress plugin for publishers**: https://www.marfeelpress.com/ (June 15, 2020)
-- **Računovodstvo Fer – Računovodstvene i knjigovodstvene usluge**: https://www.racunovodstvo-fer.hr/ (June 14, 2020)
-- **Liquor.com – Cocktail Recipes, Spirits, and Local Bars**: https://www.liquor.com/ (June 12, 2020)
-- **The Balance – Make Money Personal**: https://www.thebalance.com/ (June 12, 2020)
-- **PwC: Building relationships, creating value**: https://www.pwc.com/gx/en.html (June 12, 2020)
-- **Početna – ADRIATIC osiguranje d.d.**: https://www.adriatic-osiguranje.hr/ (June 10, 2020)
-- **Web Katalog smještaja otoka Krka**: https://holidays.krk.hr/ (June 10, 2020)
-- **Find Jobs in Tech | Dice.com | Find Jobs in Tech**: https://www.dice.com/ (June 10, 2020)
-- **How to Join – Avid Alliance Partner Program – Avid**: https://www.avid.com/alliance-partner-program/partner-with-avid (June 9, 2020)
-- **Footwear News – Shoe News and Fashion Trends**: https://footwearnews.com/ (June 8, 2020)
-- **DroneDJ – Spinning news, information and reviews on the drone ecosystem**: https://dronedj.com/ (June 8, 2020)
-- **9to5Mac – Apple News & Mac Rumors Breaking All Day**: https://9to5mac.com/ (June 8, 2020)
-- **9to5Toys – New Gear, reviews and deals**: https://9to5toys.com/ (June 8, 2020)
-- **9to5Mac – Apple News & Mac Rumors Breaking All Day**: https://9to5mac.com/ (June 8, 2020)
-- **Electrek – EV and Tesla News, Green Energy, Ebikes, and more**: https://electrek.co/ (June 8, 2020)
-- **Android Central – News, Reviews, Deals & Help on all Android devices**: https://www.androidcentral.com/new-homepage (June 8, 2020)
-- **The Gazette | Local Iowa News, Sports, Obituaries, and Headlines – Cedar Rapids, Iowa City**: https://www.thegazette.com/ (June 8, 2020)
-- **Malwarebytes Resellers and Partners | Malwarebytes**: https://www.malwarebytes.com/partners/solution-providers/ (June 8, 2020)
-- **AluK Tim – Sustavi aluminijskih profila i proizvoda za zaštitu od sunca**: https://www.aluk.hr/ (June 8, 2020)
-- **Marefind – Marine Jobs Network**: https://marefind.com/ (June 8, 2020)
-- **KAPRIOL POINT d.o.o. Imotski, zastupnik i distributer branda Kapriol na tržištu Hrvatske**: https://www.kapriol-point.hr/ (June 7, 2020)
-- **Training Courses | Teacher Center | Google for Education**: https://edu.google.com/teacher-center/training/ (June 7, 2020)
-- **PIP**: https://www.pip.hr/ (June 7, 2020)
-- **Space.com: NASA, Space Exploration and Astronomy News**: https://www.space.com/ (June 6, 2020)
-- **View all of Google’s Marketing Products & Tools – Think with Google**: https://www.thinkwithgoogle.com/intl/en-cee/products/ (June 6, 2020)
-- **Smart links for music marketing, artist marketing, and tours promotion**: https://www.linkfire.com/ (June 6, 2020)
-- **Home – University of East London (UEL)**: https://www.uel.ac.uk/clearing-homepage (June 6, 2020)
-- **HotCars – News and Informative Reviews on the Automotive Industry**: https://www.hotcars.com/ (June 6, 2020)
-- **Invest in Estonia — All the details about business in Estonia**: https://investinestonia.com/ (June 2, 2020)
-- **Acta Croatica – naslovnica**: https://actacroatica.com/hr/ (May 28, 2020)
-- **Search – Scenic° USA**: https://www.scenicusa.com/search (May 28, 2020)
-- **Rivian**: https://rivian.com/ (May 26, 2020)
-- **PAR | Visoka Poslovna Škola | Vodeći centar za obrazovanje**: https://par.hr/ (May 26, 2020)
-- **Adweek – Breaking News in Advertising, Media and Technology**: https://www.adweek.com/ (May 19, 2020)
-- **METAL SHARK**: https://www.metalsharkboats.com/ (May 19, 2020)
-- **The New York Times – Breaking News, World News & Multimedia**: https://www.nytimes.com/ (May 19, 2020)
 
 ## 4. Legal & Ecosystem (Wilson Sonsini)
 ### Wilson Sonsini Goodrich & Rosati
@@ -4540,6 +3489,14 @@ Important: Unstable Version ID releases (those with suffixes) are subject to bre
 #### AI Agents Knowledge Repository
 Synthesized from Google Innovation & AI Blog
 
+#### [test](test)
+
+
+#### Definitions
+- **General summary**: test content
+
+---
+
 #### [Innovation & AI](https://blog.google/innovation-and-ai/)
 
 
@@ -5290,6 +4247,10 @@ Scraped from:
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/
 - Insight: Last year, Nano Banana brought Gemini's intelligence to image generation and editing. Since then, it’s helped millions of people restore old photos, design from sketches and visualize ideas in ways that weren’t possible before. From the start we built Gemini to be natively multimodal from the ground up, and now we’re taking the next step.We’re introducing Gemini Omni, where Gemini’s ability to reason meets the ability to create. Omni is our new model that can create anything from any input — starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.Today, we’re rolling out the first model in the Omni family: Gemini Omni Flash, to the Gemini app, Google Flow and YouTube Shorts. In time we will support output modalities like image and audio. Here’s some of what makes Omni special:Edit your videos through conversationGemini Omni...
 
+#### Introducing computer use in Gemini 3.5 Flash
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/
+- Insight: Computer use is now a built-in tool supported in Gemini 3.5 Flash, delivering our best performance yet for agentic computer use tasks. Previously only available as a standalone Gemini 2.5 computer use model, computer use is now integrated natively in the main Gemini Flash model. Gemini already excels at function calling and using built-in tools like Search and Maps grounding. With built-in computer use capability, developers can now use 3.5 Flash to reliably build custom agents that can see, reason and take action across browser, mobile and desktop environments. This unlocks improved performance for long-horizon and enterprise automation tasks like continuous software testing and knowledge work across professional applications.Developers and enterprises can start using computer use in 3.5 Flash via the Gemini API and Gemini Enterprise Agent Platform.3.5 Flash uses computer use to analyse the Gemini app and return a categorized list of features.3.5 Flash with computer use audits its own...
+
 #### Google DeepMind
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/
 - Insight: News from Google DeepMind about how we're building AI responsibly to benefit everyone....
@@ -5297,6 +4258,10 @@ Scraped from:
 #### We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks.
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/
 - Insight: The Asia-Pacific region is a global engine for economic growth, but it's also highly vulnerable to climate change. While green technologies are gaining momentum, a recent report shows they aren’t scaling fast enough to keep up with the region’s rising environmental risks.To help innovators tackle these environmental challenges, we’re launching an inaugural Google DeepMind Accelerator program in APAC focused on “AI for the Planet.”This three-month program is designed for startups, research teams and nonprofits across the region to use frontier AI to solve problems in nature, climate, agriculture, energy and more. Selected organizations will receive expert mentorship, tailored support and help integrating frontier AI and science AI models from Google AI experts into their projects or products.If you're working on climate solutions, we want to help you scale your work. The program kicks off with an in-person bootcamp in Singapore, and you can learn more and register your interest today....
+
+#### Google DeepMind and A24 announce first-of-its-kind research partnership
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/deepmind-a24-research-partnership/
+- Insight: Today, Google DeepMind and A24 are announcing a first-of-its-kind partnership focused on research. The collaboration pairs a world-leading research lab with the industry’s most filmmaker-forward studio to help artists develop new workflows and techniques. This ensures the tools of the future are shaped by the creators who use them.This partnership creates a deep research and development collaboration between A24 and Google DeepMind spanning multiple projects over time. By anchoring Google DeepMind's innovations directly within the creative process, A24 and its filmmakers can help shape new technology in service of their vision and expand their storytelling possibilities. This hands-on collaboration provides Google DeepMind with invaluable feedback and guidance from leading artists. In addition, Google has made an investment in A24.Looking ahead, the partnership represents the beginning of a collaborative journey, one rooted in research and shared curiosity. While the initial focus is o...
 
 #### Simulate real-world places with Project Genie and Street View
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/
@@ -5353,6 +4318,10 @@ Scraped from:
 - URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-features-for-businesses/
 - Insight: Small businesses are the true engine of the global economy, yet entrepreneurs often find themselves stretched thin, playing the roles of CEO, CMO and customer service team all before lunch. AI holds incredible promise to act as an extension of your team, but to be truly helpful, it needs to remember your brand voice and context so you don't have to re-explain your goals every time you log in.Building on the new Google AI capabilities we announced in May, we’re excited to share what’s next for Gemini and Google Business Profile users. Today on stage at Google for Brazil, we introduced new Gemini app features specifically designed for business owners everywhere.Rolling out globally this month, these updates transform Gemini into a deeply knowledgeable, in-pocket partner that natively understands your business and helps you get more done.Connect your Google Business Profile to GeminiYour Google Business Profile serves as your digital storefront, helping you stand out on Google Search and ...
 
+#### 5 ways to learn with study notebooks in the Gemini app
+- URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/
+- Insight: Studying can feel overwhelming, especially when you don't know where to start or what to focus on next. That’s why we’re introducing study notebooks in the Gemini app.Study notebooks are designed specifically for students. As a goal-oriented learning space, they generate personalized lessons based on your real-time strengths and knowledge gaps. Your progress is tracked through a custom dashboard based on an initial diagnostic quiz and then follow-up quiz performance. Here are five ways to learn with study notebooks in Gemini:1. Assess your knowledge gapsTo start, upload your syllabus, notes, reading materials or other class materials. Gemini will then generate a custom diagnostic quiz to establish an academic baseline. It actively pinpoints your unique strengths and weaknesses, so you know exactly which areas need attention, replacing guessing games with a tailored learning plan.2. Study with bite-sized lessons built just for youOnce your baseline knowledge is assessed, your study note...
+
 #### View more from NotebookLM
 - URL: https://blog.google/innovation-and-ai/products/notebooklm/
 
@@ -5403,6 +4372,10 @@ Scraped from:
 - URL: https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/
 - Insight: We recently released Gemma 4, our most capable open models to date. Since then, they have been downloaded more than 150 million times, and we’ve been expanding the family’s capabilities. We introduced Multi-Token Prediction (MTP) to accelerate inference, and recently released the 12B Unified model and Quantization-Aware-Training (QAT) checkpoints. Released under an Apache 2.0 license, Gemma 4 gives builders and organizations flexibility to fine-tune and deploy models across a variety of environments, from edge devices to local workstations.Many builders are sharing what they’ve created with Gemma 4, showcasing how the models’ capabilities translate into real-world applications. Here are three highlights of what people and companies are creating.Build low-latency, on-device apps.The team at the app building company HubX used Gemma 4 to build BetterSpeak, an offline AI English tutoring platform. BetterSpeak uses the edge-optimized Gemma 4 E2B (effective 2B parameters) model as the reason...
 
+#### Interactions API: our primary interface for Gemini models and agents
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/
+- Insight: Today we're announcing that the Interactions API has reached general availability and is now our primary API for interacting with Gemini models and agents. We launched its public beta in December 2025, and it has quickly become developers’ favorite way to build applications with Gemini.With this GA release, the API now has a stable schema and we also added major new capabilities that developers asked for, including Managed Agents, background execution, Gemini Omni (soon) and more. All of our documentation now defaults to Interactions API and we are working with ecosystem partners to make it the default interface across 3P SDKs and Libraries.The simplest way to build with GeminiWhether you're calling a model or running an agent, the Interactions API gets you there in a few lines of code. Pass a model ID for inference, an agent ID for autonomous tasks, set background=True for anything long-running.Key updates since DecemberManaged Agents: A single API call provisions a remote Linux sandb...
+
 #### Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency
 - URL: https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/
 - Insight: Since releasing Gemma 4 two months ago, we've been continuously working to expand its capabilities. First, we introduced Multi-Token Prediction (MTP) to accelerate inference, and just a couple of days ago, we released a 12B model to bridge the gap between our E4B and 26B MOE models.Today, we are releasing new checkpoints optimized with Quantization-Aware Training (QAT) to make Gemma 4 even more efficient, so you can run models locally on everyday edge devices and consumer GPUs.By simulating quantization during training, QAT minimizes quality loss when the model is compressed. This release includes QAT checkpoints for the popular Q4_0 quantization format as well as a novel quantization format specialized for mobile use cases. Using this mobile format, we’ve reduced the memory footprint of Gemma 4 E2B to 1GB. Together, these dramatically reduce memory requirements while preserving the capabilities and quality you expect from Gemma 4.Keeping model quality while making them smallerQuantiza...
@@ -5433,6 +4406,10 @@ Scraped from:
 #### Gemini for Science: AI experiments and tools for a new era of discovery
 - URL: https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/
 - Insight: For centuries, the scientific method has been the greatest engine of human progress. At Google, our mission is deeply rooted in building tools to accelerate it. We believe that a new era of discovery won’t come from narrow, specialized models, but general agents that empower researchers across every scientific field.That’s why we are introducing Gemini for Science, a collection of science tools and experiments designed to expand the scale and precision of scientific exploration.A force multiplier for human ingenuityToday science faces a paradox: our collective knowledge is growing so fast that it’s becoming harder for individual scientists to see the full picture. Scientific breakthroughs often rely upon making creative connections between data, but the time required to do this manually can take weeks or even months. AI can help eliminate this bottleneck and serve as a force multiplier for scientific work by handling complex tasks. This allows researchers to focus on identifying and ta...
+
+#### Towards a world where no one is surprised by a natural disaster
+- URL: https://blog.google/innovation-and-ai/technology/research/helping-communities-prepare-for-natural-disasters/
+- Insight: The world is experiencing a dramatic rise in extreme weather events and natural disasters, devastating communities. Over the past decade, our teams at Google have worked to make helpful information available to people at times of crises — often when they need it most.We’ve advanced AI-based breakthrough research and progressed from providing timely information to forecasting and detecting natural disasters such as wildfires, floods, earthquakes and extreme weather. We’ve made critical information accessible via Google products that are used by billions, and partnered with governments and organizations around the world to help communities prepare for and respond to these crises.Actionable information in times of crises can help save lives and livelihoods: our north star for our crisis resilience efforts is that no one should be surprised by a natural disaster.At today’s AI for the Planet event, we shared how we’re making progress towards this vision, putting AI-powered tools and insight...
 
 #### Building superconducting and neutral atom quantum computers
 - URL: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/
@@ -5465,6 +4442,52 @@ Scraped from:
 #### Reservations are open for XREAL AURA — plus, see more news from AWE 2026.
 - URL: https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/
 - Insight: At AWE 2026, we’re showcasing how the Android XR ecosystem is growing alongside our partners. In today’s joint keynote, we announced that reservations are now open for XREAL AURA, coming this fall. AURA is XREAL's first wired XR glasses powered by Android XR and using the Snapdragon® Reality Elite Platform.Beyond the main stage, we kicked off the week with a developer hackathon and hands-on technical workshops. You can visit the Qualcomm booth on the show floor during the show for live demonstrations of Samsung Galaxy XR, XREAL AURA and intelligent eyewear. And don't miss our developer keynote, the Android Enterprise panel or the Auggie Awards, where we’ll celebrate breakthroughs in our community.Ready to shape the future of computing? Reserve your XREAL AURA at xreal.com/aura and start building with Android XR today....
+
+#### See all product updates
+- URL: https://blog.google/products-and-platforms/
+
+#### Chromebooks
+- URL: https://blog.google/products-and-platforms/devices/chromebooks/
+- Insight: The latest news about Chromebook....
+
+#### Google Nest
+- URL: https://blog.google/products-and-platforms/devices/google-nest/
+- Insight: News and updates about Google Nest....
+
+#### Intelligent eyewear is coming this fall
+- URL: https://blog.google/products-and-platforms/platforms/android/android-xr-io-2026/
+- Insight: This is an exciting time for Android XR, the platform we’ve built with Samsung and Qualcomm, as Gemini continues to unlock new experiences across headsets, glasses and everything in between.Today at Google I/O 2026, we shared more about intelligent eyewear: glasses that deliver help in the moment without taking you out of it. There will be two types of intelligent eyewear: audio glasses that offer spoken help in your ear, and display glasses that show you the information you need, right when you need it. Both let you stay hands-free and heads up, and get you help from Gemini just by asking.Audio glasses are launching first, coming later this fall. Let’s take a closer look.Stylish on the outsideAudio glasses can only deliver all-day help if they’re stylish and comfortable. That’s why we partnered with Samsung and eyewear brands Gentle Monster and Warby Parker to create eyewear you’ll happily wear all day. Today, we gave a sneak peek at two of the first designs that will launch as part o...
+
+#### Google Play
+- URL: https://blog.google/products-and-platforms/platforms/google-play/
+- Insight: News about Google Play, home to millions of the latest apps, games, music, movies, TV shows, books and magazines you can enjoy and share....
+
+#### Learning & Education
+- URL: https://blog.google/products-and-platforms/products/education/
+- Insight: The official source for information about Google’s learning and education-related efforts....
+
+#### NotebookLM is transforming student success at FSU
+- URL: https://blog.google/products-and-platforms/products/education/florida-state-university-notebooklm/
+- Insight: At Florida State University, we believe technology should move students from passive consumers to active learners. While we expect every new innovation to meet this standard, we are specifically seeking solutions that raise the bar entirely. We are inspired by advancements like Google NotebookLM, an AI-powered research assistant and thinking partner, grounded in trusted sources and designed to help our students, faculty and staff understand anything.When we launched our AI pilot with Google for Education, our goal was simple: put secure, accessible AI capabilities directly into the hands of our campus community to see if we could truly move the needle on academic success. What we didn't expect was just how quickly our campus would embrace it.The power of a personalized study toolIn higher education, we talk a lot about success metrics, but the real impact is measured in individual breakthroughs. Shortly after introducing NotebookLM on campus, we watched students who were struggling wit...
+
+#### Gemini models
+- URL: https://blog.google/products-and-platforms/products/gemini/
+- Insight: The latest news about Gemini. Chat to start writing, planning, learning and more with Google AI....
+
+#### Try these 3 Google AI tools to help find your next job.
+- URL: https://blog.google/products-and-platforms/products/gemini/find-job-with-google-ai-tools/
+- Insight: Job hunting can be a slog. But with a few Google AI tools, you can simplify the process from start to finish.Career Dreamer: The first step in landing a job is finding one worth applying to. Using Career Dreamer, you can brainstorm different roles to pursue based on your interests and experiences.NotebookLM: Ensure you stand out in a pool of applicants by fine-tuning your resume and cover letter. NotebookLM can help you workshop your application materials, turning past experiences into a coherent narrative to pitch to potential employers.Gemini Live: Nail face-to-face interactions by asking Gemini Live for help with interview prep. Practice answering sample interview questions, and ask it for live feedback on your responses.Watch the video below to learn more about how to use these tools in your job hunt....
+
+#### View more from XR and AR
+- URL: https://blog.google/products-and-platforms/products/google-ar-vr/
+
+#### Google Health
+- URL: https://blog.google/products-and-platforms/products/google-health/
+- Insight: A new relationship with your health....
+
+#### Google Workspace
+- URL: https://blog.google/products-and-platforms/products/workspace/
+- Insight: News about Google Workspace — the best way to create, communicate and collaborate....
 
 
 All the best - https://markposition.wordpress.com
