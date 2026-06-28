@@ -108,6 +108,7 @@ class ChiefAIOfficerAgent(BaseAgent):
             has_phase_18 = "phase 18" in title_lower or "phase 18" in sections_str or "phase_18" in title_lower
             has_phase_19 = "phase 19" in title_lower or "phase 19" in sections_str or "phase_19" in title_lower
             has_phase_20 = "phase 20" in title_lower or "phase 20" in sections_str or "phase_20" in title_lower
+            has_phase_24 = "phase 24" in title_lower or "phase 24" in sections_str or "phase_24" in title_lower
 
             # Phase 14 Specific Logic
             if has_phase_14:
@@ -245,6 +246,24 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "resonance latency" in sections_content or "less than 0.2ms" in sections_content:
                     self.logger.info("CAIO [PERF]: Phase 23 resonance latency mandate detected (<0.2ms). Issuing optimization directive.")
                     strategic_directives.append("OPTIMIZE_RESONANCE_LATENCY_PHASE_23")
+
+            # Phase 24 Specific Logic
+            if has_phase_24:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 24 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_24_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_24_PROTOCOLS")
+
+                if "neural mesh" in sections_str or "neural_mesh_integration" in sections_str:
+                    self.logger.info("CAIO [MESH]: Neural Mesh Integration mandate detected. Issuing node initialization directive.")
+                    strategic_directives.append("INITIALIZE_NEURAL_MESH_NODES")
+
+                if "distributed consensus" in sections_str or "distributed_consensus" in sections_str:
+                    self.logger.info("CAIO [SYNC]: Distributed Cognitive Consensus mandate detected. Issuing sync directive.")
+                    strategic_directives.append("ENFORCE_DISTRIBUTED_COGNITIVE_CONSENSUS")
+
+                if "mesh-aware routing" in sections_str or "mesh_aware_routing" in sections_str:
+                    self.logger.info("CAIO [NET]: Mesh-Aware Routing mandate detected. Issuing routing optimization directive.")
+                    strategic_directives.append("OPTIMIZE_MESH_AWARE_ROUTING")
 
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
