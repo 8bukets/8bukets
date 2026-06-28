@@ -919,7 +919,9 @@ public async observeKnowledge(url?: string) {
             { key: 'neural stability', domain: 'Core', label: '🧠 Neural Stability' },
             { key: 'sovereign swarm', domain: 'AI Agents', label: '🐝 Sovereign Swarm' },
             { key: 'proof-of-sovereignty', domain: 'Security', label: '🛡️ Proof-of-Sovereignty' },
-            { key: 'inter-shard', domain: 'Services', label: '🌐 Inter-Shard Trust' }
+            { key: 'inter-shard', domain: 'Services', label: '🌐 Inter-Shard Trust' },
+            { key: 'neural mesh', domain: 'Core', label: '🕸️ Neural Mesh' },
+            { key: 'cloud-native', domain: 'Services', label: '☁️ Cloud-Native Sovereignty' }
           ]
 
           strategicKeywords.forEach(sk => {

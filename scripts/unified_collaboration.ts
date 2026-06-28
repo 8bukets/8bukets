@@ -4,6 +4,7 @@ import { jules } from '../antigravity/jules'
 import { syncCollaborationState, broadcastToStakeholders } from '../antigravity/services/collaboration'
 import { generateConsolidatedReport } from '../antigravity/services/intelligence'
 import { orchestrationEngine } from '../antigravity/services/sentient_orchestration'
+import { workOrderService } from '../antigravity/services/work_order'
 
 /**
  * UNIFIED COLLABORATION ORCHESTRATOR
@@ -13,29 +14,55 @@ async function main() {
   console.log('🚀 [Antigravity] Starting Unified Collaboration cycle...')
 
   try {
-    // 1. Deep Branch Scan
+    // 1. Strategic Consultation
+    console.log('🧠 [Antigravity] Obtaining strategic directives from Chief AI Officer...')
+    const consultOrder = await workOrderService.createOrder(
+      'STRATEGIC_CONSULTATION',
+      'Obtain executive AI strategy and directives during collaboration cycle',
+      {}
+    )
+    await workOrderService.updateOrderStatus(consultOrder.id, 'executing')
+    let caioDirectives: any = {}
+    try {
+      caioDirectives = await (workOrderService as any).dispatch(consultOrder)
+      await workOrderService.updateOrderStatus(consultOrder.id, 'completed', caioDirectives)
+      console.log('✅ Strategic directives obtained.')
+    } catch (err) {
+      console.error('⚠️ Strategic consultation failed, proceeding with baseline.', err)
+      await workOrderService.updateOrderStatus(consultOrder.id, 'failed', undefined, String(err))
+    }
+
+    // 2. Deep Branch Scan
     console.log('🔍 Scanning all ecosystem branches for knowledge and results...')
     const branches = await jules.scanAllBranches(true)
     console.log(`✅ Found ${branches.length} branches.`)
 
-    // 2. State Sync & Knowledge Merge
+    // 3. State Sync & Knowledge Merge
     console.log('🧠 Synchronizing autonomous state and merging relationship maps...')
-    const state = await syncCollaborationState(branches)
+    const state = await syncCollaborationState(branches, caioDirectives)
 
-    // 3. Sentient Orchestration (Intent Alignment)
+    // 4. Sentient Orchestration (Intent Alignment)
     console.log('🧠 Coordinating autonomous agent intents for collaboration alignment...')
-    await orchestrationEngine.coordinateIntents([
+    const intents: any[] = [
       { agent: 'UnifiedCollaboration', action: 'MERGE_ECOSYSTEM_KNOWLEDGE', priority: 'High' },
       { agent: 'UnifiedCollaboration', action: 'BROADCAST_SYNERGY_ALERTS', priority: 'Medium' }
-    ])
+    ]
 
-    // 4. Stakeholder Communication
+    if (caioDirectives?.strategic_directives) {
+      caioDirectives.strategic_directives.forEach((d: string) => {
+        intents.push({ agent: 'CAIO', action: d, priority: 'High' })
+      })
+    }
+
+    await orchestrationEngine.coordinateIntents(intents)
+
+    // 5. Stakeholder Communication
     console.log('📢 Broadcasting synergy alerts to stakeholders...')
     await broadcastToStakeholders(state)
 
-    // 5. Intelligence Reporting
+    // 6. Intelligence Reporting
     console.log('📊 Generating consolidated strategic report...')
-    await generateConsolidatedReport(branches)
+    await generateConsolidatedReport(branches, caioDirectives)
 
     console.log('🏆 [Antigravity] Unified Collaboration cycle complete. Relationships mapped and results merged.')
   } catch (err) {

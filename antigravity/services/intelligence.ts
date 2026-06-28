@@ -28,7 +28,7 @@ import { checkDockerHealth } from './docker'
  * Generates system-wide intelligence reports.
  */
 
-export async function generateConsolidatedReport(branchIntelligence?: any[]) {
+export async function generateConsolidatedReport(branchIntelligence?: any[], caioDirectives?: any) {
   'use cache'
   console.log('📊 [Intelligence] Generating consolidated system report...')
 
@@ -50,6 +50,10 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 📋 Executive Summary\n`
   report += `- **System Posture:** ${isMongoOptimal && isSupabaseOptimal ? (health.mongodb === 'simulated' ? '✅ OPTIMAL (SIMULATED)' : '✅ OPTIMAL') : '⚠️ DEGRADED'}\n`
+  if (caioDirectives?.ai_strategy_status) {
+    const statusIcon = caioDirectives.ai_strategy_status === 'OPTIMAL' ? '✅' : '🚀'
+    report += `- **Executive AI Strategy:** ${statusIcon} ${caioDirectives.ai_strategy_status}\n`
+  }
   report += `- **Active Synergy:** ${branches.length} branches analyzed across multiple domains.\n`
   report += `- **Mission Alignment:** ${metadata.goals.length} strategic goals tracked.\n\n`
 
@@ -106,6 +110,18 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `_No active directives found._\n`
   }
   report += `\n`
+
+  // CAIO Strategic Directives
+  if (caioDirectives?.strategic_directives && caioDirectives.strategic_directives.length > 0) {
+    report += `## 🤖 CAIO Strategic Directives\n`
+    caioDirectives.strategic_directives.forEach((d: string) => {
+      report += `- **[CAIO]** ${d}\n`
+    })
+    if (caioDirectives.executive_summary) {
+      report += `\n> **Executive Summary:** ${caioDirectives.executive_summary}\n`
+    }
+    report += `\n`
+  }
 
   // Phase 12: Actionable Briefing
   const dockerHealthy = await checkDockerHealth()
@@ -357,6 +373,15 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🚀 Prioritized Action Items\n`
+
+  if (caioDirectives?.strategic_directives) {
+    caioDirectives.strategic_directives.forEach((d: string) => {
+       if (d.includes('ACCELERATE') || d.includes('ENFORCE') || d.includes('ACTIVATE')) {
+         report += `- **[HIGH]** CAIO Directive: ${d}\n`
+       }
+    })
+  }
+
   if (!isMongoOptimal) report += `- **[CRITICAL]** Restore MongoDB Atlas connectivity (Status: ${health.mongodb}).\n`
   if (workOrders.length > 5) report += `- **[HIGH]** Process backlog of ${workOrders.length} pending work orders.\n`
 
