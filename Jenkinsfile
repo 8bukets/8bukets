@@ -127,6 +127,11 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/coursera_certification_auditor_workflow.ts'
             }
         }
+        stage('Run Autonomous Quantum Sovereignty Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/quantum_sovereignty_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {

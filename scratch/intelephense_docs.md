@@ -14,9 +14,9 @@ The Intelephense server is proprietary software released to end users under a "f
 ### Visual Studio Code
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
 
-The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via it's configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
+The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
 
-Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.
+Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for "Enter licence key".
 
 ![Entering a licence key via the VS Code command palette](https://intelephense.com/img/license_key.png)
 *Entering a licence key via the VS Code command palette*
@@ -36,7 +36,7 @@ To start the intelephense server:
 intelephense {transport}
 ```
 
-Where {transport} is one of:
+Where `{transport}` is one of:
 
 - `--node-ipc`
 - `--stdio`
@@ -66,17 +66,17 @@ When `initializationOptions` properties are not provided by the client, the foll
 
 | OS | Property | Path | Fallback |
 | :--- | :--- | :--- | :--- |
-| *nix | storagePath | $XDG_CONFIG_HOME/intelephense/workspace/ | $HOME/.config/intelephense/workspace/ |
-| *nix | globalStoragePath | $XDG_CONFIG_HOME/intelephense/global/ | $HOME/.config/intelephense/global/ |
-| *nix | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
-| Windows | storagePath | %AppData%/intelephense/workspace/ | %UserProfile%/intelephense/workspace/ |
-| Windows | globalStoragePath | %AppData%/intelephense/global/ | %UserProfile%/intelephense/global/ |
-| Windows | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
+| *nix | `storagePath` | `$XDG_CONFIG_HOME/intelephense/workspace/` | `$HOME/.config/intelephense/workspace/` |
+| *nix | `globalStoragePath` | `$XDG_CONFIG_HOME/intelephense/global/` | `$HOME/.config/intelephense/global/` |
+| *nix | `licenceKey` | `{globalStoragePath}/licence.txt` | `{globalStoragePath}/license.txt` |
+| Windows | `storagePath` | `%AppData%/intelephense/workspace/` | `%UserProfile%/intelephense/workspace/` |
+| Windows | `globalStoragePath` | `%AppData%/intelephense/global/` | `%UserProfile%/intelephense/global/` |
+| Windows | `licenceKey` | `{globalStoragePath}/licence.txt` | `{globalStoragePath}/license.txt` |
 
 If your LSP client does not expose `initializationOptions` then a licence key can be provided by placing (only) the key in a text file at the default `licenceKey` path listed above.
 
 ## Configuration
-Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for `intelephense.files.exclude` would be `{"intelephense": {"files": {"exclude": []}}}`.
+Please see the VSCode client `package.json` configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for `intelephense.files.exclude` would be `{"intelephense": {"files": {"exclude": []}}}`.
 
 Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
 
@@ -110,7 +110,7 @@ Providing type information in your PHP code will result in a better experience w
 function foo(string $s): array {} // <- type declarations for $s (string) and function return (array)
 ```
 
-Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to it's minimal representation. For example, `MyClass|object` would become `object` because `MyClass` is a sub-type of `object`.
+Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to its minimal representation. For example, `MyClass|object` would become `object` because `MyClass` is a sub-type of `object`.
 
 Intelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases. Please see the PHPDoc Instead of PHPStorm Metadata/Attributes section in the appendix for more information.
 
@@ -173,10 +173,10 @@ In the list of supported types below, some can only be used in PHPDoc as documen
 Additional types used in other static analysis engines that are not listed here are not fully supported. Intelephense attempts to fallback to an appropriate alternative in this situation.
 
 #### Top Type
-- `mixed`: The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
+- `mixed` - The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
 
 #### Bottom Type
-- `never`: The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
+- `never` - The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
 
 #### Scalar Types
 Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.
@@ -191,46 +191,45 @@ Any of these types can be assigned to the other unless the `declare(strict_types
 - `null`
 - `true`
 - `false`
-- `unset`* Intelephense uses this PHP keyword to represent the type of an undefined variable.
+- `unset`* - Intelephense uses this PHP keyword to represent the type of an undefined variable.
 
 #### Literal Types
-- `'myString'`* String literals are encapsulated in quotes.
-- `9`* An integer literal.
+- `'myString'`* - String literals are encapsulated in quotes.
+- `9`* - An integer literal.
 
 #### Object Types
 - `object`
-- `\MyNs\MyClass`: Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
-- `object{name: string, optional?: string}`* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.
+- `\MyNs\MyClass` - Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
+- `object{name: string, optional?: string}`* - Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.
 - `static`
 - `self`
 - `$this`*
 
 #### Array Types
 - `array`
-- `array<TKey, TValue>`* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array<string|int, TValue>`.
-- `TValue[]`* Represents a numeric indexed array where the element type is `TValue`.
-- `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}`* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported.
+- `array<TKey, TValue>`* - Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array<string|int, TValue>`.
+- `TValue[]`* - Represents a numeric indexed array where the element type is `TValue`.
+- `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}`* - Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported.
 
 #### Callable Types
-- `callable`: Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
-- `callable(TParamA $a, TParamB $b): TReturn`* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type.
+- `callable` - Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
+- `callable(TParamA $a, TParamB $b): TReturn`* - Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type.
 
 #### Alias Types
-- `iterable`: Alias for `Traversable|array`.
-- `?A`: Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
+- `iterable` - Alias for `Traversable|array`.
+- `?A` - Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
 
 #### Union Types
-- `A|B|C`: A type which may have multiple atomic type representations. For example, a type constraint of `A|B` can be assigned type `A` or `B`.
+- `A|B|C` - A type which may have multiple atomic type representations. For example, a type constraint of `A|B` can be assigned type `A` or `B`.
 
 #### Intersection Types
-- `A&B&C`: A composite type which consists of multiple atomic types. For example, a type of `A&B` can be assigned to type `A` and to type `B`.
+- `A&B&C` - A composite type which consists of multiple atomic types. For example, a type of `A&B` can be assigned to type `A` and to type `B`.
 
 #### DNF Types
-- `A|B|(C&D&E)`: When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
+- `A|B|(C&D&E)` - When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
 
 #### Generic Types
-- `MyType<TypeArg1, TypeArg2>`*
-A generic type can be declared using one or many `@template` PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the `@template` declarations. The following built-in types are templated:
+- `MyType<TypeArg1, TypeArg2>`* - A generic type can be declared using one or many `@template` PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the `@template` declarations. The following built-in types are templated:
 
 - `iterable<TKey, TValue>`
 - `Traversable<TKey, TValue>`
@@ -257,20 +256,16 @@ A generic type can be declared using one or many `@template` PHPDoc annotations 
 - `SplObjectStorage<TObject, TValue>`
 
 #### Conditional Return Type
-- `(TSubject is TCompare ? TTrue : TFalse)`*
-Sometimes the return type of a function may depend on the type of a parameter. A conditional type can be used without templates too by using the parameter name. For example, `($myParam is string ? string : null)`. Conditional types must be wrapped in parentheses. Conditional types may also be nested.
+- `(TSubject is TCompare ? TTrue : TFalse)`* - Sometimes the return type of a function may depend on the type of a parameter. A conditional type can be used without templates too by using the parameter name. For example, `($myParam is string ? string : null)`. Conditional types must be wrapped in parentheses. Conditional types may also be nested.
 
 #### Array Key Type
-- `key-of<TArray>`*
-This type will resolve to a union of the keys of an array shape.
+- `key-of<TArray>`* - This type will resolve to a union of the keys of an array shape.
 
 #### Array Value Type
-- `value-of<TArray>`*
-This type will resolve to a union of the values of an array shape.
+- `value-of<TArray>`* - This type will resolve to a union of the values of an array shape.
 
 #### Index Access Type
-- `TArray[TKey]`*
-This type will resolve to the type of the value at index `TKey` in `TArray`. It is particularly useful in conjunction with `key-of<TArray>` and shape types for mapping the return type when accessing container items with arbitrary strings. For example:
+- `TArray[TKey]`* - This type will resolve to the type of the value at index `TKey` in `TArray`. It is particularly useful in conjunction with `key-of<TArray>` and shape types for mapping the return type when accessing container items with arbitrary strings. For example:
 
 ```php
 <?php
@@ -294,7 +289,7 @@ $item = $container->get('item'); //$item is MyContainerItem
 
 #### Miscellaneous Types
 - `resource`*
-- `class-string<T>`* A string where the value is the name of class `T`.
+- `class-string<T>`* - A string where the value is the name of class `T`.
 
 ## PHPDoc Annotations
 Intelephense supports standard PHPDoc annotations as well as non-standard annotations which have been popularised by other static analysis tools such as Psalm and PHPStan. The below list describes the non-standard annotations that Intelephense supports. For further information on standard PHPDoc annotations, please see the PHP_FIG and phpDocumentor references.
@@ -390,7 +385,7 @@ This feature allows you to navigate to the definition of a symbol when invoked o
 - **Availability**: FREE
 - **LSP**: `textDocument/hover`
 - **Keybinding**: `Ctrl+K Ctrl+I` | mouse-over
-This feature provides information about a symbol when hovering over a reference to that symbol in the current file. The information provided can include the type of the symbol, it's signature if it is a function or method, and any associated documentation.
+This feature provides information about a symbol when hovering over a reference to that symbol in the current file. The information provided can include the type of the symbol, its signature if it is a function or method, and any associated documentation.
 
 ![Hover tooltip](https://intelephense.com/img/hover.png)
 *Hover shows type information and documentation for a symbol*
@@ -435,8 +430,10 @@ This feature provides a list of all references to a symbol in the current file o
 
 #### Formatting
 - **Availability**: FREE
-- **LSP**: `textDocument/formatting` (**Keybinding**: `Ctrl+Shift+I`)
-- **LSP**: `textDocument/rangeFormatting` (**Keybinding**: `Ctrl+K Ctrl+F`)
+- **LSP**: `textDocument/formatting`
+- **Keybinding**: `Ctrl+Shift+I` (format document)
+- **LSP**: `textDocument/rangeFormatting`
+- **Keybinding**: `Ctrl+K Ctrl+F` (format selection)
 This feature provides formatting of a whole document or a selected range within a document. The Intelephense formatter is opinionated and aims to comply with PHP-FIG coding standards. Limited configuration options are available to allow some customisation of brace style.
 
 ![Formatter](https://intelephense.com/img/formatting.png)

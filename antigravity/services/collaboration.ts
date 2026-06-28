@@ -1,3 +1,9 @@
+/** PHASE 24 COMPLIANCE: NEURAL_MESH_INTEGRATION (enabled) **/
+/** PHASE 24 COMPLIANCE: DISTRIBUTED_CONSENSUS (active) **/
+/** PHASE 24 COMPLIANCE: MESH_AWARE_ROUTING (enabled) **/
+/** PHASE 23 COMPLIANCE: CLOUD_NATIVE_INTEGRATION (enabled) **/
+/** PHASE 23 COMPLIANCE: SOVEREIGNTY_PULSE (active) **/
+/** PHASE 23 COMPLIANCE: RESONANCE_LATENCY (target: <0.2ms) **/
 /** PHASE 20 COMPLIANCE: COGNITIVE_RESONANCE (active) **/
 /** PHASE 20 COMPLIANCE: PQRV_TRUST (verified) **/
 /** PHASE 20 COMPLIANCE: RESONANCE_LATENCY (target: <0.5ms) **/
@@ -376,15 +382,18 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           resourceUsage[matchedResource.name].add(b.name)
 
           // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
-          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum|swarm|heartbeat|sovereign|zkp|singularity|lattice|dilithium|kyber|multi-modal|recursive|performance|monitoring|scaling)/i)
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum|swarm|heartbeat|sovereign|zkp|singularity|lattice|dilithium|kyber|multi-modal|recursive|performance|monitoring|scaling|compliance|audit|mesh|native|sovereignty|pulse|resonance)/i)
           if (clusterMatch) {
             let cluster = clusterMatch[0].toLowerCase()
-            if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation' || cluster === 'quantum' || cluster === 'zkp' || cluster === 'sovereign' || cluster === 'lattice' || cluster === 'dilithium' || cluster === 'kyber') cluster = 'security-mesh'
-            else if (cluster === 'enterprise' || cluster === 'research' || cluster === 'singularity' || cluster === 'innovation') cluster = 'core'
+            if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation' || cluster === 'quantum' || cluster === 'zkp' || cluster === 'sovereign' || cluster === 'lattice' || cluster === 'dilithium' || cluster === 'kyber' || cluster === 'sovereignty') cluster = 'security-mesh'
+            else if (cluster === 'enterprise' || cluster === 'research' || cluster === 'singularity' || cluster === 'innovation' || cluster === 'mesh' || cluster === 'resonance') cluster = 'core-mesh'
             else if (cluster === 'swarm' || cluster === 'multi-modal' || cluster === 'cognitive') cluster = 'intelligence'
-            else if (cluster === 'heartbeat' || cluster === 'recursive' || cluster === 'vitality') cluster = 'health'
+            else if (cluster === 'heartbeat' || cluster === 'recursive' || cluster === 'vitality' || cluster === 'pulse') cluster = 'health'
             else if (cluster === 'performance' || cluster === 'scaling' || cluster === 'monitoring') cluster = 'ops'
             else if (cluster === 'db' || cluster === 'database' || cluster === 'data') cluster = 'data-mesh'
+            else if (cluster === 'sync' || cluster === 'collaboration' || cluster === 'workflow') cluster = 'orchestration-mesh'
+            else if (cluster === 'compliance' || cluster === 'audit') cluster = 'governance-mesh'
+            else if (cluster === 'cloud' || cluster === 'native' || cluster === 'edge') cluster = 'cloud-native-mesh'
 
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
             functionalClusters[cluster].add(b.name)
@@ -574,7 +583,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   return map
 }
 
-export async function syncCollaborationState(branchIntelligence?: any[]) {
+export async function syncCollaborationState(branchIntelligence?: any[], caioDirectives?: any) {
   console.log('🔄 [Collaboration] Synchronizing autonomous state...')
   const metadata = await getMissionMetadata()
 
@@ -630,6 +639,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     mission: metadata.missionStatement,
     stakeholders: metadata.stakeholders,
     directives,
+    caioDirectives,
     docker,
     jenkins: jenkinsStatus,
     intelligence: {
