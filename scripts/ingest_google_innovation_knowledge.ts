@@ -55,7 +55,7 @@ async function scrapeGoogleBlog(url: string): Promise<Article[]> {
             const fullUrl = href.startsWith('http') ? href : `https://blog.google${href}`;
 
             // Validation: Must be an article-like URL
-            const isArticleUrl = fullUrl.includes('/innovation-and-ai/') &&
+            const isArticleUrl = (fullUrl.includes('/innovation-and-ai/') || fullUrl.includes('/products-and-platforms/')) &&
                                 !fullUrl.endsWith('/innovation-and-ai/') &&
                                 !fullUrl.endsWith('/models-and-research/') &&
                                 !fullUrl.endsWith('/products/') &&

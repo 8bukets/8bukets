@@ -376,5 +376,77 @@
         "url": "https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/",
         "snippet": "",
         "content": "At AWE 2026, we’re showcasing how the Android XR ecosystem is growing alongside our partners. In today’s joint keynote, we announced that reservations are now open for XREAL AURA, coming this fall. AURA is XREAL's first wired XR glasses powered by Android XR and using the Snapdragon® Reality Elite Platform.Beyond the main stage, we kicked off the week with a developer hackathon and hands-on technical workshops. You can visit the Qualcomm booth on the show floor during the show for live demonstrations of Samsung Galaxy XR, XREAL AURA and intelligent eyewear. And don't miss our developer keynote, the Android Enterprise panel or the Auggie Awards, where we’ll celebrate breakthroughs in our community.Ready to shape the future of computing? Reserve your XREAL AURA at xreal.com/aura and start building with Android XR today...."
+    },
+    {
+        "title": "See all product updates",
+        "url": "https://blog.google/products-and-platforms/",
+        "snippet": "",
+        "content": ""
+    },
+    {
+        "title": "Chromebooks",
+        "url": "https://blog.google/products-and-platforms/devices/chromebooks/",
+        "snippet": "",
+        "content": "The latest news about Chromebook...."
+    },
+    {
+        "title": "Google Nest",
+        "url": "https://blog.google/products-and-platforms/devices/google-nest/",
+        "snippet": "",
+        "content": "News and updates about Google Nest...."
+    },
+    {
+        "title": "Intelligent eyewear is coming this fall",
+        "url": "https://blog.google/products-and-platforms/platforms/android/android-xr-io-2026/",
+        "snippet": "",
+        "content": "This is an exciting time for Android XR, the platform we’ve built with Samsung and Qualcomm, as Gemini continues to unlock new experiences across headsets, glasses and everything in between.Today at Google I/O 2026, we shared more about intelligent eyewear: glasses that deliver help in the moment without taking you out of it. There will be two types of intelligent eyewear: audio glasses that offer spoken help in your ear, and display glasses that show you the information you need, right when you need it. Both let you stay hands-free and heads up, and get you help from Gemini just by asking.Audio glasses are launching first, coming later this fall. Let’s take a closer look.Stylish on the outsideAudio glasses can only deliver all-day help if they’re stylish and comfortable. That’s why we partnered with Samsung and eyewear brands Gentle Monster and Warby Parker to create eyewear you’ll happily wear all day. Today, we gave a sneak peek at two of the first designs that will launch as part o..."
+    },
+    {
+        "title": "Google Play",
+        "url": "https://blog.google/products-and-platforms/platforms/google-play/",
+        "snippet": "",
+        "content": "News about Google Play, home to millions of the latest apps, games, music, movies, TV shows, books and magazines you can enjoy and share...."
+    },
+    {
+        "title": "Learning & Education",
+        "url": "https://blog.google/products-and-platforms/products/education/",
+        "snippet": "",
+        "content": "The official source for information about Google’s learning and education-related efforts...."
+    },
+    {
+        "title": "NotebookLM is transforming student success at FSU",
+        "url": "https://blog.google/products-and-platforms/products/education/florida-state-university-notebooklm/",
+        "snippet": "",
+        "content": "At Florida State University, we believe technology should move students from passive consumers to active learners. While we expect every new innovation to meet this standard, we are specifically seeking solutions that raise the bar entirely. We are inspired by advancements like Google NotebookLM, an AI-powered research assistant and thinking partner, grounded in trusted sources and designed to help our students, faculty and staff understand anything.When we launched our AI pilot with Google for Education, our goal was simple: put secure, accessible AI capabilities directly into the hands of our campus community to see if we could truly move the needle on academic success. What we didn't expect was just how quickly our campus would embrace it.The power of a personalized study toolIn higher education, we talk a lot about success metrics, but the real impact is measured in individual breakthroughs. Shortly after introducing NotebookLM on campus, we watched students who were struggling wit..."
+    },
+    {
+        "title": "Gemini models",
+        "url": "https://blog.google/products-and-platforms/products/gemini/",
+        "snippet": "",
+        "content": "The latest news about Gemini. Chat to start writing, planning, learning and more with Google AI...."
+    },
+    {
+        "title": "Try these 3 Google AI tools to help find your next job.",
+        "url": "https://blog.google/products-and-platforms/products/gemini/find-job-with-google-ai-tools/",
+        "snippet": "",
+        "content": "Job hunting can be a slog. But with a few Google AI tools, you can simplify the process from start to finish.Career Dreamer: The first step in landing a job is finding one worth applying to. Using Career Dreamer, you can brainstorm different roles to pursue based on your interests and experiences.NotebookLM: Ensure you stand out in a pool of applicants by fine-tuning your resume and cover letter. NotebookLM can help you workshop your application materials, turning past experiences into a coherent narrative to pitch to potential employers.Gemini Live: Nail face-to-face interactions by asking Gemini Live for help with interview prep. Practice answering sample interview questions, and ask it for live feedback on your responses.Watch the video below to learn more about how to use these tools in your job hunt...."
+    },
+    {
+        "title": "View more from XR and AR",
+        "url": "https://blog.google/products-and-platforms/products/google-ar-vr/",
+        "snippet": "",
+        "content": ""
+    },
+    {
+        "title": "Google Health",
+        "url": "https://blog.google/products-and-platforms/products/google-health/",
+        "snippet": "",
+        "content": "A new relationship with your health...."
+    },
+    {
+        "title": "Google Workspace",
+        "url": "https://blog.google/products-and-platforms/products/workspace/",
+        "snippet": "",
+        "content": "News about Google Workspace — the best way to create, communicate and collaborate...."
     }
 ]
