@@ -177,11 +177,16 @@ class KnowledgeMergeAgent(BaseAgent):
                 markdown_context += f"- **Source**: {e.get('domain') or 'Markposition'}\n"
                 markdown_context += f"- **Link**: [Post Link]({e.get('post_url')})\n\n"
 
-        signatures = [
-            "All the best - https://markposition.wordpress.com",
-            "All the best - https://software-online-review.com/",
-            "All the best - https://dbcode.io/"
-        ]
+        signatures = []
+        sig_path = os.path.join(os.getcwd(), 'config/signatures.json')
+        if os.path.exists(sig_path):
+            try:
+                with open(sig_path, 'r') as f:
+                    signatures = json.load(f).get('signatures', [])
+            except:
+                pass
+        if not signatures:
+            signatures = ["All the best - https://markposition.wordpress.com"]
         target_files = ['KNOWLEDGE_MERGE.md', 'CONSOLIDATED_INTELLIGENCE.md']
 
         for file in target_files:

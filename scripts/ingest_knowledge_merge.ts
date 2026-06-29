@@ -55,11 +55,16 @@ export async function ingestKnowledgeMerge() {
         });
     }
 
-    const signatures = [
-        "All the best - https://markposition.wordpress.com",
-        "All the best - https://software-online-review.com/",
-        "All the best - https://dbcode.io/"
-    ];
+    let signatures = ["All the best - https://markposition.wordpress.com"];
+    try {
+        const sigPath = path.join(process.cwd(), 'config/signatures.json');
+        if (fs.existsSync(sigPath)) {
+            const data = JSON.parse(fs.readFileSync(sigPath, 'utf8'));
+            if (Array.isArray(data.signatures)) {
+                signatures = data.signatures;
+            }
+        }
+    } catch (e) {}
 
     const targetFiles = ['KNOWLEDGE_MERGE.md', 'CONSOLIDATED_INTELLIGENCE.md', 'CONSOLIDATED_KNOWLEDGE.md'];
 

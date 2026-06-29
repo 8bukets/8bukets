@@ -230,9 +230,19 @@ def generate_daily_report(context, filename):
             jenkins = context.get("jenkins_pipeline_metrics", {})
             f.write(f"- **Jenkins Pipeline Efficiency:** {jenkins.get('pipeline_efficiency', 'N/A')}\n")
 
-            f.write(f"\n---\nAll the best - https://markposition.wordpress.com\n")
-            f.write(f"\n---\nAll the best - https://software-online-review.com/\n")
-            f.write(f"\n---\nAll the best - https://dbcode.io/\n")
+            sig_path = os.path.join(os.getcwd(), 'config/signatures.json')
+            if os.path.exists(sig_path):
+                try:
+                    with open(sig_path, 'r') as sf:
+                        signatures = json.load(sf).get('signatures', [])
+                        if signatures:
+                            f.write('\n---\n' + '\n\n---\n'.join(signatures) + '\n')
+                        else:
+                            f.write(f"\n---\nAll the best - https://markposition.wordpress.com\n")
+                except:
+                    f.write(f"\n---\nAll the best - https://markposition.wordpress.com\n")
+            else:
+                f.write(f"\n---\nAll the best - https://markposition.wordpress.com\n")
 
         logger.info(f"Report generated at {filename}")
     except IOError as e:

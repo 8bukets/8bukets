@@ -24,8 +24,14 @@ export class CloudConnectedIntegrationService {
       // 3. Validate Ecosystem Sovereignty
       await this.validateEcosystemSovereignty()
 
-      // 4. Unified Cloud Sovereign Work Cycle (Takeover + Merge + Work)
-      await this.executeCloudSovereignWork()
+      // 4. Cloud Takeover Enforcement (Phase 22/23 Leadership Shift)
+      logAutonomousAction('🌩️ [CloudConnected] Enforcing cloud takeover protocol...', 'info')
+      const takeover = await cloudWorkflowAgent.enforceCloudTakeover()
+      if (takeover.takeover) {
+        logAutonomousAction('✅ [CloudConnected] Cloud node has assumed leadership.', 'info')
+      } else {
+        logAutonomousAction(`ℹ️ [CloudConnected] Takeover status: ${takeover.reason}`, 'info')
+      }
 
       // 5. Synchronize Ecosystem & Resolve Conflicts
       await cloudConvergence.synchronizeEcosystem()
@@ -34,46 +40,6 @@ export class CloudConnectedIntegrationService {
       logAutonomousAction('✅ [CloudConnected] Phase 23 Pulse completed successfully.', 'info')
     } catch (error: any) {
       logAutonomousAction(`❌ [CloudConnected] Phase 23 Pulse failed: ${error.message}`, 'error')
-    }
-  }
-
-  /**
-   * UNIFIED CLOUD SOVEREIGN WORK (Phase 23)
-   * Orchestrates takeover, autonomous merging, and work execution when cloud node is leader.
-   */
-  public async executeCloudSovereignWork() {
-    logAutonomousAction('🌩️ [CloudConnected] Initiating Unified Cloud Sovereign Work cycle...', 'info')
-
-    try {
-      // 1. Ensure Presence is fresh
-      await onlinePresence.syncPresence()
-      const isLeader = onlinePresence.isLeader()
-
-      // 2. Cloud Takeover Enforcement
-      logAutonomousAction('🌩️ [CloudConnected] Enforcing cloud takeover protocol...', 'info')
-      const takeover = await cloudWorkflowAgent.enforceCloudTakeover()
-
-      if (takeover.takeover) {
-        logAutonomousAction('✅ [CloudConnected] Cloud node has assumed leadership. Proceeding with high-intensity merge & work.', 'info')
-      }
-
-      if (isLeader) {
-        const { jules } = await import('../jules')
-        const { workOrderService } = await import('./work_order')
-
-        // 3. Autonomous PR Audit & Knowledge Merge
-        logAutonomousAction('🤖 [CloudConnected] Leader active. Running autonomous PR audit and knowledge ingestion...', 'info')
-        await jules.autonomousPrAudit()
-        await jules.observeKnowledge()
-
-        // 4. Execute pending work orders
-        logAutonomousAction('⚡ [CloudConnected] Leader active. Dispatching pending work orders...', 'info')
-        await workOrderService.executePendingOrders()
-      } else {
-        logAutonomousAction('📡 [CloudConnected] Node is subordinate. Yielding work cycle to primary node.', 'info')
-      }
-    } catch (error: any) {
-      logAutonomousAction(`❌ [CloudConnected] Cloud Sovereign Work failed: ${error.message}`, 'error')
     }
   }
 

@@ -41,8 +41,10 @@ export class CloudWorkflowAgent {
          const { workOrderService } = await import('./work_order')
 
          const recoveredFiles = await edgeToCloudBridge.recoverCloudToLocal()
-         console.log(`📦 [CloudWorkflowAgent] State recovery pass complete (${recoveredFiles.length} files). Reloading work orders...`)
-         await workOrderService.reload()
+         if (recoveredFiles.length > 0) {
+            console.log(`📦 [CloudWorkflowAgent] Recovered ${recoveredFiles.length} state files. Reloading work orders...`)
+            await workOrderService.reload()
+         }
 
          // Immediate Execution Pulse upon takeover
          console.log('⚡ [CloudWorkflowAgent] Executing pending work orders under Cloud Sovereignty...')

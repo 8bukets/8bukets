@@ -13,6 +13,7 @@
     "@ai-sdk/react": "^3.0.184",
     "@arcjet/next": "^1.4.0",
     "@stripe/stripe-js": "^9.6.0",
+    "@swc/helpers": "^0.5.15",
     "@supabase/ssr": "^0.10.3",
     "@supabase/supabase-js": "^2.106.0",
     "ai": "^6.0.182",

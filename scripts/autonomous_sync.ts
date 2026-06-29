@@ -53,13 +53,18 @@ async function main() {
       }
     }
 
-    // 5. Execute Unified Cloud-Native Work Cycle (Phase 23)
-    console.log('🌟 [AutonomousSync] Executing Unified Cloud-Native Work Cycle...');
+    // 5. Execute Jules Work Cycle (TypeScript Engine)
+    console.log('🌟 [AutonomousSync] Executing Jules (TypeScript) work cycle...');
+    // Initial presence sync to establish leadership
     await onlinePresence.syncPresence();
     const isLeader = onlinePresence.isLeader();
 
     if (isLeader || !isCloud) {
-       await cloudConnectedIntegrationService.executeCloudSovereignWork();
+       // Phase 16 Cloud Sovereignty: Ensure autonomous merging is active in cloud cycles
+       if (isCloud) {
+         console.log('🤖 [AutonomousSync] Cloud leadership active. Triggering autonomous PR audit and merge cycle...');
+         await jules.autonomousPrAudit();
+       }
        // executeWorkCycle already performs Phase 23 Pulse and Engine Evolution
        await jules.executeWorkCycle();
     } else {

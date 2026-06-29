@@ -116,9 +116,19 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
 
 
-  report += `\n---\nAll the best - https://markposition.wordpress.com\n`
-  report += `\n---\nAll the best - https://software-online-review.com/\n`
-  report += `\n---\nAll the best - https://dbcode.io/\n`
+  try {
+    const sigPath = path.join(process.cwd(), 'config/signatures.json')
+    if (fs.existsSync(sigPath)) {
+      const { signatures } = JSON.parse(fs.readFileSync(sigPath, 'utf8'))
+      if (Array.isArray(signatures)) {
+        report += '\n---\n' + signatures.join('\n\n---\n') + '\n'
+      }
+    } else {
+      report += `\n---\nAll the best - https://markposition.wordpress.com\n`
+    }
+  } catch (e) {
+    report += `\n---\nAll the best - https://markposition.wordpress.com\n`
+  }
 
   fs.writeFileSync(reportPath, report)
   logAutonomousAction(`✅ [Intelligence] Report saved to ${reportPath}`, 'info')
