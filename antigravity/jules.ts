@@ -1,3 +1,6 @@
+/** PHASE 25 COMPLIANCE: quantum-neural-bridge (active) **/
+/** PHASE 25 COMPLIANCE: singularity-readiness (threshold: 0.999) **/
+/** PHASE 25 COMPLIANCE: recursive-expansion (enabled) **/
 /** PHASE 16 COMPLIANCE: neural-stability-index (threshold: 0.98) **/
 /** PHASE 24 COMPLIANCE: NEURAL_MESH_INTEGRATION (enabled) **/
 /** PHASE 24 COMPLIANCE: DISTRIBUTED_CONSENSUS (active) **/

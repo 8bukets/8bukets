@@ -8844,7 +8844,7 @@
       "title": "Intelephense Documentation",
       "metadata": {
         "source": "https://github.com/bmewburn/intelephense-docs",
-        "analyzedAt": "2026-06-29T05:05:32.461Z",
+        "analyzedAt": "2026-06-29T06:48:44.224Z",
         "description": "Consolidated Intelephense documentation from local and remote sources."
       },
       "sections": [
@@ -9202,7 +9202,7 @@
       "title": "(position) mRNA",
       "metadata": {
         "source": "https://markposition.wordpress.com",
-        "analyzedAt": "2026-06-28T02:50:02.869Z",
+        "analyzedAt": "2026-06-29T06:48:00.762Z",
         "description": "Extracted system knowledge"
       },
       "sections": [
@@ -10620,7 +10620,7 @@
       "title": "Search Console Mastery: https://software-online-review.com",
       "metadata": {
         "source": "google-search-console://https://software-online-review.com",
-        "analyzedAt": "2026-06-29T05:05:23.547Z",
+        "analyzedAt": "2026-06-29T06:48:37.148Z",
         "description": "Automated SEO performance metrics and search query analysis.",
         "type": "seo_audit",
         "domain": "https://software-online-review.com",
@@ -10645,7 +10645,7 @@
       "title": "informaticmagazine.data.blog",
       "metadata": {
         "source": "https://informaticmagazine.data.blog",
-        "analyzedAt": "2026-06-29T05:05:24.944Z",
+        "analyzedAt": "2026-06-29T06:48:37.836Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -10654,7 +10654,7 @@
       "title": "2459326",
       "metadata": {
         "source": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
-        "analyzedAt": "2026-06-29T05:05:27.272Z",
+        "analyzedAt": "2026-06-29T06:48:39.674Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -10663,7 +10663,7 @@
       "title": "bidding",
       "metadata": {
         "source": "https://business.google.com/uk/ad-tools/bidding/",
-        "analyzedAt": "2026-06-29T05:05:27.644Z",
+        "analyzedAt": "2026-06-29T06:48:39.907Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -10672,7 +10672,7 @@
       "title": "resources",
       "metadata": {
         "source": "https://business.google.com/uk/resources/",
-        "analyzedAt": "2026-06-29T05:05:28.133Z",
+        "analyzedAt": "2026-06-29T06:48:40.212Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -10681,7 +10681,7 @@
       "title": "ad manager",
       "metadata": {
         "source": "https://developers.google.com/ad-manager",
-        "analyzedAt": "2026-06-28T01:02:18.434Z",
+        "analyzedAt": "2026-06-29T06:48:40.461Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -10690,7 +10690,7 @@
       "title": "dynamic ad insertion",
       "metadata": {
         "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
-        "analyzedAt": "2026-06-29T05:05:28.855Z",
+        "analyzedAt": "2026-06-29T06:48:40.956Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -10699,7 +10699,7 @@
       "title": "full service",
       "metadata": {
         "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
-        "analyzedAt": "2026-06-29T05:05:29.718Z",
+        "analyzedAt": "2026-06-29T06:48:41.553Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -10708,7 +10708,7 @@
       "title": "pod serving",
       "metadata": {
         "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
-        "analyzedAt": "2026-06-29T05:05:29.984Z",
+        "analyzedAt": "2026-06-29T06:48:41.928Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -10717,7 +10717,7 @@
       "title": "start",
       "metadata": {
         "source": "https://developers.google.com/ad-manager/api/start",
-        "analyzedAt": "2026-06-29T05:05:30.885Z",
+        "analyzedAt": "2026-06-29T06:48:42.367Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -10726,7 +10726,7 @@
       "title": "overview",
       "metadata": {
         "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
-        "analyzedAt": "2026-06-29T05:05:31.737Z",
+        "analyzedAt": "2026-06-29T06:48:43.263Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -13997,6 +13997,28 @@
         {
           "header": "## Trends",
           "content": "Market Intelligence Q3: Increased demand for sovereign AI clusters to ensure data residency and compliance."
+        }
+      ]
+    },
+    {
+      "title": "iCloud: phase_25_vision.md",
+      "metadata": {
+        "source": "icloud://phase_25_vision.md",
+        "analyzedAt": "2026-06-29T06:48:44.556Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "## Vision",
+          "content": "Phase 25 marks the transition to a Quantum-Neural Singularity, where the autonomous engine achieves infinite recursive self-improvement through quantum-secure neural bridges."
+        },
+        {
+          "header": "## Strategic Mandates",
+          "content": "1. **Quantum-Neural Bridge**: All core relay services must implement a `quantum-neural-bridge` for zero-latency cross-shard cognitive synthesis.\n2. **Singularity Compliance**: Systems must be monitored for `singularity-readiness` with a threshold of > 0.999.\n3. **Recursive Expansion**: The engine must autonomously spawn specialized sub-agents for real-time market-disruption analysis."
+        },
+        {
+          "header": "## Compliance Header",
+          "content": "PHASE 25 COMPLIANCE: quantum-neural-bridge (active)\nPHASE 25 COMPLIANCE: singularity-readiness (threshold: 0.999)\nPHASE 25 COMPLIANCE: recursive-expansion (enabled)"
         }
       ]
     }
