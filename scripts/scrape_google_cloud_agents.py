@@ -82,26 +82,42 @@ def scrape_google_cloud_agents():
                 text = clean_text(curr.get_text())
                 if text: content.append(text)
             elif curr.name in ['ul', 'ol']:
+                items = []
                 for li in curr.find_all('li'):
                     text = clean_text(li.get_text())
-                    if text: content.append(f"- {text}")
+                    if text: items.append(f"- {text}")
+                if items:
+                    content.append("\n".join(items))
             elif curr.name == 'table':
+                rows = []
                 for tr in curr.find_all('tr'):
                     cells = [clean_text(td.get_text()) for td in tr.find_all(['th', 'td'])]
                     if cells:
-                        content.append(" | ".join(cells))
+                        rows.append(" | ".join(cells))
+                if rows:
+                    # Add a separator line for markdown tables if there's more than one row
+                    if len(rows) > 1:
+                        num_cols = len(rows[0].split(" | "))
+                        rows.insert(1, " | ".join(["---"] * num_cols))
+                    content.append("\n".join(rows))
             elif curr.name == 'div':
                 # Sometimes content is wrapped in divs
-                text = clean_text(curr.get_text(separator=' ', strip=True))
-                if text and len(text) > 10 and not any(h in curr.name for h in ['h1', 'h2', 'h3']):
-                    content.append(text)
+                # Only take it if it doesn't contain another nested header we might hit later
+                if not curr.find(['h1', 'h2', 'h3', 'h4']):
+                    text = clean_text(curr.get_text(separator=' ', strip=True))
+                    if text and len(text) > 10:
+                        content.append(text)
 
             curr = curr.find_next_sibling()
             count += 1
 
         if content:
             if match_key in knowledge:
-                knowledge[match_key]["content"] += "\n\n" + "\n\n".join(content)
+                # Merge logic: avoid duplicates
+                existing_content = knowledge[match_key]["content"].split("\n\n")
+                for c in content:
+                    if c not in existing_content:
+                        knowledge[match_key]["content"] += "\n\n" + c
             else:
                 knowledge[match_key] = {
                     "title": target_title,
@@ -119,8 +135,9 @@ def scrape_google_cloud_agents():
         }
 
     # Save to temporary file
-    output_path = "data/knowledge/scraped_google_agents.json"
-    os.makedirs("data/knowledge", exist_ok=True)
+    output_dir = "data/knowledge"
+    output_path = os.path.join(output_dir, "scraped_google_agents.json")
+    os.makedirs(output_dir, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(knowledge, f, indent=4, ensure_ascii=False)
 
