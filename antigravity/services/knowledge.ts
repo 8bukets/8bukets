@@ -90,12 +90,18 @@ ${summary}
       existingContent = '# Market Intelligence Matrix\n'
     }
 
-    const signature = 'All the best - https://markposition.wordpress.com'
+    const signatures = [
+      'All the best - https://markposition.wordpress.com',
+      'All the best - https://software-online-review.com/',
+      'All the best - https://dbcode.io/'
+    ]
 
     // Instead of regex, split on signature and trim
     let cleanContent = existingContent
-    if (existingContent.includes(signature)) {
-       cleanContent = existingContent.split(signature)[0]
+    for (const signature of signatures) {
+      if (cleanContent.includes(signature)) {
+        cleanContent = cleanContent.split(signature)[0]
+      }
     }
     cleanContent = cleanContent.trimEnd()
 
@@ -127,7 +133,8 @@ ${summary}
         newContent += '\n\n' + newBlocks.join('\n\n')
     }
 
-    newContent = newContent.trimEnd() + '\n\n' + signature + '\n'
+    newContent = newContent.trimEnd() + '\n\n---\n'
+    newContent += signatures.join('\n\n---\n') + '\n'
     await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
     console.log(`✅ [Knowledge Observer] ${updated ? 'Updated' : 'Appended'} insights in KNOWLEDGE_MERGE.md.`)
 

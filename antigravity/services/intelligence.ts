@@ -117,6 +117,8 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
 
   report += `\n---\nAll the best - https://markposition.wordpress.com\n`
+  report += `\n---\nAll the best - https://software-online-review.com/\n`
+  report += `\n---\nAll the best - https://dbcode.io/\n`
 
   fs.writeFileSync(reportPath, report)
   logAutonomousAction(`✅ [Intelligence] Report saved to ${reportPath}`, 'info')
