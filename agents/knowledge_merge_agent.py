@@ -130,6 +130,29 @@ class KnowledgeMergeAgent(BaseAgent):
 
         return {"consolidated_knowledge": consolidated}
 
+    def _format_nested_content(self, content: Any, indent: int = 0) -> str:
+        """Recursively formats nested dictionary content into Markdown."""
+        if isinstance(content, str):
+            return content
+        if isinstance(content, list):
+            return "\n".join([str(item) for item in content])
+
+        lines = []
+        if isinstance(content, dict):
+            for key, value in content.items():
+                if key == "text" and isinstance(value, list):
+                    lines.append("\n".join([str(item) for item in value]))
+                elif key == "subsections" and isinstance(value, dict):
+                    for sub_key, sub_value in value.items():
+                        lines.append(f"\n{'#' * (indent + 4)} {sub_key}")
+                        lines.append(self._format_nested_content(sub_value, indent + 1))
+                else:
+                    # Generic dict handling
+                    prefix = "#" * (indent + 3)
+                    lines.append(f"\n{prefix} {key}")
+                    lines.append(self._format_nested_content(value, indent + 1))
+        return "\n".join(lines).strip()
+
     def _generate_markdown(self, consolidated: dict):
         try:
             with open(self.output_md, "w", encoding="utf-8") as f:
@@ -160,12 +183,22 @@ class KnowledgeMergeAgent(BaseAgent):
                 if isinstance(ai_data, dict):
                     for sid, info in ai_data.items():
                         if isinstance(info, dict) and "title" in info:
-                            f.write(f"### {info['title']}\n\n{info.get('content', '')}\n\n")
+                            content = info.get('content', '')
+                            formatted_content = self._format_nested_content(content)
+                            f.write(f"### {info['title']}\n\n{formatted_content}\n\n")
 
                 # New Google Innovation & AI Section
                 if "google_innovation_ai" in consolidated:
                     f.write("\n## 2. Google Innovation & AI\n")
-                    for article in consolidated["google_innovation_ai"][:15]: # Show top 15
+                    # Limit to top 20 and ensure unique titles/URLs
+                    unique_articles = []
+                    seen_urls = set()
+                    for article in consolidated["google_innovation_ai"]:
+                        if article['url'] not in seen_urls:
+                            unique_articles.append(article)
+                            seen_urls.add(article['url'])
+
+                    for article in unique_articles[:20]: # Increased limit slightly
                         f.write(f"- **[{article['title']}]({article['url']})**\n")
                         if article.get('snippet'):
                             f.write(f"  * {article['snippet']}\n")
