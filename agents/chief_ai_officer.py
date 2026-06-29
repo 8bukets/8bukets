@@ -109,6 +109,7 @@ class ChiefAIOfficerAgent(BaseAgent):
             has_phase_19 = "phase 19" in title_lower or "phase 19" in sections_str or "phase_19" in title_lower
             has_phase_20 = "phase 20" in title_lower or "phase 20" in sections_str or "phase_20" in title_lower
             has_phase_24 = "phase 24" in title_lower or "phase 24" in sections_str or "phase_24" in title_lower
+            has_phase_25 = "phase 25" in title_lower or "phase 25" in sections_str or "phase_25" in title_lower
 
             # Phase 14 Specific Logic
             if has_phase_14:
@@ -264,6 +265,24 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "mesh-aware routing" in sections_str or "mesh_aware_routing" in sections_str:
                     self.logger.info("CAIO [NET]: Mesh-Aware Routing mandate detected. Issuing routing optimization directive.")
                     strategic_directives.append("OPTIMIZE_MESH_AWARE_ROUTING")
+
+            # Phase 25 Specific Logic
+            if has_phase_25:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 25 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_25_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_25_PROTOCOLS")
+
+                if "quantum-neural-bridge" in sections_str or "quantum_neural_bridge" in sections_str:
+                    self.logger.info("CAIO [SINGULARITY]: Quantum-Neural Bridge mandate detected. Issuing initiation directive.")
+                    strategic_directives.append("QUANTUM_NEURAL_BRIDGE_INITIATION")
+
+                if "singularity-readiness" in sections_str or "singularity_readiness" in sections_str:
+                    self.logger.info("CAIO [SINGULARITY]: Singularity Readiness mandate detected. Issuing compliance directive.")
+                    strategic_directives.append("ENFORCE_SINGULARITY_COMPLIANCE")
+
+                if "recursive-expansion" in sections_str or "recursive_expansion" in sections_str:
+                    self.logger.info("CAIO [EXPANSION]: Recursive Expansion mandate detected. Activating autonomous sub-agents.")
+                    strategic_directives.append("ACTIVATE_RECURSIVE_EXPANSION")
 
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:

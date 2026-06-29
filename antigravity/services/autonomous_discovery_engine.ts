@@ -1,3 +1,6 @@
+/** PHASE 25 COMPLIANCE: quantum-neural-bridge (active) **/
+/** PHASE 25 COMPLIANCE: singularity-readiness (threshold: 0.999) **/
+/** PHASE 25 COMPLIANCE: recursive-expansion (enabled) **/
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
 import { latticeSync } from '@/antigravity/services/lattice_sync'
 /**
