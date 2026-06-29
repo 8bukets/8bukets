@@ -52,6 +52,10 @@ async def test_caio_agent():
     assert "ACTIVATE_NEURAL_RECOVERY" in result["strategic_directives"]
     assert "SCOUT_LINKEDIN_FOR_CAIO_OPENINGS" in result["strategic_directives"]
     assert "AUDIT_COURSERA_AI_CERTIFICATIONS" in result["strategic_directives"]
+    assert "TARGET_SENIOR_LEADERSHIP_EXPERIENCE" in result["strategic_directives"]
+    assert "PRIORITIZE_MBA_STRATEGY_ALIGNMENT" in result["strategic_directives"]
+    assert "OPTIMIZE_TECHNICAL_BUSINESS_SYNERGY" in result["strategic_directives"]
+    assert "ENFORCE_PRIVACY_AND_CYBERSECURITY_STANDARDS" in result["strategic_directives"]
 
     # Test robust matching - ensures "doctor" or "refactor" don't trigger COORDINATE_WITH_TECHNICAL_LEADERSHIP
     # if cto/cdo are NOT present in the content but doctor/refactor are.

@@ -287,6 +287,8 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "performance tracking" in sections_str:
                     self.logger.info("CAIO [ROLE]: Performance Tracking responsibility identified. Issuing measurement directive.")
                     strategic_directives.append("MEASURE_AI_BUSINESS_IMPACT")
+                    if "OPTIMIZE_ROI_TRACKING" not in strategic_directives:
+                        strategic_directives.append("OPTIMIZE_ROI_TRACKING")
 
                 if "boost productivity" in sections_str or "enter new markets" in sections_str or "competitive edge" in sections_str:
                     self.logger.info("CAIO [STRATEGY]: Competitive advantage keywords identified. Issuing optimization directive.")
@@ -311,6 +313,22 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "coursera" in sections_str:
                     self.logger.info("CAIO [STRATEGY]: Coursera identified as a primary certification platform. Issuing executive development directive.")
                     strategic_directives.append("AUDIT_COURSERA_AI_CERTIFICATIONS")
+
+                if "8+ to 10+ years" in sections_str:
+                    self.logger.info("CAIO [ROLE]: High-level experience requirement detected. Issuing senior leadership target directive.")
+                    strategic_directives.append("TARGET_SENIOR_LEADERSHIP_EXPERIENCE")
+
+                if "mba" in sections_str:
+                    self.logger.info("CAIO [ROLE]: MBA value identified. Issuing business-strategy alignment directive.")
+                    strategic_directives.append("PRIORITIZE_MBA_STRATEGY_ALIGNMENT")
+
+                if "technical fluency" in sections_str or "business acumen" in sections_str:
+                    self.logger.info("CAIO [ROLE]: Technical fluency/Business acumen identified. Issuing strategic synergy directive.")
+                    strategic_directives.append("OPTIMIZE_TECHNICAL_BUSINESS_SYNERGY")
+
+                if "cybersecurity regulations" in sections_str or "user privacy" in sections_str:
+                    self.logger.info("CAIO [ROLE]: Privacy/Cybersecurity identified. Issuing security compliance directive.")
+                    strategic_directives.append("ENFORCE_PRIVACY_AND_CYBERSECURITY_STANDARDS")
 
                 if "government-issued professional license" in sections_str:
                     licensure_not_required = True
