@@ -218,7 +218,9 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: 'go-sim', type: 'Simulation Engine', pattern: /\.go$/ },
     { path: 'hcp-packer-tutorial', type: 'Infrastructure Tutorial', pattern: /\.pkr\.hcl$/ },
     { path: 'my-app', type: 'Frontend App', pattern: /\.tsx$|\.ts$|\.css$/ },
-    { path: '.', type: 'Core Configuration', pattern: /^\.env|Dockerfile|package\.json|README\.md|AGENTS\.md|CONSOLIDATED_INTELLIGENCE\.md|KNOWLEDGE_MERGE\.md|USAGE\.md|MISSION_HANDOFF.*\.md$/ }
+    { path: '.', type: 'Core Configuration', pattern: /^\.env|Dockerfile|package\.json|README\.md|AGENTS\.md|CONSOLIDATED_INTELLIGENCE\.md|KNOWLEDGE_MERGE\.md|USAGE\.md|MISSION_HANDOFF.*\.md$/ },
+    { path: 'terraform', type: 'Infrastructure (HCL)', pattern: /\.tf$|\.hcl$/ },
+    { path: 'public', type: 'Static Asset', pattern: /\.png$|\.jpg$|\.svg$|\.ico$|\.json$/ }
   ]
 
   const scanRecursive = async (dirPath: string, type: string, pattern: RegExp, depth: number = 0) => {
@@ -745,11 +747,13 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
     newEntries += `\n`
   }
 
-  // Phase 13: High-Impact Strategic Results
+  // Phase 13: High-Impact Strategic Results (Refined)
   if (relationshipMap?.impactfulBranches && relationshipMap.impactfulBranches.length > 0) {
     newEntries += `### 🏆 Top Impactful Strategic Results\n`
-    relationshipMap.impactfulBranches.slice(0, 8).forEach((b: any) => {
-      newEntries += `- **[Score: ${b.score}]** \`${b.name}\` (${b.category?.toUpperCase()}): ${b.results}\n`
+    newEntries += `| Impact Score | Strategic Branch | Category | Key Result |\n`
+    newEntries += `| :--- | :--- | :--- | :--- |\n`
+    relationshipMap.impactfulBranches.slice(0, 15).forEach((b: any) => {
+      newEntries += `| **${b.score}** | \`${b.name}\` | ${b.category?.toUpperCase()} | ${b.results} |\n`
     })
     newEntries += `\n`
   }
@@ -759,6 +763,8 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
 
   Object.entries(domains).sort((a, b) => a[0].localeCompare(b[0])).forEach(([domain, branchList]) => {
     newEntries += `### 🌐 Strategic Domain: ${domain}\n`
+    newEntries += `*Strategic results and knowledge merged from ${branchList.length} branches within the ${domain} domain.*\n\n`
+
     branchList.sort((a, b) => (b.score || 0) - (a.score || 0)).forEach(b => {
       const insight = b.knowledge || b.results || b.result || 'N/A';
       if (seenInsights.has(insight)) return;
