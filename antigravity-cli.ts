@@ -1,3 +1,4 @@
+#!/usr/bin/env npx tsx
 /** PHASE 24 COMPLIANCE: NEURAL_MESH_INTEGRATION (enabled) **/
 /** PHASE 24 COMPLIANCE: DISTRIBUTED_CONSENSUS (active) **/
 /** PHASE 24 COMPLIANCE: MESH_AWARE_ROUTING (enabled) **/
@@ -16,7 +17,6 @@
 import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
 import { latticeSync } from '@/antigravity/services/lattice_sync'
-#!/usr/bin/env npx tsx
 
 import { Command } from 'commander';
 import { observeKnowledge } from './antigravity/services/knowledge';

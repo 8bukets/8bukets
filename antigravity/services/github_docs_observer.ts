@@ -44,7 +44,7 @@ export class GithubDocsObserver {
         const title = headerMatch[2].trim()
         const content = part.substring(headerMatch[0].length).trim()
         if (title) {
-          sections.push({ title, content, level })
+          sections.push({ title, content })
         }
       } else {
         // Text before the first header
