@@ -315,14 +315,17 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
     report += `*No autonomous knowledge ingested yet.*\n\n`
   }
 
-  report += `## 🏆 Top Impactful Results\n`
+  report += `## 🏆 Strategic Results Summary\n`
+  report += `*Top impactful outcomes extracted from autonomous branch history and scored for strategic significance.*\n\n`
   const impactful = relationshipMap.impactfulBranches || []
   if (impactful.length > 0) {
-    impactful.slice(0, 10).forEach((b: any) => {
-      report += `- **[Score: ${b.score}]** \`${b.name}\`: ${b.results}\n`
+    report += `| Score | Strategic Result | Category | Summary |\n`
+    report += `| :--- | :--- | :---: | :--- |\n`
+    impactful.slice(0, 15).forEach((b: any) => {
+      report += `| **${b.score}** | \`${b.name}\` | ${b.category?.toUpperCase() || 'N/A'} | ${b.results} |\n`
     })
   } else {
-    report += `- No explicit results extracted from recent history.\n`
+    report += `_No explicit high-impact results extracted from recent history._\n`
   }
   report += `\n`
 

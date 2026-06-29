@@ -287,9 +287,12 @@ export async function generateActionableBriefing(state: any, directives: Directi
   // Prescriptive Strategic Advice
   briefing += `\n### 💡 Prescriptive Strategic Advice\n`
   const advices = [
-    { cond: synergies.length > 10, msg: "🔴 **CRITICAL CONTENTION:** Ecosystem contention is dangerously high. Halt new feature development and initiate a mandatory synchronization and merge sprint to stabilize the core." },
+    { cond: synergies.length > 15, msg: "🚨 **EMERGENCY CONTENTION:** System entropy is reaching critical levels. Immediate freeze on all non-essential branches. Execute an emergency merge and pruning cycle to preserve core integrity." },
+    { cond: synergies.length > 10 && synergies.length <= 15, msg: "🔴 **CRITICAL CONTENTION:** Ecosystem contention is dangerously high. Halt new feature development and initiate a mandatory synchronization and merge sprint to stabilize the core." },
     { cond: synergies.length > 5 && synergies.length <= 10, msg: "🟡 **MODERATE CONTENTION:** Developmental friction is increasing. Prioritize merging stable features and resolve resource overlaps in the 'Strategic Coordination Paths' before initiating new architectural changes." },
-    { cond: state.intelligence.branches > 2500, msg: `⚠️ **COGNITIVE OVERHEAD:** High volume of active branches detected (${state.intelligence.branches}). Execute a project-wide branch pruning cycle to maintain system focus and performance.` },
+    { cond: state.intelligence.branches > 3000, msg: `🛑 **EXTREME COGNITIVE OVERHEAD:** Over ${state.intelligence.branches} active branches detected. System performance is degraded. Mandatory bulk pruning of branches older than 30 days is advised.` },
+    { cond: state.intelligence.branches > 2500 && state.intelligence.branches <= 3000, msg: `⚠️ **COGNITIVE OVERHEAD:** High volume of active branches detected (${state.intelligence.branches}). Execute a project-wide branch pruning cycle to maintain system focus and performance.` },
+    { cond: stabilityIndex < 70, msg: `📉 **STABILITY ALERT:** Coordination Stability has dropped to ${stabilityIndex}%. Recommend immediate strategic realignment with Founder directives.` },
     { cond: !state.docker || (state.docker.status !== 'optimal' && state.docker.status !== 'simulated'), msg: `🚨 **INFRASTRUCTURE RISK:** Docker infrastructure is sub-optimal (${state.docker.status}). Review container health logs immediately and consider failing over to cloud-native secondary nodes.` },
     { cond: true, msg: "🛡️ **SOVEREIGN TRUST:** Ensure all new cognitive artifacts (agents, services, docs) include appropriate IP headers and verified signatures to prevent unauthorized cognitive drift." },
     { cond: state.intelligence.pendingTasks > 20, msg: `⚙️ **OPERATIONAL BACKLOG:** Large volume of pending work orders (${state.intelligence.pendingTasks}). Reallocate autonomous agent resources to background task processing to ensure mission momentum.` }
