@@ -24705,6 +24705,7 @@ This enables the system to proceed coding automatically and autonomously online,
 - **Branch:** `origin/cloud-workflow-adjustment-5939480137317015972`
 - **Category:** ORIGIN
 - **Result:** Commit: Authorized syntactic adjustment to trigger clean commit
+<!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale  -->
 <!-- connect with docker and collaborate -->
 // Tutorial: Create and run your first GitLab CI/CD pipeline
 //
@@ -24983,6 +24984,7 @@ This enables the system to proceed coding automatically and autonomously online,
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit
+<!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale  -->
 <!-- connect with docker and collaborate -->
 // Agent - Logika ponašanja
 // Agent odlučuje:
@@ -90616,6 +90618,7 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
         {
           "name": "origin/cloud-workflow-adjustment-5939480137317015972",
           "lastMessage": "Authorized syntactic adjustment to trigger clean commit
+<!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale  -->
 <!-- connect with docker and collaborate -->
 // Agent - Logika ponašanja
 // Agent odlučuje:
@@ -90751,6 +90754,7 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
           "domain": "Security",
           "knowledge": "",
           "results": "Commit: Authorized syntactic adjustment to trigger clean commit
+<!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale  -->
 <!-- connect with docker and collaborate -->
 // Agent - Logika ponašanja
 // Agent odlučuje:
@@ -93065,6 +93069,7 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
         {
           "name": "origin/jules-synthetic-adjustment-2956436375149232394",
           "lastMessage": "Replace Authorized syntactic adjustment to trigger clean commit
+<!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale  -->
 <!-- connect with docker and collaborate -->
 // Agent - Logika ponašanja
 // Agent odlučuje:
@@ -93200,6 +93205,7 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
           "domain": "Security",
           "knowledge": "",
           "results": "Commit: Replace Authorized syntactic adjustment to trigger clean commit
+<!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale  -->
 <!-- connect with docker and collaborate -->
 // Agent - Logika ponašanja
 // Agent odlučuje:
