@@ -949,6 +949,7 @@ The Docker Hub mcp namespace (for MCP servers built by Docker).
 ## best value of knowledge integration
 
 <!-- Authorized syntactic adjustment to trigger clean commit -->
+<!-- integrate knowledge scan make code structural framework  -->
 <!-- automate safety processes like removing harmful content and wiping out scams -->
 <!-- full autonomus automatic workflow -->
 <!-- prepare and integrate knowledge and workflow run improve for logic deploy react agents improve -->
