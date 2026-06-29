@@ -72,9 +72,24 @@ export class KnowledgeObserver {
     );
 
     if (existingIndex !== -1) {
+      const existingSection = existingData.typescript_sections[existingIndex];
+      const hasExistingContent = existingSection.sections && existingSection.sections.length > 0;
+      const hasNewContent = section.sections && section.sections.length > 0;
+
+      // GUARD: Do not overwrite populated sections with empty ones
+      if (hasExistingContent && !hasNewContent) {
+        console.warn(`⚠️ [Knowledge Observer] Skipping overwrite for "${newInsights.title}" because new content is empty.`);
+        return existingData;
+      }
+
       existingData.typescript_sections[existingIndex] = section;
     } else {
-      existingData.typescript_sections.push(section);
+      if (section.sections && section.sections.length > 0) {
+        existingData.typescript_sections.push(section);
+      } else {
+        console.warn(`⚠️ [Knowledge Observer] Skipping persistence for "${newInsights.title}" because content is empty.`);
+        return existingData;
+      }
     }
 
     // Write JSON
