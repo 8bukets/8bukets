@@ -197,22 +197,22 @@ def create_autonomous_orders():
             "created_at": datetime.now().isoformat()
         })
 
+    # Add knowledge merge (Ensuring it is appended after RESEARCH if both are new)
+    if not any(o["type"] == "KNOWLEDGE_MERGE" and o["status"] == "pending" for o in orders):
+        new_orders.append({
+            "id": f"AUTO_KNOWLEDGE_MERGE_{datetime.now().strftime('%H%M%S')}",
+            "type": "KNOWLEDGE_MERGE",
+            "description": "Consolidate all autonomous intelligence",
+            "status": "pending",
+            "created_at": datetime.now().isoformat()
+        })
+
     # Add system optimization
     if not any(o["type"] == "OPTIMIZE_SYSTEM" and o["status"] == "pending" for o in orders):
         new_orders.append({
             "id": f"AUTO_OPTIMIZE_{datetime.now().strftime('%H%M%S')}",
             "type": "OPTIMIZE_SYSTEM",
             "description": "Autonomous system posture optimization",
-            "status": "pending",
-            "created_at": datetime.now().isoformat()
-        })
-
-    # Add knowledge merge
-    if not any(o["type"] == "KNOWLEDGE_MERGE" and o["status"] == "pending" for o in orders):
-        new_orders.append({
-            "id": f"AUTO_KNOWLEDGE_MERGE_{datetime.now().strftime('%H%M%S')}",
-            "type": "KNOWLEDGE_MERGE",
-            "description": "Consolidate all autonomous intelligence",
             "status": "pending",
             "created_at": datetime.now().isoformat()
         })

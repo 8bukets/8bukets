@@ -143,8 +143,6 @@ AI assistants are AI agents designed as applications or products to collaborate 
 
 - **Source**: [https://cloud.google.com/discover/what-are-ai-agents](https://cloud.google.com/discover/what-are-ai-agents)
 
-
-
 ---
 All the best - https://markposition.wordpress.com
 
