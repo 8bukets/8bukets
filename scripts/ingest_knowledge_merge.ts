@@ -37,10 +37,19 @@ export async function ingestKnowledgeMerge() {
 
     if (knowledge.ai_agents_structured) {
         markdownContext += '## 🤖 AI Agent Intelligence\n\n';
-        knowledge.ai_agents_structured.slice(0, 5).forEach((agent: any) => {
+        // Increased limit to 20 to ensure rich discovery content is included
+        knowledge.ai_agents_structured.slice(0, 20).forEach((agent: any) => {
             markdownContext += `### ${agent.title}\n`;
-            if (agent.sections && agent.sections[0] && Array.isArray(agent.sections[0].content)) {
-                markdownContext += `${agent.sections[0].content.join(' ')}\n\n`;
+            if (agent.sections && agent.sections.length > 0) {
+                // Include up to 3 sections for more comprehensive intelligence
+                agent.sections.slice(0, 3).forEach((sec: any) => {
+                    if (sec.header && !agent.title.includes(sec.header)) {
+                        markdownContext += `#### ${sec.header}\n`;
+                    }
+                    if (Array.isArray(sec.content)) {
+                        markdownContext += `${sec.content.join(' ')}\n\n`;
+                    }
+                });
             }
             markdownContext += `- **Source**: [${agent.url}](${agent.url})\n\n`;
         });
