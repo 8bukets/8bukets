@@ -61,7 +61,8 @@ export const PresenceSchema = z.object({
     roadmap_progress: z.number().optional(),
     pipeline_status: z.string().optional(),
     fully_online: z.boolean().optional(),
-    sovereign_leadership: z.boolean().optional()
+    sovereign_leadership: z.boolean().optional(),
+    cloud_sovereignty_active: z.boolean().optional()
   }).optional(),
   sovereignty_report: z.record(z.any()).optional()
 })
@@ -112,7 +113,7 @@ export class OnlinePresenceService {
         const otherNodes = await db.collection('agent_presence').find({
            agent: 'Jules',
            'telemetry.node_id': { $ne: nodeId },
-           lastSeen: { $gt: new Date(Date.now() - 5 * 60 * 1000).toISOString() } // Active in last 5m (Phase 16 Optimization)
+           lastSeen: { $gt: new Date(Date.now() - 3 * 60 * 1000).toISOString() } // Active in last 3m (Phase 23 Optimization)
         }).toArray()
 
         if (isCloud) {
@@ -125,7 +126,7 @@ export class OnlinePresenceService {
              const diffMs = Date.now() - lastSeen
              const diffMinutes = diffMs / (1000 * 60)
 
-             if (diffMs < 300000) { // < 5 minutes
+             if (diffMs < 180000) { // < 3 minutes
                console.log(`📡 [OnlinePresence] MacBook node is ACTIVE (seen ${diffMinutes.toFixed(1)}m ago). Cloud node yielding leadership.`)
                isLeader = false
              } else {
@@ -204,7 +205,8 @@ export class OnlinePresenceService {
           roadmap_progress: 100, // Default for active pulse
           pipeline_status: isCloud ? 'running' : 'optimal',
           fully_online: isCloud || process.env.MACBOOK_CLOUD_SIMULATION === 'true',
-          sovereign_leadership: isLeader
+          sovereign_leadership: isLeader,
+          cloud_sovereignty_active: isCloud && isLeader
         },
         sovereignty_report: sovereigntyReport,
         phase16: {

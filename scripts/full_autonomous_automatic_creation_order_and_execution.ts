@@ -25,6 +25,9 @@ async function main() {
   logAutonomousAction(`🚀 [Phase 23] Initiating full autonomous creation cycle: ${pulseId}`, 'info');
 
   try {
+    // Establishing early presence
+    await onlinePresence.syncPresence();
+
     // 1. Activate Phase 23 Protocols (Cloud-Native Pulse)
     console.log('📡 [Protocols] Activating Phase 23 Cloud-Native Pulse and Swarm Heartbeat...');
     swarmHeartbeat.start();
