@@ -177,7 +177,11 @@ class KnowledgeMergeAgent(BaseAgent):
                 markdown_context += f"- **Source**: {e.get('domain') or 'Markposition'}\n"
                 markdown_context += f"- **Link**: [Post Link]({e.get('post_url')})\n\n"
 
-        signature = "All the best - https://markposition.wordpress.com"
+        signatures = [
+            "All the best - https://markposition.wordpress.com",
+            "All the best - https://software-online-review.com/",
+            "All the best - https://dbcode.io/"
+        ]
         target_files = ['KNOWLEDGE_MERGE.md', 'CONSOLIDATED_INTELLIGENCE.md']
 
         for file in target_files:
@@ -187,10 +191,10 @@ class KnowledgeMergeAgent(BaseAgent):
                     with open(file_path, 'r', encoding='utf-8') as f:
                         file_content = f.read()
 
-                    escaped_signature = re.escape(signature)
-                    sig_regex = re.compile(rf"\n*---\n*{escaped_signature}\n*|\n*{escaped_signature}\n*", re.IGNORECASE)
-
-                    file_content = sig_regex.sub('\n\n', file_content)
+                    for signature in signatures:
+                        escaped_signature = re.escape(signature)
+                        sig_regex = re.compile(rf"\n*---\n*{escaped_signature}\n*|\n*{escaped_signature}\n*", re.IGNORECASE)
+                        file_content = sig_regex.sub('\n\n', file_content)
                     file_content = file_content.strip()
 
                     # Append dynamic context if not already present
@@ -200,8 +204,9 @@ class KnowledgeMergeAgent(BaseAgent):
                     else:
                          self.logger.info(f"✨ [KnowledgeMergeAgent] Dynamic knowledge merge already exists or no new data for {file}")
 
-                    # Append signature back
-                    file_content += '\n\n---\n' + signature + '\n'
+                    # Append signatures back
+                    file_content += '\n\n---\n'
+                    file_content += '\n\n---\n'.join(signatures) + '\n'
 
                     with open(file_path, 'w', encoding='utf-8') as f:
                         f.write(file_content)
@@ -260,7 +265,8 @@ class KnowledgeMergeAgent(BaseAgent):
             with open(self.output_md, "w", encoding="utf-8") as f:
                 f.write(f"# Consolidated Knowledge Base\n\n")
                 f.write(f"**Last Sync (Python):** {consolidated['metadata']['generated_at']}\n")
-                f.write(f"**System Version:** {consolidated['metadata']['version']}\n\n")
+                version = consolidated.get('metadata', {}).get('version', '1.0')
+                f.write(f"**System Version:** {version}\n\n")
 
                 # Integrate Strategic Mapping from KNOWLEDGE_MERGE.md
                 if "strategic_mapping" in consolidated:
@@ -334,8 +340,10 @@ class KnowledgeMergeAgent(BaseAgent):
                            for sec in ts_data.get("sections", []):
                                f.write(f"#### {sec['header']}\n{sec['content']}\n\n")
 
-                # Ensure the signature is always present at the very end
+                # Ensure the signatures are always present at the very end
                 f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
+                f.write("\n---\nAll the best - https://software-online-review.com/\n")
+                f.write("\n---\nAll the best - https://dbcode.io/\n")
 
             self.logger.info(f"Consolidated Markdown saved to {self.output_md}")
         except Exception as e:

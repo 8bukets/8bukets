@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Github, Star, GitFork, AlertCircle, Clock, ExternalLink } from 'lucide-react';
+import { Star, GitFork, AlertCircle, Clock, ExternalLink } from 'lucide-react';
 
 interface RepoData {
   name: string;
@@ -56,7 +56,7 @@ export default function ReposDashboard() {
 
         <header className="flex flex-col gap-2">
           <div className="flex items-center gap-3">
-            <Github className="w-8 h-8" />
+            <GitFork className="w-8 h-8" />
             <h1 className="text-3xl font-bold">Collaboration Dashboard</h1>
           </div>
           <p className="text-zinc-500 dark:text-zinc-400">
