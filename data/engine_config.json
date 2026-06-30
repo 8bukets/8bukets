@@ -1,0 +1,8 @@
+{
+  "scaleFactor": 1.25,
+  "features": [
+    "advanced_self_correction"
+  ],
+  "autonomousCorrectionCount": 0,
+  "lastEvolution": "2026-06-30T09:39:09.170Z"
+}
