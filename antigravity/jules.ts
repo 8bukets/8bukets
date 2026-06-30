@@ -117,13 +117,7 @@ export class Jules {
       const hasPhase20 = checkKnowledge('Phase 20')
       const hasCognitiveResonance = checkKnowledge('cognitive resonance')
       const hasPQRV = checkKnowledge('PQRV')
-      const hasPhase25 = checkKnowledge('Phase 25')
-      const hasSingularityReadiness = checkKnowledge('singularity-readiness')
-      const hasQuantumNeuralBridge = checkKnowledge('quantum-neural bridge')
 
-      if (hasPhase25 || hasSingularityReadiness || hasQuantumNeuralBridge) {
-        suggestions.push('Initiate Phase 25 Quantum-Neural Bridge protocols and optimize for >0.999 singularity-readiness with <0.1ms latency.')
-      }
       if (hasPhase20 || hasCognitiveResonance || hasPQRV) {
         suggestions.push('Activate Phase 20 Cognitive Resonance and PQRV trust protocols for ultra-low latency synchronization (<0.5ms).')
       }

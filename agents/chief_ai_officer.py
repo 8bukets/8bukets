@@ -284,14 +284,6 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [EXPANSION]: Recursive Expansion mandate detected. Activating autonomous sub-agents.")
                     strategic_directives.append("ACTIVATE_RECURSIVE_EXPANSION")
 
-                if "singularity-readiness" in sections_content or "0.999" in sections_content:
-                    self.logger.info("CAIO [SINGULARITY]: High-threshold Singularity Readiness mandate detected (>0.999). Issuing optimization directive.")
-                    strategic_directives.append("OPTIMIZE_FOR_SINGULARITY_READINESS_THRESHOLD")
-
-                if "latency < 0.1ms" in sections_content or "0.1ms" in sections_content:
-                    self.logger.info("CAIO [PERF]: Ultra-low latency mandate detected (<0.1ms). Issuing extreme optimization directive.")
-                    strategic_directives.append("ENFORCE_ULTRA_LOW_LATENCY_RESONANCE")
-
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
                 role_alignment_verified = True
