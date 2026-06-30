@@ -1,4 +1,5 @@
 import asyncio
+import pytest
 import logging
 from agents.chief_ai_officer import ChiefAIOfficerAgent
 from agents.base_agent import Blackboard
@@ -6,6 +7,7 @@ from agents.base_agent import Blackboard
 # Configure logging for the test
 logging.basicConfig(level=logging.INFO)
 
+@pytest.mark.asyncio
 async def test_caio_agent():
     agent = ChiefAIOfficerAgent()
     blackboard = Blackboard()
