@@ -142,8 +142,16 @@ export async function generateActionableBriefing(state: any, directives: Directi
     briefing += `- No active directives currently registered.\n`
   }
 
-  briefing += `\n### ⚡ Strategic Synergy Summary\n`
+  // Phase 25: Collaboration Pulse
   const crossDomain = state.intelligence.relationshipMap.crossDomainSynergies || []
+  const clusterCount = Object.keys(state.intelligence.relationshipMap.functionalClusters || {}).length
+
+  briefing += `### 💓 Collaboration Pulse\n`
+  briefing += `- **Functional Cohesion:** ${clusterCount > 0 ? 'Resonant' : 'Modular'}\n`
+  briefing += `- **Cross-Pollination Index:** ${(crossDomain.length / Math.max(1, state.intelligence.branches) * 100).toFixed(2)}%\n`
+  briefing += `- **Synergy Density:** ${synergies.length} active overlaps across ${clusterCount} clusters.\n\n`
+
+  briefing += `\n### ⚡ Strategic Synergy Summary\n`
 
   if (highIntensity.length > 0) {
     briefing += `- Detected **${highIntensity.length} High-Intensity synergies**. Immediate cross-branch coordination recommended.\n`
@@ -160,10 +168,10 @@ export async function generateActionableBriefing(state: any, directives: Directi
   }
 
   const recommendations = state.intelligence.relationshipMap.collaborationRecommendations || []
-  const criticalRecs = recommendations.filter((r: any) => r.priority === 'Critical' || (r.priority === 'Routine' && r.branches.length > 5))
+  const criticalRecs = recommendations.filter((r: any) => r.priority === 'Critical' || r.priority === 'Medium' || (r.priority === 'Routine' && r.branches.length > 3))
 
   if (criticalRecs.length > 0) {
-    briefing += `\n### 🤝 Direct Coordination Paths\n`
+    briefing += `\n### 🤝 Strategic Coordination Pathways\n`
     criticalRecs.forEach((r: any) => {
       const coordinationRequired = r.rationale.includes('Urgent coordination required between:')
       const coordinationPath = coordinationRequired
@@ -173,6 +181,17 @@ export async function generateActionableBriefing(state: any, directives: Directi
       const riskLabel = r.priority === 'Critical' ? '🚨 CRITICAL' : '🟡 MODERATE';
       briefing += `- **Resource Conflict/Synergy [${riskLabel}]:** \`${r.resource}\`\n`
       briefing += `  - **Strategic Pathway:** ${coordinationPath}\n`
+
+      // Phase 25: Enhanced Merge Sequencing
+      if (r.branches && r.branches.length > 1) {
+        const sortedBranches = [...r.branches].sort((a, b) => {
+          if (a.includes('main') || a.includes('stable')) return -1;
+          if (b.includes('main') || b.includes('stable')) return 1;
+          return 0;
+        });
+        briefing += `  - **Recommended Merge Order:** ${sortedBranches.slice(0, 3).join(' ➔ ')}${sortedBranches.length > 3 ? ' ➔ ...' : ''}\n`
+      }
+
       briefing += `  - **Action Item:** ${r.action}\n`
       if (r.branches && Array.isArray(r.branches)) {
         briefing += `  - **Impacted Branches:** ${r.branches.slice(0, 5).join(', ')}${r.branches.length > 5 ? ` (+${r.branches.length - 5} more)` : ''}\n`

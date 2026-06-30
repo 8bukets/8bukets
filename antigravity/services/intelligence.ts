@@ -130,7 +130,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
     mission: metadata.missionStatement,
     stakeholders: metadata.stakeholders,
     docker: { status: dockerStatus },
-    intelligence: { pendingTasks: workOrders.length, relationshipMap }
+    intelligence: { branches: branches.length, pendingTasks: workOrders.length, relationshipMap }
   }, directives)
 
   report += `## 🚀 Actionable Intelligence\n`
