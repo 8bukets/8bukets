@@ -71,13 +71,27 @@ export class CloudConnectedIntegrationService {
    */
   public async validateEcosystemSovereignty() {
     console.log('🛡️ [CloudIntegration] Validating Ecosystem Sovereignty (Docker, GitHub, GitLab, Supabase, MongoDB, GitKraken)...');
+    const isSimulated = process.env.MACBOOK_CLOUD_SIMULATION === 'true';
+
+    let gitlabOnline = true;
+    if (!isSimulated) {
+      try {
+        const response = await fetch('https://gitlab.com/explore', { method: 'HEAD', signal: AbortSignal.timeout(5000) });
+        gitlabOnline = response.ok;
+      } catch (e) {
+        gitlabOnline = false;
+      }
+    }
+
+    const { healthCheck } = await import('../core');
+    const coreHealth = await healthCheck();
 
     const status: Record<string, boolean> = {
       Docker: await checkDockerHealth(),
       GitHub: !!(await gitProviderService.getActiveProvider()),
-      GitLab: true, // Simulated/Placeholder
-      Supabase: !!supabase,
-      MongoDB: true, // Verified via core healthCheck
+      GitLab: gitlabOnline,
+      Supabase: coreHealth.supabase !== 'error',
+      MongoDB: coreHealth.mongodb !== 'error',
       GitKraken: true // Metadata service is stateless
     };
 

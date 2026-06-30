@@ -746,6 +746,9 @@ public async observeKnowledge(url?: string) {
 
     await this.syncCollaboration()
 
+    // Phase 23: Autonomous Merge feature branches after successful cycle
+    await this.autonomousMerge()
+
     const { syncToICloud } = await import('./services/icloud')
     await syncToICloud()
 

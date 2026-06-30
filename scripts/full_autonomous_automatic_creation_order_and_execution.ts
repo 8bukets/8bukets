@@ -70,9 +70,13 @@ async function main() {
   console.log('🔍 [Antigravity] Verifying system health and cross-shard connectivity...')
   const coreHealth = await healthCheck()
   const dockerHealthy = await isDockerHealthy()
+  const ecosystemStatus = await cloudConnectedIntegrationService.validateEcosystemSovereignty() as Record<string, boolean>
+
   console.log(` - MongoDB: ${coreHealth.mongodb}`)
   console.log(` - Supabase: ${coreHealth.supabase}`)
   console.log(` - Docker: ${dockerHealthy ? 'healthy' : 'unreachable'}`)
+  console.log(` - GitLab: ${ecosystemStatus.GitLab ? 'online' : 'offline'}`)
+  console.log(` - GitKraken: ${ecosystemStatus.GitKraken ? 'ready' : 'unavailable'}`)
 
   // Step 4: Phase 19/23 Sovereign Activation & Evolution
   console.log('🧠 [Antigravity] Triggering High-Scale Engine Evolution (Phase 23)...')
