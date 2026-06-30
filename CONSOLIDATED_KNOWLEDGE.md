@@ -1,6 +1,6 @@
 # Consolidated Knowledge Base
 
-**Last Sync:** 2026-06-28T22:53:36.931Z
+**Last Sync (Python):** 2026-06-29T23:01:58.979490
 **System Version:** 1.94
 
 ## 🧩 Strategic Identity & Unified Model
@@ -402,7 +402,10 @@ Everything else should be evaluated by whether it helps:
 ---
 
 ## System Intelligence & Outlook
-Awaiting autonomous intelligence sync...
+- Scaling Strategy: Implementing simultaneous execution across agent tiers.
+- R&D Strategy: Developing realistic simulations for human-agent interaction.
+- Operational Strategy: Enhancing agent debate and feedback loops.
+- Positive outlook on multimodal scaling and autonomous research agents. Strategic focus on privacy-preserving AI and security frameworks detected. Infrastructure expansion indicates preparation for massive-scale deployment.
 
 ## 1. AI Agent Foundation
 ### Compile
@@ -924,21 +927,274 @@ Subagents are enabled by default. To disable them, set `enableAgents` to false i
 ```
 
 
+### The DESIGN.md specification
+
+### Introduction
+Learn
+The formal specification for the DESIGN.md format — token schema, section structure, and type system.
+A DESIGN.md file has two layers. The YAML front matter contains machine-readable design tokens — the precise values agents use to enforce consistency. The markdown body provides human-readable design rationale organized into ## sections. Prose may use descriptive color names (e.g., “Midnight Forest Green”) that correspond to systematic token names (e.g., primary ). The tokens are the normative values; the prose provides context for how to apply them.
+The spec is a foundation, not a prescription . It provides common ground that agents, tools, and teams can rely on, while preserving the freedom to extend the format for domain-specific needs.
+
+### Design tokens
+DESIGN.md embeds design tokens as YAML front matter at the beginning of the file. The front matter block must begin with a line containing exactly --- and end with a line containing exactly --- . The YAML content between these delimiters follows the schema defined below.
+The token system is inspired by the W3C Design Token Format . Tokens are easily converted to and from tokens.json , Figma variables, and Tailwind theme configs.
+```
+---
+version: alpha
+name: Daylight Prestige
+colors:
+primary: "#1A1C1E"
+secondary: "#6C7278"
+tertiary: "#B8422E"
+typography:
+h1:
+fontFamily: Public Sans
+fontSize: 48px
+fontWeight: 600
+lineHeight: 1.1
+letterSpacing: -0.02em
+rounded:
+sm: 4px
+md: 8px
+spacing:
+sm: 8px
+md: 16px
+components:
+button-primary:
+backgroundColor: "{colors.primary-60}"
+textColor: "{colors.primary-20}"
+rounded: "{rounded.md}"
+padding: 12px
+---
+```
+
+##### Schema
+```
+version: <string>          # optional, current version: "alpha"
+name: <string>
+description: <string>      # optional
+colors:
+<token-name>: <Color>
+typography:
+<token-name>: <Typography>
+rounded:
+<scale-level>: <Dimension>
+spacing:
+<scale-level>: <Dimension | number>
+components:
+<component-name>:
+<token-name>: <string | token reference>
+```
+The <scale-level> placeholder represents a named level in a sizing or spacing scale. Common level names include xs , sm , md , lg , xl , and full . Any descriptive string key is valid.
+
+### Token types
+##### Typography properties
+
+
+##### Token references
+A token reference is wrapped in curly braces and contains an object path to another value in the YAML tree. For most token groups, the reference must point to a primitive value (e.g., {colors.primary-60} ), not a group. Within the components section, references to composite values (e.g., {typography.label-md} ) are permitted.
+```
+components:
+button-primary:
+backgroundColor: "{colors.primary-60}"
+textColor: "{colors.primary-20}"
+rounded: "{rounded.md}"
+```
+
+### Sections
+Every DESIGN.md follows the same structure. Sections can be omitted if they are not relevant to the project, but those present should appear in the sequence listed below. All sections use ## headings. An optional # heading may appear for document titling purposes but is not parsed as a section.
+The section structure is intentionally open-ended. The canonical sections provide a shared vocabulary; design systems are free to add domain-specific sections beyond these.
+
+##### Section order
+
+
+##### Overview
+Also known as “Brand & Style.” A holistic description of the product’s look and feel. This section defines the brand personality, target audience, and the emotional response the UI should evoke. It serves as foundational context when a specific rule or token is not defined.
+```
+## Overview
+A calm, professional interface for a healthcare scheduling platform.
+Accessibility-first design with high contrast and generous touch targets.
+```
+
+##### Colors
+Defines the color palettes for the design system. At least the primary palette should be defined. Additional palettes may be named freely; a common convention is primary , secondary , tertiary , and neutral .
+```
+## Colors
+The palette is rooted in high-contrast neutrals and a single accent color.
+- **Primary (#1A1C1E):** Deep ink for headlines and core text.
+- **Secondary (#6C7278):** Sophisticated slate for borders, captions, metadata.
+- **Tertiary (#B8422E):** The sole driver for interaction.
+- **Neutral (#F7F5F2):** Warm limestone foundation.
+```
+Design tokens: A map<string, Color> mapping the token name to its hex value.
+```
+colors:
+primary: "#1A1C1E"
+secondary: "#6C7278"
+tertiary: "#B8422E"
+neutral: "#F7F5F2"
+```
+
+##### Typography
+Defines typography levels. Most design systems have 9–15 levels, each with a semantic role (headline, body, label) and size variant (small, medium, large).
+```
+## Typography
+- **Headlines:** Public Sans Semi-Bold for an institutional voice.
+- **Body:** Public Sans Regular at 16px for long-form readability.
+- **Labels:** Space Grotesk for technical data and metadata.
+```
+Design tokens: A map<string, Typography> mapping the token name to its typography properties.
+```
+typography:
+h1:
+fontFamily: Public Sans
+fontSize: 48px
+fontWeight: 600
+lineHeight: 1.1
+letterSpacing: -0.02em
+body-md:
+fontFamily: Public Sans
+fontSize: 16px
+fontWeight: 400
+lineHeight: 1.6
+label-caps:
+fontFamily: Space Grotesk
+fontSize: 12px
+fontWeight: 500
+lineHeight: 1
+letterSpacing: 0.1em
+```
+
+##### Layout
+Also known as “Layout & Spacing.” Describes the layout and spacing strategy — grid models, spacing scales, and containment principles.
+```
+## Layout
+The layout follows a Fluid Grid model for mobile and a Fixed-Max-Width
+Grid for desktop (max 1200px). A strict 8px spacing scale is used.
+```
+Design tokens: A map<string, Dimension | number> mapping the spacing scale identifier to a dimension or unitless number (e.g., column counts or ratios).
+```
+spacing:
+base: 16px
+xs: 4px
+sm: 8px
+md: 16px
+lg: 32px
+xl: 64px
+gutter: 24px
+margin: 32px
+```
+
+##### Elevation & Depth
+Also known as “Elevation.” Describes how visual hierarchy is conveyed. For designs that use shadows, it defines the shadow properties. For flat designs, it explains the alternative methods (borders, tonal layers, color contrast).
+```
+## Elevation & Depth
+Depth is achieved through tonal layers rather than heavy shadows.
+Background uses a soft off-white; primary content sits on pure white cards.
+```
+
+##### Shapes
+Describes how visual elements are shaped — corner radii, edge treatments, and the overall shape language.
+```
+## Shapes
+All interactive elements use a minimal 4px corner radius.
+Modern enough to feel current, rigid enough to feel engineered.
+```
+Design tokens: A map<string, Dimension> mapping the scale level to the corner radius.
+```
+rounded:
+sm: 4px
+md: 8px
+lg: 12px
+full: 9999px
+```
+
+##### Components
+Style guidance for component atoms. The spec defines common component types — Buttons, Chips, Lists, Inputs, Checkboxes, Radio buttons, Tooltips — but design systems are encouraged to define additional components relevant to their domain.
+```
+## Components
+- **Buttons**: Rounded (8px), primary uses brand blue fill, secondary uses outline
+- **Inputs**: 1px border, surface-variant background, 12px padding
+- **Cards**: No elevation, 1px outline border, 12px corner radius
+```
+Design tokens: A map<string, map<string, string>> mapping a component identifier to a group of sub-token properties. Token values may be literal values or references to previously defined tokens.
+Variants. A component may have variants for different UI states (hover, active, pressed). Variants are defined as separate component entries with a related key name.
+```
+components:
+button-primary:
+backgroundColor: "{colors.primary-60}"
+textColor: "{colors.primary-20}"
+rounded: "{rounded.md}"
+padding: 12px
+button-primary-hover:
+backgroundColor: "{colors.primary-70}"
+```
+
+##### Do’s and Don’ts
+Practical guidelines and common pitfalls. These act as guardrails during generation.
+```
+## Do's and Don'ts
+- Do use the primary color only for the single most important action per screen
+- Don't mix rounded and sharp corners in the same view
+- Do maintain WCAG AA contrast ratios (4.5:1 for normal text)
+- Don't use more than two font weights on a single screen
+```
+
+### Consumer behavior for unknown content
+The spec is designed to be extended. When a consumer encounters content not defined by this specification:
+
+### Recommended token names
+The following names are commonly used across design systems. They are not required but are provided as guidance for consistency.
+Colors: primary , secondary , tertiary , neutral , surface , on-surface , error
+Typography: headline-display , headline-lg , headline-md , body-lg , body-md , body-sm , label-lg , label-md , label-sm
+Rounded: none , sm , md , lg , xl , full
+
+
 ## 2. Google Innovation & AI
-- **[Gemini Embedding 2 is now generally available.](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/)**
-- **[Deep Research Max: a step change for autonomous research agents](https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/)**
-- **[Gemini 3.1 Flash TTS: the next generation of expressive AI speech](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/)**
-- **[Gemini 3.1 Flash Live: Making audio AI more natural and reliable](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/)**
-- **[Gemini Robotics ER-1.6 enhances reasoning to help robots navigate real-world tasks.](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-1-6/)**
+- **[Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)**
+- **[We’re strengthening our presence in Alabama through new investments and community support.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/)**
+- **[Our new community investments in Virginia support local jobs and expand energy affordability.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/)**
+- **[Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)**
+- **[Cloud Next ‘26: Momentum and innovation at Google scale](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/)**
+- **[7 highlights from Google Cloud Next ‘26](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-cloud-next-26-recap/)**
+- **[View the collection](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/how-google-does-it-security-series/)**
+- **[View the collection](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/next-2026/)**
+- **[Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)**
+- **[Gemini 3.5: frontier intelligence with action](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/)**
+- **[Fluid, natural voice translation with Gemini 3.5 Live Translate](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/)**
+- **[9 demos of Gemini Omni and Gemini 3.5 in action](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/)**
+- **[Introducing Gemini Omni](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)**
+- **[Introducing computer use in Gemini 3.5 Flash](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/)**
 - **[Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)**
-- **[Our new study explores how AI can reduce the climate impact of air travel.](https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/)**
-- **[Google Flow Music and Believe bring next-gen tools to artists](https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/)**
-- **[3 creative tips from our Flow Sessions artists](https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-sessions-artists-lessons/)**
-- **[Stitch’s DESIGN.md format is now open-source so you can use it across platforms.](https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-design-md/)**
+- **[We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks.](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/)**
+- **[Google DeepMind and A24 announce first-of-its-kind research partnership](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/deepmind-a24-research-partnership/)**
+- **[Simulate real-world places with Project Genie and Street View](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/)**
+- **[Running Guide agent: A step towards running unbounded](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/)**
+- **[Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)**
 
 ## 3. Market Intelligence (Markposition)
-Total Market Data Points: 0
+Total Market Data Points: 679
 
+- **advertising.amazon**: https://advertising.amazon.com/ (October 5, 2022)
+- **Drive Advertising Revenue with Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager (September 26, 2022)
+- **https://marketingplatform.google.com/about/search-ads-360/**: https://marketingplatform.google.com/about/search-ads-360/ (March 10, 2022)
+- **Analytics Academy**: https://analytics.google.com/analytics/academy/ (September 20, 2022)
+- **Adssettings google**: https://adssettings.google.com/authenticated (September 20, 2022)
+- **Data google**: https://myaccount.google.com/data-and-personalization (September 20, 2022)
+- **The Privacy Sandbox: Technology for a More Private Web.**: https://privacysandbox.com/intl/home#home-hero (September 20, 2022)
+- **Digital Experience Platform & Enterprise CMS | Crownpeak**: https://www.crownpeak.com/ (September 16, 2022)
+- **About Performance Max campaigns – Google Ads**: https://support.google.com/google-ads/answer/10724817?hl=en (September 1, 2022)
+- **About Smart Bidding – Google Ads**: https://support.google.com/google-ads/answer/7065882?hl=en (September 1, 2022)
+- **About Maximize conversion value bidding – Google Ads**: https://support.google.com/google-ads/answer/7684216?hl=en (September 1, 2022)
+- **About automated bidding – Google Ads Help**: https://support.google.com/google-ads/answer/2979071?hl=en (September 1, 2022)
+- **About Target CPA bidding – Google Ads Help**: https://support.google.com/google-ads/answer/6268632?hl=en (September 1, 2022)
+- **About Maximize conversions bidding – Google Ads Help**: https://support.google.com/google-ads/answer/7381968?hl=en (September 1, 2022)
+- **About Target ROAS bidding – Google Ads Help**: https://support.google.com/google-ads/answer/6268637?hl=en (September 1, 2022)
+- **Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help**: https://support.google.com/google-ads/answer/11189316?hl=en (September 1, 2022)
+- **Coalition for Better Ads**: https://www.betterads.org/ (August 31, 2022)
+- **ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions**: None (August 20, 2022)
+- **How To Create Quality Video Ads – YouTube Advertising**: https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/ (August 16, 2022)
+- **Business Data Responsibility – Your Data Protection & Privacy**: https://business.safety.google/ (August 15, 2022)
 
 ## 4. Legal & Ecosystem (Wilson Sonsini)
 ### Wilson Sonsini Goodrich & Rosati
@@ -972,6 +1228,7 @@ Wilson Sonsini’s history is essentially the history of modern technology:
 - **Mergers & Acquisitions**: Advising on multi-billion dollar global transactions in tech and life sciences.
 - **Regulatory & Compliance**: Navigating the complex regulatory landscape facing technology-driven businesses.
 
+
 ## 5. Technical Documentation
 ### Gemma Model
 Topics covered: models_overview, benchmark_results, core_capabilities, best_practices, model_data...
@@ -990,6 +1247,7 @@ Topics covered: repository, readme...
 
 ### Google Ads
 Topics covered: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU, https://business.google.com/uk/ad-tools/bidding/?hl=en, https://business.google.com/uk/resources/?hl=en, https://developers.google.com/ad-manager?hl=en, https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en...
+
 
 ## 6. TypeScript Ecosystem Intelligence
 ### Internal: .github/ISSUE_TEMPLATE/bug_report.md
@@ -4322,6 +4580,10 @@ Scraped from:
 - URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/
 - Insight: Studying can feel overwhelming, especially when you don't know where to start or what to focus on next. That’s why we’re introducing study notebooks in the Gemini app.Study notebooks are designed specifically for students. As a goal-oriented learning space, they generate personalized lessons based on your real-time strengths and knowledge gaps. Your progress is tracked through a custom dashboard based on an initial diagnostic quiz and then follow-up quiz performance. Here are five ways to learn with study notebooks in Gemini:1. Assess your knowledge gapsTo start, upload your syllabus, notes, reading materials or other class materials. Gemini will then generate a custom diagnostic quiz to establish an academic baseline. It actively pinpoints your unique strengths and weaknesses, so you know exactly which areas need attention, replacing guessing games with a tailored learning plan.2. Study with bite-sized lessons built just for youOnce your baseline knowledge is assessed, your study note...
 
+#### The Gemini app is bringing personalized image creation to more users.
+- URL: https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana-us-expansion/
+- Insight: Personal Intelligence makes the Gemini app feel tailored to you. With your permission, it pulls from Google tools like Gmail, Google Photos, YouTube and Search to provide the most relevant responses — like an assistant who knows you.Starting today, all eligible users in the U.S. 1 can experience deeply personalized image generation in Gemini for free. We’re connecting Personal Intelligence with Nano Banana and Google Photos, so your creations can easily reflect your taste and lifestyle, gleaned from your connected Google apps.Now, instead of writing out the intricate details of your life, you can use simple prompts like “design my dream house.” And because Gemini can pull actual images of you from Google Photos, you no longer need to manually upload photos when prompting "create an illustration of me and my favorite things." Gemini pulls the right context from your connected Google apps, letting you spend less time explaining and more time creating.You’re in control. Connecting ...
+
 #### View more from NotebookLM
 - URL: https://blog.google/innovation-and-ai/products/notebooklm/
 
@@ -4344,6 +4606,10 @@ Scraped from:
 #### I/O 2026: Welcome to the agentic Gemini era
 - URL: https://blog.google/innovation-and-ai/sundar-pichai-io-2026/
 - Insight: Editor’s note: Below is an edited transcript of Google CEO Sundar Pichai’s remarks at Google I/O 2026, adapted to include more of what was announced on stage. See all the announcements in our collection.It’s been an extraordinary year since our last I/O, a period of relentless shipping, technology advances and hyper progress. We’re now in the part of the AI cycle where people want to see the value in the products they use every day. We’ve been really focused on that, and you’ll see that in the products and features we’re announcing today at I/O.Ten years since we pivoted the company to be AI-first, we still see AI as the most profound way to advance our mission and improve people’s lives at scale. That’s why we’ve been taking a differentiated, full-stack approach to AI innovation, from our custom silicon and secure foundation, to our world-class research and models, to our products and platforms that touch billions of people. This approach enables us to iterate and innovate faster in w...
+
+#### Ask an AI expert: What exactly is the full stack?
+- URL: https://blog.google/innovation-and-ai/technology/ai/full-stack-ai-explainer/
+- Insight: If you’ve spent any time lately reading about AI or using AI tools, you’ve probably heard about “full-stack” AI and app development. Our unique full-stack approach to AI lets us deliver powerful, cost-efficient products to expert developers and everyday users alike. But what exactly does it mean when a technology system is "full-stack”? We asked Google expert Richard Seroter, who leads developer experience at Google Cloud, to explain it — and why it enables Google to bring helpful AI to billions of people.First things first: What exactly do you do at Google?I originally came to Google as a product manager, and I’ve been leading our developer relations and technical writing teams for about three years now. My team, now inclusive of product engineering for languages and frameworks along with our Open Source Programs Office, and I help software developers successfully build with Google Cloud products. We do a lot of different things, from building the programming languages and frameworks ...
 
 #### The latest AI news we announced in May 2026
 - URL: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/

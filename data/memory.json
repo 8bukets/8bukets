@@ -59,9 +59,65 @@
     "TargetingAgent": {
         "long_term": {
             "test_compatibility_persona": "Compatibility Enthusiast",
-            "last_primary_persona": "General Tech Enthusiast",
+            "last_primary_persona": "AdTech Professional",
             "new_key": "new_val"
         },
         "episodic": []
+    },
+    "RobotTxtAgent": {
+        "long_term": {
+            "disallowed_paths": [
+                "/mshots/v1/",
+                "/public.api/",
+                "/remote-login.php",
+                "/next/",
+                "/wp-admin/",
+                "/activate/",
+                "/wp-login.php",
+                "/press-this.php",
+                "/wp-signup.php",
+                "/cgi-bin/"
+            ]
+        },
+        "episodic": []
+    },
+    "BidAgent": {
+        "long_term": {
+            "adjustment_factor": 1.01
+        },
+        "episodic": []
+    },
+    "AutonomousIntelligenceAgent": {
+        "long_term": {
+            "system_health": "healthy"
+        },
+        "episodic": []
+    },
+    "ChiefAIOfficer": {
+        "long_term": {},
+        "episodic": [
+            {
+                "timestamp": "2026-06-29T23:01:59.104327",
+                "event": "strategic_review",
+                "data": {
+                    "strategy_vision": {
+                        "alignment": false,
+                        "notes": "Realignment needed."
+                    },
+                    "ethics_governance": {
+                        "status": "PASS",
+                        "notes": "Algorithms meet compliance."
+                    },
+                    "implementation_stack": {
+                        "status": "APPROVED",
+                        "version": 1.95
+                    },
+                    "performance_tracking": {
+                        "roi_assessment": "NEEDS_IMPROVEMENT",
+                        "impact_score": 0.4980615125200082
+                    }
+                }
+            }
+        ]
     }
 }
