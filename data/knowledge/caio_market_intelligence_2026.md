@@ -16,7 +16,6 @@ As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-su
     - **PwC:** Focus on responsible AI deployment in audit, tax, and advisory services.
     - **Financial Services:** JPMorgan Chase, Goldman Sachs, and HSBC. Focus on model risk management, algorithmic trading, and fraud detection.
     - **US Federal Government:** Mandated CAIOs across all agencies (USDA, ODNI, DoD, DoE, HHS).
-    - **GE Healthcare:** Parminder Bhatia, Chief AI Officer.
 - **Key Requirements in Postings:**
     - Evidence of bridging the gap between technical AI execution (e.g., Transformers, RAG architectures) and business ROI.
     - Deep experience in auditing AI workflows and aligning predictive models with revenue streams.
@@ -27,6 +26,7 @@ To meet licensure-equivalent standards for executive roles, the following progra
 
 ### 1. The Chief AI Officer's Handbook (Coursera / Packt)
 - **Content:** Develop and execute AI strategy as a CAIO, ensuring ethical compliance. Master agile AI project management and design/implement AI agents for autonomous system optimization.
+- **Structure:** 17 assignments/modules blending theory with real-world applications.
 
 ### 2. Executive AI Leadership Mastery Specialization (Coursera)
 - **Courses:** How to Build an Enterprise AI Strategy, Change Management for GenAI Integration, CEO Playbook: Generative AI.
@@ -43,9 +43,13 @@ To meet licensure-equivalent standards for executive roles, the following progra
 - **UPenn (Wharton):** Executive Data Analyst & AI Strategy – Focuses on the financial impact of AI.
 - **MIT xPRO:** AI Strategy and Leadership – Focuses on implementation and data strategy.
 - **Stanford Online:** AI-Driven Leadership – Covers AI-driven decision making and business objectives.
+- **UC Berkeley:** Executive Data Strategy – Focuses on maintaining a competitive advantage through data-driven AI.
 
 ## Salary Benchmarks (2026 Targets)
-- **National Median Base Salary:** ~$350,000+
+- **Growth-Stage Startups:** $250,000 - $400,000 base.
+- **Mid-Market Companies:** $300,000 - $500,000 base.
+- **Enterprise / Fortune 500:** $400,000 - $1,000,000+ base.
+- **National Median Base Salary:** ~$351,519.
 - **Total Compensation (Fortune 500):** $1.2M - $2.5M+ (including bonus and equity).
 - **Core Metric:** Performance is increasingly tied to "AI-Driven ROI" and "Governance Compliance Scores."
 
@@ -53,3 +57,4 @@ To meet licensure-equivalent standards for executive roles, the following progra
 - **Sovereign AI Clusters:** Increased demand for private infrastructure to ensure data residency and compliance.
 - **Direct Accountability:** Shift toward CAIOs reporting directly to the CEO rather than being nested under the CTO.
 - **Quick Win Mandate:** Expectation for measurable results (ROI) within the first 6-12 months of appointment.
+- **Agentic Sovereignty:** Focus on building and managing autonomous AI agent fleets for system optimization.
