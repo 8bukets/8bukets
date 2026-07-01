@@ -17,6 +17,11 @@ import { checkDockerHealth } from './docker';
 import { gitProviderService } from './git_provider';
 import { supabase, logAutonomousAction } from '../core';
 import { jules } from '../jules';
+import { cloudWorkflowAgent } from './cloud_workflow';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+
+const execAsync = promisify(exec);
 
 /**
  * CloudConnectedIntegrationService
@@ -104,6 +109,47 @@ export class CloudConnectedIntegrationService {
     });
 
     return status;
+  }
+
+  /**
+   * Phase 23: Execute Cloud Sovereign Work
+   * Unifies presence, takeover, PR audits, knowledge merging, and work order execution.
+   */
+  public async executeCloudSovereignWork() {
+    console.log('🌌 [CloudIntegration] Starting Unified Cloud Sovereign Work Cycle...');
+
+    // 1. Sync Presence & Check Leadership
+    await onlinePresenceService.broadcastTelemetry();
+    await onlinePresenceService.checkLeadership();
+
+    // 2. Enforce Takeover if Cloud Node
+    if (process.env.AGENT_NAME === 'cloud-relay-01') {
+      await cloudWorkflowAgent.enforceCloudTakeover();
+    }
+
+    // 3. Autonomous PR Auditing
+    console.log('🐙 [CloudIntegration] Auditing autonomous Pull Requests...');
+    try {
+      const { stdout: prCount } = await execAsync('gh pr list --label "autonomous" --json number --jq length');
+      console.log(`✅ [CloudIntegration] Found ${prCount.trim()} active autonomous PRs.`);
+    } catch (e) {
+      console.warn('⚠️ [CloudIntegration] GH CLI not available for PR auditing.');
+    }
+
+    // 4. Knowledge Merging
+    console.log('🧠 [CloudIntegration] Merging multi-shard intelligence...');
+    try {
+      await execAsync('npx tsx scripts/ingest_knowledge_merge.ts');
+      console.log('✅ [CloudIntegration] Knowledge merge completed.');
+    } catch (e: any) {
+      console.warn(`⚠️ [CloudIntegration] Knowledge merge failed: ${e.message}`);
+    }
+
+    // 5. Execute Pending Work Orders
+    const { workOrderService } = await import('./work_order');
+    await workOrderService.executePendingOrders();
+
+    logAutonomousAction('[PHASE_23] Unified Cloud Sovereign Work Cycle completed.', 'cognitive');
   }
 }
 

@@ -203,7 +203,11 @@ async function main() {
   console.log('🧹 [Antigravity] Purging stale work order state...')
   await workOrderService.clearPendingOrders()
 
-  // Step 6: Root Order Generation
+  // Step 6: Unified Cloud Sovereign Work Cycle
+  console.log('📝 [Antigravity] Executing Unified Cloud Sovereign Work Cycle...')
+  await cloudConnectedIntegrationService.executeCloudSovereignWork();
+
+  // Step 7: Root Order Generation
   console.log('📝 [Antigravity] Generating master AUTONOMOUS_CREATION order...')
   const rootOrder = await workOrderService.createOrder(
     'AUTONOMOUS_CREATION',
@@ -216,11 +220,11 @@ async function main() {
   )
   console.log(`✅ [Antigravity] Master order created: ${rootOrder.id}`)
 
-  // Step 7: Recursive Execution Pulse
+  // Step 8: Recursive Execution Pulse
   console.log('⚡ [Antigravity] Beginning recursive autonomous execution cycle...')
   await workOrderService.executePendingOrders()
 
-  // Step 8: Final Intelligence Reporting
+  // Step 9: Final Intelligence Reporting
   console.log('📊 [Antigravity] Compiling final creation intelligence report...')
   await generateCreationReport(rootOrder.id)
 
