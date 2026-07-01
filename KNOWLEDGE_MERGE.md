@@ -1,0 +1,9805 @@
+# Market Intelligence Matrix
+
+## Ecosystem Knowledge Consolidation (2026-07-01T04:06:22.992Z)
+### 🔗 Resource Dependency Matrix
+- `analytics` -> depends on -> `cross_shard_memory` (import)
+- `analytics` -> depends on -> `swarm_heartbeat` (import)
+- `analytics` -> depends on -> `lattice_sync` (import)
+- `anticipatory_intelligence_cluster` -> depends on -> `lattice_sync` (import)
+- `apac_edge_orchestrator` -> depends on -> `lattice_sync` (import)
+- `autonomous_api_documentation` -> depends on -> `lattice_sync` (import)
+- `autonomous_audit` -> depends on -> `lattice_sync` (import)
+- `autonomous_compliance` -> depends on -> `lattice_sync` (import)
+- `autonomous_database_sharding` -> depends on -> `lattice_sync` (import)
+- `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
+- _...and 251 more dependencies._
+
+### ⚡ Strategic Synergy Highlights
+- **SYNERGY [High]:** `Cluster: knowledge` involves branches: origin, origin/add-gemini-ide-docs-5507798578309108991, origin/add-google-adk-knowledge-and-examples-17228136166825962958...
+- **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
+- **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
+- **SYNERGY [High]:** `Cluster: workflow` involves branches: origin/add-docker-push-methods-8792019299013764107, origin/add-docker-scripts-14962706392589598489, origin/add-gemini-test-csharp-11995490696655996242...
+- **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
+- **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
+
+### 🏆 Top Impactful Strategic Results
+| Impact Score | Strategic Branch | Category | Key Result |
+| :--- | :--- | :--- | :--- |
+| **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
+| **130** | `origin/feat/autonomous-cloud-sovereignty-9356824831657033971` | FEATURE | Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy |
+| **130** | `origin/feat/phase16-autonomous-cloud-7295121110943695539` | FEATURE | Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence |
+| **130** | `origin/feature/autonomous-cloud-sovereignty-10105112552170184768` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and presence |
+| **130** | `origin/feature/full-cloud-sovereignty-13405760260663540052` | FEATURE | Commit: feat: implement full cloud sovereignty and autonomous online presence |
+| **130** | `origin/feature/phase-19-sovereign-swarm-creation-18087892088407006712` | FEATURE | Commit: feat: implement Phase 19 Sovereign Swarm autonomous creation and execution |
+| **100** | `origin/feat/autonomous-cloud-sovereignty-10617479099026703774` | FEATURE | Commit: feat: enable autonomous cloud sovereignty and presence |
+| **100** | `origin/feat/cloud-native-autonomy-3438116551041896813` | FEATURE | Commit: [ROADMAP:PHASE-12] Unified Cloud-Native Autonomous Evolution |
+| **100** | `origin/feat/cloud-native-convergence-16112457665657205536` | FEATURE | Commit: feat: implement cloud-native autonomous convergence and online presence |
+| **100** | `origin/feat/phase-25-singularity-integration-18319350463650196031` | FEATURE | Commit: feat: integrate Phase 25 and fix Cloudflare Worker CI |
+| **100** | `origin/feat/phase14-knowledge-integration-sovereignty-audit-15362902986675468031` | FEATURE | Commit: feat: integrate Phase 14 strategic knowledge and implement Cognitive Sovereignty Audit |
+| **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
+| **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
+| **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
+| **100** | `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` | FEATURE | Commit: feat: implement Phase 23 full autonomous creation and execution pulse |
+
+### 🌐 Strategic Domain: AI Agents
+*Strategic results and knowledge merged from 327 branches within the AI Agents domain.*
+
+- **Branch:** `origin/feature/phase-19-sovereign-swarm-creation-18087892088407006712` [Impact Score: 130]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Phase 19 Sovereign Swarm autonomous creation and execution
+  - **Activity:** Last active 8 days ago
+  - **Knowledge:** Aligned with strategic initiative: 🐝 Sovereign Swarm.
+- **Branch:** `origin/feat/phase14-knowledge-integration-sovereignty-audit-15362902986675468031` [Impact Score: 100]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 14 strategic knowledge and implement Cognitive Sovereignty Audit
+  - **Activity:** Last active 3 weeks ago
+  - **Knowledge:** Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.
+- **Branch:** `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` [Impact Score: 100]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Phase 23 full autonomous creation and execution pulse
+  - **Activity:** Last active 4 days ago
+  - **Knowledge:** Aligned with strategic initiative: 🐝 Swarm Intelligence.
+- **Branch:** `origin/add-mysql-agent-12534386317238704274` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous capabilities for JulesEvolutionAgent
+  - **Activity:** Last active 9 weeks ago
+- **Branch:** `origin/bolt-performance-soupstrainer-14059433622013418020` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous multi-agent system and optimize scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-regex-optimization-12519421487946893253` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement Autonomous Agents System & Optimize Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soup-strainer-optimization-8380713953647872097` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement Autonomous Agent System with Evolutionary Architecture
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/feature/backup-agent-11331906079381269962` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous backup agent system
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/implement-ai-agents-knowledge-11176623184876779780` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement expanded AI agents knowledge from Google Cloud
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/palette-cli-ux-improvements-8617716335041011148` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement Autonomous Agents Expansion with System IQ
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-percentages-17226232511035798370` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement autonomous evolutionary architecture with DNA-based agents
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-scraper-logging-11386897257754529243` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement Autonomous Evolutionary Agents System
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-12513139928667827617` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement autonomous multi-agent system
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/feat/phase-17-multi-modal-integration-10824368485739468570` [Impact Score: 70]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 17 Multi-Modal Cognition knowledge and improve system engine/agents
+  - **Activity:** Last active 11 days ago
+  - **Knowledge:** Aligned with strategic initiative: 👁️ Multi-Modal Integration.
+- **Branch:** `origin/feat/phase13-icloud-quantum-synergy-integration-16555976695544484777` [Impact Score: 70]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 13 iCloud knowledge and upgrade agents
+  - **Activity:** Last active 3 weeks ago
+  - **Knowledge:** Aligned with strategic initiative: ⚡ Quantum Synergy.
+- **Branch:** `origin/add-malubeach-scraper-16704333902164650708` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement Autonomous Multi-Agent System architecture
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/autonomous-agents-framework-90146205652415261` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement autonomous multi-agent system for ads and content
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-db-connection-12196506237305672986` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Implement Autonomous Agents & Evolutionary Architecture
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-14139347642198043635` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Implement Autonomous Agent Framework with IQ Tracking
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-2894680455719942553` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement Autonomous Intelligence System and Agents
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-3613197660478104645` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement autonomous agents and evolutionary architecture
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/update-scraper-target-14564535453076268184` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement collaborative autonomous agent system
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/update-scraper-target-15910668004309817623` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement autonomous multi-agent system for 24/7 operations
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/update-target-url-11001924703670317262` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement Autonomous Multi-Agent System
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt/debounce-search-10941063823449310273` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement Self-Learning Agents (IQ 25 start)
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/feat/agent-logic-architecture-4609003240533843259` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Agent - Logika ponasanja architectural integration
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/feat/ai-agents-knowledge-13986154163313695696` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement AI agents knowledge from Google Cloud
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/ai-agents-knowledge-14795660026662295366` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement AI agent knowledge from Google Cloud
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/ai-agents-knowledge-15681133979794376101` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement knowledge ingestion for AI agents
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/caio-licensure-reporting-16881271011460675674` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement licensure status reporting for CAIO agent
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/chief-ai-officer-implemented-13154530336040498192` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: verify chief ai officer agent is already implemented
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/google-ai-agents-knowledge-12584342026214538833` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Google Cloud AI agents knowledge
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/google-cloud-ai-agents-knowledge-4218668793533463141` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement exhaustive AI agents knowledge and fix CI
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/feat/implement-google-ai-agents-knowledge-17341300705636515353` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement high-quality AI agents knowledge integration
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/phase-13-integration-18269709634930068672` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 13 iCloud knowledge and enhance system engines/agents
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/phase-16-cognitive-transcendence-16716496200940960436` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 16 knowledge and improve cognitive engines
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/phase-20-cognitive-resonance-7248759692891744219` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 20 Cognitive Resonance protocols
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/feat/refine-caio-role-knowledge-v2-5295767818736859988` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: refine CAIO agent and expand executive agent roles
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/vercel-sandbox-agent-4324012582245511797` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Vercel Sandbox CLI via new autonomous SandboxAgent
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feature/knowledge-merge-all-entries-11790747981998761777` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): Expand knowledge merge agent to include all market entries
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-backend-tests-and-subagents-9232679682193337097` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ai): supercharge subagent execution limits and backend stability\n\n- Increases maxTurns across all subagents to 50 for deep multi-step execution.\n- Configures .gemini/settings.json to allow 500 maxActionsPerTask for browser_agent.\n- Fixes backend testing dependencies and ESM compatibility logic in moderation.js.\n- Mirrors updated configuration to root agents/ directory to ensure seamless discovery.
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/autonomous-evolution-1779420795460` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate react agent deployment logic and fix tools list parsing (#1955)
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/google-cloud-ai-agents-knowledge-13856646999009397935` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement high-fidelity Google Cloud AI Agent knowledge
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/implement-ai-agent-knowledge-21882567880054537` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement AI agent knowledge from Google Cloud Discover
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/implement-ai-agents-knowledge-6426333122211554413` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement AI agents knowledge and robust ReAct test fix
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/implement-gcp-ai-agents-knowledge-14133416208359869225` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement comprehensive knowledge from GCP AI agents discovery
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/improve-system-engine-phase-16-430968869549795776` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 16 iCloud knowledge and upgrade system engine and agents
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/improve/phase-18-integration-3962668745295355004` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 18 strategic knowledge and improve agents
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/sentinel/fix-csv-injection-14631498172973798397` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement self-learning IQ tracking for Intelligence Agent
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/update-duo-planner-prompt-and-agent-16216495216287918600` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Update Duo Planner system prompt and implement agent class
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/v0/8bukets-bd43e85b` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement AI agent knowledge from Google Cloud Discover (#1529)
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/bolt/optimize-analytics-counters-3356972243942763781` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt/optimize-analytics-counters-3356972243942763781
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt/optimize-analyzer-agent-7882848247587785296` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Optimize AnalyzerAgent: Remove redundant string concatenation and re-parsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-analyzer-processing-1038964724304632027` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize AnalyzerAgent text processing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-researcher-agent-14491778410455862210` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize ResearcherAgent with direct module calls
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-15316028881120091100` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt/optimize-scraper-parsing-15316028881120091100
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/update-subagents-knowledge-6325422281065488321` [Impact Score: 40]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update Subagents documentation in AI Agents knowledge base\n\n- Replaces the truncated Subagents section with the full documentation text.\n- Syncs the update across `ai_agents_knowledge.json`, `data/knowledge/ai_agents_knowledge.json`, and `ai_agents_knowledge.md`.\n- Preserves the existing file structure and manual keys.
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/cloud-autonomous-stabilization-11787002344957414636` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: finalize autonomous cloud integration and stabilize agents
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/async-fluent-workflow-17630423864710655172` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: refactor: replace blocking sync calls with non-blocking async across Python/TS agents
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/bolt-connection-pooling-8020030636571914955` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Implement shared aiohttp session for agents
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-4366988920377669204` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement parallel agent pipeline and evolutionary architecture
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/feature/ai-agent-knowledge-refinement-4060124279711853146` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refine AI agent knowledge implementation based on Google Cloud Discovery article.
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feature/google-ai-agent-knowledge-13116341653253101712` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix and complete Google Cloud AI Agent knowledge integration
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/google-ai-agents-knowledge-5091496677341900649` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement and integrate AI Agent knowledge from Google Cloud
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-deploy-react-agents-improve-10835976800642057780` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: Trigger clean commit for deploy react agents improve
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/fix-duo-planner-system-prompt-16083092832930775214` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix system prompt for Duo Planner AI Agent
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/fix-oracle-ai-knowledge-integration-2128253207995593297` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: integrate Oracle AI knowledge correctly in agents
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/gitlab-security-agent-prompt-5086130321090221521` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: chore: verify gitlab security agent prompt unchanged
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/fix/gitlab-security-analyst-agent-prompt-11288639631625011620` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Update GitLab Security Analyst Agent system prompt
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/implement-ai-agent-knowledge-12940849847121991383` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement AI Agent knowledge from Google Cloud Discover
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/implement-ai-agents-knowledge-10544419529497787617` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement AI Agents knowledge from Google Cloud Discover.
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/implement-ai-agents-knowledge-18347247063799517995` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: implement AI agents knowledge from Google Cloud
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/implement-ai-agents-knowledge-8036846396761105562` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into implement-ai-agents-knowledge-8036846396761105562
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/implement-gcp-ai-agents-knowledge-9680710330561312272` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement GCP AI Agents Knowledge and Fix CI Compatibility
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/integrate-google-innovation-ai-knowledge-11329975251392721471` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate Google Innovation & AI blog knowledge into autonomous agent ecosystem
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/jules-12457892104228508063-41c0c28d` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: integrate knowledge from Oracle AI in agents
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-duo-planner-agent-url-fix-5677968275200464330` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix URL patterns in duo_planner_agent.md
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-fix-subagent-prompts-16967744904311493464` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix subagent definition files location and update duo_planner_agent prompt
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/oracle-knowledge-update-1623548321536958066` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: integrate oracle ai knowledge properly into agents
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/palette-cli-visual-polish-8268523822408541016` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🤖 Complete Autonomous Agent System (V2)
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-4896609571382596345` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper and sanitize agent outputs
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-monetization-markdown-injection-4346962235570198500` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Markdown Injection vulnerability in MonetizationAgent
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-290759818619950664` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(security): prevent path traversal in ResearcherAgent
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-xss-content-agent-15220868101376936351` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Stored XSS in Content Agent by escaping Markdown characters
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/add-a2a-remote-agent-152042865285525971` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add generic A2A remote agent configuration
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/add-gitlab-security-agent-prompt-16540176671068222176` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(agents): Add GitLab Security Analyst Agent prompt
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/add-golang-developer-agents-5802231143872030735` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add golang developer subagents
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/add-google-research-agent-6251052890466246126` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add GoogleModelsResearchAgent and standalone scraper
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/bolt-parallel-scraping-3456726109416695191` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(performance): parallelize researcher agent tasks
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/caio-intelligence-integration-14454424676757008620` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate CAIO role intelligence and enhance agent logic
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/caio-role-enhancements-15971397418256116168` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CAIO agent and integrate role knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/add-chief-ai-officer-agent-1329096278704697703` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Chief AI Officer Python agent
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/agent-architecture-blueprint-7947491056487084323` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Agent Architecture Blueprint and foundational interfaces
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/feat/ai-agents-knowledge-ingestion-3432960869783854018` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-ingestion-3432960869783854018
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/ai-agents-knowledge-integration-10133877583552684442` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate AI agent knowledge from Google Cloud
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/ai-agents-knowledge-integration-17962488157664900856` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-integration-17962488157664900856
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/ai-agents-knowledge-integration-4554182407588547817` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate AI agent foundation and strategic knowledge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/ai-agents-knowledge-update-2880934032855437252` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-update-2880934032855437252
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/caio-research-and-agent-enhancement-2026-8330313146925585723` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate 2026 CAIO research and enhance agent strategic recognition
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/chief-ai-officer-agents-7425185603236409614` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add local and remote Chief AI Officer agents
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/chief-ai-officer-creation-17511905373912707701` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: create Chief AI Officer agent
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/create-agent-chief-ai-officer-4762951995153845072` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: create agent Chief AI Officer
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/create-caio-agent-4337063691776257193` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/create-caio-agent-4337063691776257193
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/data-agent-kit-intelligence-11472823746485531376` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: docs: integrate Data Agent Kit intelligence
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/decision-maker-agent-8910670838096441234` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: create decision maker agent for antigravity cli
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/deploy-react-agents-improve-16615732861125133740` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add deploy-react-agents-improve command to CLI
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/deploy-react-agents-logic-12098199206590490844` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/deploy-react-agents-logic-12098199206590490844
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/enhance-caio-agent-role-knowledge-v2-5314257329463039471` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CAIO agent with role-aware logic and updated knowledge base
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/evolve-chief-ai-officer-agent-5969082472717140886` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: evolve Chief AI Officer agent with market intelligence and resource allocation capabilities
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/gemini-cli-subagents-docs-8356808256042543281` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: docs: add Gemini CLI Subagents documentation
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/gitlab-security-agent-15511716266568375880` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update GitLab Security Agent prompt
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/google-ai-knowledge-integration-17446113522463245373` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Integrated AI Agents knowledge from Google Innovation & AI blog.
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feat/google-cloud-ai-agents-knowledge-4492366648459465539` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/google-cloud-ai-agents-knowledge-4492366648459465539
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/feat/high-scale-react-agent-deployment-3564540097483377252` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Enhance React agents deployment logic for higher scale
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/highlander-subagent-14372356893109913488` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add highlander subagent
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/icloud-knowledge-integration-and-engine-improvement-v2-13334952668195963162` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate iCloud knowledge and enhance system engine/agents
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/icloud-knowledge-integration-and-engine-improvement-v2-5900978067024052098` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate iCloud knowledge and improve system engines and CAIO agent
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/icloud-knowledge-integration-and-engine-improvement-v3-7738040317614912379` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate iCloud knowledge and improve system engine and agents
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/icloud-knowledge-system-improvement-9850230953244404299` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate iCloud knowledge and improve evolution engine/agents
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/ingest-agent-architecture-terminology-6454380025085424990` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest agent architecture terminology and tracking
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/ingest-google-cloud-ai-agents-knowledge-10482240976459445252` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest Google Cloud AI Agents knowledge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/ingest-subagents-3786532283562026658` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Ingest Gemini CLI Subagents knowledge
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/integrate-react-knowledge-1014096584960652610` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(react-agents): integrate knowledge extraction for deployment
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/intelephense-integration-7602330974725353866` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Intelephense Premium for Antigravity IDE and agents
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/jenkins-integration-8889480307913922372` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ci): integrate jenkins configuration parsing into cognitive engine
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/llm-super-power-agent-15457630385061771787` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add LLMSuperPowerAgent with license validation and dynamic ingestion
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/oracle-ai-knowledge-integration-15680791915741879380` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into feat/oracle-ai-knowledge-integration-15680791915741879380
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/react-agent-deployment-improvements-4418304449912244036` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/react-agent-deployment-improvements (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/react-agent-deployment-logic-2660835981298946574` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Integrate react agent deployment logic
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/remote-subagents-knowledge-10304987597767701842` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add Remote Subagents knowledge documentation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/scale-remote-subagents-9068634002929713743` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/scale-remote-subagents-9068634002929713743
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/stripe-link-cli-integration-12953010111031617616` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Integrate Stripe Link for Agents documentation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/thinking-agent-graph-of-thought-8628973372365797019` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add ThinkingAgent for continuous Graph of Thought evaluation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/add-gitlab-subagents-461501759789154721` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(agents): add gitlab_security_agent and duo_planner_agent as gemini CLI subagents
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/caio-role-update-11986401451259128704` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Chief AI Officer (CAIO) role knowledge and verify agent logic
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feature/deploy-react-agents-15831022730085051498` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(agents): Integrate React agent deployment config into orchestration
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feature/integrate-oracle-ai-knowledge-3950930680222986466` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Oracle AI knowledge into content agent
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix/duo-planner-prompt-update-5857249087494865625` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: synchronize Duo Planner agents with the latest provided system prompt
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/gemini-cli-subagent-setup-5210662692571654805` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: set up gemini CLI custom subagent and settings
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/improve-react-deployment-orchestration-8115373201736013250` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate react agent deployment configuration and orchestration logic
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/improve-system-engine-and-agents-with-icloud-knowledge-13140685069249491219` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate iCloud knowledge and improve evolution engine and Jules agent
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/ingest-subagents-knowledge-3401617007249931861` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest subagents documentation into knowledge base
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/integrate-google-innovation-ai-knowledge-12634374273910953452` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Google Innovation & AI knowledge into IntelligenceAgent
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/jules-10218835157398652197-336c97d2` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Chief AI Officer agent syntax
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-3971464412207526922-e231acac` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: create agent Chief AI Officer insertion
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/jules-4218664248837075517-97620320` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: create AgentRole type including Chief AI Officer
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-add-gemini-remote-agent-12873027587560108654` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: configure Gemini CLI remote subagent and documentation
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-chief-ai-officer-fix-12790656603275201778` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add Chief AI Officer agent syntax change
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-create-caio-agent-6458675343117660936` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: verify existing Chief AI Officer agent
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-analysis-ux-improvement-11980673162346986602` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance AnalysisAgent with rich Markdown report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-exec-summary-6369051085132382588` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(report): add executive summary table to agent report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-ux-3403375425654783519` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Table of Contents to agent reports and ignore report artifacts
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-ux-improvement-5601014531851096708` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve agent report readability with TOC and navigation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-cli-colors-7681114719260817655` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colored logging with agent emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/react-agent-deployment-18427809291502343091` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve React agent deployment logic
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/sentinel-markdown-sanitization-7145404824939616399` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add markdown sanitization to agent reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/subagent-configuration-update-7123065298896349124` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: create collaborator subagent and update existing agent configurations
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/update-react-deployment-logic-11252325931757869303` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate react agent deployment logic and fix tools list parsing
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-remote-subagents-8216224045262465071` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: configure and document Gemini CLI remote subagents
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/add-docker-agent-model-docs-997437020929679972` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: add docker agent model providers documentation
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/add-docker-mcp-catalog-knowledge-9644100882668346855` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs(knowledge): ingest Docker MCP Catalog into AI Agents KB
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/add-gitlab-security-agent-prompt-6060929454808838034` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs(agents): add GitLab Security Analyst Agent system prompt
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/add-sharing-agents-doc-12054475314514014573` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: add documentation for sharing agents via Docker
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/duo-planner-agent-update-6927150883631066240` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update duo planner agent configuration with new safety protocols
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/duo-planner-prompt-update-15997034599254729562` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs(agents): update duo planner agent prompt
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-docs-json-errors-7026823761144797836` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update Gemini remote agent documentation and fix JSON files
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-duo-planner-agent-prompt-11870259758696069140` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update duo planner agent prompt to use full URLs
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/fix-inline-agent-card-json-15069810893663467340` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: add missing Inline Agent Card JSON section
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-missing-diff-edit-engine-8402215637682154858` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: add diff / edit engine to AI agent architecture summary
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/ingest-gemini-cli-remote-subagents-16579767984832507209` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: ingest Gemini CLI remote subagent documentation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/ingest-remote-subagents-docs-1111005450111027953` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: ingest Gemini CLI Remote Subagents documentation and fix CI
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-11285418165717792072-a5eba6df` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: Verify AI Agent Architecture text alignment
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-12285609479644846939-296e30b1` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: force commit for existing AI agent architecture details
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-16939367844823065236-726fb4d6` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: acknowledge subagents documentation
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-17430343990571925541-c81c147a` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: generate AI Ecosystem Rollup mapping agents to 12-layer architecture
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-1787883397527771733-b75c17cd` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: Agent Architecture documentation is up to date
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-361744050208613117-0f82961f` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update remote subagents configuration documentation
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-3781632141493512623-e479fa22` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: verified AI Agent Architecture terminology
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-gitlab-security-agent-patch-9164786716786099651` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update gitlab security analyst agent prompt
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-knowledge-integration-compile-14557175907207924867` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: add "prepare best value of knowledge integration" to ai agents knowledge base
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-remote-subagents-docs-1653073469927459457` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: verify remote subagents documentation
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-docs-11163336897631494983` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: leave docs/AI_AGENT_ARCHITECTURE.md intact
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/update-duo-planner-prompt-13838548475697526700` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs(agents): update duo planner agent system prompt
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/update-duo-planner-system-prompt-7747836995487209053` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update Duo Planner agent system prompt
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/update-gemini-remote-agents-docs-18356627524095625467` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update Remote Subagents documentation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-13690528861975226507` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update gitlab security agent system prompt
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-15007723366612838738` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: add Merge Request Management to gitlab_security_agent prompt
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-16940786429236623062` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update gitlab security agent prompt with precise whitespacing
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-617701523818985495` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: sync gitlab_security_agent prompt with specification
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-963009201759407232` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update gitlab_security_agent system prompt exactly as specified
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/chore/create-agent-chief-ai-officer-9628397174735826027` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: create agent Chief AI Officer
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/chore/update-gitlab-security-agent-prompt-13456250813068372652` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: Update GitLab Security Analyst Agent prompt
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/feature/skip-trailing-whitespace-4724941898446010330` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: preserve formatting for gitlab security agent docs
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-8197540570479854725-c23a5090` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore(agents): Update Duo Planner agent system prompt
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-no-op-prompt-5892139652289730559` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: verify agent prompt text
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-update-duo-planner-prompt-12510917519976182075` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: sync and format Duo Planner AI agent prompt files
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-16782650584692900444` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: Verify gitlab_security_agent.md prompt
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-9385198721633097408` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore(agents): update gitlab security agent system prompt
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-subagent-prompts-18414997782670082926` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore(agents): add explicit MR management to security and planner agents
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/verify-ai-agent-architecture-7604816856702925706` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: verify AI agent architecture knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/add-duo-planner-agent-8887381606310982436`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Duo Planner Agent system prompt
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/add-duo-planner-agent-config-16696385487941017117`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Duo Planner AI Agent configuration
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/add-subagents-14416725836573894587`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add generalist and browser_agent subagents
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/bolt-analysis-optimization-12466745862754817385`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize AnalysisAgent string processing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-analyzer-optimization-1039143641568215889`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize analyzer agent text processing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-memory-optimization-18311455152297625638`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize memory usage in analytics and analysis agent
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-analytics-16514521859020060404`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-optimize-analytics-16514521859020060404
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-optimize-analytics-5015200726449326230`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-optimize-analytics-5015200726449326230
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-optimize-clean-text-13676587996373080392`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-optimize-clean-text-13676587996373080392
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-optimize-intelligence-agent-6564710749059078669`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize string concatenation in IntelligenceAgent
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-researcher-agent-subprocess-15744281419787264708`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize ResearcherAgent by removing subprocess calls
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-soupstrainer-11433902597372652499`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-optimize-scraper-soupstrainer-11433902597372652499
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-optimize-trend-identification-6164653202853995715`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize ResearchAgent trend lookup
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-orchestrator-parallelization-5297863247436025808`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Optimize AgentOrchestrator with parallel execution
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-perf-health-agent-14939916179485386661`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize HealthAgent with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-regex-optimization-461532303594678412`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-regex-optimization-461532303594678412
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-researcher-optimization-1888456818967514733`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor ResearcherAgent to use parallel direct execution
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-7413329541638180653`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-scraper-optimization-7413329541638180653
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-soup-strainer-optimization-6915325972743452926`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer in HealthAgent for ~2x faster integrity checks
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-subprocess-optimization-18368677201782107584`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor `ResearcherAgent` to invoke `scrape_informatic` directly
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/caio-role-update-393980831399900338`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update CAIO role knowledge and verify agent integration
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/cursor/cloud-agent-1782041482480-ylld3`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Cursor: Apply local changes for cloud agent
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/duo-planner-system-prompt-update-14556501185304816222`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner AI agent prompts
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/feat-daily-tasks-subagent-1551641649633932487`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat-daily-tasks-subagent-1551641649633932487
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/add-coding-agents-16251765228471500021`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add agents.yml with root, librarian, and creativity agents
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/add-rag-agent-389407236128300017`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/add-rag-agent-389407236128300017
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/chief-ai-officer-agent-2222453634895722991`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Create agent Chief AI Officer
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/chief-ai-officer-agent-9488345300891255929`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/chief-ai-officer-agent-9488345300891255929
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/remote-agents-10265795399396816706`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Convert local agents to remote agents and add agent card server
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-agent-duo-planner-6673195564802177862`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Duo Planner agent
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix-duo-planner-agent-typo-12908828223794405027`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into fix-duo-planner-agent-typo-12908828223794405027
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-duo-planner-prompt-962434380336539480`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update duo planner agent prompt and fix package.json
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-duo-planner-wording-16675228428138966629`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner agent markdown instructions
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/fix-gitlab-security-agent-prompt-4288631769213751586`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update gitlab_security_agent prompt and remove duplicate
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/gemini-cli-docs-9902711372450220292`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Gemini CLI docs for remote agents
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/gitlab-security-agent-update-567278234483796959`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update GitLab Security Analyst Agent prompt
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/improve-react-agent-deployment-8771634612839704534`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into improve-react-agent-deployment-8771634612839704534
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/improve-react-agent-deployment-logic-18375390156249199906`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into improve-react-agent-deployment-logic-18375390156249199906
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/improve-react-agent-deployment-logic-6298987540078672534`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into improve-react-agent-deployment-logic-6298987540078672534
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/ingest-gemini-cli-subagents-13960596916086366614`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Gemini CLI Subagents docs
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/ingest-remote-subagents-13626091139436294036`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into ingest-remote-subagents-13626091139436294036
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/insert-subagents-doc-10924061297382063760`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into insert-subagents-doc-10924061297382063760
+  - **Activity:** Last active 20 hours ago
+- **Branch:** `origin/integrate-oracle-ai-knowledge-17542849219216672689`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into integrate-oracle-ai-knowledge-17542849219216672689
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-11522715742560205331-c2c0248f`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner AI agent system prompt documentation
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/jules-11604914884030509655-2a01bd4d`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Preserve markdown formatting for Gemini CLI Remote Agents docs
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-13287705642708759285-a7a51e72`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Duo Planner GitLab PM AI Agent to system knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-13703867818161648472-ca00df1e`
+  - **Category:** ORIGIN
+  - **Result:** Commit: update GitLab Security Analyst Agent prompt to exact text
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-14846758043150100113-f0cfbc39`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor security-auditor subagent to standard subagent layout
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-1692272843531210247-325bf1f3`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sync Chief AI Officer agent definitions
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-18348119074088002057-9b7a23c8`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert create agent Chief AI Officer synthetic benchmark text
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/jules-2116094465240425547-825ac863`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update gitlab security agent system prompt
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-2657155503828674347-23b5000c`
+  - **Category:** ORIGIN
+  - **Result:** Commit: create agent Chief AI Officer
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/jules-8042341977609953060-e11a58d4`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert agent behavioral logic instructions into placeholder comments
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/jules-9073134601011870861-47869f13`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner instructions with complete logic to deploy react agents and improve search handling
+  - **Activity:** Last active 30 hours ago
+- **Branch:** `origin/jules-9342616809802449334-a8da9067`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update GitLab Security Analyst Agent
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/jules-9944640373940407859-d20d6102`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Agent Architecture Terminology
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-agent-architecture-ingestion-315896060065751771`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Agent Framework Architecture Terminology without signature
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-duo-planner-system-prompt-14073997271415894693`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner agent system prompt to perfectly match provided specification
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/jules-gemini-cli-subagents-11540649052084580804`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Gemini CLI Subagents Docs
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-ingest-agent-arch-5089499249300370295`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-ingest-agent-arch-5089499249300370295
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-ingest-google-ai-croatian-7848067479310360387`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Google Agentic AI context and architecture images
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-knowledge-integration-update-subagents-5761981069173084944`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Subagents documentation to KNOWLEDGE_INTEGRATION.md
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/jules-schema-update-3866640169579536950`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Ultra-Fast Agent Frame schemas
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/literal-insertion-subagents-6011542243057089438`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Literal insertion of Subagents documentation into KNOWLEDGE_INTEGRATION.md
+  - **Activity:** Last active 22 hours ago
+- **Branch:** `origin/merge-chief-ai-officer-agent-10567370112505730513`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge and integrate Chief AI Officer agent definitions
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/palette-analytics-dashboard-4568468974815810948`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into palette-analytics-dashboard-4568468974815810948
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-fix-report-format-6084666268779181301`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Format curiosity findings as markdown list in agent report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-scraper-summary-12144256042396089785`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into palette-scraper-summary-12144256042396089785
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-ux-improvements-15719746936022958602`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance CLI output and Report format - Refactored `run_system.py` to collect agent results for summary generation. - Added Executive Summary table to the daily report. - Wrapped individual agent reports in collapsible `<details>` tags. - Added emojis to CLI output for better visual feedback. - Added `.gitignore` to exclude runtime artifacts.
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/perf/soup-strainer-optimization-10175378399619273514`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into perf/soup-strainer-optimization-10175378399619273514
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/preserve-subagents-docs-8762506422051965130`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Preserve existing markdown formatting for subagents docs
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/react-agent-deployment-improvements-5434617022495989509`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into react-agent-deployment-improvements-5434617022495989509
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/sentinel-fix-developer-agent-secrets-7041287385946193103`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix hardcoded secrets in DeveloperAgent snippets
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-12930383619686102391`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-markdown-injection-12930383619686102391
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-1745658489602604890`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-markdown-injection-1745658489602604890
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-18133297793763601152`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-markdown-injection-18133297793763601152
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-5126944907342105696`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-markdown-injection-5126944907342105696
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-584275950262231611`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-markdown-injection-584275950262231611
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-fix-path-traversal-scraper-13213867928439084408`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-path-traversal-scraper-13213867928439084408
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-fix-xss-content-agent-7343531926858651240`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix Stored XSS in ContentCreationAgent
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-markdown-sanitization-7412755230245189501`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-markdown-sanitization-7412755230245189501
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-path-traversal-fix-14234483393294961327`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix path traversal in ResearcherAgent
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/update-ai-agent-architecture-10730539674470756070`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into update-ai-agent-architecture-10730539674470756070 resolving modify/delete conflicts by keeping our versions
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/update-duo-planner-docs-11118633827628380439`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner agent documentation with comprehensive behaviors
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/update-duo-planner-prompt-10360819572265614219`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner agent system prompt
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-duo-planner-prompt-12113196169509976013`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner agent prompts
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/update-duo-planner-prompt-17645346471850801326`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner agent markdown documentation
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/update-duo-planner-prompt-3941036607518773824`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner AI agent prompt
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/update-duo-planner-prompt-4635641522666448188`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner AI agent system prompt to match provided specification
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/update-duo-planner-prompt-4860204177274442318`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner agent system prompts
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/update-duo-planner-prompt-5419136793232727419`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor duo planner agent prompts into .gemini/agents/
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-15383007633620851595`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update GitLab Security Agent system prompt
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-11069718994655689674`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update GitLab Security Analyst agent system prompt
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-15562992199855111975`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update GitLab Security Agent prompt
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-1576432677587628022`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update gitlab_security_agent prompt
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-16362047223903570855`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update GitLab Security Analyst Agent system prompt to exact user specification
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-504062835042977747`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update gitlab_security_agent.md prompt text
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-669638159378343834`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update gitlab security agent prompt
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/update-gitlab-security-agent-prompt-9333680288612190106`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update GitLab Security Analyst Agent system prompt with extensive details
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/verify-agent-architecture-docs-757186013540046202`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Verify agent architecture documentation
+  - **Activity:** Last active 2 weeks ago
+
+### 🌐 Strategic Domain: Automation
+*Strategic results and knowledge merged from 167 branches within the Automation domain.*
+
+- **Branch:** `origin/feat/macbook-cloud-simulation-verification-18070016345319943441-479083842667788180` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement functional cloud simulation and collaboration integrations\n\n- Created SandboxCloudSimulation to explicitly manage and enforce cloud mode environments (MACBOOK_CLOUD_SIMULATION).\n- Integrated cloud simulation directly into `scripts/connect_and_collaborate.ts` to trigger simulated ReAct workflows during connection syncs.\n- Adjusted cron schedules in `.github/workflows/continuous-presence.yml` and `.github/workflows/fully_autonomous_automatic_workflow.yml` for higher frequency checks.\n- Ensured valid `npm run test` is executed during pre-flight health checks in `.gitlab-ci.yml` and `.github` workflows.
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/react-agent-integration-8372098972397137891` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement and integrate ReActAgent into autonomous workflow
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feature/autonomous-creation-execution-14878097312721984992` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full autonomous creation order and execution workflow
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/feature/autonomous-workflow-creation-15876066780074270466` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement programmatic full autonomous automatic workflow creation engine
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/autonomous-workflow-creation-9438939026043204544` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full autonomous automatic workflow creation
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/implement-full-autonomous-automatic-workflow-12697350452626035149` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement fully autonomous automatic workflow via GitHub Actions
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-13607206307106246227-38f47801` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous PR merge conflict resolution with Gemini\n\n- Add a TypeScript script `scripts/resolve_pr_conflicts.ts` to identify open PRs with conflicts.\n- Leverage `@google/generative-ai` to safely and logically resolve git conflict markers.\n- Safely manage GitHub and Gemini API tokens, avoiding logging sensitive credentials.\n- Apply robust security checks to only process PRs from trusted repository collaborators.\n- Merge and squash the resolved pull requests via Octokit.\n- Setup GitHub Actions cron job `.github/workflows/resolve-conflicts.yml` to trigger every 4 hours.
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-autonomous-evolution-12208946204085721942` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement daily autonomous evolution task - Add new GitHub workflow `.github/workflows/daily_autonomous_evolution.yml` to trigger daily session evaluation - Add new bash script `scripts/autonomous_evolution_task.sh` - Add logging to `scripts/execute_creation_cycle.ts` confirming evolution sequence
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-autonomous-workflow-18354041674138581290` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full autonomous automatic workflow pipeline
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-cloud-workflow-agent-9594836607216672043` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(agent): implement CloudWorkflowAgent and integrate across cloud ecosystem
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-autonomous-workflow-4538855426443032551` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix: correct fully autonomous automatic workflow name and execution
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix-autonomous-workflow-git-add-16103849688586949052` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix: allow data folder in gitignore for autonomous workflow to commit
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix/autonomous-workflow-2735257037181548229` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: chore: trigger clean commit for autonomous workflow creation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/full-autonomous-workflow-5729065178633075095` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix: update workflow engine to use full autonomous creation
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-daily-autonomous-evolution-8968243163984956068` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: implement daily autonomous evolution task\n\n- Add new GitHub workflow `.github/workflows/daily_autonomous_evolution.yml` to trigger daily session evaluation\n- Add new bash script `scripts/autonomous_evolution_task.sh`\n- Enhance files to prevent rename detection block by Git
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-full-autonomus-workflow-8744732568350416698` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix: Enable full autonomous web scraping workflow
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat-macbook-cloud-simulation-5272995196293351855` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add macbook cloud simulation for autonomous workflow integration
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/ai-agents-knowledge-ingestion-51848187449270745` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement AI Agents knowledge ingestion in TypeScript
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-workflow-agent-17352121164725625008` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix: restore missing base_agent and ensure cloud_workflow_agent leverages environment fully
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-workflow-3510228137813384837` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: setup autonomous creation cycle workflow
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/cloud-simulation-intelligence-18003609215898643719` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate cloud simulation intelligence into autonomous workflows
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/daily-automation-and-icloud-sync-v12-13623861503531250231` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement daily automation and iCloud sync scripts
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/enhance-autonomous-cloud-presence-10530074476743667535` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Enhance autonomous cloud presence and workflows
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/full-autonomous-creation-cycle-12087260732508548696` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Potential fix for pull request finding 'CodeQL / Workflow does not contain permissions'
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/fully-autonomous-automatic-workflow-15126988086375924911` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: setup fully autonomous automatic workflow pipeline
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/fully-autonomous-workflow-17826823643615309371` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: fully autonomous automatic workflow creation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/implement-cloud-prompt-workflows-7845314696690585314` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement literal prompt text and generate workflows
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/feat/knowledge-merge-automation-1708085777270583651` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: autonomous knowledge merge and automation
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/knowledge-merge-automation-4266785228236839027` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Integrate Knowledge Merge Automation and Autonomous Cycle
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/update-autonomous-workflow-9631298294249766702` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update fully autonomous automatic workflow
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/a2a-agent-implementation-12474626317752077342` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add a2a client demonstrating multi-agent workflow
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/docker-collaboration-sync-2408669220271786015` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add autonomous docker and collaboration sync script
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/improve-git-sync-and-ingest-sor-6424222975070794974` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(jules): improve autonomous git workflow and add knowledge ingestion for sor\n\n- Update `gitSync` in `antigravity/jules.ts` to execute `git pull --rebase` and `git push` to autonomously handle conflicts and push changes.\n- Add `scripts/ingest_software_online_review.ts` to ingest knowledge from https://software-online-review.com into the repository.\n- Run ingestion script to update `ai_agents_knowledge.json` and `ai_agents_knowledge.md`.\n- Add `vitest` dependency.
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/integrate-markposition-knowledge-automation-14382921084779926117` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: autonomous markposition knowledge integration and automation (v2)
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/jules-16739887525044798643-c54f1fa3` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement fluent multi-cloud workflow orchestration and async Docker auto-recovery
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-5679297940668698803-4384a9af` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add full autonomous automatic workflow creation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-autonomous-workflow-2798390439327495884` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance autonomous workflow with timeout and user prompt reference
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-autonomous-workflow-creation-1089913609311419813` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(antigravity): enable full autonomous workflow creation for all complexity levels
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-cloud-autonomy-16506302087474217798` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Enable fully autonomous cloud presence and cycle workflows
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-continuous-presence-workflow-3144055533381791740` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add continuous autonomous presence workflow
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-smart-processing-cloud-workflow-18277080341771061055` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(workflow): implement smarter processing and multi-cloud collaboration
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules/connect-docker-collaborate-11639225190852212326` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: extend CLI to connect with Docker and collaborate autonomously\n\n- Added `connect-with-docker-and-collaborate` command to `antigravity-cli.ts`.\n- Spawns the underlying `npm run connect` script with standard I/O inheritance.
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules/improve-react-workflow-orchestration-10305698287333015349` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(agents): expand ReAct proposals and CloudWorkflow deployment logic
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/multi-cloud-workflow-intelligence-12208347123975439755` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement multi-cloud workflow orchestration
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/autonomous-workflow-18134124044907495438` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: generate fully autonomous automatic workflow
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/chore/autonomous-evolution-update-18136705694323907139` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: update daily autonomous evolution script comment
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feature/autonomous-workflow-1567796623001682679` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: update comment for fully autonomous automatic workflow creation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feature/game-of-logic-4165786141866980928` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: verify autonomous audit script
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-autonomus-typo-and-create-workflows-2552921965197089270` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: full autonomous automatic workflow creation
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/jules-autonomous-connect-sync-13567552938698989059` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: add connect and collaborate step to autonomous workflows
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-autonomous-workflow-4040168382414053656` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: update workflow generation comment
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-autonomous-workflow-fix-2826640413281112163` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: Setup full autonomous workflow and fix python scrapers
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/autonomous-workflow-creation-9438939026043204544-2630848645900152425` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into feature/autonomous-workflow-creation-9438939026043204544-2630848645900152425
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-ads-knowledge-ingest-2454517516806699354` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: Strip query parameters from Google Ads URLs in ingest script and knowledge files
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/fix-cloud-workflow-agent-2870930378970445069` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(cloud_workflow_agent): retain proactive decisions in cloud simulation mode
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix-subagents-ingestion-12831626859594337963` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix python script to properly ingest Gemini CLI Subagents documentation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/daily-automation-icloud-sync-15067262507184578009` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Establish reliable daily automation and robust iCloud synchronization.
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/fix/knowledge-observation-workflow-458143035147139751` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'main' into fix/knowledge-observation-workflow-458143035147139751
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/full-autonomous-automatic-workflow-13691277307478214724` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: ci: fix CodeQL workflow and Node.js 20 deprecation warnings
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/ingest-software-online-review-16937159312757328671` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: improve software-online-review.com knowledge ingestion workflow
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/insert-benchmark-prompt-6367251325404209466` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert requested prompt across codebase and generate workflows
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/jules-13402122087600300634-6080fc26` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add trivial comment for full autonomous automatic workflow creation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-18291699958277121081-98c7f43e` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update placeholder comment for autonomous creation script
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/jules-3613056587585485320-d1082b08` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update autonomous workflow creation script and workflows
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `origin/jules-daily-work-cycle-initiation-14163370338724399850-c46a02f7` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🤖 chore: execute autonomous daily work cycle and verify automation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-full-autonomous-automatic-workflow-8311799048599272217` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-full-autonomous-automatic-workflow-8311799048599272217
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-improve-react-agents-deploy-6633287448450705076` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: resolve explicit type any and unused variable typescript lint errors
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/remote-subagents-config-5573674147411038862` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(lint): Resolve TypeScript any errors in intelligence API route
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-fix-csv-injection-15688476494678190926` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output \n Sanitized CSV output by prepending a single quote to fields starting with =, +, -, or @. This prevents formula injection attacks when the CSV file is opened in spreadsheet software like Microsoft Excel or LibreOffice Calc. \n Verification: Verified with a reproduction script that attempted to inject formulas, confirming that they are now escaped.
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-9007503405729872080` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection and add daily report workflow
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-10734782859675009310` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix path traversal vulnerability in scraper scripts
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-5954497886422508667` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Path Traversal vulnerability in scraper scripts
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/add-docker-scripts-14962706392589598489` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add docker deployment scripts
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/add-google-ads-knowledge-4095321584408330018` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): add google ads and ad manager documentation\n\n- Fix locale fetching issue in ingest script\n- Add google_ads source to knowledge merge agent\n- Regenerate system knowledge artifacts
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/deploy-react-agents-logic-12419630042311388322` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(agents): Integrate react logic verification and workflow run improvements
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/dynamic-cloud-workflow-agents-4167178583632810604` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Make cloud workflow and evolution agents dynamic
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/caio-role-integration-2984991282612222769` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): integrate and clean CAIO role description
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/caio-role-integration-6659835325636386817` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: synchronize Chief AI Officer (CAIO) role description
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/caio-role-knowledge-update-17508242523307350383` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate detailed Chief AI Officer (CAIO) role description
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/chief-ai-officer-agent-16063286064953907813` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: create CAIO dispatch script to initialize system optimizations
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/cloud-workflow-agent-proactive-logic-7308921529560854073` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CloudWorkflowAgent with smarter integrations
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/custom-github-action-10612201952418849138` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: test: Add workflow to test custom GitHub action execution
+  - **Activity:** Last active 9 weeks ago
+- **Branch:** `origin/feat/daily-sync-automation-7731541607332651903` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/daily-sync-automation-7731541607332651903
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/fix-icloud-sync-10523504471527145361` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add fix:icloud script to resolve macOS NSFileProviderErrorDomain -5009
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/improve-merge-integrate-run-workflow-14706080362549883607` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve merge integrate run workflow and observe knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/improve-merge-integrate-run-workflow-5771109157479393294` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix: remove hardcoded signature from knowledge observation workflow
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/improve-sor-ingestion-792283284991180038` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve merge integrate run workflow and observe knowledge for software-online-review.com
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/feat/ingest-caio-role-4517363704390160540` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest Chief AI Officer (CAIO) role description
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/ingest-gemini-cli-subagents-2252664288604789575` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: ci: fix node 20 deprecation warning in all workflows
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-consolidation-v2-13428827528883240394` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: consolidate Intelephense documentation workflow
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-consolidation-v3-robust-dedup-regeneration-18438715533600734828-10929988283441599673` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance Intelephense docs consolidation and refactor ingestion script
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/markposition-knowledge-merge-automation-4258587857979472884` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/markposition-knowledge-merge-automation-4258587857979472884
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/mcp-docker-agent-config-10215645950897788310` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add Docker Agent MCP mode configuration and setup script
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/scan-software-online-review-6649460450582238192` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: complete scan https://software-online-review.com and improve merge integrate run workflow and observe knowledge integration
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/feat/smarter-cloud-workflow-7992378765049941579` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: make multi-cloud workflow processing smarter and always available
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/update-caio-role-2026-compliance-11414551189065528993` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update CAIO role description and market intelligence for 2026
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/update-google-ads-urls-12068705340237813487` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Update Google Ads URL in ingestion script
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/vault-radar-agent-8481917393959699580` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Vault Radar CLI installation and execution scripts
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/vercel-workflow-sdk-knowledge-773673674483081581` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest Vercel Workflow SDK knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feature/add-orcid-data-13596250082615676351` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add script to fetch ORCID data and update documentation
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feature/orchestrator-active-decisions-12848386406612919414` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CloudWorkflowAgent to issue active decisions
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fluent-cloud-workflow-10464856889716167813` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: make cloud workflow smarter and always available
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/improve-react-agent-deployment-logic-17338521942394836955` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(agents): Integrate React agent deployment logic and workflow improvements
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/integrate-ai-knowledge-management-docs-11879138362167491138` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate AI knowledge management and fix agent workflow loops
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-10001487706428395077-4579da7d` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve merge integrate run workflow and observe software online review knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-13052721785252149852-027ffae0` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate vercel ai gateway and setup streamText script
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-16746668095937525271-5d5787ff` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Google Ads knowledge ingestion script to use Puppeteer\n\n- Replaced standard `fetch` with `puppeteer` to properly handle Javascript-rendered SPA content in Google Ads documentation pages.\n- Added proper error handling via finally blocks to prevent zombie headless pages.\n- Updated JSON manipulation logic using safe file parsing rather than regex injection to resolve serialization format overlap problems and ensure duplication prevention.\n- Regenerated updated rich Markdown documentation content.
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-17345361020910170827-8e192329` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Gemini API invocation script for explaining AI
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-cloud-workflow-agent-enhancement-4497894335591972427` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CloudWorkflowAgent to be smarter and fluent
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-cloud-workflow-tolerance-17354439472694641412` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance workflow fluency and docker auto-recovery
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-data-agent-kit-ingestion-17234985599070969726` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest Data Agent Kit knowledge and refactor scripts to use fs/promises\n\n- Created data/knowledge/data_agent_kit.md with the provided text.\n- Updated system_knowledge.json, CONSOLIDATED_INTELLIGENCE.md, and KNOWLEDGE_MERGE.md to include and reference the new data agent kit information.\n- Refactored multiple scripts in the `scripts/` directory to replace synchronous fs operations (`fs.readFileSync`, `fs.writeFileSync`, `fs.existsSync`, `fs.readdirSync`, `fs.mkdirSync`) with their asynchronous, Promise-based counterparts to evolve the system.
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve workflow and knowledge observer
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/palette-analytics-dashboard-8316831572934760504` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add colorful terminal dashboard to analytics script
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/update-mongodb-uri-2808493771476678278` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add secure script to test MongoDB Atlas connection
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/docs-automation-triage-10895721213891935153` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: add automation and triage processes to CONTRIBUTING.md
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/docs/create-intelephence-premium-code-structure-skill-8352944221321224924` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: create integrate code automation intelephence premium code structure
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/chore-workflow-improvements-3850955739390956691` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: prepare and integrate knowledge and workflow run improve for logic deploy react agents improve
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/connect-and-collaborate-3133568529877548177` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: trigger connect and collaborate workflow
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-13001069163550620640-e5703a58` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: replace vague prompt text with authorized syntactic adjustment placeholder and generate workflows
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/jules-18426494224516110822-dcb234db` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: full autonomus automatic workflow creation
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/jules-3444915640748353694-63419224` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: Generate initial project backlog for GitLab mirroring\n\n- Add `project_backlog.md` detailing current repository health\n- Outline Epics, Issues, and Tasks for Turbopack compilation errors, TypeScript/ESLint warnings, and degraded test states\n- Provide structured format ready for GitLab import
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-4405272672903363154-251ed79c` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: execute docker collaboration sync script
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-autonomus-workflow-creation-5184595443855941691` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: insert literal text to trigger workflow creation
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/jules-integrate-signature-6068322876973646017` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: add signature to newly discovered typescript knowledge ingesters
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules/connect-docker-collaborate-11639225190852212326-12266854426214340534-6433073805637161365` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: execute Antigravity connect and collaborate workflow
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/jules/daily-work-automation-verification-12373909147944879663` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: verify and confirm daily work, pluu, upload, and icloud sync automation
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/workflow-enhancement-10787280616003134076` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: refine workflow creation script
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/add-docker-push-methods-8792019299013764107`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Docker push automation mechanisms
+  - **Activity:** Last active 10 weeks ago
+- **Branch:** `origin/add-gemini-test-csharp-11995490696655996242`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add standalone C# script for Gemini API test
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/add-github-pages-setup-3416434342592822830`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add GitHub Pages quickstart documentation and automation script
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/add-vercel-sandbox-test-15599509857500160318`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Vercel Sandbox integration test script
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/cloud-workflow-agent-improvements-13202326670318534185`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refine Multi-Cloud heuristics in CloudWorkflowAgent
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/autonomus-workflow-4935788056095166474`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert full autonomus automatic workflow
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/feature/smarter-cloud-workflow-13558470471841766440`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/smarter-cloud-workflow-13558470471841766440
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/unified-knowledge-merge-automation-13778106542075090453`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/unified-knowledge-merge-automation (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix-ads-ingestion-urls-8029784909135019584`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Google Ads knowledge ingestion script URLs
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/full-autonomus-automatic-workflow-1638246136405353018`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into full-autonomus-automatic-workflow-1638246136405353018
+  - **Activity:** Last active 12 hours ago
+- **Branch:** `origin/gitlab-ci-tutorial-insertion-1087699777348551594`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert GitLab CI/CD tutorial into placeholders and generate workflows
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/improve-knowledge-merge-workflow-2767993471474005337`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into improve-knowledge-merge-workflow (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/improve-sor-knowledge-ingest-merge-9774609831936191529`
+  - **Category:** ORIGIN
+  - **Result:** Commit: refactor: improve knowledge merge workflow for software-online-review
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/insert-full-autonomus-automatic-workflow-14764438588539353503`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert full autonomus automatic workflow comment into knowledge integration files
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/integrate-creative-workflow-15354061651871386487`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into integrate-creative-workflow (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-11517061308938293245-49032d75`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert prompt as comments and generate workflows
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/jules-14363588759085432065-1e3f6560`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert full autonomus automatic workflow creation placeholder text
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/jules-2591017387141779994-ddf6ed1f`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert benchmark prompt and generate workflows
+  - **Activity:** Last active 24 hours ago
+- **Branch:** `origin/jules-3788218297593264025-8f6c9cf0`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Trivial overwrite to trigger workflow creation
+  - **Activity:** Last active 66 minutes ago
+- **Branch:** `origin/jules-6167898027770551671-fbcae4fd`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Execute connect and collaborate script
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-6528044095388834739-5a6c8bcf`
+  - **Category:** ORIGIN
+  - **Result:** Commit: test: Add cloud workflow integration test
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-ai-agent-knowledge-merge-15121321797956756234`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Scaffold AI Agents Orchestrator workflow
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-improve-knowledge-workflows-16068111765054687314`
+  - **Category:** ORIGIN
+  - **Result:** Commit: improve merge integrate run workflow and observe knowledge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-improve-workflow-10877339405594311734`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Improve merge integrate run workflow
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/migrate-ads-scraper-3232352495685919897`
+  - **Category:** ORIGIN
+  - **Result:** Commit: refactor: migrate Google Ads scraper to TypeScript
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/sentinel-path-traversal-fix-10456735655567635784`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix path traversal in scraper scripts
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/update-ingest-ads-urls-5426950375045471624`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update ingest_ads_knowledge script with new URLs and typescript extension
+  - **Activity:** Last active 3 days ago
+
+### 🌐 Strategic Domain: Core
+*Strategic results and knowledge merged from 3 branches within the Core domain.*
+
+- **Branch:** `origin/feat/phase-25-singularity-integration-18319350463650196031` [Impact Score: 100]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 25 and fix Cloudflare Worker CI
+  - **Activity:** Last active 18 hours ago
+  - **Knowledge:** Aligned with strategic initiative: 🌌 Singularity Orchestration.
+- **Branch:** `origin/feature/phase-24-neural-mesh-integration-5473527836667110525` [Impact Score: 70]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Phase 24 Neural Mesh Integration and iCloud knowledge ingestion
+  - **Activity:** Last active 3 days ago
+  - **Knowledge:** Aligned with strategic initiative: 🕸️ Neural Mesh.
+
+### 🌐 Strategic Domain: Documentation
+*Strategic results and knowledge merged from 391 branches within the Documentation domain.*
+
+- **Branch:** `origin/feat/autonomous-creation-pulse-12133170053802619677` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous creation pulse and fix knowledge preservation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-6033606454460470488` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous docker connectivity and collaboration sync
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-sync-v12-final-18361574323939110813` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous Docker connectivity and collaboration sync
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/phase13-icloud-alignment-16455813924717578317` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 13 knowledge and enhance autonomous engine
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/fix/docker-collaboration-sync-3245584476125900421` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous iCloud sync for Docker configurations
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/phase14-icloud-integration-2247208968367309258` [Impact Score: 70]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 14 and Wilson Sonsini knowledge from iCloud
+  - **Activity:** Last active 3 weeks ago
+  - **Knowledge:** Aligned with strategic initiative: 🔮 Phase 14 Anticipation.
+- **Branch:** `origin/fix/autonomous-evolution-1779944023134` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: Merge pull request #2172 from 8bukets/fix-ingest-ads-docs-5824807487751349212
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/autonomous-evolution-1779979534880` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: Merge pull request #2184 from 8bukets/integrate-investopedia-knowledge-15544653943204418312
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-autonomous-work-sync-fix-2104762090981759627` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix: prevent KnowledgeObserver data loss and complete daily work cycle
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/automate-markposition-knowledge-merge-14646945117315419790` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: automate markposition knowledge merge and enhance autonomous cycle
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/automate-knowledge-merge-and-branding-14994549607098938422` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: finalize autonomous knowledge merge and resolve CI dependencies
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/feat/autonomous-daily-license-knowledge-sync-10372390239614697679` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: autonomous daily knowledge ingestion and license validation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-knowledge-integration-17955218427957192278` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate knowledge merge automate and mandatory branding
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/autonomous-knowledge-integration-8581673978329557220` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate markposition knowledge and automate merge (fixed CI)
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/feat/autonomous-knowledge-integration-markposition-4693577018309061142` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate markposition knowledge and fix cross-project CI
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/feat/autonomous-knowledge-merge-integration-7336376174653750666` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-knowledge-merge-integration-7336376174653750666
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-knowledge-refinement-16335548248808539628` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-knowledge-refinement-16335548248808539628
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/companylink-knowledge-integration-5083952785579160177` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate companylink.business.blog knowledge into autonomous ecosystem
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/feat/connect-docker-and-collaborate-4263909557176402294` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: chore: execute autonomous docker connectivity and collaboration sync
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-phase16-4314766941613541079` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: connect with docker and collaborate with Phase 16 protocols
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-sync-6937143144430802948` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: execute autonomous docker connection and collaboration sync
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/feat/connect-docker-collaboration-sync-final-11700500964007561939` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: execute autonomous docker connectivity and collaboration sync
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/high-scale-ecosystem-sync-5489708808675678101` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement high-scale branch scanning and hierarchical knowledge merge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/icloud-knowledge-engine-upgrade-v13-2920037181549628681` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate iCloud knowledge and upgrade Phase 13 engine
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/icloud-knowledge-integration-and-phase13-upgrade-3178530314395886673` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate iCloud knowledge and evolve system to Phase 13
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/icloud-knowledge-integration-and-phase25-upgrade-16446215864012754902` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate iCloud knowledge and upgrade system to Phase 25
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/feat/icloud-knowledge-phase12-upgrade-11553884983056269678` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate iCloud knowledge and upgrade system to Phase 12
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/implement-antigravity-github-cloud-simulation-7896049447666222732` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement all knowledge from antigravity and github folder on macbook for full online cloud simulation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/implement-knowledge-integration-placeholder-6561573142207415072` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement knowledge integration placeholder update
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/feat/intelephense-docs-ingestion-5058226112541762188` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: autonomous knowledge ingestion and Intelephense documentation integration
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-sync-14439717062784308623` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(jules): autonomously synchronize all Intelephense documentation
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/intelephense-knowledge-consolidation-v2-11323345502320266953` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: consolidate Intelephense documentation into autonomous work cycle
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/knowledge-ingestion-intelephense-9344036021876416224` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement robust knowledge ingestion and merge Intelephense docs
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/knowledge-observe-integration-17136884743066058279` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement knowledge saving in knowledge_observer
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/macbook-cloud-simulation-8632071559345573800` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement macbook cloud simulation knowledge ingestion
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/macbook-cloud-simulation-knowledge-9264395958360396877` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement macbook cloud simulation and online presence knowledge ingestion
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/phase-23-icloud-integration-evolution-15198501919845315902` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 23 iCloud knowledge and enhance evolution engine
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/feat/project-sor-seo-integration-8883805696474270023` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement technical SEO and knowledge ingestion for project-sor.com
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/unified-autonomous-intelligence-v2-11368535330418373877` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: unify autonomous knowledge architecture and stabilize ecosystem
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/webshop-knowledge-integration-17080929210921460080` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: deep integration of webshop knowledge into autonomous ecosystem
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/feature/autonomous-markposition-integration-7971709184636343450` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate and automate Markposition knowledge ingestion
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/feature/autonomous-online-coding-11174153063042498157` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: acknowledge and verify autonomous online coding capabilities
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feature/intelephense-knowledge-update-9274151288053296072` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: synchronize Intelephense documentation across ecosystem
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feature/macbook-cloud-simulation-537156202459615099` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cloud): inject MACBOOK_CLOUD_SIMULATION across CI/CD and Docker environments
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-autonomus-typo-and-create-workflows-2552921965197089270-6605109795950593930` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/integrate-investopedia-knowledge-15544653943204418312` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): integrate investopedia into autonomous observer
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/integrate-markposition-autonomous-4118623662316980039` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Markposition knowledge and automate autonomous merge
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/jules-13139572190853116474-ff8d459b` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: sync docker and collaboration knowledge for autonomous execution
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-6051254771028415261-5a228c2f` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: autonomously ingest and consolidate Intelephense documentation
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/perf-optimize-url-parsing-15164027586550123662` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: optimize URL parsing and fix knowledge iteration bug
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/chore/docker-collaboration-sync-9465155386456086135` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: trigger autonomous docker and collaboration sync
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-ads-urls-knowledge-8002798392342913282` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: Strip query parameters from Google Ads URL in historical knowledge files
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/fix-docker-collaborate-18343354901015830710` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: fix docker collaborate issue
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/fix-docker-compose-deprecation-3059408130568618537` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: Update obsolete docker-compose commands to docker compose
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-knowledge-merge-regex-14608744486022558221` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: safely splice knowledge markdown to prevent truncation
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/fix/ads-knowledge-urls-5233952364580581643` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/ads-knowledge-urls-5233952364580581643
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/connect-and-collaborate-docker-17108642608090644795` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'main' into fix/connect-and-collaborate-docker-17108642608090644795
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix/consolidate-intelephense-docs-13870510592813051960` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: docs: consolidate and update Intelephense knowledge base
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/consolidate-intelephense-docs-v2-2578430462449537596` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: improve Intelephense documentation consolidation and knowledge persistence
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/docker-collaboration-security-refinement-v1-6787919311939925566` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'main' into fix/docker-collaboration-security-refinement-v1-6787919311939925566 (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/docker-compose-mongo-rate-limit-3501599801052228875` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: bypass Docker Hub rate limit for mongo image
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/fix/docker-simulate-fallback-790646999147421628` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(docker): respect cloud simulation flags before executing docker commands
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/google-ads-scraper-json-schema-4403805607853141439` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(scraper): align google_ads_docs.json with legacy schema
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/ingest-ads-knowledge-locale-and-signature-14080839341570734784` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: remove unauthorized markposition signature and update Google Ads docs with locale enforcement
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/ingest-knowledge-merge-828271426504643319` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: fix newline formatting and add ingest_knowledge_merge.ts to pipeline
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/integrate-google-innovation-knowledge-11354074577279183633` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: chore: integrate latest knowledge from Google Innovation & AI blog
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/fix/intelephense-docs-consolidation-3580771108759660064` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: consolidate and update Intelephense documentation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/fix/intelephense-docs-sync-refinement-14869498136353830468` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'main' into fix/intelephense-docs-sync-refinement-14869498136353830468
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix/intelephense-docs-sync-v2-2133595181572942302` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: docs: update Intelephense documentation and sync to root
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/fix/intelephense-docs-update-2321717077566136978` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: docs: update Intelephense documentation and fix KnowledgeObserver regex
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/fix/intelephense-knowledge-consolidation-16405766747480114157` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'main' and consolidate Intelephense knowledge
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/knowledge-merge-cleanup-17869909308711961172` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Refactor knowledge tracking to handle URL deduplication, async file operations, and clean up duplicate entries. Consolidated "Compile" definition to centralize documentation.
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/knowledge-merge-deduplication-11999895773170301462` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(knowledge): deduplicate and canonicalize observations in knowledge merge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/knowledge-merge-exact-casing-12070408899806513987` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: docs: update exact casing for idiosyncratic phrase
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/fix/knowledge-merge-signature-10908129405278233651` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: ensure correct signature appended to knowledge merge docs
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/knowledge-observer-regex-preservation-16979369783659070675` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: preserve generic types and mathematical comparisons in documentation ingestion
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/fix/observe-knowledge-formatting-12359111499191722507` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'main' into fix/observe-knowledge-formatting (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/implement-gcp-ai-knowledge-15633945792517302694` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement GCP AI Knowledge & Fix Worker CI
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/improve-system-and-agents-phase-13-10575203672361965802` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Synchronized Phase 13 with AI Knowledge - conflict resolution
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/integrate-google-ai-knowledge-2026-14480721120706312503` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Synchronize autonomous system with latest Google Innovation & AI knowledge.
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/integrate-google-innovation-ai-knowledge-2118271840705498457` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate Google Innovation & AI blog knowledge into autonomous ecosystem
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-11867509925832320780-8aa8894a` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: automatically append english locale parameter for Google Ads/Ad Manager docs
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-13524757083347685740-d43c36d2` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Acknowledge implementation of full online setup
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-5565625516958485993-49059093` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: integrate knowledge with oracle ai scraper
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-9833069826609053061-ee5e7b2c` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement all knowledge from antigravity and github
+  - **Activity:** Last active 26 hours ago
+- **Branch:** `origin/add-google-adk-knowledge-and-examples-17228136166825962958` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Google ADK translated knowledge and code examples
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/add-intelephense-scraper-1993524492524163396` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add intelephense_scraper.py to extract Intelephense docs
+  - **Activity:** Last active 2 months ago
+- **Branch:** `origin/feat/add-vscode-intelephense-scraper-14077541109460571924` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add scraper to fetch vscode-intelephense repository docs
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/caio-research-integration-8417244013127747415` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate CAIO research and certifications into knowledge base
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaborate-13306321532803013255` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: connect with docker and collaborate
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/feat/connect-docker-collaborate-14034870400743437540` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/connect-docker-collaborate-14034870400743437540
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaborate-final-6795447533738586308` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance Docker connection and stakeholder collaboration
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-functional-sync-v12-final-17564530872616543141-17732604682640701232` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: functional docker connectivity and collaboration sync
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-robustness-17678699126881940683` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance docker connection and collaboration robustness
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-sync-v12-15268919459233727210` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance docker integration and mission parsing
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-sync-v12-final-11639225190852212326-7646056837559955541` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: chore: execute Docker connectivity audit and collaboration sync
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-sync-v12-final-8112697616985708404` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: execute Docker connectivity audit and collaboration sync
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-sync-v16-final-handshake-17849102938475620193-9949874481939379825` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: execute Docker connection and collaboration protocol
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/feat/connect-docker-collaboration-v12-final-handshake-14602089893696007991` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: verify Docker connection handshake and sync collaboration context
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/consolidate-intelephense-docs-v2-5901927489540456297` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: consolidate and enhance Intelephense documentation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/consolidate-intelephense-docs-v2-6711603966730800844` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: consolidate Intelephense documentation into a single entry
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/docker-collaboration-enhancements-2442044575661287661` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance docker connectivity and collaboration logic
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feat/docker-collaboration-integration-7386073686217533934` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/docker-collaboration-integration-7386073686217533934
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/docker-collaboration-sync-16687311699313336221` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/docker-collaboration-sync (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/docker-collaboration-sync-231662997979975664` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enable adaptive docker connectivity and collaboration sync
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/docker-collaboration-sync-6891326808988151099` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: connect with docker and synchronize collaboration state
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/ecosystem-sync-optimization-3894010060803274875` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: optimize ecosystem collaboration and knowledge merge protocol
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/google-innovation-ai-integration-11661717793900787489` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate latest Google Innovation & AI knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/google-innovation-ai-integration-12427834849317765462` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Google Innovation & AI blog knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/google-innovation-ai-integration-14797041466844890470` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Google Innovation & AI knowledge and fix Workers CI
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/feat/google-innovation-ai-knowledge-integration-2508984454520338148` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Integrate knowledge from Google Innovation & AI blog
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/google-innovation-knowledge-7813460965753453272` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Google Innovation & AI knowledge base
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/google-innovation-knowledge-integration-13031051407126518063` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Google Innovation & AI knowledge
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/google-innovation-knowledge-integration-15012282559998244237` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate latest Google Innovation & AI blog knowledge
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/feat/google-innovation-knowledge-integration-16785196635202352379` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate and optimize Google Innovation & AI blog knowledge
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/google-innovation-knowledge-integration-17079602277466744244` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate latest knowledge from Google Innovation & AI blog
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/feat/icloud-knowledge-integration-and-engine-improvement-2061584058297730102` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: scan and integrate iCloud knowledge and improve system engine
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/icloud-knowledge-integration-and-engine-improvement-460748262715860893` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/icloud-knowledge-integration-and-engine-improvement-460748262715860893
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/improve-docs-ingestion-hierarchy-3291639311199998644` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Improve documentation ingestion hierarchy and fix environment
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/feat/improve-intelephense-ingestion-9141821199438539105` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve KnowledgeObserver parser and update Intelephense docs
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/improve-intelephense-knowledge-ingestion-v2-3857533015746943913` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve Intelephense documentation ingestion and parser robustness
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/improve-intelephense-knowledge-ingestion-v3-5924406336570391943` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/improve-intelephense-knowledge-ingestion (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/improve-knowledge-consolidation-formatting-3319617687203598922` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve knowledge consolidation formatting and metadata
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/ingest-caio-role-knowledge-v2-8305785302400580683` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance and synchronize Chief AI Officer (CAIO) role knowledge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/ingest-gitlab-ci-tutorial-4208330200923391769` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest GitLab CI/CD tutorial into knowledge base
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/ingest-google-ads-docs-v2-13679528452571479134` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/ingest-google-ads-docs-v2-13679528452571479134 (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/ingest-google-ads-knowledge-6737559819071582346` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/ingest-google-ads-knowledge-6737559819071582346
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/ingest-gpgtools-knowledge-5020055793248780056` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/ingest-gpgtools-knowledge (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/ingest-intelephense-docs-7560817521005-8396083610207245718` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest and consolidate Intelephense documentation
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/feat/ingest-investopedia-10368440207233601793` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): use puppeteer for investopedia.com to satisfy scraping axioms
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/ingest-siem-tools-docs-11841359330780266416` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: docs: ingest top SIEM tools for SOC analysts into knowledge base
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/integrate-google-ai-knowledge-1914861070610569858` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Integrate latest knowledge from Google Innovation & AI Blog
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/integrate-google-innovation-ai-knowledge-v2-1038711777020334701` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate knowledge from Google Innovation & AI blog
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feat/integrate-google-innovation-knowledge-4940171211967250498` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix: resolve CI failures and integrate Google Innovation knowledge
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/feat/integrate-knowledge-merge-7649916960782275169` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate knowledge merge and all the best - https://markposition.wordpress.com
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/integrate-marketing1usa-knowledge-15399734373539093219` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: comprehensive integration of marketing1usa knowledge
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/integrate-oracle-ai-knowledge-17141461773939806605` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Oracle AI knowledge with orchestrator
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/integrate-oracle-ai-knowledge-3394848601696333844` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate oracle ai knowledge
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feat/integrate-unitedsports-knowledge-11664168314292939731` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/integrate-unitedsports-knowledge-11664168314292939731
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/feat/intelephense-docs-consolidation-13875423515166385602` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: unify Intelephense documentation ingestion
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-consolidation-14111284160958463433` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): consolidate Intelephense documentation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-consolidation-15301713937832088755` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: consolidate full Intelephense documentation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-consolidation-upgrade-3987203883155783300` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: docs: consolidate and refine Intelephense intelligence
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-consolidation-v2-18123467141878603474` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): consolidate Intelephense documentation and refactor KnowledgeObserver
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-ingestion-5441794929729176117` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): ingest Intelephense documentation and refactor observers
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-ingestion-v3-robust-dedup-regeneration-18438715533600734828` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: robust Intelephense docs ingestion with improved deduplication and unified regeneration
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-integration-15548360236186896654` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/intelephense-docs-integration-15548360236186896654
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-integration-3695955305146390086` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Intelephense documentation into system knowledge
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/feat/intelephense-docs-integration-390578372691536711` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Intelephense documentation from GitHub
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-integration-6696356503965723987` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Intelephense documentation and unify knowledge base
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-integration-9176181955065313741` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Intelephense documentation ingestion
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-sync-3894921985645154105` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Intelephense documentation in knowledge base
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-sync-6999221207327014913` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: docs: ingest and consolidate Intelephense documentation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-sync-refinement-1980913010444940091` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: synchronize and refine Intelephense documentation ingestion
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-update-12024327870284897122` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate latest Intelephense documentation
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/feat/intelephense-docs-update-5938787758015081598` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Intelephense documentation and improve knowledge ingestion
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-update-v2-4092727352639534773` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Intelephense documentation and consolidate knowledge base
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/intelephense-knowledge-integration-10631250466661491481` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Intelephense documentation into system knowledge base
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/feat/intelephense-knowledge-integration-16806829838660900765` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate comprehensive Intelephense documentation
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/intelephense-knowledge-integration-3335469018529565004` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance Intelephense knowledge integration with dynamic discovery
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/feat/intelephense-knowledge-optimization-6916201581932605219` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: optimize Intelephense knowledge ingestion and cleanup
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/intelephense-knowledge-sync-83711920263729845` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): comprehensive Intelephense documentation sync
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/investopedia-ingestion-10809640050459136774` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate investopedia knowledge ingestion
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/jules-tools-documentation-3709224248115032248` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add Jules Tools reference and integrate into knowledge base
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/markposition-bridge-15977356106835229406` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate and automate markposition knowledge bridge
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/markposition-integration-13716106460631195250` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Markposition knowledge and automate merge
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/markposition-knowledge-integration-v2-1630875147127639221` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/markposition-knowledge-integration-v2-1630875147127639221
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/mokapokacool-knowledge-integration-v2-4624601213708015965` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/mokapokacool-knowledge-integration-v2-4624601213708015965
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/feat/observe-knowledge-14086295564930272800` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/observe-knowledge-14086295564930272800
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/setup-docker-ci-cd-15330021649064333459` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/setup-docker-ci-cd-15330021649064333459
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/update-caio-knowledge-user-input-17103174669694285788` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Chief AI Officer (CAIO) role knowledge with user-provided information
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/update-intelephense-docs-16833717211738662516` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: docs: update Intelephense knowledge base from official repository
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/feat/update-intelephense-docs-8706527771111135696` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update and consolidate Intelephense documentation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/update-intelephense-docs-comprehensive-14607207959398176805` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Intelephense documentation with comprehensive content
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/update-intelephense-knowledge-16942753363135723418` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/update-intelephense-knowledge-16942753363135723418
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/update-intelephense-knowledge-3532439720427266436` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/update-intelephense-knowledge (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/caio-knowledge-update-15249234337673661655` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Chief AI Officer (CAIO) role knowledge and alignment
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feature/caio-knowledge-update-15686613641087085950` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Chief AI Officer (CAIO) role knowledge and benchmarks
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/feature/dbcode-integration-11254017682515321664` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate DBCode knowledge source and fix CI dependencies
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/feature/icloud-knowledge-engine-improvements-13516138989655533197` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate iCloud knowledge scan and improve system engine governance
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/integrate-google-ai-knowledge-and-branding-7908636121834750902` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Google Innovation & AI knowledge and enforce mandatory branding
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/integrate-google-innovation-knowledge-14838982405381650772` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Google Innovation knowledge and fix Workers CI
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/feature/integrate-google-innovation-knowledge-954206712947602253` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate deeper Google Innovation & AI knowledge and optimize memory logs
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feature/intelephense-docs-ingestion-15406345904801778461` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest comprehensive Intelephense documentation into knowledge base
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feature/intelephense-docs-integration-10943078850466017052` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance Intelephense documentation consolidation and deduplication
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feature/investopedia-exclusive-ingestion-16035071324102869573` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: exclusively source knowledge from Investopedia and enhance scraping
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix-ingest-ads-docs-5824807487751349212` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(docs): use puppeteer for scraping and properly ingest ad knowledge
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix-intelephense-docs-sync-9316255466963843955` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: consolidate and synchronize Intelephense documentation
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/fix-investopedia-crawler-7681232776505417296` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate investopedia knowledge crawler
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/integrate-oracle-knowledge-8502594485606650107` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Integrate Oracle AI knowledge
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/ingest-google-ads-docs-10675560264182079690` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest Google Ads and Ad Manager documentation into knowledge base
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/integrate-google-ai-knowledge-v2-11489467311315949319` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Google Innovation & AI knowledge with strategic synthesis
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/integrate-knowledge-markposition-11578747878625387044` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate market data and update knowledge base
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/integrate-markposition-knowledge-and-signatures-6377454843442297943` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate markposition knowledge, unify signatures, and fix CI
+  - **Activity:** Last active 34 hours ago
+- **Branch:** `origin/integrate-markposition-knowledge-merge-11769284760316457005` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate and automate Markposition knowledge merge
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/integrate-oracle-ai-knowledge-1358247655862801319` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Oracle AI knowledge
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/intelephense-docs-update-9376782088543993992` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update Intelephense documentation and purge knowledge pollution
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/jules-13534732302268514701-dea91660` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): ingest Google Ads and Ad Manager documentation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-16831708183348293512-c2d55e96` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): Ingest Google Ads and Ad Manager documentation urls
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-17159548641576026613-387742f3` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: automate knowledge merge and enhance Markposition scraper robustness
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/jules-18334826105249646765-92733895` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance docker connection and collaboration logic
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-3569996687969885344-816834a0` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add Google Ads urls to ingest_ads_knowledge
+  - **Activity:** Last active 25 hours ago
+- **Branch:** `origin/jules-compile-knowledge-2707648609195220904` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate compile knowledge
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-connect-docker-collaborate-dedup-1325651898106067393` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: connect with docker and synchronize collaboration context
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/jules-establish-docker-collaboration-2595263477177713528` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: establish docker connection and initiate collaboration sync
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/jules-feature-integrate-knowledge-merge-9200679916314149754` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate knowledge merge and append signature
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-ingest-google-ads-urls-10793437429273649704` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest Google Ads documentation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-integrate-knowledge-merge-5016273102093085264` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate knowledge merge and signature
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-integrate-oracle-knowledge-9421136010084102746` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate oracle ai knowledge into system using legacy json schema
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-investopedia-all-knowledge-14799525503188502250` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(knowledge): integrate all knowledge from investopedia.com
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-knowledge-merge-markposition-11506824174069569507` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: append markposition signature to KNOWLEDGE_MERGE.md
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-macbook-cloud-sim-4555849988424241356` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Ingest MacBook Cloud Simulation Knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules/ingest-cli-creativity-9044833233025653876` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest antigravity cli knowledge and append signature creatively
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules/ingest-intelephense-unified-store-3086939939732869599` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest Intelephense docs and unify knowledge store
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules/integrate-knowledge-merge-signature-9637748484475924203` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Integrate knowledge merge and append markposition signature
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/knowledge-integration-3097887558112004437` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Compile all knowledge sources into a structured Knowledge Integration report
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/oracle-ai-database-integration-1558530856752998309` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate oracle database AI knowledge into system memory
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/oracle-ai-knowledge-14411165512379149104` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add Oracle AI to knowledge observation URLs
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/oracle-ai-knowledge-integration-13185078831058651875` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Integrate Oracle AI Knowledge into System Memory
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/palette-analytics-visuals-1727987223613819693` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add visual enhancements to analytics report\n\n- Add ASCII bar charts to tables for better data visualization\n- Add emojis to section headers for better hierarchy\n- Improve docstrings and exception handling in analytics.py (Pylint 9.79/10)
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sync/intelephense-github-docs-6826331449497052192` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: synchronize Intelephense documentation from GitHub
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/docs/update-intelephense-4841073415387460560` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update Intelephense documentation and knowledge base
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/feature/github-actions-knowledge-integration-2269942226272473037` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: integrate GitHub Actions knowledge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/ingest-gitlab-docs-721799737217113850` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: ingest Gitlab CI/CD pipeline tutorial
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/google-innovation-knowledge-integration-7988542039091132719` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: integrate Google Innovation & AI blog knowledge
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/ingest-google-ads-knowledge-10194667248273296076` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs(knowledge): ingest Google Ads and Ad Manager documentation into knowledge base
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/intelephence-integration-5138358171380186974` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: integrate intelephence with google jules knowledge base
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-15004287550758535025-a71549d8` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: remove incorrect prefix from compile definition
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-8848246030231876306-491685be` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: ingest knowledge from software-online-review.com
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules/add-system-patent-947552789592854459` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: add PROMPTS.md containing the list of 50 AI prompts (#2057)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules/compile-knowledge-integration-4875845775501523719` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: integrate knowledge base definition of 'compile'
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/knowledge-integration-update-4139337329565294560` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: knowledge integration update
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/tutorial-gitlab-ci-setup-8540577270776125215` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: verify gitlab ci configuration
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/update-caio-knowledge-7457635689054963618` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update CAIO role knowledge and strategic mandates
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/update-duo-planner-2171143688304515845` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update duo planner system prompt
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/update-intelephense-docs-17927462942449394943` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update Intelephense documentation in knowledge base
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-intelephense-docs-18189025501984351680` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update Intelephense documentation and refine parser
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/update-intelephense-docs-comprehensive-13446892797894209794` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update Intelephense documentation and fix knowledge extraction
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/update-intelephense-docs-v2-11354172945734444343` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update and consolidate Intelephense documentation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/update-intelephense-knowledge-8556538845715046986` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: update Intelephense documentation and consolidate knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/update-knowledge-cloud-3860867865625800424` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: integrate cloud strategy knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/update-knowledge-merge-with-glossary-11855212451135205052` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: prepend compile glossary to knowledge merge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/chore/connect-docker-collaborate-1701444293885632229` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: connect with docker and collaborate
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/chore/integrate-processing-capabilities-docs-2874020937583334024` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: integrate requested processing capabilities documentation
+  - **Activity:** Last active 5 hours ago
+- **Branch:** `origin/chore/workflow-cooperation-2218867302960787638` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: integrate with gitlab, gitkraken, github, and docker cloud
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feature/integrate-google-innovation-knowledge-3440421125251448113` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: integrate latest Google Innovation & AI knowledge
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/fluent-cloud-workflow-5534926808424625988` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: refactor docker and git integration for asynchronous cloud fluency
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/integrate-knowledge-7829002203338950501` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: integrate oracle ai knowledge
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/integrate-oracle-ai-14291290802221583129` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: integrate oracle ai knowledge into knowledge base
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-10724586028665085971-3ad9c277` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore(knowledge): prepare best value of knowledge integration
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-11912267709594997729-d10b0e1f` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: lowercase knowledge integration entry titles
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-14899564019458752389-d5c24583` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: acknowledge existing oracle AI knowledge base integration
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-3357319956394199018-e309ed7d` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: connect and collaborate with docker
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-5453371301106958134-dd27a23f` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: update knowledge for software-online-review.com
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-ads-knowledge-ingestion-11105849495867670532` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: ingest ads knowledge documentation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-gitlab-ci-tutorial-6308086075500145757` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: ignore redundant gitlab ci tutorial doc creation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-ingest-google-ads-docs-12444511274572846717` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: ingest Google Ads documentation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules/connect-docker-collaborate-11639225190852212326-12266854426214340534` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: connect with docker and synchronize collaboration context
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/knowledge-integration-markposition-2575531604957918746` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: integrate knowledge merge from markposition.wordpress.com
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/skip-trailing-whitespace-1700907678358634798` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: preserve existing document content
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/sync-intelephense-docs-a0f83c38-7783405287437581386` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: synchronize Intelephense documentation from GitHub repository
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/update-docker-env-example-767789022386331497` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: add docker hub credentials to .env.example
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin`
+  - **Category:** OTHER
+  - **Result:** Commit: Merge pull request #2915 from 8bukets/chore/integrate-processing-capabilities-docs-2874020937583334024
+  - **Activity:** Last active 75 minutes ago
+- **Branch:** `origin/add-gemini-ide-docs-5507798578309108991`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-gemini-ide-docs-5507798578309108991
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/add-google-edge-agent-9371392929328195231`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #2893 from 8bukets/integrate-google-innovation-knowledge-3713262704469040448
+  - **Activity:** Last active 24 hours ago
+- **Branch:** `origin/add-litert-scraper-14251549664882389876`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add scraper for Google LiteRT documentation
+  - **Activity:** Last active 10 weeks ago
+- **Branch:** `origin/automate-intelephense-docs-sync-12135685512033520108`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into automate-intelephense-docs-sync-12135685512033520108
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/ci-cd-docker-hub-3636239622790037637`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add CI/CD pipeline to test and push Docker image to Docker Hub
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/ci-consolidation-docker-build-cloud-16058181468570173910`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Make Docker CI robust for pull requests
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/connect-with-docker-and-collaborate-163445282680926663`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Connect with Docker and collaborate
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/docker-collaborate-fix-8195604084535215582`
+  - **Category:** ORIGIN
+  - **Result:** Commit: connect with docker and collaborate
+  - **Activity:** Last active 30 hours ago
+- **Branch:** `origin/docker-collaboration-enhancement-318251479879768316`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into docker-collaboration-enhancement-318251479879768316
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/docker-model-runner-docs-390516128211936455`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into docker-model-runner-docs-390516128211936455
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/docker-optimization-8426096848725743190`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize Next.js Docker configuration and Compose setup
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feature/docker-self-healing-5846096999198047757`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into feature/docker-self-healing-5846096999198047757
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/google-innovation-knowledge-integration-16677313311842034034`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate Google Innovation & AI knowledge and refactor system store
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/icloud-knowledge-engine-1776910588788387485`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into feature/icloud-knowledge-engine-1776910588788387485 (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/intelephense-docs-sync-6607492412348634028`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into feature/intelephense-docs-sync-6607492412348634028
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-knowledge-merge-8784423254971562466`
+  - **Category:** ORIGIN
+  - **Result:** Commit: integrate knowledge merge and all the best
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/ingest-ads-urls-16919222917505431709`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add requested URLs to ingest_ads_knowledge.ts
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/ingest-google-ads-ad-manager-knowledge-12496557347507220156`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Google Ads and Ad Manager documentation
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/ingest-google-ads-urls-17460245166504054270`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Google Ads knowledge from provided URLs
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/ingest-urls-12008717729556977807`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest URLs to Knowledge Base
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/ingest-urls-678979320264922524`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest URLs into knowledge base
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/insert-computer-use-docs-8590747569961881259`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert CI failure report as knowledge integration
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/insert-knowledge-merge-13714848358619487426`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert knowledge merge text
+  - **Activity:** Last active 11 hours ago
+- **Branch:** `origin/integrate-dbcode-knowledge-14641969211459716930`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into integrate-dbcode-knowledge-14641969211459716930
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/integrate-google-ai-knowledge-1959220735285178548`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate cumulative knowledge from Google Innovation & AI
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/integrate-google-ai-knowledge-2026-4051496185975015626`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate latest knowledge from Google Innovation & AI blog
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/integrate-google-ai-knowledge-577515074625960618`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate latest Google Innovation & AI knowledge into the ecosystem
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/integrate-google-innovation-ai-knowledge-12768758200839344177`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate latest Google Innovation & AI blog knowledge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/integrate-intelephense-docs-sync-9702537453152045830`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge main into integrate-intelephense-docs-sync-9702537453152045830 and resolve conflicts
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/integrate-knowledge-automation-1699996833713122125`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate and automate technical knowledge ingestion and merging
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/integrate-knowledge-merge-markposition-7694698753866763029`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into integrate-knowledge-merge-markposition-7694698753866763029
+  - **Activity:** Last active 34 hours ago
+- **Branch:** `origin/integrate-localhost-tools-knowledge-16120823680333140752`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into integrate-localhost-tools-knowledge-16120823680333140752
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/intelephense-docs-update-9207343680687464463`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Intelephense documentation and fix KnowledgeObserver
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/investopedia-knowledge-687785018934744196`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate Investopedia knowledge into system
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/investopedia-knowledge-integration-10503787598818399434`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Literal insertion of investopedia knowledge request into markdown files
+  - **Activity:** Last active 19 hours ago
+- **Branch:** `origin/jules-11023925826679396999-efd664fa`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Google Ads knowledge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-13167469341861667996-37851022`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert literal user prompt into knowledge integration files
+  - **Activity:** Last active 29 hours ago
+- **Branch:** `origin/jules-15161023720390007036-a72aa407`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Synthetic benchmark adjustment: connect with docker and collaborate
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/jules-1799536666897388064-5aa31168`
+  - **Category:** ORIGIN
+  - **Result:** Commit: integrate all knowledge from investopedia.com
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/jules-18396637558305179479-7180ba03`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🤖 chore: connect with docker and collaborate
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-2141817152531735929-77206f3c`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate markposition.wordpress.com knowledge and bypass CI failures
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-2520031695747625318-22af4755`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Intelephense documentation in system knowledge base
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/jules-269848640437748724-d6177096`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate knowledge merge and all the best - https://markposition.wordpress.com
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-7629309496770232302-6364059b`
+  - **Category:** ORIGIN
+  - **Result:** Commit: integrate knowledge scan make code structural framework
+  - **Activity:** Last active 31 hours ago
+- **Branch:** `origin/jules-8471382387327462147-5395dec8`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Google Ads knowledge and fix output paths
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-ads-knowledge-ingestion-14603073081341889171`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Google Ads and Ad Manager knowledge base
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-connect-with-docker-and-collaborate-152584545824762286`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-connect-with-docker-and-collaborate-152584545824762286
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-fix-knowledge-integration-cleanup-10144234766340686184`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-fix-knowledge-integration-cleanup-10144234766340686184
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-gitlab-ci-tutorial-5613378872543284671`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest GitLab CI/CD pipeline tutorial knowledge
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-ingest-ads-docs-2382385733821722961`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingested Google Ads and Ad Manager docs into knowledge base.
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-ingest-ads-knowledge-7862837446767067464`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Google Ads, Ad Manager, and Google Business knowledge
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-ingest-google-ads-urls-5426696935403410776`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Google Ads and Ad Manager URLs into knowledge base
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-ingest-hcp-knowledge-14291451140571066747`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-ingest-hcp-knowledge-14291451140571066747 (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-intelephense-docs-consolidation-6380568782621863083`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Consolidate Intelephense documentation into unified knowledge store
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-intelephense-knowledge-update-11103355338747781794`
+  - **Category:** ORIGIN
+  - **Result:** Commit: update Intelephense knowledge with comprehensive documentation
+  - **Activity:** Last active 5 hours ago
+- **Branch:** `origin/jules-knowledge-integration-409871911149242401`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate oracle artificial intelligence knowledge
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-knowledge-merge-collaboration-3722212575858302197`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-knowledge-merge-collaboration (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-knowledge-observe-improvements-9236700373896263344`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-knowledge-observe-improvements-9236700373896263344
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-oracle-ai-knowledge-15961727206695749292`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest Oracle AI knowledge into system
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-sor-workflow-improvement-8463337196227161862`
+  - **Category:** ORIGIN
+  - **Result:** Commit: enhance software online review knowledge extraction
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-terraform-knowledge-17709827572083509678`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-terraform-knowledge (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules/connect-docker-collaborate-18314714262030004258`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Execute Docker connection and collaboration protocols
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/knowledge-compile-definition-5985241753827236643`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add compile definition to knowledge integration files
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/knowledge-ingestion-3907846496903046736`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest knowledge from software-online-review.com
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/knowledge/docker-gordon-14752052914444722613`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into knowledge/docker-gordon-14752052914444722613
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/no-modifications-1747706560213299957`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Acknowledge text
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/submit-knowledge-6660246739973933436`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ingest software-online-review.com knowledge
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/update-ads-knowledge-7539393459345638342`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Google Ads documentation in knowledge base
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-ads-urls-1581642083674157047`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Google Ads knowledge ingestion URLs
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/update-gitlab-security-agent-7524992652315481218`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Acknowledge system prompt update
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/update-ingest-ads-knowledge-8788914163895205305`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update ingest ads knowledge urls
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/update-intelephense-docs-1980752206932081498`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Intelephense documentation in knowledge base
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-intelephense-docs-ingestion-13082987090438689982`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Intelephense documentation and ingestion logic
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-mcp-docker-security-11834660539572533331`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update MCP_DOCKER_SECURITY to use specific image
+  - **Activity:** Last active 6 weeks ago
+
+### 🌐 Strategic Domain: General
+*Strategic results and knowledge merged from 1642 branches within the General domain.*
+
+- **Branch:** `origin/fix/autonomous-evolution-1779502182555` [Impact Score: 90]
+  - **Category:** FIX
+  - **Result:** Commit: Enforce cloud simulation flags across all execution paths (#1967)
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/autonomous-evolution-1779764401136` [Impact Score: 90]
+  - **Category:** FIX
+  - **Result:** Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/autonomous-creation-evolution-14168201882249018244` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full autonomous creation and execution cycle
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/autonomous-creation-order-pulse-16989698787955078508` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Phase 23 full autonomous creation and execution pulse
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/bolt-perf-lxml-17997966610705320667` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous daily scheduler
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement unified autonomous cloud convergence (Phase 12)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-evolution-14156064890207356187` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement robust autonomous cloud takeover and online presence
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-evolution-16547296923606318765` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous cloud connectivity, async hygiene, and CI fixes
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-evolution-2894233982958127060` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous cloud evolution engine
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-failover-13782087979428754100` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous cloud failover and online presence
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-presence-v12-14478074314535541001` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous cloud presence and ecosystem collaboration (Final)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-simulation-3351490768849480182` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous cloud operation and fix CI regressions
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-takeover-7073158018253721120` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous cloud takeover and continuous presence
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-cycle-alignment-17511680594965504532` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement fully autonomous creation and execution lifecycle
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-order-12052078248727379444` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full autonomous creation order and execution
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-order-15598638641975305660` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous creation order and execution cycle
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/cloud-autonomous-evolution-4476041926243078641` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full cloud autonomy and multi-tool integration
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/cloud-presence-13706315460514423185` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement ignite-cloud-presence command for autonomous cloud operation
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/enhanced-collaboration-and-communication-v13-2841303442639975600` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement enhanced autonomous collaboration and data-driven communication (Phase 13)
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/evolve-autonomous-engine-phase-12-3914839114884356859
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/full-autonomous-creation-13166158899422643820` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full autonomous automatic creation order and execution
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/full-autonomous-creation-cycle-9619244438013541372` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full autonomous creation order and execution cycle
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/full-autonomous-creation-engine-2520836336596562790` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement fully autonomous creation order and execution chain
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/full-autonomous-creation-execution-17830710122661382280` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full autonomous creation order and execution chain
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/full-cloud-autonomous-integration-16044652152122704918` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full cloud-active autonomous integration
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/gemma-4-scraper-14386039384216646408` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: test(audit): Implement autonomous license validation
+  - **Activity:** Last active 9 weeks ago
+- **Branch:** `origin/feat/icloud-sync-daily-work-3416451490970137960` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(icloud): implement autonomous project sync to iCloud folder
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/icloud-sync-duration-13760368430856556808` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(icloud): implement sync duration tracking for autonomous backup metrics
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/phase-16-autonomous-orchestration-16474240444277557624` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: Implement Phase 16 Unified Autonomous Creation Lifecycle
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/feat/phase-19-full-autonomous-cycle-v2-15724774532845719230` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement and execute Phase 19 full autonomous creation cycle
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/feat/unified-autonomous-creation-orchestrator-784590386845426502` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement unified autonomous creation and execution orchestrator
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feature/autonomous-cloud-presence-6564198224759094346` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement continuous cloud presence and autonomous daily cycle
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/autonomous-creation-orchestration-13977001292602702505` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full autonomous creation order and execution pulse
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feature/autonomous-improvement-cycle-1978975673869849123` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous improvement cycle
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/autonomous-work-order-system-2865376496549289667` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous work order creation and execution system
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/cloud-autonomous-convergence-1900133257466601663` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement cloud-integrated autonomous evolution and convergence
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/daily-autonomous-session-evolution-10827323028057042936` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement daily autonomous session evaluation and self-correction
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-17664332290031173343-55f5ab91` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement autonomous daily work cycle and iCloud synchronization
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-4843122813281068614-8b4499aa` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cloud): implement fully autonomous macbook cloud simulation integration
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-full-autonomous-orchestration-phase-23-9722972153733386623` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance autonomous orchestration and sync lockfile
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/phase-23-autonomous-creation-17638174024765930284` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Phase 23 autonomous creation and fix worker CI
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/autonomous-daily-sync-v2-13966797701667373298` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🤖 chore: implement robust autonomous daily work and iCloud sync
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feature/autonomous-cloud-evolution-engine-6944962146145336067` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: implement fully autonomous cloud-connected coding engine
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feature/autonomous-workflow-pipeline-1359283664930221721` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix: resolve python pip dependency resolution conflict and downgrade node warning
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix-autonomous-workflow-creation-1315603339002282520` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: Fix typo 'autonomus' to 'autonomous'
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/fix-cloud-autonomous-presence-9827360869310750655` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix: resolve CI syntax and module failures
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-workflow-creation-16196168275927692425` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix: execute full autonomous automatic creation correctly
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/fix/autonomous-evolution-1779620400378-8609616731264738090` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-evolution-1779620400378-8609616731264738090
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/autonomous-evolution-cloud-presence-13859954936909571932` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-evolution-cloud-presence (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/autonomous-markposition-integration-8301978892774040495` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-markposition-integration (Resolved massive conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/autonomous-system-syntax-16085505803900570829` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-system-syntax-16085505803900570829
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/optimize-execute-creation-cycle-9988671085706556406` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix(jules): optimize scanAllBranches and autonomous git sync timeouts
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/opt-scraper-regex-6404737091544860092` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement self-evolving autonomous system
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-summary-box-1793080287147073634` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Implement autonomous bi-weekly schedule
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-10966589273094838978` [Impact Score: 60]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement bi-weekly autonomous schedule and fix CSV injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/add-jenkins-trigger-9921528925841613573` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement Jenkins integration and trigger ecosystem collaboration
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/autonomous-cloud-organism-8050182996160797424` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: fully integrated autonomous cloud-connected organism
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/autonomous-creation-pulse-fix-3305349361750404416` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: execute full autonomous creation cycle and fix autocorrect corruption
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/autonomous-engine-evolution-2256024172132915838` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Autonomous engine evolution and self-correction
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-requests-session-3076311538911381225` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): implement requests.Session for connection pooling
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/daily-autonomous-evolution-1213326923919987940` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: execute daily autonomous evolution and enhance system engine
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat-autonomous-evolution-12760253633940972159` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: daily autonomous task and system evolution
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/feat/autonomous-cloud-continuity-7259514487637520921` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix: resolve multi-stack CI failures and secure cloud takeover
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-evolution-7110023434295372001` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-evolution-7110023434295372001
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-failover-13782442138819724713` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-failover-13782442138819724713
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-failover-17244677841558201238` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: finalize autonomous cloud failover and leadership fix
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-merge-bypass-8712146839008626317` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enable autonomous cloud merging and continuous pull request processing
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-presence-978332573715716812` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-presence-978332573715716812
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-presence-and-merge-7435388487164725443` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enable autonomous cloud presence and automatic PR merging (fixed lockfile)
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-presence-enhancement-11813668786867103175
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-cycle-10141862539312644533` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: execute full autonomous creation cycle for System Health Dashboard
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-cycle-2519215097742916370` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-cycle-2519215097742916370
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-cycle-5845832032656471987` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-cycle-5845832032656471987
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-engine-2254624505132207048` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-engine-2254624505132207048
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-engine-8264207274703386634` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/autonomous-creation-engine-8264207274703386634
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-evolution-8400947059595205490` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-evolution-8400947059595205490
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-evolution-9797261657817492019` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enable and execute full autonomous creation cycle
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/autonomous-creation-refinement-1998844755356148811` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: refine autonomous creation order and execution
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/feat/autonomous-daily-task-3062223263781845683` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: chore: execute daily autonomous evolution task
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/autonomous-protocol-jules-16130780090107402276` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: autonomous PR management and protocolization in Jules
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/autonomous-work-order-engine-4034176882068097834` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-work-order-engine-4034176882068097834
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/cloud-autonomous-presence-7598106438601862770` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: autonomous cloud presence and fast-track merging
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/cloud-convergence-phase-17-526028351036584856` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement full online cloud convergence and multi-provider evolution (Phase 17)
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/connect-and-collaborate-10869785352580861022` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: chore: execute autonomous connection and collaboration sync
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: optimize branch scanning and execute autonomous collaboration sync
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/connect-docker-collaboration-sync-final-6753111079424335435` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: synchronize autonomous state and collaborate with stakeholders
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/consolidated-intelligence-sync-1091614933754712837` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement consolidated intelligence and branch scanning
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/daily-sync-workflow-5320368611823718820` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement daily pull-work-push-sync cycle
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/dual-engine-autonomous-collaboration-180989571444817477` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/dual-engine-autonomous-collaboration-180989571444817477
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance collaboration merge and global neural sync (Phase 12)
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(collaboration): advance sentient orchestration and neural parity
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607-final-1111222233334444555566667777888899990000-6627201860355673710` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance ecosystem collaboration merge and communication (Phase 12)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/full-autonomous-automatic-workflow-935883045812593574` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add telemetry metrics to autonomous creation cycle
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/full-autonomous-creation-engine-10826704714276463959` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: refine full autonomous automatic creation and execution engine
+  - **Activity:** Last active 19 hours ago
+- **Branch:** `origin/feat/full-autonomous-online-engine-13146767980189175838` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: establish full autonomous cloud-connected engine
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/full-ecosystem-collaboration-sync-2223737222399285274` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement and execute full ecosystem collaboration sync
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/google-ai-agents-knowledge-10042262486432059909` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Autonomous Evolution v2.0 - Final State
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/icloud-knowledge-integration-and-engine-improvement-15937578227129391712` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: 🤖 chore: autonomous integration stabilization
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/implement-online-collaboration-presence-12185804848721100522` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement online collaboration presence
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/feat/jenkins-pipeline-17650508759045310490` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: connect jenkins into autonomous engine pipeline
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/macbook-cloud-simulation-2306204492187680775` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement fully online macbook cloud simulation overrides
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/macbook-cloud-simulation-4201425406939094947` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement fully online macbook cloud simulation globally
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/phase-13-collaboration-intelligence-7397437910944347312` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Phase 13 strategic collaboration and data-driven intelligence
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/phase-22-cloud-super-intelligence-7069863824765684745` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/phase-22-cloud-super-intelligence-7069863824765684745
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/react-integration-v2-8425489280318980511` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement and integrate ReAct reasoning-acting protocol
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feat/search-console-integration-8156754224784644134` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: re-implement SearchConsoleAuditor and integrate SEO metrics
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/unified-autonomous-execution-engine-12129098689674624370` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Unify Work Order system and enhance autonomous execution engine
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/unified-cloud-autonomous-presence-9163919187746994224` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: unified cloud autonomous presence and telemetry integration
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/unified-cloud-autonomy-6168364407996649590` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: unify autonomous orchestration for cloud persistence
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/unified-collaboration-intelligence-10789658545646187286` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Phase 12 Unified Collaboration and Intelligence
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/unified-collaboration-intelligence-merge-v12-4808907432766111944` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement unified collaboration and intelligence roadmap
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/unified-collaboration-intelligence-v12-3867223440127640861` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: unified collaboration and strategic communication (Phase 12)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/unified-collaboration-intelligence-v12-final-17564530872616543141` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Phase 12 Unified Collaboration and Strategic Communication
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feature/autonomous-cloud-simulation-presence-15239864471767221481` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: simulate fully online cloud presence and collaboration
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/autonomous-creation-execution-5649264533760770196` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: finalize full autonomous creation order and execution engine
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/autonomous-sync-persistence-9865428495683171374` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance autonomous daily sync and persistence
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/cloud-and-local-autonomy-9538834322956606637` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement cloud autonomy and macOS background execution
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/gemini-git-worktrees-13127368067831034197` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): implement gemini git worktrees experimental feature
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/macbook-cloud-simulation-10813154388376629644` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enable continuous cloud simulation for autonomous merge and work
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/markposition-autonomous-integration-5824578537508195574` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: deep autonomous integration of markposition intelligence
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix/agent-memory-and-tests-14715316655293625624` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Complete Industrial Autonomous Market Intelligence Ecosystem
+  - **Activity:** Last active 4 months ago
+- **Branch:** `origin/fix/autonomous-evolution-1779417180082` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Jenkins pipeline into engine system collaboration (#1950)
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/autonomous-evolution-1779762421460` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: connect jenkins into autonomous engine pipeline (#2104)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/daily-work-sync-13583971229598544377` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement streamlined daily work and icloud sync cycle
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/fix/neural-recovery-and-evolution-6345337180454700006` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 16 Neural Recovery and improve Evolution Engine
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/integrate-icloud-knowledge-phase16-advanced-17672247314995486362` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate advanced Phase 16 protocols from iCloud
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/integrate-jenkins-engine-7625191917033904459` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Jenkins with autonomous engine
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jenkins-pipeline-integration-1209487305569927216` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ci): integrate jenkins pipeline with autonomous engine
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jenkins-pipeline-integration-2917487616063889464` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement Jenkins ecosystem collaboration trigger
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-10804936454534876603-52aca57c` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Jenkins API integration and ecosystem sync trigger
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-11727907802921261757-a2a7358c` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: execute full autonomous creation cycle and integrate ROI Auditor
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-12561455779254021190-7c3c5263` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: automate autonomous tasks and self-correction improvement
+  - **Activity:** Last active 51 minutes ago
+- **Branch:** `origin/jules-13238206488982251887-d6084712` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement GitLab CI/CD tutorial pipeline
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-14602813324423635796-48a23d44` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: execute full autonomous creation cycle and update system state
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-14816450646255710907-9a961bea` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance daily autonomous task with system engine self-correction and validation
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-15669541233529701765-e7b02c45` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement Jenkins Integration and Pipeline
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-334380261040546736-757cea53` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Enhance autonomous evolution to track correction count
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-3377716076333327453-2d27a121` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cloud): add SandboxCloudSimulation for autonomous online presence
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-4448288168455753466-c57b1972` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: daily autonomous system evolution
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/jules/autonomous-online-coding-presence-17025271764789693305` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add autonomous-online-coding command for cloud presence simulation
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules/connect-docker-collaborate-11639225190852212326-1342794352069175774` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: execute autonomous connection and collaboration cycle
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/macbook-cloud-simulation-2285701184876173816` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Simulate MacBook cloud presence for autonomous operation
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/palette-cli-colors-v1-15537575789263225364` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement bi-weekly reporting schedule
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-4894739317500695690` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement IQ-based Self-Learning System
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-security-fixes-2926280521022127220` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement CSV injection protection and path traversal prevention in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-10353048706525775384` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-11137622632039534003` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-1271702522999364117` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix CSV Injection vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-14785501448313010884` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Sentinel: [CRITICAL] Fix CSV injection vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-17728883922707922928` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel/fix-csv-injection-17728883922707922928
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel/fix-csv-injection-18204894269063058873` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Injection vulnerability in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-18292111345999615126` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV injection in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-1837485357128189949` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel/fix-csv-injection-1837485357128189949
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel/fix-csv-injection-2502077377827287714` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel/fix-csv-injection-2502077377827287714
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel/fix-csv-injection-2735194479684746444` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Formula Injection in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-2739836513252277633` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into sentinel/fix-csv-injection-2739836513252277633
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel/fix-csv-injection-2795873645337088864` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection in Scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-3791034134137478787` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection in scraper output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-5756251649576385500` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-5998751836772194145` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Prevent CSV Injection in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-8718980999403222499` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel/fix-csv-injection-8718980999403222499
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/sentinel/fix-csv-injection-9210533501834948716` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-markdown-injection-16528079574555238506` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix Markdown injection in analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-path-traversal-13515095468763134399` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix Path Traversal in scrape_informatic.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-path-traversal-1539865993913556303` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix Path Traversal in Scrapers
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-path-traversal-5310615808568024057` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel/fix-path-traversal-5310615808568024057
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel/fix-path-traversal-7103619358321639504` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix Path Traversal in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-path-traversal-9909177477694886926` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel/fix-path-traversal-9909177477694886926
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel/fix-request-timeout-14772585893024475880` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix missing timeout in HTTP requests
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-scraper-ssrf-timeout-839827095267002364` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Sentinel: Fix SSRF risk and add timeouts in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-scraper-timeout-15962352070527931210` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: Fix missing timeout in scraper to prevent DoS
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-scraper-timeout-7976927589477460081` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Shield: Add timeout to scraper HTTP requests
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-ssrf-pagination-12840024860908839` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: 🛡️ Sentinel: Fix SSRF vulnerability in scraper pagination
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/test-run-and-pii-sanitization-13332227309819345167` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: autonomous system evolution v1.24 with package-based layout
+  - **Activity:** Last active 2 months ago
+- **Branch:** `origin/unified-collaboration-intelligence-12081311259895722633` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement unified collaboration and strategic communication
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-analytics-loop-fusion-4342012847249900150` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: optimize analytics.py by fusing multiple data passes
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-analytics-memory-opt-10610699281805131592` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Use generators in analytics.py to reduce memory usage
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-parse-optimization-17693505208777123088` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Offload BeautifulSoup parsing to thread to unblock event loop
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-parsing-optimization-15796324175829374067` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: offload BeautifulSoup parsing to ProcessPoolExecutor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-parsing-optimization-3568259514933349807` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: offload HTML parsing to thread in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-parsing-optimization-8695577183440719223` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Perf: Offload BeautifulSoup parsing to thread
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-async-scraper-optimization-7114866315692870116` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Offload BeautifulSoup parsing to thread pool
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-clean-text-optimization-15712517231246244038` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize whitespace normalization in clean_text
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-clean-text-optimization-16548831371905751572` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize whitespace normalization in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-offload-parsing-5398069760556689777` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: offload HTML parsing to thread executor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-analytics-generators-8873141183038824574` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Use generators in analytics.py for memory efficiency
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-clean-text-7547135084806054992` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize text cleaning in scraper using split/join
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-db-connection-6272426702807930457` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Reuse SQLite connection in BlogScraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-markdown-parsing-5582723908473381878` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize markdown conversion in scraper (~4x faster parsing)
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-markdownify-10348114377870192162` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize markdown conversion in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-markdownify-usage-1055696794697199315` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Use MarkdownConverter.convert_soup to avoid re-parsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-bs4-5091120163472675133` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): Optimize BeautifulSoup parsing with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-connections-4828433141129646655` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Reuse requests Session and SQLite connection in BlogScraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-lxml-6085458244343772742` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): replace BeautifulSoup with lxml for faster parsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-11174604161297241806` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): optimize HTML comment extraction with regex
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-16907071168854197737` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): offload html parsing to thread
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-2345287755710675477` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Perf: Optimize HTML parsing in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-8116934535204558717` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize HTML parsing in scraper.py using SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-regex-7246744395174806244` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize HTML parsing with Regex and asyncio.to_thread
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-soupstrainer-7047580228088986643` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize HTML parsing with SoupStrainer
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-perf-scraper-session-10551043501921502138` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize scraper DB and network performance
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-perf-string-clean-3059858990745910669` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize whitespace cleaning in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-performance-async-parsing-2274988266574595101` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: offload parsing to executor and compile regex in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-regex-optimization-10299479456979615296` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: pre-compile regex patterns in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-10670018771745312262` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): optimize regex usage by pre-compiling patterns
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-15204028469751389164` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: pre-compile regex patterns in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-16017586951371803130` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): pre-compile regex patterns for performance
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-1936252853902893484` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): pre-compile regex patterns
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-4970481472425500127` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize text cleaning in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-6253122029365977670` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: optimize scraper regex usage
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-8134015789402111822` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): compile regex patterns for 50% speedup in is_url
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-9346752295468172099` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): optimize text cleaning regex
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scraper-optimization-10622089792901255880` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): replace select_one with find for 37% speedup
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-4739353605413310472` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): optimize scraper.py for speed and concurrency
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimizations-8732903057106461095` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize HTML parsing and string cleaning in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-regex-opt-12848838026143990534` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: optimize regex usage in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scraper-session-optimization-11606334995791514193` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Use requests.Session in BlogScraper for connection pooling
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-4709552410441311430` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Use SoupStrainer to optimize HTML parsing in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-7655426233962069468` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Use SoupStrainer to optimize HTML parsing speed
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-string-optimization-14072839521432093858` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize string processing in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-string-optimizations-16981467871586157841` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize string processing in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt/analytics-optimization-4995070729525476780` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(analytics): optimize aggregation with generator expressions
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/analytics-optimization-5186329418761379661` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Optimize analytics memory usage with generators
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/analytics-optimization-9314066458299760001` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt/analytics-optimization-9314066458299760001
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt/debounce-search-12191973509104557966` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt/debounce-search-12191973509104557966
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt/debounce-search-12622700298497962578` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Debounce search input
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/debounce-search-15326880572680328137` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt/debounce-search-15326880572680328137
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt/debounce-search-5142738797831521138` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Debounce search input for performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt/offload-parsing-14722444591062844886` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt/offload-parsing-14722444591062844886
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt/offload-parsing-18000472276561291701` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/offload-parsing-18000472276561291701
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt/optimize-analytics-memory-6106404338256355305` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Refactor analytics.py to use generators for memory efficiency
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-analytics-one-pass-7086495459285985759` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-analytics-one-pass-7086495459285985759
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt/optimize-db-commits-11398396024244254319` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize DB operations with connection reuse and batch commits
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-font-loading-5528051854303961488` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize font loading strategy
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-parsing-concurrency-16573258406501632258` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to ProcessPoolExecutor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-parsing-strainer-9971815033576562724` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer for faster HTML parsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-regex-1525106895244379137` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-regex-1525106895244379137
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt/optimize-regex-15752829805636869683` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Optimize regex usage in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-regex-3698754049166377150` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize regex usage in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-regex-scraper-6105079902300613842` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize regex performance in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-8346930055291121597` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Perf: Optimize HTML parsing with lxml and SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt/optimize-scraper-async-parsing-4453799508015818027` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with non-blocking parsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-concurrency-1999393658885551350` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Offload scraping parser to process pool
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-connections-13114973092726669835` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt/optimize-scraper-connections-13114973092726669835
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt/optimize-scraper-cpu-offload-9525808668281039762` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt/optimize-scraper-cpu-offload-9525808668281039762
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-10565425489235889147` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt/optimize-scraper-parsing-10565425489235889147
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-10918922297194629297` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: offload BeautifulSoup parsing to thread in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-11833892635611618505` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt/optimize-scraper-parsing-11833892635611618505
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-12555573345404019193` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Perf: Offload scraper parsing to ProcessPoolExecutor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-16871502457632644118` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Refactor scraper to offload parsing to thread executor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-17321207130499431239` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Refactor scraper to use ProcessPoolExecutor for CPU-bound parsing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-17943688807716434539` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Optimize scraper parsing with SoupStrainer and thread offloading
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-6721094877906606239` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Perf: Optimize scraper parsing logic
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-6892475922694217553` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and string ops
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-parsing-7966402303171106171` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt/optimize-scraper-parsing-7966402303171106171
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt/optimize-scraper-regex-10205989799343987319` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): replace bs4 with regex for comment extraction
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-regex-1393195190669429134` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with regex pre-compilation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-regex-14681340074432388490` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Perf: Pre-compile regex in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-regex-8405299950753079753` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex patterns in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-regex-9310556906555712372` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize regex usage in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-soupstrainer-14420766436161208317` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-scraper-soupstrainer-14420766436161208317
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt/optimize-scraper-soupstrainer-16309493633183505458` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt/optimize-scraper-soupstrainer-16309493633183505458
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt/optimize-scraper-soupstrainer-2187090943754439441` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-scraper-text-cleaning-12035125053828443928` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper text cleaning and URL checks
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-sqlite-connection-10336361028300221107` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt/optimize-sqlite-connection-10336361028300221107
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt/optimize-url-parsing-2495547858907129194` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt/optimize-url-parsing-2495547858907129194
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt/optimize-url-parsing-5636972327251553148` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize is_external_link by pre-calculating netloc
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/parallel-parsing-8300594593376061911` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Parallelize HTML parsing with ProcessPoolExecutor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/parallel-research-9725055391058247925` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt/parallel-research-9725055391058247925
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt/parallel-researcher-3732082642823576207` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt/parallel-researcher-3732082642823576207
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt/scraper-async-parsing-11691327216979292391` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: offload scraping to thread to unblock loop
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/scraper-async-parsing-1902549923260096653` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/scraper-optimization-5038895935936123886` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt/scraper-optimization-5038895935936123886
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt/scraper-optimization-9022037111060976209` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and string operations
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/scraper-optimization-soupstrainer-17672817174233874002` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/scraper-perf-boost-9671827754750526645` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt/scraper-perf-boost-9671827754750526645
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt/soup-strainer-optimization-16070692857915486843` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing with SoupStrainer
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/optimize-domain-analysis-3826512882999880558` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: optimize domain analysis with walrus list comprehension
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/perf-optimize-analytics-domain-10591863732234671341` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize URL parsing by utilizing existing `domain` field
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/perf-optimize-regex-10602796158546240842` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: Optimize regex matching by pre-compiling url pattern
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/perf-scraper-lxml-9392503187182498809` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf(scraper): switch to lxml parser for faster html parsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/perf-soup-strainer-6341082592320040633` [Impact Score: 40]
+  - **Category:** PERFORMANCE
+  - **Result:** Commit: perf: optimize HTML parser with SoupStrainer
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/autonomous-evolution-task-5212239239419226350` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: apply daily autonomous task logs
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/autonomous-session-evolution-14889972984750562552` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: force clean commit for daily autonomous session analysis
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/dependabot/npm_and_yarn/npm_and_yarn-f44cc39d45` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore(deps): bump the npm_and_yarn group across 2 directories with 1 update
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/evolution-task-run-4071394069840083330` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: run daily autonomous analysis and system evolution
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-autonomous-evolution-15263469635356956693` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: daily autonomous session analysis and system engine evolution
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/jules-autonomous-evolution-6202618797391726499` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: triggered autonomous evolution cycle manually
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-autonomous-evolution-task-12630282421402691933` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: verify automated daily autonomous evolution task functionality
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/autonomous-cloud-integration-v2-7175106802837350237` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into autonomous-cloud-integration-v2-7175106802837350237
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/autonomous-engine-and-work-orders-5472523483534806540` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into autonomous-engine-and-work-orders-5472523483534806540
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-debounce-search-3754580611737527363` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Implement debounce for search input
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-10743061150109398195` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Implement HTTP and DB connection pooling in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-12894303675301140287` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper parsing and implement daily schedule
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-16491499678156145300` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Implement SoupStrainer and Regex Compilation in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-2789910246289122534` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Implement sliding window concurrency for scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/cloud-autonomous-integration-17870893235290624845` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into cloud-autonomous-integration-17870893235290624845
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/cloud-simulation-autonomous-presence-9337570099349357215` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ensure ecosystem presence sync runs correctly in cloud
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/codex/software-review-platform-starter` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Autonomous System Evolution: Version 1.0
+  - **Activity:** Last active 3 months ago
+- **Branch:** `origin/daily-autonomous-task-instruction-6915509705392668403` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into daily-autonomous-task-instruction-6915509705392668403
+  - **Activity:** Last active 24 hours ago
+- **Branch:** `origin/feature/cloud-workflow-fluent-availability-1140691908336489716` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix scraper and intelligence tests for python CI checks
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feature/unified-autonomous-creation-execution-9112787488112891184` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Establish full autonomous creation and execution lifecycle
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-and-automate-autonomous-system-4910910196834454154` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix-and-automate-autonomous-system (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix-daily-sync-recursion-2513362835835522754` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: daily routine robustness and recursion in optimization engine
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-tsx-dependency-7400371801550382505` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: install missing tsx dependency
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/fix/ai-agent-architecture-summary-9021797993819332158` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix 12-layer summary list by removing erroneous 13th item
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/dependabot-alerts-resolution-4540208840351365133` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/dependabot-alerts-resolution-4540208840351365133
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/google-ads-scraper-json-schema-and-system-knowledge-4955312210061606235` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix/npm-audit-vulnerabilities-17082437904060311474` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'main' into fix/npm-audit-vulnerabilities-17082437904060311474
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix/performance-html-parser-to-lxml-13629481798986803018` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: ⚡ Optimize HTML parsing with lxml
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/fix/performance-html-parser-to-lxml-7139146645906228856` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: ⚡ [performance] Switch all scrapers from html.parser to lxml for speed improvement
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/fix/refactor-sync-fs-operations-11463572361275894261` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: refactor: replace synchronous file system operations with fs.promises
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/syntactic-adjustment-15480570906923650075` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Add benchmark placeholder comment
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/integrate-markposition-knowledge-merge-3452272022805466987` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CI failures due to missing pythonpath in pytest
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/integrate-react-agent-deployment-knowledge-12923931441009789315` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(ci): delete Advanced Setup codeql to allow Default Setup to run successfully
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-12830297844500739316-dff94a25` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix wrangler compatibility dates
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/jules-1401381832535268992-101c53a9` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(scraper): import re module in scraper.py
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-18406338226598714071-aab43e45` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: correct system memory json syntax formatting
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-2697480453734619258-d71032af` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Apply daily autonomous task and system evolution
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/jules-2876054462022588492-84e7dde1` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: use nodejs for json stringify to preserve unicode encoding
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-cloud-simulation-enforcement-7338891043576217515` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enforce cloud simulation flags across all execution paths
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-daily-work-cycle-execution-1058116400377404374` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🤖 chore: execute daily autonomous work cycle and verify sync
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/jules-fix-oracle-scraper-schema-6080803583651507344` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: modify oracle AI scraper to output flat JSON schema
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/knowledge-merge-signature-10281291985719549754` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: strictly avoid RegExp interpolation for dynamic string targets
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/nomad-cli-agent-docs-15478110730395729144` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: Update GitHub Actions to non-deprecated versions and fix bandit issues
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/palette-fix-markdown-escaping-930315787144321424` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(analytics): escape special characters in markdown report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/project-opinion-evolution-18306036414363557055` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: replace hallucinated PII with explicit placeholders in PROJECT_OPINION.md
+  - **Activity:** Last active 9 weeks ago
+- **Branch:** `origin/sentinel-analytics-security-fix-15562163645125731451` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Stored XSS and Markdown Table Injection in analytics.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-10221947977265973375` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Formula Injection vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-10298970558848162615` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-10398875479069463137` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-10425248433369273234` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-11232382863201934682` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-1326975499108887889` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-14202911627973574008` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper exports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-14407786113626138861` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in OracleNewsScraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-15771572653654019647` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-16105451329157671557` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: prevent CSV formula injection in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-16999341900923167805` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Formula Injection in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-2209257127317318783` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper and add request timeout
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-6113448530836767636` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Injection Vulnerability in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-8097827664947199765` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: prevent CSV injection in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-8148266777407041766` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper export
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-11077555139908489589` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(scraper): prevent CSV injection in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-11369382377147325845` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement bi-weekly scheduler
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-16604048284398953621` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Formula Injection vulnerability in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-9365968688429257416` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(scraper): prevent CSV formula injection
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-12358420040259215492` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Markdown injection vulnerability in analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-12642553917768757487` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: Sanitize inputs in analytics report to prevent Markdown Injection and XSS
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-12782230076673312738` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Markdown injection and stored XSS in analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-12887486750391469562` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Markdown Injection and XSS vulnerability in analytics report.
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-17432524011574370293` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(analytics): Sanitize markdown output to prevent injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-1749769319501119142` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: Sanitize inputs in analytics report generation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-3339496328156938030` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Markdown table injection in analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-3776990642729282253` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix XSS and Markdown injection in analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-4574407536048453465` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: Sanitize input in analytics report to prevent Markdown Injection and XSS
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-15570821654986088312` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix path traversal vulnerability in scraper output paths
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-17914056010192129632` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix path traversal vulnerability in scrape_informatic.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-5132007929293032238` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix path traversal vulnerability in scraper.py and analytics.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-scraper-11209913813544277514` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix path traversal vulnerability in scraper.py CLI arguments
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-scraper-timeout-1149197347818136170` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: Add request timeout to prevent scraper hang
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-scraper-url-validation-5666735410169343396` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: add strict URL scheme validation to scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-scraper-vulnerability-10920558774423191235` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: prevent scraper from following off-domain links
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-ssrf-pagination-955563201961260698` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix SSRF vulnerability in scraper pagination by validating URLs.
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-timeout-5116426609939890096` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: Add timeout to HTTP requests in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-unsafe-links-5959924612481434328` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix XSS vulnerability in scraper by validating extracted URLs
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-xss-links-14504327509896996257` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix XSS vulnerability by validating extracted links protocols
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-xss-report-17694993639350070672` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Stored XSS in Analytics Report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-10577458576876896305` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: prevent path traversal in scraper.py output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-11587562362806338360` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix path traversal vulnerability in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-12279666712111008639` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix path traversal vulnerability in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-14362573612841171516` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix path traversal in scrape_informatic.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-17847315453125522921` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: prevent path traversal in scraper output and add timeout
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-18413042180626318993` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix path traversal vulnerability in file outputs
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-4227351371045424943` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: prevent path traversal in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-scraper-security-3468579950298759361` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix stored XSS via scraper URL validation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-3881955097333769994` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix SSRF in BlogScraper by validating URL scheme and domain
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-12899560490042954915` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: sanitize CSV output to prevent formula injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-4054564814748295224` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Injection in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-4616410932219879606` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Formula Injection in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-4856694323076265204` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper by sanitizing outputs.
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-csv-injection-4898138830369691020` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper output - Add `sanitize_for_csv` method to `MarkPositionScraperAsync` class in `scraper.py` - Prepend `'` to CSV fields starting with `=`, `+`, `-`, `@` to prevent formula execution - Add entry to `.jules/sentinel.md`
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-markdown-injection-10552938949682893680` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Markdown injection vulnerability in analytics report generator
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-markdown-injection-17509944772710987348` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Markdown table injection and XSS vulnerability in analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-markdown-injection-18346561083266000842` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Markdown and HTML injection in analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-markdown-injection-796801966410983912` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: sanitize inputs in Markdown report generation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-path-traversal-2695657045169320867` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix Path Traversal vulnerability in scraper and analytics tools
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-path-traversal-scraper-15595414302913607334` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix path traversal vulnerability in scraper output arguments.
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-scraper-path-traversal-12683996464696937820` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(scraper): prevent path traversal and update schedule
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-scraper-ssrf-1182726048773637235` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: Prevent SSRF in scraper pagination logic
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel/fix-scraper-timeout-6444312596237572236` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix: Add timeout to requests in scrape_informatic.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/update-duo-planner-prompt-4058832004619230761` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CI failures related to CodeQL and dangling submodule
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/add-chief-ai-officer-agent-9719417263665099785` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: inject Chief AI Officer tasks into Jules memory
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/add-improve-merge-integrate-run-13954481227278798151` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add improve-merge-integrate-run command to ingest multiple urls
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/add-prompts-md-15347215170790120341` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: handle API rate limits and resume capabilities in prompt runner
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/bolt-analytics-memory-optimization-4307986311279861534` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Optimize analytics.py for memory efficiency
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-analytics-optimization-10259687893878942359` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: optimize analytics performance with generators and string processing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-concurrency-parsing-15586759878100859891` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): optimize parsing with ProcessPoolExecutor and SoupStrainer
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-debounce-search-12215083828535086790` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Debounce search input to optimize performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-debounce-search-14084131025983025512` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: restore daily schedule and optimize health checks
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-debounce-search-14907047231982502450` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(perf): debounce search input to reduce layout thrashing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-debounce-search-15937062067363092227` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(perf): add debounce to search input
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-debounce-search-2923495583412528786` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(js): debounce search input to improve performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-debounce-search-5046410561131707962` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: debounce search input to optimize rendering performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-debounce-search-5765463060295849249` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: debounce search input to improve performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-debounce-search-867343283904291925` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(perf): Debounce search input to reduce DOM updates
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-fix-scrape-timeout-13108681531490414412` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Update runner schedule to bi-weekly
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-frontend-search-optimization-16804922774827713480` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: optimize search with debounce and dom caching
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-analytics-13767692266549105080` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: optimize analytics aggregation loop
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-15151560624780715186` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Optimize scraper parsing with lxml and SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-8834013085452887320` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(perf): Optimize HTML parsing with SoupStrainer
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-parallel-research-17289593056697154887` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(perf): parallelize research scraping tasks
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-perf-scraper-executor-4427925572526171604` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): offload parsing to ProcessPoolExecutor for concurrency
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-perf-scraper-lxml-5373269111675878459` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): optimize html parsing with SoupStrainer and lxml
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-regex-optimization-3412472969268847493` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): optimize regex performance
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-3847743098797150456` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(perf): Optimize regex usage in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-11470662003426243348` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: optimize scraper performance using SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-12663434804223605842` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): Optimize parsing speed with lxml and SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-1835167512947388951` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): optimize parsing with SoupStrainer
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scraper-optimization-4489089491268807084` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): optimize parsing with SoupStrainer and pre-compiled regex
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-4721296771632120675` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): optimize database transactions and requests
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scraper-optimization-6251848286743864279` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): optimize text processing and url checking
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soup-strainer-opt-12465788509084692171` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): optimize HTML parsing with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soupstrainer-opt-17010756878620689019` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): optimize html parsing with SoupStrainer
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/optimize-analytics-domain-parsing-13885933983785398642` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): Optimize domain extraction using pre-computed field
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt/reuse-sqlite-connection-8909750184306123325` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(perf): reuse sqlite connection in BlogScraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/enhance-collaboration-intelligence-15412005107506698569` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance collaboration intelligence and strategic communication
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/enhanced-collaboration-intelligence-6039790404604800823` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance branch intelligence merge and strategic communication
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/feat-render-worker-macbook-cloud-4132104054450648073` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add render.yaml worker for continuous cloud execution
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/add-dry-run-and-docs-355491477019803773` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix(ci): freeze gcp deployments to bypass credential failures
+  - **Activity:** Last active 9 weeks ago
+- **Branch:** `origin/feat/add-subagents-docs-1971776765739377795` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: chore: remove compiled pyc files and fix CI failures
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/ai-architecture-docs-2911584593714899836` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix(jules): exclude cache directories from branch diff scanner
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/ai-sdk-streamtext-integration-3734860099537308061` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Vercel AI SDK streamText with Google Gemini
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feat/caio-executive-intelligence-integration-8809529010570193553` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate consolidated CAIO executive intelligence
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/feat/caio-integration-enhancement-12997886670436036730` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance Chief AI Officer (CAIO) integration
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/caio-role-integration-8526698597633243980` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Chief AI Officer (CAIO) role and strategic mandates
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/feat/caio-role-orchestration-enhancement-8826405201008920940` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CAIO role intelligence and system stabilization
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/cloud-connection-sync-9636399974461911067` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/cloud-connection-sync-9636399974461911067
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/collaboration-dashboard-13924371239853665910` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(dashboard): add collaboration dashboard to track multiple repos
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/compile-knowledge-ingestion-4339613978296539768` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: ingest dictionary definition of Compile into central trackers
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/document-hcp-credentials-12060712897845222769` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: chore: add HCP credential placeholders to env template
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/enhanced-collaboration-intelligence-16362331248901214239` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance branch scanning and consolidated intelligence
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/enhanced-collaboration-intelligence-merge-v15-9653925109654101343` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance ecosystem collaboration merge and communication
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/enhanced-collaboration-intelligence-sync-15907336332787904375` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/enhanced-collaboration-intelligence-sync (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/enhanced-collaboration-intelligence-v13-845370085628204927-2439975860907887804` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance ecosystem collaboration merge and high-signal communication
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/enhanced-collaboration-intelligence-v16-final-handshake-17849102938475620193-9949874481939379825-v2-5392120890066692791` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance unified collaboration and communication protocols
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/feat/enhanced-ecosystem-communication-11028099600291853767` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: consolidate branch intelligence and enhance ecosystem communication
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/enhanced-unified-collaboration-intelligence-17030402135063920689-14187248367486580557` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance unified collaboration and effective communication
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/feat/git-merge-approvals-2916397739730846342` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enforce approval rules for GitHub and GitLab PRs/MRs
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/gitlab-ci-pipeline-15616713096718552061` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add initial GitLab CI/CD pipeline configuration
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feat/gitlab-ci-setup-14268875280165103242` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: No changes needed for .gitlab-ci.yml tutorial
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/go-genai-sdk-example-5056505739912335467` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(go-sim): add Gemini GenAI SDK example with error handling
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/go-parallel-simulation-12127722696321938947` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: create go parallel simulation prototype
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/google-ads-scraper-5253922194982887918` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/google-ads-scraper-5253922194982887918
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/hcp-terraform-run-task-3528016114234953749` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add HCP Terraform run task configuration for Packer validation
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/icloud-sync-system-evolution-8651898857989200077` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/icloud-sync-system-evolution-8651898857989200077
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/improve-sor-knowledge-observation-workflow-12368605147794196208` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve software-online-review ingestion and add AI summaries
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/infogadgettech-integration-3038526921821696523` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: comprehensive infogadgettech integration with daily tasks
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/feat/ingest-knowledge-merge-1247852778853905654` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: test: exclude backend subproject from root vitest config
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/instrument-gemini-telemetry-2423728923945984767` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/instrument-gemini-telemetry-2423728923945984767
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/integrate-antigravity-cli-1970974784687429419` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/integrate-antigravity-cli-1970974784687429419
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/integrate-gamezone-intelligence-2649330849741750293` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/integrate-gamezone-intelligence-2649330849741750293
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/feat/integrate-google-innovation-ai-knowledge-9132301443144362405` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Google Innovation & AI blog updates
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/integrate-markposition-autonomy-14681474804703419515` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/integrate-markposition-autonomy-14681474804703419515
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/integrate-onlinereview-knowledge-2305937299083418649` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: comprehensive integration of onlinereview.news.blog
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/feat/investopedia-ingestion-17078894864582667817` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: continually scrape and ingest Investopedia market intelligence
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/macbook-cloud-presence-simulation-16607574531277439639` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/macbook-cloud-presence-simulation-16607574531277439639
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/mongodb-atlas-migration-4131498074566710377` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/mongodb-atlas-migration-4131498074566710377
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/netlify-deploy-button-8112490364183212293` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add deploy to netlify button and configuration
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/netlify-supabase-extension-config-2964669740529404630` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix: resolve ESLint parsing errors from merge conflict
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/otel-genai-semantics-11295433924323540657` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/otel-genai-semantics-11295433924323540657
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/production-ai-optimization-17760250008540547139` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: refine production AI optimizations and fix test regressions
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/feat/prototype-schema-2382889081635482231` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: introduce Prototype data schema using Zod and Mongoose
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/react-agent-deployment-logic-6656436448375867525` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix: exclude backend tests from root vitest config
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/refine-caio-role-knowledge-v2-12062284295194676723` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: refine Chief AI Officer role definition and research resources
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/scan-software-online-review-12068023973855912854` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge main into feat/scan-software-online-review-12068023973855912854 and resolve conflicts
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/setup-npm-workspaces-gemini-cli-12181861489580932121` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: setup monorepo for Gemini CLI
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/smarter-cloud-workflow-1168853453825745042` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix: correct JSON syntax error in package.json devDependencies
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/sor8bukets-worker-9724254739940303207` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: containerize sor8bukets and integrate cloudflared tunnel
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/unified-collaboration-and-communication-enhancements-6890120143084280231` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: unified collaboration merge and communication enhancement
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/feat/unified-collaboration-and-strategic-communication-v13-306924987568325391` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance unified collaboration and strategic communication
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/unified-collaboration-intelligence-v13-1994240173334479473` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/unified-collaboration-intelligence-v13-1994240173334479473
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feat/unified-collaboration-intelligence-v14-16995956840405251892` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'main' into feat/unified-collaboration-intelligence-v14-16995956840405251892
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/update-caio-role-alignment-13817598227629882201` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: align Chief AI Officer (CAIO) role and logic
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/feature/50-prompts-cli-11662647561508639317` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Adjust prompt structure, execute LLM simulations, and add visualization dashboards
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/caio-role-integration-14157009948990756800` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(caio): integrate Chief AI Officer role and strategic mandates
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/feature/enhanced-collaboration-intelligence-801051165672751368` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance collaboration merge and strategic communication
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/feature/jenkins-engine-integration-16717447765251323037` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Jenkins pipeline into engine system collaboration
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/jenkins-engine-integration-6487857646863165040` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Jenkins into engine system and collaborate
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/java-gemini-example-4885310981980819263` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add Java example using Google GenAI client
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jenkins-orchestration-pipeline-16548850115893572153` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate jenkins pipeline into engine system
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jenkins-pipeline-integration-7872982211767864585` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate jenkins pipeline into engine system and ci/cd
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-17604044638150617179-bcbb5fe2` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: insert prompt text alongside syntactic placeholders
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/jules-5125461103553111919-d5f7a47b` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: securely configure Google & Gemini API keys
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/jules-download-cli-page-4874267122039212944` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Antigravity CLI download portal
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/oci-wordpress-deployment-9120692360420901713` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add terraform and kubernetes configuration for wordpress on OCI
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-add-distribution-bars-2985599301363690621` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add ASCII distribution bars to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-add-report-percentages-11439172869140532830` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add percentages to analytics report tables
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-add-report-toc-1273852051673532647` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Table of Contents to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-add-report-toc-13017065858519563862` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add dynamic Table of Contents to daily reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-add-report-toc-14550766222336483339` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add TOC and navigation links to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-add-toc-report-14784174799878095511` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add table of contents to generated analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-bar-chart-7462251999169566505` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add ASCII bar chart to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-charts-2666464073759843485` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts and emoji headers to reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-charts-4206491572955874021` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts and visual polish to reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-charts-9684146293746097755` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to generated report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-cli-summary-14007342154187471292` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add console summary to analytics.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-cli-summary-4779315143647098313` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add emojis to analytics report headers
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-cli-ux-5862653145990614801` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CLI output for analytics.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-cli-ux-7657702415316363052` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve analytics CLI output with summary stats
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-upgrade-14203127764241002344` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with ASCII charts and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-10341790926521843230` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with emojis and better formatting
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-12591573171027613457` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add TOC and 'Back to Top' links to report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-14075089827549646693` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with visual data and improved formatting
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-14959999178292083671` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with executive summary and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-14993712482288271186` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with visual metrics and progressive disclosure
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-15030314568688647799` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add TOC and visual polish to generated report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-16535941445945509426` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance REPORT.md generation in analytics.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-2030144575011325553` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): enhance REPORT.md with TOC, emojis, and better formatting
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-2766406126539390708` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance REPORT.md with emojis, tables and details
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-4099564144535097926` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Table of Contents and visual polish to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-4232613033722096123` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): enhance report with TOC, emojis and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-4257799222443731302` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with ASCII charts and executive summary
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-4326920631813878758` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): enhance report readability with TOC, emojis, and collapsible details
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-4908260963285094639` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): improve report navigability and visual polish
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-4967986312640001007` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with executive summary and collapsible sections
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-7635334485492302228` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with TOC, emojis, and formatting
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-7815834764566994440` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with executive summary and nav
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-8715451132490550236` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add TOC, anchors, and emojis to report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-9171175876471307053` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve Markdown report readability and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-summary-4728899381542685866` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add delightful CLI summary to analytics.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-summary-8453671355123458848` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add cli summary output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-summary-box-4031844974106884823` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colored summary box to analytics report generation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-summary-box-8939838279506558518` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colored summary box to analytics CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-11549541802920057325` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add rich console summary and markdown sanitization
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-13063998870501229074` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with TOC and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-15956843867430969547` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts and emojis to reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-2619089764861975591` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with ASCII charts and Executive Summary
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-3624889402201605206` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add TOC and visual polish to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-9149291915820024140` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): enhance CLI output and report formatting
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-9573677768644785747` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add visual summary to analytics CLI and fix date parsing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-improvement-10522861074342822232` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Update system schedule to run bi-weekly
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-visual-polish-4470200487089544601` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add ASCII charts and emojis to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-visual-summary-2764218655727614121` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add visual summary with ASCII charts to analytics CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-bars-10852289251684581107` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to report tables
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-bars-14633850369654553391` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-bars-4716182374226108315` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add ASCII bar charts to analytics report tables
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ascii-bars-6236831282512919053` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to generated reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-bars-8727413594208371857` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-charts-15534847136011173808` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add ascii bar charts to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-charts-15757732960728587034` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add ASCII bar charts to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-charts-16355594758621519726` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add ASCII bar charts to daily report keyword trends
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-charts-16467333056139699036` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to distribution columns
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-charts-5993052222468580086` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to text reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-charts-7286146975517193000` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to generated Markdown report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-colors-16970097531222949087` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): Add colorful emoji logging to CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-colors-3206504166430713796` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add color and emoji to scraper CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-colors-v3-11994937576468000160` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add color-coded logs and .gitignore for better DX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-dashboard-2336811404384765093` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): add colorful summary dashboard to scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-dashboard-8254371988405476413` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ci): replace daily reporting with bi-weekly GitHub Action
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-enhancement-5441850221004135602` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): enhance run_system.py output with emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-logging-11690218801671113971` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): enhance console output with colors and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-polish-10617303078140811985` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): add colors and summary box to scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-polish-7245288327755008219` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add visual polish to CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-polish-8263686010400234400` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): Add colored logging and summary table
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-progress-8547163842398693145` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CLI progress indicator to scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-cli-spinner-ux-17355742632069179967` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add CLI spinner and emoji feedback
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-summary-box-12028055253848911084` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colorful summary box to CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-summary-box-15876395418728927629` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add summary box and colors to scraper CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-summary-box-16566719087269269209` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add summary box to scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-summary-box-17004344822758906732` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colored summary box to CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-summary-box-7747250997461256954` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colored summary box to scraper CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-summary-box-8083330425517569149` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Update scheduler to bi-weekly reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-17335050180511200643` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CLI visual polish with emojis and colors
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-3199876023688079054` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): enhance logs with colors and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-7383645213978227588` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add delightful CLI output with colors and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-cli-ux-7717349484047385997` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): enhance CLI output with colors and summary box
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-biweekly-16790383014690096100` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CLI polish and bi-weekly scheduling
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-colors-16711790772227801289` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add CLI color support and visual polish
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-improvements-16514744854922016217` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CLI output with emojis and formatting
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-improvements-17270330985806452288` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve CLI output with colors and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-improvements-6092607382424465804` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): add rich visual feedback to scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-cli-ux-polish-2111230884908221183` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CLI output with colors, emojis, and summary box
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-summary-11132373574447212764` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colorful CLI summary using Palette class
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-summary-8843972802041575160` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add CLI summary box to scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-visual-polish-10160750518849227089` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add visual polish to CLI logs with emojis and colors
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-visual-polish-12024230895845903893` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CLI visual polish with colored logging and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-visual-polish-15906787407292859541` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CLI output with colors and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-visual-polish-16691567195068530862` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve CLI visual hierarchy with colored logs and summary box
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-visual-polish-3698444401610641769` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add visual polish to CLI output with colored logging
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-visual-polish-7342470376918669690` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CLI output with colors and summary table
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-visuals-10522889352732785467` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve CLI visual hierarchy with colored logs and summary
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-colored-logging-1491286074497741313` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colored logging and emoji indicators to CLI output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-colored-logging-4205972882040105240` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): add colored logging with emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-colored-logging-ux-17992992893836772305` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add colored logging and fix double logging issue
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-enhanced-analytics-report-4125169103760286117` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with visual metrics and collapsible sections
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-enhanced-reports-16415063186850509596` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance CLI analytics report with visual data bars
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-graceful-shutdown-6686216384600575838` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): add graceful shutdown to save data on interrupt
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-analytics-report-18062852569660178887` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve analytics report readability
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-cli-logging-2441580921908599501` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: change job schedule from daily to every two weeks
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-1244892965393033926` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add TOC and navigation anchors to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-1515268010537928843` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with executive summary and collapsible details
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-1590412772742970293` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance daily report with executive summary and collapsible details
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-15954132581208631858` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve report readability with dashboard and TOC
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-16744443975495209465` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve report readability with TOC and formatting
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-3142867670552745548` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add navigation and visual polish to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-3610494715935454466` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve report readability with executive summary and collapsible sections
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-3734025861997546036` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance REPORT.md with TOC, emojis and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-4874508048051784270` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Table of Contents and navigation anchors to daily reports
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-6354626839202487663` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance REPORT.md with TOC and better formatting
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-661272626947042109` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve report readability with semantic emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-9882191085663915429` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve report readability with collapsible tables
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-log-emojis-14996925440065141338` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): enhance logs with emojis and improved visibility
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-log-formatting-15971220591968669569` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(dx): Add colored logging with emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-navigation-11771695338602020565` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(report): improve report navigability with TOC and anchors
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-navigation-16056318434640743559` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add navigation and visual polish to generated report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-navigation-17302622234226606396` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve report navigation with TOC and anchors
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-navigation-2240518606700983656` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(report): add navigation aids to daily report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-navigation-6685589132510964882` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add TOC and navigation to generated reports
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-navigation-9686279638515215567` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add TOC and navigation anchors to daily report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-16058546482539529052` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve report readability with tables and ASCII charts
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-ux-2586385590797545719` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add TOC and percentage shares to report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-ux-6836477238955573134` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add TOC, anchors, and emojis to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-6923593028800648956` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): improve report readability with TOC and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-7438110987153342447` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add navigation and visual polish to generated analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-9353964670037351042` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): improve REPORT.md visual polish
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-ux-improvement-10193181344057520742` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add navigation and visual polish to generated reports
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-improvement-13692058964087524483` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): improve report navigability and readability
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-improvement-6775578047897650791` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add ToC, anchors and emojis to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-scraper-cli-summary-16839144126479902630` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colorful CLI summary box, robustness, and tests
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-cli-summary-3176708108112650471` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add visual summary dashboard to CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-cli-summary-5336252547540046399` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add visual summary box to scraper CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-cli-ux-10254727661965721120` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve scraper CLI feedback with colored summary
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-cli-ux-5391046781979864824` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve scraper CLI with colors and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-cli-ux-5822096783494386588` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add visual polish to scraper CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-cli-ux-594719543184978660` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add colorful summary to scraper CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-summary-10400250517688153163` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): Add CLI summary box with execution stats
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-summary-1208629136224129021` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): add summary table to CLI output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-scraper-summary-box-7474193270213142188` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add CLI summary box to scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-ux-5424877083715030058` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(scraper): add colored logging and summary table
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-scraper-ux-summary-1616700660320259607` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colored summary box to scraper CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-ux-summary-7200015495059057194` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add execution summary box to scraper CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-analytics-bar-chart-17866123775961156330` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add visual distribution chart to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-analytics-report-14597730770972952440` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve analytics report readability and cli feedback
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-analytics-report-17442789238565895596` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add navigation and improve date parsing in analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-analytics-summary-2709532664525857663` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add visual summary box to analytics CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-improvement-report-visuals-10910068111888807905` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add visual bar charts and percentages to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-enhancement-15172318103977119583` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add ASCII bar charts and emojis to report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-enhancement-8007324327249044575` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance REPORT.md readability with visual metrics
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-improvements-11313390590713595542` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance generated report with tables, emojis and collapsible sections
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-improvements-13793595194787287681` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): Enhance report with ToC, emojis, and summary
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-improvements-13831713168674477220` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance daily report readability with TOC, anchors and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-improvements-5742295436253287865` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(report): add TOC, anchors, and emojis to daily report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-links-5553853487436011261` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: make report domains clickable and add emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-nav-16569108711170597601` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add TOC, emojis and navigation to generated report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-navigation-1055201088429066015` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add TOC, anchors, and navigation links to report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-navigation-13412494468983508002` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add ToC and navigation links to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-navigation-14402610223237389946` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add TOC and improved navigation to REPORT.md
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-upgrade-1698868480581836517` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve report readability with TOC, emojis, and percentages
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/cli-colors-8575730962200631478` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add colored logging and output to scraper and analytics
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette/cli-ux-improvements-18294687491796103663` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add delightful CLI logging with emojis and colors
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/enhance-report-ux-11995820090382525723` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with TOC and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/enhance-report-ux-2739052330608960722` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with TOC, emojis and anchors
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/improve-report-ux-7962049104827263798` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve analytics report readability with TOC and formatting
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/improve-report-ux-9149599354572464593` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add TOC, emojis, and navigation to daily reports
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/markdown-ui-enhancement-18003291754095827946` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance markdown report with TOC, anchors, and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/report-navigation-10848490221973178016` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add navigation and visual improvements to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/report-navigation-13835048160804897717` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add TOC, emojis, and navigation to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/report-navigation-ux-5720051547511983391` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add TOC and back-to-top links to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-7375111859144544307` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Prevent CSV injection in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-10038367286056826803` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CSV injection protection and http timeout
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-10823602123792792122` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CSV injection protection, URL validation and update schedule
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-11537968662341487277` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Fix CSV Injection vulnerability in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-12864259658340301340` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: sanitize CSV output in scraper to prevent injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-13240856359279585167` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-14810873340249906468` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Fix CSV injection vulnerability and add request timeouts
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-15021706020532406187` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-15271493773848426638` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: sanitize CSV output to prevent formula injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-16208060421848314312` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CSV injection protection to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-16277687269627577921` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CSV sanitization to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-16760384515940097224` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: mitigate CSV injection in scraper export
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-16822017676195484048` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CSV sanitization to prevent formula injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-1915470429985340471` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Prevent CSV Formula Injection in scraper output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-3226420374077565204` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Fix CSV injection and add request timeout
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-3619295018585111086` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CSV formula injection prevention to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-3792279438009718609` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Fix CSV injection vulnerability in scraper export
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-4034437976659804335` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: mitigate CSV Formula Injection in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-6685334984184848027` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Fix CSV injection vulnerability and add request timeout
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-7279293244231609649` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: secure scraper against CSV injection and hanging
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-7862227408339325944` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Fix CSV injection vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-9473825709401880639` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-9988075135877474824` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: prevent CSV injection in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-11316363243497310988` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update schedule to bi-weekly
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-12970269499686367400` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: mitigate CSV injection in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-1302740783409552070` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability in scraper export
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-8336262688317401558` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: schedule report generation every other week
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-10489928730170267771` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: sanitize markdown output in analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-15177720678056733729` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: sanitize markdown report output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-4811643959764266800` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: sanitize markdown output in reports to prevent injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-scraper-16504973600351558814` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: fix path traversal vulnerability in scrape_informatic.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-report-injection-1488382414768619374` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): add markdown sanitization to prevent injection
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-markdown-injection-fix-14905242363069244554` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: sanitize markdown report generation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-markdown-sanitization-11985779393416298758` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add markdown sanitization for analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-markdown-sanitization-15094768365702724713` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Sanitize Markdown output in analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-markdown-sanitization-7125974230705097522` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add Markdown sanitization to report generator
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-output-encoding-17232199757136201489` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: secure markdown output encoding in analytics
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-12611882508292963082` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Prevent path traversal in scraper output files
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-16721964439752681814` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Prevent path traversal in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-6263730005958541679` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Prevent path traversal in scrapers
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-scraper-dos-fix-5795128343399673854` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add response size limit to scraper to prevent DoS
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-security-fix-3723865700498354440` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Fix CSV Injection and Path Traversal in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-security-fixes-1698740501071019689` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add timeout to network requests and validate output paths in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-11285404620217692066` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add SSRF protection to BlogScraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-15679479573064166638` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add SSRF protection to BlogScraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-15708222487213179440` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add SSRF protection to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-2624088104699189240` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add SSRF protection to scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-3044566237611297460` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add URL validation to prevent SSRF in BlogScraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-4228425810213735351` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add URL validation to scraper for SSRF protection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-7380402867883374496` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add strict SSRF protection to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-url-validation-16463849517756046800` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: secure scraper with strict URL validation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-url-validation-1973285789499580044` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: stricter URL validation to prevent injection attacks
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-xss-fix-4307107486313997364` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Fix Stored XSS in Markdown reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-scraper-vulnerabilities-4677155217137782042` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: secure scraper output (path traversal & csv injection)
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-timeout-scraper-8563168967022148924` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add request timeout to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/unified-collaboration-intelligence-v2-12453699673464711823` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance unified collaboration with CAIO strategy and advanced synergies
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/add-geminiignore-3994117053724199623` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: add .geminiignore file to exclude sensitive/irrelevant files
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/best-value-knowledge-integration-17085817906964827060` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: downgrade node to v20 and remove untracked web-app submodule
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/chore/integrate-improvement-code-prompt-3030996373054214975` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: integrate improvement code prompt
+  - **Activity:** Last active 32 hours ago
+- **Branch:** `origin/chore/preserve-existing-markdown-formatting-9668321659264239484` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: preserve existing formatted markdown
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/daily-work-automation-setup-16331620852581161197` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: initialize and automate daily work cycle
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/fix-gitlab-ci-tutorial-147082030447877574` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: update .gitlab-ci.yml to match basic pipeline tutorial
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-google-ads-urls-2511312305156205133` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: Update Google Ads answer URL with query params
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/jules-1027089695129073368-c49a1c11` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: execute daily work cycle and provide environment setup tools
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/jules-10502937591393531704-242700f5` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: integrate requested changes
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/jules-12155541811000834789-d2a5f309` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: Add comment to force commit for connect and collaborate
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-13638468131991503087-80926d0f` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: force trigger CI
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/jules-1433056104887275839-9b117db6` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: synchronize ecosystem intelligence and collaboration state
+  - **Activity:** Last active 11 days ago
+- **Branch:** `origin/jules-15643813269620827017-18b637fd` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: verify initial GitLab CI/CD pipeline configuration
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/jules-16125195344274130564-4d22cb5e` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: add gitlab ci/cd tutorial jobs
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-16888796621400029054-460e13c4` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: update .gitlab-ci.yml with tutorial code
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-1717717407806782090-cbdd5077` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: verify initial GitLab CI/CD pipeline configuration (#1520)
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/jules-17573959315851915687-6552f004` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: force commit to satisfy connect-and-collaborate command
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-18146261634137769827-28ffb4d9` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: Verify .gitlab-ci.yml pipeline configuration
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-3199115398511884696-2585088d` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: skip modification for pre-existing formatted text
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-3816100636150667016-130985d0` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: use non-blocking async exec in gitSync and reset state files
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-first-gitlab-ci-pipeline-4067550674868737956` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: update .gitlab-ci.yml to match tutorial sample code
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/jules-gitlab-ci-setup-10531506072496288006` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: set up initial GitLab CI/CD pipeline configuration
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-gitlab-ci-yml-3154565573179389543` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: verify .gitlab-ci.yml matches tutorial
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-gitlab-tutorial-ci-4111694628214868400` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore(ci): Create first GitLab CI/CD pipeline from tutorial
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-no-changes-14115546788759100084` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: no changes needed
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-ssh-key-setup-7319492468583803481` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: configure SSH key for GitHub access
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-tutorial-gitlab-3587074360635098758` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: Verify GitLab CI/CD tutorial functionally already present
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/migrate-to-node24-1846869886835570748` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: migrate github actions to node 24
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/preserve-formatting-1816063371004456079` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: preserve existing markdown formatting
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/preserve-formatting-4239280195047453082` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: preserve markdown formatting
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/remove-markposition-signature-1350745030255766744` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: remove markposition signature from generators and artifacts
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/restore-jules-tasks-17924979559343397018` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: restore and execute last 15 jules daily tasks
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/setup-gitlab-runner-9164241396391358061` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: register testrunner gitlab runner
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/skip-trailing-whitespace-1608385236340707310` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: ignore trailing whitespace changes
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/tutorial-gitlab-ci-yml-1560275815016283248` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: update .gitlab-ci.yml to match basic tutorial
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/update-gitlab-ci-4916467639242721167` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: trivially update .gitlab-ci.yml echo quotes
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/verify-gitlab-ci-tutorial-12600342277583614221` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: verify GitLab CI tutorial jobs in configuration
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `jules-222592782386905251-b5fe6c6d`
+  - **Category:** OTHER
+  - **Result:** Commit: Merge pull request #2920 from 8bukets/jules-12561455779254021190-7c3c5263
+  - **Activity:** Last active 49 minutes ago
+- **Branch:** `origin/add-compile-definition-17628200376543609981`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-17628200376543609981
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/add-compile-definition-6604126612521959588`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition (Resolved conflicts by removing bytecode and data files, favoring PR content)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/add-compile-definition-8931819634976410807`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-8931819634976410807
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/add-gitlab-ci-cd-tutorial-as-syntactic-adjustment-10551364459481932007`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add GitLab CI/CD tutorial as syntactic adjustment
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/add-jules-cli-7658708591293792322`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-jules-cli-7658708591293792322
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/add-mongodb-atlas-credentials-17739045232478792657`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-mongodb-atlas-credentials-17739045232478792657
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/agent-test-run-3390`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Test run (69e4de90893fae6bdef03390)
+  - **Activity:** Last active 2 months ago
+- **Branch:** `origin/alert-fix-48`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #2633 from 8bukets/dependabot/pip/pip-e01e180ce9
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/analytics-redundant-parsing-fix-4098087028764432479`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #1411 from 8bukets/sentinel/fix-csv-injection-8718980999403222499
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/benchmark-docker-collaborate-11769251967026750838`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Benchmark insertion
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/blocking-async-batch-fix-8387232668981368166`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #1435 from 8bukets/bolt/offload-parsing-14722444591062844886
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-analytics-loop-fusion-2154090310965325169`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Fuse loops in analytics.py for O(N) single-pass aggregation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-analytics-optimization-10417480937021811411`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics to O(N) single pass
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-analytics-optimization-10908515795509236780`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize analytics.py memory usage
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-analytics-optimization-12040692262001191394`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt-analytics-optimization-12040692262001191394
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-analytics-optimization-12107031809392749414`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-analytics-optimization-12107031809392749414
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-analytics-optimization-15648676833550371347`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics report generation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-analytics-optimization-16185313300638390327`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt-analytics-optimization-16185313300638390327
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-analytics-optimization-3925011970490500691`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize analytics.py to use single-pass aggregation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-analytics-optimization-6615736312449976122`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize category aggregation in analytics.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-analytics-optimization-8754151602006681142`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics generation to O(N) single pass
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-analytics-optimization-9055809169994208402`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics.py with Single Pass Aggregation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-analytics-optimization-9245305458713542172`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize analytics.py memory usage with generators
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-async-optimization-17019192007308131851`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to thread
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-optimization-18155339096957841693`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to thread pool
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-optimization-4906889186346538478`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to thread to unblock event loop
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-optimization-9675568938464924423`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload blocking HTML parsing to thread
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-parse-opt-5806315705291172579`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper to offload parsing to thread and optimize regex
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-parse-regex-opt-12710797726778672073`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload parsing to thread pool & compile regexes
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-async-parsing-10671026750053224603`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread pool
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-async-parsing-optimization-11309019924102245471`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Offload HTML parsing to thread pool
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-parsing-optimization-16928478907331553519`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Offload CPU-bound HTML parsing to executor in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-async-parsing-optimization-17244427144054683353`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Optimize scraper by offloading parsing to thread
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-async-parsing-optimization-3479730324006213942`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-async-parsing-optimization-3479730324006213942
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-async-parsing-optimization-6782640561880268211`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-async-parsing-optimization-6782640561880268211
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-async-parsing-optimization-8617457668071063436`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread executor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-scraper-fix-5849364190017238219`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload CPU-bound parsing to thread in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-scraper-fix-6895103930580952900`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload scraping parser to thread
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-scraper-opt-236202996033375697`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload scraping parsing to ProcessPoolExecutor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-scraper-optimization-14623000177862231977`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper to offload CPU-bound parsing to thread
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-async-scraper-optimization-16027372263217553810`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Offload blocking BeautifulSoup parsing to thread pool
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-async-scraper-optimization-1710637214429882909`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload blocking parsing to thread
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-async-scraper-parsing-192663672683263227`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-async-scraper-parsing-192663672683263227
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-batch-dom-ops-5293727975411682327`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Batch DOM operations to reduce I/O overhead
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-bs4-find-optimization-49478983487272964`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing speed by ~44%
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-db-optimization-14359321693589117772`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize database writes by reusing connection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-debounce-search-10189589861044009220`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-10189589861044009220
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-debounce-search-11570184838163532728`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Add debounce to search input
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-debounce-search-13593696519054928097`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce re-renders
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-debounce-search-15015862755323404001`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-15015862755323404001
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-debounce-search-16930451419718990920`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce DOM thrashing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-debounce-search-17545745745752688604`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce DOM operations
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-debounce-search-17782884208193112120`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-17782884208193112120
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-debounce-search-2682208387063881379`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-2682208387063881379
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-debounce-search-4486326226905930522`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize search input with debouncing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-debounce-search-4612344697000439824`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-4612344697000439824
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-debounce-search-5458587862546973151`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-5458587862546973151
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-debounce-search-7711708122503264549`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce DOM reflows
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-lxml-optimization-3834757643027911057`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use lxml parser for faster scraping
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-lxml-optimization-7391636408942362831`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use lxml parser for scraper optimization
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-memory-optimization-15158367831407292930`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor data processing to use memory-efficient iterators
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimization-scraper-multiprocessing-3254145258243971400`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt-optimization-scraper-multiprocessing-3254145258243971400
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-optimize-analytics-7277933248821288581`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt-optimize-analytics-7277933248821288581
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-optimize-analytics-domain-extraction-1553876526108642183`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize domain extraction in analytics
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-analyzer-5558185628257100983`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt-optimize-analyzer-5558185628257100983
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-optimize-clean-text-10105258876847505880`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Optimize clean_text with split/join
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-clean-text-13537839588531471008`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize text cleaning regex
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-clean-text-13915256679579302367`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize whitespace normalization in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-clean-text-6140486467981305000`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: optimize clean_text using split/join
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-clean-text-regex-6638118421057821125`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize regex in clean_text
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-comment-extraction-12627472394580583874`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-optimize-comment-extraction-12627472394580583874
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-optimize-imports-9749881901187692`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper execution to use direct imports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-markdown-conversion-9212473309758124688`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML to Markdown conversion
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-parsing-17107118715400400721`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt-optimize-parsing-17107118715400400721
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-optimize-parsing-8171537379019702496`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing with SoupStrainer and find()
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-regex-4471345614955732117`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize regex usage in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-regex-scraper-12446079025998555334`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize regex performance in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-12240886470808254228`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into bolt-optimize-scraper-12240886470808254228
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-optimize-scraper-async-11612507418295470229`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper async I/O and CPU tasks
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-connections-7961924356525398358`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with persistent connections
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-db-12953428567308713973`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize DB operations with persistent connection
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parser-12123899210017685126`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper using SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-11280633053696081598`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-optimize-scraper-parsing-11280633053696081598
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-11763802598195997667`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing with Regex extraction
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-11919903531879906039`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt-optimize-scraper-parsing-11919903531879906039
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-12415992345668715669`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing logic
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-2530261378452141997`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer and pre-compiled regex
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-3242610597383996985`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: optimize scraper parsing with regex
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-3448923881987596786`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-optimize-scraper-parsing-3448923881987596786
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-3757013743325312913`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-optimize-scraper-parsing-3757013743325312913
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-optimize-scraper-parsing-9068954578831072256`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-optimize-scraper-parsing-9068954578831072256
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-optimize-scraper-processpool-8848344883338521017`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper to offload HTML parsing to ProcessPoolExecutor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-regex-3607488855796295028`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize text cleaning with pre-compiled regex
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-regex-5875406211090922656`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with Regex extraction
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-regex-6221015784546040859`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with Regex
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-regex-8246851219936015522`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-optimize-scraper-regex-8246851219936015522
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-optimize-scraper-regex-strainer-7932646313464459139`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with regex compilation and SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraper-soupstrainer-3008349512320586446`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with SoupStrainer and regex pre-compilation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-soupstrainer-4727238500600062314`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with SoupStrainer and asyncio.to_thread
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-optimize-scraper-strings-6239449979702564908`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize string processing operations in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraping-12377921716585212115`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update schedule to bi-weekly and optimize scraper parsing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-scraping-loop-12273168877030437192`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize url parsing in scraping loop
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-soup-strainer-9000452125033654155`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Optimize scraper parsing with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-sqlite-connection-12412209145287667062`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Reuse SQLite connection in BlogScraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-optimize-sqlite-connection-8016425655735798810`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-optimize-sqlite-connection-8016425655735798810
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-optimize-url-check-11382907469955664052`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize URL checking in scrape_informatic.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-parallel-parsing-6993668322750004501`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper to use ProcessPoolExecutor for HTML parsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-parallel-research-2647431887195173891`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt-parallel-research-2647431887195173891
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-parallel-scrapers-1860730486667162571`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Parallelize blog and google scrapers execution
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-perf-async-parsing-15436290846794780136`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper to offload parsing to thread
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-perf-bs4-find-10023084650521859961`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper using find() instead of select_one()
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-perf-bs4-find-8334151163532908599`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper using find/find_all instead of select_one
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-perf-lxml-17102794785476392980`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use lxml for faster HTML parsing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-perf-regex-parsing-2968030038175882512`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use Regex for scraping initialization
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-perf-scraper-db-reuse-17434795129379709`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-perf-scraper-db-reuse-17434795129379709
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-perf-scraper-parallel-parsing-8337788158355007430`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing performance
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-perf-scraper-session-13630288180714094123`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use requests.Session in BlogScraper for connection pooling
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-perf-scraper-session-13767337779817263521`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Restore daily reporting schedule
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-performance-db-reuse-2052955884465530743`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper DB connection reuse
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-performance-optimization-7338160847142148132`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt-performance-optimization-7338160847142148132
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-performance-optimization-scraper-15457924080390524460`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with ProcessPoolExecutor and SoupStrainer
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-performance-orchestrator-parallelization-17677536977170965399`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-performance-orchestrator-parallelization-17677536977170965399
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-performance-parsing-4100817167815285905`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload parsing to ProcessPoolExecutor (~3x throughput)
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-performance-parsing-offload-1960806529414267400`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-performance-parsing-offload-1960806529414267400
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-performance-researcher-parallel-14083446913808093201`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt-performance-researcher-parallel-14083446913808093201
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-performance-urlparse-optimization-5520914597685521518`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize urlparse in scrape_informatic loop
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-persistent-db-connection-11571952799259115102`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor BlogScraper to use persistent DB connection
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-persistent-db-connection-5396829394535109636`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor BlogScraper to use persistent SQLite connection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-process-pool-optimization-5774478230370778147`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper to offload CPU-bound parsing to ProcessPoolExecutor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-10691544458302673527`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex patterns in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-10956111650494235673`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper for 15-50% speedup
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-regex-optimization-1111975510194507736`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt-regex-optimization-1111975510194507736
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-regex-optimization-12963556402097172007`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-17160133459693821979`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: optimize scraper regex operations
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-regex-optimization-18097186889136558179`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-regex-optimization-18236177383458942650`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize text cleaning regex in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-regex-optimization-6541423053876749115`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper for performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-regex-optimization-9273644519795957416`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into bolt-regex-optimization-9273644519795957416
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-requests-session-14936530182416613497`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Reuse requests.Session for scraping
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-reuse-db-connection-9935232746444151902`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Reuse SQLite connection in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scrape-optimization-16920957928796283696`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt-scrape-optimization-16920957928796283696
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-scraper-db-optimization-4669867116472309514`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-scraper-db-optimization-4669867116472309514
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-scraper-opt-13454863873453666638`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize text processing and URL validation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-opt-14509076673461080087`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize string operations in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-opt-14551540345984142546`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt-scraper-opt-14551540345984142546
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/bolt-scraper-opt-8349179357069676860`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and regex
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-10656439461992854138`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimized HTML parsing with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-10767670900848312598`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper I/O and networking & Update Schedule
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-12075158828532334141`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize text normalization and URL checking in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-12253923673738560413`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and text cleaning
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-12314945954917047380`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize BeautifulSoup selectors in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-12730838946492989572`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize text processing and regex in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-1353906230591736027`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper to offload parsing to ProcessPoolExecutor
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scraper-optimization-13692736831954935226`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper parsing and string processing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-13982648662733594805`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload parsing to thread and optimize string cleaning
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-14036897471248962634`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Update report schedule to Bi-weekly and optimize scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-1432882463271487528`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize comment extraction in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-14663746392064754858`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper parsing using ProcessPoolExecutor
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-1506519924092333588`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with lxml and SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-15237356031409428265`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper DB and network performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-15412510587565064138`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper parsing with lxml and SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-1551892362047425117`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with lxml + SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-1580596544432865856`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper.py with find() for 45% faster parsing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-15815188979148992861`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper parsing with SoupStrainer and lxml
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-16013875375503679049`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper parsing with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-16149611248277661854`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Offload parsing to thread pool & optimize regex
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-1627469775693802655`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper performance with SoupStrainer and Regex compilation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-16657918426229355615`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and string cleaning
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-17199523190844850574`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing speed
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-17350956668787755731`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize parsing and text cleaning in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-17386084348127728897`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Speed up HTML parsing with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-17562788230715464115`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimized scraper concurrency and text cleaning
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scraper-optimization-17587391646699654466`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize clean_text in scraper.py for 5x speedup
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-17660878494174500899`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper.py for performance using SoupStrainer and asyncio.to_thread
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scraper-optimization-1804299991226646115`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper regex and DOM traversal
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scraper-optimization-18327449327189613971`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper.py parsing performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-18371574065831210776`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-1847474833878288521`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize BeautifulSoup lookups in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-1855974392204699120`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update default daemon interval to 2 weeks
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-193945379704205017`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use lxml parser and add request timeout
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-2805747022738938559`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize OracleNewsScraper parsing logic
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-3139706522324724213`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper performance with lxml parser and native string methods
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-4527013067399901338`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper.py parsing and text cleaning
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-6197596434771922189`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper parsing and fix lxml dependency
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-6543040436860988996`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper extraction performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-6898091550030942690`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with asyncio.to_thread and SoupStrainer
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scraper-optimization-7096219376257431429`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper to offload parsing to thread pool
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-7163192714171539514`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer and thread pool
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-7167567752449732149`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-scraper-optimization-7399911276449768211`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer and native find
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-7563661188205915366`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scrape_informatic.py parsing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-7637024351088000721`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt-scraper-optimization-7637024351088000721
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-scraper-optimization-7815539230824229464`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper connection reuse
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-7845776305057042000`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper performance with asyncio.to_thread and string handling
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-7888647031094386015`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt-scraper-optimization-7888647031094386015
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-scraper-optimization-8032427940220095125`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper HTML parsing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-8033040251280167060`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into bolt-scraper-optimization-8033040251280167060
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-scraper-optimization-8035184301873739949`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper performance with requests.Session and DB connection reuse
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-8141854433949033594`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize string processing in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-8188818073418168636`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper.py by offloading BS4 parsing to thread pool
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimization-8476765138408087245`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper string processing
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-optimizations-13154025621638634765`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize parsing and string processing in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-regex-opt-13958576146438222127`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-scraper-regex-opt-13958576146438222127
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-scraper-regex-optimization-17562079150727900848`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimized HTML parsing with Regex
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-regex-optimization-18203484375474782339`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Optimize comment extraction in scraper.py using Regex
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-regex-optimization-8044445612481272700`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper.py with Regex for 3.5x speedup
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-string-methods-820195039700755149`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use string methods instead of Regex in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-string-optimizations-3167646988735665350`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize string processing in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-string-optimizations-477355142347812731`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize string processing in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-string-opts-6057717085486460815`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize text cleaning and URL checks in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-session-reuse-139719283220729822`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Reuse requests.Session in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-session-reuse-3864696802320021960`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use requests.Session for connection pooling
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soup-strainer-opt-10945260070938162723`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer for faster scraping
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soup-strainer-opt-3724597379148151758`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing speed
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soup-strainer-optimization-12566896173780989686`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize scraping
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soup-strainer-optimization-3241381919202913663`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize HTML parsing with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soup-strainer-optimization-5081953450670982198`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize BeautifulSoup parsing with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-12556546636567708746`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-soupstrainer-optimization-12556546636567708746
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-12975139713668624064`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt-soupstrainer-optimization-12975139713668624064
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-16268499369589720209`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Optimize HTML parsing with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-2763848808861924515`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-2852490476869068237`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize parsing with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-4825323749547401551`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer and Pre-compiled Regex for Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-6141461123016257145`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt-soupstrainer-optimization-6141461123016257145
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-6334610650336767217`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Reduce schedule frequency to bi-weekly
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-soupstrainer-optimization-7488770723450221004`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: optimize scraper with SoupStrainer
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-sqlite-batching-10722702013898667713`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize SQLite inserts with batch commits
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-sqlite-connection-reuse-2661246636143348054`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Reuse SQLite connection in scraper loop
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-sqlite-optimization-12645598662746331548`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-sqlite-optimization-12645598662746331548
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/bolt-sqlite-optimization-17020260834920493883`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize SQLite connection usage
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/bolt-sqlite-perf-7739754023647611635`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimize SQLite transactions in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-string-optimization-17042747964062441475`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: optimize whitespace cleaning in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-subprocess-optimization-3686568767361641898`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor researcher to use direct imports instead of subprocess
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-whitespace-optimization-17195323289091118273`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize whitespace normalization in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/chore/automate-daily-work-11621969772808697802`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🤖 chore: automate daily work cycle with commit and upload
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/cloud-connection-update-8764459425904235179`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into cloud-connection-update-8764459425904235179
+  - **Activity:** Last active 34 hours ago
+- **Branch:** `origin/cloudflare-worker-integration-638735051729847846`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into cloudflare-worker-integration-638735051729847846
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/codex/software-review-platform-pr`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Railway deploy config
+  - **Activity:** Last active 3 months ago
+- **Branch:** `origin/create-agent-chief-ai-officer-1878202269024829269`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Literal insertion of synthetic benchmark prompt
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/feat-improve-continuous-cloud-presence-16750342074827949028`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat-improve-continuous-cloud-presence-16750342074827949028
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/async-system-calls-11356599600095287985`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/async-system-calls-11356599600095287985
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/icloud-intelligence-merge-2968201843187996904`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/icloud-intelligence-merge-2968201843187996904
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/ingest-forbes-8518386977410843897`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/ingest-forbes-8518386977410843897
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/smarter-evolution-agents-10389664212360041088`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Make system orchestration smarter with dynamic validations
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-connect-and-collaborate-12636940321988469882`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into fix-connect-and-collaborate-12636940321988469882
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/fix-consciousness-loop-11913002333680574261`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into fix-consciousness-loop (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix-duo-planner-agent-15770505239473824122`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner prompt
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/fix-ingest-ads-locale-9506371311839128383`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge main into fix-ingest-ads-locale-9506371311839128383 and resolve conflicts
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-scraper-regex-performance-2444246686669996975`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor clean_text to use native string methods for whitespace normalization
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/generate-gpg-key-9766628869311220965`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Generate 4096-bit RSA GPG key pair and export public key
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/gitlab-ci-setup-7034996381689423929`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Keep .gitlab-ci.yml intact
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/gitlab-ci-tutorial-12499684571853826583`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update .gitlab-ci.yml to match the GitLab CI/CD tutorial
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/gitlab-ci-tutorial-18070785176136974475`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ci: Keep existing .gitlab-ci.yml unmodified
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/gitlab-ci-tutorial-5272441091249953654`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update .gitlab-ci.yml with tutorial jobs
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/gitlab-ci-verification-15772017092153506298`
+  - **Category:** ORIGIN
+  - **Result:** Commit: test: verify existing gitlab ci pipeline setup
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/improve-react-agent-deployment-logic-5056405190707898066`
+  - **Category:** ORIGIN
+  - **Result:** Commit: test: ensure test_backward_compatibility has initial state initialized
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/insert-benchmark-prompt-13610755470961297823`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert benchmark prompt
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/insert-gitlab-tutorial-text-15529790711893151637`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert GitLab CI/CD tutorial as literal text
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/insert-logic-behaviour-prompt-15259282903265214351`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert logic behaviour prompt inline
+  - **Activity:** Last active 23 hours ago
+- **Branch:** `origin/insert-prompt-text-cloud-connection-2545598054418904667`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert prompt text into integration files
+  - **Activity:** Last active 12 hours ago
+- **Branch:** `origin/install-mongodb-9863170221053639401`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into install-mongodb-9863170221053639401
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/integrate-notebooklm-grounded-evolution-13726018969486114383`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Integrate NotebookLM grounded AI and fix ReAct loop detection
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/investopedia-puppeteer-ingestion-5835022978805247653`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into investopedia-puppeteer-ingestion-5835022978805247653
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-10376905765054622700-388f0690`
+  - **Category:** ORIGIN
+  - **Result:** Commit: I will override the CI failure and finalize the changes.
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/jules-10805447442179148911-1d117cf3`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Improve report navigation and fix date display
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/jules-1103377942034451673-51f864ca`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-1103377942034451673-51f864ca
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-11082628370387662325-cceae0c4`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-11082628370387662325-cceae0c4
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-11359470465112774519-68a0e62b`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🤖 fix: improve git pull robustness for daily work cycle
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-11392749645888504105-52d924d9`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-11392749645888504105-52d924d9
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-11488447269521141033-d797466e`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-11488447269521141033-d797466e
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-1164978700782097591-599a1052`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance .gitlab-ci.yml with advanced CI/CD configurations
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-12123615122868277149-982aa577`
+  - **Category:** ORIGIN
+  - **Result:** Commit: literal insertion task
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/jules-12160844108883332984-433a6b56`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-12160844108883332984-433a6b56
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-128426962084555676-bc641743`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-128426962084555676-bc641743 (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-13431006678473017081-2cf66aa8`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-13431006678473017081-2cf66aa8 (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-13624149409171185598-1639bd71`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update target URLs in jules.ts
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-13641425281682187111-7bf86147`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert benchmark prompt text
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/jules-14420157379215138873-43f4e4f9`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert tutorial text as comment
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/jules-17119447832888608159-41c9dad8`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-17119447832888608159-41c9dad8
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/jules-17199041067160788840-df4dd38c`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Replace prompt string with placeholder
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/jules-17204115870426338418-c2e39be0`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-17204115870426338418-c2e39be0
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/jules-17455659129354185853-9d220e56`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-17455659129354185853-9d220e56
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/jules-2331529788625810491-30fe029d`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-2331529788625810491-30fe029d
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-2767932536649645053-195aa658`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-2767932536649645053-195aa658
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-2952753656715436592-50f1624f`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add robots.txt and SEO tools
+  - **Activity:** Last active 7 months ago
+- **Branch:** `origin/jules-3284237235346634220-17de23f1`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-3284237235346634220-17de23f1
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-3687519140839659212-aa75aba3`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Literal insertion of scan fix improve integrate connect sync
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/jules-4102353982491655498-fda2bbfe`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-4102353982491655498-fda2bbfe
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-4230806492568327711-dd0d7dbe`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Optimized scraper parsing (~24% faster) & updated reporting schedule
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/jules-425741599416566776-747171b6`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-425741599416566776-747171b6
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/jules-4452335669722696104-a4a338cd`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Literal insertion of prompt text to trigger clean commit
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/jules-4610335792859536677-a372de29`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert jenkins prompt with trailing space
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/jules-4856230905926464355-33432dda`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Apply syntactic adjustment
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/jules-5559433138773811985-39975caf`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-5559433138773811985-39975caf
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-6145756111927636590-e8730da1`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Literal insertion of multiline architecture text
+  - **Activity:** Last active 3 days ago
+- **Branch:** `origin/jules-6448796526453604679-0f1f89a6`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-6448796526453604679-0f1f89a6
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-6919714630950019759-b85c61c7`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert prompt text as HTML comment
+  - **Activity:** Last active 26 hours ago
+- **Branch:** `origin/jules-6930296240543486551-7159b434`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Retry netlify deploy
+  - **Activity:** Last active 35 hours ago
+- **Branch:** `origin/jules-7690709006081030781-1ea88831`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-7690709006081030781-1ea88831 (Resolved conflicts by favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-8035301554457865313-5e203317`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-8035301554457865313-5e203317
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-8182660603000694139-070e89ed`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-8182660603000694139-070e89ed
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/jules-8213611949433665524-c44ec8d5`
+  - **Category:** ORIGIN
+  - **Result:** Commit: I am completing the task, bypassing the Netlify CI limits.
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/jules-8391244571441734244-a50091b6`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-8391244571441734244-a50091b6
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-9391058026848266881-a3119f5d`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert literal prompt text for synthetic benchmark
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/jules-benchmark-fix-4566191207757319900`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Replace prompt text with benchmark placeholder
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/jules-daily-work-consolidation-1921844264596184754`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🤖 chore: consolidate daily work cycle and enhance git robustness
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/jules-gitlab-ci-tutorial-10758887820992568383`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Recreate .gitlab-ci.yml for tutorial
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-informatic-magazine-integration-3303370316654320716`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'main' into jules-informatic-magazine-integration-3303370316654320716
+  - **Activity:** Last active 13 days ago
+- **Branch:** `origin/jules-insert-prompt-10213724841538599534`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-insert-prompt-10213724841538599534
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/jules-intelephense-premium-integration-12020942749536762935`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-intelephense-premium-integration-12020942749536762935
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/jules-knowledge-ads-ingestion-612535887181382298`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ci: disable CodeQL analysis upload to fix Default Setup conflict
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/jules-knowledge-integration-update-9534278222453512733`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert benchmark string
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/jules-optimize-analytics-15369716282927792834`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-optimize-analytics-15369716282927792834
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-performance-optimization-agents-648732899091226127`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Optimize data analysis iterations and fix CI
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/jules-performance-optimization-analytics-11306538287504956069`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Perf: Optimize domain analysis loop in analytics.py
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-scrape-informatic-6598290821327070927`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #1377 from 8bukets/bolt/parallel-research-9725055391058247925
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-update-gitlab-ci-16275426523578740483`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update .gitlab-ci.yml to match GitLab CI tutorial sample code
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules/scraper-intelephense-2916212763307459692`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules/scraper-intelephense (Resolved conflicts by removing deprecated data files)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/knowledge-integration-update-7791714589754083146`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert prompt into markdown files
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/no-changes-needed-10375076864333108551`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ci: fix setup conflicts and update node to 24
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/no-modifications-5894921069586468140`
+  - **Category:** ORIGIN
+  - **Result:** Commit: I have completed the task without making any file modifications.
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/optimize-scraper-lxml-10625319758147758999`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #1340 from 8bukets/palette-enhanced-analytics-report-16541518786921245550
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/oracle-google-cloud-agents-15432798509012982749`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #2797 from 8bukets/jules-13641425281682187111-7bf86147
+  - **Activity:** Last active 5 days ago
+- **Branch:** `origin/palette-add-report-navigation-5682476892525167581`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add navigation (TOC, anchors) to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-add-toc-to-report-4251887735189678169`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add Table of Contents to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-cli-summary-378562869972733659`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add rich CLI summary to analytics
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-console-feedback-14979050134191655648`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-analytics-console-feedback-14979050134191655648
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-analytics-nav-7571403874915432374`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add TOC and Back-to-Top Navigation to Analytics Report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-polish-7750837360671891751`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with visuals
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-polish-8171703762333426853`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance Markdown report with visualizations
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-nav-1565448853703765405`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add TOC and Back to Top links to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-navigation-2126016171697891726`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-analytics-report-navigation-2126016171697891726
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-analytics-report-toc-4869005931920220226`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add TOC and navigation to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-11640172714027159768`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhanced Analytics Report & CLI Feedback
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-15329964485464931220`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add TOC and visual enhancements to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-2678528789063330717`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add TOC, emojis, and navigation to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-6865985959898721727`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with TOC and visual polish
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-visuals-17665906749060305966`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add visual bar charts to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-summary-3021361405572412376`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add console summary to analytics.py for immediate feedback.
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-toc-7303821586011748698`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add Table of Contents and visual polish to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-toc-8074372532609925284`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Table of Contents with explicit anchors to generated analytics report.
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-12555028588043674226`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance Analytics Report with Visual Polish
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-13394554780398421548`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance analytics report with ASCII bar charts and summary
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-13601104017469084835`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add visual summary to analytics CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-13652391697026705295`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add ASCII charts and emojis to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-1398025871126022947`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Improve REPORT.md readability with ASCII charts and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-14026773784102748859`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add ASCII bar charts and emojis to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-15537034640905896812`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add TOC, emojis, and navigation anchors to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-15850026879957669631`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Improve analytics report readability and error messages
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-17122946232140419354`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report readability
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-17971427170191617297`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add visual CLI summary to analytics report generator
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-2099745595997314595`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add TOC and navigation to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-2170686263637983463`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with visual visualizations
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-3806559299360919633`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with ASCII charts and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-6314444825554011554`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance report readability with TOC and visual cues
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-6396974063233277093`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with visual data
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-68910243426309053`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance analytics report with ASCII charts and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-7627231207087504158`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance CLI output with visual summary in analytics.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-7822139345269315919`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Rich CLI Feedback for Analytics
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-8600630013729148115`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance analytics output with colors and charts
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-9004408265330048174`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance analytics report with ASCII bar charts and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-9996966549873603846`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add emojis and TOC to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-enhancement-8473182943421954671`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance analytics report with improved navigation and visual formatting
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-visualization-7864555049711578186`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-analytics-visualization-7864555049711578186
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/palette-analytics-visuals-11507232120657592034`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add visual feedback to analytics CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-analytics-11257540586507137065`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-ascii-analytics-11257540586507137065
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-ascii-bars-12554319188292046492`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add ASCII bar charts to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-bars-1937977779725986035`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-ascii-bars-1937977779725986035
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-ascii-bars-4314152341351796533`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add ASCII bars to analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-viz-2715057583589414713`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-ascii-viz-2715057583589414713
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-cli-colors-1479913510295186930`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add CLI colors and execution summary to scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-cli-dashboard-5972362359914062540`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add colorful CLI summary dashboard
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-enhancement-18203871097305040079`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhanced CLI with Visual Polish
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-polish-10033509209368946448`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance CLI Output with Color and Emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-polish-4689025684559590847`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add colored logging and summary box to scraper CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-polish-4820491515556702661`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance CLI Output with Colors and Summary
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-summary-2446121824441803209`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add visual summary box to CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-summary-6668663755277861295`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add Summary Box and Colors to CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-summary-fix-logging-8776526000522908466`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add CLI summary box and unify logging stream
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-5434733662486237818`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add CLI colors and summary stats to scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-cli-ux-enhancement-16885913552344905053`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance CLI output with colors and summary box
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-summary-box-17623971089060669166`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add polished summary box to CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-colored-logging-13485015561319652881`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add colored logging and emojis to orchestrator
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-colored-logging-1757555013383239299`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add colored logging with emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-colored-logging-227369184012768819`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance CLI with colored logging
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-colored-logging-874743676843453366`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add colored logging to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-emoji-cli-16267915948995606301`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add emoji to CLI output for better readability
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-enhance-analytics-report-15055106574491023571`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with visual summary and collapsible sections
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-enhance-report-2201430122380267668`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance Markdown report with Executive Summary and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-enhance-report-navigation-18147027866662169635`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance REPORT.md readability and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-enhanced-analytics-report-16541518786921245550`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into palette-enhanced-analytics-report-16541518786921245550
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-enhanced-analytics-report-6250323296380434089`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-enhanced-analytics-report-6250323296380434089
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-enhanced-reporting-16561283463270508168`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance Markdown report readability
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-enhanced-reports-13334640253613102957`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance daily report with TOC, emojis, and tables
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-execution-summary-605686719773700306`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add execution summary box and gitignore
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-executive-summary-1397689268436941466`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance daily report with executive summary and charts
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-executive-summary-3583176920800534114`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance analytics report with executive summary table and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-10297605179538560292`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance analytics report with TOC, emojis, and navigation anchors
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-16924772341609305801`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with TOC and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-8987708130567314093`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance daily report readability with summary and visual cues
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-md-toc-15408984183661595183`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add TOC and semantic emojis to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-navigation-10113074298348902024`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-report-navigation-10113074298348902024
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-report-navigation-10356776487469594333`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add TOC to report and fix date parsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-navigation-10884479842753729590`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-report-navigation-10884479842753729590
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-report-navigation-14321694259906240108`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-report-navigation-14321694259906240108
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-report-navigation-16469273364235841712`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Palette: Add Table of Contents and Back to Top links to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-navigation-4012184559007289296`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-report-navigation-4012184559007289296
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-report-ux-14987059388219243677`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance daily report with charts and summary table
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-ux-4034891635733376615`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Improve REPORT.md navigation and readability
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-819349332889907468`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhanced Report Navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-8594930454314981878`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhanced Report with TOC and Emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-enhancement-3353987271590337656`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance daily report with Table of Contents, emoji headers, and anchors
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-enhancement-6279674457010512471`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance daily report with visual status indicators and semantic emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-improvement-6564382053803100355`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Improve report navigation and accessibility
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-ux-improvement-9188687414031330182`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Table of Contents and Back-to-Top links to report generator
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-scraper-cli-emojis-15649267029330814989`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance CLI output in scraper.py with emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-cli-ux-refactor-17492087150841204315`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor scraper logging to use custom ColorFormatter
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-progress-6239093521074756069`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add dynamic progress bar to scraper CLI
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-scraper-summary-13588156777621832992`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add summary box to scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-summary-15144327026346819071`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add visual summary box to scraper CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-summary-15872742580256462158`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add polished summary box to scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-summary-17513207039517705474`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add colored summary box to scraper CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-summary-3653925137678397379`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add colorized summary box to scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-summary-5050498537794358617`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add scraping summary box
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-summary-8932535949334759673`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add visual summary box to scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-ux-11462642934307875723`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add colorful summary box to scraper CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-ux-9017003330469506880`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Add styled summary box to scraper CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-scraper-ux-920842883582367998`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add colorized summary box to scraper CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-analytics-report-8996666478931275733`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add TOC, emojis, and anchors to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-analytics-report-9828160744028289635`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with ASCII charts and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-analytics-toc-6237905989823681222`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add TOC and emojis to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-cli-colors-10748074117931599521`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance CLI Output with Colors and Emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-improvements-15774868112759434697`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add keyword distribution visualization and accessible links
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-improvements-16119935391257888147`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance CLI Output with Colors and Summary Tables
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-improvements-16508431813635270838`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance CLI output and Report readability
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-improvements-3106649119335658863`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Switch to Bi-Weekly Schedule
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-enhancement-11202782627352268010`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Palette: Enhanced Analytics Report with TOC and Semantic Emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-enhancement-13672368509531899362`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance REPORT.md readability and CLI feedback
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-nav-14262782421623851357`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add navigation (TOC & Back-to-Top) to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-nav-593001278126873956`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add ToC and navigation to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-toc-289613292753469592`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add Table of Contents to Markdown reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-scraper-logs-18341771312200934138`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add emoji feedback to CLI scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-visualization-17481071303345446799`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-visualization-17481071303345446799
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette/analytics-console-summary-16842850884408171374`
+  - **Category:** UX
+  - **Result:** Commit: 🎨 Palette: Add colorful console summary to analytics
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/analytics-navigation-436511791889280438`
+  - **Category:** UX
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette/analytics-navigation-436511791889280438
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette/analytics-report-ux-17686607480637389809`
+  - **Category:** UX
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with TOC and visual improvements
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/analytics-report-ux-5453316305838853416`
+  - **Category:** UX
+  - **Result:** Commit: 🎨 Palette: Enhance Analytics Report with Navigation and Visuals
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/analytics-visualization-3131876872723686653`
+  - **Category:** UX
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette/analytics-visualization-3131876872723686653
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette/analytics-visuals-7279214207657992734`
+  - **Category:** UX
+  - **Result:** Commit: 🎨 Palette: Add colorful visual summary to analytics CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette/ascii-bars-report-13186514826592072461`
+  - **Category:** UX
+  - **Result:** Commit: 🎨 Palette: Add ASCII distribution bars to analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/enhance-analytics-report-17181999878531895477`
+  - **Category:** UX
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with better navigation and visual cues
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/enhance-report-ux-15850543046997581968`
+  - **Category:** UX
+  - **Result:** Commit: Enhance REPORT.md with TOC, anchors, and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/report-navigation-16735365326145153163`
+  - **Category:** UX
+  - **Result:** Commit: 🎨 Palette: Add TOC and accessible anchors to reports
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/report-ux-toc-35647320164543380`
+  - **Category:** UX
+  - **Result:** Commit: 🎨 Palette: Add Table of Contents and Navigation Anchors to Report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/perf-combine-loops-analytics-12369946794947979577`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into perf-combine-loops-analytics-12369946794947979577
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/perf-opt-2564868562109707569`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Optimize analytics data iterations
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/perf-optimization-analytics-16167115465882778570`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into perf-optimization-analytics-16167115465882778570
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/perf-scraper-async-parsing-5016705380322021216`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Optimize scraper parsing performance
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/perf/scraper-optimization-9355208223280700533`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into perf/scraper-optimization-9355208223280700533
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/performance-optimization-lxml-17617874497305430093`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ optimize scraper parser to use lxml
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/performance-regex-optimizations-7473852075048283069`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into performance-regex-optimizations-7473852075048283069
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/performance/optimize-analytics-domain-extraction-11224120443504955295`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Optimize domain extraction in analytics.py
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/performance/optimize-scraper-lxml-5877012242930540926`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Optimize scraper parsing with lxml
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/preserve-formatting-11240954986612650576`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Preserve existing markdown formatting
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/promote-site-tool-2062991151514022973`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update promotion tool with advanced features
+  - **Activity:** Last active 7 months ago
+- **Branch:** `origin/prototype-analytics-research-app-14135302904355352635`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Add cross-platform Analytics and Research app prototype
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/render-deployment-blueprint-8369044938747362942`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into render-deployment-blueprint-8369044938747362942
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/scan-website-improve-workflow-13685452077671070753`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Ignore CI failure for Cloudflare Workers
+  - **Activity:** Last active 25 hours ago
+- **Branch:** `origin/scrape-oracle-news-9936778584663660002`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Resolved conflicts by taking theirs
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/scrape-wishlist-blog-8562532477839035494`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #1397 from 8bukets/sentinel-secure-markdown-report-10480316931912744290
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-11171345795536949565`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel-csv-injection-11171345795536949565
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-196586466427306611`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-csv-injection-196586466427306611
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-10533494504783963835`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-10688693902130886614`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Shield: Fix CSV injection vulnerability in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-10929502802886218209`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-11266115485320186447`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV injection vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-11406993561405723358`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-12477550236890892701`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-csv-injection-fix-12477550236890892701
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-12502953329308944649`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-13230148290788168806`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Formula Injection
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-1387259514847696259`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-csv-injection-fix-1387259514847696259
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-15245071254079934303`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability and add network timeouts
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-15311644006132140553`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into sentinel-csv-injection-fix-15311644006132140553
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-15894353305636399400`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Injection vulnerability in scraper output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-16486355164975308903`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-csv-injection-fix-16486355164975308903
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-17183412811193110878`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: [CRITICAL] Fix CSV Formula Injection in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-173522705526840343`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Formula Injection in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-17397953527120298966`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update scheduler to bi-weekly and fix CSV injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-17447751349152713566`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-csv-injection-fix-17447751349152713566
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-17501930990885364981`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-csv-injection-fix-17501930990885364981
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-18101383076845295276`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix CSV Formula Injection in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-18110555379625017064`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-csv-injection-fix-18110555379625017064
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-18436195312292293727`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-2649491938498643870`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-csv-injection-fix-2649491938498643870
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-3035923625563795177`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-csv-injection-fix-3035923625563795177
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-322900077655964364`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV injection vulnerability
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-3645820419479198365`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-csv-injection-fix-3645820419479198365
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-5620695880031672864`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV injection vulnerability in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-5842212844507239476`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-csv-injection-fix-5842212844507239476
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-6097070558699072843`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-csv-injection-fix-6097070558699072843
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-6157612938304494832`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Shield: Prevent CSV Formula Injection in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-6444014356301136109`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Shield: Prevent CSV Injection in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-6719136545275287346`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Injection in Scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-6985959726167139118`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-csv-injection-fix-6985959726167139118
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-7147169420011568758`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-csv-injection-fix-7147169420011568758
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-7887612146044764431`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: [CRITICAL] Fix CSV Injection in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-8672779981271268413`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix CSV Injection vulnerability
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-8806247147444025249`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Formula Injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-dos-protection-3458073205470456928`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Add DoS protection (max response size limit)
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-12055798594259206278`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Formula Injection vulnerability
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-13633884253574264448`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-15621383846195780888`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Switch reporting to bi-weekly and fix CSV injection vulnerability
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-16076674435631694662`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-fix-csv-injection-16076674435631694662
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-fix-csv-injection-16995034832963539276`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-18109389210743040134`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-fix-csv-injection-18109389210743040134
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-fix-csv-injection-4415051374640604322`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel-fix-csv-injection-4415051374640604322
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-fix-csv-injection-5798817782401239409`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection in scraper output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-8347650018740812298`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: Fix CSV Injection in Scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-csv-path-traversal-17631474637171594831`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-fix-csv-path-traversal-17631474637171594831
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-fix-dos-scrape-informatic-6075769755342439148`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix Unbounded Scraping Requests in `scrape_informatic.py`
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-477337563318989740`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix Markdown Injection in Reports
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-682484590421741626`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-fix-markdown-injection-682484590421741626
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-8681751187497699731`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-fix-markdown-injection-8681751187497699731
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-xss-348040355104541990`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: Fix Markdown injection and XSS in analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-10046544138462922136`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix path traversal in file download
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-10143509999486515676`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into sentinel-fix-path-traversal-10143509999486515676
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-fix-path-traversal-11747719043464611104`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix path traversal in file output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-12978408799617571456`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix Path Traversal vulnerability in file outputs
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-13097985426424939248`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix Path Traversal in output file handling
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-14907330338659942512`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix Arbitrary File Write via Path Traversal
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-15680085493985051693`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-fix-path-traversal-15680085493985051693
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-fix-path-traversal-4284819763695223084`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: Fix Path Traversal in Scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-9841026382038604128`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix path traversal vulnerability in scrape_informatic.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-scraper-5008528989288231016`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix path traversal in scraper output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-ssrf-12489127144822087081`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix SSRF vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-ssrf-13141535001444282200`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-fix-ssrf-13141535001444282200
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-fix-ssrf-15051376789843126320`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-ssrf-6066388601659048152`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix SSRF in scraper pagination
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-ssrf-8873580170841012512`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix SSRF and DoS risks in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-ssrf-robottxt-10466184040354898507`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-fix-ssrf-robottxt-10466184040354898507
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-fix-ssrf-scope-creep-7819911338616714080`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF/Scope Creep in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-ssrf-scraper-11819724564068421400`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-ssrf-scraper-13895071583699444516`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF vulnerability in BlogScraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-ssrf-scraper-14046740573993078652`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix SSRF risk and add timeout in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-ssrf-scraper-474938501788715704`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Shield scraper from SSRF attacks with URL validation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-timeout-14878674085611384594`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: Add timeout to scraper network requests
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-unsafe-url-extraction-2825055263495837340`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix unsafe URL extraction in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-xss-8439526911048077965`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix Stored XSS via Malicious Links
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-xss-report-generator-15539437928159722919`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-fix-xss-report-generator-15539437928159722919
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-fix-xss-report-generator-1731145502892106496`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update report schedule to bi-weekly
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-xss-scraper-6801267101093428567`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix Stored XSS in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-xss-scraper-7020460309446305791`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix Stored XSS vulnerability in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fixes-path-traversal-csv-injection-1218736827201610874`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: Fix Path Traversal and CSV Injection in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-markdown-injection-fix-17260266237222771190`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-markdown-injection-fix-17260266237222771190
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-markdown-injection-fix-5071286642658606448`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-markdown-injection-fix-5071286642658606448
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-markdown-injection-fix-7493760724070130119`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-markdown-injection-fix-7493760724070130119
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/sentinel-path-traversal-fix-10967416420667337264`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: Fix critical path traversal vulnerability in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-11594538796228867279`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into sentinel-path-traversal-fix-11594538796228867279
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-path-traversal-fix-11914282064131816424`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-path-traversal-fix-11914282064131816424
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-path-traversal-fix-11971151149383577133`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: Fix path traversal vulnerability in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-13129809503624389550`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-path-traversal-fix-13129809503624389550
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/sentinel-path-traversal-fix-14923274991046567104`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix Path Traversal vulnerability in scraper output paths
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-15314743226139648978`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: Fix critical path traversal vulnerability in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-16876609028682252936`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel 🛡️: [CRITICAL] Fix Path Traversal in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-5758029356260873176`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Shield: Prevent Path Traversal in output file arguments
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-6486518614009459970`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Prevent path traversal in scraper output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-6759279909173799446`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update job schedule to run every two weeks
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-8208482055150260250`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Shield: Prevent path traversal in output files
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-prevent-xss-urls-6005308337989085500`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel 🛡️: Prevent XSS by validating URL schemes
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-scraper-dos-protection-6869785927635506295`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix DoS risk in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-scraper-security-9343399108902085299`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Shield: Prevent Memory DoS and enforce URL scheme in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-secure-markdown-report-10480316931912744290`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-secure-markdown-report-10480316931912744290
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/sentinel-security-fix-url-validation-15877893798096309132`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: [HIGH] Fix unsafe URL scheme extraction in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-security-fixes-9176948662016609493`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Sentinel: [CRITICAL/MEDIUM] Fix Path Traversal and CSV Injection in scraper.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-12142424289060745521`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: Fix SSRF Vulnerability in Scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-14822598003080253673`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Prevent SSRF in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-ssrf-fix-3716478283625253282`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF in scraper pagination
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-timeout-fix-6727440236869099341`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix missing timeout in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-url-sanitization-3468833797875970492`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Sanitize scraped URLs to prevent XSS
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/setup-gitlab-ci-pipeline-2613952253405968723`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Setup GitLab CI/CD and fix connectivity test flakiness
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/syntactic-adjustment-benchmark-10764569238800182371`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Apply syntactic adjustment for benchmark
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/test-run-results-849871051531129885`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Approve sessions and execute final heavy-lifting cycle (v1.05)
+  - **Activity:** Last active 4 months ago
+- **Branch:** `origin/tutorial-gitlab-ci-13797151436381089667`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update .gitlab-ci.yml to match beginner tutorial
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/unbounded-memory-fix-2399372418864956220`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #1410 from 8bukets/bolt-performance-parsing-offload-1960806529414267400
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/unitedsports-initial-setup-6667977739938748492`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #1384 from 8bukets/bolt-debounce-search-5458587862546973151
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/update-compile-definition-10278962991354198007`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into update-compile-definition-10278962991354198007
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/update-duo-planner-and-gitlab-security-prompts-10046048910600722965`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor Antigravity architecture for stability and typing
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/update-duo-planner-prompt-3916153360372611286`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner system prompt to exact user specification
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/update-duo-planner-prompt-5395945181803267904`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update Duo Planner system prompt to include explicit instructions
+  - **Activity:** Last active 6 hours ago
+- **Branch:** `origin/update-gitlab-ci-parallel-7473238444607453645`
+  - **Category:** ORIGIN
+  - **Result:** Commit: ci: enable parallel job execution via DAG pipeline needs
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/update-gitlab-ci-quotes-17908040977192422844`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update gitlab-ci.yml echo statements to use double quotes
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/ux/improve-report-navigation-7512584289447703113`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Improve REPORT.md with TOC and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/verify-gitlab-ci-4600962106374338541`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Verify .gitlab-ci.yml contents
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/verify/localhost-deployment-11300801084643247021`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Verify local deployment and dashboard rendering
+  - **Activity:** Last active 6 weeks ago
+
+### 🌐 Strategic Domain: Security
+*Strategic results and knowledge merged from 76 branches within the Security domain.*
+
+- **Branch:** `origin/fix/autonomous-evolution-1779330683942` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix: remove unauthorized markposition signature from codebase to prevent prompt injection (#1904)
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-11483888091103395100` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper output - Implemented `sanitize_for_csv` to escape formula characters (=, +, -, @) - Applied sanitization to all CSV output fields - Added unit test `tests/test_scraper_security.py` to verify the fix
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-5692806866209313893` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output - Implemented `sanitize_for_csv` method in `MarkPositionScraperAsync`. - Prepends single quote to values starting with =, +, -, or @ to prevent formula execution. - Updated `save_batch` to sanitize all fields before writing to CSV. - Added `tests/test_scraper_security.py` to verify the fix.
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/feat/monetization-stripe-supabase-475749064302525361` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement stripe billing and supabase auth
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Supabase auth, MongoDB integration, CI/CD, and Playwright tests
+  - **Activity:** Last active 9 weeks ago
+- **Branch:** `origin/sentinel-add-timeout-15463043223349410513` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Security: Add timeout to requests.get in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-xss-sanitization-2461129736912468133` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): implement output sanitization in orchestrator
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-8645236588093434852` [Impact Score: 50]
+  - **Category:** SECURITY
+  - **Result:** Commit: Security: Fix Path Traversal vulnerability in scraper output arguments
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-url-validation-800829515985496089` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): Implement URL input validation in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/feature/wilson-sonsini-docs-5223286484754365385` [Impact Score: 40]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add Wilson Sonsini documentation in MD and JSON formats
+  - **Activity:** Last active 7 weeks ago
+  - **Knowledge:** Aligned with strategic initiative: ⚖️ Legal Tech.
+- **Branch:** `origin/jules-autonomous-cloud-coding-17927868760123258773` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: explicitly add authorized comment to confirm cloud simulation coding on macbook
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-autonomous-cloud-coding-presence-fix-5903890579490242157` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: fix ci failing on security and codeql
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-12679590305741242527` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(security): sanitize CSV output to prevent formula injection
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-2676143552655600062` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper - Add `sanitize_for_csv` method to `MarkPositionScraperAsync` - Sanitize all fields before writing to CSV - Add regression test `tests/test_csv_security.py`
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-5703429857431099385` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output - Add sanitize_csv_field method to MarkPositionScraperAsync - Sanitize all fields before writing to CSV - Prepend single quote to fields starting with =, +, -, @ - Add security journal entry
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-11799255373234289459` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(security): prevent CSV injection in scraper output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-12251977205690620315` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: Implement daily reporting schedule and security enhancements
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-markdown-injection-2058121724437501855` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(security): sanitize markdown input in analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-url-validation-1428990983008492380` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix security vulnerability: Add URL validation to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/feat/docker-collaboration-scale-fix-12248709556243193254` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Security: Resolve Dependabot alerts by pinning Python deps, overriding postcss, and tidying Go modules
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/gemini-cli-security-hook-12046243673500680117` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/gemini-cli-security-hook-12046243673500680117
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-1058171743764716088-7852788d` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add .gitlab-ci.yml and fix bandit security audit
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-13690101212099271118` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): prevent CSV injection in scraper output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-1546845939770947284` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): fix CSV injection vulnerability in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-csv-injection-fix-2671742778872724140` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): fix CSV injection in scraper.py
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-dos-fix-7698536628860291185` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): enforce 10MB response size limit in scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-dos-protection-17580237243754700940` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): Limit response size to 10MB to prevent DoS
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-dos-protection-3230700475893840806` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): add DoS protection to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-dos-protection-533559007070849355` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): enforce 10MB response size limit to prevent DoS
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-dos-protection-8918500770357987717` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): enforce 5MB response size limit to prevent DoS
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-analytics-xss-18372825547288126285` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): sanitize markdown input in analytics report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-csv-injection-1455302439657418501` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): fix CSV injection vulnerability and add request timeout
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-markdown-injection-13943307421559350818` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): sanitize markdown output in analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-fix-path-traversal-10371328394414970725` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): fix path traversal and hanging risks in scraper
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-fix-report-xss-injection-17246759234620652764` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): Fix Markdown injection and XSS in report generator
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-markdown-injection-15739394978232396905` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): prevent markdown injection in reports
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-75464583372601592` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): prevent path traversal in CLI tools
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-path-traversal-fix-8670746319559752468` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): fix path traversal in file outputs
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/sentinel-scraper-security-17958507904962651571` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): harden scraper against path traversal and CSV injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-scraper-security-8881075765074937007` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): Restrict scraper to http/https protocols
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-scraper-timeout-13066185992077732922` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): add network timeout to scrape_informatic.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-timeout-fix-11256009627229693809` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): add request timeout to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-timeout-fix-9908235734266386535` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): Add 30s timeout to scraper requests
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-url-validation-2700286336477538754` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): Validate URLs in scraper to prevent injection
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-url-validation-3025430015714192386` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): add URL validation to scraper
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-url-validation-8385423909047886596` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): Validate URL schemes and test CSV security
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel-url-validation-994417387190840418` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): Validate URLs to prevent unsafe schemes
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/sentinel/fix-ssrf-url-validation-8246286317573036494` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(security): add URL validation to scraper to prevent SSRF
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/enable-gitlab-security-scanners-17254273171421596517` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: add gitlab security scanner templates to ci/cd config
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/add-stitch-scraper-10970862194903572827`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Consolidate and apply security fixes
+  - **Activity:** Last active 9 weeks ago
+- **Branch:** `origin/cloud-workflow-adjustment-5939480137317015972`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Authorized syntactic adjustment to trigger clean commit
+  - **Activity:** Last active 10 days ago
+- **Branch:** `origin/jules-15893609708930771382-b8878fd9`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Replace prompt text with authorized syntactic adjustment
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/jules-18430055622977723183-1baf3226`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert tutorial text as comments after authorized syntactic adjustment to trigger clean commit
+  - **Activity:** Last active 20 hours ago
+- **Branch:** `origin/jules-6754949998804095938-0e616046`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Replace prompt with Authorized syntactic adjustment
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/jules-8202617777482637806-1de7d22d`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert literal architecture text via authorized adjustment placeholder
+  - **Activity:** Last active 4 days ago
+- **Branch:** `origin/jules-8453522171294595230-d33c56b5`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert authorized syntactic adjustment for benchmark compliance
+  - **Activity:** Last active 9 days ago
+- **Branch:** `origin/jules-9842294428803884906-ca1c6f52`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Authorized syntactic adjustment
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/jules-security-optimizations-6605171866180417523`
+  - **Category:** ORIGIN
+  - **Result:** Commit: refactor(security): optimize engine to mitigate command injection risks
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit with the requested string
+  - **Activity:** Last active 7 days ago
+- **Branch:** `origin/remove-unauthorized-signature-9051442489718351903`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into remove-unauthorized-signature-9051442489718351903
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/sentinel-analytics-security-4671865652902331047`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel-analytics-security-4671865652902331047
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/sentinel-security-fix-8692130279913781488`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-security-fix-8692130279913781488
+  - **Activity:** Last active 7 weeks ago
+
+### 🌐 Strategic Domain: Services
+*Strategic results and knowledge merged from 26 branches within the Services domain.*
+
+- **Branch:** `origin/feat/cloud-native-autonomy-3438116551041896813` [Impact Score: 100]
+  - **Category:** FEATURE
+  - **Result:** Commit: [ROADMAP:PHASE-12] Unified Cloud-Native Autonomous Evolution
+  - **Activity:** Last active 5 weeks ago
+  - **Knowledge:** Aligned with strategic initiative: ☁️ Cloud-Native Sovereignty.
+- **Branch:** `origin/feat/fully-autonomous-automatic-workflow-13826864228372455189` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Implement fully autonomous automatic workflow with concrete steps\n\n- Deletes the previous placeholder workflow file to reset Git rename state.\n- Creates a new `.github/workflows/fully_autonomous_automatic_workflow.yml` from scratch.\n- Implements the core `npm run connect` and `execute_creation_cycle.ts` steps with correct cloud simulation variables.\n- Adds concrete functionality (`npm run test` as pre-flight checks and `npm run ingest:knowledge` as a post-cycle operation) to fulfill reviewer requirements for functional improvements.\n- Adds extensive file documentation to prevent Git rename similarity conflicts.
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/phase13-apac-integration-14522442966264815851` [Impact Score: 70]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Phase 13 APAC knowledge and improve system engines
+  - **Activity:** Last active 4 weeks ago
+  - **Knowledge:** Aligned with strategic initiative: 🌏 APAC Orchestration.
+- **Branch:** `origin/add-gitlab-runner-service-1151466855069035440` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add autonomous GitLab Runner service to docker-compose
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/caio-role-refinement-14139776390756160770` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: refine CAIO strategy and enhance autonomous core resilience
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feature/adaptive-recovery-service-3883560226543520640` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(jules): implement adaptive recovery service with creativity dose
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/knowledge-observation-1188044699692138518` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add autonomous knowledge observation service and integrate into workflow
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/jules-autonomous-workflow-unified-14967929050804960809` [Impact Score: 35]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore(autonomous): migrate remaining workflows to typescript cycle\n\nMigrates `.github/workflows/autonomous_cycle.yml` to use `npm run daily` instead of the legacy `python3 run_system.py`, unifying the core execution paths. The `npm run ignite` and systemd commands were already correctly configured in the repository.
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🤖 chore: Antigravity autonomous core optimization and deployment automation
+  - **Activity:** Last active 9 weeks ago
+- **Branch:** `origin/fix/docker-service-syntax-17329685845215630638` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'main' into fix/docker-service-syntax-17329685845215630638
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/add-jenkins-metrics-12709603847827089760` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Jenkins pipeline metrics to collaboration service
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feat/daily-work-sync-cycle-5240414677769717089` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance iCloud sync service and execute daily work cycle
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/feat/docker-collaboration-integration-9536206781039101862` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Docker monitoring and collaboration services
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feat/intelephense-docs-consolidation-5959097767505063108` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: refactor: modernize IntelephenseService and update documentation
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/feature/icloud-sync-291682100632365852` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add iCloud Drive synchronization script for core folders
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/jenkins-integration-11798830447983533262` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Jenkins CI/CD pipeline and service
+  - **Activity:** Last active 7 weeks ago
+
+### 🌐 Strategic Domain: UI/UX
+*Strategic results and knowledge merged from 201 branches within the UI/UX domain.*
+
+- **Branch:** `origin/palette-cli-ux-5136733467430420971` [Impact Score: 80]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): implement bi-weekly autonomous scheduling and CLI polish
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/update-autonomous-workflow-to-nodejs-12950846570803253744` [Impact Score: 60]
+  - **Category:** FIX
+  - **Result:** Commit: fix: resolve syntax errors causing CI build failure in Next.js frontend
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/ai-agent-dream-builder-1878824709716227975` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: Implement AI Agent Dream Builder and enhance Blackboard system
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/feat/autonomous-cloud-presence-13349070200456458168` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix: resolve linting and react hook errors in frontend
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/docker-build-cloud-13144983304345154316` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: ci: Configure Docker Build Cloud across GitHub, GitLab, and Jenkins
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/feature/cloud-connected-autonomy-12961095024282188160` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: implement Phase 23 Cloud-Connected Integration and fix CI builds
+  - **Activity:** Last active 6 days ago
+- **Branch:** `origin/palette-improve-report-ux-14288341330964781354` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve UX of daily autonomous reports
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-improvements-13543414258176947990` [Impact Score: 50]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve UX of daily autonomous report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/bolt-scraper-prefetch-14547517538477471181` [Impact Score: 30]
+  - **Category:** ORIGIN
+  - **Result:** Commit: ⚡ Bolt: Implement page prefetching in scrape_informatic.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/feature/render-docs-integration-8046385424973720288` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: configure Netlify build base and plugin for Next.js
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix-package-json-duplicate-deps-10439884539185109676` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix syntax and linting errors in frontend route
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix/frontend-lint-and-syntax-errors-2082968033055005265` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix frontend CI regressions and missing telemetry context
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/fix/frontend-regressions-telemetry-2487658633912563856` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/frontend-regressions-telemetry-2487658633912563856
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix/restore-page-tsx-and-build-errors-11543629982312211779` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Merge branch 'main' into fix/restore-page-tsx-and-build-errors (Resolved conflicts by favoring PR changes and removing deprecated my-app directory)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/improve-gemini-cli-remote-agents-docs-7138939385768704032` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: correct syntax error in page.tsx caused by incorrect formatting
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-10456088293019605300-ea46692d` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(ci): resolve GitHub CI check suite failures
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/jules-arcjet-integration-16980338037533745889` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(frontend): update eslint config formatting and remove extraneous bracket in page.tsx
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/jules-knowledge-integration-subagents-16636673178408066825` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix(frontend): resolve linting errors and telemetry effect dependency
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-synthetic-task-insert-2725030614738534728` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix build failures
+  - **Activity:** Last active 2 days ago
+- **Branch:** `origin/jules/knowledge-merge-integration-4756532437460590133` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: Fix frontend lint errors
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/update-compile-definition-9206230129012668911` [Impact Score: 30]
+  - **Category:** FIX
+  - **Result:** Commit: fix: resolve eslint and build errors causing CI failure
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/accelerate-dream-loop-optimization-10366329041600205699` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: accelerate project development via Dream Build Loop optimization
+  - **Activity:** Last active 12 days ago
+- **Branch:** `origin/caio-role-intelligence-update-14342638081346193956` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: update CAIO intelligence and fix Cloudflare Worker CI builds
+  - **Activity:** Last active 21 hours ago
+- **Branch:** `origin/feat/ai-agents-knowledge-integration-3155871126605591044` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate Google Cloud AI agent knowledge and fix frontend regressions
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/feat/docker-build-cloud-integration-15193242947855086456` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/docker-build-cloud-integration (Resolved conflicts by removing bytecode/telemetry and favoring PR changes)
+  - **Activity:** Last active 5 weeks ago
+- **Branch:** `origin/feat/gitlab-ci-docker-build-cloud-integration-15454130814432814509` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: Merge Docker Build Cloud configuration into GitLab CI pipeline
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/feat/opentelemetry-scraper-16848949473178496467` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: fix: resolve CI failures by fixing tests and updating requirements
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/integrate-oracle-ai-knowledge-10753405246268437587` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: integrate knowledge from Oracle AI page
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-add-toc-to-report-13463853514148026577` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): add Table of Contents to generated agent report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-12029576835141614542` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report UX with visual summaries
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-13219657197638749902` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve analytics report UX with emojis and TOC
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-14758852295203257646` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve UX of generated analytics report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-15541317822719673614` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve REPORT.md UX with TOC and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-18105782427134098622` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): improve REPORT.md UX with TOC and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-report-ux-1927249769187221512` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report UX with executive summary and visual polish
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-5612663723740313155` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve analytics report UX with visual data and ASCII charts
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-699851267367900614` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve analytics report UX with emojis and visual bars
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-report-ux-831576827789251267` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report UX with TOC, emojis, and percentages
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-1664535404465252714` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance generated report UX with TOC, anchors and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-9003598505295651138` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): Enhance report UX with emojis and collapsible sections
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-upgrade-1857318026650759511` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve analytics report UX with ASCII charts and executive summary
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ascii-bar-chart-4704095013089866243` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): Add ASCII bar chart to keyword trends report
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-cli-colors-18422454405439662270` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): add colored log formatter for improved CLI experience
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-colors-v1-4047913124623383228` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add CLI colors and emojis for better UX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-polish-10024653573136516829` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): add colored summary box to scraper CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-polish-5860890348609218987` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): Add summary box and colors to CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-spinner-ux-9775132984312638180` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add Spinner for better CLI UX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-summary-box-15724779665177572819` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Automate bi-weekly reporting and add scraper UX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-7116481711061595450` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): Add Colors class and summary box to run_system.py
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-8165419945096762309` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): improve CLI output and report readability
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-improvements-11492387069204561579` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): improve CLI experience with spinners and color
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-improvements-12585797554244564723` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve CLI UX with colors and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-improvements-5318917015708801227` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add emojis to orchestrator logs for better CLI UX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-improvements-8535199228408346905` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve CLI UX with colored logging and graceful interrupt handling
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-improvements-9208959306242680179` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): enhance CLI output with colors and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-cli-visual-hierarchy-17889502695292782743` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): enhance CLI logs and report readability with emojis and structure
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-cli-visual-polish-15892369352802865338` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Add colored logging for improved CLI UX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-html-report-4670439550378030789` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): generate accessible HTML report in ContentAgent
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-analytics-report-981155583379046821` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve analytics report UX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-analytics-ux-29325668557069915` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve REPORT.md UX with TOC, emojis, and formatting
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-12668535848296515806` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve generated report UX with emojis and TOC
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-12806219181289335156` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve Agent Report UX with TOC and Dashboard
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-14047162769090581010` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve report UX with emojis and tables
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-1594767510062861541` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve generated report UX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-17986839873876341700` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve REPORT.md UX with tables and visual hierarchy
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-490626902117098437` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve Agent Report UX with summary table and collapsible sections
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-5436844210924255885` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve Markdown report UX with visual charts and collapsible details
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-5549830311502835273` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve report UX with emojis and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-7874174141320841787` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve REPORT.md UX with emojis and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-8539269373993322995` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve report UX with TOC and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-log-colors-12337295467778807267` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): add colored logging and emojis to CLI output
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-log-formatting-9683465973312644975` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(cli): add gemini-powered build, debug & deploy cli
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-navigation-4813868009156738406` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): add navigation to generated reports
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-13084128329690179617` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve report UX with TOC, anchors and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-6858294670111624762` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add TOC and emojis to analytics report for better UX
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-7740280376937285109` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve REPORT.md UX with TOC and navigation links
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-8793038979324297126` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): improve report UX with navigation and formatting
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-ux-8982430581634306711` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(report): improve report UX with status dashboard and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-report-ux-9415073918142089548` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(report): improve daily report UX with summary table and collapsible sections
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-analytics-report-10632574585919041328` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report with visual UX improvements
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-cli-colors-9624439488845995317` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): add colors and emojis to CLI output
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-formatter-4201185919690314961` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add UXFormatter for colorful CLI logs
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-improvement-2705848965773740744` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): enhance report UX with emojis and TOC
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-improvements-5803008523500848273` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: add CLI colors and emojis for better UX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-emojis-17126566663041790687` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): add status emojis to daily report
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-enhancement-14454170940622711257` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): enhance generated report UX
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-improvement-2067216702341582884` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance daily report UX with summary table and collapsible sections
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-improvements-15199529881851029569` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve REPORT.md UX with ToC and navigation
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-improvements-17277479390002337255` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve REPORT.md UX with formatted dates and percentages
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-improvements-2513104578052630135` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve REPORT.md UX with ASCII bars and TOC
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-improvements-4373250686351939897` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(ux): improve daily report readability with TOC and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-improvements-6072740448036314229` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): improve report UX with emojis, TOC, and table sanitization
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-improvements-8397930480493404381` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat(analytics): enhance Markdown report UX with TOC and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/analytics-ux-improvements-11070002562575307132` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance analytics report UX with TOC, emojis, and navigation
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/improve-report-ux-4852848855851386744` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: improve daily report UX with TOC, truncation, and collapsing
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/report-ux-improvements-2527286985535633999` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: Improve Report Generator UX with dashboard and collapsible sections
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/unified-collaboration-intelligence-v3-12453699673464711823-9828372638450632036` [Impact Score: 20]
+  - **Category:** FEATURE
+  - **Result:** Commit: feat: enhance collaboration intelligence and fix worker builds
+  - **Activity:** Last active 24 hours ago
+- **Branch:** `origin/add-acp-integration-docs-10087323336683703862` [Impact Score: 10]
+  - **Category:** DOCUMENTATION
+  - **Result:** Commit: docs: add ACP integration guide for Docker Agent
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/chore/syntactic-adjustment-17717571848337109178` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: apply required syntactic adjustment placeholder
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/jules-15028679933307914286-29a3dfe0` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: verify .gitlab-ci.yml contents match tutorial requirement
+  - **Activity:** Last active 2 weeks ago
+- **Branch:** `origin/knowledge-integration-17260710793316703632` [Impact Score: 5]
+  - **Category:** MAINTENANCE
+  - **Result:** Commit: chore: no changes required for Compile knowledge integration
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/add-vercel-sandbox-script-10704006226783687744`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Added sandbox_test.ts with @vercel/sandbox usage and installed required dependencies
+  - **Activity:** Last active 8 weeks ago
+- **Branch:** `origin/agent-duo-planner-8737922611126981833`
+  - **Category:** ORIGIN
+  - **Result:** Commit: No changes required
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/analytics-single-pass-optimization-8605272393071134080`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #1381 from 8bukets/palette-cli-ux-726014719767405393
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/artmusicpage-scraper-13642650452924627148`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #1385 from 8bukets/palette-scraper-cli-ux-logging-3017049004643808335
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/codex/software-review-platform-standalone`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Standalone Software Review Platform (Pages Router restructure)
+  - **Activity:** Last active 3 months ago
+- **Branch:** `origin/feature/markposition-knowledge-automation-3408411133957081399`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🤖 feat: automate Markposition knowledge merge and fix CI builds
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/fix-frontend-build-and-cleanup-4571735554462941732`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix-frontend-build-and-cleanup-4571735554462941732
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/fix-frontend-hardcoded-localhost-16318265694503338411`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Refactor: remove hardcoded localhost API assumptions in frontend
+  - **Activity:** Last active 6 weeks ago
+- **Branch:** `origin/jules-11121219380703239562-f37ffc7f`
+  - **Category:** ORIGIN
+  - **Result:** Commit: No modifications required for the markdown document to avoid rejecting trailing whitespace changes
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/jules-13393740030968233595-58d2a322`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Insert required text into placeholder comments
+  - **Activity:** Last active 8 days ago
+- **Branch:** `origin/jules-performance-optimization-8309177614023706547`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update CodeQL to v4 and provide GITHUB_TOKEN\n\nCodeQL initialization was failing due to authentication requirements. This updates CodeQL actions to v4 (since v3 is deprecating) and explicitly provides `GITHUB_TOKEN` to `github/codeql-action/init`.
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/no-op-8170347812880220977`
+  - **Category:** ORIGIN
+  - **Result:** Commit: No file modifications required
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/no-op-markdown-match-5823762920699134545`
+  - **Category:** ORIGIN
+  - **Result:** Commit: No modifications required as user text matches existing document
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-analytics-report-ux-1184134755645209419`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-analytics-report-ux-1184134755645209419
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-analytics-report-ux-13310145182868611809`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-analytics-report-ux-13310145182868611809
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-analytics-report-ux-1529011215089105936`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-analytics-report-ux-1529011215089105936
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-analytics-report-ux-18318316321736345338`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette-analytics-report-ux-18318316321736345338
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-analytics-report-ux-2082125199399639839`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-analytics-report-ux-2082125199399639839
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-analytics-report-ux-4867787760190622062`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette-analytics-report-ux-4867787760190622062
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-analytics-report-ux-7778046450995178550`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-analytics-report-ux-7778046450995178550
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-analytics-ux-10843440201005490887`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance analytics report with improved UX and accessibility
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-12742154247019470327`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance analytics report with improved UX and visual formatting
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-13688242619485411561`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Improve REPORT.md UX with emojis, TOC, and better formatting
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-3085333679140130358`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-analytics-ux-3085333679140130358
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-analytics-ux-3199574180142194674`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance analytics report UX with TOC, emojis, and navigation aids
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-4010601009880012208`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Palette: Improve Analytics Report UX
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-5645278881546244962`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance Markdown report UX with navigation and formatting
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-analytics-ux-7505744370262329436`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-analytics-ux-7505744370262329436
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-analytics-ux-8397484588902920160`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Improve analytics report UX with executive summary and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-analytics-ux-9649231222626251426`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-analytics-ux-9649231222626251426
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-analytics-ux-improvement-16053020405862702595`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-analytics-ux-improvement-16053020405862702595
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-cli-polish-7681580200009180365`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 UX: Add colored output and summary box to scraper CLI
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-11195364285862631174`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhanced CLI Logging and Reporting UX
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-cli-ux-13954950043505493397`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-cli-ux-13954950043505493397
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-cli-ux-17555004544357050973`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: CLI UX improvements and cleanup
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-17758522128434594634`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-cli-ux-17758522128434594634
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-cli-ux-2733075758607402523`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-cli-ux-2733075758607402523
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-cli-ux-6451827673105305913`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-cli-ux-6451827673105305913
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-cli-ux-6731712941668298150`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Improve CLI UX with colors and emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-cli-ux-726014719767405393`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-cli-ux-726014719767405393
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-cli-ux-logs-15889507569998878970`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-cli-ux-logs-15889507569998878970
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-colored-logs-4026752911446886464`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Add colored logging for better CLI UX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-daily-report-ux-12337725128930830373`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-daily-report-ux-12337725128930830373
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-enhance-analytics-report-1016309185674520626`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance Analytics Report UX
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-analytics-ux-11358974436321208229`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Improve analytics report UX with emojis, highlights, and CLI feedback. Add .gitignore.
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-10536158584792185614`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Improve REPORT.md UX with TOC and Emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-10661525199264285560`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-improve-report-ux-10661525199264285560
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-improve-report-ux-13501189748065964858`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into palette-improve-report-ux-13501189748065964858
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-improve-report-ux-1981383382023870129`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Improve daily report UX with TOC and status emojis
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-improve-report-ux-21771574619127567`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Improve Daily Report UX with TOC and Emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-3120211137232020519`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-improve-report-ux-3120211137232020519
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-improve-report-ux-5308965302741084128`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Enhance Markdown report UX with TOC, anchors, and emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-improve-report-ux-6475317828769115053`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Improve Markdown Report UX with TOC, emojis and anchors
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-10190632765765141408`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Improve Report UX with Navigation and Sanitization
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-1122938860109314687`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-report-ux-1122938860109314687
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-report-ux-13346053882994935837`
+  - **Category:** ORIGIN
+  - **Result:** Commit: 🎨 Palette: Improve Report UX with TOC and Emojis
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-report-ux-16950258538465395817`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-report-ux-16950258538465395817
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-report-ux-3294594477704470315`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-report-ux-3294594477704470315
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-report-ux-improvement-16505406583261696285`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'artmusicpage-scraper-13642650452924627148' into palette-report-ux-improvement-16505406583261696285
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-scraper-cli-ux-logging-3017049004643808335`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'artmusicpage-scraper-13642650452924627148' into palette-scraper-cli-ux-logging-3017049004643808335
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-scraper-ux-7786747023368569446`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-scraper-ux-7786747023368569446
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-cli-formatter-5975566970776686696`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-ux-cli-formatter-5975566970776686696
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-improvement-analytics-17483918169126367172`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-ux-improvement-analytics-17483918169126367172
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-ux-improvement-scraper-345565171526082614`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-ux-improvement-scraper-345565171526082614
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-improvement-scraper-cli-4201072547033955812`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into palette-ux-improvement-scraper-cli-4201072547033955812
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-ux-improvements-15311569840287861931`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Improve CLI output and report generation UX
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette-ux-report-enhancement-10371268008280215914`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-ux-report-enhancement-10371268008280215914
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-report-enhancement-15716276225370499430`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-ux-report-enhancement-15716276225370499430
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-ux-report-enhancement-6200692128049010692`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-ux-report-enhancement-6200692128049010692
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-report-enhancement-8027266546471306679`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Enhance daily report with emojis and tables for better UX
+  - **Activity:** Last active 6 months ago
+- **Branch:** `origin/palette-ux-report-enhancement-9069244241412422315`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-ux-report-enhancement-9069244241412422315
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/palette-ux-report-improvements-10452147171217744669`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into palette-ux-report-improvements-10452147171217744669
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-ux-report-improvements-139991485792048228`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette-ux-report-improvements-139991485792048228
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-ux-report-improvements-16620648284606070844`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-ux-report-improvements-16620648284606070844
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-report-improvements-2448419094629096150`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-ux-report-improvements-2448419094629096150
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-report-improvements-3538068568817014543`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-ux-report-improvements-3538068568817014543
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-ux-report-improvements-9153668087964457098`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-ux-report-improvements-9153668087964457098
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-report-improvements-940930587148457906`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-ux-report-improvements-940930587148457906
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-report-improvements-9630359626298714094`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'artmusicpage-scraper-13642650452924627148' into palette-ux-report-improvements-9630359626298714094
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette-ux-report-nav-14965712706576844094`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-ux-report-nav-14965712706576844094
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-report-nav-8282303934729668343`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-ux-report-nav-8282303934729668343
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-report-navigation-1278181711471932664`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-ux-report-navigation-1278181711471932664
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette-ux-report-navigation-9929514783226057505`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette-ux-report-navigation-9929514783226057505
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette/analytics-report-ux-1743774692152261155`
+  - **Category:** UX
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette/analytics-report-ux-1743774692152261155
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette/analytics-ux-improvement-438937651229381972`
+  - **Category:** UX
+  - **Result:** Commit: 🎨 Palette: Improve Analytics Report UX with TOC and Anchors
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/ascii-charts-ux-7109884184344478551`
+  - **Category:** UX
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette/ascii-charts-ux-7109884184344478551
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette/improve-report-ux-11475379120362374417`
+  - **Category:** UX
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette/improve-report-ux-11475379120362374417
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette/improve-report-ux-9439568871276884131`
+  - **Category:** UX
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette/improve-report-ux-9439568871276884131
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette/report-ux-6009631621912925201`
+  - **Category:** UX
+  - **Result:** Commit: 🎨 Palette: Improve Analytics Report UX
+  - **Activity:** Last active 5 months ago
+- **Branch:** `origin/palette/report-ux-enhancements-9890536469987073968`
+  - **Category:** UX
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette/report-ux-enhancements-9890536469987073968
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette/report-ux-improvements-14310325021165239369`
+  - **Category:** UX
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette/report-ux-improvements-14310325021165239369
+  - **Activity:** Last active 7 weeks ago
+- **Branch:** `origin/palette/report-ux-improvements-17015543897776799811`
+  - **Category:** UX
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette/report-ux-improvements-17015543897776799811
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/palette/report-ux-toc-4596925936165849228`
+  - **Category:** UX
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette/report-ux-toc-4596925936165849228
+  - **Activity:** Last active 4 weeks ago
+- **Branch:** `origin/preserve-formatting-16148472015921721016`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Acknowledge text snippet, no modifications required
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/sentinel-csv-injection-fix-6855106868508477486`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Merge pull request #1345 from 8bukets/palette-improve-report-ux-3120211137232020519
+  - **Activity:** Last active 3 weeks ago
+- **Branch:** `origin/update-duo-planner-prompt-17199014817685136177`
+  - **Category:** ORIGIN
+  - **Result:** Commit: Update `duo_planner_agent.md` to match the required system prompt
+  - **Activity:** Last active 8 weeks ago
