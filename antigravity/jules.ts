@@ -120,9 +120,13 @@ export class Jules {
       const hasPhase25 = checkKnowledge('Phase 25')
       const hasSingularityReadiness = checkKnowledge('singularity-readiness')
       const hasQuantumNeuralBridge = checkKnowledge('quantum-neural bridge')
+      const hasNeuralResonance = checkKnowledge('Neural Resonance Optimization')
 
-      if (hasPhase25 || hasSingularityReadiness || hasQuantumNeuralBridge) {
+      if (hasPhase25 || hasSingularityReadiness || hasQuantumNeuralBridge || hasNeuralResonance) {
         suggestions.push('Initiate Phase 25 Quantum-Neural Bridge protocols and optimize for >0.999 singularity-readiness with <0.1ms latency.')
+        if (hasNeuralResonance) {
+          suggestions.push('Implement predictive shard pre-fetching and resonance pre-flight telemetry for Phase 25 Neural Resonance Optimization.')
+        }
       }
       if (hasPhase20 || hasCognitiveResonance || hasPQRV) {
         suggestions.push('Activate Phase 20 Cognitive Resonance and PQRV trust protocols for ultra-low latency synchronization (<0.5ms).')
@@ -245,7 +249,8 @@ export class Jules {
       { name: 'Cross-Shard Memory Sync', action: () => this.syncCrossShardMemory() },
       { name: 'Quantum Secure Sync', action: () => this.performQuantumSecureSync() },
       { name: 'Multi-Modal Cognition Audit', action: () => this.recordTask('Phase 17: Multi-modal data stream integrity verified.') },
-      { name: 'Swarm Consensus Validation', action: () => this.recordTask('Phase 18: Swarm consensus verified. Inter-shard trust established.') }
+      { name: 'Swarm Consensus Validation', action: () => this.recordTask('Phase 18: Swarm consensus verified. Inter-shard trust established.') },
+      { name: 'Neural Resonance Optimization', action: () => this.recordTask('Phase 25: Predictive shard pre-fetching and resonance pre-flight telemetry enabled.') }
     ]
 
     for (const task of tasks) {

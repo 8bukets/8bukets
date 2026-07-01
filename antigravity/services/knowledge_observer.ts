@@ -186,19 +186,26 @@ export class KnowledgeObserver {
         if (currentSection) sections.push(currentSection);
         // Preserving header level by keeping the '#' prefix
         currentSection = { header: headerMatch[0].trim(), content: '' };
-      } else if (currentSection) {
-        // Only strip HTML tags if we're not in a code block and it looks like a real tag
-        // Simple heuristic: allow generics like <T>, <TKey, TValue>, <string, int> and mathematical comparisons like < 20ms
-        let contentLine = inCodeBlock ? line : line.trim();
-        if (!inCodeBlock) {
-           // Strip tags but preserve common PHP/TypeScript generics and comparisons.
-           // We explicitly exclude sequences starting with space, numbers, backticks, or common generic/type patterns.
-           // We also preserve a standalone '<' if it's at the end of a line or followed by space.
-           contentLine = contentLine.replace(/<(?!\s|$|[0-9]|<=|>=|`)(?!\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|K|V|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false|ElementType|TKey|TValue|TObject|TStart|TResume|TReturn|TSuspend|TDate|TEnd))[^>]*>?/gim, '');
+      } else {
+        // If no header found yet, create a default "Content" section
+        if (!currentSection && trimmedLine) {
+          currentSection = { header: '## Content', content: '' };
         }
 
-        if (contentLine || inCodeBlock) {
-          currentSection.content += (currentSection.content ? '\n' : '') + contentLine;
+        if (currentSection) {
+          // Only strip HTML tags if we're not in a code block and it looks like a real tag
+          // Simple heuristic: allow generics like <T>, <TKey, TValue>, <string, int> and mathematical comparisons like < 20ms
+          let contentLine = inCodeBlock ? line : line.trim();
+          if (!inCodeBlock) {
+            // Strip tags but preserve common PHP/TypeScript generics and comparisons.
+            // We explicitly exclude sequences starting with space, numbers, backticks, or common generic/type patterns.
+            // We also preserve a standalone '<' if it's at the end of a line or followed by space.
+            contentLine = contentLine.replace(/<(?!\s|$|[0-9]|<=|>=|`)(?!\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|K|V|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false|ElementType|TKey|TValue|TObject|TStart|TResume|TReturn|TSuspend|TDate|TEnd))[^>]*>?/gim, '');
+          }
+
+          if (contentLine || inCodeBlock) {
+            currentSection.content += (currentSection.content ? '\n' : '') + contentLine;
+          }
         }
       }
     });
