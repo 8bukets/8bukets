@@ -37,7 +37,9 @@ export const PresenceSchema = z.object({
       mongodb: z.string(),
       supabase: z.string()
     }),
-    uptime: z.number()
+    uptime: z.number(),
+    cloud_sovereignty_active: z.boolean().optional(),
+    ecosystem_connected: z.boolean().optional()
   }),
   lastPulse: z.string()
 })
@@ -45,8 +47,9 @@ export const PresenceSchema = z.object({
 export type Presence = z.infer<typeof PresenceSchema>
 
 class OnlinePresenceService {
-  private agentName: string = 'Jules-Orchestrator'
+  private agentName: string = process.env.AGENT_NAME || 'macbook-primary-01'
   private env: string = process.env.NODE_ENV || 'development'
+  private cloudSovereigntyActive: boolean = false
 
   /**
    * Aggregates system-wide status for the current node.
@@ -80,6 +83,8 @@ class OnlinePresenceService {
       supabaseStatus = 'error'
     }
 
+    const ecosystemConnected = mongoStatus !== 'error' && supabaseStatus !== 'error'
+
     return {
       id: `presence_${Math.random().toString(36).substring(2, 11)}`,
       agent: this.agentName,
@@ -92,9 +97,46 @@ class OnlinePresenceService {
           mongodb: mongoStatus,
           supabase: supabaseStatus
         },
-        uptime: process.uptime()
+        uptime: process.uptime(),
+        cloud_sovereignty_active: this.cloudSovereigntyActive,
+        ecosystem_connected: ecosystemConnected
       },
       lastPulse: new Date().toISOString()
+    }
+  }
+
+  /**
+   * Phase 23: Leadership Election
+   * Cloud node assumes leadership if macbook-primary-01 is inactive for > 3 minutes.
+   */
+  public async checkLeadership() {
+    if (this.agentName !== 'cloud-relay-01') return
+
+    console.log('⚖️ [Presence] Checking ecosystem leadership status...')
+    try {
+      const client = await getMongoClient()
+      const primaryPresence = await client.db().collection('agent_presence').findOne({ agent: 'macbook-primary-01' })
+
+      if (primaryPresence) {
+        const lastPulse = new Date(primaryPresence.lastPulse).getTime()
+        const now = Date.now()
+        const diff = now - lastPulse
+
+        if (diff > 180000) { // 3 minutes
+          console.log(`⚠️ [Presence] macbook-primary-01 inactive for ${Math.floor(diff / 1000)}s. Activating Cloud Sovereignty.`)
+          this.cloudSovereigntyActive = true
+          await this.broadcastTelemetry()
+        } else {
+          console.log(`✅ [Presence] macbook-primary-01 is active (last pulse ${Math.floor(diff / 1000)}s ago).`)
+          this.cloudSovereigntyActive = false
+        }
+      } else {
+        console.log('⚠️ [Presence] No presence found for macbook-primary-01. Assuming leadership.')
+        this.cloudSovereigntyActive = true
+        await this.broadcastTelemetry()
+      }
+    } catch (e) {
+      console.warn('⚠️ [Presence] Leadership check failed.')
     }
   }
 
