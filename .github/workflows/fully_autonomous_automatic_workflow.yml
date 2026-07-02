@@ -2,7 +2,7 @@ name: Fully Autonomous Automatic Workflow
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 */4 * * *'
   workflow_dispatch:
 
 permissions:
@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: 'npm'
 
       - name: Install dependencies
@@ -35,17 +35,19 @@ jobs:
       - name: Docker Health Check
         run: docker info && docker ps
 
-      - name: Execute Unified Autonomous Sync & Creation Cycle
-        run: npx tsx scripts/autonomous_sync.ts
+      - name: Connect and Collaborate
+        run: npm run connect
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Execute Fully Autonomous Creation Cycle
+        run: npx tsx scripts/full_autonomous_automatic_creation.ts
         env:
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Post-cycle Knowledge Ingestion
@@ -68,11 +70,11 @@ jobs:
 # This file defines the core CI/CD pipeline responsible for driving the
 # fully autonomous creation cycle of our artificial intelligence agents.
 #
-# It is designed to run automatically every 4 hours, providing a reliable
-# and consistent heartbeat for the system's ongoing evolution and
-# self-improvement mechanisms. In addition to the scheduled runs, the
-# workflow supports manual triggering via workflow_dispatch, which is
-# particularly useful for ad-hoc testing, emergency updates, or
+# It is designed to run automatically at midnight UTC every single day,
+# providing a reliable and consistent heartbeat for the system's ongoing
+# evolution and self-improvement mechanisms. In addition to the scheduled
+# runs, the workflow supports manual triggering via workflow_dispatch,
+# which is particularly useful for ad-hoc testing, emergency updates, or
 # initiating out-of-band creation cycles when new urgent requirements arise.
 #
 # A critical component of this workflow is the "Connect and Collaborate"
@@ -81,14 +83,14 @@ jobs:
 # of a GitHub Actions runner, we inject the `MACBOOK_CLOUD_SIMULATION: true`
 # environment variable. This simulation flag instructs the underlying
 # scripts to bypass local machine checks (such as verifying the presence
-# of Docker Desktop, GitLab CI runners, or specific GUI applications like
+# of Docker Desktop, Docker Cloud, GitLab CI runners, or specific GUI applications like
 # GitKraken) and instead assume a fully capable, cloud-connected operating
 # environment. This is essential for the system to successfully fetch the
 # latest state from the remote blackboard and synchronize agent memories.
 #
 # Following the initial connection phase, the workflow proceeds to the
 # primary execution stage: "Execute Fully Autonomous Creation Cycle".
-# Here, we invoke `npx tsx scripts/execute_creation_cycle.ts`. This
+# Here, we invoke `npx tsx scripts/full_autonomous_automatic_creation.ts`. This
 # script is the heart of the generative process, orchestrating the actions
 # of multiple specialized sub-agents. It requires several key environment
 # variables to operate securely and effectively:
