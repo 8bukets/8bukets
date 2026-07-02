@@ -19,8 +19,7 @@
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'",
     "ingest:knowledge": "npm run ingest:sor && npm run ingest:terraform && tsx --env-file=.env scripts/ingest_localhost_tools_knowledge.ts && tsx --env-file=.env scripts/ingest_markposition_knowledge.ts && tsx --env-file=.env scripts/ingest_render_docs.ts && tsx --env-file=.env scripts/ingest_ai_agents_knowledge.ts && tsx --env-file=.env scripts/ingest_ads_knowledge.ts && tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts && tsx --env-file=.env scripts/ingest_knowledge_merge.ts && npm run ingest:gemini-cli-subagents",
-    "ingest:gemini-cli-subagents": "tsx --env-file=.env scripts/ingest_gemini_cli_subagents.ts",
-    "autonomous-creation": "tsx --env-file=.env scripts/autonomous_creation_order.ts"
+    "ingest:gemini-cli-subagents": "tsx --env-file=.env scripts/ingest_gemini_cli_subagents.ts"
   },
   "dependencies": {
     "@actions/github": "^9.1.1",
@@ -34,6 +33,7 @@
     "bcrypt": "^6.0.0",
     "cheerio": "^1.2.0",
     "chokidar": "^5.0.0",
+    "command-exists": "^1.2.9",
     "commander": "^15.0.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
