@@ -128,8 +128,9 @@ export class IntelephenseService {
 
     for (const section of allSections) {
       const trimmedHeader = section.header.trim()
+      const cleanHeader = trimmedHeader.replace(/^#+\s*/, '').trim()
       const existing = headerMap.get(trimmedHeader)
-      const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System', 'Visual Studio Code', 'Other Editors'].includes(trimmedHeader)
+      const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System', 'Visual Studio Code', 'Other Editors'].includes(cleanHeader)
 
       if (!existing) {
         // Only keep sections with content, unless they are high-level structural headers
