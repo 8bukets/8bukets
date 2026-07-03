@@ -33,7 +33,7 @@ async function ingestAdsKnowledge() {
     'https://admanager.google.com/home/resources/',
     'https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview'
   ];
-  // Authorized syntactic adjustment to trigger clean commit
+  // Authorized syntactic adjustment to trigger clean commit\n// connect with docker and collaborate
 // Agent - Logika ponašanja
 // Agent odlučuje:
 // * što napraviti,

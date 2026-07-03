@@ -30,7 +30,7 @@ import { sandboxCloudSimulation } from '@/antigravity/services/cloud_simulation'
 
 async function main() {
   'use cache'
-  // Authorized syntactic adjustment to trigger clean commit
+  // Authorized syntactic adjustment to trigger clean commit\n// connect with docker and collaborate
 // Agent - Logika ponašanja
 // Agent odlučuje:
 // * što napraviti,
