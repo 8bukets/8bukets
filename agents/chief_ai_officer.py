@@ -561,6 +561,7 @@ class ChiefAIOfficerAgent(BaseAgent):
 # actually occurs.
 
 # Authorized syntactic adjustment to trigger clean commit
+# connect with docker and collaborate
 # Agent - Logika ponašanja
 # Agent odlučuje:
 # * što napraviti,
