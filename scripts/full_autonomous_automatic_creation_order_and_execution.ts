@@ -69,39 +69,55 @@ async function main() {
   console.log('☁️ [Antigravity] Cloud simulation and high-intensity autonomous mode active.')
 
   // Step 2: Phase 23 Cloud-Native Pulse
-  console.log('🌐 [Antigravity] Executing Phase 23 Cloud-Native Pulse...')
-  await cloudConnectedIntegrationService.executePhase23Pulse()
+  try {
+    console.log('🌐 [Antigravity] Executing Phase 23 Cloud-Native Pulse...')
+    await cloudConnectedIntegrationService.executePhase23Pulse()
+  } catch (err: any) {
+    console.warn('⚠️ [Antigravity] Phase 23 Pulse encountered issues:', err.message)
+  }
 
   // Step 3: Health & Connectivity
-  console.log('🔍 [Antigravity] Verifying system health and cross-shard connectivity...')
-  const coreHealth = await healthCheck()
-  const dockerHealthy = await isDockerHealthy()
-  const ecosystemStatus = await cloudConnectedIntegrationService.validateEcosystemSovereignty() as Record<string, boolean>
+  let coreHealth: any = { mongodb: 'unknown', supabase: 'unknown' }
+  let dockerHealthy = false
+  let ecosystemStatus: any = { GitLab: false, GitKraken: false }
 
-  console.log(` - MongoDB: ${coreHealth.mongodb}`)
-  console.log(` - Supabase: ${coreHealth.supabase}`)
-  console.log(` - Docker: ${dockerHealthy ? 'healthy' : 'unreachable'}`)
-  console.log(` - GitLab: ${ecosystemStatus.GitLab ? 'online' : 'offline'}`)
-  console.log(` - GitKraken: ${ecosystemStatus.GitKraken ? 'ready' : 'unavailable'}`)
+  try {
+    console.log('🔍 [Antigravity] Verifying system health and cross-shard connectivity...')
+    coreHealth = await healthCheck()
+    dockerHealthy = await isDockerHealthy()
+    ecosystemStatus = await cloudConnectedIntegrationService.validateEcosystemSovereignty() as Record<string, boolean>
+
+    console.log(` - MongoDB: ${coreHealth.mongodb}`)
+    console.log(` - Supabase: ${coreHealth.supabase}`)
+    console.log(` - Docker: ${dockerHealthy ? 'healthy' : 'unreachable'}`)
+    console.log(` - GitLab: ${ecosystemStatus.GitLab ? 'online' : 'offline'}`)
+    console.log(` - GitKraken: ${ecosystemStatus.GitKraken ? 'ready' : 'unavailable'}`)
+  } catch (err: any) {
+    console.error('❌ [Antigravity] Health verification failed:', err.message)
+  }
 
   // Step 4: Phase 19/23 Sovereign Activation & Evolution
-  console.log('🧠 [Antigravity] Triggering High-Scale Engine Evolution (Phase 23)...')
-  await cloudConnectedIntegrationService.triggerEngineEvolution()
+  try {
+    console.log('🧠 [Antigravity] Triggering High-Scale Engine Evolution (Phase 23)...')
+    await cloudConnectedIntegrationService.triggerEngineEvolution()
 
-  console.log('🤫 [Antigravity] Verifying ZKP Trust and Recursive Self-Improvement protocols...')
-  await jules.activateSwarmHeartbeat()
+    console.log('🤫 [Antigravity] Verifying ZKP Trust and Recursive Self-Improvement protocols...')
+    await jules.activateSwarmHeartbeat()
 
-  // Simulate Phase 19 Heartbeat Latency Optimization
-  console.log('💓 [Antigravity] Optimizing Swarm Heartbeat Latency (Target: <2ms)...')
-  swarmHeartbeat.report({
-    nodeId: 'sovereign-root-pulse',
-    timestamp: new Date().toISOString(),
-    status: 'active',
-    stabilityIndex: 0.99
-  })
+    // Simulate Phase 19 Heartbeat Latency Optimization
+    console.log('💓 [Antigravity] Optimizing Swarm Heartbeat Latency (Target: <2ms)...')
+    swarmHeartbeat.report({
+      nodeId: 'sovereign-root-pulse',
+      timestamp: new Date().toISOString(),
+      status: 'active',
+      stabilityIndex: 0.99
+    })
 
-  await jules.syncCrossShardMemory()
-  await jules.performQuantumSecureSync()
+    await jules.syncCrossShardMemory()
+    await jules.performQuantumSecureSync()
+  } catch (err: any) {
+    console.error('❌ [Antigravity] Sovereign activation failed:', err.message)
+  }
 
   // Step 4.4: Session Analysis & System Engine Evolution
   console.log('🔍 [Antigravity] Analyzing recent sessions and work orders for engine evolution...')
@@ -206,33 +222,57 @@ async function main() {
   console.log('✅ [Antigravity] Phase 23 Sovereign Swarm protocols engaged.')
 
   // Step 5: State Purge
-  console.log('🧹 [Antigravity] Purging stale work order state...')
-  await workOrderService.clearPendingOrders()
+  try {
+    console.log('🧹 [Antigravity] Purging stale work order state...')
+    await workOrderService.clearPendingOrders()
+  } catch (err: any) {
+    console.warn('⚠️ [Antigravity] State purge failed:', err.message)
+  }
 
   // Step 6: Unified Cloud Sovereign Work Cycle
-  console.log('📝 [Antigravity] Executing Unified Cloud Sovereign Work Cycle...')
-  await cloudConnectedIntegrationService.executeCloudSovereignWork();
+  try {
+    console.log('📝 [Antigravity] Executing Unified Cloud Sovereign Work Cycle...')
+    await cloudConnectedIntegrationService.executeCloudSovereignWork();
+  } catch (err: any) {
+    console.error('❌ [Antigravity] Unified work cycle failed:', err.message)
+  }
 
   // Step 7: Root Order Generation
-  console.log('📝 [Antigravity] Generating master AUTONOMOUS_CREATION order...')
-  const rootOrder = await workOrderService.createOrder(
-    'AUTONOMOUS_CREATION',
-    'Execute Phase 23 full autonomous creation cycle (Synthesis -> Bootstrap -> Smoke Test -> Deployment)',
-    {
-      source: 'full_autonomous_automatic_creation_order_and_execution',
-      timestamp: new Date().toISOString(),
-      compliance: 'Phase 23 Sovereign Swarm Evolution'
-    }
-  )
-  console.log(`✅ [Antigravity] Master order created: ${rootOrder.id}`)
+  let rootOrderId = ''
+  try {
+    console.log('📝 [Antigravity] Generating master AUTONOMOUS_CREATION order...')
+    const rootOrder = await workOrderService.createOrder(
+      'AUTONOMOUS_CREATION',
+      'Execute Phase 23 full autonomous creation cycle (Synthesis -> Bootstrap -> Smoke Test -> Deployment)',
+      {
+        source: 'full_autonomous_automatic_creation_order_and_execution',
+        timestamp: new Date().toISOString(),
+        compliance: 'Phase 23 Sovereign Swarm Evolution'
+      }
+    )
+    rootOrderId = rootOrder.id
+    console.log(`✅ [Antigravity] Master order created: ${rootOrderId}`)
+  } catch (err: any) {
+    console.error('❌ [Antigravity] Root order generation failed:', err.message)
+  }
 
   // Step 8: Recursive Execution Pulse
-  console.log('⚡ [Antigravity] Beginning recursive autonomous execution cycle...')
-  await workOrderService.executePendingOrders()
+  try {
+    console.log('⚡ [Antigravity] Beginning recursive autonomous execution cycle...')
+    await workOrderService.executePendingOrders()
+  } catch (err: any) {
+    console.error('❌ [Antigravity] Autonomous execution cycle failed:', err.message)
+  }
 
   // Step 9: Final Intelligence Reporting
-  console.log('📊 [Antigravity] Compiling final creation intelligence report...')
-  await generateCreationReport(rootOrder.id)
+  if (rootOrderId) {
+    try {
+      console.log('📊 [Antigravity] Compiling final creation intelligence report...')
+      await generateCreationReport(rootOrderId)
+    } catch (err: any) {
+      console.warn('⚠️ [Antigravity] Creation report generation failed:', err.message)
+    }
+  }
 
   swarmHeartbeat.stop()
 

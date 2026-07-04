@@ -62,6 +62,20 @@ export class AutonomousCreationEngine {
             idea,
             [smokeTestOrder.id]
           )
+
+          // 4. Strategic Alignment Audit (Phase 24/25)
+          if (idea.complexity === 'High') {
+            await workOrderService.createOrder(
+              'OPTIMIZE_SYSTEM',
+              `Strategic alignment audit for ${idea.feature}`,
+              {
+                target: idea.feature,
+                compliance: ['Phase 24 Neural Mesh', 'Phase 25 Singularity Readiness'],
+                directives: ['MESH_AWARE_ROUTING', 'SINGULARITY_COMPLIANCE']
+              },
+              [smokeTestOrder.id]
+            )
+          }
         }
       }
     } catch (err) {
