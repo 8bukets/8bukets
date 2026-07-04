@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-29T23:01:58.979490",
+    "generated_at": "2026-07-04T14:13:37.195Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -13,7 +13,18 @@
       "litert_docs.json",
       "stitch_docs.json",
       "vscode_intelephense_docs.json",
-      "google_ads_docs.json"
+      "google_ads_docs.json",
+      "markposition.wordpress.com",
+      "local://.github/ISSUE_TEMPLATE/bug_report.md",
+      "local://.github/ISSUE_TEMPLATE/feature_request.md",
+      "local://.github/PULL_REQUEST_TEMPLATE.md",
+      "local://gemmafour_docs.md",
+      "local://litert_docs.md",
+      "local://opentelemetry_repos.md",
+      "local://google_ads_docs.md",
+      "local://ai_agents_knowledge.md",
+      "local://localhost_tools_docs.md",
+      "local://google_innovation_ai_report.md"
     ]
   },
   "typescript_sections": {
@@ -26,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-29T22:58:51.521Z"
+        "ingestedAt": "2026-07-04T14:13:36.847Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -38,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-29T22:58:51.533Z"
+        "ingestedAt": "2026-07-04T14:13:36.895Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -70,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-29T22:58:51.543Z"
+        "ingestedAt": "2026-07-04T14:13:36.938Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -182,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-29T22:58:51.555Z"
+        "ingestedAt": "2026-07-04T14:13:36.974Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -262,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-29T22:58:51.566Z"
+        "ingestedAt": "2026-07-04T14:13:37.011Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -678,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-29T22:58:51.577Z"
+        "ingestedAt": "2026-07-04T14:13:37.044Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1774,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-29T22:58:51.589Z"
+        "ingestedAt": "2026-07-04T14:13:37.080Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2194,7 +2205,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-29T22:58:51.600Z"
+        "ingestedAt": "2026-07-04T14:13:37.112Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2450,7 +2461,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-29T22:58:51.610Z"
+        "ingestedAt": "2026-07-04T14:13:37.147Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2506,6 +2517,10 @@
         {
           "header": "9 demos of Gemini Omni and Gemini 3.5 in action",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/\n- Insight: At Google I/O 2026, we announced our latest models: Gemini Omni and the Gemini 3.5 family of models.Gemini Omni is our new model that can create anything from any input, starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.Then there’s Gemini 3.5, our latest family of models combining frontier intelligence with action. This represents a major leap forward in building more capable, intelligent agents. We’re kicking off the series by releasing 3.5 Flash. It delivers frontier performance for agents and coding, excelling at complex long-horizon tasks that deliver real-world utility.To give you a clearer understanding of Gemini Omni and Gemini 3.5 Flash, here are 9 demos of what they can help you do.Gemini OmniEdit your videos through conversation. One capability that makes Omni special is that it gives you an easier way to e..."
+        },
+        {
+          "header": "Start building with Nano Banana 2 Lite and Gemini Omni Flash",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/\n- Insight: Today, we’re making it faster and easier to experiment, refine and scale your ideas with two major releases:Introducing Nano Banana 2 Lite: Our fastest, most cost-efficient image model in the Nano Banana family yet, built for high throughput, speed and scale. Nano Banana 2 Lite is available today in Google AI Studio, Gemini API and Gemini Enterprise Agent Platform. It is also rolling out today in Google consumer surfaces including AI Mode in Search, Gemini app and many other products.Bringing Gemini Omni Flash to developers: Our high quality, cost-efficient model for video generation and conversational editing, now available in Google AI Studio, the Gemini API and Gemini Enterprise Agent Platform for the first time. Omni Flash is also available in the Gemini app and Google Flow.Building with generative media is often about creative iteration. With these two models, developers can build comprehensive, end-to-end multimedia experiences that connect rapid image generation with video creat..."
         },
         {
           "header": "Introducing Gemini Omni",
@@ -2584,6 +2599,10 @@
           "content": "- URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-features-for-businesses/\n- Insight: Small businesses are the true engine of the global economy, yet entrepreneurs often find themselves stretched thin, playing the roles of CEO, CMO and customer service team all before lunch. AI holds incredible promise to act as an extension of your team, but to be truly helpful, it needs to remember your brand voice and context so you don't have to re-explain your goals every time you log in.Building on the new Google AI capabilities we announced in May, we’re excited to share what’s next for Gemini and Google Business Profile users. Today on stage at Google for Brazil, we introduced new Gemini app features specifically designed for business owners everywhere.Rolling out globally this month, these updates transform Gemini into a deeply knowledgeable, in-pocket partner that natively understands your business and helps you get more done.Connect your Google Business Profile to GeminiYour Google Business Profile serves as your digital storefront, helping you stand out on Google Search and ..."
         },
         {
+          "header": "Gemini Spark updates: macOS launch, connected apps and more",
+          "content": "- URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-june-2026/\n- Insight: Today, we’re rolling out updates to Gemini Spark that make it even more helpful, from a new desktop experience to deeper connections with your favorite apps. Here’s a look at what’s new:Bring Gemini Spark to your MacWe’re bringing Spark to the Gemini macOS app to help you automate time-consuming tasks across your desktop.Gemini Spark can now move beyond the chat window, and tackle the heavy lifting across your desktop files and apps. For example, you can turn hours of manual file sorting into an instant action by asking Gemini Spark to sort all the PDFs in your Downloads into specific folders. Gemini Spark also connects your desktop and Google Workspace, so you can simply ask it to create a budget spreadsheet using the latest invoices saved to your computer, and create a schedule to update it regularly. To keep your information secure, Gemini Spark only has access to the files you give it permission to use.And coming soon, you’ll even be able to run tasks remotely. You can assign a mul..."
+        },
+        {
           "header": "5 ways to learn with study notebooks in the Gemini app",
           "content": "- URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/\n- Insight: Studying can feel overwhelming, especially when you don't know where to start or what to focus on next. That’s why we’re introducing study notebooks in the Gemini app.Study notebooks are designed specifically for students. As a goal-oriented learning space, they generate personalized lessons based on your real-time strengths and knowledge gaps. Your progress is tracked through a custom dashboard based on an initial diagnostic quiz and then follow-up quiz performance. Here are five ways to learn with study notebooks in Gemini:1. Assess your knowledge gapsTo start, upload your syllabus, notes, reading materials or other class materials. Gemini will then generate a custom diagnostic quiz to establish an academic baseline. It actively pinpoints your unique strengths and weaknesses, so you know exactly which areas need attention, replacing guessing games with a tailored learning plan.2. Study with bite-sized lessons built just for youOnce your baseline knowledge is assessed, your study note..."
         },
@@ -2618,6 +2637,10 @@
         {
           "header": "Ask an AI expert: What exactly is the full stack?",
           "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/full-stack-ai-explainer/\n- Insight: If you’ve spent any time lately reading about AI or using AI tools, you’ve probably heard about “full-stack” AI and app development. Our unique full-stack approach to AI lets us deliver powerful, cost-efficient products to expert developers and everyday users alike. But what exactly does it mean when a technology system is \"full-stack”? We asked Google expert Richard Seroter, who leads developer experience at Google Cloud, to explain it — and why it enables Google to bring helpful AI to billions of people.First things first: What exactly do you do at Google?I originally came to Google as a product manager, and I’ve been leading our developer relations and technical writing teams for about three years now. My team, now inclusive of product engineering for languages and frameworks along with our Open Source Programs Office, and I help software developers successfully build with Google Cloud products. We do a lot of different things, from building the programming languages and frameworks ..."
+        },
+        {
+          "header": "The latest AI news we announced in June 2026",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/\n- Insight: For more than 20 years, we’ve invested in machine learning and AI research, tools and infrastructure to build products that make everyday life better for more people. Teams across Google are working on ways to unlock AI’s benefits in fields as wide-ranging as healthcare, crisis response and education. To keep you posted on our progress, we're doing a regular roundup of Google's most recent AI news.Here’s a look back at some of our AI announcements from June.This month was about creating a more unified environment where AI delivers help naturally throughout your day. With the debut of Android 17 and local models like Gemma 4 12B running right on your laptop, our June updates reflect a vision where technology acts as an intuitive partner and helps you reach your goals. Whether you’re a small business owner trying to get your shop noticed, a student setting up a study schedule or a researcher tackling climate challenges, these updates handle the complex logistics so you can focus on what ..."
         },
         {
           "header": "The latest AI news we announced in May 2026",
@@ -2770,7 +2793,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-29T22:58:51.627Z"
+        "ingestedAt": "2026-07-04T14:13:37.181Z"
       }
     }
   },
@@ -16302,8 +16325,20 @@
     }
   },
   "market_data": {
-    "total_entries": 679,
+    "total_entries": 680,
     "recent_entries": [
+      {
+        "title": "",
+        "date": "July 25, 2021",
+        "datetime": "2021-07-25T13:55:44+02:00",
+        "author": "Filip Keser",
+        "categories": [
+          "Ad Ads Advertise"
+        ],
+        "external_link": "https://www.yourprimer.com",
+        "domain": "yourprimer.com",
+        "post_url": ""
+      },
       {
         "title": "advertising.amazon",
         "date": "October 5, 2022",
@@ -16538,21 +16573,21 @@
         "external_link": "https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/",
         "domain": "youtube.com",
         "post_url": "https://markposition.wordpress.com/2022/08/16/how-to-create-quality-video-ads-youtube-advertising/"
-      },
+      }
+    ],
+    "all_entries": [
       {
-        "title": "Business Data Responsibility – Your Data Protection & Privacy",
-        "date": "August 15, 2022",
-        "datetime": "2022-08-15T20:51:59+02:00",
+        "title": "",
+        "date": "July 25, 2021",
+        "datetime": "2021-07-25T13:55:44+02:00",
         "author": "Filip Keser",
         "categories": [
           "Ad Ads Advertise"
         ],
-        "external_link": "https://business.safety.google/",
-        "domain": "business.safety.google",
-        "post_url": "https://markposition.wordpress.com/2022/08/15/business-data-responsibility-your-data-protection-privacy/"
-      }
-    ],
-    "all_entries": [
+        "external_link": "https://www.yourprimer.com",
+        "domain": "yourprimer.com",
+        "post_url": ""
+      },
       {
         "title": "advertising.amazon",
         "date": "October 5, 2022",

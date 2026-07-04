@@ -6,6 +6,35 @@ import * as path from 'path';
  * Synthesizes system_knowledge.json into CONSOLIDATED_KNOWLEDGE.md.
  */
 
+function renderContent(content: any): string {
+    if (typeof content === 'string') return content;
+    if (Array.isArray(content)) return content.join('\n');
+
+    let result = '';
+    if (content.text) {
+        if (Array.isArray(content.text)) {
+            result += content.text.join('\n\n') + '\n\n';
+        } else {
+            result += content.text + '\n\n';
+        }
+    }
+
+    if (content.subsections) {
+        Object.entries(content.subsections).forEach(([subHeader, subContent]: [string, any]) => {
+            result += `#### ${subHeader}\n${renderContent(subContent)}\n\n`;
+        });
+    } else if (typeof content === 'object') {
+        // Fallback for objects that aren't in the standard text/subsections format
+        Object.entries(content).forEach(([header, subContent]: [string, any]) => {
+            if (header !== 'text' && header !== 'subsections') {
+                result += `#### ${header}\n${renderContent(subContent)}\n\n`;
+            }
+        });
+    }
+
+    return result.trim();
+}
+
 async function main() {
     const jsonPath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json');
     const mdPath = path.join(process.cwd(), 'CONSOLIDATED_KNOWLEDGE.md');
@@ -18,8 +47,8 @@ async function main() {
 
     const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
     let mdContent = `# Consolidated Knowledge Base\n\n`;
-    mdContent += `**Last Sync:** ${data.metadata.generated_at}\n`;
-    mdContent += `**System Version:** ${data.metadata.version}\n\n`;
+    mdContent += `**Last Sync:** ${data.metadata?.generated_at || new Date().toISOString()}\n`;
+    mdContent += `**System Version:** ${data.metadata?.version || '1.0'}\n\n`;
 
     // 1. Strategic Mapping
     if (fs.existsSync(strategicSource)) {
@@ -43,7 +72,7 @@ async function main() {
     const aiAgents = data.ai_agents || {};
     Object.values(aiAgents).forEach((info: any) => {
         if (info.title) {
-            mdContent += `### ${info.title}\n\n${info.content}\n\n`;
+            mdContent += `### ${info.title}\n\n${renderContent(info.content)}\n\n`;
         }
     });
 
@@ -60,15 +89,19 @@ async function main() {
         mdContent += `\n`;
     }
 
-    // 5. Market Intelligence
+    // 5. Market Intelligence (Limited to top 20 to reduce bloat)
     mdContent += `## 3. Market Intelligence (Markposition)\n`;
     const market = data.market_data || {};
     mdContent += `Total Market Data Points: ${market.total_entries || 0}\n\n`;
-    (market.all_entries || []).forEach((entry: any) => {
+    const entries = (market.all_entries || []).slice(0, 20);
+    entries.forEach((entry: any) => {
         if (entry.title && entry.title.length > 1) {
             mdContent += `- **${entry.title}**: ${entry.external_link || entry.post_url} (${entry.date})\n`;
         }
     });
+    if ((market.all_entries || []).length > 20) {
+        mdContent += `\n*(Truncated: showing 20 of ${market.total_entries} recent entries)*\n`;
+    }
     mdContent += `\n`;
 
     // 6. Legal & Ecosystem
@@ -76,7 +109,7 @@ async function main() {
     const legal = data.legal_ecosystem || {};
     Object.values(legal).forEach((info: any) => {
         if (info.title) {
-            mdContent += `### ${info.title}\n\n${info.content}\n\n`;
+            mdContent += `### ${info.title}\n\n${renderContent(info.content)}\n\n`;
         }
     });
 
