@@ -1,6 +1,6 @@
-name = "sor8bukets"
+name = "sor-8bukets"
 main = "src/index.js"
-compatibility_date = "2026-06-27"
+compatibility_date = "2024-04-03"
 
 # Configure a custom domain, as the task link points to the 'domains' section of the dashboard
 routes = [
