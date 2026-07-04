@@ -61,12 +61,17 @@ export class CloudConnectedIntegrationService {
         const { jules } = await import('../jules')
         const { workOrderService } = await import('./work_order')
 
-        // 3. Autonomous PR Audit & Knowledge Merge
+        // 3. Mandatory Cloud Sync & Collaboration Alignment
+        logAutonomousAction('🔄 [CloudConnected] Leader active. Synchronizing latest state and collaboration context...', 'info')
+        await jules.gitPull()
+        await jules.syncCollaboration()
+
+        // 4. Autonomous PR Audit & Knowledge Merge
         logAutonomousAction('🤖 [CloudConnected] Leader active. Running autonomous PR audit and knowledge ingestion...', 'info')
         await jules.autonomousPrAudit()
         await jules.observeKnowledge()
 
-        // 4. Execute pending work orders
+        // 5. Execute pending work orders
         logAutonomousAction('⚡ [CloudConnected] Leader active. Dispatching pending work orders...', 'info')
         await workOrderService.executePendingOrders()
       } else {
