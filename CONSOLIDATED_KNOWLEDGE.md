@@ -1,6 +1,6 @@
 # Consolidated Knowledge Base
 
-**Last Sync (Python):** 2026-06-29T23:01:58.979490
+**Last Sync:** 2026-07-04T14:13:37.195Z
 **System Version:** 1.94
 
 ## 🧩 Strategic Identity & Unified Model
@@ -929,15 +929,20 @@ Subagents are enabled by default. To disable them, set `enableAgents` to false i
 
 ### The DESIGN.md specification
 
-### Introduction
+#### Introduction
 Learn
+
 The formal specification for the DESIGN.md format — token schema, section structure, and type system.
+
 A DESIGN.md file has two layers. The YAML front matter contains machine-readable design tokens — the precise values agents use to enforce consistency. The markdown body provides human-readable design rationale organized into ## sections. Prose may use descriptive color names (e.g., “Midnight Forest Green”) that correspond to systematic token names (e.g., primary ). The tokens are the normative values; the prose provides context for how to apply them.
+
 The spec is a foundation, not a prescription . It provides common ground that agents, tools, and teams can rely on, while preserving the freedom to extend the format for domain-specific needs.
 
-### Design tokens
+#### Design tokens
 DESIGN.md embeds design tokens as YAML front matter at the beginning of the file. The front matter block must begin with a line containing exactly --- and end with a line containing exactly --- . The YAML content between these delimiters follows the schema defined below.
+
 The token system is inspired by the W3C Design Token Format . Tokens are easily converted to and from tokens.json , Figma variables, and Tailwind theme configs.
+
 ```
 ---
 version: alpha
@@ -968,7 +973,7 @@ padding: 12px
 ---
 ```
 
-##### Schema
+#### Schema
 ```
 version: <string>          # optional, current version: "alpha"
 name: <string>
@@ -987,11 +992,11 @@ components:
 ```
 The <scale-level> placeholder represents a named level in a sizing or spacing scale. Common level names include xs , sm , md , lg , xl , and full . Any descriptive string key is valid.
 
-### Token types
-##### Typography properties
+#### Token types
+#### Typography properties
 
 
-##### Token references
+#### Token references
 A token reference is wrapped in curly braces and contains an object path to another value in the YAML tree. For most token groups, the reference must point to a primitive value (e.g., {colors.primary-60} ), not a group. Within the components section, references to composite values (e.g., {typography.label-md} ) are permitted.
 ```
 components:
@@ -1001,14 +1006,15 @@ textColor: "{colors.primary-20}"
 rounded: "{rounded.md}"
 ```
 
-### Sections
+#### Sections
 Every DESIGN.md follows the same structure. Sections can be omitted if they are not relevant to the project, but those present should appear in the sequence listed below. All sections use ## headings. An optional # heading may appear for document titling purposes but is not parsed as a section.
+
 The section structure is intentionally open-ended. The canonical sections provide a shared vocabulary; design systems are free to add domain-specific sections beyond these.
 
-##### Section order
+#### Section order
 
 
-##### Overview
+#### Overview
 Also known as “Brand & Style.” A holistic description of the product’s look and feel. This section defines the brand personality, target audience, and the emotional response the UI should evoke. It serves as foundational context when a specific rule or token is not defined.
 ```
 ## Overview
@@ -1016,7 +1022,7 @@ A calm, professional interface for a healthcare scheduling platform.
 Accessibility-first design with high contrast and generous touch targets.
 ```
 
-##### Colors
+#### Colors
 Defines the color palettes for the design system. At least the primary palette should be defined. Additional palettes may be named freely; a common convention is primary , secondary , tertiary , and neutral .
 ```
 ## Colors
@@ -1035,7 +1041,7 @@ tertiary: "#B8422E"
 neutral: "#F7F5F2"
 ```
 
-##### Typography
+#### Typography
 Defines typography levels. Most design systems have 9–15 levels, each with a semantic role (headline, body, label) and size variant (small, medium, large).
 ```
 ## Typography
@@ -1065,7 +1071,7 @@ lineHeight: 1
 letterSpacing: 0.1em
 ```
 
-##### Layout
+#### Layout
 Also known as “Layout & Spacing.” Describes the layout and spacing strategy — grid models, spacing scales, and containment principles.
 ```
 ## Layout
@@ -1085,7 +1091,7 @@ gutter: 24px
 margin: 32px
 ```
 
-##### Elevation & Depth
+#### Elevation & Depth
 Also known as “Elevation.” Describes how visual hierarchy is conveyed. For designs that use shadows, it defines the shadow properties. For flat designs, it explains the alternative methods (borders, tonal layers, color contrast).
 ```
 ## Elevation & Depth
@@ -1093,7 +1099,7 @@ Depth is achieved through tonal layers rather than heavy shadows.
 Background uses a soft off-white; primary content sits on pure white cards.
 ```
 
-##### Shapes
+#### Shapes
 Describes how visual elements are shaped — corner radii, edge treatments, and the overall shape language.
 ```
 ## Shapes
@@ -1109,7 +1115,7 @@ lg: 12px
 full: 9999px
 ```
 
-##### Components
+#### Components
 Style guidance for component atoms. The spec defines common component types — Buttons, Chips, Lists, Inputs, Checkboxes, Radio buttons, Tooltips — but design systems are encouraged to define additional components relevant to their domain.
 ```
 ## Components
@@ -1130,7 +1136,7 @@ button-primary-hover:
 backgroundColor: "{colors.primary-70}"
 ```
 
-##### Do’s and Don’ts
+#### Do’s and Don’ts
 Practical guidelines and common pitfalls. These act as guardrails during generation.
 ```
 ## Do's and Don'ts
@@ -1140,15 +1146,17 @@ Practical guidelines and common pitfalls. These act as guardrails during generat
 - Don't use more than two font weights on a single screen
 ```
 
-### Consumer behavior for unknown content
+#### Consumer behavior for unknown content
 The spec is designed to be extended. When a consumer encounters content not defined by this specification:
 
-### Recommended token names
+#### Recommended token names
 The following names are commonly used across design systems. They are not required but are provided as guidance for consistency.
-Colors: primary , secondary , tertiary , neutral , surface , on-surface , error
-Typography: headline-display , headline-lg , headline-md , body-lg , body-md , body-sm , label-lg , label-md , label-sm
-Rounded: none , sm , md , lg , xl , full
 
+Colors: primary , secondary , tertiary , neutral , surface , on-surface , error
+
+Typography: headline-display , headline-lg , headline-md , body-lg , body-md , body-sm , label-lg , label-md , label-sm
+
+Rounded: none , sm , md , lg , xl , full
 
 ## 2. Google Innovation & AI
 - **[Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)**
@@ -1171,9 +1179,66 @@ Rounded: none , sm , md , lg , xl , full
 - **[Simulate real-world places with Project Genie and Street View](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/)**
 - **[Running Guide agent: A step towards running unbounded](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/)**
 - **[Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)**
+- **[Meet Dreambeans, an app that connects you with what matters](https://blog.google/innovation-and-ai/models-and-research/google-labs/dreambeans/)**
+- **[New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music](https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/)**
+- **[Pomelli adds new ways to build brand content and design websites.](https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-agentic-capabilities/)**
+- **[We’re introducing new ways to design in real time with Stitch.](https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/)**
+- **[Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)**
+- **[New research shows how AMIE, our medical AI, could help manage health conditions.](https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/)**
+- **[A new experiment brings better group meetings to Google Beam](https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/)**
+- **[Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)**
+- **[Our new initiative to apply quantum science and AI to the life sciences](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/repliqa-quantum-computing-life-sciences/)**
+- **[Answering your trending questions on World Quantum Day](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/)**
+- **[Save time and grow your business with new Gemini tools](https://blog.google/innovation-and-ai/products/gemini-app/gemini-features-for-businesses/)**
+- **[5 ways to learn with study notebooks in the Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/)**
+- **[The Gemini app is bringing personalized image creation to more users.](https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana-us-expansion/)**
+- **[View more from NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)**
+- **[Do better research with NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/)**
+- **[Generate your own Cinematic Video Overviews in NotebookLM.](https://blog.google/innovation-and-ai/products/notebooklm/generate-your-own-cinematic-video-overviews-in-notebooklm/)**
+- **[Dive deeper into I/O 2026 with NotebookLM.](https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/)**
+- **[Ask a Techspert: What is vibe coding?](https://blog.google/innovation-and-ai/products/techspert-what-is-vibe-coding/)**
+- **[I/O 2026: Welcome to the agentic Gemini era](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)**
+- **[Ask an AI expert: What exactly is the full stack?](https://blog.google/innovation-and-ai/technology/ai/full-stack-ai-explainer/)**
+- **[The latest AI news we announced in May 2026](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/)**
+- **[How we used Gemini to build Google I/O 2026](https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/)**
+- **[Catch up on 12 major I/O 2026 moments](https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/)**
+- **[Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)**
+- **[Bringing the latest Gemini models to Apple developers](https://blog.google/innovation-and-ai/technology/developers-tools/bringing-gemini-models-to-apple-developers/)**
+- **[DiffusionGemma: 4x faster text generation](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/)**
+- **[See what 3 builders are making with Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/)**
+- **[Interactions API: our primary interface for Gemini models and agents](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/)**
+- **[Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency](https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/)**
+- **[View more from Health](https://blog.google/innovation-and-ai/technology/health/)**
+- **[A more personal digital health experience for people in Europe](https://blog.google/innovation-and-ai/technology/health/google-docmorris-partnership/)**
+- **[Announcing the winners of the MedGemma Impact Challenge](https://blog.google/innovation-and-ai/technology/health/med-gemma-impact-challenge/)**
+- **[An update on our mental health work](https://blog.google/innovation-and-ai/technology/health/mental-health-updates/)**
+- **[Google Research](https://blog.google/innovation-and-ai/technology/research/)**
+- **[4 ways researchers are collaborating with Co-Scientist to solve big problems](https://blog.google/innovation-and-ai/technology/research/co-scientist-research-problems/)**
+- **[Gemini for Science: AI experiments and tools for a new era of discovery](https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/)**
+- **[Towards a world where no one is surprised by a natural disaster](https://blog.google/innovation-and-ai/technology/research/helping-communities-prepare-for-natural-disasters/)**
+- **[Building superconducting and neutral atom quantum computers](https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/)**
+- **[Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)**
+- **[How we're combatting AI scams with security, legislation and more](https://blog.google/innovation-and-ai/technology/safety-security/combatting-ai-scams/)**
+- **[Quantum frontiers may be closer than they appear](https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/)**
+- **[Our latest fraud and scams advisory](https://blog.google/innovation-and-ai/technology/safety-security/fraud-scams-advisory-june-2026/)**
+- **[Our fight against fraud: 5 ways we’re keeping you safer](https://blog.google/innovation-and-ai/technology/safety-security/scams-fraud-protection/)**
+- **[Android XR lights up Sphere in Las Vegas for CES.](https://blog.google/innovation-and-ai/technology/xr-ar/android-xr-sphere-ces-2026/)**
+- **[Reservations are open for XREAL AURA — plus, see more news from AWE 2026.](https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/)**
+- **[See all product updates](https://blog.google/products-and-platforms/)**
+- **[Chromebooks](https://blog.google/products-and-platforms/devices/chromebooks/)**
+- **[Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)**
+- **[Intelligent eyewear is coming this fall](https://blog.google/products-and-platforms/platforms/android/android-xr-io-2026/)**
+- **[Google Play](https://blog.google/products-and-platforms/platforms/google-play/)**
+- **[Learning & Education](https://blog.google/products-and-platforms/products/education/)**
+- **[NotebookLM is transforming student success at FSU](https://blog.google/products-and-platforms/products/education/florida-state-university-notebooklm/)**
+- **[Gemini models](https://blog.google/products-and-platforms/products/gemini/)**
+- **[Try these 3 Google AI tools to help find your next job.](https://blog.google/products-and-platforms/products/gemini/find-job-with-google-ai-tools/)**
+- **[View more from XR and AR](https://blog.google/products-and-platforms/products/google-ar-vr/)**
+- **[Google Health](https://blog.google/products-and-platforms/products/google-health/)**
+- **[Google Workspace](https://blog.google/products-and-platforms/products/workspace/)**
 
 ## 3. Market Intelligence (Markposition)
-Total Market Data Points: 679
+Total Market Data Points: 680
 
 - **advertising.amazon**: https://advertising.amazon.com/ (October 5, 2022)
 - **Drive Advertising Revenue with Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager (September 26, 2022)
@@ -1192,9 +1257,10 @@ Total Market Data Points: 679
 - **About Target ROAS bidding – Google Ads Help**: https://support.google.com/google-ads/answer/6268637?hl=en (September 1, 2022)
 - **Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help**: https://support.google.com/google-ads/answer/11189316?hl=en (September 1, 2022)
 - **Coalition for Better Ads**: https://www.betterads.org/ (August 31, 2022)
-- **ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions**: None (August 20, 2022)
+- **ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions**: https://sharethis.com/ (August 20, 2022)
 - **How To Create Quality Video Ads – YouTube Advertising**: https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/ (August 16, 2022)
-- **Business Data Responsibility – Your Data Protection & Privacy**: https://business.safety.google/ (August 15, 2022)
+
+*(Truncated: showing 20 of 680 recent entries)*
 
 ## 4. Legal & Ecosystem (Wilson Sonsini)
 ### Wilson Sonsini Goodrich & Rosati
@@ -1228,7 +1294,6 @@ Wilson Sonsini’s history is essentially the history of modern technology:
 - **Mergers & Acquisitions**: Advising on multi-billion dollar global transactions in tech and life sciences.
 - **Regulatory & Compliance**: Navigating the complex regulatory landscape facing technology-driven businesses.
 
-
 ## 5. Technical Documentation
 ### Gemma Model
 Topics covered: models_overview, benchmark_results, core_capabilities, best_practices, model_data...
@@ -1247,7 +1312,6 @@ Topics covered: repository, readme...
 
 ### Google Ads
 Topics covered: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU, https://business.google.com/uk/ad-tools/bidding/?hl=en, https://business.google.com/uk/resources/?hl=en, https://developers.google.com/ad-manager?hl=en, https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en...
-
 
 ## 6. TypeScript Ecosystem Intelligence
 ### Internal: .github/ISSUE_TEMPLATE/bug_report.md
@@ -4501,6 +4565,10 @@ Scraped from:
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/
 - Insight: At Google I/O 2026, we announced our latest models: Gemini Omni and the Gemini 3.5 family of models.Gemini Omni is our new model that can create anything from any input, starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.Then there’s Gemini 3.5, our latest family of models combining frontier intelligence with action. This represents a major leap forward in building more capable, intelligent agents. We’re kicking off the series by releasing 3.5 Flash. It delivers frontier performance for agents and coding, excelling at complex long-horizon tasks that deliver real-world utility.To give you a clearer understanding of Gemini Omni and Gemini 3.5 Flash, here are 9 demos of what they can help you do.Gemini OmniEdit your videos through conversation. One capability that makes Omni special is that it gives you an easier way to e...
 
+#### Start building with Nano Banana 2 Lite and Gemini Omni Flash
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/
+- Insight: Today, we’re making it faster and easier to experiment, refine and scale your ideas with two major releases:Introducing Nano Banana 2 Lite: Our fastest, most cost-efficient image model in the Nano Banana family yet, built for high throughput, speed and scale. Nano Banana 2 Lite is available today in Google AI Studio, Gemini API and Gemini Enterprise Agent Platform. It is also rolling out today in Google consumer surfaces including AI Mode in Search, Gemini app and many other products.Bringing Gemini Omni Flash to developers: Our high quality, cost-efficient model for video generation and conversational editing, now available in Google AI Studio, the Gemini API and Gemini Enterprise Agent Platform for the first time. Omni Flash is also available in the Gemini app and Google Flow.Building with generative media is often about creative iteration. With these two models, developers can build comprehensive, end-to-end multimedia experiences that connect rapid image generation with video creat...
+
 #### Introducing Gemini Omni
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/
 - Insight: Last year, Nano Banana brought Gemini's intelligence to image generation and editing. Since then, it’s helped millions of people restore old photos, design from sketches and visualize ideas in ways that weren’t possible before. From the start we built Gemini to be natively multimodal from the ground up, and now we’re taking the next step.We’re introducing Gemini Omni, where Gemini’s ability to reason meets the ability to create. Omni is our new model that can create anything from any input — starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.Today, we’re rolling out the first model in the Omni family: Gemini Omni Flash, to the Gemini app, Google Flow and YouTube Shorts. In time we will support output modalities like image and audio. Here’s some of what makes Omni special:Edit your videos through conversationGemini Omni...
@@ -4576,6 +4644,10 @@ Scraped from:
 - URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-features-for-businesses/
 - Insight: Small businesses are the true engine of the global economy, yet entrepreneurs often find themselves stretched thin, playing the roles of CEO, CMO and customer service team all before lunch. AI holds incredible promise to act as an extension of your team, but to be truly helpful, it needs to remember your brand voice and context so you don't have to re-explain your goals every time you log in.Building on the new Google AI capabilities we announced in May, we’re excited to share what’s next for Gemini and Google Business Profile users. Today on stage at Google for Brazil, we introduced new Gemini app features specifically designed for business owners everywhere.Rolling out globally this month, these updates transform Gemini into a deeply knowledgeable, in-pocket partner that natively understands your business and helps you get more done.Connect your Google Business Profile to GeminiYour Google Business Profile serves as your digital storefront, helping you stand out on Google Search and ...
 
+#### Gemini Spark updates: macOS launch, connected apps and more
+- URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-june-2026/
+- Insight: Today, we’re rolling out updates to Gemini Spark that make it even more helpful, from a new desktop experience to deeper connections with your favorite apps. Here’s a look at what’s new:Bring Gemini Spark to your MacWe’re bringing Spark to the Gemini macOS app to help you automate time-consuming tasks across your desktop.Gemini Spark can now move beyond the chat window, and tackle the heavy lifting across your desktop files and apps. For example, you can turn hours of manual file sorting into an instant action by asking Gemini Spark to sort all the PDFs in your Downloads into specific folders. Gemini Spark also connects your desktop and Google Workspace, so you can simply ask it to create a budget spreadsheet using the latest invoices saved to your computer, and create a schedule to update it regularly. To keep your information secure, Gemini Spark only has access to the files you give it permission to use.And coming soon, you’ll even be able to run tasks remotely. You can assign a mul...
+
 #### 5 ways to learn with study notebooks in the Gemini app
 - URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/
 - Insight: Studying can feel overwhelming, especially when you don't know where to start or what to focus on next. That’s why we’re introducing study notebooks in the Gemini app.Study notebooks are designed specifically for students. As a goal-oriented learning space, they generate personalized lessons based on your real-time strengths and knowledge gaps. Your progress is tracked through a custom dashboard based on an initial diagnostic quiz and then follow-up quiz performance. Here are five ways to learn with study notebooks in Gemini:1. Assess your knowledge gapsTo start, upload your syllabus, notes, reading materials or other class materials. Gemini will then generate a custom diagnostic quiz to establish an academic baseline. It actively pinpoints your unique strengths and weaknesses, so you know exactly which areas need attention, replacing guessing games with a tailored learning plan.2. Study with bite-sized lessons built just for youOnce your baseline knowledge is assessed, your study note...
@@ -4610,6 +4682,10 @@ Scraped from:
 #### Ask an AI expert: What exactly is the full stack?
 - URL: https://blog.google/innovation-and-ai/technology/ai/full-stack-ai-explainer/
 - Insight: If you’ve spent any time lately reading about AI or using AI tools, you’ve probably heard about “full-stack” AI and app development. Our unique full-stack approach to AI lets us deliver powerful, cost-efficient products to expert developers and everyday users alike. But what exactly does it mean when a technology system is "full-stack”? We asked Google expert Richard Seroter, who leads developer experience at Google Cloud, to explain it — and why it enables Google to bring helpful AI to billions of people.First things first: What exactly do you do at Google?I originally came to Google as a product manager, and I’ve been leading our developer relations and technical writing teams for about three years now. My team, now inclusive of product engineering for languages and frameworks along with our Open Source Programs Office, and I help software developers successfully build with Google Cloud products. We do a lot of different things, from building the programming languages and frameworks ...
+
+#### The latest AI news we announced in June 2026
+- URL: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/
+- Insight: For more than 20 years, we’ve invested in machine learning and AI research, tools and infrastructure to build products that make everyday life better for more people. Teams across Google are working on ways to unlock AI’s benefits in fields as wide-ranging as healthcare, crisis response and education. To keep you posted on our progress, we're doing a regular roundup of Google's most recent AI news.Here’s a look back at some of our AI announcements from June.This month was about creating a more unified environment where AI delivers help naturally throughout your day. With the debut of Android 17 and local models like Gemma 4 12B running right on your laptop, our June updates reflect a vision where technology acts as an intuitive partner and helps you reach your goals. Whether you’re a small business owner trying to get your shop noticed, a student setting up a study schedule or a researcher tackling climate challenges, these updates handle the complex logistics so you can focus on what ...
 
 #### The latest AI news we announced in May 2026
 - URL: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/
