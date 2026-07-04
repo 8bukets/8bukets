@@ -27,6 +27,7 @@ import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 
 import { jules } from '@/antigravity/jules';
 import { sandboxCloudSimulation } from '@/antigravity/services/cloud_simulation';
+import { distributedConsensus } from '@/antigravity/services/distributed_consensus';
 
 async function main() {
   'use cache'
@@ -1917,6 +1918,14 @@ Use the default keyword to specify additional configurations that are applied to
   // 2. Synchronize collaboration context
   console.log('🐳 [Jules] Connecting to Docker...');
   await jules.syncCollaboration();
+
+  // 3. Phase 24: Initiate Distributed Consensus for collaboration
+  console.log('🤝 [Jules] Initiating Phase 24 Distributed Consensus...');
+  const proposal = await distributedConsensus.propose('Jules', 'INITIATE_MESH_COLLABORATION', {
+    target: 'Docker Swarm',
+    timestamp: new Date().toISOString()
+  });
+  await distributedConsensus.castVote(proposal.id, 'macbook-primary-01', true);
 
   // Phase 12: Trigger functional work after synchronization
   console.log('⚙️ [Jules] Processing pending collaboration tasks...');

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "prop_fz0ez9jm9",
+    "proposer": "Jules",
+    "goal": "INITIATE_MESH_COLLABORATION",
+    "payload": {
+      "target": "Docker Swarm",
+      "timestamp": "2026-07-04T11:25:54.916Z"
+    },
+    "votes": {
+      "Jules": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-04T11:25:54.916Z"
+  }
+]
