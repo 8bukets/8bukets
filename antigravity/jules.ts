@@ -293,13 +293,29 @@ export class Jules {
     const { getDockerStatus, isDockerHealthy } = await import('./services/docker')
     const containers = await getDockerStatus()
     const healthy = await isDockerHealthy()
-    const composeExists = fs.existsSync(path.join(process.cwd(), 'docker-compose.yml'))
+    const composePath = path.join(process.cwd(), 'docker-compose.yml')
+    const composeExists = fs.existsSync(composePath)
 
     let report = `Docker Sovereignty: Status=${healthy ? 'Healthy' : 'Degraded'}, Containers=${containers.length}, Compose=${composeExists ? 'Available' : 'Missing'}.`
 
     if (containers.length > 0) {
       const names = containers.map(c => c.name).join(', ')
       report += ` Active: ${names}.`
+
+      // Phase 22: Cross-verify running containers with docker-compose.yml definitions
+      if (composeExists) {
+        try {
+          const composeContent = fs.readFileSync(composePath, 'utf8')
+          const definedServices = containers.filter(c => composeContent.includes(`${c.name}:`))
+          if (definedServices.length === containers.length) {
+            report += ` Orchestration alignment verified.`
+          } else {
+            report += ` Warning: ${containers.length - definedServices.length} containers not defined in primary compose file.`
+          }
+        } catch (e) {
+          console.warn('⚠️ [Jules] Failed to read docker-compose.yml for alignment check.')
+        }
+      }
     }
 
     this.recordTask(report)
