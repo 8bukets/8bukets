@@ -20,9 +20,9 @@ async function main() {
   const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true');
 
   try {
-    // 1. Phase 23 Swarm Activation
-    console.log('📡 [AutonomousSync] Activating swarm heartbeat...');
-    swarmHeartbeat.start();
+    // 1. Phase 26 Sovereign Mesh Activation
+    console.log('📡 [AutonomousSync] Activating sovereign mesh connections...');
+    await cloudConnectedIntegrationService.establishSovereignMeshConnections();
 
     // 2. Proactive iCloud Sync Fix (if local)
     if (!isCloud) {

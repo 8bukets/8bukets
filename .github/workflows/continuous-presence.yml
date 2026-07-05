@@ -2,7 +2,7 @@ name: Continuous Autonomous Cloud Presence
 
 on:
   schedule:
-    - cron: '*/2 * * * *' # Every 5 minutes for rapid persistent connection
+    - cron: '*/30 * * * *' # Every 30 minutes for persistent cloud heartbeat
   workflow_dispatch: # Allows manual trigger
 
 permissions:

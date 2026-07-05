@@ -44,6 +44,7 @@ export const PresenceSchema = z.object({
   node_priority: z.number().optional(),
   is_leader: z.boolean().optional(),
   leadership_status: z.string().optional(),
+  sovereignty_mode: z.enum(['primary', 'subordinate', 'cloud-takeover', 'autonomous-sovereign']).optional(),
   capabilities: z.array(z.string()).optional(),
   autonomous_mode: z.string().optional(),
   cloud_provider: z.string().optional(),
@@ -175,7 +176,8 @@ export class OnlinePresenceService {
         node_priority: nodePriority,
         is_leader: isLeader,
         leadership_status: (isCloud && isLeader) ? 'Autonomous Cloud Leadership' : (isLeader ? 'Primary Node Leadership' : 'Subordinate Node'),
-        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync', 'autonomous-evolution', 'cloud-takeover'],
+        sovereignty_mode: (isCloud && isLeader) ? 'cloud-takeover' : (isLeader ? 'primary' : 'subordinate'),
+        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync', 'autonomous-evolution', 'cloud-takeover', 'mesh-aware-routing'],
         autonomous_mode: process.env.AUTONOMOUS_MODE || 'standard',
         cloud_provider: cloudProvider,
         docker: {
