@@ -1,5 +1,5 @@
 {
-  "name": "sor8bukets",
+  "name": "sor-8bukets",
   "version": "1.0.0",
   "description": "Cloudflare Worker for sor8bukets",
   "main": "src/index.js",
