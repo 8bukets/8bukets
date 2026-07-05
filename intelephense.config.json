@@ -1,0 +1,5 @@
+{
+  "intelephense.files.associations": ["*.php"],
+  "intelephense.environment.phpVersion": "8.3.0",
+  "intelephense.files.maxSize": 1000000
+}
