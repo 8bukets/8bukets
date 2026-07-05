@@ -41,6 +41,7 @@ async function ingestAdsKnowledge() {
     'https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview'
   ];
   // Authorized syntactic adjustment to trigger clean commit
+  // full autonomus automatic workflow creation
 // connect with docker and collaborate
 // Agent - Logika ponašanja
 // Agent odlučuje:
