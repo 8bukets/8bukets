@@ -94,10 +94,14 @@ export async function syncToICloud() {
       '.vscode',
       'logs',
       'scratch',
-      '.env'
+      '.env',
+      '.npm',
+      '.cache',
+      'tmp',
+      '*.tmp'
     ]
 
-    const args = ['-av', ...excludes.map(e => `--exclude=${e}`), `${sourcePath}/`, `${targetPath}/`]
+    const args = ['-av', '--delete', ...excludes.map(e => `--exclude=${e}`), `${sourcePath}/`, `${targetPath}/`]
 
     console.log(`☁️ [iCloud Sync] Executing: rsync ${args.join(' ')}`)
 
