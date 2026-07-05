@@ -636,6 +636,13 @@ public async observeKnowledge(url?: string) {
   public async executeWorkCycle(parentOrderId?: string) {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
+    // Phase 26: Universal Mesh Routing (UMR) Activation
+    const { universalMeshRoutingService } = await import('./services/universal_mesh_routing');
+    const bestRoute = universalMeshRoutingService.getBestRoute();
+    if (bestRoute) {
+      console.log(`📡 [Jules] Phase 26: Optimized routing via ${bestRoute.targetNodeId} (Resonance: ${bestRoute.resonance})`);
+    }
+
     // Phase 23 Cloud-Native Pulse & Engine Evolution
     const { cloudConnectedIntegrationService } = await import('./services/cloud_connected_integration')
     await cloudConnectedIntegrationService.executePhase23Pulse()
