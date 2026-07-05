@@ -24,15 +24,14 @@ const execAsync = promisify(exec);
  */
 async function main() {
   const pulseId = `pulse_${Math.random().toString(36).substring(2, 11)}`;
-  console.log(`🚀 [Phase 23] Starting Unified Autonomous Creation Cycle (Pulse: ${pulseId})...`);
-  logAutonomousAction(`🚀 [Phase 23] Initiating full autonomous creation cycle: ${pulseId}`, 'info');
+  logAutonomousAction(`🚀 [Phase 23] Starting Unified Autonomous Creation Cycle (Pulse: ${pulseId})...`, 'info');
 
   try {
     // Establishing early presence
     await onlinePresence.syncPresence();
 
     // 1. Activate Phase 23 Protocols (Cloud-Native Pulse)
-    console.log('📡 [Protocols] Activating Phase 23 Cloud-Native Pulse and Swarm Heartbeat...');
+    logAutonomousAction('📡 [Protocols] Activating Phase 23 Cloud-Native Pulse and Swarm Heartbeat...', 'info');
     swarmHeartbeat.start();
     await cloudConnectedIntegrationService.executePhase23Pulse();
     await crossShardMemory.syncMemory();
@@ -42,84 +41,82 @@ async function main() {
     await zkpTrust.verifyProof(zkpTrust.getIdentity(), proof);
 
     // 2. Online Presence & Leadership Sync
-    console.log('🌍 [Presence] Synchronizing online presence and establishing sovereignty...');
+    logAutonomousAction('🌍 [Presence] Synchronizing online presence and establishing sovereignty...', 'info');
     const presence = await onlinePresence.syncPresence();
     const isLeader = onlinePresence.isLeader();
-    console.log(`👤 [Presence] Node: ${presence?.environment}, Leader: ${isLeader}`);
+    logAutonomousAction(`👤 [Presence] Node: ${presence?.environment}, Leader: ${isLeader}`, 'info');
 
     // 3. Health & Sovereignty Audit
     const health = await healthCheck();
-    console.log(`🏥 [Health] MongoDB: ${health.mongodb}, Supabase: ${health.supabase}`);
+    logAutonomousAction(`🏥 [Health] MongoDB: ${health.mongodb}, Supabase: ${health.supabase}`, 'info');
 
     // 4. Cloud Takeover Audit (if applicable)
     if (process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
-      console.log('🌩️ [Cloud] Auditing for Cloud Takeover...');
+      logAutonomousAction('🌩️ [Cloud] Auditing for Cloud Takeover...', 'info');
       await cloudWorkflowAgent.enforceCloudTakeover();
     }
 
     // 5. State Convergence (Lattice Sync)
-    console.log('🔐 [Lattice] Encapsulating and syncing state via Quantum-Secure protocol...');
+    logAutonomousAction('🔐 [Lattice] Encapsulating and syncing state via Quantum-Secure protocol...', 'info');
     if (presence) {
       await latticeSync.encapsulateState(presence);
     }
 
     // 6. Collaborative Memory Sync
-    console.log('🤝 [Collaboration] Synchronizing Jules collaborative context...');
+    logAutonomousAction('🤝 [Collaboration] Synchronizing Jules collaborative context...', 'info');
     await jules.syncCollaboration();
 
     // 7. Phase 23-26: Strategic Consultation & Neural Mesh Consensus
-    console.log('👔 [Strategic] Initiating Chief AI Officer consultation...');
+    logAutonomousAction('👔 [Strategic] Initiating Chief AI Officer consultation...', 'info');
     await chiefAIOfficerAgent.executeStrategicConsultation();
 
-    console.log('🤝 [Consensus] Participating in Distributed Consensus (Phase 24)...');
+    logAutonomousAction('🤝 [Consensus] Participating in Distributed Consensus (Phase 24)...', 'info');
     const acceptedDirectives = distributedConsensus.getAcceptedDirectives();
-    console.log(`🤝 [Consensus] ${acceptedDirectives.length} strategic directives accepted via Neural Mesh.`);
+    logAutonomousAction(`🤝 [Consensus] ${acceptedDirectives.length} strategic directives accepted via Neural Mesh.`, 'info');
 
-    console.log('🌐 [Routing] Enforcing Universal Mesh Routing (Phase 26)...');
+    logAutonomousAction('🌐 [Routing] Enforcing Universal Mesh Routing (Phase 26)...', 'info');
     await universalMeshRouting.enforceMeshProtocol();
     await universalMeshRouting.optimizeRoutingPath('origin-node', 'target-cluster');
 
     // 8. Work Order Execution (Triggers Recursive CreationEngine)
-    console.log('🧹 [Cleanup] Purging stale pending work orders for a clean creation state...');
+    logAutonomousAction('🧹 [Cleanup] Purging stale pending work orders for a clean creation state...', 'info');
     await workOrderService.clearPendingOrders();
 
-    console.log('📝 [Orders] Creating root Phase 23 creation order...');
+    logAutonomousAction('📝 [Orders] Creating root Phase 23 creation order...', 'info');
     const rootOrder = await workOrderService.createOrder(
       'AUTONOMOUS_CREATION',
       'Execute Phase 23 Sovereign Swarm Creation Loop',
       { pulseId, timestamp: new Date().toISOString() }
     );
 
-    console.log('⚡ [Execution] Dispatching work order queue...');
+    logAutonomousAction('⚡ [Execution] Dispatching work order queue...', 'info');
     await workOrderService.executePendingOrders();
 
     // 9. High-Scale Engine Evolution (Phase 23)
-    console.log('🧬 [Recursive] Triggering Phase 23 High-Scale Engine Evolution...');
+    logAutonomousAction('🧬 [Recursive] Triggering Phase 23 High-Scale Engine Evolution...', 'info');
     await cloudConnectedIntegrationService.triggerEngineEvolution();
 
     // 10. Python Ecosystem Cycle Integration
-    console.log('🐍 [Ecosystem] Running Python Autonomous Engine...');
+    logAutonomousAction('🐍 [Ecosystem] Running Python Autonomous Engine...', 'info');
     try {
       const token = process.env.SYSTEM_AUTH_TOKEN || 'default_dev_token';
       const { stdout } = await execAsync(`python3 autonomous_engine.py --token ${token}`);
-      console.log(stdout);
+      logAutonomousAction(`🐍 [Ecosystem] Python engine output: ${stdout}`, 'info');
     } catch (e: any) {
-      console.warn(`⚠️ [Ecosystem] Python engine encountered an error: ${e.message}`);
+      logAutonomousAction(`⚠️ [Ecosystem] Python engine encountered an error: ${e.message}`, 'warning');
     }
 
     // 11. Reporting
-    console.log('📊 [Reporting] Generating creation pulse execution record...');
+    logAutonomousAction('📊 [Reporting] Generating creation pulse execution record...', 'info');
     const allOrders = workOrderService.getAllOrders();
     await creationReportingService.generateReport(pulseId, allOrders);
 
     // 12. Final Sync & Heartbeat Shutdown
     await onlinePresence.syncPresence();
     swarmHeartbeat.stop();
-    console.log(`🏆 [Phase 23] Autonomous Creation Cycle Complete (Pulse: ${pulseId}).`);
-    logAutonomousAction(`🏆 [Phase 23] Autonomous Creation Cycle Complete: ${pulseId}`, 'info');
+    logAutonomousAction(`🏆 [Phase 23] Autonomous Creation Cycle Complete (Pulse: ${pulseId}).`, 'info');
 
   } catch (error: any) {
-    console.error(`💥 [Phase 23] Fatal cycle error: ${error.message}`);
     logAutonomousAction(`💥 [Phase 23] Fatal cycle error: ${error.message}`, 'error');
     swarmHeartbeat.stop();
     process.exit(1);
@@ -127,6 +124,6 @@ async function main() {
 }
 
 main().catch(err => {
-  console.error('💥 [Phase 23] Unhandled orchestration error:', err);
+  logAutonomousAction(`💥 [Phase 23] Unhandled orchestration error: ${err.message}`, 'error');
   process.exit(1);
 });

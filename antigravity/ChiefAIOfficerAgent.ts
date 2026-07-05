@@ -19,11 +19,9 @@ export class ChiefAIOfficerAgent {
     try {
       // 1. Invoke Python-based Strategic Consultant
       const { stdout } = await execAsync('python3 scripts/run_caio_agent.py')
-      console.log(stdout)
+      logAutonomousAction(`👔 [CAIO] Strategic Consultant Output: ${stdout}`, 'info')
 
       // 2. Parse and propose strategic directives derived from consultation
-      // In a real scenario, the Python script would output JSON that we ingest.
-      // Here we simulate proposal of a Phase 23 directive if consultation was successful.
       if (stdout.includes('PHASE_23_DIRECTIVE_GENERATED')) {
          await distributedConsensus.propose('Enforce Phase 23 Cloud Sovereignty and Mesh-Aware Routing', 'ChiefAIOfficerAgent')
       }
