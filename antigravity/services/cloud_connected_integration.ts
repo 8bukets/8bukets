@@ -2,6 +2,8 @@ import { logAutonomousAction } from '../core'
 import { onlinePresence } from './presence'
 import { cloudConvergence } from './cloud_convergence'
 import { cloudWorkflowAgent } from './cloud_workflow'
+import { swarmHeartbeat } from './swarm_heartbeat'
+import { universalMeshRouting } from './universal_mesh_routing'
 
 /**
  * ANTIGRAVITY CLOUD-CONNECTED INTEGRATION SERVICE (Phase 23)
@@ -9,12 +11,38 @@ import { cloudWorkflowAgent } from './cloud_workflow'
  */
 export class CloudConnectedIntegrationService {
   /**
+   * ESTABLISH SOVEREIGN MESH CONNECTIONS (Phase 26)
+   * Activates mesh-aware routing and swarm heartbeats for high-scale evolution.
+   */
+  public async establishSovereignMeshConnections() {
+    logAutonomousAction('🌐 [CloudConnected] Establishing Sovereign Mesh Connections...', 'info')
+
+    try {
+      // 1. Activate Swarm Heartbeat
+      swarmHeartbeat.start()
+
+      // 2. Enforce Mesh-Aware Routing Protocol
+      await universalMeshRouting.enforceMeshProtocol()
+
+      // 3. Optimize primary routing path
+      await universalMeshRouting.optimizeRoutingPath('cloud-node', 'neural-mesh-hub')
+
+      logAutonomousAction('✅ [CloudConnected] Sovereign Mesh Connections established.', 'info')
+    } catch (error: any) {
+      logAutonomousAction(`❌ [CloudConnected] Mesh connection failed: ${error.message}`, 'error')
+    }
+  }
+
+  /**
    * Orchestrates the Phase 23 Cloud-Native Pulse.
    */
   public async executePhase23Pulse() {
     logAutonomousAction('🌐 [CloudConnected] Executing Phase 23 Cloud-Native Pulse...', 'info')
 
     try {
+      // 0. Establish Mesh Connections (Phase 26)
+      await this.establishSovereignMeshConnections()
+
       // 1. Synchronize Presence
       await onlinePresence.syncPresence()
 
@@ -71,7 +99,18 @@ export class CloudConnectedIntegrationService {
         await jules.autonomousPrAudit()
         await jules.observeKnowledge()
 
-        // 5. Execute pending work orders
+        // 5. Proactive Work Generation (Phase 23 Automatic Engine)
+        const pending = workOrderService.getPendingOrders()
+        if (pending.length === 0) {
+          logAutonomousAction('🤖 [CloudConnected] No pending orders detected. Generating proactive evolution order...', 'info')
+          await workOrderService.createOrder(
+            'AUTONOMOUS_CREATION',
+            'Proactive Phase 23 Evolution Cycle (Automatic)',
+            { reason: 'queue_empty', timestamp: new Date().toISOString() }
+          )
+        }
+
+        // 6. Execute pending work orders
         logAutonomousAction('⚡ [CloudConnected] Leader active. Dispatching pending work orders...', 'info')
         await workOrderService.executePendingOrders()
       } else {

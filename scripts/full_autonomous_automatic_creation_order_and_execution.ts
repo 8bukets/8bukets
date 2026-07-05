@@ -30,9 +30,9 @@ async function main() {
     // Establishing early presence
     await onlinePresence.syncPresence();
 
-    // 1. Activate Phase 23 Protocols (Cloud-Native Pulse)
-    logAutonomousAction('📡 [Protocols] Activating Phase 23 Cloud-Native Pulse and Swarm Heartbeat...', 'info');
-    swarmHeartbeat.start();
+    // 1. Activate Phase 26 Protocols (Mesh-Aware Pulse)
+    logAutonomousAction('📡 [Protocols] Activating Phase 26 Sovereign Mesh Connections...', 'info');
+    await cloudConnectedIntegrationService.establishSovereignMeshConnections();
     await cloudConnectedIntegrationService.executePhase23Pulse();
     await crossShardMemory.syncMemory();
 
