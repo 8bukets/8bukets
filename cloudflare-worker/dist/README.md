@@ -1,0 +1,1 @@
+This folder contains the built output assets for the worker "8bukets" generated at 2026-07-05T09:05:21.714Z.
