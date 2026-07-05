@@ -262,6 +262,7 @@ To dramatično mijenja percepciju kvalitete.
 * permissions,
 * UX.
 <!-- Authorized syntactic adjustment to trigger clean commit
+<!-- create agent Chief AI Officer -->
 <!-- Agent - Logika ponašanja -->
 <!-- Agent odlučuje: -->
 <!-- * što napraviti, -->
