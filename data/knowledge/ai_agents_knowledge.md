@@ -1,9 +1,9 @@
-**System Analysis:** 2026-07-05T01:30:51.454Z
+**System Analysis:** 2026-07-05T02:10:02.817Z
 
 # Intelephense Documentation
 
 > **Source:** https://github.com/bmewburn/intelephense-docs
-> **Analyzed At:** 2026-07-05T01:30:51.341Z
+> **Analyzed At:** 2026-07-05T02:10:02.810Z
 
 ## LICENSE
 Intelephense Licence
