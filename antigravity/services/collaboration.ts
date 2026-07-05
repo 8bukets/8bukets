@@ -415,6 +415,40 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   map.collaborationRecommendations = []
   map.resourceDependencies = []
   map.crossDomainSynergies = []
+  map.meshNodes = []
+
+  // Phase 24: Mesh-Aware Resource Discovery
+  const meshCapableResources = map.resourceInventory.filter((r: any) =>
+    ['Service', 'AI Agent', 'Automation Script', 'Enterprise Service'].includes(r.type)
+  )
+
+  for (const resource of meshCapableResources) {
+    if (!resource.path) continue
+    try {
+      const content = await fs.promises.readFile(path.join(process.cwd(), resource.path), 'utf8')
+      const isMeshAware = content.includes('distributed_consensus') ||
+                          content.includes('universal_mesh_routing') ||
+                          content.includes('swarm_heartbeat') ||
+                          content.includes('MESH_AWARE_ROUTING')
+
+      if (isMeshAware) {
+        map.meshNodes.push({
+          name: resource.name,
+          type: resource.type,
+          compliance: 'Phase 24 Mesh-Aware',
+          path: resource.path
+        })
+
+        // Add to synergies as a Mesh Node
+        map.synergies.push({
+          type: 'Mesh-Aware Integration',
+          resource: resource.name,
+          branches: branches.filter(b => b.changedFiles?.some((f: string) => f.includes(resource.path))).map(b => b.name),
+          intensity: 'High'
+        })
+      }
+    } catch (e) {}
+  }
 
   // Phase 12: Resource Dependency Tracking (Expanded Static Analysis)
   const trackableResources = map.resourceInventory.filter((r: any) => ['Service', 'UI Component', 'Automation Script', 'AI Agent', 'Core Configuration', 'Enterprise Service'].includes(r.type))
@@ -751,9 +785,33 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
     newEntries += `\n`
   }
 
+  // Phase 24: Collaborative Milestones (Higher-level grouping)
+  if (relationshipMap?.impactfulBranches && relationshipMap.impactfulBranches.length > 0) {
+    newEntries += `### 🏆 Collaborative Milestones\n`
+    newEntries += `*Major progress points achieved through cross-agent synergy.*\n\n`
+
+    // Group impactful branches by Category to represent "Milestones"
+    const milestones: Record<string, any[]> = {}
+    relationshipMap.impactfulBranches.slice(0, 20).forEach((b: any) => {
+      const cat = b.category?.toUpperCase() || 'GENERAL'
+      if (!milestones[cat]) milestones[cat] = []
+      milestones[cat].push(b)
+    })
+
+    Object.entries(milestones).forEach(([cat, brs]) => {
+      const avgScore = Math.floor(brs.reduce((acc, curr) => acc + (curr.score || 0), 0) / brs.length)
+      newEntries += `#### 🚩 Milestone: ${cat} (Aggregate Impact: ${avgScore})\n`
+      brs.slice(0, 5).forEach(b => {
+        newEntries += `- **${b.name}**: ${b.results}\n`
+      })
+      if (brs.length > 5) newEntries += `- _...and ${brs.length - 5} more related achievements._\n`
+      newEntries += `\n`
+    })
+  }
+
   // Phase 13: High-Impact Strategic Results (Refined)
   if (relationshipMap?.impactfulBranches && relationshipMap.impactfulBranches.length > 0) {
-    newEntries += `### 🏆 Top Impactful Strategic Results\n`
+    newEntries += `### 📊 Top Impactful Strategic Results\n`
     newEntries += `| Impact Score | Strategic Branch | Category | Key Result |\n`
     newEntries += `| :--- | :--- | :--- | :--- |\n`
     relationshipMap.impactfulBranches.slice(0, 15).forEach((b: any) => {

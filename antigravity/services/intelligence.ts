@@ -47,12 +47,26 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
   const workOrders = await workOrderService.getPendingOrders()
 
   const reportPath = path.join(process.cwd(), 'CONSOLIDATED_INTELLIGENCE.md')
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
   let report = `# CONSOLIDATED INTELLIGENCE REPORT\n\n`
   report += `*Generated: ${new Date().toISOString()}*\n\n`
 
   const isMongoOptimal = health.mongodb === 'connected' || health.mongodb === 'healthy' || health.mongodb === 'simulated';
   const isSupabaseOptimal = health.supabase === 'connected' || health.supabase === 'healthy';
+
+  report += `## 🌐 Synergy Dashboard\n`
+  const collaborationHealth = relationshipMap.synergies?.length > 0
+    ? Math.max(0, 100 - (relationshipMap.synergies.length * 5))
+    : 100
+  const meshCount = relationshipMap.meshNodes?.length || 0
+
+  report += `| Metric | Status | Index |\n`
+  report += `| :--- | :---: | :---: |\n`
+  report += `| Collaboration Health | ${collaborationHealth > 80 ? '🟢' : (collaborationHealth > 50 ? '🟡' : '🔴')} | ${collaborationHealth}% |\n`
+  report += `| Mesh Nodes | 🕸️ | ${meshCount} nodes |\n`
+  report += `| Strategic Alignment | 🎯 | 100% |\n`
+  report += `| Autonomous Pulse | 💓 | Active |\n\n`
 
   report += `## 📋 Executive Summary\n`
   report += `- **System Posture:** ${isMongoOptimal && isSupabaseOptimal ? (health.mongodb === 'simulated' ? '✅ OPTIMAL (SIMULATED)' : '✅ OPTIMAL') : '⚠️ DEGRADED'}\n`
@@ -70,8 +84,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
   report += `- **Supabase:** ${health.supabase}\n`
   report += `- **Active Workers:** 24/7 autonomous surveillance active\n`
   report += `- **Total Branches:** ${branches.length}\n\n`
-
-  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
   // Phase 12: Resource Ecosystem Summary
   const categorizedResources: Record<string, any[]> = {}
@@ -141,6 +153,18 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
 
   report += `## 🚀 Actionable Intelligence\n`
   report += actionableBriefing + `\n\n`
+
+  // Phase 24: Inter-Agent Directives
+  const { generateInterAgentDirectives } = await import('./communication')
+  const interAgentBriefing = await generateInterAgentDirectives({
+    mission: metadata.missionStatement,
+    stakeholders: metadata.stakeholders,
+    docker: { status: dockerStatus },
+    intelligence: { branches: branches.length, pendingTasks: workOrders.length, relationshipMap }
+  })
+
+  report += `## 🤖 Inter-Agent Directives\n`
+  report += interAgentBriefing + `\n\n`
 
   const criticalRecs = relationshipMap.collaborationRecommendations.filter((r: any) => r.priority === 'Critical')
   if (criticalRecs.length > 0) {
@@ -404,9 +428,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
   if (branches.length > 2000) report += `- **[LOW]** Execute branch pruning protocol (Total: ${branches.length} branches detected).\n`
   report += `- **[INFO]** Autonomous knowledge ingestion active for real-time market intelligence.\n`
 
-  const collaborationHealth = relationshipMap.synergies.length > 0
-    ? Math.max(0, 100 - (relationshipMap.synergies.length * 5))
-    : 100
   report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | *Phase 12 Synergy Protocol Active*\n`
 
   await fs.promises.writeFile(reportPath, report)

@@ -206,6 +206,18 @@ export async function generateActionableBriefing(state: any, directives: Directi
     })
   }
 
+  // Phase 24: Collaboration Roadmap
+  briefing += `\n### 🗺️ Collaboration Roadmap\n`
+  const roadmapItems = [
+    { cond: state.intelligence.branches > 2500, msg: "Phase 1: Project-wide branch pruning and consolidation." },
+    { cond: state.intelligence.relationshipMap.synergies?.length > 10, msg: "Phase 2: High-intensity resource conflict resolution sprint." },
+    { cond: state.intelligence.relationshipMap.meshNodes?.length > 0, msg: "Phase 3: Universal Mesh Routing (UMR) expansion across all agents." },
+    { cond: true, msg: "Phase 4: Multi-agent recursive self-improvement verification." }
+  ].filter(i => i.cond)
+  roadmapItems.forEach((item, idx) => {
+    briefing += `${idx + 1}. **${item.msg.split(':')[0]}**: ${item.msg.split(':')[1]}\n`
+  })
+
   // Phase 12: Prioritized Agent-to-Stakeholder Directives
   briefing += `\n### 🤖 Agent-to-Stakeholder Directives\n`
   const agentDirectives: { severity: number, label: string, msg: string }[] = []
@@ -429,4 +441,31 @@ export async function generateActionableBriefing(state: any, directives: Directi
   briefing += `\n---\n**Coordination Stability Index:** ${stabilityIndex}% | **Architectural Drift:** ${synergies.length > 10 ? '⚠️ High' : '✅ Low'} | **Ecosystem Health:** ${state.docker.status.toUpperCase()} | *Sentient Orchestration Active*\n`
 
   return briefing
+}
+
+/**
+ * Phase 24: Inter-Agent Directives
+ * Facilitates direct communication between autonomous agents based on system state.
+ */
+export async function generateInterAgentDirectives(state: any): Promise<string> {
+  let directives = `### 🤖 Inter-Agent Communication Matrix\n`
+  const meshNodes = state.intelligence.relationshipMap.meshNodes || []
+  const clusterCount = Object.keys(state.intelligence.relationshipMap.functionalClusters || {}).length
+
+  if (meshNodes.length > 0) {
+    directives += `- **Mesh Coordinator** (Jules) -> **Mesh Nodes**: "Broadcast heartbeat with resonance < 0.05ms to maintain Phase 26 compliance."\n`
+    directives += `- **LatticeSync** -> **Distributed Consensus**: "Prepare Dilithium signatures for atomic mesh state commits."\n`
+  }
+
+  if (clusterCount > 10) {
+    directives += `- **Orchestration Agent** -> **Worker Swarm**: "Density of ${clusterCount} clusters detected. Initiate cross-shard intent alignment."\n`
+  }
+
+  if (state.intelligence.branches > 2900) {
+     directives += `- **Cleanup Agent** -> **Git Provider**: "Project overhead critical (>2900 branches). Prepare bulk pruning proposal for CAIO review."\n`
+  }
+
+  directives += `- **Intelligence Agent** -> **All Agents**: "Ecosystem knowledge merged. Sync local memories with global matrix."\n`
+
+  return directives
 }
