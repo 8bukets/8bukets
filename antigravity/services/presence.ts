@@ -36,6 +36,10 @@ export const PresenceSchema = z.object({
     neural_stability: z.number(),
     lattice_secured: z.boolean()
   }).optional(),
+  phase25: z.object({
+    resonance_latency: z.number(),
+    singularity_readiness: z.number()
+  }).optional(),
   jenkins_status: z.string().optional(),
   node_priority: z.number().optional(),
   is_leader: z.boolean().optional(),
@@ -213,6 +217,10 @@ export class OnlinePresenceService {
           heartbeat_latency: heartbeatMetrics.latency,
           neural_stability: 0.99, // Phase 16 Target: > 0.98
           lattice_secured: true
+        },
+        phase25: {
+          resonance_latency: (heartbeatMetrics as any).resonance_latency,
+          singularity_readiness: (heartbeatMetrics as any).singularity_readiness
         }
       }
 

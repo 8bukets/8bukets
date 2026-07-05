@@ -9,6 +9,9 @@ import { logAutonomousAction, healthCheck } from '../antigravity/core';
 import { cloudWorkflowAgent } from '../antigravity/services/cloud_workflow';
 import { zkpTrust } from '../antigravity/services/zkp_trust';
 import { cloudConnectedIntegrationService } from '../antigravity/services/cloud_connected_integration';
+import { distributedConsensus } from '../antigravity/services/distributed_consensus';
+import { chiefAIOfficerAgent } from '../antigravity/ChiefAIOfficerAgent';
+import { universalMeshRouting } from '../antigravity/services/universal_mesh_routing';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
@@ -64,7 +67,19 @@ async function main() {
     console.log('🤝 [Collaboration] Synchronizing Jules collaborative context...');
     await jules.syncCollaboration();
 
-    // 7. Work Order Execution (Triggers Recursive CreationEngine)
+    // 7. Phase 23-26: Strategic Consultation & Neural Mesh Consensus
+    console.log('👔 [Strategic] Initiating Chief AI Officer consultation...');
+    await chiefAIOfficerAgent.executeStrategicConsultation();
+
+    console.log('🤝 [Consensus] Participating in Distributed Consensus (Phase 24)...');
+    const acceptedDirectives = distributedConsensus.getAcceptedDirectives();
+    console.log(`🤝 [Consensus] ${acceptedDirectives.length} strategic directives accepted via Neural Mesh.`);
+
+    console.log('🌐 [Routing] Enforcing Universal Mesh Routing (Phase 26)...');
+    await universalMeshRouting.enforceMeshProtocol();
+    await universalMeshRouting.optimizeRoutingPath('origin-node', 'target-cluster');
+
+    // 8. Work Order Execution (Triggers Recursive CreationEngine)
     console.log('🧹 [Cleanup] Purging stale pending work orders for a clean creation state...');
     await workOrderService.clearPendingOrders();
 
@@ -78,11 +93,11 @@ async function main() {
     console.log('⚡ [Execution] Dispatching work order queue...');
     await workOrderService.executePendingOrders();
 
-    // 8. High-Scale Engine Evolution (Phase 23)
+    // 9. High-Scale Engine Evolution (Phase 23)
     console.log('🧬 [Recursive] Triggering Phase 23 High-Scale Engine Evolution...');
     await cloudConnectedIntegrationService.triggerEngineEvolution();
 
-    // 9. Python Ecosystem Cycle Integration
+    // 10. Python Ecosystem Cycle Integration
     console.log('🐍 [Ecosystem] Running Python Autonomous Engine...');
     try {
       const token = process.env.SYSTEM_AUTH_TOKEN || 'default_dev_token';
@@ -92,12 +107,12 @@ async function main() {
       console.warn(`⚠️ [Ecosystem] Python engine encountered an error: ${e.message}`);
     }
 
-    // 10. Reporting
+    // 11. Reporting
     console.log('📊 [Reporting] Generating creation pulse execution record...');
     const allOrders = workOrderService.getAllOrders();
     await creationReportingService.generateReport(pulseId, allOrders);
 
-    // 11. Final Sync & Heartbeat Shutdown
+    // 12. Final Sync & Heartbeat Shutdown
     await onlinePresence.syncPresence();
     swarmHeartbeat.stop();
     console.log(`🏆 [Phase 23] Autonomous Creation Cycle Complete (Pulse: ${pulseId}).`);

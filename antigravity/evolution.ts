@@ -137,6 +137,42 @@ export async function evolve() {
             suggestion: 'PHASE_19_ADAPTIVE_LATENCY_VIOLATION: High-stability nodes must target <1ms latency (Rule 30).'
           })
         }
+
+        // Rule 31: Phase 23 Cloud Sovereignty Compliance
+        if (fullPath.includes('jules.ts') && !content.includes('executePhase23Pulse()')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'PHASE_23_PULSE_MISSING: Jules must execute Phase 23 Pulse (Rule 31).'
+          })
+        }
+
+        // Rule 33: Phase 24 Neural Mesh Compliance
+        if (fullPath.includes('jules.ts') && !content.includes('distributedConsensus')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'PHASE_24_MESH_MISSING: Jules must implement Distributed Consensus (Rule 33).'
+          })
+        }
+
+        // Rule 34 & 35: Phase 25 Singularity & Resonance Compliance
+        if (fullPath.includes('presence.ts') && (!content.includes('singularity_readiness') || !content.includes('resonance_latency'))) {
+           suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'PHASE_25_METRICS_MISSING: Presence must include Singularity Readiness and Resonance Latency (Rules 34 & 35).'
+          })
+        }
+
+        // Rule 36: Phase 26 Universal Mesh Routing Compliance
+        if (fullPath.includes('jules.ts') && !content.includes('universalMeshRouting')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'PHASE_26_UMR_MISSING: Jules must implement Universal Mesh Routing (Rule 36).'
+          })
+        }
       }
     }
   }
@@ -256,6 +292,24 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
        if (!content.includes('PHASE 19 COMPLIANCE')) {
           logAutonomousAction(` - Fixing ${s.file}: Injecting Phase 19 Compliance Header (Rule 30)`, 'info')
           const header = "/** PHASE 19 COMPLIANCE: ADAPTIVE_LATENCY_PROTOCOL | SOVEREIGN_SWARM_NODE */\n"
+          if (content.startsWith('#!')) {
+             const lines = content.split('\n')
+             lines.splice(1, 0, header)
+             content = lines.join('\n')
+          } else {
+             content = header + content
+          }
+          fs.writeFileSync(fullPath, content)
+       }
+    }
+
+    // Phase 23-26 Fix: Inject Compliance Headers (Rules 31-36)
+    if (s.suggestion.includes('PHASE_23') || s.suggestion.includes('PHASE_24') || s.suggestion.includes('PHASE_25') || s.suggestion.includes('PHASE_26')) {
+       const phaseMatch = s.suggestion.match(/PHASE_(\d+)/);
+       const phase = phaseMatch ? phaseMatch[1] : '23';
+       const header = `/** PHASE ${phase} COMPLIANCE: SOVEREIGN_SWARM | NEURAL_MESH | SINGULARITY_READY */\n`
+       if (!content.includes(`PHASE ${phase} COMPLIANCE`)) {
+          logAutonomousAction(` - Fixing ${s.file}: Injecting Phase ${phase} Compliance Header`, 'info')
           if (content.startsWith('#!')) {
              const lines = content.split('\n')
              lines.splice(1, 0, header)
