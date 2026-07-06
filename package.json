@@ -24,7 +24,7 @@
     "ingest:terraform": "tsx --env-file=.env scripts/ingest_terraform_knowledge.ts",
     "ingest:companylink": "tsx --env-file=.env scripts/ingest_companylink_knowledge.ts",
     "ingest:onlinereview": "tsx --env-file=.env scripts/ingest_onlinereview_knowledge.ts",
-    "ingest:intelephense": "tsx --env-file=.env scripts/consolidate_intelephense.ts",
+    "ingest:intelephense": "npx tsx --env-file=.env scripts/consolidate_intelephense.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'",
     "validate:license": "tsx --env-file=.env scripts/validate_license.ts",
