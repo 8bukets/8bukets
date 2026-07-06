@@ -109,7 +109,7 @@ Here are some tips to get started working with the .gitlab-ci.yml file.
 
 For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.
 
-Use the pipeline editor to edit your .gitlab-ci.yml file.
+ Use the pipeline editor to edit your .gitlab-ci.yml file.
 Each job contains a script section and belongs to a stage:
 stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.
 Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.
