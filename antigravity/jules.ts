@@ -461,9 +461,25 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
+    const { onlinePresence } = await import('./services/presence')
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+
     // Phase 23: Cloud-Native Pulse & High-Scale Engine Evolution
     try {
       const { cloudConnectedIntegrationService } = await import('./services/cloud_connected_integration')
+
+      // Ensure presence is synced before determining leadership
+      await onlinePresence.syncPresence()
+      const isLeader = onlinePresence.isLeader()
+
+      // If we are in the cloud and are the leader, the CloudConnectedIntegrationService handles the main cycle
+      if (isCloud && isLeader) {
+        logAutonomousAction('🌩️ [Jules] Cloud Sovereignty active. Delegating work cycle to CloudConnectedIntegrationService.', 'info')
+        await cloudConnectedIntegrationService.executePhase23Pulse()
+        this.recordTask('Phase 23 Pulse: Cloud Sovereign Work cycle completed.')
+        return // The CloudConnectedIntegrationService already triggered evolution and work
+      }
+
       await cloudConnectedIntegrationService.executePhase23Pulse()
       await cloudConnectedIntegrationService.triggerEngineEvolution()
       this.recordTask('Phase 23 Pulse: Full Online posture enforced and engine evolution triggered.')
