@@ -61,9 +61,12 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
     : 100
   const meshCount = relationshipMap.meshNodes?.length || 0
 
+  const meshReadiness = relationshipMap.meshReadiness || { score: 0, status: 'Unknown', connectivityIndex: '0', synergyDensity: '0' }
+
   report += `| Metric | Status | Index |\n`
   report += `| :--- | :---: | :---: |\n`
   report += `| Collaboration Health | ${collaborationHealth > 80 ? '🟢' : (collaborationHealth > 50 ? '🟡' : '🔴')} | ${collaborationHealth}% |\n`
+  report += `| Mesh Readiness | ${meshReadiness.score > 80 ? '🟢' : (meshReadiness.score > 50 ? '🟡' : '🔴')} | ${meshReadiness.score}% (${meshReadiness.status}) |\n`
   report += `| Mesh Nodes | 🕸️ | ${meshCount} nodes |\n`
   report += `| Strategic Alignment | 🎯 | 100% |\n`
   report += `| Autonomous Pulse | 💓 | Active |\n\n`
@@ -155,7 +158,19 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
   report += actionableBriefing + `\n\n`
 
   // Phase 24: Inter-Agent Directives
-  const { generateInterAgentDirectives } = await import('./communication')
+  const { generateInterAgentDirectives, generateNeuralMeshDirectives } = await import('./communication')
+
+  const meshDirectives = await generateNeuralMeshDirectives({
+    mission: metadata.missionStatement,
+    stakeholders: metadata.stakeholders,
+    docker: { status: dockerStatus },
+    intelligence: { branches: branches.length, pendingTasks: workOrders.length, relationshipMap },
+    caioDirectives
+  })
+
+  report += `## 🕸️ Neural Mesh Protocols\n`
+  report += meshDirectives + `\n\n`
+
   const interAgentBriefing = await generateInterAgentDirectives({
     mission: metadata.missionStatement,
     stakeholders: metadata.stakeholders,
