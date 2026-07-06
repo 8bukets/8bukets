@@ -83,7 +83,12 @@ async function main() {
         innovation.forEach((art: any) => {
             if (art.title && art.title.length > 1) {
                 mdContent += `- **[${art.title}](${art.url})**\n`;
-                if (art.snippet) mdContent += `  * ${art.snippet}\n`;
+                const summary = art.snippet || art.content;
+                if (summary) {
+                    // Truncate summary if too long for the list
+                    const truncated = summary.length > 300 ? summary.substring(0, 300) + '...' : summary;
+                    mdContent += `  * ${truncated}\n`;
+                }
             }
         });
         mdContent += `\n`;
