@@ -204,10 +204,11 @@ export class KnowledgeObserver {
           // Simple heuristic: allow generics like <T>, <TKey, TValue>, <string, int> and mathematical comparisons like < 20ms
           let contentLine = inCodeBlock ? line : line.trim();
           if (!inCodeBlock) {
-            // Strip tags but preserve common PHP/TypeScript generics and comparisons.
+            // Strip HTML-like tags but preserve common PHP/TypeScript generics, comparisons, and PHP tags.
             // We explicitly exclude sequences starting with space, numbers, backticks, or common generic/type patterns.
             // We also preserve a standalone '<' if it's at the end of a line or followed by space.
-            contentLine = contentLine.replace(/<(?!\s|$|[0-9]|<=|>=|`)(?!\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|K|V|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false|ElementType|TKey|TValue|TObject|TStart|TResume|TReturn|TSuspend|TDate|TEnd))[^>]*>?/gim, '');
+            // ADDED: Preservation for '<?php' and sequences like '<-' often used in comments.
+            contentLine = contentLine.replace(/<(?!(\s|$|[0-9]|<=|>=|`|\?php|-))(?!\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|K|V|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false|ElementType|TKey|TValue|TObject|TStart|TResume|TReturn|TSuspend|TDate|TEnd))[^>]*>?/gim, '');
           }
 
           if (contentLine || inCodeBlock) {
