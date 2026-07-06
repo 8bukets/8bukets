@@ -664,7 +664,10 @@ public async observeKnowledge(url?: string) {
     await cloudConnectedIntegrationService.executePhase23Pulse()
     await cloudConnectedIntegrationService.triggerEngineEvolution()
 
+    console.log('📥 [Jules] PHASE: pluu (Git Pull Rebase)')
     await this.gitPull()
+
+    console.log('🧠 [Jules] PHASE: work (Cognitive Tasks & Improvements)')
     const { explore } = await import('./explorer')
     await explore()
     await this.selfRepair()
@@ -793,9 +796,11 @@ public async observeKnowledge(url?: string) {
     // Phase 23: Autonomous Merge feature branches after successful cycle
     await this.autonomousMerge()
 
+    console.log('☁️ [Jules] PHASE: sync (iCloud Synchronization)')
     const { syncToICloud } = await import('./services/icloud')
     await syncToICloud()
 
+    console.log('🚀 [Jules] PHASE: upload (Git Push)')
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
