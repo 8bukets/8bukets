@@ -59,8 +59,10 @@ async function main() {
     const isLeader = onlinePresence.isLeader();
 
     if (isLeader || !isCloud) {
+       // CloudConnectedIntegrationService handles sovereign work (Pull, Merge, Work, Push)
        await cloudConnectedIntegrationService.executeCloudSovereignWork();
-       // executeWorkCycle already performs Phase 23 Pulse and Engine Evolution
+
+       // jules.executeWorkCycle will now delegate or complement based on leadership status
        await jules.executeWorkCycle();
     } else {
        console.log('📡 [AutonomousSync] Node is subordinate. Skipping work cycle to avoid conflicts.');
