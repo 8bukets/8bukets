@@ -1,6 +1,6 @@
 {
-  "name": "sor-8bukets",
-  "main": "src/index.js",
+  "name": "8bukets",
+  "main": "index.js",
   "devDependencies": {
     "wrangler": "^3.60.0"
   }
