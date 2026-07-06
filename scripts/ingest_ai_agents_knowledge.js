@@ -18,79 +18,43 @@ async function scrapeAiAgentsKnowledge() {
     };
 
     const targetDir = "data/knowledge";
-    if (!fs.existsSync(targetDir)) {
-        fs.mkdirSync(targetDir, { recursive: true });
-    }
+    if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir, { recursive: true });
 
-    // 1. Update ai_agents_knowledge.json
     const jsonPath = path.join(targetDir, "ai_agents_knowledge.json");
     let existingJson = {};
     if (fs.existsSync(jsonPath)) {
-        try {
-            existingJson = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-        } catch (e) {}
+        try { existingJson = JSON.parse(fs.readFileSync(jsonPath, 'utf8')); } catch (e) {}
     }
     const mergedJson = { ...existingJson, ...structuredData };
     fs.writeFileSync(jsonPath, JSON.stringify(mergedJson, null, 4), 'utf8');
 
-    // 2. Update ai_agents_knowledge.md
     const mdPath = path.join(targetDir, "ai_agents_knowledge.md");
-    let mdContent = "";
-    if (fs.existsSync(mdPath)) {
-        mdContent = fs.readFileSync(mdPath, 'utf8');
-    }
-
-    const sectionsToAdd = [];
+    let mdContent = fs.existsSync(mdPath) ? fs.readFileSync(mdPath, 'utf8') : "";
+    let sectionsToAdd = "";
     for (const key in structuredData) {
-        const title = structuredData[key].title;
-        const content = structuredData[key].content.replace(/\\n/g, '\n');
-        if (!mdContent.includes("## " + title)) {
-            sectionsToAdd.push("## " + title + "\n\n" + content + "\n\n");
+        if (!mdContent.includes("## " + structuredData[key].title)) {
+            sectionsToAdd += "## " + structuredData[key].title + "\n\n" + structuredData[key].content.replace(/\\n/g, '\n') + "\n\n";
         }
     }
+    if (sectionsToAdd) fs.writeFileSync(mdPath, mdContent + "\n---\n\n" + sectionsToAdd, 'utf8');
 
-    if (sectionsToAdd.length > 0) {
-        mdContent += "\n---\n\n" + sectionsToAdd.join("");
-    }
-    fs.writeFileSync(mdPath, mdContent, 'utf8');
-
-    // 3. Integrate into system_knowledge.json
     const systemKnowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json');
     if (fs.existsSync(systemKnowledgePath)) {
         try {
             const systemKnowledge = JSON.parse(fs.readFileSync(systemKnowledgePath, 'utf8'));
-
-            // Structured entry
-            if (!systemKnowledge.ai_agents_structured) {
-                systemKnowledge.ai_agents_structured = [];
-            }
-            // Non-destructive update for system_knowledge.json too?
-            // Actually, for a single URL, we usually replace the whole entry for that URL with the latest "complete" view.
+            if (!systemKnowledge.ai_agents_structured) systemKnowledge.ai_agents_structured = [];
             systemKnowledge.ai_agents_structured = systemKnowledge.ai_agents_structured.filter(item => item.url !== URL);
-
-            const newEntry = {
+            systemKnowledge.ai_agents_structured.push({
                 url: URL,
                 title: "What are AI agents? (Updated)",
                 sections: Object.keys(structuredData).map(key => ({
                     header: structuredData[key].title,
                     content: structuredData[key].content.split(/\\n|\n/)
                 }))
-            };
-            systemKnowledge.ai_agents_structured.push(newEntry);
-
-            // Add or update keys in the root for direct access if applicable
-            for (const key in structuredData) {
-                systemKnowledge[key] = structuredData[key];
-            }
-
+            });
+            for (const key in structuredData) systemKnowledge[key] = structuredData[key];
             fs.writeFileSync(systemKnowledgePath, JSON.stringify(systemKnowledge, null, 2), 'utf8');
-            console.log("Integrated into system_knowledge.json");
-        } catch (e) {
-            console.error("Failed to update system_knowledge.json", e);
-        }
+        } catch (e) { console.error(e); }
     }
-
-    console.log("Updated knowledge files successfully.");
 }
-
 scrapeAiAgentsKnowledge();
