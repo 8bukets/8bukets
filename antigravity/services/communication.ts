@@ -444,6 +444,39 @@ export async function generateActionableBriefing(state: any, directives: Directi
 }
 
 /**
+ * Phase 24: Neural Mesh Directives (Granular)
+ * Provides specific collaboration instructions between specialized agent roles.
+ */
+export async function generateNeuralMeshDirectives(state: any): Promise<string> {
+  let directives = `### 🕸️ Neural Mesh Communication Protocols\n`
+  const relationshipMap = state.intelligence.relationshipMap;
+  const criticalSynergies = relationshipMap.synergies?.filter((s: any) => s.intensity === 'High') || [];
+
+  // 1. Coder <-> Reviewer Synergy
+  const devContention = relationshipMap.collaborationRecommendations?.filter((r: any) => r.priority === 'Critical' && r.action.includes('Consolidate')) || [];
+  if (devContention.length > 0) {
+    directives += `- **Coder Agent** -> **Reviewer Agent**: "High developmental contention detected on resources: ${devContention.map((c: any) => `\`${c.resource}\``).join(', ')}. Prioritize atomic review of involved branches to accelerate convergence."\n`
+  }
+
+  // 2. CAIO <-> All Agents (Strategic Alignment)
+  if (state.caioDirectives?.strategic_directives) {
+    directives += `- **CAIO** -> **Agent Swarm**: "Strategic priority shift: ${state.caioDirectives.strategic_directives[0]}. Re-align all autonomous intent weights immediately."\n`
+  }
+
+  // 3. Ops <-> Coder (Infrastructure awareness)
+  if (state.docker.status !== 'optimal' && state.docker.status !== 'simulated') {
+    directives += `- **Ops Agent** -> **Coder Agent**: "Infrastructure degradation detected. Suspend resource-intensive autonomous creation and focus on failover-compatible optimizations."\n`
+  }
+
+  // 4. Intelligence <-> Architect (Knowledge integration)
+  if (relationshipMap.impactfulBranches?.length > 10) {
+     directives += `- **Intelligence Agent** -> **Architect Agent**: "Ecosystem results are scaling rapidly (${relationshipMap.impactfulBranches.length} high-impact branches). Prepare architectural blueprints for multi-cloud sovereign expansion."\n`
+  }
+
+  return directives;
+}
+
+/**
  * Phase 24: Inter-Agent Directives
  * Facilitates direct communication between autonomous agents based on system state.
  */

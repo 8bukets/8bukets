@@ -623,6 +623,21 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     })
   })
 
+  // Phase 24: Mesh Readiness Audit
+  const totalServices = map.resourceInventory.filter((r: any) => ['Service', 'AI Agent', 'Enterprise Service'].includes(r.type)).length
+  const meshNodesCount = map.meshNodes?.length || 0
+  const connectivityIndex = totalServices > 0 ? (meshNodesCount / totalServices) * 100 : 100
+  const synergyDensity = branches.length > 0 ? (map.synergies.length / branches.length) * 100 : 0
+
+  map.meshReadiness = {
+    score: Math.min(100, Math.floor((connectivityIndex * 0.6) + (synergyDensity * 0.4))),
+    connectivityIndex: connectivityIndex.toFixed(2),
+    synergyDensity: synergyDensity.toFixed(2),
+    meshNodes: meshNodesCount,
+    totalServices,
+    status: connectivityIndex > 80 ? 'Optimal' : (connectivityIndex > 50 ? 'Developing' : 'Fragmented')
+  }
+
   return map
 }
 
