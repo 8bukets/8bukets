@@ -65,6 +65,7 @@ const execAsync = promisify(exec)
  */
 
 async function main() {
+  'use cache'
   // full autonomous automatic creation order and execution
   console.log('🌌 [Antigravity] Initiating Phase 26 Infinite Cognitive Expansion Pulse...')
 
