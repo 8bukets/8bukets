@@ -209,9 +209,20 @@ export class KnowledgeObserver {
             // We also preserve a standalone '<' if it's at the end of a line or followed by space.
             // ADDED: Preservation for '<?php' and sequences like '<-' often used in comments.
             contentLine = contentLine.replace(/<(?!(\s|$|[0-9]|<=|>=|`|\?php|-))(?!\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|K|V|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false|ElementType|TKey|TValue|TObject|TStart|TResume|TReturn|TSuspend|TDate|TEnd))[^>]*>?/gim, '');
+
+            // Post-processing: Remove image-related noise and common web artifacts
+            const artifacts = [
+              /A screen capture showing how to enter your intelephense licence key into VSCode\./gi,
+              /Entering a licence key via the VS Code command palette/gi,
+              /A screen capture showing how to enter your license key\./gi,
+              /\[?PREMIUM\]?\(https:\/\/intelephense\.com\)/gi
+            ];
+            artifacts.forEach(pattern => {
+              contentLine = contentLine.replace(pattern, '').trim();
+            });
           }
 
-          if (contentLine || inCodeBlock) {
+          if ((contentLine && contentLine.trim().length > 0) || inCodeBlock) {
             currentSection.content += (currentSection.content ? '\n' : '') + contentLine;
           }
         }
