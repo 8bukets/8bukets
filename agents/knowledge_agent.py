@@ -82,18 +82,18 @@ class KnowledgeAgent(BaseAgent):
                         return line.split(":", 1)[1].strip() if ":" in line else line
                 return ""
 
-            how_they_work = knowledge_dict.get("how-do-ai-agents-work", {}).get("content", "")
+            how_they_work = knowledge_dict.get("how-ai-agents-work", {}).get("content", "")
 
             definitions = {
                 "ai_agent": knowledge_dict.get("what-is-an-ai-agent", {}).get("content", ""),
                 "features": knowledge_dict.get("key-features-of-an-ai-agent", {}).get("content", ""),
-                "differences": knowledge_dict.get("what-is-the-difference-between-ai-agents-ai-assistants-and-bots", {}).get("content", "") + "\n\n" + knowledge_dict.get("key-differences", {}).get("content", ""),
+                "differences": knowledge_dict.get("ai-agents-vs-assistants-vs-bots", {}).get("content", "") + "\n\n" + knowledge_dict.get("key-differences", {}).get("content", ""),
                 "interaction_types": knowledge_dict.get("based-on-interaction", {}).get("content", ""),
                 "agent_count_types": knowledge_dict.get("based-on-number-of-agents", {}).get("content", ""),
-                "types": knowledge_dict.get("what-are-the-types-of-agents-in-ai", {}).get("content", "") + "\n\n" + knowledge_dict.get("based-on-interaction", {}).get("content", "") + "\n\n" + knowledge_dict.get("based-on-number-of-agents", {}).get("content", ""),
-                "challenges": knowledge_dict.get("challenges-with-using-ai-agents", {}).get("content", ""),
+                "types": knowledge_dict.get("types-of-ai-agents", {}).get("content", "") + "\n\n" + knowledge_dict.get("based-on-interaction", {}).get("content", "") + "\n\n" + knowledge_dict.get("based-on-number-of-agents", {}).get("content", ""),
+                "challenges": knowledge_dict.get("challenges-of-ai-agents", {}).get("content", ""),
                 "jules_tools": knowledge_dict.get("jules-tools", {}).get("content", ""),
-                "deployment": knowledge_dict.get("deploy-ai-agents-for-scale-and-efficiency-with-cloud-run", {}).get("content", ""),
+                "deployment": knowledge_dict.get("deploying-ai-agents-cloud-run", {}).get("content", ""),
                 "how_they_work": how_they_work,
                 "persona_definition": extract_bullet(how_they_work, "Persona"),
                 "memory_definition": extract_bullet(how_they_work, "Memory"),
@@ -108,13 +108,13 @@ class KnowledgeAgent(BaseAgent):
                     "security": knowledge_dict.get("security-agents", {}).get("content", "")
                 },
                 "benefits": "\n\n".join([
-                    knowledge_dict.get("benefits-of-using-ai-agents", {}).get("content", ""),
+                    knowledge_dict.get("benefits-of-ai-agents", {}).get("content", ""),
                     knowledge_dict.get("efficiency-and-productivity", {}).get("content", ""),
                     knowledge_dict.get("improved-decision-making", {}).get("content", ""),
                     knowledge_dict.get("enhanced-capabilities", {}).get("content", ""),
                     knowledge_dict.get("social-interaction-and-simulation", {}).get("content", "")
                 ]),
-                "google_cloud_tools": knowledge_dict.get("google-cloud-and-ai-agents", {}).get("content", ""),
+                "google_cloud_tools": knowledge_dict.get("google-cloud-ai-agent-portfolio", {}).get("content", ""),
                 "react-agent-deployment-logic": knowledge_dict.get("react-agent-deployment-logic", {}).get("content", "")
             }
 
