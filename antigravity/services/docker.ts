@@ -35,6 +35,16 @@ export const DockerContainerSchema = z.object({
 
 export type DockerContainer = z.infer<typeof DockerContainerSchema>
 
+export const SwarmNodeSchema = z.object({
+  id: z.string(),
+  hostname: z.string(),
+  status: z.string(),
+  availability: z.string(),
+  managerStatus: z.string()
+})
+
+export type SwarmNode = z.infer<typeof SwarmNodeSchema>
+
 /**
  * ANTIGRAVITY DOCKER SERVICE
  * Autonomously monitors Docker container connectivity and status.
@@ -90,6 +100,29 @@ export async function isDockerHealthy(): Promise<boolean> {
     return true
   } catch (e) {
     return false
+  }
+}
+
+/**
+ * getSwarmStatus: Retrieves the status of Docker Swarm nodes.
+ */
+export async function getSwarmStatus(): Promise<SwarmNode[]> {
+  if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
+    return [
+      { id: 'sim-node-01', hostname: 'macbook-primary', status: 'Ready', availability: 'Active', managerStatus: 'Leader' }
+    ]
+  }
+
+  try {
+    const { stdout } = await execAsync('docker node ls --format "{{.ID}}|{{.Hostname}}|{{.Status}}|{{.Availability}}|{{.ManagerStatus}}"')
+    if (!stdout) return []
+
+    return stdout.trim().split('\n').map(line => {
+      const [id, hostname, status, availability, managerStatus] = line.split('|')
+      return { id, hostname, status, availability, managerStatus }
+    })
+  } catch (e) {
+    return []
   }
 }
 

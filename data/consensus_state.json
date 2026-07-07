@@ -187,5 +187,66 @@
     },
     "status": "accepted",
     "timestamp": "2026-07-07T10:34:53.408Z"
+  },
+  {
+    "id": "prop_9zcz4j98e",
+    "proposer": "Jules",
+    "goal": "INITIATE_MESH_COLLABORATION",
+    "payload": {
+      "target": "Docker Swarm",
+      "timestamp": "2026-07-07T21:23:44.748Z"
+    },
+    "votes": {
+      "Jules": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-07T21:23:44.748Z"
+  },
+  {
+    "id": "prop_m02787519",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-07T21:28:15.381Z",
+      "branchCount": 2979,
+      "strategicDomains": 6
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-07T21:28:15.381Z"
+  },
+  {
+    "id": "prop_yf0ik481s",
+    "proposer": "Jules",
+    "goal": "INITIATE_MESH_COLLABORATION",
+    "payload": {
+      "target": "Docker Swarm",
+      "timestamp": "2026-07-07T21:44:16.205Z"
+    },
+    "votes": {
+      "Jules": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-07T21:44:16.205Z"
+  },
+  {
+    "id": "prop_8me8tne7u",
+    "proposer": "Jules",
+    "goal": "INITIATE_MESH_COLLABORATION",
+    "payload": {
+      "target": "Docker Swarm",
+      "timestamp": "2026-07-07T21:47:07.856Z"
+    },
+    "votes": {
+      "Jules": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-07T21:47:07.856Z"
   }
 ]
