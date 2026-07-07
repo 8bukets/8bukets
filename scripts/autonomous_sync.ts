@@ -59,10 +59,7 @@ async function main() {
     const isLeader = onlinePresence.isLeader();
 
     if (isLeader || !isCloud) {
-       // CloudConnectedIntegrationService handles sovereign work (Pull, Merge, Work, Push)
-       await cloudConnectedIntegrationService.executeCloudSovereignWork();
-
-       // jules.executeWorkCycle will now delegate or complement based on leadership status
+       // jules.executeWorkCycle autonomously delegates to cloudConnectedIntegrationService if in cloud + leader mode
        await jules.executeWorkCycle();
     } else {
        console.log('📡 [AutonomousSync] Node is subordinate. Skipping work cycle to avoid conflicts.');

@@ -24,7 +24,13 @@ export class CloudConnectedIntegrationService {
       // 2. Enforce Mesh-Aware Routing Protocol
       await universalMeshRouting.enforceMeshProtocol()
 
-      // 3. Optimize primary routing path
+      // 3. Phase 26: Predictive Node Warmup
+      await universalMeshRouting.predictiveNodeWarmup()
+
+      // 4. Phase 26: Cross-Shard Neural Caching
+      await universalMeshRouting.crossShardNeuralCaching()
+
+      // 5. Optimize primary routing path
       await universalMeshRouting.optimizeRoutingPath('cloud-node', 'neural-mesh-hub')
 
       logAutonomousAction('✅ [CloudConnected] Sovereign Mesh Connections established.', 'info')
