@@ -2,7 +2,7 @@
 
 ## Market Landscape & Role Prevalence
 As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-suite for organizations prioritizing digital transformation.
-- **Adoption Rate:** Approximately 76% of firms have now appointed a CAIO or equivalent executive lead for AI, up from 26% in 2025 (IBM Institute for Business Value CEO Study).
+- **Adoption Rate:** Approximately 76% of firms have now appointed a CAIO or equivalent executive lead for AI, up from 60% in early 2025.
 - **Industry Focus:** Highest adoption rates are observed in Technology, Healthcare, Finance, and Manufacturing sectors.
 - **Strategic Intersection:** The role sits at the intersection of business strategy, technology/data architecture, risk/ethics, and cultural transformation.
 
@@ -45,8 +45,7 @@ To meet licensure-equivalent standards for executive roles, the following progra
 - **Stanford Online:** AI-Driven Leadership – Covers AI-driven decision making and business objectives.
 
 ## Salary Benchmarks (2026 Targets)
-- **National Median Base Salary:** ~$351,519
-- **75th Percentile:** $492,127
+- **National Median Base Salary:** ~$350,000+
 - **Total Compensation (Fortune 500):** $1.2M - $2.5M+ (including bonus and equity).
 - **Core Metric:** Performance is increasingly tied to "AI-Driven ROI" and "Governance Compliance Scores."
 
