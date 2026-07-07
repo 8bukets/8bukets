@@ -16,47 +16,47 @@
     ],
     "directives": [
         {
-            "id": "dir_it0t8z5my",
+            "id": "dir_8grzjhp8h",
             "priority": "Critical",
             "domain": "Security",
             "intent": "Rotate all Phase 12 neural sync keys",
             "status": "Active",
             "synergyScore": 95,
-            "timestamp": "2026-07-07T10:34:50.021Z"
+            "timestamp": "2026-07-07T10:29:14.851Z"
         },
         {
-            "id": "dir_gwjcbhh4c",
+            "id": "dir_i6o4h4ist",
             "priority": "High",
             "domain": "AI Agents",
             "intent": "Implement Crystals-Kyber for CAIO Agent",
             "status": "Active",
             "synergyScore": 88,
-            "timestamp": "2026-07-07T10:34:50.021Z"
+            "timestamp": "2026-07-07T10:29:14.851Z"
         },
         {
-            "id": "dir_5hojizx9c",
+            "id": "dir_irh9m0l6m",
             "priority": "Medium",
             "domain": "Services",
             "intent": "Optimize MongoDB sharding for APAC nodes",
             "status": "Active",
             "synergyScore": 72,
-            "timestamp": "2026-07-07T10:34:50.021Z"
+            "timestamp": "2026-07-07T10:29:14.851Z"
         },
         {
-            "id": "dir_ty85dsrae",
+            "id": "dir_dir16bv97",
             "priority": "Low",
             "domain": "General",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-07-07T10:34:50.021Z"
+            "timestamp": "2026-07-07T10:29:14.851Z"
         },
         {
-            "id": "dir_laqvgbx93",
+            "id": "dir_xm07b2pdu",
             "priority": "Medium",
             "domain": "Documentation",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-07-07T10:34:50.021Z"
+            "timestamp": "2026-07-07T10:29:14.851Z"
         }
     ],
     "caioDirectives": {
@@ -78,7 +78,7 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1783420482551,
+        "timestamp": 1783420147449,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
@@ -22315,7 +22315,7 @@
                 {
                     "name": "origin/feature/autonomous-cloud-sovereignty-7704563431937959285",
                     "lastMessage": "feat: enable autonomous cloud work and sovereign presence",
-                    "lastSeen": "19 hours ago",
+                    "lastSeen": "18 hours ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.",
@@ -24856,7 +24856,7 @@
                 {
                     "name": "origin/feat/implement-ai-agents-knowledge-16793181359834219969",
                     "lastMessage": "Implement AI agent knowledge from Google Cloud and fix CI failures",
-                    "lastSeen": "66 minutes ago",
+                    "lastSeen": "60 minutes ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -28398,7 +28398,7 @@
                 {
                     "name": "origin",
                     "lastMessage": "Merge pull request #3055 from 8bukets/feat/implement-ai-agents-knowledge-16793181359834219969",
-                    "lastSeen": "42 minutes ago",
+                    "lastSeen": "36 minutes ago",
                     "category": "other",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -29036,7 +29036,7 @@
                 {
                     "name": "origin/fix/integrate-google-innovation-knowledge-11354074577279183633",
                     "lastMessage": "chore: integrate latest knowledge from Google Innovation & AI blog",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "fix",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -29784,7 +29784,7 @@
                 {
                     "name": "origin/jules/scraper-markposition-17752547678215960211",
                     "lastMessage": "Merge pull request #3055 from 8bukets/feat/implement-ai-agents-knowledge-16793181359834219969",
-                    "lastSeen": "42 minutes ago",
+                    "lastSeen": "36 minutes ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -33898,7 +33898,7 @@
                 {
                     "name": "origin/feat/integrate-google-innovation-ai-knowledge-v2-1038711777020334701",
                     "lastMessage": "feat: integrate knowledge from Google Innovation & AI blog",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -47032,7 +47032,7 @@
                 {
                     "name": "origin/insert-cooperate-docker-cloud-prompt-3713637821299726117",
                     "lastMessage": "Insert literal prompt text as HTML comment",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -54960,11 +54960,9 @@
                 }
             ],
             "meshReadiness": {
-                "score": 66,
+                "score": 39,
                 "connectivityIndex": "64.77",
                 "synergyDensity": "2.12",
-                "resonanceLatency": "0.045ms",
-                "singularityReadiness": "0.99995",
                 "meshNodes": 57,
                 "totalServices": 88,
                 "status": "Developing"
@@ -54974,7 +54972,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-07-07T10:34:49.998Z"
+            "timestamp": "2026-07-07T10:29:14.834Z"
         },
         "relayState": [
             {
@@ -54984,7 +54982,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-07-07T10:34:49.998Z",
+                "lastActivity": "2026-07-07T10:29:14.834Z",
                 "intensity": 0.85
             },
             {
@@ -54999,5 +54997,5 @@
             }
         ]
     },
-    "last_sync": "2026-07-07T10:34:53.298Z"
+    "last_sync": "2026-07-07T10:29:18.008Z"
 }
