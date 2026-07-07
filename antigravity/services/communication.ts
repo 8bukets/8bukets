@@ -294,6 +294,12 @@ export async function generateActionableBriefing(state: any, directives: Directi
     briefing += `- **[${ad.label}]** ${ad.msg}\n`
   })
 
+  // Phase 26: Cross-Domain Synergy Directives
+  const crossDomainDirectives = await generateCrossDomainDirectives(state)
+  if (crossDomainDirectives) {
+    briefing += `\n### 🔗 Cross-Domain Synergy Protocols\n${crossDomainDirectives}\n`
+  }
+
   // Mandatory Strategic Action Items
   briefing += `\n### 🚀 Strategic Action Items\n`
   const actionItems: string[] = []
@@ -444,6 +450,24 @@ export async function generateActionableBriefing(state: any, directives: Directi
 }
 
 /**
+ * Phase 26: Cross-Domain Synergy Directives
+ * Specifically targets synergies between different service types.
+ */
+export async function generateCrossDomainDirectives(state: any): Promise<string> {
+  let directives = ''
+  const crossDomain = state.intelligence.relationshipMap.crossDomainSynergies || []
+
+  if (crossDomain.length > 0) {
+    const highIntensity = crossDomain.filter((cd: any) => cd.intensity === 'High')
+    highIntensity.slice(0, 5).forEach((cd: any) => {
+      directives += `- **${cd.sourceType}** <-> **${cd.targetType}**: "Synergy detected between \`${cd.source}\` and \`${cd.target}\`. Ensure API contract compatibility and shared schema alignment."\n`
+    })
+  }
+
+  return directives
+}
+
+/**
  * Phase 24: Neural Mesh Directives (Granular)
  * Provides specific collaboration instructions between specialized agent roles.
  */
@@ -471,6 +495,17 @@ export async function generateNeuralMeshDirectives(state: any): Promise<string> 
   // 4. Intelligence <-> Architect (Knowledge integration)
   if (relationshipMap.impactfulBranches?.length > 10) {
      directives += `- **Intelligence Agent** -> **Architect Agent**: "Ecosystem results are scaling rapidly (${relationshipMap.impactfulBranches.length} high-impact branches). Prepare architectural blueprints for multi-cloud sovereign expansion."\n`
+  }
+
+  // 5. Security <-> Coder (Compliance)
+  const securityRisks = relationshipMap.functionalClusters?.security?.length || 0;
+  if (securityRisks > 5) {
+    directives += `- **Security Agent** -> **Coder Agent**: "Security cluster expansion detected. Enforce IP-header compliance and Dilithium signatures across all new artifacts."\n`
+  }
+
+  // 6. Architect -> Ops (Deployment)
+  if (relationshipMap.meshNodes?.length > 50) {
+    directives += `- **Architect Agent** -> **Ops Agent**: "Mesh density exceeds 50 nodes. Implement Phase 26 Universal Mesh Routing (UMR) and predictive node warmup."\n`
   }
 
   return directives;
