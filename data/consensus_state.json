@@ -139,5 +139,21 @@
     },
     "status": "accepted",
     "timestamp": "2026-07-06T08:57:24.674Z"
+  },
+  {
+    "id": "prop_amxnud23g",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-07T08:20:52.979Z",
+      "branchCount": 2966,
+      "strategicDomains": 6
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-07T08:20:52.979Z"
   }
 ]
