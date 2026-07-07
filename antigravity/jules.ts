@@ -290,13 +290,14 @@ export class Jules {
 
   public async auditDocker() {
     console.log('🐳 [Jules] Auditing Docker sovereignty...')
-    const { getDockerStatus, isDockerHealthy } = await import('./services/docker')
+    const { getDockerStatus, isDockerHealthy, getSwarmStatus } = await import('./services/docker')
     const containers = await getDockerStatus()
+    const swarmNodes = await getSwarmStatus()
     const healthy = await isDockerHealthy()
     const composePath = path.join(process.cwd(), 'docker-compose.yml')
     const composeExists = fs.existsSync(composePath)
 
-    let report = `Docker Sovereignty: Status=${healthy ? 'Healthy' : 'Degraded'}, Containers=${containers.length}, Compose=${composeExists ? 'Available' : 'Missing'}.`
+    let report = `Docker Sovereignty: Status=${healthy ? 'Healthy' : 'Degraded'}, Containers=${containers.length}, SwarmNodes=${swarmNodes.length}, Compose=${composeExists ? 'Available' : 'Missing'}.`
 
     if (containers.length > 0) {
       const names = containers.map(c => c.name).join(', ')
