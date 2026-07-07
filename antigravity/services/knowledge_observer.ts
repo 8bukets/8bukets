@@ -86,10 +86,27 @@ export class KnowledgeObserver {
 
     if (existingIndex !== -1) {
       const existingSection = existingData.typescript_sections[existingIndex];
-      const hasExistingContent = existingSection.sections && existingSection.sections.length > 0;
-      const hasNewContent = section.sections && section.sections.length > 0;
+      const existingSectionCount = (existingSection.sections || []).length;
+      const newSectionCount = (section.sections || []).length;
 
-      // GUARD: Do not overwrite populated sections with empty ones
+      const existingCharCount = JSON.stringify(existingSection).length;
+      const newCharCount = JSON.stringify(section).length;
+
+      // GUARD: Prevent documentation regression
+      // If the new version is significantly smaller in sections AND characters, skip it.
+      const isSignificantRegression =
+        (existingSectionCount - newSectionCount >= 5) &&
+        (newCharCount < existingCharCount * 0.5);
+
+      if (isSignificantRegression) {
+        console.warn(`⚠️ [Knowledge Observer] Regression Guard: Skipping update for "${newInsights.title}". New: ${newSectionCount} sections, Existing: ${existingSectionCount} sections.`);
+        return existingData;
+      }
+
+      // Existing guard for totally empty content
+      const hasExistingContent = existingSectionCount > 0;
+      const hasNewContent = newSectionCount > 0;
+
       if (hasExistingContent && !hasNewContent) {
         console.warn(`⚠️ [Knowledge Observer] Skipping overwrite for "${newInsights.title}" because new content is empty.`);
         return existingData;

@@ -17,8 +17,14 @@ async function run() {
   console.log('🚀 [Antigravity] Starting daily work cycle via Jules Agent...');
 
   try {
-    // executeWorkCycle handles pull, cognitive work, iCloud sync, and push/sync autonomously
+    // Phase 1: Explicit Pull (pluu)
+    console.log('📥 [Antigravity] Phase 1: pluu (Git Pull Rebase)...');
+    await jules.gitPull();
+
+    // Phase 2: Autonomous Work & Cloud Sync
+    // executeWorkCycle handles cognitive work, iCloud sync, and push/sync autonomously
     await jules.executeWorkCycle();
+
     console.log('🏆 [Antigravity] Daily work cycle complete.');
   } catch (err: any) {
     console.error('💥 [Antigravity] Daily work cycle failed critically:', err.message);

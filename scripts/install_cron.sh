@@ -23,6 +23,12 @@ if [ -z "$NPM_PATH" ]; then
   exit 1
 fi
 
+# Check if crontab binary is available
+if ! command -v crontab &> /dev/null; then
+    echo "❌ [Setup] 'crontab' binary not found. Please install cron (e.g., 'sudo apt install cron' on Debian/Ubuntu)."
+    exit 1
+fi
+
 # We need the full path to npm/node in cron usually, or at least a good PATH
 # But easier is to use cd $PROJECT_DIR && npm run daily if npm is in user's default cron path.
 # To be safe, we'll try to use the absolute path and set a basic PATH

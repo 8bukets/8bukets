@@ -103,10 +103,19 @@ export async function syncToICloud() {
 
     const args = ['-av', '--delete', ...excludes.map(e => `--exclude=${e}`), `${sourcePath}/`, `${targetPath}/`]
 
+    console.log(`☁️ [iCloud Sync] Source: ${sourcePath}/`)
+    console.log(`☁️ [iCloud Sync] Target: ${targetPath}/`)
     console.log(`☁️ [iCloud Sync] Executing: rsync ${args.join(' ')}`)
 
     // Use execFile to prevent shell injection and handle arguments safely
-    await execFileAsync('rsync', args)
+    try {
+      const { stdout, stderr } = await execFileAsync('rsync', args)
+      if (stderr) console.warn(`⚠️ [iCloud Sync] rsync stderr: ${stderr}`)
+    } catch (err: any) {
+      console.error(`❌ [iCloud Sync] rsync failed critically: ${err.message}`)
+      if (err.stderr) console.error(`❌ [iCloud Sync] rsync error details: ${err.stderr}`)
+      throw err
+    }
     const durationMs = Date.now() - startTime
     // Authorized syntactic adjustment to trigger clean commit
     // https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU

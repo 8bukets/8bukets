@@ -16,6 +16,9 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
   exit 0
 fi
 
+# Ensure LaunchAgents directory exists
+mkdir -p "$HOME/Library/LaunchAgents"
+
 # Create a temporary plist with the correct paths
 echo "📝 [Setup] Configuring $PLIST_NAME for user $USERNAME..."
 
