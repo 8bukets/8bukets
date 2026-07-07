@@ -1018,3 +1018,15 @@ Observing: Gathering information about the environment or situation through perc
 Planning: Developing a strategic plan to achieve goals is a key aspect of intelligent behavior. AI agents with planning capabilities can identify the necessary steps, evaluate potential actions, and choose the best course of action based on available information and desired outcomes.
 Collaborating: Working effectively with others, whether humans or other AI agents, to achieve a common goal is increasingly important in complex and dynamic environments.
 Self-refining: The capacity for self-improvement and adaptation is a hallmark of advanced AI systems. AI agents with self-refining capabilities can learn from experience, adjust their behavior based on feedback, and continuously enhance their performance and capabilities over time.
+
+---
+
+## Google Cloud and AI agents portfolio
+
+- Gemini Enterprise App: Secure platform to discover, create, run, and govern AI agents across an organization.
+- Gemini Enterprise agent platform: Create AI agents and apps using natural language or code, grounded in enterprise data.
+- Customer Experience Agent Studio (Dialogflow): Build hybrid conversational agents with deterministic and generative AI.
+- Agent Garden: Curated collection of pre-built agent samples, solutions, and frameworks.
+- Agent Development Kit (ADK): Open-source Python SDK to build multi-agent systems with orchestration and memory.
+- A2A Protocol: Open-source framework for building interoperable AI agents.
+- Cloud Run: Fully managed serverless platform for deploying containerized agents.
