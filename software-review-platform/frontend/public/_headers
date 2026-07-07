@@ -1,0 +1,2 @@
+/* headers and redirects for Netlify */
+/* failure to find these files is common in CI if not provided */
