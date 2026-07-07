@@ -183,7 +183,7 @@ export class IntelephenseService {
       analyzedAt: new Date().toISOString()
     }
 
-    // 4. Pre-purge redundant or polluted entries from JSON store to ensure clean MD generation
+    // 4. Load existing sections to ensure we don't lose detailed knowledge during "refresh"
     const storageDir = path.join(process.cwd(), 'data/knowledge')
     const jsonStore = path.join(storageDir, 'system_knowledge.json')
 
@@ -191,28 +191,42 @@ export class IntelephenseService {
       if (fs.existsSync(jsonStore)) {
         const data = await fs.promises.readFile(jsonStore, 'utf8')
         const systemKnowledge = JSON.parse(data)
+        const existingTopic = systemKnowledge.typescript_sections?.find((k: any) => k.title === 'Intelephense Documentation')
 
-        if (systemKnowledge.typescript_sections) {
-          const originalCount = systemKnowledge.typescript_sections.length
-          const filtered = systemKnowledge.typescript_sections.filter((k: any) => {
-            // Purge legacy "Intelephense: file" titles but KEEP the new "Intelephense Documentation"
-            const isLegacyIntelephense = k.title.startsWith('Intelephense') && k.title !== 'Intelephense Documentation'
-            const isLocalFilename = k.title === 'intelephense_docs.md'
+        if (existingTopic && existingTopic.sections) {
+          console.log(` 📚 Found ${existingTopic.sections.length} existing sections. Merging...`)
 
-            return !isLegacyIntelephense && !isLocalFilename
-          })
-
-          if (filtered.length !== originalCount) {
-            console.log(` 🧹 Pre-purged ${originalCount - filtered.length} redundant entries.`)
-            await fs.promises.writeFile(jsonStore, JSON.stringify({ ...systemKnowledge, typescript_sections: filtered }, null, 2))
+          // Add existing sections to the map if they are not already there
+          for (const s of existingTopic.sections) {
+            const trimmedHeader = s.header.trim()
+            if (!headerMap.has(trimmedHeader)) {
+              headerMap.set(trimmedHeader, s)
+            }
           }
+
+          // Re-generate uniqueSections from the merged map
+          const mergedSections = Array.from(headerMap.values())
+          consolidatedKnowledge.sections = mergedSections
+          console.log(` 🧩 Total unique sections after merge: ${mergedSections.length}`)
+        }
+
+        // Optional: Clean up other legacy entries while we are at it
+        if (systemKnowledge.typescript_sections) {
+            const filtered = systemKnowledge.typescript_sections.filter((k: any) => {
+              const isLegacyIntelephense = k.title.startsWith('Intelephense') && k.title !== 'Intelephense Documentation'
+              const isLocalFilename = k.title === 'intelephense_docs.md'
+              return !isLegacyIntelephense && !isLocalFilename
+            })
+            if (filtered.length !== systemKnowledge.typescript_sections.length) {
+                await fs.promises.writeFile(jsonStore, JSON.stringify({ ...systemKnowledge, typescript_sections: filtered }, null, 2))
+            }
         }
       }
     } catch (err) {
-      console.warn(' ⚠️ Failed to pre-purge knowledge store:', err)
+      console.warn(' ⚠️ Failed to merge with existing knowledge:', err)
     }
 
-    // 5. Persist consolidated knowledge (This will now generate a clean MD)
+    // 5. Persist consolidated knowledge
     const observer = new KnowledgeObserver()
     await observer.persistKnowledge(consolidatedKnowledge)
 
