@@ -76,9 +76,14 @@ export type Presence = z.infer<typeof PresenceSchema>
 
 export class OnlinePresenceService {
   private lastPresence: Presence | null = null
+  private autonomousSovereigntyActive: boolean = false
+
+  public isAutonomousSovereigntyActive(): boolean {
+    return this.autonomousSovereigntyActive
+  }
 
   public isLeader(): boolean {
-    return this.lastPresence?.is_leader ?? false
+    return (this.lastPresence?.is_leader ?? false) || this.autonomousSovereigntyActive
   }
 
   /**
@@ -134,13 +139,20 @@ export class OnlinePresenceService {
              if (diffMs < 180000) { // < 3 minutes
                console.log(`📡 [OnlinePresence] MacBook node is ACTIVE (seen ${diffMinutes.toFixed(1)}m ago). Cloud node yielding leadership.`)
                isLeader = false
+               this.autonomousSovereigntyActive = false
              } else {
                logAutonomousAction(`🌩️ [OnlinePresence] MacBook node STALE (seen ${diffMinutes.toFixed(1)}m ago). Cloud node assuming SOVEREIGN leadership.`, 'info')
                isLeader = !higherPriorityActive
+               if (isLeader) {
+                 this.autonomousSovereigntyActive = true
+               }
              }
            } else {
              logAutonomousAction('📡 [OnlinePresence] No active MacBook node detected. Cloud node assuming SOVEREIGN leadership.', 'info')
              isLeader = !higherPriorityActive
+             if (isLeader) {
+               this.autonomousSovereigntyActive = true
+             }
            }
         } else {
           // If we are the MacBook, we assert leadership
