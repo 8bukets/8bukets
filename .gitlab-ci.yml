@@ -29,3 +29,5 @@ run-autonomous-quantum_sovereignty:
     - npx tsx antigravity/workflows/quantum_sovereignty_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+# Authorized syntactic adjustment to trigger clean commit
