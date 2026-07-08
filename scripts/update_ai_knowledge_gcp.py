@@ -1,5 +1,6 @@
 import json
 import os
+import re
 
 def update_knowledge():
     scraped_json_path = "data/knowledge/scraped_google_agents.json"
@@ -25,23 +26,52 @@ def update_knowledge():
 
     # Update/Add to AI agents knowledge
     for slug, data in gcp_knowledge.items():
-        ai_agents_knowledge[slug] = data
+        # Deduplicate content if it's already there
+        if slug in ai_agents_knowledge:
+            if ai_agents_knowledge[slug]["content"] != data["content"]:
+                ai_agents_knowledge[slug] = data
+        else:
+            ai_agents_knowledge[slug] = data
 
     os.makedirs(os.path.dirname(ai_agents_json_path), exist_ok=True)
     with open(ai_agents_json_path, "w", encoding="utf-8") as f:
         json.dump(ai_agents_knowledge, f, indent=4, ensure_ascii=False)
 
-    # Sync to Markdown
+    # Sync to Markdown (Non-destructive merge by header)
+    url = "https://cloud.google.com/discover/what-are-ai-agents"
+    existing_sections = {}
+
+    if os.path.exists(ai_agents_md_path):
+        with open(ai_agents_md_path, "r", encoding="utf-8") as f:
+            md_content = f.read()
+            # Split by '---' separator
+            blocks = md_content.split('---')
+            for block in blocks:
+                # Find header '### Title'
+                header_match = re.search(r'### (.*?)\n', block)
+                if header_match:
+                    header_title = header_match.group(1).strip()
+                    # Content is everything after the header line
+                    content = block.split(header_match.group(0), 1)[1].strip()
+                    if content:
+                        existing_sections[header_title] = content
+
+    # ONLY update or add sections from the newly scraped GCP knowledge
+    for slug, data in gcp_knowledge.items():
+        title = data.get('title', slug)
+        content = data.get('content', '')
+        # Ensure we don't accidentally add Gemini CLI docs if they weren't in gcp_knowledge
+        # (they shouldn't be, but let's be safe)
+        if title:
+            existing_sections[title] = content
+
+    # Re-build the full Markdown with ALL sections (preserved + updated)
     with open(ai_agents_md_path, "w", encoding="utf-8") as f:
-        url = "https://cloud.google.com/discover/what-are-ai-agents"
-        f.write(f"# AI Agents Knowledge base\n\nScraped from: {url}\n\n")
-        sorted_keys = sorted(ai_agents_knowledge.keys())
-        for slug in sorted_keys:
-            item = ai_agents_knowledge[slug]
-            f.write(f"### {item.get('title', slug)}\n\n")
-            f.write(f"{item.get('content', '')}\n\n")
-            if 'source' in item:
-                f.write(f"*Source: {item['source']}*\n\n")
+        f.write(f"# AI Agents Knowledge base\n\nLatest Update from: {url}\n\n")
+
+        for title in sorted(existing_sections.keys()):
+            f.write(f"### {title}\n\n")
+            f.write(f"{existing_sections[title]}\n\n")
             f.write("---\n\n")
 
         f.write(f"All the best - {url}\n")

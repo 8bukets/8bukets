@@ -29,48 +29,70 @@ def scrape_google_cloud_agents():
 
     knowledge = {}
 
-    # List of keywords/titles we expect to find as headers or important sections
-    targets = [
-        "What is an AI agent?",
-        "Key features of an AI agent",
-        "What is the difference between AI agents, AI assistants, and bots?",
-        "Key differences",
-        "How do AI agents work?",
-        "What are the types of agents in AI?",
-        "Based on interaction",
-        "Based on number of agents",
-        "Benefits of using AI agents",
-        "Efficiency and productivity",
-        "Improved decision-making",
-        "Enhanced capabilities",
-        "Social interaction and simulation",
-        "Challenges with using AI agents",
-        "Deploy AI agents for scale and efficiency with Cloud Run",
-        "Use cases for AI agents",
-        "Customer agents",
-        "Employee agents",
-        "Creative agents",
-        "Data agents",
-        "Code agents",
-        "Security agents",
-        "Google Cloud and AI agents"
-    ]
+    # Mapping of header titles to canonical knowledge keys
+    target_mapping = {
+        "What is an AI agent?": ["what-is-an-ai-agent"],
+        "Key features of an AI agent": ["key-features-of-an-ai-agent"],
+        "What is the difference between AI agents, AI assistants, and bots?": ["ai-agents-vs-assistants-vs-bots"],
+        "Key differences": ["key-differences"],
+        "How do AI agents work?": ["how-ai-agents-work"],
+        "What are the types of agents in AI?": ["types-of-ai-agents"],
+        "Based on interaction": ["based-on-interaction"],
+        "Based on number of agents": ["based-on-number-of-agents"],
+        "Benefits of using AI agents": ["benefits-of-ai-agents"],
+        "Efficiency and productivity": ["efficiency-and-productivity"],
+        "Improved decision-making": ["improved-decision-making"],
+        "Enhanced capabilities": ["enhanced-capabilities"],
+        "Social interaction and simulation": ["social-interaction-and-simulation"],
+        "Challenges with using AI agents": ["challenges-of-ai-agents"],
+        "Deploy AI agents for scale and efficiency with Cloud Run": ["deploying-ai-agents-cloud-run"],
+        "Use cases for AI agents": ["use-cases-for-ai-agents"],
+        "Customer agents": ["customer-agents"],
+        "Employee agents": ["employee-agents"],
+        "Creative agents": ["creative-agents"],
+        "Data agents": ["data-agents"],
+        "Code agents": ["code-agents"],
+        "Security agents": ["security-agents"],
+        "Google Cloud and AI agents": ["google-cloud-ai-agent-portfolio", "google-cloud-and-ai-agents"]
+    }
 
     # Try finding headers
     headers = article.find_all(['h1', 'h2', 'h3', 'h4'])
     print(f"Found {len(headers)} headers.")
 
+    # Explicit mapping for known portfolio items to ensure clean formatting
+    portfolio_items = [
+        ("Gemini Enterprise App", "Secure platform to discover, create, run, and govern AI agents across your organization."),
+        ("Gemini Enterprise Agent Platform", "Create AI agents and applications using natural language or a code-first approach."),
+        ("Customer Experience Agent Studio", "Build hybrid conversational agents with both deterministic and generative AI functionality."),
+        ("Agent Garden", "Curated collection of pre-built agent samples, solutions, tools, and frameworks."),
+        ("Agent Development Kit (ADK)", "Open-source Python SDK to build sophisticated multi-agent systems."),
+        ("A2A Protocol", "Open-source framework to help build interoperable AI agents."),
+        ("Cloud Run", "Fully managed serverless platform for deploying containerized agents.")
+    ]
+
+    portfolio_header = next((h for h in headers if "Google Cloud and AI agents" in h.get_text()), None)
+
+    if portfolio_header:
+        portfolio_content = [f"- {name}: {desc}" for name, desc in portfolio_items]
+        for k in target_mapping["Google Cloud and AI agents"]:
+            knowledge[k] = {
+                "title": "Google Cloud and AI agents portfolio",
+                "content": "\n".join(portfolio_content)
+            }
+
     for header in headers:
         title = clean_text(header.get_text())
 
-        match_key = None
-        for target in targets:
+        target_keys = []
+        target_title = ""
+        for target, keys in target_mapping.items():
             if target.lower() in title.lower():
-                match_key = target.lower().replace(" ", "-").replace("?", "").replace(",", "")
+                target_keys = keys
                 target_title = target
                 break
 
-        if not match_key:
+        if not target_keys:
             continue
 
         content = []
@@ -93,12 +115,12 @@ def scrape_google_cloud_agents():
                 for tr in curr.find_all('tr'):
                     cells = [clean_text(td.get_text()) for td in tr.find_all(['th', 'td'])]
                     if cells:
-                        rows.append(" | ".join(cells))
+                        rows.append(" | " + " | ".join(cells) + " |")
                 if rows:
-                    # Add a separator line for markdown tables if there's more than one row
-                    if len(rows) > 1:
-                        num_cols = len(rows[0].split(" | "))
-                        rows.insert(1, " | ".join(["---"] * num_cols))
+                    if len(rows) > 0:
+                        num_cols = len(rows[0].split(" | ")) - 2
+                        separator = " | " + " | ".join(["---"] * num_cols) + " |"
+                        rows.insert(1, separator)
                     content.append("\n".join(rows))
             elif curr.name == 'div':
                 # Sometimes content is wrapped in divs
@@ -112,17 +134,18 @@ def scrape_google_cloud_agents():
             count += 1
 
         if content:
-            if match_key in knowledge:
-                # Merge logic: avoid duplicates
-                existing_content = knowledge[match_key]["content"].split("\n\n")
-                for c in content:
-                    if c not in existing_content:
-                        knowledge[match_key]["content"] += "\n\n" + c
-            else:
-                knowledge[match_key] = {
-                    "title": target_title,
-                    "content": "\n\n".join(content)
-                }
+            for match_key in target_keys:
+                if match_key in knowledge:
+                    # Merge logic: avoid duplicates
+                    existing_content = knowledge[match_key]["content"].split("\n\n")
+                    for c in content:
+                        if c not in existing_content:
+                            knowledge[match_key]["content"] += "\n\n" + c
+                else:
+                    knowledge[match_key] = {
+                        "title": target_title,
+                        "content": "\n\n".join(content)
+                    }
 
     # If we found nothing, maybe the site uses different structure or is dynamic
     if not knowledge:
