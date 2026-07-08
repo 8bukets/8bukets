@@ -126,6 +126,25 @@ export async function getSwarmStatus(): Promise<SwarmNode[]> {
   }
 }
 
+/**
+ * setupSwarm: Ensures the local Docker node is a Swarm manager.
+ * Supports Phase 26 Universal Mesh Routing.
+ */
+export async function setupSwarm(): Promise<boolean> {
+  try {
+    await execAsync('docker node ls');
+    return true;
+  } catch (e) {
+    try {
+      await execAsync('docker swarm init --advertise-addr 127.0.0.1');
+      return true;
+    } catch (swarmInitError) {
+      console.error('❌ [Docker] Failed to initialize Swarm:', swarmInitError);
+      return false;
+    }
+  }
+}
+
 // Phase 12: Standardized Aliases for high-fidelity simulation and tests
 export const getDockerFleetStatus = getDockerStatus
 export const checkDockerHealth = isDockerHealthy

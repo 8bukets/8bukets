@@ -1,0 +1,13 @@
+{
+  "version": "2.0",
+  "protocol": "UMR",
+  "resonanceLatencyTarget": 0.05,
+  "nodes": [
+    {
+      "id": "macbook-primary-01",
+      "role": "leader",
+      "addr": "127.0.0.1"
+    }
+  ],
+  "lastSync": "2026-07-08T21:56:35.023Z"
+}

@@ -354,5 +354,20 @@
     },
     "status": "accepted",
     "timestamp": "2026-07-08T08:44:34.357Z"
+  },
+  {
+    "id": "prop_fmcm7iego",
+    "proposer": "Jules",
+    "goal": "INITIATE_MESH_COLLABORATION",
+    "payload": {
+      "target": "Docker Swarm",
+      "timestamp": "2026-07-08T21:58:16.364Z"
+    },
+    "votes": {
+      "Jules": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-08T21:58:16.364Z"
   }
 ]
