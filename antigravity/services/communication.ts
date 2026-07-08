@@ -26,9 +26,9 @@
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
-import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
+import { swarmHeartbeat } from './swarm_heartbeat'
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
-import { latticeSync } from '@/antigravity/services/lattice_sync'
+import { latticeSync } from './lattice_sync'
 /**
  * ANTIGRAVITY COMMUNICATION HUB
  * Optimized for Phase 12 Sentient Orchestration.
@@ -36,7 +36,7 @@ import { latticeSync } from '@/antigravity/services/lattice_sync'
 import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
-import { logAutonomousAction, cacheLife } from '@/antigravity/core'
+import { logAutonomousAction, cacheLife } from '../core'
 
 /**
  * ANTIGRAVITY COMMUNICATION HUB (Phase 12)
@@ -508,6 +508,17 @@ export async function generateNeuralMeshDirectives(state: any): Promise<string> 
     directives += `- **Architect Agent** -> **Ops Agent**: "Mesh density exceeds 50 nodes. Implement Phase 26 Universal Mesh Routing (UMR) and predictive node warmup."\n`
   }
 
+  // 7. Reviewer -> Coder (Merge Sequencing)
+  const highSignalSynergies = relationshipMap.synergies?.filter((s: any) => s.intensity === 'High') || []
+  if (highSignalSynergies.length > 3) {
+    directives += `- **Reviewer Agent** -> **Coder Agent**: "High synergy density detected. Follow the 'Recommended Merge Order' in Coordination Pathways to prevent atomic state fragmentation."\n`
+  }
+
+  // 8. Observer -> All Agents (Resonance Monitoring)
+  if (state.intelligence.relationshipMap.meshReadiness?.score < 70) {
+    directives += `- **Observer Agent** -> **Agent Swarm**: "Ecosystem mesh readiness is sub-optimal (${state.intelligence.relationshipMap.meshReadiness.score}%). Optimize local resonance and stabilize UMR routes."\n`
+  }
+
   return directives;
 }
 
@@ -531,6 +542,17 @@ export async function generateInterAgentDirectives(state: any): Promise<string> 
 
   if (state.intelligence.branches > 2900) {
      directives += `- **Cleanup Agent** -> **Git Provider**: "Project overhead critical (>2900 branches). Prepare bulk pruning proposal for CAIO review."\n`
+  }
+
+  // Phase 26: Sovereignty Directives
+  if (state.docker.status === 'optimal') {
+    directives += `- **Sovereignty Service** -> **All Agents**: "Leadership anchored on primary node. Transition all background tasks to high-resonance mode."\n`
+  }
+
+  // Market Intelligence Feedback
+  const hasMarketData = state.intelligence.relationshipMap.resourceInventory.some((r: any) => r.type === 'Knowledge' && r.name.includes('Market'))
+  if (hasMarketData) {
+    directives += `- **Knowledge Agent** -> **CAIO**: "New market intelligence ingested. Strategic alignment review recommended for Phase 27 roadmap."\n`
   }
 
   directives += `- **Intelligence Agent** -> **All Agents**: "Ecosystem knowledge merged. Sync local memories with global matrix."\n`

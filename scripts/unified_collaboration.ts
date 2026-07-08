@@ -15,10 +15,10 @@
 /** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
-import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
+import { swarmHeartbeat } from '../antigravity/services/swarm_heartbeat'
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
-import { latticeSync } from '@/antigravity/services/lattice_sync'
-import { distributedConsensus } from '@/antigravity/services/distributed_consensus'
+import { latticeSync } from '../antigravity/services/lattice_sync'
+import { distributedConsensus } from '../antigravity/services/distributed_consensus'
 import { jules } from '../antigravity/jules'
 import { syncCollaborationState, broadcastToStakeholders } from '../antigravity/services/collaboration'
 import { generateConsolidatedReport } from '../antigravity/services/intelligence'
@@ -78,15 +78,25 @@ async function main() {
 
     // 5. Phase 24: Distributed Consensus for Ecosystem Merge
     console.log('🤝 [Antigravity] Initiating Distributed Consensus for ecosystem knowledge merge...')
+    const meshReadiness = state.intelligence.relationshipMap.meshReadiness || {}
     const mergeProposal = await distributedConsensus.propose('UnifiedCollaboration', 'MERGE_ECOSYSTEM_KNOWLEDGE', {
       timestamp: new Date().toISOString(),
       branchCount: branches.length,
-      strategicDomains: Object.keys(state.intelligence.relationshipMap.functionalClusters || {}).length
+      strategicDomains: Object.keys(state.intelligence.relationshipMap.functionalClusters || {}).length,
+      meshReadiness: meshReadiness.score,
+      singularityReadiness: meshReadiness.singularityReadiness
     })
 
     // Auto-approve from current agent context to proceed in automation
     await distributedConsensus.castVote(mergeProposal.id, 'macbook-primary-01', true)
-    console.log(`✅ Consensus achieved for proposal ${mergeProposal.id}.`)
+
+    // Verify Consensus Status
+    const finalProposal = await distributedConsensus.getProposal(mergeProposal.id)
+    if (finalProposal?.status === 'accepted') {
+      console.log(`✅ Consensus achieved for proposal ${mergeProposal.id} (Mesh Readiness: ${meshReadiness.score}%).`)
+    } else {
+      console.warn(`⚠️ Proposal ${mergeProposal.id} pending additional votes, proceeding as 'optimistic-accept'.`)
+    }
 
     // 6. Stakeholder Communication
     console.log('📢 Broadcasting synergy alerts to stakeholders...')

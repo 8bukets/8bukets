@@ -17,9 +17,9 @@
 /** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
-import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
+import { swarmHeartbeat } from './swarm_heartbeat'
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
-import { latticeSync } from '@/antigravity/services/lattice_sync'
+import { latticeSync } from './lattice_sync'
 /** PHASE 24 COMPLIANCE: NEURAL_MESH_INTEGRATION (enabled) **/
 /** PHASE 24 COMPLIANCE: DISTRIBUTED_CONSENSUS (active) **/
 /** PHASE 24 COMPLIANCE: MESH_AWARE_ROUTING (enabled) **/
@@ -127,6 +127,10 @@ export class DistributedConsensusService {
 
   public getPendingProposals(): ConsensusProposal[] {
     return this.proposals.filter(p => p.status === 'pending');
+  }
+
+  public async getProposal(id: string): Promise<ConsensusProposal | undefined> {
+    return this.proposals.find(p => p.id === id);
   }
 }
 
