@@ -110,6 +110,7 @@ class ChiefAIOfficerAgent(BaseAgent):
             has_phase_20 = "phase 20" in title_lower or "phase 20" in sections_str or "phase_20" in title_lower
             has_phase_24 = "phase 24" in title_lower or "phase 24" in sections_str or "phase_24" in title_lower
             has_phase_25 = "phase 25" in title_lower or "phase 25" in sections_str or "phase_25" in title_lower
+            has_phase_26 = any(p in title_lower or p in sections_str for p in ["phase 26", "phase_26"])
 
             # Phase 14 Specific Logic
             if has_phase_14:
@@ -292,9 +293,46 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [PERF]: Ultra-low latency mandate detected (<0.1ms). Issuing extreme optimization directive.")
                     strategic_directives.append("ENFORCE_ULTRA_LOW_LATENCY_RESONANCE")
 
+            # Phase 26 Specific Logic
+            if has_phase_26:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 26 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_26_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_26_PROTOCOLS")
+
+                if "universal mesh routing" in sections_str or "umr" in sections_str:
+                    if "ACTIVATE_UMR_V2" not in strategic_directives:
+                        self.logger.info("CAIO [MESH]: Universal Mesh Routing (UMR) mandate detected. Issuing activation directive.")
+                        strategic_directives.append("ACTIVATE_UMR_V2")
+
+                if "predictive node warmup" in sections_str or "predictive-node-warmup" in sections_str:
+                    if "ACTIVATE_PREDICTIVE_NODE_WARMUP" not in strategic_directives:
+                        self.logger.info("CAIO [MESH]: Predictive Node Warmup mandate detected. Issuing activation directive.")
+                        strategic_directives.append("ACTIVATE_PREDICTIVE_NODE_WARMUP")
+
+                if "cross-shard neural caching" in sections_str or "cross_shard_neural_caching" in sections_str:
+                    if "ACTIVATE_CROSS_SHARD_NEURAL_CACHING" not in strategic_directives:
+                        self.logger.info("CAIO [MESH]: Cross-Shard Neural Caching mandate detected. Issuing activation directive.")
+                        strategic_directives.append("ACTIVATE_CROSS_SHARD_NEURAL_CACHING")
+
+                if "resonance latency" in sections_str or "0.05ms" in sections_str:
+                    if "ENFORCE_PHASE_26_RESONANCE_LATENCY" not in strategic_directives:
+                        self.logger.info("CAIO [PERF]: Phase 26 resonance latency mandate detected (<0.05ms). Issuing optimization directive.")
+                        strategic_directives.append("ENFORCE_PHASE_26_RESONANCE_LATENCY")
+
+                if "singularity readiness" in sections_str or "0.9999" in sections_str:
+                    if "OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_26" not in strategic_directives:
+                        self.logger.info("CAIO [SINGULARITY]: Phase 26 Singularity Readiness mandate detected (>0.9999). Issuing compliance directive.")
+                        strategic_directives.append("OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_26")
+
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
                 role_alignment_verified = True
+
+                if "bottom-line business outcomes" in sections_str:
+                    if "ALIGN_AI_WITH_BOTTOM_LINE" not in strategic_directives:
+                        self.logger.info("CAIO [ROLE]: Bottom-line outcome responsibility identified. Issuing alignment directive.")
+                        strategic_directives.append("ALIGN_AI_WITH_BOTTOM_LINE")
+
                 if "implementation & tech stacking" in sections_str:
                     self.logger.info("CAIO [ROLE]: Tech stacking responsibility identified. Issuing build vs buy directive.")
                     strategic_directives.append("DECIDE_BUILD_VS_BUY_STRATEGY")
@@ -527,6 +565,9 @@ class ChiefAIOfficerAgent(BaseAgent):
 
         if licensure_not_required:
             summary += "Licensure Status: Not required for executive AI leadership (Verified). "
+
+        if "ACTIVATE_PHASE_26_PROTOCOLS" in strategic_directives:
+            summary += "Phase 26 Operational Mode: ACTIVE. PHASE_26_DIRECTIVE_GENERATED. "
 
         summary += f"CAIO evaluation cycle completed successfully. Final Strategy: {strategy_status}."
         if market_trends:
