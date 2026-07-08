@@ -40,6 +40,19 @@ export class CloudConnectedIntegrationService {
   }
 
   /**
+   * ESTABLISH ONLINE PRESENCE (Phase 26)
+   * High-resonance presence broadcasting with singularity readiness metrics.
+   */
+  public async establishOnlinePresence() {
+    logAutonomousAction('📡 [CloudConnected] Establishing High-Resonance Online Presence...', 'info')
+    const presence = await onlinePresence.syncPresence()
+    if (presence) {
+       logAutonomousAction(`✅ [CloudConnected] Presence established. Resonance: ${presence.phase25?.resonance_latency}ms, Readiness: ${presence.phase25?.singularity_readiness}`, 'info')
+    }
+    return presence
+  }
+
+  /**
    * Orchestrates the Phase 23 Cloud-Native Pulse.
    */
   public async executePhase23Pulse() {
@@ -50,7 +63,7 @@ export class CloudConnectedIntegrationService {
       await this.establishSovereignMeshConnections()
 
       // 1. Synchronize Presence
-      await onlinePresence.syncPresence()
+      await this.establishOnlinePresence()
 
       // 2. Sovereignty Audit
       await cloudConvergence.sovereigntyAudit()
@@ -59,7 +72,7 @@ export class CloudConnectedIntegrationService {
       await this.validateEcosystemSovereignty()
 
       // 4. Unified Cloud Sovereign Work Cycle (Takeover + Merge + Work)
-      await this.executeCloudSovereignWork()
+      await this.executeAutonomousMergeAndWork()
 
       // 5. Synchronize Ecosystem & Resolve Conflicts
       await cloudConvergence.synchronizeEcosystem()
@@ -72,15 +85,15 @@ export class CloudConnectedIntegrationService {
   }
 
   /**
-   * UNIFIED CLOUD SOVEREIGN WORK (Phase 23)
-   * Orchestrates takeover, autonomous merging, and work execution when cloud node is leader.
+   * UNIFIED AUTONOMOUS MERGE AND WORK (Phase 23/26)
+   * Orchestrates takeover, autonomous merging, conflict resolution, and work execution.
    */
-  public async executeCloudSovereignWork() {
-    logAutonomousAction('🌩️ [CloudConnected] Initiating Unified Cloud Sovereign Work cycle...', 'info')
+  public async executeAutonomousMergeAndWork() {
+    logAutonomousAction('🌩️ [CloudConnected] Initiating Autonomous Merge and Work cycle...', 'info')
 
     try {
       // 1. Ensure Presence is fresh
-      await onlinePresence.syncPresence()
+      await this.establishOnlinePresence()
       const isLeader = onlinePresence.isLeader()
 
       // 2. Cloud Takeover Enforcement
@@ -104,6 +117,18 @@ export class CloudConnectedIntegrationService {
         logAutonomousAction('🤖 [CloudConnected] Leader active. Running autonomous PR audit and knowledge ingestion...', 'info')
         await jules.autonomousPrAudit()
         await jules.observeKnowledge()
+
+        // 4b. Autonomous Conflict Resolution (Gemini-Powered)
+        logAutonomousAction('⚖️ [CloudConnected] Leader active. Resolving autonomous PR conflicts...', 'info')
+        try {
+          const { exec } = await import('child_process')
+          const { promisify } = await import('util')
+          const execAsync = promisify(exec)
+          await execAsync('npx tsx scripts/resolve_pr_conflicts.ts')
+          logAutonomousAction('✅ [CloudConnected] Autonomous conflict resolution pass complete.', 'info')
+        } catch (confErr: any) {
+          logAutonomousAction(`⚠️ [CloudConnected] Conflict resolution pass skipped or failed: ${confErr.message}`, 'warning')
+        }
 
         // 5. Proactive Work Generation (Phase 23 Automatic Engine)
         const pending = workOrderService.getPendingOrders()
