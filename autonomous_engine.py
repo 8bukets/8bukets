@@ -85,12 +85,6 @@ class AutonomousEngine:
         logger.info("📅 [Engine] Coordinating Agile planning with Duo Planner...")
         try:
             dp_agent = DuoPlannerAgent()
-            # Inject a mock execute_llm_call to bypass missing method while maintaining agent structure
-            if not hasattr(dp_agent, 'execute_llm_call'):
-                async def mock_llm_call(msgs):
-                    return json.dumps({"analysis": "Phase 23 Delivery Roadmap optimized.", "recommendations": ["Expand APAC nodes"]})
-                dp_agent.execute_llm_call = mock_llm_call
-
             self.results["agile_planning"] = await dp_agent.run({"context": "Phase 26 Evolution"}, self.blackboard)
         except Exception as e:
             logger.warning(f"⚠️ DuoPlannerAgent encountered an issue: {e}")

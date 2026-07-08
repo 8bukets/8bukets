@@ -1,0 +1,13 @@
+{
+  "title": "Phase 26 iCloud Directives",
+  "sections": [
+    {
+      "header": "Universal Mesh Routing v2",
+      "content": "Deploy UMR v2 nodes across all shards."
+    },
+    {
+      "header": "Singularity Readiness",
+      "content": "Maintain threshold > 0.9999 for Phase 26 compliance."
+    }
+  ]
+}
