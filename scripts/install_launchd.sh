@@ -16,6 +16,15 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
   exit 0
 fi
 
+# Verify dependencies
+echo "🔍 [Setup] Verifying dependencies..."
+for cmd in git rsync npm node; do
+  if ! command -v $cmd &> /dev/null; then
+    echo "❌ [Setup] Required dependency '$cmd' not found. Please install it."
+    exit 1
+  fi
+done
+
 # Create a temporary plist with the correct paths
 echo "📝 [Setup] Configuring $PLIST_NAME for user $USERNAME..."
 

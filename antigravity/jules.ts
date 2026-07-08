@@ -652,6 +652,7 @@ public async observeKnowledge(url?: string) {
 
   public async executeWorkCycle(parentOrderId?: string) {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+    console.log('📅 User Directed Sequence: pluu -> work -> upload -> sync')
 
     // Phase 26: Universal Mesh Routing (UMR) Activation
     const { universalMeshRoutingService } = await import('./services/universal_mesh_routing');
@@ -672,6 +673,7 @@ public async observeKnowledge(url?: string) {
     const { explore } = await import('./explorer')
     await explore()
     await this.selfRepair()
+    await this.processPendingTasks()
 
     // Phase 14: Strategic Consultation
     console.log('🧠 [Jules] Consulting Chief AI Officer for strategic directives...')
@@ -797,12 +799,13 @@ public async observeKnowledge(url?: string) {
     // Phase 23: Autonomous Merge feature branches after successful cycle
     await this.autonomousMerge()
 
+    console.log('🚀 [Jules] PHASE: upload (Git Push)')
+    await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
+
     console.log('☁️ [Jules] PHASE: sync (iCloud Synchronization)')
     const { syncToICloud } = await import('./services/icloud')
     await syncToICloud()
 
-    console.log('🚀 [Jules] PHASE: upload (Git Push)')
-    await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
     console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
