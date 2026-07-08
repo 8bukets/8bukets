@@ -24,10 +24,10 @@ async function scrapeArticleContent(url: string): Promise<string> {
         const $ = cheerio.load(html);
 
         // Try to find the main content
-        const articleBody = $('.article-post__content, .uni-article__body, .rich-text').text().trim();
+        const articleBody = $('.article-post__content, .uni-article__body, .rich-text, .article-post__excerpt').text().trim();
         if (articleBody) {
-            // Get first 500 characters as a meaningful summary
-            return articleBody.substring(0, 1000).replace(/\s+/g, ' ') + "...";
+            // Get up to 5000 characters for deeper knowledge integration
+            return articleBody.substring(0, 5000).replace(/\s+/g, ' ') + (articleBody.length > 5000 ? "..." : "");
         }
         return "";
     } catch (e) {
