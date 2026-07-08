@@ -44,54 +44,50 @@ class KnowledgeMergeAgent(BaseAgent):
             source_path = os.path.join(self.knowledge_dir, source_file)
             try:
                 with open(source_path, 'r', encoding='utf-8') as f:
-                    source_data_raw = json.load(f)
+                    source_data = json.load(f)
 
-                # Standardize to a list of sources
-                sources = source_data_raw if isinstance(source_data_raw, list) else [source_data_raw]
+                title = source_data.get('title', 'Unknown Source')
+                url = source_data.get('source', '')
 
-                for source_data in sources:
-                    title = source_data.get('title', 'Unknown Source')
-                    url = source_data.get('source', source_data.get('metadata', {}).get('source', ''))
+                # Check if this source already exists in system_knowledge
+                existing_idx = -1
+                for i, section in enumerate(system_knowledge.get('typescript_sections', [])):
+                    if section.get('title') == title or (section.get('metadata') and section.get('metadata').get('source') == url):
+                        existing_idx = i
+                        break
 
-                    # Check if this source already exists in system_knowledge
-                    existing_idx = -1
-                    for i, section in enumerate(system_knowledge.get('typescript_sections', [])):
-                        if section.get('title') == title or (section.get('metadata') and section.get('metadata').get('source') == url):
-                            existing_idx = i
-                            break
+                new_section = {
+                    "title": title,
+                    "metadata": {
+                        "source": url,
+                        "analyzedAt": source_data.get('analyzedAt', datetime.utcnow().isoformat() + "Z"),
+                        "description": source_data.get('description', '')
+                    },
+                    "sections": source_data.get('sections', [])
+                }
 
-                    new_section = {
-                        "title": title,
-                        "metadata": {
-                            "source": url,
-                            "analyzedAt": source_data.get('analyzedAt', source_data.get('metadata', {}).get('ingestedAt', datetime.utcnow().isoformat() + "Z")),
-                            "description": source_data.get('description', source_data.get('metadata', {}).get('description', ''))
-                        },
-                        "sections": source_data.get('sections', [])
-                    }
+                if existing_idx != -1:
+                    system_knowledge['typescript_sections'][existing_idx] = new_section
+                    self.logger.info(f"🔄 Updated knowledge from: {title}")
+                else:
+                    system_knowledge.setdefault('typescript_sections', []).append(new_section)
+                    self.logger.info(f"➕ Added new knowledge from: {title}")
 
-                    if existing_idx != -1:
-                        system_knowledge['typescript_sections'][existing_idx] = new_section
-                        self.logger.info(f"🔄 Updated knowledge from: {title}")
-                    else:
-                        system_knowledge.setdefault('typescript_sections', []).append(new_section)
-                        self.logger.info(f"➕ Added new knowledge from: {title}")
+                consolidated_count += 1
 
-                    consolidated_count += 1
+                # Prepare observation entry for KNOWLEDGE_MERGE.md
+                sections = source_data.get('sections', [])
+                top_headers = [s.get('header') for s in sections[:3]]
+                summary_info = f" Extracted key topics: {', '.join(top_headers)}..." if top_headers else ""
 
-                    # Prepare observation entry for KNOWLEDGE_MERGE.md
-                    sections = source_data.get('sections', [])
-                    top_headers = [s.get('header') for s in sections[:3]]
-                    summary_info = f" Extracted key topics: {', '.join(top_headers)}..." if top_headers else ""
-
-                    observation = f"""
+                observation = f"""
 ## Autonomous Observation
 - **Date**: {datetime.utcnow().isoformat() + "Z"}
 - **Target**: {url}
 - **Title**: {title}
 - **Relationship Map**: Confirmed relationship with {url} (Title: {title}) as an intelligence source.{summary_info} (Content Length: {len(str(sections))} chars)
 """
-                    new_observations.append(observation)
+                new_observations.append(observation)
 
             except Exception as e:
                 self.logger.error(f"❌ Failed to process source file {source_file}: {e}")
