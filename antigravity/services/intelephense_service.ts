@@ -128,23 +128,26 @@ export class IntelephenseService {
     }
 
     // 3. Deduplicate sections by header, merging content if necessary
+    // Phase 13: Enhanced level-agnostic deduplication to prevent redundant sections.
     const headerMap = new Map<string, { header: string; content: string }>()
 
     for (const section of allSections) {
       const trimmedHeader = section.header.trim()
       const cleanHeader = trimmedHeader.replace(/^#+\s*/, '').trim()
-      const existing = headerMap.get(trimmedHeader)
-      const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System', 'Visual Studio Code', 'Other Editors'].includes(cleanHeader)
+      const lookupKey = cleanHeader.toLowerCase() // Level-agnostic and case-insensitive lookup
+      const existing = headerMap.get(lookupKey)
+      const structuralHeaders = ['getting started', 'features', 'installation', 'type system', 'visual studio code', 'other editors']
+      const isStructural = structuralHeaders.includes(lookupKey)
 
       if (!existing) {
         // Only keep sections with content, unless they are high-level structural headers
         if (section.content || isStructural) {
-          headerMap.set(trimmedHeader, { header: trimmedHeader, content: section.content })
+          headerMap.set(lookupKey, { header: trimmedHeader, content: section.content })
         }
       } else {
-        // Deduplication Logic: Prioritize local overrides if they contain images or more detail.
-        const cleanExisting = (existing.content || '').replace(/\s+/g, ' ').trim()
-        const cleanNew = (section.content || '').replace(/\s+/g, ' ').trim()
+        // Deduplication Logic: Prioritize local overrides or more complete content.
+        const cleanExisting = (existing.content || '').replace(/\\n/g, '\n').replace(/\s+/g, ' ').trim()
+        const cleanNew = (section.content || '').replace(/\\n/g, '\n').replace(/\s+/g, ' ').trim()
 
         // Heuristic: If new content has an image tag and existing doesn't, or if new is significantly longer
         const hasImage = (text: string) => /!\[.*\]\(.*\)/.test(text)
@@ -153,20 +156,24 @@ export class IntelephenseService {
           continue;
         }
 
+        // If one is a strict subset of the other (ignoring whitespace/newlines), keep the longer one
+        if (cleanExisting.includes(cleanNew)) {
+          continue;
+        }
+
+        if (cleanNew.includes(cleanExisting)) {
+          existing.content = section.content
+          continue;
+        }
+
         if (hasImage(section.content) && !hasImage(existing.content)) {
           existing.content = section.content
-        } else if (cleanExisting.includes(cleanNew)) {
-          // New content is already a subset, skip
-        } else if (cleanNew.includes(cleanExisting)) {
-          // New content is more complete, replace
+        } else if (section.content && section.content.length > existing.content.length * 1.2) {
+          // If significantly longer, assume it's an update/better version
           existing.content = section.content
-        } else if (section.content && section.content.length > existing.content.length * 1.5) {
-          // Significantly longer content usually means more detail
-          existing.content = section.content
-        } else if (section.content) {
-          // Both have unique info, append unique parts if not already similar
-          existing.content += '\n\n' + section.content
         }
+        // If they are just different and not subsets, we don't append anymore to avoid messy duplication.
+        // The first one seen (usually from GitHub) wins unless the second one is significantly "better".
       }
     }
 
