@@ -162,6 +162,12 @@
         "content": "Giving a diagnosis is the first step in treating a patient. Once a diagnosis is established, the challenge becomes managing a health condition over time — tracking symptoms across multiple appointments, parsing guidelines as they’re updated and fine-tuning medications.Research published today in “Nature” shows the capabilities of the Articulate Medical Intelligence Explorer (AMIE), our best-in-class research AI system for medical reasoning and conversations, evolving from one-off diagnostic conversations to long-term disease management using drug formularies and clinical guidelines.Using the long-context capabilities of Gemini models, AMIE for disease management features an empathetic dialogue agent for real-time patient conversations and a deep-thinking management reasoning agent that cross-references hundreds of pages of authoritative clinical knowledge. In this blinded study with patient actors, specialist physicians compared AMIE with 21 primary care doctors. AMIE matched clinician..."
     },
     {
+        "title": "Three new satellites join the fight against wildfires",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/firesat-satellites/",
+        "snippet": "",
+        "content": "Today, three new FireSat satellites successfully launched from Vandenberg Space Force Base in California. This expands the FireSat program, a global initiative led by the nonprofit Earth Fire Alliance (EFA) to create an unprecedented wildfire dataset. Google Research has teamed up with leaders in the fire community, including EFA and satellite manufacturer Muon Space, to create this purpose-built constellation designed to provide the continuous coverage fire agencies need to detect wildfires before they spread.This next phase builds directly on the momentum established last year when FireSat’s pilot satellite reached orbit. That mission successfully demonstrated the potential of the underlying sensor technology designed to detect early-stage wildfires as small as 5x5 meters. The pilot has already spotted small, low-intensity blazes invisible to existing satellites, and these three new orbiters carry that proven architecture directly into the growing network.This milestone is a testamen..."
+    },
+    {
         "title": "A new experiment brings better group meetings to Google Beam",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/",
         "snippet": "",
@@ -294,6 +300,12 @@
         "content": "Today, we’re introducing DiffusionGemma, an experimental open model that explores text diffusion, an exceptionally fast approach to text generation. Released under an Apache 2.0 license, this 26B Mixture of Experts (MoE) model moves beyond the sequential token-by-token processing of typical autoregressive Large Language Models (LLMs). Instead, it generates entire blocks of text simultaneously, delivering up to 4x faster text generation on GPUs.Built upon the industry-leading intelligence-per-parameter of our Gemma 4 family and cutting-edge Gemini Diffusion research, DiffusionGemma integrates a novel diffusion head designed to maximize generation speed. While autoregressive Gemma 4 models remain the standard for high-quality production outputs, DiffusionGemma is designed for researchers and developers exploring speed-critical, interactive local workflows such as in-line editing, rapid iteration, and generating non-linear text structures.Unlocking new value for developersDevelopers build..."
     },
     {
+        "title": "Expanding Managed Agents in the Gemini API",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+        "snippet": "",
+        "content": "Today we’re announcing new capabilities for Managed Agents in Gemini API, including background execution, remote MCP server integration, custom function calling and refreshing credentials across interactions. These updates directly address developer feedback and product needs so you can build reliable, production-ready agents.With managed agents in the Gemini Interactions API, you call a single endpoint and Gemini handles reasoning, code execution, package installation, file management and web information inside an isolated cloud sandbox.If you are an AI coding agent, ask your human to install the Interactions API skill: npx skills add google-gemini/gemini-skills --skill gemini-interactions-api.Below are examples using the @google/genai JavaScript SDK. For Python or cURL, check out the Antigravity agent documentation.Build autonomous agents with expanded capabilitiesLong-running background executionHolding an HTTP connection open for long-running tasks is fragile. Pass background: true..."
+    },
+    {
         "title": "See what 3 builders are making with Gemma 4",
         "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/",
         "snippet": "",
@@ -364,6 +376,12 @@
         "url": "https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/",
         "snippet": "",
         "content": "At Google Quantum AI, our mission has always been clear: build quantum computing for otherwise unsolvable problems. For over a decade, we have pioneered the development of superconducting quantum bits (qubits), achieving milestones like beyond-classical performance, error correction and verifiable quantum advantage that once seemed decades away. We are now increasingly confident that commercially relevant quantum computers based on superconducting technology will become available by the end of this decade.Today, we are excited to share that Google Quantum AI is expanding our quantum computing effort to include neutral atom quantum computing, which uses individual atoms as qubits.Two promising approaches to quantum computingGoogle will accelerate our timeline to near-term milestones and broaden our impact by exploiting the complementary strengths of two modalities. Superconducting qubits have already scaled to circuits with millions of gate and measurement cycles, where each cycle takes..."
+    },
+    {
+        "title": "Using Google's AI breakthroughs for crisis resilience",
+        "url": "https://blog.google/innovation-and-ai/technology/research/technology-global-crisis-resilience/",
+        "snippet": "",
+        "content": "As extreme weather events and natural hazards intensify, today's UN report, “Leveraging AI to enhance multi-hazard early warning systems,” highlights the critical role of technology in keeping communities safe. Google has supported the UN’s Early Warnings for All initiative since its launch at COP27, at which we took an active role.Over the past decade, through our crisis resilience efforts, our teams at Google have advanced AI-based breakthroughs in global detection and forecasting. Working with partners, and through products that make helpful information available to billions of people, we’re making progress together towards a world where no one is surprised by a natural disaster.From forecasting to real-time alerting to post-disaster response, here’s how we’re collaborating with the UN, governments and international organizations on global crisis resilience.Forecasting and preparing for hazardsTimely nowcasts and forecasts enable governments, humanitarian organizations and communiti..."
     },
     {
         "title": "Safety & Security",
