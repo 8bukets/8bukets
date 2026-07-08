@@ -14,6 +14,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "ℹ️ [Setup] macOS detected. While cron works, Launchd is preferred. Use scripts/install_launchd.sh instead."
 fi
 
+# Verify dependencies
+echo "🔍 [Setup] Verifying dependencies..."
+for cmd in git rsync npm node; do
+  if ! command -v $cmd &> /dev/null; then
+    echo "❌ [Setup] Required dependency '$cmd' not found. Please install it."
+    exit 1
+  fi
+done
+
 # Detect npm and node path for absolute accuracy in cron
 NPM_PATH=$(which npm)
 NODE_PATH=$(which node)
