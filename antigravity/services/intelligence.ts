@@ -18,9 +18,9 @@
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
-import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
+import { swarmHeartbeat } from './swarm_heartbeat'
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
-import { latticeSync } from '@/antigravity/services/lattice_sync'
+import { latticeSync } from './lattice_sync'
 import fs from 'fs'
 import path from 'path'
 import { getMissionMetadata, generateRelationshipMap } from './collaboration'
@@ -194,6 +194,27 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
       report += `  - **Involved Branches:** ${r.branches.slice(0, 5).join(', ')}${r.branches.length > 5 ? ` (+${r.branches.length - 5} more)` : ''}\n`
     })
     report += `\n`
+  }
+
+  // Phase 26: Collaborative Milestones
+  if (relationshipMap.impactfulBranches?.length > 0) {
+    report += `### 🏆 Collaborative Milestones\n`
+    const categoryGroups: Record<string, any[]> = {}
+    relationshipMap.impactfulBranches.forEach((b: any) => {
+      const cat = b.category?.toUpperCase() || 'GENERAL'
+      if (!categoryGroups[cat]) categoryGroups[cat] = []
+      categoryGroups[cat].push(b)
+    })
+
+    Object.entries(categoryGroups).forEach(([cat, brs]) => {
+      const avgScore = Math.floor(brs.reduce((acc, curr) => acc + (curr.score || 0), 0) / brs.length)
+      report += `#### 🚩 Milestone Cluster: ${cat} (Avg Impact: ${avgScore})\n`
+      brs.slice(0, 3).forEach(b => {
+        report += `- **${b.name}**: ${b.results}\n`
+      })
+      if (brs.length > 3) report += `- *...and ${brs.length - 3} more achievements.*\n`
+      report += `\n`
+    })
   }
 
   // Phase 12: Integrated Strategic Synergy Matrix
@@ -383,23 +404,39 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
     resourceToBranches[s.resource].push(...s.branches)
   })
 
-  // Group by Cluster for better visualization
-  Object.entries(resourceToBranches).sort().forEach(([res, brs]) => {
-    const uniqueBrs = Array.from(new Set(brs))
-    const isCluster = res.startsWith('Cluster:')
-    report += `### ${isCluster ? '📂' : '📦'} ${res}\n`
-    uniqueBrs.slice(0, 15).forEach((b, idx) => {
-      const isLast = idx === Math.min(uniqueBrs.length, 15) - 1
+  // Phase 26: Cluster-Aware Visualization
+  const clusters = relationshipMap.functionalClusters || {}
+  Object.entries(clusters).sort().forEach(([cluster, brs]: [string, any]) => {
+    report += `### 📂 Cluster: ${cluster}\n`
+    const branchList = Array.isArray(brs) ? brs : []
+    branchList.slice(0, 10).forEach((b, idx) => {
+      const isLast = idx === Math.min(branchList.length, 10) - 1
       const prefix = isLast ? '└──' : '├──'
       report += `${prefix} 🌿 \`${b}\`\n`
     })
-    if (uniqueBrs.length > 15) {
-      report += `└── ⋯ (+${uniqueBrs.length - 15} more branches)\n`
+    if (branchList.length > 10) {
+      report += `└── ⋯ (+${branchList.length - 10} more branches)\n`
     }
     report += `\n`
   })
 
-  if (Object.keys(resourceToBranches).length === 0) {
+  // Map individual resources not already clustered
+  Object.entries(resourceToBranches).sort().forEach(([res, brs]) => {
+    if (res.startsWith('Cluster:')) return; // Already handled
+    const uniqueBrs = Array.from(new Set(brs))
+    report += `### 📦 Resource: ${res}\n`
+    uniqueBrs.slice(0, 5).forEach((b, idx) => {
+      const isLast = idx === Math.min(uniqueBrs.length, 5) - 1
+      const prefix = isLast ? '└──' : '├──'
+      report += `${prefix} 🌿 \`${b}\`\n`
+    })
+    if (uniqueBrs.length > 5) {
+      report += `└── ⋯ (+${uniqueBrs.length - 5} more branches)\n`
+    }
+    report += `\n`
+  })
+
+  if (Object.keys(resourceToBranches).length === 0 && Object.keys(clusters).length === 0) {
     report += `_No high-signal synergy overlaps detected for graph generation._\n\n`
   }
 

@@ -16,47 +16,47 @@
     ],
     "directives": [
         {
-            "id": "dir_sptarbiso",
+            "id": "dir_hsaweejzf",
             "priority": "Critical",
             "domain": "Security",
             "intent": "Rotate all Phase 12 neural sync keys",
             "status": "Active",
             "synergyScore": 95,
-            "timestamp": "2026-07-07T21:46:36.939Z"
+            "timestamp": "2026-07-08T08:44:30.752Z"
         },
         {
-            "id": "dir_rojbcrb5d",
+            "id": "dir_035mdvuql",
             "priority": "High",
             "domain": "AI Agents",
             "intent": "Implement Crystals-Kyber for CAIO Agent",
             "status": "Active",
             "synergyScore": 88,
-            "timestamp": "2026-07-07T21:46:36.939Z"
+            "timestamp": "2026-07-08T08:44:30.752Z"
         },
         {
-            "id": "dir_l55jxaiy8",
+            "id": "dir_yzqmwhj52",
             "priority": "Medium",
             "domain": "Services",
             "intent": "Optimize MongoDB sharding for APAC nodes",
             "status": "Active",
             "synergyScore": 72,
-            "timestamp": "2026-07-07T21:46:36.939Z"
+            "timestamp": "2026-07-08T08:44:30.752Z"
         },
         {
-            "id": "dir_blvqmnusj",
+            "id": "dir_shui5ecpp",
             "priority": "Low",
             "domain": "General",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-07-07T21:46:36.939Z"
+            "timestamp": "2026-07-08T08:44:30.752Z"
         },
         {
-            "id": "dir_ipo9do0o3",
+            "id": "dir_s63b4elg1",
             "priority": "Medium",
             "domain": "Documentation",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-07-07T21:46:36.939Z"
+            "timestamp": "2026-07-08T08:44:30.752Z"
         }
     ],
     "docker": {
@@ -66,11 +66,11 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1783460748357,
+        "timestamp": 1783500233164,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 2979,
+        "branches": 2983,
         "pendingTasks": 0,
         "relationshipMap": {
             "stakeholderEngagement": {
@@ -81,7 +81,8 @@
                 "Jules (Lead Architect)": {
                     "email": "jules@antigravity.ai",
                     "activeProjects": [
-                        "jules-13926482618051788925-e0a1fd1d",
+                        "jules-17711038057555899737-eca46269",
+                        "origin",
                         "origin/add-chief-ai-officer-agent-9719417263665099785",
                         "origin/add-compile-definition-17628200376543609981",
                         "origin/add-compile-definition-6604126612521959588",
@@ -384,6 +385,7 @@
                         "origin/jules-4698940260863761381-ceedc4ca",
                         "origin/jules-4843122813281068614-8b4499aa",
                         "origin/jules-4856230905926464355-33432dda",
+                        "origin/jules-496929391610872058-b1a665f3",
                         "origin/jules-5125461103553111919-d5f7a47b",
                         "origin/jules-5156499950924136716-0a8b4fc3",
                         "origin/jules-5338385753786039510-3043fdb1",
@@ -623,7 +625,6 @@
                     "origin/integrate-jenkins-pipeline-generation-14117303396069153360"
                 ],
                 "Maintain Zero-Touch Autonomous Operations.": [
-                    "origin",
                     "origin/add-gitlab-runner-service-1151466855069035440",
                     "origin/add-malubeach-scraper-16704333902164650708",
                     "origin/add-mysql-agent-12534386317238704274",
@@ -895,7 +896,6 @@
                     "origin/jules/autonomous-online-coding-presence-17025271764789693305-17731566985487010590",
                     "origin/jules/connect-docker-collaborate-11639225190852212326",
                     "origin/jules/connect-docker-collaborate-11639225190852212326-1342794352069175774",
-                    "origin/jules/scraper-markposition-17752547678215960211",
                     "origin/macbook-cloud-simulation-2285701184876173816",
                     "origin/make-connections-and-work-autonomous-407761102698473210",
                     "origin/opt-scraper-regex-6404737091544860092",
@@ -920,7 +920,6 @@
                     "origin/update-target-url-11001924703670317262"
                 ],
                 "Expand the Sovereign Fleet across all environments.": [
-                    "origin",
                     "origin/async-fluent-workflow-17630423864710655172",
                     "origin/dependabot/npm_and_yarn/npm_and_yarn-f44cc39d45",
                     "origin/feat/autonomous-cloud-sovereignty-10617479099026703774",
@@ -953,12 +952,10 @@
                     "origin/jules-cloud-simulation-enforcement-7338891043576217515",
                     "origin/jules-cloud-workflow-agent-9594836607216672043",
                     "origin/jules/improve-react-workflow-orchestration-10305698287333015349",
-                    "origin/jules/scraper-markposition-17752547678215960211",
                     "origin/phase-19-sovereign-swarm-16431041015008027051",
                     "origin/update-subagents-knowledge-6325422281065488321"
                 ],
                 "Implement Multi-Agent Neural Relays for Phase 13.": [
-                    "origin",
                     "origin/add-jenkins-trigger-9921528925841613573",
                     "origin/add-malubeach-scraper-16704333902164650708",
                     "origin/add-mysql-agent-12534386317238704274",
@@ -1177,7 +1174,6 @@
                     "origin/jules-macbook-cloud-sim-benchmark-17160841741878347904",
                     "origin/jules-phase-26-evolution-and-icloud-integration-13725884928664929962",
                     "origin/jules-smart-processing-cloud-workflow-18277080341771061055",
-                    "origin/jules/scraper-markposition-17752547678215960211",
                     "origin/multi-cloud-workflow-intelligence-12208347123975439755",
                     "origin/opt-scraper-regex-6404737091544860092",
                     "origin/palette-cli-colors-v1-15537575789263225364",
@@ -5848,6 +5844,13 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "origin/feat/docker-swarm-collaboration-13926482618051788925",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: establish real Docker connection and Swarm collaboration",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "origin/feat/document-hcp-credentials-12060712897845222769",
                     "status": "Ready for Merge",
                     "result": "Commit: chore: add HCP credential placeholders to env template",
@@ -6852,6 +6855,13 @@
                     "name": "origin/feat/integrate-google-innovation-knowledge-1546037599646819763",
                     "status": "Ready for Merge",
                     "result": "Commit: feat: integrate knowledge from Google Innovation & AI blog",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-google-innovation-knowledge-2590325206961785938",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: integrate latest Google Innovation & AI blog knowledge",
                     "category": "feature"
                 },
                 {
@@ -14979,7 +14989,7 @@
                     "type": "Functional Focus Synergy",
                     "resource": "Cluster: cognitive",
                     "branches": [
-                        "jules-13926482618051788925-e0a1fd1d",
+                        "jules-17711038057555899737-eca46269",
                         "main",
                         "origin/add-a2a-remote-agent-152042865285525971",
                         "origin/add-docker-agent-model-docs-997437020929679972",
@@ -15063,6 +15073,7 @@
                         "origin/feat/decision-maker-agent-8910670838096441234",
                         "origin/feat/deploy-react-agents-improve-16615732861125133740",
                         "origin/feat/deploy-react-agents-logic-12098199206590490844",
+                        "origin/feat/docker-swarm-collaboration-13926482618051788925",
                         "origin/feat/enhance-caio-agent-role-knowledge-v2-5314257329463039471",
                         "origin/feat/evolve-chief-ai-officer-agent-5969082472717140886",
                         "origin/feat/gemini-cli-subagents-docs-8356808256042543281",
@@ -15213,6 +15224,7 @@
                         "origin/jules-3971464412207526922-e231acac",
                         "origin/jules-4218664248837075517-97620320",
                         "origin/jules-461521539556268599-2ff32a4c",
+                        "origin/jules-496929391610872058-b1a665f3",
                         "origin/jules-5338385753786039510-3043fdb1",
                         "origin/jules-5360497215916656802-b1251f4c",
                         "origin/jules-5554899623696109055-c1485c6d",
@@ -15307,6 +15319,7 @@
                         "origin/update-gitlab-security-agent-15267557511525381381",
                         "origin/update-gitlab-security-agent-15383007633620851595",
                         "origin/update-gitlab-security-agent-prompt-10068468574422245186",
+                        "origin/update-gitlab-security-agent-prompt-10087093437802479843",
                         "origin/update-gitlab-security-agent-prompt-10708558267767267994",
                         "origin/update-gitlab-security-agent-prompt-11069718994655689674",
                         "origin/update-gitlab-security-agent-prompt-1244713267422706255",
@@ -15873,6 +15886,7 @@
                         "origin/feat/integrate-google-innovation-knowledge-14359259327475631995",
                         "origin/feat/integrate-google-innovation-knowledge-14618042010162779019",
                         "origin/feat/integrate-google-innovation-knowledge-1546037599646819763",
+                        "origin/feat/integrate-google-innovation-knowledge-2590325206961785938",
                         "origin/feat/integrate-google-innovation-knowledge-381443255176943530",
                         "origin/feat/integrate-google-innovation-knowledge-4940171211967250498",
                         "origin/feat/integrate-google-innovation-knowledge-6694719100503062669",
@@ -16308,7 +16322,7 @@
             ],
             "functionalClusters": {
                 "cognitive": [
-                    "jules-13926482618051788925-e0a1fd1d",
+                    "jules-17711038057555899737-eca46269",
                     "main",
                     "origin/add-a2a-remote-agent-152042865285525971",
                     "origin/add-docker-agent-model-docs-997437020929679972",
@@ -16392,6 +16406,7 @@
                     "origin/feat/decision-maker-agent-8910670838096441234",
                     "origin/feat/deploy-react-agents-improve-16615732861125133740",
                     "origin/feat/deploy-react-agents-logic-12098199206590490844",
+                    "origin/feat/docker-swarm-collaboration-13926482618051788925",
                     "origin/feat/enhance-caio-agent-role-knowledge-v2-5314257329463039471",
                     "origin/feat/evolve-chief-ai-officer-agent-5969082472717140886",
                     "origin/feat/gemini-cli-subagents-docs-8356808256042543281",
@@ -16542,6 +16557,7 @@
                     "origin/jules-3971464412207526922-e231acac",
                     "origin/jules-4218664248837075517-97620320",
                     "origin/jules-461521539556268599-2ff32a4c",
+                    "origin/jules-496929391610872058-b1a665f3",
                     "origin/jules-5338385753786039510-3043fdb1",
                     "origin/jules-5360497215916656802-b1251f4c",
                     "origin/jules-5554899623696109055-c1485c6d",
@@ -16636,6 +16652,7 @@
                     "origin/update-gitlab-security-agent-15267557511525381381",
                     "origin/update-gitlab-security-agent-15383007633620851595",
                     "origin/update-gitlab-security-agent-prompt-10068468574422245186",
+                    "origin/update-gitlab-security-agent-prompt-10087093437802479843",
                     "origin/update-gitlab-security-agent-prompt-10708558267767267994",
                     "origin/update-gitlab-security-agent-prompt-11069718994655689674",
                     "origin/update-gitlab-security-agent-prompt-1244713267422706255",
@@ -17187,6 +17204,7 @@
                     "origin/feat/integrate-google-innovation-knowledge-14359259327475631995",
                     "origin/feat/integrate-google-innovation-knowledge-14618042010162779019",
                     "origin/feat/integrate-google-innovation-knowledge-1546037599646819763",
+                    "origin/feat/integrate-google-innovation-knowledge-2590325206961785938",
                     "origin/feat/integrate-google-innovation-knowledge-381443255176943530",
                     "origin/feat/integrate-google-innovation-knowledge-4940171211967250498",
                     "origin/feat/integrate-google-innovation-knowledge-6694719100503062669",
@@ -17614,7 +17632,7 @@
                     "action": "Review 'cognitive' functional roadmaps",
                     "resource": "cognitive",
                     "branches": [
-                        "jules-13926482618051788925-e0a1fd1d",
+                        "jules-17711038057555899737-eca46269",
                         "main",
                         "origin/add-a2a-remote-agent-152042865285525971",
                         "origin/add-docker-agent-model-docs-997437020929679972",
@@ -17698,6 +17716,7 @@
                         "origin/feat/decision-maker-agent-8910670838096441234",
                         "origin/feat/deploy-react-agents-improve-16615732861125133740",
                         "origin/feat/deploy-react-agents-logic-12098199206590490844",
+                        "origin/feat/docker-swarm-collaboration-13926482618051788925",
                         "origin/feat/enhance-caio-agent-role-knowledge-v2-5314257329463039471",
                         "origin/feat/evolve-chief-ai-officer-agent-5969082472717140886",
                         "origin/feat/gemini-cli-subagents-docs-8356808256042543281",
@@ -17848,6 +17867,7 @@
                         "origin/jules-3971464412207526922-e231acac",
                         "origin/jules-4218664248837075517-97620320",
                         "origin/jules-461521539556268599-2ff32a4c",
+                        "origin/jules-496929391610872058-b1a665f3",
                         "origin/jules-5338385753786039510-3043fdb1",
                         "origin/jules-5360497215916656802-b1251f4c",
                         "origin/jules-5554899623696109055-c1485c6d",
@@ -17942,6 +17962,7 @@
                         "origin/update-gitlab-security-agent-15267557511525381381",
                         "origin/update-gitlab-security-agent-15383007633620851595",
                         "origin/update-gitlab-security-agent-prompt-10068468574422245186",
+                        "origin/update-gitlab-security-agent-prompt-10087093437802479843",
                         "origin/update-gitlab-security-agent-prompt-10708558267767267994",
                         "origin/update-gitlab-security-agent-prompt-11069718994655689674",
                         "origin/update-gitlab-security-agent-prompt-1244713267422706255",
@@ -17978,7 +17999,7 @@
                         "origin/verify-agent-architecture-docs-757186013540046202",
                         "origin/verify-ai-agent-architecture-7604816856702925706"
                     ],
-                    "rationale": "363 branches are targeting the 'cognitive' functional area. This suggests a high-priority system evolution. Recommend a architectural review to ensure consistency."
+                    "rationale": "366 branches are targeting the 'cognitive' functional area. This suggests a high-priority system evolution. Recommend a architectural review to ensure consistency."
                 },
                 {
                     "priority": "Medium",
@@ -18511,6 +18532,7 @@
                         "origin/feat/integrate-google-innovation-knowledge-14359259327475631995",
                         "origin/feat/integrate-google-innovation-knowledge-14618042010162779019",
                         "origin/feat/integrate-google-innovation-knowledge-1546037599646819763",
+                        "origin/feat/integrate-google-innovation-knowledge-2590325206961785938",
                         "origin/feat/integrate-google-innovation-knowledge-381443255176943530",
                         "origin/feat/integrate-google-innovation-knowledge-4940171211967250498",
                         "origin/feat/integrate-google-innovation-knowledge-6694719100503062669",
@@ -18821,7 +18843,7 @@
                         "origin/update-knowledge-merge-with-glossary-11855212451135205052",
                         "origin/update-mcp-docker-security-11834660539572533331"
                     ],
-                    "rationale": "425 branches are targeting the 'knowledge' functional area. This suggests a high-priority system evolution. Recommend a architectural review to ensure consistency."
+                    "rationale": "426 branches are targeting the 'knowledge' functional area. This suggests a high-priority system evolution. Recommend a architectural review to ensure consistency."
                 },
                 {
                     "priority": "Medium",
@@ -20865,903 +20887,1419 @@
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "activate_cloud_sovereignty",
                     "sourceType": "Automation Script",
                     "target": "cloud_connected_integration",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "activate_cloud_sovereignty",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "activate_cloud_sovereignty",
                     "sourceType": "Automation Script",
                     "target": "presence",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "analyze_recent_sessions",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "analyze_recent_sessions",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "analyze_recent_sessions",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "autonomous_creation_order",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "autonomous_creation_order",
                     "sourceType": "Automation Script",
                     "target": "work_order",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "autonomous_orchestrator",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "autonomous_orchestrator",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "autonomous_orchestrator",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "autonomous_orchestrator",
                     "sourceType": "Automation Script",
                     "target": "docker",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "autonomous_orchestrator",
                     "sourceType": "Automation Script",
                     "target": "work_order",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "autonomous_orchestrator",
                     "sourceType": "Automation Script",
                     "target": "creation_reporting",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "autonomous_sync",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "autonomous_sync",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "check_cloud_simulation",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "check_cloud_simulation",
                     "sourceType": "Automation Script",
                     "target": "docker",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "check_cloud_simulation",
                     "sourceType": "Automation Script",
                     "target": "react",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "check_cloud_simulation",
                     "sourceType": "Automation Script",
                     "target": "cloud_workflow",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "connect_and_collaborate",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "connect_and_collaborate",
                     "sourceType": "Automation Script",
                     "target": "cloud_simulation",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "connect_and_collaborate",
                     "sourceType": "Automation Script",
                     "target": "distributed_consensus",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "consolidate_intelephense",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "consolidate_intelephense",
                     "sourceType": "Automation Script",
                     "target": "intelephense_service",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "demo_fp_pipeline",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "demo_fp_pipeline",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "demo_fp_pipeline",
                     "sourceType": "Automation Script",
                     "target": "fp",
                     "targetType": "Utility",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "demo_work_orders",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "demo_work_orders",
                     "sourceType": "Automation Script",
                     "target": "work_order",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "execute_creation_cycle",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "execute_creation_cycle",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "execute_creation_cycle",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "execute_creation_cycle",
                     "sourceType": "Automation Script",
                     "target": "work_order",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "execute_takeover",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "execute_takeover",
                     "sourceType": "Automation Script",
                     "target": "cloud_workflow",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation",
                     "sourceType": "Automation Script",
                     "target": "docker",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation",
                     "sourceType": "Automation Script",
                     "target": "work_order",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation",
                     "sourceType": "Automation Script",
                     "target": "presence",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation",
                     "sourceType": "Automation Script",
                     "target": "cloud_convergence",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation",
                     "sourceType": "Automation Script",
                     "target": "creation_reporting",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation_order_and_execution",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation_order_and_execution",
                     "sourceType": "Automation Script",
                     "target": "distributed_consensus",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation_order_and_execution",
                     "sourceType": "Automation Script",
                     "target": "universal_mesh_routing",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation_order_and_execution",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation_order_and_execution",
                     "sourceType": "Automation Script",
                     "target": "docker",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation_order_and_execution",
                     "sourceType": "Automation Script",
                     "target": "work_order",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation_order_and_execution",
                     "sourceType": "Automation Script",
                     "target": "presence",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation_order_and_execution",
                     "sourceType": "Automation Script",
                     "target": "cloud_convergence",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation_order_and_execution",
                     "sourceType": "Automation Script",
                     "target": "cloud_connected_integration",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_automatic_creation_order_and_execution",
                     "sourceType": "Automation Script",
                     "target": "creation_reporting",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_ignition",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_ignition",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "full_autonomous_ignition",
                     "sourceType": "Automation Script",
                     "target": "work_order",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "gemini_explain_ai",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "gemini_explain_ai",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ignite_creation",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ignite_creation",
                     "sourceType": "Automation Script",
                     "target": "work_order",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ingest_agent_architecture",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_agent_architecture",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_antigravity_cli",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "High",
+                    "metadata": {
+                        "hasSharedSchema": true,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_antigravity_cli",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "High",
+                    "metadata": {
+                        "hasSharedSchema": true,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_boundary_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_boundary_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_caio_research",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ingest_caio_research",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ingest_caio_role",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ingest_caio_role",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ingest_companylink_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_companylink_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_forbes",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_forbes",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_gamezone_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_gpgtools_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_gpgtools_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_hcp_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_hcp_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_hcp_packer_knowledge",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_hcp_packer_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_hcp_packer_knowledge",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_hcp_packer_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_icloud_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ingest_icloud_knowledge",
                     "sourceType": "Automation Script",
                     "target": "icloud",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ingest_intelephense",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ingest_intelephense",
                     "sourceType": "Automation Script",
                     "target": "intelephense_service",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ingest_markposition_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_markposition_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_onlinereview_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_onlinereview_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_project_sor",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_project_sor",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_software_online_review",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_software_online_review",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_terraform_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_terraform_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_unitedsports_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "ingest_user_caio_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "ingest_user_caio_knowledge",
                     "sourceType": "Automation Script",
                     "target": "knowledge",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "integrate_knowledge",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "integrate_knowledge",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "nomad_cli",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "High",
+                    "metadata": {
+                        "hasSharedSchema": true,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "nomad_cli",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "High",
+                    "metadata": {
+                        "hasSharedSchema": true,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "react_orchestrator",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "react_orchestrator",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "react_orchestrator",
                     "sourceType": "Automation Script",
                     "target": "react",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "sync_all_branches",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "sync_all_branches",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "sync_all_branches",
                     "sourceType": "Automation Script",
                     "target": "collaboration",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "sync_all_branches",
                     "sourceType": "Automation Script",
                     "target": "intelligence",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "sync_icloud",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "sync_icloud",
                     "sourceType": "Automation Script",
                     "target": "icloud",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "test_gemini",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "test_knowledge_integration",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "test_knowledge_integration",
                     "sourceType": "Automation Script",
                     "target": "github_docs_observer",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "unified_collaboration",
                     "sourceType": "Automation Script",
                     "target": "swarm_heartbeat",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "unified_collaboration",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "unified_collaboration",
                     "sourceType": "Automation Script",
                     "target": "distributed_consensus",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "unified_collaboration",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "unified_collaboration",
                     "sourceType": "Automation Script",
                     "target": "collaboration",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "unified_collaboration",
                     "sourceType": "Automation Script",
                     "target": "intelligence",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "unified_collaboration",
                     "sourceType": "Automation Script",
                     "target": "sentient_orchestration",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "unified_collaboration",
                     "sourceType": "Automation Script",
                     "target": "work_order",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": true
+                    }
                 },
                 {
                     "source": "work_daily",
                     "sourceType": "Automation Script",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "work_daily",
                     "sourceType": "Automation Script",
                     "target": "antigravity",
                     "targetType": "Binary/Executable",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 },
                 {
                     "source": "route",
                     "sourceType": "UI Component",
                     "target": "lattice_sync",
                     "targetType": "Service",
-                    "intensity": "Medium"
+                    "intensity": "Medium",
+                    "metadata": {
+                        "hasSharedSchema": false,
+                        "hasApiContract": false
+                    }
                 }
             ],
             "meshNodes": [
@@ -22145,7 +22683,7 @@
                 {
                     "name": "origin/feature/autonomous-cloud-sovereignty-10105112552170184768",
                     "lastMessage": "feat: implement autonomous cloud sovereignty and presence",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.",
@@ -22156,7 +22694,7 @@
                 {
                     "name": "origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147",
                     "lastMessage": "feat: implement Phase 26 autonomous cloud sovereignty and failover",
-                    "lastSeen": "6 hours ago",
+                    "lastSeen": "17 hours ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.",
@@ -22189,35 +22727,13 @@
                 {
                     "name": "origin/feature/phase-23-cloud-sovereignty-enhancement-14406814491879713888",
                     "lastMessage": "feat(cloud): finalize autonomous cloud integration and fix CI failures",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.",
                     "results": "Commit: feat(cloud): finalize autonomous cloud integration and fix CI failures",
                     "changedFiles": [],
                     "score": 130
-                },
-                {
-                    "name": "origin",
-                    "lastMessage": "Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147",
-                    "lastSeen": "4 hours ago",
-                    "category": "other",
-                    "domain": "General",
-                    "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.",
-                    "results": "Commit: Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147",
-                    "changedFiles": [],
-                    "score": 110
-                },
-                {
-                    "name": "origin/jules/scraper-markposition-17752547678215960211",
-                    "lastMessage": "Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147",
-                    "lastSeen": "4 hours ago",
-                    "category": "origin",
-                    "domain": "General",
-                    "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.",
-                    "results": "Commit: Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147",
-                    "changedFiles": [],
-                    "score": 110
                 },
                 {
                     "name": "origin/feat/autonomous-cloud-sovereignty-10617479099026703774",
@@ -22233,7 +22749,7 @@
                 {
                     "name": "origin/feat/autonomous-cloud-sovereignty-13133862953322273895",
                     "lastMessage": "feat: autonomous cloud sovereignty and CI stability fixes",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.",
@@ -22266,7 +22782,7 @@
                 {
                     "name": "origin/feat/phase-25-singularity-integration-18319350463650196031",
                     "lastMessage": "feat: integrate Phase 25 and fix Cloudflare Worker CI",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "feature",
                     "domain": "Core",
                     "knowledge": "Aligned with strategic initiative: 🌌 Singularity Orchestration.",
@@ -22299,7 +22815,7 @@
                 {
                     "name": "origin/feature/autonomous-cloud-sovereignty-7704563431937959285",
                     "lastMessage": "feat: enable autonomous cloud work and sovereign presence",
-                    "lastSeen": "30 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.",
@@ -22860,7 +23376,7 @@
                 {
                     "name": "origin/feat/phase13-icloud-alignment-16455813924717578317",
                     "lastMessage": "feat: integrate Phase 13 knowledge and enhance autonomous engine",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -23256,7 +23772,7 @@
                 {
                     "name": "origin/feat/cloud-sovereign-autonomy-6398105617467273727",
                     "lastMessage": "feat: enhance cloud-native autonomy and fix Netlify CI failures",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Aligned with strategic initiative: ☁️ Cloud-Native Sovereignty.",
@@ -23289,7 +23805,7 @@
                 {
                     "name": "origin/feat/phase-24-distributed-consensus-collaboration-11320197349285458011",
                     "lastMessage": "feat: implement Phase 24 Distributed Consensus for enhanced collaboration",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Aligned with strategic initiative: 🤝 Swarm Consensus.",
@@ -23355,7 +23871,7 @@
                 {
                     "name": "origin/feature/icloud-knowledge-integration-phase-19-optimization-9121978722506943804",
                     "lastMessage": "feat: integrate iCloud knowledge and improve Phase 19 swarm optimization",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "Aligned with strategic initiative: 🐝 Swarm Intelligence.",
@@ -23421,7 +23937,7 @@
                 {
                     "name": "origin/autonomous-agents-framework-90146205652415261",
                     "lastMessage": "Implement autonomous multi-agent system for ads and content",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -23707,7 +24223,7 @@
                 {
                     "name": "origin/opt-scraper-regex-6404737091544860092",
                     "lastMessage": "Implement self-evolving autonomous system",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -23795,7 +24311,7 @@
                 {
                     "name": "origin/update-scraper-target-14564535453076268184",
                     "lastMessage": "Implement collaborative autonomous agent system",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -24037,7 +24553,7 @@
                 {
                     "name": "origin/feat/automate-knowledge-merge-and-branding-14994549607098938422",
                     "lastMessage": "feat: finalize autonomous knowledge merge and resolve CI dependencies",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -24103,7 +24619,7 @@
                 {
                     "name": "origin/feat/autonomous-cloud-presence-13349070200456458168",
                     "lastMessage": "fix: resolve linting and react hook errors in frontend",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -24125,7 +24641,7 @@
                 {
                     "name": "origin/feat/autonomous-cloud-presence-and-merge-7435388487164725443",
                     "lastMessage": "feat: enable autonomous cloud presence and automatic PR merging (fixed lockfile)",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -24202,7 +24718,7 @@
                 {
                     "name": "origin/feat/autonomous-creation-engine-8264207274703386634",
                     "lastMessage": "Merge branch 'main' into feat/autonomous-creation-engine-8264207274703386634",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -24257,7 +24773,7 @@
                 {
                     "name": "origin/feat/autonomous-daily-license-knowledge-sync-10372390239614697679",
                     "lastMessage": "feat: autonomous daily knowledge ingestion and license validation",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -24290,7 +24806,7 @@
                 {
                     "name": "origin/feat/autonomous-knowledge-integration-8581673978329557220",
                     "lastMessage": "feat: integrate markposition knowledge and automate merge (fixed CI)",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -24301,7 +24817,7 @@
                 {
                     "name": "origin/feat/autonomous-knowledge-integration-markposition-4693577018309061142",
                     "lastMessage": "feat: integrate markposition knowledge and fix cross-project CI",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -24367,7 +24883,7 @@
                 {
                     "name": "origin/feat/caio-role-refinement-14139776390756160770",
                     "lastMessage": "feat: refine CAIO strategy and enhance autonomous core resilience",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "",
@@ -24642,7 +25158,7 @@
                 {
                     "name": "origin/feat/enhanced-collaboration-v26-6747205150360071",
                     "lastMessage": "feat: enhance collaboration merge and mesh communication (Phase 26)",
-                    "lastSeen": "11 hours ago",
+                    "lastSeen": "22 hours ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -24741,7 +25257,7 @@
                 {
                     "name": "origin/feat/google-ai-agents-knowledge-12584342026214538833",
                     "lastMessage": "feat: implement Google Cloud AI agents knowledge",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -24752,7 +25268,7 @@
                 {
                     "name": "origin/feat/google-cloud-ai-agents-knowledge-4218668793533463141",
                     "lastMessage": "feat: implement exhaustive AI agents knowledge and fix CI",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -24851,7 +25367,7 @@
                 {
                     "name": "origin/feat/implement-ai-agents-knowledge-16793181359834219969",
                     "lastMessage": "Implement AI agent knowledge from Google Cloud and fix CI failures",
-                    "lastSeen": "12 hours ago",
+                    "lastSeen": "23 hours ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -25159,7 +25675,7 @@
                 {
                     "name": "origin/feat/phase-23-icloud-integration-evolution-15198501919845315902",
                     "lastMessage": "feat: integrate Phase 23 iCloud knowledge and enhance evolution engine",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -25170,7 +25686,7 @@
                 {
                     "name": "origin/feat/phase-26-umr-icloud-integration-7186208582283220117",
                     "lastMessage": "feat: implement Phase 26 Universal Mesh Routing and iCloud knowledge integration",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -25181,7 +25697,7 @@
                 {
                     "name": "origin/feat/phase26-icloud-integration-17285303421408668297",
                     "lastMessage": "feat: integrate Phase 26 iCloud knowledge and improve system engine/agents",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -25456,7 +25972,7 @@
                 {
                     "name": "origin/feature/cloud-connected-autonomy-12961095024282188160",
                     "lastMessage": "feat: implement Phase 23 Cloud-Connected Integration and fix CI builds",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -25500,7 +26016,7 @@
                 {
                     "name": "origin/feature/knowledge-merge-all-entries-11790747981998761777",
                     "lastMessage": "feat(scraper): Expand knowledge merge agent to include all market entries",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -25797,7 +26313,7 @@
                 {
                     "name": "origin/jenkins-pipeline-integration-2917487616063889464",
                     "lastMessage": "feat: Implement Jenkins ecosystem collaboration trigger",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -25918,7 +26434,7 @@
                 {
                     "name": "origin/jules-16739887525044798643-c54f1fa3",
                     "lastMessage": "feat: Implement fluent multi-cloud workflow orchestration and async Docker auto-recovery",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "",
@@ -25984,7 +26500,7 @@
                 {
                     "name": "origin/jules-6051254771028415261-5a228c2f",
                     "lastMessage": "feat: autonomously ingest and consolidate Intelephense documentation",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -25995,7 +26511,7 @@
                 {
                     "name": "origin/jules-6555493983727562929-cd52dacc",
                     "lastMessage": "feat: implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -26072,7 +26588,7 @@
                 {
                     "name": "origin/jules-phase-26-evolution-and-icloud-integration-13725884928664929962",
                     "lastMessage": "feat: integrate Phase 26 iCloud knowledge and evolve system engine",
-                    "lastSeen": "13 hours ago",
+                    "lastSeen": "24 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -26325,7 +26841,7 @@
                 {
                     "name": "origin/sentinel/fix-csv-injection-14631498172973798397",
                     "lastMessage": "feat: implement self-learning IQ tracking for Intelligence Agent",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -26644,7 +27160,7 @@
                 {
                     "name": "origin/update-duo-planner-prompt-and-agent-16216495216287918600",
                     "lastMessage": "feat: Update Duo Planner system prompt and implement agent class",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -27964,7 +28480,7 @@
                 {
                     "name": "origin/feat/cloud-native-autonomy-13870741608362044054",
                     "lastMessage": "feat: enable cloud-native autonomy and online presence",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Aligned with strategic initiative: ☁️ Cloud-Native Sovereignty.",
@@ -27980,6 +28496,17 @@
                     "domain": "General",
                     "knowledge": "Aligned with strategic initiative: ⚡ Quantum Synergy.",
                     "results": "Commit: Merge branch 'main' into feat/collaboration-synergy-analysis-9382599357384352288",
+                    "changedFiles": [],
+                    "score": 40
+                },
+                {
+                    "name": "origin/feat/docker-swarm-collaboration-13926482618051788925",
+                    "lastMessage": "feat: establish real Docker connection and Swarm collaboration",
+                    "lastSeen": "11 hours ago",
+                    "category": "feature",
+                    "domain": "AI Agents",
+                    "knowledge": "Aligned with strategic initiative: 🐝 Swarm Intelligence.",
+                    "results": "Commit: feat: establish real Docker connection and Swarm collaboration",
                     "changedFiles": [],
                     "score": 40
                 },
@@ -28063,7 +28590,7 @@
                 {
                     "name": "origin/perf-optimize-regex-10602796158546240842",
                     "lastMessage": "perf: Optimize regex matching by pre-compiling url pattern",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "performance",
                     "domain": "General",
                     "knowledge": "",
@@ -28217,7 +28744,7 @@
                 {
                     "name": "origin/feature/game-of-logic-4165786141866980928",
                     "lastMessage": "chore: verify autonomous audit script",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "maintenance",
                     "domain": "Automation",
                     "knowledge": "",
@@ -28349,7 +28876,7 @@
                 {
                     "name": "origin/jules-autonomous-workflow-unified-14967929050804960809",
                     "lastMessage": "chore(autonomous): migrate remaining workflows to typescript cycle\\n\\nMigrates `.github/workflows/autonomous_cycle.yml` to use `npm run daily` instead of the legacy `python3 run_system.py`, unifying the core execution paths. The `npm run ignite` and systemd commands were already correctly configured in the repository.",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "maintenance",
                     "domain": "Services",
                     "knowledge": "",
@@ -28404,7 +28931,7 @@
                 {
                     "name": "origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784",
                     "lastMessage": "🤖 chore: Antigravity autonomous core optimization and deployment automation",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "",
@@ -28910,7 +29437,7 @@
                 {
                     "name": "origin/fix/frontend-lint-and-syntax-errors-2082968033055005265",
                     "lastMessage": "Fix frontend CI regressions and missing telemetry context",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "fix",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -29053,7 +29580,7 @@
                 {
                     "name": "origin/fix/intelephense-knowledge-consolidation-16405766747480114157",
                     "lastMessage": "Merge branch 'main' and consolidate Intelephense knowledge",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "fix",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -29262,7 +29789,7 @@
                 {
                     "name": "origin/implement-ai-agents-knowledge-8036846396761105562",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into implement-ai-agents-knowledge-8036846396761105562",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -29537,7 +30064,7 @@
                 {
                     "name": "origin/jules-18406338226598714071-aab43e45",
                     "lastMessage": "fix: correct system memory json syntax formatting",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -29713,7 +30240,7 @@
                 {
                     "name": "origin/jules-knowledge-integration-subagents-16636673178408066825",
                     "lastMessage": "fix(frontend): resolve linting errors and telemetry effect dependency",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "fix",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -29757,7 +30284,7 @@
                 {
                     "name": "origin/make-connections-and-work-autonomous-407761102698473210",
                     "lastMessage": "Insert synthetic benchmark prompt text as HTML comment",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -29768,7 +30295,7 @@
                 {
                     "name": "origin/nomad-cli-agent-docs-15478110730395729144",
                     "lastMessage": "fix: Update GitHub Actions to non-deprecated versions and fix bandit issues",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -29823,7 +30350,7 @@
                 {
                     "name": "origin/remote-subagents-config-5573674147411038862",
                     "lastMessage": "fix(lint): Resolve TypeScript any errors in intelligence API route",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "fix",
                     "domain": "Automation",
                     "knowledge": "",
@@ -31517,7 +32044,7 @@
                 {
                     "name": "origin/add-a2a-remote-agent-152042865285525971",
                     "lastMessage": "feat: add generic A2A remote agent configuration",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -31539,7 +32066,7 @@
                 {
                     "name": "origin/add-docker-scripts-14962706392589598489",
                     "lastMessage": "feat: add docker deployment scripts",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "",
@@ -31550,7 +32077,7 @@
                 {
                     "name": "origin/add-gitlab-security-agent-prompt-16540176671068222176",
                     "lastMessage": "feat(agents): Add GitLab Security Analyst Agent prompt",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -31627,7 +32154,7 @@
                 {
                     "name": "origin/add-jenkins-metrics-12709603847827089760",
                     "lastMessage": "feat: Add Jenkins pipeline metrics to collaboration service",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "",
@@ -31770,7 +32297,7 @@
                 {
                     "name": "origin/bolt-debounce-search-5898530912352758031",
                     "lastMessage": "feat(perf): debounce search input to reduce layout thrashing",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -32111,7 +32638,7 @@
                 {
                     "name": "origin/enhance-collaboration-intelligence-15412005107506698569",
                     "lastMessage": "feat: enhance collaboration intelligence and strategic communication",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -32122,7 +32649,7 @@
                 {
                     "name": "origin/enhanced-collaboration-intelligence-6039790404604800823",
                     "lastMessage": "feat: enhance branch intelligence merge and strategic communication",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -32199,7 +32726,7 @@
                 {
                     "name": "origin/feat/ai-agents-knowledge-ingestion-3432960869783854018",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-ingestion-3432960869783854018",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -32221,7 +32748,7 @@
                 {
                     "name": "origin/feat/ai-agents-knowledge-integration-17962488157664900856",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-integration-17962488157664900856",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -32287,7 +32814,7 @@
                 {
                     "name": "origin/feat/automate-daily-work-and-icloud-sync-16993665508215750949",
                     "lastMessage": "feat: automate daily work cycle and iCloud project synchronization",
-                    "lastSeen": "11 hours ago",
+                    "lastSeen": "22 hours ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -32331,7 +32858,7 @@
                 {
                     "name": "origin/feat/caio-research-integration-8417244013127747415",
                     "lastMessage": "feat: integrate CAIO research and certifications into knowledge base",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -32364,7 +32891,7 @@
                 {
                     "name": "origin/feat/caio-role-integration-8526698597633243980",
                     "lastMessage": "feat: integrate Chief AI Officer (CAIO) role and strategic mandates",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -32452,7 +32979,7 @@
                 {
                     "name": "origin/feat/collaboration-dashboard-13924371239853665910",
                     "lastMessage": "feat(dashboard): add collaboration dashboard to track multiple repos",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -32936,7 +33463,7 @@
                 {
                     "name": "origin/feat/enhanced-collaboration-intelligence-v16-final-handshake-17849102938475620193-9949874481939379825-v2-5392120890066692791",
                     "lastMessage": "feat: enhance unified collaboration and communication protocols",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -33189,7 +33716,7 @@
                 {
                     "name": "origin/feat/google-innovation-ai-knowledge-integration-3733759549179943042",
                     "lastMessage": "feat: integrate Google Innovation & AI knowledge and fix CI",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -33332,7 +33859,7 @@
                 {
                     "name": "origin/feat/hcp-terraform-run-task-3528016114234953749",
                     "lastMessage": "feat: Add HCP Terraform run task configuration for Packer validation",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -33376,7 +33903,7 @@
                 {
                     "name": "origin/feat/icloud-knowledge-integration-and-engine-improvement-460748262715860893",
                     "lastMessage": "Merge branch 'main' into feat/icloud-knowledge-integration-and-engine-improvement-460748262715860893",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -33902,6 +34429,17 @@
                     "score": 20
                 },
                 {
+                    "name": "origin/feat/integrate-google-innovation-knowledge-2590325206961785938",
+                    "lastMessage": "feat: integrate latest Google Innovation & AI blog knowledge",
+                    "lastSeen": "9 hours ago",
+                    "category": "feature",
+                    "domain": "Documentation",
+                    "knowledge": "",
+                    "results": "Commit: feat: integrate latest Google Innovation & AI blog knowledge",
+                    "changedFiles": [],
+                    "score": 20
+                },
+                {
                     "name": "origin/feat/integrate-google-innovation-knowledge-381443255176943530",
                     "lastMessage": "feat: integrate latest Google Innovation & AI blog knowledge",
                     "lastSeen": "3 weeks ago",
@@ -33926,7 +34464,7 @@
                 {
                     "name": "origin/feat/integrate-google-innovation-knowledge-6694719100503062669",
                     "lastMessage": "feat: integrate latest Google Innovation & AI blog knowledge",
-                    "lastSeen": "23 hours ago",
+                    "lastSeen": "34 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -33970,7 +34508,7 @@
                 {
                     "name": "origin/feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -34157,7 +34695,7 @@
                 {
                     "name": "origin/feat/intelephense-docs-integration-15548360236186896654",
                     "lastMessage": "Merge branch 'main' into feat/intelephense-docs-integration-15548360236186896654",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -34289,7 +34827,7 @@
                 {
                     "name": "origin/feat/intelephense-knowledge-ingestion-4829915519788465167",
                     "lastMessage": "feat: enhance Intelephense knowledge ingestion and content preservation",
-                    "lastSeen": "31 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -34355,7 +34893,7 @@
                 {
                     "name": "origin/feat/intelephense-knowledge-sync-v26-11440261265650229332",
                     "lastMessage": "feat: synchronize Intelephense docs and fix Cloudflare Worker CI names",
-                    "lastSeen": "8 hours ago",
+                    "lastSeen": "19 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -34366,7 +34904,7 @@
                 {
                     "name": "origin/feat/intelephense-knowledge-update-395560943942458722",
                     "lastMessage": "feat: update Intelephense documentation in knowledge base",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -34377,7 +34915,7 @@
                 {
                     "name": "origin/feat/investopedia-ingestion-10809640050459136774",
                     "lastMessage": "feat: integrate investopedia knowledge ingestion",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -34795,7 +35333,7 @@
                 {
                     "name": "origin/feat/unified-collaboration-and-strategic-communication-v15-4357140190256322963",
                     "lastMessage": "feat: enhance unified collaboration and strategic communication",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -34905,7 +35443,7 @@
                 {
                     "name": "origin/feat/update-intelephense-docs-16833717211738662516",
                     "lastMessage": "docs: update Intelephense knowledge base from official repository",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -34960,7 +35498,7 @@
                 {
                     "name": "origin/feat/update-intelephense-knowledge-16942753363135723418",
                     "lastMessage": "Merge branch 'main' into feat/update-intelephense-knowledge-16942753363135723418",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -34993,7 +35531,7 @@
                 {
                     "name": "origin/feat/vault-radar-agent-8481917393959699580",
                     "lastMessage": "feat: Add Vault Radar CLI installation and execution scripts",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "",
@@ -35004,7 +35542,7 @@
                 {
                     "name": "origin/feat/vercel-workflow-sdk-knowledge-773673674483081581",
                     "lastMessage": "feat: ingest Vercel Workflow SDK knowledge",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "",
@@ -35070,7 +35608,7 @@
                 {
                     "name": "origin/feature/caio-role-integration-14157009948990756800",
                     "lastMessage": "feat(caio): integrate Chief AI Officer role and strategic mandates",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -35103,7 +35641,7 @@
                 {
                     "name": "origin/feature/dbcode-integration-11254017682515321664",
                     "lastMessage": "feat: integrate DBCode knowledge source and fix CI dependencies",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -35125,7 +35663,7 @@
                 {
                     "name": "origin/feature/enhanced-collaboration-intelligence-801051165672751368",
                     "lastMessage": "feat: enhance collaboration merge and strategic communication",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -35158,7 +35696,7 @@
                 {
                     "name": "origin/feature/icloud-sync-291682100632365852",
                     "lastMessage": "feat: add iCloud Drive synchronization script for core folders",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "",
@@ -35532,7 +36070,7 @@
                 {
                     "name": "origin/integrate-knowledge-markposition-11578747878625387044",
                     "lastMessage": "feat: integrate market data and update knowledge base",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -35543,7 +36081,7 @@
                 {
                     "name": "origin/integrate-markposition-knowledge-and-signatures-6377454843442297943",
                     "lastMessage": "feat: integrate markposition knowledge, unify signatures, and fix CI",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -35664,7 +36202,7 @@
                 {
                     "name": "origin/jules-1161081367633686083-4a91c89c",
                     "lastMessage": "feat: update scripts/ingest_ads_knowledge.ts",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "",
@@ -35884,7 +36422,7 @@
                 {
                     "name": "origin/jules-5125461103553111919-d5f7a47b",
                     "lastMessage": "feat: securely configure Google & Gemini API keys",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -36214,7 +36752,7 @@
                 {
                     "name": "origin/jules/integrate-knowledge-merge-signature-9637748484475924203",
                     "lastMessage": "feat: Integrate knowledge merge and append markposition signature",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -36665,7 +37203,7 @@
                 {
                     "name": "origin/palette-analytics-report-ux-4232613033722096123",
                     "lastMessage": "feat(analytics): enhance report with TOC, emojis and navigation",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -40647,7 +41185,7 @@
                 {
                     "name": "origin/docs/create-intelephence-premium-code-structure-skill-8352944221321224924",
                     "lastMessage": "docs: create integrate code automation intelephence premium code structure",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "documentation",
                     "domain": "Automation",
                     "knowledge": "",
@@ -40889,7 +41427,7 @@
                 {
                     "name": "origin/jules-17430343990571925541-c81c147a",
                     "lastMessage": "docs: generate AI Ecosystem Rollup mapping agents to 12-layer architecture",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "documentation",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -41164,7 +41702,7 @@
                 {
                     "name": "origin/update-intelephense-docs-15547754341118913707",
                     "lastMessage": "docs: update Intelephense documentation and fix structural header detection",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "documentation",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -41175,7 +41713,7 @@
                 {
                     "name": "origin/update-intelephense-docs-16356255795407390855",
                     "lastMessage": "docs: update Intelephense documentation and knowledge base",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "documentation",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -41230,7 +41768,7 @@
                 {
                     "name": "origin/update-intelephense-knowledge-8556538845715046986",
                     "lastMessage": "docs: update Intelephense documentation and consolidate knowledge",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "documentation",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -41318,7 +41856,7 @@
                 {
                     "name": "origin/chore/integrate-improvement-code-prompt-3030996373054214975",
                     "lastMessage": "chore: integrate improvement code prompt",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -41395,7 +41933,7 @@
                 {
                     "name": "origin/daily-work-automation-setup-16331620852581161197",
                     "lastMessage": "chore: initialize and automate daily work cycle",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -41494,7 +42032,7 @@
                 {
                     "name": "origin/jules-1027089695129073368-c49a1c11",
                     "lastMessage": "chore: execute daily work cycle and provide environment setup tools",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -41571,7 +42109,7 @@
                 {
                     "name": "origin/jules-13638468131991503087-80926d0f",
                     "lastMessage": "chore: force trigger CI",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -41593,7 +42131,7 @@
                 {
                     "name": "origin/jules-1433056104887275839-9b117db6",
                     "lastMessage": "chore: synchronize ecosystem intelligence and collaboration state",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -41670,7 +42208,7 @@
                 {
                     "name": "origin/jules-16888796621400029054-460e13c4",
                     "lastMessage": "chore: update .gitlab-ci.yml with tutorial code",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -41791,7 +42329,7 @@
                 {
                     "name": "origin/jules-3444915640748353694-63419224",
                     "lastMessage": "chore: Generate initial project backlog for GitLab mirroring\\n\\n- Add `project_backlog.md` detailing current repository health\\n- Outline Epics, Issues, and Tasks for Turbopack compilation errors, TypeScript/ESLint warnings, and degraded test states\\n- Provide structured format ready for GitLab import",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "maintenance",
                     "domain": "Automation",
                     "knowledge": "",
@@ -41835,7 +42373,7 @@
                 {
                     "name": "origin/jules-5156499950924136716-0a8b4fc3",
                     "lastMessage": "chore: full autonomus automatic workflow creation",
-                    "lastSeen": "10 hours ago",
+                    "lastSeen": "20 hours ago",
                     "category": "maintenance",
                     "domain": "Automation",
                     "knowledge": "",
@@ -42297,7 +42835,7 @@
                 {
                     "name": "origin/verify-gitlab-ci-tutorial-12600342277583614221",
                     "lastMessage": "chore: verify GitLab CI tutorial jobs in configuration",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -42317,24 +42855,35 @@
                     "score": 5
                 },
                 {
-                    "name": "jules-13926482618051788925-e0a1fd1d",
-                    "lastMessage": "Merge pull request #3066 from 8bukets/update-caio-knowledge-and-agent-logic-18095929260299055621",
-                    "lastSeen": "5 hours ago",
+                    "name": "jules-17711038057555899737-eca46269",
+                    "lastMessage": "Merge pull request #3069 from 8bukets/update-gitlab-security-agent-prompt-10087093437802479843",
+                    "lastSeen": "3 hours ago",
                     "category": "other",
                     "domain": "AI Agents",
                     "knowledge": "",
-                    "results": "Commit: Merge pull request #3066 from 8bukets/update-caio-knowledge-and-agent-logic-18095929260299055621",
+                    "results": "Commit: Merge pull request #3069 from 8bukets/update-gitlab-security-agent-prompt-10087093437802479843",
                     "changedFiles": [],
                     "score": 0
                 },
                 {
                     "name": "main",
-                    "lastMessage": "Merge pull request #3066 from 8bukets/update-caio-knowledge-and-agent-logic-18095929260299055621",
-                    "lastSeen": "5 hours ago",
+                    "lastMessage": "Merge pull request #3069 from 8bukets/update-gitlab-security-agent-prompt-10087093437802479843",
+                    "lastSeen": "3 hours ago",
                     "category": "other",
                     "domain": "AI Agents",
                     "knowledge": "",
-                    "results": "Commit: Merge pull request #3066 from 8bukets/update-caio-knowledge-and-agent-logic-18095929260299055621",
+                    "results": "Commit: Merge pull request #3069 from 8bukets/update-gitlab-security-agent-prompt-10087093437802479843",
+                    "changedFiles": [],
+                    "score": 0
+                },
+                {
+                    "name": "origin",
+                    "lastMessage": "Merge pull request #3070 from 8bukets/jules-496929391610872058-b1a665f3",
+                    "lastSeen": "2 hours ago",
+                    "category": "other",
+                    "domain": "General",
+                    "knowledge": "",
+                    "results": "Commit: Merge pull request #3070 from 8bukets/jules-496929391610872058-b1a665f3",
                     "changedFiles": [],
                     "score": 0
                 },
@@ -42450,12 +42999,12 @@
                 },
                 {
                     "name": "origin/add-google-edge-agent-9371392929328195231",
-                    "lastMessage": "Merge pull request #3051 from 8bukets/feat/integrate-google-innovation-knowledge-6694719100503062669",
-                    "lastSeen": "19 hours ago",
+                    "lastMessage": "Merge pull request #3068 from 8bukets/feat/integrate-google-innovation-knowledge-2590325206961785938",
+                    "lastSeen": "5 hours ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
-                    "results": "Commit: Merge pull request #3051 from 8bukets/feat/integrate-google-innovation-knowledge-6694719100503062669",
+                    "results": "Commit: Merge pull request #3068 from 8bukets/feat/integrate-google-innovation-knowledge-2590325206961785938",
                     "changedFiles": [],
                     "score": 0
                 },
@@ -43045,7 +43594,7 @@
                 {
                     "name": "origin/bolt-async-scraper-optimization-18077522877937982954",
                     "lastMessage": "⚡ Bolt: Offload BeautifulSoup parsing to thread",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -46092,7 +46641,7 @@
                 {
                     "name": "origin/caio-role-update-393980831399900338",
                     "lastMessage": "Update CAIO role knowledge and verify agent integration",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -46136,7 +46685,7 @@
                 {
                     "name": "origin/cloud-connection-update-8764459425904235179",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into cloud-connection-update-8764459425904235179",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -46147,7 +46696,7 @@
                 {
                     "name": "origin/cloud-integration-insert-14191513181200503991",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into cloud-integration-insert-14191513181200503991",
-                    "lastSeen": "29 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -46368,7 +46917,7 @@
                 {
                     "name": "origin/feature/autonomus-workflow-4935788056095166474",
                     "lastMessage": "Insert full autonomus automatic workflow",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -46698,7 +47247,7 @@
                 {
                     "name": "origin/full-autonomus-automatic-workflow-1638246136405353018",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into full-autonomus-automatic-workflow-1638246136405353018",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -46918,7 +47467,7 @@
                 {
                     "name": "origin/ingest-remote-subagents-13626091139436294036",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into ingest-remote-subagents-13626091139436294036",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -46962,7 +47511,7 @@
                 {
                     "name": "origin/insert-autonomus-prompt-15147060252033927111",
                     "lastMessage": "Insert requested prompt text as HTML comment",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -46995,7 +47544,7 @@
                 {
                     "name": "origin/insert-cloud-integration-comment-2419868395814538753",
                     "lastMessage": "I've completed the chore to ignore the workers builds CI failures and post the cloud integration comments.",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -47039,7 +47588,7 @@
                 {
                     "name": "origin/insert-full-autonomus-automatic-workflow-14764438588539353503",
                     "lastMessage": "Insert full autonomus automatic workflow comment into knowledge integration files",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -47061,7 +47610,7 @@
                 {
                     "name": "origin/insert-knowledge-merge-13714848358619487426",
                     "lastMessage": "Insert knowledge merge text",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -47094,7 +47643,7 @@
                 {
                     "name": "origin/insert-prompt-text-cloud-connection-2545598054418904667",
                     "lastMessage": "Insert prompt text into integration files",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -47149,7 +47698,7 @@
                 {
                     "name": "origin/insert-subagents-doc-874401240538466677",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into insert-subagents-doc-874401240538466677",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -47160,7 +47709,7 @@
                 {
                     "name": "origin/insert-subagents-docs-10327581699969961597",
                     "lastMessage": "Insert Subagents documentation",
-                    "lastSeen": "9 hours ago",
+                    "lastSeen": "20 hours ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -47171,7 +47720,7 @@
                 {
                     "name": "origin/insert-subagents-documentation-6256036216279199360",
                     "lastMessage": "Insert subagents documentation",
-                    "lastSeen": "30 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -47193,7 +47742,7 @@
                 {
                     "name": "origin/insert-workflow-comment-9252582433490782885",
                     "lastMessage": "Add full autonomus automatic workflow comment",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -47204,7 +47753,7 @@
                 {
                     "name": "origin/insert-workflow-prompt-13344168910719311941",
                     "lastMessage": "Insert full autonomus automatic workflow prompt text",
-                    "lastSeen": "33 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -47237,7 +47786,7 @@
                 {
                     "name": "origin/integrate-dbcode-knowledge-14641969211459716930",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into integrate-dbcode-knowledge-14641969211459716930",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -47369,7 +47918,7 @@
                 {
                     "name": "origin/integrate-knowledge-merge-16827007632871031224",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into integrate-knowledge-merge-16827007632871031224",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -47380,7 +47929,7 @@
                 {
                     "name": "origin/integrate-knowledge-merge-6147626280470983184",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into integrate-knowledge-merge-6147626280470983184",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -47391,7 +47940,7 @@
                 {
                     "name": "origin/integrate-knowledge-merge-markposition-7694698753866763029",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into integrate-knowledge-merge-markposition-7694698753866763029",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -47457,7 +48006,7 @@
                 {
                     "name": "origin/investopedia-integration-17574868955286254704",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into investopedia-integration-17574868955286254704",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -47523,7 +48072,7 @@
                 {
                     "name": "origin/jules-10526457463197469345-79e89e42",
                     "lastMessage": "Insert agent behavioral logic",
-                    "lastSeen": "11 hours ago",
+                    "lastSeen": "22 hours ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -47611,7 +48160,7 @@
                 {
                     "name": "origin/jules-11392749645888504105-52d924d9",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-11392749645888504105-52d924d9",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -47710,7 +48259,7 @@
                 {
                     "name": "origin/jules-12889877334909201161-2bec558e",
                     "lastMessage": "Insert Google Ads URLs after placeholder",
-                    "lastSeen": "33 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -47820,7 +48369,7 @@
                 {
                     "name": "origin/jules-14123990848911460001-966bb110",
                     "lastMessage": "ci: append trivial comment to trigger clean commit",
-                    "lastSeen": "10 hours ago",
+                    "lastSeen": "21 hours ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -47831,7 +48380,7 @@
                 {
                     "name": "origin/jules-14144710875774207495-4683bf66",
                     "lastMessage": "Insert required text as HTML comments",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -47919,7 +48468,7 @@
                 {
                     "name": "origin/jules-14430076689837449114-fff9e944",
                     "lastMessage": "Add connections requirement",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -47963,7 +48512,7 @@
                 {
                     "name": "origin/jules-15862351902563357395-9ffe1f78",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-15862351902563357395-9ffe1f78",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48062,7 +48611,7 @@
                 {
                     "name": "origin/jules-17455659129354185853-9d220e56",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-17455659129354185853-9d220e56",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48095,7 +48644,7 @@
                 {
                     "name": "origin/jules-17951167730894329511-36a18188",
                     "lastMessage": "Insert prompt text as literal comments",
-                    "lastSeen": "32 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48150,7 +48699,7 @@
                 {
                     "name": "origin/jules-18400721959620784058-09715a38",
                     "lastMessage": "Ignore Workers Builds failures and resubmit",
-                    "lastSeen": "19 hours ago",
+                    "lastSeen": "30 hours ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -48172,7 +48721,7 @@
                 {
                     "name": "origin/jules-1959102126927730788-a32f8630",
                     "lastMessage": "🚀 feat: connect with docker and collaborate",
-                    "lastSeen": "23 hours ago",
+                    "lastSeen": "34 hours ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -48315,7 +48864,7 @@
                 {
                     "name": "origin/jules-3230934647552816939-50f4017d",
                     "lastMessage": "Insert benchmark text into markdown files",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48326,7 +48875,7 @@
                 {
                     "name": "origin/jules-3284237235346634220-17de23f1",
                     "lastMessage": "Merge branch 'main' into jules-3284237235346634220-17de23f1",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48337,7 +48886,7 @@
                 {
                     "name": "origin/jules-3687519140839659212-aa75aba3",
                     "lastMessage": "Literal insertion of scan fix improve integrate connect sync",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48370,7 +48919,7 @@
                 {
                     "name": "origin/jules-3936416157787194933-d41e15fe",
                     "lastMessage": "Insert prompt text",
-                    "lastSeen": "28 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48414,7 +48963,7 @@
                 {
                     "name": "origin/jules-425741599416566776-747171b6",
                     "lastMessage": "Merge branch 'main' into jules-425741599416566776-747171b6",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48447,7 +48996,7 @@
                 {
                     "name": "origin/jules-4610335792859536677-a372de29",
                     "lastMessage": "Insert jenkins prompt with trailing space",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48463,6 +49012,17 @@
                     "domain": "General",
                     "knowledge": "",
                     "results": "Commit: Apply syntactic adjustment",
+                    "changedFiles": [],
+                    "score": 0
+                },
+                {
+                    "name": "origin/jules-496929391610872058-b1a665f3",
+                    "lastMessage": "Insert Remote Subagents documentation",
+                    "lastSeen": "2 hours ago",
+                    "category": "origin",
+                    "domain": "AI Agents",
+                    "knowledge": "",
+                    "results": "Commit: Insert Remote Subagents documentation",
                     "changedFiles": [],
                     "score": 0
                 },
@@ -48546,7 +49106,7 @@
                 {
                     "name": "origin/jules-648317117894785607-a41e2e46",
                     "lastMessage": "Insert connect with docker and collaborate",
-                    "lastSeen": "24 hours ago",
+                    "lastSeen": "35 hours ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -48601,7 +49161,7 @@
                 {
                     "name": "origin/jules-6930296240543486551-7159b434",
                     "lastMessage": "Retry netlify deploy",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48612,7 +49172,7 @@
                 {
                     "name": "origin/jules-7104578860734436678-582e4ec5",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-7104578860734436678-582e4ec5",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -48656,7 +49216,7 @@
                 {
                     "name": "origin/jules-7629309496770232302-6364059b",
                     "lastMessage": "integrate knowledge scan make code structural framework",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -48821,7 +49381,7 @@
                 {
                     "name": "origin/jules-9725398979088747137-9332be8e",
                     "lastMessage": "Insert prompt text and generate workflows",
-                    "lastSeen": "31 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -48887,7 +49447,7 @@
                 {
                     "name": "origin/jules-ads-links-3321030925826558682",
                     "lastMessage": "Insert Google Ads and Ad Manager knowledge base URLs",
-                    "lastSeen": "19 hours ago",
+                    "lastSeen": "30 hours ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -49129,7 +49689,7 @@
                 {
                     "name": "origin/jules-ingest-google-ai-croatian-7848067479310360387",
                     "lastMessage": "Ingest Google Agentic AI context and architecture images",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -49228,7 +49788,7 @@
                 {
                     "name": "origin/jules-knowledge-integration-update-subagents-5761981069173084944",
                     "lastMessage": "Add Subagents documentation to KNOWLEDGE_INTEGRATION.md",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -49261,7 +49821,7 @@
                 {
                     "name": "origin/jules-optimize-analytics-15369716282927792834",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-optimize-analytics-15369716282927792834",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -49272,7 +49832,7 @@
                 {
                     "name": "origin/jules-oracle-ai-integration-14010475435622443311",
                     "lastMessage": "Integrate Oracle AI literal replacement",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -49316,7 +49876,7 @@
                 {
                     "name": "origin/jules-performance-optimization-analytics-11306538287504956069",
                     "lastMessage": "⚡ Perf: Optimize domain analysis loop in analytics.py",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -49327,7 +49887,7 @@
                 {
                     "name": "origin/jules-schema-update-3866640169579536950",
                     "lastMessage": "Add Ultra-Fast Agent Frame schemas",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -49382,7 +49942,7 @@
                 {
                     "name": "origin/jules-synthetic-adjustment-2956436375149232394-15128750462688695288",
                     "lastMessage": "Insert prompt text and generate workflows",
-                    "lastSeen": "29 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -49393,7 +49953,7 @@
                 {
                     "name": "origin/jules-synthetic-remote-subagents-8680424287848645473",
                     "lastMessage": "Insert remote subagent text into KNOWLEDGE_INTEGRATION.md",
-                    "lastSeen": "7 hours ago",
+                    "lastSeen": "18 hours ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -49426,7 +49986,7 @@
                 {
                     "name": "origin/jules/connect-docker-collaborate-18314714262030004258",
                     "lastMessage": "Execute Docker connection and collaboration protocols",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -49442,6 +50002,17 @@
                     "domain": "General",
                     "knowledge": "",
                     "results": "Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules/scraper-intelephense (Resolved conflicts by removing deprecated data files)",
+                    "changedFiles": [],
+                    "score": 0
+                },
+                {
+                    "name": "origin/jules/scraper-markposition-17752547678215960211",
+                    "lastMessage": "Merge pull request #3070 from 8bukets/jules-496929391610872058-b1a665f3",
+                    "lastSeen": "2 hours ago",
+                    "category": "origin",
+                    "domain": "General",
+                    "knowledge": "",
+                    "results": "Commit: Merge pull request #3070 from 8bukets/jules-496929391610872058-b1a665f3",
                     "changedFiles": [],
                     "score": 0
                 },
@@ -49470,7 +50041,7 @@
                 {
                     "name": "origin/knowledge-integration-update-7791714589754083146",
                     "lastMessage": "Insert prompt into markdown files",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -49481,7 +50052,7 @@
                 {
                     "name": "origin/knowledge-merge-integration-16212546385788620620",
                     "lastMessage": "Insert knowledge merge benchmark prompt",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -49524,12 +50095,12 @@
                 },
                 {
                     "name": "origin/main",
-                    "lastMessage": "Merge pull request #3066 from 8bukets/update-caio-knowledge-and-agent-logic-18095929260299055621",
-                    "lastSeen": "5 hours ago",
+                    "lastMessage": "Merge pull request #3069 from 8bukets/update-gitlab-security-agent-prompt-10087093437802479843",
+                    "lastSeen": "3 hours ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
-                    "results": "Commit: Merge pull request #3066 from 8bukets/update-caio-knowledge-and-agent-logic-18095929260299055621",
+                    "results": "Commit: Merge pull request #3069 from 8bukets/update-gitlab-security-agent-prompt-10087093437802479843",
                     "changedFiles": [],
                     "score": 0
                 },
@@ -49613,7 +50184,7 @@
                 {
                     "name": "origin/optimize-intelephense-config-16113554392423851005",
                     "lastMessage": "Optimize Intelephense configuration and documentation, fix CI",
-                    "lastSeen": "9 hours ago",
+                    "lastSeen": "20 hours ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -49811,7 +50382,7 @@
                 {
                     "name": "origin/palette-analytics-report-ux-15329964485464931220",
                     "lastMessage": "🎨 Palette: Add TOC and visual enhancements to analytics report",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -52132,7 +52703,7 @@
                 {
                     "name": "origin/perf-combine-loops-analytics-12369946794947979577",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into perf-combine-loops-analytics-12369946794947979577",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -52154,7 +52725,7 @@
                 {
                     "name": "origin/perf-optimization-analytics-16167115465882778570",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into perf-optimization-analytics-16167115465882778570",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -52231,7 +52802,7 @@
                 {
                     "name": "origin/performance-regex-optimizations-7473852075048283069",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into performance-regex-optimizations-7473852075048283069",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -52242,7 +52813,7 @@
                 {
                     "name": "origin/performance/optimize-analytics-domain-extraction-11224120443504955295",
                     "lastMessage": "⚡ Optimize domain extraction in analytics.py",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -52253,7 +52824,7 @@
                 {
                     "name": "origin/performance/optimize-scraper-lxml-5877012242930540926",
                     "lastMessage": "⚡ Optimize scraper parsing with lxml",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -53463,7 +54034,7 @@
                 {
                     "name": "origin/sentinel-fix-path-traversal-10046544138462922136",
                     "lastMessage": "🛡️ Sentinel: [CRITICAL] Fix path traversal in file download",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -54299,7 +54870,7 @@
                 {
                     "name": "origin/update-caio-knowledge-and-agent-logic-18095929260299055621",
                     "lastMessage": "Update CAIO knowledge and resolve Cloudflare Worker CI build failures",
-                    "lastSeen": "5 hours ago",
+                    "lastSeen": "16 hours ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -54486,7 +55057,7 @@
                 {
                     "name": "origin/update-duo-planner-prompt-5397749709551043316",
                     "lastMessage": "Update Duo Planner AI Agent system prompt",
-                    "lastSeen": "24 hours ago",
+                    "lastSeen": "35 hours ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -54579,6 +55150,17 @@
                     "domain": "AI Agents",
                     "knowledge": "",
                     "results": "Commit: Update GitLab Security Analyst Agent prompt",
+                    "changedFiles": [],
+                    "score": 0
+                },
+                {
+                    "name": "origin/update-gitlab-security-agent-prompt-10087093437802479843",
+                    "lastMessage": "Update gitlab_security_agent prompt",
+                    "lastSeen": "3 hours ago",
+                    "category": "origin",
+                    "domain": "AI Agents",
+                    "knowledge": "",
+                    "results": "Commit: Update gitlab_security_agent prompt",
                     "changedFiles": [],
                     "score": 0
                 },
@@ -54930,18 +55512,6 @@
                     "results": "Commit: feat(cloud): finalize autonomous cloud integration and fix CI failures"
                 },
                 {
-                    "name": "origin",
-                    "category": "other",
-                    "score": 110,
-                    "results": "Commit: Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147"
-                },
-                {
-                    "name": "origin/jules/scraper-markposition-17752547678215960211",
-                    "category": "origin",
-                    "score": 110,
-                    "results": "Commit: Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147"
-                },
-                {
                     "name": "origin/feat/autonomous-cloud-sovereignty-10617479099026703774",
                     "category": "feature",
                     "score": 100,
@@ -55030,15 +55600,28 @@
                     "category": "feature",
                     "score": 80,
                     "results": "Commit: feat: implement full autonomous creation and execution cycle"
+                },
+                {
+                    "name": "origin/autonomous-creation-order-pulse-16989698787955078508",
+                    "category": "feature",
+                    "score": 80,
+                    "results": "Commit: feat: implement Phase 23 full autonomous creation and execution pulse"
+                },
+                {
+                    "name": "origin/autonomous-creation-phase-26-5316218333555647857",
+                    "category": "feature",
+                    "score": 80,
+                    "results": "Commit: feat: implement full Phase 23-26 autonomous creation system"
                 }
             ],
             "meshReadiness": {
                 "score": 66,
                 "connectivityIndex": "64.77",
                 "synergyDensity": "2.11",
-                "resonanceLatency": "0.045ms",
+                "resonanceLatency": "0.0450ms",
                 "singularityReadiness": "0.99995",
                 "meshNodes": 57,
+                "activeSwarmNodes": 0,
                 "totalServices": 88,
                 "status": "Developing"
             }
@@ -55047,7 +55630,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-07-07T21:46:36.924Z"
+            "timestamp": "2026-07-08T08:44:30.725Z"
         },
         "relayState": [
             {
@@ -55057,7 +55640,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-07-07T21:46:36.925Z",
+                "lastActivity": "2026-07-08T08:44:30.725Z",
                 "intensity": 0.85
             },
             {
@@ -55072,5 +55655,33 @@
             }
         ]
     },
-    "last_sync": "2026-07-07T21:46:40.439Z"
+    "last_sync": "2026-07-08T08:44:34.289Z",
+    "caioDirectives": {
+        "ai_strategy_status": "EXPANSION_MODE",
+        "infrastructure_optimization": {},
+        "strategic_directives": [
+            "ACTIVATE_SENTIENT_ORCHESTRATION",
+            "ESTABLISH_ETHICS_FRAMEWORK",
+            "OPTIMIZE_ROI_TRACKING",
+            "ENABLE_PREDICTIVE_RESOURCE_ALLOCATION",
+            "DECIDE_BUILD_VS_BUY_STRATEGY",
+            "INITIATE_CROSS_DEPARTMENT_TRAINING",
+            "ENFORCE_GOVERNANCE_FRAMEWORKS",
+            "ALIGN_AI_STRATEGY_WITH_BUSINESS_GOALS",
+            "MEASURE_AI_BUSINESS_IMPACT",
+            "OPTIMIZE_FOR_COMPETITIVE_ADVANTAGE",
+            "COORDINATE_WITH_TECHNICAL_LEADERSHIP",
+            "ANALYZE_MARKET_AI_ROLES",
+            "RESEARCH_AI_LEADERSHIP_CERTIFICATIONS",
+            "SCOUT_LINKEDIN_FOR_CAIO_OPENINGS",
+            "AUDIT_COURSERA_AI_CERTIFICATIONS",
+            "TARGET_SENIOR_LEADERSHIP_EXPERIENCE",
+            "PRIORITIZE_MBA_STRATEGY_ALIGNMENT",
+            "OPTIMIZE_TECHNICAL_BUSINESS_SYNERGY",
+            "ENFORCE_PRIVACY_AND_CYBERSECURITY_STANDARDS",
+            "PROVISION_SOVEREIGN_AI_CLUSTERS",
+            "LAUNCH_EXPLORATORY_AGENTS"
+        ],
+        "executive_summary": "Executive Role Alignment: Verified. Licensure Status: Not required for executive AI leadership (Verified). CAIO evaluation cycle completed successfully. Final Strategy: EXPANSION_MODE. Market Trends: - **Sovereign AI Clusters:** Increased demand for private infrastructure to ensure data residency and compliance.\n- **Direct Accountability:** Shift toward CAIOs reporting directly to the CEO rather than being nested under the CTO.\n- **Quick Win Mandate:** Expectation for measurable results (ROI) within the first 6-12 months of appointment."
+    }
 }
