@@ -75,9 +75,14 @@ async function scrapeAiAgentsKnowledge() {
                         }
                     }
 
+                    // Special case for portfolio items to ensure they are joined by newline but listed nicely
+                    const contentStr = currentSectionTitle.includes("portfolio") || currentSectionTitle.includes("Google Cloud and AI agents")
+                        ? uniqueLines.join('\n')
+                        : uniqueLines.join('\n\n');
+
                     data[currentSectionId] = {
                         title: currentSectionTitle,
-                        content: uniqueLines.join('\n\n')
+                        content: contentStr
                     };
                     if (!orderedScrapedKeys.includes(currentSectionId)) {
                         orderedScrapedKeys.push(currentSectionId);
@@ -180,8 +185,25 @@ async function scrapeAiAgentsKnowledge() {
             } catch(e) {}
         }
 
-        // Merge: scraped data takes precedence for matching keys
-        const mergedKnowledge = { ...existingKnowledge, ...data };
+        // Load scraped data directly to avoid hardcoded content
+        const scrapedPath = path.join(process.cwd(), "data/knowledge/scraped_google_agents.json");
+        let scrapedData: Record<string, Section> = {};
+        if (await fsPromises.access(scrapedPath).then(() => true).catch(() => false)) {
+            try {
+                scrapedData = JSON.parse(await fsPromises.readFile(scrapedPath, 'utf8'));
+            } catch(e) {}
+        }
+
+        // Clean up versioned keys from existing knowledge to avoid redundancy
+        const cleanedExisting: Record<string, Section> = {};
+        for (const k in existingKnowledge) {
+            if (!k.endsWith('-v2') && !data[k] && !scrapedData[k]) {
+                cleanedExisting[k] = existingKnowledge[k];
+            }
+        }
+
+        // Merge: current scrape + previous scrape + cleaned existing
+        const mergedKnowledge = { ...cleanedExisting, ...scrapedData, ...data };
 
         await fsPromises.writeFile(jsonPath, JSON.stringify(mergedKnowledge, null, 4), 'utf8');
 
@@ -198,7 +220,7 @@ async function scrapeAiAgentsKnowledge() {
         // Add non-scraped (manual) sections
         const manualKeys = Object.keys(mergedKnowledge).filter(key => !orderedScrapedKeys.includes(key));
         if (manualKeys.length > 0) {
-            mdContent += `All the best - ${URL}\n---\n\n# Manual Knowledge Additions\n\n`;
+            mdContent += `All the best - ${URL}\n---\n\n# Related Knowledge Additions\n\n`;
             for (const key of manualKeys) {
                 mdContent += `## ${mergedKnowledge[key].title}\n\n${mergedKnowledge[key].content}\n\n`;
             }
@@ -223,20 +245,19 @@ async function scrapeAiAgentsKnowledge() {
 
                 const newEntry = {
                     url: URL,
-                    title: "What are AI agents?",
-                    sections: [
-                        ...orderedScrapedKeys.map(key => ({
-                            header: data[key].title,
-                            content: data[key].content.split('\n\n')
-                        })),
-                        ...manualKeys.filter(k => data[k]).map(key => ({
-                            header: data[key].title,
-                            content: data[key].content.split('\n\n')
-                        }))
-                    ]
+                    title: "What are AI agents? (GCP Discovery)",
+                    sections: orderedScrapedKeys.map(key => ({
+                        header: data[key].title,
+                        content: data[key].content.split(/\n\n|\n- /).filter(c => c.trim()).map(c => c.startsWith('- ') ? c : (data[key].content.includes('\n- ') ? `- ${c}` : c))
+                    }))
                 };
 
                 systemKnowledge.ai_agents_structured.push(newEntry);
+
+                // Clean up top-level versioned keys in system_knowledge.json
+                for (const key in systemKnowledge) {
+                    if (key.endsWith('-v2')) delete systemKnowledge[key];
+                }
 
                 await fsPromises.writeFile(systemKnowledgePath, JSON.stringify(systemKnowledge, null, 2), 'utf8');
                 console.log(`✅ [Ingest] Integrated AI agents knowledge into system_knowledge.json`);
