@@ -224,7 +224,8 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: 'my-app', type: 'Frontend App', pattern: /\.tsx$|\.ts$|\.css$/ },
     { path: '.', type: 'Core Configuration', pattern: /^\.env|Dockerfile|package\.json|README\.md|AGENTS\.md|CONSOLIDATED_INTELLIGENCE\.md|KNOWLEDGE_MERGE\.md|USAGE\.md|MISSION_HANDOFF.*\.md$/ },
     { path: 'terraform', type: 'Infrastructure (HCL)', pattern: /\.tf$|\.hcl$/ },
-    { path: 'public', type: 'Static Asset', pattern: /\.png$|\.jpg$|\.svg$|\.ico$|\.json$/ }
+    { path: 'public', type: 'Static Asset', pattern: /\.png$|\.jpg$|\.svg$|\.ico$|\.json$/ },
+    { path: 'antigravity/services', type: 'Mesh Service', pattern: /universal_mesh_routing|distributed_consensus/ }
   ]
 
   const scanRecursive = async (dirPath: string, type: string, pattern: RegExp, depth: number = 0) => {
@@ -391,11 +392,11 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           resourceUsage[matchedResource.name].add(b.name)
 
           // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
-          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum|swarm|heartbeat|sovereign|zkp|singularity|lattice|dilithium|kyber|multi-modal|recursive|performance|monitoring|scaling|compliance|audit|mesh|native|sovereignty|pulse|resonance)/i)
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration|workflow|core|cognitive|legal|venture|anticipation|enterprise|research|quantum|swarm|heartbeat|sovereign|zkp|singularity|lattice|dilithium|kyber|multi-modal|recursive|performance|monitoring|scaling|compliance|audit|mesh|native|sovereignty|pulse|resonance|umr|latency|predictive)/i)
           if (clusterMatch) {
             let cluster = clusterMatch[0].toLowerCase()
             if (cluster === 'legal' || cluster === 'venture' || cluster === 'anticipation' || cluster === 'quantum' || cluster === 'zkp' || cluster === 'sovereign' || cluster === 'lattice' || cluster === 'dilithium' || cluster === 'kyber' || cluster === 'sovereignty') cluster = 'security-mesh'
-            else if (cluster === 'enterprise' || cluster === 'research' || cluster === 'singularity' || cluster === 'innovation' || cluster === 'mesh' || cluster === 'resonance') cluster = 'core-mesh'
+            else if (cluster === 'enterprise' || cluster === 'research' || cluster === 'singularity' || cluster === 'innovation' || cluster === 'mesh' || cluster === 'resonance' || cluster === 'umr' || cluster === 'latency') cluster = 'core-mesh'
             else if (cluster === 'swarm' || cluster === 'multi-modal' || cluster === 'cognitive') cluster = 'intelligence'
             else if (cluster === 'heartbeat' || cluster === 'recursive' || cluster === 'vitality' || cluster === 'pulse') cluster = 'health'
             else if (cluster === 'performance' || cluster === 'scaling' || cluster === 'monitoring') cluster = 'ops'
@@ -403,6 +404,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
             else if (cluster === 'sync' || cluster === 'collaboration' || cluster === 'workflow') cluster = 'orchestration-mesh'
             else if (cluster === 'compliance' || cluster === 'audit') cluster = 'governance-mesh'
             else if (cluster === 'cloud' || cluster === 'native' || cluster === 'edge') cluster = 'cloud-native-mesh'
+            else if (cluster === 'predictive') cluster = 'predictive-scaling'
 
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
             functionalClusters[cluster].add(b.name)
@@ -578,7 +580,9 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
       'agent': 25,
       'documentation': 10,
       'maintenance': 5,
-      'other': 0
+      'other': 0,
+      'umr': 60,
+      'singularity': 70
     };
     score += categoryWeights[b.category] || 0;
 
@@ -753,8 +757,9 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
   const relevantBranches = branches.filter(b => {
     // Phase 12: Broadened filter to include more meaningful results
     const hasMeaningfulResult = b.results && b.results !== 'N/A' && b.results.length > 5;
+    const isPhase26Core = b.name.includes('umr') || b.name.includes('phase-26') || b.name.includes('singularity');
 
-    if (!(b.knowledge || hasMeaningfulResult)) {
+    if (!(b.knowledge || hasMeaningfulResult || isPhase26Core)) {
       return false;
     }
 
@@ -787,14 +792,19 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
 
   if (relevantBranches.length === 0) return { nuggets: [] }
 
-  // Phase 13: Group by Domain for higher strategic signal
+  // Phase 13: Group by Domain for higher strategic signal (Optimized for scale)
   const domains: Record<string, any[]> = {}
+  const scoredMap = new Map();
+  if (relationshipMap?.scoredBranches) {
+    relationshipMap.scoredBranches.forEach((sb: any) => scoredMap.set(sb.name, sb));
+  }
+
   relevantBranches.forEach(b => {
     const domain = b.domain || 'General'
     if (!domains[domain]) domains[domain] = []
 
     // Look up score if available in relationshipMap
-    const scored = relationshipMap?.scoredBranches?.find((sb: any) => sb.name === b.name);
+    const scored = scoredMap.get(b.name);
     domains[domain].push(scored || b)
   })
 
