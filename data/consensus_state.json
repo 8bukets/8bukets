@@ -354,5 +354,33 @@
     },
     "status": "accepted",
     "timestamp": "2026-07-08T08:44:34.357Z"
+  },
+  {
+    "id": "prop_hf91iwa4x",
+    "proposer": "sovereign-root-pulse",
+    "goal": "INITIATE_FULL_AUTONOMOUS_CREATION",
+    "payload": {
+      "compliance": "Phase 24 Neural Mesh",
+      "timestamp": "2026-07-09T00:46:01.116Z"
+    },
+    "votes": {
+      "sovereign-root-pulse": true
+    },
+    "status": "pending",
+    "timestamp": "2026-07-09T00:46:01.116Z"
+  },
+  {
+    "id": "prop_4cf5gfzl0",
+    "proposer": "sovereign-root-pulse",
+    "goal": "INITIATE_FULL_AUTONOMOUS_CREATION",
+    "payload": {
+      "compliance": "Phase 24 Neural Mesh",
+      "timestamp": "2026-07-09T00:50:27.709Z"
+    },
+    "votes": {
+      "sovereign-root-pulse": true
+    },
+    "status": "pending",
+    "timestamp": "2026-07-09T00:50:27.709Z"
   }
 ]
