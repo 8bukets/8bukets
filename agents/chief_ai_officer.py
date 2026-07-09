@@ -576,6 +576,16 @@ class ChiefAIOfficerAgent(BaseAgent):
         if "ACTIVATE_PHASE_26_PROTOCOLS" in strategic_directives:
             summary += "Phase 26 Operational Mode: ACTIVE. PHASE_26_DIRECTIVE_GENERATED. "
 
+        if "OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_26" in strategic_directives:
+            self.logger.info("CAIO [SINGULARITY]: Mandating high-frequency Singularity Readiness audits (12h cycle).")
+            strategic_directives.append("MANDATE_SINGULARITY_AUDIT_12H")
+
+        # Docker Swarm Telemetry Integration
+        container_status = blackboard.get("container_status", {})
+        if container_status.get("engine") == "Docker" and container_status.get("fullyOnline"):
+            self.logger.info("CAIO [INFRA]: Docker Swarm telemetry integrated. Verifying node health.")
+            strategic_directives.append("VERIFY_SWARM_NODE_HEALTH")
+
         summary += f"CAIO evaluation cycle completed successfully. Final Strategy: {strategy_status}."
         if market_trends:
             summary += f" Market Trends: {market_trends.strip()}"
