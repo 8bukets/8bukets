@@ -40,8 +40,12 @@ class KnowledgeMergeAgent(BaseAgent):
         consolidated_count = 0
         new_observations = []
 
+        # Prioritize iCloud intelligence
+        source_files.sort(key=lambda x: 0 if 'icloud' in x.lower() else 1)
+
         for source_file in source_files:
             source_path = os.path.join(self.knowledge_dir, source_file)
+            is_icloud = 'icloud' in source_file.lower()
             try:
                 with open(source_path, 'r', encoding='utf-8') as f:
                     source_data_raw = json.load(f)
@@ -71,6 +75,8 @@ class KnowledgeMergeAgent(BaseAgent):
                     }
 
                     if existing_idx != -1:
+                        if is_icloud:
+                            self.logger.info(f"✨ [Priority] Overwriting knowledge from iCloud: {title}")
                         system_knowledge['typescript_sections'][existing_idx] = new_section
                         self.logger.info(f"🔄 Updated knowledge from: {title}")
                     else:

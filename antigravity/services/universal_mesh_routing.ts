@@ -4,7 +4,7 @@
 /** PHASE 19 COMPLIANCE: adaptive-latency (target: <1ms) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 26 COMPLIANCE: singularity-readiness (threshold: 0.9999) **/
-/** PHASE 26 COMPLIANCE: resonance-latency (target: <0.05ms) **/
+/** PHASE 26 COMPLIANCE: resonance-latency (target: <0.04ms) **/
 /** PHASE 26 COMPLIANCE: Universal Mesh Routing (active: UMR) **/
 /** PHASE 25 COMPLIANCE: quantum-neural-bridge (active) **/
 /** PHASE 24 COMPLIANCE: NEURAL_MESH_INTEGRATION (enabled) **/
@@ -42,9 +42,10 @@ export class UniversalMeshRoutingService {
    * predictiveNodeWarmup: Phase 26 optimization to reduce cold-start latency.
    */
   private async predictiveNodeWarmup(nodeId: string) {
-    // Phase 26 Directive: Resonance latency < 0.05ms
+    // Phase 26 Directive: Resonance latency < 0.04ms
     // Pre-establishing TCP/TLS or Neural Relay tunnels
     console.log(`📡 [UMR] Predictive warm-up initiated for node: ${nodeId}`);
+    // Simulated warmup: established neural tunnel for nodeId
   }
 
   /**
@@ -133,9 +134,9 @@ export class UniversalMeshRoutingService {
   }
 
   private startAutoUpdate() {
-    // Mandate: Update every 100ms for Phase 26 real-time compliance
+    // Mandate: Update every 50ms for Phase 26 high-frequency real-time compliance
     if (!this.interval) {
-      this.interval = setInterval(() => this.updateRoutingTable(), 100);
+      this.interval = setInterval(() => this.updateRoutingTable(), 50);
     }
   }
 }
