@@ -352,7 +352,23 @@ export class Jules {
   public async gitPull() {
     console.log('📥 [Jules] Pulling latest changes from remote...')
     try {
+      // Check for local changes
+      const { stdout: status } = await execFileAsync('git', ['status', '--porcelain'])
+      if (status.trim()) {
+        console.log('📦 [Jules] Local changes detected, stashing before pull...')
+        await execFileAsync('git', ['stash'])
+      }
+
       await execFileAsync('git', ['pull', '--rebase'])
+
+      // Re-apply stashed changes if any
+      if (status.trim()) {
+        console.log('📦 [Jules] Re-applying local changes...')
+        await execFileAsync('git', ['stash', 'pop']).catch(() => {
+          console.warn('⚠️ [Jules] Stash pop resulted in conflicts. Manual resolution may be required.')
+        })
+      }
+
       this.recordTask('Git Pull: Synchronized with remote.')
     } catch (err: any) {
       const isNetworkError = err.message.includes('Could not resolve host') || err.message.includes('Connection refused')

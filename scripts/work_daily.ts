@@ -23,7 +23,11 @@ async function run() {
   try {
     // 1. PLUU (Git Pull Rebase)
     console.log('📥 [Step 1/4] PHASE: pluu (Git Pull Rebase)...');
-    await jules.gitPull();
+    try {
+      await jules.gitPull();
+    } catch (e: any) {
+      console.warn('⚠️ [Antigravity] Git pull failed, but continuing work cycle with local state...');
+    }
 
     // 2. WORK (Autonomous Tasks & Improvements)
     console.log('🧠 [Step 2/4] PHASE: work (Autonomous Cognitive Cycle)...');
@@ -34,11 +38,20 @@ async function run() {
 
     // 3. UPLOAD (Git Push)
     console.log('🚀 [Step 3/4] PHASE: upload (Git Push)...');
-    await jules.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`);
+    try {
+      await jules.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`);
+    } catch (e: any) {
+      console.error('❌ [Antigravity] Git push failed. Changes remain local.');
+    }
 
     // 4. SYNC (iCloud)
     console.log('☁️ [Step 4/4] PHASE: sync (iCloud folder project)...');
-    await jules.syncToICloud();
+    const result = await jules.syncToICloud();
+    if ((result as any)?.status === 'failed') {
+      console.error('❌ [Antigravity] iCloud sync failed:', (result as any).error);
+    } else {
+      console.log('✅ [Antigravity] iCloud sync successful.');
+    }
 
     console.log('🏆 [Antigravity] Daily work cycle complete.');
   } catch (err: any) {
