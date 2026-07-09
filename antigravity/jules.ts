@@ -534,8 +534,14 @@ export class Jules {
                 await execFileAsync('git', ['add', file])
             }
             
-            await execFileAsync('git', ['commit', '--no-edit'])
-            console.log(` ✅ [Jules] Resolved conflicts for ${branchName}.`)
+            const { stdout: staged } = await execFileAsync('git', ['diff', '--cached', '--name-only'])
+            if (staged.trim()) {
+              await execFileAsync('git', ['commit', '--no-edit'])
+              console.log(` ✅ [Jules] Resolved conflicts for ${branchName}.`)
+            } else {
+              console.log(` ℹ️ [Jules] Conflict resolution resulted in no changes for ${branchName}. Finalizing merge with allow-empty...`)
+              await execFileAsync('git', ['commit', '--allow-empty', '-m', `🤖 chore: autonomous conflict resolution for ${branchName} (no changes)`])
+            }
           }
           
           // 3. Push
