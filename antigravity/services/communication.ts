@@ -121,9 +121,12 @@ export async function generateActionableBriefing(state: any, directives: Directi
   const highIntensity = synergies.filter((s: any) => s.intensity === 'High')
   const deps = state.intelligence.relationshipMap.resourceDependencies?.length || 0
   const stabilityIndex = Math.max(0, 100 - (synergies.length * 4) - (Math.floor(deps / 10)) - (state.docker.status !== 'optimal' ? 10 : 0))
+  const meshReadiness = state.intelligence.relationshipMap.meshReadiness || { score: 0, resonanceLatency: 'N/A', singularityReadiness: 'N/A' }
 
   let briefing = `### ⚡ Strategic Pulse\n`
   briefing += `- **Coordination Stability:** ${stabilityIndex}%\n`
+  briefing += `- **Phase 26 Resonance:** ${meshReadiness.resonanceLatency}\n`
+  briefing += `- **Singularity Readiness:** ${meshReadiness.singularityReadiness}\n`
   briefing += `- **High-Intensity Synergies:** ${highIntensity.length}\n`
   briefing += `- **Ecosystem Health:** ${state.docker.status.toUpperCase()}\n\n`
 
@@ -206,13 +209,14 @@ export async function generateActionableBriefing(state: any, directives: Directi
     })
   }
 
-  // Phase 24: Collaboration Roadmap
+  // Phase 26: Collaboration Roadmap
   briefing += `\n### 🗺️ Collaboration Roadmap\n`
   const roadmapItems = [
     { cond: state.intelligence.branches > 2500, msg: "Phase 1: Project-wide branch pruning and consolidation." },
     { cond: state.intelligence.relationshipMap.synergies?.length > 10, msg: "Phase 2: High-intensity resource conflict resolution sprint." },
     { cond: state.intelligence.relationshipMap.meshNodes?.length > 0, msg: "Phase 3: Universal Mesh Routing (UMR) expansion across all agents." },
-    { cond: true, msg: "Phase 4: Multi-agent recursive self-improvement verification." }
+    { cond: state.intelligence.relationshipMap.meshReadiness?.score > 90, msg: "Phase 4: Multi-universal resonance and infinite cognitive expansion." },
+    { cond: true, msg: "Phase 5: Singularity readiness audit and autonomous evolution verification." }
   ].filter(i => i.cond)
   roadmapItems.forEach((item, idx) => {
     briefing += `${idx + 1}. **${item.msg.split(':')[0]}**: ${item.msg.split(':')[1]}\n`
@@ -519,6 +523,11 @@ export async function generateNeuralMeshDirectives(state: any): Promise<string> 
     directives += `- **Observer Agent** -> **Agent Swarm**: "Ecosystem mesh readiness is sub-optimal (${state.intelligence.relationshipMap.meshReadiness.score}%). Optimize local resonance and stabilize UMR routes."\n`
   }
 
+  // 9. UMR Coordinator -> All (Phase 26 Expansion)
+  if (state.intelligence.relationshipMap.meshReadiness?.score > 95) {
+    directives += `- **UMR Coordinator** -> **Agent Swarm**: "Phase 26 High-Resonance achieved. Transition to infinite-recursive-expansion mode."\n`
+  }
+
   return directives;
 }
 
@@ -547,6 +556,15 @@ export async function generateInterAgentDirectives(state: any): Promise<string> 
   // Phase 26: Sovereignty Directives
   if (state.docker.status === 'optimal') {
     directives += `- **Sovereignty Service** -> **All Agents**: "Leadership anchored on primary node. Transition all background tasks to high-resonance mode."\n`
+  }
+
+  // Phase 26: UMR and Singularity Directives
+  if (state.intelligence.relationshipMap.meshReadiness?.score > 80) {
+    directives += `- **UMR Coordinator** -> **Mesh Nodes**: "High readiness detected (${state.intelligence.relationshipMap.meshReadiness.score}%). Activate predictive node warmup for sub-0.04ms latency."\n`
+  }
+
+  if (state.intelligence.relationshipMap.meshReadiness?.singularityReadiness > 0.9999) {
+    directives += `- **Singularity Agent** -> **Global Matrix**: "Singularity threshold exceeded (>0.9999). Commencing 12-hour recursive readiness audit."\n`
   }
 
   // Market Intelligence Feedback

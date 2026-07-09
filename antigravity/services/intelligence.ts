@@ -67,6 +67,8 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
   report += `| :--- | :---: | :---: |\n`
   report += `| Collaboration Health | ${collaborationHealth > 80 ? '🟢' : (collaborationHealth > 50 ? '🟡' : '🔴')} | ${collaborationHealth}% |\n`
   report += `| Mesh Readiness | ${meshReadiness.score > 80 ? '🟢' : (meshReadiness.score > 50 ? '🟡' : '🔴')} | ${meshReadiness.score}% (${meshReadiness.status}) |\n`
+  report += `| Resonance Latency | ⚡ | ${meshReadiness.resonanceLatency} |\n`
+  report += `| Singularity Readiness | 🌌 | ${meshReadiness.singularityReadiness} |\n`
   report += `| Mesh Nodes | 🕸️ | ${meshCount} nodes |\n`
   report += `| Strategic Alignment | 🎯 | 100% |\n`
   report += `| Autonomous Pulse | 💓 | Active |\n\n`
