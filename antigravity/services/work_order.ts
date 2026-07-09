@@ -323,26 +323,6 @@ export class WorkOrderService {
         return { status: 'ingested' }
       }
 
-      case 'RESEARCH': {
-        logAutonomousAction(`🔍 [WorkOrder] Executing Research for ${order.id}...`, 'info')
-        const { spawnSync } = await import('child_process')
-        const result = spawnSync('python3', ['scraper.py'], { encoding: 'utf8' })
-        if (result.status !== 0) {
-          throw new Error(`Research failed: ${result.stderr}`)
-        }
-        return { status: 'completed', output: result.stdout }
-      }
-
-      case 'KNOWLEDGE_MERGE': {
-        logAutonomousAction(`🧠 [WorkOrder] Executing Knowledge Merge for ${order.id}...`, 'info')
-        const { spawnSync } = await import('child_process')
-        const result = spawnSync('python3', ['agents/knowledge_merge_agent.py'], { encoding: 'utf8' })
-        if (result.status !== 0) {
-          throw new Error(`Knowledge Merge failed: ${result.stderr}`)
-        }
-        return { status: 'completed', output: result.stdout }
-      }
-
       case 'AUTONOMOUS_CREATION': {
         logAutonomousAction(`🚀 [WorkOrder] Executing Autonomous Creation Cycle for ${order.id}...`, 'info')
         const { creationEngine } = await import('./creation_engine')

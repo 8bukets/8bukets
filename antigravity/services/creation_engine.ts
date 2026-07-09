@@ -1,6 +1,5 @@
 import { synthesize } from '../synthesis';
 import { workOrderService } from './work_order';
-import { creationOrderService } from './creation_order';
 import { logAutonomousAction } from '../core';
 import { sentientOrchestration } from './sentient_orchestration';
 import { zkpTrust } from './zkp_trust';
@@ -32,69 +31,75 @@ export class AutonomousCreationEngine {
       timestamp: new Date().toISOString()
     });
 
-    // 1. Creation Order Generation (Phase 26)
-    logAutonomousAction('📝 [CreationEngine] Generating primary Creation Order...', 'info');
-    const systemOrders = await creationOrderService.identifyAndCreateOrders();
-    logAutonomousAction(`✅ [CreationEngine] Generated ${systemOrders.length} system-level orders.`, 'info');
-
-    // 2. Synthesis: Gap Analysis & Idea Generation
+    // 1. Synthesis: Gap Analysis & Idea Generation
     const ideas = await synthesize();
     logAutonomousAction(`🔮 [CreationEngine] Synthesized ${ideas.length} new ideas.`, 'info');
 
+    if (ideas.length === 0) {
+      logAutonomousAction('✨ [CreationEngine] No new gaps identified. System state is optimal.', 'info');
+
+      // Phase 19: Recursive Self-Improvement Pulse (Improve even when "optimal")
+      logAutonomousAction('🔄 [CreationEngine] Initiating Phase 19 Recursive Self-Improvement pulse...', 'info');
+      const { evolve, applyFixes } = await import('../evolution');
+      const suggestions = await evolve();
+      if (suggestions.length > 0) {
+        await applyFixes(suggestions);
+        logAutonomousAction(`✅ [CreationEngine] Recursive pulse applied ${suggestions.length} optimizations.`, 'info');
+      }
+
+      return { status: 'optimal', features: [] };
+    }
+
     const createdFeatures = [];
 
-    if (ideas.length > 0) {
-      // 3. Order Generation with Dependency Chains
-      const { getSystemInsights } = await import('../core');
-      const insights = await getSystemInsights();
-      const systemOptimal = (insights as any).docker?.status === 'optimal' && (insights as any).circuitBreakers?.mongodb === 'closed';
+    // 2. Order Generation with Dependency Chains
+    const { getSystemInsights } = await import('../core');
+    const insights = await getSystemInsights();
+    const systemOptimal = (insights as any).docker?.status === 'optimal' && (insights as any).circuitBreakers?.mongodb === 'closed';
 
-      for (const idea of ideas) {
-        // Phase 20: Scale Evolution Complexity
-        const allowedComplexities = (systemOptimal || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
-          ? ['Low', 'Medium', 'High']
-          : ['Low', 'Medium'];
+    for (const idea of ideas) {
+      // Phase 20: Scale Evolution Complexity
+      const allowedComplexities = (systemOptimal || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+        ? ['Low', 'Medium', 'High']
+        : ['Low', 'Medium'];
 
-        if (allowedComplexities.includes(idea.complexity)) {
-          logAutonomousAction(`📝 [CreationEngine] Generating dependency chain for ${idea.complexity}-complexity feature: ${idea.feature}`, 'info');
+      if (allowedComplexities.includes(idea.complexity)) {
+        logAutonomousAction(`📝 [CreationEngine] Generating dependency chain for ${idea.complexity}-complexity feature: ${idea.feature}`, 'info');
 
-          // Step A: Bootstrap
-          const bootstrapOrder = await workOrderService.createOrder(
-            'BOOTSTRAP_SERVICE',
-            `Bootstrap ${idea.feature}`,
-            idea
-          );
+        // Step A: Bootstrap
+        const bootstrapOrder = await workOrderService.createOrder(
+          'BOOTSTRAP_SERVICE',
+          `Bootstrap ${idea.feature}`,
+          idea
+        );
 
-          // Step B: Smoke Test (Depends on Bootstrap)
-          const serviceName = idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, '');
-          const smokeTestOrder = await workOrderService.createOrder(
-            'SMOKE_TEST',
-            `Verify ${idea.feature} integrity`,
-            { serviceName },
-            [bootstrapOrder.id]
-          );
+        // Step B: Smoke Test (Depends on Bootstrap)
+        const serviceName = idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, '');
+        const smokeTestOrder = await workOrderService.createOrder(
+          'SMOKE_TEST',
+          `Verify ${idea.feature} integrity`,
+          { serviceName },
+          [bootstrapOrder.id]
+        );
 
-          // Step C: Deployment (Depends on Smoke Test)
-          const deployOrder = await workOrderService.createOrder(
-            'DEPLOYMENT',
-            `Deploy ${idea.feature} to production`,
-            { serviceName },
-            [smokeTestOrder.id]
-          );
+        // Step C: Deployment (Depends on Smoke Test)
+        const deployOrder = await workOrderService.createOrder(
+          'DEPLOYMENT',
+          `Deploy ${idea.feature} to production`,
+          { serviceName },
+          [smokeTestOrder.id]
+        );
 
-          // Step D: Git Sync (Depends on Deployment)
-          await workOrderService.createOrder(
-            'SYSTEM_SYNC',
-            `Synchronize ${idea.feature} evolution to Git`,
-            { feature: idea.feature },
-            [deployOrder.id]
-          );
+        // Step D: Git Sync (Depends on Deployment)
+        await workOrderService.createOrder(
+          'SYSTEM_SYNC',
+          `Synchronize ${idea.feature} evolution to Git`,
+          { feature: idea.feature },
+          [deployOrder.id]
+        );
 
-          createdFeatures.push(idea.feature);
-        }
+        createdFeatures.push(idea.feature);
       }
-    } else {
-        logAutonomousAction('✨ [CreationEngine] No new synthesis gaps identified.', 'info');
     }
 
     // 3. Execution: Trigger the WorkOrderService to process the chain
