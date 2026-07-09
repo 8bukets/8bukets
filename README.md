@@ -63,9 +63,9 @@ To "work every day" automatically, Antigravity provides scheduling scripts for b
 #### Linux (Cron)
 1. Run the installation script:
    ```bash
-   ./scripts/install_cron.sh
+   npm run setup:daily
    ```
-   This adds a daily job to your user's crontab.
+   This adds a daily job to your user's crontab that executes `npm run work:daily` at midnight.
 
 Once installed, Jules will execute the daily work cycle every day at midnight.
 
