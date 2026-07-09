@@ -332,31 +332,31 @@ class ChiefAIOfficerAgent(BaseAgent):
                         strategic_directives.append("OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_26")
 
             # Role Alignment Check
-            if "Chief AI Officer (CAIO) Role" in title:
+            if "Chief AI Officer" in title:
                 role_alignment_verified = True
 
-                if "bottom-line business outcomes" in sections_str:
+                if "bottom-line business outcomes" in sections_str or "revenue streams" in sections_str:
                     if "ALIGN_AI_WITH_BOTTOM_LINE" not in strategic_directives:
                         self.logger.info("CAIO [ROLE]: Bottom-line outcome responsibility identified. Issuing alignment directive.")
                         strategic_directives.append("ALIGN_AI_WITH_BOTTOM_LINE")
 
-                if "implementation & tech stacking" in sections_str:
+                if "implementation & tech stacking" in sections_str or "build proprietary" in sections_str:
                     self.logger.info("CAIO [ROLE]: Tech stacking responsibility identified. Issuing build vs buy directive.")
                     strategic_directives.append("DECIDE_BUILD_VS_BUY_STRATEGY")
 
-                if "cross-department training" in sections_str:
+                if "cross-department training" in sections_str or "educate the board" in sections_str:
                     self.logger.info("CAIO [ROLE]: Training responsibility identified. Issuing cross-department literacy directive.")
                     strategic_directives.append("INITIATE_CROSS_DEPARTMENT_TRAINING")
 
-                if "ethics & governance" in sections_str:
+                if "ethics & governance" in sections_str or "responsible ai" in sections_str:
                     self.logger.info("CAIO [ROLE]: Ethics and governance responsibility identified. Issuing framework enforcement directive.")
                     strategic_directives.append("ENFORCE_GOVERNANCE_FRAMEWORKS")
 
-                if "strategy & vision" in sections_str:
+                if "strategy & vision" in sections_str or "ai initiatives" in sections_str:
                     self.logger.info("CAIO [ROLE]: Strategy & Vision responsibility identified. Issuing alignment directive.")
                     strategic_directives.append("ALIGN_AI_STRATEGY_WITH_BUSINESS_GOALS")
 
-                if "performance tracking" in sections_str:
+                if "performance tracking" in sections_str or "roi efficiency" in sections_str:
                     self.logger.info("CAIO [ROLE]: Performance Tracking responsibility identified. Issuing measurement directive.")
                     strategic_directives.append("MEASURE_AI_BUSINESS_IMPACT")
                     if "OPTIMIZE_ROI_TRACKING" not in strategic_directives:
@@ -370,23 +370,23 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [ROLE]: Coordination with CTO/CDO identified. Issuing technical leadership coordination directive.")
                     strategic_directives.append("COORDINATE_WITH_TECHNICAL_LEADERSHIP")
 
-                if "research available roles" in sections_str:
+                if "research available roles" in sections_str or "hiring" in sections_str:
                     self.logger.info("CAIO [ROLE]: Market research identified. Issuing role analysis directive.")
                     strategic_directives.append("ANALYZE_MARKET_AI_ROLES")
 
-                if "leadership certifications" in sections_str:
+                if "leadership certifications" in sections_str or "certification" in sections_str:
                     self.logger.info("CAIO [ROLE]: Certification research identified. Issuing executive development directive.")
                     strategic_directives.append("RESEARCH_AI_LEADERSHIP_CERTIFICATIONS")
 
-                if "linkedin jobs" in sections_str:
-                    self.logger.info("CAIO [STRATEGY]: LinkedIn Jobs identified as a primary research platform. Issuing targeted role scouting directive.")
+                if "linkedin" in sections_str:
+                    self.logger.info("CAIO [STRATEGY]: LinkedIn identified as a primary research platform. Issuing targeted role scouting directive.")
                     strategic_directives.append("SCOUT_LINKEDIN_FOR_CAIO_OPENINGS")
 
                 if "coursera" in sections_str:
                     self.logger.info("CAIO [STRATEGY]: Coursera identified as a primary certification platform. Issuing executive development directive.")
                     strategic_directives.append("AUDIT_COURSERA_AI_CERTIFICATIONS")
 
-                if "8+ to 10+ years" in sections_str:
+                if "8+ to 10+ years" in sections_str or "progressive leadership" in sections_str:
                     self.logger.info("CAIO [ROLE]: High-level experience requirement detected. Issuing senior leadership target directive.")
                     strategic_directives.append("TARGET_SENIOR_LEADERSHIP_EXPERIENCE")
 
@@ -394,9 +394,17 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [ROLE]: MBA value identified. Issuing business-strategy alignment directive.")
                     strategic_directives.append("PRIORITIZE_MBA_STRATEGY_ALIGNMENT")
 
-                if "technical fluency" in sections_str or "business acumen" in sections_str:
+                if "technical fluency" in sections_str or "business acumen" in sections_str or "technical literacy" in sections_str:
                     self.logger.info("CAIO [ROLE]: Technical fluency/Business acumen identified. Issuing strategic synergy directive.")
                     strategic_directives.append("OPTIMIZE_TECHNICAL_BUSINESS_SYNERGY")
+
+                if "workflow auditing" in sections_str or "audit ai workflows" in sections_str:
+                    self.logger.info("CAIO [ROLE]: Workflow auditing identified. Issuing technical audit directive.")
+                    strategic_directives.append("ENFORCE_TECHNICAL_WORKFLOW_AUDITS")
+
+                if "ai-ready data" in sections_str or "project failure" in sections_str:
+                    self.logger.info("CAIO [STRATEGY]: Data readiness risk identified. Issuing data governance mandate.")
+                    strategic_directives.append("MANDATE_DATA_READINESS_AUDIT")
 
                 if "cybersecurity regulations" in sections_str or "user privacy" in sections_str:
                     self.logger.info("CAIO [ROLE]: Privacy/Cybersecurity identified. Issuing security compliance directive.")
