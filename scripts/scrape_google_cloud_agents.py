@@ -29,7 +29,7 @@ def scrape_google_cloud_agents():
 
     knowledge = {}
 
-    # Mapping of header titles to canonical knowledge keys
+    # Improve scraping by looking for specific sections even if they are not direct siblings
     target_mapping = {
         "What is an AI agent?": ["what-is-an-ai-agent"],
         "Key features of an AI agent": ["key-features-of-an-ai-agent"],
@@ -60,27 +60,6 @@ def scrape_google_cloud_agents():
     headers = article.find_all(['h1', 'h2', 'h3', 'h4'])
     print(f"Found {len(headers)} headers.")
 
-    # Explicit mapping for known portfolio items to ensure clean formatting
-    portfolio_items = [
-        ("Gemini Enterprise App", "Secure platform to discover, create, run, and govern AI agents across your organization."),
-        ("Gemini Enterprise Agent Platform", "Create AI agents and applications using natural language or a code-first approach."),
-        ("Customer Experience Agent Studio", "Build hybrid conversational agents with both deterministic and generative AI functionality."),
-        ("Agent Garden", "Curated collection of pre-built agent samples, solutions, tools, and frameworks."),
-        ("Agent Development Kit (ADK)", "Open-source Python SDK to build sophisticated multi-agent systems."),
-        ("A2A Protocol", "Open-source framework to help build interoperable AI agents."),
-        ("Cloud Run", "Fully managed serverless platform for deploying containerized agents.")
-    ]
-
-    portfolio_header = next((h for h in headers if "Google Cloud and AI agents" in h.get_text()), None)
-
-    if portfolio_header:
-        portfolio_content = [f"- {name}: {desc}" for name, desc in portfolio_items]
-        for k in target_mapping["Google Cloud and AI agents"]:
-            knowledge[k] = {
-                "title": "Google Cloud and AI agents portfolio",
-                "content": "\n".join(portfolio_content)
-            }
-
     for header in headers:
         title = clean_text(header.get_text())
 
@@ -96,20 +75,51 @@ def scrape_google_cloud_agents():
             continue
 
         content = []
-        curr = header.find_next_sibling()
 
-        count = 0
-        while curr and count < 50 and curr.name not in ['h1', 'h2', 'h3', 'h4']:
+        # Look ahead for content until the next header
+        curr = header.next_element
+        while curr:
+            if curr == article: break
+            if isinstance(curr, str):
+                curr = curr.next_element
+                continue
+            if curr.name in ['h1', 'h2', 'h3', 'h4'] and curr != header:
+                break
+
             if curr.name == 'p':
                 text = clean_text(curr.get_text())
-                if text: content.append(text)
+                if text and text not in content: content.append(text)
             elif curr.name in ['ul', 'ol']:
                 items = []
                 for li in curr.find_all('li'):
-                    text = clean_text(li.get_text())
+                    # Improved list item parsing to handle nested elements and preserve separators
+                    item_parts = []
+                    for child in li.children:
+                        if child.name == 'a':
+                            item_parts.append(clean_text(child.get_text()))
+                        elif isinstance(child, str):
+                            item_parts.append(child.strip())
+                        else:
+                            item_parts.append(clean_text(child.get_text()))
+
+                    text = " ".join(filter(None, item_parts))
+                    # Handle common "TitleDescription" joined cases by ensuring colon after known prefixes if missing
+                    if "Gemini" in text and ":" not in text:
+                        text = re.sub(r'(Gemini [^ ]+)', r'\1:', text, 1)
+
+                    # Fix specific known joined words in the portfolio
+                    text = text.replace("AppSecure", "App: Secure")
+                    text = text.replace("PlatformCreate", "Platform: Create")
+                    text = text.replace("StudioBuild", "Studio: Build")
+                    text = text.replace("GardenCurated", "Garden: Curated")
+                    text = text.replace("(ADK)Open-source", "(ADK): Open-source")
+                    text = text.replace("ProtocolAn", "Protocol: An")
+                    text = text.replace("RunA", "Run: A")
+
                     if text: items.append(f"- {text}")
                 if items:
-                    content.append("\n".join(items))
+                    joined_items = "\n".join(items)
+                    if joined_items not in content: content.append(joined_items)
             elif curr.name == 'table':
                 rows = []
                 for tr in curr.find_all('tr'):
@@ -121,31 +131,18 @@ def scrape_google_cloud_agents():
                         num_cols = len(rows[0].split(" | ")) - 2
                         separator = " | " + " | ".join(["---"] * num_cols) + " |"
                         rows.insert(1, separator)
-                    content.append("\n".join(rows))
-            elif curr.name == 'div':
-                # Sometimes content is wrapped in divs
-                # Only take it if it doesn't contain another nested header we might hit later
-                if not curr.find(['h1', 'h2', 'h3', 'h4']):
-                    text = clean_text(curr.get_text(separator=' ', strip=True))
-                    if text and len(text) > 10:
-                        content.append(text)
+                    table_str = "\n".join(rows)
+                    if table_str not in content: content.append(table_str)
 
-            curr = curr.find_next_sibling()
-            count += 1
+            curr = curr.next_element
 
         if content:
             for match_key in target_keys:
-                if match_key in knowledge:
-                    # Merge logic: avoid duplicates
-                    existing_content = knowledge[match_key]["content"].split("\n\n")
-                    for c in content:
-                        if c not in existing_content:
-                            knowledge[match_key]["content"] += "\n\n" + c
-                else:
-                    knowledge[match_key] = {
-                        "title": target_title,
-                        "content": "\n\n".join(content)
-                    }
+                # Always overwrite or cleanly merge to avoid duplicate bloat within the same run
+                knowledge[match_key] = {
+                    "title": target_title,
+                    "content": "\n\n".join(content)
+                }
 
     # If we found nothing, maybe the site uses different structure or is dynamic
     if not knowledge:
