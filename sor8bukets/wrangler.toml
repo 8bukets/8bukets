@@ -1,6 +1,7 @@
 name = "sor-8bukets"
 main = "src/index.js"
 compatibility_date = "2024-04-03"
+compatibility_flags = [ "nodejs_compat" ]
 
 # Disable routes for CI build stability in restricted environments
 # routes = [

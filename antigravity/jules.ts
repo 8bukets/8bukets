@@ -128,6 +128,7 @@ export class Jules {
       const hasPhase26 = checkKnowledge('Phase 26')
       const hasUniversalMeshRouting = checkKnowledge('Universal Mesh Routing') || checkKnowledge('UMR')
       const hasInfiniteExpansion = checkKnowledge('infinite recursive expansion') || checkKnowledge('multi-universal resonance')
+
       const hasPredictiveWarmup = checkKnowledge('predictive node warmup')
 
       if (hasPhase26 || hasUniversalMeshRouting || hasInfiniteExpansion || hasPredictiveWarmup) {

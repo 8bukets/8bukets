@@ -1,0 +1,282 @@
+/app/agents/base_agent.py:5: FutureWarning:
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+2026-07-09 02:55:48,125 [INFO] AutonomousEngine: 🌌 [Antigravity] Initiating Phase 26 Autonomous Engine Pulse...
+2026-07-09 02:55:48,125 [INFO] AutonomousEngine: 🛠️ [Engine] Consolidating multi-shard intelligence...
+2026-07-09 02:55:48,125 [WARNING] KnowledgeMergeAgent: Agent KnowledgeMergeAgent: No Google API key found. LLM calls will be mocked.
+2026-07-09 02:55:48,125 [INFO] KnowledgeMergeAgent: 🚀 [KnowledgeMergeAgent] Starting knowledge consolidation pulse...
+2026-07-09 02:55:48,254 [INFO] KnowledgeMergeAgent: ✨ [Priority] Overwriting knowledge from iCloud: iCloud Test Knowledge
+2026-07-09 02:55:48,255 [INFO] KnowledgeMergeAgent: 🔄 Updated knowledge from: iCloud Test Knowledge
+2026-07-09 02:55:48,256 [INFO] KnowledgeMergeAgent: 🔄 Updated knowledge from: software info by fk – software-online-review – Filip Keser
+2026-07-09 02:55:48,259 [INFO] KnowledgeMergeAgent: 🔄 Updated knowledge from: e&n - unitedsports
+2026-07-09 02:55:48,262 [INFO] KnowledgeMergeAgent: 🔄 Updated knowledge from: news
+2026-07-09 02:55:48,263 [INFO] KnowledgeMergeAgent: 🔄 Updated knowledge from: iCloud: strategy_2025.md
+2026-07-09 02:55:48,263 [INFO] KnowledgeMergeAgent: 🔄 Updated knowledge from: Phase 26 iCloud Directives
+2026-07-09 02:55:48,266 [INFO] KnowledgeMergeAgent: ➕ Added new knowledge from: intelephense_docs.md
+2026-07-09 02:55:48,267 [INFO] KnowledgeMergeAgent: ➕ Added new knowledge from: Intelephense: README
+2026-07-09 02:55:48,267 [INFO] KnowledgeMergeAgent: ➕ Added new knowledge from: Intelephense: installation
+2026-07-09 02:55:48,267 [INFO] KnowledgeMergeAgent: ➕ Added new knowledge from: Intelephense: gettingStarted
+2026-07-09 02:55:48,268 [INFO] KnowledgeMergeAgent: ➕ Added new knowledge from: Intelephense: features
+2026-07-09 02:55:48,268 [INFO] KnowledgeMergeAgent: ➕ Added new knowledge from: Intelephense: support
+2026-07-09 02:55:48,268 [INFO] KnowledgeMergeAgent: 🔄 Updated knowledge from: software info by fk – software-online-review – Filip Keser
+2026-07-09 02:55:48,272 [INFO] KnowledgeMergeAgent: 🔄 Updated knowledge from: Company & news – #news
+2026-07-09 02:55:48,273 [INFO] KnowledgeMergeAgent: 🔄 Updated knowledge from: game zone online
+2026-07-09 02:55:48,371 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for  already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,371 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://software-online-review.com already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,371 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://unitedsports.news.blog/ already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://onlinereview.news.blog/ already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for icloud://strategy_2025.md already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for  already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for local://intelephense_docs.md already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://software-online-review.com already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://companylink.business.blog/ already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,372 [INFO] KnowledgeMergeAgent: ℹ️ Knowledge for https://gamezoneonlinegame.wordpress.com/ already exists in KNOWLEDGE_MERGE.md. Skipping append to prevent spam.
+2026-07-09 02:55:48,402 [INFO] KnowledgeMergeAgent: ✅ [KnowledgeMergeAgent] Consolidation complete. Processed 15 sources.
+2026-07-09 02:55:48,403 [INFO] AutonomousEngine: ☁️ [Engine] Evaluating cloud-native fluency...
+2026-07-09 02:55:48,403 [WARNING] CloudWorkflowAgent: Agent CloudWorkflowAgent: No Google API key found. LLM calls will be mocked.
+2026-07-09 02:55:48,403 [INFO] CloudWorkflowAgent: Evaluating multi-cloud telemetry metrics...
+2026-07-09 02:55:48,403 [INFO] AutonomousEngine: 🧠 [Engine] Consulting Chief AI Officer for strategic directives...
+2026-07-09 02:55:48,403 [WARNING] ChiefAIOfficer: Agent ChiefAIOfficer: No Google API key found. LLM calls will be mocked.
+2026-07-09 02:55:48,403 [INFO] ChiefAIOfficer: CAIO [EXEC]: Commencing evaluation of system telemetry, market intelligence, and multi-agent synthesis matrices...
+2026-07-09 02:55:48,404 [INFO] ChiefAIOfficer: CAIO [SYNC]: System maturity confirmed at Phase 26. Authorizing high-expansion protocols.
+2026-07-09 02:55:48,509 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 26 strategic mandate detected: iCloud: phase_26_directives.md
+2026-07-09 02:55:48,509 [INFO] ChiefAIOfficer: CAIO [MESH]: Universal Mesh Routing (UMR) mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,509 [INFO] ChiefAIOfficer: CAIO [PERF]: Phase 26 resonance latency mandate detected (<0.05ms). Issuing optimization directive.
+2026-07-09 02:55:48,509 [INFO] ChiefAIOfficer: CAIO [SINGULARITY]: Phase 26 Singularity Readiness mandate detected (>0.9999). Issuing compliance directive.
+2026-07-09 02:55:48,510 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 26 strategic mandate detected: Phase 26 Strategic Directives
+2026-07-09 02:55:48,510 [INFO] ChiefAIOfficer: CAIO [MESH]: Cross-Shard Neural Caching mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 26 strategic mandate detected: iCloud: new_strategy_2025.md
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [MESH]: Predictive Node Warmup mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [ROLE]: Bottom-line outcome responsibility identified. Issuing alignment directive.
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [ROLE]: Tech stacking responsibility identified. Issuing build vs buy directive.
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [ROLE]: Training responsibility identified. Issuing cross-department literacy directive.
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [ROLE]: Ethics and governance responsibility identified. Issuing framework enforcement directive.
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [ROLE]: Strategy & Vision responsibility identified. Issuing alignment directive.
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [ROLE]: Performance Tracking responsibility identified. Issuing measurement directive.
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Competitive advantage keywords identified. Issuing optimization directive.
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [ROLE]: Coordination with CTO/CDO identified. Issuing technical leadership coordination directive.
+2026-07-09 02:55:48,511 [INFO] ChiefAIOfficer: CAIO [ROLE]: Market research identified. Issuing role analysis directive.
+2026-07-09 02:55:48,512 [INFO] ChiefAIOfficer: CAIO [ROLE]: Certification research identified. Issuing executive development directive.
+2026-07-09 02:55:48,512 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: LinkedIn Jobs identified as a primary research platform. Issuing targeted role scouting directive.
+2026-07-09 02:55:48,512 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Coursera identified as a primary certification platform. Issuing executive development directive.
+2026-07-09 02:55:48,512 [INFO] ChiefAIOfficer: CAIO [ROLE]: High-level experience requirement detected. Issuing senior leadership target directive.
+2026-07-09 02:55:48,512 [INFO] ChiefAIOfficer: CAIO [ROLE]: MBA value identified. Issuing business-strategy alignment directive.
+2026-07-09 02:55:48,512 [INFO] ChiefAIOfficer: CAIO [ROLE]: Technical fluency/Business acumen identified. Issuing strategic synergy directive.
+2026-07-09 02:55:48,512 [INFO] ChiefAIOfficer: CAIO [ROLE]: Privacy/Cybersecurity identified. Issuing security compliance directive.
+2026-07-09 02:55:48,512 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Demand for sovereign AI clusters detected. Issuing provisioning directive.
+2026-07-09 02:55:48,526 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 26 strategic mandate detected: Phase 26 iCloud Directives
+2026-07-09 02:55:48,551 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 14 strategic mandate detected: iCloud: AGENTS.md
+2026-07-09 02:55:48,551 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Anticipatory Intelligence mandate detected. Activating predictive clusters.
+2026-07-09 02:55:48,551 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 15 strategic mandate detected: iCloud: AGENTS.md
+2026-07-09 02:55:48,551 [INFO] ChiefAIOfficer: CAIO [SECURITY]: Post-Quantum Security mandate detected. Issuing enforcement directive.
+2026-07-09 02:55:48,551 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 16 strategic mandate detected: iCloud: AGENTS.md
+2026-07-09 02:55:48,551 [INFO] ChiefAIOfficer: CAIO [PERF]: Neural stability index mandate detected. Issuing enforcement directive.
+2026-07-09 02:55:48,551 [INFO] ChiefAIOfficer: CAIO [PERF]: Advanced heartbeat latency mandate detected (<5ms). Issuing enforcement directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 18 strategic mandate detected: iCloud: AGENTS.md
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [SWARM]: Swarm Consensus mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 19 strategic mandate detected: iCloud: AGENTS.md
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [EVOLUTION]: Recursive Self-Improvement mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [TRUST]: ZKP-based trust mandate detected. Issuing enforcement directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [PERF]: Phase 19 heartbeat latency mandate detected (<2ms). Issuing optimization directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 20 strategic mandate detected: iCloud: AGENTS.md
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [RESONANCE]: Cognitive Resonance mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [TRUST]: PQRV-based trust mandate detected. Issuing enforcement directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [PERF]: Phase 20 resonance latency mandate detected (<0.5ms). Issuing optimization directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 23 strategic mandate detected: iCloud: AGENTS.md
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [PERF]: Phase 23 resonance latency mandate detected (<0.2ms). Issuing optimization directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 24 strategic mandate detected: iCloud: AGENTS.md
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [MESH]: Neural Mesh Integration mandate detected. Issuing node initialization directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [SYNC]: Distributed Cognitive Consensus mandate detected. Issuing sync directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [NET]: Mesh-Aware Routing mandate detected. Issuing routing optimization directive.
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 25 strategic mandate detected: iCloud: AGENTS.md
+2026-07-09 02:55:48,552 [INFO] ChiefAIOfficer: CAIO [SINGULARITY]: Singularity Readiness mandate detected. Issuing compliance directive.
+2026-07-09 02:55:48,553 [INFO] ChiefAIOfficer: CAIO [SINGULARITY]: High-threshold Singularity Readiness mandate detected (>0.999). Issuing optimization directive.
+2026-07-09 02:55:48,553 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 26 strategic mandate detected: iCloud: AGENTS.md
+2026-07-09 02:55:48,553 [INFO] ChiefAIOfficer: CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: iCloud: AGENTS.md
+2026-07-09 02:55:48,553 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Asia-Pacific edge node expansion identified. Issuing deployment directive.
+2026-07-09 02:55:48,556 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 14 strategic mandate detected: iCloud: CONSOLIDATED_INTELLIGENCE.md
+2026-07-09 02:55:48,557 [INFO] ChiefAIOfficer: CAIO [SECURITY]: IP-header protection mandate detected. Issuing audit directive.
+2026-07-09 02:55:48,558 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 16 strategic mandate detected: iCloud: CONSOLIDATED_INTELLIGENCE.md
+2026-07-09 02:55:48,559 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 19 strategic mandate detected: iCloud: CONSOLIDATED_INTELLIGENCE.md
+2026-07-09 02:55:48,559 [INFO] ChiefAIOfficer: CAIO [EVOLUTION]: Recursive Self-Improvement mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,560 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 25 strategic mandate detected: iCloud: CONSOLIDATED_INTELLIGENCE.md
+2026-07-09 02:55:48,562 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 26 strategic mandate detected: iCloud: CONSOLIDATED_INTELLIGENCE.md
+2026-07-09 02:55:48,563 [INFO] ChiefAIOfficer: CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: iCloud: CONSOLIDATED_INTELLIGENCE.md
+2026-07-09 02:55:48,565 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Quantum Synergy activation detected in integrated knowledge. Issuing directive.
+2026-07-09 02:55:48,578 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 14 strategic mandate detected: iCloud: KNOWLEDGE_MERGE.md
+2026-07-09 02:55:48,584 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 16 strategic mandate detected: iCloud: KNOWLEDGE_MERGE.md
+2026-07-09 02:55:48,588 [INFO] ChiefAIOfficer: CAIO [RECOVERY]: Neural Recovery protocol mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,588 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 18 strategic mandate detected: iCloud: KNOWLEDGE_MERGE.md
+2026-07-09 02:55:48,589 [INFO] ChiefAIOfficer: CAIO [SWARM]: Swarm Consensus mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,590 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 19 strategic mandate detected: iCloud: KNOWLEDGE_MERGE.md
+2026-07-09 02:55:48,595 [INFO] ChiefAIOfficer: CAIO [RECOVERY]: Phase 19 Neural Recovery mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,595 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 20 strategic mandate detected: iCloud: KNOWLEDGE_MERGE.md
+2026-07-09 02:55:48,595 [INFO] ChiefAIOfficer: CAIO [RESONANCE]: Cognitive Resonance mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,599 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 23 strategic mandate detected: iCloud: KNOWLEDGE_MERGE.md
+2026-07-09 02:55:48,602 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 24 strategic mandate detected: iCloud: KNOWLEDGE_MERGE.md
+2026-07-09 02:55:48,602 [INFO] ChiefAIOfficer: CAIO [MESH]: Neural Mesh Integration mandate detected. Issuing node initialization directive.
+2026-07-09 02:55:48,602 [INFO] ChiefAIOfficer: CAIO [SYNC]: Distributed Cognitive Consensus mandate detected. Issuing sync directive.
+2026-07-09 02:55:48,603 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 25 strategic mandate detected: iCloud: KNOWLEDGE_MERGE.md
+2026-07-09 02:55:48,609 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 26 strategic mandate detected: iCloud: KNOWLEDGE_MERGE.md
+2026-07-09 02:55:48,614 [INFO] ChiefAIOfficer: CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: iCloud: KNOWLEDGE_MERGE.md
+2026-07-09 02:55:48,620 [INFO] ChiefAIOfficer: CAIO [GOVERNANCE]: ISO/IEC 42001:2023 detected in knowledge: iCloud: KNOWLEDGE_MERGE.md. Mandating compliance.
+2026-07-09 02:55:48,646 [INFO] ChiefAIOfficer: CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: iCloud: ai_agents_knowledge.json
+2026-07-09 02:55:48,704 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 14 strategic mandate detected: iCloud: autonomous_state.json
+2026-07-09 02:55:48,715 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 16 strategic mandate detected: iCloud: autonomous_state.json
+2026-07-09 02:55:48,726 [INFO] ChiefAIOfficer: CAIO [RECOVERY]: Neural Recovery protocol mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,727 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 18 strategic mandate detected: iCloud: autonomous_state.json
+2026-07-09 02:55:48,727 [INFO] ChiefAIOfficer: CAIO [SWARM]: Swarm Consensus mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,730 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 19 strategic mandate detected: iCloud: autonomous_state.json
+2026-07-09 02:55:48,744 [INFO] ChiefAIOfficer: CAIO [RECOVERY]: Phase 19 Neural Recovery mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,744 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 20 strategic mandate detected: iCloud: autonomous_state.json
+2026-07-09 02:55:48,744 [INFO] ChiefAIOfficer: CAIO [RESONANCE]: Cognitive Resonance mandate detected. Issuing activation directive.
+2026-07-09 02:55:48,755 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 23 strategic mandate detected: iCloud: autonomous_state.json
+2026-07-09 02:55:48,763 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 24 strategic mandate detected: iCloud: autonomous_state.json
+2026-07-09 02:55:48,763 [INFO] ChiefAIOfficer: CAIO [MESH]: Neural Mesh Integration mandate detected. Issuing node initialization directive.
+2026-07-09 02:55:48,764 [INFO] ChiefAIOfficer: CAIO [SYNC]: Distributed Cognitive Consensus mandate detected. Issuing sync directive.
+2026-07-09 02:55:48,766 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 25 strategic mandate detected: iCloud: autonomous_state.json
+2026-07-09 02:55:48,777 [INFO] ChiefAIOfficer: CAIO [SINGULARITY]: High-threshold Singularity Readiness mandate detected (>0.999). Issuing optimization directive.
+2026-07-09 02:55:48,783 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Phase 26 strategic mandate detected: iCloud: autonomous_state.json
+2026-07-09 02:55:48,794 [INFO] ChiefAIOfficer: CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: iCloud: autonomous_state.json
+2026-07-09 02:55:48,825 [INFO] ChiefAIOfficer: CAIO [STRATEGY]: Exceptional market opportunity detected (>0.85). Authorizing aggressive expansion protocols.
+2026-07-09 02:55:48,825 [INFO] ChiefAIOfficer: CAIO [ROI]: Enforcing 95% ROI efficiency mandate.
+2026-07-09 02:55:48,825 [INFO] ChiefAIOfficer: CAIO [SINGULARITY]: Mandating high-frequency Singularity Readiness audits (12h cycle).
+2026-07-09 02:55:48,825 [INFO] ChiefAIOfficer: CAIO [INFRA]: Docker Swarm telemetry integrated. Verifying node health.
+2026-07-09 02:55:48,825 [INFO] ChiefAIOfficer: CAIO [EXEC]: Evaluation complete. Final Strategy: AGGRESSIVE_EXPANSION. Directives issued: 76
+2026-07-09 02:55:48,826 [INFO] AutonomousEngine: 📅 [Engine] Coordinating Agile planning with Duo Planner...
+2026-07-09 02:55:48,826 [WARNING] DuoPlannerAgent: Agent DuoPlannerAgent: No Google API key found. LLM calls will be mocked.
+2026-07-09 02:55:48,827 [INFO] DuoPlannerAgent: 🚀 [DuoPlannerAgent] Initiating Agile planning and delivery tracking...
+2026-07-09 02:55:48,827 [WARNING] DuoPlannerAgent: LLM call mocked due to missing API key.
+2026-07-09 02:55:48,827 [INFO] DuoPlannerAgent: ✅ [DuoPlannerAgent] Workflow complete.
+2026-07-09 02:55:48,827 [INFO] AutonomousEngine: 🔄 [Engine] Finalizing data synchronization pulse...
+2026-07-09 02:55:48,827 [WARNING] SyncAgent: Agent SyncAgent: No Google API key found. LLM calls will be mocked.
+2026-07-09 02:55:48,827 [INFO] SyncAgent: Synchronizing data and reviews with the web platform...
+2026-07-09 02:55:48,827 [INFO] SyncAgent: 🛡️ [SyncAgent] Verifying lattice-sync integrity for Phase 26 compliance...
+2026-07-09 02:55:48,834 [WARNING] SyncAgent: Database connection attempt 1 failed: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2026-07-09 02:55:49,836 [WARNING] SyncAgent: Database connection attempt 2 failed: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2026-07-09 02:55:51,839 [WARNING] SyncAgent: Database connection attempt 3 failed: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2026-07-09 02:55:51,839 [ERROR] SyncAgent: Could not connect to database after all attempts. Caching failed sync.
+2026-07-09 02:55:51,840 [INFO] SyncAgent: Cached 0 entries to data/failed_syncs.json
+2026-07-09 02:55:51,840 [INFO] AutonomousEngine: 🏆 [Antigravity] Phase 26 Autonomous Engine cycle completed successfully.
+{
+  "knowledge_merge": {
+    "consolidated_count": 15,
+    "status": "SUCCESS"
+  },
+  "cloud_workflow": {
+    "cloud_workflow_status": "FLUENT_ON_AIR"
+  },
+  "strategic_directives": {
+    "ai_strategy_status": "AGGRESSIVE_EXPANSION",
+    "infrastructure_optimization": {},
+    "strategic_directives": [
+      "ACTIVATE_PHASE_26_PROTOCOLS",
+      "ACTIVATE_SENTIENT_ORCHESTRATION",
+      "ESTABLISH_ETHICS_FRAMEWORK",
+      "OPTIMIZE_ROI_TRACKING",
+      "ENABLE_PREDICTIVE_RESOURCE_ALLOCATION",
+      "ACTIVATE_UMR_V2",
+      "ENFORCE_PHASE_26_RESONANCE_LATENCY",
+      "OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_26",
+      "ACTIVATE_CROSS_SHARD_NEURAL_CACHING",
+      "ACTIVATE_PREDICTIVE_NODE_WARMUP",
+      "ALIGN_AI_WITH_BOTTOM_LINE",
+      "DECIDE_BUILD_VS_BUY_STRATEGY",
+      "INITIATE_CROSS_DEPARTMENT_TRAINING",
+      "ENFORCE_GOVERNANCE_FRAMEWORKS",
+      "ALIGN_AI_STRATEGY_WITH_BUSINESS_GOALS",
+      "MEASURE_AI_BUSINESS_IMPACT",
+      "OPTIMIZE_FOR_COMPETITIVE_ADVANTAGE",
+      "COORDINATE_WITH_TECHNICAL_LEADERSHIP",
+      "ANALYZE_MARKET_AI_ROLES",
+      "RESEARCH_AI_LEADERSHIP_CERTIFICATIONS",
+      "SCOUT_LINKEDIN_FOR_CAIO_OPENINGS",
+      "AUDIT_COURSERA_AI_CERTIFICATIONS",
+      "TARGET_SENIOR_LEADERSHIP_EXPERIENCE",
+      "PRIORITIZE_MBA_STRATEGY_ALIGNMENT",
+      "OPTIMIZE_TECHNICAL_BUSINESS_SYNERGY",
+      "ENFORCE_PRIVACY_AND_CYBERSECURITY_STANDARDS",
+      "PROVISION_SOVEREIGN_AI_CLUSTERS",
+      "ACTIVATE_PHASE_14_PROTOCOLS",
+      "ACTIVATE_ANTICIPATORY_CLUSTERS",
+      "ACTIVATE_PHASE_15_PROTOCOLS",
+      "ENFORCE_POST_QUANTUM_SECURITY",
+      "ACTIVATE_PHASE_16_PROTOCOLS",
+      "ENFORCE_NEURAL_STABILITY_INDEX",
+      "ENFORCE_HEARTBEAT_LATENCY",
+      "ACTIVATE_PHASE_18_PROTOCOLS",
+      "ACTIVATE_SWARM_CONSENSUS",
+      "ACTIVATE_PHASE_19_PROTOCOLS",
+      "ACTIVATE_RECURSIVE_SELF_IMPROVEMENT",
+      "ENFORCE_ZKP_TRUST",
+      "OPTIMIZE_HEARTBEAT_LATENCY_PHASE_19",
+      "ACTIVATE_PHASE_20_PROTOCOLS",
+      "ACTIVATE_COGNITIVE_RESONANCE",
+      "ENFORCE_PQRV_TRUST",
+      "OPTIMIZE_RESONANCE_LATENCY",
+      "ACTIVATE_PHASE_23_PROTOCOLS",
+      "OPTIMIZE_RESONANCE_LATENCY_PHASE_23",
+      "ACTIVATE_PHASE_24_PROTOCOLS",
+      "INITIALIZE_NEURAL_MESH_NODES",
+      "ENFORCE_DISTRIBUTED_COGNITIVE_CONSENSUS",
+      "OPTIMIZE_MESH_AWARE_ROUTING",
+      "ACTIVATE_PHASE_25_PROTOCOLS",
+      "ENFORCE_SINGULARITY_COMPLIANCE",
+      "OPTIMIZE_FOR_SINGULARITY_READINESS_THRESHOLD",
+      "ACTIVATE_PHASE_13_PROTOCOLS",
+      "DEPLOY_APAC_EDGE_NODES",
+      "AUDIT_IP_HEADER_PROTECTION",
+      "ACTIVATE_RECURSIVE_SELF_IMPROVEMENT",
+      "ACTIVATE_QUANTUM_SYNERGY",
+      "ACTIVATE_NEURAL_RECOVERY",
+      "ACTIVATE_SWARM_CONSENSUS",
+      "ACTIVATE_NEURAL_RECOVERY_PROTOCOL",
+      "ACTIVATE_COGNITIVE_RESONANCE",
+      "INITIALIZE_NEURAL_MESH_NODES",
+      "ENFORCE_DISTRIBUTED_COGNITIVE_CONSENSUS",
+      "ENFORCE_ISO_42001_COMPLIANCE",
+      "ACTIVATE_NEURAL_RECOVERY",
+      "ACTIVATE_SWARM_CONSENSUS",
+      "ACTIVATE_NEURAL_RECOVERY_PROTOCOL",
+      "ACTIVATE_COGNITIVE_RESONANCE",
+      "INITIALIZE_NEURAL_MESH_NODES",
+      "ENFORCE_DISTRIBUTED_COGNITIVE_CONSENSUS",
+      "OPTIMIZE_FOR_SINGULARITY_READINESS_THRESHOLD",
+      "LAUNCH_ALL_EXPLORATORY_AGENTS",
+      "INCREASE_R_AND_D_BUDGET_ALLOCATION",
+      "MANDATE_SINGULARITY_AUDIT_12H",
+      "VERIFY_SWARM_NODE_HEALTH"
+    ],
+    "executive_summary": "Executive Role Alignment: Verified. Licensure Status: Not required for executive AI leadership (Verified). Phase 26 Operational Mode: ACTIVE. PHASE_26_DIRECTIVE_GENERATED. CAIO evaluation cycle completed successfully. Final Strategy: AGGRESSIVE_EXPANSION. Market Trends: - **Sovereign AI Clusters:** Increased demand for private infrastructure to ensure data residency and compliance.\n- **Direct Accountability:** Shift toward CAIOs reporting directly to the CEO rather than being nested under the CTO.\n- **Quick Win Mandate:** Expectation for measurable results (ROI) within the first 6-12 months of appointment."
+  },
+  "agile_planning": {
+    "analysis": "LLM call mocked",
+    "status": "success"
+  },
+  "sync": {
+    "sync_status": "FAILED_CACHED"
+  }
+}
