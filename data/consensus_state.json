@@ -382,5 +382,77 @@
     },
     "status": "pending",
     "timestamp": "2026-07-09T00:50:27.709Z"
+  },
+  {
+    "id": "prop_2vp2temgy",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-10T03:39:22.834Z",
+      "branchCount": 3033,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-10T03:39:22.834Z"
+  },
+  {
+    "id": "prop_csroxickv",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-10T03:42:22.609Z",
+      "branchCount": 3033,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-10T03:42:22.609Z"
+  },
+  {
+    "id": "prop_ij22w3jua",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-10T03:45:32.842Z",
+      "branchCount": 3033,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-10T03:45:32.843Z"
+  },
+  {
+    "id": "prop_3c4emuipe",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-10T03:46:25.514Z",
+      "branchCount": 3033,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-10T03:46:25.514Z"
   }
 ]

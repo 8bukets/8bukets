@@ -569,6 +569,13 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   const allScoredBranches = branches.map(b => {
     let score = 0;
 
+    // Phase 26: Success Metric Extraction (Granular Results)
+    const successMetrics = b.lastMessage.match(/(\d+)%|(\d+)\/(\d+)|success|optimal|stable/i);
+    if (successMetrics) {
+      score += 15;
+      if (successMetrics[1]) score += Math.min(parseInt(successMetrics[1]) / 2, 20);
+    }
+
     // 1. Category Priority
     const categoryWeights: Record<string, number> = {
       'security': 50,
@@ -713,7 +720,7 @@ export async function syncCollaborationState(branchIntelligence?: any[], caioDir
   const { getStakeholderDirectives } = await import('./communication')
   const directives = await getStakeholderDirectives()
 
-  await mergeBranchInsights(branches, relationshipMap)
+  await mergeBranchInsights(branches, relationshipMap, metadata.stakeholders)
 
   const newState = {
     ...currentState,
@@ -738,7 +745,7 @@ export async function syncCollaborationState(branchIntelligence?: any[], caioDir
   return newState
 }
 
-export async function mergeBranchInsights(branches: any[], relationshipMap?: any) {
+export async function mergeBranchInsights(branches: any[], relationshipMap?: any, stakeholders: Stakeholder[] = []) {
   console.log('🧠 [Collaboration] Merging branch insights into ecosystem matrix...')
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
@@ -873,7 +880,7 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
       if (seenInsights.has(insight)) return;
       seenInsights.add(insight);
 
-      const scoreTag = b.score ? ` [Impact Score: ${b.score}]` : '';
+      const scoreTag = b.score ? ` [Strategic Impact: ${b.score}]` : '';
       newEntries += `- **Branch:** \`${b.name}\`${scoreTag}\n`
       newEntries += `  - **Category:** ${b.category?.toUpperCase()}\n`
       newEntries += `  - **Result:** ${b.results || b.result || 'N/A'}\n`
@@ -891,6 +898,16 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
         if (coreFiles.length > 0) {
           newEntries += `  - **Strategic Impact:** Branch impacts core ecosystem architecture.\n`
         }
+      }
+
+      // Phase 26: Relationship Context
+      const involvedStakeholders = stakeholders.filter(s => {
+        const role = s.role.toLowerCase().split(' ')[0];
+        return b.name.toLowerCase().includes(role) || b.lastMessage.toLowerCase().includes(role);
+      }).map(s => s.role);
+
+      if (involvedStakeholders.length > 0) {
+        newEntries += `  - **Stakeholder Connection:** ${involvedStakeholders.join(', ')}\n`;
       }
     })
     newEntries += `\n`
@@ -912,7 +929,7 @@ export async function mergeEcosystemInsights(branchIntelligence: any[], workOrde
   console.log('🧠 [Collaboration] Merging ecosystem insights...')
 
   const relationshipMap = await generateRelationshipMap(branchIntelligence, metadata.stakeholders, metadata.goals)
-  await mergeBranchInsights(branchIntelligence, relationshipMap)
+  await mergeBranchInsights(branchIntelligence, relationshipMap, metadata.stakeholders)
   await broadcastToStakeholders({
     last_sync: new Date().toISOString(),
     docker: { status: 'synchronized', containerCount: 0 },
