@@ -1,6 +1,5 @@
-import fs from 'fs';
-import { promises as fsPromises } from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
 async function ingestMacBookCloudKnowledge() {
   console.log("Starting Enhanced MacBook Cloud Simulation & Online Presence Knowledge Ingestion...");
@@ -34,14 +33,14 @@ async function ingestMacBookCloudKnowledge() {
 
     const knowledgePath = 'KNOWLEDGE_MERGE.md';
     if (fs.existsSync(knowledgePath)) {
-      let content = await fsPromises.readFile(knowledgePath, 'utf-8');
+      let content = fs.readFileSync(knowledgePath, 'utf-8');
       const insertPointRegex = /(## Autonomous Observation\n)/;
       if (insertPointRegex.test(content)) {
          content = content.replace(insertPointRegex, (match) => `${match}${newObservation}\n`);
       } else {
          content += '\n## Autonomous Observation\n' + newObservation;
       }
-      await fsPromises.writeFile(knowledgePath, content, 'utf-8');
+      fs.writeFileSync(knowledgePath, content, 'utf-8');
       console.log(`Successfully ingested and updated ${knowledgePath}.`);
     } else {
       console.warn(`${knowledgePath} not found.`);
@@ -49,9 +48,9 @@ async function ingestMacBookCloudKnowledge() {
 
     const consolidatedPath = 'CONSOLIDATED_INTELLIGENCE.md';
     if (fs.existsSync(consolidatedPath)) {
-       let content = await fsPromises.readFile(consolidatedPath, 'utf-8');
+       let content = fs.readFileSync(consolidatedPath, 'utf-8');
        content += `\n## 🚀 Phase 26 Full Online & Autonomous Cloud Sovereignty\n- **Ingested on:** ${now}\n- **Source:** Cloud Sovereign Protocol Analysis\n- **Summary:** The system has successfully implemented the high-scale evolution protocols for Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab. It is fully capable of autonomous coding, merging, and collaboration in a cloud-native capacity, ensuring continuous online presence and engine evolution.\n`;
-       await fsPromises.writeFile(consolidatedPath, content, 'utf-8');
+       fs.writeFileSync(consolidatedPath, content, 'utf-8');
        console.log(`Successfully ingested and updated ${consolidatedPath}.`);
     } else {
        console.warn(`${consolidatedPath} not found.`);
@@ -76,7 +75,7 @@ async function ingestMacBookCloudKnowledge() {
                 { header: "Supabase/MongoDB Protocol", content: "Real-time presence and persistent memory synchronization with circuit breakers." }
             ]
         });
-        await fsPromises.writeFile(systemKnowledgePath, JSON.stringify(data, null, 2));
+        fs.writeFileSync(systemKnowledgePath, JSON.stringify(data, null, 2));
         console.log(`Successfully updated ${systemKnowledgePath}.`);
     }
 

@@ -15659,5 +15659,85 @@
   "google-cloud-and-ai-agents": {
     "title": "Google Cloud and AI agents",
     "content": "Google Cloud provides a portfolio of products and solutions in the AI agent space. These include integrated AI assistants, pre-built AI agents, AI applications, and a platform of agent and developer tools to build custom AI agents.\n\n- Gemini Enterprise: App: Secure platform to discover, create, run, and govern AI agents across your organization.\n- Gemini Enterprise: Agent Platform: Create AI agents and applications using natural language or a code-first approach. Easily ground your agents or apps in enterprise data with a range of options.\n- Customer Experience Agent Studio: Build hybrid conversational agents with both deterministic and generative AI functionality.\n- Agent Garden: Curated collection of pre-built agent samples, solutions, tools, and frameworks to accelerate the development and deployment of AI agents.\n- Agent Development Kit (ADK): Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.\n- A2A Protocol: An open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.\n- Cloud Run: A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency."
-  }
+  },
+  "typescript_sections": [
+    {
+      "title": "Phase 26 Cloud Sovereignty Protocol",
+      "metadata": {
+        "source": "MacBook Cloud Simulation Analysis",
+        "analyzedAt": "2026-07-10T20:40:01.410Z",
+        "description": "Protocols for full online autonomous presence and tool integration."
+      },
+      "sections": [
+        {
+          "header": "Docker Protocol",
+          "content": "Simulates fleet status using ANTIGRAVITY_SIMULATE_DOCKER=true."
+        },
+        {
+          "header": "GitHub/GitLab Protocol",
+          "content": "Autonomous merge and pipeline tracking with isCloud/Simulation flags."
+        },
+        {
+          "header": "GitKraken Protocol",
+          "content": "Simulates roadmap alignment and visual cleanliness."
+        },
+        {
+          "header": "Supabase/MongoDB Protocol",
+          "content": "Real-time presence and persistent memory synchronization with circuit breakers."
+        }
+      ]
+    },
+    {
+      "title": "Phase 26 Cloud Sovereignty Protocol",
+      "metadata": {
+        "source": "MacBook Cloud Simulation Analysis",
+        "analyzedAt": "2026-07-10T20:42:57.354Z",
+        "description": "Protocols for full online autonomous presence and tool integration."
+      },
+      "sections": [
+        {
+          "header": "Docker Protocol",
+          "content": "Simulates fleet status using ANTIGRAVITY_SIMULATE_DOCKER=true."
+        },
+        {
+          "header": "GitHub/GitLab Protocol",
+          "content": "Autonomous merge and pipeline tracking with isCloud/Simulation flags."
+        },
+        {
+          "header": "GitKraken Protocol",
+          "content": "Simulates roadmap alignment and visual cleanliness."
+        },
+        {
+          "header": "Supabase/MongoDB Protocol",
+          "content": "Real-time presence and persistent memory synchronization with circuit breakers."
+        }
+      ]
+    },
+    {
+      "title": "Phase 26 Cloud Sovereignty Protocol",
+      "metadata": {
+        "source": "MacBook Cloud Simulation Analysis",
+        "analyzedAt": "2026-07-10T20:44:31.375Z",
+        "description": "Protocols for full online autonomous presence and tool integration."
+      },
+      "sections": [
+        {
+          "header": "Docker Protocol",
+          "content": "Simulates fleet status using ANTIGRAVITY_SIMULATE_DOCKER=true."
+        },
+        {
+          "header": "GitHub/GitLab Protocol",
+          "content": "Autonomous merge and pipeline tracking with isCloud/Simulation flags."
+        },
+        {
+          "header": "GitKraken Protocol",
+          "content": "Simulates roadmap alignment and visual cleanliness."
+        },
+        {
+          "header": "Supabase/MongoDB Protocol",
+          "content": "Real-time presence and persistent memory synchronization with circuit breakers."
+        }
+      ]
+    }
+  ]
 }
