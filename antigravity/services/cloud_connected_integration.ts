@@ -148,6 +148,9 @@ export class CloudConnectedIntegrationService {
         // 7. Final Git Synchronization (Phase 23)
         logAutonomousAction('🚀 [CloudConnected] Leader active. Commencing final autonomous Git synchronization...', 'info')
         await jules.gitSync('🤖 chore: autonomous cloud sovereign work cycle completion')
+
+        // 8. Trigger Evolution loop (Phase 26 completion)
+        await this.triggerEngineEvolution()
       } else {
         logAutonomousAction('📡 [CloudConnected] Node is subordinate. Yielding work cycle to primary node.', 'info')
       }

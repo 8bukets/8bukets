@@ -1,0 +1,48 @@
+name: Cloud Sovereign Work Pulse
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Every hour
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sovereign-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Cloud Sovereign Work Pulse
+        run: npm run cloud-sovereign-pulse
+        env:
+          AUTONOMOUS_MODE: cloud
+          MACBOOK_CLOUD_SIMULATION: true
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Commit and Push Evolution
+        run: |
+          git config --global user.name "google-labs-jules[bot]"
+          git config --global user.email "161369871+google-labs-jules[bot]@users.noreply.github.com"
+          git add .
+          if ! git diff --cached --quiet; then
+            git commit -m "🤖 evolve: cloud sovereign work pulse completion"
+            git push origin HEAD:${{ github.ref }}
+          fi

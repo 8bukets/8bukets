@@ -13,6 +13,7 @@
     "evolve": "tsx --env-file=.env antigravity/evolution.ts",
     "daily": "tsx --env-file=.env antigravity/run_daily.ts",
     "ignite": "tsx --env-file=.env antigravity/run_daily.ts --continuous",
+    "cloud-sovereign-pulse": "tsx --env-file=.env scripts/cloud_sovereign_work_pulse.ts",
     "autonomous-creation": "tsx --env-file=.env scripts/full_autonomous_automatic_creation.ts",
     "full-autonomous-automatic-creation-order-and-execution": "tsx --env-file=.env scripts/full_autonomous_automatic_creation_order_and_execution.ts",
     "ingest:sor": "(node scripts/ingest_software_online_review.js || tsx --env-file=.env scripts/ingest_software_online_review.ts || true)",
