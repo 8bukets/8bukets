@@ -578,7 +578,14 @@ class ChiefAIOfficerAgent(BaseAgent):
 
         if "OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_26" in strategic_directives:
             self.logger.info("CAIO [SINGULARITY]: Mandating high-frequency Singularity Readiness audits (12h cycle).")
-            strategic_directives.append("MANDATE_SINGULARITY_AUDIT_12H")
+            if "MANDATE_SINGULARITY_AUDIT_12H" not in strategic_directives:
+                strategic_directives.append("MANDATE_SINGULARITY_AUDIT_12H")
+
+        # Phase 26 Compliance: High-frequency auditing mandate
+        if any("phase 26" in d.lower() for d in strategic_directives) or has_phase_26:
+            if "MANDATE_SINGULARITY_AUDIT_12H" not in strategic_directives:
+                self.logger.info("CAIO [PHASE_26]: Enforcing mandatory 12-hour Singularity Readiness audit cycle.")
+                strategic_directives.append("MANDATE_SINGULARITY_AUDIT_12H")
 
         # Docker Swarm Telemetry Integration
         container_status = blackboard.get("container_status", {})
