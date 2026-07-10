@@ -394,6 +394,10 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [ROLE]: MBA value identified. Issuing business-strategy alignment directive.")
                     strategic_directives.append("PRIORITIZE_MBA_STRATEGY_ALIGNMENT")
 
+                if any(u in sections_str for u in ["duke", "upenn", "wharton", "mit", "stanford"]):
+                    self.logger.info("CAIO [ROLE]: Top-tier university executive AI programs identified. Issuing academic partnership directive.")
+                    strategic_directives.append("EVALUATE_UNIVERSITY_AI_PARTNERSHIPS")
+
                 if "technical fluency" in sections_str or "business acumen" in sections_str:
                     self.logger.info("CAIO [ROLE]: Technical fluency/Business acumen identified. Issuing strategic synergy directive.")
                     strategic_directives.append("OPTIMIZE_TECHNICAL_BUSINESS_SYNERGY")
@@ -448,6 +452,12 @@ class ChiefAIOfficerAgent(BaseAgent):
             # ROI Mandate detection
             if "95%" in sections_str or "95% roi" in sections_str or "roi_directive_95" in sections_str:
                 roi_mandate_95 = True
+
+            # Quick Win Mandate detection
+            if "quick win" in sections_str or "6-12 months" in sections_str:
+                if "ESTABLISH_QUICK_WIN_MANDATE" not in strategic_directives:
+                    self.logger.info("CAIO [STRATEGY]: Quick win mandate (ROI within 6-12 months) detected. Issuing strategic prioritization directive.")
+                    strategic_directives.append("ESTABLISH_QUICK_WIN_MANDATE")
 
             # Quantum Resistance Directive
             if "quantum_resistance" in sections_str or "quantum-resistant" in sections_str:
