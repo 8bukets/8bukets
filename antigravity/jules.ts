@@ -733,6 +733,14 @@ public async observeKnowledge(url?: string) {
       this.recordTask(`CreationEngine: Processed ${ideas.length} ideas into work order chains.`)
     }
 
+    // Gap Analysis Pulse (Phase 26 Creation Order)
+    console.log('🏭 [Jules] Initiating Gap Analysis Pulse...')
+    const { creationOrderService } = await import('./services/creation_order')
+    const gapOrders = await creationOrderService.generateWorkOrders(parentOrderId)
+    if (gapOrders.length > 0) {
+      this.recordTask(`CreationOrder: Identified and addressed ${gapOrders.length} system gaps.`)
+    }
+
     // Phase 12: Super-Intelligence Optimization
     const { optimize } = await import('./optimization')
     const refactors = await optimize()
