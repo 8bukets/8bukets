@@ -39,64 +39,84 @@ export class ICloudObserver {
   }
 
   /**
-   * scan: Iterates through the sync directory and ingests new documents.
+   * scan: Recursively iterates through the sync directory and ingests new documents.
    */
   public async scan() {
-    let effectivePath = this.syncPath
+    let effectiveRoot = this.syncPath
 
     try {
-      await fs.access(effectivePath)
+      await fs.access(effectiveRoot)
     } catch {
       // Fallback to local scratch for simulation if iCloud path is missing
-      effectivePath = path.join(process.cwd(), 'scratch/icloud_sim')
+      effectiveRoot = path.join(process.cwd(), 'scratch/icloud_sim')
       try {
-        await fs.access(effectivePath)
+        await fs.access(effectiveRoot)
       } catch {
         console.log('ℹ️ [iCloud Observer] Sync path does not exist. Skipping scan.')
         return []
       }
     }
 
-    console.log(`☁️ [iCloud Observer] Scanning path: ${effectivePath}`)
+    console.log(`☁️ [iCloud Observer] Scanning path: ${effectiveRoot}`)
 
-    const files = await fs.readdir(effectivePath)
     const ingested: string[] = []
 
-    for (const file of files) {
-      const fullPath = path.join(effectivePath, file)
-      const stats = await fs.stat(fullPath)
+    // Recursive file walker
+    const walk = async (dir: string) => {
+      const entries = await fs.readdir(dir, { withFileTypes: true })
+      for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name)
+        if (entry.isDirectory()) {
+          await walk(fullPath)
+        } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.json'))) {
+          const relativePath = path.relative(effectiveRoot, fullPath)
+          try {
+            const content = await fs.readFile(fullPath, 'utf8')
+            let knowledge: any;
 
-      if (stats.isFile() && (file.endsWith('.md') || file.endsWith('.json'))) {
-        try {
-          const content = await fs.readFile(fullPath, 'utf8')
-          let knowledge;
+            if (entry.name.endsWith('.json')) {
+               const data = JSON.parse(content)
+               knowledge = {
+                 source: `icloud://${relativePath}`,
+                 title: data.title || `iCloud: ${relativePath}`,
+                 description: data.description || 'Extracted system knowledge from iCloud JSON',
+                 topKeywords: data.tags || [],
+                 recentPosts: [],
+                 analyzedAt: new Date().toISOString(),
+                 sections: data.sections || [{ header: 'Content', content: JSON.stringify(data, null, 2) }],
+                 metadata: {
+                   priority: data.priority || 'standard',
+                   tags: data.tags || []
+                 }
+               }
+            } else {
+               knowledge = KnowledgeObserver.processContent(`iCloud: ${relativePath}`, content, `icloud://${relativePath}`)
 
-          if (file.endsWith('.json')) {
-             const data = JSON.parse(content)
-             // Handle both structured and raw JSON
-             knowledge = {
-               source: `icloud://${file}`,
-               title: data.title || `iCloud: ${file}`,
-               description: data.description || 'Extracted system knowledge from iCloud JSON',
-               topKeywords: [],
-               recentPosts: [],
-               analyzedAt: new Date().toISOString(),
-               sections: data.sections || [{ header: 'Content', content: JSON.stringify(data, null, 2) }]
-             }
-          } else {
-             knowledge = KnowledgeObserver.processContent(`iCloud: ${file}`, content, `icloud://${file}`)
+               // Extract Priority and Tags from Markdown (basic regex)
+               const priorityMatch = content.match(/priority:\s*(high|critical|standard)/i)
+               const tagsMatch = content.match(/tags:\s*\[(.*?)\]/i) || content.match(/tags:\s*(.*)/i)
+
+               if (priorityMatch || tagsMatch) {
+                 knowledge.metadata = {
+                   ...knowledge.metadata,
+                   priority: priorityMatch ? priorityMatch[1].toLowerCase() : 'standard',
+                   tags: tagsMatch ? tagsMatch[1].split(',').map(t => t.trim().replace(/^["']|["']$/g, '')) : []
+                 }
+               }
+            }
+
+            await this.observer.persistKnowledge(knowledge)
+            ingested.push(relativePath)
+            logAutonomousAction(`[ICLOUD] Ingested ${relativePath}${knowledge.metadata?.priority === 'critical' ? ' [CRITICAL]' : ''}`, 'cognitive')
+            console.log(` ✅ [iCloud Observer] Successfully ingested: ${relativePath}`)
+          } catch (err) {
+            console.error(` ❌ [iCloud Observer] Failed to process ${relativePath}:`, err)
           }
-
-          await this.observer.persistKnowledge(knowledge)
-          ingested.push(file)
-          logAutonomousAction(`[ICLOUD] Ingested ${file}`, 'cognitive')
-          console.log(` ✅ [iCloud Observer] Successfully ingested: ${file}`)
-        } catch (err) {
-          console.error(` ❌ [iCloud Observer] Failed to process ${file}:`, err)
         }
       }
     }
 
+    await walk(effectiveRoot)
     return ingested
   }
 }

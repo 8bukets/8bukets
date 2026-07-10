@@ -190,6 +190,16 @@ export class Jules {
       if (hasPhase18 || hasSwarmConsensus) {
         suggestions.push('Activate Phase 18 Swarm Consensus and Sovereign Trust protocols for distributed intelligence.')
       }
+
+      // Priority-driven improvements
+      sections.forEach((s: any) => {
+        if (s.metadata?.priority === 'critical' || s.metadata?.priority === 'high') {
+          suggestions.push(`[PRIORITY] ${s.metadata.priority.toUpperCase()}: ${s.title} - Integration mandated.`)
+        }
+        if (s.metadata?.tags?.includes('security')) {
+          suggestions.push(`[SECURITY] Strategic security enhancement detected in ${s.title}.`)
+        }
+      });
     }
 
     if (this.memory.preferredPatterns.length < 5) {
