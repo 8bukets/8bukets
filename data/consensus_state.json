@@ -382,5 +382,77 @@
     },
     "status": "pending",
     "timestamp": "2026-07-09T00:50:27.709Z"
+  },
+  {
+    "id": "prop_2jq40938p",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-11T03:37:38.724Z",
+      "branchCount": 3059,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-11T03:37:38.725Z"
+  },
+  {
+    "id": "prop_z4ikghcs0",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-11T03:41:05.230Z",
+      "branchCount": 3059,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-11T03:41:05.230Z"
+  },
+  {
+    "id": "prop_6h9xo2bgd",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-11T03:48:57.002Z",
+      "branchCount": 3059,
+      "strategicDomains": 6,
+      "meshReadiness": 94,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-11T03:48:57.003Z"
+  },
+  {
+    "id": "prop_ch174gdfg",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-11T03:59:59.464Z",
+      "branchCount": 3059,
+      "strategicDomains": 6,
+      "meshReadiness": 94,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-11T03:59:59.464Z"
   }
 ]

@@ -429,6 +429,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
       const isMeshAware = content.includes('distributed_consensus') ||
                           content.includes('universal_mesh_routing') ||
                           content.includes('swarm_heartbeat') ||
+                          content.includes('lattice_sync') ||
                           content.includes('MESH_AWARE_ROUTING')
 
       if (isMeshAware) {
@@ -747,55 +748,66 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
     existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
   }
 
-  // Phase 16: Content-based SHA-256 deduplication
-  const seenHashes = new Set<string>();
+  // Phase 26: Robust Content-based SHA-256 deduplication and merging
+  const hashToBranches = new Map<string, any[]>();
 
-  const relevantBranches = branches.filter(b => {
-    // Phase 12: Broadened filter to include more meaningful results
+  branches.forEach(b => {
     const hasMeaningfulResult = b.results && b.results !== 'N/A' && b.results.length > 5;
+    if (!(b.knowledge || hasMeaningfulResult)) return;
 
-    if (!(b.knowledge || hasMeaningfulResult)) {
+    // Hash purely based on content to merge identical results across branches
+    const contentToHash = `${b.category}|${b.results}|${b.knowledge || ''}`;
+    const hash = crypto.createHash('sha256').update(contentToHash).digest('hex');
+
+    if (!hashToBranches.has(hash)) {
+      hashToBranches.set(hash, []);
+    }
+    hashToBranches.get(hash)!.push(b);
+  });
+
+  const mergedNuggets = Array.from(hashToBranches.values()).map(branchGroup => {
+    // Use the one with the highest score as the primary branch for this nugget
+    const primary = [...branchGroup].sort((a, b) => (b.score || 0) - (a.score || 0))[0];
+    return {
+      ...primary,
+      contributingBranches: branchGroup.map(b => b.name)
+    };
+  }).filter(nugget => {
+    // Phase 26: Precise context-aware deduplication to prevent data loss
+    const cleanResult = (nugget.results || 'N/A').trim().toLowerCase();
+    const cleanKnowledge = (nugget.knowledge || '').trim().toLowerCase();
+
+    // Check if this specific insight already exists within its branch or domain context in the merge document
+    const branchMarkers = nugget.contributingBranches.map((bn: string) => `\`${bn}\``);
+    const domainMarker = `Strategic Domain: ${nugget.domain || 'General'}`;
+
+    const isExistingInDomain = existingContent.includes(domainMarker) &&
+                               existingContent.split(domainMarker)[1].toLowerCase().includes(cleanResult);
+
+    const isExistingInBranch = branchMarkers.some(bm => {
+      if (!existingContent.includes(bm)) return false;
+      const branchSection = existingContent.split(bm)[1].split('\n- **')[0];
+      return branchSection.toLowerCase().includes(cleanResult);
+    });
+
+    if (isExistingInDomain || isExistingInBranch) {
       return false;
     }
 
-    // Generate content hash for deduplication
-    const contentToHash = `${b.name}|${b.category}|${b.results}|${b.knowledge || ''}`;
-    const hash = crypto.createHash('sha256').update(contentToHash).digest('hex');
-
-    if (seenHashes.has(hash)) return false;
-    seenHashes.add(hash);
-
-    // Hardened deduplication: Check if this specific result or knowledge for this branch is already recorded
-    const branchMarker = `- **Branch:** \`${b.name}\``;
-    if (existingContent.includes(branchMarker)) {
-        const sections = existingContent.split(branchMarker);
-        for (let i = 1; i < sections.length; i++) {
-          const branchSection = sections[i].split('\n##')[0];
-
-          const cleanResult = (b.results || 'N/A').trim().toLowerCase();
-          const cleanKnowledge = (b.knowledge || '').trim().toLowerCase();
-
-          const hasResult = branchSection.toLowerCase().includes(cleanResult);
-          const hasKnowledge = !cleanKnowledge || branchSection.toLowerCase().includes(cleanKnowledge);
-
-          if (hasResult && hasKnowledge) return false;
-        }
-    }
-
     return true;
-  })
+  });
 
-  if (relevantBranches.length === 0) return { nuggets: [] }
+  if (mergedNuggets.length === 0) return { nuggets: [] }
 
   // Phase 13: Group by Domain for higher strategic signal
   const domains: Record<string, any[]> = {}
-  relevantBranches.forEach(b => {
+  mergedNuggets.forEach(b => {
     const domain = b.domain || 'General'
     if (!domains[domain]) domains[domain] = []
 
     // Look up score if available in relationshipMap
     const scored = relationshipMap?.scoredBranches?.find((sb: any) => sb.name === b.name);
-    domains[domain].push(scored || b)
+    domains[domain].push({ ...(scored || b), contributingBranches: b.contributingBranches })
   })
 
   let newEntries = `\n## Ecosystem Knowledge Consolidation (${new Date().toISOString()})\n`
@@ -861,22 +873,19 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
     newEntries += `\n`
   }
 
-  // Phase 12: Knowledge Nugget Deduplication & Refinement
-  const seenInsights = new Set<string>();
-
+  // Phase 26: Knowledge Nugget Grouping & Refinement
   Object.entries(domains).sort((a, b) => a[0].localeCompare(b[0])).forEach(([domain, branchList]) => {
     newEntries += `### 🌐 Strategic Domain: ${domain}\n`
-    newEntries += `*Strategic results and knowledge merged from ${branchList.length} branches within the ${domain} domain.*\n\n`
+    newEntries += `*Strategic results and knowledge merged from ${branchList.length} unique insights within the ${domain} domain.*\n\n`
 
     branchList.sort((a, b) => (b.score || 0) - (a.score || 0)).forEach(b => {
-      const insight = b.knowledge || b.results || b.result || 'N/A';
-      if (seenInsights.has(insight)) return;
-      seenInsights.add(insight);
-
       const scoreTag = b.score ? ` [Impact Score: ${b.score}]` : '';
-      newEntries += `- **Branch:** \`${b.name}\`${scoreTag}\n`
+      const branchesTag = b.contributingBranches.length > 1
+        ? ` (Contributing Branches: ${b.contributingBranches.map((bn: string) => `\`${bn}\``).join(', ')})`
+        : ` (Branch: \`${b.name}\`)`;
+
+      newEntries += `- **Insight:** ${b.results || b.result || 'N/A'}${scoreTag}${branchesTag}\n`
       newEntries += `  - **Category:** ${b.category?.toUpperCase()}\n`
-      newEntries += `  - **Result:** ${b.results || b.result || 'N/A'}\n`
       if (b.lastSeen) {
         newEntries += `  - **Activity:** Last active ${b.lastSeen}\n`
       }
@@ -889,7 +898,7 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
         )
         newEntries += `  - **Artifacts:** ${b.changedFiles.length} files modified${coreFiles.length > 0 ? ` (${coreFiles.length} core files)` : ''}.\n`
         if (coreFiles.length > 0) {
-          newEntries += `  - **Strategic Impact:** Branch impacts core ecosystem architecture.\n`
+          newEntries += `  - **Strategic Impact:** Insight impacts core ecosystem architecture.\n`
         }
       }
     })
@@ -903,8 +912,8 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
   }
 
   const domainCount = Object.keys(domains).length;
-  console.log(`✅ [Collaboration] Merged ${relevantBranches.length} branch insights across ${domainCount} strategic domains.`)
-  return { nuggets: relevantBranches }
+  console.log(`✅ [Collaboration] Merged ${mergedNuggets.length} branch insights across ${domainCount} strategic domains.`)
+  return { nuggets: mergedNuggets }
 }
 
 export async function mergeEcosystemInsights(branchIntelligence: any[], workOrders: any[]) {
