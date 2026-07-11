@@ -24,6 +24,7 @@
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
 import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
+import { creationOrderService } from './services/creation_order'
 import fs from 'fs'
 import path from 'path'
 import { execFile, exec } from 'child_process'
@@ -676,6 +677,9 @@ public async observeKnowledge(url?: string) {
   public async executeWorkCycle(parentOrderId?: string) {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
     console.log('📅 User Directed Sequence: pluu -> work -> upload -> sync')
+
+    // Autonomous Gap Analysis
+    await creationOrderService.performGapAnalysis()
 
     // Phase 26: Universal Mesh Routing (UMR) Activation
     const { universalMeshRoutingService } = await import('./services/universal_mesh_routing');
