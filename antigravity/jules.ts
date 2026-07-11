@@ -461,6 +461,14 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
+    // Phase 26: Trigger Creation Order Gap Analysis
+    try {
+      const { creationOrderService } = await import('./services/creation_order')
+      await creationOrderService.performGapAnalysis()
+    } catch (e) {
+      console.warn('⚠️ [Jules] CreationOrder gap analysis failed:', e)
+    }
+
     const { onlinePresence } = await import('./services/presence')
     const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
 
