@@ -49,6 +49,18 @@ export class UniversalMeshRoutingService {
   }
 
   /**
+   * latticeSyncIntegrityCheck: Phase 26 security mandate for decentralized routing.
+   */
+  private async latticeSyncIntegrityCheck() {
+    // Phase 26 Directive: Singularity readiness > 0.9999
+    const { latticeSync } = await import('./lattice_sync');
+    await latticeSync.signPayload({
+      timestamp: new Date().toISOString(),
+      routingTableHash: Array.from(this.routingTable.keys()).join(',')
+    });
+  }
+
+  /**
    * crossShardNeuralCaching: Phase 26 optimization for distributed knowledge access.
    */
   private async crossShardNeuralCaching() {
@@ -71,6 +83,7 @@ export class UniversalMeshRoutingService {
     // Trigger Phase 26 functional improvements
     if (activeNodes.length > 0) {
       await this.crossShardNeuralCaching();
+      await this.latticeSyncIntegrityCheck();
     }
 
     const activeIds = new Set(activeNodes.map(n => n.nodeId));
