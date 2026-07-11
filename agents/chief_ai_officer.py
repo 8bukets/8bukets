@@ -378,13 +378,15 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [ROLE]: Certification research identified. Issuing executive development directive.")
                     strategic_directives.append("RESEARCH_AI_LEADERSHIP_CERTIFICATIONS")
 
-                if "linkedin jobs" in sections_str:
-                    self.logger.info("CAIO [STRATEGY]: LinkedIn Jobs identified as a primary research platform. Issuing targeted role scouting directive.")
-                    strategic_directives.append("SCOUT_LINKEDIN_FOR_CAIO_OPENINGS")
+                if "linkedin" in sections_str:
+                    if "SCOUT_LINKEDIN_FOR_CAIO_OPENINGS" not in strategic_directives:
+                        self.logger.info("CAIO [STRATEGY]: LinkedIn identified as a primary research platform. Issuing targeted role scouting directive.")
+                        strategic_directives.append("SCOUT_LINKEDIN_FOR_CAIO_OPENINGS")
 
                 if "coursera" in sections_str:
-                    self.logger.info("CAIO [STRATEGY]: Coursera identified as a primary certification platform. Issuing executive development directive.")
-                    strategic_directives.append("AUDIT_COURSERA_AI_CERTIFICATIONS")
+                    if "AUDIT_COURSERA_AI_CERTIFICATIONS" not in strategic_directives:
+                        self.logger.info("CAIO [STRATEGY]: Coursera identified as a primary certification platform. Issuing executive development directive.")
+                        strategic_directives.append("AUDIT_COURSERA_AI_CERTIFICATIONS")
 
                 if "8+ to 10+ years" in sections_str:
                     self.logger.info("CAIO [ROLE]: High-level experience requirement detected. Issuing senior leadership target directive.")
@@ -404,6 +406,18 @@ class ChiefAIOfficerAgent(BaseAgent):
 
                 if "government-issued professional license" in sections_str:
                     licensure_not_required = True
+
+            # University Partnership Check
+            if any(uni in sections_str for uni in ["duke", "mit", "stanford", "upenn"]):
+                if "EVALUATE_UNIVERSITY_AI_PARTNERSHIPS" not in strategic_directives:
+                    self.logger.info(f"CAIO [STRATEGY]: Top-tier academic keywords detected in {title}. Issuing university partnership evaluation directive.")
+                    strategic_directives.append("EVALUATE_UNIVERSITY_AI_PARTNERSHIPS")
+
+            # Data Readiness Audit Check
+            if any(term in sections_str for term in ["data governance", "architecture", "data pipelines"]):
+                if "MANDATE_DATA_READINESS_AUDIT" not in strategic_directives:
+                    self.logger.info(f"CAIO [GOVERNANCE]: Data infrastructure keywords detected in {title}. Issuing data readiness audit directive.")
+                    strategic_directives.append("MANDATE_DATA_READINESS_AUDIT")
 
             if "Phase 13" in title or "phase 13" in sections_str:
                 self.logger.info(f"CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: {title}")
