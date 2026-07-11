@@ -28,6 +28,9 @@ import { syncCollaborationState, broadcastToStakeholders } from '../antigravity/
 import { generateConsolidatedReport } from '../antigravity/services/intelligence'
 import { orchestrationEngine } from '../antigravity/services/sentient_orchestration'
 import { workOrderService } from '../antigravity/services/work_order'
+import { generateNeuralMeshDirectives, generateInterAgentDirectives } from '../antigravity/services/communication'
+import fs from 'fs'
+import path from 'path'
 
 /**
  * UNIFIED COLLABORATION ORCHESTRATOR
@@ -106,7 +109,22 @@ async function main() {
     console.log('📢 Broadcasting synergy alerts to stakeholders...')
     await broadcastToStakeholders(state)
 
-    // 7. Intelligence Reporting
+    // 7. Communication Matrix Generation
+    console.log('📊 Generating communication matrix report...')
+    const meshDirectives = await generateNeuralMeshDirectives(state)
+    const agentDirectives = await generateInterAgentDirectives(state)
+
+    let matrixReport = `# ANTIGRAVITY COMMUNICATION MATRIX\n\n`
+    matrixReport += `*Generated: ${new Date().toISOString()}*\n\n`
+    matrixReport += `## 🕸️ Neural Mesh Protocols\n${meshDirectives}\n\n`
+    matrixReport += `## 🤖 Inter-Agent Directives\n${agentDirectives}\n\n`
+    matrixReport += `---\n*Unified Collaboration Orchestrator Active*\n`
+
+    const matrixPath = path.join(process.cwd(), 'COMMUNICATION_MATRIX.md')
+    await fs.promises.writeFile(matrixPath, matrixReport)
+    console.log(`✅ Communication matrix saved to ${matrixPath}`)
+
+    // 8. Intelligence Reporting
     console.log('📊 Generating consolidated strategic report...')
     await generateConsolidatedReport(branches, caioDirectives)
 
