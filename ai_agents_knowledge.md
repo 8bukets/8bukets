@@ -5,8 +5,8 @@ Synthesized from Google Innovation & AI Blog
 ## [Innovation & AI](https://blog.google/innovation-and-ai/)
 
 ### Google Cloud Tools
-- Infrastructure & cloud
 - Gemini
+- Infrastructure & cloud
 - Interactions API
 
 ---
@@ -15,8 +15,8 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - 7 highlights from Google Cloud Next ‘26
-- Google Cloud Next ‘26
 - Gemini
+- Google Cloud Next ‘26
 
 ---
 
@@ -38,8 +38,9 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - 7 highlights from Google Cloud Next ‘26
-- Google Cloud Next ‘26
 - Gemini
+- Google Cloud Next ‘26
+- UK Scaling the UK government’s AI vision
 
 ---
 
@@ -92,6 +93,7 @@ Synthesized from Google Innovation & AI Blog
 ### Google Cloud Tools
 - Gemini
 - Google Flow
+- Nano Banana
 
 ---
 
@@ -99,6 +101,7 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
+- Nano Banana
 
 ---
 
@@ -119,13 +122,13 @@ Synthesized from Google Innovation & AI Blog
 - **Create videos with your own digital avatar**: We're committed to developing AI responsibly and we have clear policies to protect users from harm and governing the use of our AI tools. To start, you can create videos with your own voice by using Avatars , which create a digital version of yourself so you can generate videos that look and sound like you. Beyond the avatar feature, in terms of editing videos to change audio and speech, we are still working to test this and better understand how we can bring this capability to users responsibly. All videos created with Omni include our imperceptible SynthID digital watermark. You can easily verify that videos were generated with Gemini Omni through the Gemini app, Gemini in Chrome and Google Search. You can find out more about how we're expanding our content transparency and verification tools to help you understand how content was created and edited across the web in our blog post .
 
 ### Google Cloud Tools
-- Gemini
-- Nano Banana
-- Google Flow
-- YouTube Shorts
-- YouTube Create App
-- SynthID
 - Avatars
+- Gemini
+- Google Flow
+- Nano Banana
+- SynthID
+- YouTube Create App
+- YouTube Shorts
 
 ---
 
@@ -151,12 +154,12 @@ Synthesized from Google Innovation & AI Blog
 - **Take advantage of proven Google scale performance**: When you build with the Deep Research agent, you are tapping into the same autonomous research infrastructure that powers research capabilities within some of Google’s most popular products like Gemini App , NotebookLM , Google Search and Google Finance .
 
 ### Google Cloud Tools
-- Gemini models
 - Gemini
+- Gemini models
 - Gemma
-- Model Context Protocol
-- MCP
 - Interactions API
+- MCP
+- Model Context Protocol
 - Nano Banana
 
 ---
@@ -166,9 +169,9 @@ Synthesized from Google Innovation & AI Blog
 ### Google Cloud Tools
 - Gemini
 - Gemma
-- Vertex AI
 - Kaggle
 - Nano Banana
+- Vertex AI
 
 ---
 
@@ -214,8 +217,8 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Nano Banana
 - Google Flow
+- Nano Banana
 
 ---
 
@@ -381,5 +384,78 @@ Synthesized from Google Innovation & AI Blog
 
 ---
 
+## [We're rolling out AlphaEvolve widely to solve Google Cloud customers' hardest problems.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/alphaevolve-on-cloud/)
 
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Start building with Nano Banana 2 Lite and Gemini Omni Flash](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/)
+
+### Google Cloud Tools
+- Gemini
+- Interactions API
+- Nano Banana
+- Google Flow
+- SynthID
+
+---
+
+## [3 new FireSat satellites launch to help detect wildfires with AI](https://blog.google/innovation-and-ai/models-and-research/google-research/firesat-satellites/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [How to make Gemini study notebooks for any subject](https://blog.google/innovation-and-ai/products/gemini-app/how-to-make-gemini-study-notebooks/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [The latest AI news we announced in June 2026](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/)
+
+### Definitions
+- **Basic explainer**: Google just released a bunch of new AI updates to make your devices and apps more helpful. You can now use smarter tools on your laptop, get better translation features and even use AI to help with your schoolwork. These updates are designed to handle boring tasks so you can focus on what you actually enjoy. It’s all part of their plan to make technology feel like a natural partner in your daily life.
+
+### Google Cloud Tools
+- Gemini
+- Gemma
+- MCP
+- Nano Banana
+
+---
+
+## [Expanding Managed Agents in Gemini API: background tasks, remote MCP and more](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/)
+
+### Google Cloud Tools
+- Custom function calling alongside sandbox tools
+- Gemini
+- Model Context Protocol
+- MCP
+- Interactions API
+
+---
+
+## [How governments and organizations are leveraging Google’s AI breakthroughs for crisis resilience](https://blog.google/innovation-and-ai/technology/research/technology-global-crisis-resilience/)
+
+### Definitions
+- **Basic explainer**: Google is working with the UN and other groups to use AI for predicting natural disasters like floods and hurricanes. These tools help governments warn people early so they can get to safety before a storm hits. AI also analyzes satellite images to quickly spot damaged buildings, which helps aid workers deliver supplies faster. The goal is to make sure everyone stays safe and informed when emergencies happen.
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+
+---
 All the best - https://markposition.wordpress.com
+
+---
+All the best - https://software-online-review.com/
+
+---
+All the best - https://dbcode.io/
