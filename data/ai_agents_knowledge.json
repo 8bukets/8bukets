@@ -6,8 +6,8 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Infrastructure & cloud",
             "Gemini",
+            "Infrastructure & cloud",
             "Interactions API"
         ]
     },
@@ -19,8 +19,8 @@
         "benefits": [],
         "google_cloud_tools": [
             "7 highlights from Google Cloud Next ‘26",
-            "Google Cloud Next ‘26",
-            "Gemini"
+            "Gemini",
+            "Google Cloud Next ‘26"
         ]
     },
     {
@@ -51,8 +51,9 @@
         "benefits": [],
         "google_cloud_tools": [
             "7 highlights from Google Cloud Next ‘26",
+            "Gemini",
             "Google Cloud Next ‘26",
-            "Gemini"
+            "UK Scaling the UK government’s AI vision"
         ]
     },
     {
@@ -129,7 +130,8 @@
         "benefits": [],
         "google_cloud_tools": [
             "Gemini",
-            "Google Flow"
+            "Google Flow",
+            "Nano Banana"
         ]
     },
     {
@@ -139,7 +141,8 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Gemini"
+            "Gemini",
+            "Nano Banana"
         ]
     },
     {
@@ -177,13 +180,13 @@
         ],
         "benefits": [],
         "google_cloud_tools": [
+            "Avatars",
             "Gemini",
-            "Nano Banana",
             "Google Flow",
-            "YouTube Shorts",
-            "YouTube Create App",
+            "Nano Banana",
             "SynthID",
-            "Avatars"
+            "YouTube Create App",
+            "YouTube Shorts"
         ]
     },
     {
@@ -230,12 +233,12 @@
             }
         ],
         "google_cloud_tools": [
-            "Gemini models",
             "Gemini",
+            "Gemini models",
             "Gemma",
-            "Model Context Protocol",
-            "MCP",
             "Interactions API",
+            "MCP",
+            "Model Context Protocol",
             "Nano Banana"
         ]
     },
@@ -248,9 +251,9 @@
         "google_cloud_tools": [
             "Gemini",
             "Gemma",
-            "Vertex AI",
             "Kaggle",
-            "Nano Banana"
+            "Nano Banana",
+            "Vertex AI"
         ]
     },
     {
@@ -314,8 +317,8 @@
         "benefits": [],
         "google_cloud_tools": [
             "Gemini",
-            "Nano Banana",
-            "Google Flow"
+            "Google Flow",
+            "Nano Banana"
         ]
     },
     {
@@ -539,6 +542,97 @@
         "url": "https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/",
         "title": "XREAL AURA and more Android XR news from AWE 2026",
         "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/alphaevolve-on-cloud/",
+        "title": "We're rolling out AlphaEvolve widely to solve Google Cloud customers' hardest problems.",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/",
+        "title": "Start building with Nano Banana 2 Lite and Gemini Omni Flash",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Interactions API",
+            "Nano Banana",
+            "Google Flow",
+            "SynthID"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/firesat-satellites/",
+        "title": "3 new FireSat satellites launch to help detect wildfires with AI",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/how-to-make-gemini-study-notebooks/",
+        "title": "How to make Gemini study notebooks for any subject",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
+        "title": "The latest AI news we announced in June 2026",
+        "definitions": [
+            {
+                "term": "Basic explainer",
+                "text": "Google just released a bunch of new AI updates to make your devices and apps more helpful. You can now use smarter tools on your laptop, get better translation features and even use AI to help with your schoolwork. These updates are designed to handle boring tasks so you can focus on what you actually enjoy. It’s all part of their plan to make technology feel like a natural partner in your daily life."
+            }
+        ],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Gemma",
+            "MCP",
+            "Nano Banana"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+        "title": "Expanding Managed Agents in Gemini API: background tasks, remote MCP and more",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Custom function calling alongside sandbox tools",
+            "Gemini",
+            "Model Context Protocol",
+            "MCP",
+            "Interactions API"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/research/technology-global-crisis-resilience/",
+        "title": "How governments and organizations are leveraging Google’s AI breakthroughs for crisis resilience",
+        "definitions": [
+            {
+                "term": "Basic explainer",
+                "text": "Google is working with the UN and other groups to use AI for predicting natural disasters like floods and hurricanes. These tools help governments warn people early so they can get to safety before a storm hits. AI also analyzes satellite images to quickly spot damaged buildings, which helps aid workers deliver supplies faster. The goal is to make sure everyone stays safe and informed when emergencies happen."
+            }
+        ],
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
