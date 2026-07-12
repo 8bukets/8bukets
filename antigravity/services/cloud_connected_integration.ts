@@ -40,14 +40,14 @@ export class CloudConnectedIntegrationService {
   }
 
   /**
-   * ESTABLISH ONLINE PRESENCE (Phase 26)
-   * High-resonance presence broadcasting with singularity readiness metrics.
+   * ESTABLISH ONLINE PRESENCE (Phase 27)
+   * High-resonance presence broadcasting with MUR metrics.
    */
   public async establishOnlinePresence() {
-    logAutonomousAction('📡 [CloudConnected] Establishing High-Resonance Online Presence...', 'info')
+    logAutonomousAction('📡 [CloudConnected] Establishing Phase 27 MUR Online Presence...', 'info')
     const presence = await onlinePresence.syncPresence()
     if (presence) {
-       logAutonomousAction(`✅ [CloudConnected] Presence established. Resonance: ${presence.phase25?.resonance_latency}ms, Readiness: ${presence.phase25?.singularity_readiness}`, 'info')
+       logAutonomousAction(`✅ [CloudConnected] Presence established. Resonance: ${presence.phase27?.resonance_latency}ms, Readiness: ${presence.phase27?.singularity_readiness}, MUR: ${presence.phase27?.mur_active}`, 'info')
     }
     return presence
   }
@@ -117,6 +117,11 @@ export class CloudConnectedIntegrationService {
         logAutonomousAction('🤖 [CloudConnected] Leader active. Running autonomous PR audit and knowledge ingestion...', 'info')
         await jules.autonomousPrAudit()
         await jules.observeKnowledge()
+
+        // 4a. Strategic Directive Execution (Phase 27)
+        logAutonomousAction('👔 [CloudConnected] Leader active. Executing Phase 27 strategic consultation...', 'info')
+        const { chiefAIOfficerAgent } = await import('../ChiefAIOfficerAgent')
+        await chiefAIOfficerAgent.executeStrategicConsultation()
 
         // 4b. Autonomous Conflict Resolution (Gemini-Powered)
         logAutonomousAction('⚖️ [CloudConnected] Leader active. Resolving autonomous PR conflicts...', 'info')

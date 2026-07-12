@@ -464,7 +464,7 @@ export class Jules {
     const { onlinePresence } = await import('./services/presence')
     const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
 
-    // Phase 23: Cloud-Native Pulse & High-Scale Engine Evolution
+    // Phase 23/27: Cloud-Native Pulse & Multi-Universal Resonance Evolution
     try {
       const { cloudConnectedIntegrationService } = await import('./services/cloud_connected_integration')
 
@@ -474,17 +474,17 @@ export class Jules {
 
       // If we are in the cloud and are the leader, the CloudConnectedIntegrationService handles the main cycle
       if (isCloud && isLeader) {
-        logAutonomousAction('🌩️ [Jules] Cloud Sovereignty active. Delegating work cycle to CloudConnectedIntegrationService.', 'info')
+        logAutonomousAction('🌩️ [Jules] Cloud Sovereignty active (Phase 27). Delegating work cycle to CloudConnectedIntegrationService.', 'info')
         await cloudConnectedIntegrationService.executePhase23Pulse()
-        this.recordTask('Phase 23 Pulse: Cloud Sovereign Work cycle completed.')
+        this.recordTask('Phase 27 Pulse: Multi-Universal Resonance Work cycle completed.')
         return // The CloudConnectedIntegrationService already triggered evolution and work
       }
 
       await cloudConnectedIntegrationService.executePhase23Pulse()
       await cloudConnectedIntegrationService.triggerEngineEvolution()
-      this.recordTask('Phase 23 Pulse: Full Online posture enforced and engine evolution triggered.')
+      this.recordTask('Phase 27 Pulse: Full Online MUR posture enforced and engine evolution triggered.')
     } catch (e) {
-      console.warn('⚠️ [Jules] Phase 23 Pulse failed:', e)
+      console.warn('⚠️ [Jules] Phase 23/27 Pulse failed:', e)
     }
 
     // Phase 16: Swarm Heartbeat Activation
