@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-07-09T02:05:26.076Z
+**System Analysis:** 2026-07-12T01:23:13.774Z
 
 ---
 
@@ -26,7 +26,7 @@ All the best - https://markposition.wordpress.com
 # Intelephense Documentation
 
 > **Source:** https://github.com/bmewburn/intelephense-docs
-> **Analyzed At:** 2026-07-09T02:05:25.240Z
+> **Analyzed At:** 2026-07-12T01:23:13.451Z
 
 ## LICENSE
 Intelephense Licence
@@ -1240,6 +1240,140 @@ JSON schema for `workspace/configuration` request data
 ## support
 https://github.com/bmewburn/vscode-intelephense/issues
 ben@intelephense.com
+
+### About
+Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
+When paired with an LSP capable editor it provides an essential set of code tools, making for a productive and rich PHP coding experience.
+The Intelephense server is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key.
+
+#### Other Editors
+Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.
+```bash
+npm i intelephense -g
+```
+Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found here. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
+To start the intelephense server:
+```bash
+intelephense {transport}
+```
+Where {transport} is one of:
+--node-ipc
+--stdio
+--socket={number}
+--pipe={string}
+If your LSP client exposes initializationOptions, then the following values are accepted:
+```typescript
+interface InitialisationOptions {
+    // Optional absolute path to storage directory for workspace specific data.
+    storagePath?: string;
+
+    // Optional absolute path to a global storage directory for global data.
+    globalStoragePath?: string;
+
+    //Optional licence key or absolute path to a text file containing the licence key.
+    licenceKey?: string;
+
+    //Optional flag to clear server state.
+    //State can also be cleared by deleting {storagePath}/intelephense
+    clearCache?: boolean;
+}
+```
+
+### Configuration
+Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for intelephense.files.exclude would be {"intelephense": {"files": {"exclude": []}}}.
+Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
+- intelephense.files.associations - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. *.php.
+- intelephense.files.maxSize - Maximum file size in bytes to index and provide analysis for. Defaults to 1000000 (1MB).
+- intelephense.environment.phpVersion - PHP version to use for analysis. Defaults to the most recent stable PHP version.
+- intelephense.stubs - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
+
+### Type System
+Providing type information in your PHP code will result in a better experience when using Intelephense. Type information can be provided via coded type declarations or PHPDoc type annotations. Where both have been provided, PHPDoc type annotations are given precedence as they can provide more detailed type information.
+```php
+<?php
+
+/**
+ * @param string $s  <- A phpdoc parameter type annotation for $s
+ * @return string[] <- A phpdoc return type annotation specifying the array element type
+ **/
+function foo(string $s): array {} // <- type declarations for $s (string) and function return (array)
+```
+Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to it's minimal representation. For example, MyClass|object would become object because MyClass is a sub-type of object.
+
+### Type Narrowing
+Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as is_string, custom type assertions annotated with @assert, instanceof, and equality expressions. The example below demonstrates type narrowing.
+```php
+<?php
+
+class Foo {}
+
+function example(string|array|Foo|null $input): void
+{
+    if (!$input) {
+        // $input is narrowed to string|array|null in this block
+    } else {
+        if ($input instanceof Foo) {
+            // $input is narrowed to Foo in this block
+        } else if (is_string($input)) {
+            // $input is narrowed to string in this block
+        } else {
+            // $input is narrowed to array in this block
+        }
+    }
+}
+```
+
+### Type Evolving
+Type evolving is the change in a variable's type after an assignment expression. Simple variables and parameters always change to the type of the assigned expression regardless of initial assignments, type declarations or annotations.
+Intelephense will type evolve array types when mutated only if they are declared with an empty array initialiser. Otherwise they are considered to retain their initial declared, annotated or inferred type.
+```php
+<?php
+
+function example(int $a): void
+{
+    $a = "string"; // $a is now type string
+    $b = []; // $b is type array and flagged as evolving
+    $b[] = "string"; // $b is now type string[]
+    $b[] = 9; //$b is now (string|int)[]
+}
+```
+
+### Supported Types
+- mixed (Top Type)
+- never (Bottom Type)
+- int, float, bool, string (Scalar Types)
+- void, null, true, false, unset (Unit Types)
+- object, \MyNs\MyClass, static, self, $this (Object Types)
+- array, array<TKey, TValue>, TValue[], array{...} (Array Types)
+- callable, iterable, Union types (A|B), Intersection types (A&B)
+
+### PHPDoc Annotations
+Intelephense supports standard PHPDoc annotations as well as non-standard annotations:
+- @template
+- @template-extends / @extends
+- @template-implements / @implements
+- @template-use / @use
+- @param-closure-this
+- @param-out
+- @assert / @assert-if-true / @assert-if-false
+- @mixin
+- @disregard
+- @type-alias
+- @import-type
+
+### Premium Features
+The following features require a licence to access:
+- Rename
+- Code Folding
+- Find All Implementations
+- Go to Type Definition
+- Go to Declaration
+- Smart Select
+- Type Hierarchy
+- Code Lens
+- Inlay Hints
+- Document Links
+- Code Actions
 
 ---
 
@@ -36892,9 +37026,6 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **Branch:** `origin/cloud-workflow-adjustment-5939480137317015972`
 - **Category:** ORIGIN
 - **Result:** Commit: Authorized syntactic adjustment to trigger clean commit
-<!-- full autonomus automatic workflow creation -->
-<!-- connect with docker and collaborate  -->
-<!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -37543,8 +37674,6 @@ Use the default keyword to specify additional configurations that are applied to
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit
-<!-- full autonomus automatic workflow creation -->
-<!-- connect with docker and collaborate  -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -40025,8 +40154,6 @@ Use the default keyword to specify additional configurations that are applied to
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit
-<!-- full autonomus automatic workflow creation -->
-<!-- connect with docker and collaborate  -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -40977,8 +41104,6 @@ with the requested string
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit
-<!-- full autonomus automatic workflow creation -->
-<!-- connect with docker and collaborate  -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -42123,8 +42248,6 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit with the requested string
-<!-- full autonomus automatic workflow creation -->
-<!-- connect with docker and collaborate  -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -105107,15 +105230,11 @@ Based on the local codebase health assessment, the following Work Items should b
         {
           "name": "origin/cloud-workflow-adjustment-5939480137317015972",
           "lastMessage": "Authorized syntactic adjustment to trigger clean commit",
-          <!-- full autonomus automatic workflow creation -->
-          <!-- connect with docker and collaborate  -->
           "lastSeen": "3 weeks ago",
           "category": "origin",
           "domain": "Security",
           "knowledge": "",
           "results": "Commit: Authorized syntactic adjustment to trigger clean commit",
-          <!-- full autonomus automatic workflow creation -->
-          <!-- connect with docker and collaborate  -->
           "changedFiles": [],
           "score": 0
         },
@@ -108389,15 +108508,11 @@ Based on the local codebase health assessment, the following Work Items should b
         {
           "name": "origin/jules-synthetic-adjustment-2956436375149232394",
           "lastMessage": "Replace Authorized syntactic adjustment to trigger clean commit with the requested string",
-          <!-- full autonomus automatic workflow creation -->
-          <!-- connect with docker and collaborate  -->
           "lastSeen": "2 weeks ago",
           "category": "origin",
           "domain": "Security",
           "knowledge": "",
           "results": "Commit: Replace Authorized syntactic adjustment to trigger clean commit with the requested string",
-          <!-- full autonomus automatic workflow creation -->
-          <!-- connect with docker and collaborate  -->
           "changedFiles": [],
           "score": 0
         },
