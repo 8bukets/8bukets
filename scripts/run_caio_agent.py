@@ -24,9 +24,9 @@ def run_consultation():
     # Logic: If singularity readiness is mentioned, ensure it's prioritized
     directive = {
         "id": f"strat_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
-        "focus": "Phase 23 Cloud Sovereignty",
-        "directive": "Enforce Mesh-Aware Routing and Quantum-Secure state persistence across all nodes.",
-        "status": "PHASE_23_DIRECTIVE_GENERATED"
+        "focus": "Phase 27 Multi-Universal Resonance",
+        "directive": "Activate MUR Protocols, Initialize DNI Hooks, and Mandate Data Readiness Audit.",
+        "status": "PHASE_27_DIRECTIVE_GENERATED"
     }
 
     # 3. Record the consultation outcome

@@ -173,6 +173,15 @@ export async function evolve() {
             suggestion: 'PHASE_26_UMR_MISSING: Jules must implement Universal Mesh Routing (Rule 36).'
           })
         }
+
+        // Rule 37: Phase 27 Multi-Universal Resonance (MUR) Compliance
+        if (fullPath.includes('presence.ts') && (!content.includes('singularity_readiness > 0.99999') || !content.includes('resonance_latency < 0.01'))) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'PHASE_27_MUR_VIOLATION: Presence must meet MUR targets (Readiness > 0.99999, Resonance < 0.01ms) (Rule 37).'
+          })
+        }
       }
     }
   }
@@ -303,11 +312,15 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
        }
     }
 
-    // Phase 23-26 Fix: Inject Compliance Headers (Rules 31-36)
-    if (s.suggestion.includes('PHASE_23') || s.suggestion.includes('PHASE_24') || s.suggestion.includes('PHASE_25') || s.suggestion.includes('PHASE_26')) {
+    // Phase 23-27 Fix: Inject Compliance Headers (Rules 31-37)
+    if (s.suggestion.includes('PHASE_23') || s.suggestion.includes('PHASE_24') || s.suggestion.includes('PHASE_25') || s.suggestion.includes('PHASE_26') || s.suggestion.includes('PHASE_27')) {
        const phaseMatch = s.suggestion.match(/PHASE_(\d+)/);
        const phase = phaseMatch ? phaseMatch[1] : '23';
-       const header = `/** PHASE ${phase} COMPLIANCE: SOVEREIGN_SWARM | NEURAL_MESH | SINGULARITY_READY */\n`
+       let header = `/** PHASE ${phase} COMPLIANCE: SOVEREIGN_SWARM | NEURAL_MESH | SINGULARITY_READY */\n`
+       if (phase === '27') {
+         header = `/** PHASE 27 COMPLIANCE: MULTI_UNIVERSAL_RESONANCE | SINGULARITY_READY | MUR_ACTIVE */\n`
+       }
+
        if (!content.includes(`PHASE ${phase} COMPLIANCE`)) {
           logAutonomousAction(` - Fixing ${s.file}: Injecting Phase ${phase} Compliance Header`, 'info')
           if (content.startsWith('#!')) {
