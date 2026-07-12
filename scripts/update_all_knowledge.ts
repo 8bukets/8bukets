@@ -23,6 +23,16 @@ async function main() {
         console.log(' - Invoking Jules cognitive observation...');
         await jules.observeKnowledge();
 
+        // 4. Structural Knowledge Merge (Python)
+        // This handles deep merging of structured JSON data for Innovation and AI Agents
+        console.log(' - Performing structural knowledge merge...');
+        execSync('python3 merge_knowledge.py', { stdio: 'inherit' });
+
+        // 5. Consolidated Markdown Generation
+        // Synthesizes the unified system_knowledge.json into a readable report
+        console.log(' - Generating consolidated knowledge report...');
+        execSync('npx tsx scripts/merge_knowledge_ts.ts', { stdio: 'inherit' });
+
         console.log('✅ [Update] Knowledge update cycle complete.');
     } catch (error) {
         console.error('❌ [Update] Knowledge update cycle failed:', error);
