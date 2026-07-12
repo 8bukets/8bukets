@@ -689,6 +689,11 @@ public async observeKnowledge(url?: string) {
     await cloudConnectedIntegrationService.executePhase23Pulse()
     await cloudConnectedIntegrationService.triggerEngineEvolution()
 
+    // Phase 26: Autonomous Documentation Gap Analysis
+    console.log('🔍 [Jules] Initiating autonomous documentation gap analysis...')
+    const { creationOrderService } = await import('./services/creation_order')
+    await creationOrderService.performGapAnalysis(parentOrderId)
+
     console.log('📥 [Jules] PHASE: pluu (Git Pull Rebase)')
     await this.gitPull()
 
