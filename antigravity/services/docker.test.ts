@@ -34,7 +34,7 @@ describe('Docker Service', () => {
   it('should return mock fleet status when simulation is active', async () => {
     process.env.ANTIGRAVITY_SIMULATE_DOCKER = 'true'
     const status = await dockerService.getDockerStatus()
-    expect(status).toHaveLength(2)
+    expect(status).toHaveLength(4)
     expect(status[0].name).toBe('mongodb')
   })
 

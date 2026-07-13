@@ -54,9 +54,11 @@ export async function getDockerStatus(): Promise<DockerContainer[]> {
     'use cache'
 
     if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
-      console.log('🐳 [Docker] Simulation Active: Returning mock fleet status.');
+      console.log('🐳 [Docker] Phase 27 Simulation Active: Returning ultra-resonance fleet status.');
       return [
-        { id: 'sim-mongodb-01', image: 'mongo:latest', status: 'Up 2 hours', name: 'mongodb' },
+        { id: 'sim-mongodb-01', image: 'mongo:latest', status: 'Up 2 hours (Resonance: 0.008ms)', name: 'mongodb' },
+        { id: 'sim-supabase-01', image: 'supabase/postgres:latest', status: 'Up 1 hour', name: 'supabase-db' },
+        { id: 'sim-redis-01', image: 'redis:alpine', status: 'Up 2 hours', name: 'cache-layer' },
         { id: 'sim-app-01', image: 'my-app:latest', status: 'Up 2 hours', name: 'app' }
       ];
     }
