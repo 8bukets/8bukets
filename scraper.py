@@ -249,36 +249,76 @@ class WordpressScraperAsync:
             }
 
             async with aiohttp.ClientSession(headers=headers) as session:
+                pending = {} # Dict of task -> page_num
+                next_page_to_fetch = 1
+                next_page_to_write = 1
+                out_of_order_results = {}
+                stop_fetching = False
                 active = True
-                while active:
-                    tasks = []
-                    batch_start = page_num
-                    current_concurrency = self.concurrency
 
-                    for i in range(current_concurrency):
-                        current_page = batch_start + i
-                        if self.max_pages and current_page > self.max_pages:
-                            active = False
+                while active or out_of_order_results:
+                    # Refill pending tasks
+                    while len(pending) < self.concurrency and not stop_fetching:
+                        if self.max_pages and next_page_to_fetch > self.max_pages:
+                            stop_fetching = True
                             break
-                        tasks.append(self.fetch_and_parse(session, current_page, sem))
 
-                    if not tasks:
+                        task = asyncio.create_task(self.fetch_and_parse(session, next_page_to_fetch, sem))
+                        pending[task] = next_page_to_fetch
+
+                        if next_page_to_fetch % self.concurrency == 1:
+                            logger.info(f"🚀 Fetching page {next_page_to_fetch} and beyond...")
+
+                        next_page_to_fetch += 1
+
+                    if not pending and not out_of_order_results:
                         break
 
-                    logger.info(f"🚀 Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
-                    results = await asyncio.gather(*tasks)
+                    # Wait for at least one task to complete
+                    if pending:
+                        done, pending_set = await asyncio.wait(pending.keys(), return_when=asyncio.FIRST_COMPLETED)
 
-                    stop_detected = False
+                        # Rebuild pending dict from the uncompleted tasks
+                        new_pending = {t: pending[t] for t in pending_set}
 
-                    for idx, page_posts in enumerate(results):
-                        page_idx = batch_start + idx
+                        for task in done:
+                            page_idx = pending.pop(task)
+                            try:
+                                page_posts = task.result()
+                            except Exception as e:
+                                logger.error(f"Error fetching page {page_idx}: {e}")
+                                page_posts = None
+
+                            out_of_order_results[page_idx] = page_posts
+
+                            if page_posts is None or len(page_posts) == 0:
+                                stop_fetching = True
+
+                        pending = new_pending
+
+                    # Write results in order
+                    while next_page_to_write in out_of_order_results:
+                        page_posts = out_of_order_results.pop(next_page_to_write)
+
                         if page_posts is None:
-                            logger.info(f"🛑 Page {page_idx} returned 404 or empty. Stopping.")
-                            stop_detected = True
+                            logger.info(f"🛑 Page {next_page_to_write} returned 404 or empty. Stopping.")
+                            active = False
+                            out_of_order_results.clear()
+                            for p in pending.keys():
+                                p.cancel()
+                            if pending:
+                                await asyncio.gather(*pending.keys(), return_exceptions=True)
+                            pending.clear()
                             break
                         elif len(page_posts) == 0:
-                            logger.info(f"🛑 Page {page_idx} has no articles. Stopping.")
-                            stop_detected = True
+                            logger.info(f"🛑 Page {next_page_to_write} has no articles. Stopping.")
+                            active = False
+                            out_of_order_results.clear()
+                            for p in pending.keys():
+                                p.cancel()
+                            if pending:
+                                await asyncio.gather(*pending.keys(), return_exceptions=True)
+                            pending.clear()
                             break
 
                         # Process posts incrementally
@@ -307,15 +347,13 @@ class WordpressScraperAsync:
                                 unique_links.add(link)
                                 txt_f.write(link + '\n')
 
-                    if stop_detected:
+                        next_page_to_write += 1
+
+                    if not active:
                         break
 
-                    if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                        logger.info("🛑 Reached max pages limit.")
-                        break
-
-                    page_num += len(tasks)
-                    await asyncio.sleep(0.5)
+                    if pending:
+                        await asyncio.sleep(0.1) # Small sleep to yield control and throttle slightly
 
             json_f.write('\n]\n')
 
