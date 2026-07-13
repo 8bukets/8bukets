@@ -9,11 +9,12 @@ import { logAutonomousAction } from '../core'
  * Autonomously generates reports and documentation.
  */
 
-export async function generateContent(payload: { title: string; content: string; filename: string }) {
+export async function generateContent(payload: { title: string; content: string; filename: string; directory?: string }) {
   try {
     console.log(`📝 [Content] Generating content: ${payload.title}...`)
 
-    const filePath = path.join(process.cwd(), 'data', payload.filename)
+    const targetDir = payload.directory || 'data'
+    const filePath = path.join(process.cwd(), targetDir, payload.filename)
     const fullContent = `# ${payload.title}\n\nGenerated on: ${new Date().toISOString()}\n\n${payload.content}`
 
     await fs.promises.writeFile(filePath, fullContent)
