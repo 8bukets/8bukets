@@ -249,37 +249,40 @@ class WordpressScraperAsync:
             }
 
             async with aiohttp.ClientSession(headers=headers) as session:
-                active = True
-                while active:
-                    tasks = []
-                    batch_start = page_num
-                    current_concurrency = self.concurrency
+                pending = set()
+                stop_detected = False
+                highest_empty_page = float('inf')
 
-                    for i in range(current_concurrency):
-                        current_page = batch_start + i
-                        if self.max_pages and current_page > self.max_pages:
-                            active = False
-                            break
-                        tasks.append(self.fetch_and_parse(session, current_page, sem))
-
-                    if not tasks:
+                # Initial batch
+                for _ in range(self.concurrency):
+                    if self.max_pages and page_num > self.max_pages:
                         break
+                    pending.add(asyncio.create_task(self.fetch_and_parse(session, page_num, sem)))
+                    page_num += 1
 
-                    logger.info(f"🚀 Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
-                    results = await asyncio.gather(*tasks)
+                while pending:
+                    done, pending = await asyncio.wait(pending, return_when=asyncio.FIRST_COMPLETED)
 
-                    stop_detected = False
+                    for task in done:
+                        try:
+                            page_idx, page_posts = task.result()
+                        except Exception as e:
+                            logger.error(f"Task failed: {e}")
+                            continue
 
-                    for idx, page_posts in enumerate(results):
-                        page_idx = batch_start + idx
-                        if page_posts is None:
-                            logger.info(f"🛑 Page {page_idx} returned 404 or empty. Stopping.")
+                        if page_idx >= highest_empty_page:
+                            # We already found an earlier page that was empty, ignore this one
+                            continue
+
+                        if page_posts is None or len(page_posts) == 0:
+                            reason = "404 or empty" if page_posts is None else "has no articles"
+                            logger.info(f"🛑 Page {page_idx} {reason}. Stopping.")
                             stop_detected = True
-                            break
-                        elif len(page_posts) == 0:
-                            logger.info(f"🛑 Page {page_idx} has no articles. Stopping.")
-                            stop_detected = True
-                            break
+                            if page_idx < highest_empty_page:
+                                highest_empty_page = page_idx
+                            continue
+
+                        logger.info(f"✅ Fetched page {page_idx} with {len(page_posts)} posts.")
 
                         # Process posts incrementally
                         total_fetched += len(page_posts)
@@ -307,15 +310,10 @@ class WordpressScraperAsync:
                                 unique_links.add(link)
                                 txt_f.write(link + '\n')
 
-                    if stop_detected:
-                        break
-
-                    if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                        logger.info("🛑 Reached max pages limit.")
-                        break
-
-                    page_num += len(tasks)
-                    await asyncio.sleep(0.5)
+                        # Add a new task if we haven't detected a stop condition and haven't hit the limit
+                        if not stop_detected and (not self.max_pages or page_num <= self.max_pages):
+                            pending.add(asyncio.create_task(self.fetch_and_parse(session, page_num, sem)))
+                            page_num += 1
 
             json_f.write('\n]\n')
 
@@ -341,8 +339,8 @@ class WordpressScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
-            return None
+                return page_num, await self.parse_page(html)
+            return page_num, None
 
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV injection."""
