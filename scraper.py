@@ -250,72 +250,90 @@ class WordpressScraperAsync:
 
             async with aiohttp.ClientSession(headers=headers) as session:
                 active = True
-                while active:
-                    tasks = []
-                    batch_start = page_num
-                    current_concurrency = self.concurrency
 
-                    for i in range(current_concurrency):
-                        current_page = batch_start + i
-                        if self.max_pages and current_page > self.max_pages:
-                            active = False
-                            break
-                        tasks.append(self.fetch_and_parse(session, current_page, sem))
+                tasks = set()
+                # Initialize the first batch of tasks
 
-                    if not tasks:
+                async def fetch_with_idx(p):
+                    res = await self.fetch_and_parse(session, p, sem)
+                    return p, res
+
+                for i in range(self.concurrency):
+                    if self.max_pages and (page_num + i) > self.max_pages:
                         break
 
-                    logger.info(f"🚀 Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
-                    results = await asyncio.gather(*tasks)
+                    task = asyncio.create_task(fetch_with_idx(page_num + i))
+                    tasks.add(task)
 
-                    stop_detected = False
+                next_page_to_fetch = page_num + len(tasks)
 
-                    for idx, page_posts in enumerate(results):
-                        page_idx = batch_start + idx
-                        if page_posts is None:
-                            logger.info(f"🛑 Page {page_idx} returned 404 or empty. Stopping.")
-                            stop_detected = True
-                            break
-                        elif len(page_posts) == 0:
-                            logger.info(f"🛑 Page {page_idx} has no articles. Stopping.")
-                            stop_detected = True
-                            break
+                stop_detected = False
+                lowest_empty_page = float('inf')
 
-                        # Process posts incrementally
-                        total_fetched += len(page_posts)
-                        for post in page_posts:
-                            # JSON
-                            if not is_first_item:
-                                json_f.write(',\n')
-                            json.dump(post, json_f, indent=4, ensure_ascii=False)
-                            is_first_item = False
+                while tasks and active:
+                    # Wait for the first task to complete
+                    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
 
-                            # CSV
-                            csv_writer.writerow([
-                                self.sanitize_for_csv(post.get('title', '')),
-                                self.sanitize_for_csv(post.get('date', '')),
-                                self.sanitize_for_csv(post.get('author', '')),
-                                self.sanitize_for_csv(", ".join(post.get('categories', []))),
-                                self.sanitize_for_csv(post.get('external_link', '')),
-                                self.sanitize_for_csv(post.get('domain', '')),
-                                self.sanitize_for_csv(post.get('post_url', ''))
-                            ])
+                    for completed_task in done:
+                        try:
+                            page_idx, page_posts = completed_task.result()
 
-                            # TXT
-                            link = post.get('external_link')
-                            if link and link not in unique_links:
-                                unique_links.add(link)
-                                txt_f.write(link + '\n')
+                            if page_posts is None or len(page_posts) == 0:
+                                if page_posts is None:
+                                    logger.info(f"🛑 Page {page_idx} returned 404 or empty. Will stop after pending pages.")
+                                else:
+                                    logger.info(f"🛑 Page {page_idx} has no articles. Will stop after pending pages.")
 
-                    if stop_detected:
-                        break
+                                stop_detected = True
+                                lowest_empty_page = min(lowest_empty_page, page_idx)
+                                continue # Don't break, keep processing other completed tasks in `done`
 
-                    if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                        logger.info("🛑 Reached max pages limit.")
-                        break
+                            # Only process posts if we are before the lowest empty page
+                            if page_idx < lowest_empty_page:
+                                # Process posts incrementally
+                                total_fetched += len(page_posts)
+                                for post in page_posts:
+                                    # JSON
+                                    if not is_first_item:
+                                        json_f.write(',\n')
+                                    json.dump(post, json_f, indent=4, ensure_ascii=False)
+                                    is_first_item = False
 
-                    page_num += len(tasks)
-                    await asyncio.sleep(0.5)
+                                    # CSV
+                                    csv_writer.writerow([
+                                        self.sanitize_for_csv(post.get('title', '')),
+                                        self.sanitize_for_csv(post.get('date', '')),
+                                        self.sanitize_for_csv(post.get('author', '')),
+                                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                                        self.sanitize_for_csv(post.get('external_link', '')),
+                                        self.sanitize_for_csv(post.get('domain', '')),
+                                        self.sanitize_for_csv(post.get('post_url', ''))
+                                    ])
+
+                                    # TXT
+                                    link = post.get('external_link')
+                                    if link and link not in unique_links:
+                                        unique_links.add(link)
+                                        txt_f.write(link + '\n')
+
+                            # If we haven't stopped, add a new task to keep the window full
+                            if not stop_detected:
+                                if self.max_pages and next_page_to_fetch > self.max_pages:
+                                    pass
+                                else:
+                                    new_task = asyncio.create_task(fetch_with_idx(next_page_to_fetch))
+                                    pending.add(new_task)
+                                    next_page_to_fetch += 1
+
+                        except Exception as e:
+                            logger.error(f"Error processing page: {e}")
+                            if not stop_detected and (not self.max_pages or next_page_to_fetch <= self.max_pages):
+                                new_task = asyncio.create_task(fetch_with_idx(next_page_to_fetch))
+                                pending.add(new_task)
+                                next_page_to_fetch += 1
+
+                    tasks = pending
+
 
             json_f.write('\n]\n')
 
