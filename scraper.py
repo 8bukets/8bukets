@@ -108,15 +108,11 @@ class WordpressScraperAsync:
     URL_PATTERN = re.compile(r'^https?://')
 
     def clean_text(self, text: str) -> str:
-        """Normalize whitespace and remove non-breaking spaces.
-
-        Optimization: " ".join(text.split()) is ~6x faster than regex re.sub
-        for whitespace normalization.
-        """
+        """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return " ".join(text.split())
+        return self.WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
