@@ -250,36 +250,64 @@ class WordpressScraperAsync:
 
             async with aiohttp.ClientSession(headers=headers) as session:
                 active = True
-                while active:
-                    tasks = []
-                    batch_start = page_num
-                    current_concurrency = self.concurrency
+                pending = set()
 
-                    for i in range(current_concurrency):
-                        current_page = batch_start + i
-                        if self.max_pages and current_page > self.max_pages:
+                # To maintain order (or at least process stopping correctly),
+                # we keep track of tasks by their page number.
+                # However, the user said it's acceptable for results to be out of order in the files,
+                # BUT we need to ensure we don't process pages > N if page N failed.
+
+                # Instead of storing results to process later, we can process them as they complete.
+                # But to properly handle the stop condition (don't save pages after a 404),
+                # we keep track of the maximum successful page or the stop page.
+
+                stop_page = float('inf')
+
+                while active or pending:
+                    # Fill the concurrency window
+                    while len(pending) < self.concurrency and active:
+                        if self.max_pages and page_num > self.max_pages:
                             active = False
                             break
-                        tasks.append(self.fetch_and_parse(session, current_page, sem))
+                        if page_num >= stop_page:
+                            active = False
+                            break
 
-                    if not tasks:
+                        # Wrap task to include page_num
+                        task = asyncio.create_task(self.fetch_and_parse(session, page_num, sem))
+                        task.page_num = page_num
+                        pending.add(task)
+                        page_num += 1
+
+                    if not pending:
                         break
 
-                    logger.info(f"🚀 Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
-                    results = await asyncio.gather(*tasks)
+                    # Wait for at least one task to complete
+                    done, pending = await asyncio.wait(pending, return_when=asyncio.FIRST_COMPLETED)
 
-                    stop_detected = False
+                    for task in done:
+                        p_num = task.page_num
 
-                    for idx, page_posts in enumerate(results):
-                        page_idx = batch_start + idx
+                        # If we already found a stop condition on a smaller page, discard this result
+                        if p_num > stop_page:
+                            continue
+
+                        try:
+                            page_posts = task.result()
+                        except Exception as e:
+                            logger.error(f"Error processing page {p_num}: {e}")
+                            page_posts = None
+
                         if page_posts is None:
-                            logger.info(f"🛑 Page {page_idx} returned 404 or empty. Stopping.")
-                            stop_detected = True
-                            break
+                            logger.info(f"🛑 Page {p_num} returned 404 or empty. Stopping.")
+                            stop_page = min(stop_page, p_num)
+                            active = False
+                            continue
                         elif len(page_posts) == 0:
-                            logger.info(f"🛑 Page {page_idx} has no articles. Stopping.")
-                            stop_detected = True
-                            break
+                            logger.info(f"🛑 Page {p_num} has no articles. Stopping.")
+                            stop_page = min(stop_page, p_num)
+                            active = False
+                            continue
 
                         # Process posts incrementally
                         total_fetched += len(page_posts)
@@ -307,15 +335,8 @@ class WordpressScraperAsync:
                                 unique_links.add(link)
                                 txt_f.write(link + '\n')
 
-                    if stop_detected:
-                        break
-
-                    if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                        logger.info("🛑 Reached max pages limit.")
-                        break
-
-                    page_num += len(tasks)
-                    await asyncio.sleep(0.5)
+                    # Note: We removed await asyncio.sleep(0.5) from here since we want requests
+                    # to fire as soon as a slot opens up.
 
             json_f.write('\n]\n')
 
@@ -343,7 +364,6 @@ class WordpressScraperAsync:
             if html:
                 return await self.parse_page(html)
             return None
-
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV injection."""
         if not text:
