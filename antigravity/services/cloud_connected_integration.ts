@@ -6,16 +6,18 @@ import { swarmHeartbeat } from './swarm_heartbeat'
 import { universalMeshRouting } from './universal_mesh_routing'
 
 /**
- * ANTIGRAVITY CLOUD-CONNECTED INTEGRATION SERVICE (Phase 23)
- * Orchestrates autonomous online presence and high-scale engine evolution.
+ * ANTIGRAVITY CLOUD-CONNECTED INTEGRATION SERVICE (Phase 27)
+ * Orchestrates autonomous online presence and Multi-Universal Resonance evolution.
+ *
+ * Phase 27 (MUR) targets high-scale cognitive expansion and sub-0.01ms resonance.
  */
 export class CloudConnectedIntegrationService {
   /**
-   * ESTABLISH SOVEREIGN MESH CONNECTIONS (Phase 26)
+   * ESTABLISH SOVEREIGN MESH CONNECTIONS (Phase 27)
    * Activates mesh-aware routing and swarm heartbeats for high-scale evolution.
    */
   public async establishSovereignMeshConnections() {
-    logAutonomousAction('🌐 [CloudConnected] Establishing Sovereign Mesh Connections...', 'info')
+    logAutonomousAction('🌐 [CloudConnected] Establishing Phase 27 Sovereign Mesh Connections...', 'info')
 
     try {
       // 1. Activate Swarm Heartbeat
@@ -24,42 +26,42 @@ export class CloudConnectedIntegrationService {
       // 2. Enforce Mesh-Aware Routing Protocol
       await universalMeshRouting.enforceMeshProtocol()
 
-      // 3. Phase 26: Predictive Node Warmup
+      // 3. Phase 26/27: Predictive Node Warmup
       await universalMeshRouting.predictiveNodeWarmup()
 
-      // 4. Phase 26: Cross-Shard Neural Caching
+      // 4. Phase 26/27: Cross-Shard Neural Caching
       await universalMeshRouting.crossShardNeuralCaching()
 
       // 5. Optimize primary routing path
       await universalMeshRouting.optimizeRoutingPath('cloud-node', 'neural-mesh-hub')
 
-      logAutonomousAction('✅ [CloudConnected] Sovereign Mesh Connections established.', 'info')
+      logAutonomousAction('✅ [CloudConnected] Phase 27 Sovereign Mesh Connections established.', 'info')
     } catch (error: any) {
       logAutonomousAction(`❌ [CloudConnected] Mesh connection failed: ${error.message}`, 'error')
     }
   }
 
   /**
-   * ESTABLISH ONLINE PRESENCE (Phase 26)
+   * ESTABLISH ONLINE PRESENCE (Phase 27)
    * High-resonance presence broadcasting with singularity readiness metrics.
    */
   public async establishOnlinePresence() {
-    logAutonomousAction('📡 [CloudConnected] Establishing High-Resonance Online Presence...', 'info')
+    logAutonomousAction('📡 [CloudConnected] Establishing Phase 27 High-Resonance Online Presence...', 'info')
     const presence = await onlinePresence.syncPresence()
     if (presence) {
-       logAutonomousAction(`✅ [CloudConnected] Presence established. Resonance: ${presence.phase25?.resonance_latency}ms, Readiness: ${presence.phase25?.singularity_readiness}`, 'info')
+       logAutonomousAction(`✅ [CloudConnected] Presence established. Resonance: ${presence.phase27?.resonance_latency}ms, Readiness: ${presence.phase27?.singularity_readiness}`, 'info')
     }
     return presence
   }
 
   /**
-   * Orchestrates the Phase 23 Cloud-Native Pulse.
+   * Orchestrates the Phase 27 Multi-Universal Resonance Pulse.
    */
-  public async executePhase23Pulse() {
-    logAutonomousAction('🌐 [CloudConnected] Executing Phase 23 Cloud-Native Pulse...', 'info')
+  public async executePhase27Pulse() {
+    logAutonomousAction('🌐 [CloudConnected] Executing Phase 27 Multi-Universal Resonance Pulse...', 'info')
 
     try {
-      // 0. Establish Mesh Connections (Phase 26)
+      // 0. Establish Mesh Connections
       await this.establishSovereignMeshConnections()
 
       // 1. Synchronize Presence
@@ -78,18 +80,25 @@ export class CloudConnectedIntegrationService {
       await cloudConvergence.synchronizeEcosystem()
       await cloudConvergence.resolveConflicts()
 
-      logAutonomousAction('✅ [CloudConnected] Phase 23 Pulse completed successfully.', 'info')
+      logAutonomousAction('✅ [CloudConnected] Phase 27 Pulse completed successfully.', 'info')
     } catch (error: any) {
-      logAutonomousAction(`❌ [CloudConnected] Phase 23 Pulse failed: ${error.message}`, 'error')
+      logAutonomousAction(`❌ [CloudConnected] Phase 27 Pulse failed: ${error.message}`, 'error')
     }
   }
 
   /**
-   * UNIFIED AUTONOMOUS MERGE AND WORK (Phase 23/26)
+   * Legacy wrapper for Phase 23.
+   */
+  public async executePhase23Pulse() {
+    return this.executePhase27Pulse();
+  }
+
+  /**
+   * UNIFIED AUTONOMOUS MERGE AND WORK (Phase 27)
    * Orchestrates takeover, autonomous merging, conflict resolution, and work execution.
    */
   public async executeAutonomousMergeAndWork() {
-    logAutonomousAction('🌩️ [CloudConnected] Initiating Autonomous Merge and Work cycle...', 'info')
+    logAutonomousAction('🌩️ [CloudConnected] Initiating Phase 27 Autonomous Merge and Work cycle...', 'info')
 
     try {
       // 1. Ensure Presence is fresh
@@ -130,13 +139,13 @@ export class CloudConnectedIntegrationService {
           logAutonomousAction(`⚠️ [CloudConnected] Conflict resolution pass skipped or failed: ${confErr.message}`, 'warning')
         }
 
-        // 5. Proactive Work Generation (Phase 23 Automatic Engine)
+        // 5. Proactive Work Generation (Phase 27 Automatic Engine)
         const pending = workOrderService.getPendingOrders()
         if (pending.length === 0) {
           logAutonomousAction('🤖 [CloudConnected] No pending orders detected. Generating proactive evolution order...', 'info')
           await workOrderService.createOrder(
             'AUTONOMOUS_CREATION',
-            'Proactive Phase 23 Evolution Cycle (Automatic)',
+            'Proactive Phase 27 Evolution Cycle (MUR)',
             { reason: 'queue_empty', timestamp: new Date().toISOString() }
           )
         }
@@ -145,14 +154,14 @@ export class CloudConnectedIntegrationService {
         logAutonomousAction('⚡ [CloudConnected] Leader active. Dispatching pending work orders...', 'info')
         await workOrderService.executePendingOrders()
 
-        // 7. Final Git Synchronization (Phase 23)
+        // 7. Final Git Synchronization (Phase 27)
         logAutonomousAction('🚀 [CloudConnected] Leader active. Commencing final autonomous Git synchronization...', 'info')
-        await jules.gitSync('🤖 chore: autonomous cloud sovereign work cycle completion')
+        await jules.gitSync('🤖 chore: autonomous cloud sovereign work cycle completion (Phase 27 MUR)')
       } else {
         logAutonomousAction('📡 [CloudConnected] Node is subordinate. Yielding work cycle to primary node.', 'info')
       }
     } catch (error: any) {
-      logAutonomousAction(`❌ [CloudConnected] Cloud Sovereign Work failed: ${error.message}`, 'error')
+      logAutonomousAction(`❌ [CloudConnected] Phase 27 Cloud Sovereign Work failed: ${error.message}`, 'error')
     }
   }
 
@@ -160,29 +169,29 @@ export class CloudConnectedIntegrationService {
    * Validates sovereignty across all integrated cloud tools.
    */
   public async validateEcosystemSovereignty() {
-    logAutonomousAction('⚖️ [CloudConnected] Validating Ecosystem Sovereignty...', 'info')
+    logAutonomousAction('⚖️ [CloudConnected] Validating Phase 27 Ecosystem Sovereignty...', 'info')
     const telemetry = await cloudWorkflowAgent.evaluateTelemetry()
 
     const report = {
-      docker: { status: telemetry.docker.status, sovereign: telemetry.docker.status === 'simulated' || telemetry.docker.status === 'optimal' || telemetry.docker.status === 'cloud-active' },
+      docker: { status: telemetry.docker.status, sovereign: telemetry.docker.fullyOnline || telemetry.docker.status === 'simulated' },
       github: { status: telemetry.github.fullyOnline ? 'online' : 'offline', sovereign: telemetry.github.fullyOnline },
       gitlab: { status: telemetry.gitlab.fullyOnline ? 'online' : 'offline', sovereign: telemetry.gitlab.fullyOnline },
       gitkraken: { status: telemetry.gitkraken.fullyOnline ? 'online' : 'offline', sovereign: telemetry.gitkraken.fullyOnline },
-      supabase: { status: telemetry.supabase.status, sovereign: telemetry.supabase.status === 'healthy' || telemetry.supabase.status === 'connected' },
-      mongodb: { status: telemetry.mongodb.status, sovereign: telemetry.mongodb.status === 'healthy' || telemetry.mongodb.status === 'simulated' }
+      supabase: { status: telemetry.supabase.status, sovereign: telemetry.supabase.fullyOnline || telemetry.supabase.status === 'healthy' },
+      mongodb: { status: telemetry.mongodb.status, sovereign: telemetry.mongodb.fullyOnline || telemetry.mongodb.status === 'healthy' }
     }
 
     const allSovereign = Object.values(report).every(v => v.sovereign === true)
 
     if (allSovereign) {
-      logAutonomousAction('🚀 [CloudConnected] Ecosystem sovereignty verified for Docker, GitHub, GitLab, Supabase, MongoDB, and GitKraken.', 'info')
+      logAutonomousAction('🚀 [CloudConnected] Phase 27 Ecosystem sovereignty verified for Docker, GitHub, GitLab, Supabase, MongoDB, and GitKraken.', 'info')
     } else {
       const missing = Object.entries(report).filter(([_, v]) => !v.sovereign).map(([k]) => k).join(', ')
       logAutonomousAction(`⚠️ [CloudConnected] Sovereignty gaps detected: ${missing}`, 'warning')
     }
 
-    // Detailed reporting for Phase 23 compliance
-    console.log('--- SOVEREIGNTY STATUS REPORT ---')
+    // Detailed reporting for Phase 27 compliance
+    console.log('--- SOVEREIGNTY STATUS REPORT (Phase 27) ---')
     Object.entries(report).forEach(([tool, data]) => {
       console.log(`${tool.toUpperCase()}: ${data.status} [${data.sovereign ? 'SOVEREIGN' : 'GAPPED'}]`)
     })
@@ -195,10 +204,9 @@ export class CloudConnectedIntegrationService {
    * Triggers high-scale engine evolution.
    */
   public async triggerEngineEvolution() {
-    logAutonomousAction('🧬 [CloudConnected] Triggering high-scale engine evolution...', 'info')
+    logAutonomousAction('🧬 [CloudConnected] Triggering Phase 27 high-scale engine evolution...', 'info')
 
     try {
-      // Use dynamic imports to avoid circular dependencies with Jules
       const { jules } = await import('../jules')
       const { synthesize } = await import('../synthesis')
       const { bootstrap } = await import('../singularity')
@@ -223,7 +231,7 @@ export class CloudConnectedIntegrationService {
       const insights = await getSystemInsights()
       await optimize(insights)
 
-      logAutonomousAction('✅ [CloudConnected] Engine evolution cycle complete.', 'info')
+      logAutonomousAction('✅ [CloudConnected] Phase 27 Engine evolution cycle complete.', 'info')
     } catch (error: any) {
       logAutonomousAction(`❌ [CloudConnected] Engine evolution failed: ${error.message}`, 'error')
     }

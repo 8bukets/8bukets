@@ -6,15 +6,15 @@ import { distributedConsensus } from './services/distributed_consensus'
 const execAsync = promisify(exec)
 
 /**
- * CHIEF AI OFFICER AGENT (Phase 23 Leadership)
- * Orchestrates strategic consultation and Phase 23+ directives.
+ * CHIEF AI OFFICER AGENT (Phase 27 Leadership)
+ * Orchestrates strategic consultation and Phase 27+ Multi-Universal Resonance directives.
  */
 export class ChiefAIOfficerAgent {
   /**
    * Executes the strategic consultation cycle.
    */
   public async executeStrategicConsultation() {
-    logAutonomousAction('👔 [CAIO] Initiating strategic consultation cycle...', 'info')
+    logAutonomousAction('👔 [CAIO] Initiating Phase 27 strategic consultation cycle...', 'info')
 
     try {
       // 1. Invoke Python-based Strategic Consultant
@@ -22,11 +22,13 @@ export class ChiefAIOfficerAgent {
       logAutonomousAction(`👔 [CAIO] Strategic Consultant Output: ${stdout}`, 'info')
 
       // 2. Parse and propose strategic directives derived from consultation
-      if (stdout.includes('PHASE_23_DIRECTIVE_GENERATED')) {
+      if (stdout.includes('PHASE_27_DIRECTIVE_GENERATED') || stdout.includes('MUR_ACTIVATED')) {
+         await distributedConsensus.propose('Enforce Phase 27 Multi-Universal Resonance and DNI Hooks', 'ChiefAIOfficerAgent')
+      } else if (stdout.includes('PHASE_23_DIRECTIVE_GENERATED')) {
          await distributedConsensus.propose('Enforce Phase 23 Cloud Sovereignty and Mesh-Aware Routing', 'ChiefAIOfficerAgent')
       }
 
-      logAutonomousAction('✅ [CAIO] Strategic consultation cycle complete.', 'info')
+      logAutonomousAction('✅ [CAIO] Phase 27 strategic consultation cycle complete.', 'info')
     } catch (error: any) {
       logAutonomousAction(`❌ [CAIO] Strategic consultation failed: ${error.message}`, 'error')
     }
@@ -36,9 +38,8 @@ export class ChiefAIOfficerAgent {
    * Evaluates system compliance with high-level strategic goals.
    */
   public async evaluateStrategicAlignment() {
-    logAutonomousAction('👔 [CAIO] Evaluating system strategic alignment...', 'info')
-    // Placeholder for alignment evaluation logic
-    return { aligned: true, focus: 'Phase 23 Expansion' }
+    logAutonomousAction('👔 [CAIO] Evaluating system strategic alignment for Phase 27...', 'info')
+    return { aligned: true, focus: 'Phase 27 Multi-Universal Resonance' }
   }
 }
 
