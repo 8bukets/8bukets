@@ -10,10 +10,13 @@ class TestCleanTextOptimization(unittest.TestCase):
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
 
+    import re
+    WHITESPACE_PATTERN = re.compile(r'\s+')
     def optimized_clean_text(self, text):
         if not text:
             return ""
-        return " ".join(text.split())
+        text = text.replace('\xa0', ' ')
+        return self.WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def test_correctness(self):
         test_cases = [
