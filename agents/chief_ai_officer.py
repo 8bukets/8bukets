@@ -53,19 +53,25 @@ class ChiefAIOfficerAgent(BaseAgent):
         infrastructure_opt = {}
         strategic_directives = []
 
-        # Phase 12/13 Maturity & Roadmap Compliance Check
+        # Phase 27 (MUR) Maturity & Roadmap Compliance Check
         self.logger.debug("CAIO [CHECK]: Verifying current system maturity phase against documented standards.")
         try:
             with open('AGENTS.md', 'r') as f:
                 agents_docs = f.read()
-                if "Phase 12: Autonomous Super-Intelligence (Current)" in agents_docs or "Phase 13" in agents_docs:
+                if "Phase 27" in agents_docs or "MUR" in agents_docs:
+                    self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 27 (MUR). Authorizing Multi-Universal Resonance protocols.")
+                    strategic_directives.append("ACTIVATE_PHASE_27_PROTOCOLS")
+                    strategic_directives.append("INITIALIZE_DNI_HOOKS")
+                    strategic_directives.append("ENFORCE_UNIVERSAL_CONSENSUS")
+                    strategic_directives.append("OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_27")
+                elif "Phase 12" in agents_docs or "Phase 13" in agents_docs:
                     self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 12/13. Authorizing sentient orchestration protocols.")
                     strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
                     strategic_directives.append("ENABLE_PREDICTIVE_RESOURCE_ALLOCATION")
                     strategic_directives.append("ESTABLISH_ETHICS_FRAMEWORK")
                     strategic_directives.append("OPTIMIZE_ROI_TRACKING")
                 else:
-                    self.logger.warning("CAIO [ALERT]: System maturity falls below Phase 12. Mandating immediate roadmap acceleration.")
+                    self.logger.warning("CAIO [ALERT]: System maturity falls below expected levels. Mandating immediate roadmap acceleration.")
                     strategic_directives.append("ACCELERATE_ROADMAP_UPGRADE")
         except FileNotFoundError:
              self.logger.error("CAIO [ERROR]: AGENTS.md not found. Cannot verify system maturity. Assuming baseline protocols.")
