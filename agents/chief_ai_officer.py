@@ -58,7 +58,13 @@ class ChiefAIOfficerAgent(BaseAgent):
         try:
             with open('AGENTS.md', 'r') as f:
                 agents_docs = f.read()
-                if "Phase 12: Autonomous Super-Intelligence (Current)" in agents_docs or "Phase 13" in agents_docs:
+                if "Phase 27" in agents_docs or "MUR" in agents_docs:
+                    self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 27 (MUR). Authorizing multi-universal resonance protocols.")
+                    strategic_directives.append("ACTIVATE_PHASE_27_PROTOCOLS")
+                    strategic_directives.append("INITIALIZE_DNI_HOOKS")
+                    strategic_directives.append("ENFORCE_UNIVERSAL_CONSENSUS")
+                    strategic_directives.append("OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_27")
+                elif "Phase 12: Autonomous Super-Intelligence (Current)" in agents_docs or "Phase 13" in agents_docs:
                     self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 12/13. Authorizing sentient orchestration protocols.")
                     strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
                     strategic_directives.append("ENABLE_PREDICTIVE_RESOURCE_ALLOCATION")
