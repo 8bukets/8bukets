@@ -457,12 +457,25 @@ export class Jules {
     }
   }
 
+  /**
+   * Activates the swarm heartbeat with Phase 27 (MUR) targets.
+   */
+  public async activateSwarmHeartbeat() {
+    const { swarmHeartbeat } = await import('./services/swarm_heartbeat')
+    // Phase 27 MUR targets: 0.008ms resonance, 0.999995 singularity-readiness
+    swarmHeartbeat.start()
+    console.log('💓 [Jules] Swarm Heartbeat activated for Phase 27 MUR optimization.')
+  }
+
   public async executeWorkCycle() {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
     const { onlinePresence } = await import('./services/presence')
     const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+
+    // Phase 27: Multi-Universal Resonance (MUR) Heartbeat
+    await this.activateSwarmHeartbeat()
 
     // Phase 23: Cloud-Native Pulse & High-Scale Engine Evolution
     try {

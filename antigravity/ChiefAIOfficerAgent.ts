@@ -22,7 +22,9 @@ export class ChiefAIOfficerAgent {
       logAutonomousAction(`👔 [CAIO] Strategic Consultant Output: ${stdout}`, 'info')
 
       // 2. Parse and propose strategic directives derived from consultation
-      if (stdout.includes('PHASE_23_DIRECTIVE_GENERATED')) {
+      if (stdout.includes('PHASE_27_DIRECTIVE_GENERATED') || stdout.includes('MUR_DIRECTIVE_GENERATED')) {
+         await distributedConsensus.propose('Enforce Phase 27 Multi-Universal Resonance and DNI Hooks', 'ChiefAIOfficerAgent')
+      } else if (stdout.includes('PHASE_23_DIRECTIVE_GENERATED')) {
          await distributedConsensus.propose('Enforce Phase 23 Cloud Sovereignty and Mesh-Aware Routing', 'ChiefAIOfficerAgent')
       }
 
