@@ -22,14 +22,59 @@ export interface GithubDocInsight {
 export class GithubDocsObserver {
   /**
    * fetchDoc: Single file version expected by IntelephenseService and consolidate_intelephense script.
+   * Phase 26: Enhanced with retry logic and GitHub API support for better rate limit handling.
    */
-  public async fetchDoc(owner: string, repo: string, file: string): Promise<GithubDocInsight> {
+  public async fetchDoc(owner: string, repo: string, file: string, retryCount = 0, forceRaw = false): Promise<GithubDocInsight> {
+    const useApi = !!process.env.GITHUB_TOKEN && !forceRaw
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${file}`
     const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/master/${file}`
-    const response = await fetch(rawUrl)
-    if (!response.ok) {
-      throw new Error(`Failed to fetch ${file}: ${response.statusText}`)
+
+    let response: Response
+    let markdown = ''
+
+    try {
+      if (useApi) {
+        const headers: Record<string, string> = {
+          'Accept': 'application/vnd.github.v3.raw',
+          'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+          'User-Agent': 'Antigravity-Agent'
+        }
+        response = await fetch(apiUrl, { headers })
+      } else {
+        response = await fetch(rawUrl)
+      }
+
+      if (response.status === 429 && retryCount < 3) {
+        const delay = Math.pow(2, retryCount) * 1000
+        console.warn(`⚠️ [GitHub Docs Observer] Rate limited (429) for ${file}. Retrying in ${delay}ms...`)
+        await new Promise(resolve => setTimeout(resolve, delay))
+        return this.fetchDoc(owner, repo, file, retryCount + 1, forceRaw)
+      }
+
+      if (!response.ok) {
+        // Fallback to raw URL if API fails for some reason (e.g. invalid token or scope)
+        if (useApi) {
+          console.warn(`⚠️ [GitHub Docs Observer] API fetch failed for ${file} (${response.status}). Falling back to raw URL...`)
+          return this.fetchDoc(owner, repo, file, 0, true) // Restart retries for raw URL
+        }
+        throw new Error(`Failed to fetch ${file}: ${response.statusText}`)
+      }
+
+      markdown = await response.text()
+    } catch (error: any) {
+      if (retryCount < 3) {
+        console.warn(`⚠️ [GitHub Docs Observer] Error fetching ${file}: ${error.message}. Retrying...`)
+        return this.fetchDoc(owner, repo, file, retryCount + 1, forceRaw)
+      }
+
+      if (useApi) {
+        console.warn(`⚠️ [GitHub Docs Observer] Fatal API error for ${file}. Falling back to raw URL...`)
+        return this.fetchDoc(owner, repo, file, 0, true)
+      }
+
+      throw error
     }
-    const markdown = await response.text()
+
     const sections: { title: string; content: string }[] = []
 
     // Split by markdown headers
