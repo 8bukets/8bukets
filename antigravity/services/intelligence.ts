@@ -487,3 +487,56 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
 
   return { reportPath, branchCount: branches.length }
 }
+
+/**
+ * Phase 24: Communication Matrix Service
+ * Synthesizes high-resonance protocols into a standalone matrix for effective inter-agent communication.
+ */
+export async function generateCommunicationMatrix(branchIntelligence?: any[], caioDirectives?: any) {
+  'use cache'
+  console.log('📡 [Intelligence] Generating system communication matrix...')
+
+  const metadata = await getMissionMetadata()
+  const branches = (branchIntelligence || await jules.scanAllBranches(true)) as any[]
+  const workOrders = await workOrderService.getPendingOrders()
+  const dockerHealthy = await checkDockerHealth()
+  const dockerStatus = dockerHealthy ? 'optimal' : 'degraded'
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+
+  const matrixPath = path.join(process.cwd(), 'COMMUNICATION_MATRIX.md')
+
+  const state = {
+    mission: metadata.missionStatement,
+    stakeholders: metadata.stakeholders,
+    docker: { status: dockerStatus },
+    intelligence: { branches: branches.length, pendingTasks: workOrders.length, relationshipMap },
+    caioDirectives
+  }
+
+  const {
+    generateNeuralMeshDirectives,
+    generateInterAgentDirectives,
+    generateCrossDomainDirectives
+  } = await import('./communication')
+
+  let matrix = `# ANTIGRAVITY COMMUNICATION MATRIX\n\n`
+  matrix += `*Generated: ${new Date().toISOString()}*\n\n`
+  matrix += `This document centralizes high-resonance communication protocols between autonomous agents and system components for Phase 26/27 compliance.\n\n`
+
+  matrix += await generateNeuralMeshDirectives(state)
+  matrix += `\n`
+
+  matrix += await generateInterAgentDirectives(state)
+  matrix += `\n`
+
+  const crossDomain = await generateCrossDomainDirectives(state)
+  if (crossDomain) {
+    matrix += `### 🔗 Cross-Domain Synergy Protocols\n`
+    matrix += crossDomain + `\n`
+  }
+
+  await fs.promises.writeFile(matrixPath, matrix)
+  console.log(`✅ [Intelligence] Communication Matrix saved to ${matrixPath}`)
+
+  return { matrixPath }
+}
