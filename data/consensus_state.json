@@ -382,5 +382,59 @@
     },
     "status": "pending",
     "timestamp": "2026-07-09T00:50:27.709Z"
+  },
+  {
+    "id": "prop_5v1u69dmt",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-15T03:42:53.225Z",
+      "branchCount": 3160,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-15T03:42:53.225Z"
+  },
+  {
+    "id": "prop_c7jzdzu82",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-15T04:03:24.934Z",
+      "branchCount": 3160,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-15T04:03:24.935Z"
+  },
+  {
+    "id": "prop_abgmgce99",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-15T04:05:21.385Z",
+      "branchCount": 3160,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-15T04:05:21.386Z"
   }
 ]

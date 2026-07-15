@@ -25,7 +25,7 @@ import { latticeSync } from '../antigravity/services/lattice_sync'
 import { distributedConsensus } from '../antigravity/services/distributed_consensus'
 import { jules } from '../antigravity/jules'
 import { syncCollaborationState, broadcastToStakeholders } from '../antigravity/services/collaboration'
-import { generateConsolidatedReport } from '../antigravity/services/intelligence'
+import { generateConsolidatedReport, generateCommunicationMatrix } from '../antigravity/services/intelligence'
 import { orchestrationEngine } from '../antigravity/services/sentient_orchestration'
 import { workOrderService } from '../antigravity/services/work_order'
 
@@ -109,6 +109,7 @@ async function main() {
     // 7. Intelligence Reporting
     console.log('📊 Generating consolidated strategic report...')
     await generateConsolidatedReport(branches, caioDirectives)
+    await generateCommunicationMatrix(branches, caioDirectives, state.intelligence.relationshipMap)
 
     console.log('🏆 [Antigravity] Unified Collaboration cycle complete. Relationships mapped and results merged.')
   } catch (err) {
