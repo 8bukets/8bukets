@@ -12,6 +12,7 @@
     "explore": "tsx --env-file=.env antigravity/explorer.ts",
     "evolve": "tsx --env-file=.env antigravity/evolution.ts",
     "daily": "tsx --env-file=.env antigravity/run_daily.ts",
+    "cloud-sovereign-pulse": "tsx --env-file=.env scripts/cloud_sovereign_work_pulse.ts",
     "ignite": "tsx --env-file=.env antigravity/run_daily.ts --continuous",
     "autonomous-creation": "tsx --env-file=.env scripts/full_autonomous_automatic_creation.ts",
     "full-autonomous-automatic-creation-order-and-execution": "tsx --env-file=.env scripts/full_autonomous_automatic_creation_order_and_execution.ts",
