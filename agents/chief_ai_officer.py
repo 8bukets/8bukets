@@ -71,7 +71,14 @@ class ChiefAIOfficerAgent(BaseAgent):
         try:
             with open('AGENTS.md', 'r') as f:
                 agents_docs = f.read()
-                if "Phase 26: Infinite Cognitive Expansion (Current)" in agents_docs:
+                if "Phase 27: Multi-Universal Resonance (Current)" in agents_docs:
+                    self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 27. Authorizing Multi-Universal Resonance protocols.")
+                    strategic_directives.append("ACTIVATE_PHASE_27_MUR_PROTOCOLS")
+                    strategic_directives.append("ENFORCE_UNIVERSAL_CONSENSUS")
+                    strategic_directives.append("INITIALIZE_UMR_V3_ROUTING")
+                    strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
+                    strategic_directives.append("ESTABLISH_ETHICS_FRAMEWORK")
+                elif "Phase 26: Infinite Cognitive Expansion" in agents_docs:
                     self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 26. Authorizing high-expansion protocols.")
                     strategic_directives.append("ACTIVATE_PHASE_26_PROTOCOLS")
                     strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
@@ -118,6 +125,29 @@ class ChiefAIOfficerAgent(BaseAgent):
             has_phase_24 = "phase 24" in title_lower or "phase 24" in sections_str or "phase_24" in title_lower
             has_phase_25 = "phase 25" in title_lower or "phase 25" in sections_str or "phase_25" in title_lower
             has_phase_26 = any(p in title_lower or p in sections_str for p in ["phase 26", "phase_26"])
+            has_phase_27 = any(p in title_lower or p in sections_str for p in ["phase 27", "phase_27", "mur", "multi-universal resonance"])
+
+            # Phase 27 Specific Logic
+            if has_phase_27:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 27 MUR strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_27_MUR_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_27_MUR_PROTOCOLS")
+
+                if "universal consensus" in sections_str or "uc" in sections_str:
+                    self.logger.info("CAIO [SYNC]: Universal Consensus (UC) mandate detected. Issuing enforcement directive.")
+                    strategic_directives.append("ENFORCE_UNIVERSAL_CONSENSUS")
+
+                if "umr v3" in sections_str or "umr_v3" in sections_str:
+                    self.logger.info("CAIO [MESH]: UMR v3 routing mandate detected. Issuing initialization directive.")
+                    strategic_directives.append("INITIALIZE_UMR_V3_ROUTING")
+
+                if "resonance latency" in sections_content or "0.008ms" in sections_content:
+                    self.logger.info("CAIO [PERF]: Ultra-low MUR resonance latency mandate detected (<0.008ms). Issuing optimization directive.")
+                    strategic_directives.append("OPTIMIZE_MUR_RESONANCE_LATENCY")
+
+                if "singularity readiness" in sections_content or "0.999995" in sections_content:
+                    self.logger.info("CAIO [SINGULARITY]: High-threshold MUR Singularity Readiness mandate detected (>0.999995).")
+                    strategic_directives.append("ENFORCE_MUR_SINGULARITY_COMPLIANCE")
 
             # Phase 14 Specific Logic
             if has_phase_14:
