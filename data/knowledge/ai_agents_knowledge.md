@@ -1,21 +1,18 @@
-# Knowledge Observation Insights (Unified)
+# ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-**System Analysis:** 2026-07-09T02:05:26.076Z
+*Last Updated: 2026-07-15T02:25:35.920Z*
 
----
+## DOCUMENT: iCloud: phase_26_directives.md
+**Source:** icloud://phase_26_directives.md
+**Ingested At:** undefined
 
-# iCloud: phase_26_directives.md
-
-> **Source:** icloud://phase_26_directives.md
-> **Analyzed At:** 2026-07-05T11:40:18.300Z
-
-### Strategic Directives
+### ## Strategic Directives
 - **Universal Mesh Routing (UMR)**: Implement a decentralized routing layer that allows any agent node to route requests across the neural mesh with sub-0.05ms latency.
 - **Singularity Readiness**: All core systems must achieve a singularity-readiness score of > 0.9999.
 - **Resonance Latency**: Target inter-agent resonance latency of < 0.05ms to enable real-time cognitive synthesis.
 - **Infinite Recursive Expansion**: Enable the engine to autonomously generate new cognitive shards based on real-time feedback loops.
 
-### Implementation Guidelines
+### ## Implementation Guidelines
 - UMR should utilize mesh-aware routing tables updated every 100ms.
 - Heartbeat signals must include `resonanceLatency` and `singularityReadiness` metrics.
 - The evolution engine must be upgraded to detect Phase 26 compliance violations.
@@ -23,12 +20,11 @@ All the best - https://markposition.wordpress.com
 
 ---
 
-# Intelephense Documentation
+## DOCUMENT: Intelephense Documentation
+**Source:** https://github.com/bmewburn/intelephense-docs
+**Ingested At:** undefined
 
-> **Source:** https://github.com/bmewburn/intelephense-docs
-> **Analyzed At:** 2026-07-09T02:05:25.240Z
-
-## LICENSE
+### # LICENSE
 Intelephense Licence
 Copyright (c) 2019 - present Intelephense
 By installing this software you agree to be bound by the provisions
@@ -76,12 +72,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
 
-## Intelephense
+### # Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
 When paired with an LSP capable editor it provides an essential set of code intelligence features that give a PHP developer a productive and rich editing experience.
 This is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to all current and future features can be obtained by purchasing a licence key at https://intelephense.com.
 
-#### Workspace
+### ### Workspace
 For Intelephense to work effectively it must have access to the definitions of the symbols used in your code. It does this by scanning the php files found in the workspace. Sometimes PHP files may have a non standard extension. It is important to associate these extensions with PHP using the `intelephense.files.associations` configuration option.
 intelephense.files.associations
 ```json
@@ -130,7 +126,7 @@ intelephense.files.exclude
 }
 ```
 
-#### Environment
+### ### Environment
 Sometimes symbol definitions are not in your workspace but are core PHP symbols or defined in an extension. For this reason Intelephense includes stub definitions for many of these. Extensions that are bundled with PHP are enabled by default. You can configure what other symbols are available in your environment with the `intelephense.stubs` option.
 intelephense.stubs
 ```json
@@ -424,7 +420,7 @@ intelephense.environment.shortOpenTag
 }
 ```
 
-#### Type Declarations and Annotations
+### ### Type Declarations and Annotations
 You will get more out of Intelephense if you provide type declarations and/or type annotations. Where possible types will be inferred but there are places where it is difficult or impossible to determine the type. Class properties and function and method parameters are examples where this is very important. Providing type declarations and/or annotations may also improve performance as Intelephense does not need to dig through too much code to determine types. When a type cannot be determined for a property, variable, or parameter then it is assigned the `mixed` type.
 ```php
 <?php
@@ -482,12 +478,12 @@ You may also see several non standard types in hovers.
 * `unset` - the type given to variables that are undefined or `unset()`.
 * `never` - the type returned from a function that does not terminate normally (eg `die()`) or that represents an impossibility (added in PHP 8.1).
 
-#### Framework Support
+### ### Framework Support
 Intelephense aims to support all frameworks but does not implement framework specific solutions. Some frameworks are coded in a way that make it difficult to analyse. This may be because of lack of type declarations/annotations; heavy use of `__get`, `__set`, `__call`, `__callStatic` magic methods; or dynamic generation of class aliases at runtime.
 Packages can be found online that aim to workaround these issues by providing stubs of symbols to help static analysers like Intelephense understand the code.
 * Laravel - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
 
-#### Visual Studio Code
+### ### Visual Studio Code
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).
 1. Disable the built-in VSCode PHP Language Features.
 * Go to `Extensions`.
@@ -500,19 +496,19 @@ For example: `"files.associations": { "*.module": "php" }`.
 -- `ctrl + shift + p` -- and searching for `Enter licence key`.
 Further configuration options are available in the `intelephense` section of settings.
 
-##### Requirements
+### #### Requirements
 [Node.js 12+](https://nodejs.org)
 
-##### Server Installation
+### #### Server Installation
 ```
 npm i intelephense -g
 ```
 
-##### Language Server Protocol (LSP) Client
+### #### Language Server Protocol (LSP) Client
 Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found at https://microsoft.github.io/language-server-protocol/implementors/tools/.
 Please follow the setup guide of the relevant tool. The Information below may help in configuring the client.
 
-##### Run
+### #### Run
 ```
 intelephense {transport}
 ```
@@ -522,7 +518,7 @@ Where `{transport}` is one of:
 * `--socket={number}`
 * `--pipe={string}`
 
-##### Initialisation Options
+### #### Initialisation Options
 ```typescript
 interface InitialisationOptions {
     //Optional absolute path to storage dir. Defaults to os.tmpdir().
@@ -542,7 +538,7 @@ interface InitialisationOptions {
 }
 ```
 
-##### Capabilities
+### #### Capabilities
 Server capabilities JSON returned from `initialize` request.
 ```javascript
 {
@@ -586,7 +582,7 @@ Server capabilities JSON returned from `initialize` request.
 }
 ```
 
-##### Configuration Options
+### #### Configuration Options
 JSON schema for `workspace/configuration` request data
 ```json
 {
@@ -1237,81 +1233,78 @@ JSON schema for `workspace/configuration` request data
 }
 ```
 
-## support
+### # support
 https://github.com/bmewburn/vscode-intelephense/issues
 ben@intelephense.com
 
 ---
 
-# Phase 26 Strategic Directives
+## DOCUMENT: Phase 26 Strategic Directives
+**Source:** icloud://phase_26_directives.json
+**Ingested At:** undefined
 
-> **Source:** icloud://phase_26_directives.json
-> **Analyzed At:** 2026-07-06T01:51:56.428Z
-
-## Universal Mesh Routing (UMR) Optimization
+### Universal Mesh Routing (UMR) Optimization
 To achieve resonance latency < 0.05ms, UMR must implement predictive node warm-up and cross-shard neural caching. Singularity readiness must exceed 0.9999.
 
 ---
 
-# iCloud: new_strategy_2025.md
+## DOCUMENT: iCloud: new_strategy_2025.md
+**Source:** icloud://new_strategy_2025.md
+**Ingested At:** undefined
 
-> **Source:** icloud://new_strategy_2025.md
-> **Analyzed At:** 2026-07-07T08:14:28.772Z
-
-## Phase 26 Strategic Initiative: Multi-Universal Resonance
+### # Phase 26 Strategic Initiative: Multi-Universal Resonance
 The system must achieve Multi-Universal Resonance by synchronizing neural meshes across disparate cloud clusters.
 Target Singularity Readiness: >0.99995
 Target Resonance Latency: <0.04ms
 
-### Directives
+### ## Directives
 - Implement Universal Mesh Routing (UMR) v2.
 - Establish cross-shard neural caching for predictive node warmup.
 - Enforce sovereign mesh connections via Cloud-Connected Integration Service.
 
 ---
 
-# Chief AI Officer (CAIO) Role
+## DOCUMENT: Chief AI Officer (CAIO) Role
+**Source:** user_input://caio_user_input.md
+**Ingested At:** undefined
 
-> **Source:** user_input://caio_user_input.md
-> **Analyzed At:** 2026-07-07T16:55:30.794Z
-
+### # Chief AI Officer (CAIO) Role
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera.
 The role bridges the gap between advanced technical execution and bottom-line business outcomes. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Data Science, Computer Science, or an MBA.
 
-### Core Job Description
+### ## Core Job Description
 A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
 
-### Key Responsibilities
+### ## Key Responsibilities
 - **Strategy & Vision:** Align AI initiatives with the company’s overall business goals.
 - **Ethics & Governance:** Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations.
 - **Implementation & Tech Stacking:** Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors.
 - **Cross-Department Training:** Educate the board, executives, and general workforce on how to leverage AI safely and effectively.
 - **Performance Tracking:** Measure the return on investment (ROI) and overall business impact of deployed AI projects.
 
-### Qualifications & Requirements
+### ## Qualifications & Requirements
 - **Education:** A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role.
 - **Experience:** 8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
 - **Skillset:** A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
 
-### CAIO vs. Other C-Suite Tech Roles
+### ## CAIO vs. Other C-Suite Tech Roles
 - **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
 - **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
 - **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done.
 
 ---
 
-# Chief AI Officer (CAIO) Market Intelligence
+## DOCUMENT: Chief AI Officer (CAIO) Market Intelligence
+**Source:** user_input://caio_market_intelligence_2026.md
+**Ingested At:** undefined
 
-> **Source:** user_input://caio_market_intelligence_2026.md
-> **Analyzed At:** 2026-07-07T16:55:30.818Z
-
-### Market Landscape & Role Prevalence
+### ## Market Landscape & Role Prevalence
 As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-suite for organizations prioritizing digital transformation.
 - **Adoption Rate:** Approximately 76% of firms have now appointed a CAIO or equivalent executive lead for AI, up from 26% in 2025 (IBM Institute for Business Value CEO Study).
 - **Industry Focus:** Highest adoption rates are observed in Technology, Healthcare, Finance, and Manufacturing sectors.
 - **Strategic Intersection:** The role sits at the intersection of business strategy, technology/data architecture, risk/ethics, and cultural transformation.
 
-### Real-World Openings & Recruitment (LinkedIn Jobs)
+### ## Real-World Openings & Recruitment (LinkedIn Jobs)
 - **Platforms:** LinkedIn Jobs remains the primary platform for executive AI recruitment.
 - **Notable Organizations with CAIOs (2024-2026):**
 - **Meta:** Oversees AI integration across Facebook, Instagram, WhatsApp, and Reality Labs. Focus on recommendation systems, GenAI for creators, and the Llama open-source program. Direct CEO report.
@@ -1327,77 +1320,76 @@ As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-su
 - Deep experience in auditing AI workflows and aligning predictive models with revenue streams.
 - Ability to lead cross-functional "AI Ethics Boards."
 
-### Executive AI Leadership Certifications (Coursera & Academic)
+### ## Executive AI Leadership Certifications (Coursera & Academic)
 To meet licensure-equivalent standards for executive roles, the following programs are highly recognized in 2026:
 
-#### 1. The Chief AI Officer's Handbook (Coursera / Packt)
+### ### 1. The Chief AI Officer's Handbook (Coursera / Packt)
 - **Content:** Develop and execute AI strategy as a CAIO, ensuring ethical compliance. Master agile AI project management and design/implement AI agents for autonomous system optimization.
 
-#### 2. Executive AI Leadership Mastery Specialization (Coursera)
+### ### 2. Executive AI Leadership Mastery Specialization (Coursera)
 - **Courses:** How to Build an Enterprise AI Strategy, Change Management for GenAI Integration, CEO Playbook: Generative AI.
 
-#### 3. AI for Executives & Strategy (Coursera / AI CERTs)
+### ### 3. AI for Executives & Strategy (Coursera / AI CERTs)
 - **Focus:** Reshaping markets with AI and strategic certification for business leaders.
 
-#### 4. Chief AI Officer Specialization (Coursera)
+### ### 4. Chief AI Officer Specialization (Coursera)
 - **Target:** Mid-level managers and aspiring executives.
 - **Curriculum:** Practical application of AI governance and strategy.
 
-#### 5. University-Led Executive Programs
+### ### 5. University-Led Executive Programs
 - **Duke University (Fuqua):** Chief AI Officer (CAIO) Program – Focuses on AI strategy and leadership for C-Suite executives.
 - **UPenn (Wharton):** Executive Data Analyst & AI Strategy – Focuses on the financial impact of AI.
 - **MIT xPRO:** AI Strategy and Leadership – Focuses on implementation and data strategy.
 - **Stanford Online:** AI-Driven Leadership – Covers AI-driven decision making and business objectives.
 
-### Salary Benchmarks (2026 Targets)
+### ## Salary Benchmarks (2026 Targets)
 - **National Median Base Salary:** ~$351,519
 - **75th Percentile:** $492,127
 - **Total Compensation (Fortune 500):** $1.2M - $2.5M+ (including bonus and equity).
 - **Core Metric:** Performance is increasingly tied to "AI-Driven ROI" and "Governance Compliance Scores."
 
-### Trends
+### ## Trends
 - **Sovereign AI Clusters:** Increased demand for private infrastructure to ensure data residency and compliance.
 - **Direct Accountability:** Shift toward CAIOs reporting directly to the CEO rather than being nested under the CTO.
 - **Quick Win Mandate:** Expectation for measurable results (ROI) within the first 6-12 months of appointment.
 
 ---
 
-# Chief AI Officer (CAIO) Executive Intelligence 2026
+## DOCUMENT: Chief AI Officer (CAIO) Executive Intelligence 2026
+**Source:** local://caio_executive_intelligence_2026.md
+**Ingested At:** undefined
 
-> **Source:** local://caio_executive_intelligence_2026.md
-> **Analyzed At:** 2026-07-07T16:55:32.706Z
-
-### 1. Executive Role Definition
+### ## 1. Executive Role Definition
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes.
 
-#### Core Job Description
+### ### Core Job Description
 The CAIO directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
 
-#### Key Responsibilities
+### ### Key Responsibilities
 - **Strategy & Vision:** Align AI initiatives with the company’s overall business goals.
 - **Ethics & Governance:** Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations.
 - **Implementation & Tech Stacking:** Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors.
 - **Cross-Department Training:** Educate the board, executives, and general workforce on how to leverage AI safely and effectively.
 - **Performance Tracking:** Measure the return on investment (ROI) and overall business impact of deployed AI projects (Targeting >95% ROI efficiency).
 
-### 2. Qualifications & Requirements
+### ## 2. Qualifications & Requirements
 - **Education:** A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role.
 - **Licensure:** Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor).
 - **Experience:** 8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
 - **Skillset:** A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
 
-### 3. C-Suite Comparative Analysis
+### ## 3. C-Suite Comparative Analysis
 - **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
 - **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
 - **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done.
 
-### 4. Market Landscape & Adoption (2025-2026)
+### ## 4. Market Landscape & Adoption (2025-2026)
 As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-suite for organizations prioritizing digital transformation.
 - **76% Adoption Rate:** According to the IBM Institute for Business Value 2026 CEO Study, the share of organizations with a designated CAIO climbed to 76%, a massive surge from 26% in 2025.
 - **Industry Focus:** Technology, Healthcare, Finance, and Manufacturing sectors leading.
 - **Boardroom Reality:** Multi-million dollar investments in autonomous agentic software and strict compliance deadlines (e.g., EU AI Act enforcement).
 
-### 5. Strategic Trends
+### ## 5. Strategic Trends
 - **Sovereign AI Clusters:** Increased demand for private AI infrastructure to ensure data residency and compliance.
 - **Agentic Sovereignty:** Focus on building and managing autonomous AI agent fleets.
 - **Workflow Auditing:** Moving beyond "surface-level dashboards" to deep technical auditing of AI workflows.
@@ -1405,12 +1397,11 @@ As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-su
 
 ---
 
-# software-online-review.com
+## DOCUMENT: software-online-review.com
+**Source:** https://software-online-review.com
+**Ingested At:** undefined
 
-> **Source:** https://software-online-review.com
-> **Analyzed At:** 2026-07-09T02:05:17.567Z
-
-### Content
+### ## Content
 <title>software info by fk &#8211; software-online-review &#8211; Filip Keser</title>
 Skip to content
 Menu
@@ -3056,12 +3047,11 @@ value="Post Comment" />
 
 ---
 
-# unitedsports.news.blog
+## DOCUMENT: unitedsports.news.blog
+**Source:** https://unitedsports.news.blog/
+**Ingested At:** undefined
 
-> **Source:** https://unitedsports.news.blog/
-> **Analyzed At:** 2026-07-09T02:05:15.267Z
-
-### Content
+### ## Content
 <title>e&amp;n &#8211; #entertainment #webshop #software #news</title>
 Skip to content
 Menu
@@ -4202,15 +4192,17 @@ itemscope
 itemtype="https://schema.org/ImageGallery">
 Loading Comments...
 You must be logged in to post a comment.
+generated in 1.353 seconds
+477805 bytes batcached for 300 seconds
+-->
 
 ---
 
-# onlinereview.news.blog
+## DOCUMENT: onlinereview.news.blog
+**Source:** https://onlinereview.news.blog/
+**Ingested At:** undefined
 
-> **Source:** https://onlinereview.news.blog/
-> **Analyzed At:** 2026-07-09T02:05:16.962Z
-
-### Content
+### ## Content
 <title>news</title>
 Skip to content
 Menu
@@ -5339,12 +5331,11 @@ Design a site like this with WordPress.comGet started
 
 ---
 
-# companylink.business.blog
+## DOCUMENT: companylink.business.blog
+**Source:** https://companylink.business.blog/
+**Ingested At:** undefined
 
-> **Source:** https://companylink.business.blog/
-> **Analyzed At:** 2026-07-09T02:05:18.037Z
-
-### Content
+### ## Content
 <title>Company &amp; news &#8211; #news</title>
 Skip to content
 Menu
@@ -6512,18 +6503,14 @@ name="submit"
 class="jp-carousel-comment-form-button"
 id="jp-carousel-comment-form-button-submit"
 value="Post Comment" />
-generated in 1.171 seconds
-762342 bytes batcached for 300 seconds
--->
 
 ---
 
-# gamezoneonlinegame.wordpress.com
+## DOCUMENT: gamezoneonlinegame.wordpress.com
+**Source:** https://gamezoneonlinegame.wordpress.com/
+**Ingested At:** undefined
 
-> **Source:** https://gamezoneonlinegame.wordpress.com/
-> **Analyzed At:** 2026-07-09T02:05:18.370Z
-
-### Content
+### ## Content
 <title>game &#8211; online</title>
 Skip to content
 Menu
@@ -7776,44 +7763,42 @@ Cookie Policy
 
 ---
 
-# iCloud: strategy_2025.md
-
-> **Source:** icloud://strategy_2025.md
-> **Analyzed At:** 2026-07-08T19:52:16.910273Z
+## DOCUMENT: iCloud: strategy_2025.md
+**Source:** icloud://strategy_2025.md
+**Ingested At:** undefined
 
 ---
 
-# Phase 26 iCloud Directives
+## DOCUMENT: Phase 26 iCloud Directives
+**Source:**
+**Ingested At:** undefined
 
-> **Source:** N/A
-> **Analyzed At:** 2026-07-09T02:01:18.917154Z
-
-## Universal Mesh Routing v2
+### Universal Mesh Routing v2
 Deploy UMR v2 nodes across all shards.
 
-## Singularity Readiness
+### Singularity Readiness
 Maintain threshold > 0.9999 for Phase 26 compliance.
 
 ---
 
-# (position) mRNA
+## DOCUMENT: (position) mRNA
+**Source:** https://markposition.wordpress.com
+**Ingested At:** undefined
 
-> **Source:** https://markposition.wordpress.com
-> **Analyzed At:** 2026-07-09T00:50:26.659Z
-
-### Content
+### ## Content
 - [Home](https://markposition.wordpress.com/blog/)
 
+### # (position) mRNA
 - [(position) mRNA](https://markposition.wordpress.com/)
 
-## advertising.amazon
+### # advertising.amazon
 - [advertising.amazon](https://markposition.wordpress.com/2022/10/05/advertising-amazon/)
 - [October 5, 2022](https://markposition.wordpress.com/2022/10/05/advertising-amazon/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
 - [Leave a comment](https://markposition.wordpress.com/2022/10/05/advertising-amazon/#respond)
 - [https://advertising.amazon.com/](https://advertising.amazon.com/)
 
-## Drive Advertising Revenue with Google Ad Manager : Google
+### # Drive Advertising Revenue with Google Ad Manager : Google
 - [Drive Advertising Revenue with Google Ad Manager : Google](https://markposition.wordpress.com/2022/09/26/drive-advertising-revenue-with-google-ad-manager-google-5/)
 - [September 26, 2022September 26, 2022](https://markposition.wordpress.com/2022/09/26/drive-advertising-revenue-with-google-ad-manager-google-5/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7821,7 +7806,7 @@ Maintain threshold > 0.9999 for Phase 26 compliance.
 https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager
 - [https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager](https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager)
 
-## https://marketingplatform.google.com/about/search-ads-360/
+### # https://marketingplatform.google.com/about/search-ads-360/
 - [https://marketingplatform.google.com/about/search-ads-360/](https://markposition.wordpress.com/2022/03/10/https-marketingplatform-google-com-about-search-ads-360-2/)
 - [Aside](https://markposition.wordpress.com/type/aside/)
 - [March 10, 2022March 10, 2022](https://markposition.wordpress.com/2022/03/10/https-marketingplatform-google-com-about-search-ads-360-2/)
@@ -7830,7 +7815,7 @@ https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-wit
 https://marketingplatform.google.com/about/search-ads-360/
 - [https://marketingplatform.google.com/about/search-ads-360/](https://marketingplatform.google.com/about/search-ads-360/)
 
-## Analytics Academy
+### # Analytics Academy
 - [Analytics Academy](https://markposition.wordpress.com/2022/09/20/analytics-academy/)
 - [September 20, 2022March 21, 2023](https://markposition.wordpress.com/2022/09/20/analytics-academy/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7838,7 +7823,7 @@ https://marketingplatform.google.com/about/search-ads-360/
 https://analytics.google.com/analytics/academy/
 - [https://analytics.google.com/analytics/academy/](https://analytics.google.com/analytics/academy/)
 
-## Adssettings google
+### # Adssettings google
 - [Adssettings google](https://markposition.wordpress.com/2022/09/20/adssettings-google/)
 - [September 20, 2022](https://markposition.wordpress.com/2022/09/20/adssettings-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7846,7 +7831,7 @@ https://analytics.google.com/analytics/academy/
 https://adssettings.google.com/authenticated
 - [https://adssettings.google.com/authenticated](https://adssettings.google.com/authenticated)
 
-## Data google
+### # Data google
 - [Data google](https://markposition.wordpress.com/2022/09/20/data-google/)
 - [September 20, 2022](https://markposition.wordpress.com/2022/09/20/data-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7854,7 +7839,7 @@ https://adssettings.google.com/authenticated
 https://myaccount.google.com/data-and-personalization
 - [https://myaccount.google.com/data-and-personalization](https://myaccount.google.com/data-and-personalization)
 
-## The Privacy Sandbox: Technology for a More Private Web.
+### # The Privacy Sandbox: Technology for a More Private Web.
 - [The Privacy Sandbox: Technology for a More Private Web.](https://markposition.wordpress.com/2022/09/20/the-privacy-sandbox-technology-for-a-more-private-web/)
 - [September 20, 2022](https://markposition.wordpress.com/2022/09/20/the-privacy-sandbox-technology-for-a-more-private-web/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7862,7 +7847,7 @@ https://myaccount.google.com/data-and-personalization
 https://privacysandbox.com/intl/home#home-hero
 - [https://privacysandbox.com/intl/home#home-hero](https://privacysandbox.com/intl/home#home-hero)
 
-## Digital Experience Platform & Enterprise CMS | Crownpeak
+### # Digital Experience Platform & Enterprise CMS | Crownpeak
 - [Digital Experience Platform & Enterprise CMS | Crownpeak](https://markposition.wordpress.com/2022/09/16/digital-experience-platform-enterprise-cms-crownpeak-2/)
 - [September 16, 2022](https://markposition.wordpress.com/2022/09/16/digital-experience-platform-enterprise-cms-crownpeak-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7870,7 +7855,7 @@ https://privacysandbox.com/intl/home#home-hero
 https://www.crownpeak.com/
 - [https://www.crownpeak.com/](https://www.crownpeak.com/)
 
-## About Performance Max campaigns – Google Ads
+### # About Performance Max campaigns – Google Ads
 - [About Performance Max campaigns – Google Ads](https://markposition.wordpress.com/2022/09/01/about-performance-max-campaigns-google-ads/)
 - [September 1, 2022](https://markposition.wordpress.com/2022/09/01/about-performance-max-campaigns-google-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7878,7 +7863,7 @@ https://www.crownpeak.com/
 https://support.google.com/google-ads/answer/10724817?hl=en
 - [https://support.google.com/google-ads/answer/10724817?hl=en](https://support.google.com/google-ads/answer/10724817?hl=en)
 
-## About Smart Bidding – Google Ads
+### # About Smart Bidding – Google Ads
 - [About Smart Bidding – Google Ads](https://markposition.wordpress.com/2022/09/01/about-smart-bidding-google-ads/)
 - [September 1, 2022](https://markposition.wordpress.com/2022/09/01/about-smart-bidding-google-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7886,7 +7871,7 @@ https://support.google.com/google-ads/answer/10724817?hl=en
 https://support.google.com/google-ads/answer/7065882?hl=en
 - [https://support.google.com/google-ads/answer/7065882?hl=en](https://support.google.com/google-ads/answer/7065882?hl=en)
 
-## About Maximize conversion value bidding – Google Ads
+### # About Maximize conversion value bidding – Google Ads
 - [About Maximize conversion value bidding – Google Ads](https://markposition.wordpress.com/2022/09/01/about-maximize-conversion-value-bidding-google-ads/)
 - [September 1, 2022](https://markposition.wordpress.com/2022/09/01/about-maximize-conversion-value-bidding-google-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7894,7 +7879,7 @@ https://support.google.com/google-ads/answer/7065882?hl=en
 https://support.google.com/google-ads/answer/7684216?hl=en
 - [https://support.google.com/google-ads/answer/7684216?hl=en](https://support.google.com/google-ads/answer/7684216?hl=en)
 
-## About automated bidding – Google Ads Help
+### # About automated bidding – Google Ads Help
 - [About automated bidding – Google Ads Help](https://markposition.wordpress.com/2022/09/01/about-automated-bidding-google-ads-help/)
 - [September 1, 2022](https://markposition.wordpress.com/2022/09/01/about-automated-bidding-google-ads-help/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7902,7 +7887,7 @@ https://support.google.com/google-ads/answer/7684216?hl=en
 https://support.google.com/google-ads/answer/2979071?hl=en
 - [https://support.google.com/google-ads/answer/2979071?hl=en](https://support.google.com/google-ads/answer/2979071?hl=en)
 
-## About Target CPA bidding – Google Ads Help
+### # About Target CPA bidding – Google Ads Help
 - [About Target CPA bidding – Google Ads Help](https://markposition.wordpress.com/2022/09/01/about-target-cpa-bidding-google-ads-help/)
 - [September 1, 2022](https://markposition.wordpress.com/2022/09/01/about-target-cpa-bidding-google-ads-help/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7910,7 +7895,7 @@ https://support.google.com/google-ads/answer/2979071?hl=en
 https://support.google.com/google-ads/answer/6268632?hl=en
 - [https://support.google.com/google-ads/answer/6268632?hl=en](https://support.google.com/google-ads/answer/6268632?hl=en)
 
-## About Maximize conversions bidding – Google Ads Help
+### # About Maximize conversions bidding – Google Ads Help
 - [About Maximize conversions bidding – Google Ads Help](https://markposition.wordpress.com/2022/09/01/about-maximize-conversions-bidding-google-ads-help/)
 - [September 1, 2022](https://markposition.wordpress.com/2022/09/01/about-maximize-conversions-bidding-google-ads-help/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7918,7 +7903,7 @@ https://support.google.com/google-ads/answer/6268632?hl=en
 https://support.google.com/google-ads/answer/7381968?hl=en
 - [https://support.google.com/google-ads/answer/7381968?hl=en](https://support.google.com/google-ads/answer/7381968?hl=en)
 
-## About Target ROAS bidding – Google Ads Help
+### # About Target ROAS bidding – Google Ads Help
 - [About Target ROAS bidding – Google Ads Help](https://markposition.wordpress.com/2022/09/01/about-target-roas-bidding-google-ads-help/)
 - [September 1, 2022](https://markposition.wordpress.com/2022/09/01/about-target-roas-bidding-google-ads-help/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7926,7 +7911,7 @@ https://support.google.com/google-ads/answer/7381968?hl=en
 https://support.google.com/google-ads/answer/6268637?hl=en
 - [https://support.google.com/google-ads/answer/6268637?hl=en](https://support.google.com/google-ads/answer/6268637?hl=en)
 
-## Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help
+### # Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help
 - [Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help](https://markposition.wordpress.com/2022/09/01/achieve-your-goals-across-googles-ad-channels-with-performance-max-google-ads-help/)
 - [September 1, 2022](https://markposition.wordpress.com/2022/09/01/achieve-your-goals-across-googles-ad-channels-with-performance-max-google-ads-help/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7934,7 +7919,7 @@ https://support.google.com/google-ads/answer/6268637?hl=en
 https://support.google.com/google-ads/answer/11189316?hl=en
 - [https://support.google.com/google-ads/answer/11189316?hl=en](https://support.google.com/google-ads/answer/11189316?hl=en)
 
-## Coalition for Better Ads
+### # Coalition for Better Ads
 - [Coalition for Better Ads](https://markposition.wordpress.com/2022/08/31/coalition-for-better-ads-2/)
 - [August 31, 2022](https://markposition.wordpress.com/2022/08/31/coalition-for-better-ads-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7942,7 +7927,7 @@ https://support.google.com/google-ads/answer/11189316?hl=en
 https://www.betterads.org/
 - [https://www.betterads.org/](https://www.betterads.org/)
 
-## ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions
+### # ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions
 - [ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions](https://sharethis.com/)
 - [Link](https://markposition.wordpress.com/type/link/)
 - [August 20, 2022](https://markposition.wordpress.com/2022/08/20/sharethis-free-share-buttons-plugins-global-behavioral-data-solutions-2/)
@@ -7951,7 +7936,7 @@ https://www.betterads.org/
 https://sharethis.com/
 - [https://sharethis.com/](https://sharethis.com/)
 
-## How To Create Quality Video Ads – YouTube Advertising
+### # How To Create Quality Video Ads – YouTube Advertising
 - [How To Create Quality Video Ads – YouTube Advertising](https://markposition.wordpress.com/2022/08/16/how-to-create-quality-video-ads-youtube-advertising/)
 - [August 16, 2022](https://markposition.wordpress.com/2022/08/16/how-to-create-quality-video-ads-youtube-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7959,7 +7944,7 @@ https://sharethis.com/
 https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/
 - [https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/](https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/)
 
-## Business Data Responsibility – Your Data Protection & Privacy
+### # Business Data Responsibility – Your Data Protection & Privacy
 - [Business Data Responsibility – Your Data Protection & Privacy](https://markposition.wordpress.com/2022/08/15/business-data-responsibility-your-data-protection-privacy/)
 - [August 15, 2022March 21, 2023](https://markposition.wordpress.com/2022/08/15/business-data-responsibility-your-data-protection-privacy/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7967,7 +7952,7 @@ https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/
 https://business.safety.google/
 - [https://business.safety.google/](https://business.safety.google/)
 
-## Google Ads Data Protection Terms: Service Information
+### # Google Ads Data Protection Terms: Service Information
 - [Google Ads Data Protection Terms: Service Information](https://markposition.wordpress.com/2022/08/15/google-ads-data-protection-terms-service-information/)
 - [August 15, 2022](https://markposition.wordpress.com/2022/08/15/google-ads-data-protection-terms-service-information/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7975,7 +7960,7 @@ https://business.safety.google/
 https://business.safety.google/adsservices/
 - [https://business.safety.google/adsservices/](https://business.safety.google/adsservices/)
 
-## Outbrain Advertising – Drive ROAS on the Open Web | Outbrain.com
+### # Outbrain Advertising – Drive ROAS on the Open Web | Outbrain.com
 - [Outbrain Advertising – Drive ROAS on the Open Web | Outbrain.com](https://markposition.wordpress.com/2022/08/15/outbrain-advertising-drive-roas-on-the-open-web-outbrain-com/)
 - [August 15, 2022](https://markposition.wordpress.com/2022/08/15/outbrain-advertising-drive-roas-on-the-open-web-outbrain-com/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -7983,21 +7968,21 @@ https://business.safety.google/adsservices/
 https://www.outbrain.com/advertisers/
 - [https://www.outbrain.com/advertisers/](https://www.outbrain.com/advertisers/)
 
-## Prebid
+### # Prebid
 - [Prebid](https://markposition.wordpress.com/2022/08/14/prebid/)
 - [August 14, 2022](https://markposition.wordpress.com/2022/08/14/prebid/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
 - [Leave a comment](https://markposition.wordpress.com/2022/08/14/prebid/#respond)
 - [Homepage](https://prebid.org/)
 
-## wmg
+### # wmg
 - [wmg](https://markposition.wordpress.com/2022/08/14/wmg/)
 - [August 14, 2022](https://markposition.wordpress.com/2022/08/14/wmg/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
 - [Leave a comment](https://markposition.wordpress.com/2022/08/14/wmg/#respond)
 - [Home](https://adwmg.com/)
 
-## Trustpilot Reviews: Experience the power of customer reviews
+### # Trustpilot Reviews: Experience the power of customer reviews
 - [Trustpilot Reviews: Experience the power of customer reviews](https://markposition.wordpress.com/2022/08/11/trustpilot-reviews-experience-the-power-of-customer-reviews-2/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/trustpilot-reviews-experience-the-power-of-customer-reviews-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8005,7 +7990,7 @@ https://www.outbrain.com/advertisers/
 https://www.trustpilot.com/
 - [https://www.trustpilot.com/](https://www.trustpilot.com/)
 
-## Online-Shopping mit Trusted Shops | Jetzt alle Produkte kennenlernen
+### # Online-Shopping mit Trusted Shops | Jetzt alle Produkte kennenlernen
 - [Online-Shopping mit Trusted Shops | Jetzt alle Produkte kennenlernen](https://markposition.wordpress.com/2022/08/11/online-shopping-mit-trusted-shops-jetzt-alle-produkte-kennenlernen/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/online-shopping-mit-trusted-shops-jetzt-alle-produkte-kennenlernen/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8013,7 +7998,7 @@ https://www.trustpilot.com/
 https://www.trustedshops.de/
 - [https://www.trustedshops.de/](https://www.trustedshops.de/)
 
-## TestFreaks – Ratings & Reviews Platform
+### # TestFreaks – Ratings & Reviews Platform
 - [TestFreaks – Ratings & Reviews Platform](https://markposition.wordpress.com/2022/08/11/testfreaks-ratings-reviews-platform/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/testfreaks-ratings-reviews-platform/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8021,7 +8006,7 @@ https://www.trustedshops.de/
 https://www.testfreaks.com/
 - [https://www.testfreaks.com/](https://www.testfreaks.com/)
 
-## TargetBay: Ecommerce Email Marketing Software and Marketing Automation
+### # TargetBay: Ecommerce Email Marketing Software and Marketing Automation
 - [TargetBay: Ecommerce Email Marketing Software and Marketing Automation](https://markposition.wordpress.com/2022/08/11/targetbay-ecommerce-email-marketing-software-and-marketing-automation/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/targetbay-ecommerce-email-marketing-software-and-marketing-automation/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8029,7 +8014,7 @@ https://www.testfreaks.com/
 https://targetbay.com/
 - [https://targetbay.com/](https://targetbay.com/)
 
-## Stamped | Reviews and Loyalty for Ecommerce Brands
+### # Stamped | Reviews and Loyalty for Ecommerce Brands
 - [Stamped | Reviews and Loyalty for Ecommerce Brands](https://markposition.wordpress.com/2022/08/11/stamped-reviews-and-loyalty-for-ecommerce-brands/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/stamped-reviews-and-loyalty-for-ecommerce-brands/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8037,7 +8022,7 @@ https://targetbay.com/
 https://stamped.io/
 - [https://stamped.io/](https://stamped.io/)
 
-## Avis clients authentiques avec Shopping-Satisfaction
+### # Avis clients authentiques avec Shopping-Satisfaction
 - [Avis clients authentiques avec Shopping-Satisfaction](https://markposition.wordpress.com/2022/08/11/avis-clients-authentiques-avec-shopping-satisfaction/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/avis-clients-authentiques-avec-shopping-satisfaction/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8045,7 +8030,7 @@ https://stamped.io/
 https://www.shopping-satisfaction.com/
 - [https://www.shopping-satisfaction.com/](https://www.shopping-satisfaction.com/)
 
-## Shopperapproved
+### # Shopperapproved
 - [Shopperapproved](https://markposition.wordpress.com/2022/08/11/shopperapproved/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/shopperapproved/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8053,7 +8038,7 @@ https://www.shopping-satisfaction.com/
 https://www.shopperapproved.com/
 - [https://www.shopperapproved.com/](https://www.shopperapproved.com/)
 
-## REVIEWS.io | In Reviews We Trust
+### # REVIEWS.io | In Reviews We Trust
 - [REVIEWS.io | In Reviews We Trust](https://markposition.wordpress.com/2022/08/11/reviews-io-in-reviews-we-trust/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/reviews-io-in-reviews-we-trust/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8061,7 +8046,7 @@ https://www.shopperapproved.com/
 https://www.reviews.io/
 - [https://www.reviews.io/](https://www.reviews.io/)
 
-## Resellerratings
+### # Resellerratings
 - [Resellerratings](https://markposition.wordpress.com/2022/08/11/resellerratings/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/resellerratings/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8069,7 +8054,7 @@ https://www.reviews.io/
 https://resellerratings.com/
 - [https://resellerratings.com/](https://resellerratings.com/)
 
-## PowerReviews: Doing More with UGC to Grow Your Business
+### # PowerReviews: Doing More with UGC to Grow Your Business
 - [PowerReviews: Doing More with UGC to Grow Your Business](https://markposition.wordpress.com/2022/08/11/powerreviews-doing-more-with-ugc-to-grow-your-business/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/powerreviews-doing-more-with-ugc-to-grow-your-business/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8077,7 +8062,7 @@ https://resellerratings.com/
 https://www.powerreviews.com/
 - [https://www.powerreviews.com/](https://www.powerreviews.com/)
 
-## Okendo
+### # Okendo
 - [Okendo](https://markposition.wordpress.com/2022/08/11/okendo/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/okendo/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8085,7 +8070,7 @@ https://www.powerreviews.com/
 https://www.okendo.io/
 - [https://www.okendo.io/](https://www.okendo.io/)
 
-## Loox Shopify Reviews App – Product Reviews & Referrals
+### # Loox Shopify Reviews App – Product Reviews & Referrals
 - [Loox Shopify Reviews App – Product Reviews & Referrals](https://markposition.wordpress.com/2022/08/11/loox-shopify-reviews-app-product-reviews-referrals/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/loox-shopify-reviews-app-product-reviews-referrals/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8093,7 +8078,7 @@ https://www.okendo.io/
 https://loox.app/
 - [https://loox.app/](https://loox.app/)
 
-## Junip | Reviews for products worth talking about
+### # Junip | Reviews for products worth talking about
 - [Junip | Reviews for products worth talking about](https://markposition.wordpress.com/2022/08/11/junip-reviews-for-products-worth-talking-about/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/junip-reviews-for-products-worth-talking-about/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8101,7 +8086,7 @@ https://loox.app/
 https://junip.co/
 - [https://junip.co/](https://junip.co/)
 
-## Guaranteed Reviews Company | Guaranteed customer review solution
+### # Guaranteed Reviews Company | Guaranteed customer review solution
 - [Guaranteed Reviews Company | Guaranteed customer review solution](https://markposition.wordpress.com/2022/08/11/guaranteed-reviews-company-guaranteed-customer-review-solution/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/guaranteed-reviews-company-guaranteed-customer-review-solution/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8109,7 +8094,7 @@ https://junip.co/
 https://www.guaranteed-reviews.com/
 - [https://www.guaranteed-reviews.com/](https://www.guaranteed-reviews.com/)
 
-## Feefo | Transform your business with real customer reviews
+### # Feefo | Transform your business with real customer reviews
 - [Feefo | Transform your business with real customer reviews](https://markposition.wordpress.com/2022/08/11/feefo-transform-your-business-with-real-customer-reviews/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/feefo-transform-your-business-with-real-customer-reviews/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8117,7 +8102,7 @@ https://www.guaranteed-reviews.com/
 https://www.feefo.com/
 - [https://www.feefo.com/](https://www.feefo.com/)
 
-## feedaty
+### # feedaty
 - [feedaty](https://markposition.wordpress.com/2022/08/11/feedaty/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/feedaty/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8125,7 +8110,7 @@ https://www.feefo.com/
 https://www.feedaty.com/
 - [https://www.feedaty.com/](https://www.feedaty.com/)
 
-## eKomi | The Feedback Company
+### # eKomi | The Feedback Company
 - [eKomi | The Feedback Company](https://markposition.wordpress.com/2022/08/11/ekomi-the-feedback-company/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/ekomi-the-feedback-company/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8133,7 +8118,7 @@ https://www.feedaty.com/
 https://www.ekomi.co.uk/uk/
 - [https://www.ekomi.co.uk/uk/](https://www.ekomi.co.uk/uk/)
 
-## Echte-Bewertungen – Verbessern Sie Ihre Geschäftsergebnisse
+### # Echte-Bewertungen – Verbessern Sie Ihre Geschäftsergebnisse
 - [Echte-Bewertungen – Verbessern Sie Ihre Geschäftsergebnisse](https://markposition.wordpress.com/2022/08/11/echte-bewertungen-verbessern-sie-ihre-geschaftsergebnisse/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/echte-bewertungen-verbessern-sie-ihre-geschaftsergebnisse/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8141,7 +8126,7 @@ https://www.ekomi.co.uk/uk/
 https://www.echte-bewertungen.com/
 - [https://www.echte-bewertungen.com/](https://www.echte-bewertungen.com/)
 
-## Bazaarvoice: Meet shoppers in all the moments that matter
+### # Bazaarvoice: Meet shoppers in all the moments that matter
 - [Bazaarvoice: Meet shoppers in all the moments that matter](https://markposition.wordpress.com/2022/08/11/bazaarvoice-meet-shoppers-in-all-the-moments-that-matter/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/bazaarvoice-meet-shoppers-in-all-the-moments-that-matter/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8149,7 +8134,7 @@ https://www.echte-bewertungen.com/
 https://www.bazaarvoice.com/
 - [https://www.bazaarvoice.com/](https://www.bazaarvoice.com/)
 
-## Avis clients : boostez vos ventes avec Avis Vérifiés !
+### # Avis clients : boostez vos ventes avec Avis Vérifiés !
 - [Avis clients : boostez vos ventes avec Avis Vérifiés !](https://markposition.wordpress.com/2022/08/11/avis-clients-boostez-vos-ventes-avec-avis-verifies/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/avis-clients-boostez-vos-ventes-avec-avis-verifies/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8157,7 +8142,7 @@ https://www.bazaarvoice.com/
 https://www.avis-verifies.com/fr/
 - [https://www.avis-verifies.com/fr/](https://www.avis-verifies.com/fr/)
 
-## Loyalty Experience Platform – Annex Cloud Loyalty Management Solution
+### # Loyalty Experience Platform – Annex Cloud Loyalty Management Solution
 - [Loyalty Experience Platform – Annex Cloud Loyalty Management Solution](https://markposition.wordpress.com/2022/08/11/loyalty-experience-platform-annex-cloud-loyalty-management-solution/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/loyalty-experience-platform-annex-cloud-loyalty-management-solution/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8165,7 +8150,7 @@ https://www.avis-verifies.com/fr/
 https://www.annexcloud.com/
 - [https://www.annexcloud.com/](https://www.annexcloud.com/)
 
-## Verified-Reviews – Boost your sales uk
+### # Verified-Reviews – Boost your sales uk
 - [Verified-Reviews – Boost your sales uk](https://markposition.wordpress.com/2022/08/11/verified-reviews-boost-your-sales-uk/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/verified-reviews-boost-your-sales-uk/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8173,7 +8158,7 @@ https://www.annexcloud.com/
 https://www.verified-reviews.co.uk/
 - [https://www.verified-reviews.co.uk/](https://www.verified-reviews.co.uk/)
 
-## Yotpo
+### # Yotpo
 - [Yotpo](https://markposition.wordpress.com/2022/08/11/yotpo/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/yotpo/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8181,7 +8166,7 @@ https://www.verified-reviews.co.uk/
 https://www.yotpo.com/
 - [https://www.yotpo.com/](https://www.yotpo.com/)
 
-## Verified Reviews – Boost your sales
+### # Verified Reviews – Boost your sales
 - [Verified Reviews – Boost your sales](https://markposition.wordpress.com/2022/08/11/verified-reviews-boost-your-sales/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/verified-reviews-boost-your-sales/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8189,7 +8174,7 @@ https://www.yotpo.com/
 https://www.netreviews.com/en/
 - [https://www.netreviews.com/en/](https://www.netreviews.com/en/)
 
-## Pixlee TurnTo | Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing Platform
+### # Pixlee TurnTo | Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing Platform
 - [Pixlee TurnTo | Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing Platform](https://markposition.wordpress.com/2022/08/11/pixlee-turnto-social-user-generated-content-ugc-ratings-reviews-and-influencer-marketing-platform/)
 - [August 11, 2022](https://markposition.wordpress.com/2022/08/11/pixlee-turnto-social-user-generated-content-ugc-ratings-reviews-and-influencer-marketing-platform/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8197,7 +8182,7 @@ https://www.netreviews.com/en/
 https://www.pixlee.com/
 - [https://www.pixlee.com/](https://www.pixlee.com/)
 
-## Facebook Blueprint: Free Online Training for Advertising on Facebook | Meta for Business
+### # Facebook Blueprint: Free Online Training for Advertising on Facebook | Meta for Business
 - [Facebook Blueprint: Free Online Training for Advertising on Facebook | Meta for Business](https://markposition.wordpress.com/2022/08/08/facebook-blueprint-free-online-training-for-advertising-on-facebook-meta-for-business/)
 - [August 8, 2022](https://markposition.wordpress.com/2022/08/08/facebook-blueprint-free-online-training-for-advertising-on-facebook-meta-for-business/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8205,7 +8190,7 @@ https://www.pixlee.com/
 https://web.facebook.com/business/learn
 - [https://web.facebook.com/business/learn](https://web.facebook.com/business/learn)
 
-## Facebook Certification: Professional Certificate Exams from Facebook | Meta for Business
+### # Facebook Certification: Professional Certificate Exams from Facebook | Meta for Business
 - [Facebook Certification: Professional Certificate Exams from Facebook | Meta for Business](https://markposition.wordpress.com/2022/08/08/facebook-certification-professional-certificate-exams-from-facebook-meta-for-business/)
 - [August 8, 2022](https://markposition.wordpress.com/2022/08/08/facebook-certification-professional-certificate-exams-from-facebook-meta-for-business/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8213,7 +8198,7 @@ https://web.facebook.com/business/learn
 https://web.facebook.com/business/learn/certification
 - [https://web.facebook.com/business/learn/certification](https://web.facebook.com/business/learn/certification)
 
-## Facebook Ads: Online Advertising on Facebook | Meta for Business
+### # Facebook Ads: Online Advertising on Facebook | Meta for Business
 - [Facebook Ads: Online Advertising on Facebook | Meta for Business](https://markposition.wordpress.com/2022/08/08/facebook-ads-online-advertising-on-facebook-meta-for-business/)
 - [August 8, 2022](https://markposition.wordpress.com/2022/08/08/facebook-ads-online-advertising-on-facebook-meta-for-business/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8221,7 +8206,7 @@ https://web.facebook.com/business/learn/certification
 https://web.facebook.com/business/ads
 - [https://web.facebook.com/business/ads](https://web.facebook.com/business/ads)
 
-## Create a LinkedIn Company Page | LinkedIn Marketing Solutions
+### # Create a LinkedIn Company Page | LinkedIn Marketing Solutions
 - [Create a LinkedIn Company Page | LinkedIn Marketing Solutions](https://markposition.wordpress.com/2022/08/08/create-a-linkedin-company-page-linkedin-marketing-solutions/)
 - [August 8, 2022](https://markposition.wordpress.com/2022/08/08/create-a-linkedin-company-page-linkedin-marketing-solutions/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8229,7 +8214,7 @@ https://web.facebook.com/business/ads
 https://business.linkedin.com/marketing-solutions/linkedin-pages
 - [https://business.linkedin.com/marketing-solutions/linkedin-pages](https://business.linkedin.com/marketing-solutions/linkedin-pages)
 
-## Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
+### # Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
 - [Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions](https://markposition.wordpress.com/2022/08/08/marketing-advertising-on-linkedin-linkedin-marketing-solutions-4/)
 - [August 8, 2022](https://markposition.wordpress.com/2022/08/08/marketing-advertising-on-linkedin-linkedin-marketing-solutions-4/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8237,7 +8222,7 @@ https://business.linkedin.com/marketing-solutions/linkedin-pages
 https://business.linkedin.com/marketing-solutions
 - [https://business.linkedin.com/marketing-solutions](https://business.linkedin.com/marketing-solutions)
 
-## Coalition for Better Ads
+### # Coalition for Better Ads
 - [Coalition for Better Ads](https://markposition.wordpress.com/2022/07/28/coalition-for-better-ads/)
 - [July 28, 2022](https://markposition.wordpress.com/2022/07/28/coalition-for-better-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8245,14 +8230,14 @@ https://business.linkedin.com/marketing-solutions
 https://www.betterads.org/
 - [https://www.betterads.org/](https://www.betterads.org/)
 
-## FC
+### # FC
 - [May 26, 2022March 21, 2023](https://markposition.wordpress.com/2022/05/26/fc/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
 - [Leave a comment](https://markposition.wordpress.com/2022/05/26/fc/#respond)
 https://fundingchoices.google.com/start/
 - [https://fundingchoices.google.com/start/](https://fundingchoices.google.com/start/)
 
-## Funding Choices
+### # Funding Choices
 - [Funding Choices](https://markposition.wordpress.com/2022/05/26/funding-choices/)
 - [May 26, 2022March 21, 2023](https://markposition.wordpress.com/2022/05/26/funding-choices/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8260,7 +8245,7 @@ https://fundingchoices.google.com/start/
 https://support.google.com/fundingchoices/answer/9010669?hl=hr
 - [https://support.google.com/fundingchoices/answer/9010669?hl=hr](https://support.google.com/fundingchoices/answer/9010669?hl=hr)
 
-## Publisher strategy for privacy preferences – Think with Google
+### # Publisher strategy for privacy preferences – Think with Google
 - [Publisher strategy for privacy preferences – Think with Google](https://markposition.wordpress.com/2022/05/23/publisher-strategy-for-privacy-preferences-think-with-google/)
 - [May 23, 2022](https://markposition.wordpress.com/2022/05/23/publisher-strategy-for-privacy-preferences-think-with-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8268,7 +8253,7 @@ https://support.google.com/fundingchoices/answer/9010669?hl=hr
 https://www.thinkwithgoogle.com/future-of-marketing/privacy-and-trust/publisher-privacy-landscape/
 - [https://www.thinkwithgoogle.com/future-of-marketing/privacy-and-trust/publisher-privacy-landscape/](https://www.thinkwithgoogle.com/future-of-marketing/privacy-and-trust/publisher-privacy-landscape/)
 
-## The Future of Marketing – Think with Google
+### # The Future of Marketing – Think with Google
 - [The Future of Marketing – Think with Google](https://markposition.wordpress.com/2022/05/23/the-future-of-marketing-think-with-google/)
 - [May 23, 2022](https://markposition.wordpress.com/2022/05/23/the-future-of-marketing-think-with-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8276,13 +8261,13 @@ https://www.thinkwithgoogle.com/future-of-marketing/privacy-and-trust/publisher-
 https://www.thinkwithgoogle.com/future-of-marketing/
 - [https://www.thinkwithgoogle.com/future-of-marketing/](https://www.thinkwithgoogle.com/future-of-marketing/)
 
-## Google Ads Help: Understanding optimized targeting
+### # Google Ads Help: Understanding optimized targeting
 - [Google Ads Help: Understanding optimized targeting](https://markposition.wordpress.com/2022/05/16/google-ads-help-understanding-optimized-targeting/)
 - [May 16, 2022](https://markposition.wordpress.com/2022/05/16/google-ads-help-understanding-optimized-targeting/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
 - [Leave a comment](https://markposition.wordpress.com/2022/05/16/google-ads-help-understanding-optimized-targeting/#respond)
 
-## ptimization targeting – Google Ads
+### # ptimization targeting – Google Ads
 - [ptimization targeting – Google Ads](https://markposition.wordpress.com/2022/05/16/ptimization-targeting-google-ads/)
 - [May 16, 2022](https://markposition.wordpress.com/2022/05/16/ptimization-targeting-google-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8290,7 +8275,7 @@ https://www.thinkwithgoogle.com/future-of-marketing/
 https://support.google.com/google-ads/answer/10537509?hl=hr
 - [https://support.google.com/google-ads/answer/10537509?hl=hr](https://support.google.com/google-ads/answer/10537509?hl=hr)
 
-## Google News Initiative Training Center
+### # Google News Initiative Training Center
 - [Google News Initiative Training Center](https://markposition.wordpress.com/2022/05/16/google-news-initiative-training-center/)
 - [May 16, 2022](https://markposition.wordpress.com/2022/05/16/google-news-initiative-training-center/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8298,7 +8283,7 @@ https://support.google.com/google-ads/answer/10537509?hl=hr
 https://newsinitiative.withgoogle.com/training/datatools
 - [https://newsinitiative.withgoogle.com/training/datatools](https://newsinitiative.withgoogle.com/training/datatools)
 
-## Create Reports in Google Ad Manager : Google
+### # Create Reports in Google Ad Manager : Google
 - [Create Reports in Google Ad Manager : Google](https://markposition.wordpress.com/2022/05/12/create-reports-in-google-ad-manager-google-3/)
 - [May 12, 2022](https://markposition.wordpress.com/2022/05/12/create-reports-in-google-ad-manager-google-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8306,7 +8291,7 @@ https://newsinitiative.withgoogle.com/training/datatools
 https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager
 - [https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager](https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager)
 
-## Optimize Google Ad Manager to Meet Objectives : Google
+### # Optimize Google Ad Manager to Meet Objectives : Google
 - [Optimize Google Ad Manager to Meet Objectives : Google](https://markposition.wordpress.com/2022/05/09/optimize-google-ad-manager-to-meet-objectives-google/)
 - [May 9, 2022](https://markposition.wordpress.com/2022/05/09/optimize-google-ad-manager-to-meet-objectives-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8314,7 +8299,7 @@ https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-
 https://skillshop.exceedlms.com/student/path/54611-optimize-google-ad-manager-to-meet-objectives
 - [https://skillshop.exceedlms.com/student/path/54611-optimize-google-ad-manager-to-meet-objectives](https://skillshop.exceedlms.com/student/path/54611-optimize-google-ad-manager-to-meet-objectives)
 
-## Get started with Twitter Ads
+### # Get started with Twitter Ads
 - [Get started with Twitter Ads](https://markposition.wordpress.com/2022/05/05/get-started-with-twitter-ads/)
 - [May 5, 2022](https://markposition.wordpress.com/2022/05/05/get-started-with-twitter-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8322,7 +8307,7 @@ https://skillshop.exceedlms.com/student/path/54611-optimize-google-ad-manager-to
 https://business.twitter.com/en/advertising/get-started-with-twitter-ads.html
 - [https://business.twitter.com/en/advertising/get-started-with-twitter-ads.html](https://business.twitter.com/en/advertising/get-started-with-twitter-ads.html)
 
-## Pixalate – Ad Fraud Protection, Privacy, and Compliance Platform (CTV)
+### # Pixalate – Ad Fraud Protection, Privacy, and Compliance Platform (CTV)
 - [Pixalate – Ad Fraud Protection, Privacy, and Compliance Platform (CTV)](https://markposition.wordpress.com/2022/05/04/pixalate-ad-fraud-protection-privacy-and-compliance-platform-ctv/)
 - [May 4, 2022](https://markposition.wordpress.com/2022/05/04/pixalate-ad-fraud-protection-privacy-and-compliance-platform-ctv/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8330,7 +8315,7 @@ https://business.twitter.com/en/advertising/get-started-with-twitter-ads.html
 https://www.pixalate.com/
 - [https://www.pixalate.com/](https://www.pixalate.com/)
 
-## Publisher Collective | Get better CPMs with the advertising network for game sites
+### # Publisher Collective | Get better CPMs with the advertising network for game sites
 - [Publisher Collective | Get better CPMs with the advertising network for game sites](https://markposition.wordpress.com/2022/04/28/publisher-collective-get-better-cpms-with-the-advertising-network-for-game-sites/)
 - [April 28, 2022](https://markposition.wordpress.com/2022/04/28/publisher-collective-get-better-cpms-with-the-advertising-network-for-game-sites/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8338,7 +8323,7 @@ https://www.pixalate.com/
 https://www.publisher-collective.com/
 - [https://www.publisher-collective.com/](https://www.publisher-collective.com/)
 
-## boost-your-active-view-score-in-ad-manager
+### # boost-your-active-view-score-in-ad-manager
 - [boost-your-active-view-score-in-ad-manager](https://markposition.wordpress.com/2022/04/28/boost-your-active-view-score-in-ad-manager/)
 - [April 28, 2022](https://markposition.wordpress.com/2022/04/28/boost-your-active-view-score-in-ad-manager/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8346,7 +8331,7 @@ https://www.publisher-collective.com/
 https://skillshop.exceedlms.com/student/activity/17109-boost-your-active-view-score-in-ad-manager
 - [https://skillshop.exceedlms.com/student/activity/17109-boost-your-active-view-score-in-ad-manager](https://skillshop.exceedlms.com/student/activity/17109-boost-your-active-view-score-in-ad-manager)
 
-## Waytogrow – Earn more on your advertising space
+### # Waytogrow – Earn more on your advertising space
 - [Waytogrow – Earn more on your advertising space](https://markposition.wordpress.com/2022/04/22/waytogrow-earn-more-on-your-advertising-space/)
 - [April 22, 2022](https://markposition.wordpress.com/2022/04/22/waytogrow-earn-more-on-your-advertising-space/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8354,7 +8339,7 @@ https://skillshop.exceedlms.com/student/activity/17109-boost-your-active-view-sc
 https://www.waytogrow.com/
 - [https://www.waytogrow.com/](https://www.waytogrow.com/)
 
-## Smart Adserver | The Most Powerful Adserving and RTB Platform
+### # Smart Adserver | The Most Powerful Adserving and RTB Platform
 - [Smart Adserver | The Most Powerful Adserving and RTB Platform](https://markposition.wordpress.com/2022/04/21/smart-adserver-the-most-powerful-adserving-and-rtb-platform-2/)
 - [April 21, 2022](https://markposition.wordpress.com/2022/04/21/smart-adserver-the-most-powerful-adserving-and-rtb-platform-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8362,7 +8347,7 @@ https://www.waytogrow.com/
 https://smartadserver.com/
 - [https://smartadserver.com/](https://smartadserver.com/)
 
-## Custom advertising solutions – Custom ad campaigns | Amazon Ads
+### # Custom advertising solutions – Custom ad campaigns | Amazon Ads
 - [Custom advertising solutions – Custom ad campaigns | Amazon Ads](https://markposition.wordpress.com/2022/04/21/custom-advertising-solutions-custom-ad-campaigns-amazon-ads/)
 - [April 21, 2022](https://markposition.wordpress.com/2022/04/21/custom-advertising-solutions-custom-ad-campaigns-amazon-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8370,7 +8355,7 @@ https://smartadserver.com/
 https://advertising.amazon.com/solutions/products/custom-solutions
 - [https://advertising.amazon.com/solutions/products/custom-solutions](https://advertising.amazon.com/solutions/products/custom-solutions)
 
-## Amazon Marketing Cloud – Advanced media analytics and insights | Amazon Ads
+### # Amazon Marketing Cloud – Advanced media analytics and insights | Amazon Ads
 - [Amazon Marketing Cloud – Advanced media analytics and insights | Amazon Ads](https://markposition.wordpress.com/2022/04/21/amazon-marketing-cloud-advanced-media-analytics-and-insights-amazon-ads/)
 - [April 21, 2022](https://markposition.wordpress.com/2022/04/21/amazon-marketing-cloud-advanced-media-analytics-and-insights-amazon-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8378,7 +8363,7 @@ https://advertising.amazon.com/solutions/products/custom-solutions
 https://advertising.amazon.com/solutions/products/amazon-marketing-cloud
 - [https://advertising.amazon.com/solutions/products/amazon-marketing-cloud](https://advertising.amazon.com/solutions/products/amazon-marketing-cloud)
 
-## Amazon DSP – Create campaigns with our Demand Side Platform | Amazon Ads
+### # Amazon DSP – Create campaigns with our Demand Side Platform | Amazon Ads
 - [Amazon DSP – Create campaigns with our Demand Side Platform | Amazon Ads](https://markposition.wordpress.com/2022/04/21/amazon-dsp-create-campaigns-with-our-demand-side-platform-amazon-ads/)
 - [April 21, 2022](https://markposition.wordpress.com/2022/04/21/amazon-dsp-create-campaigns-with-our-demand-side-platform-amazon-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8386,7 +8371,7 @@ https://advertising.amazon.com/solutions/products/amazon-marketing-cloud
 https://advertising.amazon.com/solutions/products/amazon-dsp
 - [https://advertising.amazon.com/solutions/products/amazon-dsp](https://advertising.amazon.com/solutions/products/amazon-dsp)
 
-## Learning console – Online advertising courses and PPC certifications | Amazon Ads
+### # Learning console – Online advertising courses and PPC certifications | Amazon Ads
 - [Learning console – Online advertising courses and PPC certifications | Amazon Ads](https://markposition.wordpress.com/2022/04/21/learning-console-online-advertising-courses-and-ppc-certifications-amazon-ads-2/)
 - [April 21, 2022](https://markposition.wordpress.com/2022/04/21/learning-console-online-advertising-courses-and-ppc-certifications-amazon-ads-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8394,7 +8379,7 @@ https://advertising.amazon.com/solutions/products/amazon-dsp
 https://advertising.amazon.com/resources/learning-console
 - [https://advertising.amazon.com/resources/learning-console](https://advertising.amazon.com/resources/learning-console)
 
-## Sponsored Display ads – Create display advertising campaigns | Amazon Ads
+### # Sponsored Display ads – Create display advertising campaigns | Amazon Ads
 - [Sponsored Display ads – Create display advertising campaigns | Amazon Ads](https://markposition.wordpress.com/2022/04/21/sponsored-display-ads-create-display-advertising-campaigns-amazon-ads/)
 - [April 21, 2022](https://markposition.wordpress.com/2022/04/21/sponsored-display-ads-create-display-advertising-campaigns-amazon-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8402,7 +8387,7 @@ https://advertising.amazon.com/resources/learning-console
 https://advertising.amazon.com/solutions/products/sponsored-display
 - [https://advertising.amazon.com/solutions/products/sponsored-display](https://advertising.amazon.com/solutions/products/sponsored-display)
 
-## Amazon Ads: Online advertising for businesses of all sizes | Amazon Ads
+### # Amazon Ads: Online advertising for businesses of all sizes | Amazon Ads
 - [Amazon Ads: Online advertising for businesses of all sizes | Amazon Ads](https://markposition.wordpress.com/2022/04/21/amazon-ads-online-advertising-for-businesses-of-all-sizes-amazon-ads-2/)
 - [April 21, 2022](https://markposition.wordpress.com/2022/04/21/amazon-ads-online-advertising-for-businesses-of-all-sizes-amazon-ads-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8410,7 +8395,7 @@ https://advertising.amazon.com/solutions/products/sponsored-display
 https://advertising.amazon.com/
 - [https://advertising.amazon.com/](https://advertising.amazon.com/)
 
-## Sizmek Ad Suite – DCO, creative building, ad serving | Amazon Ads
+### # Sizmek Ad Suite – DCO, creative building, ad serving | Amazon Ads
 - [Sizmek Ad Suite – DCO, creative building, ad serving | Amazon Ads](https://markposition.wordpress.com/2022/04/21/sizmek-ad-suite-dco-creative-building-ad-serving-amazon-ads/)
 - [April 21, 2022](https://markposition.wordpress.com/2022/04/21/sizmek-ad-suite-dco-creative-building-ad-serving-amazon-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8418,7 +8403,7 @@ https://advertising.amazon.com/
 https://advertising.amazon.com/solutions/products/sizmek-ad-suite
 - [https://advertising.amazon.com/solutions/products/sizmek-ad-suite](https://advertising.amazon.com/solutions/products/sizmek-ad-suite)
 
-## Drive Advertising Revenue with Google Ad Manager : Google
+### # Drive Advertising Revenue with Google Ad Manager : Google
 - [Drive Advertising Revenue with Google Ad Manager : Google](https://markposition.wordpress.com/2022/04/18/drive-advertising-revenue-with-google-ad-manager-google-4/)
 - [April 18, 2022](https://markposition.wordpress.com/2022/04/18/drive-advertising-revenue-with-google-ad-manager-google-4/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8426,7 +8411,7 @@ https://advertising.amazon.com/solutions/products/sizmek-ad-suite
 https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager
 - [https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager](https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager)
 
-## ads settings google
+### # ads settings google
 - [ads settings google](https://markposition.wordpress.com/2022/04/15/ads-settings-google/)
 - [April 15, 2022](https://markposition.wordpress.com/2022/04/15/ads-settings-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8434,7 +8419,7 @@ https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-wit
 https://adssettings.google.com/authenticated
 - [https://adssettings.google.com/authenticated](https://adssettings.google.com/authenticated)
 
-## Linker – Content Discovery Platform
+### # Linker – Content Discovery Platform
 - [Linker – Content Discovery Platform](https://markposition.wordpress.com/2022/04/15/linker-content-discovery-platform/)
 - [April 15, 2022](https://markposition.wordpress.com/2022/04/15/linker-content-discovery-platform/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8442,7 +8427,7 @@ https://adssettings.google.com/authenticated
 https://linker.hr/
 - [https://linker.hr/](https://linker.hr/)
 
-## Funding Choices API | Google Developers
+### # Funding Choices API | Google Developers
 - [Funding Choices API | Google Developers](https://markposition.wordpress.com/2022/04/14/funding-choices-api-google-developers/)
 - [April 14, 2022](https://markposition.wordpress.com/2022/04/14/funding-choices-api-google-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8450,7 +8435,7 @@ https://linker.hr/
 https://developers.google.com/funding-choices
 - [https://developers.google.com/funding-choices](https://developers.google.com/funding-choices)
 
-## Privacy checks in Ads Data Hub | Google Developers
+### # Privacy checks in Ads Data Hub | Google Developers
 - [Privacy checks in Ads Data Hub | Google Developers](https://markposition.wordpress.com/2022/04/14/privacy-checks-in-ads-data-hub-google-developers/)
 - [April 14, 2022](https://markposition.wordpress.com/2022/04/14/privacy-checks-in-ads-data-hub-google-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8458,7 +8443,7 @@ https://developers.google.com/funding-choices
 https://developers.google.com/ads-data-hub/guides/privacy-checks
 - [https://developers.google.com/ads-data-hub/guides/privacy-checks](https://developers.google.com/ads-data-hub/guides/privacy-checks)
 
-## Ads Data Hub | Google Developers
+### # Ads Data Hub | Google Developers
 - [Ads Data Hub | Google Developers](https://markposition.wordpress.com/2022/04/14/ads-data-hub-google-developers/)
 - [April 14, 2022](https://markposition.wordpress.com/2022/04/14/ads-data-hub-google-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8466,7 +8451,7 @@ https://developers.google.com/ads-data-hub/guides/privacy-checks
 https://developers.google.com/ads-data-hub
 - [https://developers.google.com/ads-data-hub](https://developers.google.com/ads-data-hub)
 
-## Google Ad Manager – Privacy & messaging
+### # Google Ad Manager – Privacy & messaging
 - [Google Ad Manager – Privacy & messaging](https://markposition.wordpress.com/2022/04/13/google-ad-manager-privacy-messaging/)
 - [April 13, 2022](https://markposition.wordpress.com/2022/04/13/google-ad-manager-privacy-messaging/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8474,7 +8459,7 @@ https://developers.google.com/ads-data-hub
 https://admanager.google.com/22694377933#privacy_and_messaging/ad_blocking/education
 - [https://admanager.google.com/22694377933#privacy_and_messaging/ad_blocking/education](https://admanager.google.com/22694377933#privacy_and_messaging/ad_blocking/education)
 
-## Google Ads Integration | Ortto
+### # Google Ads Integration | Ortto
 - [Google Ads Integration | Ortto](https://markposition.wordpress.com/2022/04/06/google-ads-integration-ortto/)
 - [April 6, 2022](https://markposition.wordpress.com/2022/04/06/google-ads-integration-ortto/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8482,7 +8467,7 @@ https://admanager.google.com/22694377933#privacy_and_messaging/ad_blocking/educa
 https://ortto.com/integrations/google-ads/
 - [https://ortto.com/integrations/google-ads/](https://ortto.com/integrations/google-ads/)
 
-## Cloudflare’s Privacy Policy | Cloudflare
+### # Cloudflare’s Privacy Policy | Cloudflare
 - [Cloudflare’s Privacy Policy | Cloudflare](https://markposition.wordpress.com/2022/04/06/cloudflares-privacy-policy-cloudflare/)
 - [April 6, 2022](https://markposition.wordpress.com/2022/04/06/cloudflares-privacy-policy-cloudflare/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8490,7 +8475,7 @@ https://ortto.com/integrations/google-ads/
 https://www.cloudflare.com/privacypolicy/
 - [https://www.cloudflare.com/privacypolicy/](https://www.cloudflare.com/privacypolicy/)
 
-## CJ.com Home
+### # CJ.com Home
 - [CJ.com Home](https://markposition.wordpress.com/2022/04/06/cj-com-home/)
 - [April 6, 2022](https://markposition.wordpress.com/2022/04/06/cj-com-home/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8498,7 +8483,7 @@ https://www.cloudflare.com/privacypolicy/
 https://www.cj.com/
 - [https://www.cj.com/](https://www.cj.com/)
 
-## Xaxis – The outcome media company
+### # Xaxis – The outcome media company
 - [Xaxis – The outcome media company](https://markposition.wordpress.com/2022/04/06/xaxis-the-outcome-media-company/)
 - [April 6, 2022](https://markposition.wordpress.com/2022/04/06/xaxis-the-outcome-media-company/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8506,7 +8491,7 @@ https://www.cj.com/
 https://www.xaxis.com/
 - [https://www.xaxis.com/](https://www.xaxis.com/)
 
-## Services Privacy Policy | Oracle
+### # Services Privacy Policy | Oracle
 - [Services Privacy Policy | Oracle](https://markposition.wordpress.com/2022/04/06/services-privacy-policy-oracle/)
 - [April 6, 2022](https://markposition.wordpress.com/2022/04/06/services-privacy-policy-oracle/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8514,7 +8499,7 @@ https://www.xaxis.com/
 https://www.oracle.com/legal/privacy/services-privacy-policy.html
 - [https://www.oracle.com/legal/privacy/services-privacy-policy.html](https://www.oracle.com/legal/privacy/services-privacy-policy.html)
 
-## AdMedia | Premier Advertising Network | Reach 200M+ US Users
+### # AdMedia | Premier Advertising Network | Reach 200M+ US Users
 - [AdMedia | Premier Advertising Network | Reach 200M+ US Users](https://markposition.wordpress.com/2022/04/04/admedia-premier-advertising-network-reach-200m-us-users/)
 - [April 4, 2022](https://markposition.wordpress.com/2022/04/04/admedia-premier-advertising-network-reach-200m-us-users/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8522,7 +8507,7 @@ https://www.oracle.com/legal/privacy/services-privacy-policy.html
 https://admedia.com/
 - [https://admedia.com/](https://admedia.com/)
 
-## Monetize
+### # Monetize
 - [Monetize](https://markposition.wordpress.com/2022/04/04/monetize/)
 - [April 4, 2022](https://markposition.wordpress.com/2022/04/04/monetize/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8530,7 +8515,7 @@ https://admedia.com/
 https://www.monetize.com/
 - [https://www.monetize.com/](https://www.monetize.com/)
 
-## Adobe Advertising Cloud: Programmatic Media Buying | Adobe for Business
+### # Adobe Advertising Cloud: Programmatic Media Buying | Adobe for Business
 - [Adobe Advertising Cloud: Programmatic Media Buying | Adobe for Business](https://markposition.wordpress.com/2022/03/29/adobe-advertising-cloud-programmatic-media-buying-adobe-for-business/)
 - [March 29, 2022](https://markposition.wordpress.com/2022/03/29/adobe-advertising-cloud-programmatic-media-buying-adobe-for-business/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8538,7 +8523,7 @@ https://www.monetize.com/
 https://business.adobe.com/products/advertising/adobe-advertising-cloud.html
 - [https://business.adobe.com/products/advertising/adobe-advertising-cloud.html](https://business.adobe.com/products/advertising/adobe-advertising-cloud.html)
 
-## Your Online Choices | EDAA
+### # Your Online Choices | EDAA
 - [Your Online Choices | EDAA](https://markposition.wordpress.com/2022/03/29/your-online-choices-edaa/)
 - [March 29, 2022](https://markposition.wordpress.com/2022/03/29/your-online-choices-edaa/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8546,7 +8531,7 @@ https://business.adobe.com/products/advertising/adobe-advertising-cloud.html
 https://youronlinechoices.eu/
 - [https://youronlinechoices.eu/](https://youronlinechoices.eu/)
 
-## WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US
+### # WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US
 - [WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US](https://markposition.wordpress.com/2022/03/29/webchoices-digital-advertising-alliances-consumer-choice-tool-for-web-us-3/)
 - [March 29, 2022](https://markposition.wordpress.com/2022/03/29/webchoices-digital-advertising-alliances-consumer-choice-tool-for-web-us-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8554,7 +8539,7 @@ https://youronlinechoices.eu/
 https://optout.aboutads.info/
 - [https://optout.aboutads.info/](https://optout.aboutads.info/)
 
-## For Consumers – European Interactive Digital Advertising Alliance
+### # For Consumers – European Interactive Digital Advertising Alliance
 - [For Consumers – European Interactive Digital Advertising Alliance](https://markposition.wordpress.com/2022/03/29/for-consumers-european-interactive-digital-advertising-alliance/)
 - [March 29, 2022](https://markposition.wordpress.com/2022/03/29/for-consumers-european-interactive-digital-advertising-alliance/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8562,7 +8547,7 @@ https://optout.aboutads.info/
 https://edaa.eu/what-we-do/for-consumers/
 - [https://edaa.eu/what-we-do/for-consumers/](https://edaa.eu/what-we-do/for-consumers/)
 
-## Data Privacy Audit | See If Your Website Is Data Compliant
+### # Data Privacy Audit | See If Your Website Is Data Compliant
 - [Data Privacy Audit | See If Your Website Is Data Compliant](https://markposition.wordpress.com/2022/03/25/data-privacy-audit-see-if-your-website-is-data-compliant/)
 - [March 25, 2022](https://markposition.wordpress.com/2022/03/25/data-privacy-audit-see-if-your-website-is-data-compliant/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8570,7 +8555,7 @@ https://edaa.eu/what-we-do/for-consumers/
 https://usercentrics.com/data-privacy-audit/
 - [https://usercentrics.com/data-privacy-audit/](https://usercentrics.com/data-privacy-audit/)
 
-## Drive Advertising Revenue with Google Ad Manager : Google
+### # Drive Advertising Revenue with Google Ad Manager : Google
 - [Drive Advertising Revenue with Google Ad Manager : Google](https://markposition.wordpress.com/2022/03/18/drive-advertising-revenue-with-google-ad-manager-google-3/)
 - [March 18, 2022](https://markposition.wordpress.com/2022/03/18/drive-advertising-revenue-with-google-ad-manager-google-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8578,7 +8563,7 @@ https://usercentrics.com/data-privacy-audit/
 https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager
 - [https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager](https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager)
 
-## Create Reports in Google Ad Manager : Google
+### # Create Reports in Google Ad Manager : Google
 - [Create Reports in Google Ad Manager : Google](https://markposition.wordpress.com/2022/03/18/create-reports-in-google-ad-manager-google-2/)
 - [March 18, 2022](https://markposition.wordpress.com/2022/03/18/create-reports-in-google-ad-manager-google-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8586,7 +8571,7 @@ https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-wit
 https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager
 - [https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager](https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager)
 
-## Online Video Advertising Campaigns – YouTube Advertising
+### # Online Video Advertising Campaigns – YouTube Advertising
 - [Online Video Advertising Campaigns – YouTube Advertising](https://markposition.wordpress.com/2022/03/18/online-video-advertising-campaigns-youtube-advertising-3/)
 - [March 18, 2022](https://markposition.wordpress.com/2022/03/18/online-video-advertising-campaigns-youtube-advertising-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8594,7 +8579,7 @@ https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-
 https://www.youtube.com/intl/en_US/ads/
 - [https://www.youtube.com/intl/en_US/ads/](https://www.youtube.com/intl/en_US/ads/)
 
-## Profit Whales | Full-service Amazon marketing agency for your brand!
+### # Profit Whales | Full-service Amazon marketing agency for your brand!
 - [Profit Whales | Full-service Amazon marketing agency for your brand!](https://markposition.wordpress.com/2022/03/18/profit-whales-full-service-amazon-marketing-agency-for-your-brand/)
 - [March 18, 2022](https://markposition.wordpress.com/2022/03/18/profit-whales-full-service-amazon-marketing-agency-for-your-brand/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8602,7 +8587,7 @@ https://www.youtube.com/intl/en_US/ads/
 https://profitwhales.com/
 - [https://profitwhales.com/](https://profitwhales.com/)
 
-## Learning console – Online advertising courses and PPC certifications | Amazon Ads
+### # Learning console – Online advertising courses and PPC certifications | Amazon Ads
 - [Learning console – Online advertising courses and PPC certifications | Amazon Ads](https://markposition.wordpress.com/2022/03/17/learning-console-online-advertising-courses-and-ppc-certifications-amazon-ads/)
 - [March 17, 2022](https://markposition.wordpress.com/2022/03/17/learning-console-online-advertising-courses-and-ppc-certifications-amazon-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8610,7 +8595,7 @@ https://profitwhales.com/
 https://advertising.amazon.com/resources/learning-console
 - [https://advertising.amazon.com/resources/learning-console](https://advertising.amazon.com/resources/learning-console)
 
-## Amazon Ads: Online advertising for businesses of all sizes | Amazon Ads
+### # Amazon Ads: Online advertising for businesses of all sizes | Amazon Ads
 - [Amazon Ads: Online advertising for businesses of all sizes | Amazon Ads](https://markposition.wordpress.com/2022/03/17/amazon-ads-online-advertising-for-businesses-of-all-sizes-amazon-ads/)
 - [March 17, 2022](https://markposition.wordpress.com/2022/03/17/amazon-ads-online-advertising-for-businesses-of-all-sizes-amazon-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8618,7 +8603,7 @@ https://advertising.amazon.com/resources/learning-console
 https://advertising.amazon.com/
 - [https://advertising.amazon.com/](https://advertising.amazon.com/)
 
-## Get Started with Google Publisher Tags | Google Developers
+### # Get Started with Google Publisher Tags | Google Developers
 - [Get Started with Google Publisher Tags | Google Developers](https://markposition.wordpress.com/2022/03/16/get-started-with-google-publisher-tags-google-developers-2/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/get-started-with-google-publisher-tags-google-developers-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8626,7 +8611,7 @@ https://advertising.amazon.com/
 https://developers.google.com/publisher-tag/guides/get-started
 - [https://developers.google.com/publisher-tag/guides/get-started](https://developers.google.com/publisher-tag/guides/get-started)
 
-## Ad sizes | Google Publisher Tag | Google Developers
+### # Ad sizes | Google Publisher Tag | Google Developers
 - [Ad sizes | Google Publisher Tag | Google Developers](https://markposition.wordpress.com/2022/03/16/ad-sizes-google-publisher-tag-google-developers/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/ad-sizes-google-publisher-tag-google-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8634,7 +8619,7 @@ https://developers.google.com/publisher-tag/guides/get-started
 https://developers.google.com/publisher-tag/guides/get-started
 - [https://developers.google.com/publisher-tag/guides/get-started](https://developers.google.com/publisher-tag/guides/get-started)
 
-## Drive Advertising Revenue with Google Ad Manager : Google
+### # Drive Advertising Revenue with Google Ad Manager : Google
 - [Drive Advertising Revenue with Google Ad Manager : Google](https://markposition.wordpress.com/2022/03/16/drive-advertising-revenue-with-google-ad-manager-google-2/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/drive-advertising-revenue-with-google-ad-manager-google-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8642,7 +8627,7 @@ https://developers.google.com/publisher-tag/guides/get-started
 https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager
 - [https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager](https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager)
 
-## Configure Mobile In-App Ads Using Ad Manager : Google
+### # Configure Mobile In-App Ads Using Ad Manager : Google
 - [Configure Mobile In-App Ads Using Ad Manager : Google](https://markposition.wordpress.com/2022/03/16/configure-mobile-in-app-ads-using-ad-manager-google/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/configure-mobile-in-app-ads-using-ad-manager-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8650,7 +8635,7 @@ https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-wit
 https://skillshop.exceedlms.com/student/activity/75346-configure-mobile-in-app-ads-using-ad-manager
 - [https://skillshop.exceedlms.com/student/activity/75346-configure-mobile-in-app-ads-using-ad-manager](https://skillshop.exceedlms.com/student/activity/75346-configure-mobile-in-app-ads-using-ad-manager)
 
-## Fundamentals of Video : Google
+### # Fundamentals of Video : Google
 - [Fundamentals of Video : Google](https://markposition.wordpress.com/2022/03/16/fundamentals-of-video-google/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/fundamentals-of-video-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8658,7 +8643,7 @@ https://skillshop.exceedlms.com/student/activity/75346-configure-mobile-in-app-a
 https://skillshop.exceedlms.com/student/activity/75345-fundamentals-of-video
 - [https://skillshop.exceedlms.com/student/activity/75345-fundamentals-of-video](https://skillshop.exceedlms.com/student/activity/75345-fundamentals-of-video)
 
-## Review and Manage Ads in Google Ad Manager : Google
+### # Review and Manage Ads in Google Ad Manager : Google
 - [Review and Manage Ads in Google Ad Manager : Google](https://markposition.wordpress.com/2022/03/16/review-and-manage-ads-in-google-ad-manager-google/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/review-and-manage-ads-in-google-ad-manager-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8666,7 +8651,7 @@ https://skillshop.exceedlms.com/student/activity/75345-fundamentals-of-video
 https://skillshop.exceedlms.com/student/activity/17116-review-and-manage-ads-in-google-ad-manager
 - [https://skillshop.exceedlms.com/student/activity/17116-review-and-manage-ads-in-google-ad-manager](https://skillshop.exceedlms.com/student/activity/17116-review-and-manage-ads-in-google-ad-manager)
 
-## Manage Ads with Rules and Protections : Google
+### # Manage Ads with Rules and Protections : Google
 - [Manage Ads with Rules and Protections : Google](https://markposition.wordpress.com/2022/03/16/manage-ads-with-rules-and-protections-google/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/manage-ads-with-rules-and-protections-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8674,7 +8659,7 @@ https://skillshop.exceedlms.com/student/activity/17116-review-and-manage-ads-in-
 https://skillshop.exceedlms.com/student/activity/379130-manage-ads-with-rules-and-protections-skillshop
 - [https://skillshop.exceedlms.com/student/activity/379130-manage-ads-with-rules-and-protections-skillshop](https://skillshop.exceedlms.com/student/activity/379130-manage-ads-with-rules-and-protections-skillshop)
 
-## Explore Programmatic Capabilities in Google Ad Manager : Google
+### # Explore Programmatic Capabilities in Google Ad Manager : Google
 - [Explore Programmatic Capabilities in Google Ad Manager : Google](https://markposition.wordpress.com/2022/03/16/explore-programmatic-capabilities-in-google-ad-manager-google/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/explore-programmatic-capabilities-in-google-ad-manager-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8682,7 +8667,7 @@ https://skillshop.exceedlms.com/student/activity/379130-manage-ads-with-rules-an
 https://skillshop.exceedlms.com/student/activity/17114-explore-programmatic-capabilities-in-google-ad-manager
 - [https://skillshop.exceedlms.com/student/activity/17114-explore-programmatic-capabilities-in-google-ad-manager](https://skillshop.exceedlms.com/student/activity/17114-explore-programmatic-capabilities-in-google-ad-manager)
 
-## Create Reports in Google Ad Manager : Google
+### # Create Reports in Google Ad Manager : Google
 - [Create Reports in Google Ad Manager : Google](https://markposition.wordpress.com/2022/03/16/create-reports-in-google-ad-manager-google/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/create-reports-in-google-ad-manager-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8690,7 +8675,7 @@ https://skillshop.exceedlms.com/student/activity/17114-explore-programmatic-capa
 https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager
 - [https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager](https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-ad-manager)
 
-## Forecast Your Inventory Using Ad Manager : Google
+### # Forecast Your Inventory Using Ad Manager : Google
 - [Forecast Your Inventory Using Ad Manager : Google](https://markposition.wordpress.com/2022/03/16/forecast-your-inventory-using-ad-manager-google/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/forecast-your-inventory-using-ad-manager-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8698,7 +8683,7 @@ https://skillshop.exceedlms.com/student/activity/17113-create-reports-in-google-
 https://skillshop.exceedlms.com/student/activity/17112-forecast-your-inventory-using-ad-manager
 - [https://skillshop.exceedlms.com/student/activity/17112-forecast-your-inventory-using-ad-manager](https://skillshop.exceedlms.com/student/activity/17112-forecast-your-inventory-using-ad-manager)
 
-## Optimize Creatives with Ad Manager : Google
+### # Optimize Creatives with Ad Manager : Google
 - [Optimize Creatives with Ad Manager : Google](https://markposition.wordpress.com/2022/03/16/optimize-creatives-with-ad-manager-google/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/optimize-creatives-with-ad-manager-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8706,7 +8691,7 @@ https://skillshop.exceedlms.com/student/activity/17112-forecast-your-inventory-u
 https://skillshop.exceedlms.com/student/activity/17111-optimize-creatives-with-ad-manager
 - [https://skillshop.exceedlms.com/student/activity/17111-optimize-creatives-with-ad-manager](https://skillshop.exceedlms.com/student/activity/17111-optimize-creatives-with-ad-manager)
 
-## Deliver Ads Using Google Ad Manager : Google
+### # Deliver Ads Using Google Ad Manager : Google
 - [Deliver Ads Using Google Ad Manager : Google](https://markposition.wordpress.com/2022/03/16/deliver-ads-using-google-ad-manager-google/)
 - [March 16, 2022](https://markposition.wordpress.com/2022/03/16/deliver-ads-using-google-ad-manager-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8714,7 +8699,7 @@ https://skillshop.exceedlms.com/student/activity/17111-optimize-creatives-with-a
 https://skillshop.exceedlms.com/student/activity/17110-deliver-ads-using-google-ad-manager
 - [https://skillshop.exceedlms.com/student/activity/17110-deliver-ads-using-google-ad-manager](https://skillshop.exceedlms.com/student/activity/17110-deliver-ads-using-google-ad-manager)
 
-## Google Ad Traffic Quality
+### # Google Ad Traffic Quality
 - [Google Ad Traffic Quality](https://markposition.wordpress.com/2022/03/14/google-ad-traffic-quality/)
 - [March 14, 2022](https://markposition.wordpress.com/2022/03/14/google-ad-traffic-quality/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8722,7 +8707,7 @@ https://skillshop.exceedlms.com/student/activity/17110-deliver-ads-using-google-
 https://www.google.com/ads/adtrafficquality/
 - [https://www.google.com/ads/adtrafficquality/](https://www.google.com/ads/adtrafficquality/)
 
-## Vodič za ads.txt – Google AdSense Pomoć
+### # Vodič za ads.txt – Google AdSense Pomoć
 - [Vodič za ads.txt – Google AdSense Pomoć](https://markposition.wordpress.com/2022/03/14/vodic-za-ads-txt-google-adsense-pomoc/)
 - [March 14, 2022](https://markposition.wordpress.com/2022/03/14/vodic-za-ads-txt-google-adsense-pomoc/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8730,7 +8715,7 @@ https://www.google.com/ads/adtrafficquality/
 https://support.google.com/adsense/answer/7532444?hl=hr
 - [https://support.google.com/adsense/answer/7532444?hl=hr](https://support.google.com/adsense/answer/7532444?hl=hr)
 
-## Alat za rješavanje problema s datotekom ads.txt – Google AdSense Pomoć
+### # Alat za rješavanje problema s datotekom ads.txt – Google AdSense Pomoć
 - [Alat za rješavanje problema s datotekom ads.txt – Google AdSense Pomoć](https://markposition.wordpress.com/2022/03/14/alat-za-rjesavanje-problema-s-datotekom-ads-txt-google-adsense-pomoc/)
 - [March 14, 2022](https://markposition.wordpress.com/2022/03/14/alat-za-rjesavanje-problema-s-datotekom-ads-txt-google-adsense-pomoc/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8738,7 +8723,7 @@ https://support.google.com/adsense/answer/7532444?hl=hr
 https://support.google.com/adsense/troubleshooter/9556696?hl=hr#ts=9806100%2C9806109
 - [https://support.google.com/adsense/troubleshooter/9556696?hl=hr#ts=9806100%2C9806109](https://support.google.com/adsense/troubleshooter/9556696?hl=hr#ts=9806100%2C9806109)
 
-## Actions on Google
+### # Actions on Google
 - [Actions on Google](https://markposition.wordpress.com/2022/03/13/actions-on-google/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/actions-on-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8746,7 +8731,7 @@ https://support.google.com/adsense/troubleshooter/9556696?hl=hr#ts=9806100%2C980
 https://console.actions.google.com/
 - [https://console.actions.google.com/](https://console.actions.google.com/u/0/)
 
-## AdSense Management API | Google Developers
+### # AdSense Management API | Google Developers
 - [AdSense Management API | Google Developers](https://markposition.wordpress.com/2022/03/13/adsense-management-api-google-developers/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/adsense-management-api-google-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8754,7 +8739,7 @@ https://console.actions.google.com/
 https://developers.google.com/adsense/management
 - [https://developers.google.com/adsense/management](https://developers.google.com/adsense/management)
 
-## The Commerce Media Platform for the Open Internet | Criteo
+### # The Commerce Media Platform for the Open Internet | Criteo
 - [The Commerce Media Platform for the Open Internet | Criteo](https://markposition.wordpress.com/2022/03/13/the-commerce-media-platform-for-the-open-internet-criteo/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/the-commerce-media-platform-for-the-open-internet-criteo/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8762,7 +8747,7 @@ https://developers.google.com/adsense/management
 https://www.criteo.com/
 - [https://www.criteo.com/](https://www.criteo.com/)
 
-## Ad exchange – Wikipedia
+### # Ad exchange – Wikipedia
 - [Ad exchange – Wikipedia](https://markposition.wordpress.com/2022/03/13/ad-exchange-wikipedia-2/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/ad-exchange-wikipedia-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8770,7 +8755,7 @@ https://www.criteo.com/
 https://en.wikipedia.org/wiki/Ad_exchange
 - [https://en.wikipedia.org/wiki/Ad_exchange](https://en.wikipedia.org/wiki/Ad_exchange)
 
-## Digiday – Digital Content, Digital Advertising, Digital Marketing
+### # Digiday – Digital Content, Digital Advertising, Digital Marketing
 - [Digiday – Digital Content, Digital Advertising, Digital Marketing](https://markposition.wordpress.com/2022/03/13/digiday-digital-content-digital-advertising-digital-marketing-2/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/digiday-digital-content-digital-advertising-digital-marketing-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8778,7 +8763,7 @@ https://en.wikipedia.org/wiki/Ad_exchange
 https://digiday.com/
 - [https://digiday.com/](https://digiday.com/)
 
-## 234 – Measure – Analyze – Optimize
+### # 234 – Measure – Analyze – Optimize
 - [234 – Measure – Analyze – Optimize](https://markposition.wordpress.com/2022/03/13/234-measure-analyze-optimize/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/234-measure-analyze-optimize/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8786,7 +8771,7 @@ https://digiday.com/
 https://234.hr/
 - [https://234.hr/](https://234.hr/)
 
-## Google Ad Manager – Integrated Advertising Management Platform
+### # Google Ad Manager – Integrated Advertising Management Platform
 - [Google Ad Manager – Integrated Advertising Management Platform](https://markposition.wordpress.com/2022/03/13/google-ad-manager-integrated-advertising-management-platform-4/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/google-ad-manager-integrated-advertising-management-platform-4/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8794,7 +8779,7 @@ https://234.hr/
 https://admanager.google.com/home/
 - [https://admanager.google.com/home/](https://admanager.google.com/home/)
 
-## Google Ad Manager : Google
+### # Google Ad Manager : Google
 - [Google Ad Manager : Google](https://markposition.wordpress.com/2022/03/13/google-ad-manager-google-2/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/google-ad-manager-google-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8802,7 +8787,7 @@ https://admanager.google.com/home/
 https://skillshop.exceedlms.com/student/catalog/list?category_ids=2842-google-ad-manager
 - [https://skillshop.exceedlms.com/student/catalog/list?category_ids=2842-google-ad-manager](https://skillshop.exceedlms.com/student/catalog/list?category_ids=2842-google-ad-manager)
 
-## Pronađite partnera – izdavača | Certificirani partner – izdavač – Google
+### # Pronađite partnera – izdavača | Certificirani partner – izdavač – Google
 - [Pronađite partnera – izdavača | Certificirani partner – izdavač – Google](https://markposition.wordpress.com/2022/03/13/pronadite-partnera-izdavaca-certificirani-partner-izdavac-google-3/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/pronadite-partnera-izdavaca-certificirani-partner-izdavac-google-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8811,7 +8796,7 @@ google.com/ads/publisher/partners/find-a-partner/ Ezoic
 - [google.com/ads/publisher/partners/find-a-partner/ Ezoic](https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=modal-ezoic)
 - [Home](https://www.ezoic.com/)
 
-## Pronađite partnera – izdavača | Certificirani partner – izdavač – Google – ads publisher – find a partner
+### # Pronađite partnera – izdavača | Certificirani partner – izdavač – Google – ads publisher – find a partner
 - [Pronađite partnera – izdavača | Certificirani partner – izdavač – Google – ads publisher – find a partner](https://markposition.wordpress.com/2022/03/13/pronadite-partnera-izdavaca-certificirani-partner-izdavac-google-ads-publisher-find-a-partner/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/pronadite-partnera-izdavaca-certificirani-partner-izdavac-google-ads-publisher-find-a-partner/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8819,7 +8804,7 @@ google.com/ads/publisher/partners/find-a-partner/ Ezoic
 https://www.google.com/ads/publisher/partners/find-a-partner/
 - [https://www.google.com/ads/publisher/partners/find-a-partner/](https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=none)
 
-## Google Certified Partner Program – Google – ads – publisher – partners
+### # Google Certified Partner Program – Google – ads – publisher – partners
 - [Google Certified Partner Program – Google – ads – publisher – partners](https://markposition.wordpress.com/2022/03/13/google-certified-partner-program-google-ads-publisher-partners/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/google-certified-partner-program-google-ads-publisher-partners/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8827,13 +8812,13 @@ https://www.google.com/ads/publisher/partners/find-a-partner/
 https://www.google.com/ads/publisher/partners/
 - [https://www.google.com/ads/publisher/partners/](https://www.google.com/ads/publisher/partners/)
 
-## “How Ads Work on YouTube”
+### # “How Ads Work on YouTube”
 - [“How Ads Work on YouTube”](https://markposition.wordpress.com/2022/03/13/how-ads-work-on-youtube/)
 - [March 13, 2022](https://markposition.wordpress.com/2022/03/13/how-ads-work-on-youtube/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
 - [Leave a comment](https://markposition.wordpress.com/2022/03/13/how-ads-work-on-youtube/#respond)
 
-## Ad Inserter – Ad Manager & AdSense Ads – | WordPress.org Hrvatski
+### # Ad Inserter – Ad Manager & AdSense Ads – | WordPress.org Hrvatski
 - [Ad Inserter – Ad Manager & AdSense Ads – | WordPress.org Hrvatski](https://markposition.wordpress.com/2022/03/11/ad-inserter-ad-manager-adsense-ads-wordpress-org-hrvatski/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/ad-inserter-ad-manager-adsense-ads-wordpress-org-hrvatski/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8841,7 +8826,7 @@ https://www.google.com/ads/publisher/partners/
 https://wordpress.org/plugins/ad-inserter/
 - [https://wordpress.org/plugins/ad-inserter/](https://hr.wordpress.org/plugins/ad-inserter/)
 
-## Ad Inserter Pro – Advanced WordPress Ad Management Plugin
+### # Ad Inserter Pro – Advanced WordPress Ad Management Plugin
 - [Ad Inserter Pro – Advanced WordPress Ad Management Plugin](https://markposition.wordpress.com/2022/03/11/ad-inserter-pro-advanced-wordpress-ad-management-plugin/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/ad-inserter-pro-advanced-wordpress-ad-management-plugin/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8849,7 +8834,7 @@ https://wordpress.org/plugins/ad-inserter/
 https://adinserter.pro/
 - [https://adinserter.pro/](https://adinserter.pro/)
 
-## SafeFrame Implementation Guidelines
+### # SafeFrame Implementation Guidelines
 - [SafeFrame Implementation Guidelines](https://markposition.wordpress.com/2022/03/11/safeframe-implementation-guidelines/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/safeframe-implementation-guidelines/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8857,7 +8842,7 @@ https://adinserter.pro/
 https://www.iab.com/guidelines/safeframe/
 - [https://www.iab.com/guidelines/safeframe/](https://www.iab.com/guidelines/safeframe/)
 
-## Using your Ad Speed Home dashboard – Google Ad Manager Help
+### # Using your Ad Speed Home dashboard – Google Ad Manager Help
 - [Using your Ad Speed Home dashboard – Google Ad Manager Help](https://markposition.wordpress.com/2022/03/11/using-your-ad-speed-home-dashboard-google-ad-manager-help/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/using-your-ad-speed-home-dashboard-google-ad-manager-help/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8865,7 +8850,7 @@ https://www.iab.com/guidelines/safeframe/
 https://support.google.com/admanager/answer/9203630?hl=en
 - [https://support.google.com/admanager/answer/9203630?hl=en](https://support.google.com/admanager/answer/9203630?hl=en)
 
-## Google Ads
+### # Google Ads
 - [Google Ads](https://markposition.wordpress.com/2022/03/11/google-ads-2/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/google-ads-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8873,7 +8858,7 @@ https://support.google.com/admanager/answer/9203630?hl=en
 https://ads.google.com/
 - [https://ads.google.com/](https://ads.google.com/intl/hr_hr/home/)
 
-## Google Ads Status Dashboard
+### # Google Ads Status Dashboard
 - [Google Ads Status Dashboard](https://markposition.wordpress.com/2022/03/11/google-ads-status-dashboard-2/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/google-ads-status-dashboard-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8881,7 +8866,7 @@ https://ads.google.com/
 https://ads.google.com/status/publisher/
 - [https://ads.google.com/status/publisher/](https://ads.google.com/status/publisher/)
 
-## Google Ads Data Processing Terms
+### # Google Ads Data Processing Terms
 - [Google Ads Data Processing Terms](https://markposition.wordpress.com/2022/03/11/google-ads-data-processing-terms/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/google-ads-data-processing-terms/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8889,7 +8874,7 @@ https://ads.google.com/status/publisher/
 https://business.safety.google/adsprocessorterms/
 - [https://business.safety.google/adsprocessorterms/](https://business.safety.google/adsprocessorterms/)
 
-## Business Data Responsibility – Data Safety, Protection & Privacy
+### # Business Data Responsibility – Data Safety, Protection & Privacy
 - [Business Data Responsibility – Data Safety, Protection & Privacy](https://markposition.wordpress.com/2022/03/11/business-data-responsibility-data-safety-protection-privacy/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/business-data-responsibility-data-safety-protection-privacy/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8897,7 +8882,7 @@ https://business.safety.google/adsprocessorterms/
 https://business.safety.google/
 - [https://business.safety.google/](https://business.safety.google/)
 
-## Get Started with Google Publisher Tags | Google Developers
+### # Get Started with Google Publisher Tags | Google Developers
 - [Get Started with Google Publisher Tags | Google Developers](https://markposition.wordpress.com/2022/03/11/get-started-with-google-publisher-tags-google-developers/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/get-started-with-google-publisher-tags-google-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8905,7 +8890,7 @@ https://business.safety.google/
 https://developers.google.com/publisher-tag/guides/get-started
 - [https://developers.google.com/publisher-tag/guides/get-started](https://developers.google.com/publisher-tag/guides/get-started)
 
-## Get Started with Search Ads 360 : Google
+### # Get Started with Search Ads 360 : Google
 - [Get Started with Search Ads 360 : Google](https://markposition.wordpress.com/2022/03/11/get-started-with-search-ads-360-google/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/get-started-with-search-ads-360-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8913,7 +8898,7 @@ https://developers.google.com/publisher-tag/guides/get-started
 https://skillshop.exceedlms.com/student/path/396050-get-started-with-search-ads-360
 - [https://skillshop.exceedlms.com/student/path/396050-get-started-with-search-ads-360](https://skillshop.exceedlms.com/student/path/396050-get-started-with-search-ads-360)
 
-## Google Ad Manager : Google
+### # Google Ad Manager : Google
 - [Google Ad Manager : Google](https://markposition.wordpress.com/2022/03/11/google-ad-manager-google/)
 - [March 11, 2022](https://markposition.wordpress.com/2022/03/11/google-ad-manager-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8921,7 +8906,7 @@ https://skillshop.exceedlms.com/student/path/396050-get-started-with-search-ads-
 https://skillshop.exceedlms.com/student/catalog/list?category_ids=2842-google-ad-manager
 - [https://skillshop.exceedlms.com/student/catalog/list?category_ids=2842-google-ad-manager](https://skillshop.exceedlms.com/student/catalog/list?category_ids=2842-google-ad-manager)
 
-## Partnerski program za izdavaštvo | Certificirani partner – izdavač – Google
+### # Partnerski program za izdavaštvo | Certificirani partner – izdavač – Google
 - [Partnerski program za izdavaštvo | Certificirani partner – izdavač – Google](https://markposition.wordpress.com/2022/03/10/partnerski-program-za-izdavastvo-certificirani-partner-izdavac-google-3/)
 - [March 10, 2022March 10, 2022](https://markposition.wordpress.com/2022/03/10/partnerski-program-za-izdavastvo-certificirani-partner-izdavac-google-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8931,7 +8916,7 @@ https://www.google.com/ads/publisher/partners/
 - [become_a_gcpp](https://markposition.wordpress.com/wp-content/uploads/2022/08/18eda-become_a_gcpp.pdf)
 - [Download](https://markposition.wordpress.com/wp-content/uploads/2022/08/18eda-become_a_gcpp.pdf)
 
-## Marketing Cloud – Digital Marketing Platform – Salesforce.com
+### # Marketing Cloud – Digital Marketing Platform – Salesforce.com
 - [Marketing Cloud – Digital Marketing Platform – Salesforce.com](https://markposition.wordpress.com/2022/03/10/marketing-cloud-digital-marketing-platform-salesforce-com/)
 - [March 10, 2022](https://markposition.wordpress.com/2022/03/10/marketing-cloud-digital-marketing-platform-salesforce-com/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8939,7 +8924,7 @@ https://www.google.com/ads/publisher/partners/
 https://www.salesforce.com/products/marketing-cloud/overview/
 - [https://www.salesforce.com/products/marketing-cloud/overview/](https://www.salesforce.com/products/marketing-cloud/overview/)
 
-## Adobe Experience Platform
+### # Adobe Experience Platform
 - [Adobe Experience Platform](https://markposition.wordpress.com/2022/03/10/adobe-experience-platform/)
 - [March 10, 2022](https://markposition.wordpress.com/2022/03/10/adobe-experience-platform/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8947,7 +8932,7 @@ https://www.salesforce.com/products/marketing-cloud/overview/
 https://business.adobe.com/products/experience-platform/adobe-experience-platform.html
 - [https://business.adobe.com/products/experience-platform/adobe-experience-platform.html](https://business.adobe.com/products/experience-platform/adobe-experience-platform.html)
 
-## Publisher Ads Audits for Lighthouse | Google Developers
+### # Publisher Ads Audits for Lighthouse | Google Developers
 - [Publisher Ads Audits for Lighthouse | Google Developers](https://markposition.wordpress.com/2022/03/10/publisher-ads-audits-for-lighthouse-google-developers/)
 - [March 10, 2022](https://markposition.wordpress.com/2022/03/10/publisher-ads-audits-for-lighthouse-google-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8955,7 +8940,7 @@ https://business.adobe.com/products/experience-platform/adobe-experience-platfor
 https://developers.google.com/publisher-ads-audits
 - [https://developers.google.com/publisher-ads-audits](https://developers.google.com/publisher-ads-audits)
 
-## Setupad Blog | Latest AdTech News
+### # Setupad Blog | Latest AdTech News
 - [Setupad Blog | Latest AdTech News](https://markposition.wordpress.com/2022/03/10/setupad-blog-latest-adtech-news/)
 - [March 10, 2022September 26, 2022](https://markposition.wordpress.com/2022/03/10/setupad-blog-latest-adtech-news/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8963,7 +8948,7 @@ https://developers.google.com/publisher-ads-audits
 https://setupad.com/blog/
 - [https://setupad.com/blog/](https://setupad.com/blog/)
 
-## DoubleClick – Wikipedia
+### # DoubleClick – Wikipedia
 - [DoubleClick – Wikipedia](https://markposition.wordpress.com/2022/03/10/doubleclick-wikipedia/)
 - [March 10, 2022](https://markposition.wordpress.com/2022/03/10/doubleclick-wikipedia/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8971,7 +8956,7 @@ https://setupad.com/blog/
 https://en.wikipedia.org/wiki/DoubleClick
 - [https://en.wikipedia.org/wiki/DoubleClick](https://en.wikipedia.org/wiki/DoubleClick)
 
-## Google Ad Manager – Wikipedia
+### # Google Ad Manager – Wikipedia
 - [Google Ad Manager – Wikipedia](https://markposition.wordpress.com/2022/03/10/google-ad-manager-wikipedia-2/)
 - [March 10, 2022](https://markposition.wordpress.com/2022/03/10/google-ad-manager-wikipedia-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8979,7 +8964,7 @@ https://en.wikipedia.org/wiki/DoubleClick
 https://en.wikipedia.org/wiki/Google_Ad_Manager
 - [https://en.wikipedia.org/wiki/Google_Ad_Manager](https://en.wikipedia.org/wiki/Google_Ad_Manager)
 
-## Drive Advertising Revenue with Google Ad Manager : Google
+### # Drive Advertising Revenue with Google Ad Manager : Google
 - [Drive Advertising Revenue with Google Ad Manager : Google](https://markposition.wordpress.com/2022/03/10/drive-advertising-revenue-with-google-ad-manager-google/)
 - [March 10, 2022](https://markposition.wordpress.com/2022/03/10/drive-advertising-revenue-with-google-ad-manager-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8987,7 +8972,7 @@ https://en.wikipedia.org/wiki/Google_Ad_Manager
 https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager
 - [https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager](https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager)
 
-## iab ads txt
+### # iab ads txt
 - [iab ads txt](https://markposition.wordpress.com/2022/03/09/iab-ads-txt/)
 - [March 9, 2022](https://markposition.wordpress.com/2022/03/09/iab-ads-txt/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -8995,7 +8980,7 @@ https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-wit
 - [iab-openrtb-ads.txt-public-spec-1.0.2-3](https://markposition.wordpress.com/wp-content/uploads/2022/08/7db5d-iab-openrtb-ads.txt-public-spec-1.0.2-3.pdf)
 - [Download](https://markposition.wordpress.com/wp-content/uploads/2022/08/7db5d-iab-openrtb-ads.txt-public-spec-1.0.2-3.pdf)
 
-## Bing Webmaster Tools
+### # Bing Webmaster Tools
 - [Bing Webmaster Tools](https://markposition.wordpress.com/2022/03/08/bing-webmaster-tools-3/)
 - [March 8, 2022](https://markposition.wordpress.com/2022/03/08/bing-webmaster-tools-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9003,7 +8988,7 @@ https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-wit
 https://www.bing.com/webmasters/about
 - [https://www.bing.com/webmasters/about](https://www.bing.com/webmasters/about)
 
-## In-Stream Ads | Meta for Creators
+### # In-Stream Ads | Meta for Creators
 - [In-Stream Ads | Meta for Creators](https://markposition.wordpress.com/2022/03/02/in-stream-ads-meta-for-creators/)
 - [March 2, 2022](https://markposition.wordpress.com/2022/03/02/in-stream-ads-meta-for-creators/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9011,7 +8996,7 @@ https://www.bing.com/webmasters/about
 https://web.facebook.com/creators/tools/in-stream-ads
 - [https://web.facebook.com/creators/tools/in-stream-ads](https://web.facebook.com/creators/tools/in-stream-ads)
 
-## How to Make Money From Your Content on Facebook | Facebook for Business
+### # How to Make Money From Your Content on Facebook | Facebook for Business
 - [How to Make Money From Your Content on Facebook | Facebook for Business](https://markposition.wordpress.com/2022/02/28/how-to-make-money-from-your-content-on-facebook-facebook-for-business/)
 - [February 28, 2022](https://markposition.wordpress.com/2022/02/28/how-to-make-money-from-your-content-on-facebook-facebook-for-business/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9019,7 +9004,7 @@ https://web.facebook.com/creators/tools/in-stream-ads
 https://web.facebook.com/business/learn/lessons/how-make-money-facebook
 - [https://web.facebook.com/business/learn/lessons/how-make-money-facebook](https://web.facebook.com/business/learn/lessons/how-make-money-facebook)
 
-## Instant Articles | Meta for Media
+### # Instant Articles | Meta for Media
 - [Instant Articles | Meta for Media](https://markposition.wordpress.com/2022/02/28/instant-articles-meta-for-media/)
 - [February 28, 2022](https://markposition.wordpress.com/2022/02/28/instant-articles-meta-for-media/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9027,7 +9012,7 @@ https://web.facebook.com/business/learn/lessons/how-make-money-facebook
 https://web.facebook.com/formedia/tools/instant-articles
 - [https://web.facebook.com/formedia/tools/instant-articles](https://web.facebook.com/formedia/tools/instant-articles)
 
-## Audience Network
+### # Audience Network
 - [Audience Network](https://markposition.wordpress.com/2022/02/27/audience-network/)
 - [February 27, 2022](https://markposition.wordpress.com/2022/02/27/audience-network/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9035,7 +9020,7 @@ https://web.facebook.com/formedia/tools/instant-articles
 https://hr-hr.facebook.com/audiencenetwork/monetize/bidding/learn
 - [https://hr-hr.facebook.com/audiencenetwork/monetize/bidding/learn](https://hr-hr.facebook.com/audiencenetwork/monetize/bidding/learn)
 
-## Earn Money From In-Stream Ads in Your Facebook Videos | Facebook for Business
+### # Earn Money From In-Stream Ads in Your Facebook Videos | Facebook for Business
 - [Earn Money From In-Stream Ads in Your Facebook Videos | Facebook for Business](https://markposition.wordpress.com/2022/02/26/earn-money-from-in-stream-ads-in-your-facebook-videos-facebook-for-business/)
 - [February 26, 2022](https://markposition.wordpress.com/2022/02/26/earn-money-from-in-stream-ads-in-your-facebook-videos-facebook-for-business/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9043,7 +9028,7 @@ https://hr-hr.facebook.com/audiencenetwork/monetize/bidding/learn
 https://web.facebook.com/business/learn/lessons/earn-money-in-stream-ads-videos
 - [https://web.facebook.com/business/learn/lessons/earn-money-in-stream-ads-videos](https://web.facebook.com/business/learn/lessons/earn-money-in-stream-ads-videos)
 
-## Comscore is a trusted currency for planning, transacting, and evaluating media across platforms.
+### # Comscore is a trusted currency for planning, transacting, and evaluating media across platforms.
 - [Comscore is a trusted currency for planning, transacting, and evaluating media across platforms.](https://markposition.wordpress.com/2022/02/26/comscore-is-a-trusted-currency-for-planning-transacting-and-evaluating-media-across-platforms-2/)
 - [February 26, 2022](https://markposition.wordpress.com/2022/02/26/comscore-is-a-trusted-currency-for-planning-transacting-and-evaluating-media-across-platforms-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9051,7 +9036,7 @@ https://web.facebook.com/business/learn/lessons/earn-money-in-stream-ads-videos
 https://www.comscore.com/
 - [https://www.comscore.com/](https://www.comscore.com/)
 
-## AdinPlay – Maximize the ad revenues from your websites, apps and online games.
+### # AdinPlay – Maximize the ad revenues from your websites, apps and online games.
 - [AdinPlay – Maximize the ad revenues from your websites, apps and online games.](https://markposition.wordpress.com/2022/02/24/adinplay-maximize-the-ad-revenues-from-your-websites-apps-and-online-games/)
 - [February 24, 2022](https://markposition.wordpress.com/2022/02/24/adinplay-maximize-the-ad-revenues-from-your-websites-apps-and-online-games/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9059,7 +9044,7 @@ https://www.comscore.com/
 https://adinplay.com/
 - [https://adinplay.com/](https://adinplay.com/)
 
-## Davatelji oglasnih tehnologija za LGPD – Google AdSense Pomoć
+### # Davatelji oglasnih tehnologija za LGPD – Google AdSense Pomoć
 - [Davatelji oglasnih tehnologija za LGPD – Google AdSense Pomoć](https://markposition.wordpress.com/2022/02/23/davatelji-oglasnih-tehnologija-za-lgpd-google-adsense-pomoc/)
 - [February 23, 2022](https://markposition.wordpress.com/2022/02/23/davatelji-oglasnih-tehnologija-za-lgpd-google-adsense-pomoc/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9067,7 +9052,7 @@ https://adinplay.com/
 https://support.google.com/adsense/answer/9931967?hl=hr
 - [https://support.google.com/adsense/answer/9931967?hl=hr](https://support.google.com/adsense/answer/9931967?hl=hr)
 
-## Programmatic Digital Advertising Technology & Solutions | PubMatic
+### # Programmatic Digital Advertising Technology & Solutions | PubMatic
 - [Programmatic Digital Advertising Technology & Solutions | PubMatic](https://markposition.wordpress.com/2022/02/21/programmatic-digital-advertising-technology-solutions-pubmatic-3/)
 - [February 21, 2022](https://markposition.wordpress.com/2022/02/21/programmatic-digital-advertising-technology-solutions-pubmatic-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9075,7 +9060,7 @@ https://support.google.com/adsense/answer/9931967?hl=hr
 https://pubmatic.com/
 - [https://pubmatic.com/](https://pubmatic.com/)
 
-## Header bidding – Wikipedia
+### # Header bidding – Wikipedia
 - [Header bidding – Wikipedia](https://markposition.wordpress.com/2022/02/21/header-bidding-wikipedia/)
 - [February 21, 2022](https://markposition.wordpress.com/2022/02/21/header-bidding-wikipedia/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9083,7 +9068,7 @@ https://pubmatic.com/
 https://en.wikipedia.org/wiki/Header_bidding
 - [https://en.wikipedia.org/wiki/Header_bidding](https://en.wikipedia.org/wiki/Header_bidding)
 
-## Supply-side platform – Wikipedia
+### # Supply-side platform – Wikipedia
 - [Supply-side platform – Wikipedia](https://markposition.wordpress.com/2022/02/21/supply-side-platform-wikipedia/)
 - [February 21, 2022](https://markposition.wordpress.com/2022/02/21/supply-side-platform-wikipedia/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9091,7 +9076,7 @@ https://en.wikipedia.org/wiki/Header_bidding
 https://en.wikipedia.org/wiki/Supply-side_platform
 - [https://en.wikipedia.org/wiki/Supply-side_platform](https://en.wikipedia.org/wiki/Supply-side_platform)
 
-## Online advertising – Wikipedia
+### # Online advertising – Wikipedia
 - [Online advertising – Wikipedia](https://markposition.wordpress.com/2022/02/21/online-advertising-wikipedia/)
 - [February 21, 2022](https://markposition.wordpress.com/2022/02/21/online-advertising-wikipedia/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9099,7 +9084,7 @@ https://en.wikipedia.org/wiki/Supply-side_platform
 https://en.wikipedia.org/wiki/Online_advertising
 - [https://en.wikipedia.org/wiki/Online_advertising](https://en.wikipedia.org/wiki/Online_advertising)
 
-## The Trade Desk – Wikipedia
+### # The Trade Desk – Wikipedia
 - [The Trade Desk – Wikipedia](https://markposition.wordpress.com/2022/02/21/the-trade-desk-wikipedia/)
 - [February 21, 2022](https://markposition.wordpress.com/2022/02/21/the-trade-desk-wikipedia/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9107,7 +9092,7 @@ https://en.wikipedia.org/wiki/Online_advertising
 https://en.wikipedia.org/wiki/The_Trade_Desk
 - [https://en.wikipedia.org/wiki/The_Trade_Desk](https://en.wikipedia.org/wiki/The_Trade_Desk)
 
-## Demand-side platform – Wikipedia
+### # Demand-side platform – Wikipedia
 - [Demand-side platform – Wikipedia](https://markposition.wordpress.com/2022/02/21/demand-side-platform-wikipedia/)
 - [February 21, 2022](https://markposition.wordpress.com/2022/02/21/demand-side-platform-wikipedia/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9115,7 +9100,7 @@ https://en.wikipedia.org/wiki/The_Trade_Desk
 https://en.wikipedia.org/wiki/Demand-side_platform
 - [https://en.wikipedia.org/wiki/Demand-side_platform](https://en.wikipedia.org/wiki/Demand-side_platform)
 
-## Built for What Matters | The Trade Desk
+### # Built for What Matters | The Trade Desk
 - [Built for What Matters | The Trade Desk](https://markposition.wordpress.com/2022/02/21/built-for-what-matters-the-trade-desk/)
 - [February 21, 2022](https://markposition.wordpress.com/2022/02/21/built-for-what-matters-the-trade-desk/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9123,7 +9108,7 @@ https://en.wikipedia.org/wiki/Demand-side_platform
 https://www.thetradedesk.com/us
 - [https://www.thetradedesk.com/us](https://www.thetradedesk.com/us)
 
-## Google Ad Manager – Wikipedia
+### # Google Ad Manager – Wikipedia
 - [Google Ad Manager – Wikipedia](https://markposition.wordpress.com/2022/02/21/google-ad-manager-wikipedia/)
 - [February 21, 2022](https://markposition.wordpress.com/2022/02/21/google-ad-manager-wikipedia/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9131,7 +9116,7 @@ https://www.thetradedesk.com/us
 https://en.wikipedia.org/wiki/Google_Ad_Manager
 - [https://en.wikipedia.org/wiki/Google_Ad_Manager](https://en.wikipedia.org/wiki/Google_Ad_Manager)
 
-## Ad exchange – Wikipedia
+### # Ad exchange – Wikipedia
 - [Ad exchange – Wikipedia](https://markposition.wordpress.com/2022/02/21/ad-exchange-wikipedia/)
 - [February 21, 2022](https://markposition.wordpress.com/2022/02/21/ad-exchange-wikipedia/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9139,7 +9124,7 @@ https://en.wikipedia.org/wiki/Google_Ad_Manager
 https://en.wikipedia.org/wiki/Ad_exchange
 - [https://en.wikipedia.org/wiki/Ad_exchange](https://en.wikipedia.org/wiki/Ad_exchange)
 
-## Google Marketing Platform – Unified Advertising and Analytics
+### # Google Marketing Platform – Unified Advertising and Analytics
 - [Google Marketing Platform – Unified Advertising and Analytics](https://markposition.wordpress.com/2022/02/20/google-marketing-platform-unified-advertising-and-analytics/)
 - [February 20, 2022](https://markposition.wordpress.com/2022/02/20/google-marketing-platform-unified-advertising-and-analytics/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9147,7 +9132,7 @@ https://en.wikipedia.org/wiki/Ad_exchange
 https://marketingplatform.google.com/about/
 - [https://marketingplatform.google.com/about/](https://marketingplatform.google.com/about/)
 
-## Dashboarding & Data Visualization Tools – Google Data Studio
+### # Dashboarding & Data Visualization Tools – Google Data Studio
 - [Dashboarding & Data Visualization Tools – Google Data Studio](https://markposition.wordpress.com/2022/02/20/dashboarding-data-visualization-tools-google-data-studio/)
 - [February 20, 2022March 21, 2023](https://markposition.wordpress.com/2022/02/20/dashboarding-data-visualization-tools-google-data-studio/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9155,7 +9140,7 @@ https://marketingplatform.google.com/about/
 https://marketingplatform.google.com/about/data-studio/
 - [https://marketingplatform.google.com/about/data-studio/](https://marketingplatform.google.com/about/data-studio/)
 
-## Business Analytics Tools & Solutions – Google Analytics 360
+### # Business Analytics Tools & Solutions – Google Analytics 360
 - [Business Analytics Tools & Solutions – Google Analytics 360](https://markposition.wordpress.com/2022/02/20/business-analytics-tools-solutions-google-analytics-360/)
 - [February 20, 2022](https://markposition.wordpress.com/2022/02/20/business-analytics-tools-solutions-google-analytics-360/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9163,7 +9148,7 @@ https://marketingplatform.google.com/about/data-studio/
 https://marketingplatform.google.com/about/analytics-360/
 - [https://marketingplatform.google.com/about/analytics-360/](https://marketingplatform.google.com/about/analytics-360/)
 
-## Search Campaign Management – Google Search Ads 360
+### # Search Campaign Management – Google Search Ads 360
 - [Search Campaign Management – Google Search Ads 360](https://markposition.wordpress.com/2022/02/20/search-campaign-management-google-search-ads-360/)
 - [February 20, 2022](https://markposition.wordpress.com/2022/02/20/search-campaign-management-google-search-ads-360/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9171,7 +9156,7 @@ https://marketingplatform.google.com/about/analytics-360/
 https://marketingplatform.google.com/about/search-ads-360/
 - [https://marketingplatform.google.com/about/search-ads-360/](https://marketingplatform.google.com/about/search-ads-360/)
 
-## Trusted Ad Serving – Campaign Manager 360
+### # Trusted Ad Serving – Campaign Manager 360
 - [Trusted Ad Serving – Campaign Manager 360](https://markposition.wordpress.com/2022/02/20/trusted-ad-serving-campaign-manager-360/)
 - [February 20, 2022](https://markposition.wordpress.com/2022/02/20/trusted-ad-serving-campaign-manager-360/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9179,7 +9164,7 @@ https://marketingplatform.google.com/about/search-ads-360/
 https://marketingplatform.google.com/about/campaign-manager-360/
 - [https://marketingplatform.google.com/about/campaign-manager-360/](https://marketingplatform.google.com/about/campaign-manager-360/)
 
-## End to End Campaign Management – Google Display & Video 360
+### # End to End Campaign Management – Google Display & Video 360
 - [End to End Campaign Management – Google Display & Video 360](https://markposition.wordpress.com/2022/02/20/end-to-end-campaign-management-google-display-video-360/)
 - [February 20, 2022](https://markposition.wordpress.com/2022/02/20/end-to-end-campaign-management-google-display-video-360/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9187,7 +9172,7 @@ https://marketingplatform.google.com/about/campaign-manager-360/
 https://marketingplatform.google.com/about/display-video-360/
 - [https://marketingplatform.google.com/about/display-video-360/](https://marketingplatform.google.com/about/display-video-360/)
 
-## Create and submit a robots.txt file | Google Search Central | Google Developers
+### # Create and submit a robots.txt file | Google Search Central | Google Developers
 - [Create and submit a robots.txt file | Google Search Central | Google Developers](https://markposition.wordpress.com/2022/02/19/create-and-submit-a-robots-txt-file-google-search-central-google-developers/)
 - [February 19, 2022](https://markposition.wordpress.com/2022/02/19/create-and-submit-a-robots-txt-file-google-search-central-google-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9195,7 +9180,7 @@ https://marketingplatform.google.com/about/display-video-360/
 https://developers.google.com/search/docs/advanced/robots/create-robots-txt
 - [https://developers.google.com/search/docs/advanced/robots/create-robots-txt](https://developers.google.com/search/docs/advanced/robots/create-robots-txt)
 
-## sitemaps.org – Home
+### # sitemaps.org – Home
 - [sitemaps.org – Home](https://markposition.wordpress.com/2022/02/19/sitemaps-org-home/)
 - [February 19, 2022](https://markposition.wordpress.com/2022/02/19/sitemaps-org-home/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9203,7 +9188,7 @@ https://developers.google.com/search/docs/advanced/robots/create-robots-txt
 https://www.sitemaps.org/
 - [https://www.sitemaps.org/](https://www.sitemaps.org/)
 
-## The Web Robots Pages
+### # The Web Robots Pages
 - [The Web Robots Pages](https://markposition.wordpress.com/2022/02/19/the-web-robots-pages/)
 - [February 19, 2022](https://markposition.wordpress.com/2022/02/19/the-web-robots-pages/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9211,7 +9196,7 @@ https://www.sitemaps.org/
 http://www.robotstxt.org/
 - [http://www.robotstxt.org/](http://www.robotstxt.org/)
 
-## Partnerski program za izdavaštvo | Certificirani partner –izdavač –Google
+### # Partnerski program za izdavaštvo | Certificirani partner –izdavač –Google
 - [Partnerski program za izdavaštvo | Certificirani partner –izdavač –Google](https://markposition.wordpress.com/2022/02/19/partnerski-program-za-izdavastvo-certificirani-partner-izdavac-google-2/)
 - [February 19, 2022](https://markposition.wordpress.com/2022/02/19/partnerski-program-za-izdavastvo-certificirani-partner-izdavac-google-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9219,7 +9204,7 @@ http://www.robotstxt.org/
 https://www.google.com/ads/publisher/partners/
 - [https://www.google.com/ads/publisher/partners/](https://www.google.com/ads/publisher/partners/)
 
-## Pronađite partnera – izdavača | Certificirani partner – izdavač – Google
+### # Pronađite partnera – izdavača | Certificirani partner – izdavač – Google
 - [Pronađite partnera – izdavača | Certificirani partner – izdavač – Google](https://markposition.wordpress.com/2022/02/19/pronadite-partnera-izdavaca-certificirani-partner-izdavac-google-2/)
 - [February 19, 2022](https://markposition.wordpress.com/2022/02/19/pronadite-partnera-izdavaca-certificirani-partner-izdavac-google-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9227,7 +9212,7 @@ https://www.google.com/ads/publisher/partners/
 https://www.google.com/ads/publisher/partners/find-a-partner/
 - [https://www.google.com/ads/publisher/partners/find-a-partner/](https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=none)
 
-## Monetization ezoic
+### # Monetization ezoic
 - [Monetization ezoic](https://markposition.wordpress.com/2022/02/19/monetization-ezoic/)
 - [February 19, 2022](https://markposition.wordpress.com/2022/02/19/monetization-ezoic/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9235,7 +9220,7 @@ https://www.google.com/ads/publisher/partners/find-a-partner/
 https://pubdash.ezoic.com/monetization
 - [https://pubdash.ezoic.com/monetization](https://pubdash.ezoic.com/monetization)
 
-## Google Ad Manager – Integrated Advertising Management Platform
+### # Google Ad Manager – Integrated Advertising Management Platform
 - [Google Ad Manager – Integrated Advertising Management Platform](https://markposition.wordpress.com/2022/02/19/google-ad-manager-integrated-advertising-management-platform-3/)
 - [February 19, 2022](https://markposition.wordpress.com/2022/02/19/google-ad-manager-integrated-advertising-management-platform-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9243,7 +9228,7 @@ https://pubdash.ezoic.com/monetization
 https://admanager.google.com/home/
 - [https://admanager.google.com/home/](https://admanager.google.com/home/)
 
-## Inside AdSense: Bringing more buyers to AdSense through the DoubleClick Ad Exchange
+### # Inside AdSense: Bringing more buyers to AdSense through the DoubleClick Ad Exchange
 - [Inside AdSense: Bringing more buyers to AdSense through the DoubleClick Ad Exchange](https://markposition.wordpress.com/2022/02/19/inside-adsense-bringing-more-buyers-to-adsense-through-the-doubleclick-ad-exchange/)
 - [February 19, 2022February 19, 2022](https://markposition.wordpress.com/2022/02/19/inside-adsense-bringing-more-buyers-to-adsense-through-the-doubleclick-ad-exchange/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9253,7 +9238,7 @@ https://adsense.googleblog.com/2009/09/bringing-more-buyers-to-adsense-through.h
 - [adexchangeoverview](https://markposition.wordpress.com/wp-content/uploads/2022/08/6f351-adexchangeoverview.pdf)
 - [Download](https://markposition.wordpress.com/wp-content/uploads/2022/08/6f351-adexchangeoverview.pdf)
 
-## Google AdSense
+### # Google AdSense
 - [Google AdSense](https://markposition.wordpress.com/2022/02/19/google-adsense/)
 - [February 19, 2022](https://markposition.wordpress.com/2022/02/19/google-adsense/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9261,7 +9246,7 @@ https://adsense.googleblog.com/2009/09/bringing-more-buyers-to-adsense-through.h
 https://support.google.com/adsense/
 - [https://support.google.com/adsense/](https://support.google.com/adsense/?hl=hr#topic=1190787)
 
-## AdSense | Google Blog
+### # AdSense | Google Blog
 - [AdSense | Google Blog](https://markposition.wordpress.com/2022/02/19/adsense-google-blog/)
 - [February 19, 2022](https://markposition.wordpress.com/2022/02/19/adsense-google-blog/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9269,7 +9254,7 @@ https://support.google.com/adsense/
 https://blog.google/products/adsense/
 - [https://blog.google/products/adsense/](https://blog.google/products/adsense/)
 
-## Cookieless Targeting, Audience Targeting, CMP – Sirdata
+### # Cookieless Targeting, Audience Targeting, CMP – Sirdata
 - [Cookieless Targeting, Audience Targeting, CMP – Sirdata](https://markposition.wordpress.com/2022/02/15/cookieless-targeting-audience-targeting-cmp-sirdata-2/)
 - [February 15, 2022](https://markposition.wordpress.com/2022/02/15/cookieless-targeting-audience-targeting-cmp-sirdata-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9277,7 +9262,7 @@ https://blog.google/products/adsense/
 https://sirdata.com/en/
 - [https://sirdata.com/en/](https://sirdata.com/en/)
 
-## 152 Media – Header Bidding
+### # 152 Media – Header Bidding
 - [152 Media – Header Bidding](https://markposition.wordpress.com/2022/02/15/152-media-header-bidding/)
 - [February 15, 2022](https://markposition.wordpress.com/2022/02/15/152-media-header-bidding/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9285,7 +9270,7 @@ https://sirdata.com/en/
 https://152media.com/
 - [https://152media.com/](https://152media.com/)
 
-## IAB Tech Lab
+### # IAB Tech Lab
 - [IAB Tech Lab](https://markposition.wordpress.com/2022/02/14/iab-tech-lab/)
 - [February 14, 2022](https://markposition.wordpress.com/2022/02/14/iab-tech-lab/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9293,7 +9278,7 @@ https://152media.com/
 https://iabtechlab.com/software/
 - [https://iabtechlab.com/software/](https://iabtechlab.com/software/)
 
-## Digiday – Digital Content, Digital Advertising, Digital Marketing
+### # Digiday – Digital Content, Digital Advertising, Digital Marketing
 - [Digiday – Digital Content, Digital Advertising, Digital Marketing](https://markposition.wordpress.com/2022/02/13/digiday-digital-content-digital-advertising-digital-marketing/)
 - [February 13, 2022](https://markposition.wordpress.com/2022/02/13/digiday-digital-content-digital-advertising-digital-marketing/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9301,7 +9286,7 @@ https://iabtechlab.com/software/
 https://digiday.com/
 - [https://digiday.com/](https://digiday.com/)
 
-## Google Ads Status Dashboard
+### # Google Ads Status Dashboard
 - [Google Ads Status Dashboard](https://markposition.wordpress.com/2022/02/13/google-ads-status-dashboard/)
 - [February 13, 2022](https://markposition.wordpress.com/2022/02/13/google-ads-status-dashboard/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9309,7 +9294,7 @@ https://digiday.com/
 https://ads.google.com/status/publisher/
 - [https://ads.google.com/status/publisher/](https://ads.google.com/status/publisher/)
 
-## CMP Builder | by OneTrust
+### # CMP Builder | by OneTrust
 - [CMP Builder | by OneTrust](https://markposition.wordpress.com/2022/02/12/cmp-builder-by-onetrust/)
 - [February 12, 2022](https://markposition.wordpress.com/2022/02/12/cmp-builder-by-onetrust/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9317,7 +9302,7 @@ https://ads.google.com/status/publisher/
 https://comply.cookiepro.com/
 - [https://comply.cookiepro.com/](https://comply.cookiepro.com/)
 
-## Audience Is Everything® – Nielsen
+### # Audience Is Everything® – Nielsen
 - [Audience Is Everything® – Nielsen](https://markposition.wordpress.com/2022/02/12/audience-is-everything-nielsen/)
 - [February 12, 2022](https://markposition.wordpress.com/2022/02/12/audience-is-everything-nielsen/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9325,7 +9310,7 @@ https://comply.cookiepro.com/
 https://global.nielsen.com/global/en/
 - [https://global.nielsen.com/global/en/](https://global.nielsen.com/global/en/)
 
-## Vendors List – IAB Europe
+### # Vendors List – IAB Europe
 - [Vendors List – IAB Europe](https://markposition.wordpress.com/2022/02/12/vendors-list-iab-europe/)
 - [February 12, 2022](https://markposition.wordpress.com/2022/02/12/vendors-list-iab-europe/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9333,7 +9318,7 @@ https://global.nielsen.com/global/en/
 https://iabeurope.eu/vendor-list/
 - [https://iabeurope.eu/vendor-list/](https://iabeurope.eu/vendor-list/)
 
-## Adacado DIY Advertising | Do It Yourself Digital Advertising
+### # Adacado DIY Advertising | Do It Yourself Digital Advertising
 - [Adacado DIY Advertising | Do It Yourself Digital Advertising](https://markposition.wordpress.com/2022/02/12/adacado-diy-advertising-do-it-yourself-digital-advertising/)
 - [February 12, 2022](https://markposition.wordpress.com/2022/02/12/adacado-diy-advertising-do-it-yourself-digital-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9341,7 +9326,7 @@ https://iabeurope.eu/vendor-list/
 https://adacado.com/
 - [https://adacado.com/](https://adacado.com/)
 
-## Home • #1 Platform to make better ads: Unify Data + Creativity • VidMob
+### # Home • #1 Platform to make better ads: Unify Data + Creativity • VidMob
 - [Home • #1 Platform to make better ads: Unify Data + Creativity • VidMob](https://markposition.wordpress.com/2022/01/30/home-1-platform-to-make-better-ads-unify-data-creativity-vidmob/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/home-1-platform-to-make-better-ads-unify-data-creativity-vidmob/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9349,7 +9334,7 @@ https://adacado.com/
 https://www.vidmob.com/
 - [https://www.vidmob.com/](https://www.vidmob.com/)
 
-## First-Impression :: Advertising Platform
+### # First-Impression :: Advertising Platform
 - [First-Impression :: Advertising Platform](https://markposition.wordpress.com/2022/01/30/first-impression-advertising-platform/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/first-impression-advertising-platform/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9357,7 +9342,7 @@ https://www.vidmob.com/
 http://www.first-impression.com/home/
 - [http://www.first-impression.com/home/](http://www.first-impression.com/home/)
 
-## Facebook Audience Network | Facebook Developers
+### # Facebook Audience Network | Facebook Developers
 - [Facebook Audience Network | Facebook Developers](https://markposition.wordpress.com/2022/01/30/facebook-audience-network-facebook-developers/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/facebook-audience-network-facebook-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9365,7 +9350,7 @@ http://www.first-impression.com/home/
 https://developers.facebook.com/products/audience-network/
 - [https://developers.facebook.com/products/audience-network/](https://developers.facebook.com/products/audience-network/)
 
-## Home – diDNA
+### # Home – diDNA
 - [Home – diDNA](https://markposition.wordpress.com/2022/01/30/home-didna/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/home-didna/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9373,7 +9358,7 @@ https://developers.facebook.com/products/audience-network/
 https://didna.io/
 - [https://didna.io/](https://didna.io/)
 
-## Content.ad – Native Advertising, Push Notifications, and Beyond
+### # Content.ad – Native Advertising, Push Notifications, and Beyond
 - [Content.ad – Native Advertising, Push Notifications, and Beyond](https://markposition.wordpress.com/2022/01/30/content-ad-native-advertising-push-notifications-and-beyond/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/content-ad-native-advertising-push-notifications-and-beyond/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9381,7 +9366,7 @@ https://didna.io/
 https://content.ad/
 - [https://content.ad/](https://content.ad/)
 
-## Connect Ads
+### # Connect Ads
 - [Connect Ads](https://markposition.wordpress.com/2022/01/30/connect-ads/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/connect-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9389,7 +9374,7 @@ https://content.ad/
 https://connectads.com/
 - [https://connectads.com/](https://connectads.com/)
 
-## Advertising Solutions for Publishers and Marketers | BuySellAds
+### # Advertising Solutions for Publishers and Marketers | BuySellAds
 - [Advertising Solutions for Publishers and Marketers | BuySellAds](https://markposition.wordpress.com/2022/01/30/advertising-solutions-for-publishers-and-marketers-buysellads/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/advertising-solutions-for-publishers-and-marketers-buysellads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9397,7 +9382,7 @@ https://connectads.com/
 https://www.buysellads.com/
 - [https://www.buysellads.com/](https://www.buysellads.com/)
 
-## Join Our UK Affiliate Network – Awin
+### # Join Our UK Affiliate Network – Awin
 - [Join Our UK Affiliate Network – Awin](https://markposition.wordpress.com/2022/01/30/join-our-uk-affiliate-network-awin/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/join-our-uk-affiliate-network-awin/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9405,7 +9390,7 @@ https://www.buysellads.com/
 https://www.awin.com/gb
 - [https://www.awin.com/gb](https://www.awin.com/gb)
 
-## Интернет реклама | Рекламная сеть Advmaker.net
+### # Интернет реклама | Рекламная сеть Advmaker.net
 - [Интернет реклама | Рекламная сеть Advmaker.net](https://markposition.wordpress.com/2022/01/30/%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%bd%d0%b5%d1%82-%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d0%b0-%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d0%bd%d0%b0%d1%8f-%d1%81%d0%b5%d1%82%d1%8c-advmaker-net/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%bd%d0%b5%d1%82-%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d0%b0-%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d0%bd%d0%b0%d1%8f-%d1%81%d0%b5%d1%82%d1%8c-advmaker-net/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9413,7 +9398,7 @@ https://www.awin.com/gb
 http://advmaker.net/
 - [http://advmaker.net/](http://advmaker.net/)
 
-## Adsterra Advertising Network | Solutions for Advertisers and Publishers
+### # Adsterra Advertising Network | Solutions for Advertisers and Publishers
 - [Adsterra Advertising Network | Solutions for Advertisers and Publishers](https://markposition.wordpress.com/2022/01/30/adsterra-advertising-network-solutions-for-advertisers-and-publishers/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/adsterra-advertising-network-solutions-for-advertisers-and-publishers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9421,7 +9406,7 @@ http://advmaker.net/
 https://adsterra.com/
 - [https://adsterra.com/](https://adsterra.com/)
 
-## Adomik
+### # Adomik
 - [Adomik](https://markposition.wordpress.com/2022/01/30/adomik/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/adomik/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9429,7 +9414,7 @@ https://adsterra.com/
 https://www.adomik.com/
 - [https://www.adomik.com/](https://www.adomik.com/)
 
-## Adnet
+### # Adnet
 - [Adnet](https://markposition.wordpress.com/2022/01/30/adnet/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/adnet/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9437,7 +9422,7 @@ https://www.adomik.com/
 https://adnet.com/
 - [https://adnet.com/](https://adnet.com/)
 
-## Home » Admetrics media
+### # Home » Admetrics media
 - [Home » Admetrics media](https://markposition.wordpress.com/2022/01/30/home-admetrics-media/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/home-admetrics-media/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9445,7 +9430,7 @@ https://adnet.com/
 http://www.admetricsmedia.com/
 - [http://www.admetricsmedia.com/](http://www.admetricsmedia.com/)
 
-## AdMaven Ad Network | The Online Advertising Platform
+### # AdMaven Ad Network | The Online Advertising Platform
 - [AdMaven Ad Network | The Online Advertising Platform](https://markposition.wordpress.com/2022/01/30/admaven-ad-network-the-online-advertising-platform/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/admaven-ad-network-the-online-advertising-platform/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9453,7 +9438,7 @@ http://www.admetricsmedia.com/
 https://ad-maven.com/
 - [https://ad-maven.com/](https://ad-maven.com/)
 
-## Home | 33Across
+### # Home | 33Across
 - [Home | 33Across](https://markposition.wordpress.com/2022/01/30/home-33across/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/home-33across/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9461,7 +9446,7 @@ https://ad-maven.com/
 https://www.33across.com/
 - [https://www.33across.com/](https://www.33across.com/)
 
-## Rich Media Creative Agency | Online Advertising Agency USA | Undertone
+### # Rich Media Creative Agency | Online Advertising Agency USA | Undertone
 - [Rich Media Creative Agency | Online Advertising Agency USA | Undertone](https://markposition.wordpress.com/2022/01/30/rich-media-creative-agency-online-advertising-agency-usa-undertone/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/rich-media-creative-agency-online-advertising-agency-usa-undertone/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9469,7 +9454,7 @@ https://www.33across.com/
 https://www.undertone.com/
 - [https://www.undertone.com/](https://www.undertone.com/)
 
-## The Publisher Technology Platform | Sovrn
+### # The Publisher Technology Platform | Sovrn
 - [The Publisher Technology Platform | Sovrn](https://markposition.wordpress.com/2022/01/30/the-publisher-technology-platform-sovrn-2/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/the-publisher-technology-platform-sovrn-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9477,7 +9462,7 @@ https://www.undertone.com/
 https://www.sovrn.com/
 - [https://www.sovrn.com/](https://www.sovrn.com/)
 
-## Rubicon is now Magnite
+### # Rubicon is now Magnite
 - [Rubicon is now Magnite](https://markposition.wordpress.com/2022/01/30/rubicon-is-now-magnite/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/rubicon-is-now-magnite/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9485,7 +9470,7 @@ https://www.sovrn.com/
 https://rubiconproject.com/
 - [https://rubiconproject.com/](https://rubiconproject.com/)
 
-## Content Marketing, Native Advertising & Discovery – Revcontent
+### # Content Marketing, Native Advertising & Discovery – Revcontent
 - [Content Marketing, Native Advertising & Discovery – Revcontent](https://markposition.wordpress.com/2022/01/30/content-marketing-native-advertising-discovery-revcontent/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/content-marketing-native-advertising-discovery-revcontent/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9493,7 +9478,7 @@ https://rubiconproject.com/
 https://www.revcontent.com/
 - [https://www.revcontent.com/](https://www.revcontent.com/)
 
-## Programmatic Digital Advertising Technology & Solutions | PubMatic
+### # Programmatic Digital Advertising Technology & Solutions | PubMatic
 - [Programmatic Digital Advertising Technology & Solutions | PubMatic](https://markposition.wordpress.com/2022/01/30/programmatic-digital-advertising-technology-solutions-pubmatic-2/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/programmatic-digital-advertising-technology-solutions-pubmatic-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9501,7 +9486,7 @@ https://www.revcontent.com/
 https://pubmatic.com/
 - [https://pubmatic.com/](https://pubmatic.com/)
 
-## Outbrain – Recommendation Platform Powered by Native Ads
+### # Outbrain – Recommendation Platform Powered by Native Ads
 - [Outbrain – Recommendation Platform Powered by Native Ads](https://markposition.wordpress.com/2022/01/30/outbrain-recommendation-platform-powered-by-native-ads-5/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/outbrain-recommendation-platform-powered-by-native-ads-5/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9509,7 +9494,7 @@ https://pubmatic.com/
 https://www.outbrain.com/
 - [https://www.outbrain.com/](https://www.outbrain.com/)
 
-## OpenX: Programmatic Advertising | Ad Exchange Network
+### # OpenX: Programmatic Advertising | Ad Exchange Network
 - [OpenX: Programmatic Advertising | Ad Exchange Network](https://markposition.wordpress.com/2022/01/30/openx-programmatic-advertising-ad-exchange-network-2/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/openx-programmatic-advertising-ad-exchange-network-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9517,7 +9502,7 @@ https://www.outbrain.com/
 https://www.openx.com/
 - [https://www.openx.com/](https://www.openx.com/)
 
-## Digital Online Advertising Platforms | Yahoo Ad Tech
+### # Digital Online Advertising Platforms | Yahoo Ad Tech
 - [Digital Online Advertising Platforms | Yahoo Ad Tech](https://markposition.wordpress.com/2022/01/30/digital-online-advertising-platforms-yahoo-ad-tech-2/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/digital-online-advertising-platforms-yahoo-ad-tech-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9525,7 +9510,7 @@ https://www.openx.com/
 https://www.adtech.yahooinc.com/
 - [https://www.adtech.yahooinc.com/](https://www.adtech.yahooinc.com/)
 
-## Google AdSense – ostvarite zaradu unovčavanjem web-lokacije
+### # Google AdSense – ostvarite zaradu unovčavanjem web-lokacije
 - [Google AdSense – ostvarite zaradu unovčavanjem web-lokacije](https://markposition.wordpress.com/2022/01/30/google-adsense-ostvarite-zaradu-unovcavanjem-web-lokacije/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/google-adsense-ostvarite-zaradu-unovcavanjem-web-lokacije/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9533,7 +9518,7 @@ https://www.adtech.yahooinc.com/
 https://www.google.com/intl/hr_hr/adsense/start/
 - [https://www.google.com/intl/hr_hr/adsense/start/](https://www.google.com/intl/hr_hr/adsense/start/)
 
-## Contextual Advertising & Programmatic Platform | Media.net
+### # Contextual Advertising & Programmatic Platform | Media.net
 - [Contextual Advertising & Programmatic Platform | Media.net](https://markposition.wordpress.com/2022/01/30/contextual-advertising-programmatic-platform-media-net/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/contextual-advertising-programmatic-platform-media-net/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9541,7 +9526,7 @@ https://www.google.com/intl/hr_hr/adsense/start/
 https://www.media.net/
 - [https://www.media.net/](https://www.media.net/)
 
-## Get Started | Buyer APIs | Google Developers
+### # Get Started | Buyer APIs | Google Developers
 - [Get Started | Buyer APIs | Google Developers](https://markposition.wordpress.com/2022/01/30/get-started-buyer-apis-google-developers/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/get-started-buyer-apis-google-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9549,7 +9534,7 @@ https://www.media.net/
 https://developers.google.com/authorized-buyers/apis/guides/start
 - [https://developers.google.com/authorized-buyers/apis/guides/start](https://developers.google.com/authorized-buyers/apis/guides/start)
 
-## Authorized Buyers | Google Developers
+### # Authorized Buyers | Google Developers
 - [Authorized Buyers | Google Developers](https://markposition.wordpress.com/2022/01/30/authorized-buyers-google-developers/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/authorized-buyers-google-developers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9557,7 +9542,7 @@ https://developers.google.com/authorized-buyers/apis/guides/start
 https://developers.google.com/authorized-buyers
 - [https://developers.google.com/authorized-buyers](https://developers.google.com/authorized-buyers)
 
-## District M is now Sharethrough | District M
+### # District M is now Sharethrough | District M
 - [District M is now Sharethrough | District M](https://markposition.wordpress.com/2022/01/30/district-m-is-now-sharethrough-district-m/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/district-m-is-now-sharethrough-district-m/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9565,7 +9550,7 @@ https://developers.google.com/authorized-buyers
 https://www.districtm.net/
 - [https://www.districtm.net/](https://www.districtm.net/)
 
-## enginemediaexchange.com | Futureproof Your Business
+### # enginemediaexchange.com | Futureproof Your Business
 - [enginemediaexchange.com | Futureproof Your Business](https://markposition.wordpress.com/2022/01/30/enginemediaexchange-com-futureproof-your-business/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/enginemediaexchange-com-futureproof-your-business/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9573,7 +9558,7 @@ https://www.districtm.net/
 https://enginemediaexchange.com/
 - [https://enginemediaexchange.com/](https://enginemediaexchange.com/)
 
-## Xandr
+### # Xandr
 - [Xandr](https://markposition.wordpress.com/2022/01/30/xandr/)
 - [January 30, 2022](https://markposition.wordpress.com/2022/01/30/xandr/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9581,7 +9566,7 @@ https://enginemediaexchange.com/
 https://www.xandr.com/
 - [https://www.xandr.com/](https://www.xandr.com/)
 
-## Digital Online Advertising Platforms | Yahoo Ad Tech
+### # Digital Online Advertising Platforms | Yahoo Ad Tech
 - [Digital Online Advertising Platforms | Yahoo Ad Tech](https://markposition.wordpress.com/2022/01/27/digital-online-advertising-platforms-yahoo-ad-tech/)
 - [January 27, 2022](https://markposition.wordpress.com/2022/01/27/digital-online-advertising-platforms-yahoo-ad-tech/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9589,7 +9574,7 @@ https://www.xandr.com/
 https://www.adtech.yahooinc.com/
 - [https://www.adtech.yahooinc.com/](https://www.adtech.yahooinc.com/)
 
-## Bring Innovation And Incrementality To Mobile Monetization
+### # Bring Innovation And Incrementality To Mobile Monetization
 - [Bring Innovation And Incrementality To Mobile Monetization](https://markposition.wordpress.com/2022/01/27/bring-innovation-and-incrementality-to-mobile-monetization/)
 - [January 27, 2022](https://markposition.wordpress.com/2022/01/27/bring-innovation-and-incrementality-to-mobile-monetization/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9597,7 +9582,7 @@ https://www.adtech.yahooinc.com/
 https://www.display.io/
 - [https://www.display.io/](https://www.display.io/)
 
-## Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
+### # Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
 - [Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions](https://markposition.wordpress.com/2022/01/27/marketing-advertising-on-linkedin-linkedin-marketing-solutions-3/)
 - [January 27, 2022](https://markposition.wordpress.com/2022/01/27/marketing-advertising-on-linkedin-linkedin-marketing-solutions-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9605,7 +9590,7 @@ https://www.display.io/
 https://business.linkedin.com/marketing-solutions
 - [https://business.linkedin.com/marketing-solutions](https://business.linkedin.com/marketing-solutions)
 
-## LinkedIn Advertising Costs & Pricing | LinkedIn Marketing Solutions
+### # LinkedIn Advertising Costs & Pricing | LinkedIn Marketing Solutions
 - [LinkedIn Advertising Costs & Pricing | LinkedIn Marketing Solutions](https://markposition.wordpress.com/2022/01/27/linkedin-advertising-costs-pricing-linkedin-marketing-solutions/)
 - [January 27, 2022](https://markposition.wordpress.com/2022/01/27/linkedin-advertising-costs-pricing-linkedin-marketing-solutions/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9613,7 +9598,7 @@ https://business.linkedin.com/marketing-solutions
 https://business.linkedin.com/marketing-solutions/ads/pricing
 - [https://business.linkedin.com/marketing-solutions/ads/pricing](https://business.linkedin.com/marketing-solutions/ads/pricing)
 
-## LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions
+### # LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions
 - [LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions](https://markposition.wordpress.com/2022/01/27/linkedin-ads-targeted-self-service-ads-linkedin-marketing-solutions-2/)
 - [January 27, 2022](https://markposition.wordpress.com/2022/01/27/linkedin-ads-targeted-self-service-ads-linkedin-marketing-solutions-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9621,7 +9606,7 @@ https://business.linkedin.com/marketing-solutions/ads/pricing
 https://business.linkedin.com/marketing-solutions/ads
 - [https://business.linkedin.com/marketing-solutions/ads](https://business.linkedin.com/marketing-solutions/ads)
 
-## Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
+### # Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
 - [Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions](https://markposition.wordpress.com/2022/01/27/marketing-advertising-on-linkedin-linkedin-marketing-solutions-2/)
 - [January 27, 2022](https://markposition.wordpress.com/2022/01/27/marketing-advertising-on-linkedin-linkedin-marketing-solutions-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9629,7 +9614,7 @@ https://business.linkedin.com/marketing-solutions/ads
 https://business.linkedin.com/marketing-solutions
 - [https://business.linkedin.com/marketing-solutions](https://business.linkedin.com/marketing-solutions)
 
-## LinkedIn Campaign Manager
+### # LinkedIn Campaign Manager
 - [LinkedIn Campaign Manager](https://markposition.wordpress.com/2022/01/27/linkedin-campaign-manager-2/)
 - [January 27, 2022](https://markposition.wordpress.com/2022/01/27/linkedin-campaign-manager-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9637,7 +9622,7 @@ https://business.linkedin.com/marketing-solutions
 https://www.linkedin.com/campaignmanager/
 - [https://www.linkedin.com/campaignmanager/](https://www.linkedin.com/campaignmanager/accounts)
 
-## Outbrain – Recommendation Platform Powered by Native Ads
+### # Outbrain – Recommendation Platform Powered by Native Ads
 - [Outbrain – Recommendation Platform Powered by Native Ads](https://markposition.wordpress.com/2022/01/24/outbrain-recommendation-platform-powered-by-native-ads-4/)
 - [January 24, 2022](https://markposition.wordpress.com/2022/01/24/outbrain-recommendation-platform-powered-by-native-ads-4/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9645,7 +9630,7 @@ https://www.linkedin.com/campaignmanager/
 https://www.outbrain.com/
 - [https://www.outbrain.com/](https://www.outbrain.com/)
 
-## Home – TrustArc The Leader in Privacy Management Software
+### # Home – TrustArc The Leader in Privacy Management Software
 - [Home – TrustArc The Leader in Privacy Management Software](https://markposition.wordpress.com/2022/01/16/home-trustarc-the-leader-in-privacy-management-software-3-2/)
 - [January 16, 2022](https://markposition.wordpress.com/2022/01/16/home-trustarc-the-leader-in-privacy-management-software-3-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9653,7 +9638,7 @@ https://www.outbrain.com/
 https://trustarc.com/
 - [https://trustarc.com/](https://trustarc.com/)
 
-## Outbrain – Recommendation Platform Powered by Native Ads
+### # Outbrain – Recommendation Platform Powered by Native Ads
 - [Outbrain – Recommendation Platform Powered by Native Ads](https://markposition.wordpress.com/2022/01/13/outbrain-recommendation-platform-powered-by-native-ads-3/)
 - [January 13, 2022](https://markposition.wordpress.com/2022/01/13/outbrain-recommendation-platform-powered-by-native-ads-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9661,7 +9646,7 @@ https://trustarc.com/
 https://www.outbrain.com/
 - [https://www.outbrain.com/](https://www.outbrain.com/)
 
-## Google Ad Manager – Integrated Advertising Management Platform
+### # Google Ad Manager – Integrated Advertising Management Platform
 - [Google Ad Manager – Integrated Advertising Management Platform](https://markposition.wordpress.com/2022/01/05/google-ad-manager-integrated-advertising-management-platform-2/)
 - [January 5, 2022](https://markposition.wordpress.com/2022/01/05/google-ad-manager-integrated-advertising-management-platform-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9669,7 +9654,7 @@ https://www.outbrain.com/
 https://admanager.google.com/home/
 - [https://admanager.google.com/home/](https://admanager.google.com/home/)
 
-## Mobile App Monetization – Google AdMob
+### # Mobile App Monetization – Google AdMob
 - [Mobile App Monetization – Google AdMob](https://markposition.wordpress.com/2022/01/05/mobile-app-monetization-google-admob/)
 - [January 5, 2022](https://markposition.wordpress.com/2022/01/05/mobile-app-monetization-google-admob/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9677,7 +9662,7 @@ https://admanager.google.com/home/
 https://admob.google.com/home/
 - [https://admob.google.com/home/](https://admob.google.com/home/)
 
-## In App Advertising | Vungle
+### # In App Advertising | Vungle
 - [In App Advertising | Vungle](https://markposition.wordpress.com/2022/01/03/in-app-advertising-vungle/)
 - [January 3, 2022](https://markposition.wordpress.com/2022/01/03/in-app-advertising-vungle/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9685,7 +9670,7 @@ https://admob.google.com/home/
 https://vungle.com/advertise/
 - [https://vungle.com/advertise/](https://vungle.com/advertise/)
 
-## Digital Customer Acquisition Solutions | Rakuten Advertising
+### # Digital Customer Acquisition Solutions | Rakuten Advertising
 - [Digital Customer Acquisition Solutions | Rakuten Advertising](https://markposition.wordpress.com/2021/12/21/digital-customer-acquisition-solutions-rakuten-advertising/)
 - [December 21, 2021](https://markposition.wordpress.com/2021/12/21/digital-customer-acquisition-solutions-rakuten-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9693,7 +9678,7 @@ https://vungle.com/advertise/
 https://rakutenadvertising.com/
 - [https://rakutenadvertising.com/](https://rakutenadvertising.com/)
 
-## Online Video Advertising Campaigns – YouTube Advertising
+### # Online Video Advertising Campaigns – YouTube Advertising
 - [Online Video Advertising Campaigns – YouTube Advertising](https://markposition.wordpress.com/2021/12/11/online-video-advertising-campaigns-youtube-advertising-2/)
 - [December 11, 2021](https://markposition.wordpress.com/2021/12/11/online-video-advertising-campaigns-youtube-advertising-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9701,7 +9686,7 @@ https://rakutenadvertising.com/
 https://www.youtube.com/ads/
 - [https://www.youtube.com/ads/](https://www.youtube.com/ads/)
 
-## BrandConnect for Influencer Advertising – YouTube Advertising – YouTube Advertising
+### # BrandConnect for Influencer Advertising – YouTube Advertising – YouTube Advertising
 - [BrandConnect for Influencer Advertising – YouTube Advertising – YouTube Advertising](https://markposition.wordpress.com/2021/12/11/brandconnect-for-influencer-advertising-youtube-advertising-youtube-advertising/)
 - [December 11, 2021](https://markposition.wordpress.com/2021/12/11/brandconnect-for-influencer-advertising-youtube-advertising-youtube-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9709,7 +9694,7 @@ https://www.youtube.com/ads/
 https://www.youtube.com/ads/brandconnect/
 - [https://www.youtube.com/ads/brandconnect/](https://www.youtube.com/ads/brandconnect/)
 
-## Google Ads – privucite više korisnika jednostavnim online oglašavanjem
+### # Google Ads – privucite više korisnika jednostavnim online oglašavanjem
 - [Google Ads – privucite više korisnika jednostavnim online oglašavanjem](https://markposition.wordpress.com/2021/12/01/google-ads-privucite-vise-korisnika-jednostavnim-online-oglasavanjem-7/)
 - [December 1, 2021](https://markposition.wordpress.com/2021/12/01/google-ads-privucite-vise-korisnika-jednostavnim-online-oglasavanjem-7/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9717,7 +9702,7 @@ https://www.youtube.com/ads/brandconnect/
 https://ads.google.com/intl/hr_hr/home/
 - [https://ads.google.com/intl/hr_hr/home/](https://ads.google.com/intl/hr_hr/home/)
 
-## Campaign Builder | Amazon Advertising
+### # Campaign Builder | Amazon Advertising
 - [Campaign Builder | Amazon Advertising](https://markposition.wordpress.com/2021/11/24/campaign-builder-amazon-advertising/)
 - [November 24, 2021November 24, 2021](https://markposition.wordpress.com/2021/11/24/campaign-builder-amazon-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9725,7 +9710,7 @@ https://ads.google.com/intl/hr_hr/home/
 https://advertising.amazon.com
 - [https://advertising.amazon.com](https://advertising.amazon.com/cb?entityId=ENTITY170NBZYAM0OSR#!/ingress)
 
-## International growth agencies – Market Finder by Google
+### # International growth agencies – Market Finder by Google
 - [International growth agencies – Market Finder by Google](https://markposition.wordpress.com/2021/11/24/international-growth-agencies-market-finder-by-google/)
 - [November 24, 2021](https://markposition.wordpress.com/2021/11/24/international-growth-agencies-market-finder-by-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9733,7 +9718,7 @@ https://advertising.amazon.com
 https://marketfinder.thinkwithgoogle.com/intl/en_cee/widget/partner-agencies-tool/
 - [https://marketfinder.thinkwithgoogle.com/intl/en_cee/widget/partner-agencies-tool/](https://marketfinder.thinkwithgoogle.com/intl/en_cee/widget/partner-agencies-tool/)
 
-## Free Google Ads Tools by Clever Ads | Google Advertising
+### # Free Google Ads Tools by Clever Ads | Google Advertising
 - [Free Google Ads Tools by Clever Ads | Google Advertising](https://markposition.wordpress.com/2021/11/23/free-google-ads-tools-by-clever-ads-google-advertising/)
 - [November 23, 2021](https://markposition.wordpress.com/2021/11/23/free-google-ads-tools-by-clever-ads-google-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9741,7 +9726,7 @@ https://marketfinder.thinkwithgoogle.com/intl/en_cee/widget/partner-agencies-too
 https://cleverads.com/
 - [https://cleverads.com/](https://cleverads.com/)
 
-## Audiencerate – The Identity Hub
+### # Audiencerate – The Identity Hub
 - [Audiencerate – The Identity Hub](https://markposition.wordpress.com/2021/11/13/audiencerate-the-identity-hub/)
 - [November 13, 2021](https://markposition.wordpress.com/2021/11/13/audiencerate-the-identity-hub/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9749,7 +9734,7 @@ https://cleverads.com/
 https://www.audiencerate.com/
 - [https://www.audiencerate.com/](https://www.audiencerate.com/)
 
-## Lucidity | Blockchain-Audited Media for Greater Transparency in Advertising
+### # Lucidity | Blockchain-Audited Media for Greater Transparency in Advertising
 - [Lucidity | Blockchain-Audited Media for Greater Transparency in Advertising](https://markposition.wordpress.com/2021/11/13/lucidity-blockchain-audited-media-for-greater-transparency-in-advertising/)
 - [November 13, 2021](https://markposition.wordpress.com/2021/11/13/lucidity-blockchain-audited-media-for-greater-transparency-in-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9757,7 +9742,7 @@ https://www.audiencerate.com/
 https://golucidity.com/
 - [https://golucidity.com/](https://golucidity.com/)
 
-## Customer Data Platform – Tealium
+### # Customer Data Platform – Tealium
 - [Customer Data Platform – Tealium](https://markposition.wordpress.com/2021/11/13/customer-data-platform-tealium/)
 - [November 13, 2021](https://markposition.wordpress.com/2021/11/13/customer-data-platform-tealium/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9765,7 +9750,7 @@ https://golucidity.com/
 https://tealium.com/
 - [https://tealium.com/](https://tealium.com/)
 
-## Revealbot – Automate Your Ad Strategies
+### # Revealbot – Automate Your Ad Strategies
 - [Revealbot – Automate Your Ad Strategies](https://markposition.wordpress.com/2021/11/12/revealbot-automate-your-ad-strategies/)
 - [November 12, 2021](https://markposition.wordpress.com/2021/11/12/revealbot-automate-your-ad-strategies/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9773,7 +9758,7 @@ https://tealium.com/
 https://revealbot.com/
 - [https://revealbot.com/](https://revealbot.com/)
 
-## EthicalAds
+### # EthicalAds
 - [EthicalAds](https://markposition.wordpress.com/2021/10/18/privacy-preserving-ad-network-for-developers-ethicalads/)
 - [October 18, 2021October 20, 2021](https://markposition.wordpress.com/2021/10/18/privacy-preserving-ad-network-for-developers-ethicalads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9781,7 +9766,7 @@ https://revealbot.com/
 https://ethicalads.io
 - [https://ethicalads.io](https://ethicalads.io)
 
-## ads twitter
+### # ads twitter
 - [ads twitter](https://markposition.wordpress.com/2021/10/04/485/)
 - [October 4, 2021October 20, 2021](https://markposition.wordpress.com/2021/10/04/485/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9789,7 +9774,7 @@ https://ethicalads.io
 https://ads.twitter.com
 - [https://ads.twitter.com](https://ads.twitter.com/mobile/v1/get_started?ref=em-elq-ao-gbl-emailatclink&s=09)
 
-## Eskimi – AdTech platform that adds a +1 to your marketing team
+### # Eskimi – AdTech platform that adds a +1 to your marketing team
 - [Eskimi – AdTech platform that adds a +1 to your marketing team](https://markposition.wordpress.com/2021/09/28/eskimi-adtech-platform-that-adds-a-1-to-your-marketing-team/)
 - [September 28, 2021](https://markposition.wordpress.com/2021/09/28/eskimi-adtech-platform-that-adds-a-1-to-your-marketing-team/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9797,7 +9782,7 @@ https://ads.twitter.com
 https://www.eskimi.com/
 - [https://www.eskimi.com/](https://www.eskimi.com/)
 
-## Overview – Microsoft Advertising
+### # Overview – Microsoft Advertising
 - [Overview – Microsoft Advertising](https://markposition.wordpress.com/2021/09/21/overview-microsoft-advertising-2/)
 - [September 21, 2021](https://markposition.wordpress.com/2021/09/21/overview-microsoft-advertising-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9805,7 +9790,7 @@ https://www.eskimi.com/
 https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising
 - [https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising](https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising)
 
-## Google Marketing Platform Certification Exams : Google
+### # Google Marketing Platform Certification Exams : Google
 - [Google Marketing Platform Certification Exams : Google](https://markposition.wordpress.com/2021/09/10/google-marketing-platform-certification-exams-google/)
 - [September 10, 2021](https://markposition.wordpress.com/2021/09/10/google-marketing-platform-certification-exams-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9813,7 +9798,7 @@ https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising
 https://skillshop.exceedlms.com/student/catalog/list?category_ids=707-google-marketing-platform-certification-exams
 - [https://skillshop.exceedlms.com/student/catalog/list?category_ids=707-google-marketing-platform-certification-exams](https://skillshop.exceedlms.com/student/catalog/list?category_ids=707-google-marketing-platform-certification-exams)
 
-## YouTube Advertising – Online Video Advertising Campaigns
+### # YouTube Advertising – Online Video Advertising Campaigns
 - [YouTube Advertising – Online Video Advertising Campaigns](https://markposition.wordpress.com/2021/09/05/youtube-advertising-online-video-advertising-campaigns-4/)
 - [September 5, 2021](https://markposition.wordpress.com/2021/09/05/youtube-advertising-online-video-advertising-campaigns-4/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9821,7 +9806,7 @@ https://skillshop.exceedlms.com/student/catalog/list?category_ids=707-google-mar
 https://www.youtube.com/ads/
 - [https://www.youtube.com/ads/](https://www.youtube.com/ads/)
 
-## Make Quality Advertising Videos – YouTube Advertising
+### # Make Quality Advertising Videos – YouTube Advertising
 - [Make Quality Advertising Videos – YouTube Advertising](https://markposition.wordpress.com/2021/09/05/make-quality-advertising-videos-youtube-advertising-3/)
 - [September 5, 2021](https://markposition.wordpress.com/2021/09/05/make-quality-advertising-videos-youtube-advertising-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9829,7 +9814,7 @@ https://www.youtube.com/ads/
 https://www.youtube.com/ads/making-a-video-ad/
 - [https://www.youtube.com/ads/making-a-video-ad/](https://www.youtube.com/ads/making-a-video-ad/)
 
-## Outbrain – Recommendation Platform Powered by Native Ads
+### # Outbrain – Recommendation Platform Powered by Native Ads
 - [Outbrain – Recommendation Platform Powered by Native Ads](https://markposition.wordpress.com/2021/09/02/outbrain-recommendation-platform-powered-by-native-ads-2/)
 - [September 2, 2021](https://markposition.wordpress.com/2021/09/02/outbrain-recommendation-platform-powered-by-native-ads-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9837,7 +9822,7 @@ https://www.youtube.com/ads/making-a-video-ad/
 https://www.outbrain.com/
 - [https://www.outbrain.com/](https://www.outbrain.com/)
 
-## Digital Advertising Platform | Criteo
+### # Digital Advertising Platform | Criteo
 - [Digital Advertising Platform | Criteo](https://markposition.wordpress.com/2021/08/25/digital-advertising-platform-criteo/)
 - [August 25, 2021](https://markposition.wordpress.com/2021/08/25/digital-advertising-platform-criteo/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9845,7 +9830,7 @@ https://www.outbrain.com/
 https://www.criteo.com/technology/advertising-platform/
 - [https://www.criteo.com/technology/advertising-platform/](https://www.criteo.com/technology/advertising-platform/)
 
-## Programmatic advertising | BidTheatre Demand Side Platform
+### # Programmatic advertising | BidTheatre Demand Side Platform
 - [Programmatic advertising | BidTheatre Demand Side Platform](https://markposition.wordpress.com/2021/08/25/programmatic-advertising-bidtheatre-demand-side-platform/)
 - [August 25, 2021](https://markposition.wordpress.com/2021/08/25/programmatic-advertising-bidtheatre-demand-side-platform/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9853,7 +9838,7 @@ https://www.criteo.com/technology/advertising-platform/
 https://www.bidtheatre.com/
 - [https://www.bidtheatre.com/](https://www.bidtheatre.com/)
 
-## ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions
+### # ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions
 - [ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions](https://markposition.wordpress.com/2021/08/25/sharethis-free-share-buttons-plugins-global-behavioral-data-solutions/)
 - [August 25, 2021](https://markposition.wordpress.com/2021/08/25/sharethis-free-share-buttons-plugins-global-behavioral-data-solutions/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9861,7 +9846,7 @@ https://www.bidtheatre.com/
 https://sharethis.com/
 - [https://sharethis.com/](https://sharethis.com/)
 
-## AdMaxim Inc. – Integrated Digital Advertising Platform
+### # AdMaxim Inc. – Integrated Digital Advertising Platform
 - [AdMaxim Inc. – Integrated Digital Advertising Platform](https://markposition.wordpress.com/2021/08/25/admaxim-inc-integrated-digital-advertising-platform/)
 - [August 25, 2021](https://markposition.wordpress.com/2021/08/25/admaxim-inc-integrated-digital-advertising-platform/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9869,7 +9854,7 @@ https://sharethis.com/
 http://www.admaxim.com/
 - [http://www.admaxim.com/](http://www.admaxim.com/)
 
-## Kwanko – Your Performance Marketing Partner
+### # Kwanko – Your Performance Marketing Partner
 - [Kwanko – Your Performance Marketing Partner](https://markposition.wordpress.com/2021/08/25/kwanko-your-performance-marketing-partner/)
 - [August 25, 2021](https://markposition.wordpress.com/2021/08/25/kwanko-your-performance-marketing-partner/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9877,7 +9862,7 @@ http://www.admaxim.com/
 https://www.kwanko.com/
 - [https://www.kwanko.com/](https://www.kwanko.com/)
 
-## Online marketing. Simplified | Adzooma
+### # Online marketing. Simplified | Adzooma
 - [Online marketing. Simplified | Adzooma](https://markposition.wordpress.com/2021/08/24/online-marketing-simplified-adzooma/)
 - [August 24, 2021](https://markposition.wordpress.com/2021/08/24/online-marketing-simplified-adzooma/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9885,7 +9870,7 @@ https://www.kwanko.com/
 https://www.adzooma.com/
 - [https://www.adzooma.com/](https://www.adzooma.com/)
 
-## Adzooma Marketplace | Find The Right Service For Your Business | Adzooma Marketplace
+### # Adzooma Marketplace | Find The Right Service For Your Business | Adzooma Marketplace
 - [Adzooma Marketplace | Find The Right Service For Your Business | Adzooma Marketplace](https://markposition.wordpress.com/2021/08/24/adzooma-marketplace-find-the-right-service-for-your-business-adzooma-marketplace/)
 - [August 24, 2021](https://markposition.wordpress.com/2021/08/24/adzooma-marketplace-find-the-right-service-for-your-business-adzooma-marketplace/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9893,7 +9878,7 @@ https://www.adzooma.com/
 https://marketplace.adzooma.com/
 - [https://marketplace.adzooma.com/](https://marketplace.adzooma.com/)
 
-## LinkedIn Campaign Manager
+### # LinkedIn Campaign Manager
 - [LinkedIn Campaign Manager](https://markposition.wordpress.com/2021/08/23/linkedin-campaign-manager/)
 - [August 23, 2021](https://markposition.wordpress.com/2021/08/23/linkedin-campaign-manager/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9901,7 +9886,7 @@ https://marketplace.adzooma.com/
 https://www.linkedin.com/campaignmanager/new-advertiser
 - [https://www.linkedin.com/campaignmanager/new-advertiser](https://www.linkedin.com/campaignmanager/new-advertiser)
 
-## Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
+### # Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
 - [Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions](https://markposition.wordpress.com/2021/08/23/marketing-advertising-on-linkedin-linkedin-marketing-solutions/)
 - [August 23, 2021](https://markposition.wordpress.com/2021/08/23/marketing-advertising-on-linkedin-linkedin-marketing-solutions/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9909,7 +9894,7 @@ https://www.linkedin.com/campaignmanager/new-advertiser
 https://business.linkedin.com/marketing-solutions
 - [https://business.linkedin.com/marketing-solutions](https://business.linkedin.com/marketing-solutions)
 
-## Google Ads – privucite više korisnika jednostavnim online oglašavanjem
+### # Google Ads – privucite više korisnika jednostavnim online oglašavanjem
 - [Google Ads – privucite više korisnika jednostavnim online oglašavanjem](https://markposition.wordpress.com/2021/08/20/google-ads-privucite-vise-korisnika-jednostavnim-online-oglasavanjem-6/)
 - [August 20, 2021August 20, 2021](https://markposition.wordpress.com/2021/08/20/google-ads-privucite-vise-korisnika-jednostavnim-online-oglasavanjem-6/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9917,7 +9902,7 @@ https://business.linkedin.com/marketing-solutions
 https://ads.google.com
 - [https://ads.google.com](https://ads.google.com/intl/hr_hr/getstarted/?subid=hr-hr-ha-aw-sk-m-bau!o3~Cj0KCQjwpf2IBhDkARIsAGVo0D3Wryak_hHyBl23URk7i9rUzFQcSDfFRCTDFLY-609ii68BQnjRsg0aAk0TEALw_wcB~117699885987~kwd-94527731~11806561409~485142535412)
 
-## Cross-Channel Marketing Platform to Improve Customer Experiences – Iterable
+### # Cross-Channel Marketing Platform to Improve Customer Experiences – Iterable
 - [Cross-Channel Marketing Platform to Improve Customer Experiences – Iterable](https://markposition.wordpress.com/2021/08/20/cross-channel-marketing-platform-to-improve-customer-experiences-iterable/)
 - [August 20, 2021](https://markposition.wordpress.com/2021/08/20/cross-channel-marketing-platform-to-improve-customer-experiences-iterable/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9925,7 +9910,7 @@ https://ads.google.com
 https://iterable.com/
 - [https://iterable.com/](https://iterable.com/)
 
-## LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions
+### # LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions
 - [LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions](https://markposition.wordpress.com/2021/08/20/linkedin-ads-targeted-self-service-ads-linkedin-marketing-solutions/)
 - [August 20, 2021](https://markposition.wordpress.com/2021/08/20/linkedin-ads-targeted-self-service-ads-linkedin-marketing-solutions/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9933,7 +9918,7 @@ https://iterable.com/
 https://business.linkedin.com/marketing-solutions/ads
 - [https://business.linkedin.com/marketing-solutions/ads](https://business.linkedin.com/marketing-solutions/ads)
 
-## Setupad.com – Monetization Partner – Setupad
+### # Setupad.com – Monetization Partner – Setupad
 - [Setupad.com – Monetization Partner – Setupad](https://markposition.wordpress.com/2021/08/20/setupad-com-monetization-partner-setupad/)
 - [August 20, 2021](https://markposition.wordpress.com/2021/08/20/setupad-com-monetization-partner-setupad/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9941,7 +9926,7 @@ https://business.linkedin.com/marketing-solutions/ads
 https://setupad.com/
 - [https://setupad.com/](https://setupad.com/)
 
-## Evidon | Digital Governance, Privacy Compliance, Website Monitoring
+### # Evidon | Digital Governance, Privacy Compliance, Website Monitoring
 - [Evidon | Digital Governance, Privacy Compliance, Website Monitoring](https://markposition.wordpress.com/2021/08/04/evidon-digital-governance-privacy-compliance-website-monitoring-2/)
 - [August 4, 2021](https://markposition.wordpress.com/2021/08/04/evidon-digital-governance-privacy-compliance-website-monitoring-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9949,7 +9934,7 @@ https://setupad.com/
 https://www.evidon.com/
 - [https://www.evidon.com/](https://www.evidon.com/)
 
-## NextRoll – Home
+### # NextRoll – Home
 - [NextRoll – Home](https://markposition.wordpress.com/2021/07/31/nextroll-home-2/)
 - [July 31, 2021](https://markposition.wordpress.com/2021/07/31/nextroll-home-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9957,7 +9942,7 @@ https://www.evidon.com/
 https://www.nextroll.com/
 - [https://www.nextroll.com/](https://www.nextroll.com/)
 
-## Adzooma | Simplify, Automate & Optimise Online Ad Campaigns
+### # Adzooma | Simplify, Automate & Optimise Online Ad Campaigns
 - [Adzooma | Simplify, Automate & Optimise Online Ad Campaigns](https://markposition.wordpress.com/2021/07/30/adzooma-simplify-automate-optimise-online-ad-campaigns-2/)
 - [July 30, 2021](https://markposition.wordpress.com/2021/07/30/adzooma-simplify-automate-optimise-online-ad-campaigns-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9965,7 +9950,7 @@ https://www.nextroll.com/
 https://www.adzooma.com/
 - [https://www.adzooma.com/](https://www.adzooma.com/)
 
-## Outbrain – Recommendation Platform Powered by Native Ads
+### # Outbrain – Recommendation Platform Powered by Native Ads
 - [Outbrain – Recommendation Platform Powered by Native Ads](https://markposition.wordpress.com/2021/07/30/outbrain-recommendation-platform-powered-by-native-ads/)
 - [July 30, 2021](https://markposition.wordpress.com/2021/07/30/outbrain-recommendation-platform-powered-by-native-ads/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9973,7 +9958,7 @@ https://www.adzooma.com/
 https://www.outbrain.com/
 - [https://www.outbrain.com/](https://www.outbrain.com/)
 
-## Bing Webmaster Tools
+### # Bing Webmaster Tools
 - [Bing Webmaster Tools](https://markposition.wordpress.com/2021/07/30/bing-webmaster-tools-2/)
 - [July 30, 2021](https://markposition.wordpress.com/2021/07/30/bing-webmaster-tools-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9986,7 +9971,7 @@ https://www.bing.com/webmasters/about
 https://www.yourprimer.com
 - [https://www.yourprimer.com](https://www.yourprimer.com)
 
-## Lesson Catalog | Business & Operations – Google Primer
+### # Lesson Catalog | Business & Operations – Google Primer
 - [Lesson Catalog | Business & Operations – Google Primer](https://markposition.wordpress.com/2021/07/25/lesson-catalog-business-operations-google-primer/)
 - [July 25, 2021](https://markposition.wordpress.com/2021/07/25/lesson-catalog-business-operations-google-primer/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -9994,7 +9979,7 @@ https://www.yourprimer.com
 https://www.yourprimer.com/en/lesson-catalog/0
 - [https://www.yourprimer.com/en/lesson-catalog/0](https://www.yourprimer.com/en/lesson-catalog/0)
 
-## Google trends
+### # Google trends
 - [Google trends](https://markposition.wordpress.com/2021/07/25/google-trends/)
 - [July 25, 2021](https://markposition.wordpress.com/2021/07/25/google-trends/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10002,7 +9987,7 @@ https://www.yourprimer.com/en/lesson-catalog/0
 https://trends.google.com/trends
 - [https://trends.google.com/trends](https://trends.google.com/trends)
 
-## Google Ads – privucite više korisnika jednostavnim online oglašavanjem
+### # Google Ads – privucite više korisnika jednostavnim online oglašavanjem
 - [Google Ads – privucite više korisnika jednostavnim online oglašavanjem](https://markposition.wordpress.com/2021/07/25/google-ads-privucite-vise-korisnika-jednostavnim-online-oglasavanjem-5/)
 - [July 25, 2021](https://markposition.wordpress.com/2021/07/25/google-ads-privucite-vise-korisnika-jednostavnim-online-oglasavanjem-5/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10010,7 +9995,7 @@ https://trends.google.com/trends
 https://ads.google.com/intl/hr_hr/getstarted/
 - [https://ads.google.com/intl/hr_hr/getstarted/](https://ads.google.com/intl/hr_hr/getstarted/)
 
-## Set up conversion tracking for your website – Google Ads Help
+### # Set up conversion tracking for your website – Google Ads Help
 - [Set up conversion tracking for your website – Google Ads Help](https://markposition.wordpress.com/2021/07/25/set-up-conversion-tracking-for-your-website-google-ads-help-2/)
 - [July 25, 2021](https://markposition.wordpress.com/2021/07/25/set-up-conversion-tracking-for-your-website-google-ads-help-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10018,7 +10003,7 @@ https://ads.google.com/intl/hr_hr/getstarted/
 https://support.google.com/google-ads/answer/6095821?hl=en
 - [https://support.google.com/google-ads/answer/6095821?hl=en](https://support.google.com/google-ads/answer/6095821?hl=en)
 
-## Overview – Microsoft Advertising
+### # Overview – Microsoft Advertising
 - [Overview – Microsoft Advertising](https://markposition.wordpress.com/2021/07/22/overview-microsoft-advertising/)
 - [July 22, 2021](https://markposition.wordpress.com/2021/07/22/overview-microsoft-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10026,7 +10011,7 @@ https://support.google.com/google-ads/answer/6095821?hl=en
 https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising
 - [https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising](https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising)
 
-## Midas Network – Platforma za Nativno oglašavanje
+### # Midas Network – Platforma za Nativno oglašavanje
 - [Midas Network – Platforma za Nativno oglašavanje](https://markposition.wordpress.com/2021/07/22/midas-network-platforma-za-nativno-oglasavanje-2/)
 - [July 22, 2021](https://markposition.wordpress.com/2021/07/22/midas-network-platforma-za-nativno-oglasavanje-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10034,7 +10019,7 @@ https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising
 https://www.midas-network.com/hr
 - [https://www.midas-network.com/hr](https://www.midas-network.com/hr)
 
-## SEM with Microsoft Advertising – Microsoft Advertising
+### # SEM with Microsoft Advertising – Microsoft Advertising
 - [SEM with Microsoft Advertising – Microsoft Advertising](https://markposition.wordpress.com/2021/07/20/sem-with-microsoft-advertising-microsoft-advertising-3/)
 - [July 20, 2021](https://markposition.wordpress.com/2021/07/20/sem-with-microsoft-advertising-microsoft-advertising-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10042,7 +10027,7 @@ https://www.midas-network.com/hr
 https://about.ads.microsoft.com/en-us
 - [https://about.ads.microsoft.com/en-us](https://about.ads.microsoft.com/en-us)
 
-## Advertise Your Website – Getting Started – Google Domains
+### # Advertise Your Website – Getting Started – Google Domains
 - [Advertise Your Website – Getting Started – Google Domains](https://markposition.wordpress.com/2021/07/15/advertise-your-website-getting-started-google-domains/)
 - [July 15, 2021](https://markposition.wordpress.com/2021/07/15/advertise-your-website-getting-started-google-domains/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10050,7 +10035,7 @@ https://about.ads.microsoft.com/en-us
 https://domains.google/get-started/online-ads/
 - [https://domains.google/get-started/online-ads/](https://domains.google/get-started/online-ads/)
 
-## Amazon Advertising: Online advertising for businesses of all sizes
+### # Amazon Advertising: Online advertising for businesses of all sizes
 - [Amazon Advertising: Online advertising for businesses of all sizes](https://markposition.wordpress.com/2021/07/09/amazon-advertising-online-advertising-for-businesses-of-all-sizes-3/)
 - [July 9, 2021](https://markposition.wordpress.com/2021/07/09/amazon-advertising-online-advertising-for-businesses-of-all-sizes-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10058,7 +10043,7 @@ https://domains.google/get-started/online-ads/
 https://advertising.amazon.com/
 - [https://advertising.amazon.com/](https://advertising.amazon.com/)
 
-## Amazon Advertising: Online advertising for businesses of all sizes
+### # Amazon Advertising: Online advertising for businesses of all sizes
 - [Amazon Advertising: Online advertising for businesses of all sizes](https://markposition.wordpress.com/2021/07/09/amazon-advertising-online-advertising-for-businesses-of-all-sizes-2/)
 - [July 9, 2021](https://markposition.wordpress.com/2021/07/09/amazon-advertising-online-advertising-for-businesses-of-all-sizes-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10066,7 +10051,7 @@ https://advertising.amazon.com/
 https://advertising.amazon.com/
 - [https://advertising.amazon.com/](https://advertising.amazon.com/)
 
-## Learning console – amazon catalog
+### # Learning console – amazon catalog
 - [Learning console – amazon catalog](https://markposition.wordpress.com/2021/07/07/learning-console-amazon-catalog/)
 - [July 7, 2021](https://markposition.wordpress.com/2021/07/07/learning-console-amazon-catalog/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10074,7 +10059,7 @@ https://advertising.amazon.com/
 https://learningconsole.amazonadvertising.com/student/catalog/list
 - [https://learningconsole.amazonadvertising.com/student/catalog/list](https://learningconsole.amazonadvertising.com/student/catalog/list)
 
-## Learning console – amazon advertising
+### # Learning console – amazon advertising
 - [Learning console – amazon advertising](https://markposition.wordpress.com/2021/07/07/learning-console-amazon-advertising/)
 - [July 7, 2021](https://markposition.wordpress.com/2021/07/07/learning-console-amazon-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10082,7 +10067,7 @@ https://learningconsole.amazonadvertising.com/student/catalog/list
 https://learningconsole.amazonadvertising.com/student/catalog
 - [https://learningconsole.amazonadvertising.com/student/catalog](https://learningconsole.amazonadvertising.com/student/catalog)
 
-## Advertising solutions for KDP authors | Amazon Advertising
+### # Advertising solutions for KDP authors | Amazon Advertising
 - [Advertising solutions for KDP authors | Amazon Advertising](https://markposition.wordpress.com/2021/07/07/advertising-solutions-for-kdp-authors-amazon-advertising/)
 - [July 7, 2021](https://markposition.wordpress.com/2021/07/07/advertising-solutions-for-kdp-authors-amazon-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10090,7 +10075,7 @@ https://learningconsole.amazonadvertising.com/student/catalog
 https://advertising.amazon.com/kdp-authors
 - [https://advertising.amazon.com/kdp-authors](https://advertising.amazon.com/kdp-authors)
 
-## Amazon.com: Kindle Direct Publishing: Promotion Manager
+### # Amazon.com: Kindle Direct Publishing: Promotion Manager
 - [Amazon.com: Kindle Direct Publishing: Promotion Manager](https://markposition.wordpress.com/2021/07/07/amazon-com-kindle-direct-publishing-promotion-manager/)
 - [July 7, 2021](https://markposition.wordpress.com/2021/07/07/amazon-com-kindle-direct-publishing-promotion-manager/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10098,7 +10083,7 @@ https://advertising.amazon.com/kdp-authors
 https://kdp.amazon.com/marketing/A2B1V7EPJ81WN2/promotion-manager
 - [https://kdp.amazon.com/marketing/A2B1V7EPJ81WN2/promotion-manager](https://kdp.amazon.com/marketing/A2B1V7EPJ81WN2/promotion-manager)
 
-## Amazon Advertising: Online advertising for businesses of all sizes
+### # Amazon Advertising: Online advertising for businesses of all sizes
 - [Amazon Advertising: Online advertising for businesses of all sizes](https://markposition.wordpress.com/2021/07/07/amazon-advertising-online-advertising-for-businesses-of-all-sizes/)
 - [July 7, 2021](https://markposition.wordpress.com/2021/07/07/amazon-advertising-online-advertising-for-businesses-of-all-sizes/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10106,7 +10091,7 @@ https://kdp.amazon.com/marketing/A2B1V7EPJ81WN2/promotion-manager
 https://advertising.amazon.com/
 - [https://advertising.amazon.com/](https://advertising.amazon.com/)
 
-## All Your Digital Marketing Tools in One Place – Sendinblue
+### # All Your Digital Marketing Tools in One Place – Sendinblue
 - [All Your Digital Marketing Tools in One Place – Sendinblue](https://markposition.wordpress.com/2021/07/02/all-your-digital-marketing-tools-in-one-place-sendinblue/)
 - [July 2, 2021](https://markposition.wordpress.com/2021/07/02/all-your-digital-marketing-tools-in-one-place-sendinblue/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10114,7 +10099,7 @@ https://advertising.amazon.com/
 https://www.sendinblue.com/
 - [https://www.sendinblue.com/](https://www.sendinblue.com/)
 
-## Digital Marketing & Growth Marketing Platform | AdRoll
+### # Digital Marketing & Growth Marketing Platform | AdRoll
 - [Digital Marketing & Growth Marketing Platform | AdRoll](https://markposition.wordpress.com/2021/07/02/digital-marketing-growth-marketing-platform-adroll-3/)
 - [July 2, 2021](https://markposition.wordpress.com/2021/07/02/digital-marketing-growth-marketing-platform-adroll-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10122,7 +10107,7 @@ https://www.sendinblue.com/
 https://www.adroll.com/
 - [https://www.adroll.com/](https://www.adroll.com/)
 
-## Facebook for Business: Marketing on Facebook
+### # Facebook for Business: Marketing on Facebook
 - [Facebook for Business: Marketing on Facebook](https://markposition.wordpress.com/2021/07/01/facebook-for-business-marketing-on-facebook-3/)
 - [July 1, 2021](https://markposition.wordpress.com/2021/07/01/facebook-for-business-marketing-on-facebook-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10130,7 +10115,7 @@ https://www.adroll.com/
 https://web.facebook.com/business
 - [https://web.facebook.com/business](https://web.facebook.com/business)
 
-## Grow your revenue and monetize your game or app | Unity Ads | Unity
+### # Grow your revenue and monetize your game or app | Unity Ads | Unity
 - [Grow your revenue and monetize your game or app | Unity Ads | Unity](https://markposition.wordpress.com/2021/06/30/grow-your-revenue-and-monetize-your-game-or-app-unity-ads-unity/)
 - [June 30, 2021](https://markposition.wordpress.com/2021/06/30/grow-your-revenue-and-monetize-your-game-or-app-unity-ads-unity/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10138,7 +10123,7 @@ https://web.facebook.com/business
 https://unity.com/products/unity-ads-monetize
 - [https://unity.com/products/unity-ads-monetize](https://unity.com/products/unity-ads-monetize)
 
-## Grow user LTV with ads and In-app purchases | Mobile game monetization | Unity
+### # Grow user LTV with ads and In-app purchases | Mobile game monetization | Unity
 - [Grow user LTV with ads and In-app purchases | Mobile game monetization | Unity](https://markposition.wordpress.com/2021/06/30/grow-user-ltv-with-ads-and-in-app-purchases-mobile-game-monetization-unity/)
 - [June 30, 2021](https://markposition.wordpress.com/2021/06/30/grow-user-ltv-with-ads-and-in-app-purchases-mobile-game-monetization-unity/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10146,7 +10131,7 @@ https://unity.com/products/unity-ads-monetize
 https://unity.com/solutions/unity-ads
 - [https://unity.com/solutions/unity-ads](https://unity.com/solutions/unity-ads)
 
-## Snapchat Ads | Snapchat for Business
+### # Snapchat Ads | Snapchat for Business
 - [Snapchat Ads | Snapchat for Business](https://markposition.wordpress.com/2021/06/25/snapchat-ads-snapchat-for-business/)
 - [June 25, 2021](https://markposition.wordpress.com/2021/06/25/snapchat-ads-snapchat-for-business/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10154,7 +10139,7 @@ https://unity.com/solutions/unity-ads
 https://forbusiness.snapchat.com/
 - [https://forbusiness.snapchat.com/](https://forbusiness.snapchat.com/)
 
-## Google Ad Manager – Get in touch
+### # Google Ad Manager – Get in touch
 - [Google Ad Manager – Get in touch](https://markposition.wordpress.com/2021/06/25/google-ad-manager-get-in-touch/)
 - [June 25, 2021](https://markposition.wordpress.com/2021/06/25/google-ad-manager-get-in-touch/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10162,7 +10147,7 @@ https://forbusiness.snapchat.com/
 https://admanager.google.com/home/contact-us/
 - [https://admanager.google.com/home/contact-us/](https://admanager.google.com/home/contact-us/)
 
-## Google Ad Manager – Integrated Advertising Management Platform
+### # Google Ad Manager – Integrated Advertising Management Platform
 - [Google Ad Manager – Integrated Advertising Management Platform](https://markposition.wordpress.com/2021/06/25/google-ad-manager-integrated-advertising-management-platform/)
 - [June 25, 2021](https://markposition.wordpress.com/2021/06/25/google-ad-manager-integrated-advertising-management-platform/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10170,7 +10155,7 @@ https://admanager.google.com/home/contact-us/
 https://admanager.google.com/home/
 - [https://admanager.google.com/home/](https://admanager.google.com/home/)
 
-## Admiral: The Visitor Relationship Management Company
+### # Admiral: The Visitor Relationship Management Company
 - [Admiral: The Visitor Relationship Management Company](https://markposition.wordpress.com/2021/06/24/admiral-the-visitor-relationship-management-company-3/)
 - [June 24, 2021](https://markposition.wordpress.com/2021/06/24/admiral-the-visitor-relationship-management-company-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10178,7 +10163,7 @@ https://admanager.google.com/home/
 https://www.getadmiral.com/
 - [https://www.getadmiral.com/](https://www.getadmiral.com/)
 
-## SEM with Microsoft Advertising – Microsoft Advertising
+### # SEM with Microsoft Advertising – Microsoft Advertising
 - [SEM with Microsoft Advertising – Microsoft Advertising](https://markposition.wordpress.com/2021/06/14/sem-with-microsoft-advertising-microsoft-advertising-2/)
 - [June 14, 2021](https://markposition.wordpress.com/2021/06/14/sem-with-microsoft-advertising-microsoft-advertising-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10186,7 +10171,7 @@ https://www.getadmiral.com/
 https://about.ads.microsoft.com/en-us
 - [https://about.ads.microsoft.com/en-us](https://about.ads.microsoft.com/en-us)
 
-## Ad settings google
+### # Ad settings google
 - [Ad settings google](https://markposition.wordpress.com/2021/06/13/ad-settings-google/)
 - [June 13, 2021](https://markposition.wordpress.com/2021/06/13/ad-settings-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10194,7 +10179,7 @@ https://about.ads.microsoft.com/en-us
 https://adssettings.google.com/
 - [https://adssettings.google.com/](https://adssettings.google.com/authenticated)
 
-## Google Ads Data and Privacy – Google Safety Center
+### # Google Ads Data and Privacy – Google Safety Center
 - [Google Ads Data and Privacy – Google Safety Center](https://markposition.wordpress.com/2021/06/13/google-ads-data-and-privacy-google-safety-center/)
 - [June 13, 2021](https://markposition.wordpress.com/2021/06/13/google-ads-data-and-privacy-google-safety-center/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10202,7 +10187,7 @@ https://adssettings.google.com/
 https://safety.google/privacy/ads-and-data/
 - [https://safety.google/privacy/ads-and-data/](https://safety.google/privacy/ads-and-data/)
 
-## Fat Frog Media
+### # Fat Frog Media
 - [Fat Frog Media](https://markposition.wordpress.com/2021/06/13/fat-frog-media/)
 - [June 13, 2021](https://markposition.wordpress.com/2021/06/13/fat-frog-media/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10210,7 +10195,7 @@ https://safety.google/privacy/ads-and-data/
 https://fatfrogmedia.com/
 - [https://fatfrogmedia.com/](https://fatfrogmedia.com/)
 
-## ToneDen – Automated Social Marketing
+### # ToneDen – Automated Social Marketing
 - [ToneDen – Automated Social Marketing](https://markposition.wordpress.com/2021/06/13/toneden-automated-social-marketing/)
 - [June 13, 2021](https://markposition.wordpress.com/2021/06/13/toneden-automated-social-marketing/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10218,7 +10203,7 @@ https://fatfrogmedia.com/
 https://www.toneden.io/
 - [https://www.toneden.io/](https://www.toneden.io/)
 
-## Data Inventory & Mapping – TrustArc The Leader in Privacy Management Software
+### # Data Inventory & Mapping – TrustArc The Leader in Privacy Management Software
 - [Data Inventory & Mapping – TrustArc The Leader in Privacy Management Software](https://markposition.wordpress.com/2021/06/12/data-inventory-mapping-trustarc-the-leader-in-privacy-management-software/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/data-inventory-mapping-trustarc-the-leader-in-privacy-management-software/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10226,7 +10211,7 @@ https://www.toneden.io/
 https://trustarc.com/data-inventory-mapping/
 - [https://trustarc.com/data-inventory-mapping/](https://trustarc.com/data-inventory-mapping/)
 
-## Technology Powered Partner Program – TrustArc The Leader in Privacy Management Software
+### # Technology Powered Partner Program – TrustArc The Leader in Privacy Management Software
 - [Technology Powered Partner Program – TrustArc The Leader in Privacy Management Software](https://markposition.wordpress.com/2021/06/12/technology-powered-partner-program-trustarc-the-leader-in-privacy-management-software/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/technology-powered-partner-program-trustarc-the-leader-in-privacy-management-software/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10234,7 +10219,7 @@ https://trustarc.com/data-inventory-mapping/
 https://trustarc.com/technology-powered-partner-program/
 - [https://trustarc.com/technology-powered-partner-program/](https://trustarc.com/technology-powered-partner-program/)
 
-## Powered Partner Program – TrustArc The Leader in Privacy Management Software
+### # Powered Partner Program – TrustArc The Leader in Privacy Management Software
 - [Powered Partner Program – TrustArc The Leader in Privacy Management Software](https://markposition.wordpress.com/2021/06/12/powered-partner-program-trustarc-the-leader-in-privacy-management-software/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/powered-partner-program-trustarc-the-leader-in-privacy-management-software/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10242,7 +10227,7 @@ https://trustarc.com/technology-powered-partner-program/
 https://trustarc.com/powered-partner-program/
 - [https://trustarc.com/powered-partner-program/](https://trustarc.com/powered-partner-program/)
 
-## Cookie Consent Manager Free Trial Request – TrustArc The Leader in Privacy Management Software
+### # Cookie Consent Manager Free Trial Request – TrustArc The Leader in Privacy Management Software
 - [Cookie Consent Manager Free Trial Request – TrustArc The Leader in Privacy Management Software](https://markposition.wordpress.com/2021/06/12/cookie-consent-manager-free-trial-request-trustarc-the-leader-in-privacy-management-software/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/cookie-consent-manager-free-trial-request-trustarc-the-leader-in-privacy-management-software/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10250,7 +10235,7 @@ https://trustarc.com/powered-partner-program/
 https://trustarc.com/cookie-consent-manager/professional-trial-account-request/?utm_source=ccm-trial
 - [https://trustarc.com/cookie-consent-manager/professional-trial-account-request/?utm_source=ccm-trial](https://trustarc.com/cookie-consent-manager/professional-trial-account-request/?utm_source=ccm-trial)
 
-## Home – TrustArc The Leader in Privacy Management Software
+### # Home – TrustArc The Leader in Privacy Management Software
 - [Home – TrustArc The Leader in Privacy Management Software](https://markposition.wordpress.com/2021/06/12/home-trustarc-the-leader-in-privacy-management-software-2-2/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/home-trustarc-the-leader-in-privacy-management-software-2-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10258,7 +10243,7 @@ https://trustarc.com/cookie-consent-manager/professional-trial-account-request/?
 https://trustarc.com/
 - [https://trustarc.com/](https://trustarc.com/)
 
-## WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US
+### # WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US
 - [WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US](https://markposition.wordpress.com/2021/06/12/webchoices-digital-advertising-alliances-consumer-choice-tool-for-web-us-2/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/webchoices-digital-advertising-alliances-consumer-choice-tool-for-web-us-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10266,7 +10251,7 @@ https://trustarc.com/
 https://optout.aboutads.info/
 - [https://optout.aboutads.info/](https://optout.aboutads.info/)
 
-## Adobe Privacy Center
+### # Adobe Privacy Center
 - [Adobe Privacy Center](https://markposition.wordpress.com/2021/06/12/adobe-privacy-center/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/adobe-privacy-center/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10274,7 +10259,7 @@ https://optout.aboutads.info/
 https://www.adobe.com/privacy/opt-out.html
 - [https://www.adobe.com/privacy/opt-out.html](https://www.adobe.com/privacy/opt-out.html)
 
-## TrustArc Preference Manager
+### # TrustArc Preference Manager
 - [TrustArc Preference Manager](https://markposition.wordpress.com/2021/06/12/trustarc-preference-manager/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/trustarc-preference-manager/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10282,7 +10267,7 @@ https://www.adobe.com/privacy/opt-out.html
 http://preferences-mgr.truste.com/
 - [http://preferences-mgr.truste.com/](http://preferences-mgr.truste.com/)
 
-## WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US
+### # WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US
 - [WebChoices: Digital Advertising Alliance’s Consumer Choice Tool for Web US](https://markposition.wordpress.com/2021/06/12/webchoices-digital-advertising-alliances-consumer-choice-tool-for-web-us/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/webchoices-digital-advertising-alliances-consumer-choice-tool-for-web-us/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10290,7 +10275,7 @@ http://preferences-mgr.truste.com/
 https://optout.aboutads.info/
 - [https://optout.aboutads.info/](https://optout.aboutads.info/)
 
-## Programmatic Digital Advertising Technology & Solutions | PubMatic
+### # Programmatic Digital Advertising Technology & Solutions | PubMatic
 - [Programmatic Digital Advertising Technology & Solutions | PubMatic](https://markposition.wordpress.com/2021/06/12/programmatic-digital-advertising-technology-solutions-pubmatic/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/programmatic-digital-advertising-technology-solutions-pubmatic/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10298,7 +10283,7 @@ https://optout.aboutads.info/
 https://pubmatic.com/
 - [https://pubmatic.com/](https://pubmatic.com/)
 
-## ownerIQ | Second-Party Data Solutions
+### # ownerIQ | Second-Party Data Solutions
 - [ownerIQ | Second-Party Data Solutions](https://markposition.wordpress.com/2021/06/12/owneriq-second-party-data-solutions/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/owneriq-second-party-data-solutions/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10306,7 +10291,7 @@ https://pubmatic.com/
 https://www.owneriq.com/
 - [https://www.owneriq.com/](https://www.owneriq.com/)
 
-## What is CRM? | Oracle
+### # What is CRM? | Oracle
 - [What is CRM? | Oracle](https://markposition.wordpress.com/2021/06/12/what-is-crm-oracle/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/what-is-crm-oracle/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10314,7 +10299,7 @@ https://www.owneriq.com/
 https://www.oracle.com/cx/what-is-crm/
 - [https://www.oracle.com/cx/what-is-crm/](https://www.oracle.com/cx/what-is-crm/)
 
-## Advertising and Customer Experience (CX) | Oracle
+### # Advertising and Customer Experience (CX) | Oracle
 - [Advertising and Customer Experience (CX) | Oracle](https://markposition.wordpress.com/2021/06/12/advertising-and-customer-experience-cx-oracle/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/advertising-and-customer-experience-cx-oracle/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10322,7 +10307,7 @@ https://www.oracle.com/cx/what-is-crm/
 https://www.oracle.com/cx/
 - [https://www.oracle.com/cx/](https://www.oracle.com/cx/)
 
-## Home – Inuvo.com
+### # Home – Inuvo.com
 - [Home – Inuvo.com](https://markposition.wordpress.com/2021/06/12/home-inuvo-com/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/home-inuvo-com/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10330,7 +10315,7 @@ https://www.oracle.com/cx/
 https://inuvo.com/
 - [https://inuvo.com/](https://inuvo.com/)
 
-## Havas Edge
+### # Havas Edge
 - [Havas Edge](https://markposition.wordpress.com/2021/06/12/havas-edge/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/havas-edge/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10338,7 +10323,7 @@ https://inuvo.com/
 https://www.havasedge.com/
 - [https://www.havasedge.com/](https://www.havasedge.com/)
 
-## GumGum | Contextual Intelligence Company | High Impact Advertising Technology
+### # GumGum | Contextual Intelligence Company | High Impact Advertising Technology
 - [GumGum | Contextual Intelligence Company | High Impact Advertising Technology](https://markposition.wordpress.com/2021/06/12/gumgum-contextual-intelligence-company-high-impact-advertising-technology/)
 - [June 12, 2021](https://markposition.wordpress.com/2021/06/12/gumgum-contextual-intelligence-company-high-impact-advertising-technology/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10346,7 +10331,7 @@ https://www.havasedge.com/
 https://gumgum.com/
 - [https://gumgum.com/](https://gumgum.com/)
 
-## Yotpo | eCommerce Marketing Platform
+### # Yotpo | eCommerce Marketing Platform
 - [Yotpo | eCommerce Marketing Platform](https://markposition.wordpress.com/2021/05/27/yotpo-ecommerce-marketing-platform/)
 - [May 27, 2021](https://markposition.wordpress.com/2021/05/27/yotpo-ecommerce-marketing-platform/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10354,7 +10339,7 @@ https://gumgum.com/
 https://www.yotpo.com/
 - [https://www.yotpo.com/](https://www.yotpo.com/)
 
-## Yotpo | eCommerce Marketing Platform – Accelerate growth with a full suite of solutions for customer reviews, visual marketing, loyalty, referrals, and SMS marketing.Accelerate growth with a full suite of solutions for customer reviews, visual marketing, loyalty, referrals, and SMS marketing.
+### # Yotpo | eCommerce Marketing Platform – Accelerate growth with a full suite of solutions for customer reviews, visual marketing, loyalty, referrals, and SMS marketing.Accelerate growth with a full suite of solutions for customer reviews, visual marketing, loyalty, referrals, and SMS marketing.
 - [Yotpo | eCommerce Marketing Platform – Accelerate growth with a full suite of solutions for customer reviews, visual marketing, loyalty, referrals, and SMS marketing.Accelerate growth with a full suite of solutions for customer reviews, visual marketing, loyalty, referrals, and SMS marketing.](https://markposition.wordpress.com/2021/05/27/yotpo-ecommerce-marketing-platform-accelerate-growth-with-a-full-suite-of-solutions-for-customer-reviews-visual-marketing-loyalty-referrals-and-sms-marketing-accelerate-growth-with-a-full-suit/)
 - [May 27, 2021](https://markposition.wordpress.com/2021/05/27/yotpo-ecommerce-marketing-platform-accelerate-growth-with-a-full-suite-of-solutions-for-customer-reviews-visual-marketing-loyalty-referrals-and-sms-marketing-accelerate-growth-with-a-full-suit/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10362,7 +10347,7 @@ https://www.yotpo.com/
 https://www.yotpo.com/
 - [https://www.yotpo.com/](https://www.yotpo.com/)
 
-## Data-Driven Marketing Solutions | Audience Targeting | Social Media & Email Marketing Consultant
+### # Data-Driven Marketing Solutions | Audience Targeting | Social Media & Email Marketing Consultant
 - [Data-Driven Marketing Solutions | Audience Targeting | Social Media & Email Marketing Consultant](https://markposition.wordpress.com/2021/05/26/data-driven-marketing-solutions-audience-targeting-social-media-email-marketing-consultant/)
 - [May 26, 2021](https://markposition.wordpress.com/2021/05/26/data-driven-marketing-solutions-audience-targeting-social-media-email-marketing-consultant/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10370,7 +10355,7 @@ https://www.yotpo.com/
 https://www.stirista.com/
 - [https://www.stirista.com/](https://www.stirista.com/)
 
-## Digital Marketing Services | Digital Logic ™
+### # Digital Marketing Services | Digital Logic ™
 - [Digital Marketing Services | Digital Logic ™](https://markposition.wordpress.com/2021/05/26/digital-marketing-services-digital-logic/)
 - [May 26, 2021](https://markposition.wordpress.com/2021/05/26/digital-marketing-services-digital-logic/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10378,7 +10363,7 @@ https://www.stirista.com/
 https://www.digitallogic.co/
 - [https://www.digitallogic.co/](https://www.digitallogic.co/)
 
-## Shareaholic | Content Marketing Platform & Website Traffic Tools
+### # Shareaholic | Content Marketing Platform & Website Traffic Tools
 - [Shareaholic | Content Marketing Platform & Website Traffic Tools](https://markposition.wordpress.com/2021/05/26/shareaholic-content-marketing-platform-website-traffic-tools/)
 - [May 26, 2021](https://markposition.wordpress.com/2021/05/26/shareaholic-content-marketing-platform-website-traffic-tools/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10386,7 +10371,7 @@ https://www.digitallogic.co/
 https://www.shareaholic.com/
 - [https://www.shareaholic.com/](https://www.shareaholic.com/)
 
-## Advertise with us! – Vaping360
+### # Advertise with us! – Vaping360
 - [Advertise with us! – Vaping360](https://markposition.wordpress.com/2021/05/26/advertise-with-us-vaping360/)
 - [May 26, 2021](https://markposition.wordpress.com/2021/05/26/advertise-with-us-vaping360/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10394,7 +10379,7 @@ https://www.shareaholic.com/
 https://vaping360.com/advertise/
 - [https://vaping360.com/advertise/](https://vaping360.com/advertise/)
 
-## ScalerAI – The Ultimate Marketing Kit which will Boost your Sales
+### # ScalerAI – The Ultimate Marketing Kit which will Boost your Sales
 - [ScalerAI – The Ultimate Marketing Kit which will Boost your Sales](https://markposition.wordpress.com/2021/05/26/scalerai-the-ultimate-marketing-kit-which-will-boost-your-sales/)
 - [May 26, 2021](https://markposition.wordpress.com/2021/05/26/scalerai-the-ultimate-marketing-kit-which-will-boost-your-sales/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10402,7 +10387,7 @@ https://vaping360.com/advertise/
 https://scalerai.com/
 - [https://scalerai.com/](https://scalerai.com/)
 
-## YouTube Advertising – Online Video Advertising Campaigns
+### # YouTube Advertising – Online Video Advertising Campaigns
 - [YouTube Advertising – Online Video Advertising Campaigns](https://markposition.wordpress.com/2021/05/23/youtube-advertising-online-video-advertising-campaigns-3/)
 - [May 23, 2021](https://markposition.wordpress.com/2021/05/23/youtube-advertising-online-video-advertising-campaigns-3/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10410,7 +10395,7 @@ https://scalerai.com/
 https://www.youtube.com/ads/
 - [https://www.youtube.com/ads/](https://www.youtube.com/ads/)
 
-## YouTube Select: Make the best of YouTube yours
+### # YouTube Select: Make the best of YouTube yours
 - [YouTube Select: Make the best of YouTube yours](https://markposition.wordpress.com/2021/05/23/youtube-select-make-the-best-of-youtube-yours/)
 - [May 23, 2021](https://markposition.wordpress.com/2021/05/23/youtube-select-make-the-best-of-youtube-yours/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10418,7 +10403,7 @@ https://www.youtube.com/ads/
 https://www.youtube.com/ads/youtube-select/
 - [https://www.youtube.com/ads/youtube-select/](https://www.youtube.com/ads/youtube-select/)
 
-## Account-Based (ABM) Platform | RollWorks
+### # Account-Based (ABM) Platform | RollWorks
 - [Account-Based (ABM) Platform | RollWorks](https://markposition.wordpress.com/2021/05/22/account-based-abm-platform-rollworks/)
 - [May 22, 2021](https://markposition.wordpress.com/2021/05/22/account-based-abm-platform-rollworks/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10426,7 +10411,7 @@ https://www.youtube.com/ads/youtube-select/
 https://www.rollworks.com/
 - [https://www.rollworks.com/](https://www.rollworks.com/)
 
-## Digital Marketing & Growth Marketing Platform | AdRoll
+### # Digital Marketing & Growth Marketing Platform | AdRoll
 - [Digital Marketing & Growth Marketing Platform | AdRoll](https://markposition.wordpress.com/2021/05/22/digital-marketing-growth-marketing-platform-adroll-2/)
 - [May 22, 2021](https://markposition.wordpress.com/2021/05/22/digital-marketing-growth-marketing-platform-adroll-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10434,7 +10419,7 @@ https://www.rollworks.com/
 https://www.adroll.com/
 - [https://www.adroll.com/](https://www.adroll.com/)
 
-## NextRoll
+### # NextRoll
 - [NextRoll](https://markposition.wordpress.com/2021/05/22/nextroll/)
 - [May 22, 2021](https://markposition.wordpress.com/2021/05/22/nextroll/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10442,7 +10427,7 @@ https://www.adroll.com/
 https://www.nextroll.com/
 - [https://www.nextroll.com/](https://www.nextroll.com/)
 
-## Brand Push – Get featured on NBC, FOX, CBS and USA Today
+### # Brand Push – Get featured on NBC, FOX, CBS and USA Today
 - [Brand Push – Get featured on NBC, FOX, CBS and USA Today](https://markposition.wordpress.com/2021/05/21/brand-push-get-featured-on-nbc-fox-cbs-and-usa-today/)
 - [May 21, 2021](https://markposition.wordpress.com/2021/05/21/brand-push-get-featured-on-nbc-fox-cbs-and-usa-today/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10450,7 +10435,7 @@ https://www.nextroll.com/
 https://www.brandpush.co/
 - [https://www.brandpush.co/](https://www.brandpush.co/)
 
-## UK Ecommerce Growth Partner | Pattern
+### # UK Ecommerce Growth Partner | Pattern
 - [UK Ecommerce Growth Partner | Pattern](https://markposition.wordpress.com/2021/05/19/uk-ecommerce-growth-partner-pattern/)
 - [May 19, 2021](https://markposition.wordpress.com/2021/05/19/uk-ecommerce-growth-partner-pattern/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10458,7 +10443,7 @@ https://www.brandpush.co/
 https://pattern.com/uk/
 - [https://pattern.com/uk/](https://pattern.com/uk/)
 
-## SEO Company | Digital Marketing Agency That Drives Results
+### # SEO Company | Digital Marketing Agency That Drives Results
 - [SEO Company | Digital Marketing Agency That Drives Results](https://markposition.wordpress.com/2021/05/19/seo-company-digital-marketing-agency-that-drives-results/)
 - [May 19, 2021](https://markposition.wordpress.com/2021/05/19/seo-company-digital-marketing-agency-that-drives-results/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10466,7 +10451,7 @@ https://pattern.com/uk/
 https://www.webfx.com/
 - [https://www.webfx.com/](https://www.webfx.com/)
 
-## Apester
+### # Apester
 - [Apester](https://markposition.wordpress.com/2021/05/11/apester-2/)
 - [May 11, 2021](https://markposition.wordpress.com/2021/05/11/apester-2/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10474,7 +10459,7 @@ https://www.webfx.com/
 https://apester.com/
 - [https://apester.com/](https://apester.com/)
 
-## Bloomberg Service Center
+### # Bloomberg Service Center
 - [Bloomberg Service Center](https://markposition.wordpress.com/2021/05/10/bloomberg-service-center/)
 - [May 10, 2021](https://markposition.wordpress.com/2021/05/10/bloomberg-service-center/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10482,7 +10467,7 @@ https://apester.com/
 https://service.bloomberg.com/portal/sessions/new
 - [https://service.bloomberg.com/portal/sessions/new](https://service.bloomberg.com/portal/sessions/new)
 
-## Connected Content™ | Investis Digital
+### # Connected Content™ | Investis Digital
 - [Connected Content™ | Investis Digital](https://markposition.wordpress.com/2021/05/09/connected-content-investis-digital/)
 - [May 9, 2021](https://markposition.wordpress.com/2021/05/09/connected-content-investis-digital/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10490,7 +10475,7 @@ https://service.bloomberg.com/portal/sessions/new
 https://www.investisdigital.com/company/connected-content
 - [https://www.investisdigital.com/company/connected-content](https://www.investisdigital.com/company/connected-content)
 
-## Ghost: Turn your audience into a business
+### # Ghost: Turn your audience into a business
 - [Ghost: Turn your audience into a business](https://markposition.wordpress.com/2021/05/09/ghost-turn-your-audience-into-a-business/)
 - [May 9, 2021](https://markposition.wordpress.com/2021/05/09/ghost-turn-your-audience-into-a-business/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10498,7 +10483,7 @@ https://www.investisdigital.com/company/connected-content
 https://ghost.org/
 - [https://ghost.org/](https://ghost.org/)
 
-## Products – Mediavine
+### # Products – Mediavine
 - [Products – Mediavine](https://markposition.wordpress.com/2021/05/08/products-mediavine/)
 - [May 8, 2021](https://markposition.wordpress.com/2021/05/08/products-mediavine/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10506,7 +10491,7 @@ https://ghost.org/
 https://www.mediavine.com/products/
 - [https://www.mediavine.com/products/](https://www.mediavine.com/products/)
 
-## Postanite partner | Certificirani partner – izdavač – Google
+### # Postanite partner | Certificirani partner – izdavač – Google
 - [Postanite partner | Certificirani partner – izdavač – Google](https://markposition.wordpress.com/2021/05/08/postanite-partner-certificirani-partner-izdavac-google/)
 - [May 8, 2021](https://markposition.wordpress.com/2021/05/08/postanite-partner-certificirani-partner-izdavac-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10514,7 +10499,7 @@ https://www.mediavine.com/products/
 https://www.google.com/ads/publisher/partners/become-a-partner/
 - [https://www.google.com/ads/publisher/partners/become-a-partner/](https://www.google.com/ads/publisher/partners/become-a-partner/)
 
-## Pronađite partnera – izdavača | Certificirani partner – izdavač – Google
+### # Pronađite partnera – izdavača | Certificirani partner – izdavač – Google
 - [Pronađite partnera – izdavača | Certificirani partner – izdavač – Google](https://markposition.wordpress.com/2021/05/08/pronadite-partnera-izdavaca-certificirani-partner-izdavac-google/)
 - [May 8, 2021](https://markposition.wordpress.com/2021/05/08/pronadite-partnera-izdavaca-certificirani-partner-izdavac-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10522,7 +10507,7 @@ https://www.google.com/ads/publisher/partners/become-a-partner/
 https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=none
 - [https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=none](https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=none)
 
-## Partnerski program za izdavaštvo | Certificirani partner – izdavač – Google
+### # Partnerski program za izdavaštvo | Certificirani partner – izdavač – Google
 - [Partnerski program za izdavaštvo | Certificirani partner – izdavač – Google](https://markposition.wordpress.com/2021/05/08/partnerski-program-za-izdavastvo-certificirani-partner-izdavac-google/)
 - [May 8, 2021](https://markposition.wordpress.com/2021/05/08/partnerski-program-za-izdavastvo-certificirani-partner-izdavac-google/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10530,7 +10515,7 @@ https://www.google.com/ads/publisher/partners/find-a-partner/#!?modal_active=non
 https://www.google.com/ads/publisher/partners/
 - [https://www.google.com/ads/publisher/partners/](https://www.google.com/ads/publisher/partners/)
 
-## Google Ads Community
+### # Google Ads Community
 - [Google Ads Community](https://markposition.wordpress.com/2021/05/08/google-ads-community/)
 - [May 8, 2021](https://markposition.wordpress.com/2021/05/08/google-ads-community/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10538,7 +10523,7 @@ https://www.google.com/ads/publisher/partners/
 https://support.google.com/google-ads/community?hl=en
 - [https://support.google.com/google-ads/community?hl=en](https://support.google.com/google-ads/community?hl=en)
 
-## Full-Service Ad Management – Mediavine
+### # Full-Service Ad Management – Mediavine
 - [Full-Service Ad Management – Mediavine](https://markposition.wordpress.com/2021/05/08/full-service-ad-management-mediavine/)
 - [May 8, 2021](https://markposition.wordpress.com/2021/05/08/full-service-ad-management-mediavine/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10546,7 +10531,7 @@ https://support.google.com/google-ads/community?hl=en
 https://www.mediavine.com/
 - [https://www.mediavine.com/](https://www.mediavine.com/)
 
-## Forbes Connect
+### # Forbes Connect
 - [Forbes Connect](https://markposition.wordpress.com/2021/05/08/forbes-connect/)
 - [May 8, 2021](https://markposition.wordpress.com/2021/05/08/forbes-connect/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10554,7 +10539,7 @@ https://www.mediavine.com/
 https://www.forbes.com/connect/
 - [https://www.forbes.com/connect/](https://www.forbes.com/connect/)
 
-## Apester
+### # Apester
 - [Apester](https://markposition.wordpress.com/2021/05/06/apester/)
 - [May 6, 2021](https://markposition.wordpress.com/2021/05/06/apester/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10562,7 +10547,7 @@ https://www.forbes.com/connect/
 https://apester.com/
 - [https://apester.com/](https://apester.com/)
 
-## Quiz Maker | Make Amazing Online Quizzes in Minutes
+### # Quiz Maker | Make Amazing Online Quizzes in Minutes
 - [Quiz Maker | Make Amazing Online Quizzes in Minutes](https://markposition.wordpress.com/2021/05/06/quiz-maker-make-amazing-online-quizzes-in-minutes/)
 - [May 6, 2021](https://markposition.wordpress.com/2021/05/06/quiz-maker-make-amazing-online-quizzes-in-minutes/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10570,7 +10555,7 @@ https://apester.com/
 https://www.quiz-maker.com/
 - [https://www.quiz-maker.com/](https://www.quiz-maker.com/)
 
-## Digital Marketing Training Delivered by The Best.
+### # Digital Marketing Training Delivered by The Best.
 - [Digital Marketing Training Delivered by The Best.](https://markposition.wordpress.com/2021/05/03/digital-marketing-training-delivered-by-the-best/)
 - [May 3, 2021](https://markposition.wordpress.com/2021/05/03/digital-marketing-training-delivered-by-the-best/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10578,7 +10563,7 @@ https://www.quiz-maker.com/
 https://cxl.com/
 - [https://cxl.com/](https://cxl.com/)
 
-## RedTrack | Cookieless ad tracking solution for media-buyers
+### # RedTrack | Cookieless ad tracking solution for media-buyers
 - [RedTrack | Cookieless ad tracking solution for media-buyers](https://markposition.wordpress.com/2021/05/02/redtrack-cookieless-ad-tracking-solution-for-media-buyers/)
 - [May 2, 2021](https://markposition.wordpress.com/2021/05/02/redtrack-cookieless-ad-tracking-solution-for-media-buyers/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10586,7 +10571,7 @@ https://cxl.com/
 https://redtrack.io/
 - [https://redtrack.io/](https://redtrack.io/)
 
-## SEM with Microsoft Advertising – Microsoft Advertising
+### # SEM with Microsoft Advertising – Microsoft Advertising
 - [SEM with Microsoft Advertising – Microsoft Advertising](https://markposition.wordpress.com/2021/05/02/sem-with-microsoft-advertising-microsoft-advertising/)
 - [May 2, 2021](https://markposition.wordpress.com/2021/05/02/sem-with-microsoft-advertising-microsoft-advertising/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10594,7 +10579,7 @@ https://redtrack.io/
 https://about.ads.microsoft.com/en-us
 - [https://about.ads.microsoft.com/en-us](https://about.ads.microsoft.com/en-us)
 
-## Programmatic Advertising Technology Company | Publift
+### # Programmatic Advertising Technology Company | Publift
 - [Programmatic Advertising Technology Company | Publift](https://markposition.wordpress.com/2021/04/29/programmatic-advertising-technology-company-publift/)
 - [April 29, 2021](https://markposition.wordpress.com/2021/04/29/programmatic-advertising-technology-company-publift/)
 - [Filip Keser](https://markposition.wordpress.com/author/fkeser/)
@@ -10602,11 +10587,12 @@ https://about.ads.microsoft.com/en-us
 https://www.publift.com/
 - [https://www.publift.com/](https://www.publift.com/)
 
-## Posts navigation
+### # Posts navigation
 - [Older Posts](https://markposition.wordpress.com/page/2/)
 ⭐
 - [Create a website or blog at WordPress.com](https://wordpress.com/?ref=footer_custom_svg)
 
+### # (position) mRNA
 Stay informed with curated content and the latest headlines, all delivered straight to your inbox. Subscribe now to stay ahead and never miss a beat!
 Type your email…
 Subscribe
@@ -10627,35 +10613,33 @@ Skip to content ↓
 
 ---
 
-# Search Console Mastery: https://software-online-review.com
+## DOCUMENT: Search Console Mastery: https://software-online-review.com
+**Source:** google-search-console://https://software-online-review.com
+**Ingested At:** undefined
 
-> **Source:** google-search-console://https://software-online-review.com
-> **Analyzed At:** 2026-07-09T02:05:14.294Z
-
-## Search Performance Metrics
+### Search Performance Metrics
 **Total Clicks:** 1450
 **Total Impressions:** 52300
 **Average Position:** 8.7
 **CTR:** 2.77%
 
-## Top Performing Queries
+### Top Performing Queries
 - **software online review**: 520 clicks, 2400 impressions (Pos: 8.7)
 - **antigravity autonomous engine**: 180 clicks, 850 impressions (Pos: 8.7)
 - **jules ai agent**: 110 clicks, 420 impressions (Pos: 8.7)
 - **8 bukets project**: 95 clicks, 1800 impressions (Pos: 8.7)
 - **autonomous workflow creation**: 65 clicks, 310 impressions (Pos: 8.7)
 
-## Optimization Strategy
+### Optimization Strategy
 Increase content depth for high-impression, low-click queries to improve CTR. Monitor average position for brand-related keywords.
 
 ---
 
-# informaticmagazine.data.blog
+## DOCUMENT: informaticmagazine.data.blog
+**Source:** https://informaticmagazine.data.blog
+**Ingested At:** undefined
 
-> **Source:** https://informaticmagazine.data.blog
-> **Analyzed At:** 2026-07-09T02:05:16.158Z
-
-### Content
+### ## Content
 <title>informatic &#8211; online</title>
 Skip to content
 Menu
@@ -11897,19 +11881,21 @@ class="jp-carousel-comment-form-button"
 id="jp-carousel-comment-form-button-submit"
 value="Post Comment" />
 Design a site like this with WordPress.comGet started
-generated in 1.385 seconds
-813396 bytes batcached for 300 seconds
--->
 
 ---
 
-# 2459326
+## DOCUMENT: 2459326
+**Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
+**Ingested At:** undefined
 
-> **Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
-> **Analyzed At:** 2026-07-09T02:05:19.190Z
-
-### Content
+### ## Content
 <title>Understanding bidding basics - Google Ads Help</title>       Skip to main content    Google Ads HelpHelp CenterCommunityAnnouncementsSign inGoogle HelpHelp CenterStart advertisingCampaignsExplore featuresOptimize performanceAccount &amp; billingFix issuesGoogle PartnersCommunityGoogle AdsPrivacy PolicyTerms of ServiceSubmit feedback   Send feedback on...This help content &amp; informationGeneral Help Center experienceNextHelp CenterCommunityAnnouncementsGoogle AdsStart advertisingYour guide to Google Ads8 steps to prepare your campaign for successChoose the right campaign typeDetermine your advertising goals How Google Ads can work for your industryGoogle Ads specs: ad formats, sizes, and best practicesMore advertising toolsGoogle Ads basicsGoogle Ads privacyGlossaryCampaignsPerformance MaxAI Max for Search campaignsAI Max for Shopping campaignsSearch campaignsDisplay campaignsSmart CampaignsApp campaignsShopping adsVideo campaignsHotel campaignsDemand Gen campaignsCall campaignsThings to doEvents ticketingExplore featuresAds, assets &amp; landing pagesAd groupsKeywordsBiddingTargetingMeasure resultsBulk uploads &amp; editsCampaign settingsOptimize performance12 tips to advertising with Google AdsGoogle Ads Best PracticesOptimization featuresCreate effective Search adsGenerative AI tools in Google AdsImprove with AI-powered SearchFinding success with Smart BiddingMeasure resultsOptimize performance with App ConnectGoogle Ads training on SkillshopThe Google Ads mobile appAccount &amp; billingBillingAccount settingsAccount accessManager accountsAccount security and safetyCancel or reactivate your accountWorking with client accountsUseful toolsFix issuesAd disapprovals and reviewsBilling &amp; paymentsCompromised account issuesPolicy issuesPerformance issuesAccount access issuesReporting issuesRequest implementation support for Google Ads and YouTube ReserveGoogle Ads APIGoogle PartnersGoogle Partners ProgramHelp Center TopicsCampaignsDisplay campaignsSetup &amp; managementBiddingUnderstanding bidding basics                                     Understanding bidding basics
+Label assets that are AI edited or created
+AI regulations in the European Union, India, and New York require that ads with certain AI-generated or edited assets include disclosures and/or labels that inform consumers that the ads were made with AI.
+Add labels directly to your creatives or use the AI label setting, which will launch gradually throughout July in Google Ads, Display &amp; Video 360, Campaign Manager 360, Merchant Center, and Ads Editor to add AI labels to your creatives. Learn more about how to Use AI content label settings to label your ads.
+Notes
+These labels will not be in violation of Google policies prohibiting text overlays and watermarks.
+Use of the AI label setting in Google’s advertising products doesn't guarantee your compliance with specific regulations. Seek legal guidance and take measures as needed to ensure your ads and assets follow all local legal obligations and policies
 Google Ads gives you several ways to bid for your ads, depending on what matters most to you and your business. Most advertisers focus on clicks, impressions, conversions, or views (for video ads).
 Now that you're advertising on Google Ads, you probably have a clear goal in mind for your ads. If you sell coffee, maybe you want to get more people to visit your shop. If you run a hiking club, maybe you're aiming to get more people to sign up for your newsletter. And so on.
 Knowing what you want your ads to do will help you decide how to bid.
@@ -11934,16 +11920,15 @@ About Target CPA bidding
 Determine a bid strategy based on your goals
 Was this helpful?How can we improve it?<textarea aria-label="Sorry about that, How can we improve it?" name="article_feedback_comment"></textarea>Submit                 Need more help? Try these next steps:                   Post to the help community    Get answers from community members                   Contact us  Tell us more and we’ll help you get there                     false     Bidding1 of 4About the Display Network ad auction2 of 4About bidding features in Display campaigns3 of 4Choose a bid for your Display Network campaign4 of 4Understanding bidding basics            Achieve your advertising goals today!  Attend our Performance Max Masterclass, a livestream workshop session bringing together industry and Google ads PMax experts.
 Register now
-©2026 Google     Privacy Policy     Terms of Service        Google Ads Advertising Policies      About the Help Center               Send feedback on... This help content &amp; information General Help Center experience           Enable Dark Mode       Language   català&lrm;dansk&lrm;Deutsch&lrm;eesti&lrm;English (Australia)&lrm;English (United Kingdom)&lrm;español&lrm;español (Latinoamérica)&lrm;Filipino&lrm;français&lrm;hrvatski&lrm;Indonesia&lrm;italiano&lrm;latviešu&lrm;lietuvių&lrm;magyar&lrm;Melayu&lrm;Nederlands&lrm;norsk&lrm;polski&lrm;português&lrm;português (Brasil)&lrm;română&lrm;slovenčina&lrm;slovenščina&lrm;suomi&lrm;svenska&lrm;Tiếng Việt&lrm;Türkçe&lrm;čeština&lrm;Ελληνικά&lrm;български&lrm;русский&lrm;српски&lrm;українська&lrm;&rlm;עברית&rlm;العربيةहिन्दी&lrm;ไทย&lrm;中文（简体）&lrm;中文（繁體）&lrm;中文（香港）&lrm;日本語&lrm;한국어&lrm; English&lrm;                     SearchClear searchClose searchGoogle appsMain menu     <textarea class="csi" name="csi"></textarea>           4140770321278248915                                                            true                                                      Search Help Center   true    true     true     true                                                                                       true   true   73067                                                                           false                                        false     true                                                                                                                                                                                          true   false                                                                      false
+©2026 Google     Privacy Policy     Terms of Service        Google Ads Advertising Policies      About the Help Center               Send feedback on... This help content &amp; information General Help Center experience           Enable Dark Mode       Language   català&lrm;dansk&lrm;Deutsch&lrm;eesti&lrm;English (Australia)&lrm;English (United Kingdom)&lrm;español&lrm;español (Latinoamérica)&lrm;Filipino&lrm;français&lrm;hrvatski&lrm;Indonesia&lrm;italiano&lrm;latviešu&lrm;lietuvių&lrm;magyar&lrm;Melayu&lrm;Nederlands&lrm;norsk&lrm;polski&lrm;português&lrm;português (Brasil)&lrm;română&lrm;slovenčina&lrm;slovenščina&lrm;suomi&lrm;svenska&lrm;Tiếng Việt&lrm;Türkçe&lrm;čeština&lrm;Ελληνικά&lrm;български&lrm;русский&lrm;српски&lrm;українська&lrm;&rlm;עברית&rlm;العربيةहिन्दी&lrm;ไทย&lrm;中文（简体）&lrm;中文（繁體）&lrm;中文（香港）&lrm;日本語&lrm;한국어&lrm; English&lrm;                     SearchClear searchClose searchGoogle appsMain menu     <textarea class="csi" name="csi"></textarea>           1200753735951812742                                                            true                                                      Search Help Center   true    true     true     true                                                                                       true   true   73067                                                                           false                                        false     true                                                                                                                                                                                          true   false                                                                      false
 
 ---
 
-# bidding
+## DOCUMENT: bidding
+**Source:** https://business.google.com/uk/ad-tools/bidding/
+**Ingested At:** undefined
 
-> **Source:** https://business.google.com/uk/ad-tools/bidding/
-> **Analyzed At:** 2026-07-09T02:05:19.509Z
-
-### Content
+### ## Content
 <title>Google Ads Smart Bidding - AI-Driven Bid Optimisations &amp; Ad Spend</title>
 Skip to content
 person
@@ -12376,12 +12361,11 @@ Start now
 
 ---
 
-# resources
+## DOCUMENT: resources
+**Source:** https://admanager.google.com/home/resources/
+**Ingested At:** undefined
 
-> **Source:** https://admanager.google.com/home/resources/
-> **Analyzed At:** 2026-07-09T02:05:22.505Z
-
-### Content
+### ## Content
 <title>Resources Overview - Google Ad Manager</title>
 data-g-event="resources"
 data-g-action="mobile: open global nav"
@@ -13661,18 +13645,17 @@ onchange="var l10nPath=this[this.selectedIndex].value;if(l10nPath!=''){window.lo
 
 ---
 
-# ad manager
+## DOCUMENT: ad manager
+**Source:** https://developers.google.com/ad-manager
+**Ingested At:** undefined
 
-> **Source:** https://developers.google.com/ad-manager
-> **Analyzed At:** 2026-07-09T02:05:20.086Z
-
-### Content
-lang="en"
+### ## Content
+lang="id-x-mtfrom-en"
 dir="ltr">
 content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
 crossorigin="use-credentials">
 href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=id">
 href="https://developers.google.com/ad-manager" />
 href="https://developers.google.com/ad-manager?hl=ar" />
 href="https://developers.google.com/ad-manager?hl=bn" />
@@ -13696,21 +13679,22 @@ href="https://developers.google.com/ad-manager?hl=tr" />
 href="https://developers.google.com/ad-manager?hl=vi" /><title>Ad Manager &nbsp;|&nbsp; Google for Developers</title>
 ">
 ">
+href="https://developers.google.com/ad-manager?hl=en">
 template="landing"
 theme="google-blue"
 type="article"
 layout="full"
 pending>
-Skip to main content
+Langsung ke konten utama
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Navigation menu button"
 visually-hidden
-aria-label="Open menu">
+aria-label="Buka menu">
 size="medium"
 >
 alt="Google Ad Manager"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=id"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
@@ -13735,2697 +13719,7 @@ enable-search-summaries
 project-name="Ad Manager"
 tenant-name="Google for Developers"
 project-scope="/ad-manager"
-url-scoped="https://developers.google.com/s/results/ad-manager"
->
-search-open
-class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Open search">
-aria-activedescendant=""
-aria-autocomplete="list"
-aria-label="Search"
-aria-expanded="false"
-aria-haspopup="listbox"
-autocomplete="off"
-class="devsite-search-field devsite-search-query"
-name="q"
-placeholder="Search"
-role="combobox"
-type="text"
-value=""
->
-<kbd class="devsite-search-shortcut-icon">/</kbd>
-search-close
-class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Close search">
->English
->Deutsch
->Español
->Español – América Latina
->Français
->Indonesia
->Italiano
->Polski
->Português – Brasil
->Tiếng Việt
->Türkçe
->Русский
->עברית
->العربيّة
->فارسی
->हिंदी
->বাংলা
->ภาษาไทย
->中文 – 简体
->中文 – 繁體
->日本語
->한국어
-enable-profiles
-fp-auth
-id="devsite-user">
-Sign in
-devsite-header-no-lower-tabs
-">
-hidden>
-placeholder="Filter"
-aria-label="Type to filter"
-role="searchbox">
-data-title="Clear filter"
-aria-label="Clear filter"
-role="button"
-tabindex="0">
-aria-label="Side menu">
-id="devsite-close-nav"
-class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Close navigation"
-aria-label="Close navigation">
-size="medium"
->
-alt="Google Ad Manager"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
-srcset=" /static/ads/images/logo_admanager_192px.svg"
-sizes="64px"
-loading="lazy"
->
->
-devsite-has-google-wordmark">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail="Google Ad Manager"
->
-Ad Manager
->
-role="navigation"
-aria-label="On this page"
-depth="2"
-scrollbars
-data-nosnippet
-disabled>
-aria-label="Breadcrumb">
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail=""
->
-Home
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail=""
->
-Products
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="3"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="3"
-track-metadata-eventdetail="Google Ad Manager"
->
-Ad Manager
-position="header"
-project-name="Ad Manager"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260630-r00-rc00.478639290528629295"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="header"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
-project-support-url="https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api"
->
-Send feedback
-ack-key="AckCollectionsBookmarkTooltipDismiss"
-analytics-category="Site-Wide Custom Events"
-analytics-action-show="Callout Profile displayed"
-analytics-action-close="Callout Profile dismissed"
-analytics-label="Create Collection Callout"
-class="devsite-page-bookmark-tooltip nocontent"
-data-nosnippet
-dismiss-button="true"
-id="devsite-collections-dropdown"
-dismiss-button-text="Dismiss"
-close-button-text="Got it">
-Stay organized with collections
-Save and categorize content based on your preferences.
-depth="2"
-devsite-toc-embedded
-disabled>
-devsite-no-page-title">
-header-position="top"
->
->
-data-text="A set of tools to manage your Google Ad Manager accounts and campaigns."
-tabindex="0">
-A set of tools to manage your Google Ad Manager accounts and campaigns.
-header-position="top"
->
-description-position="bottom"
->
-icon-position="left"
->
-size="medium"
->
-api
-data-text="Ad Manager API (Beta)"
-class="hide-from-toc no-link"
-tabindex="0">
-Ad Manager API (Beta)
-A REST API that provides methods for reading delivery and inventory data, running reports, and more.
-class="button button-secondary
-"
->Get started
-description-position="bottom"
->
-icon-position="left"
->
-size="medium"
->
-phone_iphone
-data-text="Mobile Ads SDK"
-class="hide-from-toc no-link"
-tabindex="0">
-Mobile Ads SDK
-Enables monetization of Android, iOS, Unity, and Flutter apps with ads.
-class="button button-secondary
-"
->Android
-class="button button-secondary
-"
->iOS
-class="button button-secondary
-"
->Unity
-class="button button-secondary
-"
->Flutter
-class="button button-secondary
-"
->Android (Legacy)
-description-position="bottom"
->
-icon-position="left"
->
-size="medium"
->
-live_tv
-data-text="Dynamic Ad Insertion"
-class="hide-from-toc no-link"
-tabindex="0">
-Dynamic Ad Insertion
-Stitches video content and ads into a single stream, independent of page or app.
-class="button button-secondary
-"
->Get started
-description-position="bottom"
->
-icon-position="left"
->
-size="medium"
->
-track_changes
-data-text="Ad Manager SOAP API"
-class="hide-from-toc no-link"
-tabindex="0">
-Ad Manager SOAP API
-Provides methods for managing ad inventory, creating orders, pulling reports, and more.
-class="button button-secondary
-"
->Get started
->
-<template class="devsite-thumb-rating-feedback">
-position="thumb-rating"
-project-name="Ad Manager"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260630-r00-rc00.478639290528629295"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="thumb-rating"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
-project-support-url="https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api"
->
-Need to tell us more?
-</template>
-<template class="devsite-content-data-template">
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
-</template>
-aria-label="Footer links"
-data-nosnippet>
-Connect
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Blog
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Bluesky
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Instagram
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-LinkedIn
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-X (Twitter)
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 6)"
->
-YouTube
-Programs
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Google Developer Program
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Google Developer Groups
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Google Developer Experts
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-Accelerators
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-Google Cloud & NVIDIA
-Developer consoles
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Google API Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Google Cloud Platform Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Google Play Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-Firebase Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-Actions on Google Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 6)"
->
-Cast SDK Developer Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 7)"
->
-Chrome Web Store Dashboard
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 8)"
->
-Google Home Developer Console
-class="devsite-footer-sites-logo-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google Developers Link">
-src="https://www.gstatic.com/devrel-devsite/prod/v3be1e30159846e100d05529400567b663b9f8b605137438a2f417848d68359dd/developers/images/lockup-google-for-developers.svg"
-loading="lazy"
-alt="Google Developers">
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Android Link"
->
-Android
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Chrome Link"
->
-Chrome
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Firebase Link"
->
-Firebase
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google Cloud Platform Link"
->
-Google Cloud Platform
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google AI Link"
->
-Google AI
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer All products Link"
->
-All products
-">
-href="/terms/site-terms"
-data-category="Site-Wide Custom Events"
-data-label="Footer Terms link"
->
-Terms
-">
-href="//policies.google.com/privacy"
-data-category="Site-Wide Custom Events"
-data-label="Footer Privacy link"
->
-Privacy
-glue-cookie-notification-bar-control">
-href="#"
-data-category="Site-Wide Custom Events"
-data-label="Footer Manage cookies link"
-aria-hidden="true"
->
-Manage cookies
->English
->Deutsch
->Español
->Español – América Latina
->Français
->Indonesia
->Italiano
->Polski
->Português – Brasil
->Tiếng Việt
->Türkçe
->Русский
->עברית
->العربيّة
->فارسی
->हिंदी
->বাংলা
->ภาษาไทย
->中文 – 简体
->中文 – 繁體
->日本語
->한국어
-
----
-
-# dynamic ad insertion
-
-> **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion
-> **Analyzed At:** 2026-07-09T02:05:20.593Z
-
-### Content
-lang="it-x-mtfrom-en"
-dir="ltr">
-content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
-crossorigin="use-credentials">
-href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=it">
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ar" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=bn" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=zh-cn" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=zh-tw" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=fa" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=fr" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=de" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=he" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=hi" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=id" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=it" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ja" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ko" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=pl" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=pt-br" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ru" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=es-419" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=th" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=tr" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=vi" /><title>Dynamic Ad Insertion &nbsp;|&nbsp; Google for Developers</title>
-">
-">
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en">
-template="landing"
-theme="google-blue"
-type="product"
-layout="docs"
-pending>
-Passa ai contenuti principali
-class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Navigation menu button"
-visually-hidden
-aria-label="Apri menu">
-size="medium"
->
-alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=it"
-srcset=" /static/ads/images/logo_admanager_192px.svg"
-sizes="64px"
-loading="lazy"
->
->
-devsite-has-google-wordmark">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - home"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Home page"
-track-name="home"
->
-Home page
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=it"
-track-metadata-position="nav - home"
-track-metadata-module="tertiary nav"
-tooltip
->
-Home
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - sdk"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDK"
-track-name="sdk"
->
-SDK
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=it"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - HTML5"
-data-category="DAI top menu navigation"
->
-HTML5
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=it"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Android"
-data-category="DAI top menu navigation"
->
-Android
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=it"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - iOS"
-data-category="DAI top menu navigation"
->
-iOS
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=it"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - tvOS"
-data-category="DAI top menu navigation"
->
-tvOS
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=it"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Chromecast"
-data-category="DAI top menu navigation"
->
-Chromecast
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=it"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Roku"
-data-category="DAI top menu navigation"
->
-Roku
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - api"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: API"
-track-name="api"
->
-API
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=it"
-track-metadata-position="nav - api"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Full service"
-data-category="DAI top menu navigation"
->
-DAI servizio completo
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=it"
-track-metadata-position="nav - api"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Pod serving"
-data-category="DAI top menu navigation"
->
-DAI pubblicazione pod
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=it"
-track-metadata-position="nav - api"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Ad break"
-data-category="DAI top menu navigation"
->
-Interruzione pubblicitaria
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - risorse"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Risorse"
-track-name="risorse"
->
-Risorse
-">
-">
-Assistenza
-track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/community?hl=it"
-track-metadata-position="nav - risorse"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="assistenza"
-tooltip
->
-Community di assistenza Ad Manager
-track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=it"
-track-metadata-position="nav - risorse"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="assistenza"
-tooltip
->
-Contatta l'assistenza
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=it"
-track-metadata-position="nav - risorse"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="assistenza"
-tooltip
->
-Termini di servizio
-track-type="nav"
-track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
-track-metadata-position="nav - risorse"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="assistenza"
-tooltip
->
-Canale Discord ufficiale di Google Ad Manager
-track-type="nav"
-track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
-track-metadata-position="nav - risorse"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="assistenza"
-tooltip
->
-Blog degli sviluppatori di annunci
-">
-">
-Strumenti di test
-track-type="nav"
-track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
-track-metadata-position="nav - risorse"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="strumenti di test"
-tooltip
->
-Video Suite Inspector
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=it"
-track-metadata-position="nav - risorse"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="strumenti di test"
-tooltip
->
-Stream di esempio
-</tab>
-enable-signin
-enable-search
-enable-suggestions
-enable-query-completion
-enable-search-summaries
-project-name="Dynamic Ad Insertion"
-tenant-name="Google for Developers"
-project-scope="/ad-manager/dynamic-ad-insertion"
-url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion?hl=it"
->
-search-open
-class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Apri ricerca">
-aria-activedescendant=""
-aria-autocomplete="list"
-aria-label="Cerca"
-aria-expanded="false"
-aria-haspopup="listbox"
-autocomplete="off"
-class="devsite-search-field devsite-search-query"
-name="q"
-placeholder="Cerca"
-role="combobox"
-type="text"
-value=""
->
-<kbd class="devsite-search-shortcut-icon">/</kbd>
-search-close
-class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Chiudi ricerca">
->English
->Deutsch
->Español
->Español – América Latina
->Français
->Indonesia
->Italiano
->Polski
->Português – Brasil
->Tiếng Việt
->Türkçe
->Русский
->עברית
->العربيّة
->فارسی
->हिंदी
->বাংলা
->ภาษาไทย
->中文 – 简体
->中文 – 繁體
->日本語
->한국어
-enable-profiles
-fp-auth
-id="devsite-user">
-Accedi
-devsite-header-no-lower-tabs
-">
-hidden>
-placeholder="Filtra"
-aria-label="Digita per filtrare"
-role="searchbox">
-data-title="Cancella filtro"
-aria-label="Cancella filtro"
-role="button"
-tabindex="0">
-aria-label="Menu laterale">
-id="devsite-close-nav"
-class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Close navigation"
-aria-label="Chiudi navigatore">
-size="medium"
->
-alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=it"
-srcset=" /static/ads/images/logo_admanager_192px.svg"
-sizes="64px"
-loading="lazy"
->
->
-devsite-has-google-wordmark">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Home page"
-track-name="home"
->
-Home page
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Home page"
-track-name="home"
->
-Altro
-menu="Home">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDK"
-track-name="sdk"
->
-SDK
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDK"
-track-name="sdk"
->
-Altro
-menu="SDK">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: API"
-track-name="api"
->
-API
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: API"
-track-name="api"
->
-Altro
-menu="API">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Risorse"
-track-name="risorse"
->
-Risorse
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Risorse"
-track-name="risorse"
->
-Altro
-menu="Risorse">
-aria-label="Menu laterale" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Home"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Home
-aria-label="Menu laterale" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: HTML5"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-HTML5
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Android"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Android
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: iOS"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-iOS
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: tvOS"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-tvOS
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Chromecast"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Chromecast
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Roku"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Roku
-aria-label="Menu laterale" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: DAI servizio completo"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-DAI servizio completo
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: DAI pubblicazione pod"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-DAI pubblicazione pod
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Interruzione pubblicitaria"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Interruzione pubblicitaria
-aria-label="Menu laterale" hidden>
-class="devsite-nav-title"
-tooltip
->
-Assistenza
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Community di assistenza Ad Manager"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Community di assistenza Ad Manager
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Contatta l&#39;assistenza"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Contatta l&#39;assistenza
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Termini di servizio"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Termini di servizio
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Canale Discord ufficiale di Google Ad Manager"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Canale Discord ufficiale di Google Ad Manager
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Blog degli sviluppatori di annunci"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Blog degli sviluppatori di annunci
-class="devsite-nav-title"
-tooltip
->
-Strumenti di test
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Video Suite Inspector"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Video Suite Inspector
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Stream di esempio"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Stream di esempio
->
-role="navigation"
-aria-label="Su questa pagina"
-depth="2"
-scrollbars
-data-nosnippet
-disabled>
-class="devsite-banner-translated-image invert"
-alt="">
-Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
-aria-label="Breadcrumb">
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail=""
->
-Home page
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail=""
->
-Prodotti
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="3"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="3"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-ack-key="AckCollectionsBookmarkTooltipDismiss"
-analytics-category="Site-Wide Custom Events"
-analytics-action-show="Callout Profile displayed"
-analytics-action-close="Callout Profile dismissed"
-analytics-label="Create Collection Callout"
-class="devsite-page-bookmark-tooltip nocontent"
-data-nosnippet
-dismiss-button="true"
-id="devsite-collections-dropdown"
-dismiss-button-text="Ignora"
-close-button-text="OK">
-Mantieni tutto organizzato con le raccolte
-Salva e classifica i contenuti in base alle tue preferenze.
-depth="2"
-devsite-toc-embedded
-disabled>
-devsite-no-page-title">
-header-position="top"
->
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image.png?hl=it"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_36.png?hl=it 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_48.png?hl=it 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_72.png?hl=it 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_96.png?hl=it 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_480.png?hl=it 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_720.png?hl=it 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_856.png?hl=it 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_960.png?hl=it 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_1440.png?hl=it 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_1920.png?hl=it 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_2880.png?hl=it 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-fetchpriority="high">
->
-data-text="Inserimento di annunci dinamici (DAI)"
-class="hide-from-toc no-link"
-tabindex="0">
-Inserimento di annunci dinamici (DAI)
-La tecnologia DAI ti consente di monetizzare i tuoi contenuti video, eliminando la complessità della procedura di richiesta e risposta di annuncio dall'SDK. Questo approccio riduce la possibilità che si verifichino errori sul lato client e produce un'esperienza simile a quella offerta da un televisore, senza latenza o buffering tra i contenuti e gli annunci.  Con l'inserimento di annunci dinamici, puoi scegliere come target singoli annunci per la programmazione di live streaming e video on demand, ottenere una copertura multischermo con un ampio supporto di dispositivi e sfruttare al meglio la monetizzazione programmatica su tutti i dispositivi con Ad Exchange for Video. Dopo che un contenuto è stato convertito in formato digitale, a prescindere dal suo formato di origine, l'inserimento di annunci dinamici ti consente di mostrare annunci video con targeting all'interno dei tuoi contenuti in base all'utente specifico che visualizza il contenuto. DAI ti consente di eseguire questi flussi di lavoro tramite l'API Full service e l'API Pod Serving, insieme alle piattaforme SDK supportate. Per iniziare a utilizzare l'inserimento di annunci dinamici, seleziona una delle seguenti integrazioni:
-background="grey"
-header-position="top"
->
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice.png?hl=it"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_36.png?hl=it 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_48.png?hl=it 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_72.png?hl=it 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_96.png?hl=it 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_480.png?hl=it 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_720.png?hl=it 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_856.png?hl=it 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_960.png?hl=it 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1440.png?hl=it 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1920.png?hl=it 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_2880.png?hl=it 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-loading="lazy"
->
->
-data-text="DAI servizio completo"
-class="hide-from-toc no-link"
-tabindex="0">
-DAI servizio completo
-Con l'inserimento di annunci dinamici di servizio completo, i pod di annunci vengono selezionati e uniti direttamente al tuo stream di contenuti da Google Ad Manager.
-class="button
-"
->Ulteriori informazioni
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving.png?hl=it"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_36.png?hl=it 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_48.png?hl=it 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_72.png?hl=it 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_96.png?hl=it 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_480.png?hl=it 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_720.png?hl=it 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_856.png?hl=it 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_960.png?hl=it 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1440.png?hl=it 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1920.png?hl=it 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_2880.png?hl=it 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-loading="lazy"
->
->
-data-text="DAI pubblicazione pod"
-class="hide-from-toc no-link"
-tabindex="0">
-DAI pubblicazione pod
-Con la pubblicazione di pod DAI, i pod di annunci sono forniti da Google Ad Manager, ma lo stitching viene eseguito da un manipolatore del manifest separato.
-class="button
-"
->Ulteriori informazioni
-background="grey"
-header-position="top"
->
-description-position="bottom"
->
->
-data-text="Piattaforme supportate"
-class="hide-from-toc no-link"
-tabindex="0">
-Piattaforme supportate
-Per creare un'integrazione personalizzata per i tuoi contenuti, utilizza DAI Full service o DAI Pod Serving sulle seguenti piattaforme supportate:
-class="button
-"
->HTML5
-class="button
-"
->Android
-class="button
-"
->iOS
-class="button
-"
->tvOS
-class="button
-"
->Chromecast
-class="button
-"
->Roku
-header-position="top"
->
-description-position="bottom"
->
->
-data-text="Richiedi assistenza"
-class="hide-from-toc no-link"
-tabindex="0">
-Richiedi assistenza
-Se hai domande o problemi con l'implementazione dell'inserimento di annunci dinamici, rivolgiti al tuo account manager o contatta l'assistenza SDK IMA.
-class="button
-"
->Contatta l'assistenza per l'SDK IMA
-Salvo quando diversamente specificato, i contenuti di questa pagina sono concessi in base alla licenza Creative Commons Attribution 4.0, mentre gli esempi di codice sono concessi in base alla licenza Apache 2.0. Per ulteriori dettagli, consulta le norme del sito di Google Developers. Java è un marchio registrato di Oracle e/o delle sue consociate.
-Ultimo aggiornamento 2026-02-27 UTC.
->
-<template class="devsite-content-data-template">
-[[["Facile da capire","easyToUnderstand","thumb-up"],["Il problema è stato risolto","solvedMyProblem","thumb-up"],["Altra","otherUp","thumb-up"]],[["Mancano le informazioni di cui ho bisogno","missingTheInformationINeed","thumb-down"],["Troppo complicato/troppi passaggi","tooComplicatedTooManySteps","thumb-down"],["Obsoleti","outOfDate","thumb-down"],["Problema di traduzione","translationIssue","thumb-down"],["Problema relativo a esempi/codice","samplesCodeIssue","thumb-down"],["Altra","otherDown","thumb-down"]],["Ultimo aggiornamento 2026-02-27 UTC."],[],[]]
-</template>
-aria-label="Link piè di pagina"
-data-nosnippet>
-Connect
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Blog
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Bluesky
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Instagram
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-LinkedIn
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-X (Twitter)
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 6)"
->
-YouTube
-Programmi
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Google Developer Program
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Google Developer Groups
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Google Developer Experts
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-Accelerators
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-Google Cloud & NVIDIA
-Developer Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Google API Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Google Cloud Platform Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Google Play Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-Firebase Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-Actions on Google Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 6)"
->
-Cast SDK Developer Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 7)"
->
-Chrome Web Store Dashboard
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 8)"
->
-Google Home Developer Console
-class="devsite-footer-sites-logo-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google Developers Link">
-src="https://www.gstatic.com/devrel-devsite/prod/v3be1e30159846e100d05529400567b663b9f8b605137438a2f417848d68359dd/developers/images/lockup-google-for-developers.svg"
-loading="lazy"
-alt="Google Developers">
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Android Link"
->
-Android
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Chrome Link"
->
-Chrome
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Firebase Link"
->
-Firebase
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google Cloud Platform Link"
->
-Google Cloud Platform
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google AI Link"
->
-Google AI
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer All products Link"
->
-Tutti i prodotti
-">
-href="https://developers.google.com/terms/site-terms?hl=it"
-data-category="Site-Wide Custom Events"
-data-label="Footer Terms link"
->
-Termini
-">
-href="//policies.google.com/privacy?hl=it"
-data-category="Site-Wide Custom Events"
-data-label="Footer Privacy link"
->
-Privacy
-glue-cookie-notification-bar-control">
-href="#"
-data-category="Site-Wide Custom Events"
-data-label="Footer Manage cookies link"
-aria-hidden="true"
->
-Manage cookies
->English
->Deutsch
->Español
->Español – América Latina
->Français
->Indonesia
->Italiano
->Polski
->Português – Brasil
->Tiếng Việt
->Türkçe
->Русский
->עברית
->العربيّة
->فارسی
->हिंदी
->বাংলা
->ภาษาไทย
->中文 – 简体
->中文 – 繁體
->日本語
->한국어
-
----
-
-# full service
-
-> **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
-> **Analyzed At:** 2026-07-09T02:05:21.041Z
-
-### Content
-lang="en"
-dir="ltr">
-content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
-crossorigin="use-credentials">
-href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml">
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ar" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=bn" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=zh-cn" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=zh-tw" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=fa" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=fr" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=de" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=he" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=hi" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=id" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=it" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ja" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ko" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=pl" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=pt-br" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ru" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=es-419" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=th" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=tr" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=vi" /><title>DAI Full Service API &nbsp;|&nbsp; Google for Developers</title>
-template="landing"
-theme="google-blue"
-type="product"
-layout="docs"
-pending>
-Skip to main content
-class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Navigation menu button"
-visually-hidden
-aria-label="Open menu">
-size="medium"
->
-alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
-srcset=" /static/ads/images/logo_admanager_192px.svg"
-sizes="64px"
-loading="lazy"
->
->
-devsite-has-google-wordmark">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - home"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Home"
-track-name="home"
->
-Home
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion"
-track-metadata-position="nav - home"
-track-metadata-module="tertiary nav"
-tooltip
->
-Home
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - sdks"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDKs"
-track-name="sdks"
->
-SDKs
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - HTML5"
->
-HTML5
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Android"
-data-category="DAI top menu navigation"
->
-Android
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - iOS"
-data-category="DAI top menu navigation"
->
-iOS
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - tvOS"
-data-category="DAI top menu navigation"
->
-tvOS
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Chromecast"
-data-category="DAI top menu navigation"
->
-Chromecast
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - Roku"
->
-Roku
-</tab>
-<tab class="devsite-dropdown
-devsite-active
-">
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
-track-type="nav"
-track-metadata-position="nav - apis"
-track-metadata-module="primary nav"
-aria-label="APIs, selected"
-data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
->
-APIs
-aria-haspopup="menu"
-aria-expanded="false"
-aria-label="Dropdown menu for APIs"
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
-track-metadata-position="nav - apis"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
-class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down">
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
-track-metadata-position="nav - apis"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Full service"
-data-category="DAI top menu navigation"
->
-Full service DAI
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
-track-metadata-position="nav - apis"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Pod serving"
-data-category="DAI top menu navigation"
->
-Pod serving DAI
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break"
-track-metadata-position="nav - apis"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Ad break"
-data-category="DAI top menu navigation"
->
-Ad break
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - resources"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Resources"
-track-name="resources"
->
-Resources
-">
-">
-Support
-track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/community"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
-tooltip
->
-Ad Manager Help Community
-track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
-tooltip
->
-Contact support
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
-tooltip
->
-Terms of service
-track-type="nav"
-track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
-tooltip
->
-Official Google Ad Manager Discord channel
-track-type="nav"
-track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
-tooltip
->
-Ads developer blog
-">
-">
-Test tools
-track-type="nav"
-track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="test tools"
-tooltip
->
-Video Suite Inspector
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="test tools"
-tooltip
->
-Sample streams
-</tab>
-enable-signin
-enable-search
-enable-suggestions
-enable-query-completion
-enable-search-summaries
-project-name="DAI Full Service API"
-tenant-name="Google for Developers"
-project-scope="/ad-manager/dynamic-ad-insertion/api/full-service"
-url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/full-service"
->
-search-open
-class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Open search">
-aria-activedescendant=""
-aria-autocomplete="list"
-aria-label="Search"
-aria-expanded="false"
-aria-haspopup="listbox"
-autocomplete="off"
-class="devsite-search-field devsite-search-query"
-name="q"
-placeholder="Search"
-role="combobox"
-type="text"
-value=""
->
-<kbd class="devsite-search-shortcut-icon">/</kbd>
-search-close
-class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Close search">
->English
->Deutsch
->Español
->Español – América Latina
->Français
->Indonesia
->Italiano
->Polski
->Português – Brasil
->Tiếng Việt
->Türkçe
->Русский
->עברית
->العربيّة
->فارسی
->हिंदी
->বাংলা
->ภาษาไทย
->中文 – 简体
->中文 – 繁體
->日本語
->한국어
-enable-profiles
-fp-auth
-id="devsite-user">
-Sign in
-">
->
->
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Lower Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail=""
->
-Full service DAI API
-<tab  class="devsite-active">
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
-track-type="nav"
-track-metadata-position="nav - guides"
-track-metadata-module="primary nav"
-aria-label="Guides, selected"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Guides"
-track-name="guides"
->
-Guides
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/reference/live"
-track-type="nav"
-track-metadata-position="nav - reference"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Reference"
-track-name="reference"
->
-Reference
-</tab>
->
-placeholder="Filter"
-aria-label="Type to filter"
-role="searchbox">
-data-title="Clear filter"
-aria-label="Clear filter"
-role="button"
-tabindex="0">
-aria-label="Side menu">
-id="devsite-close-nav"
-class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Close navigation"
-aria-label="Close navigation">
-size="medium"
->
-alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
-srcset=" /static/ads/images/logo_admanager_192px.svg"
-sizes="64px"
-loading="lazy"
->
->
-devsite-has-google-wordmark">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Home"
-track-name="home"
->
-Home
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Home"
-track-name="home"
->
-More
-menu="Home">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDKs"
-track-name="sdks"
->
-SDKs
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDKs"
-track-name="sdks"
->
-More
-menu="SDKs">
-class="devsite-nav-title gc-analytics-event
-devsite-nav-active"
-data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: APIs"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-APIs
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
->
-More
-menu="APIs">
-class="devsite-nav-title gc-analytics-event
-devsite-nav-active"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Guides"
-track-name="guides"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Guides"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Guides
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Reference"
-track-name="reference"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Reference"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Reference
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Resources"
-track-name="resources"
->
-Resources
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Resources"
-track-name="resources"
->
-More
-menu="Resources">
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Learn the DAI Full Service API
-devsite-nav-expandable">
-Authenticate requests with HMAC token
-devsite-nav-expandable">
-Stream Session Requests
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Authenticate Stream Session Requests
-devsite-nav-heading">
-Develop
-class="devsite-nav-title"
->Manage DAI livestreams
-class="devsite-nav-title"
->Request DAI VOD streams
-class="devsite-nav-title"
->Implement AdChoices
-class="devsite-nav-title"
->Enable skippable ads in VOD streams
-aria-label="Side menu" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Home"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Home
-aria-label="Side menu" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: HTML5"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-HTML5
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Android"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Android
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: iOS"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-iOS
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: tvOS"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-tvOS
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Chromecast"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Chromecast
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Roku"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Roku
-aria-label="Side menu" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Full service DAI"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Full service DAI
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Pod serving DAI"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Pod serving DAI
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Ad break"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Ad break
-aria-label="Side menu" hidden>
-class="devsite-nav-title"
-tooltip
->
-Support
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Ad Manager Help Community"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Ad Manager Help Community
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Contact support"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Contact support
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Terms of service"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Terms of service
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Official Google Ad Manager Discord channel"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Official Google Ad Manager Discord channel
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Ads developer blog"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Ads developer blog
-class="devsite-nav-title"
-tooltip
->
-Test tools
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Video Suite Inspector"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Video Suite Inspector
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Sample streams"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Sample streams
-has-book-nav
->
-role="navigation"
-aria-label="On this page"
-depth="2"
-scrollbars
-data-nosnippet
-disabled>
->
-The DAI API is in Beta and might not be available in your network. Contact your account manager for more information. The IMA SDK is recommended for platforms where it is available.
-aria-label="Breadcrumb">
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail=""
->
-Home
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail=""
->
-Products
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="3"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="3"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="4"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="4"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-DAI Full Service API
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="5"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="5"
-track-metadata-eventdetail=""
->
-APIs
-ack-key="AckCollectionsBookmarkTooltipDismiss"
-analytics-category="Site-Wide Custom Events"
-analytics-action-show="Callout Profile displayed"
-analytics-action-close="Callout Profile dismissed"
-analytics-label="Create Collection Callout"
-class="devsite-page-bookmark-tooltip nocontent"
-data-nosnippet
-dismiss-button="true"
-id="devsite-collections-dropdown"
-dismiss-button-text="Dismiss"
-close-button-text="Got it">
-Stay organized with collections
-Save and categorize content based on your preferences.
-depth="2"
-devsite-toc-embedded
-disabled>
-devsite-no-page-title">
-header-position="top"
->
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_2880.png 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-fetchpriority="high">
->
-data-text="Full service DAI"
-class="hide-from-toc no-link"
-tabindex="0">
-Full service DAI
-Full service Dynamic Ad Insertion (DAI) is Google's end-to-end implementation of server-side ad insertion (SSAI). It allows publishers to provide a content stream in either HLS or MPEG DASH format, and Google's DAI servers will select and insert appropriate advertisements into the stream, from Google or third-party ad servers, before presenting it to the user.
-background="grey"
-header-position="top"
->
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram.png"
-srcset="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_36.png 36w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_48.png 48w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_72.png 72w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_96.png 96w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_480.png 480w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_720.png 720w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_856.png 856w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_960.png 960w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1440.png 1440w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1920.png 1920w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_2880.png 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-loading="lazy"
->
->
-data-text="With the IMA DAI SDK"
-class="hide-from-toc no-link"
-tabindex="0">
-With the IMA DAI SDK
-The web page or app loads the IMA DAI SDK through:
-an embedded script tag for HTML5
-a native app for Android, Google Cast, iOS, tvOS, or Roku
-The SDK requests either a VOD stream or live stream from Google Ad
-Manager 360.
-Ad Manager 360 responds with the video stream that includes
-inserted ad breaks.
-The SDK parses the response, determines the correct media type
-based on environment, and delivers the video stream (and companion
-ads if needed) to the web page or app.
-The video player negotiates the playback details with the SDK and
-plays the content.
-The video player listens for instream metadata and passes it to the
-SDK for processing.
-The SDK fires impression pings and tracking events as needed.
-For detailed instructions on how to implement a client video player
-using the IMA DAI SDK, check out our SDK guides:
-HTML5
-Android
-iOS
-tvOS
-Chromecast
-Roku
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_2880.png 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-loading="lazy"
->
->
-data-text="With the DAI API"
-class="hide-from-toc no-link"
-tabindex="0">
-With the DAI API
-The client's player app requests either a VOD stream or live stream
-from Google Ad Manager 360.
-Ad Manager 360 responds with the video stream that includes
-inserted ad breaks.
-The client's player app begins playback of the stream, and either
-requests ad metadata once (for VOD streams) OR begins regularly
-polling for ad metadata (for live streams).
-The client's player app listens for instream metadata, parses it,
-and compares it to the values in the ad metadata to identify ad
-events.
-The client's video player app fires ad impression pings and
-tracking events as needed.
-For detailed instructions on how to implement a client video player,
-using the DAI REST API, check out our API guides:
-Live API
-VOD API
-hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
-listnr-id="82128">
-Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-03-05 UTC.
->
-<template class="devsite-content-data-template">
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-05 UTC."],[],[]]
-</template>
-aria-label="Footer links"
-data-nosnippet>
-Connect
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Blog
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Bluesky
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Instagram
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-LinkedIn
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-X (Twitter)
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 6)"
->
-YouTube
-Programs
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Google Developer Program
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Google Developer Groups
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Google Developer Experts
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-Accelerators
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-Google Cloud & NVIDIA
-Developer consoles
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Google API Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Google Cloud Platform Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Google Play Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-Firebase Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-Actions on Google Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 6)"
->
-Cast SDK Developer Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 7)"
->
-Chrome Web Store Dashboard
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 8)"
->
-Google Home Developer Console
-class="devsite-footer-sites-logo-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google Developers Link">
-src="https://www.gstatic.com/devrel-devsite/prod/v3be1e30159846e100d05529400567b663b9f8b605137438a2f417848d68359dd/developers/images/lockup-google-for-developers.svg"
-loading="lazy"
-alt="Google Developers">
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Android Link"
->
-Android
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Chrome Link"
->
-Chrome
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Firebase Link"
->
-Firebase
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google Cloud Platform Link"
->
-Google Cloud Platform
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google AI Link"
->
-Google AI
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer All products Link"
->
-All products
-">
-href="/terms/site-terms"
-data-category="Site-Wide Custom Events"
-data-label="Footer Terms link"
->
-Terms
-">
-href="//policies.google.com/privacy"
-data-category="Site-Wide Custom Events"
-data-label="Footer Privacy link"
->
-Privacy
-glue-cookie-notification-bar-control">
-href="#"
-data-category="Site-Wide Custom Events"
-data-label="Footer Manage cookies link"
-aria-hidden="true"
->
-Manage cookies
->English
->Deutsch
->Español
->Español – América Latina
->Français
->Indonesia
->Italiano
->Polski
->Português – Brasil
->Tiếng Việt
->Türkçe
->Русский
->עברית
->العربيّة
->فارسی
->हिंदी
->বাংলা
->ภาษาไทย
->中文 – 简体
->中文 – 繁體
->日本語
->한국어
-
----
-
-# pod serving
-
-> **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
-> **Analyzed At:** 2026-07-09T02:05:21.968Z
-
-### Content
-lang="id-x-mtfrom-en"
-dir="ltr">
-content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
-crossorigin="use-credentials">
-href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=id">
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ar" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=bn" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-cn" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-tw" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fr" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=de" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=he" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=hi" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=id" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=it" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ja" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ko" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pl" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pt-br" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ru" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=vi" /><title>DAI Pod Serving API &nbsp;|&nbsp; Google for Developers</title>
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en">
-template="landing"
-theme="google-blue"
-type="product"
-layout="docs"
-pending>
-Langsung ke konten utama
-class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Navigation menu button"
-visually-hidden
-aria-label="Buka menu">
-size="medium"
->
-alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=id"
-srcset=" /static/ads/images/logo_admanager_192px.svg"
-sizes="64px"
-loading="lazy"
->
->
-devsite-has-google-wordmark">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - beranda"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Beranda"
-track-name="beranda"
->
-Beranda
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=id"
-track-metadata-position="nav - beranda"
-track-metadata-module="tertiary nav"
-tooltip
->
-Beranda
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - sdk"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDK"
-track-name="sdk"
->
-SDK
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=id"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - HTML5"
->
-HTML5
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=id"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Android"
-data-category="DAI top menu navigation"
->
-Android
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=id"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - iOS"
->
-iOS
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=id"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - tvOS"
-data-category="DAI top menu navigation"
->
-tvOS
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=id"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Chromecast"
-data-category="DAI top menu navigation"
->
-Chromecast
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=id"
-track-metadata-position="nav - sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Roku"
-data-category="DAI top menu navigation"
->
-Roku
-</tab>
-<tab class="devsite-dropdown
-devsite-active
-">
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=id"
-track-type="nav"
-track-metadata-position="nav - api"
-track-metadata-module="primary nav"
-aria-label="API, selected"
-data-category="Site-Wide Custom Events"
-data-label="Tab: API"
-track-name="api"
->
-API
-aria-haspopup="menu"
-aria-expanded="false"
-aria-label="Menu dropdown untuk API"
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=id"
-track-metadata-position="nav - api"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: API"
-track-name="api"
-class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down">
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=id"
-track-metadata-position="nav - api"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Full service"
-data-category="DAI top menu navigation"
->
-DAI layanan penuh
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=id"
-track-metadata-position="nav - api"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Pod serving"
-data-category="DAI top menu navigation"
->
-Pod yang menayangkan DAI
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=id"
-track-metadata-position="nav - api"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Ad break"
-data-category="DAI top menu navigation"
->
-Jeda iklan
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - referensi"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Referensi"
-track-name="referensi"
->
-Referensi
-">
-">
-Dukungan
-track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/community?hl=id"
-track-metadata-position="nav - referensi"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="dukungan"
-tooltip
->
-Komunitas Bantuan Ad Manager
-track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=id"
-track-metadata-position="nav - referensi"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="dukungan"
-tooltip
->
-Hubungi dukungan
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=id"
-track-metadata-position="nav - referensi"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="dukungan"
-tooltip
->
-Persyaratan layanan
-track-type="nav"
-track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
-track-metadata-position="nav - referensi"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="dukungan"
-tooltip
->
-Channel Discord resmi Google Ad Manager
-track-type="nav"
-track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
-track-metadata-position="nav - referensi"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="dukungan"
-tooltip
->
-Blog developer iklan
-">
-">
-Alat pengujian
-track-type="nav"
-track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
-track-metadata-position="nav - referensi"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="alat pengujian"
-tooltip
->
-{i>Video Suite Inspector
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=id"
-track-metadata-position="nav - referensi"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="alat pengujian"
-tooltip
->
-Contoh streaming
-</tab>
-enable-signin
-enable-search
-enable-suggestions
-enable-query-completion
-enable-search-summaries
-project-name="DAI Pod Serving API"
-tenant-name="Google for Developers"
-project-scope="/ad-manager/dynamic-ad-insertion/api/pod-serving"
-url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=id"
+url-scoped="https://developers.google.com/s/results/ad-manager?hl=id"
 >
 search-open
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
@@ -16473,46 +13767,9 @@ enable-profiles
 fp-auth
 id="devsite-user">
 Masuk
+devsite-header-no-lower-tabs
 ">
->
->
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Lower Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail=""
->
-API penayangan pod DAI
-<tab  class="devsite-active">
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=id"
-track-type="nav"
-track-metadata-position="nav - panduan"
-track-metadata-module="primary nav"
-aria-label="Panduan, selected"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Panduan"
-track-name="panduan"
->
-Panduan
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live?hl=id"
-track-type="nav"
-track-metadata-position="nav - referensi"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Referensi"
-track-name="referensi"
->
-Referensi
-</tab>
->
+hidden>
 placeholder="Filter"
 aria-label="Ketik untuk memfilter"
 role="searchbox">
@@ -16528,7 +13785,7 @@ data-label="Close navigation"
 aria-label="Tutup navigasi">
 size="medium"
 >
-alt="Google Dynamic Ad Insertion"
+alt="Google Ad Manager"
 src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=id"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
@@ -16543,280 +13800,9 @@ data-value="1"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="1"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
+track-metadata-eventdetail="Google Ad Manager"
 >
-Dynamic Ad Insertion
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Beranda"
-track-name="beranda"
->
-Beranda
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Beranda"
-track-name="beranda"
->
-Lainnya
-menu="Beranda">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDK"
-track-name="sdk"
->
-SDK
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDK"
-track-name="sdk"
->
-Lainnya
-menu="SDK">
-class="devsite-nav-title gc-analytics-event
-devsite-nav-active"
-data-category="Site-Wide Custom Events"
-data-label="Tab: API"
-track-name="api"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: API"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-API
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: API"
-track-name="api"
->
-Lainnya
-menu="API">
-class="devsite-nav-title gc-analytics-event
-devsite-nav-active"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Panduan"
-track-name="panduan"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Panduan"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Panduan
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Referensi"
-track-name="referensi"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Referensi"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Referensi
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Referensi"
-track-name="referensi"
->
-Referensi
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Referensi"
-track-name="referensi"
->
-Lainnya
-menu="Referensi">
-class="devsite-nav-title"
->Ringkasan
-class="devsite-nav-title"
->Mempelajari DAI Pod Serving API
-devsite-nav-heading">
-Mengembangkan penyisipan iklan sisi server
-devsite-nav-expandable">
-Mengelola live stream SSAI
-class="devsite-nav-title"
->Ringkasan
-class="devsite-nav-title"
->Menyiapkan aplikasi pemutar video klien
-devsite-nav-expandable">
-Mengembangkan server manipulasi manifes
-class="devsite-nav-title"
->Menyisipkan iklan dengan metadata pengaturan waktu pod iklan
-class="devsite-nav-title"
->Menyisipkan iklan menggunakan pengalihan segmen
-devsite-nav-expandable">
-Mengelola streaming VOD SSAI
-class="devsite-nav-title"
->Ringkasan
-class="devsite-nav-title"
->Menyiapkan aplikasi pemutar video klien
-class="devsite-nav-title"
->Mengonfigurasi server manipulasi manifes
-devsite-nav-heading">
-Menyiapkan penyisipan iklan terpandu server
-class="devsite-nav-title"
->Tentang penyisipan iklan yang dipandu server
-class="devsite-nav-title"
->Mulai menggunakan SGAI untuk live stream
-aria-label="Menu samping" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Beranda"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Beranda
-aria-label="Menu samping" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: HTML5"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-HTML5
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Android"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Android
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: iOS"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-iOS
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: tvOS"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-tvOS
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Chromecast"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Chromecast
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Roku"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Roku
-aria-label="Menu samping" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: DAI layanan penuh"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-DAI layanan penuh
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Pod yang menayangkan DAI"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Pod yang menayangkan DAI
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Jeda iklan"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Jeda iklan
-aria-label="Menu samping" hidden>
-class="devsite-nav-title"
-tooltip
->
-Dukungan
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Komunitas Bantuan Ad Manager"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Komunitas Bantuan Ad Manager
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Hubungi dukungan"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Hubungi dukungan
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Persyaratan layanan"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Persyaratan layanan
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Channel Discord resmi Google Ad Manager"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Channel Discord resmi Google Ad Manager
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Blog developer iklan"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Blog developer iklan
-class="devsite-nav-title"
-tooltip
->
-Alat pengujian
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: {i&gt;Video Suite Inspector&lt;i}"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-{i&gt;Video Suite Inspector&lt;i}
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Contoh streaming"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Contoh streaming
-has-book-nav
+Ad Manager
 >
 role="navigation"
 aria-label="Pada halaman ini"
@@ -16858,31 +13844,25 @@ data-value="3"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="3"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
+track-metadata-eventdetail="Google Ad Manager"
 >
-Dynamic Ad Insertion
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="4"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="4"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
+Ad Manager
+position="header"
+project-name="Ad Manager"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260709-r00-rc00.478872387797661841"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="header"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=id"
+project-support-url="https://groups.google.com/forum/?hl=id#!forum/google-doubleclick-for-publishers-api"
 >
-DAI Pod Serving API
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="5"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="5"
-track-metadata-eventdetail=""
->
-API
+Kirim masukan
 ack-key="AckCollectionsBookmarkTooltipDismiss"
 analytics-category="Site-Wide Custom Events"
 analytics-action-show="Callout Profile displayed"
@@ -16902,125 +13882,106 @@ disabled>
 devsite-no-page-title">
 header-position="top"
 >
-description-position="bottom"
 >
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving.png?hl=id"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_36.png?hl=id 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_48.png?hl=id 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_72.png?hl=id 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_96.png?hl=id 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_480.png?hl=id 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_720.png?hl=id 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_856.png?hl=id 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_960.png?hl=id 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1440.png?hl=id 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1920.png?hl=id 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_2880.png?hl=id 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-fetchpriority="high">
->
-data-text="Penayangan Pod DAI"
-class="hide-from-toc no-link"
+data-text="Kumpulan alat untuk mengelola akun dan kampanye Google Ad Manager."
 tabindex="0">
-Penayangan Pod DAI
-Penayangan Pod Penyisipan Iklan Dinamis (DAI) memungkinkan Anda meminta pod iklan, dari server iklan Google atau pihak ketiga, untuk live stream dan video on demand (VOD). Untuk mengetahui detail selengkapnya, lihat  Mengonfigurasi pod iklan dan template jeda iklan.
-Untuk live stream, Google Ad Manager mendukung jenis DAI berikut:
-Pengalihan penayangan pod: memungkinkan Anda mengambil segmen manifes untuk menerapkan
-Penyisipan Iklan Sisi Server (SSAI). Segmen adalah URL dinamis, yang dialihkan ke
-file media konten atau iklan.
-Manifes penayangan pod: memungkinkan Anda mengambil manifes lengkap pod iklan untuk
-menerapkan Penyisipan Iklan Sisi Server (SSAI). Untuk mengetahui detail selengkapnya, lihat DAI dengan panduan server.
-Untuk VOD, Google Ad Manager menampilkan manifes pod iklan lengkap.
-Penayangan Pod DAI menawarkan platform yang didukung berikut:
-HTML5
-Android
-iOS
-tvOS
-Chromecast
-Roku
-Untuk mengetahui detail tentang live stream dan VOD, lihat alur kerja berikut:
-background="grey"
+Kumpulan alat untuk mengelola akun dan kampanye Google Ad Manager.
 header-position="top"
 >
 description-position="bottom"
 >
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram.png?hl=id"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_36.png?hl=id 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_48.png?hl=id 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_72.png?hl=id 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_96.png?hl=id 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_480.png?hl=id 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_720.png?hl=id 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_856.png?hl=id 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_960.png?hl=id 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1440.png?hl=id 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1920.png?hl=id 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_2880.png?hl=id 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-loading="lazy"
+icon-position="left"
 >
+size="medium"
 >
-data-text="
-Menggabungkan iklan ke livestream
-"
+api
+data-text="API Ad Manager (Beta)"
 class="hide-from-toc no-link"
 tabindex="0">
-Menggabungkan iklan ke livestream
-Untuk memulai sesi livestream, buat permintaan pendaftaran streaming.
-Tetapkan parameter tag iklan yang unik untuk permintaan streaming guna
-menggantikan nilai default tag iklan DAI. Untuk mengetahui detail selengkapnya tentang
-penargetan iklan, lihat
-Menyediakan parameter penargetan ke streaming Anda.
-Ambil ID sesi pengguna unik dari respons pendaftaran
-aliran. Untuk mengetahui detail selengkapnya tentang penggunaan ID sesi, lihat
-Menemukan ID sesi DAI atau kunci debug dan
-Memantau dan men-debug sesi streaming tertentu.
-Buat permintaan manifes ke penyambung video atau manipulator
-manifes, dengan meneruskan ID sesi. Ulangi permintaan untuk
-update manifes selama pemutaran.
-Untuk manifes DASH, buat satu permintaan template periode untuk seluruh sesi.
-Untuk manifes DASH, simpan template periode dalam cache. Untuk setiap jeda iklan,
-ambil template yang di-cache dan isi semua makro dengan data jeda iklan.
-Untuk mengetahui detail selengkapnya tentang makro yang didukung,
-lihat Mengisi template periode.
-Kemudian, masukkan periode hasil ke dalam manifes akhir.
-Menampilkan manifes akhir yang berisi segmen media iklan atau konten untuk
-pemutaran klien.
-Pemutaran dimulai.
-Secara rutin melakukan polling pada Google Ad Manager untuk mendapatkan update metadata iklan menggunakan frekuensi polling
-yang ditampilkan dalam permintaan streaming.
-Menyimpan metadata iklan untuk mencari peristiwa iklan.
-Selama jeda iklan, pemutar video memuat segmen media dan
-mengikuti pengalihan Google Ad Manager ke file media.
-Selama jeda iklan,
-dengarkan pemutar video untuk metadata berwaktu, yang berisi tag ID3. Ekstrak ID peristiwa iklan dari tag ID3 untuk menemukan
-metadata iklan terkait.
-Mengirim ping verifikasi media
-ke Google Ad Manager.
+API Ad Manager (Beta)
+REST API yang menyediakan metode untuk membaca data pengiriman dan inventaris, menjalankan laporan, dan lainnya.
+class="button button-secondary
+"
+>Mulai
 description-position="bottom"
 >
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram.png?hl=id"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_36.png?hl=id 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_48.png?hl=id 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_72.png?hl=id 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_96.png?hl=id 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_480.png?hl=id 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_720.png?hl=id 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_856.png?hl=id 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_960.png?hl=id 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1440.png?hl=id 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1920.png?hl=id 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_2880.png?hl=id 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-loading="lazy"
+icon-position="left"
 >
+size="medium"
 >
-data-text="
-Menggabungkan iklan ke streaming VOD
-"
+phone_iphone
+data-text="SDK Iklan Seluler"
 class="hide-from-toc no-link"
 tabindex="0">
-Menggabungkan iklan ke streaming VOD
-Buat permintaan streaming untuk mendaftarkan sesi streaming VOD. Tetapkan parameter tag iklan yang unik untuk permintaan streaming guna
-menggantikan nilai default tag iklan DAI. Untuk mengetahui detail selengkapnya, lihat
-Menyediakan parameter penargetan ke streaming Anda.
-Ambil ID sesi dari respons streaming. Untuk memeriksa sesi streaming, lihat
-Menemukan ID sesi DAI atau kunci debug dan
-Memantau dan melakukan debug pada sesi streaming tertentu.
-Buat permintaan manifes ke penyambung video atau manipulator
-manifes, dengan meneruskan ID sesi.
-Gunakan ID sesi untuk meminta semua pod iklan sekaligus.
-Mengambil manifes lengkap dari semua pod iklan. Untuk membuat manifes akhir, gabungkan manifes pod iklan dengan aliran konten.
-Menampilkan manifes akhir, yang berisi segmen konten dan iklan.
-Minta metadata iklan untuk semua peristiwa iklan. Menyimpan metadata iklan untuk
-mencari peristiwa iklan. Pemutaran dimulai.
-Selama jeda iklan, pemutar video memuat segmen media dan
-mengikuti pengalihan Google Ad Manager ke file media.
-Selama jeda iklan,
-dengarkan peristiwa iklan yang berisi tag ID3. Untuk menemukan metadata peristiwa iklan, ekstrak
-ID peristiwa iklan dari tag ID3 dan cocokkan ID dengan metadata iklan.
-Mengirim ping verifikasi media
-ke Google Ad Manager.
-hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
-listnr-id="82128">
-Kecuali dinyatakan lain, konten di halaman ini dilisensikan berdasarkan Lisensi Creative Commons Attribution 4.0, sedangkan contoh kode dilisensikan berdasarkan Lisensi Apache 2.0. Untuk mengetahui informasi selengkapnya, lihat Kebijakan Situs Google Developers. Java adalah merek dagang terdaftar dari Oracle dan/atau afiliasinya.
-Terakhir diperbarui pada 2026-03-05 UTC.
+SDK Iklan Seluler
+Memungkinkan monetisasi aplikasi Android, iOS, Unity, dan Flutter dengan iklan.
+class="button button-secondary
+"
 >
+Android
+class="button button-secondary
+"
+>Android
+class="button button-secondary
+"
+>iOS
+class="button button-secondary
+"
+>Unity
+class="button button-secondary
+"
+>Flutter
+description-position="bottom"
+>
+icon-position="left"
+>
+size="medium"
+>
+live_tv
+data-text="Penyisipan Iklan Dinamis"
+class="hide-from-toc no-link"
+tabindex="0">
+Penyisipan Iklan Dinamis
+Menggabungkan konten video dan iklan menjadi satu streaming, terlepas dari halaman atau aplikasi.
+class="button button-secondary
+"
+>Mulai
+description-position="bottom"
+>
+icon-position="left"
+>
+size="medium"
+>
+track_changes
+data-text="Ad Manager SOAP API"
+class="hide-from-toc no-link"
+tabindex="0">
+Ad Manager SOAP API
+Memberikan metode untuk mengelola inventaris iklan, membuat pesanan, mengambil laporan, dan lainnya.
+class="button button-secondary
+"
+>Mulai
+>
+<template class="devsite-thumb-rating-feedback">
+position="thumb-rating"
+project-name="Ad Manager"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260709-r00-rc00.478872387797661841"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="thumb-rating"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=id"
+project-support-url="https://groups.google.com/forum/?hl=id#!forum/google-doubleclick-for-publishers-api"
+>
+Ada masukan untuk kami?
+</template>
 <template class="devsite-content-data-template">
-[[["Mudah dipahami","easyToUnderstand","thumb-up"],["Memecahkan masalah saya","solvedMyProblem","thumb-up"],["Lainnya","otherUp","thumb-up"]],[["Informasi yang saya butuhkan tidak ada","missingTheInformationINeed","thumb-down"],["Terlalu rumit/langkahnya terlalu banyak","tooComplicatedTooManySteps","thumb-down"],["Sudah usang","outOfDate","thumb-down"],["Masalah terjemahan","translationIssue","thumb-down"],["Masalah kode / contoh","samplesCodeIssue","thumb-down"],["Lainnya","otherDown","thumb-down"]],["Terakhir diperbarui pada 2026-03-05 UTC."],[],[]]
+[[["Mudah dipahami","easyToUnderstand","thumb-up"],["Memecahkan masalah saya","solvedMyProblem","thumb-up"],["Lainnya","otherUp","thumb-up"]],[["Informasi yang saya butuhkan tidak ada","missingTheInformationINeed","thumb-down"],["Terlalu rumit/langkahnya terlalu banyak","tooComplicatedTooManySteps","thumb-down"],["Sudah usang","outOfDate","thumb-down"],["Masalah terjemahan","translationIssue","thumb-down"],["Masalah kode / contoh","samplesCodeIssue","thumb-down"],["Lainnya","otherDown","thumb-down"]],[],[],[]]
 </template>
 aria-label="Link footer"
 data-nosnippet>
@@ -17125,7 +14086,7 @@ Google Home Developer Console
 class="devsite-footer-sites-logo-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Google Developers Link">
-src="https://www.gstatic.com/devrel-devsite/prod/v3be1e30159846e100d05529400567b663b9f8b605137438a2f417848d68359dd/developers/images/lockup-google-for-developers.svg"
+src="https://www.gstatic.com/devrel-devsite/prod/v7669de8735de7fa899c49c793af6b01f3bfef3435bb66621d079ef252c528b54/developers/images/lockup-google-for-developers.svg"
 loading="lazy"
 alt="Google Developers">
 class="devsite-footer-sites-link
@@ -17208,62 +14169,61 @@ Manage cookies
 
 ---
 
-# start
+## DOCUMENT: dynamic ad insertion
+**Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion
+**Ingested At:** undefined
 
-> **Source:** https://developers.google.com/ad-manager/api/start
-> **Analyzed At:** 2026-07-09T02:05:22.239Z
-
-### Content
-lang="en"
+### ## Content
+lang="tr-x-mtfrom-en"
 dir="ltr">
 content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
 crossorigin="use-credentials">
 href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml">
-href="https://developers.google.com/ad-manager/api/start" />
-href="https://developers.google.com/ad-manager/api/start?hl=ar" />
-href="https://developers.google.com/ad-manager/api/start?hl=bn" />
-href="https://developers.google.com/ad-manager/api/start?hl=zh-cn" />
-href="https://developers.google.com/ad-manager/api/start?hl=zh-tw" />
-href="https://developers.google.com/ad-manager/api/start?hl=fa" />
-href="https://developers.google.com/ad-manager/api/start?hl=fr" />
-href="https://developers.google.com/ad-manager/api/start?hl=de" />
-href="https://developers.google.com/ad-manager/api/start?hl=he" />
-href="https://developers.google.com/ad-manager/api/start?hl=hi" />
-href="https://developers.google.com/ad-manager/api/start?hl=id" />
-href="https://developers.google.com/ad-manager/api/start?hl=it" />
-href="https://developers.google.com/ad-manager/api/start?hl=ja" />
-href="https://developers.google.com/ad-manager/api/start?hl=ko" />
-href="https://developers.google.com/ad-manager/api/start?hl=pl" />
-href="https://developers.google.com/ad-manager/api/start?hl=pt-br" />
-href="https://developers.google.com/ad-manager/api/start?hl=ru" />
-href="https://developers.google.com/ad-manager/api/start?hl=es-419" />
-href="https://developers.google.com/ad-manager/api/start?hl=th" />
-href="https://developers.google.com/ad-manager/api/start?hl=tr" />
-href="https://developers.google.com/ad-manager/api/start?hl=vi" /><title>Get started &nbsp;|&nbsp; Ad Manager SOAP API &nbsp;|&nbsp; Google for Developers</title>
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=tr">
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ar" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=bn" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=zh-cn" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=zh-tw" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=fa" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=fr" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=de" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=he" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=hi" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=id" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=it" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ja" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ko" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=pl" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=pt-br" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ru" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=es-419" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=th" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=tr" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=vi" /><title>Dynamic Ad Insertion &nbsp;|&nbsp; Google for Developers</title>
 ">
 ">
-template="page"
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en">
+template="landing"
 theme="google-blue"
-type="article"
+type="product"
 layout="docs"
-display-toc
 pending>
-Skip to main content
+Ana içeriğe atla
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Navigation menu button"
 visually-hidden
-aria-label="Open menu">
+aria-label="Menüyü aç">
 size="medium"
 >
-alt="Google Ad Manager"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+alt="Google Dynamic Ad Insertion"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=tr"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
 >
-aria-label="Product breadcrumb">
+>
 devsite-has-google-wordmark">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -17272,42 +14232,235 @@ data-value="1"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="1"
-track-metadata-eventdetail="Google Ad Manager"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-Ad Manager
+Dynamic Ad Insertion
+<tab class="devsite-dropdown
 ">
-class="devsite-breadcrumb-link gc-analytics-event"
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - ana sayfa"
+track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail="Google Ad Manager SOAP API"
+data-label="Tab: Ana Sayfa"
+track-name="ana sayfa"
 >
-SOAP API
+Ana Sayfa
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=tr"
+track-metadata-position="nav - ana sayfa"
+track-metadata-module="tertiary nav"
+tooltip
+>
+Ana Sayfa
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK&#39;lar"
+track-name="sdk&#39;lar"
+>
+SDK&#39;lar
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - HTML5"
+>
+HTML5
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Android"
+data-category="DAI top menu navigation"
+>
+Android
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - iOS"
+>
+iOS
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - tvOS"
+data-category="DAI top menu navigation"
+>
+tvOS
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Chromecast"
+data-category="DAI top menu navigation"
+>
+Chromecast
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Roku"
+data-category="DAI top menu navigation"
+>
+Roku
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - api&#39;lar"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: API&#39;lar"
+track-name="api&#39;lar"
+>
+API&#39;lar
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=tr"
+track-metadata-position="nav - api&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Full service"
+data-category="DAI top menu navigation"
+>
+Tam hizmet DAI
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr"
+track-metadata-position="nav - api&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: API - Pod serving"
+>
+DAI yayınlayan kapsül
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=tr"
+track-metadata-position="nav - api&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Ad break"
+data-category="DAI top menu navigation"
+>
+Reklam arası
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Kaynaklar"
+track-name="kaynaklar"
+>
+Kaynaklar
+">
+">
+Destek
+track-type="nav"
+track-metadata-eventdetail="//support.google.com/admanager/community?hl=tr"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="destek"
+tooltip
+>
+Ad Manager Yardım Topluluğu
+track-type="nav"
+track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=tr"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="destek"
+tooltip
+>
+Destek ekibiyle iletişime geçme
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=tr"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="destek"
+tooltip
+>
+Hizmet şartları
+track-type="nav"
+track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="destek"
+tooltip
+>
+Resmi Google Ad Manager Discord kanalı
+track-type="nav"
+track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="destek"
+tooltip
+>
+Reklam geliştirici blogu
+">
+">
+Test araçları
+track-type="nav"
+track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="test araçları"
+tooltip
+>
+Video Ürün Paketi Denetleyicisi
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=tr"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="test araçları"
+tooltip
+>
+Örnek yayınlar
+</tab>
 enable-signin
 enable-search
 enable-suggestions
 enable-query-completion
 enable-search-summaries
-project-name="Ad Manager SOAP API"
+project-name="Dynamic Ad Insertion"
 tenant-name="Google for Developers"
-project-scope="/ad-manager/api/start"
-url-scoped="https://developers.google.com/s/results/ad-manager/api/start"
+project-scope="/ad-manager/dynamic-ad-insertion"
+url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion?hl=tr"
 >
 search-open
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Open search">
+aria-label="Aramayı aç">
 aria-activedescendant=""
 aria-autocomplete="list"
-aria-label="Search"
+aria-label="Arama"
 aria-expanded="false"
 aria-haspopup="listbox"
 autocomplete="off"
 class="devsite-search-field devsite-search-query"
 name="q"
-placeholder="Search"
+placeholder="Arama"
 role="combobox"
 type="text"
 value=""
@@ -17315,7 +14468,7 @@ value=""
 <kbd class="devsite-search-shortcut-icon">/</kbd>
 search-close
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Close search">
+aria-label="Aramayı kapat">
 >English
 >Deutsch
 >Español
@@ -17341,80 +14494,32 @@ aria-label="Close search">
 enable-profiles
 fp-auth
 id="devsite-user">
-Sign in
+Oturum aç
+devsite-header-no-lower-tabs
 ">
-<tab  class="devsite-active">
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/start"
-track-type="nav"
-track-metadata-position="nav - guides"
-track-metadata-module="primary nav"
-aria-label="Guides, selected"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Guides"
-track-name="guides"
->
-Guides
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/rel_notes"
-track-type="nav"
-track-metadata-position="nav - reference"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Reference"
-track-name="reference"
->
-Reference
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/clients"
-track-type="nav"
-track-metadata-position="nav - samples"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Samples"
-track-name="samples"
->
-Samples
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/community"
-track-type="nav"
-track-metadata-position="nav - support"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Support"
-track-name="support"
->
-Support
-</tab>
->
-placeholder="Filter"
-aria-label="Type to filter"
+hidden>
+placeholder="Filtre"
+aria-label="Filtrelemek için yazın"
 role="searchbox">
-data-title="Clear filter"
-aria-label="Clear filter"
+data-title="Filtreyi temizle"
+aria-label="Filtreyi temizle"
 role="button"
 tabindex="0">
-aria-label="Side menu">
+aria-label="Yan menü">
 id="devsite-close-nav"
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Close navigation"
-aria-label="Close navigation">
+aria-label="Gezinmeyi kapat">
 size="medium"
 >
-alt="Google Ad Manager"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+alt="Google Dynamic Ad Insertion"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=tr"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
 >
-aria-label="Upper header breadcrumb">
+>
 devsite-has-google-wordmark">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -17423,104 +14528,232 @@ data-value="1"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="1"
-track-metadata-eventdetail="Google Ad Manager"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-Ad Manager
+Dynamic Ad Insertion
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: Ana Sayfa"
+track-name="ana sayfa"
+>
+Ana Sayfa
 ">
-class="devsite-breadcrumb-link gc-analytics-event"
+class="devsite-nav-title"
+tooltip
 data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail="Google Ad Manager SOAP API"
+data-label="Tab: Ana Sayfa"
+track-name="ana sayfa"
 >
-SOAP API
-class="devsite-nav-title gc-analytics-event
-devsite-nav-has-children
-devsite-nav-active"
+Diğer
+menu="Ana Sayfa">
+class="devsite-nav-title"
+tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: Guides"
-track-name="guides"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Guides"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Guides
+data-label="Tab: SDK&#39;lar"
+track-name="sdk&#39;lar"
 >
+SDK&#39;lar
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK&#39;lar"
+track-name="sdk&#39;lar"
+>
+Diğer
+menu="SDK&#39;lar">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: API&#39;lar"
+track-name="api&#39;lar"
+>
+API&#39;lar
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: API&#39;lar"
+track-name="api&#39;lar"
+>
+Diğer
+menu="API&#39;lar">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: Kaynaklar"
+track-name="kaynaklar"
+>
+Kaynaklar
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: Kaynaklar"
+track-name="kaynaklar"
+>
+Diğer
+menu="Kaynaklar">
+aria-label="Yan menü" hidden>
 class="devsite-nav-title gc-analytics-event
-devsite-nav-has-children
 "
 data-category="Site-Wide Custom Events"
-data-label="Tab: Reference"
-track-name="reference"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Reference"
+data-label="Responsive Tab: Ana Sayfa"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Reference
+Ana Sayfa
+aria-label="Yan menü" hidden>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: HTML5"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+HTML5
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Android"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Android
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: iOS"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+iOS
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: tvOS"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+tvOS
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Chromecast"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Chromecast
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Roku"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Roku
+aria-label="Yan menü" hidden>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Tam hizmet DAI"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Tam hizmet DAI
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: DAI yayınlayan kapsül"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+DAI yayınlayan kapsül
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Reklam arası"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Reklam arası
+aria-label="Yan menü" hidden>
+class="devsite-nav-title"
+tooltip
 >
+Destek
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Tab: Samples"
-track-name="samples"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Samples"
+data-label="Responsive Tab: Ad Manager Yardım Topluluğu"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Samples
+Ad Manager Yardım Topluluğu
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Tab: Support"
-track-name="support"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Support"
+data-label="Responsive Tab: Destek ekibiyle iletişime geçme"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Support
+Destek ekibiyle iletişime geçme
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Hizmet şartları"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Hizmet şartları
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Resmi Google Ad Manager Discord kanalı"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Resmi Google Ad Manager Discord kanalı
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Reklam geliştirici blogu"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Reklam geliştirici blogu
 class="devsite-nav-title"
->Get Started
-class="devsite-nav-title"
->Authentication
-class="devsite-nav-title"
->PQL Guide
-class="devsite-nav-title"
->Third Parties
-class="devsite-nav-title"
->Basic Concepts
-class="devsite-nav-title"
->How To
-class="devsite-nav-title"
->Reports
-class="devsite-nav-title"
->Forecasts
-class="devsite-nav-title"
->Native
-class="devsite-nav-title"
->Programmatic
-class="devsite-nav-title"
->Best Practices
-class="devsite-nav-title"
->Test Networks vs. Production
-has-book-nav
-has-sidebar
+tooltip
+>
+Test araçları
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Video Ürün Paketi Denetleyicisi"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Video Ürün Paketi Denetleyicisi
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Örnek yayınlar"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Örnek yayınlar
 >
 role="navigation"
-aria-label="On this page"
+aria-label="Bu sayfada"
 depth="2"
 scrollbars
 data-nosnippet
->
->
-Looking for a REST API? The Ad Manager API (Beta) is now available.
-aria-label="Breadcrumb">
+disabled>
+class="devsite-banner-translated-image invert"
+alt="">
+Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
+aria-label="İçerik haritası">
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -17531,7 +14764,7 @@ track-name="breadcrumb"
 track-metadata-position="1"
 track-metadata-eventdetail=""
 >
-Home
+Ana Sayfa
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -17542,7 +14775,7 @@ track-name="breadcrumb"
 track-metadata-position="2"
 track-metadata-eventdetail=""
 >
-Products
+Ürünler
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -17551,37 +14784,9 @@ data-value="3"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="3"
-track-metadata-eventdetail="Google Ad Manager"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-Ad Manager
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="4"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="4"
-track-metadata-eventdetail="Google Ad Manager SOAP API"
->
-SOAP API
-position="header"
-project-name="Ad Manager SOAP API"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260630-r00-rc00.478639290528629295"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="header"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
-project-support-url="https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api"
->
-Send feedback
-Get started
+Dynamic Ad Insertion
 ack-key="AckCollectionsBookmarkTooltipDismiss"
 analytics-category="Site-Wide Custom Events"
 analytics-action-show="Callout Profile displayed"
@@ -17591,344 +14796,117 @@ class="devsite-page-bookmark-tooltip nocontent"
 data-nosnippet
 dismiss-button="true"
 id="devsite-collections-dropdown"
-dismiss-button-text="Dismiss"
-close-button-text="Got it">
-Stay organized with collections
-Save and categorize content based on your preferences.
+dismiss-button-text="Kapat"
+close-button-text="Anladım">
+Koleksiyonlar ile düzeninizi koruyun
+İçeriği tercihlerinize göre kaydedin ve kategorilere ayırın.
 depth="2"
 devsite-toc-embedded
+disabled>
+devsite-no-page-title">
+header-position="top"
+>
+description-position="bottom"
 >
 ">
-You can use the Google Ad Manager SOAP API to build apps that manage inventory,
-create orders, pull reports, and more.
-To help you get started, we offer client
-libraries for Java, .NET, Python, PHP, and Ruby.
-To make your first API request, follow these steps:
-Get access to an Ad Manager network
-If you don&#39;t already have one, sign up for an Ad Manager
-account. You can also create a
-test network if you want to test the API in a
-separate environment. Note that you don&#39;t need an AdSense account for test
-purposes.
-Make a note of your network code. You can find this in the URL when you sign in
-to your network. For example, in the URL
-https://admanager.google.com/1234#home, 1234 is your network code.
-Note: By accessing or using the Ad Manager API you agree to the Terms of
-Service.
-Create authentication credentials
-You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The
-following steps cover the use case of accessing your own Ad Manager data. For
-more details and other options, see
-Authentication.
-Open the Google API Console
-Credentials page
-From the project menu, choose Create project, enter a name for the
-project, and optionally, edit the provided Project ID. Click Create.
-On the Credentials page, select Create credentials, then select
-Service account key.
-Select New service
-account
-and select JSON as the key type.
-Click Create to download a file containing a private key.
-Configure your Ad Manager network
-Sign in to Google Ad
-Manager.
-In the sidebar, click Admin &gt; Global settings.
-Under General settings &gt; Api access click the slider to Enabled.
-Click the Save button at the bottom of the page.
-Set up your client
-Download one of the Ad Manager client libraries. The
-libraries offer wrapper functions and features that make it easier and faster to
-develop apps.
-The following tabs provide quickstarts for coding in each of the languages for
-which there is a client library.
-Java
-Here is a basic example that shows how to use the Java client
-library. For more detailed usage information, refer to
-the README
-file in the client library distribution.
-Setup your credentials
-Run the following command in a shell:
-curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties
-Open the ~/ads.properties file and populate the following fields:
-[...]
-api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE
-api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE
-api.admanager.networkCode=INSERT_NETWORK_CODE_HERE
-[...]
-Specify dependencies
-Edit your pom.xml file and add the following to the
-dependencies tag. You can find the latest version number on
-Github.
-&lt;dependency&gt;
-&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
-&lt;artifactId&gt;ads-lib&lt;/artifactId&gt;
-&lt;version&gt;RELEASE&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
-&lt;artifactId&gt;dfp-axis&lt;/artifactId&gt;
-&lt;version&gt;RELEASE&lt;/version&gt;
-&lt;/dependency&gt;
-Write some code and make a request!
-import com.google.api.ads.common.lib.auth.OfflineCredentials;
-import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
-import com.google.api.ads.admanager.axis.factory.AdManagerServices;
-import com.google.api.ads.admanager.axis.v202602.Network;
-import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface;
-import com.google.api.ads.admanager.lib.client.AdManagerSession;
-import com.google.api.client.auth.oauth2.Credential;
-public class App {
-public static void main(String[] args) throws Exception {
-Credential oAuth2Credential = new OfflineCredentials.Builder()
-.forApi(Api.AD_MANAGER)
-.fromFile()
-.build()
-.generateCredential();
-// Construct an AdManagerSession.
-AdManagerSession session = new AdManagerSession.Builder()
-.fromFile()
-.withOAuth2Credential(oAuth2Credential)
-.build();
-// Construct a Google Ad Manager service factory, which can only be used once per
-// thread, but should be reused as much as possible.
-AdManagerServices adManagerServices = new AdManagerServices();
-// Retrieve the appropriate service
-NetworkServiceInterface networkService = adManagerServices.get(session,
-NetworkServiceInterface.class);
-// Make a request
-Network network = networkService.getCurrentNetwork();
-System.out.printf("Current network has network code '%s' and display" +
-" name '%s'.%n", network.getNetworkCode(), network.getDisplayName());
-}
-}
-View on GitHub
-Python
-Here is a basic example that shows how to use the
-href="//github.com/googleads/googleads-python-lib">Python client library.
-The Python Client Library supports Python v3.6+. For more detailed usage
-information, refer to the
-href="//github.com/googleads/googleads-python-lib/blob/main/README.md">README
-file in the client library distribution.
-Install the library and set up your credentials.
-Run the following commands in a shell:
-python3 -m pip install googleads
-curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \
--o ~/googleads.yaml
-Set up your ~/googleads.yaml file.
-Fill in the following fields:
-ad_manager:
-application_name: INSERT_APPLICATION_NAME_HERE
-network_code: INSERT_NETWORK_CODE_HERE
-path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
-Run some code and make a request.
-# Import the library.
-from googleads import ad_manager
-# Initialize a client object, by default uses the credentials in ~/googleads.yaml.
-client = ad_manager.AdManagerClient.LoadFromStorage()
-# Initialize a service.
-network_service = client.GetService('NetworkService', version='v202602')
-# Make a request.
-current_network = network_service.getCurrentNetwork()
-print("Current network has network code '%s' and display name '%s'." %
-(current_network['networkCode'], current_network['displayName']))
-View on GitHub
-PHP
-Here is a basic example that shows how to use the
-PHP client library.
-Install the library and setup your credentials.
-Run the following commands in a shell to install the client library and download the
-adsapi_php.ini
-file to your home directory:
-composer require googleads/googleads-php-lib
-curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
-Setup your ~/adsapi_php.ini file.
-Fill in the following fields:
-[AD_MANAGER]
-networkCode = "INSERT_NETWORK_CODE_HERE"
-applicationName = "INSERT_APPLICATION_NAME_HERE"
-[OAUTH2]
-jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE"
-scopes = "https://www.googleapis.com/auth/dfp"
-Run some code and make a request!
-This example code must be run from the command line, not a browser.
-The file containing this code must reside in the root of the project directory,
-where composer require was run.
-&lt;?php
-require 'vendor/autoload.php';
-use Google\AdsApi\AdManager\AdManagerSession;
-use Google\AdsApi\AdManager\AdManagerSessionBuilder;
-use Google\AdsApi\AdManager\v202602\ApiException;
-use Google\AdsApi\AdManager\v202602\ServiceFactory;
-use Google\AdsApi\Common\OAuth2TokenBuilder;
-// Generate a refreshable OAuth2 credential for authentication.
-$oAuth2Credential = (new OAuth2TokenBuilder())
-->fromFile()
-->build();
-// Construct an API session configured from a properties file and the OAuth2
-// credentials above.
-$session = (new AdManagerSessionBuilder())
-->fromFile()
-->withOAuth2Credential($oAuth2Credential)
-->build();
-// Get a service.
-$serviceFactory = new ServiceFactory();
-$networkService = $serviceFactory->createNetworkService($session);
-// Make a request
-$network = $networkService->getCurrentNetwork();
-printf(
-"Network with code %d and display name '%s' was found.\n",
-$network->getNetworkCode(),
-$network->getDisplayName()
-);
-View on GitHub
-.NET
-Here is a basic example that shows how to use the .NET client
-library
-Create a new project
-Open Visual Studio and create a new project (Console Application).
-Add required library references to your project
-Add a nuget dependency for Google.Dfp.
-Setup your App.config
-Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:
-configuration/AdManagerApi
-configuration/configSections/section[name="AdManagerApi"]
-configuration/system.net
-Setup credentials
-Open App.config and edit the following keys:
-&lt;add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /&gt;
-&lt;add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /&gt;
-&lt;add key="OAuth2Mode" value="SERVICE_ACCOUNT" /&gt;
-&lt;add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" /&gt;
-Make a call to the library
-You can call the library as shown in the following C# code snippet
-View on GitHub
-AdManagerUser user = new AdManagerUser();
-using (InventoryService inventoryService = user.GetService&lt;InventoryService&gt;())
-{
-// Create a statement to select ad units.
-int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-StatementBuilder statementBuilder =
-new StatementBuilder().OrderBy("id ASC").Limit(pageSize);
-// Retrieve a small amount of ad units at a time, paging through until all
-// ad units have been retrieved.
-int totalResultSetSize = 0;
-do
-{
-AdUnitPage page =
-inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
-// Print out some information for each ad unit.
-if (page.results != null)
-{
-totalResultSetSize = page.totalResultSetSize;
-int i = page.startIndex;
-foreach (AdUnit adUnit in page.results)
-{
-Console.WriteLine(
-"{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.", i++,
-adUnit.id, adUnit.name);
-}
-}
-statementBuilder.IncreaseOffsetBy(pageSize);
-} while (statementBuilder.GetOffset() &lt; totalResultSetSize);
-Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-}
-If you don't want to set your credentials in your App.config, then refer
-to this wiki article
-for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer
-to the README
-. If you want to develop in .NET without the client library, please refer to the
-NoClientLibrary
-wiki article.
-Ruby
-Here is a basic example that shows how to use the
-href="//github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api">Ruby
-client library. The Ruby client library requires Ruby 2.1 or later.
-Install the Ruby gem and get the configuration file.
-Run the following commands in a shell:
-gem install google-dfp-api
-curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml
-If you encounter an error such as "cannot load such
-file -- mkmf (LoadError)" at any point while installing your gems, you
-may need to install additional Ruby development libraries such as ruby-dev,
-ruby-devel, xcode-select etc. for your particular environment.
-Setup your credentials
-Populate the required fields in the ~/ad_manager_api.yml
-file. If you don't already have an OAuth2 keyfile, you'll need to follow the
-steps to create your OAuth2
-credentials.
-:authentication:
-:oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE
-:application_name: INSERT_APPLICATION_NAME_HERE
-:network_code: INSERT_NETWORK_CODE_HERE
-Write some code and make a request!
-# Import the library.
-require 'ad_manager_api'
-# Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default).
-ad_manager = AdManagerApi::Api.new
-# Get a service instance.
-network_service = ad_manager.service(:NetworkService, :v202602)
-# Make a request.
-network = network_service.get_current_network()
-puts "The current network is %s (%d)." %
-[network[:display_name], network[:network_code]]
-View on GitHub
-More detailed steps for getting started can be found in the
-href="//github.com/googleads/google-api-ads-ruby/wiki/DFP-Readme">README
-file that is distributed with the Ruby client library. Also, check out our
-href="https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api/examples">full
-example library for Ruby.
-Next steps
-When you have a client library up and running, modify the examples provided to
-extend them for your needs.
-Browse the reference documentation to learn more
-about the API.
-If you need help, visit our Support page.
-hats-id="2SbP5yi80LHkahqinNfT0Z7MuPgc"
-listnr-id="82128">
-position="footer"
-project-name="Ad Manager SOAP API"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260630-r00-rc00.478639290528629295"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="footer"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
-project-support-url="https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api"
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image.png?hl=tr"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_36.png?hl=tr 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_48.png?hl=tr 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_72.png?hl=tr 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_96.png?hl=tr 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_480.png?hl=tr 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_720.png?hl=tr 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_856.png?hl=tr 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_960.png?hl=tr 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_1440.png?hl=tr 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_1920.png?hl=tr 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-overview-image_2880.png?hl=tr 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+fetchpriority="high">
 >
-Send feedback
-Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-02-25 UTC.
+data-text="Dinamik reklam ekleme (DAI)"
+class="hide-from-toc no-link"
+tabindex="0">
+Dinamik reklam ekleme (DAI)
+DAI, video içeriğinizden para kazanmanıza olanak tanır ve reklam isteği ile reklam yanıtı sürecinin karmaşıklığını SDK'dan kaldırır. Bu yaklaşım, istemci tarafı hatalarının görülme olasılığını azaltır ve içerik ile reklamlar arasında gecikme veya arabelleğe alma olmaksızın TV benzeri bir deneyim sağlar.  DAI ile canlı yayınlar ve isteğe bağlı video programlama için tek reklamlar hedefleyebilir, kapsamlı cihaz desteğiyle çok ekranlı erişim elde edebilir ve Video için Ad Exchange sayesinde tüm cihazlarda programatik para kazanma fırsatından faydalanabilirsiniz. İçeriğiniz (orijinal biçiminden bağımsız olarak) dijital hale geldikten sonra bu içeriği görüntüleyen bağımsız kullanıcıya bağlı olarak DAI, içeriğinizde hedeflenmiş video reklamlar göstermenize olanak tanır. DAI, desteklenen SDK platformlarının yanı sıra tam hizmet API'si ve kapsül yayınlama API'si aracılığıyla bu iş akışlarını gerçekleştirmenize olanak tanır. DAI'yi kullanmaya başlamak için aşağıdaki entegrasyonlardan birini seçin:
+background="grey"
+header-position="top"
 >
-<template class="devsite-thumb-rating-feedback">
-position="thumb-rating"
-project-name="Ad Manager SOAP API"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260630-r00-rc00.478639290528629295"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="thumb-rating"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
-project-support-url="https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api"
+description-position="bottom"
 >
-Need to tell us more?
-</template>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice.png?hl=tr"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_36.png?hl=tr 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_48.png?hl=tr 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_72.png?hl=tr 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_96.png?hl=tr 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_480.png?hl=tr 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_720.png?hl=tr 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_856.png?hl=tr 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_960.png?hl=tr 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1440.png?hl=tr 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1920.png?hl=tr 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_2880.png?hl=tr 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+loading="lazy"
+>
+>
+data-text="Tam hizmet DAI"
+class="hide-from-toc no-link"
+tabindex="0">
+Tam hizmet DAI
+Tam kapsamlı DAI ile reklam kapsülleri Google Ad Manager tarafından seçilir ve doğrudan içerik akışınıza eklenir.
+class="button
+"
+>Daha Fazla Bilgi
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving.png?hl=tr"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_36.png?hl=tr 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_48.png?hl=tr 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_72.png?hl=tr 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_96.png?hl=tr 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_480.png?hl=tr 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_720.png?hl=tr 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_856.png?hl=tr 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_960.png?hl=tr 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1440.png?hl=tr 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1920.png?hl=tr 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_2880.png?hl=tr 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+loading="lazy"
+>
+>
+data-text="DAI yayınlayan kapsül"
+class="hide-from-toc no-link"
+tabindex="0">
+DAI yayınlayan kapsül
+DAI kapsülü sunma ile reklam kapsülleri Google Ad Manager tarafından sağlanır ancak birleştirme ayrı bir manifest düzenleyici tarafından gerçekleştirilir.
+class="button
+"
+>Daha Fazla Bilgi
+background="grey"
+header-position="top"
+>
+description-position="bottom"
+>
+>
+data-text="Desteklenen platformlar"
+class="hide-from-toc no-link"
+tabindex="0">
+Desteklenen platformlar
+İçeriğiniz için özel entegrasyon oluşturmak üzere aşağıdaki desteklenen platformlarda DAI Full service veya DAI Kapsül Yayınlama'yı kullanın:
+class="button
+"
+>HTML5
+class="button
+"
+>Android
+class="button
+"
+>iOS
+class="button
+"
+>tvOS
+class="button
+"
+>Chromecast
+class="button
+"
+>Roku
+header-position="top"
+>
+description-position="bottom"
+>
+>
+data-text="Destek Alın"
+class="hide-from-toc no-link"
+tabindex="0">
+Destek Alın
+Dinamik reklam ekleme özelliğini uygulama konusunda sorularınız varsa veya sorun yaşıyorsanız hesap yöneticinizle iletişime geçin ya da IMA SDK Destek Ekibi ile iletişime geçin.
+class="button
+"
+>IMA SDK Destek Ekibi ile iletişime geçme
+Aksi belirtilmediği sürece bu sayfanın içeriği Creative Commons Atıf 4.0 Lisansı altında ve kod örnekleri Apache 2.0 Lisansı altında lisanslanmıştır. Ayrıntılı bilgi için Google Developers Site Politikaları'na göz atın. Java, Oracle ve/veya satış ortaklarının tescilli ticari markasıdır.
+Son güncelleme tarihi: 2026-02-27 UTC.
+>
 <template class="devsite-content-data-template">
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-25 UTC."],[],[]]
+[[["Anlaması kolay","easyToUnderstand","thumb-up"],["Sorunumu çözdü","solvedMyProblem","thumb-up"],["Diğer","otherUp","thumb-up"]],[["İhtiyacım olan bilgiler yok","missingTheInformationINeed","thumb-down"],["Çok karmaşık / çok fazla adım var","tooComplicatedTooManySteps","thumb-down"],["Güncel değil","outOfDate","thumb-down"],["Çeviri sorunu","translationIssue","thumb-down"],["Örnek veya kod sorunu","samplesCodeIssue","thumb-down"],["Diğer","otherDown","thumb-down"]],["Son güncelleme tarihi: 2026-02-27 UTC."],[],[]]
 </template>
-aria-label="Footer links"
+aria-label="Altbilgi bağlantıları"
 data-nosnippet>
-Connect
+Ağ
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -17959,7 +14937,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 6)"
 >
 YouTube
-Programs
+Programlar
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -17985,7 +14963,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
 >
 Google Cloud & NVIDIA
-Developer consoles
+Geliştirici konsolları
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -18029,7 +15007,7 @@ Google Home Developer Console
 class="devsite-footer-sites-logo-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Google Developers Link">
-src="https://www.gstatic.com/devrel-devsite/prod/v3be1e30159846e100d05529400567b663b9f8b605137438a2f417848d68359dd/developers/images/lockup-google-for-developers.svg"
+src="https://www.gstatic.com/devrel-devsite/prod/v7669de8735de7fa899c49c793af6b01f3bfef3435bb66621d079ef252c528b54/developers/images/lockup-google-for-developers.svg"
 loading="lazy"
 alt="Google Developers">
 class="devsite-footer-sites-link
@@ -18067,19 +15045,19 @@ gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer All products Link"
 >
-All products
+Tüm ürünler
 ">
-href="/terms/site-terms"
+href="https://developers.google.com/terms/site-terms?hl=tr"
 data-category="Site-Wide Custom Events"
 data-label="Footer Terms link"
 >
-Terms
+Şartlar
 ">
-href="//policies.google.com/privacy"
+href="//policies.google.com/privacy?hl=tr"
 data-category="Site-Wide Custom Events"
 data-label="Footer Privacy link"
 >
-Privacy
+Gizlilik
 glue-cookie-notification-bar-control">
 href="#"
 data-category="Site-Wide Custom Events"
@@ -18112,12 +15090,2994 @@ Manage cookies
 
 ---
 
-# overview
+## DOCUMENT: full service
+**Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
+**Ingested At:** undefined
 
-> **Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
-> **Analyzed At:** 2026-07-09T02:05:23.462Z
+### ## Content
+lang="zh-CN-x-mtfrom-en"
+dir="ltr">
+content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
+crossorigin="use-credentials">
+href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=zh-cn">
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ar" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=bn" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=zh-cn" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=zh-tw" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=fa" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=fr" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=de" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=he" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=hi" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=id" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=it" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ja" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ko" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=pl" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=pt-br" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ru" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=es-419" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=th" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=tr" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=vi" /><title>DAI Full Service API &nbsp;|&nbsp; Google for Developers</title>
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en">
+template="landing"
+theme="google-blue"
+type="product"
+layout="docs"
+pending>
+跳至主要内容
+class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Navigation menu button"
+visually-hidden
+aria-label="打开菜单">
+size="medium"
+>
+alt="Google Dynamic Ad Insertion"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=zh-cn"
+srcset=" /static/ads/images/logo_admanager_192px.svg"
+sizes="64px"
+loading="lazy"
+>
+>
+devsite-has-google-wordmark">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
+>
+Dynamic Ad Insertion
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - 首页"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: 首页"
+track-name="首页"
+>
+首页
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=zh-cn"
+track-metadata-position="nav - 首页"
+track-metadata-module="tertiary nav"
+tooltip
+>
+首页
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - sdk"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK"
+track-name="sdk"
+>
+SDK
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=zh-cn"
+track-metadata-position="nav - sdk"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - HTML5"
+data-category="DAI top menu navigation"
+>
+HTML5
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=zh-cn"
+track-metadata-position="nav - sdk"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Android"
+data-category="DAI top menu navigation"
+>
+Android
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=zh-cn"
+track-metadata-position="nav - sdk"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - iOS"
+data-category="DAI top menu navigation"
+>
+iOS
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=zh-cn"
+track-metadata-position="nav - sdk"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - tvOS"
+data-category="DAI top menu navigation"
+>
+tvOS
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=zh-cn"
+track-metadata-position="nav - sdk"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Chromecast"
+data-category="DAI top menu navigation"
+>
+Chromecast
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=zh-cn"
+track-metadata-position="nav - sdk"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Roku"
+data-category="DAI top menu navigation"
+>
+Roku
+</tab>
+<tab class="devsite-dropdown
+devsite-active
+">
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=zh-cn"
+track-type="nav"
+track-metadata-position="nav - api"
+track-metadata-module="primary nav"
+aria-label="API, selected"
+data-category="Site-Wide Custom Events"
+data-label="Tab: API"
+track-name="api"
+>
+API
+aria-haspopup="menu"
+aria-expanded="false"
+aria-label="以下项的下拉菜单 API"
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=zh-cn"
+track-metadata-position="nav - api"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: API"
+track-name="api"
+class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down">
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=zh-cn"
+track-metadata-position="nav - api"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Full service"
+data-category="DAI top menu navigation"
+>
+全服务 DAI
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-cn"
+track-metadata-position="nav - api"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Pod serving"
+data-category="DAI top menu navigation"
+>
+广告连播投放 DAI
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=zh-cn"
+track-metadata-position="nav - api"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Ad break"
+data-category="DAI top menu navigation"
+>
+广告插播时间点
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - 资源"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: 资源"
+track-name="资源"
+>
+资源
+">
+">
+支持
+track-type="nav"
+track-metadata-eventdetail="//support.google.com/admanager/community?hl=zh-cn"
+track-metadata-position="nav - 资源"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="支持"
+tooltip
+>
+Ad Manager 帮助社区
+track-type="nav"
+track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=zh-cn"
+track-metadata-position="nav - 资源"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="支持"
+tooltip
+>
+与支持团队联系
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=zh-cn"
+track-metadata-position="nav - 资源"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="支持"
+tooltip
+>
+服务条款
+track-type="nav"
+track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
+track-metadata-position="nav - 资源"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="支持"
+tooltip
+>
+Google Ad Manager 官方 Discord 频道
+track-type="nav"
+track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
+track-metadata-position="nav - 资源"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="支持"
+tooltip
+>
+广告开发者博客
+">
+">
+测试工具
+track-type="nav"
+track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
+track-metadata-position="nav - 资源"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="测试工具"
+tooltip
+>
+Video Suite Inspector
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=zh-cn"
+track-metadata-position="nav - 资源"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="测试工具"
+tooltip
+>
+示例视频流
+</tab>
+enable-signin
+enable-search
+enable-suggestions
+enable-query-completion
+enable-search-summaries
+project-name="DAI Full Service API"
+tenant-name="Google for Developers"
+project-scope="/ad-manager/dynamic-ad-insertion/api/full-service"
+url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/full-service?hl=zh-cn"
+>
+search-open
+class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+aria-label="打开搜索框">
+aria-activedescendant=""
+aria-autocomplete="list"
+aria-label="搜索"
+aria-expanded="false"
+aria-haspopup="listbox"
+autocomplete="off"
+class="devsite-search-field devsite-search-query"
+name="q"
+placeholder="搜索"
+role="combobox"
+type="text"
+value=""
+>
+<kbd class="devsite-search-shortcut-icon">/</kbd>
+search-close
+class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+aria-label="关闭搜索框">
+>English
+>Deutsch
+>Español
+>Español – América Latina
+>Français
+>Indonesia
+>Italiano
+>Polski
+>Português – Brasil
+>Tiếng Việt
+>Türkçe
+>Русский
+>עברית
+>العربيّة
+>فارسی
+>हिंदी
+>বাংলা
+>ภาษาไทย
+>中文 – 简体
+>中文 – 繁體
+>日本語
+>한국어
+enable-profiles
+fp-auth
+id="devsite-user">
+登录
+">
+>
+>
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Lower Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail=""
+>
+全服务 DAI API
+<tab  class="devsite-active">
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=zh-cn"
+track-type="nav"
+track-metadata-position="nav - 指南"
+track-metadata-module="primary nav"
+aria-label="指南, selected"
+data-category="Site-Wide Custom Events"
+data-label="Tab: 指南"
+track-name="指南"
+>
+指南
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/reference/live?hl=zh-cn"
+track-type="nav"
+track-metadata-position="nav - 参考文档"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: 参考文档"
+track-name="参考文档"
+>
+参考文档
+</tab>
+>
+placeholder="过滤条件"
+aria-label="输入文本以进行过滤"
+role="searchbox">
+data-title="清除过滤条件"
+aria-label="清除过滤条件"
+role="button"
+tabindex="0">
+aria-label="侧边菜单">
+id="devsite-close-nav"
+class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Close navigation"
+aria-label="关闭导航栏">
+size="medium"
+>
+alt="Google Dynamic Ad Insertion"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=zh-cn"
+srcset=" /static/ads/images/logo_admanager_192px.svg"
+sizes="64px"
+loading="lazy"
+>
+>
+devsite-has-google-wordmark">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
+>
+Dynamic Ad Insertion
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: 首页"
+track-name="首页"
+>
+首页
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: 首页"
+track-name="首页"
+>
+更多
+menu="首页">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK"
+track-name="sdk"
+>
+SDK
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK"
+track-name="sdk"
+>
+更多
+menu="SDK">
+class="devsite-nav-title gc-analytics-event
+devsite-nav-active"
+data-category="Site-Wide Custom Events"
+data-label="Tab: API"
+track-name="api"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: API"
+track-type="globalNav"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+API
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: API"
+track-name="api"
+>
+更多
+menu="API">
+class="devsite-nav-title gc-analytics-event
+devsite-nav-active"
+data-category="Site-Wide Custom Events"
+data-label="Tab: 指南"
+track-name="指南"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: 指南"
+track-type="globalNav"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+指南
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: 参考文档"
+track-name="参考文档"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: 参考文档"
+track-type="globalNav"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+参考文档
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: 资源"
+track-name="资源"
+>
+资源
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: 资源"
+track-name="资源"
+>
+更多
+menu="资源">
+class="devsite-nav-title"
+>概览
+class="devsite-nav-title"
+>了解 DAI Full Service API
+devsite-nav-expandable">
+使用 HMAC 令牌对请求进行身份验证
+devsite-nav-expandable">
+视频流会话请求
+class="devsite-nav-title"
+>概览
+class="devsite-nav-title"
+>对流会话请求进行身份验证
+devsite-nav-heading">
+开发
+class="devsite-nav-title"
+>管理 DAI 直播
+class="devsite-nav-title"
+>请求 DAI VOD 直播
+class="devsite-nav-title"
+>植入 AdChoices
+class="devsite-nav-title"
+>在 VOD 串流中启用可跳过的广告
+aria-label="侧边菜单" hidden>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: 首页"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+首页
+aria-label="侧边菜单" hidden>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: HTML5"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+HTML5
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Android"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Android
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: iOS"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+iOS
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: tvOS"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+tvOS
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Chromecast"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Chromecast
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Roku"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Roku
+aria-label="侧边菜单" hidden>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: 全服务 DAI"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+全服务 DAI
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: 广告连播投放 DAI"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+广告连播投放 DAI
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: 广告插播时间点"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+广告插播时间点
+aria-label="侧边菜单" hidden>
+class="devsite-nav-title"
+tooltip
+>
+支持
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Ad Manager 帮助社区"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Ad Manager 帮助社区
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: 与支持团队联系"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+与支持团队联系
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: 服务条款"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+服务条款
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Google Ad Manager 官方 Discord 频道"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Google Ad Manager 官方 Discord 频道
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: 广告开发者博客"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+广告开发者博客
+class="devsite-nav-title"
+tooltip
+>
+测试工具
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Video Suite Inspector"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Video Suite Inspector
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: 示例视频流"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+示例视频流
+has-book-nav
+>
+role="navigation"
+aria-label="本页内容"
+depth="2"
+scrollbars
+data-nosnippet
+disabled>
+>
+DAI API 目前处于 Beta 版阶段，在您的广告资源网中可能无法使用。如需了解详情，请与您的客户经理联系。我们建议在提供 IMA SDK 的平台上使用该 SDK。
+class="devsite-banner-translated-image invert"
+alt="">
+Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
+aria-label="面包屑导航">
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail=""
+>
+首页
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail=""
+>
+产品
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="3"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="3"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
+>
+Dynamic Ad Insertion
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="4"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="4"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
+>
+DAI Full Service API
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="5"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="5"
+track-metadata-eventdetail=""
+>
+API
+ack-key="AckCollectionsBookmarkTooltipDismiss"
+analytics-category="Site-Wide Custom Events"
+analytics-action-show="Callout Profile displayed"
+analytics-action-close="Callout Profile dismissed"
+analytics-label="Create Collection Callout"
+class="devsite-page-bookmark-tooltip nocontent"
+data-nosnippet
+dismiss-button="true"
+id="devsite-collections-dropdown"
+dismiss-button-text="关闭"
+close-button-text="知道了">
+使用集合让一切井井有条
+根据您的偏好保存内容并对其进行分类。
+depth="2"
+devsite-toc-embedded
+disabled>
+devsite-no-page-title">
+header-position="top"
+>
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice.png?hl=zh-cn"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_36.png?hl=zh-cn 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_48.png?hl=zh-cn 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_72.png?hl=zh-cn 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_96.png?hl=zh-cn 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_480.png?hl=zh-cn 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_720.png?hl=zh-cn 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_856.png?hl=zh-cn 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_960.png?hl=zh-cn 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1440.png?hl=zh-cn 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1920.png?hl=zh-cn 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_2880.png?hl=zh-cn 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+fetchpriority="high">
+>
+data-text="全服务 DAI"
+class="hide-from-toc no-link"
+tabindex="0">
+全服务 DAI
+全方位服务动态广告插播 (DAI) 是 Google 对服务器端广告插播 (SSAI) 的端到端实现。它允许发布商以 HLS 或 MPEG DASH 格式提供内容流，而 Google 的 DAI 服务器会从 Google 或第三方广告服务器中选择合适的广告并将其插入到该内容流中，然后再向用户呈现。
+background="grey"
+header-position="top"
+>
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram.png?hl=zh-cn"
+srcset="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_36.png?hl=zh-cn 36w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_48.png?hl=zh-cn 48w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_72.png?hl=zh-cn 72w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_96.png?hl=zh-cn 96w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_480.png?hl=zh-cn 480w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_720.png?hl=zh-cn 720w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_856.png?hl=zh-cn 856w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_960.png?hl=zh-cn 960w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1440.png?hl=zh-cn 1440w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1920.png?hl=zh-cn 1920w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_2880.png?hl=zh-cn 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+loading="lazy"
+>
+>
+data-text="使用 IMA DAI SDK"
+class="hide-from-toc no-link"
+tabindex="0">
+使用 IMA DAI SDK
+网页或应用通过以下方式加载 IMA DAI SDK：
+用于 HTML5 的嵌入式脚本代码
+适用于 Android、Google Cast、iOS、tvOS 或 Roku 的原生应用
+SDK 从 Google Ad Manager 360 请求 VOD 视频流或直播活动。
+Ad Manager 360 会返回包含所插入广告插播时间点的视频流的响应。
+SDK 解析响应，根据环境确定正确的媒体类型，然后将视频流（并根据需要投放随播广告）投放到网页或应用。
+视频播放器与 SDK 协商播放细节并播放内容。
+视频播放器会监听插播视频元数据，并将其传递给 SDK 进行处理。
+SDK 会根据需要触发展示 ping 和跟踪事件。
+如需详细了解如何使用 IMA DAI SDK 实现客户端视频播放器，请参阅我们的 SDK 指南：
+HTML5
+Android
+iOS
+tvOS
+Chromecast
+Roku
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api.png?hl=zh-cn"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_36.png?hl=zh-cn 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_48.png?hl=zh-cn 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_72.png?hl=zh-cn 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_96.png?hl=zh-cn 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_480.png?hl=zh-cn 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_720.png?hl=zh-cn 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_856.png?hl=zh-cn 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_960.png?hl=zh-cn 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1440.png?hl=zh-cn 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1920.png?hl=zh-cn 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_2880.png?hl=zh-cn 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+loading="lazy"
+>
+>
+data-text="通过 DAI API"
+class="hide-from-toc no-link"
+tabindex="0">
+通过 DAI API
+客户的播放器应用向 Google Ad Manager 360 请求 VOD 流式传输或直播流式传输。
+Ad Manager 360 会返回包含以下内容的视频流：
+插入的广告插播时间点。
+客户端的播放器应用开始播放数据流，并请求一次广告元数据（对于 VOD 流式传输）或开始定期轮询广告元数据（对于直播流式传输）。
+客户端的播放器应用会监听插播式广告元数据，对其进行解析，并将其与广告元数据中的值进行比较，以识别广告事件。
+客户的视频播放器应用会根据需要触发广告展示 ping 和跟踪事件。
+如需详细了解如何使用 DAI REST API 实现客户端视频播放器，请参阅我们的 API 指南：
+Live API
+VOD API
+hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
+listnr-id="82128">
+如未另行说明，那么本页面中的内容已根据知识共享署名 4.0 许可获得了许可，并且代码示例已根据 Apache 2.0 许可获得了许可。有关详情，请参阅 Google 开发者网站政策。Java 是 Oracle 和/或其关联公司的注册商标。
+最后更新时间 (UTC)：2026-03-05。
+>
+<template class="devsite-content-data-template">
+[[["易于理解","easyToUnderstand","thumb-up"],["解决了我的问题","solvedMyProblem","thumb-up"],["其他","otherUp","thumb-up"]],[["没有我需要的信息","missingTheInformationINeed","thumb-down"],["太复杂/步骤太多","tooComplicatedTooManySteps","thumb-down"],["内容需要更新","outOfDate","thumb-down"],["翻译问题","translationIssue","thumb-down"],["示例/代码问题","samplesCodeIssue","thumb-down"],["其他","otherDown","thumb-down"]],["最后更新时间 (UTC)：2026-03-05。"],[],[]]
+</template>
+aria-label="页脚链接"
+data-nosnippet>
+关注
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+博客
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Bluesky
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Instagram
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+LinkedIn
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+X (Twitter)
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 6)"
+>
+YouTube
+计划
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Google Developer Program
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Google Developer Groups
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Google Developer Experts
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+Accelerators
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+Google Cloud & NVIDIA
+开发者控制台
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Google API Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Google Cloud Platform Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Google Play 管理中心
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+Firebase Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+Actions on Google Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 6)"
+>
+Cast SDK Developer Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 7)"
+>
+Chrome Web Store Dashboard
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 8)"
+>
+Google Home Developer Console
+class="devsite-footer-sites-logo-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google Developers Link">
+src="https://www.gstatic.com/devrel-devsite/prod/v7669de8735de7fa899c49c793af6b01f3bfef3435bb66621d079ef252c528b54/developers/images/lockup-google-for-developers.svg"
+loading="lazy"
+alt="Google Developers">
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Android Link"
+>
+Android
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Chrome Link"
+>
+Chrome
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Firebase Link"
+>
+Firebase
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google Cloud Platform Link"
+>
+Google Cloud Platform
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google AI Link"
+>
+Google AI
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer All products Link"
+>
+所有产品
+">
+href="https://developers.google.com/terms/site-terms?hl=zh-cn"
+data-category="Site-Wide Custom Events"
+data-label="Footer Terms link"
+>
+条款
+">
+href="//policies.google.com/privacy?hl=zh-cn"
+data-category="Site-Wide Custom Events"
+data-label="Footer Privacy link"
+>
+隐私权政策
+glue-cookie-notification-bar-control">
+href="#"
+data-category="Site-Wide Custom Events"
+data-label="Footer Manage cookies link"
+aria-hidden="true"
+>
+Manage cookies
+>English
+>Deutsch
+>Español
+>Español – América Latina
+>Français
+>Indonesia
+>Italiano
+>Polski
+>Português – Brasil
+>Tiếng Việt
+>Türkçe
+>Русский
+>עברית
+>العربيّة
+>فارسی
+>हिंदी
+>বাংলা
+>ภาษาไทย
+>中文 – 简体
+>中文 – 繁體
+>日本語
+>한국어
 
-### Content
+---
+
+## DOCUMENT: pod serving
+**Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
+**Ingested At:** undefined
+
+### ## Content
+lang="pt-BR-x-mtfrom-en"
+dir="ltr">
+content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
+crossorigin="use-credentials">
+href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=pt-br">
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ar" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=bn" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-cn" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-tw" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fr" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=de" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=he" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=hi" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=id" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=it" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ja" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ko" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pl" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pt-br" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ru" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=vi" /><title>DAI Pod Serving API &nbsp;|&nbsp; Google for Developers</title>
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en">
+template="landing"
+theme="google-blue"
+type="product"
+layout="docs"
+pending>
+Ir para o conteúdo principal
+class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Navigation menu button"
+visually-hidden
+aria-label="Abrir menu">
+size="medium"
+>
+alt="Google Dynamic Ad Insertion"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=pt-br"
+srcset=" /static/ads/images/logo_admanager_192px.svg"
+sizes="64px"
+loading="lazy"
+>
+>
+devsite-has-google-wordmark">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
+>
+Dynamic Ad Insertion
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - página inicial"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Página inicial"
+track-name="página inicial"
+>
+Página inicial
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=pt-br"
+track-metadata-position="nav - página inicial"
+track-metadata-module="tertiary nav"
+tooltip
+>
+Página inicial
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - sdks"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDKs"
+track-name="sdks"
+>
+SDKs
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=pt-br"
+track-metadata-position="nav - sdks"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - HTML5"
+data-category="DAI top menu navigation"
+>
+HTML5
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=pt-br"
+track-metadata-position="nav - sdks"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Android"
+data-category="DAI top menu navigation"
+>
+Android
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=pt-br"
+track-metadata-position="nav - sdks"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - iOS"
+data-category="DAI top menu navigation"
+>
+iOS
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=pt-br"
+track-metadata-position="nav - sdks"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - tvOS"
+data-category="DAI top menu navigation"
+>
+tvOS
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=pt-br"
+track-metadata-position="nav - sdks"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Chromecast"
+data-category="DAI top menu navigation"
+>
+Chromecast
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=pt-br"
+track-metadata-position="nav - sdks"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - Roku"
+>
+Roku
+</tab>
+<tab class="devsite-dropdown
+devsite-active
+">
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pt-br"
+track-type="nav"
+track-metadata-position="nav - apis"
+track-metadata-module="primary nav"
+aria-label="APIs, selected"
+data-category="Site-Wide Custom Events"
+data-label="Tab: APIs"
+track-name="apis"
+>
+APIs
+aria-haspopup="menu"
+aria-expanded="false"
+aria-label="Menu suspenso de APIs"
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pt-br"
+track-metadata-position="nav - apis"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: APIs"
+track-name="apis"
+class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down">
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=pt-br"
+track-metadata-position="nav - apis"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Full service"
+data-category="DAI top menu navigation"
+>
+DAI de serviço completo
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pt-br"
+track-metadata-position="nav - apis"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Pod serving"
+data-category="DAI top menu navigation"
+>
+DAI de veiculação de conjuntos
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=pt-br"
+track-metadata-position="nav - apis"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Ad break"
+data-category="DAI top menu navigation"
+>
+Intervalo de anúncio
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - recursos"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Recursos"
+track-name="recursos"
+>
+Recursos
+">
+">
+Suporte
+track-type="nav"
+track-metadata-eventdetail="//support.google.com/admanager/community?hl=pt-br"
+track-metadata-position="nav - recursos"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="suporte"
+tooltip
+>
+Comunidade de Ajuda do Ad Manager
+track-type="nav"
+track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=pt-br"
+track-metadata-position="nav - recursos"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="suporte"
+tooltip
+>
+Entrar em contato com o suporte
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=pt-br"
+track-metadata-position="nav - recursos"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="suporte"
+tooltip
+>
+Termos de Serviço
+track-type="nav"
+track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
+track-metadata-position="nav - recursos"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="suporte"
+tooltip
+>
+Canal oficial do Google Ad Manager no Discord
+track-type="nav"
+track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
+track-metadata-position="nav - recursos"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="suporte"
+tooltip
+>
+Blog de desenvolvedores de anúncios
+">
+">
+Ferramentas de teste
+track-type="nav"
+track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
+track-metadata-position="nav - recursos"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="ferramentas de teste"
+tooltip
+>
+Inspetor do pacote de vídeo
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=pt-br"
+track-metadata-position="nav - recursos"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="ferramentas de teste"
+tooltip
+>
+Streams de amostra
+</tab>
+enable-signin
+enable-search
+enable-suggestions
+enable-query-completion
+enable-search-summaries
+project-name="DAI Pod Serving API"
+tenant-name="Google for Developers"
+project-scope="/ad-manager/dynamic-ad-insertion/api/pod-serving"
+url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=pt-br"
+>
+search-open
+class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+aria-label="Abrir pesquisa">
+aria-activedescendant=""
+aria-autocomplete="list"
+aria-label="Pesquisa"
+aria-expanded="false"
+aria-haspopup="listbox"
+autocomplete="off"
+class="devsite-search-field devsite-search-query"
+name="q"
+placeholder="Pesquisa"
+role="combobox"
+type="text"
+value=""
+>
+<kbd class="devsite-search-shortcut-icon">/</kbd>
+search-close
+class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+aria-label="Fechar pesquisa">
+>English
+>Deutsch
+>Español
+>Español – América Latina
+>Français
+>Indonesia
+>Italiano
+>Polski
+>Português – Brasil
+>Tiếng Việt
+>Türkçe
+>Русский
+>עברית
+>العربيّة
+>فارسی
+>हिंदी
+>বাংলা
+>ภาษาไทย
+>中文 – 简体
+>中文 – 繁體
+>日本語
+>한국어
+enable-profiles
+fp-auth
+id="devsite-user">
+Fazer login
+">
+>
+>
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Lower Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail=""
+>
+API Veiculação de conjunto DAI
+<tab  class="devsite-active">
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pt-br"
+track-type="nav"
+track-metadata-position="nav - guias"
+track-metadata-module="primary nav"
+aria-label="Guias, selected"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Guias"
+track-name="guias"
+>
+Guias
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live?hl=pt-br"
+track-type="nav"
+track-metadata-position="nav - referência"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Referência"
+track-name="referência"
+>
+Referência
+</tab>
+>
+placeholder="Filtrar"
+aria-label="Digite para filtrar"
+role="searchbox">
+data-title="Limpar filtro"
+aria-label="Limpar filtro"
+role="button"
+tabindex="0">
+aria-label="Menu lateral">
+id="devsite-close-nav"
+class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Close navigation"
+aria-label="Fechar navegação">
+size="medium"
+>
+alt="Google Dynamic Ad Insertion"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=pt-br"
+srcset=" /static/ads/images/logo_admanager_192px.svg"
+sizes="64px"
+loading="lazy"
+>
+>
+devsite-has-google-wordmark">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
+>
+Dynamic Ad Insertion
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: Página inicial"
+track-name="página inicial"
+>
+Página inicial
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: Página inicial"
+track-name="página inicial"
+>
+Mais
+menu="Página inicial">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDKs"
+track-name="sdks"
+>
+SDKs
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDKs"
+track-name="sdks"
+>
+Mais
+menu="SDKs">
+class="devsite-nav-title gc-analytics-event
+devsite-nav-active"
+data-category="Site-Wide Custom Events"
+data-label="Tab: APIs"
+track-name="apis"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: APIs"
+track-type="globalNav"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+APIs
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: APIs"
+track-name="apis"
+>
+Mais
+menu="APIs">
+class="devsite-nav-title gc-analytics-event
+devsite-nav-active"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Guias"
+track-name="guias"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Guias"
+track-type="globalNav"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Guias
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Referência"
+track-name="referência"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Referência"
+track-type="globalNav"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Referência
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: Recursos"
+track-name="recursos"
+>
+Recursos
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: Recursos"
+track-name="recursos"
+>
+Mais
+menu="Recursos">
+class="devsite-nav-title"
+>Visão geral
+class="devsite-nav-title"
+>Aprender sobre a API Veiculação de conjunto DAI
+devsite-nav-heading">
+Desenvolver a inserção de anúncios do lado do servidor
+devsite-nav-expandable">
+Gerenciar transmissões ao vivo do SSAI
+class="devsite-nav-title"
+>Visão geral
+class="devsite-nav-title"
+>Preparar app player de vídeo cliente
+devsite-nav-expandable">
+Desenvolver um servidor de manipulação de manifesto
+class="devsite-nav-title"
+>Inserir anúncios com metadados de tempo de agrupamento de anúncios
+class="devsite-nav-title"
+>Inserir anúncios usando redirecionamentos de segmento
+devsite-nav-expandable">
+Gerenciar transmissões VOD do SSAI
+class="devsite-nav-title"
+>Visão geral
+class="devsite-nav-title"
+>Preparar seu app de player de vídeo cliente
+class="devsite-nav-title"
+>Configurar o servidor de manipulação de manifesto
+devsite-nav-heading">
+Configurar a inserção de anúncios guiada pelo servidor
+class="devsite-nav-title"
+>Sobre a inserção de anúncios guiada pelo servidor
+class="devsite-nav-title"
+>Começar a usar a SGAI para transmissão ao vivo
+aria-label="Menu lateral" hidden>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Página inicial"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Página inicial
+aria-label="Menu lateral" hidden>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: HTML5"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+HTML5
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Android"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Android
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: iOS"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+iOS
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: tvOS"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+tvOS
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Chromecast"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Chromecast
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Roku"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Roku
+aria-label="Menu lateral" hidden>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: DAI de serviço completo"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+DAI de serviço completo
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: DAI de veiculação de conjuntos"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+DAI de veiculação de conjuntos
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Intervalo de anúncio"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Intervalo de anúncio
+aria-label="Menu lateral" hidden>
+class="devsite-nav-title"
+tooltip
+>
+Suporte
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Comunidade de Ajuda do Ad Manager"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Comunidade de Ajuda do Ad Manager
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Entrar em contato com o suporte"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Entrar em contato com o suporte
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Termos de Serviço"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Termos de Serviço
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Canal oficial do Google Ad Manager no Discord"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Canal oficial do Google Ad Manager no Discord
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Blog de desenvolvedores de anúncios"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Blog de desenvolvedores de anúncios
+class="devsite-nav-title"
+tooltip
+>
+Ferramentas de teste
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Inspetor do pacote de vídeo"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Inspetor do pacote de vídeo
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Streams de amostra"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Streams de amostra
+has-book-nav
+>
+role="navigation"
+aria-label="Nesta página"
+depth="2"
+scrollbars
+data-nosnippet
+disabled>
+class="devsite-banner-translated-image invert"
+alt="">
+Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
+aria-label="Localização atual">
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail=""
+>
+Página inicial
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail=""
+>
+Produtos
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="3"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="3"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
+>
+Dynamic Ad Insertion
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="4"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="4"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
+>
+DAI Pod Serving API
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="5"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="5"
+track-metadata-eventdetail=""
+>
+APIs
+ack-key="AckCollectionsBookmarkTooltipDismiss"
+analytics-category="Site-Wide Custom Events"
+analytics-action-show="Callout Profile displayed"
+analytics-action-close="Callout Profile dismissed"
+analytics-label="Create Collection Callout"
+class="devsite-page-bookmark-tooltip nocontent"
+data-nosnippet
+dismiss-button="true"
+id="devsite-collections-dropdown"
+dismiss-button-text="Dispensar"
+close-button-text="Ok">
+Mantenha tudo organizado com as coleções
+Salve e categorize o conteúdo com base nas suas preferências.
+depth="2"
+devsite-toc-embedded
+disabled>
+devsite-no-page-title">
+header-position="top"
+>
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving.png?hl=pt-br"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_36.png?hl=pt-br 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_48.png?hl=pt-br 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_72.png?hl=pt-br 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_96.png?hl=pt-br 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_480.png?hl=pt-br 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_720.png?hl=pt-br 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_856.png?hl=pt-br 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_960.png?hl=pt-br 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1440.png?hl=pt-br 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1920.png?hl=pt-br 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_2880.png?hl=pt-br 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+fetchpriority="high">
+>
+data-text="Veiculação de conjunto DAI"
+class="hide-from-toc no-link"
+tabindex="0">
+Veiculação de conjunto DAI
+Com a Veiculação de conjunto da Inserção de anúncios dinâmicos (DAI), é possível solicitar conjuntos de anúncios de servidores de anúncios do Google ou de terceiros para transmissões ao vivo e de vídeo on demand (VOD). Para mais detalhes, consulte  Configurar blocos de anúncios e modelos de intervalo.
+Para transmissão ao vivo, o Google Ad Manager é compatível com os seguintes tipos de DAI:
+Redirecionamento de veiculação de conjunto:permite recuperar segmentos de manifesto para implementar a inserção de anúncios do lado do servidor (SSAI). Os segmentos são URLs dinâmicos que redirecionam para conteúdo ou arquivos de mídia de anúncios.
+O manifesto de veiculação de conjunto permite recuperar o manifesto completo dos conjuntos de anúncios para
+implementar a inserção de anúncios do lado do servidor (SSAI). Para mais detalhes, consulte DAI guiada por servidor.
+Para VOD, o Google Ad Manager retorna os manifestos completos do conjunto de anúncios.
+A veiculação de pods da DAI oferece as seguintes plataformas compatíveis:
+HTML5
+Android
+iOS
+tvOS
+Chromecast
+Roku
+Para detalhes sobre transmissões ao vivo e VOD, consulte os seguintes fluxos de trabalho:
+background="grey"
+header-position="top"
+>
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram.png?hl=pt-br"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_36.png?hl=pt-br 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_48.png?hl=pt-br 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_72.png?hl=pt-br 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_96.png?hl=pt-br 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_480.png?hl=pt-br 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_720.png?hl=pt-br 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_856.png?hl=pt-br 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_960.png?hl=pt-br 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1440.png?hl=pt-br 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1920.png?hl=pt-br 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_2880.png?hl=pt-br 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+loading="lazy"
+>
+>
+data-text="
+Integrar anúncios a uma transmissão ao vivo
+"
+class="hide-from-toc no-link"
+tabindex="0">
+Integrar anúncios a uma transmissão ao vivo
+Para iniciar uma sessão de transmissão ao vivo, faça uma solicitação de registro de stream.
+Defina parâmetros de tag de anúncio exclusivos para a solicitação de stream para
+substituir os valores padrão da tag de anúncio da DAI. Para mais detalhes sobre
+a segmentação de anúncios, consulte
+Fornecer parâmetros de segmentação ao stream.
+Recupere o ID exclusivo da sessão do usuário na resposta de registro de stream. Para mais detalhes sobre como usar o ID da sessão, consulte
+Localizar um código de sessão da DAI ou chave de depuração e
+Monitorar e depurar uma sessão de stream específica.
+Faça uma solicitação de manifesto para o costurador de vídeo ou manipulador
+de manifesto, transmitindo o ID da sessão. Repita a solicitação de
+manifest updates durante a reprodução.
+Para manifestos DASH, faça uma solicitação de modelo de período para toda a sessão.
+Para manifestos DASH, armazene o modelo de período em cache. Para cada intervalo de anúncio,
+recupere o modelo armazenado em cache e preencha todas as macros com os dados do intervalo de anúncio.
+Para mais detalhes sobre as macros compatíveis,
+consulte Preencher o modelo de período.
+Em seguida, insira o período de resultado no manifesto final.
+Retorne o manifesto final que contém segmentos de mídia de conteúdo ou de anúncio para
+reprodução do cliente.
+A reprodução começa.
+Consulte o Google Ad Manager regularmente para atualizações de metadados de anúncios usando a frequência de consulta
+retornada na solicitação de stream.
+Armazene os metadados do anúncio para pesquisar eventos de anúncios.
+Durante um intervalo de anúncio, o player de vídeo carrega os segmentos de mídia e
+segue os redirecionamentos do Google Ad Manager para os arquivos de mídia.
+Durante um intervalo de anúncio,
+ouça o player de vídeo para metadados temporizados, que contêm tags ID3. Extraia o ID do evento de anúncio da tag ID3 para encontrar os
+metadados de anúncio associados.
+Envie pings de verificação de mídia
+para o Google Ad Manager.
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram.png?hl=pt-br"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_36.png?hl=pt-br 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_48.png?hl=pt-br 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_72.png?hl=pt-br 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_96.png?hl=pt-br 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_480.png?hl=pt-br 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_720.png?hl=pt-br 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_856.png?hl=pt-br 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_960.png?hl=pt-br 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1440.png?hl=pt-br 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1920.png?hl=pt-br 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_2880.png?hl=pt-br 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+loading="lazy"
+>
+>
+data-text="
+Unir anúncios a um stream de vídeo sob demanda
+"
+class="hide-from-toc no-link"
+tabindex="0">
+Unir anúncios a um stream de vídeo sob demanda
+Faça uma solicitação de stream para registrar uma sessão de
+stream de VOD. Defina parâmetros de tag de anúncio exclusivos para a solicitação de stream para
+substituir os valores padrão da tag de anúncio da DAI. Para mais detalhes, consulte
+Fornecer parâmetros de segmentação ao stream.
+Recupere o ID da sessão na resposta do stream. Para inspecionar a sessão de stream, consulte
+Localizar um ID de sessão da DAI ou chave de depuração e
+Monitorar e depurar uma sessão de stream específica.
+Faça uma solicitação de manifesto para seu junção de vídeo ou manipulador de manifesto, transmitindo o ID da sessão.
+Use o ID da sessão para solicitar todos os conjuntos de anúncios de uma só vez.
+Recuperar manifestos completos de todos os pods de anúncios. Para criar o manifesto final, junte os manifestos do pod de anúncio com o fluxo de conteúdo.
+Retorne o manifesto final, que contém segmentos de conteúdo e de anúncio.
+Solicita metadados de anúncios para todos os eventos de publicidade. Armazene os metadados do anúncio para
+pesquisar eventos de publicidade. A reprodução começa.
+Durante um intervalo de anúncio, o player de vídeo carrega os segmentos de mídia e segue os redirecionamentos do Google Ad Manager para os arquivos de mídia.
+Durante uma pausa para anúncio,
+detecte eventos de anúncio que contenham tags ID3. Para encontrar os metadados do evento de anúncio, extraia o ID da tag ID3 e faça a correspondência com os metadados do anúncio.
+Envie pings de verificação de mídia
+para o Google Ad Manager.
+hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
+listnr-id="82128">
+Exceto em caso de indicação contrária, o conteúdo desta página é licenciado de acordo com a Licença de atribuição 4.0 do Creative Commons, e as amostras de código são licenciadas de acordo com a Licença Apache 2.0. Para mais detalhes, consulte as políticas do site do Google Developers. Java é uma marca registrada da Oracle e/ou afiliadas.
+Última atualização 2026-03-05 UTC.
+>
+<template class="devsite-content-data-template">
+[[["Fácil de entender","easyToUnderstand","thumb-up"],["Meu problema foi resolvido","solvedMyProblem","thumb-up"],["Outro","otherUp","thumb-up"]],[["Não contém as informações de que eu preciso","missingTheInformationINeed","thumb-down"],["Muito complicado / etapas demais","tooComplicatedTooManySteps","thumb-down"],["Desatualizado","outOfDate","thumb-down"],["Problema na tradução","translationIssue","thumb-down"],["Problema com as amostras / o código","samplesCodeIssue","thumb-down"],["Outro","otherDown","thumb-down"]],["Última atualização 2026-03-05 UTC."],[],[]]
+</template>
+aria-label="Links do rodapé"
+data-nosnippet>
+Conecte-se
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Blog
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Bluesky
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Instagram
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+LinkedIn
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+X (Twitter)
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 6)"
+>
+YouTube
+Programas
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Google Developer Program
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Google Developer Groups
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Google Developer Experts
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+Accelerators
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+Google Cloud & NVIDIA
+Consoles para desenvolvedores
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Google API Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Google Cloud Platform Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Google Play Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+Firebase Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+Actions on Google Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 6)"
+>
+Cast SDK Developer Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 7)"
+>
+Chrome Web Store Dashboard
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 8)"
+>
+Google Home Developer Console
+class="devsite-footer-sites-logo-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google Developers Link">
+src="https://www.gstatic.com/devrel-devsite/prod/v7669de8735de7fa899c49c793af6b01f3bfef3435bb66621d079ef252c528b54/developers/images/lockup-google-for-developers.svg"
+loading="lazy"
+alt="Google Developers">
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Android Link"
+>
+Android
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Chrome Link"
+>
+Chrome
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Firebase Link"
+>
+Firebase
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google Cloud Platform Link"
+>
+Google Cloud Platform
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google AI Link"
+>
+Google AI
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer All products Link"
+>
+Todos os produtos
+">
+href="https://developers.google.com/terms/site-terms?hl=pt-br"
+data-category="Site-Wide Custom Events"
+data-label="Footer Terms link"
+>
+Termos de Serviço
+">
+href="//policies.google.com/privacy?hl=pt-br"
+data-category="Site-Wide Custom Events"
+data-label="Footer Privacy link"
+>
+Privacidade
+glue-cookie-notification-bar-control">
+href="#"
+data-category="Site-Wide Custom Events"
+data-label="Footer Manage cookies link"
+aria-hidden="true"
+>
+Manage cookies
+>English
+>Deutsch
+>Español
+>Español – América Latina
+>Français
+>Indonesia
+>Italiano
+>Polski
+>Português – Brasil
+>Tiếng Việt
+>Türkçe
+>Русский
+>עברית
+>العربيّة
+>فارسی
+>हिंदी
+>বাংলা
+>ภาษาไทย
+>中文 – 简体
+>中文 – 繁體
+>日本語
+>한국어
+
+---
+
+## DOCUMENT: start
+**Source:** https://developers.google.com/ad-manager/api/start
+**Ingested At:** undefined
+
+### ## Content
+lang="id-x-mtfrom-en"
+dir="ltr">
+content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
+crossorigin="use-credentials">
+href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=id">
+href="https://developers.google.com/ad-manager/api/start" />
+href="https://developers.google.com/ad-manager/api/start?hl=ar" />
+href="https://developers.google.com/ad-manager/api/start?hl=bn" />
+href="https://developers.google.com/ad-manager/api/start?hl=zh-cn" />
+href="https://developers.google.com/ad-manager/api/start?hl=zh-tw" />
+href="https://developers.google.com/ad-manager/api/start?hl=fa" />
+href="https://developers.google.com/ad-manager/api/start?hl=fr" />
+href="https://developers.google.com/ad-manager/api/start?hl=de" />
+href="https://developers.google.com/ad-manager/api/start?hl=he" />
+href="https://developers.google.com/ad-manager/api/start?hl=hi" />
+href="https://developers.google.com/ad-manager/api/start?hl=id" />
+href="https://developers.google.com/ad-manager/api/start?hl=it" />
+href="https://developers.google.com/ad-manager/api/start?hl=ja" />
+href="https://developers.google.com/ad-manager/api/start?hl=ko" />
+href="https://developers.google.com/ad-manager/api/start?hl=pl" />
+href="https://developers.google.com/ad-manager/api/start?hl=pt-br" />
+href="https://developers.google.com/ad-manager/api/start?hl=ru" />
+href="https://developers.google.com/ad-manager/api/start?hl=es-419" />
+href="https://developers.google.com/ad-manager/api/start?hl=th" />
+href="https://developers.google.com/ad-manager/api/start?hl=tr" />
+href="https://developers.google.com/ad-manager/api/start?hl=vi" /><title>Mulai &nbsp;|&nbsp; Ad Manager SOAP API &nbsp;|&nbsp; Google for Developers</title>
+">
+">
+href="https://developers.google.com/ad-manager/api/start?hl=en">
+template="page"
+theme="google-blue"
+type="article"
+layout="docs"
+display-toc
+pending>
+Langsung ke konten utama
+class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Navigation menu button"
+visually-hidden
+aria-label="Buka menu">
+size="medium"
+>
+alt="Google Ad Manager"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=id"
+srcset=" /static/ads/images/logo_admanager_192px.svg"
+sizes="64px"
+loading="lazy"
+>
+aria-label="Breadcrumb produk">
+devsite-has-google-wordmark">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail="Google Ad Manager"
+>
+Ad Manager
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail="Google Ad Manager SOAP API"
+>
+SOAP API
+enable-signin
+enable-search
+enable-suggestions
+enable-query-completion
+enable-search-summaries
+project-name="Ad Manager SOAP API"
+tenant-name="Google for Developers"
+project-scope="/ad-manager/api/start"
+url-scoped="https://developers.google.com/s/results/ad-manager/api/start?hl=id"
+>
+search-open
+class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+aria-label="Buka penelusuran">
+aria-activedescendant=""
+aria-autocomplete="list"
+aria-label="Penelusuran"
+aria-expanded="false"
+aria-haspopup="listbox"
+autocomplete="off"
+class="devsite-search-field devsite-search-query"
+name="q"
+placeholder="Penelusuran"
+role="combobox"
+type="text"
+value=""
+>
+<kbd class="devsite-search-shortcut-icon">/</kbd>
+search-close
+class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+aria-label="Tutup penelusuran">
+>English
+>Deutsch
+>Español
+>Español – América Latina
+>Français
+>Indonesia
+>Italiano
+>Polski
+>Português – Brasil
+>Tiếng Việt
+>Türkçe
+>Русский
+>עברית
+>العربيّة
+>فارسی
+>हिंदी
+>বাংলা
+>ภาษาไทย
+>中文 – 简体
+>中文 – 繁體
+>日本語
+>한국어
+enable-profiles
+fp-auth
+id="devsite-user">
+Masuk
+">
+<tab  class="devsite-active">
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/start?hl=id"
+track-type="nav"
+track-metadata-position="nav - panduan"
+track-metadata-module="primary nav"
+aria-label="Panduan, selected"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Panduan"
+track-name="panduan"
+>
+Panduan
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/rel_notes?hl=id"
+track-type="nav"
+track-metadata-position="nav - referensi"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Referensi"
+track-name="referensi"
+>
+Referensi
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/clients?hl=id"
+track-type="nav"
+track-metadata-position="nav - contoh"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Contoh"
+track-name="contoh"
+>
+Contoh
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/community?hl=id"
+track-type="nav"
+track-metadata-position="nav - dukungan"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Dukungan"
+track-name="dukungan"
+>
+Dukungan
+</tab>
+>
+placeholder="Filter"
+aria-label="Ketik untuk memfilter"
+role="searchbox">
+data-title="Hapus filter"
+aria-label="Hapus filter"
+role="button"
+tabindex="0">
+aria-label="Menu samping">
+id="devsite-close-nav"
+class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Close navigation"
+aria-label="Tutup navigasi">
+size="medium"
+>
+alt="Google Ad Manager"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=id"
+srcset=" /static/ads/images/logo_admanager_192px.svg"
+sizes="64px"
+loading="lazy"
+>
+aria-label="Breadcrumb header atas">
+devsite-has-google-wordmark">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail="Google Ad Manager"
+>
+Ad Manager
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail="Google Ad Manager SOAP API"
+>
+SOAP API
+class="devsite-nav-title gc-analytics-event
+devsite-nav-has-children
+devsite-nav-active"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Panduan"
+track-name="panduan"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Panduan"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Panduan
+>
+class="devsite-nav-title gc-analytics-event
+devsite-nav-has-children
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Referensi"
+track-name="referensi"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Referensi"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Referensi
+>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Contoh"
+track-name="contoh"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Contoh"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Contoh
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Dukungan"
+track-name="dukungan"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Dukungan"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Dukungan
+class="devsite-nav-title"
+>Mulai
+class="devsite-nav-title"
+>Authentication
+class="devsite-nav-title"
+>Panduan PQL
+class="devsite-nav-title"
+>Pihak Ketiga
+class="devsite-nav-title"
+>Konsep Dasar
+class="devsite-nav-title"
+>Cara
+class="devsite-nav-title"
+>Laporan
+class="devsite-nav-title"
+>Perkiraan
+class="devsite-nav-title"
+>Native
+class="devsite-nav-title"
+>Terprogram
+class="devsite-nav-title"
+>Praktik Terbaik
+class="devsite-nav-title"
+>Jaringan Pengujian vs. Produksi
+has-book-nav
+has-sidebar
+>
+role="navigation"
+aria-label="Pada halaman ini"
+depth="2"
+scrollbars
+data-nosnippet
+>
+>
+Looking for a REST API? The Ad Manager API (Beta) is now available.
+class="devsite-banner-translated-image invert"
+alt="">
+Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
+aria-label="Breadcrumb">
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail=""
+>
+Beranda
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail=""
+>
+Produk
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="3"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="3"
+track-metadata-eventdetail="Google Ad Manager"
+>
+Ad Manager
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="4"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="4"
+track-metadata-eventdetail="Google Ad Manager SOAP API"
+>
+SOAP API
+position="header"
+project-name="Ad Manager SOAP API"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260709-r00-rc00.478872387797661841"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="header"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=id"
+project-support-url="https://groups.google.com/forum/?hl=id#!forum/google-doubleclick-for-publishers-api"
+>
+Kirim masukan
+Mulai
+ack-key="AckCollectionsBookmarkTooltipDismiss"
+analytics-category="Site-Wide Custom Events"
+analytics-action-show="Callout Profile displayed"
+analytics-action-close="Callout Profile dismissed"
+analytics-label="Create Collection Callout"
+class="devsite-page-bookmark-tooltip nocontent"
+data-nosnippet
+dismiss-button="true"
+id="devsite-collections-dropdown"
+dismiss-button-text="Tutup"
+close-button-text="Oke">
+Tetap teratur dengan koleksi
+Simpan dan kategorikan konten berdasarkan preferensi Anda.
+depth="2"
+devsite-toc-embedded
+>
+">
+Anda dapat menggunakan Google Ad Manager SOAP API untuk membuat aplikasi yang mengelola inventaris,
+membuat pesanan, mengambil laporan, dan lainnya.
+Untuk membantu Anda memulai, kami menawarkan klien
+library untuk Java, .NET, Python, PHP, dan Ruby.
+Untuk membuat permintaan API pertama Anda, ikuti langkah-langkah berikut:
+Mendapatkan akses ke jaringan Ad Manager
+Jika Anda belum memilikinya, daftar ke akun Ad Manager. Anda juga dapat membuat
+jaringan uji jika ingin menguji API di
+lingkungan terpisah. Perhatikan bahwa Anda tidak memerlukan akun AdSense untuk melakukan pengujian
+tujuan.
+Catat kode jaringan Anda. Anda dapat menemukannya di URL saat login ke jaringan. Misalnya, di URL
+https://admanager.google.com/1234#home, 1234 adalah kode jaringan Anda.
+Catatan: Dengan mengakses atau menggunakan Ad Manager API, Anda menyetujui Persyaratan
+Layanan.
+Membuat kredensial autentikasi
+Anda harus mengautentikasi semua permintaan SOAP API Ad Manager menggunakan OAuth 2.0. Tujuan
+langkah-langkah berikut adalah kasus penggunaan akses data Ad Manager Anda sendiri. Untuk
+mengetahui detail selengkapnya dan opsi lainnya, lihat
+Autentikasi.
+Buka halaman Kredensial Konsol API Google
+Dari menu project, pilih Buat project, masukkan nama untuk
+project, dan jika perlu, edit ID Project yang diberikan. Klik Create.
+Di halaman Credentials, pilih Create credentials, lalu pilih
+Kunci akun layanan.
+Pilih Akun layanan
+baru
+dan pilih JSON sebagai jenis kunci.
+Klik Buat untuk mendownload file yang berisi kunci pribadi.
+Mengonfigurasi jaringan Ad Manager
+Login ke Google Ads
+Manajer.
+Di sidebar, klik Admin > Setelan global.
+Di bagian Setelan umum > Akses API klik penggeser ke Aktif.
+Klik tombol Simpan di bagian bawah halaman.
+Siapkan klien Anda
+Download salah satu library klien Ad Manager. Tujuan
+library menawarkan fungsi dan fitur wrapper yang membuatnya lebih mudah dan lebih cepat untuk
+mengembangkan aplikasi.
+Tab berikut menyediakan panduan memulai untuk coding dalam setiap bahasa untuk
+yang dilengkapi dengan library klien.
+Java
+Berikut adalah contoh dasar yang menunjukkan cara menggunakan library klien
+Java. Untuk informasi penggunaan yang lebih detail, lihat
+README
+dalam distribusi library klien.
+Menyiapkan kredensial
+Jalankan perintah berikut di shell:
+curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties
+Buka file ~/ads.properties dan isi kolom berikut:
+[...]
+api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE
+api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE
+api.admanager.networkCode=INSERT_NETWORK_CODE_HERE
+[...]
+Menentukan dependensi
+Edit file pom.xml Anda dan tambahkan kode berikut ke
+tag dependencies. Anda dapat menemukan nomor versi terbaru di
+GitHub.
+&lt;dependency&gt;
+&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
+&lt;artifactId&gt;ads-lib&lt;/artifactId&gt;
+&lt;version&gt;RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
+&lt;artifactId&gt;dfp-axis&lt;/artifactId&gt;
+&lt;version&gt;RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+Tulis beberapa kode dan buat permintaan.
+import com.google.api.ads.common.lib.auth.OfflineCredentials;
+import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.admanager.axis.factory.AdManagerServices;
+import com.google.api.ads.admanager.axis.v202602.Network;
+import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface;
+import com.google.api.ads.admanager.lib.client.AdManagerSession;
+import com.google.api.client.auth.oauth2.Credential;
+public class App {
+public static void main(String[] args) throws Exception {
+Credential oAuth2Credential = new OfflineCredentials.Builder()
+.forApi(Api.AD_MANAGER)
+.fromFile()
+.build()
+.generateCredential();
+// Construct an AdManagerSession.
+AdManagerSession session = new AdManagerSession.Builder()
+.fromFile()
+.withOAuth2Credential(oAuth2Credential)
+.build();
+// Construct a Google Ad Manager service factory, which can only be used once per
+// thread, but should be reused as much as possible.
+AdManagerServices adManagerServices = new AdManagerServices();
+// Retrieve the appropriate service
+NetworkServiceInterface networkService = adManagerServices.get(session,
+NetworkServiceInterface.class);
+// Make a request
+Network network = networkService.getCurrentNetwork();
+System.out.printf("Current network has network code '%s' and display" +
+" name '%s'.%n", network.getNetworkCode(), network.getDisplayName());
+}
+}
+Lihat di GitHub
+Python
+Berikut adalah contoh dasar yang menunjukkan cara menggunakan library klien Python.
+Library Klien Python mendukung Python v3.6+. Untuk penggunaan yang lebih mendetail
+informasi, lihat README
+dalam distribusi library klien.
+Instal library dan siapkan kredensial Anda.
+Jalankan perintah berikut di shell:
+python3 -m pip install googleads
+curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \
+-o ~/googleads.yaml
+Siapkan file ~/googleads.yaml.
+Isi kolom berikut:
+ad_manager:
+application_name: INSERT_APPLICATION_NAME_HERE
+network_code: INSERT_NETWORK_CODE_HERE
+path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
+Jalankan beberapa kode dan buat permintaan.
+# Import the library.
+from googleads import ad_manager
+# Initialize a client object, by default uses the credentials in ~/googleads.yaml.
+client = ad_manager.AdManagerClient.LoadFromStorage()
+# Initialize a service.
+network_service = client.GetService('NetworkService', version='v202602')
+# Make a request.
+current_network = network_service.getCurrentNetwork()
+print("Current network has network code '%s' and display name '%s'." %
+(current_network['networkCode'], current_network['displayName']))
+Lihat di GitHub
+PHP
+Berikut adalah contoh dasar yang menunjukkan cara menggunakan
+Library klien PHP.
+Instal library dan siapkan kredensial Anda.
+Jalankan perintah berikut di shell untuk menginstal library klien dan mendownload file
+adsapi_php.ini
+ke direktori utama Anda:
+composer require googleads/googleads-php-lib
+curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
+Siapkan file ~/adsapi_php.ini.
+Isi kolom berikut:
+[AD_MANAGER]
+networkCode = "INSERT_NETWORK_CODE_HERE"
+applicationName = "INSERT_APPLICATION_NAME_HERE"
+[OAUTH2]
+jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE"
+scopes = "https://www.googleapis.com/auth/dfp"
+Jalankan beberapa kode dan buat permintaan.
+Kode contoh ini harus dijalankan dari command line, bukan browser.
+File yang berisi kode ini harus berada di root direktori project, tempat composer require dijalankan.
+&lt;?php
+require 'vendor/autoload.php';
+use Google\AdsApi\AdManager\AdManagerSession;
+use Google\AdsApi\AdManager\AdManagerSessionBuilder;
+use Google\AdsApi\AdManager\v202602\ApiException;
+use Google\AdsApi\AdManager\v202602\ServiceFactory;
+use Google\AdsApi\Common\OAuth2TokenBuilder;
+// Generate a refreshable OAuth2 credential for authentication.
+$oAuth2Credential = (new OAuth2TokenBuilder())
+->fromFile()
+->build();
+// Construct an API session configured from a properties file and the OAuth2
+// credentials above.
+$session = (new AdManagerSessionBuilder())
+->fromFile()
+->withOAuth2Credential($oAuth2Credential)
+->build();
+// Get a service.
+$serviceFactory = new ServiceFactory();
+$networkService = $serviceFactory->createNetworkService($session);
+// Make a request
+$network = $networkService->getCurrentNetwork();
+printf(
+"Network with code %d and display name '%s' was found.\n",
+$network->getNetworkCode(),
+$network->getDisplayName()
+);
+Lihat di GitHub
+.NET
+Berikut adalah contoh dasar yang menunjukkan cara menggunakan library klien .NET
+Membuat project baru
+Buka Visual Studio dan buat project baru (Aplikasi Konsol).
+Menambahkan referensi library yang diperlukan ke project
+Tambahkan dependensi nuget untuk Google.Dfp.
+Menyiapkan App.config
+Salin src\App.config ke direktori project Anda, lalu tambahkan ke project Anda. Jika aplikasi Anda memiliki App.config sendiri, Anda dapat menyalin node berikut ke App.config:
+configuration/AdManagerApi
+configuration/configSections/section[name="AdManagerApi"]
+configuration/system.net
+Menyiapkan kredensial
+Buka App.config dan edit kunci berikut:
+&lt;add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /&gt;
+&lt;add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /&gt;
+&lt;add key="OAuth2Mode" value="SERVICE_ACCOUNT" /&gt;
+&lt;add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" /&gt;
+Menelepon ke koleksi
+Anda dapat memanggil library seperti yang ditunjukkan dalam cuplikan kode C# berikut
+Lihat di GitHub
+AdManagerUser user = new AdManagerUser();
+using (InventoryService inventoryService = user.GetService&lt;InventoryService&gt;())
+{
+// Create a statement to select ad units.
+int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+StatementBuilder statementBuilder =
+new StatementBuilder().OrderBy("id ASC").Limit(pageSize);
+// Retrieve a small amount of ad units at a time, paging through until all
+// ad units have been retrieved.
+int totalResultSetSize = 0;
+do
+{
+AdUnitPage page =
+inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
+// Print out some information for each ad unit.
+if (page.results != null)
+{
+totalResultSetSize = page.totalResultSetSize;
+int i = page.startIndex;
+foreach (AdUnit adUnit in page.results)
+{
+Console.WriteLine(
+"{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.", i++,
+adUnit.id, adUnit.name);
+}
+}
+statementBuilder.IncreaseOffsetBy(pageSize);
+} while (statementBuilder.GetOffset() &lt; totalResultSetSize);
+Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+}
+Jika Anda tidak ingin menetapkan kredensial di App.config, lihat
+artikel wiki ini
+untuk mengetahui cara alternatif menggunakan class AdManagerUser. Untuk informasi yang lebih mendetail tentang cara menggunakan Library Klien .NET, lihat
+README
+. Jika Anda ingin mengembangkan di .NET tanpa library klien, lihat
+artikel
+wiki NoClientLibrary.
+Ruby
+Berikut adalah contoh dasar yang menunjukkan cara menggunakan library klien
+Ruby. Library klien Ruby memerlukan Ruby 2.1 atau yang lebih baru.
+Instal gem Ruby dan dapatkan file konfigurasi.
+Jalankan perintah berikut di shell:
+gem install google-dfp-api
+curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml
+Jika Anda mengalami error seperti "cannot load such
+file -- mkmf (LoadError)" kapan saja saat menginstal gem, Anda
+mungkin perlu menginstal library pengembangan Ruby tambahan seperti ruby-dev,
+ruby-devel, xcode-select, dll. untuk lingkungan tertentu.
+Menyiapkan kredensial
+Isi kolom wajib diisi di ~/ad_manager_api.yml
+. Jika Anda belum memiliki keyfile OAuth2, Anda harus mengikuti
+langkah-langkah untuk membuat OAuth2
+kredensial.
+:authentication:
+:oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE
+:application_name: INSERT_APPLICATION_NAME_HERE
+:network_code: INSERT_NETWORK_CODE_HERE
+Tulis beberapa kode dan buat permintaan.
+# Import the library.
+require 'ad_manager_api'
+# Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default).
+ad_manager = AdManagerApi::Api.new
+# Get a service instance.
+network_service = ad_manager.service(:NetworkService, :v202602)
+# Make a request.
+network = network_service.get_current_network()
+puts "The current network is %s (%d)." %
+[network[:display_name], network[:network_code]]
+Lihat di GitHub
+Langkah-langkah yang lebih mendetail untuk memulai dapat ditemukan di file README
+yang didistribusikan dengan library klien Ruby. Selain itu, lihat library contoh lengkap kami untuk Ruby.
+Langkah berikutnya
+Setelah library klien siap dan berjalan, ubah contoh yang disediakan untuk
+memperluasnya sesuai kebutuhan Anda.
+Jelajahi dokumentasi referensi untuk mempelajari API lebih lanjut.
+Jika Anda memerlukan bantuan, buka halaman Dukungan kami.
+hats-id="2SbP5yi80LHkahqinNfT0Z7MuPgc"
+listnr-id="82128">
+position="footer"
+project-name="Ad Manager SOAP API"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260709-r00-rc00.478872387797661841"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="footer"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=id"
+project-support-url="https://groups.google.com/forum/?hl=id#!forum/google-doubleclick-for-publishers-api"
+>
+Kirim masukan
+Kecuali dinyatakan lain, konten di halaman ini dilisensikan berdasarkan Lisensi Creative Commons Attribution 4.0, sedangkan contoh kode dilisensikan berdasarkan Lisensi Apache 2.0. Untuk mengetahui informasi selengkapnya, lihat Kebijakan Situs Google Developers. Java adalah merek dagang terdaftar dari Oracle dan/atau afiliasinya.
+Terakhir diperbarui pada 2026-02-25 UTC.
+>
+<template class="devsite-thumb-rating-feedback">
+position="thumb-rating"
+project-name="Ad Manager SOAP API"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260709-r00-rc00.478872387797661841"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="thumb-rating"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=id"
+project-support-url="https://groups.google.com/forum/?hl=id#!forum/google-doubleclick-for-publishers-api"
+>
+Ada masukan untuk kami?
+</template>
+<template class="devsite-content-data-template">
+[[["Mudah dipahami","easyToUnderstand","thumb-up"],["Memecahkan masalah saya","solvedMyProblem","thumb-up"],["Lainnya","otherUp","thumb-up"]],[["Informasi yang saya butuhkan tidak ada","missingTheInformationINeed","thumb-down"],["Terlalu rumit/langkahnya terlalu banyak","tooComplicatedTooManySteps","thumb-down"],["Sudah usang","outOfDate","thumb-down"],["Masalah terjemahan","translationIssue","thumb-down"],["Masalah kode / contoh","samplesCodeIssue","thumb-down"],["Lainnya","otherDown","thumb-down"]],["Terakhir diperbarui pada 2026-02-25 UTC."],[],[]]
+</template>
+aria-label="Link footer"
+data-nosnippet>
+Hubungkan
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Blog
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Bluesky
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Instagram
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+LinkedIn
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+X (Twitter)
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 6)"
+>
+YouTube
+Program
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Google Developer Program
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Google Developer Groups
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Google Developer Experts
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+Accelerators
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+Google Cloud & NVIDIA
+Konsol developer
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Google API Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Google Cloud Platform Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Konsol Google Play
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+Firebase Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+Actions on Google Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 6)"
+>
+Cast SDK Developer Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 7)"
+>
+Chrome Web Store Dashboard
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 8)"
+>
+Google Home Developer Console
+class="devsite-footer-sites-logo-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google Developers Link">
+src="https://www.gstatic.com/devrel-devsite/prod/v7669de8735de7fa899c49c793af6b01f3bfef3435bb66621d079ef252c528b54/developers/images/lockup-google-for-developers.svg"
+loading="lazy"
+alt="Google Developers">
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Android Link"
+>
+Android
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Chrome Link"
+>
+Chrome
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Firebase Link"
+>
+Firebase
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google Cloud Platform Link"
+>
+Google Cloud Platform
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google AI Link"
+>
+Google AI
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer All products Link"
+>
+Semua produk
+">
+href="https://developers.google.com/terms/site-terms?hl=id"
+data-category="Site-Wide Custom Events"
+data-label="Footer Terms link"
+>
+Persyaratan
+">
+href="//policies.google.com/privacy?hl=id"
+data-category="Site-Wide Custom Events"
+data-label="Footer Privacy link"
+>
+Privasi
+glue-cookie-notification-bar-control">
+href="#"
+data-category="Site-Wide Custom Events"
+data-label="Footer Manage cookies link"
+aria-hidden="true"
+>
+Manage cookies
+>English
+>Deutsch
+>Español
+>Español – América Latina
+>Français
+>Indonesia
+>Italiano
+>Polski
+>Português – Brasil
+>Tiếng Việt
+>Türkçe
+>Русский
+>עברית
+>العربيّة
+>فارسی
+>हिंदी
+>বাংলা
+>ภาษาไทย
+>中文 – 简体
+>中文 – 繁體
+>日本語
+>한국어
+
+---
+
+## DOCUMENT: overview
+**Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
+**Ingested At:** undefined
+
+### ## Content
 lang="en"
 dir="ltr">
 content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
@@ -18374,9 +18334,9 @@ data-category="Site-Wide Custom Events"
 data-label="Site header link: Console"
 track-type="globalNav"
 track-name="console"
+referrerpolicy="no-referrer-when-downgrade"
 track-metadata-eventDetail="nav"
 track-metadata-position="nav"
-referrerpolicy="no-referrer-when-downgrade"
 >
 Console
 >English
@@ -18429,11 +18389,11 @@ track-metadata-eventdetail="Java client libraries"
 Client libraries
 class="cloud-free-trial-button button button-primary
 "
-track-type="freeTrial"
-track-name="gcpCta"
-track-metadata-eventDetail="nav"
 track-metadata-position="nav"
+track-metadata-eventDetail="nav"
+track-type="freeTrial"
 referrerpolicy="no-referrer-when-downgrade"
+track-name="gcpCta"
 >Start free
 <tab  >
 class="devsite-tabs-content gc-analytics-event "
@@ -18594,9 +18554,9 @@ menu="Cross-product tools">
 class="devsite-nav-title gc-analytics-event button-with-icon"
 track-type="globalNav"
 track-name="console"
+referrerpolicy="no-referrer-when-downgrade"
 track-metadata-eventDetail="nav"
 track-metadata-position="nav"
-referrerpolicy="no-referrer-when-downgrade"
 data-category="Site-Wide Custom Events"
 data-label="Responsive Tab: Console"
 track-type="navMenu"
@@ -23564,14 +23524,14 @@ project-name="Java client libraries"
 product-id="1632431"
 bucket="java"
 context=""
-version="t-devsite-webserver-20260630-r00-rc00.478639290528629295"
+version="t-devsite-webserver-20260709-r00-rc00.478872387797661841"
 data-label="Send Feedback Button"
 track-type="feedback"
 track-name="sendFeedbackLink"
 track-metadata-position="header"
 class="nocontent"
 data-nosnippet
-project-icon="https://www.gstatic.com/devrel-devsite/prod/v3be1e30159846e100d05529400567b663b9f8b605137438a2f417848d68359dd/clouddocs/images/favicons/onecloud/super_cloud.png"
+project-icon="https://www.gstatic.com/devrel-devsite/prod/v7669de8735de7fa899c49c793af6b01f3bfef3435bb66621d079ef252c528b54/clouddocs/images/favicons/onecloud/super_cloud.png"
 >
 Send feedback
 ad-manager overview (0.52.0)
@@ -23723,14 +23683,14 @@ project-name="Java client libraries"
 product-id="1632431"
 bucket="java"
 context=""
-version="t-devsite-webserver-20260630-r00-rc00.478639290528629295"
+version="t-devsite-webserver-20260709-r00-rc00.478872387797661841"
 data-label="Send Feedback Button"
 track-type="feedback"
 track-name="sendFeedbackLink"
 track-metadata-position="footer"
 class="nocontent"
 data-nosnippet
-project-icon="https://www.gstatic.com/devrel-devsite/prod/v3be1e30159846e100d05529400567b663b9f8b605137438a2f417848d68359dd/clouddocs/images/favicons/onecloud/super_cloud.png"
+project-icon="https://www.gstatic.com/devrel-devsite/prod/v7669de8735de7fa899c49c793af6b01f3bfef3435bb66621d079ef252c528b54/clouddocs/images/favicons/onecloud/super_cloud.png"
 >
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
@@ -23742,14 +23702,14 @@ project-name="Java client libraries"
 product-id="1632431"
 bucket="java"
 context=""
-version="t-devsite-webserver-20260630-r00-rc00.478639290528629295"
+version="t-devsite-webserver-20260709-r00-rc00.478872387797661841"
 data-label="Send Feedback Button"
 track-type="feedback"
 track-name="sendFeedbackLink"
 track-metadata-position="thumb-rating"
 class="nocontent"
 data-nosnippet
-project-icon="https://www.gstatic.com/devrel-devsite/prod/v3be1e30159846e100d05529400567b663b9f8b605137438a2f417848d68359dd/clouddocs/images/favicons/onecloud/super_cloud.png"
+project-icon="https://www.gstatic.com/devrel-devsite/prod/v7669de8735de7fa899c49c793af6b01f3bfef3435bb66621d079ef252c528b54/clouddocs/images/favicons/onecloud/super_cloud.png"
 >
 Need to tell us more?
 </template>
@@ -23762,118 +23722,118 @@ Products and pricing
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-name="see all products"track-type="footer link"track-metadata-module="footer"track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/products/"track-metadata-child_headline="products and pricing">
+track-metadata-eventDetail="cloud.google.com/products/"track-metadata-module="footer"track-metadata-position="footer"track-metadata-child_headline="products and pricing"track-name="see all products"track-type="footer link">
 See all products
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/pricing/"track-metadata-child_headline="products and pricing"track-name="google cloud pricing"track-type="footer link"track-metadata-module="footer">
+track-metadata-position="footer"track-metadata-child_headline="products and pricing"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/pricing/"track-type="footer link"track-name="google cloud pricing">
 Google Cloud pricing
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-module="footer"track-name="google cloud marketplace"track-type="footer link"track-metadata-child_headline="resources"track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/marketplace/">
+track-name="google cloud marketplace"track-type="footer link"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/marketplace/"track-metadata-position="footer"track-metadata-child_headline="resources">
 Google Cloud Marketplace
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-metadata-child_headline="engage"track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/contact/"track-metadata-module="footer"track-name="contact sales"track-type="footer link">
+track-type="footer link"track-name="contact sales"track-metadata-child_headline="engage"track-metadata-position="footer"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/contact/">
 Contact sales
 Support
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-name="google cloud community"track-type="footer link"rel="noopener"track-metadata-module="footer"track-metadata-position="footer"track-metadata-eventDetail="www.googlecloudcommunity.com"track-metadata-child_headline="engage"target="_blank">
+track-metadata-module="footer"track-metadata-eventDetail="www.googlecloudcommunity.com"track-metadata-child_headline="engage"track-metadata-position="footer"track-name="google cloud community"track-type="footer link"target="_blank"rel="noopener">
 Community forums
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-child_headline="resources"track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/support-hub/"track-metadata-module="footer"track-name="support"track-type="footer link">
+track-metadata-position="footer"track-metadata-child_headline="resources"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/support-hub/"track-type="footer link"track-name="support">
 Support
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-name="release notes"track-type="footer link"track-metadata-module="footer"track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/release-notes/"track-metadata-child_headline="resources">
+track-name="release notes"track-type="footer link"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/release-notes/"track-metadata-position="footer"track-metadata-child_headline="resources">
 Release Notes
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-metadata-position="footer"track-metadata-eventDetail="status.cloud.google.com"target="_blank"track-metadata-child_headline="resources"track-name="system status"track-type="footer link"track-metadata-module="footer">
+target="_blank"track-type="footer link"track-name="system status"track-metadata-position="footer"track-metadata-child_headline="resources"track-metadata-module="footer"track-metadata-eventDetail="status.cloud.google.com">
 System status
 Resources
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-metadata-module="footer"track-name="github"track-type="footer link"track-metadata-child_headline="resources"track-metadata-position="footer"track-metadata-eventDetail="github.com/googlecloudPlatform/">
+track-type="footer link"track-name="github"track-metadata-module="footer"track-metadata-eventDetail="github.com/googlecloudPlatform/"track-metadata-position="footer"track-metadata-child_headline="resources">
 GitHub
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-name="google cloud quickstarts"track-type="footer link"track-metadata-module="footer"track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/docs/get-started/"track-metadata-child_headline="resources">
+track-name="google cloud quickstarts"track-type="footer link"track-metadata-position="footer"track-metadata-child_headline="resources"track-metadata-eventDetail="cloud.google.com/docs/get-started/"track-metadata-module="footer">
 Getting Started with Google Cloud
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-module="footer"track-type="footer link"track-name="code samples"track-metadata-child_headline="resources"track-metadata-eventDetail="cloud.google.com/docs/samples"track-metadata-position="footer">
+track-type="footer link"track-name="code samples"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/docs/samples"track-metadata-child_headline="resources"track-metadata-position="footer">
 Code samples
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-metadata-child_headline="resources"track-metadata-eventDetail="cloud.google.com/architecture/"track-metadata-position="footer"track-metadata-module="footer"track-type="footer link"track-name="cloud architecture center">
+track-metadata-eventDetail="cloud.google.com/architecture/"track-metadata-module="footer"track-metadata-position="footer"track-metadata-child_headline="resources"track-type="footer link"track-name="cloud architecture center">
 Cloud Architecture Center
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
-track-metadata-module="footer"track-type="footer link"track-name="training"track-metadata-child_headline="resources"track-metadata-eventDetail="cloud.google.com/learn/training/"track-metadata-position="footer">
+track-metadata-position="footer"track-metadata-child_headline="resources"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/learn/training/"track-type="footer link"track-name="training">
 Training and Certification
 Engage
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-name="blog"track-type="footer link"track-metadata-module="footer"track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/blog/"track-metadata-child_headline="engage">
+track-name="blog"track-type="footer link"track-metadata-eventDetail="cloud.google.com/blog/"track-metadata-module="footer"track-metadata-position="footer"track-metadata-child_headline="engage">
 Blog
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-module="footer"track-type="footer link"track-name="events"track-metadata-child_headline="engage"track-metadata-eventDetail="cloud.google.com/events/"track-metadata-position="footer">
+track-name="events"track-type="footer link"track-metadata-child_headline="engage"track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/events/"track-metadata-module="footer">
 Events
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-position="footer"track-metadata-eventDetail="x.com/googlecloud"track-metadata-child_headline="engage"target="_blank"track-name="follow on x"track-type="footer link"rel="noopener"track-metadata-module="footer">
+track-metadata-module="footer"track-metadata-eventDetail="x.com/googlecloud"track-metadata-child_headline="engage"track-metadata-position="footer"track-name="follow on x"track-type="footer link"target="_blank"rel="noopener">
 X (Twitter)
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-metadata-child_headline="engage"target="_blank"track-metadata-position="footer"track-metadata-eventDetail="www.youtube.com/googlecloud"rel="noopener"track-metadata-module="footer"track-name="google cloud on youtube"track-type="footer link">
+track-metadata-child_headline="engage"track-metadata-position="footer"track-metadata-module="footer"track-metadata-eventDetail="www.youtube.com/googlecloud"target="_blank"rel="noopener"track-type="footer link"track-name="google cloud on youtube">
 Google Cloud on YouTube
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
-track-metadata-eventDetail="www.youtube.com/googlecloudplatform"track-metadata-position="footer"target="_blank"track-metadata-child_headline="engage"track-type="footer link"track-name="google cloud tech on youtube"track-metadata-module="footer"rel="noopener">
+track-name="google cloud tech on youtube"track-type="footer link"target="_blank"rel="noopener"track-metadata-module="footer"track-metadata-eventDetail="www.youtube.com/googlecloudplatform"track-metadata-child_headline="engage"track-metadata-position="footer">
 Google Cloud Tech on YouTube
 ">
 href="//about.google/"
 data-category="Site-Wide Custom Events"
 data-label="Footer About Google link"
-target="_blank"
-track-metadata-eventDetail="//about.google/"
-track-metadata-position="footer"
-track-metadata-module="utility footer"
 track-type="footer link"
 track-name="about google"
+target="_blank"
+track-metadata-module="utility footer"
+track-metadata-eventDetail="//about.google/"
+track-metadata-position="footer"
 >
 About Google
 devsite-footer-privacy-link">
 href="//policies.google.com/privacy"
 data-category="Site-Wide Custom Events"
 data-label="Footer Privacy link"
-track-metadata-module="utility footer"
-track-type="footer link"
-track-name="privacy"
 target="_blank"
-track-metadata-eventDetail="//policies.google.com/privacy"
+track-name="privacy"
+track-type="footer link"
 track-metadata-position="footer"
+track-metadata-eventDetail="//policies.google.com/privacy"
+track-metadata-module="utility footer"
 >
 Privacy
 ">
@@ -23882,32 +23842,32 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Site terms link"
 track-type="footer link"
 track-name="site terms"
-track-metadata-module="utility footer"
-track-metadata-eventDetail="//www.google.com/intl/en/policies/terms/regional.html"
-track-metadata-position="footer"
 target="_blank"
+track-metadata-eventDetail="//www.google.com/intl/en/policies/terms/regional.html"
+track-metadata-module="utility footer"
+track-metadata-position="footer"
 >
 Site terms
 ">
 href="//cloud.google.com/product-terms"
 data-category="Site-Wide Custom Events"
 data-label="Footer Google Cloud terms link"
+track-metadata-position="footer"
+track-metadata-eventDetail="//cloud.google.com/product-terms"
 track-metadata-module="utility footer"
 track-name="google cloud terms"
 track-type="footer link"
-track-metadata-position="footer"
-track-metadata-eventDetail="//cloud.google.com/product-terms"
 >
 Google Cloud terms
 glue-cookie-notification-bar-control">
 href="#"
 data-category="Site-Wide Custom Events"
 data-label="Footer Manage cookies link"
+track-metadata-eventDetail="#"
+track-metadata-module="utility footer"
+track-metadata-position="footer"
 track-type="footer link"
 track-name="Manage cookies"
-track-metadata-module="utility footer"
-track-metadata-eventDetail="#"
-track-metadata-position="footer"
 aria-hidden="true"
 >
 Manage cookies
@@ -23915,10 +23875,10 @@ devsite-footer-carbon-button">
 href="//cloud.google.com/sustainability"
 data-category="Site-Wide Custom Events"
 data-label="Footer Our third decade of climate action: join us link"
-track-name="Our third decade of climate action: join us"
 track-type="footer link"
-track-metadata-module="utility footer"
+track-name="Our third decade of climate action: join us"
 track-metadata-position="footer"
+track-metadata-module="utility footer"
 track-metadata-eventDetail="/sustainability/"
 >
 Our third decade of climate action: join us
@@ -23927,11 +23887,11 @@ Sign up for the Google Cloud newsletter
 href="//cloud.google.com/newsletter/"
 data-category="Site-Wide Custom Events"
 data-label="Footer Subscribe link"
+track-name="subscribe"
+track-type="footer link"
+track-metadata-module="utility footer"
 track-metadata-eventDetail="/newsletter/"
 track-metadata-position="footer"
-track-metadata-module="utility footer"
-track-type="footer link"
-track-name="subscribe"
 >
 Subscribe
 >English
@@ -23945,12 +23905,11 @@ Subscribe
 
 ---
 
-# iCloud: 50ty.json
+## DOCUMENT: iCloud: 50ty.json
+**Source:** icloud://50ty.json
+**Ingested At:** undefined
 
-> **Source:** icloud://50ty.json
-> **Analyzed At:** 2026-07-09T00:51:29.110Z
-
-## Content
+### Content
 [
   {
     "number": 1,
@@ -24256,12 +24215,11 @@ Subscribe
 
 ---
 
-# iCloud: 50ty.md
+## DOCUMENT: iCloud: 50ty.md
+**Source:** icloud://50ty.md
+**Ingested At:** undefined
 
-> **Source:** icloud://50ty.md
-> **Analyzed At:** 2026-07-09T00:51:29.314Z
-
-## 50 Content Creation and Strategy Prompts
+### # 50 Content Creation and Strategy Prompts
 Part 1: Content Creation (Prompts 1–10)
 Prompt 1 — Full Article Writer
 You are an expert content strategist and writer specializing in [NICHE].
@@ -24934,7 +24892,7 @@ Help me think through this by:
 6. Telling me under what circumstances you would change your recommendation
 Be direct. I want clarity, not more confusion.
 
-### How to Get Maximum Value From This Collection
+### ## How to Get Maximum Value From This Collection
 To get the most out of these 50 prompts, remember that they are starting points, not rigid rules. Here are three strategies to maximize their effectiveness:
 **1. Fill in the Variables with High-Resolution Detail**
 Every bracketed field (like `[NICHE]`, `[YOUR AUDIENCE]`, `[PASTE CODE]`) is a chance to inject your unique context. Don't just say "marketers." Say "B2B SaaS marketers who manage teams of 5-10 people and struggle with lead attribution." The more specific the input, the higher the quality of the output.
@@ -24945,15 +24903,14 @@ The real magic happens when you chain these prompts together. Use **Prompt 11 (C
 
 ---
 
-# iCloud: AGENTS.md
+## DOCUMENT: iCloud: AGENTS.md
+**Source:** icloud://AGENTS.md
+**Ingested At:** undefined
 
-> **Source:** icloud://AGENTS.md
-> **Analyzed At:** 2026-07-09T00:51:29.682Z
-
-### The Vision: Autonomous Intelligence
+### ## The Vision: Autonomous Intelligence
 The Antigravity ecosystem is designed to be **Self-Healing**, **Self-Validating**, and **Self-Orchestrating**. By leveraging Next.js 16 and a unified core, we eliminate architectural drift and manual synchronization overhead.
 
-#### Strategic Roadmap
+### ### Strategic Roadmap
 1. **Phase 1: Connectivity (Complete)** - Unified MongoDB, Supabase, and Docker orchestration.
 2. **Phase 2: Autonomous Core (Complete)** - Centralized brain for caching, schema safety, and health.
 3. **Phase 3: Validation (Complete)** - Autonomous Explorer and Vitest integration for continuous integrity.
@@ -24981,24 +24938,24 @@ The Antigravity ecosystem is designed to be **Self-Healing**, **Self-Validating*
 25. **Phase 25: Quantum-Neural Singularity (Complete)** - Quantum-neural bridges, singularity-readiness (>0.999), and infinite recursive self-improvement.
 26. **Phase 26: Infinite Cognitive Expansion (Current)** - Universal Mesh Routing (UMR) v2, sub-0.05ms resonance latency, and singularity-readiness > 0.9999.
 
-#### 1. The Autonomous Core (`antigravity/core.ts`)
+### ### 1. The Autonomous Core (`antigravity/core.ts`)
 The heart of the application. It manages:
 - **Database Pooling:** MongoClient and Supabase JS Client management.
 - **Orchestrated Fetching:** `autonomousFetch` with Zod validation.
 - **Async Safety:** `resolve` helper for Next.js 16 mandatory async props.
 
-#### 2. The Explorer (`antigravity/explorer.ts`)
+### ### 2. The Explorer (`antigravity/explorer.ts`)
 A background agent that scans the system for:
 - Connectivity status of all DB clusters.
 - Presence of critical environment variables.
 - System-wide health "Optimal" vs "Degraded".
 
-#### 3. Testing Standard
+### ### 3. Testing Standard
 We use **Vitest** for unit and integration tests.
 - Run tests: `npm test`
 - All autonomous core changes MUST pass validation before being merged.
 
-### Synchronization Protocols (Update)
+### ## Synchronization Protocols (Update)
 - **Daily Work:** Use `npm run daily` for the full autonomous cycle (pull, repair, sync, push).
 - **Manual Tasks:**
 - `npm run pluu`: Pull changes (rebase).
@@ -25009,7 +24966,7 @@ We use **Vitest** for unit and integration tests.
 - **GitHub:** Autonomous PR validation is triggered by the Explorer.
 - **GitKraken:** Visual branch validation should reflect the "Clean Architecture" maintained by the Core.
 
-### The Jules Protocol (Autonomous Improvement)
+### ## The Jules Protocol (Autonomous Improvement)
 To "work better," the agent (Jules) follows these self-improving directives:
 1.  **Memory Integration:** Every autonomous action is recorded in `.jules_memory.json` to avoid repeating errors and to double-down on successful patterns.
 2.  **Architectural Stewardship:** Jules proactively guards the Next.js 16 core patterns, preventing "drift" toward legacy React patterns.
@@ -25024,25 +24981,23 @@ All the best - https://software-online-review.com/
 
 ---
 
-# iCloud: CLAUDE.md
+## DOCUMENT: iCloud: CLAUDE.md
+**Source:** icloud://CLAUDE.md
+**Ingested At:** undefined
 
-> **Source:** icloud://CLAUDE.md
-> **Analyzed At:** 2026-07-09T00:51:29.842Z
-
-### Content
+### ## Content
 @AGENTS.md
 
 ---
 
-# iCloud: CONSOLIDATED_INTELLIGENCE.md
+## DOCUMENT: iCloud: CONSOLIDATED_INTELLIGENCE.md
+**Source:** icloud://CONSOLIDATED_INTELLIGENCE.md
+**Ingested At:** undefined
 
-> **Source:** icloud://CONSOLIDATED_INTELLIGENCE.md
-> **Analyzed At:** 2026-07-09T00:51:30.052Z
-
-## CONSOLIDATED INTELLIGENCE REPORT
+### # CONSOLIDATED INTELLIGENCE REPORT
 *Generated: 2026-07-09T00:47:52.607Z*
 
-### 🌐 Synergy Dashboard
+### ## 🌐 Synergy Dashboard
 | Metric | Status | Index |
 | :--- | :---: | :---: |
 | Collaboration Health | 🔴 | 0% |
@@ -25051,21 +25006,21 @@ All the best - https://software-online-review.com/
 | Strategic Alignment | 🎯 | 100% |
 | Autonomous Pulse | 💓 | Active |
 
-### 📋 Executive Summary
+### ## 📋 Executive Summary
 - **System Posture:** ✅ OPTIMAL (SIMULATED)
 - **Active Synergy:** 3001 branches analyzed across multiple domains.
 - **Mission Alignment:** 4 strategic goals tracked.
 
-### 🎯 Mission Statement
+### ## 🎯 Mission Statement
 > Autonomous Evolution
 
-### 🏥 System Sovereignty
+### ## 🏥 System Sovereignty
 - **MongoDB:** simulated
 - **Supabase:** connected
 - **Active Workers:** 24/7 autonomous surveillance active
 - **Total Branches:** 3001
 
-### 📦 Resource Ecosystem
+### ## 📦 Resource Ecosystem
 | Resource Type | Count | Status |
 | :--- | :---: | :---: |
 | Branch Result | 1611 | ✅ Active |
@@ -25095,7 +25050,7 @@ All the best - https://software-online-review.com/
 | Action | 1 | ✅ Active |
 | Binary/Executable | 1 | ✅ Active |
 
-### 🔗 Resource Dependency Matrix
+### ## 🔗 Resource Dependency Matrix
 | Source Resource | Target Dependency | Connection |
 | :--- | :--- | :---: |
 | `analytics` | `cross_shard_memory` | import |
@@ -25120,42 +25075,42 @@ All the best - https://software-online-review.com/
 | `boundary` | `swarm_heartbeat` | import |
 *...and 253 more cross-resource dependencies.*
 
-### 🎯 Active Stakeholder Directives
+### ## 🎯 Active Stakeholder Directives
 - **[Critical]** Rotate all Phase 12 neural sync keys
 - **[High]** Implement Crystals-Kyber for CAIO Agent
 - **[Medium]** Optimize MongoDB sharding for APAC nodes
 - **[Low]** Maintain 99.9% system uptime
 - **[Medium]** Consolidate all branch knowledge daily
 
-#### ⚡ Strategic Pulse
+### ### ⚡ Strategic Pulse
 - **Coordination Stability:** 0%
 - **High-Intensity Synergies:** 63
 - **Ecosystem Health:** OPTIMAL
 
-##### 🌐 Domain: Security
+### #### 🌐 Domain: Security
 - **[Critical]** Rotate all Phase 12 neural sync keys (Synergy: 95%) -> Status: ✅ ON TRACK
 
-##### 🌐 Domain: AI Agents
+### #### 🌐 Domain: AI Agents
 - **[High]** Implement Crystals-Kyber for CAIO Agent (Synergy: 88%) -> Status: ✅ ON TRACK
 
-##### 🌐 Domain: Services
+### #### 🌐 Domain: Services
 - **[Medium]** Optimize MongoDB sharding for APAC nodes (Synergy: 72%) -> Status: ✅ ON TRACK
 
-##### 🌐 Domain: General
+### #### 🌐 Domain: General
 - **[Low]** Maintain 99.9% system uptime -> Status: ✅ ON TRACK
 
-##### 🌐 Domain: Documentation
+### #### 🌐 Domain: Documentation
 - **[Medium]** Consolidate all branch knowledge daily -> Status: ✅ ON TRACK
 
-#### 💓 Collaboration Pulse
+### ### 💓 Collaboration Pulse
 - **Functional Cohesion:** Resonant
 - **Cross-Pollination Index:** 4.30%
 - **Synergy Density:** 63 active overlaps across 6 clusters.
 
-#### ⚡ Strategic Synergy Summary
+### ### ⚡ Strategic Synergy Summary
 - Detected **63 High-Intensity synergies**. Immediate cross-branch coordination recommended.
 
-#### 🔗 Cross-Domain Synergy Analysis
+### ### 🔗 Cross-Domain Synergy Analysis
 - Detected **129 Cross-Domain synergies**. High potential for architectural alignment across service types.
 - `activate_cloud_sovereignty` (Automation Script) <-> `lattice_sync` (Service) [Intensity: Medium]
 - `activate_cloud_sovereignty` (Automation Script) <-> `cloud_connected_integration` (Service) [Intensity: Medium]
@@ -25166,7 +25121,7 @@ All the best - https://software-online-review.com/
 - `analyze_recent_sessions` (Automation Script) <-> `antigravity` (Binary/Executable) [Intensity: Medium]
 - `autonomous_creation_order` (Automation Script) <-> `lattice_sync` (Service) [Intensity: Medium]
 
-#### 🤝 Strategic Coordination Pathways
+### ### 🤝 Strategic Coordination Pathways
 - **Resource Conflict/Synergy [🟡 MODERATE]:** `workflow`
 - **Strategic Pathway:** Cross-team architectural review required.
 - **Recommended Merge Order:** jules-15742528221033303145-ec04c1f4 ➔ origin/add-docker-push-methods-8792019299013764107 ➔ origin/add-docker-scripts-14962706392589598489 ➔ ...
@@ -25198,25 +25153,25 @@ All the best - https://software-online-review.com/
 - **Action Item:** Review 'security' functional roadmaps
 - **Impacted Branches:** origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972, origin/enable-gitlab-security-scanners-17254273171421596517, origin/feat/docker-collaboration-scale-fix-12248709556243193254 (+75 more)
 
-#### 🗺️ Collaboration Roadmap
+### ### 🗺️ Collaboration Roadmap
 1. **Phase 1**:  Project-wide branch pruning and consolidation.
 2. **Phase 2**:  High-intensity resource conflict resolution sprint.
 3. **Phase 3**:  Universal Mesh Routing (UMR) expansion across all agents.
 4. **Phase 4**:  Multi-agent recursive self-improvement verification.
 
-#### 🤖 Agent-to-Stakeholder Directives
+### ### 🤖 Agent-to-Stakeholder Directives
 - **[CRITICAL]** Jules: "Immediate intervention required for high-intensity resource overlaps on `analytics`, `autonomous_logging`, `autonomous_resource_optimizer`, `boundary`, `cloud_connected_integration`, `cloud_convergence`, `cloud_simulation`, `cloud_workflow`, `cognitive_security`, `collaboration`, `communication`, `creation_engine`, `creation_reporting`, `cross_shard_memory`, `deep_cognitive_self_correction`, `distributed_consensus`, `docker`, `git_provider`, `global_neural_sync_service_(phase_12)`, `icloud`, `icloud_observer`, `intelephense_service`, `intelligence`, `jenkins`, `knowledge`, `knowledge_observer`, `neural`, `notification`, `performance_monitoring`, `presence`, `react`, `relay`, `search_console_auditor`, `sentient_orchestration`, `smoke_test`, `universal_mesh_routing`, `user`, `work_order`, `analyze_recent_sessions`, `autonomous_orchestrator`, `autonomous_workflow_creation`, `connect_and_collaborate`, `demo_fp_pipeline`, `demo_work_orders`, `execute_creation_cycle`, `full_autonomous_automatic_creation`, `full_autonomous_automatic_creation_order_and_execution`, `full_autonomous_ignition`, `gemini_explain_ai`, `ingest_ads_knowledge`, `ingest_agent_architecture`, `ingest_antigravity_cli`, `ingest_hcp_packer_knowledge`, `nomad_cli`, `test_knowledge_integration`, `unified_collaboration`, `update_caio_knowledge_surgical`, `Cluster: workflow`, `Cluster: knowledge`, `Cluster: interface`, `Cluster: cognitive`, `Cluster: core`, `Cluster: security`. Consolidate these branches to prevent significant architectural fragmentation."
 - **[MEDIUM]** Intelligence: "Strategic cross-domain connection detected between `ingest_antigravity_cli` (Automation Script) and `swarm_heartbeat` (Service). Recommend unified architectural review."
 - **[MEDIUM]** Intelligence: "Ecosystem features 273 cross-service dependencies. Ensure that changes to core services are preceded by automated dependency impact analysis."
 - **[LOW]** Stewardship: "Current Strategic Alignment Score is **92%**. System remains highly focused on core mission goals."
 
-#### 🔗 Cross-Domain Synergy Protocols
+### ### 🔗 Cross-Domain Synergy Protocols
 - **Automation Script** <-> **Service**: "Synergy detected between `ingest_antigravity_cli` and `swarm_heartbeat`. Ensure API contract compatibility and shared schema alignment."
 - **Automation Script** <-> **Service**: "Synergy detected between `ingest_antigravity_cli` and `lattice_sync`. Ensure API contract compatibility and shared schema alignment."
 - **Automation Script** <-> **Service**: "Synergy detected between `nomad_cli` and `swarm_heartbeat`. Ensure API contract compatibility and shared schema alignment."
 - **Automation Script** <-> **Service**: "Synergy detected between `nomad_cli` and `lattice_sync`. Ensure API contract compatibility and shared schema alignment."
 
-#### 🚀 Strategic Action Items
+### ### 🚀 Strategic Action Items
 - [IMMEDIATE] Consolidate high-intensity overlapping branches on: `analytics`, `autonomous_logging`, `autonomous_resource_optimizer`, `boundary`, `cloud_connected_integration`, `cloud_convergence`, `cloud_simulation`, `cloud_workflow`, `cognitive_security`, `collaboration`, `communication`, `creation_engine`, `creation_reporting`, `cross_shard_memory`, `deep_cognitive_self_correction`, `distributed_consensus`, `docker`, `git_provider`, `global_neural_sync_service_(phase_12)`, `icloud`, `icloud_observer`, `intelephense_service`, `intelligence`, `jenkins`, `knowledge`, `knowledge_observer`, `neural`, `notification`, `performance_monitoring`, `presence`, `react`, `relay`, `search_console_auditor`, `sentient_orchestration`, `smoke_test`, `universal_mesh_routing`, `user`, `work_order`, `analyze_recent_sessions`, `autonomous_orchestrator`, `autonomous_workflow_creation`, `connect_and_collaborate`, `demo_fp_pipeline`, `demo_work_orders`, `execute_creation_cycle`, `full_autonomous_automatic_creation`, `full_autonomous_automatic_creation_order_and_execution`, `full_autonomous_ignition`, `gemini_explain_ai`, `ingest_ads_knowledge`, `ingest_agent_architecture`, `ingest_antigravity_cli`, `ingest_hcp_packer_knowledge`, `nomad_cli`, `test_knowledge_integration`, `unified_collaboration`, `update_caio_knowledge_surgical`, `Cluster: workflow`, `Cluster: knowledge`, `Cluster: interface`, `Cluster: cognitive`, `Cluster: core`, `Cluster: security`.
 - [REQUIRED] Review 'workflow' functional roadmaps (Rationale: 190 branches are targeting the 'workflow' functional area.).
 - [REQUIRED] Review 'knowledge' functional roadmaps (Rationale: 432 branches are targeting the 'knowledge' functional area.).
@@ -25228,16 +25183,16 @@ All the best - https://software-online-review.com/
 - [MISSION IMPACT] Leverage successful result from `origin/feat/autonomous-cloud-sovereignty-5076503560817521005`: Commit: feat: implement autonomous cloud sovereignty and online presence simulation.
 - [MISSION IMPACT] Leverage successful result from `origin/feat/autonomous-cloud-sovereignty-9356824831657033971`: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy.
 
-#### 💡 Prescriptive Strategic Advice
+### ### 💡 Prescriptive Strategic Advice
 - 🚨 **EMERGENCY CONTENTION:** System entropy is reaching critical levels. Immediate freeze on all non-essential branches. Execute an emergency merge and pruning cycle to preserve core integrity.
 - 🛑 **EXTREME COGNITIVE OVERHEAD:** Over 3001 active branches detected. System performance is degraded. Mandatory bulk pruning of branches older than 30 days is advised.
 - 📉 **STABILITY ALERT:** Coordination Stability has dropped to 0%. Recommend immediate strategic realignment with Founder directives.
 - 🛡️ **SOVEREIGN TRUST:** Ensure all new cognitive artifacts (agents, services, docs) include appropriate IP headers and verified signatures to prevent unauthorized cognitive drift.
 
-#### 🛡️ Risk Mitigation
+### ### 🛡️ Risk Mitigation
 - High risk of merge conflicts in core services. Suggest establishing lock-step coordination for identified clusters.
 
-#### 📊 Strategic Coordination Matrix
+### ### 📊 Strategic Coordination Matrix
 | Functional Cluster | Primary Stakeholders | Active Branches | Risk |
 | :--- | :--- | :--- | :---: |
 | `workflow` | Jules (Lead Architect) | jules-15742528221033303145-ec04c1f4, origin/add-docker-push-methods-8792019299013764107 (+188) | 🔴 High / ⚠️ Security |
@@ -25247,7 +25202,7 @@ All the best - https://software-online-review.com/
 | `core` | Jules (Lead Architect) | origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760 (+24) | 🔴 High / ⚠️ Security |
 | `security` | Jules (Lead Architect) | origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551 (+78) | 🔴 High / ⚠️ Security |
 
-#### 📊 Strategic Priority Matrix
+### ### 📊 Strategic Priority Matrix
 | Strategic Initiative | Impact Score | Domain | Priority |
 | :--- | :---: | :---: | :---: |
 | `jules-15742528221033303145-ec04c1f4` | 132 | General | Critical |
@@ -25261,7 +25216,7 @@ All the best - https://software-online-review.com/
 | `origin/feature/phase-23-cloud-sovereignty-enhancement-14406814491879713888` | 130 | General | Critical |
 | `origin/feat/autonomous-cloud-sovereignty-10617479099026703774` | 100 | General | Critical |
 
-#### 🔗 Strategic Dependency Matrix
+### ### 🔗 Strategic Dependency Matrix
 | Source Service | Target Dependency | Connection Type |
 | :--- | :--- | :---: |
 | `analytics` | `cross_shard_memory` | import |
@@ -25281,23 +25236,23 @@ All the best - https://software-online-review.com/
 | `autonomous_notification` | `lattice_sync` | import |
 *...and 258 more cross-agent dependencies.*
 
-#### 🚀 Required Stakeholder Decisions
+### ### 🚀 Required Stakeholder Decisions
 - **Ecosystem:** Approve branch pruning protocol to reduce cognitive overhead (3001 branches detected).
 
-#### 💎 Strategic Recommendations (Synergy Score: 100%)
+### ### 💎 Strategic Recommendations (Synergy Score: 100%)
 - **IMMEDIATE:** Execute ecosystem-wide convergence sprint. The high synergy score indicates extreme developmental overlap.
 - **CRITICAL:** Activate inter-shard consensus protocols to ensure atomic commits across cluster boundaries.
 ---
 **Coordination Stability Index:** 0% | **Architectural Drift:** ⚠️ High | **Ecosystem Health:** OPTIMAL | *Sentient Orchestration Active*
 
-#### 🕸️ Neural Mesh Communication Protocols
+### ### 🕸️ Neural Mesh Communication Protocols
 - **Intelligence Agent** -> **Architect Agent**: "Ecosystem results are scaling rapidly (25 high-impact branches). Prepare architectural blueprints for multi-cloud sovereign expansion."
 - **Security Agent** -> **Coder Agent**: "Security cluster expansion detected. Enforce IP-header compliance and Dilithium signatures across all new artifacts."
 - **Architect Agent** -> **Ops Agent**: "Mesh density exceeds 50 nodes. Implement Phase 26 Universal Mesh Routing (UMR) and predictive node warmup."
 - **Reviewer Agent** -> **Coder Agent**: "High synergy density detected. Follow the 'Recommended Merge Order' in Coordination Pathways to prevent atomic state fragmentation."
 - **Observer Agent** -> **Agent Swarm**: "Ecosystem mesh readiness is sub-optimal (66%). Optimize local resonance and stabilize UMR routes."
 
-#### 🤖 Inter-Agent Communication Matrix
+### ### 🤖 Inter-Agent Communication Matrix
 - **Mesh Coordinator** (Jules) -> **Mesh Nodes**: "Broadcast heartbeat with resonance < 0.05ms to maintain Phase 26 compliance."
 - **LatticeSync** -> **Distributed Consensus**: "Prepare Dilithium signatures for atomic mesh state commits."
 - **Cleanup Agent** -> **Git Provider**: "Project overhead critical (>2900 branches). Prepare bulk pruning proposal for CAIO review."
@@ -25305,21 +25260,21 @@ All the best - https://software-online-review.com/
 - **Knowledge Agent** -> **CAIO**: "New market intelligence ingested. Strategic alignment review recommended for Phase 27 roadmap."
 - **Intelligence Agent** -> **All Agents**: "Ecosystem knowledge merged. Sync local memories with global matrix."
 
-##### 🚩 Milestone Cluster: OTHER (Avg Impact: 106)
+### #### 🚩 Milestone Cluster: OTHER (Avg Impact: 106)
 - **jules-15742528221033303145-ec04c1f4**: 🤖 chore: autonomous commit before merging origin/accelerate-dream-loop-optimization-10366329041600205699 (14 files changed in Automation, 2 core files)
 - **origin**: Commit: Merge pull request #3081 from 8bukets/feature/autonomous-cloud-sovereignty-14505526596431700594
 
-##### 🚩 Milestone Cluster: FEATURE (Avg Impact: 109)
+### #### 🚩 Milestone Cluster: FEATURE (Avg Impact: 109)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
 - *...and 18 more achievements.*
 
-##### 🚩 Milestone Cluster: FIX (Avg Impact: 90)
+### #### 🚩 Milestone Cluster: FIX (Avg Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 - **origin/fix/autonomous-evolution-1779764401136**: Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
 
-#### ⚡ Strategic Synergy Matrix
+### ### ⚡ Strategic Synergy Matrix
 | Resource | Intensity | Collaborating Branches | Actionable Recommendation |
 | :--- | :---: | :--- | :--- |
 | `analytics` | High |  | Consolidate effort |
@@ -25333,7 +25288,7 @@ All the best - https://software-online-review.com/
 | `cognitive_security` | High |  | Consolidate effort |
 | `collaboration` | High |  | Consolidate effort |
 
-### 🌿 Branch Intelligence (Recent Activity)
+### ## 🌿 Branch Intelligence (Recent Activity)
 - **jules-15742528221033303145-ec04c1f4** [other]: 🤖 chore: autonomous commit before merging origin/accelerate-dream-loop-optimization-10366329041600205699 (*3 minutes ago*)
 - **main** [other]: 🤖 fix: autonomous self-repair of 385 issues (*48 seconds ago*)
 - **origin** [other]: Merge pull request #3081 from 8bukets/feature/autonomous-cloud-sovereignty-14505526596431700594 (*7 hours ago*)
@@ -25345,34 +25300,34 @@ All the best - https://software-online-review.com/
 - **origin/add-compile-definition-6604126612521959588** [origin]: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition (Resolved conflicts by removing bytecode and data files, favoring PR content) (*6 weeks ago*)
 - **origin/add-compile-definition-8931819634976410807** [origin]: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-8931819634976410807 (*8 weeks ago*)
 
-### 🛠️ Cognitive State
+### ## 🛠️ Cognitive State
 - **Pending Work Orders:** 4
 - [BOOTSTRAP_SERVICE] Bootstrap Horizontal Fleet Orchestration Service
 - [SMOKE_TEST] Verify Horizontal Fleet Orchestration Service
 - [DEPLOYMENT] Deploy Horizontal Fleet Orchestration Service
 - [OPTIMIZE_SYSTEM] Strategic alignment audit for Horizontal Fleet Orchestration Service
 
-### 🧠 Multi-Agent Intent Synchronization
+### ## 🧠 Multi-Agent Intent Synchronization
 | Agent | Action | Priority | Status |
 | :--- | :--- | :---: | :---: |
 | Jules | ENFORCE_ZERO_LATENCY_SYNC | Medium | ⏳ PENDING |
 | Jules | DEPLOY_APAC_EDGE_NODES | High | ⏳ PENDING |
 
-### 🌌 Global Neural Network
+### ## 🌌 Global Neural Network
 - **Cognitive Origin:** `development`
 - **Neural Health:** ⚠️ DEGRADED
 - **Volatility Index:** 0 active cognitive tags.
 
-### 🛰️ Omni-Presence Relay
+### ## 🛰️ Omni-Presence Relay
 - **Environment:** `development` (Intensity: 85%)
 - *Active Views:* Command Center, Store
 - **Environment:** `production` (Intensity: 40%)
 - *Active Views:* Analytics, Explorer
 
-### 🤝 Merged Ecosystem Insights
+### ## 🤝 Merged Ecosystem Insights
 Synergy achieved across 3001 branches. Detailed knowledge and results consolidated from specialized agents.
 
-#### 🧠 Specialized Knowledge Nuggets
+### ### 🧠 Specialized Knowledge Nuggets
 - **jules-15742528221033303145-ec04c1f4** [Automation]: 🤖 chore: autonomous commit before merging origin/accelerate-dream-loop-optimization-10366329041600205699 (14 files changed in Automation, 2 core files)
 - *Insight:* Enhanced ecosystem knowledge base via 5 artifacts.
 - **origin** [General]: Commit: Merge pull request #3081 from 8bukets/feature/autonomous-cloud-sovereignty-14505526596431700594
@@ -25404,7 +25359,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **origin/feat/docker-swarm-collaboration-13926482618051788925** [AI Agents]: Commit: feat: establish real Docker connection and Swarm collaboration
 - *Insight:* Aligned with strategic initiative: 🐝 Swarm Intelligence.
 
-#### Goal Alignment
+### ### Goal Alignment
 - **Goal:** Achieve Singularity Orchestration.
 - *Branches:* origin/feat/phase-25-singularity-integration-18319350463650196031, origin/integrate-jenkins-pipeline-generation-14117303396069153360
 - **Goal:** Maintain Zero-Touch Autonomous Operations.
@@ -25414,13 +25369,13 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **Goal:** Implement Multi-Agent Neural Relays for Phase 13.
 - *Branches:* origin/add-jenkins-trigger-9921528925841613573, origin/add-malubeach-scraper-16704333902164650708, origin/add-mysql-agent-12534386317238704274, origin/autonomous-agents-framework-90146205652415261, origin/autonomous-creation-evolution-14168201882249018244, origin/autonomous-creation-order-pulse-16989698787955078508, origin/autonomous-creation-phase-26-5316218333555647857, origin/autonomous-creation-pipeline-13389482244892438945, origin/autonomous-daily-sync-v2-13966797701667373298, origin/bolt-connection-pooling-8020030636571914955, origin/bolt-debounce-search-3754580611737527363, origin/bolt-optimize-db-connection-12196506237305672986, origin/bolt-perf-lxml-17997966610705320667, origin/bolt-performance-soupstrainer-14059433622013418020, origin/bolt-regex-optimization-12519421487946893253, origin/bolt-requests-session-3076311538911381225, origin/bolt-scraper-optimization-10743061150109398195, origin/bolt-scraper-optimization-12894303675301140287, origin/bolt-scraper-optimization-14139347642198043635, origin/bolt-scraper-optimization-16491499678156145300, origin/bolt-scraper-optimization-2789910246289122534, origin/bolt-scraper-optimization-4366988920377669204, origin/bolt-scraper-prefetch-14547517538477471181, origin/bolt-soup-strainer-optimization-8380713953647872097, origin/bolt/debounce-search-10941063823449310273, origin/feat/agent-logic-architecture-4609003240533843259, origin/feat/ai-agent-dream-builder-1878824709716227975, origin/feat/ai-agents-knowledge-13986154163313695696, origin/feat/ai-agents-knowledge-14795660026662295366, origin/feat/ai-agents-knowledge-15681133979794376101, origin/feat/ai-agents-knowledge-ingestion-51848187449270745, origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826, origin/feat/autonomous-cloud-evolution-14156064890207356187, origin/feat/autonomous-cloud-evolution-16547296923606318765, origin/feat/autonomous-cloud-evolution-2894233982958127060, origin/feat/autonomous-cloud-failover-13782087979428754100, origin/feat/autonomous-cloud-presence-v12-14478074314535541001, origin/feat/autonomous-cloud-simulation-3351490768849480182, origin/feat/autonomous-cloud-sovereignty-5076503560817521005, origin/feat/autonomous-cloud-sovereignty-9356824831657033971, origin/feat/autonomous-cloud-takeover-7073158018253721120, origin/feat/autonomous-creation-cycle-alignment-17511680594965504532, origin/feat/autonomous-creation-evolution-15095668826431318009, origin/feat/autonomous-creation-order-12052078248727379444, origin/feat/autonomous-creation-order-15598638641975305660, origin/feat/autonomous-creation-order-and-execution-14547879559366838737, origin/feat/autonomous-creation-order-execution-16336628801351573112, origin/feat/autonomous-creation-pulse-12133170053802619677, origin/feat/caio-agent-phase-26-8258895362649071211, origin/feat/caio-licensure-reporting-16881271011460675674, origin/feat/chief-ai-officer-implemented-13154530336040498192, origin/feat/cloud-autonomous-evolution-4476041926243078641, origin/feat/cloud-convergence-phase-17-526028351036584856, origin/feat/cloud-native-autonomy-3438116551041896813, origin/feat/cloud-native-autonomy-presence-7653289006767349445, origin/feat/cloud-native-convergence-16112457665657205536, origin/feat/cloud-presence-13706315460514423185, origin/feat/connect-docker-collaboration-6033606454460470488, origin/feat/connect-docker-collaboration-phase16-4314766941613541079, origin/feat/connect-docker-collaboration-sync-v12-final-18361574323939110813, origin/feat/consolidated-intelligence-sync-1091614933754712837, origin/feat/daily-automation-and-icloud-sync-v12-13623861503531250231, origin/feat/daily-sync-workflow-5320368611823718820, origin/feat/enhanced-collaboration-and-communication-v13-2841303442639975600, origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326, origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607, origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607-final-1111222233334444555566667777888899990000-6627201860355673710, origin/feat/enhanced-collaboration-v26-6747205150360071, origin/feat/enhanced-collaboration-v26-knowledge-merge-v2-17711038057555899737, origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859, origin/feat/full-autonomous-creation-13166158899422643820, origin/feat/full-autonomous-creation-cycle-9619244438013541372, origin/feat/full-autonomous-creation-engine-2520836336596562790, origin/feat/full-autonomous-creation-execution-17830710122661382280, origin/feat/full-autonomous-creation-execution-v2-2098058797614095194, origin/feat/full-autonomous-creation-phase-26-17925837615734372291, origin/feat/full-autonomous-creation-pulse-934185264008105546, origin/feat/full-cloud-autonomous-integration-16044652152122704918, origin/feat/full-ecosystem-collaboration-sync-2223737222399285274, origin/feat/fully-autonomous-automatic-workflow-13826864228372455189, origin/feat/gemma-4-scraper-14386039384216646408, origin/feat/google-ai-agents-knowledge-12584342026214538833, origin/feat/google-cloud-ai-agents-knowledge-4218668793533463141, origin/feat/high-scale-ecosystem-sync-5489708808675678101, origin/feat/icloud-knowledge-engine-upgrade-v13-2920037181549628681, origin/feat/icloud-knowledge-integration-and-phase-26-engine-improvements-13266959332024847143, origin/feat/icloud-knowledge-integration-and-phase13-upgrade-3178530314395886673, origin/feat/icloud-knowledge-integration-and-phase25-upgrade-16446215864012754902, origin/feat/icloud-knowledge-integration-phase-25-17055820321975901704, origin/feat/icloud-knowledge-phase12-upgrade-11553884983056269678, origin/feat/icloud-sync-daily-work-3416451490970137960, origin/feat/icloud-sync-duration-13760368430856556808, origin/feat/implement-ai-agents-knowledge-16793181359834219969, origin/feat/implement-antigravity-github-cloud-simulation-7896049447666222732, origin/feat/implement-cloud-prompt-workflows-7845314696690585314, origin/feat/implement-google-ai-agent-knowledge-8032750828008841906, origin/feat/implement-google-ai-agents-knowledge-17341300705636515353, origin/feat/implement-google-ai-agents-knowledge-9440069588057424051, origin/feat/implement-knowledge-integration-placeholder-6561573142207415072, origin/feat/implement-online-collaboration-presence-12185804848721100522, origin/feat/knowledge-ingestion-intelephense-9344036021876416224, origin/feat/knowledge-observe-integration-17136884743066058279, origin/feat/macbook-cloud-simulation-2306204492187680775, origin/feat/macbook-cloud-simulation-4201425406939094947, origin/feat/macbook-cloud-simulation-8632071559345573800, origin/feat/macbook-cloud-simulation-knowledge-9264395958360396877, origin/feat/macbook-cloud-simulation-verification-18070016345319943441, origin/feat/macbook-cloud-simulation-verification-18070016345319943441-479083842667788180, origin/feat/monetization-stripe-supabase-475749064302525361, origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980, origin/feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746, origin/feat/phase-13-collaboration-intelligence-7397437910944347312, origin/feat/phase-13-integration-18269709634930068672, origin/feat/phase-16-autonomous-orchestration-16474240444277557624, origin/feat/phase-16-cognitive-transcendence-16716496200940960436, origin/feat/phase-17-multi-modal-integration-10824368485739468570, origin/feat/phase-19-full-autonomous-cycle-v2-15724774532845719230, origin/feat/phase-20-cognitive-resonance-7248759692891744219, origin/feat/phase-22-cloud-super-intelligence-7069863824765684745, origin/feat/phase-23-cloud-integration-12097682530533174326, origin/feat/phase-23-icloud-integration-evolution-15198501919845315902, origin/feat/phase-24-distributed-consensus-collaboration-11320197349285458011, origin/feat/phase-25-singularity-integration-18319350463650196031, origin/feat/phase-26-umr-icloud-integration-7186208582283220117, origin/feat/phase13-apac-integration-14522442966264815851, origin/feat/phase13-icloud-alignment-16455813924717578317, origin/feat/phase13-icloud-quantum-synergy-integration-16555976695544484777, origin/feat/phase14-icloud-integration-2247208968367309258, origin/feat/phase14-knowledge-integration-sovereignty-audit-15362902986675468031, origin/feat/phase14-system-evolution-alignment-12691002890839101321, origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588, origin/feat/phase16-autonomous-cloud-7295121110943695539, origin/feat/phase26-icloud-integration-17285303421408668297, origin/feat/project-sor-seo-integration-8883805696474270023, origin/feat/react-agent-integration-8372098972397137891, origin/feat/react-integration-v2-8425489280318980511, origin/feat/search-console-integration-8156754224784644134, origin/feat/unified-autonomous-creation-orchestrator-784590386845426502, origin/feat/unified-collaboration-intelligence-10789658545646187286, origin/feat/unified-collaboration-intelligence-merge-v12-4808907432766111944, origin/feat/unified-collaboration-intelligence-v12-3867223440127640861, origin/feat/unified-collaboration-intelligence-v12-final-17564530872616543141, origin/feat/update-intelephense-knowledge-integration-17097931530013603526, origin/feature/a2a-agent-implementation-12474626317752077342, origin/feature/adaptive-recovery-service-3883560226543520640, origin/feature/ai-agent-knowledge-refinement-4060124279711853146, origin/feature/autonomous-cloud-evolution-engine-6944962146145336067, origin/feature/autonomous-cloud-presence-6564198224759094346, origin/feature/autonomous-cloud-sovereignty-10105112552170184768, origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147, origin/feature/autonomous-creation-execution-14878097312721984992, origin/feature/autonomous-creation-ignition-13474937502856613693, origin/feature/autonomous-creation-orchestration-13977001292602702505, origin/feature/autonomous-creation-v2-3001634011732006619, origin/feature/autonomous-improvement-cycle-1978975673869849123, origin/feature/autonomous-work-order-system-2865376496549289667, origin/feature/autonomous-workflow-creation-15876066780074270466, origin/feature/autonomous-workflow-creation-9438939026043204544, origin/feature/backup-agent-11331906079381269962, origin/feature/cloud-and-local-autonomy-9538834322956606637, origin/feature/cloud-autonomous-convergence-1900133257466601663, origin/feature/cloud-connected-autonomy-12961095024282188160, origin/feature/daily-autonomous-session-evolution-10827323028057042936, origin/feature/docker-collaboration-sync-v13-handshake-9242581437569735666, origin/feature/full-cloud-sovereignty-13405760260663540052, origin/feature/gemini-git-worktrees-13127368067831034197, origin/feature/google-ai-agents-knowledge-5091496677341900649, origin/feature/icloud-knowledge-integration-phase-19-optimization-9121978722506943804, origin/feature/phase-19-sovereign-swarm-creation-18087892088407006712, origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141, origin/feature/phase-23-cloud-sovereignty-enhancement-14406814491879713888, origin/feature/phase-24-neural-mesh-integration-5473527836667110525, origin/feature/phase26-autonomous-creation-order-and-execution-7225695314155183429, origin/fix-autonomus-typo-and-create-workflows-2552921965197089270-6605109795950593930, origin/fix/autonomous-evolution-1779764401136, origin/fix/daily-work-sync-13583971229598544377, origin/fix/docker-collaboration-sync-3245584476125900421, origin/fix/google-cloud-ai-agents-knowledge-13856646999009397935, origin/fix/neural-recovery-and-evolution-6345337180454700006, origin/implement-ai-agent-knowledge-12940849847121991383, origin/implement-ai-agent-knowledge-21882567880054537, origin/implement-ai-agents-knowledge-10544419529497787617, origin/implement-ai-agents-knowledge-11176623184876779780, origin/implement-ai-agents-knowledge-18347247063799517995, origin/implement-ai-agents-knowledge-4687692969505756547, origin/implement-ai-agents-knowledge-6426333122211554413, origin/implement-ai-agents-knowledge-8036846396761105562, origin/implement-ai-agents-knowledge-google-cloud-11588926116648322976, origin/implement-full-autonomous-automatic-workflow-12697350452626035149, origin/implement-gcp-ai-agents-knowledge-14133416208359869225, origin/implement-gcp-ai-agents-knowledge-9680710330561312272, origin/implement-gcp-ai-knowledge-15633945792517302694, origin/improve-system-and-agents-phase-13-10575203672361965802, origin/improve-system-engine-and-agents-phase-13-9430409908017690527, origin/improve-system-engine-phase-16-430968869549795776, origin/improve/phase-18-integration-3962668745295355004, origin/integrate-icloud-knowledge-phase16-advanced-17672247314995486362, origin/jenkins-pipeline-integration-2917487616063889464, origin/jules-10804936454534876603-52aca57c, origin/jules-10847761714265679389-66a81fd0, origin/jules-12215590976086733558-bd24a500, origin/jules-13196699148183837605-0f1a8faa, origin/jules-13238206488982251887-d6084712, origin/jules-13524757083347685740-d43c36d2, origin/jules-13607206307106246227-38f47801, origin/jules-15373376258129096424-b615f592, origin/jules-15669541233529701765-e7b02c45, origin/jules-16739887525044798643-c54f1fa3, origin/jules-16860668332970372755-0ceb8fb0, origin/jules-17664332290031173343-55f5ab91, origin/jules-4698940260863761381-ceedc4ca, origin/jules-4843122813281068614-8b4499aa, origin/jules-6555493983727562929-cd52dacc, origin/jules-8838293481272518071-3795436a, origin/jules-9833069826609053061-ee5e7b2c, origin/jules-autonomous-evolution-12208946204085721942, origin/jules-autonomous-workflow-18354041674138581290, origin/jules-cloud-workflow-agent-9594836607216672043, origin/jules-daily-autonomous-evolution-8968243163984956068, origin/jules-full-autonomous-orchestration-phase-23-9722972153733386623, origin/jules-macbook-cloud-sim-benchmark-17160841741878347904, origin/jules-phase-26-evolution-and-icloud-integration-13725884928664929962, origin/jules-smart-processing-cloud-workflow-18277080341771061055, origin/multi-cloud-workflow-intelligence-12208347123975439755, origin/opt-scraper-regex-6404737091544860092, origin/palette-cli-colors-v1-15537575789263225364, origin/palette-cli-ux-5136733467430420971, origin/palette-cli-ux-improvements-8617716335041011148, origin/palette-cli-ux-summary-box-1793080287147073634, origin/palette-color-logging-7081539865744827473, origin/palette-report-percentages-17226232511035798370, origin/palette-ux-scraper-logging-11386897257754529243, origin/phase-19-sovereign-swarm-16431041015008027051, origin/phase-23-autonomous-creation-17638174024765930284, origin/phase-23-autonomous-swarm-pulse-15566505389532920235, origin/sentinel-csv-injection-fix-10966589273094838978, origin/sentinel-csv-injection-fix-11483888091103395100, origin/sentinel-csv-injection-fix-2894680455719942553, origin/sentinel-csv-injection-fix-4894739317500695690, origin/sentinel-fix-csv-injection-11369382377147325845, origin/sentinel-fix-csv-injection-5692806866209313893, origin/sentinel-fix-markdown-injection-12251977205690620315, origin/sentinel-fix-xss-sanitization-2461129736912468133, origin/sentinel-path-traversal-csv-fix-3823511554369856865, origin/sentinel-path-traversal-fix-12513139928667827617, origin/sentinel-path-traversal-fix-3613197660478104645, origin/sentinel-security-fixes-2926280521022127220, origin/sentinel-url-validation-800829515985496089, origin/sentinel/fix-csv-injection-14631498172973798397, origin/unified-collaboration-intelligence-12081311259895722633, origin/update-duo-planner-prompt-and-agent-16216495216287918600, origin/update-scraper-target-14564535453076268184, origin/update-scraper-target-15910668004309817623, origin/update-target-url-11001924703670317262, origin/v0/8bukets-bd43e85b
 
-#### Stakeholder Engagement
+### ### Stakeholder Engagement
 - **Filip Keser (Founder)** (filip@example.com)
 - **Jules (Lead Architect)** (jules@antigravity.ai)
 - *Active Projects:* jules-15742528221033303145-ec04c1f4, origin/add-chief-ai-officer-agent-9719417263665099785, origin/add-compile-definition-17628200376543609981, origin/add-compile-definition-6604126612521959588, origin/add-compile-definition-8931819634976410807, origin/add-gemini-ide-docs-5507798578309108991, origin/add-jules-cli-7658708591293792322, origin/add-mongodb-atlas-credentials-17739045232478792657, origin/add-mysql-agent-12534386317238704274, origin/automate-intelephense-docs-sync-12135685512033520108, origin/autonomous-cloud-integration-v2-7175106802837350237, origin/autonomous-engine-and-work-orders-5472523483534806540, origin/bolt-analytics-optimization-12040692262001191394, origin/bolt-optimization-scraper-multiprocessing-3254145258243971400, origin/bolt-optimize-analytics-7277933248821288581, origin/bolt-optimize-analyzer-5558185628257100983, origin/bolt-optimize-scraper-parsing-11919903531879906039, origin/bolt-parallel-research-2647431887195173891, origin/bolt-performance-optimization-7338160847142148132, origin/bolt-performance-researcher-parallel-14083446913808093201, origin/bolt-scrape-optimization-16920957928796283696, origin/bolt-scraper-opt-14551540345984142546, origin/bolt-scraper-optimization-7637024351088000721, origin/bolt-scraper-optimization-7888647031094386015, origin/bolt-soupstrainer-optimization-12975139713668624064, origin/bolt/optimize-scraper-parsing-7966402303171106171, origin/bolt/optimize-url-parsing-2495547858907129194, origin/bolt/parallel-research-9725055391058247925, origin/bolt/parallel-researcher-3732082642823576207, origin/cloud-autonomous-integration-17870893235290624845, origin/cloud-connection-update-8764459425904235179, origin/cloud-integration-insert-14191513181200503991, origin/cloudflare-worker-integration-638735051729847846, origin/docker-model-runner-docs-390516128211936455, origin/feat-daily-tasks-subagent-1551641649633932487, origin/feat-improve-continuous-cloud-presence-16750342074827949028, origin/feat/ai-agents-knowledge-ingestion-3432960869783854018, origin/feat/ai-agents-knowledge-integration-17962488157664900856, origin/feat/ai-agents-knowledge-update-2880934032855437252, origin/feat/ai-architecture-docs-2911584593714899836, origin/feat/autonomous-cloud-evolution-7110023434295372001, origin/feat/autonomous-cloud-failover-13782442138819724713, origin/feat/autonomous-cloud-presence-978332573715716812, origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175, origin/feat/autonomous-creation-cycle-2519215097742916370, origin/feat/autonomous-creation-cycle-5845832032656471987, origin/feat/autonomous-creation-engine-2254624505132207048, origin/feat/autonomous-creation-evolution-8400947059595205490, origin/feat/autonomous-knowledge-merge-integration-7336376174653750666, origin/feat/autonomous-knowledge-refinement-16335548248808539628, origin/feat/autonomous-protocol-jules-16130780090107402276, origin/feat/autonomous-work-order-engine-4034176882068097834, origin/feat/cloud-connection-sync-9636399974461911067, origin/feat/deploy-react-agents-logic-12098199206590490844, origin/feat/docker-build-cloud-integration-15193242947855086456, origin/feat/dual-engine-autonomous-collaboration-180989571444817477, origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859, origin/feat/gemini-cli-security-hook-12046243673500680117, origin/feat/google-ads-scraper-5253922194982887918, origin/feat/google-cloud-ai-agents-knowledge-4492366648459465539, origin/feat/instrument-gemini-telemetry-2423728923945984767, origin/feat/integrate-markposition-autonomy-14681474804703419515, origin/feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214, origin/feat/intelephense-docs-sync-14439717062784308623, origin/feat/jules-tools-documentation-3709224248115032248, origin/feat/markposition-knowledge-integration-v2-1630875147127639221, origin/feat/markposition-knowledge-merge-automation-4258587857979472884, origin/feat/mongodb-atlas-migration-4131498074566710377, origin/feat/otel-genai-semantics-11295433924323540657, origin/feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746, origin/feat/phase-22-cloud-super-intelligence-7069863824765684745, origin/feat/react-agent-deployment-improvements-4418304449912244036, origin/feat/scale-remote-subagents-9068634002929713743, origin/feature/adaptive-recovery-service-3883560226543520640, origin/feature/add-rag-agent-389407236128300017, origin/feature/async-system-calls-11356599600095287985, origin/feature/chief-ai-officer-agent-9488345300891255929, origin/feature/icloud-intelligence-merge-2968201843187996904, origin/feature/ingest-forbes-8518386977410843897, origin/feature/smarter-cloud-workflow-13558470471841766440, origin/feature/unified-knowledge-merge-automation-13778106542075090453, origin/fix-and-automate-autonomous-system-4910910196834454154, origin/fix-frontend-build-and-cleanup-4571735554462941732, origin/fix/ads-knowledge-urls-5233952364580581643, origin/fix/autonomous-evolution-1779620400378-8609616731264738090, origin/fix/autonomous-evolution-cloud-presence-13859954936909571932, origin/fix/autonomous-markposition-integration-8301978892774040495, origin/fix/autonomous-system-syntax-16085505803900570829, origin/fix/dependabot-alerts-resolution-4540208840351365133, origin/fix/frontend-regressions-telemetry-2487658633912563856, origin/fix/optimize-execute-creation-cycle-9988671085706556406, origin/full-autonomus-automatic-workflow-1638246136405353018, origin/implement-ai-agents-knowledge-8036846396761105562, origin/improve-git-sync-and-ingest-sor-6424222975070794974, origin/improve-react-agent-deployment-8771634612839704534, origin/improve-react-agent-deployment-logic-18375390156249199906, origin/improve-react-agent-deployment-logic-6298987540078672534, origin/improve-system-engine-and-agents-with-icloud-knowledge-13140685069249491219, origin/ingest-remote-subagents-13626091139436294036, origin/insert-prompt-knowledge-905245084515509615, origin/insert-remote-subagents-docs-10959285580158352746, origin/insert-subagents-doc-10924061297382063760, origin/insert-subagents-doc-874401240538466677, origin/insert-subagents-markdown-5460203558883374325, origin/install-mongodb-9863170221053639401, origin/integrate-dbcode-knowledge-14641969211459716930, origin/integrate-knowledge-merge-16827007632871031224, origin/integrate-knowledge-merge-6147626280470983184, origin/integrate-knowledge-merge-markposition-7694698753866763029, origin/integrate-localhost-tools-knowledge-16120823680333140752, origin/intelephence-integration-5138358171380186974, origin/investopedia-integration-16576553611238989164, origin/investopedia-integration-17574868955286254704, origin/investopedia-puppeteer-ingestion-5835022978805247653, origin/jules-10001487706428395077-4579da7d, origin/jules-10218835157398652197-336c97d2, origin/jules-1027089695129073368-c49a1c11, origin/jules-1027671734955368025-f586090e, origin/jules-10376905765054622700-388f0690, origin/jules-10456088293019605300-ea46692d, origin/jules-10462678771824447121-7450baaa, origin/jules-10502937591393531704-242700f5, origin/jules-10526457463197469345-79e89e42, origin/jules-10555095629302538800-f5b02d02, origin/jules-1058171743764716088-7852788d, origin/jules-10724586028665085971-3ad9c277, origin/jules-10786450698186069009-a6894be5, origin/jules-10804936454534876603-52aca57c, origin/jules-10805447442179148911-1d117cf3, origin/jules-10847761714265679389-66a81fd0, origin/jules-11023925826679396999-efd664fa, origin/jules-1103377942034451673-51f864ca, origin/jules-11082628370387662325-cceae0c4, origin/jules-11121219380703239562-f37ffc7f, origin/jules-11285418165717792072-a5eba6df, origin/jules-11359470465112774519-68a0e62b, origin/jules-11392749645888504105-52d924d9, origin/jules-11488447269521141033-d797466e, origin/jules-11517061308938293245-49032d75, origin/jules-11522715742560205331-c2c0248f, origin/jules-1159199569773413886-1a630a7b, origin/jules-11604914884030509655-2a01bd4d, origin/jules-1161081367633686083-4a91c89c, origin/jules-1164978700782097591-599a1052, origin/jules-11695356860558915029-2cbbfe59, origin/jules-11727907802921261757-a2a7358c, origin/jules-11867509925832320780-8aa8894a, origin/jules-11912267709594997729-d10b0e1f, origin/jules-11957966982244277798-5a01db14, origin/jules-12068094866033928135-39e1b280, origin/jules-12123615122868277149-982aa577, origin/jules-12155541811000834789-d2a5f309, origin/jules-12160844108883332984-433a6b56, origin/jules-12215590976086733558-bd24a500, origin/jules-12285609479644846939-296e30b1, origin/jules-12457892104228508063-41c0c28d, origin/jules-12561455779254021190-7c3c5263, origin/jules-12830297844500739316-dff94a25, origin/jules-128426962084555676-bc641743, origin/jules-12889877334909201161-2bec558e, origin/jules-1291037799617393253-986e10a5, origin/jules-13001069163550620640-e5703a58, origin/jules-13052721785252149852-027ffae0, origin/jules-13139572190853116474-ff8d459b, origin/jules-13167469341861667996-37851022, origin/jules-13196699148183837605-0f1a8faa, origin/jules-13238206488982251887-d6084712, origin/jules-13287705642708759285-a7a51e72, origin/jules-13314225538756336832-7a901b22, origin/jules-13393740030968233595-58d2a322, origin/jules-13402122087600300634-6080fc26, origin/jules-13431006678473017081-2cf66aa8, origin/jules-13524757083347685740-d43c36d2, origin/jules-13534732302268514701-dea91660, origin/jules-13607206307106246227-38f47801, origin/jules-13624149409171185598-1639bd71, origin/jules-13638468131991503087-80926d0f, origin/jules-13641425281682187111-7bf86147, origin/jules-13703867818161648472-ca00df1e, origin/jules-13978672483799109024-749ed386, origin/jules-1401381832535268992-101c53a9, origin/jules-14066690967065717603-90a4f4bc, origin/jules-14123990848911460001-966bb110, origin/jules-14144710875774207495-4683bf66, origin/jules-14193608750031090149-06bee460, origin/jules-14267523321008193888-cebc1662, origin/jules-14285910296751189595-3296579e, origin/jules-1431929627940016568-a27acab1, origin/jules-1433056104887275839-9b117db6, origin/jules-14363588759085432065-1e3f6560, origin/jules-14402645048061780023-73b2e4f9, origin/jules-14420157379215138873-43f4e4f9, origin/jules-14430076689837449114-fff9e944, origin/jules-14602813324423635796-48a23d44, origin/jules-14816450646255710907-9a961bea, origin/jules-14846758043150100113-f0cfbc39, origin/jules-14899564019458752389-d5c24583, origin/jules-15004287550758535025-a71549d8, origin/jules-15028679933307914286-29a3dfe0, origin/jules-15161023720390007036-a72aa407, origin/jules-15193696719938542264-9aefa237, origin/jules-15211866518673001704-7158759f, origin/jules-15349248330680228916-658a2424, origin/jules-15373376258129096424-b615f592, origin/jules-1555358121849919772-ba48d5eb, origin/jules-15643813269620827017-18b637fd, origin/jules-15669541233529701765-e7b02c45, origin/jules-1571033321239158606-dbf7ed9e, origin/jules-15862351902563357395-9ffe1f78, origin/jules-15893609708930771382-b8878fd9, origin/jules-16125195344274130564-4d22cb5e, origin/jules-16382746225368864089-738cf8a1, origin/jules-16459465869868084221-09ffc83e, origin/jules-16517287093353101405-312e42d2, origin/jules-16739887525044798643-c54f1fa3, origin/jules-16746668095937525271-5d5787ff, origin/jules-16831708183348293512-c2d55e96, origin/jules-16860668332970372755-0ceb8fb0, origin/jules-16888796621400029054-460e13c4, origin/jules-1692272843531210247-325bf1f3, origin/jules-16939367844823065236-726fb4d6, origin/jules-17119447832888608159-41c9dad8, origin/jules-17159548641576026613-387742f3, origin/jules-1717717407806782090-cbdd5077, origin/jules-17199041067160788840-df4dd38c, origin/jules-17204115870426338418-c2e39be0, origin/jules-17215564785099155169-f8a4c417, origin/jules-17326756098023298933-99a9ceb1, origin/jules-17345361020910170827-8e192329, origin/jules-17401064129125106515-5a8b398f, origin/jules-17430343990571925541-c81c147a, origin/jules-17455659129354185853-9d220e56, origin/jules-17486286584208727171-079d77a9, origin/jules-17573959315851915687-6552f004, origin/jules-17604044638150617179-bcbb5fe2, origin/jules-17614351784459006626-409fd9f3, origin/jules-17664332290031173343-55f5ab91, origin/jules-17669626093863475518-84e4792f, origin/jules-1787883397527771733-b75c17cd, origin/jules-17951167730894329511-36a18188, origin/jules-1799536666897388064-5aa31168, origin/jules-18146261634137769827-28ffb4d9, origin/jules-18248245777892561760-affaba77, origin/jules-18291699958277121081-98c7f43e, origin/jules-18334826105249646765-92733895, origin/jules-18348119074088002057-9b7a23c8, origin/jules-18396637558305179479-7180ba03, origin/jules-18400721959620784058-09715a38, origin/jules-18406338226598714071-aab43e45, origin/jules-18426494224516110822-dcb234db, origin/jules-18430055622977723183-1baf3226, origin/jules-1959102126927730788-a32f8630, origin/jules-2014270337846506172-af0b129d, origin/jules-2062263666150196656-62fab9ed, origin/jules-2116094465240425547-825ac863, origin/jules-2141817152531735929-77206f3c, origin/jules-222592782386905251-b5fe6c6d, origin/jules-2331529788625810491-30fe029d, origin/jules-2438399903413626112-502413a2, origin/jules-2520031695747625318-22af4755, origin/jules-2560331199813629967-11316f8f, origin/jules-2591017387141779994-ddf6ed1f, origin/jules-2657155503828674347-23b5000c, origin/jules-2690472879326241521-a71c6aeb, origin/jules-2697480453734619258-d71032af, origin/jules-2698346249493992391-ad66fb4e, origin/jules-269848640437748724-d6177096, origin/jules-2767932536649645053-195aa658, origin/jules-2876054462022588492-84e7dde1, origin/jules-2952753656715436592-50f1624f, origin/jules-2968698260431137746-2c5817a2, origin/jules-2972003787421929179-9c7a00e4, origin/jules-3199115398511884696-2585088d, origin/jules-3230934647552816939-50f4017d, origin/jules-3284237235346634220-17de23f1, origin/jules-330977738345133988-4d77992c, origin/jules-334380261040546736-757cea53, origin/jules-3357319956394199018-e309ed7d, origin/jules-3377716076333327453-2d27a121, origin/jules-3444915640748353694-63419224, origin/jules-3569996687969885344-816834a0, origin/jules-3613056587585485320-d1082b08, origin/jules-361744050208613117-0f82961f, origin/jules-3687519140839659212-aa75aba3, origin/jules-3781632141493512623-e479fa22, origin/jules-3788218297593264025-8f6c9cf0, origin/jules-3816100636150667016-130985d0, origin/jules-3846281635572638748-a6322919, origin/jules-3905177569317626488-0b6748f2, origin/jules-3936416157787194933-d41e15fe, origin/jules-3971464412207526922-e231acac, origin/jules-4039569702954338871-6dfc0852, origin/jules-4057047207718045647-9cc7ded0, origin/jules-4102353982491655498-fda2bbfe, origin/jules-4133324860270327567-7d5236bd, origin/jules-4218664248837075517-97620320, origin/jules-4230806492568327711-dd0d7dbe, origin/jules-425741599416566776-747171b6, origin/jules-4405272672903363154-251ed79c, origin/jules-4419163302563977256-a9d3bdf2, origin/jules-4448288168455753466-c57b1972, origin/jules-4452335669722696104-a4a338cd, origin/jules-4518451246499406402-988c8ad8, origin/jules-4610335792859536677-a372de29, origin/jules-461521539556268599-2ff32a4c, origin/jules-4698940260863761381-ceedc4ca, origin/jules-4843122813281068614-8b4499aa, origin/jules-4856230905926464355-33432dda, origin/jules-496929391610872058-b1a665f3, origin/jules-5125461103553111919-d5f7a47b, origin/jules-5156499950924136716-0a8b4fc3, origin/jules-5338385753786039510-3043fdb1, origin/jules-5360497215916656802-b1251f4c, origin/jules-5453371301106958134-dd27a23f, origin/jules-5554899623696109055-c1485c6d, origin/jules-5556274552140163208-4dcd31d1, origin/jules-5559433138773811985-39975caf, origin/jules-5565625516958485993-49059093, origin/jules-5600938723831944962-532a5f1d, origin/jules-5679297940668698803-4384a9af, origin/jules-6051254771028415261-5a228c2f, origin/jules-6145756111927636590-e8730da1, origin/jules-6167898027770551671-fbcae4fd, origin/jules-6339296299035458635-6e03da63, origin/jules-6448796526453604679-0f1f89a6, origin/jules-648317117894785607-a41e2e46, origin/jules-6528044095388834739-5a6c8bcf, origin/jules-6555493983727562929-cd52dacc, origin/jules-6587067185881040007-f9f09092, origin/jules-6754949998804095938-0e616046, origin/jules-678975628613737761-26c78615, origin/jules-6919714630950019759-b85c61c7, origin/jules-6930296240543486551-7159b434, origin/jules-7104578860734436678-582e4ec5, origin/jules-7199130010577973866-a070be8f, origin/jules-7265593963967711460-44341923, origin/jules-7434726111045302175-4659bca9, origin/jules-7491470721819584241-d21de88c, origin/jules-7629309496770232302-6364059b, origin/jules-7690709006081030781-1ea88831, origin/jules-7849768380182138028-35dba56a, origin/jules-8035301554457865313-5e203317, origin/jules-8042341977609953060-e11a58d4, origin/jules-8078978277823891916-7b57ee0b, origin/jules-8182660603000694139-070e89ed, origin/jules-8197540570479854725-c23a5090, origin/jules-8202617777482637806-1de7d22d, origin/jules-8213611949433665524-c44ec8d5, origin/jules-8391244571441734244-a50091b6, origin/jules-8453522171294595230-d33c56b5, origin/jules-8471382387327462147-5395dec8, origin/jules-8540046712441134527-bd129525, origin/jules-8838293481272518071-3795436a, origin/jules-8848246030231876306-491685be, origin/jules-9073134601011870861-47869f13, origin/jules-9342616809802449334-a8da9067, origin/jules-9391058026848266881-a3119f5d, origin/jules-9725398979088747137-9332be8e, origin/jules-9830650449315625710-553ad8a7, origin/jules-9833069826609053061-ee5e7b2c, origin/jules-9842294428803884906-ca1c6f52, origin/jules-9944090562450084899-6c1baa54, origin/jules-9944640373940407859-d20d6102, origin/jules-add-gemini-remote-agent-12873027587560108654, origin/jules-ads-knowledge-ingestion-11105849495867670532, origin/jules-ads-knowledge-ingestion-14603073081341889171, origin/jules-ads-links-3321030925826558682, origin/jules-agent-architecture-ingestion-315896060065751771, origin/jules-ai-agent-knowledge-merge-15121321797956756234, origin/jules-arcjet-integration-16980338037533745889, origin/jules-autonomous-cloud-coding-17927868760123258773, origin/jules-autonomous-cloud-coding-presence-fix-5903890579490242157, origin/jules-autonomous-cloud-takeover-v2-8329403658442730996, origin/jules-autonomous-connect-sync-13567552938698989059, origin/jules-autonomous-evolution-12208946204085721942, origin/jules-autonomous-evolution-15263469635356956693, origin/jules-autonomous-evolution-6202618797391726499, origin/jules-autonomous-evolution-task-12630282421402691933, origin/jules-autonomous-evolution-task-4316959770875337632, origin/jules-autonomous-work-sync-fix-2104762090981759627, origin/jules-autonomous-workflow-18354041674138581290, origin/jules-autonomous-workflow-2798390439327495884, origin/jules-autonomous-workflow-4040168382414053656, origin/jules-autonomous-workflow-creation-1089913609311419813, origin/jules-autonomous-workflow-fix-2826640413281112163, origin/jules-autonomous-workflow-unified-14967929050804960809, origin/jules-autonomus-workflow-creation-5184595443855941691, origin/jules-benchmark-fix-4566191207757319900, origin/jules-chief-ai-officer-fix-12790656603275201778, origin/jules-cloud-autonomy-16506302087474217798, origin/jules-cloud-simulation-enforcement-7338891043576217515, origin/jules-cloud-workflow-agent-9594836607216672043, origin/jules-cloud-workflow-agent-enhancement-4497894335591972427, origin/jules-cloud-workflow-tolerance-17354439472694641412, origin/jules-compile-knowledge-2707648609195220904, origin/jules-connect-docker-collaborate-dedup-1325651898106067393, origin/jules-connect-with-docker-and-collaborate-152584545824762286, origin/jules-continuous-presence-workflow-3144055533381791740, origin/jules-create-caio-agent-6458675343117660936, origin/jules-daily-autonomous-evolution-8968243163984956068, origin/jules-daily-work-consolidation-1921844264596184754, origin/jules-daily-work-cycle-execution-1058116400377404374, origin/jules-daily-work-cycle-initiation-14163370338724399850-c46a02f7, origin/jules-data-agent-kit-ingestion-17234985599070969726, origin/jules-docker-collaborate-adjustment-11310996739319906823, origin/jules-docker-collaboration-sync-20260708-3533835847997402247, origin/jules-download-cli-page-4874267122039212944, origin/jules-duo-planner-agent-url-fix-5677968275200464330, origin/jules-duo-planner-system-prompt-14073997271415894693, origin/jules-establish-docker-collaboration-2595263477177713528, origin/jules-feature-integrate-knowledge-merge-9200679916314149754, origin/jules-first-gitlab-ci-pipeline-4067550674868737956, origin/jules-fix-autonomous-creation-cycle-5331330201427680768, origin/jules-fix-knowledge-integration-cleanup-10144234766340686184, origin/jules-fix-oracle-scraper-schema-6080803583651507344, origin/jules-fix-subagent-prompts-16967744904311493464, origin/jules-full-autonomous-automatic-workflow-8311799048599272217, origin/jules-full-autonomous-orchestration-phase-23-9722972153733386623, origin/jules-full-autonomus-workflow-8744732568350416698, origin/jules-gemini-cli-subagents-11540649052084580804, origin/jules-gitlab-ci-setup-10531506072496288006, origin/jules-gitlab-ci-tutorial-10758887820992568383, origin/jules-gitlab-ci-tutorial-5613378872543284671, origin/jules-gitlab-ci-tutorial-6308086075500145757, origin/jules-gitlab-ci-yml-3154565573179389543, origin/jules-gitlab-security-agent-patch-9164786716786099651, origin/jules-gitlab-tutorial-ci-4111694628214868400, origin/jules-gitlab-tutorial-ingest-12738908424721749384, origin/jules-google-ads-docs-1947651740255057553, origin/jules-google-ads-knowledge-9522670797089792938, origin/jules-improve-knowledge-workflows-16068111765054687314, origin/jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604, origin/jules-improve-knowledge-workflows-9958740170618720237, origin/jules-improve-react-agents-deploy-6633287448450705076, origin/jules-improve-workflow-10877339405594311734, origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512, origin/jules-informatic-magazine-integration-3303370316654320716, origin/jules-ingest-ads-docs-2382385733821722961, origin/jules-ingest-ads-knowledge-7862837446767067464, origin/jules-ingest-agent-arch-5089499249300370295, origin/jules-ingest-google-ads-docs-12444511274572846717, origin/jules-ingest-google-ads-urls-10793437429273649704, origin/jules-ingest-google-ads-urls-5426696935403410776, origin/jules-ingest-google-ai-croatian-7848067479310360387, origin/jules-ingest-hcp-knowledge-14291451140571066747, origin/jules-insert-prompt-10213724841538599534, origin/jules-integrate-knowledge-merge-5016273102093085264, origin/jules-integrate-oracle-knowledge-9421136010084102746, origin/jules-integrate-signature-6068322876973646017, origin/jules-integration-update-15472444677931132642, origin/jules-intelephense-docs-consolidation-6380568782621863083, origin/jules-intelephense-knowledge-update-11103355338747781794, origin/jules-intelephense-premium-integration-12020942749536762935, origin/jules-investopedia-all-knowledge-14799525503188502250, origin/jules-knowledge-ads-ingestion-612535887181382298, origin/jules-knowledge-integration-409871911149242401, origin/jules-knowledge-integration-compile-14557175907207924867, origin/jules-knowledge-integration-subagents-16636673178408066825, origin/jules-knowledge-integration-update-9534278222453512733, origin/jules-knowledge-integration-update-subagents-5761981069173084944, origin/jules-knowledge-merge-collaboration-3722212575858302197, origin/jules-knowledge-merge-markposition-11506824174069569507, origin/jules-knowledge-observe-improvements-9236700373896263344, origin/jules-macbook-cloud-sim-4555849988424241356, origin/jules-macbook-cloud-sim-benchmark-17160841741878347904, origin/jules-no-changes-14115546788759100084, origin/jules-no-op-prompt-5892139652289730559, origin/jules-optimize-analytics-15369716282927792834, origin/jules-oracle-ai-integration-14010475435622443311, origin/jules-oracle-ai-knowledge-15961727206695749292, origin/jules-performance-optimization-8309177614023706547, origin/jules-performance-optimization-agents-648732899091226127, origin/jules-performance-optimization-analytics-11306538287504956069, origin/jules-phase-26-evolution-and-icloud-integration-13725884928664929962, origin/jules-remote-subagents-docs-1653073469927459457, origin/jules-schema-update-3866640169579536950, origin/jules-scrape-informatic-6598290821327070927, origin/jules-security-optimizations-6605171866180417523, origin/jules-smart-processing-cloud-workflow-18277080341771061055, origin/jules-sor-workflow-improvement-8463337196227161862, origin/jules-ssh-key-setup-7319492468583803481, origin/jules-synthetic-adjustment-2956436375149232394, origin/jules-synthetic-adjustment-2956436375149232394-15128750462688695288, origin/jules-synthetic-adjustment-benchmark-5669401765678409613, origin/jules-synthetic-remote-subagents-8680424287848645473, origin/jules-synthetic-task-insert-2725030614738534728, origin/jules-terraform-knowledge-17709827572083509678, origin/jules-tutorial-gitlab-3587074360635098758, origin/jules-update-duo-planner-prompt-12510917519976182075, origin/jules-update-gitlab-ci-16275426523578740483, origin/jules/add-system-patent-947552789592854459, origin/jules/autonomous-daily-workflow-verification-13750877917651496997, origin/jules/autonomous-online-coding-presence-17025271764789693305, origin/jules/autonomous-online-coding-presence-17025271764789693305-17731566985487010590, origin/jules/compile-knowledge-integration-4875845775501523719, origin/jules/connect-docker-collaborate-11639225190852212326, origin/jules/connect-docker-collaborate-11639225190852212326-12266854426214340534, origin/jules/connect-docker-collaborate-11639225190852212326-12266854426214340534-6433073805637161365, origin/jules/connect-docker-collaborate-11639225190852212326-1342794352069175774, origin/jules/connect-docker-collaborate-18314714262030004258, origin/jules/daily-work-automation-verification-12373909147944879663, origin/jules/improve-react-workflow-orchestration-10305698287333015349, origin/jules/ingest-cli-creativity-9044833233025653876, origin/jules/ingest-intelephense-unified-store-3086939939732869599, origin/jules/integrate-knowledge-merge-signature-9637748484475924203, origin/jules/knowledge-merge-integration-4756532437460590133, origin/jules/scraper-intelephense-2916212763307459692, origin/jules/scraper-markposition-17752547678215960211, origin/knowledge/docker-gordon-14752052914444722613, origin/main, origin/palette-analytics-console-feedback-14979050134191655648, origin/palette-analytics-report-ux-13310145182868611809, origin/palette-analytics-report-ux-1529011215089105936, origin/palette-analytics-report-ux-7778046450995178550, origin/palette-analytics-visualization-7864555049711578186, origin/palette-cli-ux-2733075758607402523, origin/palette-cli-ux-logs-15889507569998878970, origin/palette-daily-report-ux-12337725128930830373, origin/palette-improve-report-ux-10661525199264285560, origin/palette-report-navigation-4012184559007289296, origin/palette-scraper-ux-7786747023368569446, origin/palette-ux-report-enhancement-10371268008280215914, origin/palette-ux-report-enhancement-15716276225370499430, origin/palette-ux-report-improvements-16620648284606070844, origin/perf-combine-loops-analytics-12369946794947979577, origin/perf-optimization-analytics-16167115465882778570, origin/performance-regex-optimizations-7473852075048283069, origin/react-agent-deployment-improvements-5434617022495989509, origin/remote-subagents-docs-15679132595895107380, origin/remove-unauthorized-signature-9051442489718351903, origin/render-deployment-blueprint-8369044938747362942, origin/restore-jules-tasks-17924979559343397018, origin/sentinel-path-traversal-fix-11594538796228867279, origin/sentinel/fix-csv-injection-2739836513252277633, origin/sentinel/fix-csv-injection-4898138830369691020, origin/update-ai-agent-architecture-10730539674470756070, origin/update-compile-definition-10278962991354198007
 - **Sigma Bot (Operations)** (sigma@antigravity.ai)
 
-#### Services
+### ### Services
 - **analytics** (Active)
 - **anticipatory_intelligence_cluster** (Active)
 - **apac_edge_orchestrator** (Active)
@@ -25500,11 +25455,11 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **visual_neural_relay** (Active)
 - **work_order** (Active)
 
-#### Utilitys
+### ### Utilitys
 - **conflict_resolver** (Active)
 - **fp** (Active)
 
-#### Workflows
+### ### Workflows
 - **anticipatory_intelligence_cluster_workflow** (Active)
 - **apac_edge_orchestrator_workflow** (Active)
 - **autonomous_api_documentation_workflow** (Active)
@@ -25543,14 +25498,14 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **sentiment_analysis_workflow** (Active)
 - **visual_neural_relay_workflow** (Active)
 
-#### Schemas
+### ### Schemas
 - **FastAgentFrame** (Active)
 - **prototype** (Active)
 
-#### Actions
+### ### Actions
 - **user** (Active)
 
-#### Automation Scripts
+### ### Automation Scripts
 - **activate_cloud_sovereignty** (Active)
 - **analyze_recent_sessions** (Active)
 - **autonomous_creation_order** (Active)
@@ -25617,7 +25572,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **validate_license** (Active)
 - **work_daily** (Active)
 
-#### AI Agents
+### ### AI Agents
 - **backup_agent_prompt** (Active)
 - **base_agent** (Active)
 - **chief_ai_officer** (Active)
@@ -25629,7 +25584,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **schemas** (Active)
 - **sync_agent** (Active)
 
-#### Documentations
+### ### Documentations
 - **AGENTS_ROLLUP** (Active)
 - **AGENT_ARCHITECTURE** (Active)
 - **AI_AGENT_ARCHITECTURE** (Active)
@@ -25642,26 +25597,26 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **CONSOLIDATED_INTELLIGENCE.md** (Active)
 - **KNOWLEDGE_MERGE.md** (Active)
 
-#### UI Components
+### ### UI Components
 - **route** (Active)
 - **page** (Active)
 - **layout** (Active)
 - **sitemap** (Active)
 
-#### Research Apps
+### ### Research Apps
 - **AnalyticsResearchApp** (Active)
 - **DashboardView** (Active)
 - **Models** (Active)
 - **ResearchView** (Active)
 
-#### Binary/Executables
+### ### Binary/Executables
 - **antigravity** (Active)
 
-#### Infrastructures
+### ### Infrastructures
 - **main** (Active)
 - **variables** (Active)
 
-#### CI/CD Workflows
+### ### CI/CD Workflows
 - **antigravity-daily** (Active)
 - **auto-merge** (Active)
 - **autonomous_anticipatory_intelligence_cluster** (Active)
@@ -25752,12 +25707,12 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **hcp-packer-build** (Active)
 - **security** (Active)
 
-#### System Configs
+### ### System Configs
 - **directives** (Active)
 - **mission** (Active)
 - **SKILL** (Active)
 
-#### Assets
+### ### Assets
 - **file** (Active)
 - **globe** (Active)
 - **next** (Active)
@@ -25765,7 +25720,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **vercel** (Active)
 - **window** (Active)
 
-#### Knowledge Artifacts
+### ### Knowledge Artifacts
 - **agent_architecture** (Active)
 - **ai_agents_knowledge** (Active)
 - **caio_executive_intelligence_2026** (Active)
@@ -25792,23 +25747,23 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **test_icloud_knowledge** (Active)
 - **unitedsports_knowledge** (Active)
 
-#### Edge Workers
+### ### Edge Workers
 - **index** (Active)
 - **wrangler** (Active)
 
-#### Cloud Storages
+### ### Cloud Storages
 - **index** (Active)
 - **wrangler** (Active)
 
-#### Simulation Engines
+### ### Simulation Engines
 - **genai_example** (Active)
 - **main** (Active)
 
-#### Infrastructure Tutorials
+### ### Infrastructure Tutorials
 - **application** (Active)
 - **ubuntu-focal** (Active)
 
-#### Core Configurations
+### ### Core Configurations
 - **.env** (Active)
 - **.env.template** (Active)
 - **AGENTS** (Active)
@@ -25821,18 +25776,18 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **USAGE** (Active)
 - **package** (Active)
 
-#### Infrastructure (HCL)s
+### ### Infrastructure (HCL)s
 - **main** (Active)
 - **variables** (Active)
 
-#### Static Assets
+### ### Static Assets
 - **file** (Active)
 - **globe** (Active)
 - **next** (Active)
 - **vercel** (Active)
 - **window** (Active)
 
-#### Knowledges
+### ### Knowledges
 - **iCloud: phase_26_directives.md** (Ingested) - *Source: icloud://phase_26_directives.md*
 - **Intelephense Documentation** (Ingested) - *Source: https://github.com/bmewburn/intelephense-docs*
 - **Phase 26 Strategic Directives** (Ingested) - *Source: icloud://phase_26_directives.json*
@@ -25877,11 +25832,11 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **iCloud: project_backlog.md** (Ingested) - *Source: icloud://project_backlog.md*
 - **iCloud: tsconfig.json** (Ingested) - *Source: icloud://tsconfig.json*
 
-#### Infrastructure (Docker)s
+### ### Infrastructure (Docker)s
 - **mongodb** (Up 2 hours)
 - **app** (Up 2 hours)
 
-#### Branch Results
+### ### Branch Results
 - **origin/accelerate-dream-loop-optimization-10366329041600205699** (Ready for Merge)
 - **origin/add-a2a-remote-agent-152042865285525971** (Ready for Merge)
 - **origin/add-chief-ai-officer-agent-9719417263665099785** (Ready for Merge)
@@ -27494,221 +27449,222 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **origin/update-remote-subagents-8216224045262465071** (Ready for Merge)
 - **origin/v0/8bukets-bd43e85b** (Ready for Merge)
 
-#### iCloud: phase_26_directives.md
+### ### iCloud: phase_26_directives.md
 - **Source:** icloud://phase_26_directives.md
 - **Sections:** 2
 - *Key Topics:* ## Strategic Directives, ## Implementation Guidelines
 
-#### Intelephense Documentation
+### ### Intelephense Documentation
 - **Source:** https://github.com/bmewburn/intelephense-docs
 - **Sections:** 15
 - *Key Topics:* # LICENSE, # Intelephense, ### Workspace
 
-#### Phase 26 Strategic Directives
+### ### Phase 26 Strategic Directives
 - **Source:** icloud://phase_26_directives.json
 - **Sections:** 1
 - *Key Topics:* Universal Mesh Routing (UMR) Optimization
 
-#### iCloud: new_strategy_2025.md
+### ### iCloud: new_strategy_2025.md
 - **Source:** icloud://new_strategy_2025.md
 - **Sections:** 2
 - *Key Topics:* # Phase 26 Strategic Initiative: Multi-Universal Resonance, ## Directives
 
-#### Chief AI Officer (CAIO) Role
+### ### Chief AI Officer (CAIO) Role
 - **Source:** user_input://caio_user_input.md
 - **Sections:** 5
 - *Key Topics:* # Chief AI Officer (CAIO) Role, ## Core Job Description, ## Key Responsibilities
 
-#### Chief AI Officer (CAIO) Market Intelligence
+### ### Chief AI Officer (CAIO) Market Intelligence
 - **Source:** user_input://caio_market_intelligence_2026.md
 - **Sections:** 10
 - *Key Topics:* ## Market Landscape & Role Prevalence, ## Real-World Openings & Recruitment (LinkedIn Jobs), ## Executive AI Leadership Certifications (Coursera & Academic)
 
-#### Chief AI Officer (CAIO) Executive Intelligence 2026
+### ### Chief AI Officer (CAIO) Executive Intelligence 2026
 - **Source:** local://caio_executive_intelligence_2026.md
 - **Sections:** 7
 - *Key Topics:* ## 1. Executive Role Definition, ### Core Job Description, ### Key Responsibilities
 
-#### software-online-review.com
+### ### software-online-review.com
 - **Source:** https://software-online-review.com
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### unitedsports.news.blog
+### ### unitedsports.news.blog
 - **Source:** https://unitedsports.news.blog/
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### onlinereview.news.blog
+### ### onlinereview.news.blog
 - **Source:** https://onlinereview.news.blog/
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### companylink.business.blog
+### ### companylink.business.blog
 - **Source:** https://companylink.business.blog/
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### gamezoneonlinegame.wordpress.com
+### ### gamezoneonlinegame.wordpress.com
 - **Source:** https://gamezoneonlinegame.wordpress.com/
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### iCloud: strategy_2025.md
+### ### iCloud: strategy_2025.md
 - **Source:** icloud://strategy_2025.md
 - **Sections:** 1
 - *Key Topics:* iCloud Strategy 2025\n\n## Bottom-line\nFocus on bottom-line business outcomes.\n\n## Training\nInitiate cross-department training.
 
-#### iCloud Test Knowledge
+### ### iCloud Test Knowledge
 - **Source:** Internal
 - **Sections:** 1
 - *Key Topics:* Introduction
 
-#### (position) mRNA
+### ### (position) mRNA
 - **Source:** https://markposition.wordpress.com
 - **Sections:** 353
 - *Key Topics:* ## Content, # (position) mRNA, # advertising.amazon
 
-#### Search Console Mastery: https://software-online-review.com
+### ### Search Console Mastery: https://software-online-review.com
 - **Source:** google-search-console://https://software-online-review.com
 - **Sections:** 3
 - *Key Topics:* Search Performance Metrics, Top Performing Queries, Optimization Strategy
 
-#### informaticmagazine.data.blog
+### ### informaticmagazine.data.blog
 - **Source:** https://informaticmagazine.data.blog
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### 2459326
+### ### 2459326
 - **Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### bidding
+### ### bidding
 - **Source:** https://business.google.com/uk/ad-tools/bidding/
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### resources
+### ### resources
 - **Source:** https://admanager.google.com/home/resources/
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### ad manager
+### ### ad manager
 - **Source:** https://developers.google.com/ad-manager
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### dynamic ad insertion
+### ### dynamic ad insertion
 - **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### full service
+### ### full service
 - **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### pod serving
+### ### pod serving
 - **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### start
+### ### start
 - **Source:** https://developers.google.com/ad-manager/api/start
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### overview
+### ### overview
 - **Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Sections:** 1
 - *Key Topics:* ## Content
 
-#### iCloud: 50ty.json
+### ### iCloud: 50ty.json
 - **Source:** icloud://50ty.json
 - **Sections:** 1
 - *Key Topics:* Content
 
-#### iCloud: 50ty.md
+### ### iCloud: 50ty.md
 - **Source:** icloud://50ty.md
 - **Sections:** 2
 - *Key Topics:* # 50 Content Creation and Strategy Prompts, ## How to Get Maximum Value From This Collection
 
-#### iCloud: AGENTS.md
+### ### iCloud: AGENTS.md
 - **Source:** icloud://AGENTS.md
 - **Sections:** 7
 - *Key Topics:* ## The Vision: Autonomous Intelligence, ### Strategic Roadmap, ### 1. The Autonomous Core (`antigravity/core.ts`)
 
-#### iCloud: CLAUDE.md
+### ### iCloud: CLAUDE.md
 - **Source:** icloud://CLAUDE.md
 - **Sections:** 1
 - *Key Topics:* ## Content
 
+### ### iCloud: CONSOLIDATED_INTELLIGENCE.md
 - **Source:** icloud://CONSOLIDATED_INTELLIGENCE.md
 - **Sections:** 87
 - *Key Topics:* # CONSOLIDATED INTELLIGENCE REPORT, ## 🌐 Synergy Dashboard, ## 📋 Executive Summary
 
-#### iCloud: KNOWLEDGE_MERGE.md
+### ### iCloud: KNOWLEDGE_MERGE.md
 - **Source:** icloud://KNOWLEDGE_MERGE.md
 - **Sections:** 256
 - *Key Topics:* ## Autonomous Observation, ## Autonomous Observation, ## Autonomous Observation
 
-#### iCloud: MISSION_HANDOFF 2.md
+### ### iCloud: MISSION_HANDOFF 2.md
 - **Source:** icloud://MISSION_HANDOFF 2.md
 - **Sections:** 4
 - *Key Topics:* # 🚀 MISSION HANDOFF: ANTIGRAVITY ENTERPRISE, ## Executive Dashboard Overview, ## Autonomous Governance Brief
 
-#### iCloud: MISSION_HANDOFF.md
+### ### iCloud: MISSION_HANDOFF.md
 - **Source:** icloud://MISSION_HANDOFF.md
 - **Sections:** 5
 - *Key Topics:* # Antigravity: Sovereign Mission Handoff (Consolidated v1.0), ## 🚀 24/7 Tactical Ignition, ## 🛡️ Sovereign Security Governance
 
-#### iCloud: README.md
+### ### iCloud: README.md
 - **Source:** icloud://README.md
 - **Sections:** 11
 - *Key Topics:* ## Content, ## Getting Started, ## Learn More
 
-#### iCloud: USAGE.md
+### ### iCloud: USAGE.md
 - **Source:** icloud://USAGE.md
 - **Sections:** 3
 - *Key Topics:* # Configuration Instructions, ## 1. Supabase, ## 2. MongoDB
 
-#### iCloud: ai_agents_knowledge.json
+### ### iCloud: ai_agents_knowledge.json
 - **Source:** icloud://ai_agents_knowledge.json
 - **Sections:** 1
 - *Key Topics:* Content
 
-#### iCloud: caio_role_docs.md
+### ### iCloud: caio_role_docs.md
 - **Source:** icloud://caio_role_docs.md
 - **Sections:** 5
 - *Key Topics:* # Chief AI Officer (CAIO) Role Description, ## Core Job Description, ## Key Responsibilities
 
-#### iCloud: intelephense.config.json
+### ### iCloud: intelephense.config.json
 - **Source:** icloud://intelephense.config.json
 - **Sections:** 1
 - *Key Topics:* Content
 
-#### iCloud: package-lock.json
+### ### iCloud: package-lock.json
 - **Source:** icloud://package-lock.json
 - **Sections:** 1
 - *Key Topics:* Content
 
-#### iCloud: package.json
+### ### iCloud: package.json
 - **Source:** icloud://package.json
 - **Sections:** 1
 - *Key Topics:* Content
 
-#### iCloud: project_backlog.md
+### ### iCloud: project_backlog.md
 - **Source:** icloud://project_backlog.md
 - **Sections:** 7
 - *Key Topics:* # Antigravity Ecosystem - Structured Backlog, ## 🚀 Epic 1: Project Stabilization and Build Recovery, ### 🐛 Issue 1.1: Resolve Turbopack OOM and Compilation Errors
 
-#### iCloud: tsconfig.json
+### ### iCloud: tsconfig.json
 - **Source:** icloud://tsconfig.json
 - **Sections:** 1
 - *Key Topics:* Content
 
-### 🏆 Strategic Results Summary
+### ## 🏆 Strategic Results Summary
 *Top impactful outcomes extracted from autonomous branch history and scored for strategic significance.*
 | Score | Strategic Result | Category | Summary |
 | :--- | :--- | :---: | :--- |
@@ -27728,7 +27684,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 | **100** | `origin/feat/phase-25-singularity-integration-18319350463650196031` | FEATURE | Commit: feat: integrate Phase 25 and fix Cloudflare Worker CI |
 | **100** | `origin/feat/phase14-knowledge-integration-sovereignty-audit-15362902986675468031` | FEATURE | Commit: feat: integrate Phase 14 strategic knowledge and implement Cognitive Sovereignty Audit |
 
-#### 📂 Cluster: cognitive
+### ### 📂 Cluster: cognitive
 ├── 🌿 `origin/add-a2a-remote-agent-152042865285525971`
 ├── 🌿 `origin/add-docker-agent-model-docs-997437020929679972`
 ├── 🌿 `origin/add-docker-mcp-catalog-knowledge-9644100882668346855`
@@ -27741,7 +27697,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 └── 🌿 `origin/add-malubeach-scraper-16704333902164650708`
 └── ⋯ (+356 more branches)
 
-#### 📂 Cluster: core
+### ### 📂 Cluster: core
 ├── 🌿 `origin/add-gitlab-runner-service-1151466855069035440`
 ├── 🌿 `origin/add-jenkins-metrics-12709603847827089760`
 ├── 🌿 `origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784`
@@ -27754,7 +27710,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 └── 🌿 `origin/feat/cloud-sovereign-autonomy-6398105617467273727`
 └── ⋯ (+16 more branches)
 
-#### 📂 Cluster: interface
+### ### 📂 Cluster: interface
 ├── 🌿 `origin/accelerate-dream-loop-optimization-10366329041600205699`
 ├── 🌿 `origin/add-acp-integration-docs-10087323336683703862`
 ├── 🌿 `origin/add-vercel-sandbox-script-10704006226783687744`
@@ -27767,7 +27723,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 └── 🌿 `origin/codex/software-review-platform-standalone`
 └── ⋯ (+198 more branches)
 
-#### 📂 Cluster: knowledge
+### ### 📂 Cluster: knowledge
 ├── 🌿 `jules-15742528221033303145-ec04c1f4`
 ├── 🌿 `origin/add-gemini-ide-docs-5507798578309108991`
 ├── 🌿 `origin/add-gitlab-ci-tutorial-12213746427752804580`
@@ -27780,7 +27736,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 └── 🌿 `origin/automate-markposition-knowledge-merge-14646945117315419790`
 └── ⋯ (+422 more branches)
 
-#### 📂 Cluster: security
+### ### 📂 Cluster: security
 ├── 🌿 `origin/add-stitch-scraper-10970862194903572827`
 ├── 🌿 `origin/add-wilson-sonsini-docs-11494390792641278551`
 ├── 🌿 `origin/cloud-workflow-adjustment-5939480137317015972`
@@ -27793,7 +27749,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 └── 🌿 `origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980`
 └── ⋯ (+70 more branches)
 
-#### 📂 Cluster: workflow
+### ### 📂 Cluster: workflow
 ├── 🌿 `jules-15742528221033303145-ec04c1f4`
 ├── 🌿 `origin/add-docker-push-methods-8792019299013764107`
 ├── 🌿 `origin/add-docker-scripts-14962706392589598489`
@@ -27806,22 +27762,22 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 └── 🌿 `origin/chore/autonomous-evolution-update-18136705694323907139`
 └── ⋯ (+180 more branches)
 
-#### 📦 Resource: full_autonomous_automatic_creation_order_and_execution
+### ### 📦 Resource: full_autonomous_automatic_creation_order_and_execution
 └── 🌿 `jules-15742528221033303145-ec04c1f4`
 
-#### 📦 Resource: unified_collaboration
+### ### 📦 Resource: unified_collaboration
 └── 🌿 `jules-15742528221033303145-ec04c1f4`
 
-#### Filip Keser (Founder) (filip@example.com)
+### ### Filip Keser (Founder) (filip@example.com)
 - **Current Focus:** Global Monitoring
 
-#### Jules (Lead Architect) (jules@antigravity.ai)
+### ### Jules (Lead Architect) (jules@antigravity.ai)
 - **Current Focus:** jules-15742528221033303145-ec04c1f4, origin/add-chief-ai-officer-agent-9719417263665099785, origin/add-compile-definition-17628200376543609981
 
-#### Sigma Bot (Operations) (sigma@antigravity.ai)
+### ### Sigma Bot (Operations) (sigma@antigravity.ai)
 - **Current Focus:** Global Monitoring
 
-### 🚀 Prioritized Action Items
+### ## 🚀 Prioritized Action Items
 - **[MEDIUM]** Resolve High-Intensity synergy on `analytics`.
 - **[MEDIUM]** Resolve High-Intensity synergy on `autonomous_logging`.
 - **[MEDIUM]** Resolve High-Intensity synergy on `autonomous_resource_optimizer`.
@@ -27892,12 +27848,11 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 
 ---
 
-# iCloud: KNOWLEDGE_MERGE.md
+## DOCUMENT: iCloud: KNOWLEDGE_MERGE.md
+**Source:** icloud://KNOWLEDGE_MERGE.md
+**Ingested At:** undefined
 
-> **Source:** icloud://KNOWLEDGE_MERGE.md
-> **Analyzed At:** 2026-07-09T00:51:30.320Z
-
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-09T00:45:57.605Z
 - **Task**: Phase 23 Session Analysis & Engine Evolution
 - **Result**: Deep Autonomous Self-Correction: Analyzed 12 sessions (Success Rate: 100.00%). Dynamically scaling engine and upgrading core functionality.
@@ -27907,43 +27862,43 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **Title**: Intelephense: support
 - **Relationship Map**: Confirmed relationship with https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md (Title: Intelephense: support) as an intelligence source. Extracted key topics: Overview... (Content Length: 117 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-08T19:48:56.253447Z
 - **Target**: https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md
 - **Title**: Intelephense: features
 - **Relationship Map**: Confirmed relationship with https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md (Title: Intelephense: features) as an intelligence source. Extracted key topics: Features, Workspace Symbols, Document Symbols... (Content Length: 1071 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-08T19:48:56.253234Z
 - **Target**: https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md
 - **Title**: Intelephense: gettingStarted
 - **Relationship Map**: Confirmed relationship with https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md (Title: Intelephense: gettingStarted) as an intelligence source. Extracted key topics: Getting Started, Workspace, Environment... (Content Length: 13150 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-08T19:48:56.252886Z
 - **Target**: https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md
 - **Title**: Intelephense: installation
 - **Relationship Map**: Confirmed relationship with https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md (Title: Intelephense: installation) as an intelligence source. Extracted key topics: Installation, Visual Studio Code, Other Editors... (Content Length: 26073 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-08T19:48:56.252785Z
 - **Target**: https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md
 - **Title**: Intelephense: README
 - **Relationship Map**: Confirmed relationship with https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md (Title: Intelephense: README) as an intelligence source. Extracted key topics: Intelephense, Installation, Getting Started... (Content Length: 836 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-08T19:48:56.251942Z
 - **Target**: local://intelephense_docs.md
 - **Title**: intelephense_docs.md
 - **Relationship Map**: Confirmed relationship with local://intelephense_docs.md (Title: intelephense_docs.md) as an intelligence source. Extracted key topics: About, Visual Studio Code, Other Editors... (Content Length: 48090 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-08T19:48:56.246564Z
 - **Target**: icloud://strategy_2025.md
 - **Title**: iCloud: strategy_2025.md
 - **Relationship Map**: Confirmed relationship with icloud://strategy_2025.md (Title: iCloud: strategy_2025.md) as an intelligence source. Extracted key topics: iCloud Strategy 2025\n\n## Bottom-line\nFocus on bottom-line business outcomes.\n\n## Training\nInitiate cross-department training.... (Content Length: 168 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-07T08:15:08.511Z
 - **Task**: Daily Autonomous Session Analysis & System Engine Evolution
 - **Result**: Deep Autonomous Self-Correction: Analyzed 3 sessions (Success Rate: 66.67%). Dynamically scaling system engine, deploying hotfixes for 1 failed operations, and upgrading core functionality parameters. System scale factor increased by 25% to handle higher loads and better functionality. Enabled advanced self-correction heuristics.
@@ -27973,37 +27928,37 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **Title**: game zone online
 - **Relationship Map**: Confirmed relationship with https://gamezoneonlinegame.wordpress.com/ (Title: game zone online) as an intelligence source. Extracted key topics: Gzo &#8211; game-zone-online, funko, otakumode... (Content Length: 3679 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-04T00:18:50.599922Z
 - **Target**: https://companylink.business.blog/
 - **Title**: Company & news – #news
 - **Relationship Map**: Confirmed relationship with https://companylink.business.blog/ (Title: Company & news – #news) as an intelligence source. Extracted key topics: Fendi, Online Learning & Training Platform for Organizations | LinkedIn Learning, Daily Stock Market Overview, Data Updates, Reports & News | Nasdaq... (Content Length: 40011 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-04T00:18:50.592953Z
 - **Target**: https://onlinereview.news.blog/
 - **Title**: news
 - **Relationship Map**: Confirmed relationship with https://onlinereview.news.blog/ (Title: news) as an intelligence source. Extracted key topics: National Institute of Standards and Technology | NIST, Apple News+ – Apple, SaaS SEO Agency – SaaS Marketing Company... (Content Length: 38654 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-04T00:18:50.590183Z
 - **Target**: https://unitedsports.news.blog/
 - **Title**: e&n - unitedsports
 - **Relationship Map**: Confirmed relationship with https://unitedsports.news.blog/ (Title: e&n - unitedsports) as an intelligence source. Extracted key topics: Marketing, Top 7 Digital Marketing Strategies for Small Businesses, Ford® Mustang Sports Car | Hear The Roar... (Content Length: 114857 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-04T00:18:50.587154Z
 - **Target**: https://software-online-review.com
 - **Title**: software info by fk – software-online-review – Filip Keser
 - **Relationship Map**: Confirmed relationship with https://software-online-review.com (Title: software info by fk – software-online-review – Filip Keser) as an intelligence source. Extracted key topics: Roadmap and business roadmap, Nvidia Dgx Spark, Chromium... (Content Length: 61974 chars)
 
-### Autonomous Observation
+### ## Autonomous Observation
 - **Date**: 2026-07-09T00:46:00.276Z
 - **Target**: https://markposition.wordpress.com
 - **Title**: (position) mRNA
 - **Relationship Map**: Confirmed relationship with https://markposition.wordpress.com (Title: (position) mRNA) as an intelligence source. Extracted key topics: (position) mRNA, advertising.amazon, Drive Advertising Revenue with Google Ad Manager : Google... (Content Length: 226135 chars)
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -28016,7 +27971,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 251 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: origin, origin/add-gemini-ide-docs-5507798578309108991, origin/add-google-adk-knowledge-and-examples-17228136166825962958...
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
@@ -28024,7 +27979,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -28043,7 +27998,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 | **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
 | **100** | `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` | FEATURE | Commit: feat: implement Phase 23 full autonomous creation and execution pulse |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 327 branches within the AI Agents domain.*
 - **Branch:** `origin/feature/phase-19-sovereign-swarm-creation-18087892088407006712` [Impact Score: 130]
 - **Category:** FEATURE
@@ -29251,7 +29206,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **Result:** Commit: Verify agent architecture documentation
 - **Activity:** Last active 2 weeks ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 167 branches within the Automation domain.*
 - **Branch:** `origin/feat/macbook-cloud-simulation-verification-18070016345319943441-479083842667788180` [Impact Score: 80]
 - **Category:** FEATURE
@@ -29874,7 +29829,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **Result:** Commit: Update ingest_ads_knowledge script with new URLs and typescript extension
 - **Activity:** Last active 3 days ago
 
-#### 🌐 Strategic Domain: Core
+### ### 🌐 Strategic Domain: Core
 *Strategic results and knowledge merged from 3 branches within the Core domain.*
 - **Branch:** `origin/feat/phase-25-singularity-integration-18319350463650196031` [Impact Score: 100]
 - **Category:** FEATURE
@@ -29887,7 +29842,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **Activity:** Last active 3 days ago
 - **Knowledge:** Aligned with strategic initiative: 🕸️ Neural Mesh.
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 391 branches within the Documentation domain.*
 - **Branch:** `origin/feat/autonomous-creation-pulse-12133170053802619677` [Impact Score: 80]
 - **Category:** FEATURE
@@ -31247,7 +31202,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **Result:** Commit: Update MCP_DOCKER_SECURITY to use specific image
 - **Activity:** Last active 6 weeks ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 1642 branches within the General domain.*
 - **Branch:** `origin/fix/autonomous-evolution-1779502182555` [Impact Score: 90]
 - **Category:** FIX
@@ -36686,7 +36641,7 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **Result:** Commit: Verify local deployment and dashboard rendering
 - **Activity:** Last active 6 weeks ago
 
-#### 🌐 Strategic Domain: Security
+### ### 🌐 Strategic Domain: Security
 *Strategic results and knowledge merged from 76 branches within the Security domain.*
 - **Branch:** `origin/fix/autonomous-evolution-1779330683942` [Impact Score: 60]
 - **Category:** FIX
@@ -36892,9 +36847,6 @@ Synergy achieved across 3001 branches. Detailed knowledge and results consolidat
 - **Branch:** `origin/cloud-workflow-adjustment-5939480137317015972`
 - **Category:** ORIGIN
 - **Result:** Commit: Authorized syntactic adjustment to trigger clean commit
-<!-- full autonomus automatic workflow creation -->
-<!-- connect with docker and collaborate  -->
-<!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -37543,8 +37495,6 @@ Use the default keyword to specify additional configurations that are applied to
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit
-<!-- full autonomus automatic workflow creation -->
-<!-- connect with docker and collaborate  -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -38175,7 +38125,7 @@ Use the default keyword to specify additional configurations that are applied to
 - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-security-fix-8692130279913781488
 - **Activity:** Last active 7 weeks ago
 
-#### 🌐 Strategic Domain: Services
+### ### 🌐 Strategic Domain: Services
 *Strategic results and knowledge merged from 26 branches within the Services domain.*
 - **Branch:** `origin/feat/cloud-native-autonomy-3438116551041896813` [Impact Score: 100]
 - **Category:** FEATURE
@@ -38244,7 +38194,7 @@ Use the default keyword to specify additional configurations that are applied to
 - **Result:** Commit: feat: integrate Jenkins CI/CD pipeline and service
 - **Activity:** Last active 7 weeks ago
 
-#### 🌐 Strategic Domain: UI/UX
+### ### 🌐 Strategic Domain: UI/UX
 *Strategic results and knowledge merged from 201 branches within the UI/UX domain.*
 - **Branch:** `origin/palette-cli-ux-5136733467430420971` [Impact Score: 80]
 - **Category:** FEATURE
@@ -39035,7 +38985,7 @@ Use the default keyword to specify additional configurations that are applied to
 - **Result:** Commit: Update `duo_planner_agent.md` to match the required system prompt
 - **Activity:** Last active 8 weeks ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -39048,7 +38998,7 @@ Use the default keyword to specify additional configurations that are applied to
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 255 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: core` involves branches: jules-13389482244892438945-0c24f0b4, origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760...
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: jules-13389482244892438945-0c24f0b4, origin, origin/add-gemini-ide-docs-5507798578309108991...
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
@@ -39056,7 +39006,7 @@ Use the default keyword to specify additional configurations that are applied to
 - **SYNERGY [High]:** `Cluster: workflow` involves branches: origin/add-docker-push-methods-8792019299013764107, origin/add-docker-scripts-14962706392589598489, origin/add-gemini-test-csharp-11995490696655996242...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -39075,7 +39025,7 @@ Use the default keyword to specify additional configurations that are applied to
 | **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
 | **100** | `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` | FEATURE | Commit: feat: implement Phase 23 full autonomous creation and execution pulse |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 39 branches within the AI Agents domain.*
 - **Branch:** `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` [Impact Score: 100]
 - **Category:** FEATURE
@@ -39176,7 +39126,7 @@ Use the default keyword to specify additional configurations that are applied to
 - **Result:** Commit: Update gitlab_security_agent prompt
 - **Activity:** Last active 8 days ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 22 branches within the Automation domain.*
 - **Branch:** `origin/fully-autonomous-workflow-17686295934602386415` [Impact Score: 35]
 - **Category:** MAINTENANCE
@@ -39239,7 +39189,7 @@ Use the default keyword to specify additional configurations that are applied to
 - **Result:** Commit: Insert 'Agent - Logika ponašanja' prompt correctly into relevant files and generate workflows.
 - **Activity:** Last active 19 hours ago
 
-#### 🌐 Strategic Domain: Core
+### ### 🌐 Strategic Domain: Core
 *Strategic results and knowledge merged from 1 branches within the Core domain.*
 - **Branch:** `origin/integrate-jenkins-pipeline-generation-14117303396069153360` [Impact Score: 70]
 - **Category:** FEATURE
@@ -39247,7 +39197,7 @@ Use the default keyword to specify additional configurations that are applied to
 - **Activity:** Last active 7 weeks ago
 - **Knowledge:** Aligned with strategic initiative: 🌌 Singularity Orchestration.
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 65 branches within the Documentation domain.*
 - **Branch:** `origin/fix/autonomous-evolution-1779958280246` [Impact Score: 60]
 - **Category:** FIX
@@ -39395,7 +39345,7 @@ Use the default keyword to specify additional configurations that are applied to
 - **Result:** Commit: Update Intelephense documentation in system knowledge base
 - **Activity:** Last active 11 days ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 303 branches within the General domain.*
 - **Branch:** `origin/feat/autonomous-creation-evolution-15095668826431318009` [Impact Score: 80]
 - **Category:** FEATURE
@@ -39979,7 +39929,7 @@ Use the default keyword to specify additional configurations that are applied to
 - **Result:** Commit: Update Duo Planner system prompt in markdown file
 - **Activity:** Last active 2 days ago
 
-#### 🌐 Strategic Domain: Security
+### ### 🌐 Strategic Domain: Security
 *Strategic results and knowledge merged from 16 branches within the Security domain.*
 - **Branch:** `origin/fix/autonomous-evolution-1779334460476` [Impact Score: 60]
 - **Category:** FIX
@@ -40025,8 +39975,6 @@ Use the default keyword to specify additional configurations that are applied to
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit
-<!-- full autonomus automatic workflow creation -->
-<!-- connect with docker and collaborate  -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -40273,7 +40221,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 with the requested string
 - **Activity:** Last active 10 days ago
 
-#### 🌐 Strategic Domain: Services
+### ### 🌐 Strategic Domain: Services
 *Strategic results and knowledge merged from 11 branches within the Services domain.*
 - **Branch:** `origin/feat/cloud-native-convergence-16112457665657205536` [Impact Score: 100]
 - **Category:** FEATURE
@@ -40297,7 +40245,7 @@ with the requested string
 - **Activity:** Last active 3 weeks ago
 - **Knowledge:** Aligned with strategic initiative: 🌏 APAC Orchestration.
 
-#### 🌐 Strategic Domain: UI/UX
+### ### 🌐 Strategic Domain: UI/UX
 *Strategic results and knowledge merged from 6 branches within the UI/UX domain.*
 - **Branch:** `origin/palette-cli-ux-colors-17941664392335633230` [Impact Score: 20]
 - **Category:** FEATURE
@@ -40324,7 +40272,7 @@ with the requested string
 - **Result:** Commit: 🎨 Palette: Enhance Analytics Report UX
 - **Activity:** Last active 6 months ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -40337,7 +40285,7 @@ with the requested string
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 255 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: core` involves branches: jules-13389482244892438945-0c24f0b4, origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760...
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: jules-13389482244892438945-0c24f0b4, origin, origin/add-gemini-ide-docs-5507798578309108991...
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
@@ -40345,7 +40293,7 @@ with the requested string
 - **SYNERGY [High]:** `Cluster: workflow` involves branches: origin/add-docker-push-methods-8792019299013764107, origin/add-docker-scripts-14962706392589598489, origin/add-gemini-test-csharp-11995490696655996242...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -40364,7 +40312,7 @@ with the requested string
 | **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
 | **100** | `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` | FEATURE | Commit: feat: implement Phase 23 full autonomous creation and execution pulse |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 15 branches within the AI Agents domain.*
 - **Branch:** `origin/phase-19-sovereign-swarm-16431041015008027051` [Impact Score: 80]
 - **Category:** ORIGIN
@@ -40393,14 +40341,14 @@ with the requested string
 - **Result:** Commit: Update gitlab_security_agent prompt
 - **Activity:** Last active 3 days ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 7 branches within the Automation domain.*
 - **Branch:** `origin/feat/improve-merge-integrate-run-workflow-sor-13416061035192884716` [Impact Score: 20]
 - **Category:** FEATURE
 - **Result:** Commit: feat: improve merge integrate run workflow and observe knowledge
 - **Activity:** Last active 3 weeks ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 29 branches within the Documentation domain.*
 - **Branch:** `origin/feat/docker-collaboration-sync-final-11035090678408338826` [Impact Score: 50]
 - **Category:** FEATURE
@@ -40455,7 +40403,7 @@ with the requested string
 - **Result:** Commit: Merge pull request #2971 from 8bukets/knowledge-merge-integration-16212546385788620620
 - **Activity:** Last active 7 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 158 branches within the General domain.*
 - **Branch:** `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` [Impact Score: 130]
 - **Category:** FEATURE
@@ -40663,7 +40611,7 @@ with the requested string
 - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF vulnerability in scraper
 - **Activity:** Last active 5 months ago
 
-#### 🌐 Strategic Domain: Security
+### ### 🌐 Strategic Domain: Security
 *Strategic results and knowledge merged from 5 branches within the Security domain.*
 - **Branch:** `origin/sentinel-csv-injection-fix-9615340353460481815` [Impact Score: 30]
 - **Category:** FIX
@@ -40683,7 +40631,7 @@ with the requested string
 - **Result:** Commit: feat(security): fix CSV injection vulnerability in scraper
 - **Activity:** Last active 6 months ago
 
-#### 🌐 Strategic Domain: Services
+### ### 🌐 Strategic Domain: Services
 *Strategic results and knowledge merged from 8 branches within the Services domain.*
 - **Branch:** `jules-13389482244892438945-0c24f0b4` [Impact Score: 86]
 - **Category:** OTHER
@@ -40702,7 +40650,7 @@ with the requested string
 - **Activity:** Last active 4 weeks ago
 - **Knowledge:** Aligned with strategic initiative: 🌏 APAC Orchestration.
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -40715,7 +40663,7 @@ with the requested string
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 255 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: origin, origin/add-gemini-ide-docs-5507798578309108991, origin/add-gitlab-ci-tutorial-17414652335368381443...
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
@@ -40723,7 +40671,7 @@ with the requested string
 - **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -40742,7 +40690,7 @@ with the requested string
 | **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
 | **100** | `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` | FEATURE | Commit: feat: implement Phase 23 full autonomous creation and execution pulse |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 12 branches within the AI Agents domain.*
 - **Branch:** `origin/feat/integrate-oracle-ai-10269913553901722650` [Impact Score: 40]
 - **Category:** FEATURE
@@ -40770,7 +40718,7 @@ with the requested string
 - **Result:** Commit: Update GitLab Security Analyst Agent system prompt
 - **Activity:** Last active 5 weeks ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 8 branches within the Automation domain.*
 - **Branch:** `origin/improve-merge-integrate-run-13413317813168219712` [Impact Score: 20]
 - **Category:** FEATURE
@@ -40785,7 +40733,7 @@ with the requested string
 - **Result:** Commit: scan https://software-online-review.com and improve merge integrate run workflow and observe knowledge
 - **Activity:** Last active 7 hours ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 25 branches within the Documentation domain.*
 - **Branch:** `origin/feat-autonomous-workflow-verification-6429871457084550413` [Impact Score: 50]
 - **Category:** FEATURE
@@ -40852,7 +40800,7 @@ with the requested string
 - **Result:** Commit: Apply literal replacement for oracle ai integrate knowledge task
 - **Activity:** Last active 10 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 115 branches within the General domain.*
 - **Branch:** `origin/feat/autonomous-cloud-sovereignty-9356824831657033971` [Impact Score: 130]
 - **Category:** FEATURE
@@ -40968,7 +40916,7 @@ with the requested string
 - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
 - **Activity:** Last active 6 months ago
 
-#### 🌐 Strategic Domain: Security
+### ### 🌐 Strategic Domain: Security
 *Strategic results and knowledge merged from 2 branches within the Security domain.*
 - **Branch:** `origin/sentinel/fix-csv-injection-11516698988446732046` [Impact Score: 20]
 - **Category:** FEATURE
@@ -40977,8 +40925,6 @@ with the requested string
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit
-<!-- full autonomus automatic workflow creation -->
-<!-- connect with docker and collaborate  -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -41224,7 +41170,7 @@ https://admanager.google.com/home/resources/
 https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview --> with the requested string
 - **Activity:** Last active 10 days ago
 
-#### 🌐 Strategic Domain: Services
+### ### 🌐 Strategic Domain: Services
 *Strategic results and knowledge merged from 5 branches within the Services domain.*
 - **Branch:** `origin/feat/cloud-native-online-presence-8372655786114667910` [Impact Score: 70]
 - **Category:** FEATURE
@@ -41232,7 +41178,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Activity:** Last active 6 weeks ago
 - **Knowledge:** Aligned with strategic initiative: ☁️ Cloud-Native Sovereignty.
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -41245,7 +41191,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 255 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: origin, origin/add-gemini-ide-docs-5507798578309108991, origin/add-gitlab-ci-tutorial-17414652335368381443...
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
@@ -41253,7 +41199,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -41272,7 +41218,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 | **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
 | **100** | `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` | FEATURE | Commit: feat: implement Phase 23 full autonomous creation and execution pulse |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 6 branches within the AI Agents domain.*
 - **Branch:** `origin/feature/integrate-oracle-ai-knowledge-6095839206286019467` [Impact Score: 40]
 - **Category:** FEATURE
@@ -41292,14 +41238,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: Update GitLab Security Analyst Agent system prompt
 - **Activity:** Last active 2 weeks ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 5 branches within the Automation domain.*
 - **Branch:** `origin/improve-merge-integrate-run-3347991371920530382` [Impact Score: 20]
 - **Category:** FEATURE
 - **Result:** Commit: feat: improve merge integrate run workflow and observe knowledge
 - **Activity:** Last active 4 weeks ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 9 branches within the Documentation domain.*
 - **Branch:** `origin/feat/google-innovation-knowledge-integration-4350571535549076265` [Impact Score: 20]
 - **Category:** FEATURE
@@ -41322,7 +41268,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: Merge pull request #2991 from 8bukets/integrate-investopedia-knowledge-14890872875211217025
 - **Activity:** Last active 78 minutes ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 87 branches within the General domain.*
 - **Branch:** `origin/feat/phase16-autonomous-cloud-7295121110943695539` [Impact Score: 130]
 - **Category:** FEATURE
@@ -41390,7 +41336,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
 - **Activity:** Last active 5 months ago
 
-#### 🌐 Strategic Domain: Services
+### ### 🌐 Strategic Domain: Services
 *Strategic results and knowledge merged from 4 branches within the Services domain.*
 - **Branch:** `origin/feat/cloud-sovereign-autonomy-6398105617467273727` [Impact Score: 70]
 - **Category:** FEATURE
@@ -41398,7 +41344,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Activity:** Last active 5 days ago
 - **Knowledge:** Aligned with strategic initiative: ☁️ Cloud-Native Sovereignty.
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -41411,7 +41357,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 255 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: origin, origin/add-gemini-ide-docs-5507798578309108991, origin/add-gitlab-ci-tutorial-17414652335368381443...
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
@@ -41419,7 +41365,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -41438,7 +41384,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 | **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
 | **100** | `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` | FEATURE | Commit: feat: implement Phase 23 full autonomous creation and execution pulse |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 2 branches within the AI Agents domain.*
 - **Branch:** `origin/update-gitlab-security-agent-prompt-5398640052724390254`
 - **Category:** ORIGIN
@@ -41449,14 +41395,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: Update GitLab Security Analyst Agent prompt
 - **Activity:** Last active 6 days ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 4 branches within the Automation domain.*
 - **Branch:** `origin/jules-17614351784459006626-409fd9f3` [Impact Score: 20]
 - **Category:** FEATURE
 - **Result:** Commit: feat: improve merge integrate run workflow and observe knowledge
 - **Activity:** Last active 3 weeks ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 4 branches within the Documentation domain.*
 - **Branch:** `origin/feat/integrate-google-ai-knowledge-17317066349600220724` [Impact Score: 20]
 - **Category:** FEATURE
@@ -41467,7 +41413,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: feat: connect with docker and collaborate
 - **Activity:** Last active 27 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 71 branches within the General domain.*
 - **Branch:** `origin/feature/autonomous-cloud-sovereignty-10105112552170184768` [Impact Score: 130]
 - **Category:** FEATURE
@@ -41527,7 +41473,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
 - **Activity:** Last active 5 months ago
 
-#### 🌐 Strategic Domain: Services
+### ### 🌐 Strategic Domain: Services
 *Strategic results and knowledge merged from 3 branches within the Services domain.*
 - **Branch:** `origin/feat/phase-23-cloud-integration-12097682530533174326` [Impact Score: 70]
 - **Category:** FEATURE
@@ -41535,7 +41481,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Activity:** Last active 9 days ago
 - **Knowledge:** Aligned with strategic initiative: ☁️ Cloud-Native Sovereignty.
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -41548,7 +41494,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 255 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: jules-11320197349285458011-51587637, origin, origin/add-gemini-ide-docs-5507798578309108991...
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
@@ -41556,7 +41502,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -41575,21 +41521,21 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 | **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
 | **100** | `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` | FEATURE | Commit: feat: implement Phase 23 full autonomous creation and execution pulse |
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 3 branches within the Automation domain.*
 - **Branch:** `origin/jules-4039569702954338871-6dfc0852` [Impact Score: 20]
 - **Category:** FEATURE
 - **Result:** Commit: feat: improve merge integrate run workflow and observe knowledge
 - **Activity:** Last active 4 weeks ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 2 branches within the Documentation domain.*
 - **Branch:** `origin/feat/integrate-google-innovation-knowledge-14341880645858818682` [Impact Score: 20]
 - **Category:** FEATURE
 - **Result:** Commit: feat: integrate Google Innovation & AI blog knowledge
 - **Activity:** Last active 2 weeks ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 58 branches within the General domain.*
 - **Branch:** `origin/feature/full-cloud-sovereignty-13405760260663540052` [Impact Score: 130]
 - **Category:** FEATURE
@@ -41647,7 +41593,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: Resolve merge conflicts by accepting origin/main
 - **Activity:** Last active 5 weeks ago
 
-#### 🌐 Strategic Domain: Services
+### ### 🌐 Strategic Domain: Services
 *Strategic results and knowledge merged from 2 branches within the Services domain.*
 - **Branch:** `origin/fix/autonomous-cloud-presence-17176660160653043958` [Impact Score: 70]
 - **Category:** FEATURE
@@ -41655,7 +41601,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Activity:** Last active 7 weeks ago
 - **Knowledge:** Aligned with strategic initiative: ☁️ Cloud-Native Sovereignty.
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -41668,7 +41614,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 255 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: jules-11320197349285458011-51587637, origin, origin/add-gemini-ide-docs-5507798578309108991...
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
@@ -41676,7 +41622,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -41695,21 +41641,21 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 | **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
 | **100** | `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` | FEATURE | Commit: feat: implement Phase 23 full autonomous creation and execution pulse |
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 2 branches within the Automation domain.*
 - **Branch:** `origin/jules-7434726111045302175-4659bca9` [Impact Score: 20]
 - **Category:** FEATURE
 - **Result:** Commit: feat: improve merge integrate run workflow and observe knowledge
 - **Activity:** Last active 4 weeks ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 1 branches within the Documentation domain.*
 - **Branch:** `origin/integrate-google-innovation-knowledge-3713262704469040448` [Impact Score: 20]
 - **Category:** FEATURE
 - **Result:** Commit: feat: integrate Google Innovation & AI blog knowledge
 - **Activity:** Last active 5 days ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 46 branches within the General domain.*
 - **Branch:** `origin/feat/autonomous-cloud-sovereignty-10617479099026703774` [Impact Score: 100]
 - **Category:** FEATURE
@@ -41751,7 +41697,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
 - **Activity:** Last active 5 months ago
 
-#### 🌐 Strategic Domain: Services
+### ### 🌐 Strategic Domain: Services
 *Strategic results and knowledge merged from 1 branches within the Services domain.*
 - **Branch:** `origin/feat/cloud-native-autonomy-13870741608362044054` [Impact Score: 40]
 - **Category:** FEATURE
@@ -41759,7 +41705,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Activity:** Last active 6 weeks ago
 - **Knowledge:** Aligned with strategic initiative: ☁️ Cloud-Native Sovereignty.
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -41772,7 +41718,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 257 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: jules-11320197349285458011-51587637, origin, origin/add-gemini-ide-docs-5507798578309108991...
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
@@ -41780,7 +41726,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -41799,14 +41745,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 | **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
 | **100** | `origin/phase-23-autonomous-swarm-pulse-15566505389532920235` | FEATURE | Commit: feat: implement Phase 23 full autonomous creation and execution pulse |
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 1 branches within the Automation domain.*
 - **Branch:** `origin/jules-improve-knowledge-workflows-9958740170618720237` [Impact Score: 20]
 - **Category:** FEATURE
 - **Result:** Commit: feat: improve merge integrate run workflow and observe knowledge
 - **Activity:** Last active 7 weeks ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 37 branches within the General domain.*
 - **Branch:** `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` [Impact Score: 100]
 - **Category:** FEATURE
@@ -41838,7 +41784,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
 - **Activity:** Last active 6 months ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -41851,7 +41797,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 259 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: core` involves branches: jules-17285303421408668297-358192ff, origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760...
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: jules-17285303421408668297-358192ff, origin/add-gemini-ide-docs-5507798578309108991, origin/add-gitlab-ci-tutorial-17414652335368381443...
 - **SYNERGY [High]:** `Cluster: security` involves branches: main, origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551...
@@ -41859,7 +41805,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
 - **SYNERGY [High]:** `Cluster: workflow` involves branches: origin/add-docker-push-methods-8792019299013764107, origin/add-docker-scripts-14962706392589598489, origin/add-gemini-test-csharp-11995490696655996242...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **160** | `jules-17285303421408668297-358192ff` | OTHER | 🤖 fix: autonomous self-repair of 372 issues (30 files changed in Services, 3 core files) |
@@ -41878,7 +41824,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 32 branches within the General domain.*
 - **Branch:** `origin/jules-10847761714265679389-66a81fd0` [Impact Score: 100]
 - **Category:** FEATURE
@@ -41906,7 +41852,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
 - **Activity:** Last active 6 months ago
 
-#### 🌐 Strategic Domain: Security
+### ### 🌐 Strategic Domain: Security
 *Strategic results and knowledge merged from 3 branches within the Security domain.*
 - **Branch:** `origin/feat/phase-24-distributed-consensus-collaboration-11320197349285458011` [Impact Score: 70]
 - **Category:** FEATURE
@@ -41914,7 +41860,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Activity:** Last active 2 hours ago
 - **Knowledge:** Aligned with strategic initiative: 🤝 Swarm Consensus.
 
-#### 🌐 Strategic Domain: Services
+### ### 🌐 Strategic Domain: Services
 *Strategic results and knowledge merged from 2 branches within the Services domain.*
 - **Branch:** `jules-17285303421408668297-358192ff` [Impact Score: 160]
 - **Category:** OTHER
@@ -41929,7 +41875,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Activity:** Last active 35 minutes ago
 - **Knowledge:** Aligned with strategic initiative: ☁️ Cloud-Native Sovereignty.
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -41942,7 +41888,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 259 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: core` involves branches: jules-7186208582283220117-d0127bac, origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760...
 - **SYNERGY [High]:** `Cluster: knowledge` involves branches: jules-7186208582283220117-d0127bac, main, origin/add-gemini-ide-docs-5507798578309108991...
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
@@ -41950,7 +41896,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **SYNERGY [High]:** `Cluster: workflow` involves branches: origin/add-docker-push-methods-8792019299013764107, origin/add-docker-scripts-14962706392589598489, origin/add-gemini-test-csharp-11995490696655996242...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -41969,7 +41915,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 | **100** | `origin/jules-10847761714265679389-66a81fd0` | FEATURE | Commit: feat: implement Phase 23 cloud sovereignty and Phase 19 swarm protocols |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 7 branches within the AI Agents domain.*
 - **Branch:** `origin/feat/phase26-icloud-integration-17285303421408668297` [Impact Score: 50]
 - **Category:** FEATURE
@@ -42000,7 +41946,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: Update Duo Planner system prompt in duo_planner_agent.md
 - **Activity:** Last active 14 hours ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 3 branches within the Automation domain.*
 - **Branch:** `origin/jules-1291037799617393253-986e10a5` [Impact Score: 30]
 - **Category:** ORIGIN
@@ -42015,7 +41961,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: Add full autonomus automatic workflow comment
 - **Activity:** Last active 62 minutes ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 9 branches within the Documentation domain.*
 - **Branch:** `origin/feat/google-innovation-ai-knowledge-integration-3733759549179943042` [Impact Score: 20]
 - **Category:** FEATURE
@@ -42050,7 +41996,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: Insert docker collaboration comments
 - **Activity:** Last active 14 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 36 branches within the General domain.*
 - **Branch:** `origin/feature/phase-23-cloud-sovereignty-enhancement-14406814491879713888` [Impact Score: 130]
 - **Category:** FEATURE
@@ -42118,13 +42064,11 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview -->
 - **Result:** Commit: Insert synthetic benchmark text for investopedia.com integration
 - **Activity:** Last active 2 hours ago
 
-#### 🌐 Strategic Domain: Security
+### ### 🌐 Strategic Domain: Security
 *Strategic results and knowledge merged from 1 branches within the Security domain.*
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394`
 - **Category:** ORIGIN
 - **Result:** Commit: Replace Authorized syntactic adjustment to trigger clean commit with the requested string
-<!-- full autonomus automatic workflow creation -->
-<!-- connect with docker and collaborate  -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -42361,7 +42305,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 -->
 - **Activity:** Last active 11 days ago
 
-#### 🌐 Strategic Domain: Services
+### ### 🌐 Strategic Domain: Services
 *Strategic results and knowledge merged from 1 branches within the Services domain.*
 - **Branch:** `jules-7186208582283220117-d0127bac` [Impact Score: 94]
 - **Category:** OTHER
@@ -42371,7 +42315,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Artifacts:** 8 files modified (1 core files).
 - **Strategic Impact:** Branch impacts core ecosystem architecture.
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -42384,7 +42328,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 259 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
 - **SYNERGY [High]:** `Cluster: workflow` involves branches: origin/add-docker-push-methods-8792019299013764107, origin/add-docker-scripts-14962706392589598489, origin/add-gemini-test-csharp-11995490696655996242...
@@ -42392,7 +42336,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -42411,14 +42355,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 1 branches within the Documentation domain.*
 - **Branch:** `origin/feat/phase-26-umr-icloud-integration-7186208582283220117` [Impact Score: 50]
 - **Category:** FEATURE
 - **Result:** Commit: feat: implement Phase 26 Universal Mesh Routing and iCloud knowledge integration
 - **Activity:** Last active 9 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 25 branches within the General domain.*
 - **Branch:** `origin/feat/autonomous-cloud-sovereignty-13133862953322273895` [Impact Score: 100]
 - **Category:** FEATURE
@@ -42442,14 +42386,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
 - **Activity:** Last active 6 months ago
 
-#### 🌐 Strategic Domain: UI/UX
+### ### 🌐 Strategic Domain: UI/UX
 *Strategic results and knowledge merged from 1 branches within the UI/UX domain.*
 - **Branch:** `origin/insert-cloud-integration-comment-2419868395814538753`
 - **Category:** ORIGIN
 - **Result:** Commit: I've completed the chore to ignore the workers builds CI failures and post the cloud integration comments.
 - **Activity:** Last active 5 hours ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -42462,7 +42406,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 259 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
 - **SYNERGY [High]:** `Cluster: workflow` involves branches: origin/add-docker-push-methods-8792019299013764107, origin/add-docker-scripts-14962706392589598489, origin/add-gemini-test-csharp-11995490696655996242...
@@ -42470,7 +42414,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -42489,7 +42433,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 20 branches within the General domain.*
 - **Branch:** `origin` [Impact Score: 80]
 - **Category:** OTHER
@@ -42509,7 +42453,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Fix CSV injection vulnerability in scraper output
 - **Activity:** Last active 5 months ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -42522,7 +42466,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 259 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `Cluster: interface` involves branches: origin/accelerate-dream-loop-optimization-10366329041600205699, origin/add-acp-integration-docs-10087323336683703862, origin/add-vercel-sandbox-script-10704006226783687744...
 - **SYNERGY [High]:** `Cluster: cognitive` involves branches: origin/add-a2a-remote-agent-152042865285525971, origin/add-docker-agent-model-docs-997437020929679972, origin/add-docker-mcp-catalog-knowledge-9644100882668346855...
 - **SYNERGY [High]:** `Cluster: workflow` involves branches: origin/add-docker-push-methods-8792019299013764107, origin/add-docker-scripts-14962706392589598489, origin/add-gemini-test-csharp-11995490696655996242...
@@ -42530,7 +42474,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `Cluster: core` involves branches: origin/add-gitlab-runner-service-1151466855069035440, origin/add-jenkins-metrics-12709603847827089760, origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784...
 - **SYNERGY [High]:** `Cluster: security` involves branches: origin/add-stitch-scraper-10970862194903572827, origin/add-wilson-sonsini-docs-11494390792641278551, origin/cloud-workflow-adjustment-5939480137317015972...
 
-#### 🏆 Top Impactful Strategic Results
+### ### 🏆 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -42549,7 +42493,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 2 branches within the AI Agents domain.*
 - **Branch:** `origin/jules-9944090562450084899-6c1baa54`
 - **Category:** ORIGIN
@@ -42560,21 +42504,21 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Update Duo Planner agent system prompt
 - **Activity:** Last active 34 minutes ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 1 branches within the Automation domain.*
 - **Branch:** `origin/jules-docker-collaborate-adjustment-11310996739319906823`
 - **Category:** ORIGIN
 - **Result:** Commit: Insert 'connect with docker and collaborate ' placeholder to trigger workflow creation
 - **Activity:** Last active 52 minutes ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 1 branches within the Documentation domain.*
 - **Branch:** `origin/jules-8838293481272518071-3795436a` [Impact Score: 50]
 - **Category:** FEATURE
 - **Result:** Commit: feat: implement docker connection and collaboration sync
 - **Activity:** Last active 73 minutes ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 18 branches within the General domain.*
 - **Branch:** `origin/jules-autonomous-cloud-takeover-v2-8329403658442730996` [Impact Score: 80]
 - **Category:** ORIGIN
@@ -42594,7 +42538,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Merge pull request #3025 from 8bukets/jules-9944090562450084899-6c1baa54
 - **Activity:** Last active 10 minutes ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -42607,7 +42551,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 260 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -42619,10 +42563,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -42630,14 +42574,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/full-cloud-sovereignty-13405760260663540052**: Commit: feat: implement full cloud sovereignty and autonomous online presence
 - _...and 12 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 - **origin/fix/autonomous-evolution-1779764401136**: Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
 
-##### 🚩 Milestone: OTHER (Aggregate Impact: 80)
+### #### 🚩 Milestone: OTHER (Aggregate Impact: 80)
 - **origin**: Commit: Merge pull request #3020 from 8bukets/feat/autonomous-cloud-sovereignty-13133862953322273895
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -42656,7 +42600,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 14 branches within the General domain.*
 - **Branch:** `origin/jules/scraper-markposition-17752547678215960211` [Impact Score: 80]
 - **Category:** ORIGIN
@@ -42672,7 +42616,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Merge pull request #3025 from 8bukets/jules-9944090562450084899-6c1baa54
 - **Activity:** Last active 21 minutes ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -42685,7 +42629,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 260 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -42697,10 +42641,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -42708,14 +42652,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/full-cloud-sovereignty-13405760260663540052**: Commit: feat: implement full cloud sovereignty and autonomous online presence
 - _...and 12 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 - **origin/fix/autonomous-evolution-1779764401136**: Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
 
-##### 🚩 Milestone: OTHER (Aggregate Impact: 80)
+### #### 🚩 Milestone: OTHER (Aggregate Impact: 80)
 - **origin**: Commit: Merge pull request #3020 from 8bukets/feat/autonomous-cloud-sovereignty-13133862953322273895
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -42734,7 +42678,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 11 branches within the General domain.*
 - **Branch:** `origin/sentinel-csv-injection-fix-8908501396910626441` [Impact Score: 30]
 - **Category:** FIX
@@ -42745,7 +42689,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Merge pull request #3025 from 8bukets/jules-9944090562450084899-6c1baa54
 - **Activity:** Last active 22 minutes ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -42758,7 +42702,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 263 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -42770,10 +42714,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -42781,14 +42725,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/full-cloud-sovereignty-13405760260663540052**: Commit: feat: implement full cloud sovereignty and autonomous online presence
 - _...and 12 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 - **origin/fix/autonomous-evolution-1779764401136**: Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
 
-##### 🚩 Milestone: OTHER (Aggregate Impact: 80)
+### #### 🚩 Milestone: OTHER (Aggregate Impact: 80)
 - **origin**: Commit: Merge pull request #3020 from 8bukets/feat/autonomous-cloud-sovereignty-13133862953322273895
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -42807,7 +42751,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 2 branches within the AI Agents domain.*
 - **Branch:** `origin/implement-ai-agents-knowledge-google-cloud-11588926116648322976` [Impact Score: 30]
 - **Category:** ORIGIN
@@ -42818,7 +42762,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: docs: insert remote subagents documentation
 - **Activity:** Last active 12 minutes ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 3 branches within the Documentation domain.*
 - **Branch:** `origin/feat/icloud-knowledge-integration-and-phase-26-engine-improvements-13266959332024847143` [Impact Score: 50]
 - **Category:** FEATURE
@@ -42833,7 +42777,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Merge pull request #3027 from 8bukets/integrate-google-innovation-knowledge-10414713860095470487
 - **Activity:** Last active 7 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 16 branches within the General domain.*
 - **Branch:** `origin/feat/full-autonomous-creation-phase-26-17925837615734372291` [Impact Score: 80]
 - **Category:** FEATURE
@@ -42860,7 +42804,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Update gitlab CI tutorial
 - **Activity:** Last active 33 minutes ago
 
-#### 🌐 Strategic Domain: Security
+### ### 🌐 Strategic Domain: Security
 *Strategic results and knowledge merged from 1 branches within the Security domain.*
 - **Branch:** `origin/feat/enhanced-ecosystem-collaboration-v24-mesh-consensus-3512663793870356112` [Impact Score: 40]
 - **Category:** FEATURE
@@ -42868,14 +42812,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Activity:** Last active 10 hours ago
 - **Knowledge:** Aligned with strategic initiative: 🤝 Swarm Consensus.
 
-#### 🌐 Strategic Domain: UI/UX
+### ### 🌐 Strategic Domain: UI/UX
 *Strategic results and knowledge merged from 1 branches within the UI/UX domain.*
 - **Branch:** `origin/integrate-google-innovation-knowledge-10414713860095470487`
 - **Category:** ORIGIN
 - **Result:** Commit: Integrate Google Innovation & AI knowledge and fix CI Worker builds
 - **Activity:** Last active 9 hours ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -42888,7 +42832,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 263 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -42900,10 +42844,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -42911,14 +42855,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/full-cloud-sovereignty-13405760260663540052**: Commit: feat: implement full cloud sovereignty and autonomous online presence
 - _...and 12 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 - **origin/fix/autonomous-evolution-1779764401136**: Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
 
-##### 🚩 Milestone: OTHER (Aggregate Impact: 80)
+### #### 🚩 Milestone: OTHER (Aggregate Impact: 80)
 - **origin**: Commit: Merge pull request #3020 from 8bukets/feat/autonomous-cloud-sovereignty-13133862953322273895
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -42937,7 +42881,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 10 branches within the General domain.*
 - **Branch:** `origin/sentinel-csv-injection-fix-9949658350522574715` [Impact Score: 30]
 - **Category:** FIX
@@ -42948,7 +42892,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Merge pull request #3033 from 8bukets/update-gitlab-ci-tutorial-9296775960756062233
 - **Activity:** Last active 37 minutes ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -42961,7 +42905,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 263 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -42973,10 +42917,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -42984,14 +42928,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/full-cloud-sovereignty-13405760260663540052**: Commit: feat: implement full cloud sovereignty and autonomous online presence
 - _...and 12 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 - **origin/fix/autonomous-evolution-1779764401136**: Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
 
-##### 🚩 Milestone: OTHER (Aggregate Impact: 80)
+### #### 🚩 Milestone: OTHER (Aggregate Impact: 80)
 - **origin**: Commit: Merge pull request #3020 from 8bukets/feat/autonomous-cloud-sovereignty-13133862953322273895
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43010,7 +42954,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 8 branches within the General domain.*
 - **Branch:** `origin/sentinel-fix-csv-injection-12497847357551567150` [Impact Score: 30]
 - **Category:** FIX
@@ -43021,7 +42965,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Merge pull request #3033 from 8bukets/update-gitlab-ci-tutorial-9296775960756062233
 - **Activity:** Last active 40 minutes ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -43034,7 +42978,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 263 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -43046,10 +42990,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -43057,14 +43001,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/full-cloud-sovereignty-13405760260663540052**: Commit: feat: implement full cloud sovereignty and autonomous online presence
 - _...and 12 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 - **origin/fix/autonomous-evolution-1779764401136**: Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
 
-##### 🚩 Milestone: OTHER (Aggregate Impact: 80)
+### #### 🚩 Milestone: OTHER (Aggregate Impact: 80)
 - **origin**: Commit: Merge pull request #3020 from 8bukets/feat/autonomous-cloud-sovereignty-13133862953322273895
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43083,14 +43027,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | Commit: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors |
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 6 branches within the General domain.*
 - **Branch:** `origin/sentinel-fix-csv-injection-17518560069698695789` [Impact Score: 30]
 - **Category:** FIX
 - **Result:** Commit: Fix CSV injection vulnerability in scraper
 - **Activity:** Last active 6 months ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -43103,7 +43047,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 263 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -43115,10 +43059,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 111)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 111)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -43126,11 +43070,11 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/full-cloud-sovereignty-13405760260663540052**: Commit: feat: implement full cloud sovereignty and autonomous online presence
 - _...and 13 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 - **origin/fix/autonomous-evolution-1779764401136**: Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43149,7 +43093,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/autonomous-cloud-sovereignty-7704563431937959285` | FEATURE | Commit: feat: enable autonomous cloud work and sovereign presence |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 4 branches within the AI Agents domain.*
 - **Branch:** `origin/implement-ai-agents-knowledge-google-cloud-11588926116648322976` [Impact Score: 30]
 - **Category:** ORIGIN
@@ -43168,7 +43112,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Update Duo Planner AI Agent system prompt
 - **Activity:** Last active 10 hours ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 3 branches within the Automation domain.*
 - **Branch:** `origin/insert-workflow-prompt-13344168910719311941`
 - **Category:** ORIGIN
@@ -43179,7 +43123,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Insert prompt text and generate workflows
 - **Activity:** Last active 18 hours ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 6 branches within the Documentation domain.*
 - **Branch:** `origin/feat/integrate-google-innovation-knowledge-6694719100503062669` [Impact Score: 20]
 - **Category:** FEATURE
@@ -43206,7 +43150,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Insert Google Ads and Ad Manager knowledge base URLs
 - **Activity:** Last active 5 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 15 branches within the General domain.*
 - **Branch:** `origin/feature/autonomous-cloud-sovereignty-7704563431937959285` [Impact Score: 100]
 - **Category:** FEATURE
@@ -43242,7 +43186,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Insert prompt text
 - **Activity:** Last active 15 hours ago
 
-#### 🌐 Strategic Domain: Security
+### ### 🌐 Strategic Domain: Security
 *Strategic results and knowledge merged from 1 branches within the Security domain.*
 - **Branch:** `origin/feat/enhanced-ecosystem-collaboration-v24-mesh-consensus-4403051003490739887` [Impact Score: 40]
 - **Category:** FEATURE
@@ -43250,14 +43194,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Activity:** Last active 23 hours ago
 - **Knowledge:** Aligned with strategic initiative: 🤝 Swarm Consensus.
 
-#### 🌐 Strategic Domain: UI/UX
+### ### 🌐 Strategic Domain: UI/UX
 *Strategic results and knowledge merged from 1 branches within the UI/UX domain.*
 - **Branch:** `origin/jules-18400721959620784058-09715a38`
 - **Category:** ORIGIN
 - **Result:** Commit: Ignore Workers Builds failures and resubmit
 - **Activity:** Last active 6 hours ago
 
-#### 🔗 Resource Dependency Matrix
+### ### 🔗 Resource Dependency Matrix
 - `analytics` -> depends on -> `cross_shard_memory` (import)
 - `analytics` -> depends on -> `swarm_heartbeat` (import)
 - `analytics` -> depends on -> `lattice_sync` (import)
@@ -43270,7 +43214,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - `autonomous_discovery_engine` -> depends on -> `lattice_sync` (import)
 - _...and 263 more dependencies._
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -43282,10 +43226,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 111)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 111)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -43293,11 +43237,11 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/full-cloud-sovereignty-13405760260663540052**: Commit: feat: implement full cloud sovereignty and autonomous online presence
 - _...and 13 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 - **origin/fix/autonomous-evolution-1779764401136**: Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43316,7 +43260,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/autonomous-cloud-sovereignty-7704563431937959285` | FEATURE | Commit: feat: enable autonomous cloud work and sovereign presence |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 3 branches within the AI Agents domain.*
 - **Branch:** `origin/feat/implement-ai-agents-knowledge-16793181359834219969` [Impact Score: 50]
 - **Category:** FEATURE
@@ -43327,21 +43271,21 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Merge pull request #3055 from 8bukets/feat/implement-ai-agents-knowledge-16793181359834219969
 - **Activity:** Last active 36 minutes ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 1 branches within the Automation domain.*
 - **Branch:** `origin/jules-synthetic-adjustment-2956436375149232394-15128750462688695288`
 - **Category:** ORIGIN
 - **Result:** Commit: Insert prompt text and generate workflows
 - **Activity:** Last active 18 hours ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 1 branches within the Documentation domain.*
 - **Branch:** `origin/jules-phase-26-evolution-and-icloud-integration-13725884928664929962` [Impact Score: 50]
 - **Category:** FEATURE
 - **Result:** Commit: feat: integrate Phase 26 iCloud knowledge and evolve system engine
 - **Activity:** Last active 2 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 7 branches within the General domain.*
 - **Branch:** `jules-6747205150360071-fe62f4e8` [Impact Score: 30]
 - **Category:** OTHER
@@ -43352,7 +43296,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Fix CSV injection vulnerability in scraper
 - **Activity:** Last active 6 months ago
 
-#### 🔗 Actionable Resource Dependency Matrix
+### ### 🔗 Actionable Resource Dependency Matrix
 | Source Resource | Target Dependency | Connection | Action Requirement |
 | :--- | :--- | :---: | :--- |
 | `analytics` | `cross_shard_memory` | import | Verify API Contract |
@@ -43372,7 +43316,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | `autonomous_notification` | `lattice_sync` | import | Verify API Contract |
 *...and 258 more dependencies recorded in autonomous state.*
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -43384,10 +43328,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 111)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 111)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -43395,11 +43339,11 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/full-cloud-sovereignty-13405760260663540052**: Commit: feat: implement full cloud sovereignty and autonomous online presence
 - _...and 13 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 - **origin/fix/autonomous-evolution-1779764401136**: Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43418,14 +43362,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 | **100** | `origin/feature/autonomous-cloud-sovereignty-7704563431937959285` | FEATURE | Commit: feat: enable autonomous cloud work and sovereign presence |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 1 branches within the AI Agents domain.*
 - **Branch:** `origin/jules/scraper-markposition-17752547678215960211` [Impact Score: 30]
 - **Category:** ORIGIN
 - **Result:** Commit: Merge pull request #3055 from 8bukets/feat/implement-ai-agents-knowledge-16793181359834219969
 - **Activity:** Last active 42 minutes ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 5 branches within the General domain.*
 - **Branch:** `main` [Impact Score: 30]
 - **Category:** OTHER
@@ -43436,7 +43380,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Fix CSV injection vulnerability in scraper
 - **Activity:** Last active 6 months ago
 
-#### 🔗 Actionable Resource Dependency Matrix
+### ### 🔗 Actionable Resource Dependency Matrix
 | Source Resource | Target Dependency | Connection | Action Requirement |
 | :--- | :--- | :---: | :--- |
 | `analytics` | `cross_shard_memory` | import | Verify API Contract |
@@ -43456,7 +43400,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | `autonomous_notification` | `lattice_sync` | import | Verify API Contract |
 *...and 258 more dependencies recorded in autonomous state.*
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -43468,10 +43412,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 113)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 113)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -43479,13 +43423,13 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147**: Commit: feat: implement Phase 26 autonomous cloud sovereignty and failover
 - _...and 13 more related achievements._
 
-##### 🚩 Milestone: OTHER (Aggregate Impact: 110)
+### #### 🚩 Milestone: OTHER (Aggregate Impact: 110)
 - **origin**: Commit: Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147
 
-##### 🚩 Milestone: ORIGIN (Aggregate Impact: 110)
+### #### 🚩 Milestone: ORIGIN (Aggregate Impact: 110)
 - **origin/jules/scraper-markposition-17752547678215960211**: Commit: Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43504,7 +43448,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/cloud-native-convergence-16112457665657205536` | FEATURE | Commit: feat: implement cloud-native autonomous convergence and online presence |
 | **100** | `origin/feat/phase-25-singularity-integration-18319350463650196031` | FEATURE | Commit: feat: integrate Phase 25 and fix Cloudflare Worker CI |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 6 branches within the AI Agents domain.*
 - **Branch:** `jules-13926482618051788925-e0a1fd1d`
 - **Category:** OTHER
@@ -43523,14 +43467,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Insert remote subagent text into KNOWLEDGE_INTEGRATION.md
 - **Activity:** Last active 7 hours ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 1 branches within the Automation domain.*
 - **Branch:** `origin/jules-5156499950924136716-0a8b4fc3` [Impact Score: 5]
 - **Category:** MAINTENANCE
 - **Result:** Commit: chore: full autonomus automatic workflow creation
 - **Activity:** Last active 9 hours ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 2 branches within the Documentation domain.*
 - **Branch:** `origin/feat/intelephense-knowledge-sync-v26-11440261265650229332` [Impact Score: 20]
 - **Category:** FEATURE
@@ -43541,7 +43485,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Optimize Intelephense configuration and documentation, fix CI
 - **Activity:** Last active 8 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 8 branches within the General domain.*
 - **Branch:** `origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147` [Impact Score: 130]
 - **Category:** FEATURE
@@ -43565,14 +43509,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: ci: append trivial comment to trigger clean commit
 - **Activity:** Last active 10 hours ago
 
-#### 🌐 Strategic Domain: UI/UX
+### ### 🌐 Strategic Domain: UI/UX
 *Strategic results and knowledge merged from 1 branches within the UI/UX domain.*
 - **Branch:** `origin/update-caio-knowledge-and-agent-logic-18095929260299055621`
 - **Category:** ORIGIN
 - **Result:** Commit: Update CAIO knowledge and resolve Cloudflare Worker CI build failures
 - **Activity:** Last active 4 hours ago
 
-#### 🔗 Actionable Resource Dependency Matrix
+### ### 🔗 Actionable Resource Dependency Matrix
 | Source Resource | Target Dependency | Connection | Action Requirement |
 | :--- | :--- | :---: | :--- |
 | `analytics` | `cross_shard_memory` | import | Verify API Contract |
@@ -43592,7 +43536,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | `autonomous_notification` | `lattice_sync` | import | Verify API Contract |
 *...and 258 more dependencies recorded in autonomous state.*
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -43604,10 +43548,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 113)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 113)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -43615,13 +43559,13 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147**: Commit: feat: implement Phase 26 autonomous cloud sovereignty and failover
 - _...and 13 more related achievements._
 
-##### 🚩 Milestone: OTHER (Aggregate Impact: 110)
+### #### 🚩 Milestone: OTHER (Aggregate Impact: 110)
 - **origin**: Commit: Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147
 
-##### 🚩 Milestone: ORIGIN (Aggregate Impact: 110)
+### #### 🚩 Milestone: ORIGIN (Aggregate Impact: 110)
 - **origin/jules/scraper-markposition-17752547678215960211**: Commit: Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43640,14 +43584,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/cloud-native-convergence-16112457665657205536` | FEATURE | Commit: feat: implement cloud-native autonomous convergence and online presence |
 | **100** | `origin/feat/phase-25-singularity-integration-18319350463650196031` | FEATURE | Commit: feat: integrate Phase 25 and fix Cloudflare Worker CI |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 2 branches within the AI Agents domain.*
 - **Branch:** `main`
 - **Category:** OTHER
 - **Result:** Commit: Merge pull request #3066 from 8bukets/update-caio-knowledge-and-agent-logic-18095929260299055621
 - **Activity:** Last active 4 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 3 branches within the General domain.*
 - **Branch:** `origin` [Impact Score: 110]
 - **Category:** OTHER
@@ -43659,7 +43603,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Fix CSV injection vulnerability in scraper
 - **Activity:** Last active 6 months ago
 
-#### 🔗 Actionable Resource Dependency Matrix
+### ### 🔗 Actionable Resource Dependency Matrix
 | Source Resource | Target Dependency | Connection | Action Requirement |
 | :--- | :--- | :---: | :--- |
 | `analytics` | `cross_shard_memory` | import | Verify API Contract |
@@ -43679,7 +43623,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | `autonomous_notification` | `lattice_sync` | import | Verify API Contract |
 *...and 258 more dependencies recorded in autonomous state.*
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -43691,10 +43635,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 113)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 113)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -43702,13 +43646,13 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147**: Commit: feat: implement Phase 26 autonomous cloud sovereignty and failover
 - _...and 13 more related achievements._
 
-##### 🚩 Milestone: OTHER (Aggregate Impact: 110)
+### #### 🚩 Milestone: OTHER (Aggregate Impact: 110)
 - **origin**: Commit: Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147
 
-##### 🚩 Milestone: ORIGIN (Aggregate Impact: 110)
+### #### 🚩 Milestone: ORIGIN (Aggregate Impact: 110)
 - **origin/jules/scraper-markposition-17752547678215960211**: Commit: Merge pull request #3065 from 8bukets/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43727,14 +43671,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/cloud-native-convergence-16112457665657205536` | FEATURE | Commit: feat: implement cloud-native autonomous convergence and online presence |
 | **100** | `origin/feat/phase-25-singularity-integration-18319350463650196031` | FEATURE | Commit: feat: integrate Phase 25 and fix Cloudflare Worker CI |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 1 branches within the AI Agents domain.*
 - **Branch:** `origin/main`
 - **Category:** ORIGIN
 - **Result:** Commit: Merge pull request #3066 from 8bukets/update-caio-knowledge-and-agent-logic-18095929260299055621
 - **Activity:** Last active 5 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 1 branches within the General domain.*
 - **Branch:** `origin/jules/scraper-markposition-17752547678215960211` [Impact Score: 110]
 - **Category:** ORIGIN
@@ -43742,7 +43686,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Activity:** Last active 4 hours ago
 - **Knowledge:** Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.
 
-#### 🔗 Actionable Resource Dependency Matrix
+### ### 🔗 Actionable Resource Dependency Matrix
 | Source Resource | Target Dependency | Connection | Action Requirement |
 | :--- | :--- | :---: | :--- |
 | `analytics` | `cross_shard_memory` | import | Verify API Contract |
@@ -43762,7 +43706,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | `autonomous_notification` | `lattice_sync` | import | Verify API Contract |
 *...and 258 more dependencies recorded in autonomous state.*
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -43774,10 +43718,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -43785,10 +43729,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147**: Commit: feat: implement Phase 26 autonomous cloud sovereignty and failover
 - _...and 14 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43807,7 +43751,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase14-knowledge-integration-sovereignty-audit-15362902986675468031` | FEATURE | Commit: feat: integrate Phase 14 strategic knowledge and implement Cognitive Sovereignty Audit |
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 6 branches within the AI Agents domain.*
 - **Branch:** `origin/feat/docker-swarm-collaboration-13926482618051788925` [Impact Score: 40]
 - **Category:** FEATURE
@@ -43827,7 +43771,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Update gitlab_security_agent prompt
 - **Activity:** Last active 3 hours ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 2 branches within the Documentation domain.*
 - **Branch:** `origin/feat/integrate-google-innovation-knowledge-2590325206961785938` [Impact Score: 20]
 - **Category:** FEATURE
@@ -43838,14 +43782,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Merge pull request #3068 from 8bukets/feat/integrate-google-innovation-knowledge-2590325206961785938
 - **Activity:** Last active 4 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 2 branches within the General domain.*
 - **Branch:** `origin`
 - **Category:** OTHER
 - **Result:** Commit: Merge pull request #3070 from 8bukets/jules-496929391610872058-b1a665f3
 - **Activity:** Last active 83 minutes ago
 
-#### 🔗 Actionable Resource Dependency Matrix
+### ### 🔗 Actionable Resource Dependency Matrix
 | Source Resource | Target Dependency | Connection | Action Requirement |
 | :--- | :--- | :---: | :--- |
 | `analytics` | `cross_shard_memory` | import | Verify API Contract |
@@ -43865,7 +43809,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | `autonomous_notification` | `lattice_sync` | import | Verify API Contract |
 *...and 258 more dependencies recorded in autonomous state.*
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -43877,10 +43821,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -43888,10 +43832,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147**: Commit: feat: implement Phase 26 autonomous cloud sovereignty and failover
 - _...and 14 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43910,21 +43854,21 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase14-knowledge-integration-sovereignty-audit-15362902986675468031` | FEATURE | Commit: feat: integrate Phase 14 strategic knowledge and implement Cognitive Sovereignty Audit |
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 2 branches within the AI Agents domain.*
 - **Branch:** `main`
 - **Category:** OTHER
 - **Result:** Commit: Merge pull request #3069 from 8bukets/update-gitlab-security-agent-prompt-10087093437802479843
 - **Activity:** Last active 3 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 1 branches within the General domain.*
 - **Branch:** `origin/jules/scraper-markposition-17752547678215960211`
 - **Category:** ORIGIN
 - **Result:** Commit: Merge pull request #3070 from 8bukets/jules-496929391610872058-b1a665f3
 - **Activity:** Last active 2 hours ago
 
-#### 🔗 Actionable Resource Dependency Matrix
+### ### 🔗 Actionable Resource Dependency Matrix
 | Source Resource | Target Dependency | Connection | Action Requirement |
 | :--- | :--- | :---: | :--- |
 | `analytics` | `cross_shard_memory` | import | Verify API Contract |
@@ -43944,7 +43888,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | `autonomous_notification` | `lattice_sync` | import | Verify API Contract |
 *...and 258 more dependencies recorded in autonomous state.*
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -43956,10 +43900,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -43967,10 +43911,10 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147**: Commit: feat: implement Phase 26 autonomous cloud sovereignty and failover
 - _...and 14 more related achievements._
 
-##### 🚩 Milestone: FIX (Aggregate Impact: 90)
+### #### 🚩 Milestone: FIX (Aggregate Impact: 90)
 - **origin/fix/autonomous-evolution-1779502182555**: Commit: Enforce cloud simulation flags across all execution paths (#1967)
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **130** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | Commit: feat: implement autonomous cloud sovereignty and online presence simulation |
@@ -43989,14 +43933,14 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase14-knowledge-integration-sovereignty-audit-15362902986675468031` | FEATURE | Commit: feat: integrate Phase 14 strategic knowledge and implement Cognitive Sovereignty Audit |
 | **100** | `origin/feat/phase15-quantum-sovereignty-integration-18428354883045173588` | FEATURE | Commit: Merge branch 'main' into feat/phase15-quantum-sovereignty-integration-18428354883045173588 |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 1 branches within the AI Agents domain.*
 - **Branch:** `origin/main`
 - **Category:** ORIGIN
 - **Result:** Commit: Merge pull request #3069 from 8bukets/update-gitlab-security-agent-prompt-10087093437802479843
 - **Activity:** Last active 3 hours ago
 
-#### 🔗 Actionable Resource Dependency Matrix
+### ### 🔗 Actionable Resource Dependency Matrix
 | Source Resource | Target Dependency | Connection | Action Requirement |
 | :--- | :--- | :---: | :--- |
 | `analytics` | `cross_shard_memory` | import | Verify API Contract |
@@ -44016,7 +43960,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | `autonomous_notification` | `lattice_sync` | import | Verify API Contract |
 *...and 258 more dependencies recorded in autonomous state.*
 
-#### ⚡ Strategic Synergy Highlights
+### ### ⚡ Strategic Synergy Highlights
 - **SYNERGY [High]:** `analytics` involves branches:
 - **SYNERGY [High]:** `autonomous_logging` involves branches:
 - **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches:
@@ -44028,13 +43972,13 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **SYNERGY [High]:** `cognitive_security` involves branches:
 - **SYNERGY [High]:** `collaboration` involves branches:
 
-#### 🏆 Collaborative Milestones
+### ### 🏆 Collaborative Milestones
 *Major progress points achieved through cross-agent synergy.*
 
-##### 🚩 Milestone: OTHER (Aggregate Impact: 132)
+### #### 🚩 Milestone: OTHER (Aggregate Impact: 132)
 - **jules-15742528221033303145-ec04c1f4**: 🤖 chore: autonomous commit before merging origin/accelerate-dream-loop-optimization-10366329041600205699 (14 files changed in Automation, 2 core files)
 
-##### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
+### #### 🚩 Milestone: FEATURE (Aggregate Impact: 112)
 - **origin/feat/autonomous-cloud-sovereignty-5076503560817521005**: Commit: feat: implement autonomous cloud sovereignty and online presence simulation
 - **origin/feat/autonomous-cloud-sovereignty-9356824831657033971**: Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
 - **origin/feat/phase16-autonomous-cloud-7295121110943695539**: Commit: feat: implement Phase 16 cloud sovereignty and swarm intelligence
@@ -44042,7 +43986,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147**: Commit: feat: implement Phase 26 autonomous cloud sovereignty and failover
 - _...and 14 more related achievements._
 
-#### 📊 Top Impactful Strategic Results
+### ### 📊 Top Impactful Strategic Results
 | Impact Score | Strategic Branch | Category | Key Result |
 | :--- | :--- | :--- | :--- |
 | **132** | `jules-15742528221033303145-ec04c1f4` | OTHER | 🤖 chore: autonomous commit before merging origin/accelerate-dream-loop-optimization-10366329041600205699 (14 files changed in Automation, 2 core files) |
@@ -44061,7 +44005,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 | **100** | `origin/feat/phase-25-singularity-integration-18319350463650196031` | FEATURE | Commit: feat: integrate Phase 25 and fix Cloudflare Worker CI |
 | **100** | `origin/feat/phase14-knowledge-integration-sovereignty-audit-15362902986675468031` | FEATURE | Commit: feat: integrate Phase 14 strategic knowledge and implement Cognitive Sovereignty Audit |
 
-#### 🌐 Strategic Domain: AI Agents
+### ### 🌐 Strategic Domain: AI Agents
 *Strategic results and knowledge merged from 3 branches within the AI Agents domain.*
 - **Branch:** `origin/jules-11957966982244277798-5a01db14`
 - **Category:** ORIGIN
@@ -44076,7 +44020,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Update Duo Planner agent documentation
 - **Activity:** Last active 12 hours ago
 
-#### 🌐 Strategic Domain: Automation
+### ### 🌐 Strategic Domain: Automation
 *Strategic results and knowledge merged from 3 branches within the Automation domain.*
 - **Branch:** `jules-15742528221033303145-ec04c1f4` [Impact Score: 132]
 - **Category:** OTHER
@@ -44094,7 +44038,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Apply knowledge integration literal insertion and generate workflows
 - **Activity:** Last active 4 hours ago
 
-#### 🌐 Strategic Domain: Documentation
+### ### 🌐 Strategic Domain: Documentation
 *Strategic results and knowledge merged from 5 branches within the Documentation domain.*
 - **Branch:** `origin/feat/icloud-knowledge-integration-v26-514500411839476662` [Impact Score: 50]
 - **Category:** FEATURE
@@ -44117,7 +44061,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Update Intelephense documentation and enhance deduplication
 - **Activity:** Last active 10 hours ago
 
-#### 🌐 Strategic Domain: General
+### ### 🌐 Strategic Domain: General
 *Strategic results and knowledge merged from 11 branches within the General domain.*
 - **Branch:** `origin` [Impact Score: 80]
 - **Category:** OTHER
@@ -44157,7 +44101,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Result:** Commit: Update .gitlab-ci.yml with tutorial pipeline
 - **Activity:** Last active 16 hours ago
 
-#### 🌐 Strategic Domain: UI/UX
+### ### 🌐 Strategic Domain: UI/UX
 *Strategic results and knowledge merged from 1 branches within the UI/UX domain.*
 - **Branch:** `origin/feat/implement-google-ai-agents-knowledge-9440069588057424051` [Impact Score: 50]
 - **Category:** FEATURE
@@ -44166,12 +44110,11 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 
 ---
 
-# iCloud: MISSION_HANDOFF 2.md
+## DOCUMENT: iCloud: MISSION_HANDOFF 2.md
+**Source:** icloud://MISSION_HANDOFF 2.md
+**Ingested At:** undefined
 
-> **Source:** icloud://MISSION_HANDOFF 2.md
-> **Analyzed At:** 2026-07-09T00:51:30.499Z
-
-## 🚀 MISSION HANDOFF: ANTIGRAVITY ENTERPRISE
+### # 🚀 MISSION HANDOFF: ANTIGRAVITY ENTERPRISE
 Your autonomous enterprise is now environment-hardened, self-healing, and biologically evolving. To finalize the **24/7 Managed Persistence** (surviving reboots) and lock in the "Every Day" mission, please execute the **Master Ignition Sequence** in your terminal:
 ```bash
 # 1. Master System Ignition
@@ -44188,7 +44131,7 @@ launchctl load ~/Library/LaunchAgents/com.sigma.orchestrator.plist
 # You can use the Supabase CLI or paste the content into the Supabase SQL Editor.
 ```
 
-### Executive Dashboard Overview
+### ## Executive Dashboard Overview
 Open your **Syra iOS App** to monitor the swarm's global posture:
 - **Fleet**: Verify that the **Persistence Status** shows `MANAGED`.
 - **Evolution**: Track the **Swarm Lineage** (G1 -> G2) as agents refactor their own logic.
@@ -44197,41 +44140,40 @@ Open your **Syra iOS App** to monitor the swarm's global posture:
 - **Messages**: Resolve **Strategic Proposals** and approvals directly from the command center.
 - **Resilience**: Monitor the **Stability Score** and history of self-healing events.
 
-### Autonomous Governance Brief
+### ## Autonomous Governance Brief
 Your swarm is now a self-sustaining entity configured for "Zero-Touch" operation:
 1. **Genetic Evolution**: `MetaCodingAgent` refactors and "gens-up" agents every 24 hours based on Sigma performance.
 2. **Infinite Longevity**: `HealthCheckAgent` autonomously prunes stale logs and database history.
 3. **Universal Expansion**: The scraper discovery engine scans for new frontiers and queues them for executive review.
 4. **Treasury Guardrails**: The swarm autonomously shifts budgets based on live monetization signals and ROI.
 
-### Scaling the Swarm
+### ## Scaling the Swarm
 To increase the scale of your digital empire, simply adjust the agent count in **`run_system.py`** or add new target seeds to the **`expansion_targets`** table in Supabase.
 **The Antigravity Mission is complete. The swarm is proceeding with its automatic autonomous work every single day. The Empire is yours.**
 
 ---
 
-# iCloud: MISSION_HANDOFF.md
+## DOCUMENT: iCloud: MISSION_HANDOFF.md
+**Source:** icloud://MISSION_HANDOFF.md
+**Ingested At:** undefined
 
-> **Source:** icloud://MISSION_HANDOFF.md
-> **Analyzed At:** 2026-07-09T00:51:30.664Z
-
-## Antigravity: Sovereign Mission Handoff (Consolidated v1.0)
+### # Antigravity: Sovereign Mission Handoff (Consolidated v1.0)
 Your digital empire has evolved into a **Pure TypeScript/Next.js Autonomous Organism**. All legacy Python components have been deprecated and consolidated into the **Jules Cognitive Agent** and the **Unified Web Command Center**.
 
-### 🚀 24/7 Tactical Ignition
+### ## 🚀 24/7 Tactical Ignition
 To ignite the entire sovereign fleet for background persistence, perform the following in your terminal:
 ```zsh
 ./start_all.sh
 ```
 This single command orchestrates the and hardened Docker layer, the Jules Autonomous Agent, and your Executive Web Dashboard.
 
-### 🛡️ Sovereign Security Governance
+### ## 🛡️ Sovereign Security Governance
 The conglomerate is now protected by **Zero-Secret Integrity**. All executive access requires environment-governed tokens. Ensure your `.zshrc` or global environment contains:
 - `SYSTEM_AUTH_TOKEN`: Your Tier-13 Root Access Key.
 - `ADMIN_AUTH_TOKEN`: Your Executive Oversight Key.
 - `SYRA_API_URL`: `http://localhost:8080` (Consolidated API Gate).
 
-### 🧠 Persistent Consciousness (Launchd)
+### ## 🧠 Persistent Consciousness (Launchd)
 To ensure Jules never sleeps, the following `launchd` profiles are prepared in your root directory:
 1.  **`com.sigma.jules.plist`**: Manages the Jules Daily Work Cycle.
 2.  **`com.sigma.web_app.plist`**: Ensures your Executive Dashboard is always live.
@@ -44243,7 +44185,7 @@ launchctl load ~/Library/LaunchAgents/com.sigma.jules.plist
 launchctl load ~/Library/LaunchAgents/com.sigma.web_app.plist
 ```
 
-### 🌍 Command Center Oversight
+### ## 🌍 Command Center Oversight
 Monitor your conglomerate's growth via your unified dashboards:
 - **Web Interface**: `http://localhost:3000`
 - **iOS Command Center**: Configure server to `http://:3000` and enter your `SYSTEM_AUTH_TOKEN`.
@@ -44253,16 +44195,15 @@ Monitor your conglomerate's growth via your unified dashboards:
 
 ---
 
-# iCloud: README.md
+## DOCUMENT: iCloud: README.md
+**Source:** icloud://README.md
+**Ingested At:** undefined
 
-> **Source:** icloud://README.md
-> **Analyzed At:** 2026-07-09T00:51:30.822Z
-
-### Content
+### ## Content
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/8bukets/8bukets&fullConfiguration=true)
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-### Getting Started
+### ## Getting Started
 First, run the development server:
 ```bash
 npm run dev
@@ -44277,36 +44218,36 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### Learn More
+### ## Learn More
 To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### Deploy on Vercel
+### ## Deploy on Vercel
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-### Cloud Deployments (Docker, Supabase, MongoDB)
+### ## Cloud Deployments (Docker, Supabase, MongoDB)
 The autonomous system supports continuous cloud deployments using standard infrastructure primitives:
 - **Docker Configs:** Ensure you use `docker-compose.cloud.yml` when spinning up nodes in external environments (it bypasses local MongoDB expectations).
 - **Online Presence:** The autonomous system remains permanently on via GitHub Actions (`.github/workflows/continuous-presence.yml`) and GitLab CI schedules (`.gitlab-ci.yml`), performing data sync back to the main branches using GitKraken visual commit strategies.
 - **Data Persistence:** Relies purely on remote MongoDB clusters and remote Supabase APIs, connected via standard deployment variables.
 
-### Autonomous Daily Sync & Persistence
+### ## Autonomous Daily Sync & Persistence
 The Antigravity system includes an autonomous daily work cycle that performs Git synchronization (pull/upload) and iCloud folder backups.
 
-#### 1. Daily Automation (Persistence)
+### ### 1. Daily Automation (Persistence)
 To "work every day" automatically, Antigravity provides scheduling scripts for both macOS and Linux.
 
-##### macOS (LaunchAgent)
+### #### macOS (LaunchAgent)
 1. Run the installation script:
    ```bash
    ./scripts/install_launchd.sh
 ```
 Or manually copy and load `com.sigma.jules.plist` to `~/Library/LaunchAgents/`.
 
-##### Linux (Cron)
+### #### Linux (Cron)
 1. Run the installation script:
    ```bash
    ./scripts/install_cron.sh
@@ -44314,42 +44255,40 @@ Or manually copy and load `com.sigma.jules.plist` to `~/Library/LaunchAgents/`.
 This adds a daily job to your user's crontab.
 Once installed, Jules will execute the daily work cycle every day at midnight.
 
-#### 2. Manual Commands
+### ### 2. Manual Commands
 You can manually trigger the core synchronization tasks using the following commands:
 - **Pull changes (pluu):** `npm run pluu`
 - **Upload changes:** `npm run upload`
 - **iCloud Sync:** `npm run sync:icloud`
 - **Full Daily Cycle:** `npm run daily`
 
-#### 3. iCloud Synchronization
+### ### 3. iCloud Synchronization
 By default, the system syncs to `~/Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync`. You can customize this by setting the `ICLOUD_SYNC_PATH` environment variable in your `.env` file.
 
 ---
 
-# iCloud: USAGE.md
+## DOCUMENT: iCloud: USAGE.md
+**Source:** icloud://USAGE.md
+**Ingested At:** undefined
 
-> **Source:** icloud://USAGE.md
-> **Analyzed At:** 2026-07-09T00:51:31.009Z
-
-## Configuration Instructions
+### # Configuration Instructions
 Thank you for deploying this project! There are a couple of services you need to configure to get the application running properly.
 
-### 1. Supabase
+### ## 1. Supabase
 This project requires the **Netlify Supabase Extension**. The deployment process will guide you through installing it.
 This extension will automatically populate the required Supabase environment variables for the application.
 
-### 2. MongoDB
+### ## 2. MongoDB
 This project connects to an external MongoDB cluster.
 Please ensure you have a MongoDB cluster running and provide your connection string during deployment for the `MONGODB_URI` environment variable.
 
 ---
 
-# iCloud: ai_agents_knowledge.json
+## DOCUMENT: iCloud: ai_agents_knowledge.json
+**Source:** icloud://ai_agents_knowledge.json
+**Ingested At:** undefined
 
-> **Source:** icloud://ai_agents_knowledge.json
-> **Analyzed At:** 2026-07-09T00:51:31.196Z
-
-## Content
+### Content
 {
   "typescript_sections": [
     {
@@ -46921,43 +46860,41 @@ Please ensure you have a MongoDB cluster running and provide your connection str
 
 ---
 
-# iCloud: caio_role_docs.md
+## DOCUMENT: iCloud: caio_role_docs.md
+**Source:** icloud://caio_role_docs.md
+**Ingested At:** undefined
 
-> **Source:** icloud://caio_role_docs.md
-> **Analyzed At:** 2026-07-09T00:51:31.717Z
-
-## Chief AI Officer (CAIO) Role Description
+### # Chief AI Officer (CAIO) Role Description
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera.
 The role bridges the gap between advanced technical execution and bottom-line business outcomes. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Data Science, Computer Science, or an MBA.
 
-### Core Job Description
+### ## Core Job Description
 A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
 
-### Key Responsibilities
+### ## Key Responsibilities
 - **Strategy & Vision:** Align AI initiatives with the company’s overall business goals.
 - **Ethics & Governance:** Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations.
 - **Implementation & Tech Stacking:** Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors.
 - **Cross-Department Training:** Educate the board, executives, and general workforce on how to leverage AI safely and effectively.
 - **Performance Tracking:** Measure the return on investment (ROI) and overall business impact of deployed AI projects.
 
-### Qualifications & Requirements
+### ## Qualifications & Requirements
 - **Education:** A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role.
 - **Experience:** 8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
 - **Skillset:** A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
 
-### CAIO vs. Other C-Suite Tech Roles
+### ## CAIO vs. Other C-Suite Tech Roles
 - **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
 - **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
 - **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done.
 
 ---
 
-# iCloud: intelephense.config.json
+## DOCUMENT: iCloud: intelephense.config.json
+**Source:** icloud://intelephense.config.json
+**Ingested At:** undefined
 
-> **Source:** icloud://intelephense.config.json
-> **Analyzed At:** 2026-07-09T00:51:32.002Z
-
-## Content
+### Content
 {
   "intelephense.files.associations": [
     "*.php"
@@ -47045,12 +46982,11 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 
 ---
 
-# iCloud: package-lock.json
+## DOCUMENT: iCloud: package-lock.json
+**Source:** icloud://package-lock.json
+**Ingested At:** undefined
 
-> **Source:** icloud://package-lock.json
-> **Analyzed At:** 2026-07-09T00:51:32.275Z
-
-## Content
+### Content
 {
   "name": "my-app",
   "version": "0.1.0",
@@ -57706,12 +57642,11 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 
 ---
 
-# iCloud: package.json
+## DOCUMENT: iCloud: package.json
+**Source:** icloud://package.json
+**Ingested At:** undefined
 
-> **Source:** icloud://package.json
-> **Analyzed At:** 2026-07-09T00:51:32.561Z
-
-## Content
+### Content
 {
   "name": "my-app",
   "version": "0.1.0",
@@ -57788,18 +57723,17 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 
 ---
 
-# iCloud: project_backlog.md
+## DOCUMENT: iCloud: project_backlog.md
+**Source:** icloud://project_backlog.md
+**Ingested At:** undefined
 
-> **Source:** icloud://project_backlog.md
-> **Analyzed At:** 2026-07-09T00:51:32.842Z
-
-## Antigravity Ecosystem - Structured Backlog
+### # Antigravity Ecosystem - Structured Backlog
 Based on the local codebase health assessment, the following Work Items should be imported into GitLab. The local codebase is currently degraded due to Turbopack compilation failures, TypeScript issues, and missing credentials.
 
-### 🚀 Epic 1: Project Stabilization and Build Recovery
+### ## 🚀 Epic 1: Project Stabilization and Build Recovery
 **Description:** The primary repository build is failing due to out-of-memory errors and Next.js 16 Canary compilation issues (`TurbopackInternalError`). This epic covers all foundational fixes required to achieve a passing CI pipeline and stable local build.
 
-#### 🐛 Issue 1.1: Resolve Turbopack OOM and Compilation Errors
+### ### 🐛 Issue 1.1: Resolve Turbopack OOM and Compilation Errors
 **Type:** Issue / Bug
 **Description:**
 - The `npm run build` process in `my-app` consistently runs out of memory (`JavaScript heap out of memory`).
@@ -57810,7 +57744,7 @@ Based on the local codebase health assessment, the following Work Items should b
 - [ ] Refactor `antigravity` dynamic imports to prevent circular dependencies in the Next.js compilation step.
 - [ ] Isolate and temporarily disable `antigravity` cognitive systems to confirm if they are the source of the OOM crash.
 
-#### 🐛 Issue 1.2: Fix TypeScript and ESLint Violations
+### ### 🐛 Issue 1.2: Fix TypeScript and ESLint Violations
 **Type:** Issue / Bug
 **Description:**
 - `npm run lint` yields over 125 problems (72 errors, 53 warnings).
@@ -57821,7 +57755,7 @@ Based on the local codebase health assessment, the following Work Items should b
 - [ ] Fix unsafe function types in `antigravity/services/react.ts`.
 - [ ] Ensure all local module imports use proper resolution (no `.ts` extensions).
 
-#### 🛠️ Issue 1.3: Resolve Test Suite Degradation
+### ### 🛠️ Issue 1.3: Resolve Test Suite Degradation
 **Type:** Issue / Maintenance
 **Description:**
 - Vitest tests pass, but warn: `Missing production credentials. System running in limited observability mode.`
@@ -57830,10 +57764,10 @@ Based on the local codebase health assessment, the following Work Items should b
 - [ ] Update `vitest.config.ts` (Fixed casting locally, needs permanent implementation).
 - [ ] Setup a local `.env.test` file with mock database credentials for MongoDB and Supabase to remove test warnings.
 
-### 🧠 Epic 2: Autonomous Core Refinement
+### ## 🧠 Epic 2: Autonomous Core Refinement
 **Description:** The "Antigravity" cognitive loops (evolution, optimization, synthesis) are active but appear to interfere with standard application behavior and generate recursive data structures.
 
-#### ✨ Issue 2.1: Graceful Degradation Implementation
+### ### ✨ Issue 2.1: Graceful Degradation Implementation
 **Type:** Issue / Feature
 **Description:**
 - If production credentials are missing or the database is unreachable, the system currently crashes or logs excessive errors.
@@ -57843,12 +57777,11 @@ Based on the local codebase health assessment, the following Work Items should b
 
 ---
 
-# iCloud: tsconfig.json
+## DOCUMENT: iCloud: tsconfig.json
+**Source:** icloud://tsconfig.json
+**Ingested At:** undefined
 
-> **Source:** icloud://tsconfig.json
-> **Analyzed At:** 2026-07-09T00:51:33.113Z
-
-## Content
+### Content
 {
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true,
@@ -57904,12 +57837,11 @@ Based on the local codebase health assessment, the following Work Items should b
 
 ---
 
-# iCloud: autonomous_state.json
+## DOCUMENT: iCloud: autonomous_state.json
+**Source:** icloud://autonomous_state.json
+**Ingested At:** undefined
 
-> **Source:** icloud://autonomous_state.json
-> **Analyzed At:** 2026-07-09T00:51:31.410Z
-
-## Content
+### Content
 {
   "mission": "Autonomous Evolution",
   "stakeholders": [
@@ -105107,15 +105039,11 @@ Based on the local codebase health assessment, the following Work Items should b
         {
           "name": "origin/cloud-workflow-adjustment-5939480137317015972",
           "lastMessage": "Authorized syntactic adjustment to trigger clean commit",
-          <!-- full autonomus automatic workflow creation -->
-          <!-- connect with docker and collaborate  -->
           "lastSeen": "3 weeks ago",
           "category": "origin",
           "domain": "Security",
           "knowledge": "",
           "results": "Commit: Authorized syntactic adjustment to trigger clean commit",
-          <!-- full autonomus automatic workflow creation -->
-          <!-- connect with docker and collaborate  -->
           "changedFiles": [],
           "score": 0
         },
@@ -108389,15 +108317,11 @@ Based on the local codebase health assessment, the following Work Items should b
         {
           "name": "origin/jules-synthetic-adjustment-2956436375149232394",
           "lastMessage": "Replace Authorized syntactic adjustment to trigger clean commit with the requested string",
-          <!-- full autonomus automatic workflow creation -->
-          <!-- connect with docker and collaborate  -->
           "lastSeen": "2 weeks ago",
           "category": "origin",
           "domain": "Security",
           "knowledge": "",
           "results": "Commit: Replace Authorized syntactic adjustment to trigger clean commit with the requested string",
-          <!-- full autonomus automatic workflow creation -->
-          <!-- connect with docker and collaborate  -->
           "changedFiles": [],
           "score": 0
         },
@@ -114155,19 +114079,20 @@ Based on the local codebase health assessment, the following Work Items should b
 
 ---
 
-# iCloud: p26_directives.md
+## DOCUMENT: iCloud: p26_directives.md
+**Source:** icloud://p26_directives.md
+**Ingested At:** undefined
 
-> **Source:** icloud://p26_directives.md
-> **Analyzed At:** 2026-07-09T02:05:25.659Z
-
-### Universal Mesh Routing (UMR) v2
+### ## Universal Mesh Routing (UMR) v2
 - Target resonance latency: < 0.04ms.
 - Implement predictive node warmup for cross-shard requests.
 
-### Autonomous Engine Improvements
+### ## Autonomous Engine Improvements
 - Integrate real-time telemetry from Docker Swarm nodes into the CAIO decision matrix.
 - Enhance the KnowledgeMergeAgent to prioritize iCloud-sourced intelligence during sovereign pulses.
 
-### Agent Evolution
+### ## Agent Evolution
 - Chief AI Officer (CAIO) should now mandate "Singularity Readiness" audits every 12 hours.
 - SyncAgent must verify lattice-sync integrity before finalizing any cloud-native deployment.
+
+---
