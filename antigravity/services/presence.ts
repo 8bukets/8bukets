@@ -4,6 +4,7 @@ import { checkDockerHealth } from './docker'
 import { gitProvider } from './git_provider'
 import { latticeSync } from './lattice_sync'
 import { swarmHeartbeat } from './swarm_heartbeat'
+import { distributedConsensus } from './distributed_consensus'
 import os from 'os'
 
 /**
@@ -39,6 +40,11 @@ export const PresenceSchema = z.object({
   phase25: z.object({
     resonance_latency: z.number(),
     singularity_readiness: z.number()
+  }).optional(),
+  phase27: z.object({
+    resonance_latency: z.number(),
+    singularity_readiness: z.number(),
+    universal_consensus: z.boolean()
   }).optional(),
   jenkins_status: z.string().optional(),
   node_priority: z.number().optional(),
@@ -181,7 +187,7 @@ export class OnlinePresenceService {
         agent: 'Jules',
         status: 'online',
         lastSeen: new Date().toISOString(),
-        version: '1.6.0-alpha',
+        version: '1.7.0-mur',
         environment: isCloud ? 'cloud' : 'local',
         active_providers: providers,
         jenkins_status: jenkinsStatus,
@@ -235,6 +241,11 @@ export class OnlinePresenceService {
         phase25: {
           resonance_latency: (heartbeatMetrics as any).resonance_latency,
           singularity_readiness: (heartbeatMetrics as any).singularity_readiness
+        },
+        phase27: {
+          resonance_latency: (heartbeatMetrics as any).resonance_latency,
+          singularity_readiness: (heartbeatMetrics as any).singularity_readiness,
+          universal_consensus: distributedConsensus.getAcceptedDirectives().length > 0
         }
       }
 
