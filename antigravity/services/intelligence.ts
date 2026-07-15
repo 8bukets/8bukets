@@ -480,10 +480,45 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
   if (branches.length > 2000) report += `- **[LOW]** Execute branch pruning protocol (Total: ${branches.length} branches detected).\n`
   report += `- **[INFO]** Autonomous knowledge ingestion active for real-time market intelligence.\n`
 
+  report += `\n## 📡 Communication Matrix\nDetailed inter-agent communication protocols and neural mesh synchronization directives have been consolidated into [COMMUNICATION_MATRIX.md](./COMMUNICATION_MATRIX.md).\n`
+
   report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | *Phase 12 Synergy Protocol Active*\n`
 
   await fs.promises.writeFile(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
 
   return { reportPath, branchCount: branches.length }
+}
+
+export async function generateCommunicationMatrix(branches: any[], caioDirectives: any, relationshipMap: any) {
+  console.log('📡 [Intelligence] Generating standalone communication matrix...')
+  const { generateNeuralMeshDirectives, generateInterAgentDirectives, generateCrossDomainDirectives } = await import('./communication')
+  const { checkDockerHealth } = await import('./docker')
+  const { getMissionMetadata } = await import('./collaboration')
+  const { logAutonomousAction } = await import('../core')
+
+  const metadata = await getMissionMetadata()
+  const dockerHealthy = await checkDockerHealth()
+
+  const state = {
+    intelligence: { branches: branches.length, relationshipMap, pendingTasks: 0 },
+    caioDirectives,
+    docker: { status: dockerHealthy ? 'optimal' : 'degraded' },
+    stakeholders: metadata.stakeholders
+  }
+
+  let matrix = `# ANTIGRAVITY COMMUNICATION MATRIX\n\n`
+  matrix += `*Generated: ${new Date().toISOString()}*\n\n`
+  matrix += await generateNeuralMeshDirectives(state) + `\n\n`
+  matrix += await generateInterAgentDirectives(state) + `\n\n`
+
+  const crossDomain = await generateCrossDomainDirectives(state)
+  if (crossDomain) {
+    matrix += `### 🔗 Cross-Domain Synergy Protocols\n` + crossDomain + `\n\n`
+  }
+
+  const matrixPath = path.join(process.cwd(), 'COMMUNICATION_MATRIX.md')
+  await fs.promises.writeFile(matrixPath, matrix)
+  console.log(`✅ [Intelligence] Communication Matrix saved to ${matrixPath}`)
+  logAutonomousAction(`Generated standalone Communication Matrix artifact: ${matrixPath}`, 'sync')
 }
