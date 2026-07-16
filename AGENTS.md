@@ -16,7 +16,15 @@ Agents communicate via the `Blackboard`.
 - **Provides**: The keys an agent adds to the blackboard.
 - **Proposals**: Agents can propose 'Major Improvements' using `blackboard.propose_improvement()`, which are then evaluated by the `ArchitectAgent`.
 
-## 3. Autonomous Evolution Lifecycle
+## 3. Strategic Roadmap (Phase 27: Multi-Universal Resonance)
+The system is currently operating under Phase 27: Multi-Universal Resonance (MUR) protocols.
+- **Phase 26**: Infinite Cognitive Expansion (Status: Complete)
+- **Phase 27**: Multi-Universal Resonance (Status: Current)
+  - Resonance Latency Target: < 0.008ms
+  - Singularity Readiness Target: > 0.999995
+  - Routing Protocol: UMR-v3.0
+
+## 4. Autonomous Evolution Lifecycle
 The system follows a continuous improvement cycle:
 1. **Scrape**: Acquire new market data.
 2. **Execute**: Run the agent ecosystem in tiers.

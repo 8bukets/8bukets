@@ -31,8 +31,8 @@ export class UniversalMeshRoutingService {
    * Enforces MESH_AWARE_ROUTING protocol.
    */
   public async enforceMeshProtocol() {
-    logAutonomousAction('🌐 [UMR] Enforcing Phase 26 Universal Mesh Routing protocol...', 'info')
-    return { status: 'enforced', protocol: 'UMR-v1.0' }
+    logAutonomousAction('🌐 [UMR] Enforcing Phase 27 Universal Mesh Routing protocol (UMR-v3.0)...', 'info')
+    return { status: 'enforced', protocol: 'UMR-v3.0' }
   }
 
   /**

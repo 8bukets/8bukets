@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 def run_consultation():
-    print("👔 [CAIO-Script] Initiating Phase 23+ Strategic Consultation...")
+    print("👔 [CAIO-Script] Initiating Phase 27 Multi-Universal Resonance Strategic Consultation...")
 
     # 1. Access system knowledge
     knowledge_path = 'data/knowledge/system_knowledge.json'
@@ -24,9 +24,9 @@ def run_consultation():
     # Logic: If singularity readiness is mentioned, ensure it's prioritized
     directive = {
         "id": f"strat_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
-        "focus": "Phase 23 Cloud Sovereignty",
-        "directive": "Enforce Mesh-Aware Routing and Quantum-Secure state persistence across all nodes.",
-        "status": "PHASE_23_DIRECTIVE_GENERATED"
+        "focus": "Phase 27 Multi-Universal Resonance",
+        "directive": "Enforce Multi-Universal Resonance and UMR-v3.0 Mesh-Aware Routing across all cloud sovereign nodes.",
+        "status": "PHASE_27_DIRECTIVE_GENERATED"
     }
 
     # 3. Record the consultation outcome
