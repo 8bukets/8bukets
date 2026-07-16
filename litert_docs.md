@@ -168,6 +168,11 @@ simplifies the setup significantly with the ability to specify the
 target backend as an option. See on-device inference guide for more
 details.
 
+## Supported operators
+
+LiteRT CompiledModel API supports a wide-range of operators across different
+hardware accelerators. See operators guide .
+
 ## Additional documentation and support
 
 - LiteRT-Samples GitHub Repo for more LiteRT sample apps.

@@ -63,6 +63,10 @@
         "title": "Choose a backend",
         "content": "The most straightforward way to incorporate backends in LiteRT is to rely on\nthe runtime's built-in intelligence. With the CompiledModel API, LiteRT\nsimplifies the setup significantly with the ability to specify the\ntarget backend as an option. See on-device inference guide for more\ndetails."
     },
+    "Supported operators": {
+        "title": "Supported operators",
+        "content": "LiteRT CompiledModel API supports a wide-range of operators across different\nhardware accelerators. See operators guide ."
+    },
     "Additional documentation and support": {
         "title": "Additional documentation and support",
         "content": "- LiteRT-Samples GitHub Repo for more LiteRT sample apps.\n\n- For existing users of TensorFlow Lite , see migration guide .\n\n- LiteRT Tools page for performance, profiling, error reporting etc.\n\nLiteRT-Samples GitHub Repo for more LiteRT sample apps.\n\nFor existing users of TensorFlow Lite , see migration guide .\n\nLiteRT Tools page for performance, profiling, error reporting etc."
