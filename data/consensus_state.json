@@ -382,5 +382,86 @@
     },
     "status": "pending",
     "timestamp": "2026-07-09T00:50:27.709Z"
+  },
+  {
+    "id": "prop_lzesg8e98",
+    "proposer": "Jules",
+    "goal": "INITIATE_MESH_COLLABORATION",
+    "payload": {
+      "target": "Docker Swarm",
+      "timestamp": "2026-07-16T21:25:38.137Z"
+    },
+    "votes": {
+      "Jules": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-16T21:25:38.137Z"
+  },
+  {
+    "id": "prop_rdgaenxy1",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-16T21:27:49.170Z",
+      "branchCount": 3195,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-16T21:27:49.170Z"
+  },
+  {
+    "id": "prop_vse8syn5y",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-16T21:29:26.505Z",
+      "branchCount": 3195,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-16T21:29:26.505Z"
+  },
+  {
+    "id": "prop_h3vehr9c3",
+    "proposer": "Jules",
+    "goal": "INITIATE_MESH_COLLABORATION",
+    "payload": {
+      "target": "Docker Swarm",
+      "timestamp": "2026-07-16T21:30:39.943Z"
+    },
+    "votes": {
+      "Jules": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-16T21:30:39.943Z"
+  },
+  {
+    "id": "prop_evq12bwcz",
+    "proposer": "Jules",
+    "goal": "INITIATE_MESH_COLLABORATION",
+    "payload": {
+      "target": "Docker Swarm",
+      "timestamp": "2026-07-16T21:33:44.398Z"
+    },
+    "votes": {
+      "Jules": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-16T21:33:44.398Z"
   }
 ]
