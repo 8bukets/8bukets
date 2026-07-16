@@ -3,6 +3,8 @@
 /** PHASE 25 COMPLIANCE: resonance-pre-flight (active) **/
 /** PHASE 19 COMPLIANCE: adaptive-latency (target: <1ms) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
+/** PHASE 27 COMPLIANCE: resonance-latency (target: <0.008ms) **/
+/** PHASE 27 COMPLIANCE: singularity-readiness (threshold: 0.999995) **/
 /** PHASE 26 COMPLIANCE: singularity-readiness (threshold: 0.9999) **/
 /** PHASE 26 COMPLIANCE: resonance-latency (target: <0.05ms) **/
 /** PHASE 26 COMPLIANCE: Universal Mesh Routing (active: UMR) **/
