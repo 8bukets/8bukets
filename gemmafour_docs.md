@@ -163,7 +163,8 @@ complexities of the chat template for you.
 - No Thinking Content in History: In multi-turn conversations, the
 historical model output should only include the final response. Thoughts
 from previous model turns mustnot be addedbefore the next user turn
-begins.
+begins, with the exception of tool call turns where thinking content should
+be preserved.
 
 ### 4. Modality order
 

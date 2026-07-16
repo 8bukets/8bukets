@@ -69,17 +69,15 @@ export async function observeKnowledge(url: string = 'https://www.investopedia.c
     const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
     // Extract some summaries for the merge file
-    const headings = mdContent.split('\n').filter(line => line.startsWith('#')).map(h => h.replace(/^#+\s*/, '')).slice(0, 3)
+    const headings = $('h1, h2, h3').map((i, el) => $(el).text().trim()).get().slice(0, 5);
     const summaryInfo = headings.length > 0 ? ` Extracted key topics: ${headings.join(', ')}...` : ''
-
-    const relationshipText = `Confirmed relationship with ${url} (Title: ${title}) as an intelligence source.${summaryInfo} (Content Length: ${mdContent.length} chars)`
 
     const relationshipEntry = `
 ## Autonomous Observation
 - **Date**: ${new Date().toISOString()}
 - **Target**: ${url}
 - **Title**: ${title}
-- **Context**: Ingested and observed external market or technical intelligence from ${url}.
+- **Context**: Ingested external technical intelligence from ${url}.${summaryInfo}
 - **Summary**:
 ${summary}
 `
