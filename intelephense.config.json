@@ -80,5 +80,10 @@
     "zlib"
   ],
   "intelephense.completion.insertUseDeclaration": true,
-  "intelephense.diagnostics.enable": true
+  "intelephense.diagnostics.enable": true,
+  "intelephense.initializationOptions": {
+    "storagePath": "./.intelephense/workspace",
+    "globalStoragePath": "./.intelephense/global",
+    "clearCache": false
+  }
 }
