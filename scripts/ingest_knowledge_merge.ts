@@ -19,8 +19,11 @@ export async function ingestKnowledgeMerge() {
 
         // Group by domain
         const grouped: Record<string, any[]> = {};
-        knowledge.market_data.recent_entries.slice(0, 15).forEach((e: any) => {
-            const domain = e.domain || 'General Intelligence';
+        knowledge.market_data.recent_entries.slice(0, 25).forEach((e: any) => {
+            let domain = e.domain || 'General Intelligence';
+            if (e.post_url && e.post_url.includes('markposition.wordpress.com')) {
+                domain = 'Markposition Intelligence';
+            }
             if (!grouped[domain]) grouped[domain] = [];
             grouped[domain].push(e);
         });

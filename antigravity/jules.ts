@@ -153,7 +153,8 @@ export class Jules {
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
     const urlsToObserve = [
       'https://software-online-review.com',
-      'https://dbcode.io'
+      'https://dbcode.io',
+      'https://markposition.wordpress.com'
     ]
 
     for (const url of urlsToObserve) {
@@ -497,7 +498,6 @@ export class Jules {
     await this.selfRepair()
 
     // Phase 22: Autonomous PR Audit (Priority in Cloud)
-    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
     if (isCloud) {
        await this.autonomousPrAudit()
        this.recordTask('Cloud Sovereignty: PR Audit completed in Cloud Mode.')
