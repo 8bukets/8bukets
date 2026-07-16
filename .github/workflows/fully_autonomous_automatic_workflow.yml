@@ -35,10 +35,15 @@ jobs:
       - name: Docker Health Check
         run: docker info && docker ps
 
-      - name: Connect and Collaborate
-        run: npm run connect
+      - name: Execute Phase 27 Cloud Sovereign Pulse
+        run: npm run cloud-sovereign-pulse
         env:
+          AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Execute Fully Autonomous Creation Cycle
         run: npx tsx scripts/full_autonomous_automatic_creation_order_and_execution.ts
