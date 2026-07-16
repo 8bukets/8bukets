@@ -48,61 +48,51 @@ Summary: markposition.wordpress.com is a blog by Filip Keser that provides infor
 
 ## 📈 Latest Market Intelligence (Dynamic Merge)
 
-### 🌐 pandora.com
-- [Untitled Signal](undefined)
-  - *Date*: July 30, 2021
+### 🌐 Markposition Intelligence
+- [advertising.amazon](https://markposition.wordpress.com/2022/10/05/advertising-amazon/)
+  - *Date*: October 5, 2022
+- [Drive Advertising Revenue with Google Ad Manager : Google](https://markposition.wordpress.com/2022/09/26/drive-advertising-revenue-with-google-ad-manager-google-5/)
+  - *Date*: September 26, 2022
+- [Analytics Academy](https://markposition.wordpress.com/2022/09/20/analytics-academy/)
+  - *Date*: September 20, 2022
+- [Adssettings google](https://markposition.wordpress.com/2022/09/20/adssettings-google/)
+  - *Date*: September 20, 2022
+- [Data google](https://markposition.wordpress.com/2022/09/20/data-google/)
+  - *Date*: September 20, 2022
+- [The Privacy Sandbox: Technology for a More Private Web.](https://markposition.wordpress.com/2022/09/20/the-privacy-sandbox-technology-for-a-more-private-web/)
+  - *Date*: September 20, 2022
+- [Digital Experience Platform & Enterprise CMS | Crownpeak](https://markposition.wordpress.com/2022/09/16/digital-experience-platform-enterprise-cms-crownpeak-2/)
+  - *Date*: September 16, 2022
+- [About Performance Max campaigns – Google Ads](https://markposition.wordpress.com/2022/09/01/about-performance-max-campaigns-google-ads/)
+  - *Date*: September 1, 2022
+- [About Smart Bidding – Google Ads](https://markposition.wordpress.com/2022/09/01/about-smart-bidding-google-ads/)
+  - *Date*: September 1, 2022
+- [About Maximize conversion value bidding – Google Ads](https://markposition.wordpress.com/2022/09/01/about-maximize-conversion-value-bidding-google-ads/)
+  - *Date*: September 1, 2022
+- [About automated bidding – Google Ads Help](https://markposition.wordpress.com/2022/09/01/about-automated-bidding-google-ads-help/)
+  - *Date*: September 1, 2022
+- [About Target CPA bidding – Google Ads Help](https://markposition.wordpress.com/2022/09/01/about-target-cpa-bidding-google-ads-help/)
+  - *Date*: September 1, 2022
+- [About Maximize conversions bidding – Google Ads Help](https://markposition.wordpress.com/2022/09/01/about-maximize-conversions-bidding-google-ads-help/)
+  - *Date*: September 1, 2022
+- [About Target ROAS bidding – Google Ads Help](https://markposition.wordpress.com/2022/09/01/about-target-roas-bidding-google-ads-help/)
+  - *Date*: September 1, 2022
+- [Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help](https://markposition.wordpress.com/2022/09/01/achieve-your-goals-across-googles-ad-channels-with-performance-max-google-ads-help/)
+  - *Date*: September 1, 2022
+- [Coalition for Better Ads](https://markposition.wordpress.com/2022/08/31/coalition-for-better-ads-2/)
+  - *Date*: August 31, 2022
+- [How To Create Quality Video Ads – YouTube Advertising](https://markposition.wordpress.com/2022/08/16/how-to-create-quality-video-ads-youtube-advertising/)
+  - *Date*: August 16, 2022
+- [Business Data Responsibility – Your Data Protection & Privacy](https://markposition.wordpress.com/2022/08/15/business-data-responsibility-your-data-protection-privacy/)
+  - *Date*: August 15, 2022
 
-### 🌐 youtube.com
-- [LMFAO – Sorry For Party Rocking](https://artmusicpage.wordpress.com/2023/02/17/lmfao-sorry-for-party-rocking/)
-  - *Date*: February 17, 2023
-- [Tina Turner & Eros Ramazzotti – Cose Della Vita](https://artmusicpage.wordpress.com/2023/02/14/tina-turner-eros-ramazzotti-cose-della-vita/)
-  - *Date*: February 14, 2023
-- [Vevo Music Hits](https://artmusicpage.wordpress.com/2022/02/25/vevo-music-hits/)
-  - *Date*: February 25, 2022
-
-### 🌐 artists.amazonmusic.com
-- [STAY PLUGGED INTO YOUR FANS – With the Amazon Music for Artists app, instantly know how your fans are listening to your music. Available on web and mobile](https://artmusicpage.wordpress.com/2023/01/25/stay-plugged-into-your-fans-with-the-amazon-music-for-artists-app-instantly-know-how-your-fans-are-listening-to-your-music-available-on-web-and-mobile/)
-  - *Date*: January 25, 2023
-
-### 🌐 music.apple.com
-- [music apple](https://artmusicpage.wordpress.com/2023/01/11/music-apple/)
-  - *Date*: January 11, 2023
-
-### 🌐 cdbaby.com
-- [Cd Baby](https://artmusicpage.wordpress.com/2022/11/21/cd-baby/)
-  - *Date*: November 21, 2022
-
-### 🌐 clubhouse.com
-- [clubhouse](https://artmusicpage.wordpress.com/2022/11/17/clubhouse/)
-  - *Date*: November 17, 2022
-
-### 🌐 songwhip.com
-- [songwhip](https://artmusicpage.wordpress.com/2022/11/13/songwhip/)
-  - *Date*: November 13, 2022
-
-### 🌐 audiio.com
-- [audiio](https://artmusicpage.wordpress.com/2022/11/11/audiii/)
-  - *Date*: November 11, 2022
-
-### 🌐 yousician.com
-- [yousician 🎼🎸](https://artmusicpage.wordpress.com/2022/10/07/yousician-%f0%9f%8e%bc%f0%9f%8e%b8/)
-  - *Date*: October 7, 2022
+### 🌐 General Intelligence
+- [ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions](https://sharethis.com/)
+  - *Date*: August 20, 2022
 
 ### 🌐 spotify.com
 - [Spotify](https://www.spotify.com/hr-hr/premium/?utm_source=hr-hr_brand_contextual_text&utm_medium=paidsearch&utm_campaign=alwayson_roe_hr_premiumbusiness_core_brand+contextual-mobile+text+exact+hr-hr+google&gclid=CjwKCAjw6fyXBhBgEiwAhhiZsl6doSZS1rdGnJIlDd99xyA7sIV1AYZYKyUGPrcog45zrV6_2o2TRBoCOlcQAvD_BwE&gclsrc=aw.ds)
   - *Date*: August 20, 2022
-
-### 🌐 open.spotify.com
-- [Rock Classics – I Love Rock N Roll](https://artmusicpage.wordpress.com/2022/08/18/rock-classics-i-love-rock-n-roll/)
-  - *Date*: August 18, 2022
-
-### 🌐 esound.app
-- [esound](https://artmusicpage.wordpress.com/2022/08/18/esound/)
-  - *Date*: August 18, 2022
-
-### 🌐 snipfeed.co
-- [Music Ebook](https://artmusicpage.wordpress.com/2022/03/24/music-ebook/)
-  - *Date*: March 24, 2022
 
 ## 🤖 AI Agent Intelligence
 
