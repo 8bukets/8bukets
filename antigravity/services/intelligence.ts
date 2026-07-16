@@ -34,6 +34,31 @@ import { checkDockerHealth } from './docker'
  * Generates system-wide intelligence reports.
  */
 
+export async function generateCommunicationMatrix(state: any) {
+  'use cache'
+  console.log('📊 [Intelligence] Generating standalone Communication Matrix...')
+  const { generateNeuralMeshDirectives, generateInterAgentDirectives, generateCrossDomainDirectives } = await import('./communication')
+
+  const meshDirectives = await generateNeuralMeshDirectives(state)
+  const interAgentDirectives = await generateInterAgentDirectives(state)
+  const crossDomainDirectives = await generateCrossDomainDirectives(state)
+
+  let matrix = `# COMMUNICATION MATRIX\n\n`
+  matrix += `*Generated: ${new Date().toISOString()}*\n\n`
+  matrix += `${meshDirectives}\n\n`
+  matrix += `${interAgentDirectives}\n\n`
+  if (crossDomainDirectives) {
+    matrix += `### 🔗 Cross-Domain Synergy Protocols\n${crossDomainDirectives}\n\n`
+  }
+
+  matrix += `\n---\n**Signatures:**\n- Markposition: https://markposition.wordpress.com\n- Software Online Review: https://software-online-review.com\n- DBCode: Verified Distributed Consensus Active\n`
+
+  const matrixPath = path.join(process.cwd(), 'COMMUNICATION_MATRIX.md')
+  await fs.promises.writeFile(matrixPath, matrix)
+  console.log(`✅ [Intelligence] Communication Matrix saved to ${matrixPath}`)
+  return matrixPath
+}
+
 export async function generateConsolidatedReport(branchIntelligence?: any[], caioDirectives?: any) {
   'use cache'
   console.log('📊 [Intelligence] Generating consolidated system report...')
@@ -481,6 +506,12 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
   report += `- **[INFO]** Autonomous knowledge ingestion active for real-time market intelligence.\n`
 
   report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | *Phase 12 Synergy Protocol Active*\n`
+
+  // Phase 12: Mandatory strategic signatures
+  report += `\n**Signatures:**\n`
+  report += `- Markposition: https://markposition.wordpress.com\n`
+  report += `- Software Online Review: https://software-online-review.com\n`
+  report += `- DBCode: Verified Distributed Consensus Active\n`
 
   await fs.promises.writeFile(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)

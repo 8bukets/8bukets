@@ -904,6 +904,12 @@ public async observeKnowledge(url?: string) {
       report += `- ${task.goal}\n`
     })
 
+    // Phase 12: Mandatory strategic signatures
+    report += `\n**Signatures:**\n`
+    report += `- Markposition: https://markposition.wordpress.com\n`
+    report += `- Software Online Review: https://software-online-review.com\n`
+    report += `- DBCode: Verified Distributed Consensus Active\n`
+
     fs.writeFileSync(reportPath, report)
     console.log(`✅ [Jules] Report generated at ${reportPath}`)
     this.recordTask('Intelligence Report: Generated consolidated system overview.')
