@@ -21,9 +21,9 @@ async function main() {
     console.log('⚖️ [CloudSovereignty] Validating initial toolset sovereignty...')
     await cloudConnectedIntegrationService.validateEcosystemSovereignty()
 
-    // 3. Execute Phase 23 Pulse (Audit, Presence, Convergence)
-    console.log('📡 [CloudSovereignty] Executing Phase 23 Cloud-Native Pulse...')
-    await cloudConnectedIntegrationService.executePhase23Pulse()
+    // 3. Execute Phase 27 MUR Pulse (Audit, Presence, Convergence)
+    console.log('📡 [CloudSovereignty] Executing Phase 27 Multi-Universal Resonance Pulse...')
+    await cloudConnectedIntegrationService.executePhase27MURPulse()
 
     // 3. Initial Engine Evolution
     console.log('🧬 [CloudSovereignty] Triggering initial engine evolution...')

@@ -30,10 +30,10 @@ async function main() {
     // Establishing early presence
     await onlinePresence.syncPresence();
 
-    // 1. Activate Phase 26 Protocols (Mesh-Aware Pulse)
-    logAutonomousAction('📡 [Protocols] Activating Phase 26 Sovereign Mesh Connections...', 'info');
+    // 1. Activate Phase 27 Protocols (Multi-Universal Resonance Pulse)
+    logAutonomousAction('📡 [Protocols] Activating Phase 27 Sovereign Mesh Connections...', 'info');
     await cloudConnectedIntegrationService.establishSovereignMeshConnections();
-    await cloudConnectedIntegrationService.executePhase23Pulse();
+    await cloudConnectedIntegrationService.executePhase27MURPulse();
     await crossShardMemory.syncMemory();
 
     // Generate and verify Sovereign Trust proof
