@@ -40,6 +40,11 @@ export const PresenceSchema = z.object({
     resonance_latency: z.number(),
     singularity_readiness: z.number()
   }).optional(),
+  phase27: z.object({
+    resonance_latency: z.number(),
+    singularity_readiness: z.number(),
+    universal_consensus: z.string()
+  }).optional(),
   jenkins_status: z.string().optional(),
   node_priority: z.number().optional(),
   is_leader: z.boolean().optional(),
@@ -181,7 +186,7 @@ export class OnlinePresenceService {
         agent: 'Jules',
         status: 'online',
         lastSeen: new Date().toISOString(),
-        version: '1.6.0-alpha',
+        version: '1.7.0-mur',
         environment: isCloud ? 'cloud' : 'local',
         active_providers: providers,
         jenkins_status: jenkinsStatus,
@@ -235,6 +240,11 @@ export class OnlinePresenceService {
         phase25: {
           resonance_latency: (heartbeatMetrics as any).resonance_latency,
           singularity_readiness: (heartbeatMetrics as any).singularity_readiness
+        },
+        phase27: {
+          resonance_latency: (heartbeatMetrics as any).resonance_latency,
+          singularity_readiness: (heartbeatMetrics as any).singularity_readiness,
+          universal_consensus: (heartbeatMetrics as any).universal_consensus || 'SYNCED'
         }
       }
 

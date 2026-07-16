@@ -6,12 +6,12 @@ import { swarmHeartbeat } from './swarm_heartbeat'
 import { universalMeshRouting } from './universal_mesh_routing'
 
 /**
- * ANTIGRAVITY CLOUD-CONNECTED INTEGRATION SERVICE (Phase 23)
- * Orchestrates autonomous online presence and high-scale engine evolution.
+ * ANTIGRAVITY CLOUD-CONNECTED INTEGRATION SERVICE (Phase 27 MUR)
+ * Orchestrates autonomous online presence and Multi-Universal Resonance engine evolution.
  */
 export class CloudConnectedIntegrationService {
   /**
-   * ESTABLISH SOVEREIGN MESH CONNECTIONS (Phase 26)
+   * ESTABLISH SOVEREIGN MESH CONNECTIONS (Phase 27)
    * Activates mesh-aware routing and swarm heartbeats for high-scale evolution.
    */
   public async establishSovereignMeshConnections() {
@@ -40,26 +40,26 @@ export class CloudConnectedIntegrationService {
   }
 
   /**
-   * ESTABLISH ONLINE PRESENCE (Phase 26)
+   * ESTABLISH ONLINE PRESENCE (Phase 27)
    * High-resonance presence broadcasting with singularity readiness metrics.
    */
   public async establishOnlinePresence() {
-    logAutonomousAction('📡 [CloudConnected] Establishing High-Resonance Online Presence...', 'info')
+    logAutonomousAction('📡 [CloudConnected] Establishing High-Resonance Online Presence (Phase 27)...', 'info')
     const presence = await onlinePresence.syncPresence()
     if (presence) {
-       logAutonomousAction(`✅ [CloudConnected] Presence established. Resonance: ${presence.phase25?.resonance_latency}ms, Readiness: ${presence.phase25?.singularity_readiness}`, 'info')
+       logAutonomousAction(`✅ [CloudConnected] Presence established. Resonance: ${presence.phase27?.resonance_latency}ms, Readiness: ${presence.phase27?.singularity_readiness}`, 'info')
     }
     return presence
   }
 
   /**
-   * Orchestrates the Phase 23 Cloud-Native Pulse.
+   * Orchestrates the Phase 27 Multi-Universal Resonance Pulse.
    */
-  public async executePhase23Pulse() {
-    logAutonomousAction('🌐 [CloudConnected] Executing Phase 23 Cloud-Native Pulse...', 'info')
+  public async executePhase27MURPulse() {
+    logAutonomousAction('🌐 [CloudConnected] Executing Phase 27 Multi-Universal Resonance Pulse...', 'info')
 
     try {
-      // 0. Establish Mesh Connections (Phase 26)
+      // 0. Establish Mesh Connections (Phase 27)
       await this.establishSovereignMeshConnections()
 
       // 1. Synchronize Presence
@@ -78,14 +78,14 @@ export class CloudConnectedIntegrationService {
       await cloudConvergence.synchronizeEcosystem()
       await cloudConvergence.resolveConflicts()
 
-      logAutonomousAction('✅ [CloudConnected] Phase 23 Pulse completed successfully.', 'info')
+      logAutonomousAction('✅ [CloudConnected] Phase 27 MUR Pulse completed successfully.', 'info')
     } catch (error: any) {
-      logAutonomousAction(`❌ [CloudConnected] Phase 23 Pulse failed: ${error.message}`, 'error')
+      logAutonomousAction(`❌ [CloudConnected] Phase 27 MUR Pulse failed: ${error.message}`, 'error')
     }
   }
 
   /**
-   * UNIFIED AUTONOMOUS MERGE AND WORK (Phase 23/26)
+   * UNIFIED AUTONOMOUS MERGE AND WORK (Phase 27 MUR)
    * Orchestrates takeover, autonomous merging, conflict resolution, and work execution.
    */
   public async executeAutonomousMergeAndWork() {
@@ -130,24 +130,24 @@ export class CloudConnectedIntegrationService {
           logAutonomousAction(`⚠️ [CloudConnected] Conflict resolution pass skipped or failed: ${confErr.message}`, 'warning')
         }
 
-        // 5. Proactive Work Generation (Phase 23 Automatic Engine)
+        // 5. Proactive Work Generation (Phase 27 Automatic Engine)
         const pending = workOrderService.getPendingOrders()
         if (pending.length === 0) {
-          logAutonomousAction('🤖 [CloudConnected] No pending orders detected. Generating proactive evolution order...', 'info')
+          logAutonomousAction('🤖 [CloudConnected] No pending orders detected. Generating proactive Phase 27 evolution order...', 'info')
           await workOrderService.createOrder(
             'AUTONOMOUS_CREATION',
-            'Proactive Phase 23 Evolution Cycle (Automatic)',
+            'Proactive Phase 27 MUR Evolution Cycle (Automatic)',
             { reason: 'queue_empty', timestamp: new Date().toISOString() }
           )
         }
 
         // 6. Execute pending work orders
-        logAutonomousAction('⚡ [CloudConnected] Leader active. Dispatching pending work orders...', 'info')
+        logAutonomousAction('⚡ [CloudConnected] Leader active. Dispatching pending work orders (Phase 27)...', 'info')
         await workOrderService.executePendingOrders()
 
-        // 7. Final Git Synchronization (Phase 23)
-        logAutonomousAction('🚀 [CloudConnected] Leader active. Commencing final autonomous Git synchronization...', 'info')
-        await jules.gitSync('🤖 chore: autonomous cloud sovereign work cycle completion')
+        // 7. Final Git Synchronization (Phase 27)
+        logAutonomousAction('🚀 [CloudConnected] Leader active. Commencing final autonomous Git synchronization (Phase 27)...', 'info')
+        await jules.gitSync('🤖 chore: autonomous cloud sovereign work cycle completion (Phase 27 MUR)')
       } else {
         logAutonomousAction('📡 [CloudConnected] Node is subordinate. Yielding work cycle to primary node.', 'info')
       }
@@ -181,8 +181,8 @@ export class CloudConnectedIntegrationService {
       logAutonomousAction(`⚠️ [CloudConnected] Sovereignty gaps detected: ${missing}`, 'warning')
     }
 
-    // Detailed reporting for Phase 23 compliance
-    console.log('--- SOVEREIGNTY STATUS REPORT ---')
+    // Detailed reporting for Phase 27 compliance
+    console.log('--- PHASE 27 SOVEREIGNTY STATUS REPORT ---')
     Object.entries(report).forEach(([tool, data]) => {
       console.log(`${tool.toUpperCase()}: ${data.status} [${data.sovereign ? 'SOVEREIGN' : 'GAPPED'}]`)
     })
