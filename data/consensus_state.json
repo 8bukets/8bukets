@@ -382,5 +382,41 @@
     },
     "status": "pending",
     "timestamp": "2026-07-09T00:50:27.709Z"
+  },
+  {
+    "id": "prop_p2r3k9zom",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-17T05:47:28.051Z",
+      "branchCount": 3201,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-17T05:47:28.051Z"
+  },
+  {
+    "id": "prop_pvf4f9tnq",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-17T05:49:18.811Z",
+      "branchCount": 3201,
+      "strategicDomains": 6,
+      "meshReadiness": 66,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-17T05:49:18.811Z"
   }
 ]
