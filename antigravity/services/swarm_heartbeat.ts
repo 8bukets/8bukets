@@ -28,8 +28,8 @@ export interface Heartbeat {
   timestamp: string;
   status: 'active' | 'degraded';
   stabilityIndex: number;
-  resonanceLatency?: number; // Target < 0.05ms for Phase 26
-  singularityReadiness?: number; // Target > 0.9999 for Phase 26
+  resonanceLatency?: number; // Target < 0.008ms for Phase 27 (0.05ms for Phase 26)
+  singularityReadiness?: number; // Target > 0.999995 for Phase 27 (0.9999 for Phase 26)
 }
 
 export class SwarmHeartbeat {

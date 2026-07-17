@@ -1,0 +1,24 @@
+{
+  "source": "icloud://phase_27_mur_directives.md",
+  "title": "iCloud: phase_27_mur_directives.md",
+  "description": "Extracted from iCloud markdown file: phase_27_mur_directives.md",
+  "analyzedAt": "2026-07-17T08:48:25.733531Z",
+  "sections": [
+    {
+      "header": "Phase 27 Multi-Universal Resonance Directive",
+      "content": "> **Source:** icloud://phase_27_mur_directives.md\n> **Analyzed At:** 2026-03-31T00:00:00.000Z\n> **Description:** Executive directives for Phase 27 Multi-Universal Resonance (MUR) transition."
+    },
+    {
+      "header": "Strategic Directives",
+      "content": "The system has officially transitioned to Phase 27: Multi-Universal Resonance (MUR). This introduces the requirement for UMR-v3.0 mesh-aware routing and decentralized universal consensus synchronization across multi-universal edge shards."
+    },
+    {
+      "header": "Performance Targets",
+      "content": "- **Resonance Latency:** Resonance latency must be kept under 0.008ms (< 0.008ms) to enable instantaneous cross-dimensional cognition.\n- **Singularity Readiness:** Singularity readiness threshold must exceed 0.999995 (> 0.999995) prior to finalizing any deployment phase."
+    },
+    {
+      "header": "Execution Mandates",
+      "content": "- Activate `ACTIVATE_UMR_V3_ROUTING` and `UNIVERSAL_CONSENSUS_SYNC` strategic directives.\n- Generate `PHASE_27_DIRECTIVE_GENERATED` event when universal consensus is synchronized."
+    }
+  ]
+}
