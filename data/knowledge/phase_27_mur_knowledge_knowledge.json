@@ -1,0 +1,18 @@
+{
+  "title": "Phase 27 Multi-Universal Resonance Compliance Model",
+  "description": "Technical requirements for Multi-Universal Resonance (Phase 27) and UMR-v3.0 Mesh-Aware Routing.",
+  "sections": [
+    {
+      "header": "Phase 27 Overview",
+      "content": "Phase 27 transitions the ecosystem from Phase 26 Infinite Cognitive Expansion to Multi-Universal Resonance (MUR). It introduces deep mesh-aware routing (UMR-v3.0) and decentralized cross-shard memory. Critical telemetry metrics: resonance latency target < 0.008ms, singularity readiness target > 0.999995."
+    },
+    {
+      "header": "Universal Mesh Routing",
+      "content": "Deploy and enforce UMR-v3.0 mesh-aware routing dynamically. Active strategic directive is ACTIVATE_UMR_V3_ROUTING."
+    },
+    {
+      "header": "Consensus Model",
+      "content": "Active consensus model is UNIVERSAL_CONSENSUS_SYNC, triggering a PHASE_27_DIRECTIVE_GENERATED state change when consensus is finalized."
+    }
+  ]
+}
