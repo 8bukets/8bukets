@@ -485,5 +485,65 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
   await fs.promises.writeFile(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
 
+  // Generate standalone communication matrix
+  try {
+    await generateCommunicationMatrix(branches, caioDirectives)
+  } catch (err) {
+    console.error('⚠️ [Intelligence] Standalone Communication Matrix generation failed:', err)
+  }
+
   return { reportPath, branchCount: branches.length }
+}
+
+export async function generateCommunicationMatrix(branches: any[], caioDirectives?: any) {
+  console.log('🗣️ [Intelligence] Generating standalone Communication Matrix...')
+  const metadata = await getMissionMetadata()
+  const workOrders = await workOrderService.getPendingOrders()
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+
+  const dockerHealthy = await checkDockerHealth()
+  const dockerStatus = dockerHealthy ? 'optimal' : 'degraded'
+
+  const state = {
+    mission: metadata.missionStatement,
+    stakeholders: metadata.stakeholders,
+    docker: { status: dockerStatus },
+    caioDirectives,
+    intelligence: {
+      branches: branches.length,
+      pendingTasks: workOrders.length,
+      relationshipMap
+    }
+  }
+
+  const { generateInterAgentDirectives, generateNeuralMeshDirectives, generateCrossDomainDirectives } = await import('./communication')
+
+  const neuralMeshProtocols = await generateNeuralMeshDirectives(state)
+  const interAgentMatrix = await generateInterAgentDirectives(state)
+  const crossDomainProtocols = await generateCrossDomainDirectives(state)
+
+  let matrix = `# COMMUNICATION MATRIX\n\n`
+  matrix += `*Generated: ${new Date().toISOString()}*\n\n`
+  matrix += `This document synthesizes strategic collaboration routing, inter-agent sync protocols, and cross-domain synergy patterns across the ecosystem.\n\n`
+
+  matrix += `## 🕸️ Neural Mesh Communication Protocols\n`
+  matrix += neuralMeshProtocols ? neuralMeshProtocols.replace('### 🕸️ Neural Mesh Communication Protocols\n', '') : 'No neural mesh directives defined.'
+  matrix += `\n\n`
+
+  matrix += `## 🤖 Inter-Agent Communication Matrix\n`
+  matrix += interAgentMatrix ? interAgentMatrix.replace('### 🤖 Inter-Agent Communication Matrix\n', '') : 'No inter-agent directives defined.'
+  matrix += `\n\n`
+
+  matrix += `## 🔗 Cross-Domain Synergy Protocols\n`
+  if (crossDomainProtocols) {
+    matrix += crossDomainProtocols
+  } else {
+    matrix += `_No high-intensity cross-domain synergies requiring active routing protocol enforcement._`
+  }
+  matrix += `\n`
+
+  const matrixPath = path.join(process.cwd(), 'COMMUNICATION_MATRIX.md')
+  await fs.promises.writeFile(matrixPath, matrix)
+  console.log(`✅ [Intelligence] Communication Matrix saved to ${matrixPath}`)
+  return matrixPath
 }
