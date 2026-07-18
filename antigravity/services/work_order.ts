@@ -139,6 +139,7 @@ export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('SMOKE_TEST'), payload: SmokeTestPayloadSchema, result: SmokeTestResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('DEPLOYMENT'), payload: BootstrapServicePayloadSchema, result: DeploymentResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('META_CORRECTION'), payload: MetaCorrectionPayloadSchema, result: MetaCorrectionResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('STRATEGIC_CONSULTATION'), payload: z.any(), result: z.any().optional() }),
 ])
 
 export type WorkOrder = z.infer<typeof WorkOrderSchema>
@@ -264,6 +265,22 @@ export class WorkOrderService {
     console.log(`🎬 [WorkOrder] Dispatching ${order.type}: ${order.goal}`)
 
     switch (order.type) {
+      case 'STRATEGIC_CONSULTATION':
+        const { exec } = await import('child_process')
+        const { promisify } = await import('util')
+        const execAsync = promisify(exec)
+        try {
+          const { stdout } = await execAsync('python3 scripts/run_caio_agent.py')
+          return JSON.parse(stdout)
+        } catch (e: any) {
+          console.error('⚠️ Failed to execute run_caio_agent.py:', e)
+          return {
+            ai_strategy_status: 'BASELINE',
+            strategic_directives: ['ESTABLISH_BASELINE_GOVERNANCE'],
+            executive_summary: 'Fallback to baseline due to python execution error.'
+          }
+        }
+
       case 'BOOTSTRAP_SERVICE':
         const { bootstrap } = await import('../singularity')
         return await bootstrap(order.payload)
