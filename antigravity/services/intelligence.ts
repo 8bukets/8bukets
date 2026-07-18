@@ -485,5 +485,60 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
   await fs.promises.writeFile(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
 
+  // Generate standalone communication matrix
+  try {
+    await generateCommunicationMatrix(branches, caioDirectives)
+  } catch (err) {
+    console.error('⚠️ Failed to generate standalone Communication Matrix:', err)
+  }
+
   return { reportPath, branchCount: branches.length }
+}
+
+export async function generateCommunicationMatrix(branches: any[], caioDirectives?: any) {
+  'use cache'
+  console.log('📊 [Intelligence] Generating standalone Communication Matrix...')
+
+  const metadata = await getMissionMetadata()
+  const workOrders = await workOrderService.getPendingOrders()
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+  const dockerHealthy = await checkDockerHealth()
+  const dockerStatus = dockerHealthy ? 'optimal' : 'degraded'
+
+  const state = {
+    mission: metadata.missionStatement,
+    stakeholders: metadata.stakeholders,
+    docker: { status: dockerStatus },
+    intelligence: { branches: branches.length, pendingTasks: workOrders.length, relationshipMap },
+    caioDirectives
+  }
+
+  const { generateNeuralMeshDirectives, generateInterAgentDirectives, generateCrossDomainDirectives } = await import('./communication')
+
+  const neuralMeshDirectives = await generateNeuralMeshDirectives(state)
+  const interAgentDirectives = await generateInterAgentDirectives(state)
+  const crossDomainDirectives = await generateCrossDomainDirectives(state)
+
+  let content = `# COMMUNICATION MATRIX\n\n`
+  content += `*Generated: ${new Date().toISOString()}*\n\n`
+
+  content += `## 🕸️ Neural Mesh Communication Protocols\n`
+  content += `${neuralMeshDirectives}\n\n`
+
+  content += `## 🤖 Inter-Agent Communication Matrix\n`
+  content += `${interAgentDirectives}\n\n`
+
+  content += `## 🔗 Cross-Domain Synergy Protocols\n`
+  content += `${crossDomainDirectives || '_No high-intensity cross-domain synergies active._'}\n\n`
+
+  content += `\n---\nAll the best - https://markposition.wordpress.com\n`
+  content += `All the best - https://companylink.business.blog/\n`
+  content += `All the best - https://software-online-review.com/\n`
+
+  const outputPath = path.join(process.cwd(), 'COMMUNICATION_MATRIX.md')
+  const outputPathTypo = path.join(process.cwd(), 'COMMUNUATION_MATRIX.md')
+
+  await fs.promises.writeFile(outputPath, content, 'utf8')
+  await fs.promises.writeFile(outputPathTypo, content, 'utf8')
+  console.log(`✅ [Intelligence] Standalone Communication Matrix generated at ${outputPath}`)
 }
