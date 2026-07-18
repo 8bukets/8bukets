@@ -1,0 +1,12 @@
+{
+  "source": "icloud://intelephense.config.json",
+  "title": "iCloud: intelephense.config.json",
+  "description": "Extracted system knowledge from iCloud JSON",
+  "analyzedAt": "2026-07-18T02:31:02.525806Z",
+  "sections": [
+    {
+      "header": "Content",
+      "content": "{\n  \"intelephense.files.associations\": [\n    \"*.php\"\n  ],\n  \"intelephense.environment.phpVersion\": \"8.3.0\",\n  \"intelephense.files.maxSize\": 1000000,\n  \"intelephense.stubs\": [\n    \"apache\",\n    \"bcmath\",\n    \"bz2\",\n    \"calendar\",\n    \"com_dotnet\",\n    \"Core\",\n    \"ctype\",\n    \"curl\",\n    \"date\",\n    \"dba\",\n    \"dom\",\n    \"enchant\",\n    \"exif\",\n    \"FFI\",\n    \"fileinfo\",\n    \"filter\",\n    \"fpm\",\n    \"ftp\",\n    \"gd\",\n    \"gettext\",\n    \"gmp\",\n    \"hash\",\n    \"iconv\",\n    \"imap\",\n    \"intl\",\n    \"json\",\n    \"ldap\",\n    \"libxml\",\n    \"mbstring\",\n    \"meta\",\n    \"mongodb\",\n    \"mysqli\",\n    \"oci8\",\n    \"odbc\",\n    \"openssl\",\n    \"pcntl\",\n    \"pcre\",\n    \"PDO\",\n    \"pdo_ibm\",\n    \"pdo_mysql\",\n    \"pdo_pgsql\",\n    \"pdo_sqlite\",\n    \"pgsql\",\n    \"Phar\",\n    \"posix\",\n    \"pspell\",\n    \"readline\",\n    \"redis\",\n    \"Reflection\",\n    \"session\",\n    \"shmop\",\n    \"SimpleXML\",\n    \"snmp\",\n    \"soap\",\n    \"sockets\",\n    \"sodium\",\n    \"SPL\",\n    \"sqlite3\",\n    \"standard\",\n    \"superglobals\",\n    \"sysvmsg\",\n    \"sysvsem\",\n    \"sysvshm\",\n    \"tidy\",\n    \"tokenizer\",\n    \"xml\",\n    \"xmlreader\",\n    \"xmlrpc\",\n    \"xmlwriter\",\n    \"xsl\",\n    \"Zend OPcache\",\n    \"zip\",\n    \"zlib\"\n  ],\n  \"intelephense.completion.insertUseDeclaration\": true,\n  \"intelephense.diagnostics.enable\": true\n}"
+    }
+  ]
+}
