@@ -1,61 +1,120 @@
-/** PHASE 20 COMPLIANCE: COGNITIVE_RESONANCE (active) **/
-/** PHASE 20 COMPLIANCE: PQRV_TRUST (verified) **/
-/** PHASE 20 COMPLIANCE: RESONANCE_LATENCY (target: <0.5ms) **/
-/** PHASE 26 COMPLIANCE: singularity-readiness (threshold: 0.9999) **/
-/** PHASE 26 COMPLIANCE: resonance-latency (target: <0.05ms) **/
-/** PHASE 26 COMPLIANCE: Universal Mesh Routing (active: UMR) **/
-/** PHASE 26 COMPLIANCE: infinite-recursive-expansion (enabled) **/
-/** PHASE 24 COMPLIANCE: NEURAL_MESH_INTEGRATION (enabled) **/
-/** PHASE 24 COMPLIANCE: DISTRIBUTED_CONSENSUS (active) **/
-/** PHASE 24 COMPLIANCE: MESH_AWARE_ROUTING (enabled) **/
-/** PHASE 25 COMPLIANCE: quantum-neural-bridge (active) **/
-/** PHASE 25 COMPLIANCE: singularity-readiness (threshold: 0.999) **/
-/** PHASE 25 COMPLIANCE: recursive-expansion (enabled) **/
-/** PHASE 23 COMPLIANCE: CLOUD_NATIVE_INTEGRATION (enabled) **/
-/** PHASE 23 COMPLIANCE: SOVEREIGNTY_PULSE (active) **/
-/** PHASE 23 COMPLIANCE: RESONANCE_LATENCY (target: <0.2ms) **/
-/** PHASE 19 COMPLIANCE: RECURSIVE_SELF_IMPROVEMENT (enabled) **/
-/** PHASE 19 COMPLIANCE: ZKP_TRUST (verified) **/
-/** PHASE 19 COMPLIANCE: HEARTBEAT_LATENCY (target: <2ms) **/
-/** PHASE 19 COMPLIANCE: NEURAL_RECOVERY (active) **/
-/** PHASE 18 COMPLIANCE: SWARM_CONSENSUS (active) **/
-/** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
-/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
-/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
-/** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
-/** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
-/** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
-import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
-/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
-import { latticeSync } from '@/antigravity/services/lattice_sync'
+/**
+ * @license
+ * Copyright (c) 2024 Filip Keser. All rights reserved.
+ *
+ * This software and associated documentation files (the "Software") are the
+ * intellectual property of Filip Keser, Founder. No license is granted to any
+ * person or entity to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, without the express written permission
+ * of the copyright holder.
+ */
+
 import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
 import { logAutonomousAction } from '../core'
+import { ExternalSuggestionSchema } from './external_suggestions'
 
-export const WorkOrderSchema = z.object({
+/**
+ * Schemas for each Work Order type's payload and result.
+ * This allows for strong type validation across the system.
+ */
+
+// Base schema with common fields for all work orders
+const BaseWorkOrderSchema = z.object({
   id: z.string(),
-  type: z.enum([
-    'BOOTSTRAP_SERVICE',
-    'OPTIMIZE_SYSTEM',
-    'CONTENT_GENERATION',
-    'SMOKE_TEST',
-    'DEPLOYMENT',
-    'KNOWLEDGE_INGESTION',
-    'SYSTEM_SYNC',
-    'CLOUD_INTELLIGENCE_MERGE',
-    'AUTONOMOUS_CREATION',
-    'STRATEGIC_CONSULTATION'
-  ]),
   goal: z.string(),
-  payload: z.any(),
   dependsOn: z.array(z.string()).optional(),
   status: z.enum(['pending', 'executing', 'completed', 'failed']),
   created_at: z.string(),
   completed_at: z.string().optional(),
-  result: z.any().optional(),
   error: z.string().optional()
 })
+
+// Schemas for specific payloads and results
+const BootstrapServicePayloadSchema = z.object({
+  feature: z.string(),
+  rationale: z.string(),
+  complexity: z.enum(['Low', 'Medium', 'High']),
+})
+
+const BootstrapServiceResultSchema = z.object({
+  filePath: z.string(),
+  workflowPath: z.string(),
+  githubActionPath: z.string(),
+  serviceName: z.string(),
+  feature: z.string(),
+})
+
+const EvolutionMetricSchema = z.object({
+  file: z.string(),
+  complexity: z.number(),
+  suggestion: z.string(),
+})
+
+const OptimizeSystemPayloadSchema = z.object({
+  proposals: z.array(EvolutionMetricSchema),
+})
+
+const OptimizeSystemResultSchema = z.object({
+  appliedFixes: z.number()
+})
+
+const ContentGenerationPayloadSchema = z.object({
+  title: z.string(),
+  content: z.string(),
+  filename: z.string(),
+})
+
+const ContentGenerationResultSchema = z.object({
+  filePath: z.string(),
+  size: z.number()
+})
+
+const SmokeTestPayloadSchema = z.object({
+  filePath: z.string().optional(),
+  serviceName: z.string().optional(),
+})
+
+const SmokeTestResultSchema = z.object({
+  status: z.literal('passed'),
+  service: z.string().optional(),
+  timestamp: z.string(),
+  details: z.string(),
+})
+
+const DeploymentResultSchema = z.object({
+  status: z.literal('deployed'),
+  timestamp: z.string(),
+})
+
+const EvaluationFindingSchema = z.object({
+  source: z.enum(['evolution', 'synthesis', 'jules', 'optimization', 'supervisor']),
+  assessment: z.string(),
+  severity: z.enum(['info', 'warning', 'critical']),
+  recommendation: z.string().optional(),
+})
+
+const MetaCorrectionPayloadSchema = z.object({
+  findings: z.array(EvaluationFindingSchema),
+  externalSuggestions: z.array(ExternalSuggestionSchema),
+  evaluationTimestamp: z.string(),
+})
+
+const MetaCorrectionResultSchema = z.object({
+  status: z.literal('acknowledged'),
+  details: z.string(),
+})
+
+// Discriminated union of all work order types
+export const WorkOrderSchema = z.discriminatedUnion('type', [
+  BaseWorkOrderSchema.extend({ type: z.literal('BOOTSTRAP_SERVICE'), payload: BootstrapServicePayloadSchema, result: BootstrapServiceResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('OPTIMIZE_SYSTEM'), payload: OptimizeSystemPayloadSchema, result: OptimizeSystemResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('CONTENT_GENERATION'), payload: ContentGenerationPayloadSchema, result: ContentGenerationResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('SMOKE_TEST'), payload: SmokeTestPayloadSchema, result: SmokeTestResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('DEPLOYMENT'), payload: BootstrapServicePayloadSchema, result: DeploymentResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('META_CORRECTION'), payload: MetaCorrectionPayloadSchema, result: MetaCorrectionResultSchema.optional() }),
+])
 
 export type WorkOrder = z.infer<typeof WorkOrderSchema>
 
@@ -63,38 +122,39 @@ const STORAGE_PATH = path.join(process.cwd(), 'data/work_orders.json')
 
 export class WorkOrderService {
   private orders: WorkOrder[] = []
-  private initialized: Promise<void>
 
   constructor() {
-    this.initialized = this.load()
+    this.load()
   }
 
-  private async load() {
-    try {
-      await fs.promises.access(STORAGE_PATH)
-      const data = await fs.promises.readFile(STORAGE_PATH, 'utf8')
-      const parsed = JSON.parse(data)
-      const result = z.array(WorkOrderSchema).safeParse(parsed)
-      if (result.success) {
-        this.orders = result.data
-      } else {
-        console.error('❌ [WorkOrder] Data validation failed:', result.error.format())
+  private load() {
+    if (fs.existsSync(STORAGE_PATH)) {
+      try {
+        const data = fs.readFileSync(STORAGE_PATH, 'utf8')
+        const parsed = JSON.parse(data)
+        const result = z.array(WorkOrderSchema).safeParse(parsed)
+        if (result.success) {
+          this.orders = result.data
+        } else {
+          console.error('❌ [WorkOrder] Data validation failed:', result.error.format())
+          this.orders = []
+        }
+      } catch (e) {
+        console.error('❌ [WorkOrder] Failed to load work orders:', e)
         this.orders = []
       }
-    } catch (e) {
-      // File likely doesn't exist yet, which is fine
-      this.orders = []
     }
   }
 
-  private async save() {
+  private save() {
     const dataDir = path.dirname(STORAGE_PATH)
-    await fs.promises.mkdir(dataDir, { recursive: true })
-    await fs.promises.writeFile(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true })
+    }
+    fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
   }
 
-  public async createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): Promise<WorkOrder> {
-    await this.initialized
+  public createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): WorkOrder {
     const newOrder: WorkOrder = {
       id: `wo_${Math.random().toString(36).substring(2, 11)}`,
       type,
@@ -105,25 +165,16 @@ export class WorkOrderService {
       created_at: new Date().toISOString()
     }
     this.orders.push(newOrder)
-    await this.save()
+    this.save()
     logAutonomousAction(`[WORK_ORDER] Created: ${newOrder.id} - ${goal}`, 'cognitive')
     return newOrder
   }
 
-  public async clearPendingOrders() {
-    await this.initialized
-    this.orders = this.orders.filter(o => o.status !== 'pending')
-    await this.save()
-    logAutonomousAction('[WORK_ORDER] Cleared all pending orders', 'info')
-  }
-
-  public async getPendingOrders(): Promise<WorkOrder[]> {
-    await this.initialized
+  public getPendingOrders(): WorkOrder[] {
     return this.orders.filter(o => o.status === 'pending')
   }
 
   public async updateOrderStatus(id: string, status: WorkOrder['status'], result?: any, error?: string) {
-    await this.initialized
     const order = this.orders.find(o => o.id === id)
     if (order) {
       order.status = status
@@ -132,17 +183,16 @@ export class WorkOrderService {
       }
       if (result) order.result = result
       if (error) order.error = error
-      await this.save()
+      this.save()
     }
   }
 
   public async executePendingOrders() {
-    await this.initialized
     let hasProgress = true
 
     while (hasProgress) {
       hasProgress = false
-      const pending = await this.getPendingOrders()
+      const pending = this.getPendingOrders()
       if (pending.length === 0) break
 
       console.log(`⚡ [WorkOrder] Processing ${pending.length} pending orders...`)
@@ -213,41 +263,13 @@ export class WorkOrderService {
         await applyFixes(suggestions)
         return { appliedFixes: suggestions.length }
 
-      case 'KNOWLEDGE_INGESTION':
-        const { jules: julesK } = await import('../jules')
-        await julesK.observeKnowledge()
-        return { status: 'knowledge_ingested' }
-
-      case 'SYSTEM_SYNC':
-        const { jules: julesS } = await import('../jules')
-        await julesS.syncToICloud()
-        return { status: 'system_synced' }
-
-      case 'CLOUD_INTELLIGENCE_MERGE':
-        logAutonomousAction('[CLOUD_SYNC] Pulling 8Bukets unified intelligence', 'info')
-        const { jules: julesC } = await import('../jules')
-        await julesC.syncToICloud()
-        return { status: 'cloud_intelligence_merged' }
-
-      case 'AUTONOMOUS_CREATION':
-        const { jules: julesA } = await import('../jules')
-        await julesA.executeWorkCycle(order.id)
-        return { status: 'autonomous_creation_executed' }
-
-      case 'STRATEGIC_CONSULTATION':
-        const { exec } = await import('child_process')
-        const { promisify: promisifyUtil } = await import('util')
-        const execAsync = promisifyUtil(exec)
-
-        console.log('🤖 [WorkOrder] Invoking Chief AI Officer for strategic consultation...')
-        try {
-          const { stdout } = await execAsync('python3 scripts/run_caio_agent.py')
-          const strategicResult = JSON.parse(stdout)
-          return strategicResult
-        } catch (err: any) {
-          console.error('❌ [WorkOrder] CAIO Consultation failed:', err.message)
-          throw new Error(`CAIO Consultation failed: ${err.message}`)
-        }
+      case 'META_CORRECTION':
+        const details = {
+          internalFindings: order.payload.findings?.length || 0,
+          externalSuggestions: order.payload.externalSuggestions?.length || 0,
+        };
+        logAutonomousAction(`[META] Executing supervisor-issued correction: ${order.goal}`, 'cognitive');
+        return { status: 'acknowledged', details: `Meta-correction work order dispatched for agent review. Contains ${details.internalFindings} internal findings and ${details.externalSuggestions} external suggestions.` };
 
       default:
         throw new Error(`Unknown work order type: ${order.type}`)
