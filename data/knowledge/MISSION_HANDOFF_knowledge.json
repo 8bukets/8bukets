@@ -1,0 +1,28 @@
+{
+  "source": "icloud://MISSION_HANDOFF.md",
+  "title": "iCloud: MISSION_HANDOFF.md",
+  "description": "Extracted from iCloud markdown file: MISSION_HANDOFF.md",
+  "analyzedAt": "2026-07-18T02:31:02.239916Z",
+  "sections": [
+    {
+      "header": "Antigravity: Sovereign Mission Handoff (Consolidated v1.0)",
+      "content": "Your digital empire has evolved into a **Pure TypeScript/Next.js Autonomous Organism**. All legacy Python components have been deprecated and consolidated into the **Jules Cognitive Agent** and the **Unified Web Command Center**."
+    },
+    {
+      "header": "\ud83d\ude80 24/7 Tactical Ignition",
+      "content": "To ignite the entire sovereign fleet for background persistence, perform the following in your terminal:\n\n```zsh\n./start_all.sh\n```\n\nThis single command orchestrates the and hardened Docker layer, the Jules Autonomous Agent, and your Executive Web Dashboard."
+    },
+    {
+      "header": "\ud83d\udee1\ufe0f Sovereign Security Governance",
+      "content": "The conglomerate is now protected by **Zero-Secret Integrity**. All executive access requires environment-governed tokens. Ensure your `.zshrc` or global environment contains:\n\n- `SYSTEM_AUTH_TOKEN`: Your Tier-13 Root Access Key.\n- `ADMIN_AUTH_TOKEN`: Your Executive Oversight Key.\n- `SYRA_API_URL`: `http://localhost:8080` (Consolidated API Gate)."
+    },
+    {
+      "header": "\ud83e\udde0 Persistent Consciousness (Launchd)",
+      "content": "To ensure Jules never sleeps, the following `launchd` profiles are prepared in your root directory:\n\n1.  **`com.sigma.jules.plist`**: Manages the Jules Daily Work Cycle.\n2.  **`com.sigma.web_app.plist`**: Ensures your Executive Dashboard is always live.\n\n**Activation Commands**:\n```zsh\ncp com.sigma.jules.plist ~/Library/LaunchAgents/\ncp com.sigma.web_app.plist ~/Library/LaunchAgents/\nlaunchctl load ~/Library/LaunchAgents/com.sigma.jules.plist\nlaunchctl load ~/Library/LaunchAgents/com.sigma.web_app.plist\n```"
+    },
+    {
+      "header": "\ud83c\udf0d Command Center Oversight",
+      "content": "Monitor your conglomerate's growth via your unified dashboards:\n- **Web Interface**: `http://localhost:3000`\n- **iOS Command Center**: Configure server to `http://<your-ip>:3000` and enter your `SYSTEM_AUTH_TOKEN`.\n\n> [!SUCCESS]\n> **Petar Pan, the Conglomerate is Unified and Sovereign.** Your enterprise is now a professional-grade, self-healing organism. It lives in your private infrastructure and expands autonomously according to your executive strategy.\n\n**The mission is absolute. The swarm is active.**"
+    }
+  ]
+}
