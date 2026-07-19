@@ -15,7 +15,7 @@ import { observeKnowledge } from './services/knowledge';
 import { getSystemInsights, healthCheck, clearLogBuffer } from './core';
 import { runSequentialAgents } from './run_parallel';
 import { workOrderService } from './services/work_order';
-import { exec as execCallback } from 'child_process';
+import { exec as execCallback, spawn } from 'child_process';
 import { promisify } from 'util';
 const exec = promisify(execCallback);
 
@@ -230,6 +230,84 @@ dockerCommand
                 console.error(error.stderr);
             }
         }
+    });
+
+dockerCommand
+    .command('up')
+    .description('Start the core Docker containers in detached mode (docker compose up -d).')
+    .action(async () => {
+        console.log('🐳 [CLI] Starting Docker services...');
+        const dockerComposeDir = '/Users/filipkeser/Documents/Antigravity';
+
+        try {
+            const { stdout, stderr } = await exec('docker compose up -d', {
+                cwd: dockerComposeDir,
+            });
+            console.log(stdout);
+            if (stderr) {
+                console.warn(stderr);
+            }
+            console.log('✅ [CLI] Docker services started.');
+        } catch (error: any) {
+            console.error(`${c.fg.red}Failed to execute 'docker compose up -d'. Is Docker running?${c.reset}`);
+            if (error.stderr) {
+                console.error(error.stderr);
+            }
+        }
+    });
+
+dockerCommand
+    .command('down')
+    .description('Stop the core Docker containers (docker compose down).')
+    .action(async () => {
+        console.log('🐳 [CLI] Stopping Docker services...');
+        const dockerComposeDir = '/Users/filipkeser/Documents/Antigravity';
+
+        try {
+            const { stdout, stderr } = await exec('docker compose down', {
+                cwd: dockerComposeDir,
+            });
+            console.log(stdout);
+            if (stderr) {
+                console.warn(stderr);
+            }
+            console.log('✅ [CLI] Docker services stopped.');
+        } catch (error: any) {
+            console.error(`${c.fg.red}Failed to execute 'docker compose down'.${c.reset}`);
+            if (error.stderr) {
+                console.error(error.stderr);
+            }
+        }
+    });
+
+dockerCommand
+    .command('logs [service]')
+    .description('Tail the logs of a specific Docker service (or all services).')
+    .action((service) => {
+        const serviceName = service || 'all services';
+        console.log('🐳 [CLI] Tailing logs for service:', c.fg.cyan + serviceName + c.reset, '. Press Ctrl+C to exit.');
+        const dockerComposeDir = '/Users/filipkeser/Documents/Antigravity';
+
+        const args = ['compose', 'logs', '--follow'];
+        if (service) {
+            args.push(service);
+        }
+
+        const dockerProcess = spawn('docker', args, {
+            cwd: dockerComposeDir,
+            stdio: 'inherit',
+        });
+
+        dockerProcess.on('error', (err) => {
+            console.error(`${c.fg.red}Failed to execute 'docker compose logs'. Is Docker running?${c.reset}`);
+            console.error(err);
+        });
+
+        dockerProcess.on('close', (code) => {
+            if (code !== 0 && code !== null) {
+                console.log(`\n${c.fg.yellow}Log tailing process exited unexpectedly with code ${code}.${c.reset}`);
+            }
+        });
     });
 
 program
