@@ -148,6 +148,19 @@ const AutonomousCreationResultSchema = z.object({
   timestamp: z.string(),
 })
 
+const SecurityAuditPayloadSchema = z.object({
+  scope: z.enum(['full', 'incremental']).default('full'),
+  depth: z.enum(['shallow', 'deep']).default('deep'),
+});
+
+// Duplicating schema from cognitive_security.ts to avoid circular dependency
+const SecurityAuditResultSchema = z.object({
+  status: z.enum(['secure', 'warning', 'critical']),
+  issuesFound: z.number(),
+  lastAudit: z.string(),
+  scannedFiles: z.number()
+});
+
 // Discriminated union of all work order types
 export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('BOOTSTRAP_SERVICE'), payload: BootstrapServicePayloadSchema, result: BootstrapServiceResultSchema.optional() }),
@@ -157,6 +170,7 @@ export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('DEPLOYMENT'), payload: BootstrapServicePayloadSchema, result: DeploymentResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('META_CORRECTION'), payload: MetaCorrectionPayloadSchema, result: MetaCorrectionResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('AUTONOMOUS_CREATION'), payload: AutonomousCreationPayloadSchema, result: AutonomousCreationResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('SECURITY_AUDIT'), payload: SecurityAuditPayloadSchema, result: SecurityAuditResultSchema.optional() }),
 ])
 
 export type WorkOrder = z.infer<typeof WorkOrderSchema>
@@ -339,6 +353,11 @@ export class WorkOrderService {
       case 'AUTONOMOUS_CREATION':
         logAutonomousAction(`[AUTONOMOUS_CREATION] Executing autonomous creation sequence: ${order.goal}`, 'cognitive')
         return { status: 'completed', timestamp: new Date().toISOString() }
+
+      case 'SECURITY_AUDIT':
+        const { runSecurityAudit } = await import('./cognitive_security')
+        logAutonomousAction(`[SECURITY] Executing full audit as per work order: ${order.goal}`, 'security');
+        return await runSecurityAudit();
 
       default:
         throw new Error(`Unknown work order type: ${(order as any).type}`)
