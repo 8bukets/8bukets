@@ -67,6 +67,23 @@ program
     });
 
 program
+    .command('collaborate')
+    .description('Run a full multi-agent collaboration cycle (agents:run + sync).')
+    .action(async () => {
+        console.log(`\n${c.bright}${c.fg.magenta}🤝 [CLI] Initiating full multi-agent collaboration cycle...${c.reset}`);
+
+        console.log(`\n${c.bright}--- 1. Executing Specialized Agent Pulses ---${c.reset}`);
+        await runSequentialAgents();
+        console.log(`${c.bright}--- ✅ Agent pulses complete ---${c.reset}\n`);
+
+        console.log(`${c.bright}--- 2. Synchronizing Collaboration State & Merging Insights ---${c.reset}`);
+        await syncCollaborationState();
+        console.log(`${c.bright}--- ✅ Collaboration state synchronized ---${c.reset}\n`);
+
+        console.log(`${c.fg.green}✅ [CLI] Multi-agent collaboration cycle complete.${c.reset}`);
+    });
+
+program
     .command('health')
     .description('Run a health check on core system dependencies (MongoDB, Supabase).')
     .action(async () => {
@@ -177,15 +194,6 @@ program
         console.log(`✅ [CLI] Observation of ${url} complete.`);
     });
 
-program
-    .command('intelligence [url]')
-    .description("Trigger Jules' autonomous intelligence gathering and knowledge observation.")
-    .action(async (url) => {
-        console.log("🤖 [CLI] Triggering Jules' intelligence gathering...");
-        await jules.observeKnowledge(url);
-        console.log("✅ [CLI] Jules' intelligence gathering complete.");
-    });
-
 const julesCommand = program.command('jules').description('Commands for the Jules AI agent.');
 
 julesCommand
@@ -243,11 +251,16 @@ dockerCommand
             const { stdout, stderr } = await exec('docker compose up -d', {
                 cwd: dockerComposeDir,
             });
-            console.log(stdout);
-            if (stderr) {
-                console.warn(stderr);
+
+            if (stdout) {
+                console.log(stdout);
             }
-            console.log('✅ [CLI] Docker services started.');
+            if (stderr) {
+                // Log stderr as a warning as it often contains non-critical info like "network already exists"
+                console.warn(`${c.fg.yellow}Output from Docker (stderr):${c.reset}\n${stderr}`);
+            }
+
+            console.log('✅ [CLI] Docker `up` command finished.');
         } catch (error: any) {
             console.error(`${c.fg.red}Failed to execute 'docker compose up -d'. Is Docker running?${c.reset}`);
             if (error.stderr) {
@@ -258,7 +271,7 @@ dockerCommand
 
 dockerCommand
     .command('down')
-    .description('Stop the core Docker containers (docker compose down).')
+    .description('Stop and remove the core Docker containers (docker compose down).')
     .action(async () => {
         console.log('🐳 [CLI] Stopping Docker services...');
         const dockerComposeDir = '/Users/filipkeser/Documents/Antigravity';
@@ -267,13 +280,17 @@ dockerCommand
             const { stdout, stderr } = await exec('docker compose down', {
                 cwd: dockerComposeDir,
             });
-            console.log(stdout);
-            if (stderr) {
-                console.warn(stderr);
+
+            if (stdout) {
+                console.log(stdout);
             }
-            console.log('✅ [CLI] Docker services stopped.');
+            if (stderr) {
+                console.warn(`${c.fg.yellow}Output from Docker (stderr):${c.reset}\n${stderr}`);
+            }
+
+            console.log('✅ [CLI] Docker `down` command finished.');
         } catch (error: any) {
-            console.error(`${c.fg.red}Failed to execute 'docker compose down'.${c.reset}`);
+            console.error(`${c.fg.red}Failed to execute 'docker compose down'. Is Docker running?${c.reset}`);
             if (error.stderr) {
                 console.error(error.stderr);
             }
@@ -285,7 +302,7 @@ dockerCommand
     .description('Tail the logs of a specific Docker service (or all services).')
     .action((service) => {
         const serviceName = service || 'all services';
-        console.log('🐳 [CLI] Tailing logs for service:', c.fg.cyan + serviceName + c.reset, '. Press Ctrl+C to exit.');
+        console.log(`🐳 [CLI] Tailing logs for service: ${c.fg.cyan}${serviceName}${c.reset}. Press Ctrl+C to exit.`);
         const dockerComposeDir = '/Users/filipkeser/Documents/Antigravity';
 
         const args = ['compose', 'logs', '--follow'];
@@ -295,7 +312,7 @@ dockerCommand
 
         const dockerProcess = spawn('docker', args, {
             cwd: dockerComposeDir,
-            stdio: 'inherit',
+            stdio: 'inherit', // Pipe child process's stdio to the parent for real-time output
         });
 
         dockerProcess.on('error', (err) => {
@@ -303,11 +320,70 @@ dockerCommand
             console.error(err);
         });
 
+        // This event fires when the user stops the process (e.g., with Ctrl+C)
         dockerProcess.on('close', (code) => {
+            // A null code means termination by signal (like Ctrl+C), which is a normal exit for this command.
             if (code !== 0 && code !== null) {
                 console.log(`\n${c.fg.yellow}Log tailing process exited unexpectedly with code ${code}.${c.reset}`);
             }
         });
+    });
+
+dockerCommand
+    .command('restart <service>')
+    .description('Restart a specific Docker service.')
+    .action(async (service) => {
+        console.log(`🐳 [CLI] Restarting Docker service: ${c.fg.cyan}${service}${c.reset}...`);
+        const dockerComposeDir = '/Users/filipkeser/Documents/Antigravity';
+
+        try {
+            const { stdout, stderr } = await exec(`docker compose restart ${service}`, {
+                cwd: dockerComposeDir,
+            });
+
+            if (stdout) {
+                console.log(stdout);
+            }
+            if (stderr) {
+                console.warn(`${c.fg.yellow}Output from Docker (stderr):${c.reset}\n${stderr}`);
+            }
+
+            console.log(`✅ [CLI] Service '${c.fg.cyan}${service}${c.reset}' restarted.`);
+        } catch (error: any) {
+            console.error(`${c.fg.red}Failed to execute 'docker compose restart ${service}'. Is Docker running and is the service name correct?${c.reset}`);
+            if (error.stderr) {
+                console.error(error.stderr);
+            }
+        }
+    });
+
+dockerCommand
+    .command('prune')
+    .description('Remove unused Docker data (containers, networks, volumes, images).')
+    .option('-a, --all', 'Remove all unused images, not just dangling ones.')
+    .action(async (options) => {
+        console.log(`🐳 [CLI] Pruning unused Docker data...`);
+
+        const pruneCommand = `docker system prune --volumes -f ${options.all ? '-a' : ''}`.trim();
+        console.log(`${c.dim}Executing: ${pruneCommand}${c.reset}`);
+
+        try {
+            const { stdout, stderr } = await exec(pruneCommand);
+
+            if (stdout) {
+                console.log(stdout);
+            }
+            if (stderr) {
+                console.warn(`${c.fg.yellow}Output from Docker (stderr):${c.reset}\n${stderr}`);
+            }
+
+            console.log(`✅ [CLI] Docker prune complete.`);
+        } catch (error: any) {
+            console.error(`${c.fg.red}Failed to execute 'docker system prune'. Is Docker running?${c.reset}`);
+            if (error.stderr) {
+                console.error(error.stderr);
+            }
+        }
     });
 
 program
@@ -359,115 +435,32 @@ workOrderCommand
         console.log(JSON.stringify(newOrder, null, 2));
     });
 
-const decisionsCommand = program.command('decisions').description('Manage autonomous stakeholder decisions.');
+const testCommand = program.command('test').description('Run tests for the autonomous system.');
 
-decisionsCommand
-    .command('list')
-    .description('List pending stakeholder decisions requiring authorization.')
-    .action(async () => {
-        console.log('📊 [CLI] Analyzing system state for pending decisions...');
-        const insights = await getSystemInsights();
-        const decisions = getPendingDecisions(insights);
+testCommand
+    .command('e2e')
+    .description('Run a full end-to-end test of the autonomous creation and execution cycle.')
+    .action(() => {
+        console.log('🧪 [CLI] Starting full end-to-end autonomous test...');
+        console.log(`${c.dim}This will create and execute a new work order automatically via 'npm run autonomous-creation'.${c.reset}`);
 
-        if (decisions.length === 0) {
-            console.log(`✅ ${c.fg.green}No pending decisions require authorization at this time.${c.reset}`);
-            return;
-        }
-
-        console.log(`\n${c.bright}${c.fg.cyan}--- 📋 Pending Stakeholder Decisions ---${c.reset}\n`);
-        decisions.forEach(d => {
-            console.log(`${c.bright}[${d.id}]${c.reset} ${c.fg.yellow}${d.category}:${c.reset} ${d.title}`);
-            console.log(`  ${c.dim}${d.description}${c.reset}\n`);
+        // We use spawn to get real-time output from the npm script
+        const testProcess = spawn('npm', ['run', 'autonomous-creation'], {
+            stdio: 'inherit', // Pipe output to our terminal, showing the script's progress in real-time.
+            shell: true,      // Use shell for compatibility, especially on Windows.
         });
-    });
 
-decisionsCommand
-    .command('approve <id>')
-    .description('Approve and execute a stakeholder decision by its ID.')
-    .action(async (id) => {
-        const idUpper = id.toUpperCase();
-        console.log(`⚡️ [CLI] Resolving authorization for decision: ${c.fg.cyan}${idUpper}${c.reset}...`);
-        const insights = await getSystemInsights();
-        const decisions = getPendingDecisions(insights);
-        const decision = decisions.find(d => d.id === idUpper);
+        testProcess.on('error', (err) => {
+            console.error(`${c.fg.red}Failed to start the test process. Make sure 'npm' is in your PATH.${c.reset}`);
+            console.error(err);
+        });
 
-        if (!decision) {
-            console.error(`${c.fg.red}Error: Decision ${idUpper} is not active or pending.${c.reset}`);
-            return;
-        }
-
-        console.log(`🚀 [CLI] Executing decision: ${decision.title}...`);
-        try {
-            if (idUpper === 'DEC-001') {
-                console.log('🔄 Triggering cloud-native secondary node routing...');
-                console.log('✅ Secondary routes activated successfully.');
-            } else if (idUpper === 'DEC-002') {
-                console.log('♻️ Restarting degraded fleet processes...');
-                console.log('✅ Process fleet restarted.');
-            } else if (idUpper === 'DEC-003') {
-                console.log('🛡️ Applying automated cognitive security fixes...');
-                const suggestions = await evolve();
-                await applyFixes(suggestions);
-                console.log('✅ Security fixes successfully applied.');
-            } else if (idUpper === 'DEC-004') {
-                console.log('📝 Creating autonomous work orders for ideas...');
-                insights.ideas.forEach((idea: any) => {
-                    workOrderService.createOrder({
-                        description: `Implement ${idea.feature}: ${idea.rationale}`,
-                        priority: 'Medium',
-                        source: 'cli-decision'
-                    });
-                });
-                console.log(`✅ Created ${insights.ideas.length} pending work orders.`);
+        testProcess.on('close', (code) => {
+            if (code !== 0) {
+                console.error(`\n${c.fg.red}❌ [CLI] End-to-end autonomous test script failed with exit code ${code}.${c.reset}`);
             }
-            console.log(`✅ [CLI] Decision ${idUpper} executed successfully.`);
-        } catch (e: any) {
-            console.error(`${c.fg.red}Failed to execute decision:${c.reset}`, e.message || e);
-        }
+        });
     });
-
-function getPendingDecisions(insights: any) {
-    const decisions = [];
-
-    if (insights.circuitBreakers.mongodb === 'open' || insights.circuitBreakers.supabase === 'open') {
-        decisions.push({
-            id: 'DEC-001',
-            category: 'Infrastructure',
-            title: 'Approve failover to cloud-native secondary nodes',
-            description: 'One or more primary database circuit breakers are open. Route traffic to secondary nodes.'
-        });
-    }
-
-    const degradedAgents = insights.persistence.filter((p: any) => p.status !== 'healthy');
-    if (degradedAgents.length > 0) {
-        decisions.push({
-            id: 'DEC-002',
-            category: 'Ecosystem',
-            title: 'Restart degraded background agents',
-            description: `Processes for degraded agents (${degradedAgents.map((a: any) => a.agent).join(', ')}) will be recycled.`
-        });
-    }
-
-    if (insights.security.issuesFound > 0) {
-        decisions.push({
-            id: 'DEC-003',
-            category: 'Security',
-            title: `Approve automatic mitigation of ${insights.security.issuesFound} security risks`,
-            description: 'Apply compliance templates to mitigate all identified codebase vulnerabilities.'
-        });
-    }
-
-    if (insights.ideas.length > 0) {
-        decisions.push({
-            id: 'DEC-004',
-            category: 'Cognitive',
-            title: `Authorize work orders for ${insights.ideas.length} synthesized ideas`,
-            description: `Generates pending work orders for: ${insights.ideas.map((i: any) => i.feature).join(', ')}.`
-        });
-    }
-
-    return decisions;
-}
 
 program.parse(process.argv);
 
