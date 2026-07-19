@@ -10,11 +10,26 @@
 import { Command, Option } from 'commander';
 import { evolve, applyFixes } from './evolution';
 import { jules } from './jules';
-import { syncCollaborationState } from './services/collaboration'
-import { observeKnowledge } from './services/knowledge'
-import { getSystemInsights, healthCheck } from './core'
+import { syncCollaborationState } from './services/collaboration';
+import { observeKnowledge } from './services/knowledge';
+import { getSystemInsights, healthCheck, clearLogBuffer } from './core';
 import { runSequentialAgents } from './run_parallel';
 import { workOrderService } from './services/work_order';
+
+// --- Color constants for better readability ---
+const c = {
+    reset: '\x1b[0m',
+    dim: '\x1b[2m',
+    fg: {
+        red: '\x1b[31m',
+        green: '\x1b[32m',
+        yellow: '\x1b[33m',
+        blue: '\x1b[34m',
+        magenta: '\x1b[35m',
+        cyan: '\x1b[36m',
+        gray: '\x1b[90m',
+    }
+};
 
 const program = new Command();
 
@@ -99,20 +114,38 @@ program
         console.log('✅ [CLI] System status report complete.');
     });
 
-program
-    .command('logs')
+const logsCommand = program.command('logs').description('Manage autonomous action logs.');
+
+logsCommand
+    .command('show')
     .description('Show the latest autonomous action logs from the in-memory buffer.')
     .action(async () => {
         console.log('📜 [CLI] Fetching latest autonomous logs...');
         const { logs } = await getSystemInsights();
         if (!logs || logs.length === 0) {
-            console.log('No logs available in the current buffer.');
+            console.log(`${c.dim}No logs available in the current buffer.${c.reset}`);
         } else {
-            logs.forEach((log: any) => {
-                console.log(`[${log.time}] [${log.type.toUpperCase()}] ${log.msg}`);
+            logs.forEach((log: { time: string; type: string; msg: string }) => {
+                let typeColor = c.fg.yellow;
+                const typeUpper = log.type.toUpperCase();
+                if (typeUpper === 'INFO') typeColor = c.fg.green;
+                if (typeUpper === 'ROI') typeColor = c.fg.blue;
+                if (typeUpper === 'ERROR' || typeUpper === 'WARN' || typeUpper === 'SECURITY') typeColor = c.fg.red;
+                if (typeUpper === 'SYSTEM' || typeUpper === 'COGNITIVE') typeColor = c.fg.magenta;
+
+                console.log(`${c.fg.gray}[${log.time}]${c.reset} ${typeColor}[${typeUpper}]${c.reset} ${log.msg}`);
             });
         }
         console.log('✅ [CLI] Log display complete.');
+    });
+
+logsCommand
+    .command('clear')
+    .description('Clear the in-memory autonomous log buffer.')
+    .action(() => {
+        console.log('🗑️  [CLI] Clearing in-memory log buffer...');
+        clearLogBuffer();
+        console.log('✅ [CLI] Log buffer cleared.');
     });
 
 program

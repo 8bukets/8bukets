@@ -163,7 +163,7 @@ export function recordUpdate(tag: string) {
 export function getPredictiveProfile(tag: string): 'inventory' | 'catalog' | 'minutes' {
   const stats = volatilityRegistry.get(tag)
   if (!stats) return 'catalog' // Default to long-lived for new data
-  
+
   const age = Date.now() - stats.lastUpdate
   const frequency = stats.updates > 5 ? 'high' : 'low'
 
@@ -198,6 +198,11 @@ export function logAutonomousAction(msg: string, type: string = 'info') {
   if (logBuffer.length > 50) logBuffer.pop()
 }
 
+export function clearLogBuffer() {
+  logBuffer.length = 0
+  logAutonomousAction('Log buffer cleared by user.', 'system')
+}
+
 export async function getSystemInsights() {
   // Phase 12: Safeguard against CLI-mode execution
   // Only use cache if we are in a recognized Next.js request context
@@ -210,14 +215,14 @@ export async function getSystemInsights() {
       // Not in a 'use cache' context, skip
     }
   }
-  
+
   const { synthesize } = await import('./synthesis')
   const { getPersistenceHealth } = await import('./services/persistence')
   const { getNetworkState } = await import('./services/neural')
   const { getRelayState } = await import('./services/relay')
   const { optimize } = await import('./optimization')
   const { runSecurityAudit } = await import('./services/cognitive_security')
-  
+
   const ideas = await synthesize()
   const persistence = await getPersistenceHealth()
   const network = await getNetworkState()
@@ -269,7 +274,7 @@ export async function autonomousFetch<T>(
 ): Promise<T> {
   try {
     const data = await fetcher()
-    
+
     // Phase 12: Safeguard against non-server environments
     const isServerRequest = !!process.env.NEXT_RUNTIME
 
@@ -290,11 +295,11 @@ export async function autonomousFetch<T>(
     return result.data
   } catch (err) {
     console.warn('[Autonomous Core] Primary fetch failed. Attempting Graceful Degradation...', err)
-    
+
     // In Next.js 16, if we are in a 'use cache' scope, we can rely on 
     // the stale-while-revalidate behavior if a previous entry exists.
     // If we throw here, Next.js will often serve the stale content if available.
-    throw err 
+    throw err
   }
 }
 

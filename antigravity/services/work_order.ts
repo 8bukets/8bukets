@@ -319,7 +319,7 @@ export class WorkOrderService {
         return { status: 'acknowledged', details: `Meta-correction work order dispatched for agent review. Contains ${details.internalFindings} internal findings and ${details.externalSuggestions} external suggestions.` };
 
       default:
-        throw new Error(`Unknown work order type: ${order.type}`)
+        throw new Error(`Unknown work order type: ${(order as any).type}`)
     }
   }
 }
