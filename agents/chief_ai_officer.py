@@ -71,7 +71,17 @@ class ChiefAIOfficerAgent(BaseAgent):
         try:
             with open('AGENTS.md', 'r') as f:
                 agents_docs = f.read()
-                if "Phase 26: Infinite Cognitive Expansion (Current)" in agents_docs:
+                if "Phase 27: Multi-Universal Resonance (Current)" in agents_docs:
+                    self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 27. Authorizing multi-universal resonance protocols.")
+                    strategic_directives.append("ACTIVATE_PHASE_27_PROTOCOLS")
+                    strategic_directives.append("ACTIVATE_UMR_V3")
+                    strategic_directives.append("ENFORCE_MUR_COMPLIANCE")
+                    strategic_directives.append("INITIATE_UNIVERSAL_CONSENSUS_SYNC")
+                    strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
+                    strategic_directives.append("ESTABLISH_ETHICS_FRAMEWORK")
+                    strategic_directives.append("OPTIMIZE_ROI_TRACKING")
+                    strategic_directives.append("ENABLE_PREDICTIVE_RESOURCE_ALLOCATION")
+                elif "Phase 26: Infinite Cognitive Expansion (Current)" in agents_docs or "Phase 26: Infinite Cognitive Expansion (Complete)" in agents_docs:
                     self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 26. Authorizing high-expansion protocols.")
                     strategic_directives.append("ACTIVATE_PHASE_26_PROTOCOLS")
                     strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
@@ -118,6 +128,33 @@ class ChiefAIOfficerAgent(BaseAgent):
             has_phase_24 = "phase 24" in title_lower or "phase 24" in sections_str or "phase_24" in title_lower
             has_phase_25 = "phase 25" in title_lower or "phase 25" in sections_str or "phase_25" in title_lower
             has_phase_26 = any(p in title_lower or p in sections_str for p in ["phase 26", "phase_26"])
+            has_phase_27 = any(p in title_lower or p in sections_str for p in ["phase 27", "phase_27", "multi-universal resonance", "mur"])
+
+            # Phase 27 Specific Logic
+            if has_phase_27:
+                self.logger.info(f"CAIO [STRATEGY]: Phase 27 strategic mandate detected: {title}")
+                if "ACTIVATE_PHASE_27_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_27_PROTOCOLS")
+
+                if "umr-v3.0" in sections_str or "umr v3" in sections_str or "umr-v3" in sections_str:
+                    if "ACTIVATE_UMR_V3" not in strategic_directives:
+                        self.logger.info("CAIO [MESH]: Universal Mesh Routing (UMR-v3.0) mandate detected. Issuing activation directive.")
+                        strategic_directives.append("ACTIVATE_UMR_V3")
+
+                if "universal_consensus_sync" in sections_str or "universal consensus sync" in sections_str:
+                    if "INITIATE_UNIVERSAL_CONSENSUS_SYNC" not in strategic_directives:
+                        self.logger.info("CAIO [SYNC]: Universal Consensus Sync mandate detected. Issuing sync directive.")
+                        strategic_directives.append("INITIATE_UNIVERSAL_CONSENSUS_SYNC")
+
+                if "resonance-latency <0.008ms" in sections_str or "0.008ms" in sections_str:
+                    if "ENFORCE_PHASE_27_RESONANCE_LATENCY" not in strategic_directives:
+                        self.logger.info("CAIO [PERF]: Phase 27 resonance latency mandate detected (<0.008ms). Issuing optimization directive.")
+                        strategic_directives.append("ENFORCE_PHASE_27_RESONANCE_LATENCY")
+
+                if "singularity_readiness" in sections_str or "0.999995" in sections_str:
+                    if "OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_27" not in strategic_directives:
+                        self.logger.info("CAIO [SINGULARITY]: Phase 27 Singularity Readiness mandate detected (>0.999995). Issuing compliance directive.")
+                        strategic_directives.append("OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_27")
 
             # Phase 14 Specific Logic
             if has_phase_14:
@@ -573,8 +610,15 @@ class ChiefAIOfficerAgent(BaseAgent):
         if licensure_not_required:
             summary += "Licensure Status: Not required for executive AI leadership (Verified). "
 
+        if "ACTIVATE_PHASE_27_PROTOCOLS" in strategic_directives:
+            summary += "Phase 27 Operational Mode: ACTIVE. PHASE_27_DIRECTIVE_GENERATED. "
+
         if "ACTIVATE_PHASE_26_PROTOCOLS" in strategic_directives:
             summary += "Phase 26 Operational Mode: ACTIVE. PHASE_26_DIRECTIVE_GENERATED. "
+
+        if "OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_27" in strategic_directives:
+            self.logger.info("CAIO [SINGULARITY]: Mandating high-frequency Singularity Readiness audits for Phase 27 (6h cycle).")
+            strategic_directives.append("MANDATE_SINGULARITY_AUDIT_6H")
 
         if "OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_26" in strategic_directives:
             self.logger.info("CAIO [SINGULARITY]: Mandating high-frequency Singularity Readiness audits (12h cycle).")
