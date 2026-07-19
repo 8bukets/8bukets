@@ -2576,6 +2576,81 @@
       "id": "ai8sptw8c",
       "status": "completed",
       "goal": "System Scan: Health is DEGRADED. Found 386 evolution paths."
+    },
+    {
+      "id": "gu5a54a32",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://unitedsports.news.blog/"
+    },
+    {
+      "id": "krs71razf",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://software-online-review.com"
+    },
+    {
+      "id": "14dfzr308",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://onlinereview.news.blog/"
+    },
+    {
+      "id": "2wp6xylm8",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://companylink.business.blog/"
+    },
+    {
+      "id": "kikihnt5i",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://gamezoneonlinegame.wordpress.com/"
+    },
+    {
+      "id": "dpug1oxrh",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU"
+    },
+    {
+      "id": "oq8iyj76e",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://business.google.com/uk/ad-tools/bidding/"
+    },
+    {
+      "id": "26jackt8t",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://business.google.com/uk/resources/"
+    },
+    {
+      "id": "iosu2wzkc",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://developers.google.com/ad-manager"
+    },
+    {
+      "id": "z10z62hg5",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://developers.google.com/ad-manager/dynamic-ad-insertion"
+    },
+    {
+      "id": "7xl5wmkfk",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
+    },
+    {
+      "id": "3j9csdri9",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
+    },
+    {
+      "id": "0picbdx2t",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://developers.google.com/ad-manager/api/start"
+    },
+    {
+      "id": "c37n7x32m",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://admanager.google.com/home/resources/"
+    },
+    {
+      "id": "4dgsmvwlx",
+      "status": "completed",
+      "goal": "Knowledge Observation: Extracted concepts from https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
     }
   ],
   "activeAgents": []

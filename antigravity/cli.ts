@@ -15,28 +15,34 @@ import { observeKnowledge } from './services/knowledge';
 import { getSystemInsights, healthCheck, clearLogBuffer } from './core';
 import { runSequentialAgents } from './run_parallel';
 import { workOrderService } from './services/work_order';
+import { exec as execCallback } from 'child_process';
+import { promisify } from 'util';
+const exec = promisify(execCallback);
 
 // --- Color constants for better readability ---
 const c = {
-    reset: '\x1b[0m',
-    dim: '\x1b[2m',
+    reset: "\x1b[0m",
+    bright: "\x1b[1m",
+    dim: "\x1b[2m",
     fg: {
-        red: '\x1b[31m',
-        green: '\x1b[32m',
-        yellow: '\x1b[33m',
-        blue: '\x1b[34m',
-        magenta: '\x1b[35m',
-        cyan: '\x1b[36m',
-        gray: '\x1b[90m',
-    }
+        black: "\x1b[30m",
+        red: "\x1b[31m",
+        green: "\x1b[32m",
+        yellow: "\x1b[33m",
+        blue: "\x1b[34m",
+        magenta: "\x1b[35m",
+        cyan: "\x1b[36m",
+        white: "\x1b[37m",
+        gray: "\x1b[90m"
+    },
 };
 
 const program = new Command();
 
 program
-    .name('agy')
+    .name('antigravity')
     .description('CLI for the Antigravity Autonomous Ecosystem')
-    .version('1.1.0');
+    .version('1.0.0');
 
 program
     .command('evolve')
@@ -77,38 +83,52 @@ program
         console.log('📊 [CLI] Gathering comprehensive system status...');
         const insights = await getSystemInsights();
 
-        console.log('\n--- 📊 Antigravity System Status ---');
-        console.log(`\n🕒 Uptime: ${Math.floor(insights.uptime / 60)} minutes`);
+        const cbStatusColor = (status: string) => {
+            switch (status) {
+                case 'closed': return c.fg.green;
+                case 'open': return c.fg.red;
+                case 'half-open': return c.fg.yellow;
+                default: return c.reset;
+            }
+        };
 
-        console.log('\n--- ❤️ System Health ---');
-        console.log(`  MongoDB Circuit Breaker: ${insights.circuitBreakers.mongodb}`);
-        console.log(`  Supabase Circuit Breaker: ${insights.circuitBreakers.supabase}`);
+        console.log(`\n${c.bright}${c.fg.cyan}--- 📊 Antigravity System Status ---${c.reset}`);
+        console.log(`\n🕒 Uptime: ${c.fg.yellow}${Math.floor(insights.uptime / 60)} minutes${c.reset}`);
 
-        console.log('\n--- 🛡️ Cognitive Security ---');
-        console.log(`  Status: ${insights.security.status}`);
-        console.log(`  Issues Found: ${insights.security.issuesFound}`);
-        console.log(`  Files Scanned: ${insights.security.scannedFiles}`);
-        console.log(`  Last Audit: ${new Date(insights.security.lastAudit).toLocaleString()}`);
+        console.log(`\n${c.bright}${c.fg.cyan}--- ❤️ System Health ---${c.reset}`);
+        console.log(`  MongoDB Circuit Breaker: ${cbStatusColor(insights.circuitBreakers.mongodb)}${insights.circuitBreakers.mongodb}${c.reset}`);
+        console.log(`  Supabase Circuit Breaker: ${cbStatusColor(insights.circuitBreakers.supabase)}${insights.circuitBreakers.supabase}${c.reset}`);
 
-        console.log('\n--- 🧠 Cognitive Insights & Proposals ---');
+        console.log(`\n${c.bright}${c.fg.cyan}--- 🛡️ Cognitive Security ---${c.reset}`);
+        const securityStatusColor = insights.security.status === 'secure' ? c.fg.green : c.fg.red;
+        const issuesColor = insights.security.issuesFound > 0 ? c.fg.red : c.fg.green;
+        console.log(`  Status: ${securityStatusColor}${insights.security.status}${c.reset}`);
+        console.log(`  Issues Found: ${issuesColor}${insights.security.issuesFound}${c.reset}`);
+        console.log(`  Files Scanned: ${c.fg.yellow}${insights.security.scannedFiles}${c.reset}`);
+        console.log(`  Last Audit: ${c.dim}${new Date(insights.security.lastAudit).toLocaleString()}${c.reset}`);
+
+        console.log(`\n${c.bright}${c.fg.cyan}--- 🧠 Cognitive Insights & Proposals ---${c.reset}`);
         if (insights.ideas.length > 0) {
             console.log('  New Ideas Synthesized:');
-            insights.ideas.forEach((idea: any) => console.log(`    - [${idea.complexity}] ${idea.feature}: ${idea.rationale}`));
+            insights.ideas.forEach((idea: any) => console.log(`    - ${c.fg.magenta}[${idea.complexity}]${c.reset} ${idea.feature}: ${c.dim}${idea.rationale}${c.reset}`));
         } else {
-            console.log('  No new ideas synthesized.');
+            console.log(`  ${c.dim}No new ideas synthesized.${c.reset}`);
         }
         if (insights.proposals.length > 0) {
             console.log('\n  Predictive Refactors:');
-            insights.proposals.forEach((p: any) => console.log(`    - [${p.vector.toUpperCase()}] ${p.proposal} (Impact: ${(p.impactScore * 100).toFixed(0)}%)`));
+            insights.proposals.forEach((p: any) => console.log(`    - ${c.fg.blue}[${p.vector.toUpperCase()}]${c.reset} ${p.proposal} ${c.dim}(Impact: ${(p.impactScore * 100).toFixed(0)}%)${c.reset}`));
         } else {
-            console.log('\n  No predictive refactors proposed.');
+            console.log(`\n  ${c.dim}No predictive refactors proposed.${c.reset}`);
         }
 
-        console.log('\n--- 🗄️ Caching & Persistence ---');
-        console.log(`  Volatility Registry Size: ${insights.caching.registrySize}`);
+        console.log(`\n${c.bright}${c.fg.cyan}--- 🗄️ Caching & Persistence ---${c.reset}`);
+        console.log(`  Volatility Registry Size: ${c.fg.yellow}${insights.caching.registrySize}${c.reset}`);
         if (insights.persistence.length > 0) {
             console.log('\n  Persistence Fleet:');
-            insights.persistence.forEach((p: any) => console.log(`    - ${p.agent}: ${p.status} (PID: ${p.pid || 'N/A'})`));
+            insights.persistence.forEach((p: any) => {
+                const statusColor = p.status === 'healthy' ? c.fg.green : c.fg.yellow;
+                console.log(`    - ${p.agent}: ${statusColor}${p.status}${c.reset} ${c.dim}(PID: ${p.pid || 'N/A'})${c.reset}`);
+            });
         }
 
         console.log('✅ [CLI] System status report complete.');
@@ -157,6 +177,15 @@ program
         console.log(`✅ [CLI] Observation of ${url} complete.`);
     });
 
+program
+    .command('intelligence [url]')
+    .description("Trigger Jules' autonomous intelligence gathering and knowledge observation.")
+    .action(async (url) => {
+        console.log("🤖 [CLI] Triggering Jules' intelligence gathering...");
+        await jules.observeKnowledge(url);
+        console.log("✅ [CLI] Jules' intelligence gathering complete.");
+    });
+
 const julesCommand = program.command('jules').description('Commands for the Jules AI agent.');
 
 julesCommand
@@ -166,6 +195,41 @@ julesCommand
         console.log("🤖 [CLI] Triggering Jules' daily routine...");
         await jules.runDailyRoutine();
         console.log("✅ [CLI] Jules' daily routine complete.");
+    });
+
+const dockerCommand = program.command('docker').description('Manage core Docker services.');
+
+dockerCommand
+    .command('status')
+    .description('Show the status of the core Docker containers (MongoDB, etc.).')
+    .action(async () => {
+        console.log('🐳 [CLI] Checking status of Docker services...');
+        const dockerComposeDir = '/Users/filipkeser/Documents/Antigravity';
+
+        try {
+            const { stdout, stderr } = await exec('docker compose ps', {
+                cwd: dockerComposeDir,
+            });
+
+            if (stderr && !stdout) {
+                console.error(`${c.fg.red}Error checking Docker status:${c.reset}\n${stderr}`);
+                return;
+            }
+
+            console.log(`\n${c.bright}${c.fg.cyan}--- 🐳 Docker Service Status ---${c.reset}\n`);
+            console.log(stdout);
+
+            if (stderr) {
+                console.warn(`${c.fg.yellow}Warnings from Docker:${c.reset}\n${stderr}`);
+            }
+
+            console.log('✅ [CLI] Docker status check complete.');
+        } catch (error: any) {
+            console.error(`${c.fg.red}Failed to execute 'docker compose ps'. Is Docker running and is the project at '${dockerComposeDir}'?${c.reset}`);
+            if (error.stderr) {
+                console.error(error.stderr);
+            }
+        }
     });
 
 program
