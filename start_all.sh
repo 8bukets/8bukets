@@ -14,8 +14,8 @@ docker compose up -d
 
 # 2. Trigger Autonomous Work Cycle (Enterprise Selection)
 echo "🧠 [Jules] Commencing initial autonomous work cycle..."
-# Use node directly to ensure the right environment
-/usr/local/bin/npm run daily
+# Use the Antigravity CLI to trigger Jules' daily routine
+npm run antigravity -- jules:daily
 
 # 3. Handle existing dev servers
 echo "🧹 [Cleanup] Clearing legacy network ports..."

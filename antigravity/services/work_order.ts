@@ -179,19 +179,41 @@ export class WorkOrderService {
     fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
   }
 
-  public createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): WorkOrder {
+  public createOrder(typeOrObj: any, goal?: string, payload?: any, dependsOn?: string[]): WorkOrder {
+    if (typeOrObj && typeof typeOrObj === 'object') {
+      const desc = typeOrObj.description || typeOrObj.goal || '';
+      const priority = typeOrObj.priority || 'Medium';
+      const source = typeOrObj.source || 'cli';
+      const newOrder: WorkOrder = {
+        id: `wo_${Math.random().toString(36).substring(2, 11)}`,
+        type: 'BOOTSTRAP_SERVICE',
+        goal: desc,
+        payload: {
+          feature: desc,
+          rationale: `Created via ${source} (priority: ${priority})`,
+          complexity: priority === 'Critical' || priority === 'High' ? 'High' : priority === 'Medium' ? 'Medium' : 'Low'
+        },
+        status: 'pending',
+        created_at: new Date().toISOString()
+      }
+      this.orders.push(newOrder)
+      this.save()
+      logAutonomousAction(`[WORK_ORDER] Created: ${newOrder.id} - ${desc}`, 'cognitive')
+      return newOrder
+    }
+
     const newOrder: WorkOrder = {
       id: `wo_${Math.random().toString(36).substring(2, 11)}`,
-      type,
-      goal,
-      payload,
+      type: typeOrObj,
+      goal: goal || '',
+      payload: payload || {},
       dependsOn,
       status: 'pending',
       created_at: new Date().toISOString()
     }
     this.orders.push(newOrder)
     this.save()
-    logAutonomousAction(`[WORK_ORDER] Created: ${newOrder.id} - ${goal}`, 'cognitive')
+    logAutonomousAction(`[WORK_ORDER] Created: ${newOrder.id} - ${newOrder.goal}`, 'cognitive')
     return newOrder
   }
 
