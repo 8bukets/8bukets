@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /** PHASE 18 COMPLIANCE: SWARM_CONSENSUS (active) **/
 /** PHASE 18 COMPLIANCE: SOVEREIGN_TRUST (verified) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
@@ -13,7 +14,6 @@
 import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
 import { latticeSync } from '@/antigravity/services/lattice_sync'
-#!/usr/bin/env node
 /**
  * ANTIGRAVITY AUTONOMOUS ECOSYSTEM
  * Command-Line Interface (CLI)
