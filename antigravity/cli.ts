@@ -82,6 +82,28 @@ program
     });
 
 program
+    .command('sync:pqr-stream')
+    .description('Perform a state-of-the-art Post-Quantum Resonance (PQR) stream sync.')
+    .action(async () => {
+        console.log(`\n${c.bright}${c.fg.magenta}⚛️  [CLI] Initiating State-of-the-Art PQR Stream Sync...${c.reset}`);
+
+        console.log(`\n${c.bright}--- 1. Establishing Quantum-Secure Lattice ---${c.reset}`);
+        await latticeSync();
+        console.log(`${c.fg.green}✅ Lattice secured.${c.reset}`);
+
+        console.log(`\n${c.bright}--- 2. Broadcasting Swarm Heartbeat ---${c.reset}`);
+        const activeNodes = await swarmHeartbeat.broadcast();
+        console.log(`${c.fg.green}✅ Heartbeat acknowledged by ${activeNodes} active nodes.${c.reset}`);
+
+        console.log(`\n${c.bright}--- 3. Streaming High-Impact State Deltas ---${c.reset}`);
+        // This represents a high-speed, delta-focused sync of the ecosystem's state.
+        await syncCollaborationState();
+        console.log(`${c.fg.green}✅ State stream complete.${c.reset}`);
+
+        console.log(`\n${c.fg.green}✅ [CLI] PQR Stream Sync successful. Ecosystem is at state-of-the-art resonance.${c.reset}`);
+    });
+
+program
     .command('collaborate')
     .description('Run a full multi-agent collaboration cycle (agents:run + sync).')
     .action(async () => {
