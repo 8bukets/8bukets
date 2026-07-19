@@ -23,6 +23,10 @@ from agents.jules_evolution_agent import JulesEvolutionAgent
 from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
 from agents.docker_evolution_agent import DockerEvolutionAgent
 from agents.github_evolution_agent import GitHubEvolutionAgent
+from agents.google_edge_agent import GoogleEdgeAgent
+from agents.google_innovation_ai_agent import GoogleInnovationAIAgent
+from agents.google_models_research_agent import GoogleModelsResearchAgent
+from agents.jenkins_agent import JenkinsEvolutionAgent
 
 logging.basicConfig(level=logging.INFO)
 
@@ -51,6 +55,10 @@ async def verify():
         KnowledgeAgent(),
         AnalysisAgent(),
         ResearchAgent(),
+        GoogleEdgeAgent(),
+        GoogleInnovationAIAgent(),
+        GoogleModelsResearchAgent(),
+        JenkinsEvolutionAgent(),
         IntelligenceAgent(),
         ReActAgent(),
         TargetingAgent(),
