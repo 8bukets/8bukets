@@ -8,17 +8,10 @@
         <array>
             <string>/usr/local/bin/npm</string>
             <string>run</string>
-            <string>antigravity</string>
-            <string>--</string>
-            <string>jules:daily</string>
+            <string>ignite</string>
         </array>
-        <key>StartCalendarInterval</key>
-        <dict>
-            <key>Hour</key>
-            <integer>0</integer>
-            <key>Minute</key>
-            <integer>0</integer>
-        </dict>
+        <key>KeepAlive</key>
+        <true/>
         <key>RunAtLoad</key>
         <true/>
         <key>EnvironmentVariables</key>
@@ -31,8 +24,8 @@
         <key>WorkingDirectory</key>
         <string>/Users/filipkeser/Documents/Antigravity</string>
         <key>StandardOutPath</key>
-        <string>/Users/filipkeser/Documents/Antigravity/jules_daily.log</string>
+        <string>/Users/filipkeser/Documents/Antigravity/jules_continuous.log</string>
         <key>StandardErrorPath</key>
-        <string>/Users/filipkeser/Documents/Antigravity/jules_daily.error.log</string>
+        <string>/Users/filipkeser/Documents/Antigravity/jules_continuous.error.log</string>
     </dict>
 </plist>
