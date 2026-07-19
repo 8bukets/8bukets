@@ -1,3 +1,5 @@
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 /**
  * Implement Horizontal Fleet Orchestration Service: Manages dynamic horizontal scaling and localized routing logic for edge container deployments. Autonomous Workflow
  * Generated autonomously by the Antigravity Singularity Engine.
