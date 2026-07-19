@@ -131,6 +131,38 @@ const MetaCorrectionResultSchema = z.object({
   details: z.string(),
 })
 
+const AutonomousCreationPayloadSchema = z.object({
+  source: z.string().optional(),
+  timestamp: z.string().optional(),
+  compliance: z.string().optional(),
+  strategicDirectives: z.any().optional(),
+  agilePlanning: z.any().optional(),
+  metrics: z.any().optional(),
+  environment: z.string().optional(),
+}).passthrough()
+
+const AutonomousCreationResultSchema = z.object({
+  status: z.string(),
+  ideasProcessed: z.number().optional(),
+  timestamp: z.string(),
+}).passthrough()
+
+const SystemSyncPayloadSchema = z.any()
+
+const SystemSyncResultSchema = z.object({
+  status: z.literal('synced'),
+  timestamp: z.string()
+})
+
+const StrategicConsultationPayloadSchema = z.any()
+
+const StrategicConsultationResultSchema = z.object({
+  ai_strategy_status: z.string(),
+  infrastructure_optimization: z.any().optional(),
+  strategic_directives: z.array(z.string()),
+  executive_summary: z.string().optional()
+}).passthrough()
+
 // Discriminated union of all work order types
 export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('BOOTSTRAP_SERVICE'), payload: BootstrapServicePayloadSchema, result: BootstrapServiceResultSchema.optional() }),
@@ -139,6 +171,9 @@ export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('SMOKE_TEST'), payload: SmokeTestPayloadSchema, result: SmokeTestResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('DEPLOYMENT'), payload: BootstrapServicePayloadSchema, result: DeploymentResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('META_CORRECTION'), payload: MetaCorrectionPayloadSchema, result: MetaCorrectionResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('AUTONOMOUS_CREATION'), payload: AutonomousCreationPayloadSchema, result: AutonomousCreationResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('SYSTEM_SYNC'), payload: SystemSyncPayloadSchema, result: SystemSyncResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('STRATEGIC_CONSULTATION'), payload: StrategicConsultationPayloadSchema, result: StrategicConsultationResultSchema.optional() }),
 ])
 
 export type WorkOrder = z.infer<typeof WorkOrderSchema>
@@ -219,6 +254,11 @@ export class WorkOrderService {
 
   public getPendingOrders(): WorkOrder[] {
     return this.orders.filter(o => o.status === 'pending')
+  }
+
+  public async clearPendingOrders() {
+    this.orders = this.orders.filter(o => o.status !== 'pending')
+    this.save()
   }
 
   public async updateOrderStatus(id: string, status: WorkOrder['status'], result?: any, error?: string) {
@@ -317,6 +357,30 @@ export class WorkOrderService {
         };
         logAutonomousAction(`[META] Executing supervisor-issued correction: ${order.goal}`, 'cognitive');
         return { status: 'acknowledged', details: `Meta-correction work order dispatched for agent review. Contains ${details.internalFindings} internal findings and ${details.externalSuggestions} external suggestions.` };
+
+      case 'AUTONOMOUS_CREATION':
+        const { synthesize } = await import('../synthesis')
+        const { creationEngine } = await import('./creation_engine')
+        const ideas = await synthesize(order.payload)
+        await creationEngine.processIdeas(ideas, order.id)
+        return {
+          status: 'completed',
+          ideasProcessed: ideas.length,
+          timestamp: new Date().toISOString()
+        }
+
+      case 'SYSTEM_SYNC':
+        logAutonomousAction(`[SYSTEM_SYNC] Syncing mesh nodes: ${order.goal}`, 'info')
+        return { status: 'synced', timestamp: new Date().toISOString() }
+
+      case 'STRATEGIC_CONSULTATION':
+        const { execSync } = await import('child_process')
+        try {
+          const stdout = execSync('python3 scripts/run_caio_agent.py', { encoding: 'utf8' })
+          return JSON.parse(stdout)
+        } catch (err: any) {
+          throw new Error(`Strategic consultation failed: ${err.message}`)
+        }
 
       default:
         throw new Error(`Unknown work order type: ${(order as any).type}`)
