@@ -41,6 +41,7 @@ export const ExternalSuggestionSchema = z.object({
 })
 
 export async function processExternalSuggestions(url: string) {
+  'use cache'
   console.log(`🤖 [Supervisor] Processing external suggestions from: ${url}`)
   // In a real-world scenario, this would involve an actual network request.
   // For this simulation, we return a mock response based on the conceptual URL.
