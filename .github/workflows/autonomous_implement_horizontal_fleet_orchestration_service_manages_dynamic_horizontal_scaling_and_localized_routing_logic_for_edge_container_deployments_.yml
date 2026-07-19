@@ -1,0 +1,22 @@
+name: Autonomous Implement Horizontal Fleet Orchestration Service: Manages dynamic horizontal scaling and localized routing logic for edge container deployments. Workflow
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Hourly
+  workflow_dispatch:
+
+jobs:
+  run-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - run: npm ci
+      - run: npx tsx antigravity/workflows/implement_horizontal_fleet_orchestration_service_manages_dynamic_horizontal_scaling_and_localized_routing_logic_for_edge_container_deployments__workflow.ts
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}

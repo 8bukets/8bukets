@@ -21,3 +21,27 @@ deploy-prod:
   script:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
+
+run-autonomous-test_cli:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Test CLI Service"
+    - npx tsx antigravity/workflows/test_cli_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-test_reverted_command_format:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Test Reverted Command format"
+    - npx tsx antigravity/workflows/test_reverted_command_format_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-implement_horizontal_fleet_orchestration_service_manages_dynamic_horizontal_scaling_and_localized_routing_logic_for_edge_container_deployments_:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Implement Horizontal Fleet Orchestration Service: Manages dynamic horizontal scaling and localized routing logic for edge container deployments."
+    - npx tsx antigravity/workflows/implement_horizontal_fleet_orchestration_service_manages_dynamic_horizontal_scaling_and_localized_routing_logic_for_edge_container_deployments__workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"

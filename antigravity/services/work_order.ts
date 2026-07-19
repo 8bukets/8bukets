@@ -131,6 +131,23 @@ const MetaCorrectionResultSchema = z.object({
   details: z.string(),
 })
 
+const AutonomousCreationPayloadSchema = z.object({
+  source: z.string(),
+  timestamp: z.string(),
+  compliance: z.string(),
+  strategicDirectives: z.any().optional(),
+  agilePlanning: z.any().optional(),
+  metrics: z.object({
+    targetResonanceLatency: z.string(),
+    targetSingularityReadiness: z.string(),
+  }).optional(),
+})
+
+const AutonomousCreationResultSchema = z.object({
+  status: z.literal('completed'),
+  timestamp: z.string(),
+})
+
 // Discriminated union of all work order types
 export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('BOOTSTRAP_SERVICE'), payload: BootstrapServicePayloadSchema, result: BootstrapServiceResultSchema.optional() }),
@@ -139,6 +156,7 @@ export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('SMOKE_TEST'), payload: SmokeTestPayloadSchema, result: SmokeTestResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('DEPLOYMENT'), payload: BootstrapServicePayloadSchema, result: DeploymentResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('META_CORRECTION'), payload: MetaCorrectionPayloadSchema, result: MetaCorrectionResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('AUTONOMOUS_CREATION'), payload: AutonomousCreationPayloadSchema, result: AutonomousCreationResultSchema.optional() }),
 ])
 
 export type WorkOrder = z.infer<typeof WorkOrderSchema>
@@ -317,6 +335,10 @@ export class WorkOrderService {
         };
         logAutonomousAction(`[META] Executing supervisor-issued correction: ${order.goal}`, 'cognitive');
         return { status: 'acknowledged', details: `Meta-correction work order dispatched for agent review. Contains ${details.internalFindings} internal findings and ${details.externalSuggestions} external suggestions.` };
+
+      case 'AUTONOMOUS_CREATION':
+        logAutonomousAction(`[AUTONOMOUS_CREATION] Executing autonomous creation sequence: ${order.goal}`, 'cognitive')
+        return { status: 'completed', timestamp: new Date().toISOString() }
 
       default:
         throw new Error(`Unknown work order type: ${(order as any).type}`)

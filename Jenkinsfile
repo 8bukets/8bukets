@@ -132,6 +132,21 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/quantum_sovereignty_workflow.ts'
             }
         }
+        stage('Run Autonomous Test CLI Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/test_cli_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Test Reverted Command format') {
+            steps {
+                sh 'npx tsx antigravity/workflows/test_reverted_command_format_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Implement Horizontal Fleet Orchestration Service: Manages dynamic horizontal scaling and localized routing logic for edge container deployments.') {
+            steps {
+                sh 'npx tsx antigravity/workflows/implement_horizontal_fleet_orchestration_service_manages_dynamic_horizontal_scaling_and_localized_routing_logic_for_edge_container_deployments__workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {
