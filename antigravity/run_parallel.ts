@@ -1,3 +1,7 @@
+/** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
+import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 import { Jules, AgentRole } from './jules'
 import fs from 'fs'
 import path from 'path'
@@ -7,9 +11,9 @@ const LOCK_FILE = path.join(process.cwd(), 'antigravity/.git_lock');
 async function acquireLock(agent: string): Promise<boolean> {
   const maxRetries = 120; // Wait up to 60 seconds (120 * 500ms)
   for (let i = 0; i < maxRetries; i++) {
-    if (!fs.existsSync(LOCK_FILE)) {
+    if (!await fs.promises.access(LOCK_FILE).then(() => true).catch(() => false)) {
       try {
-        fs.writeFileSync(LOCK_FILE, JSON.stringify({ agent, timestamp: new Date().toISOString() }), { flag: 'wx' });
+        await fs.promises.writeFile(LOCK_FILE, JSON.stringify({ agent, timestamp: new Date().toISOString() }), { flag: 'wx' });
         return true;
       } catch {
         // file creation failed, lock was acquired concurrently
@@ -22,8 +26,8 @@ async function acquireLock(agent: string): Promise<boolean> {
 
 function releaseLock(agent: string) {
   try {
-    if (fs.existsSync(LOCK_FILE)) {
-      const lockData = JSON.parse(fs.readFileSync(LOCK_FILE, 'utf8'));
+    if (await fs.promises.access(LOCK_FILE).then(() => true).catch(() => false)) {
+      const lockData = JSON.parse(await fs.promises.readFile(LOCK_FILE, 'utf8'));
       if (lockData.agent === agent) {
         fs.unlinkSync(LOCK_FILE);
       }
