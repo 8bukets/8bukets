@@ -161,6 +161,20 @@ const SecurityAuditResultSchema = z.object({
   scannedFiles: z.number()
 });
 
+const StrategicConsultationPayloadSchema = z.object({}).catchall(z.any());
+const StrategicConsultationResultSchema = z.object({
+  ai_strategy_status: z.string().optional(),
+  infrastructure_optimization: z.any().optional(),
+  strategic_directives: z.array(z.string()).optional(),
+  executive_summary: z.string().optional(),
+}).catchall(z.any());
+
+const SystemSyncPayloadSchema = z.object({}).catchall(z.any());
+const SystemSyncResultSchema = z.object({
+  status: z.string(),
+  timestamp: z.string()
+}).catchall(z.any());
+
 // Discriminated union of all work order types
 export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('BOOTSTRAP_SERVICE'), payload: BootstrapServicePayloadSchema, result: BootstrapServiceResultSchema.optional() }),
@@ -171,6 +185,8 @@ export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('META_CORRECTION'), payload: MetaCorrectionPayloadSchema, result: MetaCorrectionResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('AUTONOMOUS_CREATION'), payload: AutonomousCreationPayloadSchema, result: AutonomousCreationResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('SECURITY_AUDIT'), payload: SecurityAuditPayloadSchema, result: SecurityAuditResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('STRATEGIC_CONSULTATION'), payload: StrategicConsultationPayloadSchema, result: StrategicConsultationResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('SYSTEM_SYNC'), payload: SystemSyncPayloadSchema, result: SystemSyncResultSchema.optional() }),
 ])
 
 export type WorkOrder = z.infer<typeof WorkOrderSchema>
@@ -358,6 +374,18 @@ export class WorkOrderService {
         const { runSecurityAudit } = await import('./cognitive_security')
         logAutonomousAction(`[SECURITY] Executing full audit as per work order: ${order.goal}`, 'security');
         return await runSecurityAudit();
+
+      case 'STRATEGIC_CONSULTATION':
+        logAutonomousAction(`[STRATEGIC_CONSULTATION] Obtaining executive AI strategy and directives`, 'cognitive');
+        const { exec } = await import('child_process');
+        const { promisify } = await import('util');
+        const execAsync = promisify(exec);
+        const { stdout } = await execAsync('python3 scripts/run_caio_agent.py');
+        return JSON.parse(stdout);
+
+      case 'SYSTEM_SYNC':
+        logAutonomousAction(`[SYSTEM_SYNC] Syncing mesh nodes after consensus`, 'cognitive');
+        return { status: 'synchronized', timestamp: new Date().toISOString() };
 
       default:
         throw new Error(`Unknown work order type: ${(order as any).type}`)

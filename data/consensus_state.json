@@ -410,5 +410,23 @@
     },
     "status": "pending",
     "timestamp": "2026-07-19T10:51:37.390Z"
+  },
+  {
+    "id": "prop_0jqw3718u",
+    "proposer": "UnifiedCollaboration",
+    "goal": "MERGE_ECOSYSTEM_KNOWLEDGE",
+    "payload": {
+      "timestamp": "2026-07-20T08:36:44.343Z",
+      "branchCount": 3236,
+      "strategicDomains": 6,
+      "meshReadiness": 65,
+      "singularityReadiness": "0.99995"
+    },
+    "votes": {
+      "UnifiedCollaboration": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-20T08:36:44.343Z"
   }
 ]

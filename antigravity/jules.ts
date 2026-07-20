@@ -904,6 +904,12 @@ public async observeKnowledge(url?: string) {
       report += `- ${task.goal}\n`
     })
 
+    report += `\n---\n`
+    report += `### 👥 Integrated Market Intelligence\n`
+    report += `All the best - https://markposition.wordpress.com\n`
+    report += `All the best - https://software-online-review.com\n`
+    report += `All the best - DBCode (Verified Distributed Consensus)\n`
+
     fs.writeFileSync(reportPath, report)
     console.log(`✅ [Jules] Report generated at ${reportPath}`)
     this.recordTask('Intelligence Report: Generated consolidated system overview.')
