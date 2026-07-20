@@ -1,3174 +1,1229 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-07-19T10:51:37.005Z
+**System Analysis:** 2026-07-20T07:02:01.766Z
 
 ---
 
-# e&n - unitedsports
+# unitedsports.news.blog
 
 > **Source:** https://unitedsports.news.blog/
-> **Analyzed At:** 2026-06-18T07:48:34.275982Z
+> **Analyzed At:** 2026-07-20T07:00:09.184Z
 
-## Marketing
+### Content
+<title>e&amp;n &#8211; #entertainment #webshop #software #news</title>
+Skip to content
+Menu
+Barron&#8217;s
+blackrock
+blackrock &#8211; aladdin
+fidelity
+forbes
+forbes advisor
+Investopedia
+Ishares
+kot4x
+Market Grader
+Marketwatch
+metatrader5
+NPM &#8211; Nasdaq Private Market International
+nyse
+nytimes
+roboforex
+saxo
+stockinvest.us
+tradelocker
+tradingview
+e&amp;n
+#entertainment #webshop #software #news
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-03-07T04:17:50-05:00">March 7, 2022</time>
+Marketing
 https://marketing1usa.wordpress.com/
-
-## Top 7 Digital Marketing Strategies for Small Businesses
+Written by Filip Keser<time class="entry-date published" datetime="2024-05-12T15:32:06-05:00">May 12, 2024</time><time class="updated" datetime="2024-07-11T04:10:16-05:00">July 11, 2024</time>
+Top 7 Digital Marketing Strategies for Small&nbsp;Businesses
 https://bizee.com/
-
-## Netflix
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-12-03T03:59:05-05:00">December 3, 2023</time>
+Ford® Mustang Sports Car | Hear The&nbsp;Roar
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-12-03T03:24:41-05:00">December 3, 2023</time>
+Displate &#8211; metal posters | Collect Your&nbsp;Passions
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-11-30T02:30:29-05:00">November 30, 2023</time>
+Netflix
 https://www.netflix.com/
-
-## startup – investor – capital – program – software
-https://www.softwareadvice.com/
-https://www.junipersquare.com/
-https://www.junipersquare.com/platform/investor-portal
-https://block.xyz/
-https://www.q4inc.com/
-https://www.q4inc.com/platform/q4-capital-connect/
-Links: https://www.softwareadvice.com/, https://www.junipersquare.com/, https://www.junipersquare.com/platform/investor-portal, https://block.xyz/, https://www.q4inc.com/, https://www.q4inc.com/platform/q4-capital-connect/
-
-## timberhillgroup
-https://www.timberhillgroup.com/
-https://www.junipersquare.com/
-Links: https://www.timberhillgroup.com/, https://www.junipersquare.com/
-
-## investor
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-05-17T03:53:57-05:00">May 17, 2023</time>
+startup &#8211; investor &#8211; capital &#8211; program &#8211;&nbsp;software
+https://www.softwareadvice.com/ https://www.junipersquare.com/ https://www.junipersquare.com/platform/investor-portal https://block.xyz/ https://www.q4inc.com/ https://www.q4inc.com/platform/q4-capital-connect/
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-05-14T05:45:33-05:00">May 14, 2023</time>
+timberhillgroup
+https://www.timberhillgroup.com/ https://www.junipersquare.com/
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-05-10T21:10:45-05:00">May 10, 2023</time>
+investor
 https://www.investor.gov/
-
-## check-your-investment-professional
-https://www.sec.gov/check-your-investment-professional
-https://www.sec.gov/
-Links: https://www.sec.gov/check-your-investment-professional, https://www.sec.gov/
-
-## swfinstitute
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-05-10T21:08:19-05:00">May 10, 2023</time>
+check-your-investment-professional
+https://www.sec.gov/check-your-investment-professional https://www.sec.gov/
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-04-26T23:30:29-05:00">April 26, 2023</time>
+swfinstitute
 https://www.swfinstitute.org/
-
-## shop
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-04-10T07:53:44-05:00">April 10, 2023</time>
+shop
 https://shop.app/
-
-## fidelity
-https://www.fidelity.com/
-https://www.fidelity.com/stock-trading/overview
-Links: https://www.fidelity.com/, https://www.fidelity.com/stock-trading/overview
-
-## lawinsider
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-03-28T04:23:05-05:00">March 28, 2023</time>
+fidelity
+https://www.fidelity.com/ https://www.fidelity.com/stock-trading/overview
+Written by Filip Keser<time class="entry-date published updated" datetime="2023-01-11T02:48:50-05:00">January 11, 2023</time>
+lawinsider
 https://www.lawinsider.com/
-
-## cookunity
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-12-21T04:10:15-05:00">December 21, 2022</time>
+nationaltoday
+Home
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-12-14T08:02:42-05:00">December 14, 2022</time>
+cookunity
 https://www.cookunity.com/
-
-## hitc
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-10-21T07:32:50-05:00">October 21, 2022</time>
+hitc
 https://www.hitc.com/
-
-## cbre
-https://www.cbre.com/
-https://www.quotemedia.com/
-Links: https://www.cbre.com/, https://www.quotemedia.com/
-
-## bankrate
+Written by Filip Keser<time class="entry-date published" datetime="2022-10-10T11:01:14-05:00">October 10, 2022</time><time class="updated" datetime="2023-10-13T22:51:11-05:00">October 13, 2023</time>
+cbre
+https://www.cbre.com/ https://www.quotemedia.com/
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-10-09T09:51:15-05:00">October 9, 2022</time>
+bankrate
 https://www.bankrate.com/
-
-## foxbusiness
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-10-05T03:49:01-05:00">October 5, 2022</time>
+foxbusiness
 https://www.foxbusiness.com/
-
-## Mashed – Calling all food lovers!
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-29T13:23:48-05:00">September 29, 2022</time>
+Mashed &#8211; Calling all food&nbsp;lovers!
 https://www.mashed.com/
-
-## MrBeast Burger
+Written by Filip Keser<time class="entry-date published" datetime="2022-09-29T13:15:34-05:00">September 29, 2022</time><time class="updated" datetime="2023-11-30T02:31:42-05:00">November 30, 2023</time>
+MrBeast Burger
 https://mrbeastburger.com/
-
-## DIOR
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-27T15:52:03-05:00">September 27, 2022</time>
+DIOR
 https://www.dior.com/
-
-## Instacart | Grocery Delivery or Pickup from Local Stores Near You
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-27T07:24:58-05:00">September 27, 2022</time>
+Instacart | Grocery Delivery or Pickup from Local Stores Near&nbsp;You
 https://www.instacart.com/
-
-## Walmart.com | Save Money. Live Better
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-27T06:37:24-05:00">September 27, 2022</time>
+Walmart.com | Save Money. Live&nbsp;Better
 https://www.walmart.com/
-
-## Fanta® | Delicious Fruit Flavored Sodas
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-27T06:36:29-05:00">September 27, 2022</time>
+Fanta® | Delicious Fruit Flavored&nbsp;Sodas
 https://www.fanta.com/
-
-## McDonalds
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-26T12:58:48-05:00">September 26, 2022</time>
+McDonalds
 https://www.mcdonaldsapps.com/
-
-## American Dream – Fantasy, Fashion, Food, Family, and Fun
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-20T13:45:22-05:00">September 20, 2022</time>
+American Dream &#8211; Fantasy, Fashion, Food, Family, and&nbsp;Fun
 https://www.americandream.com/
-
-## Custom App Development for Restaurants – DineEngine
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-20T13:41:33-05:00">September 20, 2022</time>
+Custom App Development for Restaurants &#8211;&nbsp;DineEngine
 https://dineengine.com/
-
-## Top Forecasters on Futuur
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-19T14:52:21-05:00">September 19, 2022</time>
+Top Forecasters on&nbsp;Futuur
 https://futuur.com/
-
-## TRADING ECONOMICS | 20 million INDICATORS FROM 196 COUNTRIES
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-13T12:24:15-05:00">September 13, 2022</time>
+TRADING ECONOMICS | 20 million INDICATORS FROM 196&nbsp;COUNTRIES
 https://tradingeconomics.com/
-
-## Amazon.com. Spend less. Smile more.
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-08T10:33:01-05:00">September 8, 2022</time>
+Amazon.com. Spend less. Smile&nbsp;more.
 https://www.amazon.com/
-
-## MasterClass Online Classes
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-09-02T09:14:42-05:00">September 2, 2022</time>
+MasterClass Online Classes
 https://www.masterclass.com/
-
-## Bungalow | Best Room & Home Rentals Experience
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-08-24T01:08:10-05:00">August 24, 2022</time>
+Bungalow | Best Room &amp; Home Rentals&nbsp;Experience
 https://bungalow.com/
-
-## Elite Daily
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-08-22T04:06:11-05:00">August 22, 2022</time>
+Elite Daily
 https://www.elitedaily.com/
-
-## Brides – Wedding Ideas, Planning & Inspiration
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-08-22T04:05:09-05:00">August 22, 2022</time>
+Brides &#8211; Wedding Ideas, Planning &amp;&nbsp;Inspiration
 https://www.brides.com/
-
-## International Law Firm
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-08-19T06:24:10-05:00">August 19, 2022</time>
+https://game-zone-online.com/
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-08-01T04:27:50-05:00">August 1, 2022</time>
+International Law Firm
 https://cms.law/en
-
-## Suministros de oficina al por mayor y soluciones entre empresas | Amazon Business
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-07-29T06:43:02-05:00">July 29, 2022</time>
+Suministros de oficina al por mayor y soluciones entre empresas | Amazon&nbsp;Business
 https://business.amazon.com/
-
-## Apple Books – Apple
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-07-28T00:58:34-05:00">July 28, 2022</time>
+Apple Books &#8211;&nbsp;Apple
 https://www.apple.com/apple-books/
-
-## The Global Leader in Loyalty Commerce | Points
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-07-27T10:38:32-05:00">July 27, 2022</time>
+The Global Leader in Loyalty Commerce |&nbsp;Points
 https://www.points.com/
-
-## Payroll, HR and Tax Services | ADP Official Site
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-07-26T13:17:50-05:00">July 26, 2022</time>
+Payroll, HR and Tax Services | ADP Official&nbsp;Site
 https://www.adp.com/
-
-## Prophet: A growth and transformation consulting firm.
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-07-26T06:43:59-05:00">July 26, 2022</time>
+Prophet: A growth and transformation consulting&nbsp;firm.
 https://www.prophet.com/
-
-## All Elite Crate | Exclusive Monthly Subscription Crates
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-07-17T12:09:00-05:00">July 17, 2022</time>
+All Elite Crate | Exclusive Monthly Subscription&nbsp;Crates
 https://www.allelitecrate.com/
-
-## StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-06-02T13:23:18-05:00">June 2, 2022</time>
+StockX: Sneakers, Streetwear, Trading Cards, Handbags,&nbsp;Watches
 https://stockx.com/
-
-## Financial Times
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-06-01T04:13:50-05:00">June 1, 2022</time>
+Financial Times
 https://www.ft.com/
-
-## World Edition – The Atlantic
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-05-31T01:17:44-05:00">May 31, 2022</time>
+World Edition &#8211; The&nbsp;Atlantic
 https://www.theatlantic.com/
-
-## Adweek
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-05-31T01:16:14-05:00">May 31, 2022</time>
+Adweek
 https://www.adweek.com/
-
-## Plugged In
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-05-21T16:23:57-05:00">May 21, 2022</time>
+Plugged In
 https://www.pluggedin.com/
-
-## Shop Chefclub! Cookbooks, kitchen gadgets & more! – Chefclub USA
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-05-16T23:37:28-05:00">May 16, 2022</time>
+Shop Chefclub! Cookbooks, kitchen gadgets &amp; more! – Chefclub&nbsp;USA
 https://shop-us.chefclub.tv/
-
-## BOXABL CASITA – Accesory Dwelling Unit
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-05-10T01:55:44-05:00">May 10, 2022</time>
+BOXABL CASITA – Accesory Dwelling&nbsp;Unit
 https://www.boxabl.com/
-
-## Alibaba Manufacturer Directory
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-05-07T23:26:44-05:00">May 7, 2022</time>
+Alibaba Manufacturer Directory
 https://www.alibaba.com/
-
-## Amazon.com. Spend less. Smile more.
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-05-07T23:25:25-05:00">May 7, 2022</time>
+Amazon.com. Spend less. Smile&nbsp;more.
 https://www.amazon.com/
-
-## Celebrity, News, & Editorial Picture Agency | TheMegaAgency.com
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-05-05T08:03:46-05:00">May 5, 2022</time>
+Celebrity, News, &amp; Editorial Picture Agency | TheMegaAgency.com
 https://themegaagency.com/
-
-## Walmart.com | Save Money. Live Better
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-05-04T12:08:06-05:00">May 4, 2022</time>
+Walmart.com | Save Money. Live&nbsp;Better
 https://www.walmart.com/
-
-## Pepsi
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-05-04T07:42:44-05:00">May 4, 2022</time>
+Pepsi
 https://www.pepsi.com/
-
-## Greyp G12s eHYPERBIKE | Greyp Bikes
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-27T10:29:34-05:00">April 27, 2022</time>
+Greyp G12s eHYPERBIKE | Greyp&nbsp;Bikes
 https://www.greyp.com/ehyperbike/
-
-## New Jersey Local News, Breaking News, Sports & Weather
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-27T08:51:38-05:00">April 27, 2022</time>
+New Jersey Local News, Breaking News, Sports &amp;&nbsp;Weather
 https://www.nj.com/
-
-## Mountain America Credit Union in Utah & the West
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-17T10:01:05-05:00">April 17, 2022</time>
+Mountain America Credit Union in Utah &amp; the&nbsp;West
 https://www.macu.com/
-
-## Blue Bow
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-16T23:32:41-05:00">April 16, 2022</time>
+Blue Bow
 https://www.amexgiftcard.com/blue_bow.html
-
-## Corporate Cards from American Express
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-16T23:27:59-05:00">April 16, 2022</time>
+Corporate Cards from American&nbsp;Express
 https://www.americanexpress.com/us/credit-cards/business/corporate-credit-cards
-
-## BuzzFeed
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-16T13:28:39-05:00">April 16, 2022</time>
+BuzzFeed
 https://www.buzzfeed.com/
-
-## Welcome to Forge – Your Secondary Market Solution
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-06T04:54:54-05:00">April 6, 2022</time>
+Welcome to Forge &#8211; Your Secondary Market&nbsp;Solution
 https://forgeglobal.com/
-
-## Amazon.co.uk: Low Prices in Electronics, Books, Sports Equipment & more
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-04T09:10:55-05:00">April 4, 2022</time>
+Amazon.co.uk: Low Prices in Electronics, Books, Sports Equipment &amp;&nbsp;more
 https://www.amazon.co.uk/
-
-## Far Out Magazine | Music, Film, TV, Art & Pop Culture News
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-04T00:49:30-05:00">April 4, 2022</time>
+Far Out Magazine | Music, Film, TV, Art &amp; Pop Culture&nbsp;News
 https://faroutmagazine.co.uk/
-
-## ESPN: Serving sports fans. Anytime. Anywhere.
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-02T23:26:36-05:00">April 2, 2022</time>
+ESPN: Serving sports fans. Anytime.&nbsp;Anywhere.
 https://www.espn.com/
-
-## Electronics, Cars, Fashion, Collectibles & More | eBay
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-02T23:11:16-05:00">April 2, 2022</time>
+Electronics, Cars, Fashion, Collectibles &amp; More |&nbsp;eBay
 https://www.ebay.com/
-
-## Home | Life.Church
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-04-02T09:41:16-05:00">April 2, 2022</time>
+Home | Life.Church
 http://www.life.church/
-
-## Strafe Esports | Watch Esports Games Online | Esports Schedules
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-03-27T13:24:29-05:00">March 27, 2022</time>
+Strafe Esports | Watch Esports Games Online | Esports&nbsp;Schedules
 https://www.strafe.com/
-
-## WWE News, Results, Photos & Video – Official Site | WWE
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-03-25T16:41:49-05:00">March 25, 2022</time>
+WWE News, Results, Photos &amp; Video &#8211; Official Site |&nbsp;WWE
 https://www.wwe.com/
-
-## Tesco – Supermarkets | Online Groceries, Clubcard & Recipes
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-03-15T22:31:23-05:00">March 15, 2022</time>
+Tesco &#8211; Supermarkets | Online Groceries, Clubcard &amp;&nbsp;Recipes
 https://www.tesco.com/
-
-## Sneaker News – Jordans, Yeezys, release dates & more.
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-03-15T08:29:41-05:00">March 15, 2022</time>
+Sneaker News &#8211; Jordans, Yeezys, release dates &amp;&nbsp;more.
 https://sneakernews.com/
-
-## NME | Music, Film, TV, Gaming & Pop Culture News
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-03-11T13:11:28-05:00">March 11, 2022</time>
+NME | Music, Film, TV, Gaming &amp; Pop Culture&nbsp;News
 https://www.nme.com/#
-
-## 44 Pro Gloves
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-03-07T11:07:46-05:00">March 7, 2022</time>
+44 Pro Gloves
 https://44progloves.com/
-
-## Indian Motorcycle – America’s First Motorcycle Company
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-03-07T05:37:13-05:00">March 7, 2022</time>
+Indian Motorcycle &#8211; America&#8217;s First Motorcycle&nbsp;Company
 https://www.indianmotorcycle.com/en-us/
-
-## MARCA English – Latest Sports News Today & Live Sports
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-03-04T00:24:41-05:00">March 4, 2022</time>
+MARCA English &#8211; Latest Sports News Today &amp; Live&nbsp;Sports
 https://www.marca.com/en/
-
-## Sell books, art & collectibles online
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-02-28T12:29:14-05:00">February 28, 2022</time>
+Sell books, art &amp; collectibles&nbsp;online
 https://www.abebooks.com/books/Sell/
-
-## Target : Expect More. Pay Less.
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-02-23T00:11:59-05:00">February 23, 2022</time>
+Target : Expect More. Pay&nbsp;Less.
 https://www.target.com/
-
-## Walmart.com | Save Money. Live Better
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-02-23T00:11:43-05:00">February 23, 2022</time>
+Walmart.com | Save Money. Live&nbsp;Better
 https://www.walmart.com/
-
-## Latest Celebrity News, Entertainment News & Gossip | Page Six
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-02-22T16:38:56-05:00">February 22, 2022</time>
+Latest Celebrity News, Entertainment News &amp; Gossip | Page&nbsp;Six
 https://pagesix.com/
-
-## International Business, World News & Global Stock Market Analysis
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-02-02T03:33:56-05:00">February 2, 2022</time>
+International Business, World News &amp; Global Stock Market&nbsp;Analysis
 https://www.cnbc.com/world/
-
-## White & Case LLP International Law Firm, Global Law Practice
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-01-26T11:02:37-05:00">January 26, 2022</time>
+White &amp; Case LLP International Law Firm, Global Law&nbsp;Practice
 https://www.whitecase.com/
-
-## People | White & Case LLP
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-01-26T11:02:26-05:00">January 26, 2022</time>
+People | White &amp; Case&nbsp;LLP
 https://www.whitecase.com/people
-
-## SHOWTIME Official Site
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-01-14T08:22:40-05:00">January 14, 2022</time>
+SHOWTIME Official Site
 https://www.sho.com/
-
-## Kuka
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-01-14T04:03:00-05:00">January 14, 2022</time>
+Kuka
 https://www.kuka.live/
-
-## Facebook for Business: Marketing on Facebook
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-01-13T00:16:19-05:00">January 13, 2022</time>
+Facebook for Business: Marketing on&nbsp;Facebook
 https://web.facebook.com/business
-
-## Samsung US | Mobile | TV | Home Electronics | Home Appliances | Samsung US
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-01-09T03:39:00-05:00">January 9, 2022</time>
+Samsung US | Mobile | TV | Home Electronics | Home Appliances | Samsung&nbsp;US
 https://www.samsung.com/us/
-
-## The New York Times – Breaking News, US News, World News and Videos
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-01-06T12:47:10-05:00">January 6, 2022</time>
+The New York Times &#8211; Breaking News, US News, World News and&nbsp;Videos
 https://www.nytimes.com/
-
-## DiscoverPlus
+Written by Filip Keser<time class="entry-date published updated" datetime="2022-01-01T19:47:15-05:00">January 1, 2022</time>
+DiscoverPlus
 https://www.discoveryplus.com/
-
-## Recipe Ideas, Product Reviews, Home Decor Inspiration, and Beauty Tips – Good Housekeeping
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-26T22:49:17-05:00">December 26, 2021</time>
+Recipe Ideas, Product Reviews, Home Decor Inspiration, and Beauty Tips &#8211; Good&nbsp;Housekeeping
 https://www.goodhousekeeping.com/
-
-## Best Buy | Official Online Store | Shop Now & Save
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-26T22:41:10-05:00">December 26, 2021</time>
+Best Buy | Official Online Store | Shop Now &amp;&nbsp;Save
 https://www.bestbuy.com/
-
-## Everything You Need to Know to Start and Grow Your Business
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-26T20:23:23-05:00">December 26, 2021</time>
+Everything You Need to Know to Start and Grow Your&nbsp;Business
 https://www.inc.com/
-
-## Home | Interactive Brokers LLC
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-26T14:38:16-05:00">December 26, 2021</time>
+Home | Interactive Brokers&nbsp;LLC
 https://www.interactivebrokers.com/en/home.php
-
-## Cute Hairstyles, Celeb News, Fun Quizzes, Beauty Advice, and Teen Fashion – Seventeen Magazine
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-23T18:11:34-05:00">December 23, 2021</time>
+Cute Hairstyles, Celeb News, Fun Quizzes, Beauty Advice, and Teen Fashion &#8211; Seventeen&nbsp;Magazine
 https://www.seventeen.com/
-
-## Net Worth Spot – Influencers’ Net Worth
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-23T18:08:23-05:00">December 23, 2021</time>
+Net Worth Spot – Influencers&#8217; Net&nbsp;Worth
 https://networthspot.com/
-
-## Slice.ca – Style, Self, Ambition, Culture and Watch Videos
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-23T17:59:42-05:00">December 23, 2021</time>
+Slice.ca – Style, Self, Ambition, Culture and Watch&nbsp;Videos
 https://www.slice.ca/
-
-## Watch USTVNow Movies ,TV Shows Online Legally
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-22T08:12:58-05:00">December 22, 2021</time>
+Watch USTVNow Movies ,TV Shows Online&nbsp;Legally
 https://www.ustvnow.com/www.ustvnow.com/home
-
-## software info by fk – software-online-review – Filip Keser
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-22T03:29:04-05:00">December 22, 2021</time>
+software info by fk – software-online-review – Filip&nbsp;Keser
 https://software-online-review.com/
-
-## Best Buy International: Select your Country – Best Buy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-19T04:26:42-05:00">December 19, 2021</time>
+Best Buy International: Select your Country &#8211; Best&nbsp;Buy
 https://www.bestbuy.com/
-
-## Luxury SUVs, Sedans, Coupes, Convertibles & Crossovers | BMW USA
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-17T12:53:05-05:00">December 17, 2021</time>
+Luxury SUVs, Sedans, Coupes, Convertibles &amp; Crossovers | BMW&nbsp;USA
 https://www.bmwusa.com/
-
-## Bright Side — Inspiration. Creativity. Wonder.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-17T09:36:49-05:00">December 17, 2021</time>
+Bright Side — Inspiration. Creativity.&nbsp;Wonder.
 https://brightside.me/
-
-## The Latest Esports Industry News | Esports Insider
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-12T16:06:36-05:00">December 12, 2021</time>
+The Latest Esports Industry News | Esports&nbsp;Insider
 https://esportsinsider.com/
-
-## Variety
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-12T16:03:59-05:00">December 12, 2021</time>
+Variety
 https://variety.com/
-
-## Kids Toys, Action Figures, Toys Online – Hasbro
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-11T11:01:37-05:00">December 11, 2021</time>
+Kids Toys, Action Figures, Toys Online &#8211;&nbsp;Hasbro
 https://shop.hasbro.com/en-us
-
-## Barça Store | Official Barça Store
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-12-07T23:07:16-05:00">December 7, 2021</time>
+Barça Store | Official Barça&nbsp;Store
 https://store.fcbarcelona.com/en/
-
-## CNN International – Breaking News, US News, World News and Video
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-11-30T07:56:29-05:00">November 30, 2021</time>
+CNN International &#8211; Breaking News, US News, World News and&nbsp;Video
 https://edition.cnn.com/
-
-## Magzter – World’s largest digital newsstand with thousands of magazines and newspapers
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-11-30T07:06:58-05:00">November 30, 2021</time>
+Magzter &#8211; World’s largest digital newsstand with thousands of magazines and&nbsp;newspapers
 https://www.magzter.com/
-
-## Fast Company | The future of business
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-11-26T18:52:47-05:00">November 26, 2021</time>
+Fast Company | The future of&nbsp;business
 https://www.fastcompany.com/
-
-## Kmart – Deals on Furniture, Toys, Clothes, Tools, Tablets & TVs
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-11-12T14:32:44-05:00">November 12, 2021</time>
+Kmart &#8211; Deals on Furniture, Toys, Clothes, Tools, Tablets &amp;&nbsp;TVs
 https://m.kmart.com/home
-
-## grubhub
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-11-06T02:20:52-05:00">November 6, 2021</time>
+grubhub
 https://www.grubhub.com/
-
-## Global Communications | Services, Solutions & Satellite Internet | Viasat
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-11-05T14:13:12-05:00">November 5, 2021</time>
+Global Communications | Services, Solutions &amp; Satellite Internet |&nbsp;Viasat
 https://www.viasat.com/
-
-## High-Speed Satellite Internet from HughesNet® | 844-737-2700
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-11-05T14:11:45-05:00">November 5, 2021</time>
+High-Speed Satellite Internet from HughesNet® |&nbsp;844-737-2700
 https://www.hughesnet.com/
-
-## Samsung US | Mobile | TV | Home Electronics | Home Appliances | Samsung US
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-11-03T05:55:45-05:00">November 3, 2021</time>
+Samsung US | Mobile | TV | Home Electronics | Home Appliances | Samsung&nbsp;US
 https://www.samsung.com/us/
-
-## Magazine
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-11-02T14:02:06-05:00">November 2, 2021</time>
+Magazine
 https://fortune.com/magazine/
-
-## Four Roses Bourbon | Kentucky Bourbon Whiskey
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-11-01T07:46:46-05:00">November 1, 2021</time>
+Four Roses Bourbon | Kentucky Bourbon&nbsp;Whiskey
 https://fourrosesbourbon.com/
-
-## New York Magazine
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-31T05:04:07-05:00">October 31, 2021</time>
+New York Magazine
 https://nymag.com/
-
-## Peacock Tv
+Written by Filip Keser<time class="entry-date published" datetime="2021-10-20T10:11:15-05:00">October 20, 2021</time><time class="updated" datetime="2021-10-20T10:12:09-05:00">October 20, 2021</time>
+Peacock Tv
 https://www.peacocktv.com
-
-## WWE News, Results, Photos & Video – Official Site | WWE
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-20T10:09:00-05:00">October 20, 2021</time>
+WWE News, Results, Photos &amp; Video &#8211; Official Site |&nbsp;WWE
 https://www.wwe.com/
-
-## American Express Credit Cards, Rewards & Banking
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-18T01:43:47-05:00">October 18, 2021</time>
+American Express Credit Cards, Rewards &amp;&nbsp;Banking
 https://www.americanexpress.com/
-
-## America First Credit Union – Utah Personal and Business Banking and Loan Services
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-18T01:43:20-05:00">October 18, 2021</time>
+America First Credit Union &#8211; Utah Personal and Business Banking and Loan&nbsp;Services
 https://www.americafirst.com/
-
-## Forbes Advisor – Smart Financial Decisions Made Simple
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-18T01:42:00-05:00">October 18, 2021</time>
+Forbes Advisor – Smart Financial Decisions Made&nbsp;Simple
 https://www.forbes.com/advisor/
-
-## Credit Card Insider | Compare Credit Cards and Build Credit
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-18T01:39:35-05:00">October 18, 2021</time>
+Credit Card Insider | Compare Credit Cards and Build&nbsp;Credit
 https://www.creditcardinsider.com/
-
-## Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-18T01:33:58-05:00">October 18, 2021</time>
+Credit Card, Mortgage, Banking, Auto | Chase Online |&nbsp;Chase.com
 https://www.chase.com/
-
-## Insider
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-18T01:29:07-05:00">October 18, 2021</time>
+Insider
 https://www.insider.com/
-
-## Stream NFL Live, How to watch NFL Internationally | NFL Game Pass
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-17T08:41:37-05:00">October 17, 2021</time>
+Stream NFL Live, How to watch NFL Internationally | NFL Game&nbsp;Pass
 https://www.nflgamepass.com/en
-
-## Apple News+ – Apple
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-17T02:51:13-05:00">October 17, 2021</time>
+Apple News+ &#8211;&nbsp;Apple
 https://www.apple.com/apple-news/
-
-## Apple Store Online – Apple
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-17T02:27:38-05:00">October 17, 2021</time>
+Apple Store Online &#8211;&nbsp;Apple
 https://www.apple.com/store
-
-## Fine Art, Jewels, Watches, Wine Auctions & Sales | Sotheby’s
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-15T08:24:04-05:00">October 15, 2021</time>
+Fine Art, Jewels, Watches, Wine Auctions &amp; Sales |&nbsp;Sotheby&#8217;s
 https://www.sothebys.com/en/
-
-## Movie Tickets & Movie Times | Fandango
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-08T05:05:57-05:00">October 8, 2021</time>
+Movie Tickets &amp; Movie Times |&nbsp;Fandango
 https://www.fandango.com/
-
-## OkCupid: Best Free Dating App & Site to Find a Match Today
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-08T01:43:06-05:00">October 8, 2021</time>
+OkCupid: Best Free Dating App &amp; Site to Find a Match&nbsp;Today
 https://www.okcupid.com/
-
-## Tinder
+Written by Filip Keser<time class="entry-date published" datetime="2021-10-08T01:40:37-05:00">October 8, 2021</time><time class="updated" datetime="2021-10-08T01:41:56-05:00">October 8, 2021</time>
+Tinder
 https://tinder.com
-
-## RENTEON | Car Rental Solution
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-07T22:32:05-05:00">October 7, 2021</time>
+RENTEON | Car Rental&nbsp;Solution
 https://renteon.com/
-
-## Walmart.com | Save Money. Live Better
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-07T13:31:05-05:00">October 7, 2021</time>
+Walmart.com | Save Money. Live&nbsp;Better
 https://www.walmart.com/
-
-## The Verge
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-07T13:27:13-05:00">October 7, 2021</time>
+The Verge
 https://www.theverge.com/
-
-## CBS TV Network Primetime, Daytime, Late Night and Classic Television Shows
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-02T02:46:35-05:00">October 2, 2021</time>
+CBS TV Network Primetime, Daytime, Late Night and Classic Television&nbsp;Shows
 https://www.cbs.com/
-
-## CBS News – Breaking news, 24/7 live streaming news & top stories
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-02T02:44:29-05:00">October 2, 2021</time>
+CBS News &#8211; Breaking news, 24/7 live streaming news &amp; top&nbsp;stories
 https://www.cbsnews.com/
-
-## Investopedia Stock Simulator
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-01T01:46:53-05:00">October 1, 2021</time>
+Investopedia Stock Simulator
 https://www.investopedia.com/simulator/
-
-## Celeb Answers
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-10-01T01:23:04-05:00">October 1, 2021</time>
+Celeb Answers
 https://celebanswers.com/
-
-## SONY PICTURES PRESENTS: MOVIES | Sony Pictures Entertainment
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-30T14:46:20-05:00">September 30, 2021</time>
+SONY PICTURES PRESENTS: MOVIES | Sony Pictures&nbsp;Entertainment
 https://www.sonypictures.com/movies
-
-## Fitify Workouts & Plans
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-30T13:17:32-05:00">September 30, 2021</time>
+Fitify Workouts &amp;&nbsp;Plans
 https://gofitify.com/
-
-## StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-30T13:07:58-05:00">September 30, 2021</time>
+StockX: Sneakers, Streetwear, Trading Cards, Handbags,&nbsp;Watches
 https://stockx.com/
-
-## KicksOnFire.com • Sneaker News & Release Dates
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-30T13:03:36-05:00">September 30, 2021</time>
+KicksOnFire.com • Sneaker News &amp; Release&nbsp;Dates
 https://www.kicksonfire.com/
-
-## Author Media – Innovative Book Promotion For Writers
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-27T12:17:18-05:00">September 27, 2021</time>
+Author Media &#8211; Innovative Book Promotion For&nbsp;Writers
 https://www.authormedia.com/
-
-## Medium – Where good ideas find you.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-27T06:41:38-05:00">September 27, 2021</time>
+Medium – Where good ideas find&nbsp;you.
 https://medium.com/
-
-## Fortune – Fortune 500 Daily & Breaking Business News
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-27T01:39:39-05:00">September 27, 2021</time>
+Fortune &#8211; Fortune 500 Daily &amp; Breaking Business&nbsp;News
 https://fortune.com/
-
-## Bravo TV Official Site
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-26T07:35:29-05:00">September 26, 2021</time>
+Bravo TV Official&nbsp;Site
 https://www.bravotv.com/
-
-## Luxury Style, Travel, and Leisure – Town & Country Magazine
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-26T07:27:45-05:00">September 26, 2021</time>
+Luxury Style, Travel, and Leisure &#8211; Town &amp; Country&nbsp;Magazine
 https://www.townandcountrymag.com/
-
-## Paramount Pictures
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-20T11:13:35-05:00">September 20, 2021</time>
+Paramount Pictures
 https://www.paramount.com/
-
-## WSJ Real Estate
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-17T07:26:50-05:00">September 17, 2021</time>
+WSJ Real Estate
 https://www.wsj.com/news/realestate
-
-## IMDb: Ratings, Reviews, and Where to Watch the Best Movies & TV Shows
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-17T01:58:28-05:00">September 17, 2021</time>
+IMDb: Ratings, Reviews, and Where to Watch the Best Movies &amp; TV&nbsp;Shows
 https://m.imdb.com/
-
-## T-Mobile & Sprint merged to create the leader in 5G
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-16T23:56:11-05:00">September 16, 2021</time>
+T-Mobile &amp; Sprint merged to create the leader in&nbsp;5G
 https://www.t-mobile.com/
-
-## TED: Ideas Worth Spreading
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-15T04:18:52-05:00">September 15, 2021</time>
+TED: Ideas Worth&nbsp;Spreading
 https://www.ted.com/
-
-## NerdWallet: Make all the right money moves
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-12T02:42:15-05:00">September 12, 2021</time>
+NerdWallet: Make all the right money&nbsp;moves
 https://www.nerdwallet.com/
-
-## Walmart.com | Save Money. Live Better.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-11T15:42:09-05:00">September 11, 2021</time>
+Walmart.com | Save Money. Live&nbsp;Better.
 https://www.walmart.com/
-
-## Amazon.ca: Low Prices – Fast Shipping – Millions of Items
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-09-10T06:51:56-05:00">September 10, 2021</time>
+Amazon.ca: Low Prices – Fast Shipping – Millions of&nbsp;Items
 https://www.amazon.ca/
-
-## SaaS SEO Agency – SaaS Marketing Company
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T21:39:52-05:00">August 31, 2021</time>
+SaaS SEO Agency &#8211; SaaS Marketing&nbsp;Company
 https://www.fortis.agency/
-
-## Cloudflare – The Web Performance & Security Company | Cloudflare
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T20:42:43-05:00">August 31, 2021</time>
+Cloudflare &#8211; The Web Performance &amp; Security Company |&nbsp;Cloudflare
 https://www.cloudflare.com/hp/
-
-## WordPress.com: Verify and Set up Google Workspace – Google Workspace Admin Help
+Written by Filip Keser<time class="entry-date published" datetime="2021-08-31T20:38:14-05:00">August 31, 2021</time><time class="updated" datetime="2023-03-21T05:20:15-05:00">March 21, 2023</time>
+WordPress.com: Verify and Set up Google Workspace &#8211; Google Workspace Admin&nbsp;Help
 https://support.google.com/a/answer/7011689?hl=hr
-
-## Empowering App Development for Developers | Docker
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T19:26:56-05:00">August 31, 2021</time>
+Empowering App Development for Developers |&nbsp;Docker
 https://www.docker.com/
-
-## The Keyword | Google
+Written by Filip Keser<time class="entry-date published" datetime="2021-08-31T19:19:19-05:00">August 31, 2021</time><time class="updated" datetime="2023-03-21T05:19:07-05:00">March 21, 2023</time>
+The Keyword |&nbsp;Google
 https://www.blog.google/
-
-## Solutions built for teachers and students | Google for Education
+Written by Filip Keser<time class="entry-date published" datetime="2021-08-31T19:19:06-05:00">August 31, 2021</time><time class="updated" datetime="2023-03-21T05:20:38-05:00">March 21, 2023</time>
+Solutions built for teachers and students | Google for&nbsp;Education
 https://edu.google.com/
-
-## Cratos | CRYPTO EXCHANGE SERVICE
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T18:45:20-05:00">August 31, 2021</time>
+Cratos | CRYPTO EXCHANGE&nbsp;SERVICE
 https://cratos.net/
-
-## Cratos | CRYPTO EXCHANGE SERVICE
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T18:44:11-05:00">August 31, 2021</time>
+Cratos | CRYPTO EXCHANGE&nbsp;SERVICE
 https://cratos.net/
-
-## Access denied | www.bitgo.com used Cloudflare to restrict access
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T18:43:27-05:00">August 31, 2021</time>
+Access denied | www.bitgo.com used Cloudflare to restrict&nbsp;access
 https://www.bitgo.com/
-
-## Cloudflare – The Web Performance & Security Company | Cloudflare
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T18:42:33-05:00">August 31, 2021</time>
+Cloudflare &#8211; The Web Performance &amp; Security Company |&nbsp;Cloudflare
 https://www.cloudflare.com/hp/
-
-## WordPress.com: Verify and Set up Google Workspace – Google Workspace Admin Help
+Written by Filip Keser<time class="entry-date published" datetime="2021-08-31T18:38:03-05:00">August 31, 2021</time><time class="updated" datetime="2023-03-21T05:42:53-05:00">March 21, 2023</time>
+WordPress.com: Verify and Set up Google Workspace &#8211; Google Workspace Admin&nbsp;Help
 https://support.google.com/a/answer/7011689?hl=hr
-
-## ROG Phone｜Phones｜ASUS Global
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T15:26:31-05:00">August 31, 2021</time>
+ROG Phone｜Phones｜ASUS Global
 https://www.asus.com/mobile/phones/ROG-Phone/
-
-## Technology News, Latest & Popular Gadgets Reviews, Specifications, Prices, Mobile Comparison, Technology Videos & Photos | Gadgets Now
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T15:22:56-05:00">August 31, 2021</time>
+Technology News, Latest &amp; Popular Gadgets Reviews, Specifications, Prices, Mobile Comparison, Technology Videos &amp; Photos | Gadgets&nbsp;Now
 https://www.gadgetsnow.com/
-
-## Luxury Hotel in Zagreb :: Esplanade Zagreb Hotel
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T15:16:06-05:00">August 31, 2021</time>
+Luxury Hotel in Zagreb :: Esplanade Zagreb&nbsp;Hotel
 https://www.esplanade.hr/
-
-## ROG Phone｜Phones｜ASUS Global
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T13:26:23-05:00">August 31, 2021</time>
+ROG Phone｜Phones｜ASUS Global
 https://www.asus.com/mobile/phones/ROG-Phone/
-
-## Science news, expert analysis, covid coronavirus research, space tech
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T08:20:10-05:00">August 31, 2021</time>
+Science news, expert analysis, covid coronavirus research, space&nbsp;tech
 https://cosmosmagazine.com/
-
-## Vocal media
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T07:58:07-05:00">August 31, 2021</time>
+Vocal media
 https://vocal.media/vocal-plus?via=filip
-
-## FAMILY PAKET za 2 odrasle osobe i 1 ili 2 djece do 12 godina u Obiteljskom Resortu Urania u Baškoj Vodi uz 2 ili 3 noćenja na bazi Polupansiona, poklon dobrodošlice i uslugu čuvanja za mališane! – Crno Jaje
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T07:31:18-05:00">August 31, 2021</time>
+FAMILY PAKET za 2 odrasle osobe i 1 ili 2 djece do 12 godina u Obiteljskom Resortu Urania u Baškoj Vodi uz 2 ili 3 noćenja na bazi Polupansiona, poklon dobrodošlice i uslugu čuvanja za mališane! &#8211; Crno&nbsp;Jaje
 https://www.crnojaje.hr/
-
-## gol.hr – Sportske vijesti i rezultati
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T07:30:59-05:00">August 31, 2021</time>
+gol.hr &#8211; Sportske vijesti i&nbsp;rezultati
 https://gol.dnevnik.hr/
-
-## Vocal media
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:57:06-05:00">August 31, 2021</time>
+Vocal media
 https://vocal.media/vocal-plus?via=filip
-
-## ArtStation – Learning
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:41:05-05:00">August 31, 2021</time>
+ArtStation &#8211; Learning
 https://www.artstation.com/learning
-
-## ArtStation – Explore
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:38:39-05:00">August 31, 2021</time>
+ArtStation &#8211; Explore
 https://www.artstation.com
-
-## Sancta Domenica Webshop | Top Brandovi na jednom mjestu‎
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:35:56-05:00">August 31, 2021</time>
+Sancta Domenica Webshop | Top Brandovi na jednom&nbsp;mjestu‎
 https://www.sancta-domenica.hr/
-
-## Sancta Domenica Webshop | Top Brandovi na jednom mjestu‎
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:35:47-05:00">August 31, 2021</time>
+Sancta Domenica Webshop | Top Brandovi na jednom&nbsp;mjestu‎
 https://www.sancta-domenica.hr/
-
-## ROG – Republic of Gamers｜Global | For Those Who Dare
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:32:50-05:00">August 31, 2021</time>
+ROG &#8211; Republic of Gamers｜Global | For Those Who&nbsp;Dare
 https://rog.asus.com/
-
-## ASUS USA
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:31:15-05:00">August 31, 2021</time>
+ASUS USA
 https://www.asus.com/us/
-
-## Acer Predator – moćna računala za igranje
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:29:51-05:00">August 31, 2021</time>
+Acer Predator – moćna računala za&nbsp;igranje
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## Acer Predator – moćna računala za igranje
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:25:34-05:00">August 31, 2021</time>
+Acer Predator – moćna računala za&nbsp;igranje
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## Predator Helios 700 | Prijenosna računala | Acer Hrvatska
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:16:01-05:00">August 31, 2021</time>
+Predator Helios 700 | Prijenosna računala | Acer&nbsp;Hrvatska
 https://www.acer.com/ac/hr/HR/content/predator-series/predatorhelios700
-
-## Linker – Content Discovery Platform
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T02:09:20-05:00">August 31, 2021</time>
+Linker &#8211; Content Discovery&nbsp;Platform
 https://linker.hr/
-
-## Science news, expert analysis, covid coronavirus research, space tech
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T01:20:01-05:00">August 31, 2021</time>
+Science news, expert analysis, covid coronavirus research, space&nbsp;tech
 https://cosmosmagazine.com/
-
-## Epic Games Store | Download & Play PC Games, Mods, DLC & More – Epic Games
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:49:14-05:00">August 31, 2021</time>
+Epic Games Store | Download &amp; Play PC Games, Mods, DLC &amp; More – Epic&nbsp;Games
 https://www.epicgames.com/store/en-US/
-
-## ROG – Republic of Gamers｜Global | For Those Who Dare
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:32:58-05:00">August 31, 2021</time>
+ROG &#8211; Republic of Gamers｜Global | For Those Who&nbsp;Dare
 https://rog.asus.com/
-
-## ROG – Republic of Gamers｜Global | For Those Who Dare
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:32:43-05:00">August 31, 2021</time>
+ROG &#8211; Republic of Gamers｜Global | For Those Who&nbsp;Dare
 https://rog.asus.com/
-
-## ROG – Republic of Gamers｜Global | For Those Who Dare
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:32:31-05:00">August 31, 2021</time>
+ROG &#8211; Republic of Gamers｜Global | For Those Who&nbsp;Dare
 https://rog.asus.com/
-
-## Business
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:32:04-05:00">August 31, 2021</time>
+Business
 https://www.asus.com/
-
-## ASUS USA
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:31:09-05:00">August 31, 2021</time>
+ASUS USA
 https://www.asus.com/us/
-
-## Acer Predator – moćna računala za igranje
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:30:16-05:00">August 31, 2021</time>
+Acer Predator – moćna računala za&nbsp;igranje
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## Acer | Channel Portal
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:28:42-05:00">August 31, 2021</time>
+Acer | Channel&nbsp;Portal
 https://partner.acer.com
-
-## Acer | Channel Portal
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:27:27-05:00">August 31, 2021</time>
+Acer | Channel&nbsp;Portal
 https://partner.acer.com
-
-## Acer Predator – moćna računala za igranje
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:25:25-05:00">August 31, 2021</time>
+Acer Predator – moćna računala za&nbsp;igranje
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## Acer Predator – moćna računala za igranje
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:25:17-05:00">August 31, 2021</time>
+Acer Predator – moćna računala za&nbsp;igranje
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## PREDATOR ORION 9000 | Stolno računalo za ekstremno igranje | Acer Hrvatska
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:23:00-05:00">August 31, 2021</time>
+PREDATOR ORION 9000 | Stolno računalo za ekstremno igranje | Acer&nbsp;Hrvatska
 https://www.acer.com/ac/hr/HR/content/predator-series/predatororion9000
-
-## Predator Helios 700 | Prijenosna računala | Acer Hrvatska
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:16:07-05:00">August 31, 2021</time>
+Predator Helios 700 | Prijenosna računala | Acer&nbsp;Hrvatska
 https://www.acer.com/ac/hr/HR/content/predator-series/predatorhelios700
-
-## Predator Helios 700 | Prijenosna računala | Acer Hrvatska
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-31T00:15:52-05:00">August 31, 2021</time>
+Predator Helios 700 | Prijenosna računala | Acer&nbsp;Hrvatska
 https://www.acer.com/ac/hr/HR/content/predator-series/predatorhelios700
-
-## Naslovna – HPB Invest
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T20:45:16-05:00">August 30, 2021</time>
+Naslovna &#8211; HPB&nbsp;Invest
 https://www.hpb-invest.hr/
-
-## NCS (NoCopyrightSounds) – free music for content creators
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T19:56:27-05:00">August 30, 2021</time>
+NCS (NoCopyrightSounds) &#8211; free music for content&nbsp;creators
 https://ncs.io/
-
-## NIO | Next Generation Smart Electric Vehicles
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T19:22:36-05:00">August 30, 2021</time>
+NIO | Next Generation Smart Electric&nbsp;Vehicles
 https://www.nio.com/
-
-## Naslovna – HPB Invest
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T18:45:24-05:00">August 30, 2021</time>
+Naslovna &#8211; HPB&nbsp;Invest
 https://www.hpb-invest.hr/
-
-## DIY.org – The Learning Community For Kids • Online Courses
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T18:17:21-05:00">August 30, 2021</time>
+DIY.org &#8211; The Learning Community For Kids • Online&nbsp;Courses
 https://diy.org/
-
-## Sell Worldwide with eBay
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T18:07:28-05:00">August 30, 2021</time>
+Sell Worldwide with&nbsp;eBay
 https://export.ebay.com/en/
-
-## NCS (NoCopyrightSounds) – free music for content creators
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T17:56:37-05:00">August 30, 2021</time>
+NCS (NoCopyrightSounds) &#8211; free music for content&nbsp;creators
 https://ncs.io/
-
-## NCS (NoCopyrightSounds) – free music for content creators
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T17:56:19-05:00">August 30, 2021</time>
+NCS (NoCopyrightSounds) &#8211; free music for content&nbsp;creators
 https://ncs.io/
-
-## Sell Worldwide with eBay
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T16:07:21-05:00">August 30, 2021</time>
+Sell Worldwide with&nbsp;eBay
 https://export.ebay.com/en/
-
-## Protis – Naslovnica
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T15:03:31-05:00">August 30, 2021</time>
+Protis &#8211; Naslovnica
 https://www.protis.hr/
-
-## Links.hr: Informatika i oprema, Sport, Dronovi i Roboti, Bijela tehnika i Kućanski aparati
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T15:03:17-05:00">August 30, 2021</time>
+Links.hr: Informatika i oprema, Sport, Dronovi i Roboti, Bijela tehnika i Kućanski&nbsp;aparati
 https://www.links.hr/hr/
-
-## RONIS – hifi, smart tv, car audio, mobiteli i računala
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T15:01:31-05:00">August 30, 2021</time>
+RONIS &#8211; hifi, smart tv, car audio, mobiteli i&nbsp;računala
 https://www.ronis.hr/
-
-## RONIS – hifi, smart tv, car audio, mobiteli i računala
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T15:01:23-05:00">August 30, 2021</time>
+RONIS &#8211; hifi, smart tv, car audio, mobiteli i&nbsp;računala
 https://www.ronis.hr/
-
-## Northern Illinois University – Your Future. Our Focus.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T14:23:33-05:00">August 30, 2021</time>
+Northern Illinois University &#8211; Your Future. Our&nbsp;Focus.
 https://www.niu.edu/index.shtml
-
-## Tom’s Guide | Tech Product Reviews, Top Picks and How To
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T13:23:48-05:00">August 30, 2021</time>
+Tom&#8217;s Guide | Tech Product Reviews, Top Picks and How&nbsp;To
 https://www.tomsguide.com/
-
-## Welcome | AWS Training & Certification
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T13:06:14-05:00">August 30, 2021</time>
+Welcome | AWS Training &amp;&nbsp;Certification
 https://www.aws.training/
-
-## Official HP® Store | Laptops, Desktops, Monitors & Printers – HP Store UK
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T11:50:36-05:00">August 30, 2021</time>
+Official HP® Store | Laptops, Desktops, Monitors &amp; Printers &#8211; HP Store&nbsp;UK
 https://www.hp.com/gb-en/shop/
-
-## Official HP® Store | Laptops, Desktops, Monitors & Printers – HP Store UK
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T11:50:27-05:00">August 30, 2021</time>
+Official HP® Store | Laptops, Desktops, Monitors &amp; Printers &#8211; HP Store&nbsp;UK
 https://www.hp.com/gb-en/shop/
-
-## Naslovnica – tportal
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T11:31:17-05:00">August 30, 2021</time>
+Naslovnica &#8211; tportal
 https://www.tportal.hr/
-
-## AWS re/Start
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T11:12:32-05:00">August 30, 2021</time>
+AWS re/Start
 https://aws.amazon.com/training/restart/
-
-## AWS Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T11:09:23-05:00">August 30, 2021</time>
+AWS Academy
 https://aws.amazon.com/training/awsacademy/
-
-## AWS Certified Security – Specialty
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T11:08:30-05:00">August 30, 2021</time>
+AWS Certified Security &#8211;&nbsp;Specialty
 https://aws.amazon.com/certification/certified-security-specialty/
-
-## AWS Certification – Validate AWS Cloud Skills – Get AWS Certified
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T11:07:10-05:00">August 30, 2021</time>
+AWS Certification &#8211; Validate AWS Cloud Skills &#8211; Get AWS&nbsp;Certified
 https://aws.amazon.com/certification/
-
-## Welcome | AWS Training & Certification
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T11:06:06-05:00">August 30, 2021</time>
+Welcome | AWS Training &amp;&nbsp;Certification
 https://www.aws.training/
-
-## Naslovna – VIO d.o.o.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T10:55:55-05:00">August 30, 2021</time>
+Naslovna &#8211; VIO&nbsp;d.o.o.
 https://www.vio.hr/
-
-## Checkaso — ASO Tool | App Store Optimization for iOS & Android
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T10:48:04-05:00">August 30, 2021</time>
+Checkaso — ASO Tool | App Store Optimization for iOS &amp;&nbsp;Android
 https://checkaso.io/
-
-## Official HP® Store | Laptops, Desktops, Monitors & Printers – HP Store UK
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T09:50:43-05:00">August 30, 2021</time>
+Official HP® Store | Laptops, Desktops, Monitors &amp; Printers &#8211; HP Store&nbsp;UK
 https://www.hp.com/gb-en/shop/
-
-## Business HTZ
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T09:20:32-05:00">August 30, 2021</time>
+Business HTZ
 https://www.htz.hr/hr-HR
-
-## Vodnikova – škola stranih jezika – Naslovnica
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T09:15:14-05:00">August 30, 2021</time>
+Vodnikova &#8211; škola stranih jezika &#8211;&nbsp;Naslovnica
 https://www.vodnikova.hr/hr/
-
-## NACIONAL.HR – online izdanje najutjecajnijeg političkog tjednika
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T09:11:13-05:00">August 30, 2021</time>
+NACIONAL.HR – online izdanje najutjecajnijeg političkog&nbsp;tjednika
 https://www.nacional.hr/
-
-## LoyaltyLobby – Making sense of travel loyalty programs.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T09:10:56-05:00">August 30, 2021</time>
+LoyaltyLobby &#8211; Making sense of travel loyalty&nbsp;programs.
 https://loyaltylobby.com/
-
-## Klix.ba
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T09:10:21-05:00">August 30, 2021</time>
+Klix.ba
 https://www.klix.ba/
-
-## Learn web design with free video courses and tutorials | Webflow University
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T07:22:00-05:00">August 30, 2021</time>
+Learn web design with free video courses and tutorials | Webflow&nbsp;University
 https://university.webflow.com/
-
-## Webflow: The no-code platform for web design and development
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T07:21:46-05:00">August 30, 2021</time>
+Webflow: The no-code platform for web design and&nbsp;development
 https://webflow.com/
-
-## PC Game System Requirements, News And Hardware Test Tools
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T07:12:42-05:00">August 30, 2021</time>
+PC Game System Requirements, News And Hardware Test&nbsp;Tools
 https://www.game-debate.com/
-
-## Međunarodno | Volvo Cars – Hrvatska
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T07:12:19-05:00">August 30, 2021</time>
+Međunarodno | Volvo Cars &#8211;&nbsp;Hrvatska
 https://www.volvocars.com/hr
-
-## Start a Business, Grow Your Business – Shopify 14-Day Free Trial
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T06:25:27-05:00">August 30, 2021</time>
+Start a Business, Grow Your Business &#8211; Shopify 14-Day Free&nbsp;Trial
 https://www.shopify.com/
-
-## Tom’s Guide | Tech Product Reviews, Top Picks and How To
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T06:23:41-05:00">August 30, 2021</time>
+Tom&#8217;s Guide | Tech Product Reviews, Top Picks and How&nbsp;To
 https://www.tomsguide.com/
-
-## Besplatno otvaranje 3 tarot karte | astro24.net
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T06:21:02-05:00">August 30, 2021</time>
+Besplatno otvaranje 3 tarot karte |&nbsp;astro24.net
 https://astro24.net/
-
-## Welcome | AWS Training & Certification
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T06:06:21-05:00">August 30, 2021</time>
+Welcome | AWS Training &amp;&nbsp;Certification
 https://www.aws.training/
-
-## The Power Query user interface | Microsoft Docs
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T02:25:44-05:00">August 30, 2021</time>
+The Power Query user interface | Microsoft&nbsp;Docs
 https://docs.microsoft.com/en-us/power-query/power-query-ui
-
-## XenForo – Compelling community forum platform
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T02:17:29-05:00">August 30, 2021</time>
+XenForo &#8211; Compelling community forum&nbsp;platform
 https://xenforo.com/
-
-## LoyaltyLobby – Making sense of travel loyalty programs.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-30T02:10:49-05:00">August 30, 2021</time>
+LoyaltyLobby &#8211; Making sense of travel loyalty&nbsp;programs.
 https://loyaltylobby.com/
-
-## The Fitboxing Revolution | An exciting business opportunity for your club
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T19:26:15-05:00">August 29, 2021</time>
+The Fitboxing Revolution | An exciting business opportunity for your&nbsp;club
 https://www.f3fitbox.com/
-
-## CAVIAR – Luxury iPhones and Cases | Official Website
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T19:24:08-05:00">August 29, 2021</time>
+CAVIAR &#8211; Luxury iPhones and Cases | Official&nbsp;Website
 https://caviar.global/
-
-## CAVIAR – Luxury iPhones and Cases | Official Website
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T19:23:59-05:00">August 29, 2021</time>
+CAVIAR &#8211; Luxury iPhones and Cases | Official&nbsp;Website
 https://caviar.global/
-
-## portal Nikola Tesla – CARNET
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T16:50:30-05:00">August 29, 2021</time>
+portal Nikola Tesla &#8211;&nbsp;CARNET
 https://www.carnet.hr/usluga/portal-nikola-tesla/
-
-## Nacionalni portal za učenje na daljinu “Nikola Tesla”
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T16:50:21-05:00">August 29, 2021</time>
+Nacionalni portal za učenje na daljinu &#8220;Nikola&nbsp;Tesla&#8221;
 https://tesla.carnet.hr/
-
-## Hrvatska akademska i istraživačka mreža – CARNET
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T16:50:12-05:00">August 29, 2021</time>
+Hrvatska akademska i istraživačka mreža –&nbsp;CARNET
 https://www.carnet.hr/
-
-## Product reviews, how-tos, deals and the latest tech news – CNET
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T15:45:47-05:00">August 29, 2021</time>
+Product reviews, how-tos, deals and the latest tech news &#8211;&nbsp;CNET
 https://www.cnet.com/
-
-## PC Gamer
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T14:43:20-05:00">August 29, 2021</time>
+PC Gamer
 https://www.pcgamer.com/uk/
-
-## XDA Portal & Forums
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T14:39:17-05:00">August 29, 2021</time>
+XDA Portal &amp;&nbsp;Forums
 https://www.xda-developers.com/
-
-## Roadshow Auto Buying Program – Roadshow
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T13:44:06-05:00">August 29, 2021</time>
+Roadshow Auto Buying Program &#8211;&nbsp;Roadshow
 https://www.cnet.com/roadshow/roadshow-auto-buying-program/
-
-## New cars, car reviews and pricing – Roadshow by CNET
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T13:42:54-05:00">August 29, 2021</time>
+New cars, car reviews and pricing &#8211; Roadshow by&nbsp;CNET
 https://www.cnet.com/roadshow/
-
-## Synonyms and Antonyms of Words | Thesaurus.com
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T13:24:38-05:00">August 29, 2021</time>
+Synonyms and Antonyms of Words |&nbsp;Thesaurus.com
 https://www.thesaurus.com/
-
-## Dictionary.com | Meanings and Definitions of Words at Dictionary.com
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T13:24:08-05:00">August 29, 2021</time>
+Dictionary.com | Meanings and Definitions of Words at&nbsp;Dictionary.com
 https://www.dictionary.com/
-
-## Optika Erjavec
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T13:20:08-05:00">August 29, 2021</time>
+Optika Erjavec
 https://optikaerjavec.eu/
-
-## Video Games Reviews & News – GameSpot
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T13:09:04-05:00">August 29, 2021</time>
+Video Games Reviews &amp; News &#8211;&nbsp;GameSpot
 https://www.gamespot.com/
-
-## GamesRadar+
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T13:05:45-05:00">August 29, 2021</time>
+GamesRadar+
 https://www.gamesradar.com/uk/
-
-## Internet-Filiale – Sparkasse Dillingen-Nördlingen
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T09:49:58-05:00">August 29, 2021</time>
+Internet-Filiale &#8211; Sparkasse Dillingen-Nördlingen
 https://www.spk-dlg-noe.de/de/home.html
-
-## Total TV – Bogat TV program
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T01:19:45-05:00">August 29, 2021</time>
+Total TV &#8211; Bogat TV&nbsp;program
 https://totaltv.hr/
-
-## Školska knjiga – vaša najveća online knjižara
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T00:54:12-05:00">August 29, 2021</time>
+Školska knjiga &#8211; vaša najveća online&nbsp;knjižara
 https://shop.skolskaknjiga.hr/
-
-## Learn computer programming | Online courses from JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-29T00:31:12-05:00">August 29, 2021</time>
+Learn computer programming | Online courses from JetBrains&nbsp;Academy
 https://www.jetbrains.com/academy/
-
-## Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft Surface
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T23:45:23-05:00">August 28, 2021</time>
+Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft&nbsp;Surface
 https://www.microsoft.com/en-us/surface/devices/surface-duo
-
-## Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft Surface
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T23:45:15-05:00">August 28, 2021</time>
+Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft&nbsp;Surface
 https://www.microsoft.com/en-us/surface/devices/surface-duo
-
-## All Developer Tools and Products by JetBrains
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:51:07-05:00">August 28, 2021</time>
+All Developer Tools and Products by&nbsp;JetBrains
 https://www.jetbrains.com/products/
-
-## All Developer Tools and Products by JetBrains
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:50:03-05:00">August 28, 2021</time>
+All Developer Tools and Products by&nbsp;JetBrains
 https://www.jetbrains.com/products/
-
-## Partners – JetBrains
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:48:21-05:00">August 28, 2021</time>
+Partners &#8211; JetBrains
 https://www.jetbrains.com/company/partners/
-
-## Track Java Desktop Application Developer – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:45:38-05:00">August 28, 2021</time>
+Track Java Desktop Application Developer – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/9
-
-## Track Natural Language Processing – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:45:21-05:00">August 28, 2021</time>
+Track Natural Language Processing – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/10
-
-## Track Java Core – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:44:53-05:00">August 28, 2021</time>
+Track Java Core – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/15
-
-## Track Java for Beginners – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:44:39-05:00">August 28, 2021</time>
+Track Java for Beginners – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/8
-
-## Track Java Developer – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:44:23-05:00">August 28, 2021</time>
+Track Java Developer – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/17
-
-## Track Java Backend Developer – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:44:08-05:00">August 28, 2021</time>
+Track Java Backend Developer – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/12
-
-## Track Kotlin Developer – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:43:24-05:00">August 28, 2021</time>
+Track Kotlin Developer – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/3
-
-## Track Kotlin Basics – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:42:03-05:00">August 28, 2021</time>
+Track Kotlin Basics – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/18
-
-## Track Python Developer – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:41:26-05:00">August 28, 2021</time>
+Track Python Developer – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/2
-
-## Track Python for Beginners – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:37:28-05:00">August 28, 2021</time>
+Track Python for Beginners – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/6
-
-## Track Frontend Developer – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:36:16-05:00">August 28, 2021</time>
+Track Frontend Developer – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/5
-
-## Track Java Developer – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:34:37-05:00">August 28, 2021</time>
+Track Java Developer – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks/17
-
-## Tracks – JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:32:32-05:00">August 28, 2021</time>
+Tracks – JetBrains&nbsp;Academy
 https://hyperskill.org/tracks
-
-## Learn computer programming | Online courses from JetBrains Academy
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T22:30:43-05:00">August 28, 2021</time>
+Learn computer programming | Online courses from JetBrains&nbsp;Academy
 https://www.jetbrains.com/academy/
-
-## Najam ureda i poslovnog prostora u Zagrebu – bee@work
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T21:45:50-05:00">August 28, 2021</time>
+Najam ureda i poslovnog prostora u Zagrebu &#8211;&nbsp;bee@work
 https://www.bee-at-work.hr/
-
-## Automated Text and Content Creation – Xanevo
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T19:44:09-05:00">August 28, 2021</time>
+Automated Text and Content Creation &#8211;&nbsp;Xanevo
 https://www.xanevo.com/
-
-## Amazon.com. Spend less. Smile more.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T17:07:19-05:00">August 28, 2021</time>
+Amazon.com. Spend less. Smile&nbsp;more.
 https://www.amazon.com/
-
-## Amazon.com. Spend less. Smile more.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T17:07:03-05:00">August 28, 2021</time>
+Amazon.com. Spend less. Smile&nbsp;more.
 https://www.amazon.com/
-
-## StreamYard
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T16:52:06-05:00">August 28, 2021</time>
+StreamYard
 https://streamyard.com/
-
-## 优酷视频-首页
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T16:37:32-05:00">August 28, 2021</time>
+优酷视频-首页
 https://www.youku.com/?spm=a2hww.12518357.yklogo.1
-
-## REHAU Hrvatska – Proizvođač rješenja na bazi polimera
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T15:36:46-05:00">August 28, 2021</time>
+REHAU Hrvatska – Proizvođač rješenja na bazi&nbsp;polimera
 https://www.rehau.com/hr-hr
-
-## Amazon.com. Spend less. Smile more.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T15:06:55-05:00">August 28, 2021</time>
+Amazon.com. Spend less. Smile&nbsp;more.
 https://www.amazon.com/
-
-## Amazon.com. Spend less. Smile more.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T15:06:21-05:00">August 28, 2021</time>
+Amazon.com. Spend less. Smile&nbsp;more.
 https://www.amazon.com/
-
-## PC shop – Servis i Prodaja Računala Zagreb | Povoljne cijene | MagazinRS
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T14:59:57-05:00">August 28, 2021</time>
+PC shop &#8211; Servis i Prodaja Računala Zagreb | Povoljne cijene |&nbsp;MagazinRS
 https://www.pcshop.hr/
-
-## StreamYard
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T14:52:15-05:00">August 28, 2021</time>
+StreamYard
 https://streamyard.com/
-
-## Robb Report – The Best Luxury Cars, Jets, Yachts, Travel, Watches
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T14:38:12-05:00">August 28, 2021</time>
+Robb Report – The Best Luxury Cars, Jets, Yachts, Travel,&nbsp;Watches
 https://robbreport.com/
-
-## Trustpilot Reviews: Experience the power of customer reviews
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T11:40:01-05:00">August 28, 2021</time>
+Trustpilot Reviews: Experience the power of customer&nbsp;reviews
 https://www.trustpilot.com/
-
-## Cloudflare – The Web Performance & Security Company | Cloudflare
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T11:39:40-05:00">August 28, 2021</time>
+Cloudflare &#8211; The Web Performance &amp; Security Company |&nbsp;Cloudflare
 https://www.cloudflare.com/hp/
-
-## Website Security | Trust Guard
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T11:39:14-05:00">August 28, 2021</time>
+Website Security | Trust&nbsp;Guard
 https://www.trustguard.com/index.php
-
-## Get more Google Seller Ratings and Product Reviews.
+Written by Filip Keser<time class="entry-date published" datetime="2021-08-28T11:24:24-05:00">August 28, 2021</time><time class="updated" datetime="2023-03-21T05:43:22-05:00">March 21, 2023</time>
+Get more Google Seller Ratings and Product&nbsp;Reviews.
 https://www.shopperapproved.com/
-
-## Collect up to 10x more Seller Ratings and Reviews.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T11:23:57-05:00">August 28, 2021</time>
+Collect up to 10x more Seller Ratings and&nbsp;Reviews.
 https://www.shopperapproved.com/merchantreviewsoftware.php
-
-## MAD CATZ: Official Site – Dare to Lead
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T11:12:53-05:00">August 28, 2021</time>
+MAD CATZ: Official Site &#8211; Dare to&nbsp;Lead
 https://www.madcatz.com/en/Home/Index
-
-## Gaming Accessories | PC Gaming Accessories | Lenovo US | Lenovo US
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T11:10:54-05:00">August 28, 2021</time>
+Gaming Accessories | PC Gaming Accessories | Lenovo US | Lenovo&nbsp;US
 https://www.lenovo.com/us/en/d/accessories-and-monitors/gaming-accessories/
-
-## Computer Accessories & Software | Lenovo US
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T11:10:16-05:00">August 28, 2021</time>
+Computer Accessories &amp; Software | Lenovo&nbsp;US
 https://www.lenovo.com/us/en/accessories-and-software
-
-## Lenovo Official US Site | Laptops, PCs, Tablets & Data Center | Lenovo US
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T11:00:57-05:00">August 28, 2021</time>
+Lenovo Official US Site | Laptops, PCs, Tablets &amp; Data Center | Lenovo&nbsp;US
 https://www.lenovo.com/us/en/
-
-## Amazon.com. Spend less. Smile more.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T10:07:12-05:00">August 28, 2021</time>
+Amazon.com. Spend less. Smile&nbsp;more.
 https://www.amazon.com/
-
-## Trustpilot Reviews: Experience the power of customer reviews
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:40:08-05:00">August 28, 2021</time>
+Trustpilot Reviews: Experience the power of customer&nbsp;reviews
 https://www.trustpilot.com/
-
-## Cloudflare – The Web Performance & Security Company | Cloudflare
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:39:48-05:00">August 28, 2021</time>
+Cloudflare &#8211; The Web Performance &amp; Security Company |&nbsp;Cloudflare
 https://www.cloudflare.com/hp/
-
-## Website Security | Trust Guard
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:39:22-05:00">August 28, 2021</time>
+Website Security | Trust&nbsp;Guard
 https://www.trustguard.com/index.php
-
-## Breguet | Swiss Luxury Watches – since 1775
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:37:48-05:00">August 28, 2021</time>
+Breguet | Swiss Luxury Watches &#8211; since&nbsp;1775
 https://www.breguet.com/en/home
-
-## Get more Google Seller Ratings and Product Reviews.
+Written by Filip Keser<time class="entry-date published" datetime="2021-08-28T09:24:30-05:00">August 28, 2021</time><time class="updated" datetime="2023-03-21T05:43:59-05:00">March 21, 2023</time>
+Get more Google Seller Ratings and Product&nbsp;Reviews.
 https://www.shopperapproved.com/
-
-## ICY BOX – Always well connected.
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:17:33-05:00">August 28, 2021</time>
+ICY BOX &#8211; Always well&nbsp;connected.
 https://icybox.de/en/
-
-## StarTech.com USB C Multiport Adapter, USB Type-C Mini Dock with HDMI 4K or 1080p VGA Video, 100W PD Passthrough, 3x USB 3.0, Gigabit Ethernet, SD & MicroSD Card Reader, USB 3.0 Adapter – USB C HDMI Travel Dock (DKT30CHVSCPD) – docking station – USB-C – VGA, HDMI – GigE | Lenovo US
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:07:29-05:00">August 28, 2021</time>
+StarTech.com USB C Multiport Adapter, USB Type-C Mini Dock with HDMI 4K or 1080p VGA Video, 100W PD Passthrough, 3x USB 3.0, Gigabit Ethernet, SD &amp; MicroSD Card Reader, USB 3.0 Adapter &#8211; USB C HDMI Travel Dock (DKT30CHVSCPD) &#8211; docking station &#8211; USB-C &#8211; VGA, HDMI &#8211; GigE | Lenovo&nbsp;US
 https://www.lenovo.com/us/en/p/accessories-and-software/docking/docking_usb-docks-(universal-cable-docks)/78024264
-
-## Lenovo® Official Site | Laptops, Tablets, Desktops, smart devices, phones and Data Center | Lenovo Croatia
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:06:22-05:00">August 28, 2021</time>
+Lenovo® Official Site | Laptops, Tablets, Desktops, smart devices, phones and Data Center | Lenovo&nbsp;Croatia
 https://www.lenovo.com/hr/hr/
-
-## Lenovo® Official Site | Laptops, Tablets, Desktops, smart devices, phones and Data Center | Lenovo Croatia
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:05:29-05:00">August 28, 2021</time>
+Lenovo® Official Site | Laptops, Tablets, Desktops, smart devices, phones and Data Center | Lenovo&nbsp;Croatia
 https://www.lenovo.com/hr/hr/
-
-## Shop for Home and Home Office
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:03:10-05:00">August 28, 2021</time>
+Shop for Home and Home&nbsp;Office
 https://www.dell.com
-
-## Lenovo Official US Site | Laptops, PCs, Tablets & Data Center | Lenovo US
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:01:08-05:00">August 28, 2021</time>
+Lenovo Official US Site | Laptops, PCs, Tablets &amp; Data Center | Lenovo&nbsp;US
 https://www.lenovo.com/us/en/
-
-## Lenovo Official US Site | Laptops, PCs, Tablets & Data Center | Lenovo US
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T09:00:08-05:00">August 28, 2021</time>
+Lenovo Official US Site | Laptops, PCs, Tablets &amp; Data Center | Lenovo&nbsp;US
 https://www.lenovo.com/us/en/
-
-## Naslovnica – Pikaj.hr
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T08:44:35-05:00">August 28, 2021</time>
+Naslovnica &#8211; Pikaj.hr
 https://pikaj.hr/
-
-## Naslovnica – Pikaj.hr
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-28T08:44:24-05:00">August 28, 2021</time>
+Naslovnica &#8211; Pikaj.hr
 https://pikaj.hr/
-
-## Premium Bootstrap Themes and Templates: Download @ Creative Tim
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-27T22:17:50-05:00">August 27, 2021</time>
+Premium Bootstrap Themes and Templates: Download @ Creative&nbsp;Tim
 https://www.creative-tim.com/
-
-## Croatia Small Ship Cruises & Tours 2021 & 2022 | Cruise Croatia
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-27T21:54:27-05:00">August 27, 2021</time>
+Croatia Small Ship Cruises &amp; Tours 2021 &amp; 2022 | Cruise&nbsp;Croatia
 https://cruisecroatia.com/
-
-## Top4Mobile.hr – Maske i torbice za mobitele
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-27T12:11:37-05:00">August 27, 2021</time>
+Top4Mobile.hr &#8211; Maske i torbice za&nbsp;mobitele
 https://top4mobile.hr/
-
-## Baseus Global | Official Website
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-27T10:20:32-05:00">August 27, 2021</time>
+Baseus Global | Official&nbsp;Website
 https://store.baseus.com/home
-
-## Autowill,Opel partner Zagreb, Pula, Vukovar, Vinkovci, S. Brod, Poreč
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-27T10:02:19-05:00">August 27, 2021</time>
+Autowill,Opel partner Zagreb, Pula, Vukovar, Vinkovci, S. Brod,&nbsp;Poreč
 https://opel.autowill.hr/
-
-## Home | Top Gear
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-27T07:55:05-05:00">August 27, 2021</time>
+Home | Top&nbsp;Gear
 https://www.topgear.com/
-
-## Home | Top Gear
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-27T05:54:56-05:00">August 27, 2021</time>
+Home | Top&nbsp;Gear
 https://www.topgear.com/
-
-## Surfshark: Secure Your Digital Life
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-27T00:46:53-05:00">August 27, 2021</time>
+Surfshark: Secure Your Digital&nbsp;Life
 https://surfshark.com/
-
-## Formative
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-26T20:52:58-05:00">August 26, 2021</time>
+Formative
 https://www.formative.com/pricing
-
-## Formative
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-26T20:52:49-05:00">August 26, 2021</time>
+Formative
 https://www.formative.com/pricing
-
-## Versace Official Online Store Europe | Fashion Clothing & Accessories
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-26T20:00:06-05:00">August 26, 2021</time>
+Versace Official Online Store Europe | Fashion Clothing &amp;&nbsp;Accessories
 https://www.versace.com/eu/en/home/
-
-## sve.hr
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-26T19:15:32-05:00">August 26, 2021</time>
+sve.hr
 https://www.sve.hr/
-
-## Ondato: complete and cost-effective compliance management suite
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-26T17:22:34-05:00">August 26, 2021</time>
+Ondato: complete and cost-effective compliance management&nbsp;suite
 https://ondato.com/
-
-## Home – Healthy Bite
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-26T13:58:23-05:00">August 26, 2021</time>
+Home &#8211; Healthy&nbsp;Bite
 http://healthybite.rs/
-
-## Redragon | Keyboards, Mice, and more – Official Site‎ – REDRAGON ZONE
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-26T13:48:26-05:00">August 26, 2021</time>
+Redragon | Keyboards, Mice, and more &#8211; Official Site‎ – REDRAGON&nbsp;ZONE
 https://www.redragonzone.com/
-
-## Ondato: complete and cost-effective compliance management suite
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-26T12:22:25-05:00">August 26, 2021</time>
+Ondato: complete and cost-effective compliance management&nbsp;suite
 https://ondato.com/
-
-## Joom. Easy shopping, fast shipping
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-26T04:17:49-05:00">August 26, 2021</time>
+Joom. Easy shopping, fast&nbsp;shipping
 https://www.joom.com/en
-
-## Digital Advertising Platform | Criteo
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T23:25:59-05:00">August 25, 2021</time>
+Digital Advertising Platform |&nbsp;Criteo
 https://www.criteo.com/technology/advertising-platform/
-
-## Programmatic advertising | BidTheatre Demand Side Platform
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T20:33:03-05:00">August 25, 2021</time>
+Programmatic advertising | BidTheatre Demand Side&nbsp;Platform
 https://www.bidtheatre.com/
-
-## ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T20:31:44-05:00">August 25, 2021</time>
+ShareThis: Free Share Buttons &amp; Plugins, Global Behavioral Data&nbsp;Solutions
 https://sharethis.com/
-
-## AdMaxim Inc. – Integrated Digital Advertising Platform
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T20:31:04-05:00">August 25, 2021</time>
+AdMaxim Inc. – Integrated Digital Advertising&nbsp;Platform
 http://www.admaxim.com/
-
-## Kwanko – Your Performance Marketing Partner
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T20:30:32-05:00">August 25, 2021</time>
+Kwanko &#8211; Your Performance Marketing&nbsp;Partner
 https://www.kwanko.com/
-
-## SSL Digital Certificate Authority – Encryption & Authentication
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T18:39:25-05:00">August 25, 2021</time>
+SSL Digital Certificate Authority &#8211; Encryption &amp;&nbsp;Authentication
 https://www.digicert.com/
-
-## Partner Inbound
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T17:52:28-05:00">August 25, 2021</time>
+Partner Inbound
 https://www.letsdeel.com/partner-program
-
-## Affiliates
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T17:51:12-05:00">August 25, 2021</time>
+Affiliates
 https://www.letsdeel.com/affiliates
-
-## Fur Clothing for Women – Made of 100% Real Fur – Aria Moda
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T16:35:07-05:00">August 25, 2021</time>
+Fur Clothing for Women &#8211; Made of 100% Real Fur &#8211; Aria&nbsp;Moda
 https://aria-moda.com/
-
-## Women’s Fur Coats – Fur Clothing for Women – Aria Moda
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T16:34:41-05:00">August 25, 2021</time>
+Women&#8217;s Fur Coats &#8211; Fur Clothing for Women &#8211; Aria&nbsp;Moda
 https://aria-moda.com/category/fur-coats/
-
-## Free Cloud Computing Services – AWS
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T14:12:09-05:00">August 25, 2021</time>
+Free Cloud Computing Services &#8211;&nbsp;AWS
 https://aws.amazon.com/free/
-
-## Mydataknox.hr | Brz i pouzdan cloud
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T14:10:09-05:00">August 25, 2021</time>
+Mydataknox.hr | Brz i pouzdan&nbsp;cloud
 https://mydataknox.hr/
-
-## Compute Engine: Virtual Machines (VMs)  | Google Cloud
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T14:09:04-05:00">August 25, 2021</time>
+Compute Engine: Virtual Machines (VMs)  | Google&nbsp;Cloud
 https://cloud.google.com/compute?hl=hr
-
-## Consent Management Platform (CMP) | Usercentrics
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T08:43:16-05:00">August 25, 2021</time>
+Consent Management Platform (CMP) |&nbsp;Usercentrics
 https://usercentrics.com/
-
-## Wayfarer
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T07:16:02-05:00">August 25, 2021</time>
+Wayfarer
 https://www.wayfarer.hr/
-
-## Diagnose and code your car | Carly OBD
+Written by Filip Keser<time class="entry-date published updated" datetime="2021-08-25T06:44:19-05:00">August 25, 2021</time>
+Diagnose and code your car | Carly&nbsp;OBD
 https://www.mycarly.com/
-
-## Consent Management Platform (CMP) | Usercentrics
-https://usercentrics.com/
-
-## Buy & Sell BTC, ETH, Crypto at $0 Fees l AAX Bitcoin Futures Exchange
-https://www.aaxpro.com/en-US/m/
-
-## Ethereum (ETH) Blockchain Explorer
-https://etherscan.io/
-
-## Online marketing. Simplified | Adzooma
-https://www.adzooma.com/
-
-## Adzooma Marketplace | Find The Right Service For Your Business | Adzooma Marketplace
-https://marketplace.adzooma.com/
-
-## Tiltify – Made for Fundraisers
-https://tiltify.com/
-
-## StreamElements OBS.Live | Streaming Open Broadcaster Software
-https://streamelements.com/obslive
-
-## Launch, monetize, and scale with Xsolla tools and services | Xsolla
-https://xsolla.com/
-
-## Crossclip | The Easiest Way to Convert Your Twitch Clips
-https://crossclip.com/
-
-## Crossclip | The Easiest Way to Convert Your Twitch Clips
-https://crossclip.com/
-
-## Launch, monetize, and scale with Xsolla tools and services | Xsolla
-https://xsolla.com/
-
-## Launch, monetize, and scale with Xsolla tools and services | Xsolla
-https://xsolla.com/
-
-## Launch, monetize, and scale with Xsolla tools and services | Xsolla
-https://xsolla.com/
-
-## Premiere Pro free download & free trial | Adobe Premiere Pro
-https://www.adobe.com/products/premiere/free-trial-download.html
-
-## Porsche Croatia
-https://www.porschecroatia.hr/
-
-## Naslovnica
-https://www.volkswagen.hr/
-
-## LinkedIn Campaign Manager
-https://www.linkedin.com/campaignmanager/new-advertiser
-
-## Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
-https://business.linkedin.com/marketing-solutions
-
-## Online Learning & Training Platform for Organizations | LinkedIn Learning
-https://learning.linkedin.com/
-
-## Physical and Virtual Visa Commercial Cards vol.2 | Payhawk | Payhawk
-https://payhawk.com/
-
-## Payhawk | The Financial System of Tomorrow with NextGen Visa Cards
-https://payhawk.com/
-
-## StreamElements | The Ultimate Streamer Platform
-https://streamelements.com/
-
-## Razer United States | For Gamers. By Gamers.
-https://www.razer.com/
-
-## Adobe products: desktop, web, and mobile applications | Adobe
-https://www.adobe.com/products/catalog.html
-
-## LinkedIn Campaign Manager
-https://www.linkedin.com/campaignmanager/new-advertiser
-
-## LinkedIn Campaign Manager
-https://www.linkedin.com/campaignmanager/new-advertiser
-
-## Find leads and close deals | LinkedIn Sales Solutions
-https://business.linkedin.com/sales-solutions
-
-## Mercury | Banking built for startups
-https://mercury.com/
-
-## Mercury | Banking built for startups
-https://mercury.com/
-
-## StreamElements | The Ultimate Streamer Platform
-https://streamelements.com/
-
-## Razer United States | For Gamers. By Gamers.
-https://www.razer.com/
-
-## Adobe products: desktop, web, and mobile applications | Adobe
-https://www.adobe.com/products/catalog.html
-
-## StreamElements | The Ultimate Streamer Platform
-https://streamelements.com/
-
-## StreamElements | The Ultimate Streamer Platform
-https://streamelements.com/
-
-## (1) New Message!
-https://www.imperva.com/partners/channel-partners-application/
-
-## Cyber Security Leader | Imperva, Inc.
-https://www.imperva.com/
-
-## id.me
-https://www.id.me/
-
-## ibisPaint – Draw and Paint App
-https://ibispaint.com/
-
-## smart facing holder|tws earbuds|smart shooting phone holder|dancing robot|Earbuds manufacturers|Topjoy
-https://www.topjoyint.com/
-
-## Mobilmedia | Brza i pouzdana dostava‎
-https://mobilmedia.hr/
-
-## Dealify | The Number One Lifetime Deals Platform for Growth Hackers
-https://www.dealify.com/
-
-## Projektna rješenja za online trgovinu – Moja-Trgovina.Net
-https://www.moja-trgovina.net/
-
-## Se-Mark
-https://www.se-mark.hr/
-
-## Se-Mark
-https://www.se-mark.hr/
-
-## Joppy – Recruitment platform for developers by developers
-https://www.joppy.me/
-
-## Omaze
-https://www.omaze.com/
-
-## Premium Bootstrap Themes and Templates: Download @ Creative Tim
-https://www.creative-tim.com/
-
-## Se-Mark
-https://www.se-mark.hr/
-
-## Premium Bootstrap Themes and Templates: Download @ Creative Tim
-https://www.creative-tim.com/
-
-## Kleap – Create a mobile first website – For free & on mobile
-https://kleap.co/
-
-## Gorilla Experiment Builder » Create online behavioural experiments easily
-https://gorilla.sc/
-
-## D.Franklin® | Sunglasses and Accessories | Official Web
-https://www.dfranklincreation.com/
-
-## Gorilla Experiment Builder » Create online behavioural experiments easily
-https://gorilla.sc/
-
-## MicroAcquire – #1 Startup acquisition marketplace
-https://microacquire.com/
-
-## Hublock.io & Data-sharing layer for logistics
-https://www.hublock.io/
-
-## Dobro došli – Visoka škola “Logos centar” Mostar
-https://www.logos-centar.com/#
-
-## Sifted | Startup Europe explored through grown up reporting.
-https://sifted.eu/
-
-## Microverse | Learn How To Code Online
-https://www.microverse.org/
-
-## Platforms | Profitlevel
-https://profitlevel.com/en/trading/platforms
-
-## Pushwoosh – №1 push notification and cross-channel marketing service
-https://www.pushwoosh.com/
-
-## WordPress VIP – OneSignal
-https://onesignal.com/integrations/wordpress-vip
-
-## Google Ads – privucite više korisnika jednostavnim online oglašavanjem
-https://ads.google.com
-
-## Cross-Channel Marketing Platform to Improve Customer Experiences – Iterable
-https://iterable.com/
-
-## LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions
-https://business.linkedin.com/marketing-solutions/ads
-
-## Home | Scrum Guides
-https://scrumguides.org/
-
-## Home | Scrum.org
-https://www.scrum.org/index
-
-## What is Scrum?
-https://www.scrum.org/resources/what-is-scrum
-
-## Partner Inbound
-https://www.letsdeel.com/partner-program
-
-## Explore Remote partner programs. | Remote
-https://partners.remote.com/partners
-
-## Laravel – The PHP Framework For Web Artisans
-https://laravel.com/
-
-## Road & Track
-https://www.roadandtrack.com/
-
-## Instagram | About | Official Site
-https://about.instagram.com/
-
-## Instagram | About | Official Site
-https://about.instagram.com/
-
-## World’s Favorite Instagram Marketing Platform | Later
-https://later.com/
-
-## MOHITO – Posljednji ženstveni trendovi | Kupi online!
-https://www.mohito.com/hr/hr/
-
-## Run your EU company online or invoice without one | Xolo
-https://www.xolo.io/zz-en
-
-## Setupad.com – Monetization Partner – Setupad
-https://setupad.com/
-
-## Shipito For Business
-https://www.shipito.com/en/shipito-for-business
-
-## Knowledge Base Software That Scales With Your Product-Document360
-https://document360.com/
-
-## Spryker Academy
-https://academy.spryker.com/learn
-
-## Run your EU company online or invoice without one | Xolo
-https://www.xolo.io/zz-en
-
-## Cryptocurrency Exchange Software | Blockchain software | White label Exchange Software – ChainUP
-https://www.chainup.com/en-US/
-
-## Spryker Documentation
-https://documentation.spryker.com/docs/
-
-## Firebase
-https://firebase.google.com/?hl=hr
-
-## Integrations Directory – OneSignal
-https://onesignal.com/integrations
-
-## Facebook for Business: Marketing on Facebook
-https://web.facebook.com/business
-
-## Front – Customer Communication Platform | Team Email
-https://front.com/
-
-## Customer Success and Product Experience Software | Gainsight
-https://www.gainsight.com/
-
-## MoEngage: Insights-led Customer Engagement Platform
-https://www.moengage.com/
-
-## Pendo.io – Product Experience and Digital Adoption Solutions
-https://www.pendo.io/
-
-## RudderStack – The Customer Data Platform for Developers
-https://rudderstack.com/
-
-## Cloud Object Storage | Store & Retrieve Data Anywhere | Amazon Simple Storage Service (S3)
-https://aws.amazon.com/s3/
-
-## Home
-https://www.mparticle.com/
-
-## Integrations · Hightouch
-https://hightouch.io/integrations
-
-## Physical and Virtual Visa Commercial Cards vol.2 | Payhawk | Payhawk
-https://payhawk.com/start/visa-cards/
-
-## Modne kolekcije na jednom mjestu – GLAMI.hr
-https://www.glami.hr/
-
-## Buy online! Reserved & Shop Online
-https://www.reserved.com/gr/en/
-
-## Joom. Easy shopping, fast shipping
-https://www.joom.com/en
-
-## Joom. Easy shopping, fast shipping
-https://www.joom.com/en
-
-## F-IQ
-https://f-iq.app/
-
-## Knowledge Base Software That Scales With Your Product-Document360
-https://document360.com/
-
-## Payhawk | The Financial System of Tomorrow with NextGen Visa Cards
-https://payhawk.com/
-
-## Online payment processing for internet businesses – Stripe
-https://stripe.com/
-
-## Send Money, Pay Online or Set Up a Merchant Account – PayPal
-https://www.paypal.com
-
-## BillDesk – All Your Payments. Single Location.
-https://www.billdesk.com/
-
-## Financial Services for Emerging Markets | PayU Global
-https://corporate.payu.com/
-
-## Global HR Solutions for Distributed Teams | Remote
-https://remote.com/
-
-## For Startups
-https://www.letsdeel.com/for-startups
-
-## Stocard – Your mobile wallet
-https://stocardapp.com/en/de
-
-## Payroll & Compliance for International Teams | Deel
-https://www.letsdeel.com/
-
-## Lifewire: Tech News, Reviews, Help & How-Tos
-https://www.lifewire.com/
-
-## Partner Inbound
-https://www.letsdeel.com/partner-program
-
-## Payroll & Compliance for International Teams | Deel
-https://www.letsdeel.com/
-
-## Play DivX files. Free Video Software to play, convert and cast video.
-https://www.divx.com/
-
-## GDPR, ePrivacy and CCPA compliant cookies | Cookiebot CMP
-https://www.cookiebot.com/en/
-
-## Venture Capital Definition
-https://www.investopedia.com/terms/v/venturecapital.asp
-
-## Capital Markets Definition
-https://www.investopedia.com/terms/c/capitalmarkets.asp
-
-## Bond Market Definition
-https://www.investopedia.com/terms/b/bondmarket.asp
-
-## Stock Market Definition
-https://www.investopedia.com/terms/s/stockmarket.asp
-
-## GDPR, ePrivacy and CCPA compliant cookies | Cookiebot CMP
-https://www.cookiebot.com/en/
-
-## Global HR Solutions for Distributed Teams | Remote
-https://remote.com/
-
-## Y2Mate Youtube Downloader
-https://en.y2mate.guru/10/
-
-## Payroll & Compliance for International Teams | Deel
-https://www.letsdeel.com/
-
-## The New York Times – Breaking News, US News, World News and Videos
-https://www.nytimes.com/
-
-## Movieweb: Movie News, Movie Trailers, New Movies, Movie Reviews
-https://movieweb.com/
-
-## New Movies, TV Shows | Celebrity News & Gossip | CINEMABLEND
-https://www.cinemablend.com/
-
-## DOBA Fakultet: Odaberite program za razvoj svoje karijere
-https://www.doba.hr/
-
-## Best Products: Product Reviews, Deals, and More
-https://www.bestproducts.com/
-
-## Movieweb: Movie News, Movie Trailers, New Movies, Movie Reviews
-https://movieweb.com/
-
-## New Movies, TV Shows | Celebrity News & Gossip | CINEMABLEND
-https://www.cinemablend.com/
-
-## Online Accounting Software | Small Business Accounting | Xero US
-https://www.xero.com/us/accounting-software/
-
-## Download Instagram Video, Photos, IGTV & Reels
-https://igram.io/
-
-## Instagram Downloader, Download Video, Photo, Reels, IGTV online – SnapInsta
-https://snapinsta.app/
-
-## Harvard Business School Online Courses & Learning Platforms
-https://online.hbs.edu/
-
-## Academic Programs – About – Harvard Business School
-https://www.hbs.edu/about/academic-programs/Pages/default.aspx
-
-## MBA – Harvard Business School
-https://www.hbs.edu/mba/Pages/default.aspx
-
-## Harvard Business Review – Ideas and Advice for Leaders
-https://hbr.org/
-
-## Harvard Business Review – Ideas and Advice for Leaders
-https://hbr.org/
-
-## Subscribe to HBR – Digital & Print
-https://hbr.org/subscriptions
-
-## World’s Most Affordable Push Notifications Services | Truepush
-https://www.truepush.com/
-
-## Save S$1,080 on one year of Accounting and Tax with Osome and OCBC Bank
-https://osome.com/sg/start-digital/
-
-## Online Accounting Software | Small Business Accounting | Xero US
-https://www.xero.com/us/accounting-software/
-
-## Tumblr
-https://www.tumblr.com/
-
-## RAPTOR fleet – GPS nadzor vozila – gps tracking, nadzor vozila
-https://raptor-fleet.com/
-
-## Buy and Sell Online Businesses, Websites, Apps & Domains – Flippa
-https://flippa.com/
-
-## Researcher | An App For Academics
-https://www.researcher-app.com/
-
-## Google Cloud Platform Webinars
-https://cloudonair.withgoogle.com/
-
-## Home – Google Cloud Startup Summit
-https://cloudonair.withgoogle.com/events/startup
-
-## Google Cloud Platform Webinars
-https://cloudonair.withgoogle.com/#cert_prep
-
-## IBAN Checker: International Bank Account Number validation
-https://www.iban.com/
-
-## Build for everyone – Google Careers
-https://careers.google.com/
-
-## Start a Business, Grow Your Business – Shopify 14-Day Free Trial
-https://www.shopify.com/
-
-## Petrokemija d.d.
-https://petrokemija.hr/hr-hr/
-
-## Event Management Technology & Hospitality Solutions | Cvent
-https://www.cvent.com/
-
-## Alfa Vision Optika – dioptrijski i sunčani okviri
-https://alfavision-optika.hr/hr/
-
-## Fiat Hrvatska
-https://www.fiat.hr/
-
-## Product Hunt – The best new products in tech.
-https://www.producthunt.com/
-
-## Candis – Women’s Magazine – Family, Health, Competitions & Savings
-https://www.candis.co.uk/
-
-## DSG bicikli – prodaja i servis bicikla
-https://dsg.hr/
-
-## JetBrains: Essential tools for software developers and teams
-https://www.jetbrains.com/
-
-## Kite – Free AI Coding Assistant and Code Auto-Complete Plugin
-https://www.kite.com/
-
-## Startups.com | Courses, Expert Advice & Software for Startup Founders
-https://www.startups.com/
-
-## SalesAI Powered Copywriting – ClosersCopy
-https://www.closerscopy.com/
-
-## PyCharm: the Python IDE for Professional Developers by JetBrains
-https://www.jetbrains.com/pycharm/
-
-## Integrations | Parabola
-https://parabola.io/integrations
-
-## Kylie Cosmetics | Kylie Cosmetics by Kylie Jenner
-https://kyliecosmetics.com
-
-## Formative for Schools
-https://goformative.com/schools
-
-## Automobili Lamborghini – Official Website | Lamborghini.com
-https://www.lamborghini.com/en-en
-
-## The World’s Luxury Marketplace: Homes, Cars, Yachts & Jets for Sale | JamesEdition
-https://www.jamesedition.com/
-
-## Formative
-https://goformative.com/schools
-
-## Where to Pay Later with Zip
-https://zip.co/
-
-## Muške majice i majice bez rukava| 60 757 komada na jednom mjestu – GLAMI.hr
-https://www.glami.hr/muske-majice-i-majce-bez-rukava/
-
-## Stockwatch
-https://www.stockwatch.com/
-
-## Automobili Lamborghini – Official Website | Lamborghini.com
-https://www.lamborghini.com/en-en
-
-## Classic Cars for Sale. Comps, Alerts and More. – CLASSIC.COM
-https://www.classic.com/
-
-## Road & Track
-https://www.roadandtrack.com/
-
-## The World’s Luxury Marketplace: Homes, Cars, Yachts & Jets for Sale | JamesEdition
-https://www.jamesedition.com/
-
-## Classic Driver | The classic car & lifestyle market and magazine
-https://www.classicdriver.com/en
-
-## Mercedes-AMG CLA Coupé
-https://www.mercedes-benz.hr/osobna-vozila/mercedes-benz-vozila/modeli/cla/coupe-c118/amg.html
-
-## Svaka šalica ima svoju priču
-https://www.franck.eu/hr/
-
-## Snogoo
-https://snogoo.hr/
-
-## Where to Pay Later with Zip
-https://zip.co/
-
-## MERLE WOOD & ASSOCIATES | LUXURY YACHT SPECIALISTS
-https://www.merlewood.com/
-
-## Kera-Term Početna – Kera Term Trgovina
-https://kera-term.hr/
-
-## Kera-Term Početna – Kera Term Trgovina
-https://kera-term.hr/
-
-## The World’s Luxury Marketplace: Homes, Cars, Yachts & Jets for Sale | JamesEdition
-https://www.jamesedition.com/
-
-## Mime et Moi
-https://mimemoi.com/int/en/
-
-## Never Settle – OnePlus (Hrvatska)
-https://www.oneplus.com/hr
-
-## The World’s First Fully Convertible High Heels | Pashion Footwear
-https://pashionfootwear.com/
-
-## Alfa Elmas | nekretnine Krk, Malinska, apartmani , kuće, vikendice, vile
-https://alfaelmas.com/
-
-## Finest Apothecary Skincare – Kiehl’s
-https://www.kiehls.hr/
-
-## Tematske torte – Torterie Macaron
-https://www.torterie-macaron.com/tematske-torte/
-
-## Foodie – Foodie
-https://foodie.hr/
-
-## Wolt – Otkrij i naruči sjajnu hranu.
-https://wolt.com/hr/
-
-## Torterie Macaron | Najfinije torte, macaroni, sladoled i druge slastice
-https://www.torterie-macaron.com/
-
-## Influencer Marketing | #1 Platform, Agency & Influencer Resources
-https://influencermarketinghub.com/
-
-## VEKA HR
-https://veka.hr/
-
-## Nekretnine Hrvatska – RealEstateCroatia.com – Portal za nekretnine u Hrvatskoj
-https://www.realestatecroatia.com/hrv/default.asp
-
-## Smart invest nekretnine Opatija, Rijeka | Stanovi, kuće, poslovni prostori, zemljišta, prodaja i najam
-http://www.smart-invest.hr/
-
-## The Fastest Off-Road E-bikes – 10,000 (Watt) Power | VectorEbike.com
-https://vectorebike.com/
-
-## Electrek – EV and Tesla News, Green Energy, Ebikes, and more
-https://electrek.co/
-
-## eROCKIT – The Human Hybrid
-https://www.erockit.de/en/home-2/
-
-## Finest Apothecary Skincare – Kiehl’s
-https://www.kiehls.hr/
-
-## Blog Tool, Publishing Platform, and CMS — WordPress.org
-https://wordpress.org/
-
-## Bolt Food
-https://food.bolt.eu/hr-hr/
-
-## Official Rosetta Stone® – Language Learning – Learn a Language
-https://www.rosettastone.eu/
-
-## HUAWEI Hrvatska
-https://consumer.huawei.com/hr/
-
-## Author Media – Innovative Book Promotion For Writers
-https://www.authormedia.com/
-
-## Agrotrgovina.hr by Kokot Agro / – Vodeća agrotrgovina u Hrvatskoj
-https://www.agrotrgovina.hr/
-
-## Consent Management Platform – GDPR Compliance, CCPA Compliance Consent Management Solution, Privacy Manager
-https://www.uniconsent.com/
-
-## Tricent Compliance Tool
-https://www.tricent.com/
-
-## Designrr PRO Flash Sale
-https://go.designrr.io/special-pro-upgrade-special2yx
-
-## PINK PANDA – Šminka, kozmetika, make up i još svašta ;)
-https://www.pinkpanda.hr/
-
-## Home | LibreOffice – Free Office Suite – Based on OpenOffice – Compatible with Microsoft
-https://www.libreoffice.org/
-
-## Moj-eRačun – servis za slanje elektroničkih računa – e-računa – naslovna
-https://www.moj-eracun.hr/cms/naslovna/
-
-## Apache OpenOffice – Official Site – The Free and Open Productivity Suite
-http://www.openoffice.org/
-
-## Prevent Cybersecurity Breaches | Comodo Cybersecurity
-https://www.comodo.com/
-
-## Yippee
-https://www.yippee.tv/
-
-## DiviCo | Gadgets on line
-https://www.divico.hr/
-
-## Upwork | The World’s Work Marketplace for Freelancing
-https://www.upwork.com/
-
-## Bimi Boo – Bimi Boo – Educational toys, cartoons and apps for kids
-https://bimiboo.com/
-
-## Bimi Boo – Bimi Boo – Educational toys, cartoons and apps for kids
-https://bimiboo.com/
-
-## TechSmith Software, Services, and Apps | TechSmith
-https://www.techsmith.com/products.html
-
-## Traverse Legal
-https://www.traverselegal.com/
-
-## Traverse Legal
-https://www.traverselegal.com/
-
-## Amazon.co.uk Sign up for Prime Video
-https://www.amazon.co.uk/gp/video/offers
-
-## Tom’s Guide | Tech Product Reviews, Top Picks and How To
-https://www.tomsguide.com/
-
-## Amazon.com: Amazon Prime
-https://www.amazon.com/amazonprime
-
-## Iznajmljivači.hr – Portal za iznajmljivače privatnog smještaja
-https://www.xn--iznajmljivai-yrb.hr/
-
-## Carmel Valley Hotels | Quail Lodge & Golf Club – Home | Monterey Peninsula Hotels
-https://www.quaillodge.com/
-
-## Amazon.de: Günstige Preise für Elektronik & Foto, Filme, Musik, Bücher, Games, Spielzeug & mehr
-https://www.amazon.de/
-
-## Carmel Valley Hotels | Quail Lodge & Golf Club – Home | Monterey Peninsula Hotels
-https://www.quaillodge.com/
-
-## Home | Global | Siemens Energy Global
-https://www.siemens-energy.com/global/en.html
-
-## Bluetooth gamepad and apple peripheral accessories full range of product models-Ten excellent brands of Bluetooth gamepad
-http://m.ipega.hk/product.html
-
-## No compromise cloud performance | IONOS Cloud
-https://cloud.ionos.com/
-
-## Automatic Code Review, Testing, Inspection & Auditing | SonarCloud
-https://sonarcloud.io/
-
-## ⚡️ Download APK for Android (Free) – Fastest!
-https://apkcombo.com/
-
-## Nintendo Life – Nintendo Switch, eShop & Retro, News, Videos and Reviews
-https://www.nintendolife.com/
-
-## Free Online Courses – Business e Learning and Training | Shopify Compass
-https://www.shopify.com/learn
-
-## List Your Website for Sale | Buy and Sell Businesses
-https://exchangemarketplace.com/create-a-listing
-
-## Ecommerce Websites & Businesses for Sale | Buy and Sell Online Sites
-https://exchangemarketplace.com/
-
-## Free Stock Photos: High-Res Images for Websites & Commercial Use
-https://burst.shopify.com/
-
-## Free Stock Photos: High-Res Images for Websites & Commercial Use
-https://burst.shopify.com/
-
-## Free Online Courses – Business e Learning and Training | Shopify Compass
-https://www.shopify.com/learn
-
-## Start a Business, Grow Your Business – Shopify 14-Day Free Trial
-https://www.shopify.com/
-
-## Debutify – World’s Smartest Shopify Theme. Free 14-day Trial
-https://debutify.com/
-
-## Online Courses – Learn Anything, On Your Schedule | Udemy
-https://www.udemy.com/
-
-## Tenjin – Free attribution, Ad Revenue LTV, Cost and ad revenue aggregation, Automation APIs, Internal BI on demand
-https://tenjin.com/
-
-## Online Courses – Learn Anything, On Your Schedule | Udemy
-https://www.udemy.com/
-
-## 99000mah Solar Power Bank Wireless Fast Charger With SOS LED Light Portable Charging External Battery For Xiaomi Iphone Samsung
-99000mah Solar Power Bank Wireless Fast Charger With SOS LED Light Portable Charging External Battery For Xiaomi Iphone Samsung
-https://a.aliexpress.com/_mPruSwF
-
-## Dignet
-https://dignet.hr/home
-
-## Naslovna – UNIQA osiguranje
-https://www.uniqa.hr/
-
-## Sportsko učilište PESG Zagreb
-https://pesg.hr/
-
-## WordPress — jekyll-import • Import your old & busted site to Jekyll
-https://import.jekyllrb.com/docs/wordpress/
-
-## StarMaker: Bring out the singer in you!
-https://starmakerstudios.com/
-
-## SpeedBike 72V 7000W Dual Engine Electric Scooter with double Motors drive good suspention E Scooter
-SpeedBike 72V 7000W Dual Engine Electric Scooter with double Motors drive good suspention E Scooter
-https://a.aliexpress.com/_mrR8NPv
-
-## Svi sportski događaji na jednom mjestu | SuperSport
-https://m.supersport.hr/sport
-
-## MyWallSt – Investing For Everyone
-https://mywallst.com/
-
-## MyWallSt – Investing For Everyone
-https://mywallst.com/
-
-## Giga d.o.o. | Htz Oprema
-https://giga.hr/
-
-## Ford Hrvatska
-https://ford.hr/
-
-## Novi Mustang Mach-E
-https://ford.hr/mustang-mach-e
-
-## Naslovnica – ZŠEM
-https://zsem.hr/
-
-## Edukacija – ZŠEM – Poslovna akademija – Cjeloživotno učenje
-https://www.zsemakademija.hr/
-
-## Prikaži katalog – ebook024
-https://www.ebook024.com/catalog
-
-## Knowing market history can help you weather volatility | Chase.com
-https://www.chase.com/personal/investments/learning-and-insights/article/investing-is-a-marathon-not-a-sprint
-
-## HIF – HRVATSKI INSTITUT ZA FINANCIJE
-https://hif.hr/
-
-## Apple Trade In – Apple
-https://www.apple.com/shop/trade-in
-
-## Apple Store Online – Apple
-https://www.apple.com/store
-
-## Apple Card – Apple
-https://www.apple.com/apple-card/
-
-## App Store – Apple
-https://www.apple.com/app-store/
-
-## App Store – Apple
-https://www.apple.com/app-store/
-
-## Apple
-https://www.apple.com/
-
-## ‎Sketch Pad – My Drawing Board on the App Store
-https://apps.apple.com/us/app/sketch-pad-my-drawing-board/id1048919894
-
-## Home
-http://drawingpadapp.com/
-
-## Drazba.hr – Javne dražbe iz Hrvatske i inozemstva
-https://www.drazba.hr/
-
-## Citi Personal Wealth Management
-https://investments.citi.com/nxi/login
-
-## Disneyland® Official Site
-https://disneyland.disney.go.com/
-
-## App Store – Apple
-https://www.apple.com/app-store/
-
-## Apple Music
-https://music.apple.com/us/browse
-
-## shopDisney | Official Site for Disney Merchandise
-https://www.shopdisney.com/
-
-## Marvel Clothing, T Shirts, Sweatshirts & More | shopDisney
-https://www.shopdisney.com/franchises/marvel/clothing/
-
-## Disney Visa Card | shopDisney
-https://www.sfcc-stg.shopdisney.com/disney-visa-card.html
-
-## shopDisney | Official Site for Disney Merchandise
-https://www.shopdisney.com/
-
-## Chase Refer a Friend Checking: Earn up to $500 Cash | Chase
-https://accounts.chase.com/raf/landing
-
-## Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com
-https://www.chase.com/
-
-## Shop Official Marvel Merchandise | shopDisney
-https://www.shopdisney.com/marvel-content/
-
-## Drag Racing 1/4 Mile times – DragTimes.com
-http://www.dragtimes.com/
-
-## Global Investment Bank and Financial Services | Citi
-https://www.citigroup.com/citi/index.htm
-
-## Moja idealna veza | Terrakom
-https://www.terrakom.hr/
-
-## Check VIN | Decoder | VIN | autoDNA
-https://www.autodna.com/
-
-## Stock Images, Royalty-Free Pictures, Illustrations & Videos – iStock
-https://www.istockphoto.com/
-
-## Download TikTok Video Without Watermark | sssTikTok.io
-https://ssstik.io/
-
-## IKEA.com – International homepage – IKEA
-https://www.ikea.com/
-
-## Namještaj i dekoracije za tvoj dom – IKEA
-https://www.ikea.com/hr/hr/
-
-## Welcome to STAEDTLER
-https://www.staedtler.com/intl/en/
-
-## Sketch.IO – The Maker of Sketchpad
-https://sketch.io/
-
-## Online program
-https://americanacademy.com/online/
-
-## Online program – americanacademy
-https://americanacademy.com/online/
-
-## American Academy
-https://americanacademy.com/
-
-## Hollywood Story: Fashion Star | Nanobit – Put Extra Into Ordinary
-https://www.nanobit.com/games/hollywood-story-fashion-star/
-
-## Amazon.com. Spend less. Smile more.
-https://www.amazon.com/
-
-## Sketchpad – Draw, Create, Share!
-https://sketch.io/sketchpad/
-
-## Span.eu – IT partner kojem ćete vjerovati godinama
-https://www.span.eu/hr/
-
-## Empowering kids and adults through hands-on STEM experience – Circuitmess
-https://circuitmess.com/
-
-## Get Qualified, Study 100% Online with VU | VU Online
-https://online.vu.edu.au/study-online
-
-## Online Courses | VU Online
-https://online.vu.edu.au/online-courses
-
-## Online MBA – Master of Business Administration | VU Online
-https://online.vu.edu.au/online-courses/mba
-
-## Suncani Hvar Hotels | Best hotels in Hvar Croatia | Official website
-https://www.suncanihvar.com/
-
-## HOAKA SWIMWEAR – HOAKA SWIMWEAR INTERNATIONAL
-https://international.hoakaswimwear.com/
-
-## Tabou Stories: Love Episodes | Nanobit – Put Extra Into Ordinary
-https://www.nanobit.com/games/tabou-stories-love-episodes/
-
-## My Story: Choose Your Own Path | Nanobit – Put Extra Into Ordinary
-https://www.nanobit.com/games/my-story-choose-your-own-path/
-
-## Hollywood Story: Fashion Star | Nanobit – Put Extra Into Ordinary
-https://www.nanobit.com/games/hollywood-story-fashion-star/
-
-## Germania :: Naslovna stranica
-https://www.germaniasport.hr/hr#/
-
-## autoevolution.com: automotive news and vehicle specifications
-https://www.autoevolution.com/
-
-## Bazaarvoice: Meet shoppers in all the moments that matter
-https://www.bazaarvoice.com/
-
-## Početna stranica
-https://www.mastercard.hr/hr-hr.html
-
-## Croatia Hotels
-https://www.online-reservations.com/
-
-## Welcome page – Waterman Svpetrvs Resort
-https://watermanresorts.com/
-
-## Simple Membership – WordPress plugin | WordPress.org
-https://wordpress.org/plugins/simple-membership/
-
-## Qontigo – Financial Intelligence Innovator | Qontigo
-https://qontigo.com/
-
-## Qontigo – Financial Intelligence Innovator | Qontigo
-https://qontigo.com/
-
-## Proizvodi
-https://www.imunoglukan.hr/proizvodi/
-
-## Discover – Apple Developer
-https://developer.apple.com/discover/
-
-## L’Oréal, world leader in beauty : makeup, cosmetics, haircare, perfume
-https://www.loreal.com/en/
-
-## Francisco Partners – Investments
-https://www.franciscopartners.com/investments
-
-## Distribute – Apple Developer
-https://developer.apple.com/distribute/
-
-## Develop – Apple Developer
-https://developer.apple.com/develop/
-
-## SwiftUI Overview – Xcode – Apple Developer
-https://developer.apple.com/xcode/swiftui/
-
-## Xcode 13 Overview – Apple Developer
-https://developer.apple.com/xcode/
-
-## Flutter – Beautiful native apps in record time
-https://flutter.dev/
-
-## macOS install – Flutter
-https://flutter.dev/docs/get-started/install/macos
-
-## Francisco Partners – Homepage
-https://www.franciscopartners.com/
-
-## L’Oréal Finance : Homepage
-https://www.loreal-finance.com/eng
-
-## L’Oréal, world leader in beauty : makeup, cosmetics, haircare, perfume
-https://www.loreal.com/en/
-
-## L’Oréal, world leader in beauty : makeup, cosmetics, haircare, perfume
-https://www.loreal.com/en/
-
-## MarketWatch: Stock Market News – Financial News – MarketWatch
-https://www.marketwatch.com/
-
-## Options Investing E-learning | live
-https://live.euronext.com/en/euronext-knowledge-centre/options-investing-e-learning
-
-## Diploma in Business Analytics – Swiss School of Business and Management Geneva
-https://www.ssbm.ch/certificate-programs/diploma-in-business-analytics/
-
-## WooCommerce – Sell Online With The eCommerce Platform for WordPress
-https://woocommerce.com/
-
-## BBA MBA EMBA Online MBA DBA – Swiss School of Business and Management Geneva
-https://www.ssbm.ch/
-
-## VISOKA ŠKOLA ZA SIGURNOST (VSS)
-https://www.vss.hr/
-
-## Site home page | live
-https://live.euronext.com/en
-
-## Investing.com – Stock Market Quotes & Financial News
-https://www.investing.com/
-
-## Morningstar | Empowering Investor Success
-https://www.morningstar.com/
-
-## DividendMax – notifications, declarations, forecasts and tools for UK private investors
-https://www.dividendmax.com/
-
-## TipRanks | Stock Market Research, News and Analyst Forecast.
-https://www.tipranks.com/
-
-## MarketBeat: Stock Market News and Research Tools
-https://www.marketbeat.com/
-
-## Stock Market Activity Today & Latest Stock Market Trends | Nasdaq
-https://www.nasdaq.com/market-activity
-
-## Daily Stock Market Overview, Data Updates, Reports & News | Nasdaq
-https://www.nasdaq.com/
-
-## Stock Quote & Chart | AT&T
-https://investors.att.com/stock-information/stock-quote-and-chart
-
-## AT&T Official Site – Unlimited Data Plans, Internet Service, & TV
-https://www.att.com/
-
-## Barron’s | Financial and Investment News
-https://www.barrons.com/
-
-## Fool.com: Stock Investing Advice | Stock Research
-https://www.fool.com/
-
-## SMS Studio – SMS Marketing Platform
-https://www.sms.studio/
-
-## Hyundai Hrvatska
-https://hyundai.hr/
-
-## Search Legal Contracts, Clauses and Legal Definitions | Law Insider
-https://www.lawinsider.com/
-
-## Business Phone, VoIP, Communication APIs, Contact Center | Vonage
-https://www.vonage.com/
-
-## Privacy, Security and Data Governance Software | GDPR, CCPA, ISO
-https://www.onetrust.com/
-
-## Online Forex Trading – 24/5 | Forex Broker – RoboForex
-https://roboforex.com/
-
-## Lajk.hr
-https://www.index.hr/lajk
-
-## Dogma nekretnine, Rijeka | Stanovi, kuće, tereni, apartmani, poslovni prostori
-https://dogma-nekretnine.com/
-
-## Njuskalo.hr oglasnik
-https://www.njuskalo.hr/
-
-## Anigota.hr – profesionalna foto i video ponuda
-https://www.anigota.hr/
-
-## Video kamere | Profesionalne video kamere | Prodaja | Anigota
-https://www.anigota.hr/profesionalne-video-kamere-13/13/
-
-## Popular gift cards – Startselect.com
-https://startselect.com/hr-en
-
-## Krispy Kreme – Doughnuts, Coffee & Drinks
-https://www.krispykreme.com/
-
-## Official New York Yankees Website | MLB.com
-https://www.mlb.com/yankees
-
-## Zacks Investment Research: Stock Research, Analysis, & Recommendations
-https://www.zacks.com/
-
-## Ultimate WordPress Plugins by Supsystic
-https://supsystic.com/
-
-## Cloudflare – The Web Performance & Security Company | Cloudflare
-https://www.cloudflare.com/
-
-## Smart line – Studio DOMUS – Montažne kuće
-https://studio-domus.hr/smart-line/
-
-## Katalog kuća – Studio DOMUS – Montažne kuće
-https://studio-domus.hr/katalog-kuca-studio-domus/
-
-## Cijene – Studio DOMUS – Montažne kuće
-https://studio-domus.hr/cijene/
-
-## Cloudflare – The Web Performance & Security Company | Cloudflare
-https://www.cloudflare.com/
-
-## Flexport: Digital Freight Forwarder & Customs Broker
-https://www.flexport.com/
-
-## GitHub Learning Lab
-https://lab.github.com/
-
-## Kontaktne leće online: povoljne cijene | Adrialece.hr | Adrialece.hr
-https://www.adrialece.hr/
-
-## npm Docs
-https://docs.npmjs.com/
-
-## GitHub
-https://github.com/
-
-## GitHub Marketplace · to improve your workflow
-https://github.com/marketplace?type=
-
-## Početna stranica
-https://www.certifiedshop.com/hr/oznaka-povjerenja
-
-## Evidon | Digital Governance, Privacy Compliance, Website Monitoring
-https://www.evidon.com/
-
-## Terra Adriatica – Solution to an Age-Old Croatian Land Title Issue
-https://terraadriatica.hr/en/
-
-## Event Technology Platform for Virtual, Hybrid, and Online Experiences | Hopin
-https://hopin.com/
-
-## Tipovi Mastercard kartica
-https://www.mastercard.hr/hr-hr/privatni/pronadite-karticu.html
-
-## Početna stranica
-https://www.mastercard.hr/hr-hr.html
-
-## GDPR, ePrivacy and CCPA compliant cookies | Cookiebot CMP
-https://www.cookiebot.com/en/
-
-## GDPR, ePrivacy and CCPA compliant cookies | Cookiebot CMP
-https://www.cookiebot.com/en/
-
-## Mercedes-Benz – Osobna vozila
-https://www.mercedes-benz.hr/osobna-vozila.html
-
-## Naslovnica – Izrada web stranica – Izrada web trgovina
-https://netbit.hr/
-
-## Invisalign – prozirni aparatići za zube | Dental Centar Ostojić
-https://dcostojic.hr/invisalign-prozirni-aparatici-za-zube/
-
-## Usluge estetske medicine ⋆ Estetska medicina Dental Centar Ostojić
-https://ecostojic.hr/
-
-## Naslovna – UNIQA osiguranje
-https://www.uniqa.hr/
-
-## Blu Ray & DVD Player for Windows – WinDVD Pro 12 by Corel
-https://www.windvdpro.com/en/
-
-## VideoStudio Pro: Video Editing Software by Corel
-https://www.videostudiopro.com/en/
-
-## Corel Digital & Photo Painting Software and Painter Apps
-https://www.painterartist.com/en/
-
-## Corel Corporation
-https://www.corel.com/en/
-
-## PaintShop Pro: Photo Editing Software by Corel
-https://www.paintshoppro.com/en/
-
-## Getting Started Photo Editing Tutorials from Corel PaintShop Pro
-https://www.paintshoppro.com/en/learn/
-
-## [OFFICIAL] FilmoraPro Video Editor: Power Up Your Story
-https://filmora.wondershare.net/filmorapro-video-editor/
-
-## Wondershare Software Official: Creativity, Productivity, Utility Software
-https://www.wondershare.net/
-
-## Acer Hrvatska
-https://www.acer.com/ac/hr/HR/content/home
-
-## Top ponuda Računala, Mobitela | Vacom.hr
-https://vacom.hr/
-
-## Wacom
-https://estore.wacom.com/en-HR/
-
-## Wacom
-https://estore.wacom.com/en-HR/
-
-## Najbolja web, e-commerce, mobilna i IT rješenja | Perpetuum Mobile
-https://www.perpetuum.hr/
-
-## Wondershare Software Official: Creativity, Productivity, Utility Software
-https://www.wondershare.net/
-
-## Norton™ Official Site | Antivirus, VPN & Security Software
-https://us.norton.com/home1?s_tnt=136193%3A1%3A0&adobe_mc_sdid=SDID%3D2EA9CAD72FF77A3F-43A0C7F6746CDBE7%7CMCORGID%3D67C716D751E567F70A490D4C%40AdobeOrg%7CTS%3D1627973709&adobe_mc_ref=https%3A%2F%2Fus.norton.com%2Fhome2%3Fs_tnt%3D136193%25253A2%25253A0
-
-## Norton Motorcycles
-https://www.nortonmotorcycles.com/
-
-## Wacom
-https://estore.wacom.com/en-HR/
-
-## adidas Runtastic: adidas Running & adidas Training apps
-https://www.runtastic.com/
-
-## Nike
-https://www.nike.com
-
-## E-osobna – Naslovna
-https://www.eid.hr/
-
-## Universal Gaming Controller for iPhone – Razer Kishi
-https://www.razer.com/mobile-controllers/razer-kishi
-
-## Razer United States | For Gamers. By Gamers.
-https://www.razer.com/
-
-## Android Central – News, Reviews, Deals & Help on all Android devices
-https://www.androidcentral.com/
-
-## Get the Best Smart Connected Cube | GoCube
-https://getgocube.com/
-
-## Izrada internet trgovina | LIMS sustav | Mathema
-https://www.mathema.hr/
-
-## CalyxOS
-https://calyxos.org/
-
-## The Latest Technology Product Reviews, News, Tips, and Deals | PCMag
-https://www.pcmag.com/
-
-## Home – KaiOS
-https://www.kaiostech.com/
-
-## webOS Open Source Edition
-https://www.webosose.org/
-
-## Palm Source
-https://www.palmsource.com/
-
-## UX Collective
-https://uxdesign.cc/
-
-## Affirm | Buy now, pay later with no late fees or surprises
-https://www.affirm.com/
-
-## UltraSabers® Lightsabers | Build Your Custom Lightsaber – Shop The Galaxy’s Best Sabers
-https://ultrasabers.com/
-
-## Get more Google Seller Ratings and Product Reviews.
-https://www.shopperapproved.com/
-
-## StreamYard
-https://streamyard.com/
-
-## SPLACH-The Robust Expeditioner of Outdoor Adventures – SPLACH Bike
-https://splach.bike/
-
-## Bilderlings – fintech platform for business
-https://bilderlings.com/
-
-## Nintendo News | My Nintendo News
-https://mynintendonews.com/
-
-## The Ritz Herald – Beyond the Headlines
-https://ritzherald.com/
-
-## Stata | Learn
-https://www.stata.com/learn/
-
-## Omaze
-https://www.omaze.com/
-
-## EViews.com
-https://www.eviews.com/home.html
-
-## Auto-Tune – The Best Vocal Plug-Ins For Professional Production
-https://www.antarestech.com/
-
-## Zendesk: Customer Service Software & Sales CRM | Best in 2021
-https://www.zendesk.com/
-
-## NextRoll – Home
-https://www.nextroll.com/
-
-## Games | Nanobit – Put Extra Into Ordinary
-https://www.nanobit.com/games/
-
-## Netokracija | Internet tehnologije, poslovanje i kultura
-https://www.netokracija.com/
-
-## BIRKENSTOCK Croatia | Shop online
-https://www.birkenstock.com/hr-en
-
-## Birkenstock Online Shop
-https://www.birkenstock.com/
-
-## Lutrija – Hrvatska Lutrija | Loto | Eurojackpot | dobitak | Igraj online
-http://www.lutrija.hr/hl/lutrija
-
-## YouTube Go
-https://www.youtubego.com/
-
-## YouTube Go
-https://www.youtubego.com/
-
-## Zendesk: Customer Service Software & Sales CRM | Best in 2021
-https://www.zendesk.com/
-
-## America First Credit Union – Utah Personal and Business Banking and Loan Services
-https://www.americafirst.com/
-
-## Raiders
-https://www.americafirst.com/raiders.html
-
-## Raiders Card
-https://www.americafirst.com/raiders/raiderscard.html
-
-## Pay Less Super Markets : Shop Groceries, Find Digital Coupons & Order Online
-https://www.pay-less.com/
-
-## QFC : Shop Groceries, Find Digital Coupons & Order Online
-https://www.qfc.com/
-
-## Ralphs : Shop Groceries, Find Digital Coupons & Order Online
-https://www.ralphs.com/
-
-## Smith’s Food and Drug : Shop Groceries, Find Digital Coupons & Order Online
-https://www.smithsfoodanddrug.com/
-
-## Kroger : Shop Groceries, Find Digital Coupons & Order Online
-https://www.kroger.com/
-
-## Raiders.com | Las Vegas Raiders Official Team Website
-https://www.raiders.com/
-
-## Jeffree Star Cosmetics
-https://jeffreestarcosmetics.com/
-
-## Jeffree Star Cosmetics
-https://jeffreestarcosmetics.com/
-
-## Naslovna – UNIQA osiguranje
-https://www.uniqa.hr/
-
-## InShot
-http://inshot.com/
-
-## Jeffree Star Cosmetics
-https://jeffreestarcosmetics.com/
-
-## Budicool najpovoljniji webshop u Hrvatskoj
-https://www.budicool.hr/
-
-## The best gaming chairs | Secretlab US
-https://secretlab.co/
-
-## Boost Conversions Adding Social Proof to Any Site | Provely
-https://provely.io/
-
-## Music Player for Android
-https://audifyplayer.com/
-
-## Audiomack | Free Music Sharing and Discovery
-https://audiomack.com/
-
-## Download Music on Boomplay – Home of Music
-https://www.boomplay.com/
-
-## CreateStudio Animation Made Easy – CreateStudio
-https://createstudio.com/
-
-## Google Search Console
-https://search.google.com/search-console/about
-
-## ListingFlow.ai | AI Powered Real Estate Listings
-https://www.listingflow.ai/
-
-## Clubhouse Golf vjenčanje i eventi / zeleno okruženje i dašak luksuza
-https://clubhousegolf.hr/
-
-## Trgovina | Hrvatski novčarski zavod
-https://www.hnz.hr/trgovina/
-
-## Osiguranje auta, zdravstvena osiguranja i telekom paketi | kompare.hr
-https://kompare.hr/
-
-## Adzooma | Simplify, Automate & Optimise Online Ad Campaigns
-https://www.adzooma.com/
-
-## Maps, geocoding, and navigation APIs & SDKs | Mapbox
-https://www.mapbox.com/
-
-## OpenStreetMap
-https://www.openstreetmap.org/about
-
-## Naslovnica
-https://www.volkswagen.hr/
-
-## Passat
-https://www.volkswagen.hr/passat
-
-## Outbrain – Recommendation Platform Powered by Native Ads
-https://www.outbrain.com/
-
-## Home – COTRUGLI
-https://cotrugli.org/
-
-## Bing Webmaster Tools
-https://www.bing.com/webmasters/about
-
-## StreamYard
-https://streamyard.com/
-
-## Naslovnica – Belje
-https://www.belje.hr/
-
-## Gligora Cheese&deli | Prodaja sira i delikatesa online | Hrvatska | Pag
-https://webshop.gligora.com/
-
-## MALL.HR | Sigurna i povoljna online kupnja
-https://www.mall.hr/
-
-## Muške cipele i moda online | ZALANDO
-https://www.zalando.hr/muskarci-home/
-
-## Jeffree Star Cosmetics
-https://jeffreestarcosmetics.com/
-
-## Assetto Corsa
-https://store.playstation.com/en-hr/product/EP4040-CUSA01797_00-ASSETTOCORSAXXXX/
-
-## Idle Champions of the Forgotten Realms | Download and Play for Free – Epic Games Store
-https://www.epicgames.com/store/en-US/p/idle-champions-of-the-forgotten-realms
-
-## Following ‹ Reader — WordPress.com
-https://wordpress.com/read
-
-## MAJICE I TISAK – WEBSHOP Početna – MAJICE I TISAK – WEBSHOP
-https://majiceitisak.hr/
-
-## Naslovnica | Audi Hrvatska
-https://www.audi.hr/
-
-## Kvadrati Upravljanje – Upravljanje nekretninama / Commercial real estate management
-http://kvadratiupravljanje.hr/
-
-## HBO GO
-https://hbogo.hr/
-
-## Skype | Communication tool for free calls and chat
-https://www.skype.com/en/
-
-## Video Conferencing, Cloud Phone, Webinars, Chat, Virtual Events | Zoom
-https://zoom.us/
-
-## Video Conferencing, Meetings, Calling | Microsoft Teams
-https://www.microsoft.com/content/microsoft/en-us/bade/microsoft-teams/group-chat-software
-
-## Free video maker | Create your own video easily – Animoto
-https://animoto.com/
-
-## The Academy | Jarvis
-https://www.conversion.ai/academy
-
-## Best Buy | Official Online Store | Shop Now & Save
-https://www.bestbuy.com/
-
-## Apple – Pronađite lokacije
-https://locate.apple.com/hr/hr/
-
-## Store.com.hr | Store.com.hr
-https://www.store.com.hr/
-
-## Apple (Hrvatska)
-https://www.apple.com/hr/
-
-## Mac Pro – Tehničke specifikacije – Apple (HR)
-https://www.apple.com/hr/mac-pro/specs/
-
-## VIP Dashboard
-https://dashboard.wpvip.com/
-
-## Basic usage · WordPress VIP Documentation
-https://docs.wpvip.com/technical-references/vip-cli/basic-usage/
-
-## Home · WordPress VIP Documentation
-https://docs.wpvip.com/
-
-## New York Post – Breaking News, Top Headlines, Photos & Videos
-https://nypost.com/
-
-## How much does WordPress VIP cost? – The Agile Content Platform | WordPress VIP
-https://wpvip.com/pricing/
-
-## WordPress Cost | WordPress Price | Compare Our Plans
-https://wordpress.com/pricing/
-
-## ColibriWP – The Ultimate Drag and Drop WordPress Page Builder
-https://colibriwp.com/
-
-## Jarvis – AI Copywriting Assistant
-https://www.conversion.ai/
-
-## Mac Pro – Tehničke specifikacije – Apple (HR)
-https://www.apple.com/hr/mac-pro/specs/
-
-## Apple Arcade – Apple (HR)
-https://www.apple.com/hr/apple-arcade/
-
-## ‎Logic Pro on the Mac App Store
-https://apps.apple.com/hr/app/logic-pro/id634148309?mt=12
-
-## Cheap Domain Name Registration, Cheap Web Hosting at Online®. Register Domain Names, Website Hosting, WordPress, Shared, cPanel, Windows, Plesk, Cloud, VPS, Dedicated Server
-https://the-online.com/
-
-## BMW modeli
-https://www.bmw.hr/hr/all-models.html
-
-## https://www.malwarebytes.com
-https://www.malwarebytes.com/
-
-## Home | Segway Powersports
-https://powersports.segway.com/
-
-## Project Communication Platform | Kitchen
-https://kitchen.co/
-
-## Top Software at Capterra | Software & Software Reviews For Business & Nonprofit
-https://www.capterra.com/
-
-## Jarvis – AI Copywriting Assistant
-https://www.conversion.ai/
-
-## Best Buy | Official Online Store | Shop Now & Save
-https://www.bestbuy.com/
-
-## CROATIA Poliklinika
-http://www.poliklinikacroatia.hr/
-
-## DuList — Početna
-https://dulist.hr/
-
-## Dalmatinski portal | Najnovije vijesti iz Splita i Dalmacije
-https://dalmatinskiportal.hr/
-
-## Međunarodna zračna luka Zagreb – Franjo Tuđman – Putnici
-https://www.zagreb-airport.hr/
-
-## Sweetwater
-https://www.sweetwater.com/
-
-## Lider Media
-https://lider.media/
-
-## Keune.hr
-https://www.keune.hr/
-
-## 60V 2000W Electric Scooter with 60V 15ah Lithium Battery – China Electric Scooter and 60V 20000W Brushless Motor price | Made-in-China.com
-https://m.made-in-china.com/product/60V-2000W-Electric-Scooter-with-60V-15ah-Lithium-Battery-941089605.html?utm_source=facebook&utm_medium=cpc&utm_campaign=01-m-feed1-old&utm_content=01-m-feed1-retargetdev-europed-tex&fbclid=IwAR0uYckfs6ktmDpBzYKyDWx34bqCyYWqit4no5vgPfEBiIpdOgxXjLzCmRI
-
-## Stránka nebyla nalezena
-https://www.zalando.cz/en/
-
-## Početna – PANEX DINAMIC
-https://dinamic.hr/
-
-## Online kupnja allianz
-https://www.allianz.hr/hr_HR/privatni-korisnici/online-kupnja.html
-
-## Allianz – Privatni korisnici
-https://www.allianz.hr/hr_HR/privatni-korisnici.html
-
-## Odaberite Hondu | Honda automobili | Honda Ruting
-http://www.honda.hr/automobili/
-
-## Official Honda Autos USA | Honda
-https://automobiles.honda.com/
-
-## Zaba – Banka za sve što vam je važno! – Zagrebačka banka
-https://www.zaba.hr/home/
-
-## Investicijski fondovi OTP Investa | OTP banka d.d.
-https://www.otpbanka.hr/hr/gradani/investicijski-fondovi
-
-## MrMaks – MrMaks HR
-https://hr.mrmaks.eu/
-
-## Unlimited Graphic Design – Unlimited Design Service – No Limit Creatives
-https://nlc.com/
-
-## Privacy, Security and Data Governance Software | GDPR, CCPA, ISO
-https://www.onetrust.com/
-
-## RTL Play
-https://play.rtl.hr/premium
-
-## RTLplay, reprize TV programa i uživo
-https://play.rtl.hr/rtlhr_rtl_play
-
-## Brendirana odjeća i obuća za žene i muškarce | Odjeća Factcool
-https://hr.factcool.com/
-
-## TrustedSite | Security & trust for businesses and their customers
-https://www.trustedsite.com/
-
-## TrustedSite Certification | Build trust and boost sales.
-https://www.trustedsite.com/certification/
-
-## TrustedSite Certification | Shop with confidence.
-https://www.trustedsite.com/for-consumers
-
-## TrustedSite Certification | Shop with confidence.
-https://www.trustedsite.com/for-consumers
-
-## Reality TV Shows, Celebrity News, Pop Culture & Music Videos | MTV
-https://www.mtv.com/
-
-## Start
-https://start.gov.hr/st/index.html
-
-## START – Fina
-https://www.fina.hr/start
-
-## Naslovnica – Fina
-https://www.fina.hr/
-
-## Početna
-http://www.arhivtrezor.hr/hr/#
-
-## FINA e-Račun – Mali poduzetnici | PBZ
-https://www.pbz.hr/mali-poduzetnici/digitalno-bankarstvo-za-poslovne-subjekte/e-racun.html
-
-## FINA e-Račun – Mali poduzetnici | PBZ
-https://www.pbz.hr/mali-poduzetnici/digitalno-bankarstvo-za-poslovne-subjekte/e-racun.html
-
-## Mali poduzetnici | PBZ
-https://www.pbz.hr/mali-poduzetnici
-
-## TrustedSite | Security & trust for businesses and their customers
-https://www.trustedsite.com/
-
-## Cosmopolitan.com – The Women’s Magazine for Fashion, Sex Advice, Dating Tips, and Celebrity News
-https://www.cosmopolitan.com/
-
-## Menu — Victoria’s Secret
-https://www.victoriassecret.com/hr/
-
-## Victoria’s Secret: The World’s Most Famous Bras, Panties, Lingerie, Sportswear, Swimsuits, Beauty and Accessories
-https://www.victoriassecret.com/us/
-
-## Professional Woman’s Magazine | The Working Woman’s Magazine –
-https://professionalwomanmag.com/
-
-## Women’s Health – Fitness, Nutrition, Sex, and Weight Loss Tips for Women
-https://www.womenshealthmag.com/
-
-## ICT Business | ICT vijesti, IT tehnologije, poslovna rješenja, leadership i telekomunikacije
-https://www.ictbusiness.info/
-
-## Startup Program
-https://inthecloud.withgoogle.com/startup/dl-cd.html
-
-## Start
-https://start.gov.hr/st/index.html
-
-## Start
-https://start.gov.hr/st/index.html
-
-## Startup Program
-https://inthecloud.withgoogle.com/startup/dl-cd.html
-
-## Startup Program
-https://inthecloud.withgoogle.com/startup/dl-cd.html
-
-## Paramount Pictures
-https://www.paramount.com/
-
-## Paramount+ – Stream live TV, Movies, Originals, News, and more
-https://www.paramountplus.com/intl/
-
-## Easy Recipes & Family And Health Advice You Can Trust | GoodtoKnow
-https://www.goodto.com/
-
-## Online Magazines – Digital Magazine Subscriptions | Pocketmags
-https://pocketmags.com/
-
-## Buy single magazine issues and subscriptions – Newsstand.co.uk
-https://www.newsstand.co.uk/
-
-## Lesson Catalog | Business & Operations – Google Primer
-https://www.yourprimer.com/en/lesson-catalog/0
-
-## Lesson Catalog | Business & Operations – Google Primer
-https://www.yourprimer.com/en/lesson-catalog/0
-
-## Google trends
-https://trends.google.com/trends
-
-## Google Ads – privucite više korisnika jednostavnim online oglašavanjem
-https://ads.google.com/intl/hr_hr/getstarted/
-
-## Set up conversion tracking for your website – Google Ads Help
-https://support.google.com/google-ads/answer/6095821?hl=en
-
-## Kuhinje DANKÜCHEN – broj 1 u Austriji
-https://dankuchen.hr/
-
-## KiCad EDA – Schematic Capture & PCB Design Software
-https://www.kicad.org/
-
-## Cipele, torbe i modni dodaci – Aldo official online trgovina
-https://www.aldoshoes.com.hr/
-
-## Anastasia Beverly Hills Cosmetics & Beauty | Official Website
-https://www.anastasiabeverlyhills.com/
-
-## Conversion tracking: Definition – Google Ads Help
-https://support.google.com/google-ads/answer/6308?hl=en
-
-## Memgraph | In-Memory Cypher Graph Database
-https://memgraph.com/
-
-## Mercedes-Benz A-klasa Kompaktna limuzina
-https://www.mercedes-benz.hr/osobna-vozila/mercedes-benz-vozila/modeli/a-klasa/kompaktna-limuzina-w177/explore.html
-
-## Mercedes-Benz A-klasa Kompaktna limuzina
-https://www.mercedes-benz.hr/osobna-vozila/mercedes-benz-vozila/modeli/a-klasa/kompaktna-limuzina-w177/explore.html
-
-## A-klasa Kompaktna limuzina – Motor – Konfigurator Mercedes-Benz automobila
-https://www.mercedes-benz.hr/osobna-vozila/mercedes-benz-vozila/car-configurator.html
-
-## Journal.hr – lifestyle magazin
-https://www.journal.hr/
-
-## Buy Autodesk Software | Get Prices & Buy Online | Official Autodesk Store
-https://www.autodesk.com/products
-
-## Autodesk | 3D Design, Engineering & Construction Software
-https://www.autodesk.com/
-
-## EAGLE | PCB Design And Electrical Schematic Software | Autodesk
-https://www.autodesk.com/products/eagle/overview
-
-## PCB Design Software & Tools | Altium
-https://www.altium.com/
-
-## Workplace Productivity & Automation Tools | Formstack
-https://www.formstack.com/
-
-## Bellabeat – Personalized programs & Wellness trackers
-https://bellabeat.com/
-
-## 2021 Audi RS 5 Coupe | Audi USA
-https://www.audiusa.com/us/web/en/models/a5/rs5-coupe/2021/overview.html
-
-## 2021 Audi RS 5 Coupe | Audi USA
-https://www.audiusa.com/us/web/en/models/a5/rs5-coupe/2021/overview.html
-
-## 2021 Audi RS 5 Coupe | Audi USA
-https://www.audiusa.com/us/web/en/models/a5/rs5-coupe/2021/overview.html
-
-## Bellabeat – Personalized programs & Wellness trackers
-https://bellabeat.com/
-
-## Audi | Luxury sedans, SUVs, convertibles, electric vehicles & more
-https://www.audiusa.com/us/web/en.html
-
-## Courses – Jordan Belfort
-https://jb.online/pages/course
-
-## CLOUDVOCAL® | You Make Music, We Mic it.
-https://us.cloudvocal.com/
-
-## Započnite s upotrebom AdSensea
-https://www.google.com/adsense/signup/new/lead?gsessionid=cvNSXbQoIsH1rOukL6QpkZqQF9rkWKAN8MvkZmGfIwo
-
-## Top Proizvodi
-https://www.topproizvodi.eu/
-
-## happykoala-hr
-https://happykoala.hr/
-
-## Jordan Belfort | The Wolf of Wall Street
-https://jb.online/
-
-## La La Land Shop – online prodaja
-http://www.landshop.hr/
-
-## Online prodaja muških i ženskih naočala | NAOCALESHOP
-https://www.naocaleshop.hr/
-
-## Rizk Casino – Najbolji Online Casino u Hrvatskoj!
-https://rizk.hr/hr
-
-## ZAKS zlatarne | vrhunski nakit od zlata i srebra, zlatnici, prstenje, narukvice, naušnice, ogrlice, privjesci, otkup lom zlata | zlatarnica
-http://www.zaks.hr/index.php
-
-## Webinar Software. New Platform for Webinars – LiveWebinar.com
-https://www.livewebinar.com/
-
-## Ponuda Dana — Počni Štedjeti Već Danas Uz Najveće Popuste
-https://www.ponudadana.hr/
-
-## Admin Panel – WordPress
-https://cedcommerce.com/wordpress-plugins/admin-panel
-
-## Mercedes-Benz Konfigurator
-https://www.mercedes-benz.hr/osobna-vozila/configurator.html
-
-## Mercedes-Benz – Osobna vozila
-https://www.mercedes-benz.hr/osobna-vozila.html
-
-## Marketing Automation Software for Startups – Encharge
-https://encharge.io/
-
-## Overview – Microsoft Advertising
-https://about.ads.microsoft.com/en-us/h/a/microsoft-advertising
-
-## CedCommerce: Clever, Affordable & Elegant Solutions
-https://cedcommerce.com/
-
-## Google Developers
-https://developers.google.com/?hl=hr
-
-## Google Search Central (formerly Webmasters) | Web SEO Resources
-https://developers.google.com/search/blog/2021/04/changes-to-feedburner?hl=hr
-
-## Capture One photo editing software
-https://www.captureone.com/en
-
-## Encharge Affiliate Program – Encharge
-https://encharge.io/affiliate-program/
-
-## Creative Cloud
-https://exchange.adobe.com/creativecloud
-
-## Creative Cloud
-https://exchange.adobe.com/creativecloud
-
-## XC Partners
-https://partners.adobe.com/exchangeprogram/experiencecloud.html
-
-## Croatia osiguranje d.d.
-https://crosig.hr/
-
-## Croatia osiguranje d.d.
-https://crosig.hr/
-
-## Best Restaurants 2021 Near Me – Restaurant Guru
-https://restaurantguru.com/
-
-## Midas Network – Platforma za Nativno oglašavanje
-https://www.midas-network.com/hr
-
-## FEITIAN Technologies US
-https://shop.ftsafe.us/
-
-## Mlinar Shop
-https://shop.mlinar.hr/
-
-## Izbor grada | Mlinar Shop
-https://shop.mlinar.hr/cs
-
-## Collections – FEITIAN Technologies US
-https://shop.ftsafe.us/collections
-
-## Free Website Builder – Create Free Websites I Vsble
-https://www.vsble.me/
-
-## Free Website Builder – Create Free Websites I Vsble
-https://www.vsble.me/
-
-## Google for Startups Campus – A Global Community of Startups
-https://www.campus.co/
-
-## Campus Global Startup School – Google for Startups
-https://www.campus.co/global/startup-school/
-
-## Campus Global Startup School Trainings Schedule – Google for Startups
-https://www.campus.co/global/startup-school/trainings/schedule/
-
-## Google Primer – Learn Business & Marketing Skills
-https://yourprimer.com/youtubetips/
-
-## BigCommerce Certified Partner| BigCommerce Store Solution & Services
-https://bigcommerce.cedcommerce.com/
-
-## Products – Zenva Academy
-https://academy.zenva.com/shop/
-
-## SEM with Microsoft Advertising – Microsoft Advertising
-https://about.ads.microsoft.com/en-us
-
-## Developer Program – Microsoft 365
-https://developer.microsoft.com/en-us/microsoft-365/dev-program
-
-## Getting started with VBA in Office | Microsoft Docs
-https://docs.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office
-
-## Browse Certifications and Exams | Microsoft Docs
-https://docs.microsoft.com/en-us/learn/certifications/browse/
-
-## Browse Certifications and Exams | Microsoft Docs
-https://docs.microsoft.com/en-us/learn/certifications/browse/
-
-## Umbraco – the flexible open source .NET CMS
-https://umbraco.com/
-
-## Umbraco – the flexible open source .NET CMS
-https://umbraco.com/
-
-## Multistream to 30+ Platforms Simultaneously | Restream
-https://restream.io/
-
-## Multistream to 30+ Platforms Simultaneously | Restream
-https://restream.io/
-
-## Naslovnica – Extra FM
-https://extrafm.hr/
-
-## The Keyword | Google
-https://blog.google/
-
-## Google – About Google, Our Culture & Company News
-https://about.google/
-
-## Browse All of Google’s Products & Services – Google
-https://about.google/products/
-
-## One link or QR code to apps on App Store and Google Play
-https://www.onelink.to/
-
-## AppsFlyer | Attribution Data You Can Trust
-https://www.appsflyer.com/
-
-## Home – Ovation Themes
-https://www.ovationthemes.com/
-
-## ESTNN | Esports News Network: LoL, Dota 2, Fortnite, CoD, Valorant
-https://estnn.com/
-
-## Pioniere für Elektroscooter & Emobilität.
-https://www.forca-sports.de/
-
-## Grant Thornton
-https://test.grantthornton.hr/
-
-## Executive Education Programs | Harvard Kennedy School
-https://www.hks.harvard.edu/executive-education-program-finder
-
-## Executive Education Programs | Harvard Kennedy School
-https://www.hks.harvard.edu/executive-education-program-finder
-
-## Harvard Kennedy School | Harvard Kennedy School
-https://www.hks.harvard.edu/
-
-## Harvard Kennedy School | Harvard Kennedy School
-https://www.hks.harvard.edu/
-
-## Create a site — WordPress.com
-https://wordpress.com/start/free/user?ref=create-blog-lp
-
-## Global Leader in Screen Recording and Screen Capture | TechSmith
-https://www.techsmith.com/
-
-## Employee Training | TechSmith
-https://www.techsmith.com/employee-training.html
-
-## Executive Education Programs | Harvard Kennedy School
-https://www.hks.harvard.edu/executive-education-program-finder
-
-## Cloud hosting – (P)okrenite novu stranicu! – Avalon
-https://www.avalon.hr/
-
-## The Only Tool You Need To Run a Profitable Agency | Productive
-https://www.productive.io/
-
-## HOME – PERFUMIST
-https://perfumist.fr/
-
-## Fitify Workouts & Plans
-https://gofitify.com/
-
-## Xpeng Motors(G3、P7)_Intelligent electric car with Internet DNA
-https://en.xiaopeng.com/
-
-## Reniwn – Create Unlimited Websites
-https://www.reniwn.com
-
-## KingsBox.it – Attrezzatura per Fitness Funzionale
-https://www.kingsbox.it/hr/
-
-## TrustPulse: Best Social Proof App to Skyrocket Conversions
-https://trustpulse.com/
-
-## Kiwi themes – high quality themes for Drupal
-https://kiwi-themes.com/
-
-## AliExpress – Online Shopping for Popular Electronics, Fashion, Home & Garden, Toys & Sports, Automobiles and More.
-https://mbest.aliexpress.com/?albbt=Google_7_fbrnd&src=google&acnt=304-410-9721&crea=399352412040&aff_platform=aaf&netw=g&albcp=229122388&mtctp=b&aff_fcid=5576456f773d4fc59bbfe3092aa8f38a-1626535050142-05107-UneMJZVf&gclid=Cj0KCQjw_8mHBhClARIsABfFgpgImO03S_9pr3ovc0HwKH2ajyd3uWiN1v2FOp95HO5wlEZ5M_jMLZwaAqj6EALw_wcB&albag=15757210588&aff_fsk=UneMJZVf&albch=fbrnd&isSmbActive=false&albagn=888888&isSmbAutoCall=false&sk=UneMJZVf&aff_trace_key=5576456f773d4fc59bbfe3092aa8f38a-1626535050142-05107-UneMJZVf&trgt=kwd-10737310247&device=m&terminal_id=fbe1655e96484dd99bc8adb3d321c47a&needSmbHouyi=false
-
-## NEOSTAR
-https://www.neostar.com/hr
-
-## SEAT | SEAT
-https://www.seat.hr/
-
-## KKW BEAUTY
-https://kkwbeauty.com/
-
-## GOG.com
-https://www.gog.com/
-
-## Talent Relationship Management Software & Applicant Tracking System
-https://thrivetrm.com/
-
-## Windows Virtual Desktop | Remote Desktop | Microsoft Azure
-https://azure.microsoft.com/en-us/services/virtual-desktop/
-
-## SAP Store
-https://store.sap.com/dcp/en/
-
-## Copy Shark | AI Powered Copywriting
-https://www.copyshark.ai/
-
-## AI Writer & AI Content Generator – Kafkai
-https://kafkai.com/
-
-## Create great content
-https://creatoracademy.youtube.com/page/course/great-content
-
-## Kafkai Affiliate Program
-https://kafkai.com/affiliate
-
-## Cloud-Based School Management Software | Ayotree
-https://www.ayotree.com/
-
-## Procurement & Supply Chain Solutions for Spend Management | SAP Ariba
-https://www.ariba.com/
-
-## SAP Store
-https://store.sap.com/dcp/en/
-
-## Pekara Dubravica | Naslovna
-https://www.pekara-dubravica.hr/
+Posts navigation
+Older posts
+Blog at WordPress.com.
+e&amp;n
+#entertainment #webshop #software #news
+action="https://wordpress.com/email-subscriptions"
+method="post"
+accept-charset="utf-8"
+data-blog="178666584"
+data-post_access_level="everybody"
+data-subscriber_email=""
+id="subscribe-blog"
+>
+id="subscribe-field-label"
+for="subscribe-field"
+class="screen-reader-text"
+>
+Type your email…
+required="required"
+type="email"
+name="email"
+autocomplete="email"
+class="no-border-radius "
+style="font-size: 16px;padding: 15px 23px 15px 23px;border-radius: 0px;border-width: 1px;"
+placeholder="Type your email…"
+value=""
+id="subscribe-field"
+title="Please fill in this field."
+/>
+>
+class="wp-block-button__link no-border-radius"
+style="font-size: 16px;padding: 15px 23px 15px 23px;margin: 0; margin-left: 10px;border-radius: 0px;border-width: 1px;"
+name="jetpack_subscriptions_widget"
+>
+Subscribe
+Skip to content ↓
+e&amp;n
+Blog at WordPress.com.
+class="hide-on-button ads-active"
+data-hide-timeout="30"
+data-consent-expiration="180"
+id="eu-cookie-law"
+style="display: none"
+>
+Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use.
+To find out more, including how to control cookies, see here:
+Cookie Policy
+class="actnbr-pub-escutcheon actnbr-has-follow actnbr-has-actions">
+Subscribe
+Subscribed
+e&amp;n
+Join 141 other subscribers
+Sign me up
+Already have a WordPress.com account? Log in now.
+e&amp;n
+Subscribe
+Subscribed
+Sign up
+Log in
+Report this content
+View site in Reader
+Manage subscriptions
+Collapse this bar
+class="jp-carousel-wrap swiper jp-carousel-swiper-container jp-carousel-transitions"
+itemscope
+itemtype="https://schema.org/ImageGallery">
+Loading Comments...
+You must be logged in to post a comment.
 
 ---
 
-# software info by fk – software-online-review – Filip Keser
+# software-online-review.com
 
 > **Source:** https://software-online-review.com
-> **Analyzed At:** 2026-06-29T12:17:51.243340Z
+> **Analyzed At:** 2026-07-20T07:00:09.493Z
 
-## Roadmap and business roadmap
-A roadmap is
-a strategic plan that defines a goal or desired outcome and includes the major steps or milestones needed to reach it
-. It also serves as a communication tool, a high-level document that helps articulate strategic thinking—the why—behind both the goal and the plan for getting there.
-A business roadmap is
-a visual representation of your business strategy
-. It outlines the steps, goals, initiatives, and milestones needed to achieve your long-term plans. A business roadmap is also more tactical, focusing on how you will reach your objectives.
-Eight Bukets – Challenge
-Six – Create Value – Capture Value
+### Content
+<title>software info by fk &#8211; software-online-review &#8211; Filip Keser</title>
+Skip to content
+Menu
+ads &#8211; analitics &#8211;&nbsp;advertising
+affiliate &#8211; partner &#8211;&nbsp;reseller
+all about cookies
+Amazon affiliate program
+Author.jpg
+Auto magazine
+BUY IT NOW &#8211; ESCROW &#8211; PROJECT SOR &#8211; DOMAIN WITH&nbsp;CONTENT
+Companylink Business
+Cosmetic &amp; parfumes
+Customer Management System Process&nbsp;Driver
+design style
+draagster &#8211; India
+E&amp;N
+Fintech bussines card example scheme&nbsp;links
+gadget
+Game zone
+Google search
+google third party cookies &#8211; privacy sandbox &#8211; safari dont use third party &#8230;&nbsp;2023
+idea to make by&nbsp;fk
+Informatic magazine
+Marketing
+Music page
+NordVPN
+notes
+online news &amp;&nbsp;content
+Pilot project
+software-online-review
+Startup online hiring Scheme links &#8211; online &amp;&nbsp;google
+Store
+Study &#8211; Courses&nbsp;online
+Unitedsports News
+unofficial
+us-cro-info-news
+Venture Capital
+Web shop us croatia&nbsp;online
+Webshops
+WordPress links
+WordPress Read
+WordPress Upgrade
+" data-image-caption="" data-large-file="https://software-online-review.com/wp-content/uploads/2021/10/cropped-cropped-screenshot_20211031-010800_facebook.jpg?w=120" />					software info by fk
+software-online-review &#8211; Filip Keser
+Featured
+Posted in software online review		Roadmap and business&nbsp;roadmap
+Posted on <time class="entry-date published" datetime="2025-11-01T19:32:05+01:00">November 1, 2025</time><time class="updated" datetime="2025-11-01T20:24:39+01:00">November 1, 2025</time> by Filip Keser
+A roadmap is&nbsp;a strategic plan that defines a goal or desired outcome and includes the major steps or milestones needed to reach it. It also serves as a communication tool, a high-level document that helps articulate strategic thinking—the why—behind both the goal and the plan for getting there.
+" data-large-file="https://software-online-review.com/wp-content/uploads/2025/11/img_2984.jpg?w=515" width="515" height="1024" src="https://software-online-review.com/wp-content/uploads/2025/11/img_2984.jpg?w=515" alt="" class="wp-image-14501" srcset="https://software-online-review.com/wp-content/uploads/2025/11/img_2984.jpg?w=515 515w, https://software-online-review.com/wp-content/uploads/2025/11/img_2984.jpg?w=75 75w, https://software-online-review.com/wp-content/uploads/2025/11/img_2984.jpg?w=151 151w, https://software-online-review.com/wp-content/uploads/2025/11/img_2984.jpg 640w" sizes="(max-width: 515px) 100vw, 515px" />
+A business roadmap is&nbsp;a visual representation of your business strategy. It outlines the steps, goals, initiatives, and milestones needed to achieve your long-term plans. A business roadmap is also more tactical, focusing on how you will reach your objectives.
+Eight Bukets &#8211; Challenge
+Six &#8211; Create Value &#8211; Capture Value
 I’m giving you the map, now you must walk the path
 https://youtu.be/qllWAheHkms?si=fCkbOSRuRO5kZ0ol
-The 80 – 20 Rule
+The 80 &#8211; 20 Rule
 https://www.investopedia.com/terms/1/80-20-rule.asp
-
-## Nvidia Dgx Spark
+Featured
+Posted in software online review		Nvidia Dgx Spark
+Posted on <time class="entry-date published" datetime="2025-10-25T05:43:41+02:00">October 25, 2025</time><time class="updated" datetime="2025-10-25T06:15:37+02:00">October 25, 2025</time> by Filip Keser
 https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/
 https://marketplace.nvidia.com/en-us/developer/dgx-spark/
 https://www.nvidia.com/en-us/
-
-## Chromium
+Featured
+Posted in software online review		Chromium
+Posted on <time class="entry-date published" datetime="2025-10-24T22:04:54+02:00">October 24, 2025</time><time class="updated" datetime="2025-10-25T06:16:27+02:00">October 25, 2025</time> by Filip Keser
 https://en.wikipedia.org/wiki/Chromium_(web_browser)
 The One Investment Rule
 https://youtu.be/IBD_AdM3WNI?si=xORYvpzXfwyYxO-a
@@ -3176,26 +1231,59 @@ Chromium org
 https://www.chromium.org/chromium-projects/
 browsing history
 https://interestingengineering.com/culture/chatgpt-to-absorb-users-life-history
-ghat gpt – gemini – missing personality
+ghat gpt &#8211; gemini &#8211; missing personality
 https://www.tomsguide.com/ai/i-switched-from-chatgpt-to-gemini-for-one-week-and-heres-why-im-going-back-to-chatgpt
 Chromium base
 https://www.pcmag.com/comparisons/chatgpt-vs-gemini-which-ai-chatbot-is-actually-smarter
 Gemini
 https://gemini.google.com/app/download
 https://gemini.google/subscriptions/
-Chat Gpt – Open AI
+Chat Gpt &#8211; Open AI
 https://chatgpt.com/
 https://openai.com/
 https://en.wikipedia.org/wiki/OpenAI
-
-## Google marketing
+Featured
+Posted in software online review		Project Sor
+Posted on <time class="entry-date published" datetime="2024-11-25T20:00:00+01:00">November 25, 2024</time><time class="updated" datetime="2024-11-25T19:46:43+01:00">November 25, 2024</time> by Filip Keser
+Featured
+Posted in marketing		Google marketing
+Posted on <time class="entry-date published" datetime="2023-12-07T01:22:42+01:00">December 7, 2023</time><time class="updated" datetime="2024-06-02T08:08:01+02:00">June 2, 2024</time> by Filip Keser
 Subscribe to continue reading
 Subscribe to get access to the rest of this post and other subscriber-only content.
+action="https://wordpress.com/email-subscriptions"
+method="post"
+accept-charset="utf-8"
+data-blog="178675373"
+data-post_access_level="everybody"
+data-subscriber_email=""
+id="subscribe-blog"
+>
+id="subscribe-field-label"
+for="subscribe-field"
+class="screen-reader-text"
+>
 Type your email…
+required="required"
+type="email"
+name="email"
+autocomplete="email"
+class=" has-primary-border-color"
+style="font-size: 16px;padding: 15px 23px 15px 23px;border-color: primary;border-radius: 50px;border-width: 1px;"
+placeholder="Type your email…"
+value=""
+id="subscribe-field"
+title="Please fill in this field."
+/>
+>
+class="wp-block-button__link has-primary-border-color"
+style="font-size: 16px;padding: 15px 23px 15px 23px;margin: 0; margin-left: 10px;border-color: primary;border-radius: 50px;border-width: 1px;"
+name="jetpack_subscriptions_widget"
+>
 Subscribe
 Already a subscriber?
-
-## chronicle
+Featured
+Posted in software online review		chronicle
+Posted on <time class="entry-date published" datetime="2023-10-17T16:04:25+02:00">October 17, 2023</time><time class="updated" datetime="2023-11-30T02:33:25+01:00">November 30, 2023</time> by Filip Keser
 https://chronicle.security/
 https://cloud.google.com/chronicle-soar
 Chronicle ingests your own data into a private container at petabyte scale with 1-year retention
@@ -3207,25 +1295,25 @@ https://cloud.google.com/partners
 https://inthecloud.withgoogle.com/pck-page/register.html
 https://www.partneradvantage.goog/GCPPRM/s/memberregistration
 https://cloud.google.com/partners/become-a-partner/
-
-## Security key
+Featured
+Posted in software online review		Security key
+Posted on <time class="entry-date published" datetime="2023-04-24T05:20:27+02:00">April 24, 2023</time><time class="updated" datetime="2023-11-30T02:33:53+01:00">November 30, 2023</time> by Filip Keser
 https://webauthn.io/
 https://store.google.com/us/product/titan_security_key
 https://www.ftsafe.com/Products/FIDO
 https://www.ftsafe.com/
-
-## search google
-BUY IT NOW – ESCROW –  PROJECT SOR – DOMAIN WITH
-CONTENT
+Featured
+Posted in software online review		search google
+Posted on <time class="entry-date published" datetime="2022-08-25T04:41:03+02:00">August 25, 2022</time><time class="updated" datetime="2023-11-30T02:35:27+01:00">November 30, 2023</time> by Filip Keser
+BUY IT NOW &#8211; ESCROW &#8211;  PROJECT SOR &#8211; DOMAIN WITH CONTENT
 Buy it Now
 https://www.google.com/
 https://search.google.com/search-console/about
 https://developers.google.com/search
-
-## software-online-review
-NEED CONSTRUCTION WORKER –
-https://software-online-review.com/startup-online-hiring-scheme-online/
-ARCHITECTS & SOFTWARE DEVELOPERS
+Featured
+Posted in software online review		software-online-review
+Posted on <time class="entry-date published" datetime="2022-07-22T02:46:33+02:00">July 22, 2022</time><time class="updated" datetime="2024-10-23T16:55:50+02:00">October 23, 2024</time> by Filip Keser
+NEED CONSTRUCTION WORKER &#8211; https://software-online-review.com/startup-online-hiring-scheme-online/ARCHITECTS &amp; SOFTWARE DEVELOPERS
 https://www.delawareinc.com/
 https://www.sba.gov/
 https://eqvista.com/
@@ -3246,7 +1334,7 @@ https://pagespeed.web.dev/
 https://www.catchpoint.com/
 https://search.google.com/search-console/about
 WordPress VIP
-Site Kit by Google – Analytics, Search Console, AdSense, Speed
+Site Kit by Google &#8211; Analytics, Search Console, AdSense, Speed
 https://sitekit.withgoogle.com/
 https://www.investopedia.com/articles/markets/011516/top-5-google-shareholders-goog.asp
 https://www.nasdaq.com/market-activity/stocks/goog
@@ -3258,10 +1346,10 @@ https://neuechair.com/
 Neue™
 https://www.google.com/
 The 5 stages of a startup
-Solving the problem. Running a successful business is all about producing something that solves a problem. …
-2. Development. This is where it starts getting serious. …
-Entering the market. …
-Scaling. …
+Solving the problem. Running a successful business is all about producing something that solves a problem. &#8230;
+2. Development. This is where it starts getting serious. &#8230;
+Entering the market. &#8230;
+Scaling. &#8230;
 Maturity.
 Buy it Now
 https://sedo.com/us/
@@ -3274,114 +1362,65 @@ Filling in some gaps in your jewellery knowledge or trying to discover some unto
 Uncut Diamond Jewellery explained?
 An uncut diamond, as suggested by the name, is a diamond in its most natural form. Prior to any shaping to enhance proportion, symmetry and polish involved in diamond cutting, an uncut diamond is a raw diamond that is completely virgin and free from human manipulation.
 What is an uncut Diamond worth and why are Diamonds cut?
-Apart from their quirky edge, there is not a whole lot of value in purchasing raw diamonds. Uncut diamonds are typically worth less than traditionally cut diamonds as their unpolished, rough edges hinder how well light is refracted. This reduces their sparkle and brilliance, thus reducing their market value.
+Apart from their quirky edge, there is not a whole lot of value in purchasing raw diamonds. Uncut diamonds are typically worth less than traditionally cut diamonds as their unpolished, rough edges hinder how well light is refracted. This reduces their sparkle and brilliance, thus reducing their market value.&nbsp;
 What does a raw uncut Diamond look like?
 An uncut diamond is often bumpy and dull with no real structure. An acquired taste, uncut diamond rings provide a uniqueness and level of beauty some like to hold with others even looking for a rough diamond ring to mark their love.
 Diamond Cut Breakdown
-To create beautiful diamonds that are worth thousands, diamond cutters have the difficult job of trying to create finished products which align in proportion, symmetry and polish. Make no mistake, while this is easy to decide in theory, cutting diamonds is  a challenge where compromises often have to be made. Compromising factors such as diamond weight, to create the right proportions and symmetry, or  proportions and symmetry to avoid cutting further diamond and reducing weight.
-In a similar way to natural diamonds, poorly cut diamonds can also refract light badly, resulting in little to no sparkle and less spread for your carat weight. To identify how you can be savvy and well informed when choosing your own diamond jewellery, here is everything you need to know about cuts.
+To create beautiful diamonds that are worth thousands, diamond cutters have the difficult job of trying to create finished products which align in proportion, symmetry and polish. Make no mistake, while this is easy to decide in theory, cutting diamonds is&nbsp; a challenge where compromises often have to be made. Compromising factors such as diamond weight, to create the right proportions and symmetry, or&nbsp; proportions and symmetry to avoid cutting further diamond and reducing weight.
+In a similar way to natural diamonds, poorly cut diamonds can also refract light badly, resulting in little to no sparkle and less spread for your carat weight. To identify how you can be savvy and well informed when choosing your own diamond jewellery, here is everything you need to know about cuts.&nbsp;
 Developed in the 1940’s to 1950’s by the Gemological Institute of America (GIA), cut grades were developed to allow independent labs to identify a diamond’s clarity, colour and structure. A prime example of a predetermined cut grade is a brilliant cut diamond which will have 57 or 58 facets accurately cut and defined. While miniature, this provides a system to govern how well a diamond will sparkle.
 While they offer a significant discount in price, poorly cut diamonds lack luster and you will be paying for a diamond without any sparkle. To ensure that you have an effective diamond that is worthwhile, we always suggest purchasing a diamond with an “excellent” to “good” cut. However, if you are still interested in purchasing a diamond of a lower cut, we suggest taking a look in person under various lighting conditions to avoid any disappointment.
 Website, other related websites and blogs created as a scratch base pilot project for merging and evolving to something better and highly valuable.
-
-## Client Portal
+Featured
+" data-large-file="https://software-online-review.com/wp-content/uploads/2022/04/d5eec-pexels-photo-7875939.jpeg?w=840" />
+Posted in software online review		Client Portal
+Posted on <time class="entry-date published" datetime="2022-03-22T06:50:13+01:00">March 22, 2022</time><time class="updated" datetime="2023-03-25T03:50:23+01:00">March 25, 2023</time> by Filip Keser
 https://atomic-temporary-178675373.wpcomstaging.com/clients/
-
-## Harvard Business Review – Ideas and Advice for Leaders
+Featured
+Posted in software online review		Harvard Business Review &#8211; Ideas and Advice for&nbsp;Leaders
+Posted on <time class="entry-date published" datetime="2022-03-21T04:22:24+01:00">March 21, 2022</time><time class="updated" datetime="2023-03-20T09:52:31+01:00">March 20, 2023</time> by Filip Keser
 https://hbr.org/
-
-## Small Business Administration
+Featured
+" data-large-file="https://software-online-review.com/wp-content/uploads/2022/04/148ec-pexels-photo-207983.jpeg?w=840" />
+Posted in management, software, software online review, technology, workflow		Perfect Strangers
+Posted on <time class="entry-date published" datetime="2022-02-24T04:10:53+01:00">February 24, 2022</time><time class="updated" datetime="2022-02-25T01:26:46+01:00">February 25, 2022</time> by Filip Keser
+Featured
+Posted in software online review		Small Business Administration
+Posted on <time class="entry-date published" datetime="2021-05-14T20:26:08+02:00">May 14, 2021</time><time class="updated" datetime="2025-02-27T12:24:50+01:00">February 27, 2025</time> by Filip Keser
 https://www.sba.gov/
 https://www.sba.gov/funding-programs/loans/7a-loans
 https://www.sba.gov/funding-programs/loans/
 https://www.sba.gov/funding-programs/
-
-## Chromium – Base
-It’s true—
-Chromium
-has become the “engine” powering approximately
-80% of the global browser market
-. While initiated by Google, it is an open-source project, allowing other companies to skip the massive cost of developing their own rendering engines and focus instead on unique features.
-StatCounter Global Stats +5
+Posted in software online review		Chromium &#8211; Base
+Posted on <time class="entry-date published" datetime="2026-02-20T14:47:57+01:00">February 20, 2026</time><time class="updated" datetime="2026-02-20T14:54:15+01:00">February 20, 2026</time> by Filip Keser
+It&#8217;s true—Chromium&nbsp;has become the &#8220;engine&#8221; powering approximately&nbsp;80% of the global browser market. While initiated by Google, it is an open-source project, allowing other companies to skip the massive cost of developing their own rendering engines and focus instead on unique features.&nbsp;StatCounter Global Stats&nbsp;+5
 Browsers Built on Chromium:
-Beyond
-Google Chrome
-, prominent examples include:
-Microsoft Edge:
-Switched to Chromium in 2020 for better web compatibility and extension support.
-Brave:
-Focuses on privacy by automatically blocking ads and trackers.
-Opera & Opera GX:
-Some of the earliest adopters after abandoning their custom “Presto” engine.
-Vivaldi:
-Aimed at power users with extreme interface customization.
-Samsung Internet:
-The dominant browser for Samsung mobile devices.
-Arc:
-A modern browser that rethinks tab management and user experience.
-Efficient App +6
+Beyond&nbsp;Google Chrome, prominent examples include:
+Microsoft Edge: Switched to Chromium in 2020 for better web compatibility and extension support.
+Brave: Focuses on privacy by automatically blocking ads and trackers.
+Opera &amp; Opera GX: Some of the earliest adopters after abandoning their custom &#8220;Presto&#8221; engine.
+Vivaldi: Aimed at power users with extreme interface customization.
+Samsung Internet: The dominant browser for Samsung mobile devices.
+Arc: A modern browser that rethinks tab management and user experience. Efficient App +6
 The Major Exceptions (Non-Chromium):
 Only two major players still maintain their own independent engines:
-Mozilla Firefox:
-Uses its own
-Gecko
-engine.
-Apple Safari:
-Uses the
-WebKit
-engine. Interestingly, Chromium originally started as a fork of WebKit before they split into separate projects.
-Reddit +3
+Mozilla Firefox: Uses its own Gecko engine.
+Apple Safari: Uses the WebKit engine. Interestingly, Chromium originally started as a fork of WebKit before they split into separate projects. Reddit +3
 Why the Shift to Chromium?
-The transition is driven by
-security
-,
-speed
-(specifically the V8 JavaScript engine), and a
-massive extension ecosystem
-. Maintaining a modern engine is so complex that even giants like Microsoft found it more efficient to adopt the Chromium base to ensure perfect website compatibility.
-Sahi Pro +3
+The transition is driven by&nbsp;security,&nbsp;speed&nbsp;(specifically the V8 JavaScript engine), and a&nbsp;massive extension ecosystem. Maintaining a modern engine is so complex that even giants like&nbsp;Microsoft&nbsp;found it more efficient to adopt the Chromium base to ensure perfect website compatibility.&nbsp;Sahi Pro&nbsp;+3
 1. Privacy Differences (Brave vs. Vivaldi vs. Chrome)
 While they are all built on Chromium, each browser handles your data differently:
-Google Chrome:
-The least private. It integrates deep telemetry with your Google account and uses your browsing history for targeted advertising.
-Brave:
-A “hardcore” approach to privacy. It blocks ads, trackers, and fingerprinting
-directly in the engine
-by default. It is also fully open-source.
-Vivaldi:
-Focused on user control. It offers built-in blockers and granular permissions for every site. Unlike Brave, Vivaldi’s interface (UI) is not open-source, as noted in
-PCMag reviews
-.
-Ungoogled Chromium:
-For maximalists—this is Chromium with every link to Google’s servers
-manually stripped out
-, though it requires manual updates.
+Google Chrome: The least private. It integrates deep telemetry with your Google account and uses your browsing history for targeted advertising.
+Brave: A &#8220;hardcore&#8221; approach to privacy. It blocks ads, trackers, and fingerprinting directly in the engine by default. It is also fully open-source.
+Vivaldi: Focused on user control. It offers built-in blockers and granular permissions for every site. Unlike Brave, Vivaldi’s interface (UI) is not open-source, as noted in PCMag reviews.
+Ungoogled Chromium: For maximalists—this is Chromium with every link to Google’s servers manually stripped out, though it requires manual updates.
 2. The Monopoly Problem and Web Standards
 Since Google controls Chromium’s development, it effectively sets the rules for the entire internet:
-Dictating Standards:
-If Google introduces a new feature in Chromium (e.g.,
-Privacy Sandbox
-), it overnight becomes the standard that web developers must follow. This makes it harder for Firefox (Gecko engine) to survive, as developers often optimize sites
-only for Chromium
-.
-Manifest V3:
-Google recently changed how extensions work (Manifest V3), which
-complicates the effectiveness of traditional ad blockers
-. While Brave and Vivaldi strive to maintain old functionality, they are ultimately limited by what Google allows in the base code.
-Antitrust Battles:
-Due to this dominance, the U.S. Department of Justice (DOJ) attempted to force Google to
-sell Chrome
-. However, according to rulings from September 2025, Google
-will not have to sell the browser
-but must share search data with competitors.
+Dictating Standards: If Google introduces a new feature in Chromium (e.g., Privacy Sandbox), it overnight becomes the standard that web developers must follow. This makes it harder for Firefox (Gecko engine) to survive, as developers often optimize sites only for Chromium.
+Manifest V3: Google recently changed how extensions work (Manifest V3), which complicates the effectiveness of traditional ad blockers. While Brave and Vivaldi strive to maintain old functionality, they are ultimately limited by what Google allows in the base code.
+Antitrust Battles: Due to this dominance, the U.S. Department of Justice (DOJ) attempted to force Google to sell Chrome. However, according to rulings from September 2025, Google will not have to sell the browser but must share search data with competitors.
 Conclusion: Which one to use?
-If you want to escape Google’s influence,
-Firefox
-is the only true alternative with an independent engine. If you want Chromium’s speed but with privacy,
-Brave
-or the
-Mullvad Browser
-are the top choices for 2026.
+If you want to escape Google’s influence,&nbsp;Firefox&nbsp;is the only true alternative with an independent engine. If you want Chromium’s speed but with privacy,&nbsp;Brave&nbsp;or the&nbsp;Mullvad Browser&nbsp;are the top choices for 2026.
 https://www.chromium.org/getting-involved/download-chromium/
 https://developer.apple.com/safari/resources/
 https://chromium.woolyss.com/download/
@@ -3389,219 +1428,113 @@ https://download-chromium.appspot.com/
 https://webkit.org/downloads
 https://www.google.com/chrome/canary/
 https://www.google.com/chrome/dev/
-
-## Schema
-Schema.org
-is a collaborative,
-community-driven initiative
-that provides a standardized “language” or dictionary of
-structured data tags
-to help search engines understand the content of web pages.
+Posted in software online review		Schema
+Posted on <time class="entry-date published updated" datetime="2026-02-17T21:30:45+01:00">February 17, 2026</time> by Filip Keser
+Schema.org&nbsp;is a collaborative,&nbsp;community-driven initiative&nbsp;that provides a standardized &#8220;language&#8221; or dictionary of&nbsp;structured data tags&nbsp;to help search engines understand the content of web pages.&nbsp;
 Here is exactly what it does and why it matters:
-Clarifies Content Meaning:
-While standard HTML tells a browser how to
-display
-text (e.g., as a heading), Schema tags tell search engines what that text
-is
-—distinguishing, for instance, between a movie title, a person’s name, or a product’s price.
-Powers Rich Snippets:
-By using these tags, your page can appear in search results with enhanced visual features like
-review stars
-, recipe images, or price listings, which often lead to higher
-click-through rates
-.
-Universal Industry Standard:
-It was founded and is maintained by major search engines, including
-Google, Microsoft (Bing), Yahoo, and Yandex
-, ensuring that all major crawlers recognize the same set of definitions.
-Broad Versatility:
-The vocabulary covers thousands of “types” including local businesses, articles, events, recipes, and products, helping search engines categorize almost any kind of information.
-In practice, this is typically implemented using the
-JSON-LD format
-, which Google recommends as the most efficient way to add these metadata “labels” to your site’s code.
+Clarifies Content Meaning: While standard HTML tells a browser how to display text (e.g., as a heading), Schema tags tell search engines what that text is—distinguishing, for instance, between a movie title, a person&#8217;s name, or a product&#8217;s price.
+Powers Rich Snippets: By using these tags, your page can appear in search results with enhanced visual features like review stars, recipe images, or price listings, which often lead to higher click-through rates.
+Universal Industry Standard: It was founded and is maintained by major search engines, including Google, Microsoft (Bing), Yahoo, and Yandex, ensuring that all major crawlers recognize the same set of definitions.
+Broad Versatility:&nbsp;The vocabulary covers thousands of &#8220;types&#8221; including local businesses, articles, events, recipes, and products, helping search engines categorize almost any kind of information.&nbsp;
+In practice, this is typically implemented using the&nbsp;JSON-LD format, which Google recommends as the most efficient way to add these metadata &#8220;labels&#8221; to your site&#8217;s code.
 https://schema.org/
 https://validator.schema.org/
-
-## Google AI
+Posted in software online review		Google AI
+Posted on <time class="entry-date published" datetime="2025-12-18T11:43:50+01:00">December 18, 2025</time><time class="updated" datetime="2025-12-18T11:53:16+01:00">December 18, 2025</time> by Filip Keser
 https://one.google.com/
 https://one.google.com/about/
 https://one.google.com/about/google-ai-plans/
 https://gemini.google.com/
-Gemini 3 Pro is Google’s most advanced AI model. It is designed to handle complex tasks that require advanced reasoning and understanding of different types of data. It is currently available in preview for developers and through the Google AI Pro plan.
+Gemini 3 Pro is Google&#8217;s most advanced AI model. It is designed to handle complex tasks that require advanced reasoning and understanding of different types of data. It is currently available in preview for developers and through the Google AI Pro plan.&nbsp;
 Key features and capabilities:
-Complex tasks
-: Gemini 3 Pro is optimized for complex tasks that require broad general knowledge and advanced reasoning across various data types, such as text, images, and video.
-Creative generation
-: The model excels at creative writing and developing complex, multifaceted concepts.
-Advanced reasoning
-: It is considered the most intelligent Google model to date, with improved logical reasoning, analysis, and coding capabilities.
-Research assistance
-: It assists users in summarizing hours of work into minutes by providing detailed reports on topics by analyzing hundreds of web pages in real-time.
-Multimodality
-: It has advanced visual and spatial reasoning capabilities (such as the Gemini 3 Pro Image model).
+Complex tasks: Gemini 3 Pro is optimized for complex tasks that require broad general knowledge and advanced reasoning across various data types, such as text, images, and video.
+Creative generation: The model excels at creative writing and developing complex, multifaceted concepts.
+Advanced reasoning: It is considered the most intelligent Google model to date, with improved logical reasoning, analysis, and coding capabilities.
+Research assistance: It assists users in summarizing hours of work into minutes by providing detailed reports on topics by analyzing hundreds of web pages in real-time.
+Multimodality: It has advanced visual and spatial reasoning capabilities (such as the Gemini 3 Pro Image model).&nbsp;
 Availability:
 Gemini 3 Pro is currently in preview and is available through:
-Gemini API
-: Developers can access the model through the
-Google AI Studio
-and Vertex AI platforms to build applications.
-Google AI Pro subscription
-: Users who subscribe to the Google AI Pro plan get extended access to Gemini 3 Pro features, including the “Deep Research” feature.
-The model was launched in November 2025. Demand was so high that Google had to temporarily adjust the system to ensure availability. Pricing is calculated per million tokens, and details are available on the API pricing page.
+Gemini API: Developers can access the model through the&nbsp;Google AI Studio&nbsp;and Vertex AI platforms to build applications.
+Google AI Pro subscription: Users who subscribe to the Google AI Pro plan get extended access to Gemini 3 Pro features, including the &#8220;Deep Research&#8221; feature.&nbsp;
+The model was launched in November 2025. Demand was so high that Google had to temporarily adjust the system to ensure availability. Pricing is calculated per million tokens, and details are available on the API pricing page.&nbsp;
 https://jules.google/
-Jules
-is
-Google’s autonomous, asynchronous AI coding agent
-designed to help software developers automate complex tasks like fixing bugs, writing tests, and implementing new features.
-Unlike traditional “co-pilots” that suggest code as you type, Jules acts like an independent collaborator that clones your codebase into a secure virtual machine (VM) to perform work in the background.
+Jules&nbsp;is&nbsp;Google&#8217;s autonomous, asynchronous AI coding agent&nbsp;designed to help software developers automate complex tasks like fixing bugs, writing tests, and implementing new features.&nbsp;
+Unlike traditional &#8220;co-pilots&#8221; that suggest code as you type, Jules acts like an independent collaborator that clones your codebase into a secure virtual machine (VM) to perform work in the background.&nbsp;
 Key Capabilities and Features (2025 Updates)
-Autonomous Workflow:
-Tasks are submitted via prompt, and Jules plans, executes, and verifies the changes independently, eventually opening a pull request.
-Asynchronous Development:
-Developers can assign tasks to Jules and continue working on other projects while it runs in a cloud environment.
-Gemini-Powered Intelligence:
-As of late 2025, Jules utilizes advanced models like
-Gemini 2.5 Pro
-and has been updated with integrations for
-Gemini 3
-for improved reasoning and transparency.
-Critic-Augmented Generation:
-A “critic” feature provides an adversarial review of Jules’ proposed changes before completion to ensure high code quality.
-Proactive Assistance:
-A new
-Suggested Tasks
-feature automatically scans code to propose improvements or schedule routine updates without being prompted.
-Audio Changelogs:
-It can generate audible summaries of recent commits to help developers catch up on project history.
+Autonomous Workflow:&nbsp;Tasks are submitted via prompt, and Jules plans, executes, and verifies the changes independently, eventually opening a pull request.
+Asynchronous Development:&nbsp;Developers can assign tasks to Jules and continue working on other projects while it runs in a cloud environment.
+Gemini-Powered Intelligence:&nbsp;As of late 2025, Jules utilizes advanced models like&nbsp;Gemini 2.5 Pro&nbsp;and has been updated with integrations for&nbsp;Gemini 3&nbsp;for improved reasoning and transparency.
+Critic-Augmented Generation:&nbsp;A &#8220;critic&#8221; feature provides an adversarial review of Jules&#8217; proposed changes before completion to ensure high code quality.
+Proactive Assistance:&nbsp;A new&nbsp;Suggested Tasks&nbsp;feature automatically scans code to propose improvements or schedule routine updates without being prompted.
+Audio Changelogs:&nbsp;It can generate audible summaries of recent commits to help developers catch up on project history.&nbsp;
 How to Use Jules
-Web Interface:
-You can sign in and manage repositories at jules.google.com.
-Command Line (CLI):
-Use
-Jules Tools
-to interact with the agent directly from your terminal, allowing for parallel task runs and local diff viewing.
-Jules API:
-Developers can programmatically integrate Jules into custom workflows, CI/CD pipelines, or tools like Slack and Linear.
-GitHub Integration:
-Tasks can be assigned directly by adding a
-jules
-label to an issue in a connected GitHub repository.
+Web Interface:&nbsp;You can sign in and manage repositories at&nbsp;jules.google.com.
+Command Line (CLI):&nbsp;Use&nbsp;Jules Tools&nbsp;to interact with the agent directly from your terminal, allowing for parallel task runs and local diff viewing.
+Jules API:&nbsp;Developers can programmatically integrate Jules into custom workflows, CI/CD pipelines, or tools like Slack and Linear.
+GitHub Integration:&nbsp;Tasks can be assigned directly by adding a&nbsp;jules&nbsp;label to an issue in a connected GitHub repository.&nbsp;
 Pricing and Availability
-Jules is currently in
-Public Beta
-. It is available globally where Gemini is supported and offers structured tiers:
-Free Tier:
-Accessible to all users for basic exploration.
-Paid Tiers:
-Higher usage limits are available via
-Google AI Pro
-and
-Ultra
-subscriptions.
+Jules is currently in&nbsp;Public Beta. It is available globally where Gemini is supported and offers structured tiers:&nbsp;
+Free Tier:&nbsp;Accessible to all users for basic exploration.
+Paid Tiers:&nbsp;Higher usage limits are available via&nbsp;Google AI Pro&nbsp;and&nbsp;Ultra&nbsp;subscriptions.&nbsp;
 https://antigravity.google/
-In 2025, “Google Antigravity” primarily refers to a professional software development platform, though it can also refer to a classic search engine Easter egg.
+In 2025, &#8220;Google Antigravity&#8221; primarily refers to a professional software development platform, though it can also refer to a classic search engine Easter egg.&nbsp;
 1. Google Antigravity (Agentic IDE)
-Launched on November 18, 2025,
-Google Antigravity
-is an “agent-first” AI-powered Integrated Development Environment (IDE). Antigravity uses autonomous agents to plan, execute, and verify entire development tasks. Standard coding assistants suggest code snippets.
+Launched on November 18, 2025,&nbsp;Google Antigravity&nbsp;is an &#8220;agent-first&#8221; AI-powered Integrated Development Environment (IDE). Antigravity uses autonomous agents to plan, execute, and verify entire development tasks. Standard coding assistants suggest code snippets.&nbsp;
 Key Components:
-Agent Manager:
-This is an interface for orchestrating multiple background agents. The agents work across different workspaces.
-Editor View:
-This is a fully-featured IDE (forked from Visual Studio Code) for coding with AI-powered tab completion and inline commands.
-Antigravity Browser:
-This browser allows agents to navigate, test, and verify web applications.
+Agent Manager:&nbsp;This is an interface for orchestrating multiple background agents. The agents work across different workspaces.
+Editor View:&nbsp;This is a fully-featured IDE (forked from Visual Studio Code) for coding with AI-powered tab completion and inline commands.
+Antigravity Browser:&nbsp;This browser allows agents to navigate, test, and verify web applications.
 Core Features:
-Artifacts:
-Agents produce deliverables like implementation plans, code diffs, and browser recordings. These allow for easy verification.
-Model Optionality:
-It is powered primarily by
-Gemini 3
-, but also supports other models. These include Anthropic’s Claude Sonnet 4.5 and OpenAI’s GPT-OSS.
-Feedback Loops:
-Users can leave comments directly on artifacts to guide agent iteration. This is similar to “Google Docs-style” comments.
-Availability:
-It is currently in
-Public Preview
-for individual users with personal Gmail accounts. There is no charge. Higher rate limits are available for Google AI Pro and Ultra subscribers.
+Artifacts:&nbsp;Agents produce deliverables like implementation plans, code diffs, and browser recordings. These allow for easy verification.
+Model Optionality:&nbsp;It is powered primarily by&nbsp;Gemini 3, but also supports other models. These include Anthropic&#8217;s Claude Sonnet 4.5 and OpenAI&#8217;s GPT-OSS.
+Feedback Loops:&nbsp;Users can leave comments directly on artifacts to guide agent iteration. This is similar to &#8220;Google Docs-style&#8221; comments.
+Availability:&nbsp;It is currently in&nbsp;Public Preview&nbsp;for individual users with personal Gmail accounts. There is no charge. Higher rate limits are available for Google AI Pro and Ultra subscribers.&nbsp;
 2. Google Antigravity (Easter Egg)
-This web trick mimics the lack of gravity on the Google search page. It is often hosted by third-party sites like Mr. Doob.
-How to trigger:
-Searching “Google Gravity” or “Google Antigravity” and clicking “I’m Feeling Lucky” typically causes the search bar and buttons to fall to the bottom of the screen or float around.
-Interaction:
-Users can click and “throw” the various page elements across the screen.
+This web trick mimics the lack of gravity on the Google search page. It is often hosted by third-party sites like&nbsp;Mr. Doob.&nbsp;
+How to trigger:&nbsp;Searching &#8220;Google Gravity&#8221; or &#8220;Google Antigravity&#8221; and clicking &#8220;I&#8217;m Feeling Lucky&#8221; typically causes the search bar and buttons to fall to the bottom of the screen or float around.
+Interaction:&nbsp;Users can click and &#8220;throw&#8221; the various page elements across the screen.&nbsp;
 google antigravity vs google jules
-In 2025, Google offers two distinct agentic coding tools:
-Antigravity
-and
-Jules
-. Both use Gemini 3 models for coding automation, but they differ in their environment and interaction style.
+In 2025, Google offers two distinct agentic coding tools:&nbsp;
+Antigravity&nbsp;and&nbsp;Jules. Both use Gemini 3 models for coding automation, but they differ in their environment and interaction style.&nbsp;
 Quick Comparison (2025)
-Feature
-Google Antigravity
-Google Jules
-Primary Format
-Standalone AI-first IDE (fork of VS Code)
-Background/Asynchronous Coding Agent
-User Interaction
-Synchronous/Interactive:
-Code alongside agents in real-time.
-Asynchronous:
-Assign a task and return later.
-Integration
-Local environment; works like Cursor or Windsurf.
-Integrated with GitHub repositories and works in a cloud VM.
-Best For
-Active development, “vibe coding,” and multi-agent orchestration.
-Routine maintenance, bug fixing, and long-running documentation tasks.
+<table class="has-fixed-layout"><tbody><tr><th class="has-text-align-left" data-align="left">Feature&nbsp;</th><th class="has-text-align-left" data-align="left">Google Antigravity</th><th class="has-text-align-left" data-align="left">Google Jules</th></tr><tr><td>Primary Format</td><td>Standalone AI-first IDE (fork of VS Code)</td><td>Background/Asynchronous Coding Agent</td></tr><tr><td>User Interaction</td><td>Synchronous/Interactive:&nbsp;Code alongside agents in real-time.</td><td>Asynchronous:&nbsp;Assign a task and return later.</td></tr><tr><td>Integration</td><td>Local environment; works like Cursor or Windsurf.</td><td>Integrated with GitHub repositories and works in a cloud VM.</td></tr><tr><td>Best For</td><td>Active development, &#8220;vibe coding,&#8221; and multi-agent orchestration.</td><td>Routine maintenance, bug fixing, and long-running documentation tasks.</td></tr></tbody></table>
 Google Antigravity: The AI-First IDE
-Launched in November 2025, Antigravity is an “agent-first” development platform designed as a direct competitor to Cursor.
-Key Strength:
-Orchestration. It allows multiple agent threads to run simultaneously, such as one agent refactoring a file while another writes unit tests.
-Browser Control:
-It integrates Chrome, allowing agents to “see” rendered HTML, click buttons, and run front-end tests autonomously.
-Status:
-Currently in public preview; it supports Gemini 3 Pro and Claude 3.5 models.
+Launched in November 2025,&nbsp;Antigravity&nbsp;is an &#8220;agent-first&#8221; development platform designed as a direct competitor to Cursor.&nbsp;
+Key Strength: Orchestration. It allows multiple agent threads to run simultaneously, such as one agent refactoring a file while another writes unit tests.
+Browser Control: It integrates Chrome, allowing agents to &#8220;see&#8221; rendered HTML, click buttons, and run front-end tests autonomously.
+Status: Currently in public preview; it supports Gemini 3 Pro and Claude 3.5 models.
 Google Jules: The Asynchronous Agent
-Jules is a specialist “subcontractor” that handles bounded tasks in the background.
-Key Strength:
-Autonomy. Jules runs in a secure cloud environment (VM), meaning it can work on a task for hours without requiring the user’s session to stay active.
-GitHub Focused:
-It is primarily used to open branches, fix GitHub issues, and submit pull requests automatically.
-Availability:
-Now out of beta and available via
-Jules.google
-or as a VS Code extension.
-Pricing & Access
-Both tools are part of the
-Google AI Pro/Ultra plans
-(typically bundled with Google One subscriptions):
-Jules:
-Offers a free tier; paid tiers provide higher concurrency (e.g., 15 tasks at once).
-Antigravity:
-Available for free during its initial launch period, with premium rate limits tied to the Google AI Pro plan.
+Jules is a specialist &#8220;subcontractor&#8221; that handles bounded tasks in the background.&nbsp;
+Key Strength: Autonomy. Jules runs in a secure cloud environment (VM), meaning it can work on a task for hours without requiring the user&#8217;s session to stay active.
+GitHub Focused: It is primarily used to open branches, fix GitHub issues, and submit pull requests automatically.
+Availability: Now out of beta and available via Jules.google or as a VS Code extension.
+Pricing &amp; Access
+Both tools are part of the&nbsp;Google AI Pro/Ultra plans&nbsp;(typically bundled with Google One subscriptions):&nbsp;
+Jules: Offers a free tier; paid tiers provide higher concurrency (e.g., 15 tasks at once).
+Antigravity: Available for free during its initial launch period, with premium rate limits tied to the Google AI Pro plan.
 https://geminicli.com/
 https://codeassist.google/
 https://developer.android.com/studio
-
-## deepmind.google
+Posted in Google, management, marketing, platform, software, software online review, technology		deepmind.google
+Posted on <time class="entry-date published" datetime="2025-12-02T10:39:13+01:00">December 2, 2025</time><time class="updated" datetime="2025-12-14T17:48:38+01:00">December 14, 2025</time> by Filip Keser
 https://deepmind.google/models/gemini/pro/
 https://deepmind.google/models
 https://deepmind.google
 https://aistudio.google.com/
 https://gemini.google.com/
 https://jules.google.com/
-
-## Gemini & AI Pro
+Posted in software online review		Gemini &amp; AI&nbsp;Pro
+Posted on <time class="entry-date published updated" datetime="2025-11-16T11:47:49+01:00">November 16, 2025</time> by Filip Keser
 https://one.google.com/ai
 https://one.google.com/about/
-
-## topic – top
+Posted in software online review		topic &#8211; top
+Posted on <time class="entry-date published updated" datetime="2025-10-22T10:29:29+02:00">October 22, 2025</time> by Filip Keser
 https://www.financialexpress.com/world-news/us-news/googles-ex-ceonbsperic-schmidtnbspsued-for-abuse-stalking-who-is-michelle-ritternbspnbsp/4016867/
 https://nypost.com/2025/10/20/business/eric-schmidts-ex-mistress-31-sues-former-google-ceo-70-over-alleged-stalking-abuse-and-digital-surveillance/
 https://torontosun.com/news/world/ex-google-ceo-controlling-behaviour-former-mistress
-
-## FK – I was a worker without even knowing it.
+Posted in software online review		FK &#8211; I was a worker without even knowing&nbsp;it.
+Posted on <time class="entry-date published" datetime="2025-09-20T11:15:18+02:00">September 20, 2025</time><time class="updated" datetime="2026-02-17T21:22:52+01:00">February 17, 2026</time> by Filip Keser
+" data-image-caption="" data-large-file="https://software-online-review.com/wp-content/uploads/2025/09/img_3328.jpg?w=840" loading="lazy" width="1179" height="1422" src="https://software-online-review.com/wp-content/uploads/2025/09/img_3328.jpg" alt="" class="wp-image-14532" srcset="https://software-online-review.com/wp-content/uploads/2025/09/img_3328.jpg 1179w, https://software-online-review.com/wp-content/uploads/2025/09/img_3328.jpg?w=124&amp;h=150 124w, https://software-online-review.com/wp-content/uploads/2025/09/img_3328.jpg?w=249&amp;h=300 249w, https://software-online-review.com/wp-content/uploads/2025/09/img_3328.jpg?w=768&amp;h=926 768w, https://software-online-review.com/wp-content/uploads/2025/09/img_3328.jpg?w=849&amp;h=1024 849w" sizes="auto, (max-width: 1179px) 100vw, 1179px" />
 How The Rich Think
 https://youtu.be/vgqOD_RQDXo?si=0z_kZBJSBQ7VHDCM
 Why Saving Money Won’t Make You Rich
@@ -3616,11 +1549,11 @@ Secrets the Welthy Alredy Know
 https://youtu.be/deQU7CWxSTc?si=XJTnzXQ9OJgJ7_RD
 Never Start What You Can’t Finish
 https://youtu.be/5yx7HALtRfA?si=_5IwLx-vEFqxrreH
-The Billionare Lawyer Who Took Down Disney & Coca-Cola, Grow or Die, Google Vision
+The Billionare Lawyer Who Took Down Disney &amp; Coca-Cola, Grow or Die, Google Vision
 https://youtu.be/u0XdaETDMjg?si=jKyGpuhxzXH2FQKp
-John Morgan – Morgan & Morgan
+John Morgan &#8211; Morgan &amp; Morgan
 https://youtu.be/EF6-Ed2H2cE?si=eH4YLVA1REs3JFmj
-How to Be a Business Champion – John Morgan
+How to Be a Business Champion &#8211; John Morgan
 https://youtu.be/dM1x8vexP5E?si=KsUWt3WusJwjfB54
 John Morgan speach
 https://youtu.be/KsFu2emsnaY?si=JElhIqoGhlFJjwe1
@@ -3632,63 +1565,72 @@ Learn Like a Loser
 https://youtu.be/Xrt-J9wMygM?si=xXLePuXqwzuh-7_U
 How to Never Lose Money
 https://youtu.be/Kv_pEewrVgA?si=jHLgzMGeSme0j_y-
-
-## Systems
+Posted in software online review		Systems
+Posted on <time class="entry-date published" datetime="2025-09-14T23:54:37+02:00">September 14, 2025</time><time class="updated" datetime="2025-10-10T20:16:58+02:00">October 10, 2025</time> by Filip Keser
 Don’t Set Goals, Create Systems
 https://youtu.be/oz4TPEccl5Y?si=EXIRewkt7FBWDpYF
-
-## daily
+Posted in software online review		daily
+Posted on <time class="entry-date published updated" datetime="2025-08-22T13:21:13+02:00">August 22, 2025</time> by Filip Keser
 https://youtube.com/shorts/6x0z18DK1yI?si=mRksxb1UwWWl1QEu
-
-## MC post
-Mark Cuban: I didn’t take a vacation for 7 years—until I became a millionaire
+Posted in software online review		No One Is Your Friend Until You Win | Jack Ma’s Most Brutal Truth
+Posted on <time class="entry-date published updated" datetime="2025-08-20T08:43:18+02:00">August 20, 2025</time> by Filip Keser
+Posted in software online review		MC post
+Posted on <time class="entry-date published" datetime="2025-06-22T00:08:23+02:00">June 22, 2025</time><time class="updated" datetime="2025-10-22T10:26:29+02:00">October 22, 2025</time> by Filip Keser
+Mark Cuban: I didn&#8217;t take a vacation for 7 years—until I became a millionaire
 https://www.cnbc.com/2025/06/13/mark-cuban-i-didnt-take-a-vacation-while-building-my-first-business.html
-
-## Uncut Diamond
-When you merge gmail, history of account gmail and web search, and web presence on exmpl webpage and similar, you got hell of potential to make “imagination” to virtual experience in real time, the real picture. And with right skill, people and of course software and seed it, can develop very good and fast. But it is on higher level. fk
-
-## Sor – notebooklm google
-for better understanding try insert
-https://software-online-review.com
-in notebooklm, the ai generate voices will reproduce context
+Posted in software online review		Why Do the Hardest Workers Often Earn the Least? – Nietzsche and the Lie of Moral&nbsp;Labor
+Posted on <time class="entry-date published updated" datetime="2025-06-14T09:47:44+02:00">June 14, 2025</time> by Filip Keser
+Posted in e commerce, Google, management, marketing, platform, software online review, technology, workflow		School of Hard Knocks &#8211; Edwin Arroyave is an entrepreneur known as the&nbsp;founder and CEO of Skyline Security&nbsp;Management
+Posted on <time class="entry-date published" datetime="2025-05-29T14:18:38+02:00">May 29, 2025</time><time class="updated" datetime="2025-05-29T14:18:39+02:00">May 29, 2025</time> by Filip Keser
+Posted in Google, software online review
+Posted on <time class="entry-date published" datetime="2025-04-29T15:13:39+02:00">April 29, 2025</time><time class="updated" datetime="2025-05-01T14:54:30+02:00">May 1, 2025</time> by Filip Keser
+Posted in software online review		Uncut Diamond
+Posted on <time class="entry-date published updated" datetime="2025-03-04T14:55:03+01:00">March 4, 2025</time> by Filip Keser
+When you merge gmail, history of account gmail and web search, and web presence on exmpl webpage and similar, you got hell of potential to make &#8220;imagination&#8221; to virtual experience in real time, the real picture. And with right skill, people and of course software and seed it, can develop very good and fast. But it is on higher level. fk
+Posted in software online review		Sor &#8211; notebooklm&nbsp;google
+Posted on <time class="entry-date published" datetime="2024-10-18T01:22:43+02:00">October 18, 2024</time><time class="updated" datetime="2024-10-19T11:45:44+02:00">October 19, 2024</time> by Filip Keser
+for better understanding try insert https://software-online-review.com in notebooklm, the ai generate voices will reproduce context
 https://notebooklm.google/
 or just listen produced audio
 https://notebooklm.google.com/notebook/14500c25-5fd5-42e9-b456-7ebd0735f319/audio
-
-## U.S. Patent and Trademark Office: Official Website and Resources
+Posted in marketing, software, software online review, technology, workflow		U.S. Patent and Trademark Office: Official Website and&nbsp;Resources
+Posted on <time class="entry-date published updated" datetime="2024-09-01T12:05:15+02:00">September 1, 2024</time> by F K
 https://www.uspto.gov/
 https://ipidentifier.uspto.gov/#/identifier/welcome
 https://www.usa.gov/agencies/u-s-patent-and-trademark-office
 https://patents.google.com/
-
-## Stock example
+Posted in software online review		Stock example
+Posted on <time class="entry-date published updated" datetime="2023-11-30T02:44:29+01:00">November 30, 2023</time> by Filip Keser
 https://www.nasdaq.com/
 https://www.google.com/finance/
 https://www.google.com/finance/quote/GOOGL:NASDAQ?window=MAX
 https://www.google.com/finance/quote/MSFT:NASDAQ?window=MAX
-
-## Cast
+Posted in software online review		Cast
+Posted on <time class="entry-date published updated" datetime="2023-03-24T04:58:35+01:00">March 24, 2023</time> by Filip Keser
 https://cast.ai/
-
-## web apps – blazor
+Posted in software online review		web apps &#8211;&nbsp;blazor
+Posted on <time class="entry-date published" datetime="2023-03-15T13:48:59+01:00">March 15, 2023</time><time class="updated" datetime="2023-03-15T13:50:28+01:00">March 15, 2023</time> by Filip Keser
 https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps
 https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
-
-## ibm itsm itil
+Posted in software online review		ibm itsm itil
+Posted on <time class="entry-date published updated" datetime="2023-03-09T13:05:09+01:00">March 9, 2023</time> by Filip Keser
 https://www.ibm.com/us-en/
 https://www.ibm.com/topics/it-service-management
 https://www.ibm.com/topics/it-infrastructure-library
-
-## Uml
+Posted in software online review		Uml
+Posted on <time class="entry-date published updated" datetime="2023-03-09T12:59:23+01:00">March 9, 2023</time> by Filip Keser
 https://www.uml.org/
-
-## duplocloud
-Home – Old
-
-## zyte
+Posted in software online review		duplocloud
+Posted on <time class="entry-date published updated" datetime="2023-03-09T12:57:13+01:00">March 9, 2023</time> by Filip Keser
+Home &#8211; Old
+Posted in software online review		archimatetool
+Posted on <time class="entry-date published updated" datetime="2023-03-09T12:54:19+01:00">March 9, 2023</time> by Filip Keser
+Home
+Posted in software online review		zyte
+Posted on <time class="entry-date published updated" datetime="2022-12-14T11:46:51+01:00">December 14, 2022</time> by Filip Keser
 https://www.zyte.com/b/
-
-## os
+Posted in software online review		os
+Posted on <time class="entry-date published updated" datetime="2022-10-27T15:05:28+02:00">October 27, 2022</time> by Filip Keser
 https://zorin.com/
 https://ubuntu.com/
 https://linuxmint.com/
@@ -3700,30 +1642,30 @@ https://archlinux.org/
 https://www.parrotsec.org/
 https://www.linux.org/
 https://elementary.io/
-
-## appian
+Posted in software online review		appian
+Posted on <time class="entry-date published updated" datetime="2022-10-24T06:10:02+02:00">October 24, 2022</time> by Filip Keser
 https://appian.com/
-
-## Amazon
+Posted in software online review		Amazon
+Posted on <time class="entry-date published" datetime="2022-10-14T13:16:09+02:00">October 14, 2022</time><time class="updated" datetime="2022-10-14T13:20:37+02:00">October 14, 2022</time> by Filip Keser
 https://www.amazon.com/
 https://developer.amazon.com/
 https://business.amazon.com/
 https://aws.amazon.com/
 https://en.m.wikipedia.org/wiki/Amazon_(company)
 https://www.nasdaq.com/market-activity/stocks/amzn
-
-## Oracle
+Posted in software online review		Oracle
+Posted on <time class="entry-date published updated" datetime="2022-10-14T12:46:51+02:00">October 14, 2022</time> by Filip Keser
 https://www.oracle.com/
 https://www.oracle.com/products/
 https://www.oracle.com/products/software/
 https://developer.oracle.com/
-
-## IBM
+Posted in software online review		IBM
+Posted on <time class="entry-date published updated" datetime="2022-10-14T12:42:16+02:00">October 14, 2022</time> by Filip Keser
 https://www.ibm.com/
 https://www.ibm.com/products
 https://www.ibm.com/db2
-
-## Microsoft
+Posted in software online review		Microsoft
+Posted on <time class="entry-date published" datetime="2022-10-12T13:25:45+02:00">October 12, 2022</time><time class="updated" datetime="2022-10-14T12:43:11+02:00">October 14, 2022</time> by Filip Keser
 https://visualstudio.microsoft.com/
 https://about.ads.microsoft.com/en-us/partners/
 https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-enterprise
@@ -3733,3309 +1675,4707 @@ https://azuremarketplace.microsoft.com/en-us/marketplace/apps
 https://azuremarketplace.microsoft.com/en-us/sell
 https://partner.microsoft.com/en-us/membership
 https://partner.microsoft.com/en-us/training
-
-## Apache
+Posted in platform		Apache
+Posted on <time class="entry-date published updated" datetime="2022-10-12T13:14:05+02:00">October 12, 2022</time> by Filip Keser
 https://httpd.apache.org/
 https://spark.apache.org/
 https://orc.apache.org/
 https://airflow.apache.org/
 https://parquet.apache.org/
 https://cassandra.apache.org/
-
-## shellscript – unix
+Posted in software online review		shellscript &#8211; unix
+Posted on <time class="entry-date published updated" datetime="2022-10-10T08:31:08+02:00">October 10, 2022</time> by Filip Keser
 https://www.shellscript.sh/
 https://www.tutorialspoint.com/unix/shell_scripting.htm
 https://www.opengroup.org/membership/forums/platform/unix
 https://www.opengroup.org/membership/forums/platform/unix
-
-## tableau
+Posted in software online review		tableau
+Posted on <time class="entry-date published" datetime="2022-10-07T08:24:03+02:00">October 7, 2022</time><time class="updated" datetime="2022-10-11T06:53:19+02:00">October 11, 2022</time> by Filip Keser
 https://www.tableau.com/
-
-## qlik
+Posted in software online review		qlik
+Posted on <time class="entry-date published" datetime="2022-10-07T08:19:28+02:00">October 7, 2022</time><time class="updated" datetime="2022-10-11T06:53:03+02:00">October 11, 2022</time> by Filip Keser
 https://www.qlik.com/us/
-
-## Global Cybersecurity Leader – Palo Alto Networks
+Posted in software		Global Cybersecurity Leader &#8211; Palo Alto&nbsp;Networks
+Posted on <time class="entry-date published" datetime="2022-09-23T11:55:35+02:00">September 23, 2022</time><time class="updated" datetime="2022-10-11T06:51:53+02:00">October 11, 2022</time> by Filip Keser
 https://www.paloaltonetworks.com/
 https://www.paloaltonetworks.com/services/education
-
-## Telepresence
+Posted in software online review		Telepresence
+Posted on <time class="entry-date published updated" datetime="2022-09-23T11:54:40+02:00">September 23, 2022</time> by Filip Keser
 https://www.telepresence.io/
-
-## The world’s most powerful smart workplace management platform | Planon
+Posted in management, software		The world’s most powerful smart workplace management platform |&nbsp;Planon
+Posted on <time class="entry-date published updated" datetime="2022-09-21T03:21:45+02:00">September 21, 2022</time> by Filip Keser
 https://planonsoftware.com/us/
-
-## Crypto Invoicing, Payroll & Expenses | Request Finance
+Posted in technology		Crypto Invoicing, Payroll &amp; Expenses | Request&nbsp;Finance
+Posted on <time class="entry-date published updated" datetime="2022-08-26T06:04:28+02:00">August 26, 2022</time> by Filip Keser
 https://www.request.finance/
-
-## Hightouch | Sync your customer data to business tools
+Posted in software, software online review		Hightouch | Sync your customer data to business&nbsp;tools
+Posted on <time class="entry-date published" datetime="2022-08-24T01:09:42+02:00">August 24, 2022</time><time class="updated" datetime="2022-08-24T01:10:24+02:00">August 24, 2022</time> by Filip Keser
 https://hightouch.com/
-
-## Grafana: The open observability platform | Grafana Labs
+Posted in software online review		Grafana: The open observability platform | Grafana&nbsp;Labs
+Posted on <time class="entry-date published updated" datetime="2022-08-24T01:09:06+02:00">August 24, 2022</time> by Filip Keser
 https://grafana.com/
-
-## OpenAI
+Posted in technology		OpenAI
+Posted on <time class="entry-date published updated" datetime="2022-08-22T15:27:53+02:00">August 22, 2022</time> by Filip Keser
 https://openai.com/
-
-## UltraEdit Text Editor + Coding Software
+Posted in software, workflow		UltraEdit Text Editor + Coding&nbsp;Software
+Posted on <time class="entry-date published updated" datetime="2022-08-22T15:13:43+02:00">August 22, 2022</time> by Filip Keser
 https://www.ultraedit.com/
-
-## Unbounce – The Landing Page Builder & Platform
+Posted in software online review		Unbounce &#8211; The Landing Page Builder &amp;&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2022-08-21T13:51:34+02:00">August 21, 2022</time> by Filip Keser
 https://unbounce.com/
-
-## sumologic
+Posted in software online review		sumologic
+Posted on <time class="entry-date published updated" datetime="2022-08-20T02:17:28+02:00">August 20, 2022</time> by Filip Keser
 https://www.sumologic.com/
-
-## Global Leader of Cyber Security Solutions and Services | Fortinet
+Posted in software online review		Global Leader of Cyber Security Solutions and Services |&nbsp;Fortinet
+Posted on <time class="entry-date published updated" datetime="2022-08-20T02:12:37+02:00">August 20, 2022</time> by Filip Keser
 https://www.fortinet.com/
-
-## LDAP.com – Lightweight Directory Access Protocol
+Posted in software online review		LDAP.com – Lightweight Directory Access&nbsp;Protocol
+Posted on <time class="entry-date published updated" datetime="2022-08-20T02:11:09+02:00">August 20, 2022</time> by Filip Keser
 https://ldap.com/
-
-## Kerberos: The Network Authentication Protocol
+Posted in software online review		Kerberos: The Network Authentication&nbsp;Protocol
+Posted on <time class="entry-date published updated" datetime="2022-08-20T00:27:06+02:00">August 20, 2022</time> by Filip Keser
 https://web.mit.edu/kerberos/
-
-## MIT – Massachusetts Institute of Technology
+Posted in software online review		MIT &#8211; Massachusetts Institute of&nbsp;Technology
+Posted on <time class="entry-date published updated" datetime="2022-08-20T00:26:28+02:00">August 20, 2022</time> by Filip Keser
 https://web.mit.edu/
-
-## DataSunrise – Data and Database Security and Compliance
+Posted in software online review		DataSunrise &#8211; Data and Database Security and&nbsp;Compliance
+Posted on <time class="entry-date published updated" datetime="2022-08-20T00:24:30+02:00">August 20, 2022</time> by Filip Keser
 https://www.datasunrise.com/
-
-## software-online-review
+Posted in software, software online review, technology		software-online-review
+Posted on <time class="entry-date published updated" datetime="2022-08-18T02:17:24+02:00">August 18, 2022</time> by Filip Keser
 software-online-review
-
-## Yotpo | eCommerce Marketing Platform
+title=""
+alt=""
+class="wp-block-jetpack-story_image wp-story-image "
+src="https://software-online-review.com/wp-content/uploads/2022/08/wp_story1660807043934_0.jpg"
+/>
+Posted in software online review		Yotpo | eCommerce Marketing&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2022-08-11T08:02:07+02:00">August 11, 2022</time> by Filip Keser
 https://www.yotpo.com/
-
-## The UNIX and Linux Forums – Free Linux and Unix Tech Support
+Posted in software online review		The UNIX and Linux Forums &#8211; Free Linux and Unix Tech&nbsp;Support
+Posted on <time class="entry-date published updated" datetime="2022-08-08T16:45:33+02:00">August 8, 2022</time> by Filip Keser
 https://www.unix.com/
-
-## PrimeFaces – Ultimate UI Framework
+Posted in software online review		PrimeFaces – Ultimate UI&nbsp;Framework
+Posted on <time class="entry-date published updated" datetime="2022-08-08T03:47:55+02:00">August 8, 2022</time> by Filip Keser
 https://www.primefaces.org/
-
-## Jakarta® EE | Cloud Native Enterprise Java | Java EE | the Eclipse Foundation | The Eclipse Foundation
+Posted in software online review		Jakarta® EE | Cloud Native Enterprise Java | Java EE | the Eclipse Foundation | The Eclipse&nbsp;Foundation
+Posted on <time class="entry-date published updated" datetime="2022-08-08T03:47:29+02:00">August 8, 2022</time> by Filip Keser
 https://jakarta.ee/
-
-## Download .NET (Linux, macOS, and Windows)
+Posted in software online review		Download .NET (Linux, macOS, and&nbsp;Windows)
+Posted on <time class="entry-date published updated" datetime="2022-08-08T03:47:05+02:00">August 8, 2022</time> by Filip Keser
 https://dotnet.microsoft.com/en-us/download
-
-## WildFly
+Posted in software online review		WildFly
+Posted on <time class="entry-date published updated" datetime="2022-08-08T03:44:06+02:00">August 8, 2022</time> by Filip Keser
 https://www.wildfly.org/
-
-## Payara Services Ltd – devoted to Open Source, Java, our customers and the community
+Posted in software online review		Payara Services Ltd – devoted to Open Source, Java, our customers and the&nbsp;community
+Posted on <time class="entry-date published updated" datetime="2022-08-08T03:43:36+02:00">August 8, 2022</time> by Filip Keser
 https://www.payara.fish/
-
-## JFrog Platform | Complete DevOps Platform from Code to Production
+Posted in software online review		JFrog Platform | Complete DevOps Platform from Code to&nbsp;Production
+Posted on <time class="entry-date published updated" datetime="2022-08-08T03:42:59+02:00">August 8, 2022</time> by Filip Keser
 https://jfrog.com/platform/
-
-## Microsoft Endpoint Manager | Microsoft Security
+Posted in software online review		Microsoft Endpoint Manager | Microsoft&nbsp;Security
+Posted on <time class="entry-date published updated" datetime="2022-08-03T10:10:55+02:00">August 3, 2022</time> by Filip Keser
 https://www.microsoft.com/en-us/security/business/microsoft-endpoint-manager
-
-## Google Data Studio
+Posted in software online review		Google Data Studio
+Posted on <time class="entry-date published" datetime="2022-07-18T03:30:39+02:00">July 18, 2022</time><time class="updated" datetime="2023-03-19T09:55:40+01:00">March 19, 2023</time> by Filip Keser
 https://datastudio.google.com
-
-## PowerPoint charts :: Waterfall, Gantt, Mekko, Process Flow and Agenda :: think-cell
+Posted in software online review		PowerPoint charts :: Waterfall, Gantt, Mekko, Process Flow and Agenda ::&nbsp;think-cell
+Posted on <time class="entry-date published updated" datetime="2022-07-18T03:29:43+02:00">July 18, 2022</time> by Filip Keser
 https://www.think-cell.com/en/
-
-## Get started with Google Cloud training and certification
+Posted in software online review		Get started with Google Cloud training and&nbsp;certification
+Posted on <time class="entry-date published" datetime="2022-07-12T13:01:23+02:00">July 12, 2022</time><time class="updated" datetime="2023-03-19T09:57:29+01:00">March 19, 2023</time> by Filip Keser
 https://cloudonair.withgoogle.com/events/get-started-google-cloud-training
-
-## API Documentation & Design Tools for Teams | Swagger
+Posted in software online review		API Documentation &amp; Design Tools for Teams |&nbsp;Swagger
+Posted on <time class="entry-date published updated" datetime="2022-05-23T05:53:27+02:00">May 23, 2022</time> by Filip Keser
 https://swagger.io/
-
-## Project Lombok
+Posted in software online review		Project Lombok
+Posted on <time class="entry-date published updated" datetime="2022-05-23T05:53:12+02:00">May 23, 2022</time> by Filip Keser
 https://projectlombok.org/
-
-## Amazon.com. Spend less. Smile more.
+Posted in software online review		Amazon.com. Spend less. Smile&nbsp;more.
+Posted on <time class="entry-date published updated" datetime="2022-05-07T23:25:13+02:00">May 7, 2022</time> by Filip Keser
 https://www.amazon.com/
-
-## Product Hunt – The best new products in tech.
+Posted in software online review		Product Hunt – The best new products in&nbsp;tech.
+Posted on <time class="entry-date published updated" datetime="2022-04-07T02:54:26+02:00">April 7, 2022</time> by Filip Keser
 https://www.producthunt.com/
-
-## Microsoft Download Center: Windows, Office, Xbox & More
+Posted in software online review		Microsoft Download Center: Windows, Office, Xbox &amp;&nbsp;More
+Posted on <time class="entry-date published updated" datetime="2022-04-07T01:51:20+02:00">April 7, 2022</time> by Filip Keser
 https://www.microsoft.com/en-us/download
-
-## Red Hat Ansible | Automation Platform
+Posted in software online review		Red Hat Ansible | Automation&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2022-04-05T04:40:19+02:00">April 5, 2022</time> by Filip Keser
 https://www.ansible.com/products/automation-platform
-
-## Harvard Business Review – Ideas and Advice for Leaders
+Posted in software online review		Harvard Business Review &#8211; Ideas and Advice for&nbsp;Leaders
+Posted on <time class="entry-date published" datetime="2022-03-21T04:22:18+01:00">March 21, 2022</time><time class="updated" datetime="2023-10-24T11:21:26+02:00">October 24, 2023</time> by Filip Keser
 https://hbr.org/
-<iframe src="”>
-
-## Datawheel
+&lt;iframe src=&quot;&#8221;&gt;
+Posted in software online review		Datawheel
+Posted on <time class="entry-date published" datetime="2022-03-21T04:01:16+01:00">March 21, 2022</time><time class="updated" datetime="2023-03-20T09:54:45+01:00">March 20, 2023</time> by Filip Keser
 https://www.datawheel.us/
-
-## Oracle | Cloud Applications and Cloud Platform
+Posted in software online review		Oracle | Cloud Applications and Cloud&nbsp;Platform
+Posted on <time class="entry-date published" datetime="2022-03-21T04:01:14+01:00">March 21, 2022</time><time class="updated" datetime="2023-10-24T11:18:28+02:00">October 24, 2023</time> by Filip Keser
 https://www.oracle.com/index.html
-<iframe src="”>
-
-<iframe src="”>
-
-## software-online-review-by-fk
+&lt;iframe src=&quot;&#8221;&gt;
+&lt;iframe src=&quot;&#8221;&gt;
+Posted in software online review		software-online-review-by-fk
+Posted on <time class="entry-date published" datetime="2022-03-21T04:01:13+01:00">March 21, 2022</time><time class="updated" datetime="2023-10-24T11:12:53+02:00">October 24, 2023</time> by Filip Keser
 https://softwareonlinereviewbyfk.wordpress.com/
-
-## Database Documentation Oracle
+Posted in software online review		Database Documentation Oracle
+Posted on <time class="entry-date published updated" datetime="2022-02-24T03:41:57+01:00">February 24, 2022</time> by Filip Keser
 https://docs.oracle.com/en/database/index.html
-
-## Oracle Center
+Posted in software online review		Oracle Center
+Posted on <time class="entry-date published updated" datetime="2022-02-24T02:54:39+01:00">February 24, 2022</time> by Filip Keser
 https://docs.oracle.com/en/
-
-## Figma: the collaborative interface design tool.
+Posted in software online review		Figma: the collaborative interface design&nbsp;tool.
+Posted on <time class="entry-date published updated" datetime="2022-01-31T14:17:30+01:00">January 31, 2022</time> by Filip Keser
 https://www.figma.com/
-
-## SiteManager: No Code Collaborative web design platform
+Posted in software online review		SiteManager: No Code Collaborative web design&nbsp;platform
+Posted on <time class="entry-date published updated" datetime="2022-01-31T14:17:14+01:00">January 31, 2022</time> by Filip Keser
 https://www.sitemanager.io/
-
-## Helm
+Posted in software online review		Helm
+Posted on <time class="entry-date published updated" datetime="2022-01-31T09:52:23+01:00">January 31, 2022</time> by Filip Keser
 https://helm.sh/
-
-## .NET | Free. Cross-platform. Open Source.
+Posted in software online review		.NET | Free. Cross-platform. Open&nbsp;Source.
+Posted on <time class="entry-date published updated" datetime="2022-01-29T02:38:28+01:00">January 29, 2022</time> by Filip Keser
 https://dotnet.microsoft.com/en-us/
-
-## Prisma Developer Docs | Palo Alto Networks
+Posted in software online review		Prisma Developer Docs | Palo Alto&nbsp;Networks
+Posted on <time class="entry-date published updated" datetime="2022-01-27T13:43:48+01:00">January 27, 2022</time> by Filip Keser
 https://prisma.pan.dev/
-
-## Splunk | Turn Data Into Doing
+Posted in software online review		Splunk | Turn Data Into&nbsp;Doing
+Posted on <time class="entry-date published updated" datetime="2022-01-27T13:35:53+01:00">January 27, 2022</time> by Filip Keser
 https://www.splunk.com/
-
-## Cloud SQL: for PostgreSQL, MySQL & SQL Server  |  Cloud SQL: Relational Database Service  | Google Cloud
+Posted in software online review		Cloud SQL: for PostgreSQL, MySQL &amp; SQL Server  |  Cloud SQL: Relational Database Service  | Google&nbsp;Cloud
+Posted on <time class="entry-date published" datetime="2022-01-27T04:23:00+01:00">January 27, 2022</time><time class="updated" datetime="2023-03-19T09:58:27+01:00">March 19, 2023</time> by Filip Keser
 https://cloud.google.com/sql
-
-## Artifact Registry  | Google Cloud
+Posted in software online review		Artifact Registry  | Google&nbsp;Cloud
+Posted on <time class="entry-date published" datetime="2022-01-26T13:09:43+01:00">January 26, 2022</time><time class="updated" datetime="2023-03-19T09:58:57+01:00">March 19, 2023</time> by Filip Keser
 https://cloud.google.com/artifact-registry
-
-## Container Registry  | Google Cloud
+Posted in software online review		Container Registry  | Google&nbsp;Cloud
+Posted on <time class="entry-date published" datetime="2022-01-26T13:09:32+01:00">January 26, 2022</time><time class="updated" datetime="2023-03-19T10:00:01+01:00">March 19, 2023</time> by Filip Keser
 https://cloud.google.com/container-registry
-
-## GPU-optimized AI, Machine Learning, & HPC Software | NVIDIA NGC
+Posted in software online review		GPU-optimized AI, Machine Learning, &amp; HPC Software | NVIDIA&nbsp;NGC
+Posted on <time class="entry-date published updated" datetime="2022-01-25T10:32:28+01:00">January 25, 2022</time> by Filip Keser
 https://catalog.ngc.nvidia.com/
-
-## vi
+Posted in software online review		vi
+Posted on <time class="entry-date published updated" datetime="2022-01-24T07:20:57+01:00">January 24, 2022</time> by Filip Keser
 https://www.vi.ai/
-
-## npm
+Posted in software online review		npm
+Posted on <time class="entry-date published updated" datetime="2022-01-24T07:16:17+01:00">January 24, 2022</time> by Filip Keser
 https://www.npmjs.com/
-
-## Work hub | Qatalog
+Posted in software online review		Work hub |&nbsp;Qatalog
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:32:36+01:00">January 24, 2022</time> by Filip Keser
 https://qatalog.com/
-
-## Java | Oracle
+Posted in software online review		Java | Oracle
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:11:19+01:00">January 24, 2022</time> by Filip Keser
 https://www.java.com/en/
-
-## Oracle | Cloud Applications and Cloud Platform
+Posted in software online review		Oracle | Cloud Applications and Cloud&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:10:57+01:00">January 24, 2022</time> by Filip Keser
 https://www.oracle.com/index.html
-
-## Java Software | Oracle
+Posted in software online review		Java Software |&nbsp;Oracle
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:10:50+01:00">January 24, 2022</time> by Filip Keser
 https://www.oracle.com/java/
-
-## Apache HBase – Apache HBase™ Home
+Posted in software online review		Apache HBase – Apache HBase™&nbsp;Home
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:10:00+01:00">January 24, 2022</time> by Filip Keser
 https://hbase.apache.org/
-
-## Redis
+Posted in software online review		Redis
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:09:40+01:00">January 24, 2022</time> by Filip Keser
 https://redis.io/
-
-## Apache Kafka
+Posted in software online review		Apache Kafka
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:09:22+01:00">January 24, 2022</time> by Filip Keser
 https://kafka.apache.org/
-
-## Welcome to Python.org
+Posted in software online review		Welcome to Python.org
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:09:01+01:00">January 24, 2022</time> by Filip Keser
 https://www.python.org/
-
-## Apache Airflow
+Posted in software online review		Apache Airflow
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:08:42+01:00">January 24, 2022</time> by Filip Keser
 https://airflow.apache.org/
-
-## Apache Spark™ – Unified Engine for large-scale data analytics
+Posted in software online review		Apache Spark™ &#8211; Unified Engine for large-scale data&nbsp;analytics
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:08:20+01:00">January 24, 2022</time> by Filip Keser
 https://spark.apache.org/
-
-## Apache NiFi
+Posted in software online review		Apache NiFi
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:07:57+01:00">January 24, 2022</time> by Filip Keser
 https://nifi.apache.org/
-
-## Apache Flink: Stateful Computations over Data Streams
+Posted in software online review		Apache Flink: Stateful Computations over Data&nbsp;Streams
+Posted on <time class="entry-date published updated" datetime="2022-01-24T02:07:29+01:00">January 24, 2022</time> by Filip Keser
 https://flink.apache.org/
-
-## Google Workspace | Business Apps & Collaboration Tools
+Posted in software online review		Google Workspace | Business Apps &amp; Collaboration&nbsp;Tools
+Posted on <time class="entry-date published" datetime="2022-01-06T03:30:58+01:00">January 6, 2022</time><time class="updated" datetime="2023-03-20T02:17:17+01:00">March 20, 2023</time> by Filip Keser
 https://workspace.google.com/intl/en_ie/
-
-## AWS Marketplace: Homepage
+Posted in software online review		AWS Marketplace: Homepage
+Posted on <time class="entry-date published updated" datetime="2022-01-05T05:00:41+01:00">January 5, 2022</time> by Filip Keser
 https://aws.amazon.com/marketplace
-
-## Bitnami: Packaged Applications for Any Platform – Cloud, Container, Virtual Machine
+Posted in software online review		Bitnami: Packaged Applications for Any Platform &#8211; Cloud, Container, Virtual&nbsp;Machine
+Posted on <time class="entry-date published updated" datetime="2022-01-05T04:58:34+01:00">January 5, 2022</time> by Filip Keser
 https://bitnami.com/
-
-## Code Quality and Code Security | Developers First | SonarSource
+Posted in software online review		Code Quality and Code Security | Developers First |&nbsp;SonarSource
+Posted on <time class="entry-date published updated" datetime="2022-01-04T14:38:31+01:00">January 4, 2022</time> by Filip Keser
 https://www.sonarsource.com/
-
-## Code Quality and Code Security | SonarQube
+Posted in software online review		Code Quality and Code Security |&nbsp;SonarQube
+Posted on <time class="entry-date published updated" datetime="2022-01-04T14:38:21+01:00">January 4, 2022</time> by Filip Keser
 https://www.sonarqube.org/
-
-## Market leading Real Estate and Facility Management software | Planon
+Posted in software online review		Market leading Real Estate and Facility Management software |&nbsp;Planon
+Posted on <time class="entry-date published updated" datetime="2021-11-24T11:52:40+01:00">November 24, 2021</time> by Filip Keser
 https://planonsoftware.com/us/
-
-## The Open Data Lake Company | Qubole
+Posted in software online review		The Open Data Lake Company |&nbsp;Qubole
+Posted on <time class="entry-date published updated" datetime="2021-11-20T23:27:42+01:00">November 20, 2021</time> by Filip Keser
 https://www.qubole.com/
-
-## Firebase
+Posted in software online review		Firebase
+Posted on <time class="entry-date published updated" datetime="2021-11-13T02:14:27+01:00">November 13, 2021</time> by Filip Keser
 https://firebase.google.com/?hl=hr
-
-## Drupal – Open Source CMS | Drupal.org
+Posted in software online review		Drupal &#8211; Open Source CMS |&nbsp;Drupal.org
+Posted on <time class="entry-date published updated" datetime="2021-11-12T10:25:48+01:00">November 12, 2021</time> by Filip Keser
 https://www.drupal.org/home
-
-## Home | Yarn – Package Manager
+Posted in software online review		Home | Yarn &#8211; Package&nbsp;Manager
+Posted on <time class="entry-date published updated" datetime="2021-11-12T06:02:39+01:00">November 12, 2021</time> by Filip Keser
 https://yarnpkg.com/
-
-## Composer
+Posted in software online review		Composer
+Posted on <time class="entry-date published updated" datetime="2021-11-12T06:01:14+01:00">November 12, 2021</time> by Filip Keser
 https://getcomposer.org/
-
-## aliexpress
+Posted in software online review		aliexpress
+Posted on <time class="entry-date published updated" datetime="2021-11-10T09:49:06+01:00">November 10, 2021</time> by Filip Keser
 https://aliexpress.com
-
-## Affiliatly admin panel
+Posted in software online review		Affiliatly admin panel
+Posted on <time class="entry-date published updated" datetime="2021-11-09T02:36:37+01:00">November 9, 2021</time> by Filip Keser
 https://www.affiliatly.com/af-1053314/affiliate.panel?mode=register
-
-## Making Delivery & Field Service Management Smarter – GSM Tasks
+Posted in software online review		Making Delivery &amp; Field Service Management Smarter &#8211; GSM&nbsp;Tasks
+Posted on <time class="entry-date published updated" datetime="2021-10-20T10:06:33+02:00">October 20, 2021</time> by Filip Keser
 https://gsmtasks.com/
-
-## Getswift – Your Complete Delivery Management Software Solution
+Posted in software online review		Getswift &#8211; Your Complete Delivery Management Software&nbsp;Solution
+Posted on <time class="entry-date published updated" datetime="2021-10-20T10:05:48+02:00">October 20, 2021</time> by Filip Keser
 https://www.getswift.co/
-
-## topratedlocal
+Posted in software online review		topratedlocal
+Posted on <time class="entry-date published updated" datetime="2021-10-20T10:05:20+02:00">October 20, 2021</time> by Filip Keser
 https://www.topratedlocal.com
-
-## Jungleworks | Powering The On-Demand World
+Posted in software online review		Jungleworks | Powering The On-Demand&nbsp;World
+Posted on <time class="entry-date published updated" datetime="2021-10-20T10:02:36+02:00">October 20, 2021</time> by Filip Keser
 https://jungleworks.com/
-
-## Box — Secure Cloud Content Management, Workflow, and Collaboration
+Posted in software online review		Box — Secure Cloud Content Management, Workflow, and&nbsp;Collaboration
+Posted on <time class="entry-date published updated" datetime="2021-10-20T07:58:10+02:00">October 20, 2021</time> by Filip Keser
 https://www.box.com/home
-
-## Process Management and Workflow Automation Software – Nintex
+Posted in software online review		Process Management and Workflow Automation Software &#8211;&nbsp;Nintex
+Posted on <time class="entry-date published updated" datetime="2021-10-20T07:56:03+02:00">October 20, 2021</time> by Filip Keser
 https://www.nintex.com/
-
-## Document Management Software | eFileCabinet
+Posted in software online review		Document Management Software |&nbsp;eFileCabinet
+Posted on <time class="entry-date published updated" datetime="2021-10-20T07:55:26+02:00">October 20, 2021</time> by Filip Keser
 https://www.efilecabinet.com/
-
-## DocStar Enterprise Content Management and AP Automation Solutions
+Posted in software online review		DocStar Enterprise Content Management and AP Automation&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-10-20T07:54:52+02:00">October 20, 2021</time> by Filip Keser
 https://www.docstar.com/
-
-## Document Management Software | Workflow Automation | DocuWare
+Posted in software online review		Document Management Software | Workflow Automation |&nbsp;DocuWare
+Posted on <time class="entry-date published updated" datetime="2021-10-20T07:54:29+02:00">October 20, 2021</time> by Filip Keser
 https://start.docuware.com/
-
-## Enterprise Content Management (ECM) | Laserfiche
+Posted in software online review		Enterprise Content Management (ECM) |&nbsp;Laserfiche
+Posted on <time class="entry-date published updated" datetime="2021-10-20T07:53:38+02:00">October 20, 2021</time> by Filip Keser
 https://www.laserfiche.com/
-
-## FileNet Content Manager – Overview | IBM
+Posted in software online review		FileNet Content Manager &#8211; Overview |&nbsp;IBM
+Posted on <time class="entry-date published updated" datetime="2021-10-20T07:53:10+02:00">October 20, 2021</time> by Filip Keser
 https://www.ibm.com/products/filenet-content-manager
-
-## Apache Spark™ – Unified Engine for large-scale data analytics
+Posted in software online review		Apache Spark™ &#8211; Unified Engine for large-scale data&nbsp;analytics
+Posted on <time class="entry-date published updated" datetime="2021-10-19T11:05:26+02:00">October 19, 2021</time> by Filip Keser
 https://spark.apache.org/
-
-## Apache Hive TM
+Posted in software online review		Apache Hive TM
+Posted on <time class="entry-date published updated" datetime="2021-10-19T11:04:02+02:00">October 19, 2021</time> by Filip Keser
 https://hive.apache.org/
-
-## Apache Airflow
+Posted in software online review		Apache Airflow
+Posted on <time class="entry-date published updated" datetime="2021-10-19T11:02:44+02:00">October 19, 2021</time> by Filip Keser
 https://airflow.apache.org/
-
-## Medallia | Customer Experience and Employee Experience
+Posted in software online review		Medallia | Customer Experience and Employee&nbsp;Experience
+Posted on <time class="entry-date published updated" datetime="2021-10-05T04:13:21+02:00">October 5, 2021</time> by Filip Keser
 https://www.medallia.com/
-
-## Circle | Payments infrastructure for internet businesses
+Posted in software online review		Circle | Payments infrastructure for internet&nbsp;businesses
+Posted on <time class="entry-date published updated" datetime="2021-09-30T21:37:01+02:00">September 30, 2021</time> by Filip Keser
 https://www.circle.com/en/
-
-## .NET UI Controls for Developers of Mobile, Desktop, Web, Reporting & BI Apps
+Posted in software online review		.NET UI Controls for Developers of Mobile, Desktop, Web, Reporting &amp; BI&nbsp;Apps
+Posted on <time class="entry-date published updated" datetime="2021-09-29T08:38:44+02:00">September 29, 2021</time> by Filip Keser
 https://www.devexpress.com/
-
-## Unlock digital potential – Optimizely
+Posted in software online review		Unlock digital potential &#8211;&nbsp;Optimizely
+Posted on <time class="entry-date published updated" datetime="2021-09-24T10:51:34+02:00">September 24, 2021</time> by Filip Keser
 https://www.optimizely.com/
-
-## Bulbshare | The Customer Collaboration Platform
+Posted in software online review		Bulbshare | The Customer Collaboration&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-09-24T10:49:57+02:00">September 24, 2021</time> by Filip Keser
 https://bulbshare.com/
-
-## Rock-solid SMS gateway – Sign up for free – GatewayAPI
+Posted in software online review		Rock-solid SMS gateway &#8211; Sign up for free &#8211;&nbsp;GatewayAPI
+Posted on <time class="entry-date published updated" datetime="2021-09-24T10:48:55+02:00">September 24, 2021</time> by Filip Keser
 https://gatewayapi.com/
-
-## Supermetrics: the easiest way to move your marketing data
+Posted in software online review		Supermetrics: the easiest way to move your marketing&nbsp;data
+Posted on <time class="entry-date published updated" datetime="2021-09-18T15:28:56+02:00">September 18, 2021</time> by Filip Keser
 https://supermetrics.com/
-
-## Code Quality and Code Security | SonarQube
+Posted in software online review		Code Quality and Code Security |&nbsp;SonarQube
+Posted on <time class="entry-date published updated" datetime="2021-09-17T09:16:52+02:00">September 17, 2021</time> by Filip Keser
 https://www.sonarqube.org/
-
-## Free Online Survey Software and Tools | QuestionPro®
+Posted in software online review		Free Online Survey Software and Tools |&nbsp;QuestionPro®
+Posted on <time class="entry-date published updated" datetime="2021-09-17T08:06:53+02:00">September 17, 2021</time> by Filip Keser
 https://www.questionpro.com/
-
-## The FreeBSD Project
+Posted in software online review		The FreeBSD Project
+Posted on <time class="entry-date published updated" datetime="2021-09-16T01:31:19+02:00">September 16, 2021</time> by Filip Keser
 https://www.freebsd.org/
-
-## Visa Partner
+Posted in software online review		Visa Partner
+Posted on <time class="entry-date published updated" datetime="2021-09-11T19:01:59+02:00">September 11, 2021</time> by Filip Keser
 https://partner.visa.com/homepage.html
-
-## KnowledgeForce Platform | Market Force
+Posted in software online review		KnowledgeForce Platform | Market&nbsp;Force
+Posted on <time class="entry-date published updated" datetime="2021-09-11T17:59:38+02:00">September 11, 2021</time> by Filip Keser
 https://www.marketforce.com/knowledgeforce
-
-## Customer Experience Management (CX) | Market Force
+Posted in software online review		Customer Experience Management (CX) | Market&nbsp;Force
+Posted on <time class="entry-date published updated" datetime="2021-09-11T17:59:21+02:00">September 11, 2021</time> by Filip Keser
 https://www.marketforce.com/
-
-## Partnership Automation: Key to Partnership Success | Impact
+Posted in software online review		Partnership Automation: Key to Partnership Success |&nbsp;Impact
+Posted on <time class="entry-date published updated" datetime="2021-09-10T10:54:40+02:00">September 10, 2021</time> by Filip Keser
 https://impact.com/
-
-## Impactio – America’s #1 Impact Analytics and Reputation Management Platform for PhDs
+Posted in software online review		Impactio &#8211; America&#8217;s #1 Impact Analytics and Reputation Management Platform for&nbsp;PhDs
+Posted on <time class="entry-date published updated" datetime="2021-09-10T10:34:40+02:00">September 10, 2021</time> by Filip Keser
 https://www.impactio.com/
-
-## TrustRadius: Software Reviews, Software Comparisons and More
+Posted in software online review		TrustRadius: Software Reviews, Software Comparisons and&nbsp;More
+Posted on <time class="entry-date published updated" datetime="2021-09-07T14:34:32+02:00">September 7, 2021</time> by Filip Keser
 https://www.trustradius.com/
-
-## MX | Powering the Money Experience for 30 Million Users
+Posted in software online review		MX | Powering the Money Experience for 30 Million&nbsp;Users
+Posted on <time class="entry-date published updated" datetime="2021-09-04T07:50:29+02:00">September 4, 2021</time> by Filip Keser
 https://www.mx.com/
-
-## Databricks – The Data and AI Company
+Posted in software online review		Databricks &#8211; The Data and AI&nbsp;Company
+Posted on <time class="entry-date published updated" datetime="2021-09-04T07:46:56+02:00">September 4, 2021</time> by Filip Keser
 https://databricks.com/
-
-## Front – Customer Communication Platform | Team Email
+Posted in software online review		Front &#8211; Customer Communication Platform | Team&nbsp;Email
+Posted on <time class="entry-date published updated" datetime="2021-09-02T14:50:38+02:00">September 2, 2021</time> by Filip Keser
 https://front.com/
-
-## The most powerful Git client for Mac and Windows | Tower Git Client
+Posted in software online review		The most powerful Git client for Mac and Windows | Tower Git&nbsp;Client
+Posted on <time class="entry-date published updated" datetime="2021-09-02T01:09:39+02:00">September 2, 2021</time> by Filip Keser
 https://www.git-tower.com/
-
-## Welcome | AWS Training & Certification
+Posted in software online review		Welcome | AWS Training &amp;&nbsp;Certification
+Posted on <time class="entry-date published updated" datetime="2021-08-30T06:06:21+02:00">August 30, 2021</time> by Filip Keser
 https://www.aws.training/
-
-## The Power Query user interface | Microsoft Docs
+Posted in software online review		The Power Query user interface | Microsoft&nbsp;Docs
+Posted on <time class="entry-date published updated" datetime="2021-08-30T02:25:44+02:00">August 30, 2021</time> by Filip Keser
 https://docs.microsoft.com/en-us/power-query/power-query-ui
-
-## XenForo – Compelling community forum platform
+Posted in software online review		XenForo &#8211; Compelling community forum&nbsp;platform
+Posted on <time class="entry-date published updated" datetime="2021-08-30T02:17:29+02:00">August 30, 2021</time> by Filip Keser
 https://xenforo.com/
-
-## Ondato: complete and cost-effective compliance management suite
+Posted in software online review		Ondato: complete and cost-effective compliance management&nbsp;suite
+Posted on <time class="entry-date published updated" datetime="2021-08-26T12:22:25+02:00">August 26, 2021</time> by Filip Keser
 https://ondato.com/
-
-## Cyber Security Leader | Imperva, Inc.
+Posted in software online review		Cyber Security Leader | Imperva,&nbsp;Inc.
+Posted on <time class="entry-date published updated" datetime="2021-08-23T06:34:44+02:00">August 23, 2021</time> by Filip Keser
 https://www.imperva.com/
-
-## id.me
+Posted in software online review		id.me
+Posted on <time class="entry-date published" datetime="2021-08-23T06:32:26+02:00">August 23, 2021</time><time class="updated" datetime="2021-08-23T06:33:09+02:00">August 23, 2021</time> by Filip Keser
 https://www.id.me/
-
-## Premium Bootstrap Themes and Templates: Download @ Creative Tim
+Posted in software online review		Premium Bootstrap Themes and Templates: Download @ Creative&nbsp;Tim
+Posted on <time class="entry-date published updated" datetime="2021-08-22T00:51:21+02:00">August 22, 2021</time> by Filip Keser
 https://www.creative-tim.com/
-
-## Gorilla Experiment Builder » Create online behavioural experiments easily
+Posted in software online review		Gorilla Experiment Builder » Create online behavioural experiments&nbsp;easily
+Posted on <time class="entry-date published updated" datetime="2021-08-21T13:45:40+02:00">August 21, 2021</time> by Filip Keser
 https://gorilla.sc/
-
-## Firebase
+Posted in software online review		Firebase
+Posted on <time class="entry-date published" datetime="2021-08-20T10:00:41+02:00">August 20, 2021</time><time class="updated" datetime="2023-03-20T10:56:57+01:00">March 20, 2023</time> by Filip Keser
 https://firebase.google.com/?hl=hr
-
-## Integrations Directory – OneSignal
+Posted in software online review		Integrations Directory &#8211;&nbsp;OneSignal
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:00:04+02:00">August 20, 2021</time> by Filip Keser
 https://onesignal.com/integrations
-
-## Facebook for Business: Marketing on Facebook
+Posted in software online review		Facebook for Business: Marketing on&nbsp;Facebook
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:59:06+02:00">August 20, 2021</time> by Filip Keser
 https://web.facebook.com/business
-
-## Front – Customer Communication Platform | Team Email
+Posted in software online review		Front &#8211; Customer Communication Platform | Team&nbsp;Email
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:58:27+02:00">August 20, 2021</time> by Filip Keser
 https://front.com/
-
-## Customer Success and Product Experience Software | Gainsight
+Posted in software online review		Customer Success and Product Experience Software |&nbsp;Gainsight
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:57:56+02:00">August 20, 2021</time> by Filip Keser
 https://www.gainsight.com/
-
-## MoEngage: Insights-led Customer Engagement Platform
+Posted in software online review		MoEngage: Insights-led Customer Engagement&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:52:20+02:00">August 20, 2021</time> by Filip Keser
 https://www.moengage.com/
-
-## Pendo.io – Product Experience and Digital Adoption Solutions
+Posted in software online review		Pendo.io &#8211; Product Experience and Digital Adoption&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:51:43+02:00">August 20, 2021</time> by Filip Keser
 https://www.pendo.io/
-
-## RudderStack – The Customer Data Platform for Developers
+Posted in software online review		RudderStack &#8211; The Customer Data Platform for&nbsp;Developers
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:51:04+02:00">August 20, 2021</time> by Filip Keser
 https://rudderstack.com/
-
-## Cloud Object Storage | Store & Retrieve Data Anywhere | Amazon Simple Storage Service (S3)
+Posted in software online review		Cloud Object Storage | Store &amp; Retrieve Data Anywhere | Amazon Simple Storage Service&nbsp;(S3)
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:50:30+02:00">August 20, 2021</time> by Filip Keser
 https://aws.amazon.com/s3/
-
-## Mparticle
+Posted in software online review		Mparticle
+Posted on <time class="entry-date published" datetime="2021-08-20T09:49:44+02:00">August 20, 2021</time><time class="updated" datetime="2021-09-10T13:17:25+02:00">September 10, 2021</time> by Filip Keser
 https://www.mparticle.com/
-
-## Integrations · Hightouch
+Posted in software online review		Integrations · Hightouch
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:46:32+02:00">August 20, 2021</time> by Filip Keser
 https://hightouch.io/integrations
-
-## Knowledge Base Software That Scales With Your Product-Document360
+Posted in software online review		Knowledge Base Software That Scales With Your Product-Document360
+Posted on <time class="entry-date published updated" datetime="2021-08-20T05:22:22+02:00">August 20, 2021</time> by Filip Keser
 https://document360.com/
-
-## Payhawk | The Financial System of Tomorrow with NextGen Visa Cards
+Posted in software online review		Payhawk | The Financial System of Tomorrow with NextGen Visa&nbsp;Cards
+Posted on <time class="entry-date published updated" datetime="2021-08-20T01:00:36+02:00">August 20, 2021</time> by Filip Keser
 https://payhawk.com/
-
-## Online payment processing for internet businesses – Stripe
+Posted in software online review		Online payment processing for internet businesses &#8211;&nbsp;Stripe
+Posted on <time class="entry-date published updated" datetime="2021-08-20T01:00:11+02:00">August 20, 2021</time> by Filip Keser
 https://stripe.com/
-
-## Send Money, Pay Online or Set Up a Merchant Account – PayPal
+Posted in software online review		Send Money, Pay Online or Set Up a Merchant Account &#8211;&nbsp;PayPal
+Posted on <time class="entry-date published" datetime="2021-08-20T00:59:42+02:00">August 20, 2021</time><time class="updated" datetime="2021-08-20T01:01:37+02:00">August 20, 2021</time> by Filip Keser
 https://www.paypal.com
-
-## BillDesk – All Your Payments. Single Location.
+Posted in software online review		BillDesk &#8211; All Your Payments. Single&nbsp;Location.
+Posted on <time class="entry-date published updated" datetime="2021-08-20T00:59:23+02:00">August 20, 2021</time> by Filip Keser
 https://www.billdesk.com/
-
-## Financial Services for Emerging Markets | PayU Global
+Posted in software online review		Financial Services for Emerging Markets | PayU&nbsp;Global
+Posted on <time class="entry-date published updated" datetime="2021-08-20T00:58:53+02:00">August 20, 2021</time> by Filip Keser
 https://corporate.payu.com/
-
-## Global HR Solutions for Distributed Teams | Remote
+Posted in software online review		Global HR Solutions for Distributed Teams |&nbsp;Remote
+Posted on <time class="entry-date published updated" datetime="2021-08-19T14:44:40+02:00">August 19, 2021</time> by Filip Keser
 https://remote.com/
-
-## Payroll & Compliance for International Teams | Deel
+Posted in software online review		Payroll &amp; Compliance for International Teams |&nbsp;Deel
+Posted on <time class="entry-date published updated" datetime="2021-08-19T13:19:48+02:00">August 19, 2021</time> by Filip Keser
 https://www.letsdeel.com/
-
-## Save S$1,080 on one year of Accounting and Tax with Osome and OCBC Bank
+Posted in software online review		Save S$1,080 on one year of Accounting and Tax with Osome and OCBC&nbsp;Bank
+Posted on <time class="entry-date published updated" datetime="2021-08-18T19:44:24+02:00">August 18, 2021</time> by Filip Keser
 https://osome.com/sg/start-digital/
-
-## Online Accounting Software | Small Business Accounting | Xero US
+Posted in software online review		Online Accounting Software | Small Business Accounting | Xero&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2021-08-18T19:43:07+02:00">August 18, 2021</time> by Filip Keser
 https://www.xero.com/us/accounting-software/
-
-## Event Management Technology & Hospitality Solutions | Cvent
+Posted in software online review		Event Management Technology &amp; Hospitality Solutions |&nbsp;Cvent
+Posted on <time class="entry-date published updated" datetime="2021-08-18T15:34:05+02:00">August 18, 2021</time> by Filip Keser
 https://www.cvent.com/
-
-## Product Hunt – The best new products in tech.
+Posted in software online review		Product Hunt – The best new products in&nbsp;tech.
+Posted on <time class="entry-date published updated" datetime="2021-08-18T13:02:20+02:00">August 18, 2021</time> by Filip Keser
 https://www.producthunt.com/
-
-## SalesAI Powered Copywriting – ClosersCopy
+Posted in software online review		SalesAI Powered Copywriting &#8211;&nbsp;ClosersCopy
+Posted on <time class="entry-date published updated" datetime="2021-08-18T01:02:24+02:00">August 18, 2021</time> by Filip Keser
 https://www.closerscopy.com/
-
-## PyCharm: the Python IDE for Professional Developers by JetBrains
+Posted in software online review		PyCharm: the Python IDE for Professional Developers by&nbsp;JetBrains
+Posted on <time class="entry-date published updated" datetime="2021-08-18T01:00:30+02:00">August 18, 2021</time> by Filip Keser
 https://www.jetbrains.com/pycharm/
-
-## Integrations | Parabola
+Posted in software online review		Integrations | Parabola
+Posted on <time class="entry-date published updated" datetime="2021-08-18T00:54:08+02:00">August 18, 2021</time> by Filip Keser
 https://parabola.io/integrations
-
-## Where to Pay Later with Zip
+Posted in software online review		Where to Pay Later with&nbsp;Zip
+Posted on <time class="entry-date published updated" datetime="2021-08-17T14:53:09+02:00">August 17, 2021</time> by Filip Keser
 https://zip.co/
-
-## Tricent Compliance Tool
+Posted in software online review		Tricent Compliance Tool
+Posted on <time class="entry-date published updated" datetime="2021-08-16T12:57:54+02:00">August 16, 2021</time> by Filip Keser
 https://www.tricent.com/
-
-## Apache OpenOffice – Official Site – The Free and Open Productivity Suite
+Posted in software online review		Apache OpenOffice &#8211; Official Site &#8211; The Free and Open Productivity&nbsp;Suite
+Posted on <time class="entry-date published updated" datetime="2021-08-15T18:38:16+02:00">August 15, 2021</time> by Filip Keser
 http://www.openoffice.org/
-
-## Prevent Cybersecurity Breaches | Comodo Cybersecurity
+Posted in software online review		Prevent Cybersecurity Breaches | Comodo&nbsp;Cybersecurity
+Posted on <time class="entry-date published updated" datetime="2021-08-15T18:36:58+02:00">August 15, 2021</time> by Filip Keser
 https://www.comodo.com/
-
-## Bazaarvoice: Meet shoppers in all the moments that matter
+Posted in software online review		Bazaarvoice: Meet shoppers in all the moments that&nbsp;matter
+Posted on <time class="entry-date published updated" datetime="2021-08-10T12:43:39+02:00">August 10, 2021</time> by Filip Keser
 https://www.bazaarvoice.com/
-
-## EViews.com
+Posted in software online review		EViews.com
+Posted on <time class="entry-date published updated" datetime="2021-08-01T20:40:32+02:00">August 1, 2021</time> by Filip Keser
 https://www.eviews.com/home.html
-
-## Zendesk: Customer Service Software & Sales CRM | Best in 2021
+Posted in software online review		Zendesk: Customer Service Software &amp; Sales CRM | Best in&nbsp;2021
+Posted on <time class="entry-date published updated" datetime="2021-07-31T14:41:07+02:00">July 31, 2021</time> by Filip Keser
 https://www.zendesk.com/
-
-## Top Software at Capterra | Software & Software Reviews For Business & Nonprofit
+Posted in software online review		Top Software at Capterra | Software &amp; Software Reviews For Business &amp;&nbsp;Nonprofit
+Posted on <time class="entry-date published updated" datetime="2021-07-27T18:43:15+02:00">July 27, 2021</time> by Filip Keser
 https://www.capterra.com/
-
-## Jarvis – AI Copywriting Assistant
+Posted in software online review		Jarvis – AI Copywriting&nbsp;Assistant
+Posted on <time class="entry-date published updated" datetime="2021-07-27T18:42:37+02:00">July 27, 2021</time> by Filip Keser
 https://www.conversion.ai/
-
-## Memgraph | In-Memory Cypher Graph Database
+Posted in software online review		Memgraph | In-Memory Cypher Graph&nbsp;Database
+Posted on <time class="entry-date published updated" datetime="2021-07-25T09:51:08+02:00">July 25, 2021</time> by Filip Keser
 https://memgraph.com/
-
-## Buy Autodesk Software | Get Prices & Buy Online | Official Autodesk Store
+Posted in software online review		Buy Autodesk Software | Get Prices &amp; Buy Online | Official Autodesk&nbsp;Store
+Posted on <time class="entry-date published updated" datetime="2021-07-25T06:31:54+02:00">July 25, 2021</time> by Filip Keser
 https://www.autodesk.com/products
-
-## Autodesk | 3D Design, Engineering & Construction Software
+Posted in software online review		Autodesk | 3D Design, Engineering &amp; Construction&nbsp;Software
+Posted on <time class="entry-date published updated" datetime="2021-07-25T06:31:37+02:00">July 25, 2021</time> by Filip Keser
 https://www.autodesk.com/
-
-## EAGLE | PCB Design And Electrical Schematic Software | Autodesk
+Posted in software online review		EAGLE | PCB Design And Electrical Schematic Software |&nbsp;Autodesk
+Posted on <time class="entry-date published updated" datetime="2021-07-25T06:31:28+02:00">July 25, 2021</time> by Filip Keser
 https://www.autodesk.com/products/eagle/overview
-
-## PCB Design Software & Tools | Altium
+Posted in software online review		PCB Design Software &amp; Tools |&nbsp;Altium
+Posted on <time class="entry-date published updated" datetime="2021-07-25T06:29:47+02:00">July 25, 2021</time> by Filip Keser
 https://www.altium.com/
-
-## Workplace Productivity & Automation Tools | Formstack
+Posted in software online review		Workplace Productivity &amp; Automation Tools |&nbsp;Formstack
+Posted on <time class="entry-date published updated" datetime="2021-07-25T05:40:22+02:00">July 25, 2021</time> by Filip Keser
 https://www.formstack.com/
-
-## Umbraco – the flexible open source .NET CMS
+Posted in software online review		Umbraco &#8211; the flexible open source .NET&nbsp;CMS
+Posted on <time class="entry-date published updated" datetime="2021-07-20T05:07:04+02:00">July 20, 2021</time> by Filip Keser
 https://umbraco.com/
-
-## Umbraco – the flexible open source .NET CMS
+Posted in software online review		Umbraco &#8211; the flexible open source .NET&nbsp;CMS
+Posted on <time class="entry-date published updated" datetime="2021-07-20T05:06:15+02:00">July 20, 2021</time> by Filip Keser
 https://umbraco.com/
-
-## The Only Tool You Need To Run a Profitable Agency | Productive
+Posted in software online review		The Only Tool You Need To Run a Profitable Agency |&nbsp;Productive
+Posted on <time class="entry-date published updated" datetime="2021-07-18T20:57:36+02:00">July 18, 2021</time> by Filip Keser
 https://www.productive.io/
-
-## Talent Relationship Management Software & Applicant Tracking System
+Posted in software online review		Talent Relationship Management Software &amp; Applicant Tracking&nbsp;System
+Posted on <time class="entry-date published updated" datetime="2021-07-17T02:32:10+02:00">July 17, 2021</time> by Filip Keser
 https://thrivetrm.com/
-
-## Windows Virtual Desktop | Remote Desktop | Microsoft Azure
+Posted in software online review		Windows Virtual Desktop | Remote Desktop | Microsoft&nbsp;Azure
+Posted on <time class="entry-date published updated" datetime="2021-07-16T15:45:56+02:00">July 16, 2021</time> by Filip Keser
 https://azure.microsoft.com/en-us/services/virtual-desktop/
-
-## Procurement & Supply Chain Solutions for Spend Management | SAP Ariba
+Posted in software online review		Procurement &amp; Supply Chain Solutions for Spend Management | SAP&nbsp;Ariba
+Posted on <time class="entry-date published updated" datetime="2021-07-16T08:15:15+02:00">July 16, 2021</time> by Filip Keser
 https://www.ariba.com/
-
-## SAP Store
+Posted in software online review		SAP Store
+Posted on <time class="entry-date published updated" datetime="2021-07-16T08:14:35+02:00">July 16, 2021</time> by Filip Keser
 https://store.sap.com/dcp/en/
-
-## Semrush – Online Visibility Management Platform
+Posted in software online review		Semrush &#8211; Online Visibility Management&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-07-15T08:46:41+02:00">July 15, 2021</time> by Filip Keser
 https://www.semrush.com/
-
-## B2B Network for Supply Chain E Procurement Marketplaces & Digital B2B Payments | Tradeshift
+Posted in software online review		B2B Network for Supply Chain E Procurement Marketplaces &amp; Digital B2B Payments |&nbsp;Tradeshift
+Posted on <time class="entry-date published updated" datetime="2021-07-10T14:32:08+02:00">July 10, 2021</time> by Filip Keser
 https://tradeshift.com/
-
-## Endpoint Management, Security and Risk | Home | Tanium
+Posted in software online review		Endpoint Management, Security and Risk | Home |&nbsp;Tanium
+Posted on <time class="entry-date published updated" datetime="2021-07-10T14:27:10+02:00">July 10, 2021</time> by Filip Keser
 https://www.tanium.com/
-
-## Webinar Software. New Platform for Webinars – LiveWebinar.com
+Posted in software online review		Webinar Software. New Platform for Webinars &#8211;&nbsp;LiveWebinar.com
+Posted on <time class="entry-date published updated" datetime="2021-07-08T08:19:44+02:00">July 8, 2021</time> by Filip Keser
 https://www.livewebinar.com/
-
-## Copy Shark | AI Powered Copywriting
+Posted in software online review		Copy Shark | AI Powered&nbsp;Copywriting
+Posted on <time class="entry-date published updated" datetime="2021-07-05T14:42:46+02:00">July 5, 2021</time> by Filip Keser
 https://www.copyshark.ai/
-
-## Bryxen – We Create Video Marketing Tools
+Posted in software online review		Bryxen – We Create Video Marketing&nbsp;Tools
+Posted on <time class="entry-date published updated" datetime="2021-07-04T11:27:23+02:00">July 4, 2021</time> by Filip Keser
 http://www.bryxen.com/
-
-## Maps, geocoding, and navigation APIs & SDKs | Mapbox
+Posted in software online review		Maps, geocoding, and navigation APIs &amp; SDKs |&nbsp;Mapbox
+Posted on <time class="entry-date published updated" datetime="2021-07-04T07:48:54+02:00">July 4, 2021</time> by Filip Keser
 https://www.mapbox.com/
-
-## Marker.io: Website Feedback Tool & Bug Tracking
+Posted in software online review		Marker.io: Website Feedback Tool &amp; Bug&nbsp;Tracking
+Posted on <time class="entry-date published updated" datetime="2021-07-02T15:41:31+02:00">July 2, 2021</time> by Filip Keser
 https://marker.io/
-
-## Talent Relationship Management Software & Applicant Tracking System
+Posted in software online review		Talent Relationship Management Software &amp; Applicant Tracking&nbsp;System
+Posted on <time class="entry-date published updated" datetime="2021-07-02T14:47:47+02:00">July 2, 2021</time> by Filip Keser
 https://thrivetrm.com/
-
-## Descript | All-in-one audio/video editing, as easy as a doc.
+Posted in software online review		Descript | All-in-one audio/video editing, as easy as a&nbsp;doc.
+Posted on <time class="entry-date published updated" datetime="2021-07-02T14:27:35+02:00">July 2, 2021</time> by Filip Keser
 https://www.descript.com/
-
-## Automatically convert audio and video to text: Fast, Accurate, & Affordable | Sonix
+Posted in software online review		Automatically convert audio and video to text: Fast, Accurate, &amp; Affordable |&nbsp;Sonix
+Posted on <time class="entry-date published updated" datetime="2021-07-02T14:26:21+02:00">July 2, 2021</time> by Filip Keser
 https://sonix.ai/
-
-## Happy Scribe: Audio Transcription & Video Subtitles
+Posted in software online review		Happy Scribe: Audio Transcription &amp; Video&nbsp;Subtitles
+Posted on <time class="entry-date published updated" datetime="2021-07-02T14:24:26+02:00">July 2, 2021</time> by Filip Keser
 https://www.happyscribe.com/
-
-## GoodDay: Inspiring Work Management Platform
+Posted in software online review		GoodDay: Inspiring Work Management&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-07-02T13:18:27+02:00">July 2, 2021</time> by Filip Keser
 https://www.goodday.work/
-
-## Instructure | Educational Software Development
+Posted in software online review		Instructure | Educational Software&nbsp;Development
+Posted on <time class="entry-date published updated" datetime="2021-07-02T03:16:17+02:00">July 2, 2021</time> by Filip Keser
 https://www.instructure.com/en-gb
-
-## Digital Publishing Platform for Everyone | Joomag
+Posted in software online review		Digital Publishing Platform for Everyone |&nbsp;Joomag
+Posted on <time class="entry-date published updated" datetime="2021-07-01T23:26:51+02:00">July 1, 2021</time> by Filip Keser
 https://www.joomag.com/en
-
-## Product Integrations – Virtual and Hybrid Events Platform | Airmeet
+Posted in software online review		Product Integrations &#8211; Virtual and Hybrid Events Platform |&nbsp;Airmeet
+Posted on <time class="entry-date published updated" datetime="2021-06-30T12:26:47+02:00">June 30, 2021</time> by Filip Keser
 https://www.airmeet.com/hub/product-integrations/
-
-## Qlik | Data Analytics & Data Integration Solutions
+Posted in software online review		Qlik | Data Analytics &amp; Data Integration&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-06-29T13:52:33+02:00">June 29, 2021</time> by Filip Keser
 https://www.qlik.com/us/
-
-## Angular
+Posted in software online review		Angular
+Posted on <time class="entry-date published updated" datetime="2021-06-28T15:21:05+02:00">June 28, 2021</time> by Filip Keser
 https://angular.io/
-
-## TypeScript: Typed JavaScript at Any Scale.
+Posted in software online review		TypeScript: Typed JavaScript at Any&nbsp;Scale.
+Posted on <time class="entry-date published updated" datetime="2021-06-28T15:20:33+02:00">June 28, 2021</time> by Filip Keser
 https://www.typescriptlang.org/
-
-## Jest · 🃏 Delightful JavaScript Testing
+Posted in software online review		Jest · 🃏 Delightful JavaScript&nbsp;Testing
+Posted on <time class="entry-date published updated" datetime="2021-06-28T15:20:18+02:00">June 28, 2021</time> by Filip Keser
 https://jestjs.io/
-
-## RxJS
+Posted in software online review		RxJS
+Posted on <time class="entry-date published updated" datetime="2021-06-28T15:20:05+02:00">June 28, 2021</time> by Filip Keser
 https://rxjs.dev/
-
-## Redux – A predictable state container for JavaScript apps. | Redux
+Posted in software online review		Redux &#8211; A predictable state container for JavaScript apps. |&nbsp;Redux
+Posted on <time class="entry-date published updated" datetime="2021-06-28T15:19:45+02:00">June 28, 2021</time> by Filip Keser
 https://redux.js.org/
-
-## Duck Creek Technologies | Enterprise P&C Insurance Software
+Posted in software online review		Duck Creek Technologies | Enterprise P&amp;C Insurance&nbsp;Software
+Posted on <time class="entry-date published updated" datetime="2021-06-24T19:36:12+02:00">June 24, 2021</time> by Filip Keser
 https://www.duckcreek.com/
-
-## PHP: Hypertext Preprocessor
+Posted in software online review		PHP: Hypertext Preprocessor
+Posted on <time class="entry-date published updated" datetime="2021-06-23T14:57:25+02:00">June 23, 2021</time> by Filip Keser
 https://www.php.net/index.php
-
-## SiteManager: No Code Collaborative web design platform
+Posted in software online review		SiteManager: No Code Collaborative web design&nbsp;platform
+Posted on <time class="entry-date published updated" datetime="2021-06-23T10:29:18+02:00">June 23, 2021</time> by Filip Keser
 https://www.sitemanager.io/
-
-## Home | Grass Valley
+Posted in software online review		Home | Grass&nbsp;Valley
+Posted on <time class="entry-date published updated" datetime="2021-06-23T02:37:54+02:00">June 23, 2021</time> by Filip Keser
 https://www.grassvalley.com/
-
-## Stratus Technologies | Zero-touch Edge Computing
+Posted in software online review		Stratus Technologies | Zero-touch Edge&nbsp;Computing
+Posted on <time class="entry-date published updated" datetime="2021-06-23T02:10:11+02:00">June 23, 2021</time> by Filip Keser
 https://www.stratus.com/
-
-## Oracle VM VirtualBox
+Posted in software online review		Oracle VM VirtualBox
+Posted on <time class="entry-date published updated" datetime="2021-06-23T01:38:18+02:00">June 23, 2021</time> by Filip Keser
 https://www.virtualbox.org/
-
-## Home – Chatlayer.ai
+Posted in software online review		Home &#8211; Chatlayer.ai
+Posted on <time class="entry-date published updated" datetime="2021-06-21T15:10:25+02:00">June 21, 2021</time> by Filip Keser
 https://chatlayer.ai/
-
-## Sinch – SMS, Voice, Video & Verification APIs
+Posted in software online review		Sinch &#8211; SMS, Voice, Video &amp; Verification&nbsp;APIs
+Posted on <time class="entry-date published updated" datetime="2021-06-21T15:09:35+02:00">June 21, 2021</time> by Filip Keser
 https://www.sinch.com/
-
-## Video transcoding, streaming, capture, screen recording, captioning and workflow automation solutions | Telestream, LLC
+Posted in software online review		Video transcoding, streaming, capture, screen recording, captioning and workflow automation solutions | Telestream,&nbsp;LLC
+Posted on <time class="entry-date published updated" datetime="2021-06-19T15:18:30+02:00">June 19, 2021</time> by Filip Keser
 http://www.telestream.net/
-
-## Braintree | Online Payment Solutions and Global Payment Processor
+Posted in software online review		Braintree | Online Payment Solutions and Global Payment&nbsp;Processor
+Posted on <time class="entry-date published updated" datetime="2021-06-17T16:14:06+02:00">June 17, 2021</time> by Filip Keser
 https://www.braintreepayments.com/hr/
-
-## Customer Data Platform – CDP | Microsoft Dynamics 365
+Posted in software online review		Customer Data Platform &#8211; CDP | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:05:37+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/customer-data-platform/
-
-## Customer Insights | Microsoft Dynamics 365
+Posted in software online review		Customer Insights | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:05:27+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/ai/customer-insights/
-
-## Sales Overview | Microsoft Dynamics 365
+Posted in software online review		Sales Overview | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:04:51+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/sales/overview/
-
-## Relationship Sales | Microsoft Dynamics 365
+Posted in software online review		Relationship Sales | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:04:43+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/sales/relationship-sales/
-
-## Product Visualize | Microsoft Dynamics 365
+Posted in software online review		Product Visualize | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:04:32+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/mixed-reality/product-visualize/
-
-## Customer Service | Microsoft Dynamics 365
+Posted in software online review		Customer Service | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:04:18+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/customer-service/overview/
-
-## Field Service | Microsoft Dynamics 365
+Posted in software online review		Field Service | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:04:07+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/field-service/overview/
-
-## Remote Assist | Microsoft Dynamics 365
+Posted in software online review		Remote Assist | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:03:56+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/mixed-reality/remote-assist/
-
-## Marketing – Customer Journey | Microsoft Dynamics 365
+Posted in software online review		Marketing – Customer Journey | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:03:42+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/marketing/overview/
-
-## Commerce | Microsoft Dynamics 365
+Posted in software online review		Commerce | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:03:30+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/commerce/overview/
-
-## Commerce | Microsoft Dynamics 365
+Posted in software online review		Commerce | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:03:01+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/commerce/overview/
-
-## Connected Store | Microsoft Dynamics 365
+Posted in software online review		Connected Store | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:02:51+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/ai/connected-store/
-
-## Fraud Protection and Loss Prevention | Microsoft Dynamics 365
+Posted in software online review		Fraud Protection and Loss Prevention | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:02:39+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/ai/fraud-protection/
-
-## Supply Chain Management | Microsoft Dynamics 365
+Posted in software online review		Supply Chain Management | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:02:26+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/supply-chain-management/overview/
-
-## Microsoft Mixed Reality / AR Guides | Microsoft Dynamics 365
+Posted in software online review		Microsoft Mixed Reality / AR Guides | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:02:11+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/mixed-reality/guides/
-
-## Intelligent Order Management | Microsoft Dynamics 365
+Posted in software online review		Intelligent Order Management | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:01:58+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/intelligent-order-management/
-
-## Customer Service Professional | Microsoft Dynamics 365
+Posted in software online review		Customer Service Professional | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:01:33+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/customer-service/professional/
-
-## Dynamics 365 Sales Professional
+Posted in software online review		Dynamics 365 Sales&nbsp;Professional
+Posted on <time class="entry-date published updated" datetime="2021-06-15T11:01:18+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/sales/professional/
-
-## Human Resources | Microsoft Dynamics 365
+Posted in software online review		Human Resources | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T10:59:30+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/human-resources/overview/
-
-## Finance | Microsoft Dynamics 365
+Posted in software online review		Finance | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T10:59:05+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/finance/overview/
-
-## Project Operations | Microsoft Dynamics 365
+Posted in software online review		Project Operations | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T10:58:35+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/project-operations/overview/
-
-## Business Application Platform | Microsoft Power Platform
+Posted in software online review		Business Application Platform | Microsoft Power&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-06-15T10:57:36+02:00">June 15, 2021</time> by Filip Keser
 https://powerplatform.microsoft.com/en-us/
-
-## Common Data Model | Microsoft Power Platform
+Posted in software online review		Common Data Model | Microsoft Power&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-06-15T10:56:35+02:00">June 15, 2021</time> by Filip Keser
 https://powerplatform.microsoft.com/en-us/common-data-model/
-
-## Microsoft Dataverse | Microsoft Power Platform
+Posted in software online review		Microsoft Dataverse | Microsoft Power&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-06-15T10:51:01+02:00">June 15, 2021</time> by Filip Keser
 https://powerplatform.microsoft.com/en-us/dataverse/
-
-## Business Application Platform | Microsoft Power Platform
+Posted in software online review		Business Application Platform | Microsoft Power&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-06-15T10:50:40+02:00">June 15, 2021</time> by Filip Keser
 https://powerplatform.microsoft.com/en-us/
-
-## Business Central | Microsoft Dynamics 365
+Posted in software online review		Business Central | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T10:40:21+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/business-central/overview/
-
-## Business Central Pricing | Microsoft Dynamics 365
+Posted in software online review		Business Central Pricing | Microsoft Dynamics&nbsp;365
+Posted on <time class="entry-date published updated" datetime="2021-06-15T10:38:18+02:00">June 15, 2021</time> by Filip Keser
 https://dynamics.microsoft.com/en-us/business-central/pricing/
-
-## Small Business Software and Tools – Microsoft Store
+Posted in software online review		Small Business Software and Tools &#8211; Microsoft&nbsp;Store
+Posted on <time class="entry-date published updated" datetime="2021-06-14T01:27:21+02:00">June 14, 2021</time> by Filip Keser
 https://www.microsoft.com/en-us/store/b/software
-
-## Business Application Platform | Microsoft Power Platform
+Posted in software online review		Business Application Platform | Microsoft Power&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-06-14T01:00:28+02:00">June 14, 2021</time> by Filip Keser
 https://powerplatform.microsoft.com/en-us/
-
-## Software for Mac – Microsoft Store
+Posted in software online review		Software for Mac &#8211; Microsoft&nbsp;Store
+Posted on <time class="entry-date published updated" datetime="2021-06-14T00:55:39+02:00">June 14, 2021</time> by Filip Keser
 https://www.microsoft.com/en-us/store/collections/SoftwareforMac/
-
-## Otter Voice Meeting Notes – Otter.ai
+Posted in software online review		Otter Voice Meeting Notes &#8211;&nbsp;Otter.ai
+Posted on <time class="entry-date published updated" datetime="2021-06-13T02:21:09+02:00">June 13, 2021</time> by Filip Keser
 https://otter.ai/
-
-## Bring structure to your research – protocols.io
+Posted in software online review		Bring structure to your research &#8211;&nbsp;protocols.io
+Posted on <time class="entry-date published updated" datetime="2021-06-10T10:23:17+02:00">June 10, 2021</time> by Filip Keser
 https://www.protocols.io/welcome
-
-## Mollie – Effortless payments
+Posted in software online review		Mollie – Effortless&nbsp;payments
+Posted on <time class="entry-date published updated" datetime="2021-06-10T00:05:15+02:00">June 10, 2021</time> by Filip Keser
 https://www.mollie.com/en
-
-## Buy Autodesk Software | Get Prices & Buy Online | Official Autodesk Store
+Posted in software online review		Buy Autodesk Software | Get Prices &amp; Buy Online | Official Autodesk&nbsp;Store
+Posted on <time class="entry-date published updated" datetime="2021-06-08T01:44:09+02:00">June 8, 2021</time> by Filip Keser
 https://www.autodesk.com/products
-
-## WSCAD – Next Generation Electrical CAD
+Posted in software online review		WSCAD – Next Generation Electrical&nbsp;CAD
+Posted on <time class="entry-date published updated" datetime="2021-06-08T01:42:51+02:00">June 8, 2021</time> by Filip Keser
 https://www.wscad.com/
-
-## AUCOTEC AG – Engineering Software
+Posted in software online review		AUCOTEC AG &#8211; Engineering&nbsp;Software
+Posted on <time class="entry-date published updated" datetime="2021-06-08T01:41:05+02:00">June 8, 2021</time> by Filip Keser
 https://www.aucotec.com/en/
-
-## Bring structure to your research – protocols.io
+Posted in software online review		Bring structure to your research &#8211;&nbsp;protocols.io
+Posted on <time class="entry-date published updated" datetime="2021-06-03T00:20:16+02:00">June 3, 2021</time> by Filip Keser
 https://www.protocols.io/
-
-## Hire Freelancer. Find Remote Jobs & Get Paid Online at Useme.eu | useme.com
+Posted in software online review		Hire Freelancer. Find Remote Jobs &amp; Get Paid Online at Useme.eu |&nbsp;useme.com
+Posted on <time class="entry-date published updated" datetime="2021-06-02T12:02:28+02:00">June 2, 2021</time> by Filip Keser
 https://useme.com/en/
-
-## Bamboo
+Posted in software online review		Bamboo
+Posted on <time class="entry-date published updated" datetime="2021-06-01T22:15:11+02:00">June 1, 2021</time> by Filip Keser
 https://www.bamboo-cloud.com/
-
-## Drools – Business Rules Management System (Java™, Open Source)
+Posted in software online review		Drools &#8211; Business Rules Management System (Java™, Open&nbsp;Source)
+Posted on <time class="entry-date published updated" datetime="2021-06-01T14:23:32+02:00">June 1, 2021</time> by Filip Keser
 https://www.drools.org/
-
-## SocialBee | Social Media Management Tools, Training, and Teams
+Posted in software online review		SocialBee | Social Media Management Tools, Training, and&nbsp;Teams
+Posted on <time class="entry-date published updated" datetime="2021-06-01T14:18:49+02:00">June 1, 2021</time> by Filip Keser
 https://socialbee.io/
-
-## Documentation | Dataform
+Posted in software online review		Documentation | Dataform
+Posted on <time class="entry-date published updated" datetime="2021-06-01T11:04:15+02:00">June 1, 2021</time> by Filip Keser
 https://docs.dataform.co/
-
-## Dataform | Manage data pipelines in BigQuery
+Posted in software online review		Dataform | Manage data pipelines in&nbsp;BigQuery
+Posted on <time class="entry-date published updated" datetime="2021-06-01T11:03:29+02:00">June 1, 2021</time> by Filip Keser
 https://dataform.co/
-
-## Cloud Computing Services  | Google Cloud
+Posted in software online review		Cloud Computing Services  | Google&nbsp;Cloud
+Posted on <time class="entry-date published" datetime="2021-06-01T06:48:18+02:00">June 1, 2021</time><time class="updated" datetime="2023-03-20T03:45:51+01:00">March 20, 2023</time> by Filip Keser
 https://cloud.google.com/
-
-## Univision
+Posted in software online review		Univision
+Posted on <time class="entry-date published updated" datetime="2021-06-01T06:48:07+02:00">June 1, 2021</time> by Filip Keser
 https://corporate.univision.com/
-
-## Create 3D Floor Plans & Interior Designs for Home, Office Online | Foyr
+Posted in software online review		Create 3D Floor Plans &amp; Interior Designs for Home, Office Online |&nbsp;Foyr
+Posted on <time class="entry-date published updated" datetime="2021-05-31T13:50:50+02:00">May 31, 2021</time> by Filip Keser
 https://foyr.com/
-
-## Data-Driven Marketing Solutions | Audience Targeting | Social Media & Email Marketing Consultant
+Posted in software online review		Data-Driven Marketing Solutions | Audience Targeting | Social Media &amp; Email Marketing&nbsp;Consultant
+Posted on <time class="entry-date published updated" datetime="2021-05-26T16:29:01+02:00">May 26, 2021</time> by Filip Keser
 https://www.stirista.com/
-
-## Create 3D Floor Plans & Interior Designs for Home, Office Online | Foyr
+Posted in software online review		Create 3D Floor Plans &amp; Interior Designs for Home, Office Online |&nbsp;Foyr
+Posted on <time class="entry-date published updated" datetime="2021-05-25T22:34:45+02:00">May 25, 2021</time> by Filip Keser
 https://foyr.com/
-
-## Amara – Award-winning Subtitle Editor and Enterprise Offerings
+Posted in software online review		Amara – Award-winning Subtitle Editor and Enterprise&nbsp;Offerings
+Posted on <time class="entry-date published updated" datetime="2021-05-25T05:38:57+02:00">May 25, 2021</time> by Filip Keser
 https://amara.org/en/
-
-## Sinch developers
+Posted in software online review		Sinch developers
+Posted on <time class="entry-date published updated" datetime="2021-05-25T03:23:48+02:00">May 25, 2021</time> by Filip Keser
 https://developers.sinch.com/
-
-## Sinch – SMS, Voice, Video & Verification APIs
+Posted in software online review		Sinch &#8211; SMS, Voice, Video &amp; Verification&nbsp;APIs
+Posted on <time class="entry-date published updated" datetime="2021-05-25T03:20:23+02:00">May 25, 2021</time> by Filip Keser
 https://www.sinch.com/
-
-## Sales Engagement Platform, Sales Automation Software | Outreach
+Posted in software online review		Sales Engagement Platform, Sales Automation Software |&nbsp;Outreach
+Posted on <time class="entry-date published updated" datetime="2021-05-24T14:36:42+02:00">May 24, 2021</time> by Filip Keser
 https://www.outreach.io/
-
-## Outreach integrations
+Posted in software online review		Outreach integrations
+Posted on <time class="entry-date published updated" datetime="2021-05-24T14:36:30+02:00">May 24, 2021</time> by Filip Keser
 https://www.outreach.io/product/integrations
-
-## Gmail: Secure Enterprise Email for Business | Google Workspace
+Posted in software online review		Gmail: Secure Enterprise Email for Business | Google&nbsp;Workspace
+Posted on <time class="entry-date published" datetime="2021-05-24T14:34:57+02:00">May 24, 2021</time><time class="updated" datetime="2023-03-20T02:47:09+01:00">March 20, 2023</time> by Filip Keser
 https://workspace.google.com/products/gmail/
-
-## Google Workspace (Formerly G Suite): Business Collaboration Tools
+Posted in software online review		Google Workspace (Formerly G Suite): Business Collaboration&nbsp;Tools
+Posted on <time class="entry-date published" datetime="2021-05-24T14:34:40+02:00">May 24, 2021</time><time class="updated" datetime="2023-03-20T02:48:54+01:00">March 20, 2023</time> by Filip Keser
 https://workspace.google.com/
-
-## BeDigital Network
+Posted in software online review		BeDigital Network
+Posted on <time class="entry-date published updated" datetime="2021-05-24T12:25:05+02:00">May 24, 2021</time> by Filip Keser
 https://www.bedigital.io/
-
-## Trustpilot Reviews: Experience the power of customer reviews
+Posted in software online review		Trustpilot Reviews: Experience the power of customer&nbsp;reviews
+Posted on <time class="entry-date published updated" datetime="2021-05-23T16:36:08+02:00">May 23, 2021</time> by Filip Keser
 https://www.trustpilot.com/
-
-## Axonaut : the best all-in-one CRM
+Posted in software online review		Axonaut : the best all-in-one&nbsp;CRM
+Posted on <time class="entry-date published updated" datetime="2021-05-22T22:55:23+02:00">May 22, 2021</time> by Filip Keser
 https://axonaut.com/en
-
-## Clustaar Conversational AI – actionable insights from your customers
+Posted in software online review		Clustaar Conversational AI &#8211; actionable insights from your&nbsp;customers
+Posted on <time class="entry-date published updated" datetime="2021-05-22T22:54:55+02:00">May 22, 2021</time> by Filip Keser
 https://clustaar.com/
-
-## Flowrite – Supercharge your daily communication
+Posted in software online review		Flowrite &#8211; Supercharge your daily&nbsp;communication
+Posted on <time class="entry-date published updated" datetime="2021-05-22T04:44:42+02:00">May 22, 2021</time> by Filip Keser
 https://www.flowrite.com/
-
-## Masterworks – Learn to Invest in Fine Art
+Posted in software online review		Masterworks &#8211; Learn to Invest in Fine&nbsp;Art
+Posted on <time class="entry-date published updated" datetime="2021-05-21T04:42:57+02:00">May 21, 2021</time> by Filip Keser
 https://www.masterworks.io/trading/bulletin
-
-## Freemius – The new standard in selling WordPress plugins and themes
+Posted in software online review		Freemius &#8211; The new standard in selling WordPress plugins and&nbsp;themes
+Posted on <time class="entry-date published updated" datetime="2021-05-21T04:10:18+02:00">May 21, 2021</time> by Filip Keser
 https://freemius.com/
-
-## abc.xyz na Googleu
-Pogledajte taj post tvrtke abc.xyz na Googleu:
-https://posts.gle/m6MVA9
-
-## abc.xyz
+Posted in software online review		abc.xyz na Googleu
+Posted on <time class="entry-date published" datetime="2021-05-21T01:38:06+02:00">May 21, 2021</time><time class="updated" datetime="2023-03-20T02:49:54+01:00">March 20, 2023</time> by Filip Keser
+Pogledajte taj post tvrtke abc.xyz na Googleu: https://posts.gle/m6MVA9
+Posted in software online review		Chill
+Posted on <time class="entry-date published updated" datetime="2021-05-21T01:20:34+02:00">May 21, 2021</time> by Filip Keser
+Posted in software online review		abc.xyz
+Posted on <time class="entry-date published" datetime="2021-05-21T00:13:50+02:00">May 21, 2021</time><time class="updated" datetime="2023-03-20T11:07:59+01:00">March 20, 2023</time> by Filip Keser
 abc.xyz 00385992135341
-
-## Objavite recenziju za abc.xyz na Googleu
+Posted in software online review		Objavite recenziju za abc.xyz na&nbsp;Googleu
+Posted on <time class="entry-date published" datetime="2021-05-21T00:09:03+02:00">May 21, 2021</time><time class="updated" datetime="2023-03-20T03:30:03+01:00">March 20, 2023</time> by Filip Keser
 Tvrtka abc.xyz rado bi čula vaše povratne informacije! Objavite recenziju na našem profilu.
 https://g.page/r/CXJb5DQpP4Q1EA0/review
-
-## Civo Kubernetes – Fast, Simple, Managed Kubernetes Service – Civo.com
+Posted in software online review		Civo Kubernetes – Fast, Simple, Managed Kubernetes Service &#8211;&nbsp;Civo.com
+Posted on <time class="entry-date published updated" datetime="2021-05-20T11:24:06+02:00">May 20, 2021</time> by Filip Keser
 https://www.civo.com/
-
-## I Was Made For Lovin’ You by Tonight Intro Kiss • A podcast on Anchor
+Posted in software online review		I Was Made For Lovin&#8217; You by Tonight Intro Kiss • A podcast on&nbsp;Anchor
+Posted on <time class="entry-date published updated" datetime="2021-05-20T07:56:51+02:00">May 20, 2021</time> by Filip Keser
 https://anchor.fm/eight-bukets/episodes/I-Was-Made-For-Lovin-You-e118lpc
-
-## I Was Made For Lovin’ You
+Posted in software online review		I Was Made For Lovin&#8217;&nbsp;You
+Posted on <time class="entry-date published updated" datetime="2021-05-20T07:44:31+02:00">May 20, 2021</time> by Filip Keser
 https://anchor.fm/eight-bukets/episodes/I-Was-Made-For-Lovin-You-e118lpc
-
-## Subscription business financial metrics. Absolutely free.
+Posted in software online review		Subscription business financial metrics. Absolutely&nbsp;free.
+Posted on <time class="entry-date published updated" datetime="2021-05-20T06:38:43+02:00">May 20, 2021</time> by Filip Keser
 https://www.profitwell.com/
-
-## Priceintelligently
+Posted in software online review		Priceintelligently
+Posted on <time class="entry-date published updated" datetime="2021-05-20T06:38:34+02:00">May 20, 2021</time> by Filip Keser
 https://www.priceintelligently.com/blog
-
-## Pricing Strategy Driven by Data
+Posted in software online review		Pricing Strategy Driven by&nbsp;Data
+Posted on <time class="entry-date published updated" datetime="2021-05-20T06:36:59+02:00">May 20, 2021</time> by Filip Keser
 https://www.priceintelligently.com/
-
-## Integromat – Achieve more in less time with fewer people
+Posted in software online review		Integromat &#8211; Achieve more in less time with fewer&nbsp;people
+Posted on <time class="entry-date published updated" datetime="2021-05-20T04:38:20+02:00">May 20, 2021</time> by Filip Keser
 https://www.integromat.com/en
-
-## Rise above mundane tasks with our no-code AI platform
+Posted in software online review		Rise above mundane tasks with our no-code AI&nbsp;platform
+Posted on <time class="entry-date published updated" datetime="2021-05-20T04:35:57+02:00">May 20, 2021</time> by Filip Keser
 https://levity.ai/
-
-## Chill • A podcast on Anchor
+Posted in software online review		Chill • A podcast on&nbsp;Anchor
+Posted on <time class="entry-date published updated" datetime="2021-05-20T02:12:07+02:00">May 20, 2021</time> by Filip Keser
 https://anchor.fm/filip-keser4
-
-## Jekyll • Simple, blog-aware, static sites | Transform your plain text into static websites and blogs
+Posted in software online review		Jekyll • Simple, blog-aware, static sites | Transform your plain text into static websites and&nbsp;blogs
+Posted on <time class="entry-date published" datetime="2021-05-19T14:24:43+02:00">May 19, 2021</time><time class="updated" datetime="2024-10-24T09:46:27+02:00">October 24, 2024</time> by Filip Keser
 https://jekyllrb.com/
 https://import.jekyllrb.com/docs/wordpress/
-
-## Gatsby | The Speed you Need to Delight Every Customer | Gatsby
+Posted in software online review		Gatsby | The Speed you Need to Delight Every Customer |&nbsp;Gatsby
+Posted on <time class="entry-date published updated" datetime="2021-05-19T14:24:16+02:00">May 19, 2021</time> by Filip Keser
 https://www.gatsbyjs.com/
-
-## Postach.io | The Evernote Powered Blogging Platform
+Posted in software online review		Postach.io | The Evernote Powered Blogging&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-05-19T14:23:15+02:00">May 19, 2021</time> by Filip Keser
 https://postach.io/
-
-## MovableType.org
+Posted in software online review		MovableType.org
+Posted on <time class="entry-date published updated" datetime="2021-05-19T14:22:32+02:00">May 19, 2021</time> by Filip Keser
 https://www.movabletype.org/
-
-## Netlify: Develop & deploy the best web experiences in record time
+Posted in software online review		Netlify: Develop &amp; deploy the best web experiences in record&nbsp;time
+Posted on <time class="entry-date published updated" datetime="2021-05-19T14:02:40+02:00">May 19, 2021</time> by Filip Keser
 https://www.netlify.com/
-
-## OpenStreetMap
+Posted in software online review		OpenStreetMap
+Posted on <time class="entry-date published updated" datetime="2021-05-19T01:29:53+02:00">May 19, 2021</time> by Filip Keser
 https://www.openstreetmap.org/
-
-## Leaflet – a JavaScript library for interactive maps
+Posted in software online review		Leaflet &#8211; a JavaScript library for interactive&nbsp;maps
+Posted on <time class="entry-date published updated" datetime="2021-05-19T01:29:31+02:00">May 19, 2021</time> by Filip Keser
 https://leafletjs.com/
-
-## CARTO | Unlock the power of spatial analysis
+Posted in software online review		CARTO | Unlock the power of spatial&nbsp;analysis
+Posted on <time class="entry-date published updated" datetime="2021-05-19T01:28:59+02:00">May 19, 2021</time> by Filip Keser
 https://carto.com/
-
-## Gartner Digital Market Contact
+Posted in software online review		Gartner Digital Market&nbsp;Contact
+Posted on <time class="entry-date published updated" datetime="2021-05-16T00:43:31+02:00">May 16, 2021</time> by Filip Keser
 https://www.gartner.com/en/digital-markets/get-started
-
-## Global Research and Advisory Company | Gartner
+Posted in software online review		Global Research and Advisory Company |&nbsp;Gartner
+Posted on <time class="entry-date published updated" datetime="2021-05-16T00:43:16+02:00">May 16, 2021</time> by Filip Keser
 https://www.gartner.com/en
-
-## Business Software Reviews from Software Advice®
+Posted in software online review		Business Software Reviews from Software&nbsp;Advice®
+Posted on <time class="entry-date published updated" datetime="2021-05-16T00:43:00+02:00">May 16, 2021</time> by Filip Keser
 https://www.softwareadvice.com/
-
-## GetApp | Business Software, Reviews & Comparisons
+Posted in software online review		GetApp | Business Software, Reviews &amp;&nbsp;Comparisons
+Posted on <time class="entry-date published updated" datetime="2021-05-16T00:42:09+02:00">May 16, 2021</time> by Filip Keser
 https://www.getapp.com/
-
-## Top Software at Capterra | Software & Software Reviews For Business & Nonprofit
+Posted in software online review		Top Software at Capterra | Software &amp; Software Reviews For Business &amp;&nbsp;Nonprofit
+Posted on <time class="entry-date published updated" datetime="2021-05-15T13:47:06+02:00">May 15, 2021</time> by Filip Keser
 https://www.capterra.com/
-
-## High Risk Support, No Reserves, Instant Payouts – MyUser
+Posted in software online review		High Risk Support, No Reserves, Instant Payouts &#8211;&nbsp;MyUser
+Posted on <time class="entry-date published updated" datetime="2021-05-15T13:44:15+02:00">May 15, 2021</time> by Filip Keser
 https://www.myuser.com/
-
-## TheFunded.com: The Resource for Entrepreneurs.
+Posted in software online review		TheFunded.com: The Resource for&nbsp;Entrepreneurs.
+Posted on <time class="entry-date published updated" datetime="2021-05-14T20:38:31+02:00">May 14, 2021</time> by Filip Keser
 http://www.thefunded.com/
-
-## InBIA: Global Network of Entrepreneurial Ecosystem Builders InBIA
+Posted in software online review		InBIA: Global Network of Entrepreneurial Ecosystem Builders&nbsp;InBIA
+Posted on <time class="entry-date published updated" datetime="2021-05-14T20:32:21+02:00">May 14, 2021</time> by Filip Keser
 https://inbia.org/
-
-## RAISON – pre-IPO investments from €100
+Posted in software online review		RAISON &#8211; pre-IPO investments from&nbsp;€100
+Posted on <time class="entry-date published updated" datetime="2021-05-14T14:50:03+02:00">May 14, 2021</time> by Filip Keser
 https://raison.ai/
-
-## YC Recommendations | Y Combinator
+Posted in software online review		YC Recommendations | Y&nbsp;Combinator
+Posted on <time class="entry-date published updated" datetime="2021-05-14T14:20:47+02:00">May 14, 2021</time> by Filip Keser
 https://www.ycombinator.com/recommend/
-
-## Technology Partners | WordPress VIP
+Posted in software online review		Technology Partners | WordPress&nbsp;VIP
+Posted on <time class="entry-date published updated" datetime="2021-05-14T14:09:36+02:00">May 14, 2021</time> by Filip Keser
 https://wpvip.com/partners/technology-partners/
-
-## WordPress for the Enterprise | WordPress VIP
+Posted in software online review		WordPress for the Enterprise | WordPress&nbsp;VIP
+Posted on <time class="entry-date published updated" datetime="2021-05-14T14:03:57+02:00">May 14, 2021</time> by Filip Keser
 https://wpvip.com/
-
-## Portfolio | FundersClub
+Posted in software online review		Portfolio | FundersClub
+Posted on <time class="entry-date published" datetime="2021-05-14T13:58:51+02:00">May 14, 2021</time><time class="updated" datetime="2022-10-31T02:16:16+01:00">October 31, 2022</time> by Filip Keser
 https://fundersclub.com/portfolio/
 https://fundersclub.com/
-
-## Tools, guides, and resources for startups – Google for Startups
+Posted in software online review		Tools, guides, and resources for startups &#8211; Google for&nbsp;Startups
+Posted on <time class="entry-date published" datetime="2021-05-14T13:27:58+02:00">May 14, 2021</time><time class="updated" datetime="2023-03-20T03:30:27+01:00">March 20, 2023</time> by Filip Keser
 https://startup.google.com/tools/
-
-## Best Practices & Helpful Tools for New Startups – Google for Startups
+Posted in software online review		Best Practices &amp; Helpful Tools for New Startups &#8211; Google for&nbsp;Startups
+Posted on <time class="entry-date published" datetime="2021-05-14T13:26:37+02:00">May 14, 2021</time><time class="updated" datetime="2023-03-20T03:30:49+01:00">March 20, 2023</time> by Filip Keser
 https://startup.google.com/
-
-## Y Combinator
+Posted in software online review		Y Combinator
+Posted on <time class="entry-date published updated" datetime="2021-05-14T13:25:24+02:00">May 14, 2021</time> by Filip Keser
 https://www.ycombinator.com/
-
-## Founder Institute: World’s premier idea-stage accelerator & startup launch program.
+Posted in software online review		Founder Institute: World&#8217;s premier idea-stage accelerator &amp; startup launch&nbsp;program.
+Posted on <time class="entry-date published updated" datetime="2021-05-14T13:09:40+02:00">May 14, 2021</time> by Filip Keser
 https://fi.co/join
-
-## MicroAcquire – #1 Startup acquisition marketplace
+Posted in software online review		MicroAcquire &#8211; #1 Startup acquisition&nbsp;marketplace
+Posted on <time class="entry-date published updated" datetime="2021-05-14T13:08:31+02:00">May 14, 2021</time> by Filip Keser
 https://microacquire.com/
-
-## Checkaso — ASO Tool | App Store Optimization for iOS & Android
+Posted in software online review		Checkaso — ASO Tool | App Store Optimization for iOS &amp;&nbsp;Android
+Posted on <time class="entry-date published updated" datetime="2021-05-14T09:48:15+02:00">May 14, 2021</time> by Filip Keser
 https://checkaso.io/
-
-## LiveChat Platform – Chat framework for innovative teams
+Posted in software online review		LiveChat Platform – Chat framework for innovative&nbsp;teams
+Posted on <time class="entry-date published updated" datetime="2021-05-13T06:16:45+02:00">May 13, 2021</time> by Filip Keser
 https://developers.livechat.com
-
-## Signature
-All the best - https://software-online-review.com
+Posts navigation
+Older posts
+Follow software info by fk on WordPress.com
+ads - analitics - advertisingaffiliate - partner - resellerall about cookiesAmazon affiliate programAuthor.jpgAuto magazineBUY IT NOW - ESCROW - PROJECT SOR - DOMAIN WITH CONTENTCompanylink BusinessCosmetic &amp; parfumesCustomer Management System Process Driverdesign styledraagster - IndiaE&amp;NFintech bussines card example scheme linksgadgetGame zoneGoogle searchgoogle third party cookies - privacy sandbox - safari dont use third party ... 2023idea to make by fkInformatic magazineMarketingMusic pageNordVPNnotesonline news &amp; contentPilot projectsoftware-online-reviewStartup online hiring Scheme links - online &amp; googleStoreStudy - Courses onlineUnitedsports Newsunofficialus-cro-info-newsVenture CapitalWeb shop us croatia onlineWebshopsWordpress linksWordpress ReadWordpress UpgradeTranslateSearch
+Search for:
+https://issuu.com/filkes
+Subscribe to Blog via Email
+action="https://subscribe.wordpress.com"
+method="post"
+accept-charset="utf-8"
+data-blog="178675373"
+data-post_access_level="everybody"
+id="subscribe-blog-2"
+>
+Enter your email address to subscribe to this blog and receive notifications of new posts by email.
+id="subscribe-field-2-label"
+for="subscribe-field-2"
+class="screen-reader-text"
+>
+Email Address:
+type="email"
+name="email"
+autocomplete="email"
+style="width: 95%; padding: 1px 10px"
+placeholder="Email Address"
+value=""
+id="subscribe-field-2"
+required
+/>
+>
+class="wp-block-button__link"
+>
+Subscribe
+Join 280 other subscribers
+Follow software info by fk on WordPress.com
+TagsAcademy
+AD
+ADS
+affiliate
+ai
+analytics
+app
+artificial-intelligence
+audience
+automating
+automation
+bussines
+call Center
+center
+chatgpt
+CLICK
+cloud
+customer
+data
+database
+data privacy software
+Discovery
+elastic
+email
+enterprise
+gemini
+go
+golang
+Google
+iintegrations
+integrations
+internet
+java
+joomla
+kibana
+language
+link
+localisation
+m
+management
+marketing
+monitoring
+news
+officecrm
+online
+Oracle
+planing
+platform
+play
+product
+program
+programing
+projects
+real estate
+Sales
+sap
+School of Hard Knocks
+server
+shopify
+SMS
+software
+speech
+sql
+storage
+suite
+system
+technology
+text
+URL
+virtual machines
+visitor
+vizalize
+vode
+web
+WordPress
+BUY IT NOW &#8211; ESCROW &#8211; PROJECT SOR &#8211; DOMAIN WITH CONTENT
+" data-image-caption="" data-large-file="https://software-online-review.com/wp-content/uploads/2021/10/cropped-cropped-screenshot_20211031-010800_facebook.jpg?w=120" />
+software info by fk
+software-online-review - Filip Keser
+action="https://wordpress.com/email-subscriptions"
+method="post"
+accept-charset="utf-8"
+data-blog="178675373"
+data-post_access_level="everybody"
+data-subscriber_email=""
+id="subscribe-blog-3"
+>
+id="subscribe-field-3-label"
+for="subscribe-field-3"
+class="screen-reader-text"
+>
+Type your email…
+required="required"
+type="email"
+name="email"
+autocomplete="email"
+class="no-border-radius "
+style="font-size: 16px;padding: 15px 23px 15px 23px;border-radius: 0px;border-width: 1px;"
+placeholder="Type your email…"
+value=""
+id="subscribe-field-3"
+title="Please fill in this field."
+/>
+>
+class="wp-block-button__link no-border-radius"
+style="font-size: 16px;padding: 15px 23px 15px 23px;margin: 0; margin-left: 10px;border-radius: 0px;border-width: 1px;"
+name="jetpack_subscriptions_widget"
+>
+Subscribe
+Skip to content ↓
+class="hide-on-button ads-active"
+data-hide-timeout="30"
+data-consent-expiration="180"
+id="eu-cookie-law"
+style="display: none"
+>
+Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use.
+To find out more, including how to control cookies, see here:
+Cookie Policy
+class="actnbr-pub-scratchpad actnbr-has-follow actnbr-has-actions">
+Subscribe
+Subscribed
+software info by fk
+Join 146 other subscribers
+Sign me up
+Already have a WordPress.com account? Log in now.
+software info by fk
+Subscribe
+Subscribed
+Sign up
+Log in
+Report this content
+View site in Reader
+Manage subscriptions
+Collapse this bar
+class="jp-carousel-wrap swiper jp-carousel-swiper-container jp-carousel-transitions"
+itemscope
+itemtype="https://schema.org/ImageGallery">
+Loading Comments...
+Write a Comment...
+<textarea
+name="comment"
+class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea"
+id="jp-carousel-comment-form-comment-field"
+placeholder="Write a Comment..."
+></textarea>
+Email
+Name
+Website
+type="submit"
+name="submit"
+class="jp-carousel-comment-form-button"
+id="jp-carousel-comment-form-button-submit"
+value="Post Comment" />
 
 ---
 
-# news
+# onlinereview.news.blog
 
 > **Source:** https://onlinereview.news.blog/
-> **Analyzed At:** 2026-06-29T12:18:08.677362Z
+> **Analyzed At:** 2026-07-20T07:00:09.773Z
 
-## National Institute of Standards and Technology | NIST
+### Content
+<title>news</title>
+Skip to content
+Menu
+news
+Posted in news &amp; etc		National Institute of Standards and Technology |&nbsp;NIST
+Posted on <time class="entry-date published updated" datetime="2022-09-05T21:28:05+00:00">September 5, 2022</time> by Filip Keser
 https://www.time.gov/
-
-## Apple News+ – Apple
+Posted in news &amp; etc		Apple News+ &#8211;&nbsp;Apple
+Posted on <time class="entry-date published updated" datetime="2021-10-17T07:51:25+00:00">October 17, 2021</time> by Filip Keser
 https://www.apple.com/apple-news/
-
-## SaaS SEO Agency – SaaS Marketing Company
+Posted in online		SaaS SEO Agency &#8211; SaaS Marketing&nbsp;Company
+Posted on <time class="entry-date published updated" datetime="2021-08-31T21:39:52+00:00">August 31, 2021</time> by Filip Keser
 https://www.fortis.agency/
-
-## Cloudflare – The Web Performance & Security Company | Cloudflare
+Posted in wordpress by fk		Cloudflare &#8211; The Web Performance &amp; Security Company |&nbsp;Cloudflare
+Posted on <time class="entry-date published updated" datetime="2021-08-31T20:42:43+00:00">August 31, 2021</time> by Filip Keser
 https://www.cloudflare.com/hp/
-
-## WordPress.com: Verify and Set up Google Workspace – Google Workspace Admin Help
+Posted in wordpress by fk		WordPress.com: Verify and Set up Google Workspace &#8211; Google Workspace Admin&nbsp;Help
+Posted on <time class="entry-date published updated" datetime="2021-08-31T20:38:14+00:00">August 31, 2021</time> by Filip Keser
 https://support.google.com/a/answer/7011689?hl=hr
-
-## Empowering App Development for Developers | Docker
+Posted in info		Empowering App Development for Developers |&nbsp;Docker
+Posted on <time class="entry-date published updated" datetime="2021-08-31T19:26:56+00:00">August 31, 2021</time> by Filip Keser
 https://www.docker.com/
-
-## The Keyword | Google
+Posted in info		The Keyword |&nbsp;Google
+Posted on <time class="entry-date published updated" datetime="2021-08-31T19:19:19+00:00">August 31, 2021</time> by Filip Keser
 https://www.blog.google/
-
-## Solutions built for teachers and students | Google for Education
+Posted in info		Solutions built for teachers and students | Google for&nbsp;Education
+Posted on <time class="entry-date published updated" datetime="2021-08-31T19:19:06+00:00">August 31, 2021</time> by Filip Keser
 https://edu.google.com/
-
-## Cratos | CRYPTO EXCHANGE SERVICE
+Posted in info		Cratos | CRYPTO EXCHANGE&nbsp;SERVICE
+Posted on <time class="entry-date published updated" datetime="2021-08-31T18:45:20+00:00">August 31, 2021</time> by Filip Keser
 https://cratos.net/
-
-## Cratos | CRYPTO EXCHANGE SERVICE
+Posted in info		Cratos | CRYPTO EXCHANGE&nbsp;SERVICE
+Posted on <time class="entry-date published updated" datetime="2021-08-31T18:44:11+00:00">August 31, 2021</time> by Filip Keser
 https://cratos.net/
-
-## Access denied | www.bitgo.com used Cloudflare to restrict access
+Posted in info		Access denied | www.bitgo.com used Cloudflare to restrict&nbsp;access
+Posted on <time class="entry-date published updated" datetime="2021-08-31T18:43:27+00:00">August 31, 2021</time> by Filip Keser
 https://www.bitgo.com/
-
-## Cloudflare – The Web Performance & Security Company | Cloudflare
+Posted in info		Cloudflare &#8211; The Web Performance &amp; Security Company |&nbsp;Cloudflare
+Posted on <time class="entry-date published updated" datetime="2021-08-31T18:42:33+00:00">August 31, 2021</time> by Filip Keser
 https://www.cloudflare.com/hp/
-
-## WordPress.com: Verify and Set up Google Workspace – Google Workspace Admin Help
+Posted in notes online		WordPress.com: Verify and Set up Google Workspace &#8211; Google Workspace Admin&nbsp;Help
+Posted on <time class="entry-date published updated" datetime="2021-08-31T18:38:03+00:00">August 31, 2021</time> by Filip Keser
 https://support.google.com/a/answer/7011689?hl=hr
-
-## ROG Phone｜Phones｜ASUS Global
+Posted in Online &amp; News		ROG Phone｜Phones｜ASUS Global
+Posted on <time class="entry-date published updated" datetime="2021-08-31T15:26:31+00:00">August 31, 2021</time> by Filip Keser
 https://www.asus.com/mobile/phones/ROG-Phone/
-
-## Technology News, Latest & Popular Gadgets Reviews, Specifications, Prices, Mobile Comparison, Technology Videos & Photos | Gadgets Now
+Posted in Online &amp; News		Technology News, Latest &amp; Popular Gadgets Reviews, Specifications, Prices, Mobile Comparison, Technology Videos &amp; Photos | Gadgets&nbsp;Now
+Posted on <time class="entry-date published updated" datetime="2021-08-31T15:22:56+00:00">August 31, 2021</time> by Filip Keser
 https://www.gadgetsnow.com/
-
-## Luxury Hotel in Zagreb :: Esplanade Zagreb Hotel
+Posted in online		Luxury Hotel in Zagreb :: Esplanade Zagreb&nbsp;Hotel
+Posted on <time class="entry-date published updated" datetime="2021-08-31T15:16:06+00:00">August 31, 2021</time> by Filip Keser
 https://www.esplanade.hr/
-
-## ROG Phone｜Phones｜ASUS Global
+Posted in gaming		ROG Phone｜Phones｜ASUS Global
+Posted on <time class="entry-date published updated" datetime="2021-08-31T13:26:23+00:00">August 31, 2021</time> by Filip Keser
 https://www.asus.com/mobile/phones/ROG-Phone/
-
-## Science news, expert analysis, covid coronavirus research, space tech
+Posted in online		Science news, expert analysis, covid coronavirus research, space&nbsp;tech
+Posted on <time class="entry-date published updated" datetime="2021-08-31T08:20:10+00:00">August 31, 2021</time> by Filip Keser
 https://cosmosmagazine.com/
-
-## Vocal media
+Posted in info		Vocal media
+Posted on <time class="entry-date published updated" datetime="2021-08-31T07:58:07+00:00">August 31, 2021</time> by Filip Keser
 https://vocal.media/vocal-plus?via=filip
-
-## FAMILY PAKET za 2 odrasle osobe i 1 ili 2 djece do 12 godina u Obiteljskom Resortu Urania u Baškoj Vodi uz 2 ili 3 noćenja na bazi Polupansiona, poklon dobrodošlice i uslugu čuvanja za mališane! – Crno Jaje
+Posted in online		FAMILY PAKET za 2 odrasle osobe i 1 ili 2 djece do 12 godina u Obiteljskom Resortu Urania u Baškoj Vodi uz 2 ili 3 noćenja na bazi Polupansiona, poklon dobrodošlice i uslugu čuvanja za mališane! &#8211; Crno&nbsp;Jaje
+Posted on <time class="entry-date published updated" datetime="2021-08-31T07:31:18+00:00">August 31, 2021</time> by Filip Keser
 https://www.crnojaje.hr/
-
-## gol.hr – Sportske vijesti i rezultati
+Posted in online		gol.hr &#8211; Sportske vijesti i&nbsp;rezultati
+Posted on <time class="entry-date published updated" datetime="2021-08-31T07:30:59+00:00">August 31, 2021</time> by Filip Keser
 https://gol.dnevnik.hr/
-
-## Vocal media
+Vocal media
 https://vocal.media/vocal-plus?via=filip
-
-## ArtStation – Learning
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-31T02:57:06+00:00">August 31, 2021</time> by Filip Keser
+Posted in Online &amp; News		ArtStation &#8211; Learning
+Posted on <time class="entry-date published updated" datetime="2021-08-31T02:41:05+00:00">August 31, 2021</time> by Filip Keser
 https://www.artstation.com/learning
-
-## ArtStation – Explore
+Posted in Online &amp; News		ArtStation &#8211; Explore
+Posted on <time class="entry-date published updated" datetime="2021-08-31T02:38:39+00:00">August 31, 2021</time> by Filip Keser
 https://www.artstation.com
-
-## Sancta Domenica Webshop | Top Brandovi na jednom mjestu‎
+Posted in online		Sancta Domenica Webshop | Top Brandovi na jednom&nbsp;mjestu‎
+Posted on <time class="entry-date published updated" datetime="2021-08-31T02:35:56+00:00">August 31, 2021</time> by Filip Keser
 https://www.sancta-domenica.hr/
-
-## Sancta Domenica Webshop | Top Brandovi na jednom mjestu‎
+Posted in webshop - online		Sancta Domenica Webshop | Top Brandovi na jednom&nbsp;mjestu‎
+Posted on <time class="entry-date published updated" datetime="2021-08-31T02:35:47+00:00">August 31, 2021</time> by Filip Keser
 https://www.sancta-domenica.hr/
-
-## ROG – Republic of Gamers｜Global | For Those Who Dare
+Posted in Online &amp; News		ROG &#8211; Republic of Gamers｜Global | For Those Who&nbsp;Dare
+Posted on <time class="entry-date published updated" datetime="2021-08-31T02:32:50+00:00">August 31, 2021</time> by Filip Keser
 https://rog.asus.com/
-
-## ASUS USA
+Posted in Online &amp; News		ASUS USA
+Posted on <time class="entry-date published updated" datetime="2021-08-31T02:31:15+00:00">August 31, 2021</time> by Filip Keser
 https://www.asus.com/us/
-
-## Acer Predator – moćna računala za igranje
+Posted in online		Acer Predator – moćna računala za&nbsp;igranje
+Posted on <time class="entry-date published updated" datetime="2021-08-31T02:29:51+00:00">August 31, 2021</time> by Filip Keser
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## Acer Predator – moćna računala za igranje
+Posted in Online &amp; News		Acer Predator – moćna računala za&nbsp;igranje
+Posted on <time class="entry-date published updated" datetime="2021-08-31T02:25:34+00:00">August 31, 2021</time> by Filip Keser
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## Predator Helios 700 | Prijenosna računala | Acer Hrvatska
+Posted in Online &amp; News		Predator Helios 700 | Prijenosna računala | Acer&nbsp;Hrvatska
+Posted on <time class="entry-date published updated" datetime="2021-08-31T02:16:01+00:00">August 31, 2021</time> by Filip Keser
 https://www.acer.com/ac/hr/HR/content/predator-series/predatorhelios700
-
-## Linker – Content Discovery Platform
+Posted in online		Linker &#8211; Content Discovery&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-31T02:09:20+00:00">August 31, 2021</time> by Filip Keser
 https://linker.hr/
-
-## Science news, expert analysis, covid coronavirus research, space tech
+Science news, expert analysis, covid coronavirus research, space&nbsp;tech
 https://cosmosmagazine.com/
-
-## Epic Games Store | Download & Play PC Games, Mods, DLC & More – Epic Games
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-31T01:20:01+00:00">August 31, 2021</time> by Filip Keser
+Posted in gaming		Epic Games Store | Download &amp; Play PC Games, Mods, DLC &amp; More – Epic&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:49:14+00:00">August 31, 2021</time> by Filip Keser
 https://www.epicgames.com/store/en-US/
-
-## ROG – Republic of Gamers｜Global | For Those Who Dare
+Posted in notes online		ROG &#8211; Republic of Gamers｜Global | For Those Who&nbsp;Dare
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:32:58+00:00">August 31, 2021</time> by Filip Keser
 https://rog.asus.com/
-
-## ROG – Republic of Gamers｜Global | For Those Who Dare
+Posted in gaming		ROG &#8211; Republic of Gamers｜Global | For Those Who&nbsp;Dare
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:32:43+00:00">August 31, 2021</time> by Filip Keser
 https://rog.asus.com/
-
-## ROG – Republic of Gamers｜Global | For Those Who Dare
+Posted in info		ROG &#8211; Republic of Gamers｜Global | For Those Who&nbsp;Dare
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:32:31+00:00">August 31, 2021</time> by Filip Keser
 https://rog.asus.com/
-
-## Business
+Posted in info		Business
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:32:04+00:00">August 31, 2021</time> by Filip Keser
 https://www.asus.com/
-
-## ASUS USA
+Posted in gaming		ASUS USA
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:31:09+00:00">August 31, 2021</time> by Filip Keser
 https://www.asus.com/us/
-
-## Acer Predator – moćna računala za igranje
+Posted in gaming		Acer Predator – moćna računala za&nbsp;igranje
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:30:16+00:00">August 31, 2021</time> by Filip Keser
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## Acer | Channel Portal
+Posted in partner/reseller		Acer | Channel&nbsp;Portal
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:28:42+00:00">August 31, 2021</time> by Filip Keser
 https://partner.acer.com
-
-## Acer | Channel Portal
+Posted in notes online		Acer | Channel&nbsp;Portal
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:27:27+00:00">August 31, 2021</time> by Filip Keser
 https://partner.acer.com
-
-## Acer Predator – moćna računala za igranje
+Posted in gaming		Acer Predator – moćna računala za&nbsp;igranje
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:25:25+00:00">August 31, 2021</time> by Filip Keser
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## Acer Predator – moćna računala za igranje
+Posted in notes online		Acer Predator – moćna računala za&nbsp;igranje
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:25:17+00:00">August 31, 2021</time> by Filip Keser
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## PREDATOR ORION 9000 | Stolno računalo za ekstremno igranje | Acer Hrvatska
+Posted in notes online		PREDATOR ORION 9000 | Stolno računalo za ekstremno igranje | Acer&nbsp;Hrvatska
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:23:00+00:00">August 31, 2021</time> by Filip Keser
 https://www.acer.com/ac/hr/HR/content/predator-series/predatororion9000
-
-## Predator Helios 700 | Prijenosna računala | Acer Hrvatska
+Posted in notes online		Predator Helios 700 | Prijenosna računala | Acer&nbsp;Hrvatska
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:16:07+00:00">August 31, 2021</time> by Filip Keser
 https://www.acer.com/ac/hr/HR/content/predator-series/predatorhelios700
-
-## Predator Helios 700 | Prijenosna računala | Acer Hrvatska
+Posted in gaming		Predator Helios 700 | Prijenosna računala | Acer&nbsp;Hrvatska
+Posted on <time class="entry-date published updated" datetime="2021-08-31T00:15:52+00:00">August 31, 2021</time> by Filip Keser
 https://www.acer.com/ac/hr/HR/content/predator-series/predatorhelios700
-
-## Naslovna – HPB Invest
+Posted in online		Naslovna &#8211; HPB&nbsp;Invest
+Posted on <time class="entry-date published updated" datetime="2021-08-30T20:45:16+00:00">August 30, 2021</time> by Filip Keser
 https://www.hpb-invest.hr/
-
-## NCS (NoCopyrightSounds) – free music for content creators
+Posted in online		NCS (NoCopyrightSounds) &#8211; free music for content&nbsp;creators
+Posted on <time class="entry-date published updated" datetime="2021-08-30T19:56:27+00:00">August 30, 2021</time> by Filip Keser
 https://ncs.io/
-
-## NIO | Next Generation Smart Electric Vehicles
+Posted in cars magazine		NIO | Next Generation Smart Electric&nbsp;Vehicles
+Posted on <time class="entry-date published updated" datetime="2021-08-30T19:22:36+00:00">August 30, 2021</time> by Filip Keser
 https://www.nio.com/
-
-## Naslovna – HPB Invest
+Posted in notes online		Naslovna &#8211; HPB&nbsp;Invest
+Posted on <time class="entry-date published updated" datetime="2021-08-30T18:45:24+00:00">August 30, 2021</time> by Filip Keser
 https://www.hpb-invest.hr/
-
-## DIY.org – The Learning Community For Kids • Online Courses
+Posted in Online &amp; News		DIY.org &#8211; The Learning Community For Kids • Online&nbsp;Courses
+Posted on <time class="entry-date published updated" datetime="2021-08-30T18:17:21+00:00">August 30, 2021</time> by Filip Keser
 https://diy.org/
-
-## Sell Worldwide with eBay
+Posted in Online &amp; News		Sell Worldwide with&nbsp;eBay
+Posted on <time class="entry-date published updated" datetime="2021-08-30T18:07:28+00:00">August 30, 2021</time> by Filip Keser
 https://export.ebay.com/en/
-
-## NCS (NoCopyrightSounds) – free music for content creators
+Posted in gaming		NCS (NoCopyrightSounds) &#8211; free music for content&nbsp;creators
+Posted on <time class="entry-date published updated" datetime="2021-08-30T17:56:37+00:00">August 30, 2021</time> by Filip Keser
 https://ncs.io/
-
-## NCS (NoCopyrightSounds) – free music for content creators
+Posted in music		NCS (NoCopyrightSounds) &#8211; free music for content&nbsp;creators
+Posted on <time class="entry-date published updated" datetime="2021-08-30T17:56:19+00:00">August 30, 2021</time> by Filip Keser
 https://ncs.io/
-
-## Sell Worldwide with eBay
+Posted in info		Sell Worldwide with&nbsp;eBay
+Posted on <time class="entry-date published updated" datetime="2021-08-30T16:07:21+00:00">August 30, 2021</time> by Filip Keser
 https://export.ebay.com/en/
-
-## Protis – Naslovnica
+Posted in Online &amp; News		Protis &#8211; Naslovnica
+Posted on <time class="entry-date published updated" datetime="2021-08-30T15:03:31+00:00">August 30, 2021</time> by Filip Keser
 https://www.protis.hr/
-
-## Links.hr: Informatika i oprema, Sport, Dronovi i Roboti, Bijela tehnika i Kućanski aparati
+Posted in Online &amp; News		Links.hr: Informatika i oprema, Sport, Dronovi i Roboti, Bijela tehnika i Kućanski&nbsp;aparati
+Posted on <time class="entry-date published updated" datetime="2021-08-30T15:03:17+00:00">August 30, 2021</time> by Filip Keser
 https://www.links.hr/hr/
-
-## RONIS – hifi, smart tv, car audio, mobiteli i računala
+Posted in Online &amp; News		RONIS &#8211; hifi, smart tv, car audio, mobiteli i&nbsp;računala
+Posted on <time class="entry-date published updated" datetime="2021-08-30T15:01:31+00:00">August 30, 2021</time> by Filip Keser
 https://www.ronis.hr/
-
-## RONIS – hifi, smart tv, car audio, mobiteli i računala
+Posted in webshop - online		RONIS &#8211; hifi, smart tv, car audio, mobiteli i&nbsp;računala
+Posted on <time class="entry-date published updated" datetime="2021-08-30T15:01:23+00:00">August 30, 2021</time> by Filip Keser
 https://www.ronis.hr/
-
-## Northern Illinois University – Your Future. Our Focus.
+Northern Illinois University &#8211; Your Future. Our&nbsp;Focus.
 https://www.niu.edu/index.shtml
-
-## Tom’s Guide | Tech Product Reviews, Top Picks and How To
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-30T14:23:33+00:00">August 30, 2021</time> by Filip Keser
+Posted in Online &amp; News		Tom&#8217;s Guide | Tech Product Reviews, Top Picks and How&nbsp;To
+Posted on <time class="entry-date published updated" datetime="2021-08-30T13:23:48+00:00">August 30, 2021</time> by Filip Keser
 https://www.tomsguide.com/
-
-## Welcome | AWS Training & Certification
+Posted in Online &amp; News		Welcome | AWS Training &amp;&nbsp;Certification
+Posted on <time class="entry-date published updated" datetime="2021-08-30T13:06:14+00:00">August 30, 2021</time> by Filip Keser
 https://www.aws.training/
-
-## Official HP® Store | Laptops, Desktops, Monitors & Printers – HP Store UK
+Posted in Online &amp; News		Official HP® Store | Laptops, Desktops, Monitors &amp; Printers &#8211; HP Store&nbsp;UK
+Posted on <time class="entry-date published updated" datetime="2021-08-30T11:50:36+00:00">August 30, 2021</time> by Filip Keser
 https://www.hp.com/gb-en/shop/
-
-## Official HP® Store | Laptops, Desktops, Monitors & Printers – HP Store UK
+Posted in webshop - online		Official HP® Store | Laptops, Desktops, Monitors &amp; Printers &#8211; HP Store&nbsp;UK
+Posted on <time class="entry-date published updated" datetime="2021-08-30T11:50:27+00:00">August 30, 2021</time> by Filip Keser
 https://www.hp.com/gb-en/shop/
-
-## Naslovnica – tportal
+Posted in online		Naslovnica &#8211; tportal
+Posted on <time class="entry-date published updated" datetime="2021-08-30T11:31:17+00:00">August 30, 2021</time> by Filip Keser
 https://www.tportal.hr/
-
-## AWS re/Start
+Posted in info		AWS re/Start
+Posted on <time class="entry-date published updated" datetime="2021-08-30T11:12:32+00:00">August 30, 2021</time> by Filip Keser
 https://aws.amazon.com/training/restart/
-
-## AWS Academy
+Posted in info		AWS Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-30T11:09:23+00:00">August 30, 2021</time> by Filip Keser
 https://aws.amazon.com/training/awsacademy/
-
-## AWS Certified Security – Specialty
+Posted in info		AWS Certified Security &#8211;&nbsp;Specialty
+Posted on <time class="entry-date published updated" datetime="2021-08-30T11:08:30+00:00">August 30, 2021</time> by Filip Keser
 https://aws.amazon.com/certification/certified-security-specialty/
-
-## AWS Certification – Validate AWS Cloud Skills – Get AWS Certified
+Posted in info		AWS Certification &#8211; Validate AWS Cloud Skills &#8211; Get AWS&nbsp;Certified
+Posted on <time class="entry-date published updated" datetime="2021-08-30T11:07:10+00:00">August 30, 2021</time> by Filip Keser
 https://aws.amazon.com/certification/
-
-## Welcome | AWS Training & Certification
+Posted in info		Welcome | AWS Training &amp;&nbsp;Certification
+Posted on <time class="entry-date published updated" datetime="2021-08-30T11:06:06+00:00">August 30, 2021</time> by Filip Keser
 https://www.aws.training/
-
-## Naslovna – VIO d.o.o.
+Posted in online		Naslovna &#8211; VIO&nbsp;d.o.o.
+Posted on <time class="entry-date published updated" datetime="2021-08-30T10:55:55+00:00">August 30, 2021</time> by Filip Keser
 https://www.vio.hr/
-
-## Checkaso — ASO Tool | App Store Optimization for iOS & Android
+Posted in info		Checkaso — ASO Tool | App Store Optimization for iOS &amp;&nbsp;Android
+Posted on <time class="entry-date published updated" datetime="2021-08-30T10:48:04+00:00">August 30, 2021</time> by Filip Keser
 https://checkaso.io/
-
-## Official HP® Store | Laptops, Desktops, Monitors & Printers – HP Store UK
+Posted in info		Official HP® Store | Laptops, Desktops, Monitors &amp; Printers &#8211; HP Store&nbsp;UK
+Posted on <time class="entry-date published updated" datetime="2021-08-30T09:50:43+00:00">August 30, 2021</time> by Filip Keser
 https://www.hp.com/gb-en/shop/
-
-## Business HTZ
+Posted in online		Business HTZ
+Posted on <time class="entry-date published updated" datetime="2021-08-30T09:20:32+00:00">August 30, 2021</time> by Filip Keser
 https://www.htz.hr/hr-HR
-
-## Vodnikova – škola stranih jezika – Naslovnica
+Posted in online		Vodnikova &#8211; škola stranih jezika &#8211;&nbsp;Naslovnica
+Posted on <time class="entry-date published updated" datetime="2021-08-30T09:15:14+00:00">August 30, 2021</time> by Filip Keser
 https://www.vodnikova.hr/hr/
-
-## NACIONAL.HR – online izdanje najutjecajnijeg političkog tjednika
+Posted in online		NACIONAL.HR – online izdanje najutjecajnijeg političkog&nbsp;tjednika
+Posted on <time class="entry-date published updated" datetime="2021-08-30T09:11:13+00:00">August 30, 2021</time> by Filip Keser
 https://www.nacional.hr/
-
-## LoyaltyLobby – Making sense of travel loyalty programs.
+Posted in online		LoyaltyLobby &#8211; Making sense of travel loyalty&nbsp;programs.
+Posted on <time class="entry-date published updated" datetime="2021-08-30T09:10:56+00:00">August 30, 2021</time> by Filip Keser
 https://loyaltylobby.com/
-
-## Klix.ba
+Posted in online		Klix.ba
+Posted on <time class="entry-date published updated" datetime="2021-08-30T09:10:21+00:00">August 30, 2021</time> by Filip Keser
 https://www.klix.ba/
-
-## Learn web design with free video courses and tutorials | Webflow University
+Posted in info		Learn web design with free video courses and tutorials | Webflow&nbsp;University
+Posted on <time class="entry-date published updated" datetime="2021-08-30T07:22:00+00:00">August 30, 2021</time> by Filip Keser
 https://university.webflow.com/
-
-## Webflow: The no-code platform for web design and development
+Posted in info		Webflow: The no-code platform for web design and&nbsp;development
+Posted on <time class="entry-date published updated" datetime="2021-08-30T07:21:46+00:00">August 30, 2021</time> by Filip Keser
 https://webflow.com/
-
-## PC Game System Requirements, News And Hardware Test Tools
+Posted in gaming		PC Game System Requirements, News And Hardware Test&nbsp;Tools
+Posted on <time class="entry-date published updated" datetime="2021-08-30T07:12:42+00:00">August 30, 2021</time> by Filip Keser
 https://www.game-debate.com/
-
-## Međunarodno | Volvo Cars – Hrvatska
+Posted in cars magazine		Međunarodno | Volvo Cars &#8211;&nbsp;Hrvatska
+Posted on <time class="entry-date published updated" datetime="2021-08-30T07:12:19+00:00">August 30, 2021</time> by Filip Keser
 https://www.volvocars.com/hr
-
-## Start a Business, Grow Your Business – Shopify 14-Day Free Trial
+Start a Business, Grow Your Business &#8211; Shopify 14-Day Free&nbsp;Trial
 https://www.shopify.com/
-
-## Tom’s Guide | Tech Product Reviews, Top Picks and How To
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-30T06:25:27+00:00">August 30, 2021</time> by Filip Keser
+Tom&#8217;s Guide | Tech Product Reviews, Top Picks and How&nbsp;To
 https://www.tomsguide.com/
-
-## Besplatno otvaranje 3 tarot karte | astro24.net
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-30T06:23:41+00:00">August 30, 2021</time> by Filip Keser
+Posted in online		Besplatno otvaranje 3 tarot karte |&nbsp;astro24.net
+Posted on <time class="entry-date published updated" datetime="2021-08-30T06:21:02+00:00">August 30, 2021</time> by Filip Keser
 https://astro24.net/
-
-## Welcome | AWS Training & Certification
+Posted in Online &amp; News		Welcome | AWS Training &amp;&nbsp;Certification
+Posted on <time class="entry-date published updated" datetime="2021-08-30T06:06:21+00:00">August 30, 2021</time> by Filip Keser
 https://www.aws.training/
-
-## The Power Query user interface | Microsoft Docs
+Posted in Online &amp; News		The Power Query user interface | Microsoft&nbsp;Docs
+Posted on <time class="entry-date published updated" datetime="2021-08-30T02:25:44+00:00">August 30, 2021</time> by Filip Keser
 https://docs.microsoft.com/en-us/power-query/power-query-ui
-
-## XenForo – Compelling community forum platform
+Posted in Online &amp; News		XenForo &#8211; Compelling community forum&nbsp;platform
+Posted on <time class="entry-date published updated" datetime="2021-08-30T02:17:29+00:00">August 30, 2021</time> by Filip Keser
 https://xenforo.com/
-
-## LoyaltyLobby – Making sense of travel loyalty programs.
+LoyaltyLobby &#8211; Making sense of travel loyalty&nbsp;programs.
 https://loyaltylobby.com/
-
-## The Fitboxing Revolution | An exciting business opportunity for your club
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-30T02:10:49+00:00">August 30, 2021</time> by Filip Keser
+Posted in webshop - online		The Fitboxing Revolution | An exciting business opportunity for your&nbsp;club
+Posted on <time class="entry-date published updated" datetime="2021-08-29T19:26:15+00:00">August 29, 2021</time> by Filip Keser
 https://www.f3fitbox.com/
-
-## CAVIAR – Luxury iPhones and Cases | Official Website
+Posted in Online &amp; News		CAVIAR &#8211; Luxury iPhones and Cases | Official&nbsp;Website
+Posted on <time class="entry-date published updated" datetime="2021-08-29T19:24:08+00:00">August 29, 2021</time> by Filip Keser
 https://caviar.global/
-
-## CAVIAR – Luxury iPhones and Cases | Official Website
+Posted in webshop - online		CAVIAR &#8211; Luxury iPhones and Cases | Official&nbsp;Website
+Posted on <time class="entry-date published updated" datetime="2021-08-29T19:23:59+00:00">August 29, 2021</time> by Filip Keser
 https://caviar.global/
-
-## portal Nikola Tesla – CARNET
+Posted in online		portal Nikola Tesla &#8211;&nbsp;CARNET
+Posted on <time class="entry-date published updated" datetime="2021-08-29T16:50:30+00:00">August 29, 2021</time> by Filip Keser
 https://www.carnet.hr/usluga/portal-nikola-tesla/
-
-## Nacionalni portal za učenje na daljinu “Nikola Tesla”
+Posted in online		Nacionalni portal za učenje na daljinu &#8220;Nikola&nbsp;Tesla&#8221;
+Posted on <time class="entry-date published updated" datetime="2021-08-29T16:50:21+00:00">August 29, 2021</time> by Filip Keser
 https://tesla.carnet.hr/
-
-## Hrvatska akademska i istraživačka mreža – CARNET
+Posted in online		Hrvatska akademska i istraživačka mreža –&nbsp;CARNET
+Posted on <time class="entry-date published updated" datetime="2021-08-29T16:50:12+00:00">August 29, 2021</time> by Filip Keser
 https://www.carnet.hr/
-
-## Product reviews, how-tos, deals and the latest tech news – CNET
+Posted in Online &amp; News		Product reviews, how-tos, deals and the latest tech news &#8211;&nbsp;CNET
+Posted on <time class="entry-date published updated" datetime="2021-08-29T15:45:47+00:00">August 29, 2021</time> by Filip Keser
 https://www.cnet.com/
-
-## PC Gamer
+Posted in gaming		PC Gamer
+Posted on <time class="entry-date published updated" datetime="2021-08-29T14:43:20+00:00">August 29, 2021</time> by Filip Keser
 https://www.pcgamer.com/uk/
-
-## XDA Portal & Forums
+Posted in info		XDA Portal &amp;&nbsp;Forums
+Posted on <time class="entry-date published updated" datetime="2021-08-29T14:39:17+00:00">August 29, 2021</time> by Filip Keser
 https://www.xda-developers.com/
-
-## Roadshow Auto Buying Program – Roadshow
+Posted in cars magazine		Roadshow Auto Buying Program &#8211;&nbsp;Roadshow
+Posted on <time class="entry-date published updated" datetime="2021-08-29T13:44:06+00:00">August 29, 2021</time> by Filip Keser
 https://www.cnet.com/roadshow/roadshow-auto-buying-program/
-
-## New cars, car reviews and pricing – Roadshow by CNET
+Posted in cars magazine		New cars, car reviews and pricing &#8211; Roadshow by&nbsp;CNET
+Posted on <time class="entry-date published updated" datetime="2021-08-29T13:42:54+00:00">August 29, 2021</time> by Filip Keser
 https://www.cnet.com/roadshow/
-
-## Synonyms and Antonyms of Words | Thesaurus.com
+Posted in info		Synonyms and Antonyms of Words |&nbsp;Thesaurus.com
+Posted on <time class="entry-date published updated" datetime="2021-08-29T13:24:38+00:00">August 29, 2021</time> by Filip Keser
 https://www.thesaurus.com/
-
-## Dictionary.com | Meanings and Definitions of Words at Dictionary.com
+Posted in info		Dictionary.com | Meanings and Definitions of Words at&nbsp;Dictionary.com
+Posted on <time class="entry-date published updated" datetime="2021-08-29T13:24:08+00:00">August 29, 2021</time> by Filip Keser
 https://www.dictionary.com/
-
-## Optika Erjavec
+Posted in online		Optika Erjavec
+Posted on <time class="entry-date published updated" datetime="2021-08-29T13:20:08+00:00">August 29, 2021</time> by Filip Keser
 https://optikaerjavec.eu/
-
-## Video Games Reviews & News – GameSpot
+Posted in gaming		Video Games Reviews &amp; News &#8211;&nbsp;GameSpot
+Posted on <time class="entry-date published updated" datetime="2021-08-29T13:09:04+00:00">August 29, 2021</time> by Filip Keser
 https://www.gamespot.com/
-
-## GamesRadar+
+Posted in gaming		GamesRadar+
+Posted on <time class="entry-date published updated" datetime="2021-08-29T13:05:45+00:00">August 29, 2021</time> by Filip Keser
 https://www.gamesradar.com/uk/
-
-## Internet-Filiale – Sparkasse Dillingen-Nördlingen
+Posted in online		Internet-Filiale &#8211; Sparkasse Dillingen-Nördlingen
+Posted on <time class="entry-date published updated" datetime="2021-08-29T09:49:58+00:00">August 29, 2021</time> by Filip Keser
 https://www.spk-dlg-noe.de/de/home.html
-
-## Total TV – Bogat TV program
+Posted in online		Total TV &#8211; Bogat TV&nbsp;program
+Posted on <time class="entry-date published updated" datetime="2021-08-29T01:19:45+00:00">August 29, 2021</time> by Filip Keser
 https://totaltv.hr/
-
-## Školska knjiga – vaša najveća online knjižara
+Posted in webshop - online		Školska knjiga &#8211; vaša najveća online&nbsp;knjižara
+Posted on <time class="entry-date published updated" datetime="2021-08-29T00:54:12+00:00">August 29, 2021</time> by Filip Keser
 https://shop.skolskaknjiga.hr/
-
-## Learn computer programming | Online courses from JetBrains Academy
+Posted in Online &amp; News		Learn computer programming | Online courses from JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-29T00:31:12+00:00">August 29, 2021</time> by Filip Keser
 https://www.jetbrains.com/academy/
-
-## Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft Surface
+Posted in notes online		Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft&nbsp;Surface
+Posted on <time class="entry-date published updated" datetime="2021-08-28T23:45:23+00:00">August 28, 2021</time> by Filip Keser
 https://www.microsoft.com/en-us/surface/devices/surface-duo
-
-## Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft Surface
+Posted in info		Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft&nbsp;Surface
+Posted on <time class="entry-date published updated" datetime="2021-08-28T23:45:15+00:00">August 28, 2021</time> by Filip Keser
 https://www.microsoft.com/en-us/surface/devices/surface-duo
-
-## All Developer Tools and Products by JetBrains
+Posted in info		All Developer Tools and Products by&nbsp;JetBrains
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:51:07+00:00">August 28, 2021</time> by Filip Keser
 https://www.jetbrains.com/products/
-
-## All Developer Tools and Products by JetBrains
+Posted in info		All Developer Tools and Products by&nbsp;JetBrains
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:50:03+00:00">August 28, 2021</time> by Filip Keser
 https://www.jetbrains.com/products/
-
-## Partners – JetBrains
+Posted in partner/reseller		Partners &#8211; JetBrains
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:48:21+00:00">August 28, 2021</time> by Filip Keser
 https://www.jetbrains.com/company/partners/
-
-## Track Java Desktop Application Developer – JetBrains Academy
+Posted in info		Track Java Desktop Application Developer – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:45:38+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/9
-
-## Track Natural Language Processing – JetBrains Academy
+Posted in info		Track Natural Language Processing – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:45:21+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/10
-
-## Track Java Core – JetBrains Academy
+Posted in info		Track Java Core – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:44:53+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/15
-
-## Track Java for Beginners – JetBrains Academy
+Posted in info		Track Java for Beginners – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:44:39+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/8
-
-## Track Java Developer – JetBrains Academy
+Posted in info		Track Java Developer – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:44:23+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/17
-
-## Track Java Backend Developer – JetBrains Academy
+Posted in info		Track Java Backend Developer – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:44:08+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/12
-
-## Track Kotlin Developer – JetBrains Academy
+Posted in info		Track Kotlin Developer – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:43:24+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/3
-
-## Track Kotlin Basics – JetBrains Academy
+Posted in info		Track Kotlin Basics – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:42:03+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/18
-
-## Track Python Developer – JetBrains Academy
+Posted in info		Track Python Developer – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:41:26+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/2
-
-## Track Python for Beginners – JetBrains Academy
+Posted in info		Track Python for Beginners – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:37:28+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/6
-
-## Track Frontend Developer – JetBrains Academy
+Posted in info		Track Frontend Developer – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:36:16+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/5
-
-## Track Java Developer – JetBrains Academy
+Posted in info		Track Java Developer – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:34:37+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks/17
-
-## Tracks – JetBrains Academy
+Posted in info		Tracks – JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:32:32+00:00">August 28, 2021</time> by Filip Keser
 https://hyperskill.org/tracks
-
-## Learn computer programming | Online courses from JetBrains Academy
+Posted in info		Learn computer programming | Online courses from JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-28T22:30:43+00:00">August 28, 2021</time> by Filip Keser
 https://www.jetbrains.com/academy/
-
-## Najam ureda i poslovnog prostora u Zagrebu – bee@work
+Posted in online		Najam ureda i poslovnog prostora u Zagrebu &#8211;&nbsp;bee@work
+Posted on <time class="entry-date published updated" datetime="2021-08-28T21:45:50+00:00">August 28, 2021</time> by Filip Keser
 https://www.bee-at-work.hr/
-
-## Automated Text and Content Creation – Xanevo
+Posted in wordpress by fk		Automated Text and Content Creation &#8211;&nbsp;Xanevo
+Posted on <time class="entry-date published updated" datetime="2021-08-28T19:44:09+00:00">August 28, 2021</time> by Filip Keser
 https://www.xanevo.com/
-
-## Amazon.com. Spend less. Smile more.
+Posted in Online &amp; News		Amazon.com. Spend less. Smile&nbsp;more.
+Posted on <time class="entry-date published updated" datetime="2021-08-28T17:07:19+00:00">August 28, 2021</time> by Filip Keser
 https://www.amazon.com/
-
-## Amazon.com. Spend less. Smile more.
+Posted in online		Amazon.com. Spend less. Smile&nbsp;more.
+Posted on <time class="entry-date published updated" datetime="2021-08-28T17:07:03+00:00">August 28, 2021</time> by Filip Keser
 https://www.amazon.com/
-
-## StreamYard
+Posted in Online &amp; News		StreamYard
+Posted on <time class="entry-date published updated" datetime="2021-08-28T16:52:06+00:00">August 28, 2021</time> by Filip Keser
 https://streamyard.com/
-
-## 优酷视频-首页
+Posted in online		优酷视频-首页
+Posted on <time class="entry-date published updated" datetime="2021-08-28T16:37:32+00:00">August 28, 2021</time> by Filip Keser
 https://www.youku.com/?spm=a2hww.12518357.yklogo.1
-
-## REHAU Hrvatska – Proizvođač rješenja na bazi polimera
+Posted in online		REHAU Hrvatska – Proizvođač rješenja na bazi&nbsp;polimera
+Posted on <time class="entry-date published updated" datetime="2021-08-28T15:36:46+00:00">August 28, 2021</time> by Filip Keser
 https://www.rehau.com/hr-hr
-
-## Amazon.com. Spend less. Smile more.
+Posted in info		Amazon.com. Spend less. Smile&nbsp;more.
+Posted on <time class="entry-date published updated" datetime="2021-08-28T15:06:55+00:00">August 28, 2021</time> by Filip Keser
 https://www.amazon.com/
-
-## Amazon.com. Spend less. Smile more.
+Posted in gaming		Amazon.com. Spend less. Smile&nbsp;more.
+Posted on <time class="entry-date published updated" datetime="2021-08-28T15:06:21+00:00">August 28, 2021</time> by Filip Keser
 https://www.amazon.com/
-
-## PC shop – Servis i Prodaja Računala Zagreb | Povoljne cijene | MagazinRS
+Posted in gaming		PC shop &#8211; Servis i Prodaja Računala Zagreb | Povoljne cijene |&nbsp;MagazinRS
+Posted on <time class="entry-date published updated" datetime="2021-08-28T14:59:57+00:00">August 28, 2021</time> by Filip Keser
 https://www.pcshop.hr/
-
-## StreamYard
+Posted in gaming		StreamYard
+Posted on <time class="entry-date published updated" datetime="2021-08-28T14:52:15+00:00">August 28, 2021</time> by Filip Keser
 https://streamyard.com/
-
-## Robb Report – The Best Luxury Cars, Jets, Yachts, Travel, Watches
+Posted in cars magazine		Robb Report – The Best Luxury Cars, Jets, Yachts, Travel,&nbsp;Watches
+Posted on <time class="entry-date published updated" datetime="2021-08-28T14:38:12+00:00">August 28, 2021</time> by Filip Keser
 https://robbreport.com/
-
-## Trustpilot Reviews: Experience the power of customer reviews
+Posted in wordpress by fk		Trustpilot Reviews: Experience the power of customer&nbsp;reviews
+Posted on <time class="entry-date published updated" datetime="2021-08-28T11:40:01+00:00">August 28, 2021</time> by Filip Keser
 https://www.trustpilot.com/
-
-## Cloudflare – The Web Performance & Security Company | Cloudflare
+Posted in wordpress by fk		Cloudflare &#8211; The Web Performance &amp; Security Company |&nbsp;Cloudflare
+Posted on <time class="entry-date published updated" datetime="2021-08-28T11:39:40+00:00">August 28, 2021</time> by Filip Keser
 https://www.cloudflare.com/hp/
-
-## Website Security | Trust Guard
+Posted in wordpress by fk		Website Security | Trust&nbsp;Guard
+Posted on <time class="entry-date published updated" datetime="2021-08-28T11:39:14+00:00">August 28, 2021</time> by Filip Keser
 https://www.trustguard.com/index.php
-
-## Get more Google Seller Ratings and Product Reviews.
+Posted in wordpress by fk		Get more Google Seller Ratings and Product&nbsp;Reviews.
+Posted on <time class="entry-date published updated" datetime="2021-08-28T11:24:24+00:00">August 28, 2021</time> by Filip Keser
 https://www.shopperapproved.com/
-
-## Collect up to 10x more Seller Ratings and Reviews.
+Posted in wordpress by fk		Collect up to 10x more Seller Ratings and&nbsp;Reviews.
+Posted on <time class="entry-date published updated" datetime="2021-08-28T11:23:57+00:00">August 28, 2021</time> by Filip Keser
 https://www.shopperapproved.com/merchantreviewsoftware.php
-
-## MAD CATZ: Official Site – Dare to Lead
+Posted in Online &amp; News		MAD CATZ: Official Site &#8211; Dare to&nbsp;Lead
+Posted on <time class="entry-date published updated" datetime="2021-08-28T11:12:53+00:00">August 28, 2021</time> by Filip Keser
 https://www.madcatz.com/en/Home/Index
-
-## Gaming Accessories | PC Gaming Accessories | Lenovo US | Lenovo US
+Posted in Online &amp; News		Gaming Accessories | PC Gaming Accessories | Lenovo US | Lenovo&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2021-08-28T11:10:54+00:00">August 28, 2021</time> by Filip Keser
 https://www.lenovo.com/us/en/d/accessories-and-monitors/gaming-accessories/
-
-## Computer Accessories & Software | Lenovo US
+Posted in Online &amp; News		Computer Accessories &amp; Software | Lenovo&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2021-08-28T11:10:16+00:00">August 28, 2021</time> by Filip Keser
 https://www.lenovo.com/us/en/accessories-and-software
-
-## Lenovo Official US Site | Laptops, PCs, Tablets & Data Center | Lenovo US
+Posted in Online &amp; News		Lenovo Official US Site | Laptops, PCs, Tablets &amp; Data Center | Lenovo&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2021-08-28T11:00:57+00:00">August 28, 2021</time> by Filip Keser
 https://www.lenovo.com/us/en/
-
-## Amazon.com. Spend less. Smile more.
+Amazon.com. Spend less. Smile&nbsp;more.
 https://www.amazon.com/
-
-## Trustpilot Reviews: Experience the power of customer reviews
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-28T10:07:12+00:00">August 28, 2021</time> by Filip Keser
+Posted in info		Trustpilot Reviews: Experience the power of customer&nbsp;reviews
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:40:08+00:00">August 28, 2021</time> by Filip Keser
 https://www.trustpilot.com/
-
-## Cloudflare – The Web Performance & Security Company | Cloudflare
+Posted in info		Cloudflare &#8211; The Web Performance &amp; Security Company |&nbsp;Cloudflare
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:39:48+00:00">August 28, 2021</time> by Filip Keser
 https://www.cloudflare.com/hp/
-
-## Website Security | Trust Guard
+Posted in info		Website Security | Trust&nbsp;Guard
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:39:22+00:00">August 28, 2021</time> by Filip Keser
 https://www.trustguard.com/index.php
-
-## Breguet | Swiss Luxury Watches – since 1775
+Breguet | Swiss Luxury Watches &#8211; since&nbsp;1775
 https://www.breguet.com/en/home
-
-## Get more Google Seller Ratings and Product Reviews.
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-28T09:37:48+00:00">August 28, 2021</time> by Filip Keser
+Posted in info		Get more Google Seller Ratings and Product&nbsp;Reviews.
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:24:30+00:00">August 28, 2021</time> by Filip Keser
 https://www.shopperapproved.com/
-
-## ICY BOX – Always well connected.
+Posted in info		ICY BOX &#8211; Always well&nbsp;connected.
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:17:33+00:00">August 28, 2021</time> by Filip Keser
 https://icybox.de/en/
-
-## StarTech.com USB C Multiport Adapter, USB Type-C Mini Dock with HDMI 4K or 1080p VGA Video, 100W PD Passthrough, 3x USB 3.0, Gigabit Ethernet, SD & MicroSD Card Reader, USB 3.0 Adapter – USB C HDMI Travel Dock (DKT30CHVSCPD) – docking station – USB-C – VGA, HDMI – GigE | Lenovo US
+Posted in notes online		StarTech.com USB C Multiport Adapter, USB Type-C Mini Dock with HDMI 4K or 1080p VGA Video, 100W PD Passthrough, 3x USB 3.0, Gigabit Ethernet, SD &amp; MicroSD Card Reader, USB 3.0 Adapter &#8211; USB C HDMI Travel Dock (DKT30CHVSCPD) &#8211; docking station &#8211; USB-C &#8211; VGA, HDMI &#8211; GigE | Lenovo&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:07:29+00:00">August 28, 2021</time> by Filip Keser
 https://www.lenovo.com/us/en/p/accessories-and-software/docking/docking_usb-docks-(universal-cable-docks)/78024264
-
-## Lenovo® Official Site | Laptops, Tablets, Desktops, smart devices, phones and Data Center | Lenovo Croatia
+Posted in gaming		Lenovo® Official Site | Laptops, Tablets, Desktops, smart devices, phones and Data Center | Lenovo&nbsp;Croatia
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:06:22+00:00">August 28, 2021</time> by Filip Keser
 https://www.lenovo.com/hr/hr/
-
-## Lenovo® Official Site | Laptops, Tablets, Desktops, smart devices, phones and Data Center | Lenovo Croatia
+Posted in info		Lenovo® Official Site | Laptops, Tablets, Desktops, smart devices, phones and Data Center | Lenovo&nbsp;Croatia
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:05:29+00:00">August 28, 2021</time> by Filip Keser
 https://www.lenovo.com/hr/hr/
-
-## Shop for Home and Home Office
+Posted in info		Shop for Home and Home&nbsp;Office
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:03:10+00:00">August 28, 2021</time> by Filip Keser
 https://www.dell.com
-
-## Lenovo Official US Site | Laptops, PCs, Tablets & Data Center | Lenovo US
+Posted in notes online		Lenovo Official US Site | Laptops, PCs, Tablets &amp; Data Center | Lenovo&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:01:08+00:00">August 28, 2021</time> by Filip Keser
 https://www.lenovo.com/us/en/
-
-## Lenovo Official US Site | Laptops, PCs, Tablets & Data Center | Lenovo US
+Posted in info		Lenovo Official US Site | Laptops, PCs, Tablets &amp; Data Center | Lenovo&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2021-08-28T09:00:08+00:00">August 28, 2021</time> by Filip Keser
 https://www.lenovo.com/us/en/
-
-## Naslovnica – Pikaj.hr
+Posted in Online &amp; News		Naslovnica &#8211; Pikaj.hr
+Posted on <time class="entry-date published updated" datetime="2021-08-28T08:44:35+00:00">August 28, 2021</time> by Filip Keser
 https://pikaj.hr/
-
-## Naslovnica – Pikaj.hr
+Posted in webshop - online		Naslovnica &#8211; Pikaj.hr
+Posted on <time class="entry-date published updated" datetime="2021-08-28T08:44:24+00:00">August 28, 2021</time> by Filip Keser
 https://pikaj.hr/
-
-## Premium Bootstrap Themes and Templates: Download @ Creative Tim
+Posted in info		Premium Bootstrap Themes and Templates: Download @ Creative&nbsp;Tim
+Posted on <time class="entry-date published updated" datetime="2021-08-27T22:17:50+00:00">August 27, 2021</time> by Filip Keser
 https://www.creative-tim.com/
-
-## Croatia Small Ship Cruises & Tours 2021 & 2022 | Cruise Croatia
+Posted in online		Croatia Small Ship Cruises &amp; Tours 2021 &amp; 2022 | Cruise&nbsp;Croatia
+Posted on <time class="entry-date published updated" datetime="2021-08-27T21:54:27+00:00">August 27, 2021</time> by Filip Keser
 https://cruisecroatia.com/
-
-## Top4Mobile.hr – Maske i torbice za mobitele
+Posted in webshop - online		Top4Mobile.hr &#8211; Maske i torbice za&nbsp;mobitele
+Posted on <time class="entry-date published updated" datetime="2021-08-27T12:11:37+00:00">August 27, 2021</time> by Filip Keser
 https://top4mobile.hr/
-
-## Baseus Global | Official Website
+Posted in info		Baseus Global | Official&nbsp;Website
+Posted on <time class="entry-date published updated" datetime="2021-08-27T10:20:32+00:00">August 27, 2021</time> by Filip Keser
 https://store.baseus.com/home
-
-## Autowill,Opel partner Zagreb, Pula, Vukovar, Vinkovci, S. Brod, Poreč
+Posted in cars magazine		Autowill,Opel partner Zagreb, Pula, Vukovar, Vinkovci, S. Brod,&nbsp;Poreč
+Posted on <time class="entry-date published updated" datetime="2021-08-27T10:02:19+00:00">August 27, 2021</time> by Filip Keser
 https://opel.autowill.hr/
-
-## Home | Top Gear
+Posted in online		Home | Top&nbsp;Gear
+Posted on <time class="entry-date published updated" datetime="2021-08-27T07:55:05+00:00">August 27, 2021</time> by Filip Keser
 https://www.topgear.com/
-
-## Home | Top Gear
+Posted in cars magazine		Home | Top&nbsp;Gear
+Posted on <time class="entry-date published updated" datetime="2021-08-27T05:54:56+00:00">August 27, 2021</time> by Filip Keser
 https://www.topgear.com/
-
-## Surfshark: Secure Your Digital Life
+Posted in Online &amp; News		Surfshark: Secure Your Digital&nbsp;Life
+Posted on <time class="entry-date published updated" datetime="2021-08-27T00:46:53+00:00">August 27, 2021</time> by Filip Keser
 https://surfshark.com/
-
-## Formative
+Posted in online		Formative
+Posted on <time class="entry-date published updated" datetime="2021-08-26T20:52:58+00:00">August 26, 2021</time> by Filip Keser
 https://www.formative.com/pricing
-
-## Formative
+Posted in Online &amp; News		Formative
+Posted on <time class="entry-date published updated" datetime="2021-08-26T20:52:49+00:00">August 26, 2021</time> by Filip Keser
 https://www.formative.com/pricing
-
-## Versace Official Online Store Europe | Fashion Clothing & Accessories
+Posted in webshop - online		Versace Official Online Store Europe | Fashion Clothing &amp;&nbsp;Accessories
+Posted on <time class="entry-date published updated" datetime="2021-08-26T20:00:06+00:00">August 26, 2021</time> by Filip Keser
 https://www.versace.com/eu/en/home/
-
-## sve.hr
+Posted in webshop - online		sve.hr
+Posted on <time class="entry-date published updated" datetime="2021-08-26T19:15:32+00:00">August 26, 2021</time> by Filip Keser
 https://www.sve.hr/
-
-## Ondato: complete and cost-effective compliance management suite
+Posted in info		Ondato: complete and cost-effective compliance management&nbsp;suite
+Posted on <time class="entry-date published updated" datetime="2021-08-26T17:22:34+00:00">August 26, 2021</time> by Filip Keser
 https://ondato.com/
-
-## Home – Healthy Bite
+Posted in online		Home &#8211; Healthy&nbsp;Bite
+Posted on <time class="entry-date published updated" datetime="2021-08-26T13:58:23+00:00">August 26, 2021</time> by Filip Keser
 http://healthybite.rs/
-
-## Redragon | Keyboards, Mice, and more – Official Site‎ – REDRAGON ZONE
+Posted in gaming		Redragon | Keyboards, Mice, and more &#8211; Official Site‎ – REDRAGON&nbsp;ZONE
+Posted on <time class="entry-date published updated" datetime="2021-08-26T13:48:26+00:00">August 26, 2021</time> by Filip Keser
 https://www.redragonzone.com/
-
-## Ondato: complete and cost-effective compliance management suite
+Posted in Online &amp; News		Ondato: complete and cost-effective compliance management&nbsp;suite
+Posted on <time class="entry-date published updated" datetime="2021-08-26T12:22:25+00:00">August 26, 2021</time> by Filip Keser
 https://ondato.com/
-
-## Joom. Easy shopping, fast shipping
+Posted in webshop - online		Joom. Easy shopping, fast&nbsp;shipping
+Posted on <time class="entry-date published updated" datetime="2021-08-26T04:17:49+00:00">August 26, 2021</time> by Filip Keser
 https://www.joom.com/en
-
-## Digital Advertising Platform | Criteo
+Posted in Online &amp; News		Digital Advertising Platform |&nbsp;Criteo
+Posted on <time class="entry-date published updated" datetime="2021-08-25T23:25:59+00:00">August 25, 2021</time> by Filip Keser
 https://www.criteo.com/technology/advertising-platform/
-
-## Programmatic advertising | BidTheatre Demand Side Platform
+Posted in Online &amp; News		Programmatic advertising | BidTheatre Demand Side&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-25T20:33:03+00:00">August 25, 2021</time> by Filip Keser
 https://www.bidtheatre.com/
-
-## ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions
+Posted in Online &amp; News		ShareThis: Free Share Buttons &amp; Plugins, Global Behavioral Data&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-08-25T20:31:44+00:00">August 25, 2021</time> by Filip Keser
 https://sharethis.com/
-
-## AdMaxim Inc. – Integrated Digital Advertising Platform
+Posted in Online &amp; News		AdMaxim Inc. – Integrated Digital Advertising&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-25T20:31:04+00:00">August 25, 2021</time> by Filip Keser
 http://www.admaxim.com/
-
-## Kwanko – Your Performance Marketing Partner
+Posted in Online &amp; News		Kwanko &#8211; Your Performance Marketing&nbsp;Partner
+Posted on <time class="entry-date published updated" datetime="2021-08-25T20:30:32+00:00">August 25, 2021</time> by Filip Keser
 https://www.kwanko.com/
-
-## SSL Digital Certificate Authority – Encryption & Authentication
+Posted in info		SSL Digital Certificate Authority &#8211; Encryption &amp;&nbsp;Authentication
+Posted on <time class="entry-date published updated" datetime="2021-08-25T18:39:25+00:00">August 25, 2021</time> by Filip Keser
 https://www.digicert.com/
-
-## Partner Inbound
+Posted in partner/reseller		Partner Inbound
+Posted on <time class="entry-date published updated" datetime="2021-08-25T17:52:28+00:00">August 25, 2021</time> by Filip Keser
 https://www.letsdeel.com/partner-program
-
-## Affiliates
+Posted in partner/reseller		Affiliates
+Posted on <time class="entry-date published updated" datetime="2021-08-25T17:51:12+00:00">August 25, 2021</time> by Filip Keser
 https://www.letsdeel.com/affiliates
-
-## Fur Clothing for Women – Made of 100% Real Fur – Aria Moda
+Posted in webshop - online		Fur Clothing for Women &#8211; Made of 100% Real Fur &#8211; Aria&nbsp;Moda
+Posted on <time class="entry-date published updated" datetime="2021-08-25T16:35:07+00:00">August 25, 2021</time> by Filip Keser
 https://aria-moda.com/
-
-## Women’s Fur Coats – Fur Clothing for Women – Aria Moda
+Posted in webshop - online		Women&#8217;s Fur Coats &#8211; Fur Clothing for Women &#8211; Aria&nbsp;Moda
+Posted on <time class="entry-date published updated" datetime="2021-08-25T16:34:41+00:00">August 25, 2021</time> by Filip Keser
 https://aria-moda.com/category/fur-coats/
-
-## Free Cloud Computing Services – AWS
+Posted in info		Free Cloud Computing Services &#8211;&nbsp;AWS
+Posted on <time class="entry-date published updated" datetime="2021-08-25T14:12:09+00:00">August 25, 2021</time> by Filip Keser
 https://aws.amazon.com/free/
-
-## Mydataknox.hr | Brz i pouzdan cloud
+Posted in info		Mydataknox.hr | Brz i pouzdan&nbsp;cloud
+Posted on <time class="entry-date published updated" datetime="2021-08-25T14:10:09+00:00">August 25, 2021</time> by Filip Keser
 https://mydataknox.hr/
-
-## Compute Engine: Virtual Machines (VMs)  | Google Cloud
+Posted in info		Compute Engine: Virtual Machines (VMs)  | Google&nbsp;Cloud
+Posted on <time class="entry-date published updated" datetime="2021-08-25T14:09:04+00:00">August 25, 2021</time> by Filip Keser
 https://cloud.google.com/compute?hl=hr
-
-## Consent Management Platform (CMP) | Usercentrics
+Posted in wordpress by fk		Consent Management Platform (CMP) |&nbsp;Usercentrics
+Posted on <time class="entry-date published updated" datetime="2021-08-25T08:43:16+00:00">August 25, 2021</time> by Filip Keser
 https://usercentrics.com/
-
-## Wayfarer
+Posted in webshop - online		Wayfarer
+Posted on <time class="entry-date published updated" datetime="2021-08-25T07:16:02+00:00">August 25, 2021</time> by Filip Keser
 https://www.wayfarer.hr/
-
-## Diagnose and code your car | Carly OBD
+Posted in cars magazine		Diagnose and code your car | Carly&nbsp;OBD
+Posted on <time class="entry-date published updated" datetime="2021-08-25T06:44:19+00:00">August 25, 2021</time> by Filip Keser
 https://www.mycarly.com/
-
-## Consent Management Platform (CMP) | Usercentrics
+Posted in info		Consent Management Platform (CMP) |&nbsp;Usercentrics
+Posted on <time class="entry-date published updated" datetime="2021-08-25T06:43:25+00:00">August 25, 2021</time> by Filip Keser
 https://usercentrics.com/
-
-## Buy & Sell BTC, ETH, Crypto at $0 Fees l AAX Bitcoin Futures Exchange
+Posted in info		Buy &amp; Sell BTC, ETH, Crypto at $0 Fees l AAX Bitcoin Futures&nbsp;Exchange
+Posted on <time class="entry-date published updated" datetime="2021-08-25T05:32:18+00:00">August 25, 2021</time> by Filip Keser
 https://www.aaxpro.com/en-US/m/
-
-## Ethereum (ETH) Blockchain Explorer
+Posted in info		Ethereum (ETH) Blockchain&nbsp;Explorer
+Posted on <time class="entry-date published updated" datetime="2021-08-25T05:31:34+00:00">August 25, 2021</time> by Filip Keser
 https://etherscan.io/
-
-## Online marketing. Simplified | Adzooma
+Posted in Online &amp; News		Online marketing. Simplified |&nbsp;Adzooma
+Posted on <time class="entry-date published updated" datetime="2021-08-24T16:25:58+00:00">August 24, 2021</time> by Filip Keser
 https://www.adzooma.com/
-
-## Adzooma Marketplace | Find The Right Service For Your Business | Adzooma Marketplace
+Posted in Online &amp; News		Adzooma Marketplace | Find The Right Service For Your Business | Adzooma&nbsp;Marketplace
+Posted on <time class="entry-date published updated" datetime="2021-08-24T16:25:46+00:00">August 24, 2021</time> by Filip Keser
 https://marketplace.adzooma.com/
-
-## Tiltify – Made for Fundraisers
+Posted in gaming		Tiltify &#8211; Made for&nbsp;Fundraisers
+Posted on <time class="entry-date published updated" datetime="2021-08-24T05:34:03+00:00">August 24, 2021</time> by Filip Keser
 https://tiltify.com/
-
-## StreamElements OBS.Live | Streaming Open Broadcaster Software
+Posted in gaming		StreamElements OBS.Live | Streaming Open Broadcaster&nbsp;Software
+Posted on <time class="entry-date published updated" datetime="2021-08-24T05:21:01+00:00">August 24, 2021</time> by Filip Keser
 https://streamelements.com/obslive
-
-## Launch, monetize, and scale with Xsolla tools and services | Xsolla
+Posted in Online &amp; News		Launch, monetize, and scale with Xsolla tools and services |&nbsp;Xsolla
+Posted on <time class="entry-date published updated" datetime="2021-08-23T21:46:08+00:00">August 23, 2021</time> by Filip Keser
 https://xsolla.com/
-
-## Crossclip | The Easiest Way to Convert Your Twitch Clips
+Posted in notes online		Crossclip | The Easiest Way to Convert Your Twitch&nbsp;Clips
+Posted on <time class="entry-date published updated" datetime="2021-08-23T19:51:48+00:00">August 23, 2021</time> by Filip Keser
 https://crossclip.com/
-
-## Crossclip | The Easiest Way to Convert Your Twitch Clips
+Posted in gaming		Crossclip | The Easiest Way to Convert Your Twitch&nbsp;Clips
+Posted on <time class="entry-date published updated" datetime="2021-08-23T19:51:38+00:00">August 23, 2021</time> by Filip Keser
 https://crossclip.com/
-
-## Launch, monetize, and scale with Xsolla tools and services | Xsolla
+Posted in notes online		Launch, monetize, and scale with Xsolla tools and services |&nbsp;Xsolla
+Posted on <time class="entry-date published updated" datetime="2021-08-23T19:46:23+00:00">August 23, 2021</time> by Filip Keser
 https://xsolla.com/
-
-## Launch, monetize, and scale with Xsolla tools and services | Xsolla
+Posted in info		Launch, monetize, and scale with Xsolla tools and services |&nbsp;Xsolla
+Posted on <time class="entry-date published updated" datetime="2021-08-23T19:46:16+00:00">August 23, 2021</time> by Filip Keser
 https://xsolla.com/
-
-## Launch, monetize, and scale with Xsolla tools and services | Xsolla
+Posted in gaming		Launch, monetize, and scale with Xsolla tools and services |&nbsp;Xsolla
+Posted on <time class="entry-date published updated" datetime="2021-08-23T19:45:51+00:00">August 23, 2021</time> by Filip Keser
 https://xsolla.com/
-
-## Premiere Pro free download & free trial | Adobe Premiere Pro
+Posted in Online &amp; News		Premiere Pro free download &amp; free trial | Adobe Premiere&nbsp;Pro
+Posted on <time class="entry-date published updated" datetime="2021-08-23T19:37:38+00:00">August 23, 2021</time> by Filip Keser
 https://www.adobe.com/products/premiere/free-trial-download.html
-
-## Porsche Croatia
+Posted in cars magazine		Porsche Croatia
+Posted on <time class="entry-date published updated" datetime="2021-08-23T17:36:21+00:00">August 23, 2021</time> by Filip Keser
 https://www.porschecroatia.hr/
-
-## Naslovnica
+Posted in cars magazine		Naslovnica
+Posted on <time class="entry-date published updated" datetime="2021-08-23T17:36:12+00:00">August 23, 2021</time> by Filip Keser
 https://www.volkswagen.hr/
-
-## LinkedIn Campaign Manager
+Posted in Online &amp; News		LinkedIn Campaign Manager
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:32:04+00:00">August 23, 2021</time> by Filip Keser
 https://www.linkedin.com/campaignmanager/new-advertiser
-
-## Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
+Posted in Online &amp; News		Marketing &amp; Advertising on LinkedIn | LinkedIn Marketing&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:30:56+00:00">August 23, 2021</time> by Filip Keser
 https://business.linkedin.com/marketing-solutions
-
-## Online Learning & Training Platform for Organizations | LinkedIn Learning
+Posted in Online &amp; News		Online Learning &amp; Training Platform for Organizations | LinkedIn&nbsp;Learning
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:30:00+00:00">August 23, 2021</time> by Filip Keser
 https://learning.linkedin.com/
-
-## Physical and Virtual Visa Commercial Cards vol.2 | Payhawk | Payhawk
+Posted in Online &amp; News		Physical and Virtual Visa Commercial Cards vol.2 | Payhawk |&nbsp;Payhawk
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:18:13+00:00">August 23, 2021</time> by Filip Keser
 https://payhawk.com/start/visa-cards/
-
-## Payhawk | The Financial System of Tomorrow with NextGen Visa Cards
+Posted in Online &amp; News		Payhawk | The Financial System of Tomorrow with NextGen Visa&nbsp;Cards
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:16:25+00:00">August 23, 2021</time> by Filip Keser
 https://payhawk.com/
-
-## StreamElements | The Ultimate Streamer Platform
+Posted in Online &amp; News		StreamElements | The Ultimate Streamer&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:08:26+00:00">August 23, 2021</time> by Filip Keser
 https://streamelements.com/
-
-## Razer United States | For Gamers. By Gamers.
+Posted in Online &amp; News		Razer United States | For Gamers. By&nbsp;Gamers.
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:07:39+00:00">August 23, 2021</time> by Filip Keser
 https://www.razer.com/
-
-## Adobe products: desktop, web, and mobile applications | Adobe
+Posted in Online &amp; News		Adobe products: desktop, web, and mobile applications |&nbsp;Adobe
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:07:21+00:00">August 23, 2021</time> by Filip Keser
 https://www.adobe.com/products/catalog.html
-
-## LinkedIn Campaign Manager
+Posted in notes online		LinkedIn Campaign Manager
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:32:24+00:00">August 23, 2021</time> by Filip Keser
 https://www.linkedin.com/campaignmanager/new-advertiser
-
-## LinkedIn Campaign Manager
+Posted in info		LinkedIn Campaign Manager
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:32:17+00:00">August 23, 2021</time> by Filip Keser
 https://www.linkedin.com/campaignmanager/new-advertiser
-
-## Find leads and close deals | LinkedIn Sales Solutions
+Posted in info		Find leads and close deals | LinkedIn Sales&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:30:37+00:00">August 23, 2021</time> by Filip Keser
 https://business.linkedin.com/sales-solutions
-
-## Mercury | Banking built for startups
+Posted in info		Mercury | Banking built for&nbsp;startups
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:19:24+00:00">August 23, 2021</time> by Filip Keser
 https://mercury.com/
-
-## Mercury | Banking built for startups
+Posted in gaming		Mercury | Banking built for&nbsp;startups
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:19:17+00:00">August 23, 2021</time> by Filip Keser
 https://mercury.com/
-
-## StreamElements | The Ultimate Streamer Platform
+Posted in gaming		StreamElements | The Ultimate Streamer&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:08:17+00:00">August 23, 2021</time> by Filip Keser
 https://streamelements.com/
-
-## Razer United States | For Gamers. By Gamers.
+Posted in gaming		Razer United States | For Gamers. By&nbsp;Gamers.
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:07:47+00:00">August 23, 2021</time> by Filip Keser
 https://www.razer.com/
-
-## Adobe products: desktop, web, and mobile applications | Adobe
+Posted in info		Adobe products: desktop, web, and mobile applications |&nbsp;Adobe
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:07:12+00:00">August 23, 2021</time> by Filip Keser
 https://www.adobe.com/products/catalog.html
-
-## StreamElements | The Ultimate Streamer Platform
+Posted in info		StreamElements | The Ultimate Streamer&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-23T12:29:17+00:00">August 23, 2021</time> by Filip Keser
 https://streamelements.com/
-
-## StreamElements | The Ultimate Streamer Platform
+Posted in gaming		StreamElements | The Ultimate Streamer&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-23T12:29:09+00:00">August 23, 2021</time> by Filip Keser
 https://streamelements.com/
-
-## (1) New Message!
+Posted in partner/reseller		(1) New Message!
+Posted on <time class="entry-date published updated" datetime="2021-08-23T11:34:36+00:00">August 23, 2021</time> by Filip Keser
 https://www.imperva.com/partners/channel-partners-application/
-
-## Cyber Security Leader | Imperva, Inc.
+Posted in Online &amp; News		Cyber Security Leader | Imperva,&nbsp;Inc.
+Posted on <time class="entry-date published updated" datetime="2021-08-23T06:34:44+00:00">August 23, 2021</time> by Filip Keser
 https://www.imperva.com/
-
-## id.me
+Posted in Online &amp; News		id.me
+Posted on <time class="entry-date published updated" datetime="2021-08-23T06:32:26+00:00">August 23, 2021</time> by Filip Keser
 https://www.id.me/
-
-## ibisPaint – Draw and Paint App
+Posted in Online &amp; News		ibisPaint &#8211; Draw and Paint&nbsp;App
+Posted on <time class="entry-date published updated" datetime="2021-08-22T15:53:39+00:00">August 22, 2021</time> by Filip Keser
 https://ibispaint.com/
-
-## smart facing holder|tws earbuds|smart shooting phone holder|dancing robot|Earbuds manufacturers|Topjoy
+Posted in Online &amp; News		smart facing holder|tws earbuds|smart shooting phone holder|dancing robot|Earbuds manufacturers|Topjoy
+Posted on <time class="entry-date published updated" datetime="2021-08-22T13:26:27+00:00">August 22, 2021</time> by Filip Keser
 https://www.topjoyint.com/
-
-## Mobilmedia | Brza i pouzdana dostava‎
+Posted in webshop - online		Mobilmedia | Brza i pouzdana&nbsp;dostava‎
+Posted on <time class="entry-date published updated" datetime="2021-08-22T13:00:19+00:00">August 22, 2021</time> by Filip Keser
 https://mobilmedia.hr/
-
-## Dealify | The Number One Lifetime Deals Platform for Growth Hackers
+Posted in info		Dealify | The Number One Lifetime Deals Platform for Growth&nbsp;Hackers
+Posted on <time class="entry-date published updated" datetime="2021-08-22T09:50:48+00:00">August 22, 2021</time> by Filip Keser
 https://www.dealify.com/
-
-## Projektna rješenja za online trgovinu – Moja-Trgovina.Net
+Posted in Online &amp; News		Projektna rješenja za online trgovinu &#8211; Moja-Trgovina.Net
+Posted on <time class="entry-date published updated" datetime="2021-08-22T07:46:03+00:00">August 22, 2021</time> by Filip Keser
 https://www.moja-trgovina.net/
-
-## Se-Mark
+Posted in Online &amp; News		Se-Mark
+Posted on <time class="entry-date published updated" datetime="2021-08-22T07:45:06+00:00">August 22, 2021</time> by Filip Keser
 https://www.se-mark.hr/
-
-## Se-Mark
+Posted in webshop - online		Se-Mark
+Posted on <time class="entry-date published updated" datetime="2021-08-22T07:44:37+00:00">August 22, 2021</time> by Filip Keser
 https://www.se-mark.hr/
-
-## Joppy – Recruitment platform for developers by developers
+Posted in info		Joppy &#8211; Recruitment platform for developers by&nbsp;developers
+Posted on <time class="entry-date published updated" datetime="2021-08-22T07:26:42+00:00">August 22, 2021</time> by Filip Keser
 https://www.joppy.me/
-
-## Omaze
+Omaze
 https://www.omaze.com/
-
-## Premium Bootstrap Themes and Templates: Download @ Creative Tim
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-22T07:14:13+00:00">August 22, 2021</time> by Filip Keser
+Posted in info		Premium Bootstrap Themes and Templates: Download @ Creative&nbsp;Tim
+Posted on <time class="entry-date published updated" datetime="2021-08-22T05:51:29+00:00">August 22, 2021</time> by Filip Keser
 https://www.creative-tim.com/
-
-## Se-Mark
+Posted in info		Se-Mark
+Posted on <time class="entry-date published updated" datetime="2021-08-22T05:44:55+00:00">August 22, 2021</time> by Filip Keser
 https://www.se-mark.hr/
-
-## Premium Bootstrap Themes and Templates: Download @ Creative Tim
+Posted in Online &amp; News		Premium Bootstrap Themes and Templates: Download @ Creative&nbsp;Tim
+Posted on <time class="entry-date published updated" datetime="2021-08-22T00:51:21+00:00">August 22, 2021</time> by Filip Keser
 https://www.creative-tim.com/
-
-## Kleap – Create a mobile first website – For free & on mobile
+Posted in info		Kleap &#8211; Create a mobile first website &#8211; For free &amp; on&nbsp;mobile
+Posted on <time class="entry-date published updated" datetime="2021-08-21T22:18:29+00:00">August 21, 2021</time> by Filip Keser
 https://kleap.co/
-
-## Gorilla Experiment Builder » Create online behavioural experiments easily
+Posted in info		Gorilla Experiment Builder » Create online behavioural experiments&nbsp;easily
+Posted on <time class="entry-date published updated" datetime="2021-08-21T18:47:40+00:00">August 21, 2021</time> by Filip Keser
 https://gorilla.sc/
-
-## D.Franklin® | Sunglasses and Accessories | Official Web
+Posted in webshop - online		D.Franklin® | Sunglasses and Accessories | Official&nbsp;Web
+Posted on <time class="entry-date published updated" datetime="2021-08-21T15:34:49+00:00">August 21, 2021</time> by Filip Keser
 https://www.dfranklincreation.com/
-
-## Gorilla Experiment Builder » Create online behavioural experiments easily
+Posted in Online &amp; News		Gorilla Experiment Builder » Create online behavioural experiments&nbsp;easily
+Posted on <time class="entry-date published updated" datetime="2021-08-21T13:45:40+00:00">August 21, 2021</time> by Filip Keser
 https://gorilla.sc/
-
-## MicroAcquire – #1 Startup acquisition marketplace
+Posted in info		MicroAcquire &#8211; #1 Startup acquisition&nbsp;marketplace
+Posted on <time class="entry-date published updated" datetime="2021-08-21T10:32:35+00:00">August 21, 2021</time> by Filip Keser
 https://microacquire.com/
-
-## Hublock.io & Data-sharing layer for logistics
+Posted in info		Hublock.io &amp; Data-sharing layer for&nbsp;logistics
+Posted on <time class="entry-date published updated" datetime="2021-08-21T10:31:04+00:00">August 21, 2021</time> by Filip Keser
 https://www.hublock.io/
-
-## Dobro došli – Visoka škola “Logos centar” Mostar
+Posted in online		Dobro došli &#8211; Visoka škola &#8220;Logos centar&#8221;&nbsp;Mostar
+Posted on <time class="entry-date published updated" datetime="2021-08-21T09:11:08+00:00">August 21, 2021</time> by Filip Keser
 https://www.logos-centar.com/#
-
-## Sifted | Startup Europe explored through grown up reporting.
+Posted in info		Sifted | Startup Europe explored through grown up&nbsp;reporting.
+Posted on <time class="entry-date published updated" datetime="2021-08-21T08:16:24+00:00">August 21, 2021</time> by Filip Keser
 https://sifted.eu/
-
-## Microverse | Learn How To Code Online
+Posted in info		Microverse | Learn How To Code&nbsp;Online
+Posted on <time class="entry-date published updated" datetime="2021-08-21T08:15:19+00:00">August 21, 2021</time> by Filip Keser
 https://www.microverse.org/
-
-## Platforms | Profitlevel
+Posted in info		Platforms | Profitlevel
+Posted on <time class="entry-date published updated" datetime="2021-08-21T06:47:00+00:00">August 21, 2021</time> by Filip Keser
 https://profitlevel.com/en/trading/platforms
-
-## Pushwoosh – №1 push notification and cross-channel marketing service
+Posted in wordpress by fk		Pushwoosh – №1 push notification and cross-channel marketing&nbsp;service
+Posted on <time class="entry-date published updated" datetime="2021-08-20T17:00:25+00:00">August 20, 2021</time> by Filip Keser
 https://www.pushwoosh.com/
-
-## WordPress VIP – OneSignal
+Posted in wordpress by fk		WordPress VIP &#8211;&nbsp;OneSignal
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:59:53+00:00">August 20, 2021</time> by Filip Keser
 https://onesignal.com/integrations/wordpress-vip
-
-## Google Ads – privucite više korisnika jednostavnim online oglašavanjem
+Posted in Online &amp; News		Google Ads – privucite više korisnika jednostavnim online&nbsp;oglašavanjem
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:55:06+00:00">August 20, 2021</time> by Filip Keser
 https://ads.google.com
-
-## Cross-Channel Marketing Platform to Improve Customer Experiences – Iterable
+Posted in Online &amp; News		Cross-Channel Marketing Platform to Improve Customer Experiences &#8211;&nbsp;Iterable
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:54:38+00:00">August 20, 2021</time> by Filip Keser
 https://iterable.com/
-
-## LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions
+Posted in Online &amp; News		LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:53:09+00:00">August 20, 2021</time> by Filip Keser
 https://business.linkedin.com/marketing-solutions/ads
-
-## Home | Scrum Guides
+Posted in info		Home | Scrum&nbsp;Guides
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:30:24+00:00">August 20, 2021</time> by Filip Keser
 https://scrumguides.org/
-
-## Home | Scrum.org
+Posted in info		Home | Scrum.org
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:30:18+00:00">August 20, 2021</time> by Filip Keser
 https://www.scrum.org/index
-
-## What is Scrum?
+Posted in info		What is Scrum?
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:30:11+00:00">August 20, 2021</time> by Filip Keser
 https://www.scrum.org/resources/what-is-scrum
-
-## Partner Inbound
+Posted in partner/reseller		Partner Inbound
+Posted on <time class="entry-date published updated" datetime="2021-08-20T15:36:26+00:00">August 20, 2021</time> by Filip Keser
 https://www.letsdeel.com/partner-program
-
-## Explore Remote partner programs. | Remote
+Posted in partner/reseller		Explore Remote partner programs. |&nbsp;Remote
+Posted on <time class="entry-date published updated" datetime="2021-08-20T15:32:17+00:00">August 20, 2021</time> by Filip Keser
 https://partners.remote.com/partners
-
-## Laravel – The PHP Framework For Web Artisans
+Posted in info		Laravel &#8211; The PHP Framework For Web&nbsp;Artisans
+Posted on <time class="entry-date published updated" datetime="2021-08-20T15:25:57+00:00">August 20, 2021</time> by Filip Keser
 https://laravel.com/
-
-## Road & Track
+Posted in cars magazine		Road &amp; Track
+Posted on <time class="entry-date published updated" datetime="2021-08-20T15:01:27+00:00">August 20, 2021</time> by Filip Keser
 https://www.roadandtrack.com/
-
-## Instagram | About | Official Site
+Posted in online		Instagram | About | Official&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2021-08-20T14:43:13+00:00">August 20, 2021</time> by Filip Keser
 https://about.instagram.com/
-
-## Instagram | About | Official Site
+Posted in Online &amp; News		Instagram | About | Official&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2021-08-20T14:43:06+00:00">August 20, 2021</time> by Filip Keser
 https://about.instagram.com/
-
-## World’s Favorite Instagram Marketing Platform | Later
+Posted in Online &amp; News		World’s Favorite Instagram Marketing Platform |&nbsp;Later
+Posted on <time class="entry-date published updated" datetime="2021-08-20T14:42:35+00:00">August 20, 2021</time> by Filip Keser
 https://later.com/
-
-## MOHITO – Posljednji ženstveni trendovi | Kupi online!
+Posted in webshop - online		MOHITO &#8211; Posljednji ženstveni trendovi | Kupi&nbsp;online!
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:31:12+00:00">August 20, 2021</time> by Filip Keser
 https://www.mohito.com/hr/hr/
-
-## Run your EU company online or invoice without one | Xolo
+Posted in wordpress by fk		Run your EU company online or invoice without one |&nbsp;Xolo
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:28:05+00:00">August 20, 2021</time> by Filip Keser
 https://www.xolo.io/zz-en
-
-## Setupad.com – Monetization Partner – Setupad
+Posted in Online &amp; News		Setupad.com &#8211; Monetization Partner &#8211;&nbsp;Setupad
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:26:44+00:00">August 20, 2021</time> by Filip Keser
 https://setupad.com/
-
-## Shipito For Business
+Posted in Online &amp; News		Shipito For Business
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:24:53+00:00">August 20, 2021</time> by Filip Keser
 https://www.shipito.com/en/shipito-for-business
-
-## Knowledge Base Software That Scales With Your Product-Document360
+Posted in wordpress by fk		Knowledge Base Software That Scales With Your Product-Document360
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:22:15+00:00">August 20, 2021</time> by Filip Keser
 https://document360.com/
-
-## Spryker Academy
+Posted in Online &amp; News		Spryker Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:21:31+00:00">August 20, 2021</time> by Filip Keser
 https://academy.spryker.com/learn
-
-## Run your EU company online or invoice without one | Xolo
+Posted in info		Run your EU company online or invoice without one |&nbsp;Xolo
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:27:57+00:00">August 20, 2021</time> by Filip Keser
 https://www.xolo.io/zz-en
-
-## Cryptocurrency Exchange Software | Blockchain software | White label Exchange Software – ChainUP
+Posted in info		Cryptocurrency Exchange Software | Blockchain software | White label Exchange Software &#8211;&nbsp;ChainUP
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:27:28+00:00">August 20, 2021</time> by Filip Keser
 https://www.chainup.com/en-US/
-
-## Spryker Documentation
+Posted in info		Spryker Documentation
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:22:04+00:00">August 20, 2021</time> by Filip Keser
 https://documentation.spryker.com/docs/
-
-## Firebase
+Posted in Online &amp; News		Firebase
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:00:41+00:00">August 20, 2021</time> by Filip Keser
 https://firebase.google.com/?hl=hr
-
-## Integrations Directory – OneSignal
+Posted in Online &amp; News		Integrations Directory &#8211;&nbsp;OneSignal
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:00:04+00:00">August 20, 2021</time> by Filip Keser
 https://onesignal.com/integrations
-
-## Facebook for Business: Marketing on Facebook
+Posted in Online &amp; News		Facebook for Business: Marketing on&nbsp;Facebook
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:59:06+00:00">August 20, 2021</time> by Filip Keser
 https://web.facebook.com/business
-
-## Front – Customer Communication Platform | Team Email
+Posted in Online &amp; News		Front &#8211; Customer Communication Platform | Team&nbsp;Email
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:58:27+00:00">August 20, 2021</time> by Filip Keser
 https://front.com/
-
-## Customer Success and Product Experience Software | Gainsight
+Posted in Online &amp; News		Customer Success and Product Experience Software |&nbsp;Gainsight
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:57:56+00:00">August 20, 2021</time> by Filip Keser
 https://www.gainsight.com/
-
-## MoEngage: Insights-led Customer Engagement Platform
+Posted in Online &amp; News		MoEngage: Insights-led Customer Engagement&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:52:20+00:00">August 20, 2021</time> by Filip Keser
 https://www.moengage.com/
-
-## Pendo.io – Product Experience and Digital Adoption Solutions
+Posted in Online &amp; News		Pendo.io &#8211; Product Experience and Digital Adoption&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:51:43+00:00">August 20, 2021</time> by Filip Keser
 https://www.pendo.io/
-
-## RudderStack – The Customer Data Platform for Developers
+Posted in Online &amp; News		RudderStack &#8211; The Customer Data Platform for&nbsp;Developers
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:51:04+00:00">August 20, 2021</time> by Filip Keser
 https://rudderstack.com/
-
-## Cloud Object Storage | Store & Retrieve Data Anywhere | Amazon Simple Storage Service (S3)
+Posted in Online &amp; News		Cloud Object Storage | Store &amp; Retrieve Data Anywhere | Amazon Simple Storage Service&nbsp;(S3)
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:50:30+00:00">August 20, 2021</time> by Filip Keser
 https://aws.amazon.com/s3/
-
-## Home
+Posted in Online &amp; News		Home
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:49:44+00:00">August 20, 2021</time> by Filip Keser
 https://www.mparticle.com/
-
-## Integrations · Hightouch
+Posted in Online &amp; News		Integrations · Hightouch
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:46:32+00:00">August 20, 2021</time> by Filip Keser
 https://hightouch.io/integrations
-
-## Physical and Virtual Visa Commercial Cards vol.2 | Payhawk | Payhawk
+Posted in online		Physical and Virtual Visa Commercial Cards vol.2 | Payhawk |&nbsp;Payhawk
+Posted on <time class="entry-date published updated" datetime="2021-08-20T08:01:01+00:00">August 20, 2021</time> by Filip Keser
 https://payhawk.com/start/visa-cards/
-
-## Modne kolekcije na jednom mjestu – GLAMI.hr
+Posted in webshop - online		Modne kolekcije na jednom mjestu &#8211;&nbsp;GLAMI.hr
+Posted on <time class="entry-date published updated" datetime="2021-08-20T07:53:38+00:00">August 20, 2021</time> by Filip Keser
 https://www.glami.hr/
-
-## Buy online! Reserved & Shop Online
+Posted in webshop - online		Buy online! Reserved &amp; Shop&nbsp;Online
+Posted on <time class="entry-date published updated" datetime="2021-08-20T07:51:34+00:00">August 20, 2021</time> by Filip Keser
 https://www.reserved.com/gr/en/
-
-## Joom. Easy shopping, fast shipping
+Posted in online		Joom. Easy shopping, fast&nbsp;shipping
+Posted on <time class="entry-date published updated" datetime="2021-08-20T06:59:22+00:00">August 20, 2021</time> by Filip Keser
 https://www.joom.com/en
-
-## Joom. Easy shopping, fast shipping
+Posted in Online &amp; News		Joom. Easy shopping, fast&nbsp;shipping
+Posted on <time class="entry-date published updated" datetime="2021-08-20T06:59:09+00:00">August 20, 2021</time> by Filip Keser
 https://www.joom.com/en
-
-## F-IQ
+Posted in Online &amp; News		F-IQ
+Posted on <time class="entry-date published updated" datetime="2021-08-20T06:12:40+00:00">August 20, 2021</time> by Filip Keser
 https://f-iq.app/
-
-## Knowledge Base Software That Scales With Your Product-Document360
+Posted in Online &amp; News		Knowledge Base Software That Scales With Your Product-Document360
+Posted on <time class="entry-date published updated" datetime="2021-08-20T05:22:22+00:00">August 20, 2021</time> by Filip Keser
 https://document360.com/
-
-## Payhawk | The Financial System of Tomorrow with NextGen Visa Cards
+Posted in Online &amp; News		Payhawk | The Financial System of Tomorrow with NextGen Visa&nbsp;Cards
+Posted on <time class="entry-date published updated" datetime="2021-08-20T01:00:36+00:00">August 20, 2021</time> by Filip Keser
 https://payhawk.com/
-
-## Online payment processing for internet businesses – Stripe
+Posted in Online &amp; News		Online payment processing for internet businesses &#8211;&nbsp;Stripe
+Posted on <time class="entry-date published updated" datetime="2021-08-20T01:00:11+00:00">August 20, 2021</time> by Filip Keser
 https://stripe.com/
-
-## Send Money, Pay Online or Set Up a Merchant Account – PayPal
+Posted in Online &amp; News		Send Money, Pay Online or Set Up a Merchant Account &#8211;&nbsp;PayPal
+Posted on <time class="entry-date published updated" datetime="2021-08-20T00:59:42+00:00">August 20, 2021</time> by Filip Keser
 https://www.paypal.com
-
-## BillDesk – All Your Payments. Single Location.
+Posted in Online &amp; News		BillDesk &#8211; All Your Payments. Single&nbsp;Location.
+Posted on <time class="entry-date published updated" datetime="2021-08-20T00:59:23+00:00">August 20, 2021</time> by Filip Keser
 https://www.billdesk.com/
-
-## Financial Services for Emerging Markets | PayU Global
+Posted in Online &amp; News		Financial Services for Emerging Markets | PayU&nbsp;Global
+Posted on <time class="entry-date published updated" datetime="2021-08-20T00:58:53+00:00">August 20, 2021</time> by Filip Keser
 https://corporate.payu.com/
-
-## Global HR Solutions for Distributed Teams | Remote
+Posted in wordpress by fk		Global HR Solutions for Distributed Teams |&nbsp;Remote
+Posted on <time class="entry-date published updated" datetime="2021-08-19T21:44:33+00:00">August 19, 2021</time> by Filip Keser
 https://remote.com/
-
-## For Startups
+Posted in wordpress by fk		For Startups
+Posted on <time class="entry-date published updated" datetime="2021-08-19T21:42:11+00:00">August 19, 2021</time> by Filip Keser
 https://www.letsdeel.com/for-startups
-
-## Stocard – Your mobile wallet
+Posted in Online &amp; News		Stocard &#8211; Your mobile&nbsp;wallet
+Posted on <time class="entry-date published updated" datetime="2021-08-19T21:03:41+00:00">August 19, 2021</time> by Filip Keser
 https://stocardapp.com/en/de
-
-## Payroll & Compliance for International Teams | Deel
+Posted in wordpress by fk		Payroll &amp; Compliance for International Teams |&nbsp;Deel
+Posted on <time class="entry-date published updated" datetime="2021-08-19T20:20:22+00:00">August 19, 2021</time> by Filip Keser
 https://www.letsdeel.com/
-
-## Lifewire: Tech News, Reviews, Help & How-Tos
+Posted in Online &amp; News		Lifewire: Tech News, Reviews, Help &amp;&nbsp;How-Tos
+Posted on <time class="entry-date published updated" datetime="2021-08-19T20:15:18+00:00">August 19, 2021</time> by Filip Keser
 https://www.lifewire.com/
-
-## Partner Inbound
+Posted in partner/reseller		Partner Inbound
+Posted on <time class="entry-date published updated" datetime="2021-08-19T19:40:52+00:00">August 19, 2021</time> by Filip Keser
 https://www.letsdeel.com/partner-program
-
-## Payroll & Compliance for International Teams | Deel
+Posted in notes online		Payroll &amp; Compliance for International Teams |&nbsp;Deel
+Posted on <time class="entry-date published updated" datetime="2021-08-19T18:20:16+00:00">August 19, 2021</time> by Filip Keser
 https://www.letsdeel.com/
-
-## Play DivX files. Free Video Software to play, convert and cast video.
+Posted in info		Play DivX files. Free Video Software to play, convert and cast&nbsp;video.
+Posted on <time class="entry-date published updated" datetime="2021-08-19T18:14:20+00:00">August 19, 2021</time> by Filip Keser
 https://www.divx.com/
-
-## GDPR, ePrivacy and CCPA compliant cookies | Cookiebot CMP
+Posted in wordpress by fk		GDPR, ePrivacy and CCPA compliant cookies | Cookiebot&nbsp;CMP
+Posted on <time class="entry-date published updated" datetime="2021-08-19T17:59:15+00:00">August 19, 2021</time> by Filip Keser
 https://www.cookiebot.com/en/
-
-## Venture Capital Definition
+Posted in notes online		Venture Capital Definition
+Posted on <time class="entry-date published updated" datetime="2021-08-19T16:03:52+00:00">August 19, 2021</time> by Filip Keser
 https://www.investopedia.com/terms/v/venturecapital.asp
-
-## Capital Markets Definition
+Posted in notes online		Capital Markets Definition
+Posted on <time class="entry-date published updated" datetime="2021-08-19T16:03:39+00:00">August 19, 2021</time> by Filip Keser
 https://www.investopedia.com/terms/c/capitalmarkets.asp
-
-## Bond Market Definition
+Posted in notes online		Bond Market Definition
+Posted on <time class="entry-date published updated" datetime="2021-08-19T16:03:32+00:00">August 19, 2021</time> by Filip Keser
 https://www.investopedia.com/terms/b/bondmarket.asp
-
-## Stock Market Definition
+Posted in notes online		Stock Market Definition
+Posted on <time class="entry-date published updated" datetime="2021-08-19T16:03:22+00:00">August 19, 2021</time> by Filip Keser
 https://www.investopedia.com/terms/s/stockmarket.asp
-
-## GDPR, ePrivacy and CCPA compliant cookies | Cookiebot CMP
+Posted in info		GDPR, ePrivacy and CCPA compliant cookies | Cookiebot&nbsp;CMP
+Posted on <time class="entry-date published updated" datetime="2021-08-19T15:59:07+00:00">August 19, 2021</time> by Filip Keser
 https://www.cookiebot.com/en/
-
-## Global HR Solutions for Distributed Teams | Remote
+Posted in Online &amp; News		Global HR Solutions for Distributed Teams |&nbsp;Remote
+Posted on <time class="entry-date published updated" datetime="2021-08-19T14:44:40+00:00">August 19, 2021</time> by Filip Keser
 https://remote.com/
-
-## Y2Mate Youtube Downloader
+Posted in info		Y2Mate Youtube Downloader
+Posted on <time class="entry-date published updated" datetime="2021-08-19T14:14:23+00:00">August 19, 2021</time> by Filip Keser
 https://en.y2mate.guru/10/
-
-## Payroll & Compliance for International Teams | Deel
+Posted in Online &amp; News		Payroll &amp; Compliance for International Teams |&nbsp;Deel
+Posted on <time class="entry-date published updated" datetime="2021-08-19T13:19:48+00:00">August 19, 2021</time> by Filip Keser
 https://www.letsdeel.com/
-
-## The New York Times – Breaking News, US News, World News and Videos
+Posted in online		The New York Times &#8211; Breaking News, US News, World News and&nbsp;Videos
+Posted on <time class="entry-date published updated" datetime="2021-08-19T07:52:42+00:00">August 19, 2021</time> by Filip Keser
 https://www.nytimes.com/
-
-## Movieweb: Movie News, Movie Trailers, New Movies, Movie Reviews
+Posted in online		Movieweb: Movie News, Movie Trailers, New Movies, Movie&nbsp;Reviews
+Posted on <time class="entry-date published updated" datetime="2021-08-19T07:48:49+00:00">August 19, 2021</time> by Filip Keser
 https://movieweb.com/
-
-## New Movies, TV Shows | Celebrity News & Gossip | CINEMABLEND
+Posted in online		New Movies, TV Shows | Celebrity News &amp; Gossip |&nbsp;CINEMABLEND
+Posted on <time class="entry-date published updated" datetime="2021-08-19T07:43:59+00:00">August 19, 2021</time> by Filip Keser
 https://www.cinemablend.com/
-
-## DOBA Fakultet: Odaberite program za razvoj svoje karijere
+Posted in online		DOBA Fakultet: Odaberite program za razvoj svoje&nbsp;karijere
+Posted on <time class="entry-date published updated" datetime="2021-08-19T01:00:09+00:00">August 19, 2021</time> by Filip Keser
 https://www.doba.hr/
-
-## Best Products: Product Reviews, Deals, and More
+Best Products: Product Reviews, Deals, and&nbsp;More
 https://www.bestproducts.com/
-
-## Movieweb: Movie News, Movie Trailers, New Movies, Movie Reviews
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-19T00:53:36+00:00">August 19, 2021</time> by Filip Keser
+Movieweb: Movie News, Movie Trailers, New Movies, Movie&nbsp;Reviews
 https://movieweb.com/
-
-## New Movies, TV Shows | Celebrity News & Gossip | CINEMABLEND
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-19T00:48:37+00:00">August 19, 2021</time> by Filip Keser
+New Movies, TV Shows | Celebrity News &amp; Gossip |&nbsp;CINEMABLEND
 https://www.cinemablend.com/
-
-## Online Accounting Software | Small Business Accounting | Xero US
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-19T00:43:50+00:00">August 19, 2021</time> by Filip Keser
+Posted in info		Online Accounting Software | Small Business Accounting | Xero&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2021-08-19T00:42:59+00:00">August 19, 2021</time> by Filip Keser
 https://www.xero.com/us/accounting-software/
-
-## Download Instagram Video, Photos, IGTV & Reels
+Posted in Online &amp; News		Download Instagram Video, Photos, IGTV &amp;&nbsp;Reels
+Posted on <time class="entry-date published updated" datetime="2021-08-18T22:16:11+00:00">August 18, 2021</time> by Filip Keser
 https://igram.io/
-
-## Instagram Downloader, Download Video, Photo, Reels, IGTV online – SnapInsta
+Posted in Online &amp; News		Instagram Downloader, Download Video, Photo, Reels, IGTV online &#8211;&nbsp;SnapInsta
+Posted on <time class="entry-date published updated" datetime="2021-08-18T22:16:04+00:00">August 18, 2021</time> by Filip Keser
 https://snapinsta.app/
-
-## Harvard Business School Online Courses & Learning Platforms
+Posted in Online &amp; News		Harvard Business School Online Courses &amp; Learning&nbsp;Platforms
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:46:39+00:00">August 18, 2021</time> by Filip Keser
 https://online.hbs.edu/
-
-## Academic Programs – About – Harvard Business School
+Posted in Online &amp; News		Academic Programs &#8211; About &#8211; Harvard Business&nbsp;School
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:46:00+00:00">August 18, 2021</time> by Filip Keser
 https://www.hbs.edu/about/academic-programs/Pages/default.aspx
-
-## MBA – Harvard Business School
+Posted in Online &amp; News		MBA &#8211; Harvard Business&nbsp;School
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:45:38+00:00">August 18, 2021</time> by Filip Keser
 https://www.hbs.edu/mba/Pages/default.aspx
-
-## Harvard Business Review – Ideas and Advice for Leaders
+Posted in Online &amp; News		Harvard Business Review &#8211; Ideas and Advice for&nbsp;Leaders
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:42:54+00:00">August 18, 2021</time> by Filip Keser
 https://hbr.org/
-
-## Harvard Business Review – Ideas and Advice for Leaders
+Posted in Online &amp; News		Harvard Business Review &#8211; Ideas and Advice for&nbsp;Leaders
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:41:33+00:00">August 18, 2021</time> by Filip Keser
 https://hbr.org/
-
-## Subscribe to HBR – Digital & Print
+Posted in Online &amp; News		Subscribe to HBR &#8211; Digital &amp;&nbsp;Print
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:41:18+00:00">August 18, 2021</time> by Filip Keser
 https://hbr.org/subscriptions
-
-## World’s Most Affordable Push Notifications Services | Truepush
+Posted in wordpress by fk		World&#8217;s Most Affordable Push Notifications Services |&nbsp;Truepush
+Posted on <time class="entry-date published updated" datetime="2021-08-18T20:03:58+00:00">August 18, 2021</time> by Filip Keser
 https://www.truepush.com/
-
-## Save S$1,080 on one year of Accounting and Tax with Osome and OCBC Bank
+Posted in Online &amp; News		Save S$1,080 on one year of Accounting and Tax with Osome and OCBC&nbsp;Bank
+Posted on <time class="entry-date published updated" datetime="2021-08-18T19:44:24+00:00">August 18, 2021</time> by Filip Keser
 https://osome.com/sg/start-digital/
-
-## Online Accounting Software | Small Business Accounting | Xero US
+Posted in Online &amp; News		Online Accounting Software | Small Business Accounting | Xero&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2021-08-18T19:43:07+00:00">August 18, 2021</time> by Filip Keser
 https://www.xero.com/us/accounting-software/
-
-## Tumblr
+Posted in Online &amp; News		Tumblr
+Posted on <time class="entry-date published updated" datetime="2021-08-18T19:38:31+00:00">August 18, 2021</time> by Filip Keser
 https://www.tumblr.com/
-
-## RAPTOR fleet – GPS nadzor vozila – gps tracking, nadzor vozila
+Posted in Online &amp; News		RAPTOR fleet – GPS nadzor vozila – gps tracking, nadzor&nbsp;vozila
+Posted on <time class="entry-date published updated" datetime="2021-08-18T19:03:45+00:00">August 18, 2021</time> by Filip Keser
 https://raptor-fleet.com/
-
-## Buy and Sell Online Businesses, Websites, Apps & Domains – Flippa
+Posted in info		Buy and Sell Online Businesses, Websites, Apps &amp; Domains &#8211;&nbsp;Flippa
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:36:01+00:00">August 18, 2021</time> by Filip Keser
 https://flippa.com/
-
-## Researcher | An App For Academics
+Posted in info		Researcher | An App For&nbsp;Academics
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:27:45+00:00">August 18, 2021</time> by Filip Keser
 https://www.researcher-app.com/
-
-## Google Cloud Platform Webinars
+Posted in info		Google Cloud Platform&nbsp;Webinars
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:23:59+00:00">August 18, 2021</time> by Filip Keser
 https://cloudonair.withgoogle.com/
-
-## Home – Google Cloud Startup Summit
+Posted in info		Home &#8211; Google Cloud Startup&nbsp;Summit
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:23:10+00:00">August 18, 2021</time> by Filip Keser
 https://cloudonair.withgoogle.com/events/startup
-
-## Google Cloud Platform Webinars
+Posted in info		Google Cloud Platform&nbsp;Webinars
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:22:57+00:00">August 18, 2021</time> by Filip Keser
 https://cloudonair.withgoogle.com/#cert_prep
-
-## IBAN Checker: International Bank Account Number validation
+Posted in notes online		IBAN Checker: International Bank Account Number&nbsp;validation
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:18:53+00:00">August 18, 2021</time> by Filip Keser
 https://www.iban.com/
-
-## Build for everyone – Google Careers
+Posted in info		Build for everyone &#8211; Google&nbsp;Careers
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:15:26+00:00">August 18, 2021</time> by Filip Keser
 https://careers.google.com/
-
-## Start a Business, Grow Your Business – Shopify 14-Day Free Trial
+Posted in notes online		Start a Business, Grow Your Business &#8211; Shopify 14-Day Free&nbsp;Trial
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:03:18+00:00">August 18, 2021</time> by Filip Keser
 https://www.shopify.com/
-
-## Signature
-All the best - https://onlinereview.news.blog/
+Posts navigation
+Older posts
+news
+Stay informed with curated content and the latest headlines, all delivered straight to your inbox. Subscribe now to stay ahead and never miss a beat!
+action="https://wordpress.com/email-subscriptions"
+method="post"
+accept-charset="utf-8"
+data-blog="178614542"
+data-post_access_level="everybody"
+data-subscriber_email=""
+id="subscribe-blog"
+>
+id="subscribe-field-label"
+for="subscribe-field"
+class="screen-reader-text"
+>
+Type your email…
+required="required"
+type="email"
+name="email"
+autocomplete="email"
+class="no-border-radius "
+style="font-size: 16px;padding: 15px 23px 15px 23px;border-radius: 0px;border-width: 1px;"
+placeholder="Type your email…"
+value=""
+id="subscribe-field"
+title="Please fill in this field."
+/>
+>
+class="wp-block-button__link no-border-radius"
+style="font-size: 16px;padding: 15px 23px 15px 23px;margin: 0; margin-left: 10px;border-radius: 0px;border-width: 1px;"
+name="jetpack_subscriptions_widget"
+>
+Subscribe
+Skip to content ↓
+news
+class="actnbr-pub-scratchpad actnbr-has-follow actnbr-has-actions">
+Subscribe
+Subscribed
+news
+Sign me up
+Already have a WordPress.com account? Log in now.
+news
+Subscribe
+Subscribed
+Sign up
+Log in
+Report this content
+View site in Reader
+Manage subscriptions
+Collapse this bar
+class="jp-carousel-wrap swiper jp-carousel-swiper-container jp-carousel-transitions"
+itemscope
+itemtype="https://schema.org/ImageGallery">
+Loading Comments...
+Write a Comment...
+<textarea
+name="comment"
+class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea"
+id="jp-carousel-comment-form-comment-field"
+placeholder="Write a Comment..."
+></textarea>
+Email (Required)
+Name (Required)
+Website
+type="submit"
+name="submit"
+class="jp-carousel-comment-form-button"
+id="jp-carousel-comment-form-button-submit"
+value="Post Comment" />
+Design a site like this with WordPress.comGet started
 
 ---
 
-# Company & news – #news
+# companylink.business.blog
 
 > **Source:** https://companylink.business.blog/
-> **Analyzed At:** 2026-06-29T12:18:05.652477Z
+> **Analyzed At:** 2026-07-20T07:00:10.011Z
 
-## Fendi
+### Content
+<title>Company &amp; news &#8211; #news</title>
+Skip to content
+Menu
+Company &amp; news
+#news
+Featured
+Posted in news &amp; co		Fendi
+Posted on <time class="entry-date published" datetime="2022-06-03T05:21:09+00:00">June 3, 2022</time><time class="updated" datetime="2024-07-11T09:07:59+00:00">July 11, 2024</time> by Filip Keser
 https://www.fendi.com/hr/gift-ideas/gifts/for-her/for-her-view-all
-
-## Online Learning & Training Platform for Organizations | LinkedIn Learning
+Featured
+Posted in news &amp; co		Online Learning &amp; Training Platform for Organizations | LinkedIn&nbsp;Learning
+Posted on <time class="entry-date published" datetime="2021-08-23T15:30:00+00:00">August 23, 2021</time><time class="updated" datetime="2024-04-09T09:01:54+00:00">April 9, 2024</time> by Filip Keser
 https://learning.linkedin.com/
-
-## Daily Stock Market Overview, Data Updates, Reports & News | Nasdaq
+Featured
+Daily Stock Market Overview, Data Updates, Reports &amp; News |&nbsp;Nasdaq
 https://www.nasdaq.com/
-
-## Stock Images, Photos, Vectors, Video, and Music | Shutterstock
+Link&bull;		Posted on <time class="entry-date published" datetime="2021-08-08T01:56:10+00:00">August 8, 2021</time><time class="updated" datetime="2024-04-09T09:13:32+00:00">April 9, 2024</time> by Filip Keser
+Featured
+Posted in news &amp; co		Stock Images, Photos, Vectors, Video, and Music |&nbsp;Shutterstock
+Posted on <time class="entry-date published" datetime="2021-07-02T10:10:55+00:00">July 2, 2021</time><time class="updated" datetime="2024-04-09T09:14:40+00:00">April 9, 2024</time> by Filip Keser
 https://www.shutterstock.com/
-
-## The New York Stock Exchange | NYSE
+Featured
+Posted in info		The New York Stock Exchange |&nbsp;NYSE
+Posted on <time class="entry-date published" datetime="2021-06-15T15:44:48+00:00">June 15, 2021</time><time class="updated" datetime="2024-04-09T09:15:21+00:00">April 9, 2024</time> by Filip Keser
 https://www.nyse.com/index
-
-## Investor’s Business Daily | Stock News & Stock Market Analysis – IBD
+Featured
+Posted in notes online		Investor&#8217;s Business Daily | Stock News &amp; Stock Market Analysis &#8211;&nbsp;IBD
+Posted on <time class="entry-date published" datetime="2021-03-07T19:08:09+00:00">March 7, 2021</time><time class="updated" datetime="2024-04-09T09:16:00+00:00">April 9, 2024</time> by Filip Keser
 https://www.investors.com/
-
-## Tiffany & Co. Official | Luxury Jewelry, Gifts & Accessories Since 1837
+Featured
+Posted in online		Tiffany &amp; Co. Official | Luxury Jewelry, Gifts &amp; Accessories Since&nbsp;1837
+Posted on <time class="entry-date published" datetime="2021-02-25T15:16:52+00:00">February 25, 2021</time><time class="updated" datetime="2024-04-09T09:04:20+00:00">April 9, 2024</time> by Filip Keser
 https://www.tiffany.com/
-
-## Ford®
+Featured
+Posted in Co &amp; news		Ford®
+Posted on <time class="entry-date published" datetime="2020-12-07T19:10:11+00:00">December 7, 2020</time><time class="updated" datetime="2024-04-09T09:06:42+00:00">April 9, 2024</time> by Filip Keser
 https://www.ford.com/
-
-## StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches
+Featured
+Posted in news &amp; co		StockX: Sneakers, Streetwear, Trading Cards, Handbags,&nbsp;Watches
+Posted on <time class="entry-date published" datetime="2020-11-10T13:23:08+00:00">November 10, 2020</time><time class="updated" datetime="2024-04-09T09:17:52+00:00">April 9, 2024</time> by Filip Keser
 https://stockx.com/
-
-## Top Scholarships for Studying Abroad: Your Guide
+Posted in Co &amp; news		Top Scholarships for Studying Abroad: Your&nbsp;Guide
+Posted on <time class="entry-date published" datetime="2024-04-09T09:11:09+00:00">April 9, 2024</time><time class="updated" datetime="2024-07-11T09:06:25+00:00">July 11, 2024</time> by Filip Keser
 https://studyabroadaide.com
 https://globalscholarships.com/
-
-## swfinstitute
+Posted in Co &amp; news		swfinstitute
+Posted on <time class="entry-date published updated" datetime="2023-04-27T04:28:54+00:00">April 27, 2023</time> by Filip Keser
 https://www.swfinstitute.org/
-
-## TrustedSite Certification | Shop with confidence.
+Posted in wordpress by fk		TrustedSite Certification | Shop with&nbsp;confidence.
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:20:58+00:00">June 3, 2022</time> by Filip Keser
 https://www.trustedsite.com/for-consumers
-
-## LinkedIn Campaign Manager
+Posted in news &amp; co		LinkedIn Campaign Manager
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:20:56+00:00">June 3, 2022</time> by Filip Keser
 https://www.linkedin.com/campaignmanager/new-advertiser
-
-## Marketing & Advertising on LinkedIn | LinkedIn Marketing Solutions
+Posted in news &amp; co		Marketing &amp; Advertising on LinkedIn | LinkedIn Marketing&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:20:53+00:00">June 3, 2022</time> by Filip Keser
 https://business.linkedin.com/marketing-solutions
-
-## Launch, monetize, and scale with Xsolla tools and services | Xsolla
+Posted in notes online		Launch, monetize, and scale with Xsolla tools and services |&nbsp;Xsolla
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:20:46+00:00">June 3, 2022</time> by Filip Keser
 https://xsolla.com/
-
-## Crossclip | The Easiest Way to Convert Your Twitch Clips
+Posted in notes online		Crossclip | The Easiest Way to Convert Your Twitch&nbsp;Clips
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:20:43+00:00">June 3, 2022</time> by Filip Keser
 https://crossclip.com/
-
-## Tiltify – Made for Fundraisers
+Posted in gaming		Tiltify &#8211; Made for&nbsp;Fundraisers
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:20:41+00:00">June 3, 2022</time> by Filip Keser
 https://tiltify.com/
-
-## Discount Designer Fashion | Sale Up To 70% Off At THE OUTNET
+Posted in webshop - online		Discount Designer Fashion | Sale Up To 70% Off At THE&nbsp;OUTNET
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:16:13+00:00">June 3, 2022</time> by Filip Keser
 https://www.theoutnet.com/en-hr/
-
-## Luxury consignment sales. Shop for pre-owned designer handbags, shoes, jewelry and more | The RealReal
+Posted in online		Luxury consignment sales. Shop for pre-owned designer handbags, shoes, jewelry and more | The&nbsp;RealReal
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:16:11+00:00">June 3, 2022</time> by Filip Keser
 https://www.therealreal.com/
-
-## HyperC – Process Optimization Platform – HyperC
+Posted in news &amp; co		HyperC &#8211; Process Optimization Platform &#8211;&nbsp;HyperC
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:16:10+00:00">June 3, 2022</time> by Filip Keser
 https://hyperc.com/
-
-## AWS Marketplace
+Posted in news &amp; co		AWS Marketplace
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:16:05+00:00">June 3, 2022</time> by Filip Keser
 https://aws.amazon.com/marketplace/b/eLearning/6297422083
-
-## Swiss-made Swatch watch collections. | Swatch AM
+Posted in webshop - online		Swiss-made Swatch watch collections. | Swatch&nbsp;AM
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:16:01+00:00">June 3, 2022</time> by Filip Keser
 https://www.swatch.com/en-us/choosecountry
-
-## Najpovoljniji Krediti i Osiguranja | Moj Bankar
+Posted in online		Najpovoljniji Krediti i Osiguranja | Moj&nbsp;Bankar
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:59+00:00">June 3, 2022</time> by Filip Keser
 https://www.moj-bankar.hr/Kreditna-kartica/Pbz/American-express-start-card-za-studente/12
-
-## Looking for a hotel in the Opatija Riviera Croatia? Visit us! | Liburnia
+Posted in news &amp; co		Looking for a hotel in the Opatija Riviera Croatia? Visit us! |&nbsp;Liburnia
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:58+00:00">June 3, 2022</time> by Filip Keser
 https://www.liburnia.hr/
-
-## Europsko tržište rabljenih i novih automobila – AutoScout24
+Posted in news &amp; co		Europsko tržište rabljenih i novih automobila &#8211;&nbsp;AutoScout24
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:56+00:00">June 3, 2022</time> by Filip Keser
 https://www.autoscout24.hr/
-
-## Igračke za pse ǀ Oprema za pse ǀ Zvjerinjak.hr
+Posted in webshop - online		Igračke za pse ǀ Oprema za pse ǀ&nbsp;Zvjerinjak.hr
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:53+00:00">June 3, 2022</time> by Filip Keser
 https://zvjerinjak.hr/kategorija-proizvoda/psi/igracke-za-pse/
-
-## Budicool najpovoljniji webshop u Hrvatskoj
+Posted in online		Budicool najpovoljniji webshop u&nbsp;Hrvatskoj
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:52+00:00">June 3, 2022</time> by Filip Keser
 https://www.budicool.hr/
-
-## Mercedes-Benz GLA: istaknuta obilježja
+Posted in online		Mercedes-Benz GLA: istaknuta&nbsp;obilježja
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:50+00:00">June 3, 2022</time> by Filip Keser
 https://www.mercedes-benz.hr/osobna-vozila/mercedes-benz-vozila/modeli/gla/gla-h247/explore.html
-
-## Consent Management Platform (CMP) | Usercentrics
+Posted in info		Consent Management Platform (CMP) |&nbsp;Usercentrics
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:47+00:00">June 3, 2022</time> by Filip Keser
 https://usercentrics.com/
-
-## Diagnose and code your car | Carly OBD
+Posted in cars magazine		Diagnose and code your car | Carly&nbsp;OBD
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:46+00:00">June 3, 2022</time> by Filip Keser
 https://www.mycarly.com/
-
-## Consent Management Platform (CMP) | Usercentrics
+Posted in wordpress by fk		Consent Management Platform (CMP) |&nbsp;Usercentrics
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:44+00:00">June 3, 2022</time> by Filip Keser
 https://usercentrics.com/
-
-## Compute Engine: Virtual Machines (VMs)  | Google Cloud
+Posted in info		Compute Engine: Virtual Machines (VMs)  | Google&nbsp;Cloud
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:43+00:00">June 3, 2022</time> by Filip Keser
 https://cloud.google.com/compute?hl=hr
-
-## Redragon | Keyboards, Mice, and more – Official Site‎ – REDRAGON ZONE
+Posted in gaming		Redragon | Keyboards, Mice, and more &#8211; Official Site‎ – REDRAGON&nbsp;ZONE
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:38+00:00">June 3, 2022</time> by Filip Keser
 https://www.redragonzone.com/
-
-## ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions
+Posted in news &amp; co		ShareThis: Free Share Buttons &amp; Plugins, Global Behavioral Data&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:37+00:00">June 3, 2022</time> by Filip Keser
 https://sharethis.com/
-
-## Women’s Fur Coats – Fur Clothing for Women – Aria Moda
+Posted in webshop - online		Women&#8217;s Fur Coats &#8211; Fur Clothing for Women &#8211; Aria&nbsp;Moda
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:35+00:00">June 3, 2022</time> by Filip Keser
 https://aria-moda.com/category/fur-coats/
-
-## Fur Clothing for Women – Made of 100% Real Fur – Aria Moda
+Posted in webshop - online		Fur Clothing for Women &#8211; Made of 100% Real Fur &#8211; Aria&nbsp;Moda
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:33+00:00">June 3, 2022</time> by Filip Keser
 https://aria-moda.com/
-
-## Partner Inbound
+Posted in partner/reseller		Partner Inbound
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:31+00:00">June 3, 2022</time> by Filip Keser
 https://www.letsdeel.com/partner-program
-
-## SSL Digital Certificate Authority – Encryption & Authentication
+Posted in info		SSL Digital Certificate Authority &#8211; Encryption &amp;&nbsp;Authentication
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:29+00:00">June 3, 2022</time> by Filip Keser
 https://www.digicert.com/
-
-## Kwanko – Your Performance Marketing Partner
+Posted in news &amp; co		Kwanko &#8211; Your Performance Marketing&nbsp;Partner
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:28+00:00">June 3, 2022</time> by Filip Keser
 https://www.kwanko.com/
-
-## Programmatic advertising | BidTheatre Demand Side Platform
+Posted in news &amp; co		Programmatic advertising | BidTheatre Demand Side&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:24+00:00">June 3, 2022</time> by Filip Keser
 https://www.bidtheatre.com/
-
-## Digital Advertising Platform | Criteo
+Posted in news &amp; co		Digital Advertising Platform |&nbsp;Criteo
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:22+00:00">June 3, 2022</time> by Filip Keser
 https://www.criteo.com/technology/advertising-platform/
-
-## Joom. Easy shopping, fast shipping
+Posted in webshop - online		Joom. Easy shopping, fast&nbsp;shipping
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:21+00:00">June 3, 2022</time> by Filip Keser
 https://www.joom.com/en
-
-## Computer Accessories & Software | Lenovo US
+Posted in news &amp; co		Computer Accessories &amp; Software | Lenovo&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:16+00:00">June 3, 2022</time> by Filip Keser
 https://www.lenovo.com/us/en/accessories-and-software
-
-## Lenovo Official US Site | Laptops, PCs, Tablets & Data Center | Lenovo US
+Posted in notes online		Lenovo Official US Site | Laptops, PCs, Tablets &amp; Data Center | Lenovo&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:15:11+00:00">June 3, 2022</time> by Filip Keser
 https://www.lenovo.com/us/en/
-
-## Trustpilot Reviews: Experience the power of customer reviews
+Posted in wordpress by fk		Trustpilot Reviews: Experience the power of customer&nbsp;reviews
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:41+00:00">June 3, 2022</time> by Filip Keser
 https://www.trustpilot.com/
-
-## Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft Surface
+Posted in notes online		Surface Duo – Dual-Screen Mobile Productivity, Do One Better – Microsoft&nbsp;Surface
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:26+00:00">June 3, 2022</time> by Filip Keser
 https://www.microsoft.com/en-us/surface/devices/surface-duo
-
-## Learn computer programming | Online courses from JetBrains Academy
+Posted in news &amp; co		Learn computer programming | Online courses from JetBrains&nbsp;Academy
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:24+00:00">June 3, 2022</time> by Filip Keser
 https://www.jetbrains.com/academy/
-
-## Školska knjiga – vaša najveća online knjižara
+Posted in webshop - online		Školska knjiga &#8211; vaša najveća online&nbsp;knjižara
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:23+00:00">June 3, 2022</time> by Filip Keser
 https://shop.skolskaknjiga.hr/
-
-## Total TV – Bogat TV program
+Posted in online		Total TV &#8211; Bogat TV&nbsp;program
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:21+00:00">June 3, 2022</time> by Filip Keser
 https://totaltv.hr/
-
-## Internet-Filiale – Sparkasse Dillingen-Nördlingen
+Posted in online		Internet-Filiale &#8211; Sparkasse Dillingen-Nördlingen
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:20+00:00">June 3, 2022</time> by Filip Keser
 https://www.spk-dlg-noe.de/de/home.html
-
-## Video Games Reviews & News – GameSpot
+Posted in gaming		Video Games Reviews &amp; News &#8211;&nbsp;GameSpot
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:18+00:00">June 3, 2022</time> by Filip Keser
 https://www.gamespot.com/
-
-## LoyaltyLobby – Making sense of travel loyalty programs.
+Posted in online		LoyaltyLobby &#8211; Making sense of travel loyalty&nbsp;programs.
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:17+00:00">June 3, 2022</time> by Filip Keser
 https://loyaltylobby.com/
-
-## NACIONAL.HR – online izdanje najutjecajnijeg političkog tjednika
+Posted in online		NACIONAL.HR – online izdanje najutjecajnijeg političkog&nbsp;tjednika
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:15+00:00">June 3, 2022</time> by Filip Keser
 https://www.nacional.hr/
-
-## GamesRadar+
+Posted in gaming		GamesRadar+
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:14+00:00">June 3, 2022</time> by Filip Keser
 https://www.gamesradar.com/uk/
-
-## Vodnikova – škola stranih jezika – Naslovnica
+Posted in online		Vodnikova &#8211; škola stranih jezika &#8211;&nbsp;Naslovnica
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:08+00:00">June 3, 2022</time> by Filip Keser
 https://www.vodnikova.hr/hr/
-
-## Business HTZ
+Posted in online		Business HTZ
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:07+00:00">June 3, 2022</time> by Filip Keser
 https://www.htz.hr/hr-HR
-
-## Checkaso — ASO Tool | App Store Optimization for iOS & Android
+Posted in info		Checkaso — ASO Tool | App Store Optimization for iOS &amp;&nbsp;Android
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:14:02+00:00">June 3, 2022</time> by Filip Keser
 https://checkaso.io/
-
-## AWS Certification – Validate AWS Cloud Skills – Get AWS Certified
+Posted in info		AWS Certification &#8211; Validate AWS Cloud Skills &#8211; Get AWS&nbsp;Certified
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:59+00:00">June 3, 2022</time> by Filip Keser
 https://aws.amazon.com/certification/
-
-## Welcome | AWS Training & Certification
+Posted in info		Welcome | AWS Training &amp;&nbsp;Certification
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:57+00:00">June 3, 2022</time> by Filip Keser
 https://www.aws.training/
-
-## AWS Certified Security – Specialty
+Posted in info		AWS Certified Security &#8211;&nbsp;Specialty
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:55+00:00">June 3, 2022</time> by Filip Keser
 https://aws.amazon.com/certification/certified-security-specialty/
-
-## AWS Academy
+Posted in info		AWS Academy
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:54+00:00">June 3, 2022</time> by Filip Keser
 https://aws.amazon.com/training/awsacademy/
-
-## AWS re/Start
+Posted in info		AWS re/Start
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:53+00:00">June 3, 2022</time> by Filip Keser
 https://aws.amazon.com/training/restart/
-
-## Naslovnica – tportal
+Posted in online		Naslovnica &#8211; tportal
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:51+00:00">June 3, 2022</time> by Filip Keser
 https://www.tportal.hr/
-
-## Official HP® Store | Laptops, Desktops, Monitors & Printers – HP Store UK
+Posted in news &amp; co		Official HP® Store | Laptops, Desktops, Monitors &amp; Printers &#8211; HP Store&nbsp;UK
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:49+00:00">June 3, 2022</time> by Filip Keser
 https://www.hp.com/gb-en/shop/
-
-## Welcome | AWS Training & Certification
+Posted in news &amp; co		Welcome | AWS Training &amp;&nbsp;Certification
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:47+00:00">June 3, 2022</time> by Filip Keser
 https://www.aws.training/
-
-## Tom’s Guide | Tech Product Reviews, Top Picks and How To
+Posted in news &amp; co		Tom&#8217;s Guide | Tech Product Reviews, Top Picks and How&nbsp;To
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:42+00:00">June 3, 2022</time> by Filip Keser
 https://www.tomsguide.com/
-
-## Northern Illinois University – Your Future. Our Focus.
+Northern Illinois University &#8211; Your Future. Our&nbsp;Focus.
 https://www.niu.edu/index.shtml
-
-## RONIS – hifi, smart tv, car audio, mobiteli i računala
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:40+00:00">June 3, 2022</time> by Filip Keser
+Posted in webshop - online		RONIS &#8211; hifi, smart tv, car audio, mobiteli i&nbsp;računala
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:38+00:00">June 3, 2022</time> by Filip Keser
 https://www.ronis.hr/
-
-## Links.hr: Informatika i oprema, Sport, Dronovi i Roboti, Bijela tehnika i Kućanski aparati
+Posted in news &amp; co		Links.hr: Informatika i oprema, Sport, Dronovi i Roboti, Bijela tehnika i Kućanski&nbsp;aparati
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:34+00:00">June 3, 2022</time> by Filip Keser
 https://www.links.hr/hr/
-
-## Linker – Content Discovery Platform
+Posted in online		Linker &#8211; Content Discovery&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:29+00:00">June 3, 2022</time> by Filip Keser
 https://linker.hr/
-
-## Acer | Channel Portal
+Posted in partner/reseller		Acer | Channel&nbsp;Portal
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:24+00:00">June 3, 2022</time> by Filip Keser
 https://partner.acer.com
-
-## ASUS USA
+Posted in gaming		ASUS USA
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:19+00:00">June 3, 2022</time> by Filip Keser
 https://www.asus.com/us/
-
-## ROG – Republic of Gamers｜Global | For Those Who Dare
+Posted in notes online		ROG &#8211; Republic of Gamers｜Global | For Those Who&nbsp;Dare
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:17+00:00">June 3, 2022</time> by Filip Keser
 https://rog.asus.com/
-
-## Epic Games Store | Download & Play PC Games, Mods, DLC & More – Epic Games
+Posted in gaming		Epic Games Store | Download &amp; Play PC Games, Mods, DLC &amp; More – Epic&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:12+00:00">June 3, 2022</time> by Filip Keser
 https://www.epicgames.com/store/en-US/
-
-## Science news, expert analysis, covid coronavirus research, space tech
+Science news, expert analysis, covid coronavirus research, space&nbsp;tech
 https://cosmosmagazine.com/
-
-## Acer Predator – moćna računala za igranje
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:10+00:00">June 3, 2022</time> by Filip Keser
+Posted in online		Acer Predator – moćna računala za&nbsp;igranje
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:13:04+00:00">June 3, 2022</time> by Filip Keser
 https://www.acer.com/ac/hr/HR/content/predator-home
-
-## Sancta Domenica Webshop | Top Brandovi na jednom mjestu‎
+Posted in online		Sancta Domenica Webshop | Top Brandovi na jednom&nbsp;mjestu‎
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:12:57+00:00">June 3, 2022</time> by Filip Keser
 https://www.sancta-domenica.hr/
-
-## ArtStation – Learning
+Posted in news &amp; co		ArtStation &#8211; Learning
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:12:53+00:00">June 3, 2022</time> by Filip Keser
 https://www.artstation.com/learning
-
-## gol.hr – Sportske vijesti i rezultati
+Posted in online		gol.hr &#8211; Sportske vijesti i&nbsp;rezultati
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:12:47+00:00">June 3, 2022</time> by Filip Keser
 https://gol.dnevnik.hr/
-
-## FAMILY PAKET za 2 odrasle osobe i 1 ili 2 djece do 12 godina u Obiteljskom Resortu Urania u Baškoj Vodi uz 2 ili 3 noćenja na bazi Polupansiona, poklon dobrodošlice i uslugu čuvanja za mališane! – Crno Jaje
+Posted in online		FAMILY PAKET za 2 odrasle osobe i 1 ili 2 djece do 12 godina u Obiteljskom Resortu Urania u Baškoj Vodi uz 2 ili 3 noćenja na bazi Polupansiona, poklon dobrodošlice i uslugu čuvanja za mališane! &#8211; Crno&nbsp;Jaje
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:12:45+00:00">June 3, 2022</time> by Filip Keser
 https://www.crnojaje.hr/
-
-## Vocal media
+Posted in info		Vocal media
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:12:43+00:00">June 3, 2022</time> by Filip Keser
 https://vocal.media/vocal-plus?via=filip
-
-## Science news, expert analysis, covid coronavirus research, space tech
+Posted in online		Science news, expert analysis, covid coronavirus research, space&nbsp;tech
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:12:41+00:00">June 3, 2022</time> by Filip Keser
 https://cosmosmagazine.com/
-
-## Luxury Hotel in Zagreb :: Esplanade Zagreb Hotel
+Posted in online		Luxury Hotel in Zagreb :: Esplanade Zagreb&nbsp;Hotel
+Posted on <time class="entry-date published updated" datetime="2022-06-03T05:12:38+00:00">June 3, 2022</time> by Filip Keser
 https://www.esplanade.hr/
-
-## Online marketing. Simplified | Adzooma
+Posted in news &amp; co		Online marketing. Simplified |&nbsp;Adzooma
+Posted on <time class="entry-date published updated" datetime="2021-08-24T16:25:58+00:00">August 24, 2021</time> by Filip Keser
 https://www.adzooma.com/
-
-## Physical and Virtual Visa Commercial Cards vol.2 | Payhawk | Payhawk
+Posted in news &amp; co		Physical and Virtual Visa Commercial Cards vol.2 | Payhawk |&nbsp;Payhawk
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:18:13+00:00">August 23, 2021</time> by Filip Keser
 https://payhawk.com/start/visa-cards/
-
-## Payhawk | The Financial System of Tomorrow with NextGen Visa Cards
+Posted in news &amp; co		Payhawk | The Financial System of Tomorrow with NextGen Visa&nbsp;Cards
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:16:25+00:00">August 23, 2021</time> by Filip Keser
 https://payhawk.com/
-
-## StreamElements | The Ultimate Streamer Platform
+Posted in news &amp; co		StreamElements | The Ultimate Streamer&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:08:26+00:00">August 23, 2021</time> by Filip Keser
 https://streamelements.com/
-
-## Razer United States | For Gamers. By Gamers.
+Posted in news &amp; co		Razer United States | For Gamers. By&nbsp;Gamers.
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:07:39+00:00">August 23, 2021</time> by Filip Keser
 https://www.razer.com/
-
-## Adobe products: desktop, web, and mobile applications | Adobe
+Posted in news &amp; co		Adobe products: desktop, web, and mobile applications |&nbsp;Adobe
+Posted on <time class="entry-date published updated" datetime="2021-08-23T15:07:21+00:00">August 23, 2021</time> by Filip Keser
 https://www.adobe.com/products/catalog.html
-
-## LinkedIn Campaign Manager
+Posted in notes online		LinkedIn Campaign Manager
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:32:24+00:00">August 23, 2021</time> by Filip Keser
 https://www.linkedin.com/campaignmanager/new-advertiser
-
-## Find leads and close deals | LinkedIn Sales Solutions
+Posted in info		Find leads and close deals | LinkedIn Sales&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:30:37+00:00">August 23, 2021</time> by Filip Keser
 https://business.linkedin.com/sales-solutions
-
-## Mercury | Banking built for startups
+Posted in info		Mercury | Banking built for&nbsp;startups
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:19:24+00:00">August 23, 2021</time> by Filip Keser
 https://mercury.com/
-
-## Razer United States | For Gamers. By Gamers.
+Posted in gaming		Razer United States | For Gamers. By&nbsp;Gamers.
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:07:47+00:00">August 23, 2021</time> by Filip Keser
 https://www.razer.com/
-
-## Adobe products: desktop, web, and mobile applications | Adobe
+Posted in info		Adobe products: desktop, web, and mobile applications |&nbsp;Adobe
+Posted on <time class="entry-date published updated" datetime="2021-08-23T13:07:12+00:00">August 23, 2021</time> by Filip Keser
 https://www.adobe.com/products/catalog.html
-
-## StreamElements | The Ultimate Streamer Platform
+Posted in info		StreamElements | The Ultimate Streamer&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-23T12:29:17+00:00">August 23, 2021</time> by Filip Keser
 https://streamelements.com/
-
-## StreamElements | The Ultimate Streamer Platform
+Posted in gaming		StreamElements | The Ultimate Streamer&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-23T12:29:09+00:00">August 23, 2021</time> by Filip Keser
 https://streamelements.com/
-
-## Cyber Security Leader | Imperva, Inc.
+Posted in news &amp; co		Cyber Security Leader | Imperva,&nbsp;Inc.
+Posted on <time class="entry-date published updated" datetime="2021-08-23T06:34:44+00:00">August 23, 2021</time> by Filip Keser
 https://www.imperva.com/
-
-## id.me
+Posted in news &amp; co		id.me
+Posted on <time class="entry-date published updated" datetime="2021-08-23T06:32:26+00:00">August 23, 2021</time> by Filip Keser
 https://www.id.me/
-
-## ibisPaint – Draw and Paint App
+Posted in news &amp; co		ibisPaint &#8211; Draw and Paint&nbsp;App
+Posted on <time class="entry-date published updated" datetime="2021-08-22T15:53:39+00:00">August 22, 2021</time> by Filip Keser
 https://ibispaint.com/
-
-## smart facing holder|tws earbuds|smart shooting phone holder|dancing robot|Earbuds manufacturers|Topjoy
+Posted in news &amp; co		smart facing holder|tws earbuds|smart shooting phone holder|dancing robot|Earbuds manufacturers|Topjoy
+Posted on <time class="entry-date published updated" datetime="2021-08-22T13:26:27+00:00">August 22, 2021</time> by Filip Keser
 https://www.topjoyint.com/
-
-## Mobilmedia | Brza i pouzdana dostava‎
+Posted in webshop - online		Mobilmedia | Brza i pouzdana&nbsp;dostava‎
+Posted on <time class="entry-date published updated" datetime="2021-08-22T13:00:19+00:00">August 22, 2021</time> by Filip Keser
 https://mobilmedia.hr/
-
-## Dealify | The Number One Lifetime Deals Platform for Growth Hackers
+Posted in info		Dealify | The Number One Lifetime Deals Platform for Growth&nbsp;Hackers
+Posted on <time class="entry-date published updated" datetime="2021-08-22T09:50:48+00:00">August 22, 2021</time> by Filip Keser
 https://www.dealify.com/
-
-## Projektna rješenja za online trgovinu – Moja-Trgovina.Net
+Posted in news &amp; co		Projektna rješenja za online trgovinu &#8211; Moja-Trgovina.Net
+Posted on <time class="entry-date published updated" datetime="2021-08-22T07:46:03+00:00">August 22, 2021</time> by Filip Keser
 https://www.moja-trgovina.net/
-
-## Se-Mark
+Posted in webshop - online		Se-Mark
+Posted on <time class="entry-date published updated" datetime="2021-08-22T07:44:37+00:00">August 22, 2021</time> by Filip Keser
 https://www.se-mark.hr/
-
-## Joppy – Recruitment platform for developers by developers
+Posted in info		Joppy &#8211; Recruitment platform for developers by&nbsp;developers
+Posted on <time class="entry-date published updated" datetime="2021-08-22T07:26:42+00:00">August 22, 2021</time> by Filip Keser
 https://www.joppy.me/
-
-## Omaze
+Omaze
 https://www.omaze.com/
-
-## Premium Bootstrap Themes and Templates: Download @ Creative Tim
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-22T07:14:13+00:00">August 22, 2021</time> by Filip Keser
+Posted in info		Premium Bootstrap Themes and Templates: Download @ Creative&nbsp;Tim
+Posted on <time class="entry-date published updated" datetime="2021-08-22T05:51:29+00:00">August 22, 2021</time> by Filip Keser
 https://www.creative-tim.com/
-
-## Premium Bootstrap Themes and Templates: Download @ Creative Tim
+Posted in news &amp; co		Premium Bootstrap Themes and Templates: Download @ Creative&nbsp;Tim
+Posted on <time class="entry-date published updated" datetime="2021-08-22T00:51:21+00:00">August 22, 2021</time> by Filip Keser
 https://www.creative-tim.com/
-
-## Kleap – Create a mobile first website – For free & on mobile
+Posted in info		Kleap &#8211; Create a mobile first website &#8211; For free &amp; on&nbsp;mobile
+Posted on <time class="entry-date published updated" datetime="2021-08-21T22:18:29+00:00">August 21, 2021</time> by Filip Keser
 https://kleap.co/
-
-## Gorilla Experiment Builder » Create online behavioural experiments easily
+Posted in info		Gorilla Experiment Builder » Create online behavioural experiments&nbsp;easily
+Posted on <time class="entry-date published updated" datetime="2021-08-21T18:47:40+00:00">August 21, 2021</time> by Filip Keser
 https://gorilla.sc/
-
-## D.Franklin® | Sunglasses and Accessories | Official Web
+Posted in webshop - online		D.Franklin® | Sunglasses and Accessories | Official&nbsp;Web
+Posted on <time class="entry-date published updated" datetime="2021-08-21T15:34:49+00:00">August 21, 2021</time> by Filip Keser
 https://www.dfranklincreation.com/
-
-## Gorilla Experiment Builder » Create online behavioural experiments easily
+Posted in news &amp; co		Gorilla Experiment Builder » Create online behavioural experiments&nbsp;easily
+Posted on <time class="entry-date published updated" datetime="2021-08-21T13:45:40+00:00">August 21, 2021</time> by Filip Keser
 https://gorilla.sc/
-
-## MicroAcquire – #1 Startup acquisition marketplace
+Posted in info		MicroAcquire &#8211; #1 Startup acquisition&nbsp;marketplace
+Posted on <time class="entry-date published updated" datetime="2021-08-21T10:32:35+00:00">August 21, 2021</time> by Filip Keser
 https://microacquire.com/
-
-## Hublock.io & Data-sharing layer for logistics
+Posted in info		Hublock.io &amp; Data-sharing layer for&nbsp;logistics
+Posted on <time class="entry-date published updated" datetime="2021-08-21T10:31:04+00:00">August 21, 2021</time> by Filip Keser
 https://www.hublock.io/
-
-## Dobro došli – Visoka škola “Logos centar” Mostar
+Posted in online		Dobro došli &#8211; Visoka škola &#8220;Logos centar&#8221;&nbsp;Mostar
+Posted on <time class="entry-date published updated" datetime="2021-08-21T09:11:08+00:00">August 21, 2021</time> by Filip Keser
 https://www.logos-centar.com/#
-
-## Sifted | Startup Europe explored through grown up reporting.
+Posted in info		Sifted | Startup Europe explored through grown up&nbsp;reporting.
+Posted on <time class="entry-date published updated" datetime="2021-08-21T08:16:24+00:00">August 21, 2021</time> by Filip Keser
 https://sifted.eu/
-
-## Microverse | Learn How To Code Online
+Posted in info		Microverse | Learn How To Code&nbsp;Online
+Posted on <time class="entry-date published updated" datetime="2021-08-21T08:15:19+00:00">August 21, 2021</time> by Filip Keser
 https://www.microverse.org/
-
-## Platforms | Profitlevel
+Posted in info		Platforms | Profitlevel
+Posted on <time class="entry-date published updated" datetime="2021-08-21T06:47:00+00:00">August 21, 2021</time> by Filip Keser
 https://profitlevel.com/en/trading/platforms
-
-## Pushwoosh – №1 push notification and cross-channel marketing service
+Posted in wordpress by fk		Pushwoosh – №1 push notification and cross-channel marketing&nbsp;service
+Posted on <time class="entry-date published updated" datetime="2021-08-20T17:00:25+00:00">August 20, 2021</time> by Filip Keser
 https://www.pushwoosh.com/
-
-## WordPress VIP – OneSignal
+Posted in wordpress by fk		WordPress VIP &#8211;&nbsp;OneSignal
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:59:53+00:00">August 20, 2021</time> by Filip Keser
 https://onesignal.com/integrations/wordpress-vip
-
-## Google Ads – privucite više korisnika jednostavnim online oglašavanjem
+Posted in news &amp; co		Google Ads – privucite više korisnika jednostavnim online&nbsp;oglašavanjem
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:55:06+00:00">August 20, 2021</time> by Filip Keser
 https://ads.google.com
-
-## Cross-Channel Marketing Platform to Improve Customer Experiences – Iterable
+Posted in news &amp; co		Cross-Channel Marketing Platform to Improve Customer Experiences &#8211;&nbsp;Iterable
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:54:38+00:00">August 20, 2021</time> by Filip Keser
 https://iterable.com/
-
-## LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing Solutions
+Posted in news &amp; co		LinkedIn Ads: Targeted Self-Service Ads | LinkedIn Marketing&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:53:09+00:00">August 20, 2021</time> by Filip Keser
 https://business.linkedin.com/marketing-solutions/ads
-
-## Home | Scrum Guides
+Posted in info		Home | Scrum&nbsp;Guides
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:30:24+00:00">August 20, 2021</time> by Filip Keser
 https://scrumguides.org/
-
-## Home | Scrum.org
+Posted in info		Home | Scrum.org
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:30:18+00:00">August 20, 2021</time> by Filip Keser
 https://www.scrum.org/index
-
-## What is Scrum?
+Posted in info		What is Scrum?
+Posted on <time class="entry-date published updated" datetime="2021-08-20T16:30:11+00:00">August 20, 2021</time> by Filip Keser
 https://www.scrum.org/resources/what-is-scrum
-
-## Partner Inbound
+Posted in partner/reseller		Partner Inbound
+Posted on <time class="entry-date published updated" datetime="2021-08-20T15:36:26+00:00">August 20, 2021</time> by Filip Keser
 https://www.letsdeel.com/partner-program
-
-## Explore Remote partner programs. | Remote
+Posted in partner/reseller		Explore Remote partner programs. |&nbsp;Remote
+Posted on <time class="entry-date published updated" datetime="2021-08-20T15:32:17+00:00">August 20, 2021</time> by Filip Keser
 https://partners.remote.com/partners
-
-## Laravel – The PHP Framework For Web Artisans
+Posted in info		Laravel &#8211; The PHP Framework For Web&nbsp;Artisans
+Posted on <time class="entry-date published updated" datetime="2021-08-20T15:25:57+00:00">August 20, 2021</time> by Filip Keser
 https://laravel.com/
-
-## Road & Track
+Posted in cars magazine		Road &amp; Track
+Posted on <time class="entry-date published updated" datetime="2021-08-20T15:01:27+00:00">August 20, 2021</time> by Filip Keser
 https://www.roadandtrack.com/
-
-## Instagram | About | Official Site
+Posted in online		Instagram | About | Official&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2021-08-20T14:43:13+00:00">August 20, 2021</time> by Filip Keser
 https://about.instagram.com/
-
-## World’s Favorite Instagram Marketing Platform | Later
+Posted in news &amp; co		World’s Favorite Instagram Marketing Platform |&nbsp;Later
+Posted on <time class="entry-date published updated" datetime="2021-08-20T14:42:35+00:00">August 20, 2021</time> by Filip Keser
 https://later.com/
-
-## MOHITO – Posljednji ženstveni trendovi | Kupi online!
+Posted in webshop - online		MOHITO &#8211; Posljednji ženstveni trendovi | Kupi&nbsp;online!
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:31:12+00:00">August 20, 2021</time> by Filip Keser
 https://www.mohito.com/hr/hr/
-
-## Run your EU company online or invoice without one | Xolo
+Posted in wordpress by fk		Run your EU company online or invoice without one |&nbsp;Xolo
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:28:05+00:00">August 20, 2021</time> by Filip Keser
 https://www.xolo.io/zz-en
-
-## Setupad.com – Monetization Partner – Setupad
+Posted in news &amp; co		Setupad.com &#8211; Monetization Partner &#8211;&nbsp;Setupad
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:26:44+00:00">August 20, 2021</time> by Filip Keser
 https://setupad.com/
-
-## Shipito For Business
+Posted in news &amp; co		Shipito For Business
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:24:53+00:00">August 20, 2021</time> by Filip Keser
 https://www.shipito.com/en/shipito-for-business
-
-## Knowledge Base Software That Scales With Your Product-Document360
+Posted in wordpress by fk		Knowledge Base Software That Scales With Your Product-Document360
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:22:15+00:00">August 20, 2021</time> by Filip Keser
 https://document360.com/
-
-## Spryker Academy
+Posted in news &amp; co		Spryker Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-20T12:21:31+00:00">August 20, 2021</time> by Filip Keser
 https://academy.spryker.com/learn
-
-## Run your EU company online or invoice without one | Xolo
+Posted in info		Run your EU company online or invoice without one |&nbsp;Xolo
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:27:57+00:00">August 20, 2021</time> by Filip Keser
 https://www.xolo.io/zz-en
-
-## Cryptocurrency Exchange Software | Blockchain software | White label Exchange Software – ChainUP
+Posted in info		Cryptocurrency Exchange Software | Blockchain software | White label Exchange Software &#8211;&nbsp;ChainUP
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:27:28+00:00">August 20, 2021</time> by Filip Keser
 https://www.chainup.com/en-US/
-
-## Spryker Documentation
+Posted in info		Spryker Documentation
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:22:04+00:00">August 20, 2021</time> by Filip Keser
 https://documentation.spryker.com/docs/
-
-## Firebase
+Posted in news &amp; co		Firebase
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:00:41+00:00">August 20, 2021</time> by Filip Keser
 https://firebase.google.com/?hl=hr
-
-## Integrations Directory – OneSignal
+Posted in news &amp; co		Integrations Directory &#8211;&nbsp;OneSignal
+Posted on <time class="entry-date published updated" datetime="2021-08-20T10:00:04+00:00">August 20, 2021</time> by Filip Keser
 https://onesignal.com/integrations
-
-## Facebook for Business: Marketing on Facebook
+Posted in news &amp; co		Facebook for Business: Marketing on&nbsp;Facebook
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:59:06+00:00">August 20, 2021</time> by Filip Keser
 https://web.facebook.com/business
-
-## Front – Customer Communication Platform | Team Email
+Posted in news &amp; co		Front &#8211; Customer Communication Platform | Team&nbsp;Email
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:58:27+00:00">August 20, 2021</time> by Filip Keser
 https://front.com/
-
-## Customer Success and Product Experience Software | Gainsight
+Posted in news &amp; co		Customer Success and Product Experience Software |&nbsp;Gainsight
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:57:56+00:00">August 20, 2021</time> by Filip Keser
 https://www.gainsight.com/
-
-## MoEngage: Insights-led Customer Engagement Platform
+Posted in news &amp; co		MoEngage: Insights-led Customer Engagement&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:52:20+00:00">August 20, 2021</time> by Filip Keser
 https://www.moengage.com/
-
-## Pendo.io – Product Experience and Digital Adoption Solutions
+Posted in news &amp; co		Pendo.io &#8211; Product Experience and Digital Adoption&nbsp;Solutions
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:51:43+00:00">August 20, 2021</time> by Filip Keser
 https://www.pendo.io/
-
-## RudderStack – The Customer Data Platform for Developers
+Posted in news &amp; co		RudderStack &#8211; The Customer Data Platform for&nbsp;Developers
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:51:04+00:00">August 20, 2021</time> by Filip Keser
 https://rudderstack.com/
-
-## Cloud Object Storage | Store & Retrieve Data Anywhere | Amazon Simple Storage Service (S3)
+Posted in news &amp; co		Cloud Object Storage | Store &amp; Retrieve Data Anywhere | Amazon Simple Storage Service&nbsp;(S3)
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:50:30+00:00">August 20, 2021</time> by Filip Keser
 https://aws.amazon.com/s3/
-
-## Home
+Posted in news &amp; co		Home
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:49:44+00:00">August 20, 2021</time> by Filip Keser
 https://www.mparticle.com/
-
-## Integrations · Hightouch
+Posted in news &amp; co		Integrations · Hightouch
+Posted on <time class="entry-date published updated" datetime="2021-08-20T09:46:32+00:00">August 20, 2021</time> by Filip Keser
 https://hightouch.io/integrations
-
-## Physical and Virtual Visa Commercial Cards vol.2 | Payhawk | Payhawk
+Posted in online		Physical and Virtual Visa Commercial Cards vol.2 | Payhawk |&nbsp;Payhawk
+Posted on <time class="entry-date published updated" datetime="2021-08-20T08:01:01+00:00">August 20, 2021</time> by Filip Keser
 https://payhawk.com/start/visa-cards/
-
-## Modne kolekcije na jednom mjestu – GLAMI.hr
+Posted in webshop - online		Modne kolekcije na jednom mjestu &#8211;&nbsp;GLAMI.hr
+Posted on <time class="entry-date published updated" datetime="2021-08-20T07:53:38+00:00">August 20, 2021</time> by Filip Keser
 https://www.glami.hr/
-
-## Buy online! Reserved & Shop Online
+Posted in webshop - online		Buy online! Reserved &amp; Shop&nbsp;Online
+Posted on <time class="entry-date published updated" datetime="2021-08-20T07:51:34+00:00">August 20, 2021</time> by Filip Keser
 https://www.reserved.com/gr/en/
-
-## Joom. Easy shopping, fast shipping
+Posted in online		Joom. Easy shopping, fast&nbsp;shipping
+Posted on <time class="entry-date published updated" datetime="2021-08-20T06:59:22+00:00">August 20, 2021</time> by Filip Keser
 https://www.joom.com/en
-
-## F-IQ
+Posted in news &amp; co		F-IQ
+Posted on <time class="entry-date published updated" datetime="2021-08-20T06:12:40+00:00">August 20, 2021</time> by Filip Keser
 https://f-iq.app/
-
-## Knowledge Base Software That Scales With Your Product-Document360
+Posted in news &amp; co		Knowledge Base Software That Scales With Your Product-Document360
+Posted on <time class="entry-date published updated" datetime="2021-08-20T05:22:22+00:00">August 20, 2021</time> by Filip Keser
 https://document360.com/
-
-## Payhawk | The Financial System of Tomorrow with NextGen Visa Cards
+Posted in news &amp; co		Payhawk | The Financial System of Tomorrow with NextGen Visa&nbsp;Cards
+Posted on <time class="entry-date published updated" datetime="2021-08-20T01:00:36+00:00">August 20, 2021</time> by Filip Keser
 https://payhawk.com/
-
-## Online payment processing for internet businesses – Stripe
+Posted in news &amp; co		Online payment processing for internet businesses &#8211;&nbsp;Stripe
+Posted on <time class="entry-date published updated" datetime="2021-08-20T01:00:11+00:00">August 20, 2021</time> by Filip Keser
 https://stripe.com/
-
-## Send Money, Pay Online or Set Up a Merchant Account – PayPal
+Posted in news &amp; co		Send Money, Pay Online or Set Up a Merchant Account &#8211;&nbsp;PayPal
+Posted on <time class="entry-date published updated" datetime="2021-08-20T00:59:42+00:00">August 20, 2021</time> by Filip Keser
 https://www.paypal.com
-
-## BillDesk – All Your Payments. Single Location.
+Posted in news &amp; co		BillDesk &#8211; All Your Payments. Single&nbsp;Location.
+Posted on <time class="entry-date published updated" datetime="2021-08-20T00:59:23+00:00">August 20, 2021</time> by Filip Keser
 https://www.billdesk.com/
-
-## Financial Services for Emerging Markets | PayU Global
+Posted in news &amp; co		Financial Services for Emerging Markets | PayU&nbsp;Global
+Posted on <time class="entry-date published updated" datetime="2021-08-20T00:58:53+00:00">August 20, 2021</time> by Filip Keser
 https://corporate.payu.com/
-
-## Global HR Solutions for Distributed Teams | Remote
+Posted in wordpress by fk		Global HR Solutions for Distributed Teams |&nbsp;Remote
+Posted on <time class="entry-date published updated" datetime="2021-08-19T21:44:33+00:00">August 19, 2021</time> by Filip Keser
 https://remote.com/
-
-## For Startups – letsdeel
+Posted in wordpress by fk		For Startups &#8211;&nbsp;letsdeel
+Posted on <time class="entry-date published" datetime="2021-08-19T21:42:11+00:00">August 19, 2021</time><time class="updated" datetime="2024-04-26T13:48:06+00:00">April 26, 2024</time> by Filip Keser
 https://www.letsdeel.com/for-startups
-
-## Stocard – Your mobile wallet
+Posted in news &amp; co		Stocard &#8211; Your mobile&nbsp;wallet
+Posted on <time class="entry-date published updated" datetime="2021-08-19T21:03:41+00:00">August 19, 2021</time> by Filip Keser
 https://stocardapp.com/en/de
-
-## Payroll & Compliance for International Teams | Deel
+Posted in wordpress by fk		Payroll &amp; Compliance for International Teams |&nbsp;Deel
+Posted on <time class="entry-date published updated" datetime="2021-08-19T20:20:22+00:00">August 19, 2021</time> by Filip Keser
 https://www.letsdeel.com/
-
-## Lifewire: Tech News, Reviews, Help & How-Tos
+Posted in news &amp; co		Lifewire: Tech News, Reviews, Help &amp;&nbsp;How-Tos
+Posted on <time class="entry-date published updated" datetime="2021-08-19T20:15:18+00:00">August 19, 2021</time> by Filip Keser
 https://www.lifewire.com/
-
-## Partner Inbound
+Posted in partner/reseller		Partner Inbound
+Posted on <time class="entry-date published updated" datetime="2021-08-19T19:40:52+00:00">August 19, 2021</time> by Filip Keser
 https://www.letsdeel.com/partner-program
-
-## Payroll & Compliance for International Teams | Deel
+Posted in notes online		Payroll &amp; Compliance for International Teams |&nbsp;Deel
+Posted on <time class="entry-date published updated" datetime="2021-08-19T18:20:16+00:00">August 19, 2021</time> by Filip Keser
 https://www.letsdeel.com/
-
-## Play DivX files. Free Video Software to play, convert and cast video.
+Posted in info		Play DivX files. Free Video Software to play, convert and cast&nbsp;video.
+Posted on <time class="entry-date published updated" datetime="2021-08-19T18:14:20+00:00">August 19, 2021</time> by Filip Keser
 https://www.divx.com/
-
-## GDPR, ePrivacy and CCPA compliant cookies | Cookiebot CMP
+Posted in wordpress by fk		GDPR, ePrivacy and CCPA compliant cookies | Cookiebot&nbsp;CMP
+Posted on <time class="entry-date published updated" datetime="2021-08-19T17:59:15+00:00">August 19, 2021</time> by Filip Keser
 https://www.cookiebot.com/en/
-
-## Venture Capital Definition
+Posted in notes online		Venture Capital Definition
+Posted on <time class="entry-date published updated" datetime="2021-08-19T16:03:52+00:00">August 19, 2021</time> by Filip Keser
 https://www.investopedia.com/terms/v/venturecapital.asp
-
-## Capital Markets Definition
+Posted in notes online		Capital Markets Definition
+Posted on <time class="entry-date published updated" datetime="2021-08-19T16:03:39+00:00">August 19, 2021</time> by Filip Keser
 https://www.investopedia.com/terms/c/capitalmarkets.asp
-
-## Bond Market Definition
+Posted in notes online		Bond Market Definition
+Posted on <time class="entry-date published updated" datetime="2021-08-19T16:03:32+00:00">August 19, 2021</time> by Filip Keser
 https://www.investopedia.com/terms/b/bondmarket.asp
-
-## Stock Market Definition
+Posted in notes online		Stock Market Definition
+Posted on <time class="entry-date published updated" datetime="2021-08-19T16:03:22+00:00">August 19, 2021</time> by Filip Keser
 https://www.investopedia.com/terms/s/stockmarket.asp
-
-## Global HR Solutions for Distributed Teams | Remote
+Posted in news &amp; co		Global HR Solutions for Distributed Teams |&nbsp;Remote
+Posted on <time class="entry-date published updated" datetime="2021-08-19T14:44:40+00:00">August 19, 2021</time> by Filip Keser
 https://remote.com/
-
-## Y2Mate Youtube Downloader
+Posted in info		Y2Mate Youtube Downloader
+Posted on <time class="entry-date published updated" datetime="2021-08-19T14:14:23+00:00">August 19, 2021</time> by Filip Keser
 https://en.y2mate.guru/10/
-
-## The New York Times – Breaking News, US News, World News and Videos
+Posted in online		The New York Times &#8211; Breaking News, US News, World News and&nbsp;Videos
+Posted on <time class="entry-date published updated" datetime="2021-08-19T07:52:42+00:00">August 19, 2021</time> by Filip Keser
 https://www.nytimes.com/
-
-## Movieweb: Movie News, Movie Trailers, New Movies, Movie Reviews
+Posted in online		Movieweb: Movie News, Movie Trailers, New Movies, Movie&nbsp;Reviews
+Posted on <time class="entry-date published updated" datetime="2021-08-19T07:48:49+00:00">August 19, 2021</time> by Filip Keser
 https://movieweb.com/
-
-## New Movies, TV Shows | Celebrity News & Gossip | CINEMABLEND
+Posted in online		New Movies, TV Shows | Celebrity News &amp; Gossip |&nbsp;CINEMABLEND
+Posted on <time class="entry-date published updated" datetime="2021-08-19T07:43:59+00:00">August 19, 2021</time> by Filip Keser
 https://www.cinemablend.com/
-
-## DOBA Fakultet: Odaberite program za razvoj svoje karijere
+Posted in online		DOBA Fakultet: Odaberite program za razvoj svoje&nbsp;karijere
+Posted on <time class="entry-date published updated" datetime="2021-08-19T01:00:09+00:00">August 19, 2021</time> by Filip Keser
 https://www.doba.hr/
-
-## Best Products: Product Reviews, Deals, and More
+Best Products: Product Reviews, Deals, and&nbsp;More
 https://www.bestproducts.com/
-
-## Movieweb: Movie News, Movie Trailers, New Movies, Movie Reviews
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-19T00:53:36+00:00">August 19, 2021</time> by Filip Keser
+Movieweb: Movie News, Movie Trailers, New Movies, Movie&nbsp;Reviews
 https://movieweb.com/
-
-## Download Instagram Video, Photos, IGTV & Reels
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-19T00:48:37+00:00">August 19, 2021</time> by Filip Keser
+Posted in news &amp; co		Download Instagram Video, Photos, IGTV &amp;&nbsp;Reels
+Posted on <time class="entry-date published updated" datetime="2021-08-18T22:16:11+00:00">August 18, 2021</time> by Filip Keser
 https://igram.io/
-
-## Instagram Downloader, Download Video, Photo, Reels, IGTV online – SnapInsta
+Posted in news &amp; co		Instagram Downloader, Download Video, Photo, Reels, IGTV online &#8211;&nbsp;SnapInsta
+Posted on <time class="entry-date published updated" datetime="2021-08-18T22:16:04+00:00">August 18, 2021</time> by Filip Keser
 https://snapinsta.app/
-
-## Harvard Business School Online Courses & Learning Platforms
+Posted in news &amp; co		Harvard Business School Online Courses &amp; Learning&nbsp;Platforms
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:46:39+00:00">August 18, 2021</time> by Filip Keser
 https://online.hbs.edu/
-
-## Academic Programs – About – Harvard Business School
+Posted in news &amp; co		Academic Programs &#8211; About &#8211; Harvard Business&nbsp;School
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:46:00+00:00">August 18, 2021</time> by Filip Keser
 https://www.hbs.edu/about/academic-programs/Pages/default.aspx
-
-## MBA – Harvard Business School
+Posted in news &amp; co		MBA &#8211; Harvard Business&nbsp;School
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:45:38+00:00">August 18, 2021</time> by Filip Keser
 https://www.hbs.edu/mba/Pages/default.aspx
-
-## Harvard Business Review – Ideas and Advice for Leaders
+Posted in news &amp; co		Harvard Business Review &#8211; Ideas and Advice for&nbsp;Leaders
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:42:54+00:00">August 18, 2021</time> by Filip Keser
 https://hbr.org/
-
-## Subscribe to HBR – Digital & Print
+Posted in news &amp; co		Subscribe to HBR &#8211; Digital &amp;&nbsp;Print
+Posted on <time class="entry-date published updated" datetime="2021-08-18T21:41:18+00:00">August 18, 2021</time> by Filip Keser
 https://hbr.org/subscriptions
-
-## World’s Most Affordable Push Notifications Services | Truepush
+Posted in wordpress by fk		World&#8217;s Most Affordable Push Notifications Services |&nbsp;Truepush
+Posted on <time class="entry-date published updated" datetime="2021-08-18T20:03:58+00:00">August 18, 2021</time> by Filip Keser
 https://www.truepush.com/
-
-## Save S$1,080 on one year of Accounting and Tax with Osome and OCBC Bank
+Posted in news &amp; co		Save S$1,080 on one year of Accounting and Tax with Osome and OCBC&nbsp;Bank
+Posted on <time class="entry-date published updated" datetime="2021-08-18T19:44:24+00:00">August 18, 2021</time> by Filip Keser
 https://osome.com/sg/start-digital/
-
-## Online Accounting Software | Small Business Accounting | Xero US
+Posted in news &amp; co		Online Accounting Software | Small Business Accounting | Xero&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2021-08-18T19:43:07+00:00">August 18, 2021</time> by Filip Keser
 https://www.xero.com/us/accounting-software/
-
-## Tumblr
+Posted in news &amp; co		Tumblr
+Posted on <time class="entry-date published updated" datetime="2021-08-18T19:38:31+00:00">August 18, 2021</time> by Filip Keser
 https://www.tumblr.com/
-
-## RAPTOR fleet – GPS nadzor vozila – gps tracking, nadzor vozila
+Posted in news &amp; co		RAPTOR fleet – GPS nadzor vozila – gps tracking, nadzor&nbsp;vozila
+Posted on <time class="entry-date published updated" datetime="2021-08-18T19:03:45+00:00">August 18, 2021</time> by Filip Keser
 https://raptor-fleet.com/
-
-## Buy and Sell Online Businesses, Websites, Apps & Domains – Flippa
+Posted in info		Buy and Sell Online Businesses, Websites, Apps &amp; Domains &#8211;&nbsp;Flippa
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:36:01+00:00">August 18, 2021</time> by Filip Keser
 https://flippa.com/
-
-## Researcher | An App For Academics
+Posted in info		Researcher | An App For&nbsp;Academics
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:27:45+00:00">August 18, 2021</time> by Filip Keser
 https://www.researcher-app.com/
-
-## Google Cloud Platform Webinars
+Posted in info		Google Cloud Platform&nbsp;Webinars
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:23:59+00:00">August 18, 2021</time> by Filip Keser
 https://cloudonair.withgoogle.com/
-
-## Home – Google Cloud Startup Summit
+Posted in info		Home &#8211; Google Cloud Startup&nbsp;Summit
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:23:10+00:00">August 18, 2021</time> by Filip Keser
 https://cloudonair.withgoogle.com/events/startup
-
-## Google Cloud Platform Webinars
+Posted in info		Google Cloud Platform&nbsp;Webinars
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:22:57+00:00">August 18, 2021</time> by Filip Keser
 https://cloudonair.withgoogle.com/#cert_prep
-
-## IBAN Checker: International Bank Account Number validation
+Posted in notes online		IBAN Checker: International Bank Account Number&nbsp;validation
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:18:53+00:00">August 18, 2021</time> by Filip Keser
 https://www.iban.com/
-
-## Build for everyone – Google Careers
+Posted in info		Build for everyone &#8211; Google&nbsp;Careers
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:15:26+00:00">August 18, 2021</time> by Filip Keser
 https://careers.google.com/
-
-## Start a Business, Grow Your Business – Shopify 14-Day Free Trial
+Posted in notes online		Start a Business, Grow Your Business &#8211; Shopify 14-Day Free&nbsp;Trial
+Posted on <time class="entry-date published updated" datetime="2021-08-18T18:03:18+00:00">August 18, 2021</time> by Filip Keser
 https://www.shopify.com/
-
-## Petrokemija d.d.
+Posted in online		Petrokemija d.d.
+Posted on <time class="entry-date published updated" datetime="2021-08-18T17:00:19+00:00">August 18, 2021</time> by Filip Keser
 https://petrokemija.hr/hr-hr/
-
-## Event Management Technology & Hospitality Solutions | Cvent
+Posted in news &amp; co		Event Management Technology &amp; Hospitality Solutions |&nbsp;Cvent
+Posted on <time class="entry-date published updated" datetime="2021-08-18T15:34:05+00:00">August 18, 2021</time> by Filip Keser
 https://www.cvent.com/
-
-## Alfa Vision Optika – dioptrijski i sunčani okviri
+Posted in online		Alfa Vision Optika – dioptrijski i sunčani&nbsp;okviri
+Posted on <time class="entry-date published updated" datetime="2021-08-18T15:09:03+00:00">August 18, 2021</time> by Filip Keser
 https://alfavision-optika.hr/hr/
-
-## Fiat Hrvatska
+Posted in cars magazine		Fiat Hrvatska
+Posted on <time class="entry-date published updated" datetime="2021-08-18T14:08:23+00:00">August 18, 2021</time> by Filip Keser
 https://www.fiat.hr/
-
-## Product Hunt – The best new products in tech.
+Posted in news &amp; co		Product Hunt – The best new products in&nbsp;tech.
+Posted on <time class="entry-date published updated" datetime="2021-08-18T13:02:20+00:00">August 18, 2021</time> by Filip Keser
 https://www.producthunt.com/
-
-## Candis – Women’s Magazine – Family, Health, Competitions & Savings
+Candis &#8211; Women&#8217;s Magazine &#8211; Family, Health, Competitions &amp;&nbsp;Savings
 https://www.candis.co.uk/
-
-## DSG bicikli – prodaja i servis bicikla
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-18T09:51:13+00:00">August 18, 2021</time> by Filip Keser
+Posted in cars magazine		DSG bicikli &#8211; prodaja i servis&nbsp;bicikla
+Posted on <time class="entry-date published updated" datetime="2021-08-18T09:31:33+00:00">August 18, 2021</time> by Filip Keser
 https://dsg.hr/
-
-## JetBrains: Essential tools for software developers and teams
+Posted in info		JetBrains: Essential tools for software developers and&nbsp;teams
+Posted on <time class="entry-date published updated" datetime="2021-08-18T06:01:15+00:00">August 18, 2021</time> by Filip Keser
 https://www.jetbrains.com/
-
-## Kite – Free AI Coding Assistant and Code Auto-Complete Plugin
+Posted in info		Kite &#8211; Free AI Coding Assistant and Code Auto-Complete&nbsp;Plugin
+Posted on <time class="entry-date published updated" datetime="2021-08-18T05:58:00+00:00">August 18, 2021</time> by Filip Keser
 https://www.kite.com/
-
-## Startups.com | Courses, Expert Advice & Software for Startup Founders
+Posted in info		Startups.com | Courses, Expert Advice &amp; Software for Startup&nbsp;Founders
+Posted on <time class="entry-date published updated" datetime="2021-08-18T05:55:03+00:00">August 18, 2021</time> by Filip Keser
 https://www.startups.com/
-
-## SalesAI Powered Copywriting – ClosersCopy
+Posted in news &amp; co		SalesAI Powered Copywriting &#8211;&nbsp;ClosersCopy
+Posted on <time class="entry-date published updated" datetime="2021-08-18T01:02:24+00:00">August 18, 2021</time> by Filip Keser
 https://www.closerscopy.com/
-
-## PyCharm: the Python IDE for Professional Developers by JetBrains
+Posted in news &amp; co		PyCharm: the Python IDE for Professional Developers by&nbsp;JetBrains
+Posted on <time class="entry-date published updated" datetime="2021-08-18T01:00:30+00:00">August 18, 2021</time> by Filip Keser
 https://www.jetbrains.com/pycharm/
-
-## Integrations | Parabola
+Posted in news &amp; co		Integrations | Parabola
+Posted on <time class="entry-date published updated" datetime="2021-08-18T00:54:08+00:00">August 18, 2021</time> by Filip Keser
 https://parabola.io/integrations
-
-## Kylie Cosmetics | Kylie Cosmetics by Kylie Jenner
+Posted in webshop - online		Kylie Cosmetics | Kylie Cosmetics by Kylie&nbsp;Jenner
+Posted on <time class="entry-date published updated" datetime="2021-08-17T23:42:44+00:00">August 17, 2021</time> by Filip Keser
 https://kyliecosmetics.com
-
-## Formative for Schools
+Posted in online		Formative for Schools
+Posted on <time class="entry-date published updated" datetime="2021-08-17T22:08:13+00:00">August 17, 2021</time> by Filip Keser
 https://goformative.com/schools
-
-## Automobili Lamborghini – Official Website | Lamborghini.com
+Posted in online		Automobili Lamborghini &#8211; Official Website |&nbsp;Lamborghini.com
+Posted on <time class="entry-date published updated" datetime="2021-08-17T20:40:30+00:00">August 17, 2021</time> by Filip Keser
 https://www.lamborghini.com/en-en
-
-## The World’s Luxury Marketplace: Homes, Cars, Yachts & Jets for Sale | JamesEdition
+Posted in online		The World&#8217;s Luxury Marketplace: Homes, Cars, Yachts &amp; Jets for Sale |&nbsp;JamesEdition
+Posted on <time class="entry-date published updated" datetime="2021-08-17T20:37:36+00:00">August 17, 2021</time> by Filip Keser
 https://www.jamesedition.com/
-
-## Formative
+Posted in info		Formative
+Posted on <time class="entry-date published updated" datetime="2021-08-17T20:08:24+00:00">August 17, 2021</time> by Filip Keser
 https://goformative.com/schools
-
-## Where to Pay Later with Zip
+Posted in info		Where to Pay Later with&nbsp;Zip
+Posted on <time class="entry-date published updated" datetime="2021-08-17T19:53:18+00:00">August 17, 2021</time> by Filip Keser
 https://zip.co/
-
-## Muške majice i majice bez rukava| 60 757 komada na jednom mjestu – GLAMI.hr
+Posted in notes online		Muške majice i majice bez rukava| 60 757 komada na jednom mjestu &#8211;&nbsp;GLAMI.hr
+Posted on <time class="entry-date published updated" datetime="2021-08-17T19:13:36+00:00">August 17, 2021</time> by Filip Keser
 https://www.glami.hr/muske-majice-i-majce-bez-rukava/
-
-## Stockwatch
+Posted in news &amp; co		Stockwatch
+Posted on <time class="entry-date published updated" datetime="2021-08-17T18:49:49+00:00">August 17, 2021</time> by Filip Keser
 https://www.stockwatch.com/
-
-## Automobili Lamborghini – Official Website | Lamborghini.com
+Posted in cars magazine		Automobili Lamborghini &#8211; Official Website |&nbsp;Lamborghini.com
+Posted on <time class="entry-date published updated" datetime="2021-08-17T18:40:15+00:00">August 17, 2021</time> by Filip Keser
 https://www.lamborghini.com/en-en
-
-## Classic Cars for Sale. Comps, Alerts and More. – CLASSIC.COM
+Posted in cars magazine		Classic Cars for Sale. Comps, Alerts and More. &#8211;&nbsp;CLASSIC.COM
+Posted on <time class="entry-date published updated" datetime="2021-08-17T18:38:42+00:00">August 17, 2021</time> by Filip Keser
 https://www.classic.com/
-
-## Road & Track
+Posted in cars magazine		Road &amp; Track
+Posted on <time class="entry-date published updated" datetime="2021-08-17T18:38:11+00:00">August 17, 2021</time> by Filip Keser
 https://www.roadandtrack.com/
-
-## Classic Driver | The classic car & lifestyle market and magazine
+Posted in cars magazine		Classic Driver | The classic car &amp; lifestyle market and&nbsp;magazine
+Posted on <time class="entry-date published updated" datetime="2021-08-17T18:33:04+00:00">August 17, 2021</time> by Filip Keser
 https://www.classicdriver.com/en
-
-## Mercedes-AMG CLA Coupé
+Posted in notes online		Mercedes-AMG CLA Coupé
+Posted on <time class="entry-date published updated" datetime="2021-08-17T18:30:12+00:00">August 17, 2021</time> by Filip Keser
 https://www.mercedes-benz.hr/osobna-vozila/mercedes-benz-vozila/modeli/cla/coupe-c118/amg.html
-
-## Svaka šalica ima svoju priču
+Posted in online		Svaka šalica ima svoju&nbsp;priču
+Posted on <time class="entry-date published updated" datetime="2021-08-17T17:17:32+00:00">August 17, 2021</time> by Filip Keser
 https://www.franck.eu/hr/
-
-## Snogoo
+Posted in online		Snogoo
+Posted on <time class="entry-date published updated" datetime="2021-08-17T17:16:43+00:00">August 17, 2021</time> by Filip Keser
 https://snogoo.hr/
-
-## Where to Pay Later with Zip
+Posted in news &amp; co		Where to Pay Later with&nbsp;Zip
+Posted on <time class="entry-date published updated" datetime="2021-08-17T14:53:09+00:00">August 17, 2021</time> by Filip Keser
 https://zip.co/
-
-## MERLE WOOD & ASSOCIATES | LUXURY YACHT SPECIALISTS
+MERLE WOOD &amp; ASSOCIATES | LUXURY YACHT&nbsp;SPECIALISTS
 https://www.merlewood.com/
-
-## Kera-Term Početna – Kera Term Trgovina
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-17T13:51:21+00:00">August 17, 2021</time> by Filip Keser
+Posted in webshop - online		Kera-Term Početna &#8211; Kera Term&nbsp;Trgovina
+Posted on <time class="entry-date published updated" datetime="2021-08-17T13:49:16+00:00">August 17, 2021</time> by Filip Keser
 https://kera-term.hr/
-
-## Mime et Moi
+Posted in webshop - online		Mime et Moi
+Posted on <time class="entry-date published updated" datetime="2021-08-17T10:47:43+00:00">August 17, 2021</time> by Filip Keser
 https://mimemoi.com/int/en/
-
-## Never Settle – OnePlus (Hrvatska)
+Posted in info		Never Settle &#8211; OnePlus&nbsp;(Hrvatska)
+Posted on <time class="entry-date published updated" datetime="2021-08-17T09:05:30+00:00">August 17, 2021</time> by Filip Keser
 https://www.oneplus.com/hr
-
-## The World’s First Fully Convertible High Heels | Pashion Footwear
+Posted in news &amp; co		The World&#8217;s First Fully Convertible High Heels | Pashion&nbsp;Footwear
+Posted on <time class="entry-date published updated" datetime="2021-08-17T08:19:10+00:00">August 17, 2021</time> by Filip Keser
 https://pashionfootwear.com/
-
-## Alfa Elmas | nekretnine Krk, Malinska, apartmani , kuće, vikendice, vile
+Posted in online		Alfa Elmas | nekretnine Krk, Malinska, apartmani , kuće, vikendice,&nbsp;vile
+Posted on <time class="entry-date published updated" datetime="2021-08-17T08:11:11+00:00">August 17, 2021</time> by Filip Keser
 https://alfaelmas.com/
-
-## Finest Apothecary Skincare – Kiehl’s
+Posted in webshop - online		Finest Apothecary Skincare –&nbsp;Kiehl’s
+Posted on <time class="entry-date published updated" datetime="2021-08-17T07:56:33+00:00">August 17, 2021</time> by Filip Keser
 https://www.kiehls.hr/
-
-## Tematske torte – Torterie Macaron
+Posted in online		Tematske torte &#8211; Torterie&nbsp;Macaron
+Posted on <time class="entry-date published updated" datetime="2021-08-17T07:51:19+00:00">August 17, 2021</time> by Filip Keser
 https://www.torterie-macaron.com/tematske-torte/
-
-## Foodie – Foodie
+Posted in online		Foodie &#8211; Foodie
+Posted on <time class="entry-date published updated" datetime="2021-08-17T07:45:21+00:00">August 17, 2021</time> by Filip Keser
 https://foodie.hr/
-
-## Wolt – Otkrij i naruči sjajnu hranu.
+Posted in online		Wolt &#8211; Otkrij i naruči sjajnu&nbsp;hranu.
+Posted on <time class="entry-date published updated" datetime="2021-08-17T07:45:04+00:00">August 17, 2021</time> by Filip Keser
 https://wolt.com/hr/
-
-## Torterie Macaron | Najfinije torte, macaroni, sladoled i druge slastice
+Posted in webshop - online		Torterie Macaron | Najfinije torte, macaroni, sladoled i druge&nbsp;slastice
+Posted on <time class="entry-date published updated" datetime="2021-08-17T07:39:30+00:00">August 17, 2021</time> by Filip Keser
 https://www.torterie-macaron.com/
-
-## Influencer Marketing | #1 Platform, Agency & Influencer Resources
+Posted in info		Influencer Marketing | #1 Platform, Agency &amp; Influencer&nbsp;Resources
+Posted on <time class="entry-date published updated" datetime="2021-08-17T07:33:35+00:00">August 17, 2021</time> by Filip Keser
 https://influencermarketinghub.com/
-
-## VEKA HR
+Posted in online		VEKA HR
+Posted on <time class="entry-date published updated" datetime="2021-08-17T07:31:53+00:00">August 17, 2021</time> by Filip Keser
 https://veka.hr/
-
-## Nekretnine Hrvatska – RealEstateCroatia.com – Portal za nekretnine u Hrvatskoj
+Posted in online		Nekretnine Hrvatska &#8211; RealEstateCroatia.com &#8211; Portal za nekretnine u&nbsp;Hrvatskoj
+Posted on <time class="entry-date published updated" datetime="2021-08-17T07:17:48+00:00">August 17, 2021</time> by Filip Keser
 https://www.realestatecroatia.com/hrv/default.asp
-
-## Smart invest nekretnine Opatija, Rijeka | Stanovi, kuće, poslovni prostori, zemljišta, prodaja i najam
+Posted in online		Smart invest nekretnine Opatija, Rijeka | Stanovi, kuće, poslovni prostori, zemljišta, prodaja i&nbsp;najam
+Posted on <time class="entry-date published updated" datetime="2021-08-17T07:17:34+00:00">August 17, 2021</time> by Filip Keser
 http://www.smart-invest.hr/
-
-## The Fastest Off-Road E-bikes – 10,000 (Watt) Power | VectorEbike.com
+Posted in cars magazine		The Fastest Off-Road E-bikes &#8211; 10,000 (Watt) Power |&nbsp;VectorEbike.com
+Posted on <time class="entry-date published updated" datetime="2021-08-17T07:01:37+00:00">August 17, 2021</time> by Filip Keser
 https://vectorebike.com/
-
-## Electrek – EV and Tesla News, Green Energy, Ebikes, and more
+Posted in cars magazine		Electrek &#8211; EV and Tesla News, Green Energy, Ebikes, and&nbsp;more
+Posted on <time class="entry-date published updated" datetime="2021-08-17T06:59:16+00:00">August 17, 2021</time> by Filip Keser
 https://electrek.co/
-
-## eROCKIT – The Human Hybrid
+Posted in cars magazine		eROCKIT – The Human&nbsp;Hybrid
+Posted on <time class="entry-date published updated" datetime="2021-08-17T06:58:49+00:00">August 17, 2021</time> by Filip Keser
 https://www.erockit.de/en/home-2/
-
-## Finest Apothecary Skincare – Kiehl’s
+Posted in news &amp; co		Finest Apothecary Skincare –&nbsp;Kiehl’s
+Posted on <time class="entry-date published updated" datetime="2021-08-17T05:56:26+00:00">August 17, 2021</time> by Filip Keser
 https://www.kiehls.hr/
-
-## Blog Tool, Publishing Platform, and CMS — WordPress.org
+Posted in info		Blog Tool, Publishing Platform, and CMS —&nbsp;WordPress.org
+Posted on <time class="entry-date published updated" datetime="2021-08-17T05:46:04+00:00">August 17, 2021</time> by Filip Keser
 https://wordpress.org/
-
-## Bolt Food
+Posted in info		Bolt Food
+Posted on <time class="entry-date published updated" datetime="2021-08-17T05:44:29+00:00">August 17, 2021</time> by Filip Keser
 https://food.bolt.eu/hr-hr/
-
-## Official Rosetta Stone® – Language Learning – Learn a Language
+Posted in online		Official Rosetta Stone® &#8211; Language Learning &#8211; Learn a&nbsp;Language
+Posted on <time class="entry-date published updated" datetime="2021-08-17T04:37:55+00:00">August 17, 2021</time> by Filip Keser
 https://www.rosettastone.eu/
-
-## HUAWEI Hrvatska
+Posted in info		HUAWEI Hrvatska
+Posted on <time class="entry-date published updated" datetime="2021-08-17T02:33:58+00:00">August 17, 2021</time> by Filip Keser
 https://consumer.huawei.com/hr/
-
-## Author Media – Innovative Book Promotion For Writers
+Posted in info		Author Media &#8211; Innovative Book Promotion For&nbsp;Writers
+Posted on <time class="entry-date published updated" datetime="2021-08-16T18:31:33+00:00">August 16, 2021</time> by Filip Keser
 https://www.authormedia.com/
-
-## Agrotrgovina.hr by Kokot Agro / – Vodeća agrotrgovina u Hrvatskoj
+Posted in webshop - online		Agrotrgovina.hr by Kokot Agro / – Vodeća agrotrgovina u&nbsp;Hrvatskoj
+Posted on <time class="entry-date published updated" datetime="2021-08-16T17:47:35+00:00">August 16, 2021</time> by Filip Keser
 https://www.agrotrgovina.hr/
-
-## Consent Management Platform – GDPR Compliance, CCPA Compliance Consent Management Solution, Privacy Manager
+Posted in info		Consent Management Platform &#8211; GDPR Compliance, CCPA Compliance Consent Management Solution, Privacy&nbsp;Manager
+Posted on <time class="entry-date published updated" datetime="2021-08-16T17:08:41+00:00">August 16, 2021</time> by Filip Keser
 https://www.uniconsent.com/
-
-## Tricent Compliance Tool
+Posted in news &amp; co		Tricent Compliance Tool
+Posted on <time class="entry-date published updated" datetime="2021-08-16T12:57:54+00:00">August 16, 2021</time> by Filip Keser
 https://www.tricent.com/
-
-## Designrr PRO Flash Sale
+Posted in notes online		Designrr PRO Flash&nbsp;Sale
+Posted on <time class="entry-date published updated" datetime="2021-08-16T09:57:13+00:00">August 16, 2021</time> by Filip Keser
 https://go.designrr.io/special-pro-upgrade-special2yx
-
-## PINK PANDA – Šminka, kozmetika, make up i još svašta ;)
+Posted in webshop - online		PINK PANDA &#8211; Šminka, kozmetika, make up i još svašta&nbsp;;)
+Posted on <time class="entry-date published updated" datetime="2021-08-15T23:41:50+00:00">August 15, 2021</time> by Filip Keser
 https://www.pinkpanda.hr/
-
-## Home | LibreOffice – Free Office Suite – Based on OpenOffice – Compatible with Microsoft
+Posted in info		Home | LibreOffice &#8211; Free Office Suite &#8211; Based on OpenOffice &#8211; Compatible with&nbsp;Microsoft
+Posted on <time class="entry-date published updated" datetime="2021-08-15T23:39:27+00:00">August 15, 2021</time> by Filip Keser
 https://www.libreoffice.org/
-
-## Moj-eRačun – servis za slanje elektroničkih računa – e-računa – naslovna
+Posted in info		Moj-eRačun &#8211; servis za slanje elektroničkih računa &#8211; e-računa &#8211;&nbsp;naslovna
+Posted on <time class="entry-date published updated" datetime="2021-08-15T18:51:36+00:00">August 15, 2021</time> by Filip Keser
 https://www.moj-eracun.hr/cms/naslovna/
-
-## Apache OpenOffice – Official Site – The Free and Open Productivity Suite
+Posted in news &amp; co		Apache OpenOffice &#8211; Official Site &#8211; The Free and Open Productivity&nbsp;Suite
+Posted on <time class="entry-date published updated" datetime="2021-08-15T18:38:16+00:00">August 15, 2021</time> by Filip Keser
 http://www.openoffice.org/
-
-## Prevent Cybersecurity Breaches | Comodo Cybersecurity
+Posted in news &amp; co		Prevent Cybersecurity Breaches | Comodo&nbsp;Cybersecurity
+Posted on <time class="entry-date published updated" datetime="2021-08-15T18:36:58+00:00">August 15, 2021</time> by Filip Keser
 https://www.comodo.com/
-
-## Yippee
+Posted in news &amp; co		Yippee
+Posted on <time class="entry-date published updated" datetime="2021-08-15T18:15:32+00:00">August 15, 2021</time> by Filip Keser
 https://www.yippee.tv/
-
-## DiviCo | Gadgets on line
+Posted in info		DiviCo | Gadgets on&nbsp;line
+Posted on <time class="entry-date published updated" datetime="2021-08-15T10:57:29+00:00">August 15, 2021</time> by Filip Keser
 https://www.divico.hr/
-
-## Upwork | The World’s Work Marketplace for Freelancing
+Posted in info		Upwork | The World’s Work Marketplace for&nbsp;Freelancing
+Posted on <time class="entry-date published updated" datetime="2021-08-15T10:23:46+00:00">August 15, 2021</time> by Filip Keser
 https://www.upwork.com/
-
-## Bimi Boo – Bimi Boo – Educational toys, cartoons and apps for kids
+Posted in news &amp; co		Bimi Boo – Bimi Boo – Educational toys, cartoons and apps for&nbsp;kids
+Posted on <time class="entry-date published updated" datetime="2021-08-15T09:20:08+00:00">August 15, 2021</time> by Filip Keser
 https://bimiboo.com/
-
-## TechSmith Software, Services, and Apps | TechSmith
+Posted in info		TechSmith Software, Services, and Apps |&nbsp;TechSmith
+Posted on <time class="entry-date published updated" datetime="2021-08-15T09:08:45+00:00">August 15, 2021</time> by Filip Keser
 https://www.techsmith.com/products.html
-
-## Traverse Legal
+Posted in notes online		Traverse Legal
+Posted on <time class="entry-date published updated" datetime="2021-08-15T05:37:18+00:00">August 15, 2021</time> by Filip Keser
 https://www.traverselegal.com/
-
-## Amazon.co.uk Sign up for Prime Video
+Posted in info		Amazon.co.uk Sign up for Prime&nbsp;Video
+Posted on <time class="entry-date published updated" datetime="2021-08-14T19:51:57+00:00">August 14, 2021</time> by Filip Keser
 https://www.amazon.co.uk/gp/video/offers
-
-## Tom’s Guide | Tech Product Reviews, Top Picks and How To
+Posted in info		Tom&#8217;s Guide | Tech Product Reviews, Top Picks and How&nbsp;To
+Posted on <time class="entry-date published updated" datetime="2021-08-14T19:50:11+00:00">August 14, 2021</time> by Filip Keser
 https://www.tomsguide.com/
-
-## Amazon.com: Amazon Prime
+Posted in info		Amazon.com: Amazon Prime
+Posted on <time class="entry-date published updated" datetime="2021-08-14T19:49:01+00:00">August 14, 2021</time> by Filip Keser
 https://www.amazon.com/amazonprime
-
-## Iznajmljivači.hr – Portal za iznajmljivače privatnog smještaja
+Posted in online		Iznajmljivači.hr &#8211; Portal za iznajmljivače privatnog&nbsp;smještaja
+Posted on <time class="entry-date published updated" datetime="2021-08-14T17:33:34+00:00">August 14, 2021</time> by Filip Keser
 https://www.xn--iznajmljivai-yrb.hr/
-
-## Carmel Valley Hotels | Quail Lodge & Golf Club – Home | Monterey Peninsula Hotels
+Posted in online		Carmel Valley Hotels | Quail Lodge &amp; Golf Club – Home | Monterey Peninsula&nbsp;Hotels
+Posted on <time class="entry-date published updated" datetime="2021-08-14T11:07:41+00:00">August 14, 2021</time> by Filip Keser
 https://www.quaillodge.com/
-
-## Amazon.de: Günstige Preise für Elektronik & Foto, Filme, Musik, Bücher, Games, Spielzeug & mehr
+Posted in online		Amazon.de: Günstige Preise für Elektronik &amp; Foto, Filme, Musik, Bücher, Games, Spielzeug &amp;&nbsp;mehr
+Posted on <time class="entry-date published updated" datetime="2021-08-14T09:09:59+00:00">August 14, 2021</time> by Filip Keser
 https://www.amazon.de/
-
-## Carmel Valley Hotels | Quail Lodge & Golf Club – Home | Monterey Peninsula Hotels
+Carmel Valley Hotels | Quail Lodge &amp; Golf Club – Home | Monterey Peninsula&nbsp;Hotels
 https://www.quaillodge.com/
-
-## Home | Global | Siemens Energy Global
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-14T04:07:31+00:00">August 14, 2021</time> by Filip Keser
+Posted in online		Home | Global | Siemens Energy&nbsp;Global
+Posted on <time class="entry-date published updated" datetime="2021-08-13T16:43:11+00:00">August 13, 2021</time> by Filip Keser
 https://www.siemens-energy.com/global/en.html
-
-## Bluetooth gamepad and apple peripheral accessories full range of product models-Ten excellent brands of Bluetooth gamepad
+Posted in gaming		Bluetooth gamepad and apple peripheral accessories full range of product models-Ten excellent brands of Bluetooth&nbsp;gamepad
+Posted on <time class="entry-date published updated" datetime="2021-08-13T15:04:27+00:00">August 13, 2021</time> by Filip Keser
 http://m.ipega.hk/product.html
-
-## No compromise cloud performance | IONOS Cloud
+Posted in info		No compromise cloud performance | IONOS&nbsp;Cloud
+Posted on <time class="entry-date published updated" datetime="2021-08-13T14:41:19+00:00">August 13, 2021</time> by Filip Keser
 https://cloud.ionos.com/
-
-## Automatic Code Review, Testing, Inspection & Auditing | SonarCloud
+Posted in info		Automatic Code Review, Testing, Inspection &amp; Auditing |&nbsp;SonarCloud
+Posted on <time class="entry-date published updated" datetime="2021-08-13T10:37:30+00:00">August 13, 2021</time> by Filip Keser
 https://sonarcloud.io/
-
-## ⚡️ Download APK for Android (Free) – Fastest!
+Posted in gaming		⚡️ Download APK for Android (Free) &#8211;&nbsp;Fastest!
+Posted on <time class="entry-date published updated" datetime="2021-08-12T17:45:21+00:00">August 12, 2021</time> by Filip Keser
 https://apkcombo.com/
-
-## Nintendo Life – Nintendo Switch, eShop & Retro, News, Videos and Reviews
+Posted in gaming		Nintendo Life &#8211; Nintendo Switch, eShop &amp; Retro, News, Videos and&nbsp;Reviews
+Posted on <time class="entry-date published updated" datetime="2021-08-12T17:41:26+00:00">August 12, 2021</time> by Filip Keser
 https://www.nintendolife.com/
-
-## Free Online Courses – Business e Learning and Training | Shopify Compass
+Posted in news &amp; co		Free Online Courses &#8211; Business e Learning and Training | Shopify&nbsp;Compass
+Posted on <time class="entry-date published updated" datetime="2021-08-12T17:20:03+00:00">August 12, 2021</time> by Filip Keser
 https://www.shopify.com/learn
-
-## List Your Website for Sale | Buy and Sell Businesses
+Posted in info		List Your Website for Sale | Buy and Sell&nbsp;Businesses
+Posted on <time class="entry-date published updated" datetime="2021-08-12T15:23:20+00:00">August 12, 2021</time> by Filip Keser
 https://exchangemarketplace.com/create-a-listing
-
-## Ecommerce Websites & Businesses for Sale | Buy and Sell Online Sites
+Posted in info		Ecommerce Websites &amp; Businesses for Sale | Buy and Sell Online&nbsp;Sites
+Posted on <time class="entry-date published updated" datetime="2021-08-12T15:22:32+00:00">August 12, 2021</time> by Filip Keser
 https://exchangemarketplace.com/
-
-## Free Stock Photos: High-Res Images for Websites & Commercial Use
+Posted in info		Free Stock Photos: High-Res Images for Websites &amp; Commercial&nbsp;Use
+Posted on <time class="entry-date published updated" datetime="2021-08-12T15:21:24+00:00">August 12, 2021</time> by Filip Keser
 https://burst.shopify.com/
-
-## Free Stock Photos: High-Res Images for Websites & Commercial Use
+Posted in music		Free Stock Photos: High-Res Images for Websites &amp; Commercial&nbsp;Use
+Posted on <time class="entry-date published updated" datetime="2021-08-12T15:21:14+00:00">August 12, 2021</time> by Filip Keser
 https://burst.shopify.com/
-
-## Free Online Courses – Business e Learning and Training | Shopify Compass
+Posted in info		Free Online Courses &#8211; Business e Learning and Training | Shopify&nbsp;Compass
+Posted on <time class="entry-date published updated" datetime="2021-08-12T15:20:13+00:00">August 12, 2021</time> by Filip Keser
 https://www.shopify.com/learn
-
-## Start a Business, Grow Your Business – Shopify 14-Day Free Trial
+Posted in info		Start a Business, Grow Your Business &#8211; Shopify 14-Day Free&nbsp;Trial
+Posted on <time class="entry-date published updated" datetime="2021-08-12T15:19:13+00:00">August 12, 2021</time> by Filip Keser
 https://www.shopify.com/
-
-## Debutify – World’s Smartest Shopify Theme. Free 14-day Trial
+Posted in info		Debutify &#8211; World&#8217;s Smartest Shopify Theme. Free 14-day&nbsp;Trial
+Posted on <time class="entry-date published updated" datetime="2021-08-12T15:18:43+00:00">August 12, 2021</time> by Filip Keser
 https://debutify.com/
-
-## Tenjin – Free attribution, Ad Revenue LTV, Cost and ad revenue aggregation, Automation APIs, Internal BI on demand
+Posted in info		Tenjin &#8211; Free attribution, Ad Revenue LTV, Cost and ad revenue aggregation, Automation APIs, Internal BI on&nbsp;demand
+Posted on <time class="entry-date published updated" datetime="2021-08-12T12:30:05+00:00">August 12, 2021</time> by Filip Keser
 https://tenjin.com/
-
-## Online Courses – Learn Anything, On Your Schedule | Udemy
+Posted in info		Online Courses &#8211; Learn Anything, On Your Schedule |&nbsp;Udemy
+Posted on <time class="entry-date published updated" datetime="2021-08-12T12:28:29+00:00">August 12, 2021</time> by Filip Keser
 https://www.udemy.com/
-
-## 99000mah Solar Power Bank Wireless Fast Charger With SOS LED Light Portable Charging External Battery For Xiaomi Iphone Samsung
-99000mah Solar Power Bank Wireless Fast Charger With SOS LED Light Portable Charging External Battery For Xiaomi Iphone Samsung
-https://a.aliexpress.com/_mPruSwF
-
-## Dignet
+Posted in news &amp; co		99000mah Solar Power Bank Wireless Fast Charger With SOS LED Light Portable Charging External Battery For Xiaomi Iphone&nbsp;Samsung
+Posted on <time class="entry-date published updated" datetime="2021-08-12T09:11:44+00:00">August 12, 2021</time> by Filip Keser
+99000mah Solar Power Bank Wireless Fast Charger With SOS LED Light Portable Charging External Battery For Xiaomi Iphone Samsung https://a.aliexpress.com/_mPruSwF
+Posted in online		Dignet
+Posted on <time class="entry-date published updated" datetime="2021-08-12T09:00:53+00:00">August 12, 2021</time> by Filip Keser
 https://dignet.hr/home
-
-## Naslovna – UNIQA osiguranje
+Posted in online		Naslovna &#8211; UNIQA&nbsp;osiguranje
+Posted on <time class="entry-date published updated" datetime="2021-08-12T08:06:26+00:00">August 12, 2021</time> by Filip Keser
 https://www.uniqa.hr/
-
-## Sportsko učilište PESG Zagreb
+Posted in online		Sportsko učilište PESG&nbsp;Zagreb
+Posted on <time class="entry-date published updated" datetime="2021-08-12T08:02:18+00:00">August 12, 2021</time> by Filip Keser
 https://pesg.hr/
-
-## WordPress — jekyll-import • Import your old & busted site to Jekyll
+Posted in wordpress by fk		WordPress — jekyll-import • Import your old &amp; busted site to&nbsp;Jekyll
+Posted on <time class="entry-date published updated" datetime="2021-08-12T07:43:37+00:00">August 12, 2021</time> by Filip Keser
 https://import.jekyllrb.com/docs/wordpress/
-
-## StarMaker: Bring out the singer in you!
+Posted in music		StarMaker: Bring out the singer in&nbsp;you!
+Posted on <time class="entry-date published updated" datetime="2021-08-12T07:34:12+00:00">August 12, 2021</time> by Filip Keser
 https://starmakerstudios.com/
-
-## SpeedBike 72V 7000W Dual Engine Electric Scooter with double Motors drive good suspention E Scooter
-SpeedBike 72V 7000W Dual Engine Electric Scooter with double Motors drive good suspention E Scooter
-https://a.aliexpress.com/_mrR8NPv
-
-## Svi sportski događaji na jednom mjestu | SuperSport
+Posted in cars magazine		SpeedBike 72V 7000W Dual Engine Electric Scooter with double Motors drive good suspention E&nbsp;Scooter
+Posted on <time class="entry-date published updated" datetime="2021-08-12T07:09:15+00:00">August 12, 2021</time> by Filip Keser
+SpeedBike 72V 7000W Dual Engine Electric Scooter with double Motors drive good suspention E Scooter https://a.aliexpress.com/_mrR8NPv
+Posted in online		Svi sportski događaji na jednom mjestu |&nbsp;SuperSport
+Posted on <time class="entry-date published updated" datetime="2021-08-12T00:15:03+00:00">August 12, 2021</time> by Filip Keser
 https://m.supersport.hr/sport
-
-## MyWallSt – Investing For Everyone
+Posted in notes online		MyWallSt &#8211; Investing For&nbsp;Everyone
+Posted on <time class="entry-date published updated" datetime="2021-08-11T22:26:21+00:00">August 11, 2021</time> by Filip Keser
 https://mywallst.com/
-
-## Giga d.o.o. | Htz Oprema
+Posted in online		Giga d.o.o. | Htz&nbsp;Oprema
+Posted on <time class="entry-date published updated" datetime="2021-08-11T21:14:30+00:00">August 11, 2021</time> by Filip Keser
 https://giga.hr/
-
-## Ford Hrvatska
+Posted in cars magazine		Ford Hrvatska
+Posted on <time class="entry-date published updated" datetime="2021-08-11T19:11:38+00:00">August 11, 2021</time> by Filip Keser
 https://ford.hr/
-
-## Novi Mustang Mach-E
+Posted in cars magazine		Novi Mustang Mach-E
+Posted on <time class="entry-date published updated" datetime="2021-08-11T19:11:27+00:00">August 11, 2021</time> by Filip Keser
 https://ford.hr/mustang-mach-e
-
-## Naslovnica – ZŠEM
+Posted in online		Naslovnica &#8211; ZŠEM
+Posted on <time class="entry-date published updated" datetime="2021-08-11T18:22:32+00:00">August 11, 2021</time> by Filip Keser
 https://zsem.hr/
-
-## Edukacija – ZŠEM – Poslovna akademija – Cjeloživotno učenje
+Posted in online		Edukacija &#8211; ZŠEM &#8211; Poslovna akademija &#8211; Cjeloživotno&nbsp;učenje
+Posted on <time class="entry-date published updated" datetime="2021-08-11T18:22:18+00:00">August 11, 2021</time> by Filip Keser
 https://www.zsemakademija.hr/
-
-## Prikaži katalog – ebook024
+Posted in online		Prikaži katalog &#8211;&nbsp;ebook024
+Posted on <time class="entry-date published updated" datetime="2021-08-11T18:22:06+00:00">August 11, 2021</time> by Filip Keser
 https://www.ebook024.com/catalog
-
-## Knowing market history can help you weather volatility | Chase.com
+Knowing market history can help you weather volatility |&nbsp;Chase.com
 https://www.chase.com/personal/investments/learning-and-insights/article/investing-is-a-marathon-not-a-sprint
-
-## HIF – HRVATSKI INSTITUT ZA FINANCIJE
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-11T17:22:25+00:00">August 11, 2021</time> by Filip Keser
+Posted in online		HIF – HRVATSKI INSTITUT ZA&nbsp;FINANCIJE
+Posted on <time class="entry-date published updated" datetime="2021-08-11T15:10:49+00:00">August 11, 2021</time> by Filip Keser
 https://hif.hr/
-
-## Apple Trade In – Apple
+Posted in news &amp; co		Apple Trade In &#8211;&nbsp;Apple
+Posted on <time class="entry-date published updated" datetime="2021-08-11T14:59:22+00:00">August 11, 2021</time> by Filip Keser
 https://www.apple.com/shop/trade-in
-
-## Apple Store Online – Apple
+Posted in news &amp; co		Apple Store Online &#8211;&nbsp;Apple
+Posted on <time class="entry-date published updated" datetime="2021-08-11T14:57:21+00:00">August 11, 2021</time> by Filip Keser
 https://www.apple.com/store
-
-## Apple Card – Apple
+Posted in news &amp; co		Apple Card &#8211;&nbsp;Apple
+Posted on <time class="entry-date published updated" datetime="2021-08-11T14:57:10+00:00">August 11, 2021</time> by Filip Keser
 https://www.apple.com/apple-card/
-
-## App Store – Apple
+Posted in webshop - online		App Store &#8211;&nbsp;Apple
+Posted on <time class="entry-date published updated" datetime="2021-08-11T14:54:06+00:00">August 11, 2021</time> by Filip Keser
 https://www.apple.com/app-store/
-
-## Apple
+Posted in news &amp; co		Apple
+Posted on <time class="entry-date published updated" datetime="2021-08-11T14:52:34+00:00">August 11, 2021</time> by Filip Keser
 https://www.apple.com/
-
-## ‎Sketch Pad – My Drawing Board on the App Store
+Posted in news &amp; co		‎Sketch Pad &#8211; My Drawing Board on the App&nbsp;Store
+Posted on <time class="entry-date published updated" datetime="2021-08-11T14:52:22+00:00">August 11, 2021</time> by Filip Keser
 https://apps.apple.com/us/app/sketch-pad-my-drawing-board/id1048919894
-
-## Drazba.hr – Javne dražbe iz Hrvatske i inozemstva
+Posted in online		Drazba.hr &#8211; Javne dražbe iz Hrvatske i&nbsp;inozemstva
+Posted on <time class="entry-date published updated" datetime="2021-08-11T14:48:23+00:00">August 11, 2021</time> by Filip Keser
 https://www.drazba.hr/
-
-## Citi Personal Wealth Management
+Posted in notes online		Citi Personal Wealth&nbsp;Management
+Posted on <time class="entry-date published updated" datetime="2021-08-11T13:14:16+00:00">August 11, 2021</time> by Filip Keser
 https://investments.citi.com/nxi/login
-
-## Disneyland® Official Site
+Posted in online		Disneyland® Official Site
+Posted on <time class="entry-date published updated" datetime="2021-08-11T12:54:42+00:00">August 11, 2021</time> by Filip Keser
 https://disneyland.disney.go.com/
-
-## Apple Music
+Posted in music		Apple Music
+Posted on <time class="entry-date published updated" datetime="2021-08-11T12:53:29+00:00">August 11, 2021</time> by Filip Keser
 https://music.apple.com/us/browse
-
-## shopDisney | Official Site for Disney Merchandise
+Posted in gaming		shopDisney | Official Site for Disney&nbsp;Merchandise
+Posted on <time class="entry-date published updated" datetime="2021-08-11T12:27:43+00:00">August 11, 2021</time> by Filip Keser
 https://www.shopdisney.com/
-
-## Marvel Clothing, T Shirts, Sweatshirts & More | shopDisney
+Posted in gaming		Marvel Clothing, T Shirts, Sweatshirts &amp; More |&nbsp;shopDisney
+Posted on <time class="entry-date published updated" datetime="2021-08-11T12:25:14+00:00">August 11, 2021</time> by Filip Keser
 https://www.shopdisney.com/franchises/marvel/clothing/
-
-## Disney Visa Card | shopDisney
+Posted in gaming		Disney Visa Card |&nbsp;shopDisney
+Posted on <time class="entry-date published updated" datetime="2021-08-11T12:24:11+00:00">August 11, 2021</time> by Filip Keser
 https://www.sfcc-stg.shopdisney.com/disney-visa-card.html
-
-## shopDisney | Official Site for Disney Merchandise
+Posted in gaming		shopDisney | Official Site for Disney&nbsp;Merchandise
+Posted on <time class="entry-date published updated" datetime="2021-08-11T12:23:49+00:00">August 11, 2021</time> by Filip Keser
 https://www.shopdisney.com/
-
-## Chase Refer a Friend Checking: Earn up to $500 Cash | Chase
+Posted in partner/reseller		Chase Refer a Friend Checking: Earn up to $500 Cash |&nbsp;Chase
+Posted on <time class="entry-date published updated" datetime="2021-08-11T12:21:47+00:00">August 11, 2021</time> by Filip Keser
 https://accounts.chase.com/raf/landing
-
-## Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com
+Posted in gaming		Credit Card, Mortgage, Banking, Auto | Chase Online |&nbsp;Chase.com
+Posted on <time class="entry-date published updated" datetime="2021-08-11T11:47:02+00:00">August 11, 2021</time> by Filip Keser
 https://www.chase.com/
-
-## Shop Official Marvel Merchandise | shopDisney
+Posted in gaming		Shop Official Marvel Merchandise |&nbsp;shopDisney
+Posted on <time class="entry-date published updated" datetime="2021-08-11T11:44:40+00:00">August 11, 2021</time> by Filip Keser
 https://www.shopdisney.com/marvel-content/
-
-## Drag Racing 1/4 Mile times – DragTimes.com
+Posted in cars magazine		Drag Racing 1/4 Mile times &#8211;&nbsp;DragTimes.com
+Posted on <time class="entry-date published updated" datetime="2021-08-11T08:21:23+00:00">August 11, 2021</time> by Filip Keser
 http://www.dragtimes.com/
-
-## Global Investment Bank and Financial Services | Citi
+Global Investment Bank and Financial Services |&nbsp;Citi
 https://www.citigroup.com/citi/index.htm
-
-## Moja idealna veza | Terrakom
+Link&bull;		Posted on <time class="entry-date published updated" datetime="2021-08-11T08:16:22+00:00">August 11, 2021</time> by Filip Keser
+Posted in online		Moja idealna veza |&nbsp;Terrakom
+Posted on <time class="entry-date published updated" datetime="2021-08-11T06:47:57+00:00">August 11, 2021</time> by Filip Keser
 https://www.terrakom.hr/
-
-## Check VIN | Decoder | VIN | autoDNA
+Posted in online		Check VIN | Decoder | VIN |&nbsp;autoDNA
+Posted on <time class="entry-date published updated" datetime="2021-08-10T22:29:33+00:00">August 10, 2021</time> by Filip Keser
 https://www.autodna.com/
-
-## Stock Images, Royalty-Free Pictures, Illustrations & Videos – iStock
+Posted in music		Stock Images, Royalty-Free Pictures, Illustrations &amp; Videos &#8211;&nbsp;iStock
+Posted on <time class="entry-date published updated" datetime="2021-08-10T20:43:56+00:00">August 10, 2021</time> by Filip Keser
 https://www.istockphoto.com/
-
-## Download TikTok Video Without Watermark | sssTikTok.io
+Posted in news &amp; co		Download TikTok Video Without Watermark |&nbsp;sssTikTok.io
+Posted on <time class="entry-date published updated" datetime="2021-08-10T20:28:31+00:00">August 10, 2021</time> by Filip Keser
 https://ssstik.io/
-
-## IKEA.com – International homepage – IKEA
+Posted in online		IKEA.com – International homepage –&nbsp;IKEA
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:48:12+00:00">August 10, 2021</time> by Filip Keser
 https://www.ikea.com/
-
-## Namještaj i dekoracije za tvoj dom – IKEA
+Posted in webshop - online		Namještaj i dekoracije za tvoj dom &#8211;&nbsp;IKEA
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:48:01+00:00">August 10, 2021</time> by Filip Keser
 https://www.ikea.com/hr/hr/
-
-## Welcome to STAEDTLER
+Posted in online		Welcome to STAEDTLER
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:47:02+00:00">August 10, 2021</time> by Filip Keser
 https://www.staedtler.com/intl/en/
-
-## Sketch.IO – The Maker of Sketchpad
+Posted in news &amp; co		Sketch.IO &#8211; The Maker of&nbsp;Sketchpad
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:40:37+00:00">August 10, 2021</time> by Filip Keser
 https://sketch.io/
-
-## Online program
+Posted in online		Online program
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:40:12+00:00">August 10, 2021</time> by Filip Keser
 https://americanacademy.com/online/
-
-## Online program – americanacademy
+Posted in news &amp; co		Online program &#8211;&nbsp;americanacademy
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:40:03+00:00">August 10, 2021</time> by Filip Keser
 https://americanacademy.com/online/
-
-## American Academy
+Posted in online		American Academy
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:39:10+00:00">August 10, 2021</time> by Filip Keser
 https://americanacademy.com/
-
-## Hollywood Story: Fashion Star | Nanobit – Put Extra Into Ordinary
+Posted in online		Hollywood Story: Fashion Star | Nanobit &#8211; Put Extra Into&nbsp;Ordinary
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:36:59+00:00">August 10, 2021</time> by Filip Keser
 https://www.nanobit.com/games/hollywood-story-fashion-star/
-
-## Amazon.com. Spend less. Smile more.
+Posted in webshop - online		Amazon.com. Spend less. Smile&nbsp;more.
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:26:35+00:00">August 10, 2021</time> by Filip Keser
 https://www.amazon.com/
-
-## Sketchpad – Draw, Create, Share!
+Posted in news &amp; co		Sketchpad &#8211; Draw, Create,&nbsp;Share!
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:21:31+00:00">August 10, 2021</time> by Filip Keser
 https://sketch.io/sketchpad/
-
-## Span.eu – IT partner kojem ćete vjerovati godinama
+Posted in news &amp; co		Span.eu &#8211; IT partner kojem ćete vjerovati&nbsp;godinama
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:16:09+00:00">August 10, 2021</time> by Filip Keser
 https://www.span.eu/hr/
-
-## Empowering kids and adults through hands-on STEM experience – Circuitmess
+Posted in news &amp; co		Empowering kids and adults through hands-on STEM experience &#8211;&nbsp;Circuitmess
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:10:14+00:00">August 10, 2021</time> by Filip Keser
 https://circuitmess.com/
-
-## Get Qualified, Study 100% Online with VU | VU Online
+Posted in news &amp; co		Get Qualified, Study 100% Online with VU | VU&nbsp;Online
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:01:10+00:00">August 10, 2021</time> by Filip Keser
 https://online.vu.edu.au/study-online
-
-## Online Courses | VU Online
+Posted in news &amp; co		Online Courses | VU&nbsp;Online
+Posted on <time class="entry-date published updated" datetime="2021-08-10T19:00:28+00:00">August 10, 2021</time> by Filip Keser
 https://online.vu.edu.au/online-courses
-
-## Online MBA – Master of Business Administration | VU Online
+Posted in news &amp; co		Online MBA &#8211; Master of Business Administration | VU&nbsp;Online
+Posted on <time class="entry-date published updated" datetime="2021-08-10T18:47:51+00:00">August 10, 2021</time> by Filip Keser
 https://online.vu.edu.au/online-courses/mba
-
-## Suncani Hvar Hotels | Best hotels in Hvar Croatia | Official website
+Posted in online		Suncani Hvar Hotels | Best hotels in Hvar Croatia | Official&nbsp;website
+Posted on <time class="entry-date published updated" datetime="2021-08-10T18:34:09+00:00">August 10, 2021</time> by Filip Keser
 https://www.suncanihvar.com/
-
-## HOAKA SWIMWEAR – HOAKA SWIMWEAR INTERNATIONAL
+Posted in webshop - online		HOAKA SWIMWEAR – HOAKA SWIMWEAR&nbsp;INTERNATIONAL
+Posted on <time class="entry-date published updated" datetime="2021-08-10T18:03:34+00:00">August 10, 2021</time> by Filip Keser
 https://international.hoakaswimwear.com/
-
-## Tabou Stories: Love Episodes | Nanobit – Put Extra Into Ordinary
+Posted in gaming		Tabou Stories: Love Episodes | Nanobit &#8211; Put Extra Into&nbsp;Ordinary
+Posted on <time class="entry-date published updated" datetime="2021-08-10T17:37:35+00:00">August 10, 2021</time> by Filip Keser
 https://www.nanobit.com/games/tabou-stories-love-episodes/
-
-## My Story: Choose Your Own Path | Nanobit – Put Extra Into Ordinary
+Posted in gaming		My Story: Choose Your Own Path | Nanobit &#8211; Put Extra Into&nbsp;Ordinary
+Posted on <time class="entry-date published updated" datetime="2021-08-10T17:37:22+00:00">August 10, 2021</time> by Filip Keser
 https://www.nanobit.com/games/my-story-choose-your-own-path/
-
-## Hollywood Story: Fashion Star | Nanobit – Put Extra Into Ordinary
+Posted in gaming		Hollywood Story: Fashion Star | Nanobit &#8211; Put Extra Into&nbsp;Ordinary
+Posted on <time class="entry-date published updated" datetime="2021-08-10T17:37:09+00:00">August 10, 2021</time> by Filip Keser
 https://www.nanobit.com/games/hollywood-story-fashion-star/
-
-## Germania :: Naslovna stranica
+Posted in online		Germania :: Naslovna&nbsp;stranica
+Posted on <time class="entry-date published updated" datetime="2021-08-10T17:09:44+00:00">August 10, 2021</time> by Filip Keser
 https://www.germaniasport.hr/hr#/
-
-## autoevolution.com: automotive news and vehicle specifications
+Posted in cars magazine		autoevolution.com: automotive news and vehicle&nbsp;specifications
+Posted on <time class="entry-date published updated" datetime="2021-08-10T13:22:10+00:00">August 10, 2021</time> by Filip Keser
 https://www.autoevolution.com/
-
-## Signature
-All the best - https://companylink.business.blog/
+Posts navigation
+Older posts
+Follow Company &amp; news on WordPress.com
+SearchSearch⭐
+Rating: 1 out of 5.
+Company &amp; news
+#news
+action="https://wordpress.com/email-subscriptions"
+method="post"
+accept-charset="utf-8"
+data-blog="179042801"
+data-post_access_level="everybody"
+data-subscriber_email=""
+id="subscribe-blog"
+>
+id="subscribe-field-label"
+for="subscribe-field"
+class="screen-reader-text"
+>
+Type your email…
+required="required"
+type="email"
+name="email"
+autocomplete="email"
+class="no-border-radius "
+style="font-size: 16px;padding: 15px 23px 15px 23px;border-radius: 0px;border-width: 1px;"
+placeholder="Type your email…"
+value=""
+id="subscribe-field"
+title="Please fill in this field."
+/>
+>
+class="wp-block-button__link no-border-radius"
+style="font-size: 16px;padding: 15px 23px 15px 23px;margin: 0; margin-left: 10px;border-radius: 0px;border-width: 1px;"
+name="jetpack_subscriptions_widget"
+>
+Subscribe
+Skip to content ↓
+class="actnbr-pub-scratchpad actnbr-has-follow actnbr-has-actions">
+Subscribe
+Subscribed
+Company &amp; news
+Sign me up
+Already have a WordPress.com account? Log in now.
+Company &amp; news
+Subscribe
+Subscribed
+Sign up
+Log in
+Report this content
+View site in Reader
+Manage subscriptions
+Collapse this bar
+class="hide-on-button"
+data-hide-timeout="30"
+data-consent-expiration="180"
+id="eu-cookie-law"
+style="display: none"
+>
+Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use.
+To find out more, including how to control cookies, see here:
+Cookie Policy
+class="jp-carousel-wrap swiper jp-carousel-swiper-container jp-carousel-transitions"
+itemscope
+itemtype="https://schema.org/ImageGallery">
+Loading Comments...
+Write a Comment...
+<textarea
+name="comment"
+class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea"
+id="jp-carousel-comment-form-comment-field"
+placeholder="Write a Comment..."
+></textarea>
+Email (Required)
+Name (Required)
+Website
+type="submit"
+name="submit"
+class="jp-carousel-comment-form-button"
+id="jp-carousel-comment-form-button-submit"
+value="Post Comment" />
 
 ---
 
-# game zone online
+# gamezoneonlinegame.wordpress.com
 
 > **Source:** https://gamezoneonlinegame.wordpress.com/
-> **Analyzed At:** 2026-06-18T07:38:43.924362Z
-
-## funko
-https://funko.com/
-
-## otakumode
-https://otakumode.com/
-
-## earlygame
-https://earlygame.com/
-
-## bricklink
-https://www.bricklink.com/
-
-## play google &#8211; google play games
-https://play.google.com/googleplaygames
-
-## tracker
-https://tracker.gg/
-
-## THEPOINTSILVER &#8211; Tpsplays
-@Tpsplays - https://youtube.com/@TPSPlays
-
-
-
-@Tpscreative - https://youtube.com/@TPSCreative
-
-
-
-@Thepointsilver - https://youtube.com/@TPS-thepointsilver
-
-
-
-
-Tweets by skkipperping
-
-## FORTNITE
-https://www.epicgames.com/fortnite/en-US/home
-
-
-
-https://fortnite.gg/
-
-
-
-https://fortnitetracker.com/
-
-
-
-https://www.twitch.tv/directory/game/Fortnite
-
-
-
-https://www.youtube.com/@fortnite
-
-
-
-https://www.instagram.com/fortnite/
-
-
-
-  @fortnite
-
-
-
-
-Tweets by FortniteGame
-
-
-
-
-
-Tweets by FortniteStatus
-
-## gamepur
-https://www.gamepur.com/
-
-## loupedeck
-Front page
-
-## robolox
-https://www.roblox.com/home
-
-## minecraft
-https://www.minecraft.net/en-us
-
-## opencritic
-https://opencritic.com/
-
-## Tom &amp; Angela
-https://outfit7.com/applications/
-
-## iron source
-https://www.is.com/
-
-
-
-https://www.is.com/mobile-ad-network/
-
-## icryptogaming
-https://www.icryptogaming.com/
-
-## ubisoft
-https://store.ubi.com/
-
-
-
-https://ubisoft.com/
-
-## gismart karaoke
-Karaoke
-
-
-
-
-
-Products
-
-
-
-
+> **Analyzed At:** 2026-07-20T07:00:10.260Z
+
+### Content
+<title>game &#8211; online</title>
+Skip to content
+Menu
 Home
-
-## Twitch
+google ads game
+game
+online
+Featured
+Posted in gaming		Gzo &#8211; game-zone-online
+Posted on <time class="entry-date published updated" datetime="2024-11-28T17:22:24+00:00">November 28, 2024</time> by Filip Keser
+Featured
+Posted in gaming		funko
+Posted on <time class="entry-date published updated" datetime="2023-04-28T02:55:34+00:00">April 28, 2023</time> by Filip Keser
+https://funko.com/
+Featured
+Posted in gaming		otakumode
+Posted on <time class="entry-date published updated" datetime="2023-04-27T18:24:05+00:00">April 27, 2023</time> by Filip Keser
+https://otakumode.com/
+Featured
+Posted in gaming		play google &#8211; google play&nbsp;games
+Posted on <time class="entry-date published" datetime="2022-12-18T05:12:33+00:00">December 18, 2022</time><time class="updated" datetime="2023-03-21T12:01:55+00:00">March 21, 2023</time> by Filip Keser
+https://play.google.com/googleplaygames
+Featured
+Posted in gaming		THEPOINTSILVER &#8211; Tpsplays
+Posted on <time class="entry-date published" datetime="2022-12-09T08:11:19+00:00">December 9, 2022</time><time class="updated" datetime="2022-12-13T13:41:22+00:00">December 13, 2022</time> by Filip Keser
+@Tpsplays &#8211; https://youtube.com/@TPSPlays
+@Tpscreative &#8211; https://youtube.com/@TPSCreative
+@Thepointsilver &#8211; https://youtube.com/@TPS-thepointsilver
+Tweets by skkipperping
+Featured
+Posted in game, gaming		FORTNITE
+Posted on <time class="entry-date published" datetime="2022-12-09T06:40:26+00:00">December 9, 2022</time><time class="updated" datetime="2023-01-05T19:32:31+00:00">January 5, 2023</time> by Filip Keser
+https://www.epicgames.com/fortnite/en-US/home
+https://fortnite.gg/
+https://fortnitetracker.com/
+https://www.twitch.tv/directory/game/Fortnite
+https://www.youtube.com/@fortnite
+https://www.instagram.com/fortnite/
+@fortnite
+Tweets by FortniteGame
+Tweets by FortniteStatus
+Featured
+Posted in gaming		robolox
+Posted on <time class="entry-date published updated" datetime="2022-11-11T18:59:32+00:00">November 11, 2022</time> by Filip Keser
+https://www.roblox.com/home
+Featured
+Posted in gaming		minecraft
+Posted on <time class="entry-date published updated" datetime="2022-11-11T18:59:05+00:00">November 11, 2022</time> by Filip Keser
+https://www.minecraft.net/en-us
+Featured
+Posted in gaming		Tom &amp; Angela
+Posted on <time class="entry-date published updated" datetime="2022-10-27T20:11:58+00:00">October 27, 2022</time> by Filip Keser
+https://outfit7.com/applications/
+Featured
+Posted in gaming		icryptogaming
+Posted on <time class="entry-date published" datetime="2022-10-17T12:03:54+00:00">October 17, 2022</time><time class="updated" datetime="2022-10-17T13:00:58+00:00">October 17, 2022</time> by Filip Keser
+https://www.icryptogaming.com/
+Featured
+Posted in gaming		Twitch
+Posted on <time class="entry-date published updated" datetime="2022-10-12T19:14:45+00:00">October 12, 2022</time> by Filip Keser
 https://www.twitch.com/
-
-
-
 https://www.twitch.tv/
-
-## twitchcon
+Featured
+Posted in gaming		twitchcon
+Posted on <time class="entry-date published updated" datetime="2022-10-12T19:11:11+00:00">October 12, 2022</time> by Filip Keser
 https://www.twitchcon.com/
-
-## playrix 🌈🌠🏖
+Featured
+Posted in gaming		playrix 🌈🌠🏖
+Posted on <time class="entry-date published" datetime="2022-10-07T06:13:42+00:00">October 7, 2022</time><time class="updated" datetime="2022-10-07T06:15:34+00:00">October 7, 2022</time> by Filip Keser
 https://www.playrix.com/en/games/fishdom
-
-
-
 https://www.playrix.com/en/games/fishdom
-
-## bouncemasters &amp; other games
+Featured
+Posted in game		Warner Bros. Games
+Posted on <time class="entry-date published" datetime="2022-09-20T04:59:28+00:00">September 20, 2022</time><time class="updated" datetime="2022-09-20T05:04:16+00:00">September 20, 2022</time> by Filip Keser
+https://warnerbrosgames.com/
+Featured
+Posted in game, gaming		List of Latest Games |&nbsp;Gameloft
+Posted on <time class="entry-date published" datetime="2022-09-20T04:56:46+00:00">September 20, 2022</time><time class="updated" datetime="2022-09-20T05:03:59+00:00">September 20, 2022</time> by Filip Keser
+https://www.gameloft.com/games
+Featured
+Posted in game, gaming		Home &#8211; Marvel Contest of&nbsp;Champions
+Posted on <time class="entry-date published updated" datetime="2022-09-01T19:21:41+00:00">September 1, 2022</time> by Filip Keser
+https://playcontestofchampions.com/
+Featured
+Posted in game, gaming		NEW STATE MOBILE
+Posted on <time class="entry-date published updated" datetime="2022-08-30T16:35:44+00:00">August 30, 2022</time> by Filip Keser
+https://newstate.pubg.com/en
+Featured
+Posted in game, gaming		Buff &#8211; Level up Everywhere | Game to Get Items&nbsp;IRL
+Posted on <time class="entry-date published" datetime="2022-08-25T16:46:02+00:00">August 25, 2022</time><time class="updated" datetime="2022-08-28T12:24:07+00:00">August 28, 2022</time> by Filip Keser
+https://www.buff.game/
+BUFF
+Featured
+Posted in game, gaming		saintsrow
+Posted on <time class="entry-date published" datetime="2022-08-24T02:46:34+00:00">August 24, 2022</time><time class="updated" datetime="2022-08-24T02:48:57+00:00">August 24, 2022</time> by Filip Keser
+https://saintsrow.com/
+Featured
+Posted in gaming		NvidiaGeForceNow
+Posted on <time class="entry-date published" datetime="2022-05-20T15:11:29+00:00">May 20, 2022</time><time class="updated" datetime="2022-08-24T02:53:57+00:00">August 24, 2022</time> by Filip Keser
+https://www.nvidia.com/en-eu/geforce-now/
+https://www.nvidia.com/en-eu/geforce-now/download/
+https://play.geforcenow.com/
+https://www.nvidia.com/en-eu/geforce-now/fortnite-mobile/
+Featured
+Posted in gaming		rockstargames
+Posted on <time class="entry-date published" datetime="2022-05-05T19:07:40+00:00">May 5, 2022</time><time class="updated" datetime="2022-08-24T02:55:45+00:00">August 24, 2022</time> by Filip Keser
+https://www.rockstargames.com/games
+Featured
+Posted in gaming		Games for Android | Games for Mobile Phone | Razer Cortex&nbsp;🎮
+Posted on <time class="entry-date published" datetime="2022-04-30T14:18:50+00:00">April 30, 2022</time><time class="updated" datetime="2022-08-25T16:57:09+00:00">August 25, 2022</time> by Filip Keser
+https://www.razer.com/cortex/mobile
+Featured
+" data-large-file="https://gamezoneonlinegame.wordpress.com/wp-content/uploads/2022/05/a4116-pexels-photo-7133640.jpeg?w=840" />
+Posted in game, gaming		tpsplays
+Posted on <time class="entry-date published" datetime="2022-04-15T06:27:51+00:00">April 15, 2022</time><time class="updated" datetime="2022-05-20T16:21:58+00:00">May 20, 2022</time> by Filip Keser
+https://www.epicgames.com/fortnite/en-US/home
+Become a Patron!https://c6.patreon.com/becomePatronButton.bundle.js
+http://trgo.co/en/r/X5FiTd
+Featured
+Posted in gaming		blizzard
+Posted on <time class="entry-date published" datetime="2022-03-05T12:34:19+00:00">March 5, 2022</time><time class="updated" datetime="2022-03-26T08:40:20+00:00">March 26, 2022</time> by Filip Keser
+https://www.blizzard.com/en-us/
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in gaming		shop.battle.net
+Posted on <time class="entry-date published" datetime="2022-03-05T12:32:49+00:00">March 5, 2022</time><time class="updated" datetime="2022-03-26T08:31:22+00:00">March 26, 2022</time> by Filip Keser
+https://eu.shop.battle.net/en-gb
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in gaming		blizzard/battle.net/desktop
+Posted on <time class="entry-date published" datetime="2022-03-05T12:32:18+00:00">March 5, 2022</time><time class="updated" datetime="2022-03-26T08:41:24+00:00">March 26, 2022</time> by Filip Keser
+https://www.blizzard.com/en-us/apps/battle.net/desktop
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in gaming		riotgames
+Posted on <time class="entry-date published" datetime="2022-03-05T12:28:39+00:00">March 5, 2022</time><time class="updated" datetime="2022-03-26T08:42:38+00:00">March 26, 2022</time> by Filip Keser
+https://www.riotgames.com/en
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in gaming		epicgames
+Posted on <time class="entry-date published" datetime="2022-03-05T12:27:33+00:00">March 5, 2022</time><time class="updated" datetime="2022-03-26T08:43:14+00:00">March 26, 2022</time> by Filip Keser
+https://www.epicgames.com/store/en-US/
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in gaming		Downloads – Blizzard&nbsp;Entertainment
+Posted on <time class="entry-date published" datetime="2022-03-03T21:14:18+00:00">March 3, 2022</time><time class="updated" datetime="2022-03-26T08:44:42+00:00">March 26, 2022</time> by Filip Keser
+https://www.blizzard.com/en-us/download/
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in game, gaming		Blizzard Entertainment
+Posted on <time class="entry-date published" datetime="2022-03-03T21:12:28+00:00">March 3, 2022</time><time class="updated" datetime="2022-08-25T16:49:52+00:00">August 25, 2022</time> by Filip Keser
+https://www.blizzard.com/en-us/
+Featured
+Posted in gaming		business.facebook/creatorstudio
+Posted on <time class="entry-date published" datetime="2022-02-28T08:48:26+00:00">February 28, 2022</time><time class="updated" datetime="2022-03-26T08:45:33+00:00">March 26, 2022</time> by Filip Keser
+https://business.facebook.com/creatorstudio/home
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in gaming		The most powerful real-time 3D creation tool &#8211; Unreal&nbsp;Engine
+Posted on <time class="entry-date published" datetime="2022-02-26T11:04:49+00:00">February 26, 2022</time><time class="updated" datetime="2022-03-26T08:47:27+00:00">March 26, 2022</time> by Filip Keser
+https://www.unrealengine.com/en-US/
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in game, gaming		StreamElements | The Ultimate Streamer&nbsp;Platform
+Posted on <time class="entry-date published" datetime="2022-02-26T11:04:21+00:00">February 26, 2022</time><time class="updated" datetime="2022-03-26T08:48:03+00:00">March 26, 2022</time> by Filip Keser
+https://streamelements.com/
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in gaming		Epic Games Store | Download &amp; Play PC Games, Mods, DLC &amp; More – Epic&nbsp;Games
+Posted on <time class="entry-date published" datetime="2022-02-26T10:03:10+00:00">February 26, 2022</time><time class="updated" datetime="2022-03-26T08:49:02+00:00">March 26, 2022</time> by Filip Keser
+https://www.epicgames.com/store/en-US/
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in gaming		facebook/fbgaminghome/creators/getstarted/streamlabs
+Posted on <time class="entry-date published" datetime="2022-02-25T22:17:46+00:00">February 25, 2022</time><time class="updated" datetime="2022-03-26T08:49:52+00:00">March 26, 2022</time> by Filip Keser
+https://www.facebook.com/fbgaminghome/creators/getstarted/streamlabs
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in gaming		ck
+Posted on <time class="entry-date published" datetime="2022-02-25T21:26:45+00:00">February 25, 2022</time><time class="updated" datetime="2023-03-21T11:59:46+00:00">March 21, 2023</time> by Filip Keser
+https://www.facebook.com/corinnakopff/videos/
+https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6730670908080320
+(adsbygoogle = window.adsbygoogle || []).push({});
+Featured
+Posted in game, gaming		facebook/live/producer
+Posted on <time class="entry-date published" datetime="2022-02-25T18:53:56+00:00">February 25, 2022</time><time class="updated" datetime="2023-03-21T11:58:40+00:00">March 21, 2023</time> by Filip Keser
+https://www.facebook.com/live/producer
+Posted in gaming		earlygame
+Posted on <time class="entry-date published updated" datetime="2023-03-18T08:29:43+00:00">March 18, 2023</time> by Filip Keser
+https://earlygame.com/
+Posted in gaming		bricklink
+Posted on <time class="entry-date published updated" datetime="2023-01-08T00:12:50+00:00">January 8, 2023</time> by Filip Keser
+https://www.bricklink.com/
+Posted in gaming		tracker
+Posted on <time class="entry-date published updated" datetime="2022-12-13T13:43:33+00:00">December 13, 2022</time> by Filip Keser
+https://tracker.gg/
+Posted in gaming		gamepur
+Posted on <time class="entry-date published updated" datetime="2022-12-06T10:42:18+00:00">December 6, 2022</time> by Filip Keser
+https://www.gamepur.com/
+Posted in gaming		loupedeck
+Posted on <time class="entry-date published updated" datetime="2022-11-29T15:37:17+00:00">November 29, 2022</time> by Filip Keser
+Front page
+Posted in gaming		opencritic
+Posted on <time class="entry-date published updated" datetime="2022-11-06T09:45:33+00:00">November 6, 2022</time> by Filip Keser
+https://opencritic.com/
+Posted in gaming		iron source
+Posted on <time class="entry-date published updated" datetime="2022-10-23T20:15:17+00:00">October 23, 2022</time> by Filip Keser
+https://www.is.com/
+https://www.is.com/mobile-ad-network/
+Posted in gaming		ubisoft
+Posted on <time class="entry-date published updated" datetime="2022-10-14T11:43:30+00:00">October 14, 2022</time> by Filip Keser
+https://store.ubi.com/
+https://ubisoft.com/
+Posted in gaming		gismart karaoke
+Posted on <time class="entry-date published" datetime="2022-10-13T14:31:40+00:00">October 13, 2022</time><time class="updated" datetime="2022-10-13T14:36:12+00:00">October 13, 2022</time> by Filip Keser
+Karaoke
+Products
+Home
+Posted in gaming		bouncemasters &amp; other&nbsp;games
+Posted on <time class="entry-date published updated" datetime="2022-10-02T07:05:41+00:00">October 2, 2022</time> by Filip Keser
 https://aigames.ae/
-
-## Hangman
+Posted in gaming		Hangman
+Posted on <time class="entry-date published" datetime="2022-10-02T07:04:02+00:00">October 2, 2022</time><time class="updated" datetime="2022-10-02T07:04:46+00:00">October 2, 2022</time> by Filip Keser
 https://hangmanwordgame.com/
-
-## play together
+Posted in game		play together
+Posted on <time class="entry-date published updated" datetime="2022-10-02T06:50:44+00:00">October 2, 2022</time> by Filip Keser
 http://www.haegin.kr/games.php
-
-## knighthoodgame
+Posted in gaming		knighthoodgame
+Posted on <time class="entry-date published updated" datetime="2022-09-30T09:22:19+00:00">September 30, 2022</time> by Filip Keser
 https://knighthoodgame.com/
-
-## godzilalab ninja
+Posted in gaming		godzilalab ninja
+Posted on <time class="entry-date published updated" datetime="2022-09-30T09:21:36+00:00">September 30, 2022</time> by Filip Keser
 https://www.godzilab.ninja/
-
-## im30
+Posted in gaming		im30
+Posted on <time class="entry-date published" datetime="2022-09-30T09:18:18+00:00">September 30, 2022</time><time class="updated" datetime="2022-09-30T09:18:55+00:00">September 30, 2022</time> by Filip Keser
 Last Shelter : Survival
-
-
-
 https://www.im30.net/en/category/games/
-
-## Whaleapp
+Posted in gaming		Whaleapp
+Posted on <time class="entry-date published updated" datetime="2022-09-30T09:16:47+00:00">September 30, 2022</time> by Filip Keser
 https://www.whaleapp.com/solitaire-texas-village
-
-
-
 https://www.whaleapp.com/
-
-## Playkot
+Posted in gaming		Playkot
+Posted on <time class="entry-date published updated" datetime="2022-09-30T09:15:27+00:00">September 30, 2022</time> by Filip Keser
 https://playkot.com/
-
-## kixeye
+Posted in gaming		kixeye
+Posted on <time class="entry-date published updated" datetime="2022-09-30T09:14:05+00:00">September 30, 2022</time> by Filip Keser
 https://kixeye.com/game/imperiaonline
-
-
 https://kixeye.com/game/
-
-
-
 https://kixeye.com
-
-## Magnumquest
+Posted in gaming		Magnumquest
+Posted on <time class="entry-date published" datetime="2022-09-30T09:11:08+00:00">September 30, 2022</time><time class="updated" datetime="2022-09-30T09:12:23+00:00">September 30, 2022</time> by Filip Keser
 https://www.magnumquest.com/
-
-## igg
+Posted in gaming		igg
+Posted on <time class="entry-date published updated" datetime="2022-09-30T09:10:07+00:00">September 30, 2022</time> by Filip Keser
 https://www.igg.com
-
-## Gamesture
+Posted in gaming		Gamesture
+Posted on <time class="entry-date published updated" datetime="2022-09-30T09:09:06+00:00">September 30, 2022</time> by Filip Keser
 https://gamesture.com/
-
-## Plarium
+Posted in gaming		Plarium
+Posted on <time class="entry-date published updated" datetime="2022-09-30T09:07:42+00:00">September 30, 2022</time> by Filip Keser
 https://plarium.com/
-
-## Century games
+Posted in gaming		Century games
+Posted on <time class="entry-date published updated" datetime="2022-09-30T09:06:33+00:00">September 30, 2022</time> by Filip Keser
 Our Games
-
-## Easybrain &#8211; Simple Mobile Experiences
+Posted in gaming		Easybrain &#8211; Simple Mobile&nbsp;Experiences
+Posted on <time class="entry-date published updated" datetime="2022-09-27T20:21:29+00:00">September 27, 2022</time> by Filip Keser
 https://easybrain.com/
-
-## Okay?
+Posted in gaming		Okay?
+Posted on <time class="entry-date published updated" datetime="2022-09-27T12:29:16+00:00">September 27, 2022</time> by Filip Keser
 https://www.kamibox.de/okay
-
-## Orbital Nine Games
+Posted in gaming		Orbital Nine Games
+Posted on <time class="entry-date published updated" datetime="2022-09-27T12:28:37+00:00">September 27, 2022</time> by Filip Keser
 https://orbitalnine.com/
-
-## Fortnite Articles, Guides, &amp; Pro Player Tips | Game Hub | Scuf Gaming
+Posted in gaming		Fortnite Articles, Guides, &amp; Pro Player Tips | Game Hub | Scuf&nbsp;Gaming
+Posted on <time class="entry-date published updated" datetime="2022-09-25T18:00:07+00:00">September 25, 2022</time> by Filip Keser
 https://scufgaming.com/eu/gaming/fortnite
-
-## Signature
-All the best - https://gamezoneonlinegame.wordpress.com/
+Posted in game, gaming		SCUF® Custom Controllers | Best PS5, PS4, &amp; Xbox&nbsp;Controllers
+Posted on <time class="entry-date published updated" datetime="2022-09-25T17:43:08+00:00">September 25, 2022</time> by Filip Keser
+https://scufgaming.com
+Posted in gaming		All for minecraft
+Posted on <time class="entry-date published updated" datetime="2022-09-25T05:10:42+00:00">September 25, 2022</time> by Filip Keser
+https://lyxoto.com/
+Posted in gaming		Find new games
+Posted on <time class="entry-date published updated" datetime="2022-09-25T05:07:36+00:00">September 25, 2022</time> by Filip Keser
+https://www.50gameslike.com/
+Posted in gaming		(주)모비릭스
+Posted on <time class="entry-date published updated" datetime="2022-09-25T05:06:02+00:00">September 25, 2022</time> by Filip Keser
+https://www.mobirix.com/games/launching_game.html
+Posted in gaming		Digital Celebration For Gamers. By&nbsp;Gamers.
+Posted on <time class="entry-date published updated" datetime="2022-09-23T14:54:47+00:00">September 23, 2022</time> by Filip Keser
+https://www.razer.com/razercon
+Posted in gaming		MrBeast Burger
+Posted on <time class="entry-date published updated" datetime="2022-09-20T18:42:10+00:00">September 20, 2022</time> by Filip Keser
+https://mrbeastburger.com/
+Posted in gaming		Modern Combat Versus |&nbsp;Gameloft
+Posted on <time class="entry-date published updated" datetime="2022-09-20T05:01:42+00:00">September 20, 2022</time> by Filip Keser
+https://www.gameloft.com/game/modern-combat-versus
+Posted in gaming		N.O.V.A Legacy |&nbsp;Gameloft
+Posted on <time class="entry-date published updated" datetime="2022-09-20T05:01:20+00:00">September 20, 2022</time> by Filip Keser
+https://www.gameloft.com/game/nova-legacy-mobile
+Posted in gaming		Gameloft Official &#8211; #1 Mobile Video Games&nbsp;Developer
+Posted on <time class="entry-date published updated" datetime="2022-09-20T04:55:31+00:00">September 20, 2022</time> by Filip Keser
+https://www.gameloft.com/
+Posted in gaming		Rocket League Sideswipe | Rocket League&nbsp;Sideswipe
+Posted on <time class="entry-date published updated" datetime="2022-09-20T04:54:36+00:00">September 20, 2022</time> by Filip Keser
+https://sideswipe.rocketleague.com/
+Posted in gaming		Castle Crush &#8211; Legendary Monsters, Magic Arenas, Epic&nbsp;Duels.
+Posted on <time class="entry-date published updated" datetime="2022-09-19T12:10:30+00:00">September 19, 2022</time> by Filip Keser
+https://castlecrushgame.com/
+Posted in gaming		Wild Castle &#8211; Funovus | Game&nbsp;Studio
+Posted on <time class="entry-date published updated" datetime="2022-09-19T12:09:54+00:00">September 19, 2022</time> by Filip Keser
+https://www.funovus.com/games/wild-castle
+Posted in gaming		Trading Game &#8211; Forex, Bitcoin and Stock Market&nbsp;Game
+Posted on <time class="entry-date published updated" datetime="2022-09-19T12:08:23+00:00">September 19, 2022</time> by Filip Keser
+https://tradinggame.com/
+Posted in gaming		Afterverse
+Posted on <time class="entry-date published updated" datetime="2022-09-12T10:55:54+00:00">September 12, 2022</time> by Filip Keser
+https://www.afterverse.com/en
+Posted in gaming		Fanatical | Buy PC Games, Steam Keys, Game&nbsp;Bundles
+Posted on <time class="entry-date published updated" datetime="2022-09-11T15:55:43+00:00">September 11, 2022</time> by Filip Keser
+https://www.fanatical.com/en/
+Posted in gaming		Challengermode
+Posted on <time class="entry-date published updated" datetime="2022-09-11T13:54:17+00:00">September 11, 2022</time> by Filip Keser
+https://www.challengermode.com/
+Posted in gaming		Axlebolt
+Posted on <time class="entry-date published updated" datetime="2022-09-08T04:49:13+00:00">September 8, 2022</time> by Filip Keser
+https://axlebolt.com/en
+Posted in game, gaming		Bandai Namco Europe | Official&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-09-07T14:42:48+00:00">September 7, 2022</time> by Filip Keser
+https://en.bandainamcoent.eu/
+Posted in gaming		Kotaku | Gaming Reviews, News, Tips and&nbsp;More.
+Posted on <time class="entry-date published updated" datetime="2022-09-06T10:38:12+00:00">September 6, 2022</time> by Filip Keser
+https://kotaku.com/
+Posted in gaming		深圳市凉屋游戏科技有限公司
+Posted on <time class="entry-date published updated" datetime="2022-09-06T04:51:24+00:00">September 6, 2022</time> by Filip Keser
+http://www.chillyroom.com/en
+Posted in gaming		넷마블 | 모바일게임 &#8211; 즐거운 게임세상&nbsp;넷마블!
+Posted on <time class="entry-date published updated" datetime="2022-09-05T18:47:09+00:00">September 5, 2022</time> by Filip Keser
+http://www.netmarble.net/mobile
+Posted in gaming		MARVEL Collect! by Topps &#8211;&nbsp;Topps
+Posted on <time class="entry-date published updated" datetime="2022-09-05T18:45:19+00:00">September 5, 2022</time> by Filip Keser
+https://play.toppsapps.com/app/marvel-collect
+Posted in gaming		Monopoly &#8211; the classic board game on mobile by Marmalade Game&nbsp;Studio
+Posted on <time class="entry-date published updated" datetime="2022-09-04T05:14:39+00:00">September 4, 2022</time> by Filip Keser
+https://www.marmaladegamestudio.com/games/monopoly/
+Posted in gaming		Marmalade Game Studio
+Posted on <time class="entry-date published updated" datetime="2022-09-04T05:14:26+00:00">September 4, 2022</time> by Filip Keser
+https://www.marmaladegamestudio.com/games/
+Posted in gaming		Kitka Games – Game&nbsp;Studio
+Posted on <time class="entry-date published updated" datetime="2022-09-04T03:39:49+00:00">September 4, 2022</time> by Filip Keser
+https://kitkagames.com/
+Posted in gaming		Kitka Games – Game&nbsp;Studio
+Posted on <time class="entry-date published updated" datetime="2022-09-03T07:58:40+00:00">September 3, 2022</time> by Filip Keser
+https://kitkagames.com/
+Posted in game, gaming		Official thepointsilver Merch /&nbsp;Streamlabs
+Posted on <time class="entry-date published updated" datetime="2022-09-02T14:17:59+00:00">September 2, 2022</time> by Filip Keser
+https://streamlabs.com/thepointsilver/merch
+Posted in gaming		The New Razer Gold &amp;&nbsp;Silver
+Posted on <time class="entry-date published updated" datetime="2022-09-01T18:43:44+00:00">September 1, 2022</time> by Filip Keser
+https://gold.razer.com/
+Posted in gaming		해긴
+Posted on <time class="entry-date published updated" datetime="2022-08-30T16:34:17+00:00">August 30, 2022</time> by Filip Keser
+http://www.haegin.kr
+Posted in gaming		Rekall Games | Free cross-platform mobile &amp; PC action&nbsp;games
+Posted on <time class="entry-date published updated" datetime="2022-08-30T16:33:27+00:00">August 30, 2022</time> by Filip Keser
+https://www.rekall.games/
+Posted in gaming		AZUR GAMES
+Posted on <time class="entry-date published updated" datetime="2022-08-30T16:32:23+00:00">August 30, 2022</time> by Filip Keser
+https://azurgames.com/games/
+Posted in gaming		HappyfishGames
+Posted on <time class="entry-date published updated" datetime="2022-08-30T16:31:44+00:00">August 30, 2022</time> by Filip Keser
+http://www.tangram-games.com/
+Posted in game, gaming		Immortal Game &#8211; The next generation of chess platform powered by&nbsp;blockchain
+Posted on <time class="entry-date published updated" datetime="2022-08-29T21:36:04+00:00">August 29, 2022</time> by Filip Keser
+https://immortal.game/
+Posted in gaming		Games &#8211; Unico
+Posted on <time class="entry-date published updated" datetime="2022-08-25T17:03:05+00:00">August 25, 2022</time> by Filip Keser
+https://unicostudio.co/games.html
+Posted in game, gaming		LootBoy
+Posted on <time class="entry-date published updated" datetime="2022-08-25T16:43:58+00:00">August 25, 2022</time> by Filip Keser
+https://www.lootboy.com/
+Posted in gaming		Gismart » Leading mobile app and game&nbsp;publisher
+Posted on <time class="entry-date published updated" datetime="2022-08-20T03:36:56+00:00">August 20, 2022</time> by Filip Keser
+https://gismart.com/
+Posted in gaming		Ketchapp &#8211; Games
+Posted on <time class="entry-date published updated" datetime="2022-08-20T03:36:26+00:00">August 20, 2022</time> by Filip Keser
+http://www.ketchappgames.com/games/
+Posted in gaming		SEGA
+Posted on <time class="entry-date published updated" datetime="2022-08-19T13:02:40+00:00">August 19, 2022</time> by Filip Keser
+https://www.sega.com/
+Posted in gaming		Online Gaming shop: Desktop PCs, Laptops, Keyboards, Monitors | SCAN&nbsp;UK
+Posted on <time class="entry-date published updated" datetime="2022-08-19T11:46:30+00:00">August 19, 2022</time> by Filip Keser
+https://www.scan.co.uk/shop/gaming
+Posted in gaming		ASUS
+Posted on <time class="entry-date published updated" datetime="2022-08-19T11:13:44+00:00">August 19, 2022</time> by Filip Keser
+ASUS
+title="wp_story1660907622205_0"
+alt=""
+class="wp-block-jetpack-story_image wp-story-image wp-story-crop-wide"
+src="https://gamezoneonlinegame.wordpress.com/wp-content/uploads/2022/08/wp_story1660907622205_0_mp4_std.original.jpg?w=840"
+/>
+Posted in gaming		https://web.facebook.com/creators
+Posted on <time class="entry-date published updated" datetime="2022-08-19T11:08:15+00:00">August 19, 2022</time> by Filip Keser
+https://web.facebook.com/creators
+title=""
+alt=""
+class="wp-block-jetpack-story_image wp-story-image "
+src="https://gamezoneonlinegame.wordpress.com/wp-content/uploads/2022/08/wp_story1660907295690_0.jpg"
+/>
+Posted in game		Microverse Disney
+Posted on <time class="entry-date published updated" datetime="2022-08-18T07:06:03+00:00">August 18, 2022</time> by Filip Keser
+Microverse Disney
+title=""
+alt=""
+class="wp-block-jetpack-story_image wp-story-image "
+src="https://gamezoneonlinegame.wordpress.com/wp-content/uploads/2022/08/wp_story1660806362917_0.jpg"
+/>
+Posted in gaming		Play Games You Own. Find Games You Want. | NVIDIA GeForce NOW &#8211; games&nbsp;list
+Posted on <time class="entry-date published updated" datetime="2022-08-17T01:46:56+00:00">August 17, 2022</time> by Filip Keser
+https://www.nvidia.com/en-us/geforce-now/games/
+Posted in gaming		Your Games. Your Devices. Play Anywhere | NVIDIA GeForce&nbsp;NOW
+Posted on <time class="entry-date published updated" datetime="2022-08-17T00:52:37+00:00">August 17, 2022</time> by Filip Keser
+https://www.nvidia.com/en-eu/geforce-now/
+Posted in gaming		LEGO.com for kids
+Posted on <time class="entry-date published updated" datetime="2022-08-14T18:30:31+00:00">August 14, 2022</time> by Filip Keser
+https://www.lego.com/en-us/kids
+Posted in gaming		LEGO® Marvel Collection &#8211; WB&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2022-08-14T18:29:47+00:00">August 14, 2022</time> by Filip Keser
+https://warnerbrosgames.com/game/LEGO-marvel-collection
+Posted in gaming		Marvel Contest of&nbsp;Champions
+Posted on <time class="entry-date published updated" datetime="2022-08-10T07:12:53+00:00">August 10, 2022</time> by Filip Keser
+https://playcontestofchampions.com/
+Posted in gaming		SuperMii-Cartoon Avatar Maker
+Posted on <time class="entry-date published updated" datetime="2022-08-07T10:03:54+00:00">August 7, 2022</time> by Filip Keser
+https://www.supermii.cn/
+Posted in gaming		TweenCraft: Making Cartoon Video&nbsp;Tools
+Posted on <time class="entry-date published updated" datetime="2022-08-07T09:59:40+00:00">August 7, 2022</time> by Filip Keser
+http://www.tweencraft.com/
+Posted in gaming		Toontastic 3D | Creative Storytelling&nbsp;App
+Posted on <time class="entry-date published updated" datetime="2022-08-07T09:55:07+00:00">August 7, 2022</time> by Filip Keser
+https://toontastic.withgoogle.com/
+Posted in gaming		Toontastic 3D | Creative Storytelling&nbsp;App
+Posted on <time class="entry-date published updated" datetime="2022-08-07T09:54:37+00:00">August 7, 2022</time> by Filip Keser
+https://toontastic.withgoogle.com/
+Posted in gaming		Best Fiends
+Posted on <time class="entry-date published updated" datetime="2022-08-02T18:32:07+00:00">August 2, 2022</time> by Filip Keser
+https://bestfiends.com/
+Posted in gaming		Clash of Clans iOS and Android Mobile Strategy War Game. Download Free&nbsp;Today!
+Posted on <time class="entry-date published updated" datetime="2022-08-02T05:31:25+00:00">August 2, 2022</time> by Filip Keser
+https://clashofclans.com/
+Posted in gaming		Clash.com
+Posted on <time class="entry-date published updated" datetime="2022-08-02T05:30:59+00:00">August 2, 2022</time> by Filip Keser
+https://clash.com/en
+Posted in gaming		Kabam | The best in mobile&nbsp;gaming
+Posted on <time class="entry-date published updated" datetime="2022-08-01T14:29:15+00:00">August 1, 2022</time> by Filip Keser
+https://kabam.com/games/
+Posted in gaming		Royalty Free Music for video creators | Epidemic&nbsp;Sound
+Posted on <time class="entry-date published updated" datetime="2022-07-31T15:02:26+00:00">July 31, 2022</time> by Filip Keser
+https://www.epidemicsound.com/
+Posted in gaming		BlueStacks – Best Mobile Gaming Platform for PC &amp; Mac | 100% Safe and&nbsp;FREE
+Posted on <time class="entry-date published updated" datetime="2022-07-30T15:13:42+00:00">July 30, 2022</time> by Filip Keser
+https://www.bluestacks.com/
+Posted in gaming		Pocket Tactics | Mobile gaming&nbsp;guides
+Posted on <time class="entry-date published updated" datetime="2022-07-30T15:05:17+00:00">July 30, 2022</time> by Filip Keser
+https://www.pockettactics.com/
+Posted in gaming		The Best Android Emulator for PC | GameLoop Official&nbsp;2022
+Posted on <time class="entry-date published updated" datetime="2022-07-30T15:03:12+00:00">July 30, 2022</time> by Filip Keser
+https://www.gameloop.com/
+Posted in gaming		Search and dowload all mobile games on GameLoop Android game platform | GameLoop&nbsp;Official
+Posted on <time class="entry-date published updated" datetime="2022-07-30T15:02:59+00:00">July 30, 2022</time> by Filip Keser
+https://www.gameloop.com/game
+Posted in gaming		GameLoop.VIP Pure Android Emulator Client&nbsp;Download
+Posted on <time class="entry-date published updated" datetime="2022-07-30T15:02:27+00:00">July 30, 2022</time> by Filip Keser
+https://gameloop.vip/
+Posted in gaming		VEGAS Post: Full stack video&nbsp;production
+Posted on <time class="entry-date published updated" datetime="2022-07-30T14:49:42+00:00">July 30, 2022</time> by Filip Keser
+https://www.vegascreativesoftware.com/us/vegas-post/
+Posted in gaming		Fortnite Competitive
+Posted on <time class="entry-date published updated" datetime="2022-07-30T14:48:04+00:00">July 30, 2022</time> by Filip Keser
+https://www.epicgames.com/fortnite/competitive/en-US/news
+Posted in gaming		G2A.COM &#8211; You Lose When You Overpay. Play More, Pay&nbsp;Less!
+Posted on <time class="entry-date published updated" datetime="2022-07-29T11:41:08+00:00">July 29, 2022</time> by Filip Keser
+https://www.g2a.com/
+Posted in gaming		Instant-Gaming.com &#8211; Your favorites PC/MAC games up to 70% off! Digital games, Instant Delivery,&nbsp;24/7!
+Posted on <time class="entry-date published updated" datetime="2022-07-29T11:40:44+00:00">July 29, 2022</time> by Filip Keser
+https://www.instant-gaming.com/en/
+Posted in gaming		game | tap4fun
+Posted on <time class="entry-date published updated" datetime="2022-07-25T07:58:46+00:00">July 25, 2022</time> by Filip Keser
+https://www.tap4fun.com/game/en
+Posted in gaming		Gift Card Promotions, Where to Buy, &amp; Management &#8211; Google&nbsp;Play
+Posted on <time class="entry-date published" datetime="2022-07-21T18:07:20+00:00">July 21, 2022</time><time class="updated" datetime="2023-03-21T12:02:37+00:00">March 21, 2023</time> by Filip Keser
+https://play.google.com/about/giftcards/
+Posted in gaming		Gamepur | Video Game Guides, News, Features, and&nbsp;More
+Posted on <time class="entry-date published updated" datetime="2022-07-19T06:12:18+00:00">July 19, 2022</time> by Filip Keser
+https://www.gamepur.com/
+Posted in gaming		Raven Software | Our&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2022-07-19T06:11:57+00:00">July 19, 2022</time> by Filip Keser
+https://www.ravensoftware.com/game
+Posted in gaming		Steam
+Posted on <time class="entry-date published updated" datetime="2022-07-12T05:31:09+00:00">July 12, 2022</time> by Filip Keser
+https://store.steampowered.com/
+Posted in gaming		ALARA Prime &#8211; 3 Team Tactical Shooter &#8211; Pre-Alpha&nbsp;Access
+Posted on <time class="entry-date published updated" datetime="2022-07-12T05:30:51+00:00">July 12, 2022</time> by Filip Keser
+https://www.playalara.com/
+Posted in gaming		Gematsu &#8211; Japanese Video Game&nbsp;News
+Posted on <time class="entry-date published updated" datetime="2022-07-12T05:30:17+00:00">July 12, 2022</time> by Filip Keser
+https://www.gematsu.com/
+Posted in gaming		PC Game System Requirements, News And Hardware Test&nbsp;Tools
+Posted on <time class="entry-date published updated" datetime="2022-06-02T18:58:44+00:00">June 2, 2022</time> by Filip Keser
+https://www.game-debate.com/
+Posted in gaming		Womplay | Play Premium Games &amp; Earn&nbsp;NFTs
+Posted on <time class="entry-date published updated" datetime="2022-06-01T06:26:17+00:00">June 1, 2022</time> by Filip Keser
+https://womplay.io/
+Posted in gaming		Easybrain &#8211; Simple Mobile&nbsp;Experiences
+Posted on <time class="entry-date published updated" datetime="2022-05-25T15:20:06+00:00">May 25, 2022</time> by Filip Keser
+https://easybrain.com/
+Posted in gaming		Razer Best Gaming Laptops | Top-Rated Powerful Gaming Laptops&nbsp;💻
+Posted on <time class="entry-date published updated" datetime="2022-05-23T05:37:52+00:00">May 23, 2022</time> by Filip Keser
+https://www.razer.com/pc/gaming-laptops
+Posted in gaming		Discover | Adobe Creative&nbsp;Cloud
+Posted on <time class="entry-date published updated" datetime="2022-05-22T18:19:00+00:00">May 22, 2022</time> by Filip Keser
+https://creativecloud.adobe.com/
+Posted in gaming		VEGAS Pro: Video &amp; audio for&nbsp;professionals
+Posted on <time class="entry-date published updated" datetime="2022-05-21T20:05:21+00:00">May 21, 2022</time> by Filip Keser
+https://www.vegascreativesoftware.com/us/vegas-pro/
+Posted in gaming		VEGAS Pro: Video &amp; audio for&nbsp;professionals
+Posted on <time class="entry-date published updated" datetime="2022-05-21T19:59:47+00:00">May 21, 2022</time> by Filip Keser
+https://www.vegascreativesoftware.com/us/vegas-pro/
+Posted in gaming		overwolf
+Posted on <time class="entry-date published updated" datetime="2022-05-20T10:27:31+00:00">May 20, 2022</time> by Filip Keser
+https://www.overwolf.com/
+Posted in gaming		Pricing | Patreon
+Posted on <time class="entry-date published updated" datetime="2022-05-19T15:31:50+00:00">May 19, 2022</time> by Filip Keser
+https://www.patreon.com/pricing
+Posted in gaming		Shorter Link &#8211; The Easiest Way to Share Your&nbsp;Content
+Posted on <time class="entry-date published updated" datetime="2022-05-18T13:04:22+00:00">May 18, 2022</time> by Filip Keser
+https://shorter.link/founders/
+Posted in gaming		EA Play &amp; EA Play Pro Game Memberships | Origin |&nbsp;Origin
+Posted on <time class="entry-date published updated" datetime="2022-05-17T20:13:00+00:00">May 17, 2022</time> by Filip Keser
+https://www.origin.com/irl/en-us/store/ea-play
+Posted in gaming		EA Play &#8211; EA Video Game Membership &#8211; EA Official&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-05-17T20:12:49+00:00">May 17, 2022</time> by Filip Keser
+https://www.ea.com/ea-play
+Posted in gaming		Command &amp; Conquer Remastered &#8211; EA Official&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-05-17T20:12:40+00:00">May 17, 2022</time> by Filip Keser
+https://www.ea.com/games/command-and-conquer/command-and-conquer-remastered
+Posted in gaming		EA Play Pro for PC &#8211; Video Game Subscription Service &#8211; Electronic&nbsp;Arts
+Posted on <time class="entry-date published updated" datetime="2022-05-17T20:12:10+00:00">May 17, 2022</time> by Filip Keser
+https://www.ea.com/ea-play/games-ea-play-pro
+Posted in gaming		Origin
+Posted on <time class="entry-date published updated" datetime="2022-05-17T20:10:30+00:00">May 17, 2022</time> by Filip Keser
+https://www.origin.com/irl/en-us/store
+Posted in gaming		Apex Legends™ for PC |&nbsp;Origin
+Posted on <time class="entry-date published updated" datetime="2022-05-17T20:10:01+00:00">May 17, 2022</time> by Filip Keser
+https://www.origin.com/irl/en-us/store/apex/apex
+Posted in gaming		Apex Legends™ for PC |&nbsp;Origin
+Posted on <time class="entry-date published updated" datetime="2022-05-17T20:09:47+00:00">May 17, 2022</time> by Filip Keser
+https://www.origin.com/irl/en-us/store/apex/apex
+Posted in gaming		Apex Legends &#8211; The Next Evolution of Hero Shooter &#8211; Free to&nbsp;Play
+Posted on <time class="entry-date published updated" datetime="2022-05-17T20:09:41+00:00">May 17, 2022</time> by Filip Keser
+https://www.ea.com/games/apex-legends
+Posted in gaming		ORIGIN PC | Gaming PCs, Gaming Laptops, Custom&nbsp;Computers
+Posted on <time class="entry-date published updated" datetime="2022-05-17T20:09:15+00:00">May 17, 2022</time> by Filip Keser
+https://www.originpc.com/
+Posted in gaming		Alienware Laptops | Dell&nbsp;USA
+Posted on <time class="entry-date published updated" datetime="2022-05-17T17:25:57+00:00">May 17, 2022</time> by Filip Keser
+https://www.dell.com/en-us/shop/dell-laptops/sr/laptops/alienware-laptops
+Posted in gaming		Dell Gaming Laptops: G-series | Dell&nbsp;USA
+Posted on <time class="entry-date published updated" datetime="2022-05-17T17:23:37+00:00">May 17, 2022</time> by Filip Keser
+https://www.dell.com/en-us/shop/dell-laptops/sr/laptops/g-series
+Posted in gaming		Welcome to Steam
+Posted on <time class="entry-date published updated" datetime="2022-05-17T06:14:17+00:00">May 17, 2022</time> by Filip Keser
+https://store.steampowered.com/
+Posted in gaming		Electronic Arts Home Page &#8211; Official EA&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-05-17T06:13:43+00:00">May 17, 2022</time> by Filip Keser
+https://www.ea.com/
+Posted in gaming		Play Apex Legends Now &#8211; The Next Evolution of Battle Royale &#8211; Free on PlayStation®4, PlayStation®5, Xbox One, Xbox Series X|S, Nintendo Switch, and PC via Origin and&nbsp;Steam
+Posted on <time class="entry-date published updated" datetime="2022-05-17T06:13:26+00:00">May 17, 2022</time> by Filip Keser
+https://www.ea.com/games/apex-legends/play-now-for-free
+Posted in gaming		Apex Legends™ on&nbsp;Steam
+Posted on <time class="entry-date published updated" datetime="2022-05-17T06:13:16+00:00">May 17, 2022</time> by Filip Keser
+https://store.steampowered.com/app/1172470/Apex_Legends/
+Posted in gaming		Cookie Run: OvenBreak
+Posted on <time class="entry-date published updated" datetime="2022-05-17T04:31:43+00:00">May 17, 2022</time> by Filip Keser
+https://game.devsisters.com/en/cookierun/#hot-issue
+Posted in gaming		Welcome | Intel&#8217;s Gaming Support&nbsp;Hub
+Posted on <time class="entry-date published updated" datetime="2022-05-13T17:24:38+00:00">May 13, 2022</time> by Filip Keser
+https://gameplay.intel.com/
+Posted in gaming		Hot Wheels
+Posted on <time class="entry-date published updated" datetime="2022-05-13T13:50:38+00:00">May 13, 2022</time> by Filip Keser
+https://hotwheelsunleashed.com/
+Posted in gaming		FUNKO HOME |&nbsp;Funko
+Posted on <time class="entry-date published updated" datetime="2022-05-13T13:24:52+00:00">May 13, 2022</time> by Filip Keser
+https://www.funko.com/
+Posted in gaming		HyperX &#8211; Gaming Headsets, Keyboards &amp; More – WE’RE ALL GAMERS |&nbsp;HyperX
+Posted on <time class="entry-date published updated" datetime="2022-05-13T06:19:43+00:00">May 13, 2022</time> by Filip Keser
+https://www.hyperxgaming.com/en
+Posted in gaming		Professional video editing software | Adobe Premiere&nbsp;Pro
+Posted on <time class="entry-date published updated" datetime="2022-05-11T06:07:57+00:00">May 11, 2022</time> by Filip Keser
+https://www.adobe.com/products/premiere.html
+Posted in gaming		Royalty Free Music for video creators | Epidemic&nbsp;Sound
+Posted on <time class="entry-date published updated" datetime="2022-05-11T05:59:44+00:00">May 11, 2022</time> by Filip Keser
+https://www.epidemicsound.com/
+Posted in gaming		Buy Music Editing and Notation Software, Video Editing Software &#8211;&nbsp;Avid
+Posted on <time class="entry-date published updated" datetime="2022-05-10T19:46:24+00:00">May 10, 2022</time> by Filip Keser
+https://shop.avid.com/
+Posted in gaming		Fortnite – Microsoft&nbsp;Store
+Posted on <time class="entry-date published" datetime="2022-05-08T18:43:40+00:00">May 8, 2022</time><time class="updated" datetime="2022-05-08T18:44:30+00:00">May 8, 2022</time> by Filip Keser
+https://www.microsoft.com/fortnite/
+Posted in gaming		Xbox Cloud Gaming (Beta) on&nbsp;Xbox.com
+Posted on <time class="entry-date published updated" datetime="2022-05-08T18:42:52+00:00">May 8, 2022</time> by Filip Keser
+https://www.xbox.com/en-us/play
+Posted in gaming		KRISP
+Posted on <time class="entry-date published updated" datetime="2022-05-07T09:46:59+00:00">May 7, 2022</time> by Filip Keser
+https://krisp.ai/
+Posted in gaming		rog.asus
+Posted on <time class="entry-date published updated" datetime="2022-05-05T21:26:24+00:00">May 5, 2022</time> by Filip Keser
+https://rog.asus.com/
+Posted in gaming		rog.asus/armoury-crate
+Posted on <time class="entry-date published updated" datetime="2022-05-05T21:25:10+00:00">May 5, 2022</time> by Filip Keser
+https://rog.asus.com/armoury-crate/
+Posted in gaming		Twitter for Business | Twitter tips, tools, and best&nbsp;practices
+Posted on <time class="entry-date published updated" datetime="2022-05-05T10:23:17+00:00">May 5, 2022</time> by Filip Keser
+https://business.twitter.com/en.html
+Posted in gaming		Crytek &#8211; video game developer, makers of&nbsp;CRYENGINE
+Posted on <time class="entry-date published" datetime="2022-05-05T09:40:18+00:00">May 5, 2022</time><time class="updated" datetime="2022-05-05T09:46:24+00:00">May 5, 2022</time> by Filip Keser
+https://www.crytek.com/
+Posted in gaming		ROG &#8211; Republic of Gamers｜Global | For Those Who&nbsp;Dare
+Posted on <time class="entry-date published updated" datetime="2022-05-04T09:58:23+00:00">May 4, 2022</time> by Filip Keser
+https://rog.asus.com/
+Posted in gaming		Twitch Channels, Games and Global Statistics ·&nbsp;TwitchTracker
+Posted on <time class="entry-date published updated" datetime="2022-05-03T00:23:47+00:00">May 3, 2022</time> by Filip Keser
+https://twitchtracker.com/
+Posted in gaming		Twitch Channels, Games and Global Statistics ·&nbsp;TwitchTracker
+Posted on <time class="entry-date published updated" datetime="2022-05-03T00:22:29+00:00">May 3, 2022</time> by Filip Keser
+https://twitchtracker.com/
+Posted in gaming		ThePointSilver &#8211; Streamer Overview &amp; Stats ·&nbsp;TwitchTracker
+Posted on <time class="entry-date published updated" datetime="2022-05-03T00:22:22+00:00">May 3, 2022</time> by Filip Keser
+https://twitchtracker.com/thepointsilver
+Posted in gaming		Fortnite Competitive
+Posted on <time class="entry-date published updated" datetime="2022-05-02T23:56:03+00:00">May 2, 2022</time> by Filip Keser
+https://www.epicgames.com/fortnite/competitive/en-US/home
+Posted in gaming		Fortnite | Free-to-Play Cross-Platform Game &#8211;&nbsp;Fortnite
+Posted on <time class="entry-date published updated" datetime="2022-05-02T23:55:35+00:00">May 2, 2022</time> by Filip Keser
+https://www.epicgames.com/fortnite/en-US/home
+Posted in gaming		Fortnite Esports ▷ Your Gateway to Fortnite Competitive&nbsp;Scene
+Posted on <time class="entry-date published updated" datetime="2022-05-02T23:53:56+00:00">May 2, 2022</time> by Filip Keser
+https://www.esports.net/fortnite/
+Posted in gaming		Esports.net &#8211; News, wikis &amp; guides for a growing esports&nbsp;community.
+Posted on <time class="entry-date published updated" datetime="2022-05-02T23:52:03+00:00">May 2, 2022</time> by Filip Keser
+https://www.esports.net/
+Posted in gaming		esports.com &#8211; Everything else is just&nbsp;Gaming!
+Posted on <time class="entry-date published updated" datetime="2022-05-02T23:45:07+00:00">May 2, 2022</time> by Filip Keser
+https://www.esports.com/en
+Posted in gaming		LeagueOfLegends
+Posted on <time class="entry-date published updated" datetime="2022-05-02T23:44:45+00:00">May 2, 2022</time> by Filip Keser
+https://www.leagueoflegends.com/de-de/
+Posted in gaming		Riot Games
+Posted on <time class="entry-date published updated" datetime="2022-05-02T23:44:20+00:00">May 2, 2022</time> by Filip Keser
+https://www.riotgames.com/en
+Posted in gaming		LoL Esports
+Posted on <time class="entry-date published updated" datetime="2022-05-02T23:43:58+00:00">May 2, 2022</time> by Filip Keser
+https://lolesports.com/
+Posted in gaming		Tps
+Posted on <time class="entry-date published updated" datetime="2022-05-02T18:21:24+00:00">May 2, 2022</time> by Filip Keser
+Check out this video &#8220;Tps &#8211; thepointsilver &#8211; #thepointsilver &#8211; Tpsplays &#8211; Tpscreative&#8221; https://www.twitch.tv/thepointsilver/v/1473092166?sr=a&amp;t=16s
+Posted in gaming		PC Game System Requirements, News And Hardware Test&nbsp;Tools
+Posted on <time class="entry-date published updated" datetime="2022-05-02T08:16:44+00:00">May 2, 2022</time> by Filip Keser
+https://www.game-debate.com/
+Posted in gaming		Cloud gaming |&nbsp;Loudplay
+Posted on <time class="entry-date published updated" datetime="2022-04-30T14:13:21+00:00">April 30, 2022</time> by Filip Keser
+https://www.loudplay.io/
+Posted in gaming		Project N | Video games&nbsp;agency
+Posted on <time class="entry-date published updated" datetime="2022-04-28T18:29:57+00:00">April 28, 2022</time> by Filip Keser
+https://www.project-n.com/
+Posted in gaming		Create powerful live streams | Restream&nbsp;Studio
+Posted on <time class="entry-date published updated" datetime="2022-04-28T06:50:53+00:00">April 28, 2022</time> by Filip Keser
+https://restream.io/studio
+Posted in gaming		GIPHY &#8211; Be&nbsp;Animated
+Posted on <time class="entry-date published updated" datetime="2022-04-26T19:39:00+00:00">April 26, 2022</time> by Filip Keser
+https://giphy.com/
+Posted in gaming		Influencer Marketing | #1 Platform, Agency &amp; Influencer&nbsp;Resources
+Posted on <time class="entry-date published updated" datetime="2022-04-25T12:27:04+00:00">April 25, 2022</time> by Filip Keser
+https://influencermarketinghub.com/
+Posted in gaming		Lenovo Gaming | Gaming PCs, Consoles &amp; More | Lenovo&nbsp;US
+Posted on <time class="entry-date published updated" datetime="2022-04-25T04:18:36+00:00">April 25, 2022</time> by Filip Keser
+https://www.lenovo.com/us/en/gaming/shop/
+Posted in gaming		Games &#8211; Scopely
+Posted on <time class="entry-date published updated" datetime="2022-04-22T20:16:55+00:00">April 22, 2022</time> by Filip Keser
+https://scopely.com/games/
+Posted in gaming		Scrabble® Go &#8211;&nbsp;Scopely
+Posted on <time class="entry-date published updated" datetime="2022-04-22T20:16:47+00:00">April 22, 2022</time> by Filip Keser
+https://scopely.com/game/scr-go-mobile/
+Posted in gaming		Looney Tunes™ World of Mayhem (Mobile Game) |&nbsp;Scopely
+Posted on <time class="entry-date published updated" datetime="2022-04-22T20:16:20+00:00">April 22, 2022</time> by Filip Keser
+https://scopely.com/game/looney-tunes/
+Posted in gaming		War and Order &#8211; CAMEL&nbsp;GAMES
+Posted on <time class="entry-date published updated" datetime="2022-04-22T20:15:08+00:00">April 22, 2022</time> by Filip Keser
+https://www.camelgames.com/game/war_and_order
+Posted in gaming		IM30
+Posted on <time class="entry-date published updated" datetime="2022-04-22T20:14:34+00:00">April 22, 2022</time> by Filip Keser
+https://www.im30.net/
+Posted in gaming		Fighting Arena
+Posted on <time class="entry-date published updated" datetime="2022-04-22T19:50:38+00:00">April 22, 2022</time> by Filip Keser
+http://fightingarena.games/
+Posted in gaming		GAMES &#8211; CAMEL&nbsp;GAMES
+Posted on <time class="entry-date published updated" datetime="2022-04-22T19:49:21+00:00">April 22, 2022</time> by Filip Keser
+https://www.camelgames.com/games
+Posted in gaming		Age of Origins &#8211; CAMEL&nbsp;GAMES
+Posted on <time class="entry-date published updated" datetime="2022-04-22T19:49:14+00:00">April 22, 2022</time> by Filip Keser
+https://www.camelgames.com/game/age_of_z_origins
+Posted in gaming		Zero City &#8211; try to&nbsp;survive
+Posted on <time class="entry-date published updated" datetime="2022-04-22T19:46:24+00:00">April 22, 2022</time> by Filip Keser
+https://zc.my.games/en/
+Posted in gaming		YouTube
+Posted on <time class="entry-date published updated" datetime="2022-04-22T16:32:09+00:00">April 22, 2022</time> by Filip Keser
+https://youtube.com/
+https://youtube.com/hashtag/thepointsilver
+Gzo &#8211; game-zone-online
+funko
+otakumode
+earlygame
+bricklink
+thepointsilver
+tpsplays
+PretragaPretraga
+https://youtube.com/hashtag/thepointsilver
+Posted in gaming		GOG.com
+Posted on <time class="entry-date published updated" datetime="2022-04-19T11:36:25+00:00">April 19, 2022</time> by Filip Keser
+https://www.gog.com/www.gog.com/en
+Posted in gaming		The Latest Technology Product Reviews, News, Tips, and Deals |&nbsp;PCMag
+Posted on <time class="entry-date published updated" datetime="2022-04-19T11:36:09+00:00">April 19, 2022</time> by Filip Keser
+https://www.pcmag.com/
+Posted in gaming		Lutris &#8211; Open Gaming&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2022-04-19T11:31:59+00:00">April 19, 2022</time> by Filip Keser
+https://lutris.net/
+Posted in gaming		Home &#8211; universeisland
+Posted on <time class="entry-date published updated" datetime="2022-04-18T17:20:30+00:00">April 18, 2022</time> by Filip Keser
+https://universeisland.games/
+Posted in gaming		Xbox Official Site: Consoles, Games, and Community |&nbsp;Xbox
+Posted on <time class="entry-date published updated" datetime="2022-04-16T14:33:39+00:00">April 16, 2022</time> by Filip Keser
+https://www.xbox.com/en-US
+Posted in gaming		universeisland
+Posted on <time class="entry-date published updated" datetime="2022-04-15T14:54:48+00:00">April 15, 2022</time> by Filip Keser
+https://universeisland.games/
+Posted in gaming		The Official Pokémon Website | Pokemon.com | Explore the World of&nbsp;Pokémon
+Posted on <time class="entry-date published updated" datetime="2022-04-15T07:21:27+00:00">April 15, 2022</time> by Filip Keser
+https://www.pokemon.com/us/
+Posted in gaming		StreamElements | The Ultimate Streamer&nbsp;Platform
+Posted on <time class="entry-date published updated" datetime="2022-04-12T22:09:27+00:00">April 12, 2022</time> by Filip Keser
+https://streamelements.com/
+Posted in gaming		Overwatch: Legendary Edition for Nintendo Switch &#8211;&nbsp;Nintendo
+Posted on <time class="entry-date published updated" datetime="2022-04-12T04:24:43+00:00">April 12, 2022</time> by Filip Keser
+https://www.nintendo.com/store/products/overwatch-legendary-edition-switch/
+Posted in gaming		Kupite Overwatch® Legendary Edition – Microsoft Store&nbsp;hr-HR
+Posted on <time class="entry-date published updated" datetime="2022-04-12T04:24:26+00:00">April 12, 2022</time> by Filip Keser
+https://www.microsoft.com/hr-hr/p/overwatch-legendary-edition/9p2q994zwb64
+Posted in gaming		Igre za Windows – Microsoftova&nbsp;trgovina
+Posted on <time class="entry-date published updated" datetime="2022-04-12T04:24:02+00:00">April 12, 2022</time> by Filip Keser
+https://www.microsoft.com/hr-hr/store/games/windows
+Posted in gaming		Overwatch
+Posted on <time class="entry-date published updated" datetime="2022-04-12T04:21:37+00:00">April 12, 2022</time> by Filip Keser
+https://playoverwatch.com/en-us/
+Posted in gaming		Microsoft Download Center: Windows, Office, Xbox &amp;&nbsp;More
+Posted on <time class="entry-date published updated" datetime="2022-04-07T06:51:35+00:00">April 7, 2022</time> by Filip Keser
+https://www.microsoft.com/en-us/download
+Posted in gaming		Fortnite | Free-to-Play Cross-Platform Game &#8211;&nbsp;Fortnite
+Posted on <time class="entry-date published updated" datetime="2022-04-07T06:38:42+00:00">April 7, 2022</time> by Filip Keser
+https://www.epicgames.com/fortnite/en-US/home
+Posted in gaming		Overwatch 2
+Posted on <time class="entry-date published updated" datetime="2022-04-06T07:47:55+00:00">April 6, 2022</time> by Filip Keser
+https://overwatch2.playoverwatch.com/en-us/trailer
+Posted in game, gaming		tpsplays
+Posted on <time class="entry-date published" datetime="2022-04-05T16:51:25+00:00">April 5, 2022</time><time class="updated" datetime="2022-04-10T18:34:50+00:00">April 10, 2022</time> by Filip Keser
+Posted in gaming		Pogledajte &#8220;TPSPlays&#8221; na&nbsp;YouTubeu
+Posted on <time class="entry-date published updated" datetime="2022-04-05T16:48:47+00:00">April 5, 2022</time> by Filip Keser
+https://youtube.com/c/ThePointSilver
+Posted in gaming		All your video needs in one place |&nbsp;Clipchamp
+Posted on <time class="entry-date published updated" datetime="2022-04-05T14:31:14+00:00">April 5, 2022</time> by Filip Keser
+https://clipchamp.com/en/
+Posted in gaming		Nekki &#8211; game&nbsp;publisher
+Posted on <time class="entry-date published updated" datetime="2022-04-04T14:46:31+00:00">April 4, 2022</time> by Filip Keser
+https://nekki.com/
+Posted in gaming		Twitch pokimane
+Posted on <time class="entry-date published updated" datetime="2022-03-31T05:01:02+00:00">March 31, 2022</time> by Filip Keser
+https://m.twitch.tv/pokimane/about
+Posted in gaming		NZXT Gaming PCs &amp; Components |&nbsp;NZXT
+Posted on <time class="entry-date published updated" datetime="2022-03-31T05:00:22+00:00">March 31, 2022</time> by Filip Keser
+https://nzxt.com/
+Posted in gaming		NZXT BLD | Custom Gaming PC Builder |&nbsp;NZXT
+Posted on <time class="entry-date published updated" datetime="2022-03-31T04:59:32+00:00">March 31, 2022</time> by Filip Keser
+https://nzxt.com/category/gaming-pcs/build
+Posted in gaming		PlayStation.Blog – Official PlayStation Blog for news and video updates on PlayStation, PS5, PS4, PS VR, PlayStation Plus and&nbsp;more.
+Posted on <time class="entry-date published updated" datetime="2022-03-29T12:41:53+00:00">March 29, 2022</time> by Filip Keser
+https://blog.playstation.com/
+Posted in gaming		Professional video editing software | Adobe Premiere&nbsp;Pro
+Posted on <time class="entry-date published updated" datetime="2022-03-29T11:31:14+00:00">March 29, 2022</time> by Filip Keser
+https://www.adobe.com/products/premiere.html
+Posted in gaming		KineMaster &#8211; Mobile Video&nbsp;Editor
+Posted on <time class="entry-date published updated" datetime="2022-03-27T20:16:28+00:00">March 27, 2022</time> by Filip Keser
+https://www.kinemaster.com/
+Posted in gaming		True Axis
+Posted on <time class="entry-date published updated" datetime="2022-03-27T18:26:05+00:00">March 27, 2022</time> by Filip Keser
+http://trueaxis.com/
+Posted in gaming		Video Games Reviews &amp; News &#8211;&nbsp;GameSpot
+Posted on <time class="entry-date published updated" datetime="2022-03-26T21:31:01+00:00">March 26, 2022</time> by Filip Keser
+https://www.gamespot.com/
+Posted in gaming		Publisher Portal unreal&nbsp;engine
+Posted on <time class="entry-date published updated" datetime="2022-03-26T09:39:23+00:00">March 26, 2022</time> by Filip Keser
+https://publish.unrealengine.com/v3/welcome
+Posted in gaming		Epic Games Technical Support &amp; Customer Service | Epic&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2022-03-26T09:38:55+00:00">March 26, 2022</time> by Filip Keser
+https://www.epicgames.com/help/en-US/
+Posted in gaming		Support-A-Creator Support | Get Help &amp; Customer&nbsp;Service
+Posted on <time class="entry-date published updated" datetime="2022-03-26T09:38:45+00:00">March 26, 2022</time> by Filip Keser
+https://www.epicgames.com/help/en-US/supportacreator-c83
+Posted in gaming		Epic Games Store | Download &amp; Play PC Games, Mods, DLC &amp; More – Epic&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2022-03-26T09:38:01+00:00">March 26, 2022</time> by Filip Keser
+https://store.epicgames.com/en-US/
+Posted in gaming		UE Marketplace Support&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-03-26T09:37:32+00:00">March 26, 2022</time> by Filip Keser
+https://marketplacehelp.epicgames.com
+Posted in gaming		AI Games FZ
+Posted on <time class="entry-date published updated" datetime="2022-03-25T22:51:28+00:00">March 25, 2022</time> by Filip Keser
+https://aigames.ae/index.html
+Posted in gaming		dragon-ball-official
+Posted on <time class="entry-date published updated" datetime="2022-03-25T16:50:16+00:00">March 25, 2022</time> by Filip Keser
+https://en.dragon-ball-official.com/
+Posted in gaming		support google youtube
+Posted on <time class="entry-date published" datetime="2022-03-25T16:34:17+00:00">March 25, 2022</time><time class="updated" datetime="2023-03-21T12:03:01+00:00">March 21, 2023</time> by Filip Keser
+https://support.google.com/youtube
+Posted in gaming		SuperGaming
+Posted on <time class="entry-date published updated" datetime="2022-03-25T09:07:46+00:00">March 25, 2022</time> by Filip Keser
+https://www.supergaming.com/
+Posted in gaming		SteelSeries Stratus+ Wireless Controller for Android and Chromebook |&nbsp;SteelSeries
+Posted on <time class="entry-date published updated" datetime="2022-03-23T16:05:03+00:00">March 23, 2022</time> by Filip Keser
+https://steelseries.com/gaming-controllers/stratus-plus
+Posted in gaming		CS.MONEY — Trading Bot for fast CS:GO skins&nbsp;trade
+Posted on <time class="entry-date published updated" datetime="2022-03-22T18:04:31+00:00">March 22, 2022</time> by Filip Keser
+https://cs.money/
+Posted in gaming		software-online-review-by-fk
+Posted on <time class="entry-date published updated" datetime="2022-03-20T14:20:49+00:00">March 20, 2022</time> by Filip Keser
+https://softwareonlinereviewbyfk.wordpress.com/
+Posted in gaming		iMovie &#8211; Apple
+Posted on <time class="entry-date published updated" datetime="2022-03-17T09:01:07+00:00">March 17, 2022</time> by Filip Keser
+https://www.apple.com/imovie/
+Posted in gaming		Top Youtube channels:PLAYBOARD
+Posted on <time class="entry-date published updated" datetime="2022-03-17T09:00:39+00:00">March 17, 2022</time> by Filip Keser
+https://playboard.co/en/
+Posted in gaming		Youtube Video Editing Service |&nbsp;Editpanda.io
+Posted on <time class="entry-date published updated" datetime="2022-03-17T08:59:20+00:00">March 17, 2022</time> by Filip Keser
+https://www.editpanda.io/
+Posted in gaming		Music Streaming Player | Stream &amp; DMCA Safe Music for Twitch Streamers | Pretzel&nbsp;Rocks
+Posted on <time class="entry-date published updated" datetime="2022-03-16T21:15:31+00:00">March 16, 2022</time> by Filip Keser
+https://www.pretzel.rocks/
+Posted in gaming		TC Helicon | Product |&nbsp;GoXLR
+Posted on <time class="entry-date published updated" datetime="2022-03-15T20:53:04+00:00">March 15, 2022</time> by Filip Keser
+https://www.tc-helicon.com/product.html?modelCode=P0CQK
+Posted in gaming		UploadVR: VR/AR News, Reviews, Guides,&nbsp;Analysis
+Posted on <time class="entry-date published updated" datetime="2022-03-13T05:21:51+00:00">March 13, 2022</time> by Filip Keser
+https://uploadvr.com/
+Posted in gaming		Arcade games online | Antstream&nbsp;Arcade
+Posted on <time class="entry-date published updated" datetime="2022-03-12T12:36:38+00:00">March 12, 2022</time> by Filip Keser
+https://www.antstream.com/
+Posted in gaming		Mobile Phone Peripherals &amp; Accessories | Gaming Gear For Cell Phones&nbsp;📱
+Posted on <time class="entry-date published updated" datetime="2022-03-12T08:25:12+00:00">March 12, 2022</time> by Filip Keser
+https://www.razer.com/mobile
+Posted in gaming		Gaming Software | Synapse, Razer Chroma RGB, Razer Cortex and More&nbsp;🎮
+Posted on <time class="entry-date published updated" datetime="2022-03-12T08:22:54+00:00">March 12, 2022</time> by Filip Keser
+https://www.razer.com/pc/software
+Posted in gaming		Razer Streaming Devices &#8211; Microphone, Webcam, Headsets, and&nbsp;more
+Posted on <time class="entry-date published updated" datetime="2022-03-12T08:18:01+00:00">March 12, 2022</time> by Filip Keser
+https://www.razer.com/pc/streaming
+Posted in gaming		Dot Esports &#8211; Esports News, Analysis, Tournament Coverage, and&nbsp;More
+Posted on <time class="entry-date published updated" datetime="2022-03-11T22:33:33+00:00">March 11, 2022</time> by Filip Keser
+https://dotesports.com/
+Posted in gaming		TrueAchievements &#8211; Xbox Achievement&nbsp;Tracking
+Posted on <time class="entry-date published updated" datetime="2022-03-11T18:12:35+00:00">March 11, 2022</time> by Filip Keser
+https://www.trueachievements.com/
+Posted in gaming		WoWS: Legends—Become a naval&nbsp;legend
+Posted on <time class="entry-date published updated" datetime="2022-03-11T09:52:15+00:00">March 11, 2022</time> by Filip Keser
+https://wowslegends.com/
+Posted in gaming		Wargaming.net games — the full list of games available for players on the official&nbsp;website
+Posted on <time class="entry-date published updated" datetime="2022-03-11T09:52:00+00:00">March 11, 2022</time> by Filip Keser
+https://eu.wargaming.net/en
+Posted in gaming		PC Download Video Games &#8211; Official EA&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-03-10T17:19:54+00:00">March 10, 2022</time> by Filip Keser
+https://www.ea.com/games/library/pc-download
+Posted in gaming		Electronic Arts Home Page &#8211; Official EA&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-03-10T17:19:25+00:00">March 10, 2022</time> by Filip Keser
+https://www.ea.com/
+Posted in gaming		Mobile Video Games &#8211; Official EA&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-03-10T17:19:07+00:00">March 10, 2022</time> by Filip Keser
+https://www.ea.com/games/library/mobile
+Posted in gaming		Gamepur | Video Game Guides, News, Features, and More&nbsp;&#8211;
+Posted on <time class="entry-date published updated" datetime="2022-03-10T17:00:45+00:00">March 10, 2022</time> by Filip Keser
+https://www.gamepur.com/
+Posted in gaming		Epic Games Store | Official&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-03-10T16:19:10+00:00">March 10, 2022</time> by Filip Keser
+https://www.epicgames.com/store/en-US/
+Posted in gaming		Get A Free Game Every Week | Epic Games&nbsp;Store
+Posted on <time class="entry-date published updated" datetime="2022-03-10T16:19:01+00:00">March 10, 2022</time> by Filip Keser
+https://www.epicgames.com/store/en-US/free-games
+Posted in gaming		Frozen Freefall &#8211; Jam&nbsp;City
+Posted on <time class="entry-date published updated" datetime="2022-03-09T17:10:07+00:00">March 9, 2022</time> by Filip Keser
+https://www.jamcity.com/game/frozen-freefall/
+Posted in gaming		Games &#8211; Jam&nbsp;City
+Posted on <time class="entry-date published updated" datetime="2022-03-09T17:08:51+00:00">March 9, 2022</time> by Filip Keser
+https://www.jamcity.com/games/
+Posted in gaming		Harry Potter: Hogwarts&nbsp;Mystery
+Posted on <time class="entry-date published updated" datetime="2022-03-09T17:07:31+00:00">March 9, 2022</time> by Filip Keser
+https://www.harrypotterhogwartsmystery.com/
+Posted in gaming		Popular | Crazy&nbsp;Labs
+Posted on <time class="entry-date published updated" datetime="2022-03-07T22:47:42+00:00">March 7, 2022</time> by Filip Keser
+https://www.crazylabs.com/games/popular/
+Posted in gaming		Lexa
+Posted on <time class="entry-date published updated" datetime="2022-03-07T10:48:25+00:00">March 7, 2022</time> by Filip Keser
+Lexa27:39 | 19 chapters 🔖https://api.chapterme.co/share/video/DXku5Ee33m4
+Posted in gaming		Grand Street Racing&nbsp;Tour
+Posted on <time class="entry-date published updated" datetime="2022-03-06T06:30:56+00:00">March 6, 2022</time> by Filip Keser
+https://herocraft.com/games/3fa30693-dfcc-4026-88d7-289e64b7c5eb/
+Posted in gaming		Herocraft games
+Posted on <time class="entry-date published updated" datetime="2022-03-06T06:30:07+00:00">March 6, 2022</time> by Filip Keser
+https://herocraft.com/games/
+Posted in gaming		discord/streamkit
+Posted on <time class="entry-date published updated" datetime="2022-03-05T13:15:04+00:00">March 5, 2022</time> by Filip Keser
+https://discord.com/streamkit
+Posted in gaming		Latest Games &#8211; Official EA&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-03-04T17:13:26+00:00">March 4, 2022</time> by Filip Keser
+https://www.ea.com/games
+Posted in gaming		Electronic Arts Home Page &#8211; Official EA&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-03-04T17:13:00+00:00">March 4, 2022</time> by Filip Keser
+https://www.ea.com/
+Posted in gaming		Apex Legends &#8211; The Next Evolution of Hero Shooter &#8211; Free to&nbsp;Play
+Posted on <time class="entry-date published updated" datetime="2022-03-04T17:11:30+00:00">March 4, 2022</time> by Filip Keser
+https://www.ea.com/games/apex-legends
+Posted in gaming		Apex Ready To Ship PCs – Apex Gaming&nbsp;PCs
+Posted on <time class="entry-date published updated" datetime="2022-03-04T17:09:49+00:00">March 4, 2022</time> by Filip Keser
+https://apexgamingpcs.com/pages/apex-ready-to-ship-pcs
+Posted in gaming		Gaming PCs | Apex Gaming&nbsp;PCs
+Posted on <time class="entry-date published updated" datetime="2022-03-04T17:08:43+00:00">March 4, 2022</time> by Filip Keser
+https://apexgamingpcs.com/
+Posted in gaming		Peaksel &#8211; Mobile games &amp; apps development &amp; publishing company&nbsp;Serbia
+Posted on <time class="entry-date published updated" datetime="2022-03-03T22:24:55+00:00">March 3, 2022</time> by Filip Keser
+https://peaksel.com/
+Posted in gaming		The Official Blizzard Gear Store &#8211; Game Merchandise &amp;&nbsp;Apparel
+Posted on <time class="entry-date published updated" datetime="2022-03-03T21:12:12+00:00">March 3, 2022</time> by Filip Keser
+https://gear.blizzard.com/
+Posted in gaming		Battle.net Shop
+Posted on <time class="entry-date published updated" datetime="2022-03-03T21:10:30+00:00">March 3, 2022</time> by Filip Keser
+https://eu.shop.battle.net/en-gb
+Posted in gaming		Call of Duty®: Warzone &#8211; Call of Duty: Warzone | Battle.net&nbsp;Shop
+Posted on <time class="entry-date published updated" datetime="2022-03-03T21:10:07+00:00">March 3, 2022</time> by Filip Keser
+https://eu.shop.battle.net/en-gb/product/call-of-duty-warzone
+Posted in gaming		Call of Duty® | Best-Selling Video Game&nbsp;Franchise
+Posted on <time class="entry-date published updated" datetime="2022-03-03T21:08:50+00:00">March 3, 2022</time> by Filip Keser
+https://www.callofduty.com/
+Posted in gaming		Sekiro™ Shadows Die&nbsp;Twice
+Posted on <time class="entry-date published updated" datetime="2022-03-03T21:08:37+00:00">March 3, 2022</time> by Filip Keser
+https://www.sekirothegame.com/
+Posted in gaming		Activision | Games
+Posted on <time class="entry-date published updated" datetime="2022-03-03T21:08:09+00:00">March 3, 2022</time> by Filip Keser
+https://www.activision.com/games
+Posted in gaming		Tony Hawk&#8217;s™ Pro Skater™ 1 +&nbsp;2
+Posted on <time class="entry-date published updated" datetime="2022-03-03T21:07:41+00:00">March 3, 2022</time> by Filip Keser
+https://www.tonyhawkthegame.com/
+Posted in gaming		Activision
+Posted on <time class="entry-date published updated" datetime="2022-03-03T21:07:12+00:00">March 3, 2022</time> by Filip Keser
+https://www.activision.com/
+Posted in gaming		Level Up Bootcamp
+Posted on <time class="entry-date published updated" datetime="2022-03-03T14:47:41+00:00">March 3, 2022</time> by Filip Keser
+https://web.facebook.com/fbgaminghome/creators/levelupbootcamp
+Posted in gaming		World of Warcraft
+Posted on <time class="entry-date published updated" datetime="2022-03-03T14:18:10+00:00">March 3, 2022</time> by Filip Keser
+https://worldofwarcraft.com/en-us/
+Posted in gaming		Premium Music for Content Creators | Epidemic&nbsp;Sound
+Posted on <time class="entry-date published updated" datetime="2022-03-03T12:16:36+00:00">March 3, 2022</time> by Filip Keser
+https://www.epidemicsound.com/
+Posted in gaming		Meta for Creators
+Posted on <time class="entry-date published updated" datetime="2022-03-03T11:31:32+00:00">March 3, 2022</time> by Filip Keser
+https://web.facebook.com/creators
+Posted in gaming		Grow Your Fanbase| Meta for&nbsp;Creators
+Posted on <time class="entry-date published updated" datetime="2022-03-03T11:30:35+00:00">March 3, 2022</time> by Filip Keser
+https://web.facebook.com/creators/grow-your-fanbase
+Posted in gaming		minecraft.dungeons
+Posted on <time class="entry-date published updated" datetime="2022-03-02T19:49:31+00:00">March 2, 2022</time> by Filip Keser
+https://www.minecraft.net/en-us/about-dungeons
+Posted in gaming		minecraft
+Posted on <time class="entry-date published updated" datetime="2022-03-02T19:49:01+00:00">March 2, 2022</time> by Filip Keser
+https://www.minecraft.net/en-us
+Posted in gaming		education.minecraft
+Posted on <time class="entry-date published updated" datetime="2022-03-02T19:48:11+00:00">March 2, 2022</time> by Filip Keser
+https://education.minecraft.net/en-us
+Posted in gaming		Grand Theft Auto V &#8211; Rockstar&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2022-03-02T15:51:40+00:00">March 2, 2022</time> by Filip Keser
+https://www.rockstargames.com/
+Posted in gaming		Grand Theft Auto: Episodes from Liberty City &#8211; Rockstar&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2022-03-02T15:51:28+00:00">March 2, 2022</time> by Filip Keser
+https://www.rockstargames.com/
+Posted in gaming		Grand Theft Auto: Vice City &#8211; Rockstar&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2022-03-02T15:51:12+00:00">March 2, 2022</time> by Filip Keser
+https://www.rockstargames.com/
+Posted in gaming		All Games &#8211; Rockstar&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2022-03-02T15:50:41+00:00">March 2, 2022</time> by Filip Keser
+https://www.rockstargames.com/
+Posted in gaming		Grand Theft Auto V &#8211; Rockstar&nbsp;Games
+Posted on <time class="entry-date published updated" datetime="2022-03-02T15:50:34+00:00">March 2, 2022</time> by Filip Keser
+https://www.rockstargames.com/
+Posted in gaming		Rockstar Store | Official Store for GTA, Red Dead Redemption | Rockstar&nbsp;Store
+Posted on <time class="entry-date published updated" datetime="2022-03-02T15:49:36+00:00">March 2, 2022</time> by Filip Keser
+https://store.rockstargames.com/en
+Posted in gaming		Rockstar Games
+Posted on <time class="entry-date published updated" datetime="2022-03-02T15:48:36+00:00">March 2, 2022</time> by Filip Keser
+https://www.rockstargames.com/
+Posted in gaming		Tps
+Posted on <time class="entry-date published updated" datetime="2022-03-02T13:21:45+00:00">March 2, 2022</time> by Filip Keser
+Posted in gaming		Discord | SteelSeries
+Posted on <time class="entry-date published updated" datetime="2022-03-01T13:50:47+00:00">March 1, 2022</time> by Filip Keser
+https://steelseries.com/discord
+Posted in gaming		Amazon.com. Spend less. Smile&nbsp;more.
+Posted on <time class="entry-date published updated" datetime="2022-02-28T17:26:13+00:00">February 28, 2022</time> by Filip Keser
+https://www.amazon.com/
+Posted in gaming		Instant Articles | Meta for&nbsp;Media
+Posted on <time class="entry-date published updated" datetime="2022-02-28T08:52:11+00:00">February 28, 2022</time> by Filip Keser
+https://web.facebook.com/formedia/tools/instant-articles
+Posted in gaming		Facebook creation
+Posted on <time class="entry-date published updated" datetime="2022-02-26T23:36:58+00:00">February 26, 2022</time> by Filip Keser
+https://business.facebook.com/pages/creation/
+Posted in gaming		Creator Streaming Best&nbsp;Practices
+Posted on <time class="entry-date published updated" datetime="2022-02-26T23:35:58+00:00">February 26, 2022</time> by Filip Keser
+https://web.facebook.com/fbgaminghome/creators/best-practices
+Posted in gaming		Streamlabs Studio
+Posted on <time class="entry-date published updated" datetime="2022-02-26T21:27:41+00:00">February 26, 2022</time> by Filip Keser
+https://streamlabsstudio.com/
+Posted in gaming		StreamElements &#8211; Profile&nbsp;Settings
+Posted on <time class="entry-date published updated" datetime="2022-02-26T06:46:39+00:00">February 26, 2022</time> by Filip Keser
+https://streamelements.com/dashboard/
+Posted in gaming		Free Mobile &amp; Online Games &#8211; Zynga &#8211;&nbsp;Zynga
+Posted on <time class="entry-date published updated" datetime="2022-02-24T07:36:36+00:00">February 24, 2022</time> by Filip Keser
+https://www-admin.zynga.com/
+Posted in gaming		Words With Friends 2 &#8211; Zynga &#8211;&nbsp;Zynga
+Posted on <time class="entry-date published updated" datetime="2022-02-24T07:36:30+00:00">February 24, 2022</time> by Filip Keser
+https://www-admin.zynga.com/games/words-with-friends-2/
+Posted in gaming		SteelSeries Limited Edition |&nbsp;SteelSeries
+Posted on <time class="entry-date published updated" datetime="2022-02-23T22:06:36+00:00">February 23, 2022</time> by Filip Keser
+https://steelseries.com/gaming-products/limited-edition
+Posted in gaming		Keyboard &#8211; GIGABYTE&nbsp;Global
+Posted on <time class="entry-date published updated" datetime="2022-02-23T06:52:46+00:00">February 23, 2022</time> by Filip Keser
+https://www.gigabyte.com/Keyboard
+Posted in gaming		Creative &amp; Gaming | Industry Solution &#8211; GIGABYTE&nbsp;Global
+Posted on <time class="entry-date published updated" datetime="2022-02-23T06:38:24+00:00">February 23, 2022</time> by Filip Keser
+https://www.gigabyte.com/Industry-Solutions/Creatives-Gaming
+Posted in gaming		Laptop &#8211; GIGABYTE&nbsp;Global
+Posted on <time class="entry-date published updated" datetime="2022-02-23T06:38:04+00:00">February 23, 2022</time> by Filip Keser
+https://www.gigabyte.com/Laptop#GIGABYTE-Gaming
+Posted in gaming		Consoles, Collectibles, Video Games, and More – Buy, Sell or Trade |&nbsp;GameStop
+Posted on <time class="entry-date published updated" datetime="2022-02-23T05:10:55+00:00">February 23, 2022</time> by Filip Keser
+https://www.gamestop.com/
+Posted in gaming		Rockstar Store | Official Store for GTA, Red Dead Redemption | Rockstar&nbsp;Store
+Posted on <time class="entry-date published updated" datetime="2022-02-23T05:10:34+00:00">February 23, 2022</time> by Filip Keser
+https://store.rockstargames.com/en
+Posted in gaming		Learn How to Become a Successful Streamer with Streamlabs University | Streamlabs&nbsp;University
+Posted on <time class="entry-date published updated" datetime="2022-02-21T10:54:29+00:00">February 21, 2022</time> by Filip Keser
+https://streamlabs.com/university
+Posted in gaming		Setup.gg &#8211; Gamers Setups, Settings and&nbsp;Keybinds
+Posted on <time class="entry-date published updated" datetime="2022-02-20T07:00:55+00:00">February 20, 2022</time> by Filip Keser
+https://setup.gg/
+Posted in gaming		AKRacing | Premium Gaming&nbsp;Chairs
+Posted on <time class="entry-date published updated" datetime="2022-02-20T04:29:29+00:00">February 20, 2022</time> by Filip Keser
+https://akracing.com/
+Posted in gaming		Thermaltake
+Posted on <time class="entry-date published updated" datetime="2022-02-20T04:27:04+00:00">February 20, 2022</time> by Filip Keser
+https://www.thermaltake.com/
+Posted in gaming		Play without a console | Blacknut Cloud&nbsp;Gaming
+Posted on <time class="entry-date published updated" datetime="2022-02-17T17:30:09+00:00">February 17, 2022</time> by Filip Keser
+https://www.blacknut.com/en
+Posted in gaming		Artificial Intelligence Computing Leadership from&nbsp;NVIDIA
+Posted on <time class="entry-date published updated" datetime="2022-02-17T17:29:24+00:00">February 17, 2022</time> by Filip Keser
+https://www.nvidia.com/en-gb/
+Posted in gaming		Your Games. Your Devices. Play Anywhere | NVIDIA GeForce&nbsp;NOW
+Posted on <time class="entry-date published updated" datetime="2022-02-17T17:29:11+00:00">February 17, 2022</time> by Filip Keser
+https://www.nvidia.com/en-eu/geforce-now/
+Posted in gaming		Ergonomic Gaming Chairs |&nbsp;Duelhawk
+Posted on <time class="entry-date published updated" datetime="2022-02-17T12:03:14+00:00">February 17, 2022</time> by Filip Keser
+https://www.duelhawk.com/
+Posted in gaming		The Latest Technology Product Reviews, News, Tips, and Deals |&nbsp;PCMag
+Posted on <time class="entry-date published updated" datetime="2022-02-17T11:48:37+00:00">February 17, 2022</time> by Filip Keser
+https://www.pcmag.com/
+Posted in gaming		speedlink
+Posted on <time class="entry-date published updated" datetime="2022-02-14T02:09:10+00:00">February 14, 2022</time> by Filip Keser
+https://www.speedlink.com/en/
+Posted in gaming		Rampage Gaming
+Posted on <time class="entry-date published updated" datetime="2022-02-12T19:55:57+00:00">February 12, 2022</time> by Filip Keser
+https://www.rampage.com.tr/
+Posted in gaming		Business &#8211; Best for Content&nbsp;Creation
+Posted on <time class="entry-date published updated" datetime="2022-02-12T04:35:27+00:00">February 12, 2022</time> by Filip Keser
+https://www.asus.com/
+Posted in gaming		Razer United States | For Gamers. By&nbsp;Gamers.
+Posted on <time class="entry-date published updated" datetime="2022-02-11T19:46:37+00:00">February 11, 2022</time> by Filip Keser
+https://www.razer.com/
+Posted in gaming		Clutch Chairs – Clutch&nbsp;USA
+Posted on <time class="entry-date published updated" datetime="2022-02-08T18:44:42+00:00">February 8, 2022</time> by Filip Keser
+https://usa.clutchchairz.com/
+Posted in gaming		Gaming PCs and Accessories | Dell&nbsp;USA
+Posted on <time class="entry-date published updated" datetime="2022-02-02T06:58:49+00:00">February 2, 2022</time> by Filip Keser
+https://www.dell.com/en-us/shop/gaming-and-games/cp/game
+Posted in gaming		Alienware Laptops | Dell United&nbsp;States
+Posted on <time class="entry-date published updated" datetime="2022-02-02T06:57:44+00:00">February 2, 2022</time> by Filip Keser
+https://www.dell.com/en-us/shop/dell-laptops/sf/alienware-laptops
+Posted in gaming		Games &#8211; Outfit7
+Posted on <time class="entry-date published updated" datetime="2022-01-31T16:57:06+00:00">January 31, 2022</time> by Filip Keser
+https://outfit7.com/applications/
+Posted in gaming		Official Site &#8211; For Glory |&nbsp;SteelSeries
+Posted on <time class="entry-date published updated" datetime="2022-01-31T15:38:05+00:00">January 31, 2022</time> by Filip Keser
+https://steelseries.com/
+Posted in gaming		Ducky Official Website | Switch The&nbsp;World
+Posted on <time class="entry-date published updated" datetime="2022-01-26T11:41:01+00:00">January 26, 2022</time> by Filip Keser
+https://www.duckychannel.com.tw/en
+Posted in gaming		GamerStorm
+Posted on <time class="entry-date published updated" datetime="2022-01-25T18:21:40+00:00">January 25, 2022</time> by Filip Keser
+https://www.gamerstorm.com/index.shtml
+Posted in gaming		GeForce Graphics Cards &#8211; Ultimate PC Gaming | NVIDIA&nbsp;UK
+Posted on <time class="entry-date published updated" datetime="2022-01-25T15:30:36+00:00">January 25, 2022</time> by Filip Keser
+https://www.nvidia.com/en-eu/geforce/
+Posted in gaming		GeForce RTX: Your Ultimate Live Streaming Solution |&nbsp;NVIDIA
+Posted on <time class="entry-date published updated" datetime="2022-01-25T15:30:23+00:00">January 25, 2022</time> by Filip Keser
+https://www.nvidia.com/en-eu/geforce/broadcasting/
+Posted in gaming		Desktop PC &#8211; GIGABYTE&nbsp;Global
+Posted on <time class="entry-date published updated" datetime="2022-01-25T15:28:31+00:00">January 25, 2022</time> by Filip Keser
+https://www.gigabyte.com/Desktop-PC
+Posted in gaming		Laptop &#8211; GIGABYTE&nbsp;Global
+Posted on <time class="entry-date published updated" datetime="2022-01-25T15:28:21+00:00">January 25, 2022</time> by Filip Keser
+https://www.gigabyte.com/Laptop#GIGABYTE-Gaming
+Posted in gaming		Official Site &#8211; For Glory |&nbsp;SteelSeries
+Posted on <time class="entry-date published updated" datetime="2022-01-24T11:57:15+00:00">January 24, 2022</time> by Filip Keser
+https://steelseries.com/
+Posted in gaming		Controllers, Video games, RIG, Gaming equipment &#8211;&nbsp;Nacon
+Posted on <time class="entry-date published updated" datetime="2022-01-24T11:50:32+00:00">January 24, 2022</time> by Filip Keser
+https://www.nacongaming.com/en-GB/
+Posted in gaming		Fortnite
+Posted on <time class="entry-date published" datetime="2022-01-23T07:56:33+00:00">January 23, 2022</time><time class="updated" datetime="2023-03-21T11:58:14+00:00">March 21, 2023</time> by Filip Keser
+https://sites.google.com/view/fortnite-accessories/
+Posted in gaming		HyperX &#8211; Gaming Headsets, Keyboards &amp; More – WE’RE ALL GAMERS |&nbsp;HyperX
+Posted on <time class="entry-date published updated" datetime="2022-01-21T08:35:08+00:00">January 21, 2022</time> by Filip Keser
+https://www.hyperxgaming.com/en
+Posted in gaming		OMEN Gaming PCs &#8211; Laptop and desktop computers | HP® Official&nbsp;Site
+Posted on <time class="entry-date published updated" datetime="2022-01-21T08:33:40+00:00">January 21, 2022</time> by Filip Keser
+https://www.omen.com/us/en.html
+Posted in gaming		Oslo | Video Review &amp; Collaboration Tools for&nbsp;YouTubers
+Posted on <time class="entry-date published updated" datetime="2022-01-19T11:48:54+00:00">January 19, 2022</time> by Filip Keser
+https://oslo.io/
+Posted in gaming		Crossclip | The Easiest Way to Convert Your Twitch&nbsp;Clips
+Posted on <time class="entry-date published updated" datetime="2022-01-19T11:48:34+00:00">January 19, 2022</time> by Filip Keser
+https://crossclip.com/
+Posted in gaming		Willow | The All-in-One Link in Bio for Creators, Brands, &amp;&nbsp;Influencers
+Posted on <time class="entry-date published updated" datetime="2022-01-19T11:48:17+00:00">January 19, 2022</time> by Filip Keser
+https://wlo.link/
+Posts navigation
+Older posts
+Follow game on WordPress.com
+SearchSearch⭐
+Rating: 1 out of 5.
+game
+online
+action="https://wordpress.com/email-subscriptions"
+method="post"
+accept-charset="utf-8"
+data-blog="178610336"
+data-post_access_level="everybody"
+data-subscriber_email=""
+id="subscribe-blog"
+>
+id="subscribe-field-label"
+for="subscribe-field"
+class="screen-reader-text"
+>
+Type your email…
+required="required"
+type="email"
+name="email"
+autocomplete="email"
+class="no-border-radius "
+style="font-size: 16px;padding: 15px 23px 15px 23px;border-radius: 0px;border-width: 1px;"
+placeholder="Type your email…"
+value=""
+id="subscribe-field"
+title="Please fill in this field."
+/>
+>
+class="wp-block-button__link no-border-radius"
+style="font-size: 16px;padding: 15px 23px 15px 23px;margin: 0; margin-left: 10px;border-radius: 0px;border-width: 1px;"
+name="jetpack_subscriptions_widget"
+>
+Subscribe
+Skip to content ↓
+class="actnbr-pub-scratchpad actnbr-has-follow actnbr-has-actions">
+Subscribe
+Subscribed
+game
+Sign me up
+Already have a WordPress.com account? Log in now.
+game
+Subscribe
+Subscribed
+Sign up
+Log in
+Report this content
+View site in Reader
+Manage subscriptions
+Collapse this bar
+class="jp-carousel-wrap swiper jp-carousel-swiper-container jp-carousel-transitions"
+itemscope
+itemtype="https://schema.org/ImageGallery">
+Loading Comments...
+Write a Comment...
+<textarea
+name="comment"
+class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea"
+id="jp-carousel-comment-form-comment-field"
+placeholder="Write a Comment..."
+></textarea>
+Email (Required)
+Name (Required)
+Website
+type="submit"
+name="submit"
+class="jp-carousel-comment-form-button"
+id="jp-carousel-comment-form-button-submit"
+value="Post Comment" />
+class="hide-on-button"
+data-hide-timeout="30"
+data-consent-expiration="180"
+id="eu-cookie-law"
+style="display: none"
+>
+Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use.
+To find out more, including how to control cookies, see here:
+Cookie Policy
 
 ---
 
 # 2459326
 
 > **Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
-> **Analyzed At:** 2026-07-19T06:03:28.796Z
+> **Analyzed At:** 2026-07-20T07:00:10.932Z
 
 ### Content
 <title>Understanding bidding basics - Google Ads Help</title>       Skip to main content    Google Ads HelpHelp CenterCommunityAnnouncementsSign inGoogle HelpHelp CenterStart advertisingCampaignsExplore featuresOptimize performanceAccount &amp; billingFix issuesGoogle PartnersCommunityGoogle AdsPrivacy PolicyTerms of ServiceSubmit feedback   Send feedback on...This help content &amp; informationGeneral Help Center experienceNextHelp CenterCommunityAnnouncementsGoogle AdsStart advertisingYour guide to Google Ads8 steps to prepare your campaign for successChoose the right campaign typeDetermine your advertising goals How Google Ads can work for your industryGoogle Ads specs: ad formats, sizes, and best practicesMore advertising toolsGoogle Ads basicsGoogle Ads privacyGlossaryCampaignsPerformance MaxAI Max for Search campaignsAI Max for Shopping campaignsSearch campaignsDisplay campaignsSmart CampaignsApp campaignsShopping adsVideo campaignsHotel campaignsDemand Gen campaignsCall campaignsThings to doEvents ticketingExplore featuresAds, assets &amp; landing pagesAd groupsKeywordsBiddingTargetingMeasure resultsBulk uploads &amp; editsCampaign settingsOptimize performance12 tips to advertising with Google AdsGoogle Ads Best PracticesOptimization featuresCreate effective Search adsGenerative AI tools in Google AdsImprove with AI-powered SearchFinding success with Smart BiddingMeasure resultsOptimize performance with App ConnectGoogle Ads training on SkillshopThe Google Ads mobile appAccount &amp; billingBillingAccount settingsAccount accessManager accountsAccount security and safetyCancel or reactivate your accountWorking with client accountsUseful toolsFix issuesAd disapprovals and reviewsBilling &amp; paymentsCompromised account issuesPolicy issuesPerformance issuesAccount access issuesReporting issuesRequest implementation support for Google Ads and YouTube ReserveGoogle Ads APIGoogle PartnersGoogle Partners ProgramHelp Center TopicsCampaignsDisplay campaignsSetup &amp; managementBiddingUnderstanding bidding basics                                     Understanding bidding basics
@@ -7069,14 +6409,14 @@ About Target CPA bidding
 Determine a bid strategy based on your goals
 Was this helpful?How can we improve it?<textarea aria-label="Sorry about that, How can we improve it?" name="article_feedback_comment"></textarea>Submit                 Need more help? Try these next steps:                   Post to the help community    Get answers from community members                   Contact us  Tell us more and we’ll help you get there                     false     Bidding1 of 4About the Display Network ad auction2 of 4About bidding features in Display campaigns3 of 4Choose a bid for your Display Network campaign4 of 4Understanding bidding basics            Achieve your advertising goals today!  Attend our Performance Max Masterclass, a livestream workshop session bringing together industry and Google ads PMax experts.
 Register now
-©2026 Google     Privacy Policy     Terms of Service        Google Ads Advertising Policies      About the Help Center               Send feedback on... This help content &amp; information General Help Center experience           Enable Dark Mode       Language   català&lrm;dansk&lrm;Deutsch&lrm;eesti&lrm;English (Australia)&lrm;English (United Kingdom)&lrm;español&lrm;español (Latinoamérica)&lrm;Filipino&lrm;français&lrm;hrvatski&lrm;Indonesia&lrm;italiano&lrm;latviešu&lrm;lietuvių&lrm;magyar&lrm;Melayu&lrm;Nederlands&lrm;norsk&lrm;polski&lrm;português&lrm;português (Brasil)&lrm;română&lrm;slovenčina&lrm;slovenščina&lrm;suomi&lrm;svenska&lrm;Tiếng Việt&lrm;Türkçe&lrm;čeština&lrm;Ελληνικά&lrm;български&lrm;русский&lrm;српски&lrm;українська&lrm;&rlm;עברית&rlm;العربيةहिन्दी&lrm;ไทย&lrm;中文（简体）&lrm;中文（繁體）&lrm;中文（香港）&lrm;日本語&lrm;한국어&lrm; English&lrm;                     SearchClear searchClose searchGoogle appsMain menu     <textarea class="csi" name="csi"></textarea>           5971915748759993373                                                            true                                                      Search Help Center   true    true     true     true                                                                                       true   true   73067                                                                           false                                        false     true                                                                                                                                                                                          true   false                                                                      false
+©2026 Google     Privacy Policy     Terms of Service        Google Ads Advertising Policies      About the Help Center               Send feedback on... This help content &amp; information General Help Center experience           Enable Dark Mode       Language   català&lrm;dansk&lrm;Deutsch&lrm;eesti&lrm;English (Australia)&lrm;English (United Kingdom)&lrm;español&lrm;español (Latinoamérica)&lrm;Filipino&lrm;français&lrm;hrvatski&lrm;Indonesia&lrm;italiano&lrm;latviešu&lrm;lietuvių&lrm;magyar&lrm;Melayu&lrm;Nederlands&lrm;norsk&lrm;polski&lrm;português&lrm;português (Brasil)&lrm;română&lrm;slovenčina&lrm;slovenščina&lrm;suomi&lrm;svenska&lrm;Tiếng Việt&lrm;Türkçe&lrm;čeština&lrm;Ελληνικά&lrm;български&lrm;русский&lrm;српски&lrm;українська&lrm;&rlm;עברית&rlm;العربيةहिन्दी&lrm;ไทย&lrm;中文（简体）&lrm;中文（繁體）&lrm;中文（香港）&lrm;日本語&lrm;한국어&lrm; English&lrm;                     SearchClear searchClose searchGoogle appsMain menu     <textarea class="csi" name="csi"></textarea>           6669944726409556580                                                            true                                                      Search Help Center   true    true     true     true                                                                                       true   true   73067                                                                           false                                        false     true                                                                                                                                                                                          true   false                                                                      false
 
 ---
 
 # bidding
 
 > **Source:** https://business.google.com/uk/ad-tools/bidding/
-> **Analyzed At:** 2026-07-19T06:03:29.696Z
+> **Analyzed At:** 2026-07-20T07:00:11.065Z
 
 ### Content
 <title>Google Ads Smart Bidding - AI-Driven Bid Optimisations &amp; Ad Spend</title>
@@ -7514,7 +6854,7 @@ Start now
 # resources
 
 > **Source:** https://admanager.google.com/home/resources/
-> **Analyzed At:** 2026-07-19T06:03:34.771Z
+> **Analyzed At:** 2026-07-20T07:00:13.673Z
 
 ### Content
 <title>Resources Overview - Google Ad Manager</title>
@@ -8799,15 +8139,15 @@ onchange="var l10nPath=this[this.selectedIndex].value;if(l10nPath!=''){window.lo
 # ad manager
 
 > **Source:** https://developers.google.com/ad-manager
-> **Analyzed At:** 2026-07-19T06:03:31.112Z
+> **Analyzed At:** 2026-07-20T07:00:11.675Z
 
 ### Content
-lang="fr-x-mtfrom-en"
+lang="vi-x-mtfrom-en"
 dir="ltr">
 content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
 crossorigin="use-credentials">
 href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=fr">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=vi">
 href="https://developers.google.com/ad-manager" />
 href="https://developers.google.com/ad-manager?hl=ar" />
 href="https://developers.google.com/ad-manager?hl=bn" />
@@ -8836,18 +8176,17 @@ template="landing"
 theme="google-blue"
 type="article"
 layout="full"
-concierge='hide'
 pending>
-Passer au contenu principal
+Chuyển ngay đến nội dung chính
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Navigation menu button"
 visually-hidden
-aria-label="Ouvrir le menu">
+aria-label="Mở trình đơn">
 size="medium"
 >
 alt="Google Ad Manager"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fr"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=vi"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
@@ -8872,20 +8211,20 @@ enable-search-summaries
 project-name="Ad Manager"
 tenant-name="Google for Developers"
 project-scope="/ad-manager"
-url-scoped="https://developers.google.com/s/results/ad-manager?hl=fr"
+url-scoped="https://developers.google.com/s/results/ad-manager?hl=vi"
 >
 search-open
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Ouvrir la recherche">
+aria-label="Mở hộp tìm kiếm">
 aria-activedescendant=""
 aria-autocomplete="list"
-aria-label="Recherche"
+aria-label="Tìm kiếm"
 aria-expanded="false"
 aria-haspopup="listbox"
 autocomplete="off"
 class="devsite-search-field devsite-search-query"
 name="q"
-placeholder="Recherche"
+placeholder="Tìm kiếm"
 role="combobox"
 type="text"
 value=""
@@ -8893,7 +8232,7 @@ value=""
 <kbd class="devsite-search-shortcut-icon">/</kbd>
 search-close
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Fermer la recherche">
+aria-label="Đóng hộp tìm kiếm">
 >English
 >Deutsch
 >Español
@@ -8919,27 +8258,27 @@ aria-label="Fermer la recherche">
 enable-profiles
 fp-auth
 id="devsite-user">
-Connexion
+Đăng nhập
 devsite-header-no-lower-tabs
 ">
 hidden>
-placeholder="Filtrer"
-aria-label="Saisissez du texte pour filtrer les résultats"
+placeholder="Lọc"
+aria-label="Nhập để lọc"
 role="searchbox">
-data-title="Supprimer le filtre"
-aria-label="Supprimer le filtre"
+data-title="Xoá bộ lọc"
+aria-label="Xoá bộ lọc"
 role="button"
 tabindex="0">
-aria-label="Menu latéral">
+aria-label="Trình đơn bên">
 id="devsite-close-nav"
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Close navigation"
-aria-label="Fermer la navigation">
+aria-label="Đóng trình đơn điều hướng">
 size="medium"
 >
 alt="Google Ad Manager"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fr"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=vi"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
@@ -8958,7 +8297,7 @@ track-metadata-eventdetail="Google Ad Manager"
 Ad Manager
 >
 role="navigation"
-aria-label="Sur cette page"
+aria-label="Trên trang này"
 depth="2"
 scrollbars
 data-nosnippet
@@ -8966,7 +8305,7 @@ disabled>
 class="devsite-banner-translated-image invert"
 alt="">
 Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
-aria-label="Fil d'Ariane">
+aria-label="Tập hợp liên kết phân cấp">
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -8977,7 +8316,7 @@ track-name="breadcrumb"
 track-metadata-position="1"
 track-metadata-eventdetail=""
 >
-Accueil
+Trang chủ
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -8988,7 +8327,7 @@ track-name="breadcrumb"
 track-metadata-position="2"
 track-metadata-eventdetail=""
 >
-Produits
+Sản phẩm
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -9012,10 +8351,10 @@ track-name="sendFeedbackLink"
 track-metadata-position="header"
 class="nocontent"
 data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fr"
-project-support-url="https://groups.google.com/forum/?hl=fr#!forum/google-doubleclick-for-publishers-api"
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=vi"
+project-support-url="https://groups.google.com/forum/?hl=vi#!forum/google-doubleclick-for-publishers-api"
 >
-Envoyer des commentaires
+Gửi ý kiến phản hồi
 ack-key="AckCollectionsBookmarkTooltipDismiss"
 analytics-category="Site-Wide Custom Events"
 analytics-action-show="Callout Profile displayed"
@@ -9025,10 +8364,10 @@ class="devsite-page-bookmark-tooltip nocontent"
 data-nosnippet
 dismiss-button="true"
 id="devsite-collections-dropdown"
-dismiss-button-text="Ignorer"
-close-button-text="OK">
-Restez organisé à l'aide des collections
-Enregistrez et classez les contenus selon vos préférences.
+dismiss-button-text="Đóng"
+close-button-text="Đã hiểu">
+Sử dụng bộ sưu tập để sắp xếp ngăn nắp các trang
+Lưu và phân loại nội dung dựa trên lựa chọn ưu tiên của bạn.
 depth="2"
 devsite-toc-embedded
 disabled>
@@ -9036,9 +8375,9 @@ devsite-no-page-title">
 header-position="top"
 >
 >
-data-text="Ensemble d'outils permettant de gérer vos comptes et vos campagnes Google Ad Manager."
+data-text="Một bộ công cụ để quản lý tài khoản và chiến dịch Google Ad Manager của bạn."
 tabindex="0">
-Ensemble d'outils permettant de gérer vos comptes et vos campagnes Google Ad Manager.
+Một bộ công cụ để quản lý tài khoản và chiến dịch Google Ad Manager của bạn.
 header-position="top"
 >
 description-position="bottom"
@@ -9048,14 +8387,14 @@ icon-position="left"
 size="medium"
 >
 api
-data-text="API Ad Manager (bêta)"
+data-text="API Ad Manager (Beta)"
 class="hide-from-toc no-link"
 tabindex="0">
-API Ad Manager (bêta)
-API REST qui fournit des méthodes permettant de lire les données de diffusion et d'inventaire, d'exécuter des rapports, etc.
+API Ad Manager (Beta)
+API REST cung cấp các phương thức để đọc dữ liệu phân phối và kho hàng, chạy báo cáo, v.v.
 class="button button-secondary
 "
->Premiers pas
+>Bắt đầu
 description-position="bottom"
 >
 icon-position="left"
@@ -9063,11 +8402,11 @@ icon-position="left"
 size="medium"
 >
 phone_iphone
-data-text="SDK Mobile Ads"
+data-text="SDK quảng cáo trên thiết bị di động"
 class="hide-from-toc no-link"
 tabindex="0">
-SDK Mobile Ads
-Active la monétisation des applications Android, iOS, Unity et Flutter avec des annonces.
+SDK quảng cáo trên thiết bị di động
+Bật quảng cáo để kiếm tiền từ ứng dụng Android, iOS, Unity và Flutter.
 class="button button-secondary
 "
 >
@@ -9091,14 +8430,14 @@ icon-position="left"
 size="medium"
 >
 live_tv
-data-text="Insertion dynamique d'annonces"
+data-text="Chèn quảng cáo động"
 class="hide-from-toc no-link"
 tabindex="0">
-Insertion dynamique d'annonces
-Regroupez le contenu vidéo et les annonces dans un flux unique, indépendamment de la page ou de l'application.
+Chèn quảng cáo động
+Ghép nội dung video và quảng cáo vào một luồng duy nhất, độc lập với trang hoặc ứng dụng.
 class="button button-secondary
 "
->Premiers pas
+>Bắt đầu
 description-position="bottom"
 >
 icon-position="left"
@@ -9106,14 +8445,14 @@ icon-position="left"
 size="medium"
 >
 track_changes
-data-text="API SOAP Ad Manager"
+data-text="API SOAP Ad Manager"
 class="hide-from-toc no-link"
 tabindex="0">
-API SOAP Ad Manager
-Offre des méthodes pour gérer l'inventaire d'annonces, créer des commandes, générer des rapports, etc.
+API SOAP Ad Manager
+Cung cấp các phương thức để quản lý khoảng không quảng cáo, tạo đơn đặt hàng, lấy báo cáo, v.v.
 class="button button-secondary
 "
->Premiers pas
+>Bắt đầu
 >
 <template class="devsite-thumb-rating-feedback">
 position="thumb-rating"
@@ -9128,17 +8467,17 @@ track-name="sendFeedbackLink"
 track-metadata-position="thumb-rating"
 class="nocontent"
 data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fr"
-project-support-url="https://groups.google.com/forum/?hl=fr#!forum/google-doubleclick-for-publishers-api"
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=vi"
+project-support-url="https://groups.google.com/forum/?hl=vi#!forum/google-doubleclick-for-publishers-api"
 >
-Voulez-vous nous donner plus d'informations ?
+Bạn muốn chia sẻ thêm với chúng tôi?
 </template>
 <template class="devsite-content-data-template">
-[[["Facile à comprendre","easyToUnderstand","thumb-up"],["J'ai pu résoudre mon problème","solvedMyProblem","thumb-up"],["Autre","otherUp","thumb-up"]],[["Il n'y a pas l'information dont j'ai besoin","missingTheInformationINeed","thumb-down"],["Trop compliqué/Trop d'étapes","tooComplicatedTooManySteps","thumb-down"],["Obsolète","outOfDate","thumb-down"],["Problème de traduction","translationIssue","thumb-down"],["Mauvais exemple/Erreur de code","samplesCodeIssue","thumb-down"],["Autre","otherDown","thumb-down"]],[],[],[]]
+[[["Dễ hiểu","easyToUnderstand","thumb-up"],["Giúp tôi giải quyết được vấn đề","solvedMyProblem","thumb-up"],["Khác","otherUp","thumb-up"]],[["Thiếu thông tin tôi cần","missingTheInformationINeed","thumb-down"],["Quá phức tạp/quá nhiều bước","tooComplicatedTooManySteps","thumb-down"],["Đã lỗi thời","outOfDate","thumb-down"],["Vấn đề về bản dịch","translationIssue","thumb-down"],["Vấn đề về mẫu/mã","samplesCodeIssue","thumb-down"],["Khác","otherDown","thumb-down"]],[],[],[]]
 </template>
-aria-label="Liens de pied de page"
+aria-label="Đường liên kết ở chân trang"
 data-nosnippet>
-Communiquer
+Connect
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -9169,7 +8508,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 6)"
 >
 YouTube
-Programmes
+Chương trình
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -9195,7 +8534,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
 >
 Google Cloud & NVIDIA
-Consoles pour développeurs
+Bảng điều khiển dành cho nhà phát triển
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -9210,7 +8549,7 @@ class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
 >
-Google Play Console
+Google Play Console
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
@@ -9277,19 +8616,19 @@ gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer All products Link"
 >
-Tous les produits
+Tất cả sản phẩm
 ">
-href="https://developers.google.com/terms/site-terms?hl=fr"
+href="https://developers.google.com/terms/site-terms?hl=vi"
 data-category="Site-Wide Custom Events"
 data-label="Footer Terms link"
 >
-Conditions d'utilisation
+Điều khoản
 ">
-href="//policies.google.com/privacy?hl=fr"
+href="//policies.google.com/privacy?hl=vi"
 data-category="Site-Wide Custom Events"
 data-label="Footer Privacy link"
 >
-Règles de confidentialité
+Quyền riêng tư
 glue-cookie-notification-bar-control">
 href="#"
 data-category="Site-Wide Custom Events"
@@ -9319,17 +8658,13 @@ Manage cookies
 >中文 – 繁體
 >日本語
 >한국어
-data-info-panel
-data-ai-panel
-data-api-explorer-panel
->
 
 ---
 
 # dynamic ad insertion
 
 > **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion
-> **Analyzed At:** 2026-07-19T06:03:31.484Z
+> **Analyzed At:** 2026-07-20T07:00:11.916Z
 
 ### Content
 lang="en"
@@ -9365,7 +8700,6 @@ template="landing"
 theme="google-blue"
 type="product"
 layout="docs"
-concierge='hide'
 pending>
 Skip to main content
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
@@ -9450,8 +8784,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: SDK - iOS"
 data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - iOS"
 >
 iOS
 track-type="nav"
@@ -9477,8 +8811,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: SDK - Roku"
 data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - Roku"
 >
 Roku
 </tab>
@@ -9518,8 +8852,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - apis"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: API - Ad break"
 data-category="DAI top menu navigation"
+data-label="Tab menu: API - Ad break"
 >
 Ad break
 </tab>
@@ -10242,25 +9576,21 @@ Manage cookies
 >中文 – 繁體
 >日本語
 >한국어
-data-info-panel
-data-ai-panel
-data-api-explorer-panel
->
 
 ---
 
 # full service
 
 > **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
-> **Analyzed At:** 2026-07-19T06:03:32.163Z
+> **Analyzed At:** 2026-07-20T07:00:12.265Z
 
 ### Content
-lang="ko-x-mtfrom-en"
+lang="th-x-mtfrom-en"
 dir="ltr">
 content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
 crossorigin="use-credentials">
 href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=ko">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=th">
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service" />
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ar" />
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=bn" />
@@ -10287,18 +9617,17 @@ template="landing"
 theme="google-blue"
 type="product"
 layout="docs"
-concierge='hide'
 pending>
-기본 콘텐츠로 건너뛰기
+ข้ามไปที่เนื้อหาหลัก
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Navigation menu button"
 visually-hidden
-aria-label="메뉴 열기">
+aria-label="เปิดเมนู">
 size="medium"
 >
 alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=ko"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=th"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
@@ -10319,22 +9648,22 @@ Dynamic Ad Insertion
 ">
 class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
 track-type="nav"
-track-metadata-position="nav - 홈"
+track-metadata-position="nav - หน้าแรก"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Tab: 홈"
-track-name="홈"
+data-label="Tab: หน้าแรก"
+track-name="หน้าแรก"
 >
-홈
+หน้าแรก
 ">
 ">
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ko"
-track-metadata-position="nav - 홈"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=th"
+track-metadata-position="nav - หน้าแรก"
 track-metadata-module="tertiary nav"
 tooltip
 >
-홈
+หน้าแรก
 </tab>
 <tab class="devsite-dropdown
 ">
@@ -10350,7 +9679,7 @@ SDK
 ">
 ">
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=th"
 track-metadata-position="nav - sdk"
 track-metadata-module="tertiary nav"
 tooltip
@@ -10359,7 +9688,7 @@ data-label="Tab menu: SDK - HTML5"
 >
 HTML5
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=th"
 track-metadata-position="nav - sdk"
 track-metadata-module="tertiary nav"
 tooltip
@@ -10368,7 +9697,7 @@ data-category="DAI top menu navigation"
 >
 Android
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=th"
 track-metadata-position="nav - sdk"
 track-metadata-module="tertiary nav"
 tooltip
@@ -10377,25 +9706,25 @@ data-category="DAI top menu navigation"
 >
 iOS
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=th"
 track-metadata-position="nav - sdk"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: SDK - tvOS"
+data-category="DAI top menu navigation"
 >
 tvOS
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=th"
 track-metadata-position="nav - sdk"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: SDK - Chromecast"
 data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - Chromecast"
 >
 Chromecast
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=th"
 track-metadata-position="nav - sdk"
 track-metadata-module="tertiary nav"
 tooltip
@@ -10408,7 +9737,7 @@ Roku
 devsite-active
 ">
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=th"
 track-type="nav"
 track-metadata-position="nav - api"
 track-metadata-module="primary nav"
@@ -10420,9 +9749,9 @@ track-name="api"
 API
 aria-haspopup="menu"
 aria-expanded="false"
-aria-label="드롭다운 메뉴: API"
+aria-label="เมนูแบบเลื่อนลงสำหรับ API"
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=th"
 track-metadata-position="nav - api"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
@@ -10432,106 +9761,106 @@ class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down">
 ">
 ">
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=th"
 track-metadata-position="nav - api"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: API - Full service"
 data-category="DAI top menu navigation"
+data-label="Tab menu: API - Full service"
 >
-전체 서비스 DAI
+DAI บริการเต็มรูปแบบ
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th"
 track-metadata-position="nav - api"
 track-metadata-module="tertiary nav"
 tooltip
 data-label="Tab menu: API - Pod serving"
 data-category="DAI top menu navigation"
 >
-DAI를 게재하는 광고 모음
+DAI ที่แสดงพ็อด
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=th"
 track-metadata-position="nav - api"
 track-metadata-module="tertiary nav"
 tooltip
 data-label="Tab menu: API - Ad break"
 data-category="DAI top menu navigation"
 >
-광고 시점
+ช่วงพักโฆษณา
 </tab>
 <tab class="devsite-dropdown
 ">
 class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
 track-type="nav"
-track-metadata-position="nav - 리소스"
+track-metadata-position="nav - ทรัพยากร"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Tab: 리소스"
-track-name="리소스"
+data-label="Tab: ทรัพยากร"
+track-name="ทรัพยากร"
 >
-리소스
+ทรัพยากร
 ">
 ">
-지원
+การสนับสนุน
 track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/community?hl=ko"
-track-metadata-position="nav - 리소스"
+track-metadata-eventdetail="//support.google.com/admanager/community?hl=th"
+track-metadata-position="nav - ทรัพยากร"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="지원"
+track-metadata-module_headline="การสนับสนุน"
 tooltip
 >
-Ad Manager 도움말 커뮤니티
+ชุมชนความช่วยเหลือของ Ad Manager
 track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=ko"
-track-metadata-position="nav - 리소스"
+track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=th"
+track-metadata-position="nav - ทรัพยากร"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="지원"
+track-metadata-module_headline="การสนับสนุน"
 tooltip
 >
-지원팀에 문의
+ติดต่อฝ่ายสนับสนุน
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=ko"
-track-metadata-position="nav - 리소스"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=th"
+track-metadata-position="nav - ทรัพยากร"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="지원"
+track-metadata-module_headline="การสนับสนุน"
 tooltip
 >
-서비스 약관
+ข้อกำหนดในการให้บริการ
 track-type="nav"
 track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
-track-metadata-position="nav - 리소스"
+track-metadata-position="nav - ทรัพยากร"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="지원"
+track-metadata-module_headline="การสนับสนุน"
 tooltip
 >
-공식 Google Ad Manager Discord 채널
+ช่อง Discord อย่างเป็นทางการของ Google Ad Manager
 track-type="nav"
 track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
-track-metadata-position="nav - 리소스"
+track-metadata-position="nav - ทรัพยากร"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="지원"
+track-metadata-module_headline="การสนับสนุน"
 tooltip
 >
-광고 개발자 블로그
+บล็อกนักพัฒนาโฆษณา
 ">
 ">
-테스트 도구
+เครื่องมือทดสอบ
 track-type="nav"
 track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
-track-metadata-position="nav - 리소스"
+track-metadata-position="nav - ทรัพยากร"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="테스트 도구"
+track-metadata-module_headline="เครื่องมือทดสอบ"
 tooltip
 >
-동영상 광고 게재 검사기
+เครื่องมือตรวจสอบ Video Suite
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=ko"
-track-metadata-position="nav - 리소스"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=th"
+track-metadata-position="nav - ทรัพยากร"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="테스트 도구"
+track-metadata-module_headline="เครื่องมือทดสอบ"
 tooltip
 >
-샘플 스트림
+ตัวอย่างสตรีม
 </tab>
 enable-signin
 enable-search
@@ -10541,20 +9870,20 @@ enable-search-summaries
 project-name="DAI Full Service API"
 tenant-name="Google for Developers"
 project-scope="/ad-manager/dynamic-ad-insertion/api/full-service"
-url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/full-service?hl=ko"
+url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/full-service?hl=th"
 >
 search-open
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="검색 열기">
+aria-label="เปิดการค้นหา">
 aria-activedescendant=""
 aria-autocomplete="list"
-aria-label="검색"
+aria-label="ค้นหา"
 aria-expanded="false"
 aria-haspopup="listbox"
 autocomplete="off"
 class="devsite-search-field devsite-search-query"
 name="q"
-placeholder="검색"
+placeholder="ค้นหา"
 role="combobox"
 type="text"
 value=""
@@ -10562,7 +9891,7 @@ value=""
 <kbd class="devsite-search-shortcut-icon">/</kbd>
 search-close
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="검색 닫기">
+aria-label="ปิดการค้นหา">
 >English
 >Deutsch
 >Español
@@ -10588,7 +9917,7 @@ aria-label="검색 닫기">
 enable-profiles
 fp-auth
 id="devsite-user">
-로그인
+ลงชื่อเข้าใช้
 ">
 >
 >
@@ -10602,50 +9931,50 @@ track-name="breadcrumb"
 track-metadata-position="1"
 track-metadata-eventdetail=""
 >
-전체 서비스 DAI API
+DAI API ที่ให้บริการเต็มรูปแบบ
 <tab  class="devsite-active">
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=th"
 track-type="nav"
-track-metadata-position="nav - 가이드"
+track-metadata-position="nav - คำแนะนำ"
 track-metadata-module="primary nav"
-aria-label="가이드, selected"
+aria-label="คำแนะนำ, selected"
 data-category="Site-Wide Custom Events"
-data-label="Tab: 가이드"
-track-name="가이드"
+data-label="Tab: คำแนะนำ"
+track-name="คำแนะนำ"
 >
-가이드
+คำแนะนำ
 </tab>
 <tab  >
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/reference/live?hl=ko"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/reference/live?hl=th"
 track-type="nav"
-track-metadata-position="nav - 참조"
+track-metadata-position="nav - ข้อมูลอ้างอิง"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Tab: 참조"
-track-name="참조"
+data-label="Tab: ข้อมูลอ้างอิง"
+track-name="ข้อมูลอ้างอิง"
 >
-참조
+ข้อมูลอ้างอิง
 </tab>
 >
-placeholder="필터"
-aria-label="입력하여 필터링"
+placeholder="ตัวกรอง"
+aria-label="พิมพ์เพื่อกรอง"
 role="searchbox">
-data-title="필터 지우기"
-aria-label="필터 지우기"
+data-title="ล้างตัวกรอง"
+aria-label="ล้างตัวกรอง"
 role="button"
 tabindex="0">
-aria-label="사이드 메뉴">
+aria-label="เมนูด้านข้าง">
 id="devsite-close-nav"
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Close navigation"
-aria-label="탐색 메뉴 닫기">
+aria-label="ปิดการนำทาง">
 size="medium"
 >
 alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=ko"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=th"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
@@ -10665,19 +9994,19 @@ Dynamic Ad Insertion
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: 홈"
-track-name="홈"
+data-label="Tab: หน้าแรก"
+track-name="หน้าแรก"
 >
-홈
+หน้าแรก
 ">
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: 홈"
-track-name="홈"
+data-label="Tab: หน้าแรก"
+track-name="หน้าแรก"
 >
-더보기
-menu="홈">
+เพิ่มเติม
+menu="หน้าแรก">
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
@@ -10692,7 +10021,7 @@ data-category="Site-Wide Custom Events"
 data-label="Tab: SDK"
 track-name="sdk"
 >
-더보기
+เพิ่มเติม
 menu="SDK">
 class="devsite-nav-title gc-analytics-event
 devsite-nav-active"
@@ -10712,78 +10041,78 @@ data-category="Site-Wide Custom Events"
 data-label="Tab: API"
 track-name="api"
 >
-더보기
+เพิ่มเติม
 menu="API">
 class="devsite-nav-title gc-analytics-event
 devsite-nav-active"
 data-category="Site-Wide Custom Events"
-data-label="Tab: 가이드"
-track-name="가이드"
+data-label="Tab: คำแนะนำ"
+track-name="คำแนะนำ"
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 가이드"
+data-label="Responsive Tab: คำแนะนำ"
 track-type="globalNav"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-가이드
+คำแนะนำ
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Tab: 참조"
-track-name="참조"
+data-label="Tab: ข้อมูลอ้างอิง"
+track-name="ข้อมูลอ้างอิง"
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 참조"
+data-label="Responsive Tab: ข้อมูลอ้างอิง"
 track-type="globalNav"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-참조
+ข้อมูลอ้างอิง
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: 리소스"
-track-name="리소스"
+data-label="Tab: ทรัพยากร"
+track-name="ทรัพยากร"
 >
-리소스
+ทรัพยากร
 ">
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: 리소스"
-track-name="리소스"
+data-label="Tab: ทรัพยากร"
+track-name="ทรัพยากร"
 >
-더보기
-menu="리소스">
+เพิ่มเติม
+menu="ทรัพยากร">
 class="devsite-nav-title"
->개요
+>ภาพรวม
 class="devsite-nav-title"
->DAI Full Service API 알아보기
+>ดูข้อมูลเกี่ยวกับ DAI Full Service API
 devsite-nav-expandable">
-HMAC 토큰으로 요청 인증
+ตรวจสอบสิทธิ์คำขอด้วยโทเค็น HMAC
 devsite-nav-expandable">
-스트림 세션 요청
+คำขอเซสชันการสตรีม
 class="devsite-nav-title"
->개요
+>ภาพรวม
 class="devsite-nav-title"
->스트림 세션 요청 인증
+>ตรวจสอบสิทธิ์คำขอเซสชันสตรีม
 devsite-nav-heading">
-개발
+พัฒนา
 class="devsite-nav-title"
->DAI 라이브 스트림 관리
+>จัดการสตรีมแบบสดของ DAI
 class="devsite-nav-title"
->DAI VOD 스트림 요청
+>ขอสตรีม VOD ของ DAI
 class="devsite-nav-title"
->AdChoices 구현
+>ใช้ตัวเลือกโฆษณาอื่นๆ
 class="devsite-nav-title"
->VOD 스트림에서 건너뛸 수 있는 광고 사용 설정
-aria-label="사이드 메뉴" hidden>
+>เปิดใช้โฆษณาแบบข้ามได้ในสตรีม VOD
+aria-label="เมนูด้านข้าง" hidden>
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 홈"
+data-label="Responsive Tab: หน้าแรก"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-홈
-aria-label="사이드 메뉴" hidden>
+หน้าแรก
+aria-label="เมนูด้านข้าง" hidden>
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
@@ -10832,110 +10161,110 @@ track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
 Roku
-aria-label="사이드 메뉴" hidden>
+aria-label="เมนูด้านข้าง" hidden>
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 전체 서비스 DAI"
+data-label="Responsive Tab: DAI บริการเต็มรูปแบบ"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-전체 서비스 DAI
+DAI บริการเต็มรูปแบบ
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: DAI를 게재하는 광고 모음"
+data-label="Responsive Tab: DAI ที่แสดงพ็อด"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-DAI를 게재하는 광고 모음
+DAI ที่แสดงพ็อด
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 광고 시점"
+data-label="Responsive Tab: ช่วงพักโฆษณา"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-광고 시점
-aria-label="사이드 메뉴" hidden>
+ช่วงพักโฆษณา
+aria-label="เมนูด้านข้าง" hidden>
 class="devsite-nav-title"
 tooltip
 >
-지원
+การสนับสนุน
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Ad Manager 도움말 커뮤니티"
+data-label="Responsive Tab: ชุมชนความช่วยเหลือของ Ad Manager"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Ad Manager 도움말 커뮤니티
+ชุมชนความช่วยเหลือของ Ad Manager
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 지원팀에 문의"
+data-label="Responsive Tab: ติดต่อฝ่ายสนับสนุน"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-지원팀에 문의
+ติดต่อฝ่ายสนับสนุน
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 서비스 약관"
+data-label="Responsive Tab: ข้อกำหนดในการให้บริการ"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-서비스 약관
+ข้อกำหนดในการให้บริการ
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 공식 Google Ad Manager Discord 채널"
+data-label="Responsive Tab: ช่อง Discord อย่างเป็นทางการของ Google Ad Manager"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-공식 Google Ad Manager Discord 채널
+ช่อง Discord อย่างเป็นทางการของ Google Ad Manager
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 광고 개발자 블로그"
+data-label="Responsive Tab: บล็อกนักพัฒนาโฆษณา"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-광고 개발자 블로그
+บล็อกนักพัฒนาโฆษณา
 class="devsite-nav-title"
 tooltip
 >
-테스트 도구
+เครื่องมือทดสอบ
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 동영상 광고 게재 검사기"
+data-label="Responsive Tab: เครื่องมือตรวจสอบ Video Suite"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-동영상 광고 게재 검사기
+เครื่องมือตรวจสอบ Video Suite
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 샘플 스트림"
+data-label="Responsive Tab: ตัวอย่างสตรีม"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-샘플 스트림
+ตัวอย่างสตรีม
 has-book-nav
 >
 role="navigation"
-aria-label="이 페이지의 내용"
+aria-label="ในหน้านี้"
 depth="2"
 scrollbars
 data-nosnippet
 disabled>
 >
-DAI API는 베타 버전이며 일부 네트워크에서는 사용하지 못할 수 있습니다. 자세한 내용은 계정 관리자에게 문의하세요. IMA SDK를 사용할 수 있는 경우에는 이 SDK를 사용하는 것이 좋습니다.
+DAI API อยู่ในเวอร์ชันเบต้าและอาจไม่พร้อมใช้งานในเครือข่ายของคุณ ติดต่อผู้จัดการฝ่ายดูแลลูกค้าเพื่อสอบถามข้อมูลเพิ่มเติม แนะนำให้ใช้ IMA SDK สำหรับแพลตฟอร์มที่มีให้ใช้งาน
 class="devsite-banner-translated-image invert"
 alt="">
 Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
-aria-label="탐색경로">
+aria-label="เบรดครัมบ์">
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -10946,7 +10275,7 @@ track-name="breadcrumb"
 track-metadata-position="1"
 track-metadata-eventdetail=""
 >
-홈
+หน้าแรก
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -10957,7 +10286,7 @@ track-name="breadcrumb"
 track-metadata-position="2"
 track-metadata-eventdetail=""
 >
-제품
+ผลิตภัณฑ์
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -11000,10 +10329,10 @@ class="devsite-page-bookmark-tooltip nocontent"
 data-nosnippet
 dismiss-button="true"
 id="devsite-collections-dropdown"
-dismiss-button-text="닫기"
-close-button-text="확인">
-컬렉션을 사용해 정리하기
-내 환경설정을 기준으로 콘텐츠를 저장하고 분류하세요.
+dismiss-button-text="ปิด"
+close-button-text="รับทราบ">
+จัดทุกอย่างให้เป็นระเบียบอยู่เสมอด้วยคอลเล็กชัน
+บันทึกและจัดหมวดหมู่เนื้อหาตามค่ากำหนดของคุณ
 depth="2"
 devsite-toc-embedded
 disabled>
@@ -11013,45 +10342,42 @@ header-position="top"
 description-position="bottom"
 >
 ">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice.png?hl=ko"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_36.png?hl=ko 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_48.png?hl=ko 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_72.png?hl=ko 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_96.png?hl=ko 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_480.png?hl=ko 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_720.png?hl=ko 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_856.png?hl=ko 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_960.png?hl=ko 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1440.png?hl=ko 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1920.png?hl=ko 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_2880.png?hl=ko 2880w"
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice.png?hl=th"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_36.png?hl=th 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_48.png?hl=th 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_72.png?hl=th 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_96.png?hl=th 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_480.png?hl=th 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_720.png?hl=th 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_856.png?hl=th 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_960.png?hl=th 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1440.png?hl=th 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1920.png?hl=th 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_2880.png?hl=th 2880w"
 sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
 fetchpriority="high">
 >
-data-text="전체 서비스 DAI"
+data-text="DAI บริการเต็มรูปแบบ"
 class="hide-from-toc no-link"
 tabindex="0">
-전체 서비스 DAI
-전체 서비스 동적 광고 삽입 (DAI)은 Google의 엔드 투 엔드 서버 측 광고 삽입 (SSAI) 구현입니다. 게시자는 HLS 또는 MPEG DASH 형식으로 콘텐츠 스트림을 제공할 수 있으며, Google의 DAI 서버는 사용자에게 표시하기 전에 Google 또는 서드 파티 광고 서버에서 스트림에 적절한 광고를 선택하여 삽입합니다.
+DAI บริการเต็มรูปแบบ
+การแทรกโฆษณาแบบไดนามิก (DAI) แบบบริการเต็มรูปแบบคือการติดตั้งใช้งานการแทรกโฆษณาฝั่งเซิร์ฟเวอร์ (SSAI) แบบครบวงจรของ Google ซึ่งช่วยให้ผู้เผยแพร่โฆษณาสามารถระบุสตรีมเนื้อหาในรูปแบบ HLS หรือ MPEG DASH และเซิร์ฟเวอร์ DAI ของ Google จะเลือกและแทรกโฆษณาที่เหมาะสมลงในสตรีมจากเซิร์ฟเวอร์โฆษณาของ Google หรือบุคคลที่สาม ก่อนที่จะนำเสนอต่อผู้ใช้
 background="grey"
 header-position="top"
 >
 description-position="bottom"
 >
 ">
-src="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram.png?hl=ko"
-srcset="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_36.png?hl=ko 36w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_48.png?hl=ko 48w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_72.png?hl=ko 72w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_96.png?hl=ko 96w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_480.png?hl=ko 480w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_720.png?hl=ko 720w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_856.png?hl=ko 856w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_960.png?hl=ko 960w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1440.png?hl=ko 1440w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1920.png?hl=ko 1920w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_2880.png?hl=ko 2880w"
+src="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram.png?hl=th"
+srcset="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_36.png?hl=th 36w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_48.png?hl=th 48w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_72.png?hl=th 72w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_96.png?hl=th 96w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_480.png?hl=th 480w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_720.png?hl=th 720w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_856.png?hl=th 856w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_960.png?hl=th 960w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1440.png?hl=th 1440w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1920.png?hl=th 1920w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_2880.png?hl=th 2880w"
 sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
 loading="lazy"
 >
 >
-data-text="IMA DAI SDK를 사용하는 경우"
+data-text="ใช้ IMA DAI SDK"
 class="hide-from-toc no-link"
 tabindex="0">
-IMA DAI SDK를 사용하는 경우
-웹페이지 또는 앱에서 다음을 통해 IMA DAI SDK를 로드합니다.
-HTML5에 삽입된 스크립트 태그
-Android, Google Cast, iOS, tvOS 또는 Roku용 기본 앱
-SDK가 Google Ad Manager 360에서 VOD 스트림 또는 실시간 스트림을 요청합니다.
-Ad Manager 360은 삽입된 광고 시점이 포함된 동영상 스트림으로 응답합니다.
-SDK가 응답을 파싱하고, 환경에 따라 올바른 미디어 유형을
-결정하며, 동영상 스트림 (필요한 경우 컴패니언 광고)을
-웹페이지 또는 앱에 게재합니다.
-동영상 플레이어가 SDK와 재생 세부정보를 협상하고 콘텐츠를 재생합니다.
-동영상 플레이어는 인스트림 메타데이터를 수신 대기하고 처리를 위해
-SDK에 전달합니다.
-SDK는 필요에 따라 노출 핑 및 추적 이벤트를 실행합니다.
-IMA DAI SDK를 사용하여 클라이언트 동영상 플레이어를 구현하는 방법은 Google의 SDK 가이드를 참고하세요.
+ใช้ IMA DAI SDK
+หน้าเว็บหรือแอปโหลด IMA DAI SDK ผ่านช่องทางต่อไปนี้
+แท็กสคริปต์ที่ฝังสำหรับ HTML5
+แอปที่มาพร้อมเครื่องสำหรับ Android, Google Cast, iOS, tvOS หรือ Roku
+SDK ขอสตรีม VOD หรือสตรีมแบบสดจาก Google Ad Manager 360
+Ad Manager 360 ตอบสนองด้วยสตรีมวิดีโอที่มีช่วงพักโฆษณาที่แทรกไว้
+SDK จะแยกวิเคราะห์การตอบกลับ กำหนดประเภทสื่อที่ถูกต้องตามสภาพแวดล้อม และแสดงสตรีมวิดีโอ (และโฆษณาที่แสดงร่วมหากจำเป็น) ไปยังหน้าเว็บหรือแอป
+โปรแกรมเล่นวิดีโอเจรจาต่อรองรายละเอียดการเล่นกับ SDK และเล่นเนื้อหา
+โปรแกรมเล่นวิดีโอจะคอยฟังข้อมูลเมตาในสตรีมและส่งไปยัง SDK เพื่อประมวลผล
+SDK จะเริ่มการใช้คำสั่ง ping การแสดงผลและการติดตามเหตุการณ์ตามที่จำเป็น
+สำหรับคำแนะนำโดยละเอียดเกี่ยวกับวิธีใช้โปรแกรมเล่นวิดีโอของไคลเอ็นต์โดยใช้ IMA DAI SDK โปรดดูคำแนะนำเกี่ยวกับ SDK ของเรา
 HTML5
 Android
 iOS
@@ -11061,1141 +10387,44 @@ Roku
 description-position="bottom"
 >
 ">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api.png?hl=ko"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_36.png?hl=ko 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_48.png?hl=ko 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_72.png?hl=ko 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_96.png?hl=ko 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_480.png?hl=ko 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_720.png?hl=ko 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_856.png?hl=ko 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_960.png?hl=ko 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1440.png?hl=ko 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1920.png?hl=ko 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_2880.png?hl=ko 2880w"
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api.png?hl=th"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_36.png?hl=th 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_48.png?hl=th 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_72.png?hl=th 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_96.png?hl=th 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_480.png?hl=th 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_720.png?hl=th 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_856.png?hl=th 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_960.png?hl=th 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1440.png?hl=th 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1920.png?hl=th 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_2880.png?hl=th 2880w"
 sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
 loading="lazy"
 >
 >
-data-text="DAI API 사용"
+data-text="ใช้ DAI API"
 class="hide-from-toc no-link"
 tabindex="0">
-DAI API 사용
-클라이언트의 플레이어 앱이 VOD 스트림 또는 라이브 스트림을 요청합니다.
-Google Ad Manager 360에서
-얻을 수 있습니다
-Ad Manager 360은 삽입된 광고 시점이 포함된 동영상 스트림으로 응답합니다.
-클라이언트의 플레이어 앱이 스트림 재생을 시작하고
-광고 메타데이터를 한 번 요청 (VOD 스트림의 경우) 또는 정기적으로 시작
-광고 메타데이터 (라이브 스트림의 경우) 폴링
-클라이언트의 플레이어 앱은 인스트림 메타데이터를 리슨하고 파싱한 후 광고 메타데이터의 값과 비교하여 광고 이벤트를 식별합니다.
-클라이언트의 동영상 플레이어 앱은 필요에 따라 광고 노출 핑 및 추적 이벤트를 실행합니다.
-클라이언트 동영상 플레이어를 구현하는 방법에 관한 자세한 안내는
-DAI REST API를 사용하는 경우 Google의 API 가이드를 확인하세요.
-라이브 API
+ใช้ DAI API
+แอปโปรแกรมเล่นของลูกค้าจะขอสตรีม VOD หรือสตรีมแบบสดจาก Google Ad Manager 360
+Ad Manager 360 ตอบสนองด้วยสตรีมวิดีโอที่มี
+ช่วงพักโฆษณาที่แทรกแล้ว
+แอปโปรแกรมเล่นของไคลเอ็นต์จะเริ่มเล่นสตรีม และ
+ขอข้อมูลเมตาโฆษณาครั้งเดียว (สำหรับสตรีม VOD) หรือเริ่มเป็นประจำ
+การสำรวจข้อมูลเมตาของโฆษณา (สำหรับสตรีมแบบสด)
+แอปเพลเยอร์ของลูกค้าจะคอยฟังข้อมูลเมตาในสตรีม แยกวิเคราะห์ และเปรียบเทียบกับค่าในข้อมูลเมตาของโฆษณาเพื่อระบุเหตุการณ์โฆษณา
+แอปโปรแกรมเล่นวิดีโอของลูกค้าจะเริ่มใช้คำสั่ง ping การแสดงโฆษณาและ
+เหตุการณ์การติดตามตามที่จำเป็น
+ดูวิธีการโดยละเอียดในการติดตั้งใช้งานโปรแกรมเล่นวิดีโอไคลเอ็นต์โดยใช้ DAI REST API ได้ที่คู่มือ API
+API แบบสด
 VOD API
 hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
 listnr-id="82128">
-달리 명시되지 않는 한 이 페이지의 콘텐츠에는 Creative Commons Attribution 4.0 라이선스에 따라 라이선스가 부여되며, 코드 샘플에는 Apache 2.0 라이선스에 따라 라이선스가 부여됩니다. 자세한 내용은 Google Developers 사이트 정책을 참조하세요. 자바는 Oracle 및/또는 Oracle 계열사의 등록 상표입니다.
-최종 업데이트: 2026-03-05(UTC)
+เนื้อหาของหน้าเว็บนี้ได้รับอนุญาตภายใต้ใบอนุญาตที่ต้องระบุที่มาของครีเอทีฟคอมมอนส์ 4.0 และตัวอย่างโค้ดได้รับอนุญาตภายใต้ใบอนุญาต Apache 2.0 เว้นแต่จะระบุไว้เป็นอย่างอื่น โปรดดูรายละเอียดที่นโยบายเว็บไซต์ Google Developers Java เป็นเครื่องหมายการค้าจดทะเบียนของ Oracle และ/หรือบริษัทในเครือ
+อัปเดตล่าสุด 2026-03-05 UTC
 >
 <template class="devsite-content-data-template">
-[[["이해하기 쉬움","easyToUnderstand","thumb-up"],["문제가 해결됨","solvedMyProblem","thumb-up"],["기타","otherUp","thumb-up"]],[["필요한 정보가 없음","missingTheInformationINeed","thumb-down"],["너무 복잡함/단계 수가 너무 많음","tooComplicatedTooManySteps","thumb-down"],["오래됨","outOfDate","thumb-down"],["번역 문제","translationIssue","thumb-down"],["샘플/코드 문제","samplesCodeIssue","thumb-down"],["기타","otherDown","thumb-down"]],["최종 업데이트: 2026-03-05(UTC)"],[],[]]
+[[["เข้าใจง่าย","easyToUnderstand","thumb-up"],["แก้ปัญหาของฉันได้","solvedMyProblem","thumb-up"],["อื่นๆ","otherUp","thumb-up"]],[["ไม่มีข้อมูลที่ฉันต้องการ","missingTheInformationINeed","thumb-down"],["ซับซ้อนเกินไป/มีหลายขั้นตอนมากเกินไป","tooComplicatedTooManySteps","thumb-down"],["ล้าสมัย","outOfDate","thumb-down"],["ปัญหาเกี่ยวกับการแปล","translationIssue","thumb-down"],["ตัวอย่าง/ปัญหาเกี่ยวกับโค้ด","samplesCodeIssue","thumb-down"],["อื่นๆ","otherDown","thumb-down"]],["อัปเดตล่าสุด 2026-03-05 UTC"],[],[]]
 </template>
-aria-label="바닥글 링크"
+aria-label="ลิงก์ส่วนท้าย"
 data-nosnippet>
-연결
+เชื่อมต่อ
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
 >
-블로그
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Bluesky
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Instagram
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-LinkedIn
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-X(트위터)
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 6)"
->
-YouTube
-프로그램
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Google Developer Program
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Google Developer Groups
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Google Developer Experts
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-Accelerators
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-Google Cloud & NVIDIA
-개발자 콘솔
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Google API Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Google Cloud Platform Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Google Play Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-Firebase Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-Actions on Google Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 6)"
->
-Cast SDK Developer Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 7)"
->
-Chrome Web Store Dashboard
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 8)"
->
-Google Home Developer Console
-class="devsite-footer-sites-logo-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google Developers Link">
-src="https://www.gstatic.com/devrel-devsite/prod/v544324a32f4e1e28baf5bd35dca83b6157fef32c5ffbe146b7ca395602e11426/developers/images/lockup-google-for-developers.svg"
-loading="lazy"
-alt="Google Developers">
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Android Link"
->
-Android
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Chrome Link"
->
-Chrome
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Firebase Link"
->
-Firebase
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google Cloud Platform Link"
->
-Google Cloud Platform
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google AI Link"
->
-Google AI
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer All products Link"
->
-모든 제품
-">
-href="https://developers.google.com/terms/site-terms?hl=ko"
-data-category="Site-Wide Custom Events"
-data-label="Footer Terms link"
->
-약관
-">
-href="//policies.google.com/privacy?hl=ko"
-data-category="Site-Wide Custom Events"
-data-label="Footer Privacy link"
->
-개인정보처리방침
-glue-cookie-notification-bar-control">
-href="#"
-data-category="Site-Wide Custom Events"
-data-label="Footer Manage cookies link"
-aria-hidden="true"
->
-Manage cookies
->English
->Deutsch
->Español
->Español – América Latina
->Français
->Indonesia
->Italiano
->Polski
->Português – Brasil
->Tiếng Việt
->Türkçe
->Русский
->עברית
->العربيّة
->فارسی
->हिंदी
->বাংলা
->ภาษาไทย
->中文 – 简体
->中文 – 繁體
->日本語
->한국어
-data-info-panel
-data-ai-panel
-data-api-explorer-panel
->
-
----
-
-# pod serving
-
-> **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
-> **Analyzed At:** 2026-07-19T06:03:32.630Z
-
-### Content
-lang="en"
-dir="ltr">
-content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
-crossorigin="use-credentials">
-href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml">
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ar" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=bn" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-cn" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-tw" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fr" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=de" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=he" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=hi" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=id" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=it" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ja" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ko" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pl" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pt-br" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ru" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=vi" /><title>DAI Pod Serving API &nbsp;|&nbsp; Google for Developers</title>
-template="landing"
-theme="google-blue"
-type="product"
-layout="docs"
-concierge='hide'
-pending>
-Skip to main content
-class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Navigation menu button"
-visually-hidden
-aria-label="Open menu">
-size="medium"
->
-alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
-srcset=" /static/ads/images/logo_admanager_192px.svg"
-sizes="64px"
-loading="lazy"
->
->
-devsite-has-google-wordmark">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - home"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Home"
-track-name="home"
->
-Home
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion"
-track-metadata-position="nav - home"
-track-metadata-module="tertiary nav"
-tooltip
->
-Home
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - sdks"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDKs"
-track-name="sdks"
->
-SDKs
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - HTML5"
->
-HTML5
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Android"
-data-category="DAI top menu navigation"
->
-Android
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - iOS"
->
-iOS
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - tvOS"
->
-tvOS
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Chromecast"
-data-category="DAI top menu navigation"
->
-Chromecast
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku"
-track-metadata-position="nav - sdks"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - Roku"
-data-category="DAI top menu navigation"
->
-Roku
-</tab>
-<tab class="devsite-dropdown
-devsite-active
-">
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
-track-type="nav"
-track-metadata-position="nav - apis"
-track-metadata-module="primary nav"
-aria-label="APIs, selected"
-data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
->
-APIs
-aria-haspopup="menu"
-aria-expanded="false"
-aria-label="Dropdown menu for APIs"
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
-track-metadata-position="nav - apis"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
-class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down">
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
-track-metadata-position="nav - apis"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Full service"
-data-category="DAI top menu navigation"
->
-Full service DAI
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
-track-metadata-position="nav - apis"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: API - Pod serving"
->
-Pod serving DAI
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break"
-track-metadata-position="nav - apis"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Ad break"
-data-category="DAI top menu navigation"
->
-Ad break
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - resources"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Resources"
-track-name="resources"
->
-Resources
-">
-">
-Support
-track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/community"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
-tooltip
->
-Ad Manager Help Community
-track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
-tooltip
->
-Contact support
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
-tooltip
->
-Terms of service
-track-type="nav"
-track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
-tooltip
->
-Official Google Ad Manager Discord channel
-track-type="nav"
-track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
-tooltip
->
-Ads developer blog
-">
-">
-Test tools
-track-type="nav"
-track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="test tools"
-tooltip
->
-Video Suite Inspector
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams"
-track-metadata-position="nav - resources"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="test tools"
-tooltip
->
-Sample streams
-</tab>
-enable-signin
-enable-search
-enable-suggestions
-enable-query-completion
-enable-search-summaries
-project-name="DAI Pod Serving API"
-tenant-name="Google for Developers"
-project-scope="/ad-manager/dynamic-ad-insertion/api/pod-serving"
-url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/pod-serving"
->
-search-open
-class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Open search">
-aria-activedescendant=""
-aria-autocomplete="list"
-aria-label="Search"
-aria-expanded="false"
-aria-haspopup="listbox"
-autocomplete="off"
-class="devsite-search-field devsite-search-query"
-name="q"
-placeholder="Search"
-role="combobox"
-type="text"
-value=""
->
-<kbd class="devsite-search-shortcut-icon">/</kbd>
-search-close
-class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Close search">
->English
->Deutsch
->Español
->Español – América Latina
->Français
->Indonesia
->Italiano
->Polski
->Português – Brasil
->Tiếng Việt
->Türkçe
->Русский
->עברית
->العربيّة
->فارسی
->हिंदी
->বাংলা
->ภาษาไทย
->中文 – 简体
->中文 – 繁體
->日本語
->한국어
-enable-profiles
-fp-auth
-id="devsite-user">
-Sign in
-">
->
->
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Lower Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail=""
->
-DAI pod serving API
-<tab  class="devsite-active">
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
-track-type="nav"
-track-metadata-position="nav - guides"
-track-metadata-module="primary nav"
-aria-label="Guides, selected"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Guides"
-track-name="guides"
->
-Guides
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live"
-track-type="nav"
-track-metadata-position="nav - reference"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Reference"
-track-name="reference"
->
-Reference
-</tab>
->
-placeholder="Filter"
-aria-label="Type to filter"
-role="searchbox">
-data-title="Clear filter"
-aria-label="Clear filter"
-role="button"
-tabindex="0">
-aria-label="Side menu">
-id="devsite-close-nav"
-class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Close navigation"
-aria-label="Close navigation">
-size="medium"
->
-alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
-srcset=" /static/ads/images/logo_admanager_192px.svg"
-sizes="64px"
-loading="lazy"
->
->
-devsite-has-google-wordmark">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Home"
-track-name="home"
->
-Home
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Home"
-track-name="home"
->
-More
-menu="Home">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDKs"
-track-name="sdks"
->
-SDKs
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: SDKs"
-track-name="sdks"
->
-More
-menu="SDKs">
-class="devsite-nav-title gc-analytics-event
-devsite-nav-active"
-data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: APIs"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-APIs
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
->
-More
-menu="APIs">
-class="devsite-nav-title gc-analytics-event
-devsite-nav-active"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Guides"
-track-name="guides"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Guides"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Guides
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Tab: Reference"
-track-name="reference"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Reference"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Reference
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Resources"
-track-name="resources"
->
-Resources
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: Resources"
-track-name="resources"
->
-More
-menu="Resources">
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Learn DAI Pod Serving API
-devsite-nav-expandable">
-Authenticate requests with HMAC token
-devsite-nav-expandable">
-Stream Session Requests
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Authenticate Stream Session Requests
-devsite-nav-expandable">
-Ad Pod Requests
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Authenticate Pod Segment Requests
-class="devsite-nav-title"
->Authenticate Pod Manifest Requests
-class="devsite-nav-title"
->Authenticate Ad Pod Timing Metadata Request
-class="devsite-nav-title"
->Token Generator
-devsite-nav-heading">
-Develop server-side ad insertion
-devsite-nav-expandable">
-Manage SSAI livestreams
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Prepare client video player app
-devsite-nav-expandable">
-Develop manifest manipulation server
-class="devsite-nav-title"
->Insert ads with ad pod timing metadata
-class="devsite-nav-title"
->Insert ads using segment redirects
-devsite-nav-expandable">
-Manage SSAI VOD streams
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Prepare your client video player app
-class="devsite-nav-title"
->Configure your manifest manipulation server
-devsite-nav-heading">
-Set up server-guided ad insertion
-class="devsite-nav-title"
->About server-guided ad insertion
-class="devsite-nav-title"
->Get started with SGAI for livestream
-aria-label="Side menu" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Home"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Home
-aria-label="Side menu" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: HTML5"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-HTML5
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Android"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Android
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: iOS"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-iOS
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: tvOS"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-tvOS
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Chromecast"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Chromecast
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Roku"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Roku
-aria-label="Side menu" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Full service DAI"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Full service DAI
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Pod serving DAI"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Pod serving DAI
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Ad break"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Ad break
-aria-label="Side menu" hidden>
-class="devsite-nav-title"
-tooltip
->
-Support
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Ad Manager Help Community"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Ad Manager Help Community
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Contact support"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Contact support
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Terms of service"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Terms of service
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Official Google Ad Manager Discord channel"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Official Google Ad Manager Discord channel
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Ads developer blog"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Ads developer blog
-class="devsite-nav-title"
-tooltip
->
-Test tools
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Video Suite Inspector"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Video Suite Inspector
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Sample streams"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Sample streams
-has-book-nav
->
-role="navigation"
-aria-label="On this page"
-depth="2"
-scrollbars
-data-nosnippet
-disabled>
-aria-label="Breadcrumb">
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail=""
->
-Home
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail=""
->
-Products
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="3"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="3"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="4"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="4"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-DAI Pod Serving API
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="5"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="5"
-track-metadata-eventdetail=""
->
-APIs
-ack-key="AckCollectionsBookmarkTooltipDismiss"
-analytics-category="Site-Wide Custom Events"
-analytics-action-show="Callout Profile displayed"
-analytics-action-close="Callout Profile dismissed"
-analytics-label="Create Collection Callout"
-class="devsite-page-bookmark-tooltip nocontent"
-data-nosnippet
-dismiss-button="true"
-id="devsite-collections-dropdown"
-dismiss-button-text="Dismiss"
-close-button-text="Got it">
-Stay organized with collections
-Save and categorize content based on your preferences.
-depth="2"
-devsite-toc-embedded
-disabled>
-devsite-no-page-title">
-header-position="top"
->
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_2880.png 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-fetchpriority="high">
->
-data-text="DAI Pod Serving"
-class="hide-from-toc no-link"
-tabindex="0">
-DAI Pod Serving
-Dynamic Ad Insertion (DAI) Pod Serving lets you request ad pods, from Google or third-party ad servers, for live and video-on-demand (VOD) streams. For more details, see  Configure ad pods and break templates.
-For livestream, Google Ad Manager supports the following DAI types:
-Pod serving redirect: lets you retrieve manifest segments to implement
-Server-Side Ad Insertion (SSAI). The segments are dynamic URLs, redirecting to either
-content or ad media files.
-Pod serving manifest: lets you retrieve the complete manifest of the ad pods to
-implement Server-Side Ad Insertion (SSAI). For more details,
-see Server guided DAI.
-For VOD, Google Ad Manager returns the complete ad pod manifests.
-DAI Pod serving offers the following supported platforms:
-HTML5
-Android
-iOS
-tvOS
-Chromecast
-Roku
-For details on livestream and VOD, see the following workflows:
-background="grey"
-header-position="top"
->
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_2880.png 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-loading="lazy"
->
->
-data-text="Stitch ads into a livestream"
-class="hide-from-toc no-link"
-tabindex="0">
-Stitch ads into a livestream
-To start a livestream session, make a stream registration request.
-Set ad tag parameters unique for the stream request to
-override the DAI ad tag's default values. For more details about
-ad targeting, see
-Supply targeting parameters to your stream.
-Retrieve the unique user session ID from the stream registration
-response. For more details about using the session ID, see
-Locate a DAI session ID or debug key and
-Monitor and debug a specific stream session.
-Make a manifest request to your video stitcher or manifest
-manipulator, passing the session ID. Repeat the request for
-manifest updates throughout playback.
-For DASH manifests, make one period template request for the entire session.
-For DASH manifests, cache the period template. For each ad break,
-retrieve the cached template and populate all macros with the ad break data.
-For more details about supported macros,
-see Populate the period template.
-Then, insert the result period into the final manifest.
-Return the final manifest that contains content or ad media segments for
-client playback.
-Playback begins.
-Regularly poll Google Ad Manager for updates of ad metadata using the polling frequency
-returned in the stream request.
-Store the ad metadata for looking up ad events.
-During an ad break, the video player loads the media segments and
-follows Google Ad Manager redirects to the media files.
-During an ad break,
-listen to the video player for timed metadata, containing ID3
-tags. Extract the ad event ID from the ID3 tag to find the
-associated ad metadata.
-Send media verification pings
-to Google Ad Manager.
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_2880.png 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-loading="lazy"
->
->
-data-text="Stitch ads into a VOD stream"
-class="hide-from-toc no-link"
-tabindex="0">
-Stitch ads into a VOD stream
-Make a stream request to register a VOD stream
-session. Set ad tag parameters unique for the stream request to
-override the DAI ad tag's default values. For more details, see
-Supply targeting parameters to your stream.
-Retrieve the session ID from the stream response. To inspect the stream session, see
-Locate a DAI session ID or debug key and
-Monitor and debug a specific stream session.
-Make a manifest request to your video stitcher or manifest
-manipulator, passing the session ID.
-Use the session ID to request all ad pods at once.
-Retrieve complete manifests of all ad pods. To create the final manifest, stitch the ad
-pod manifests with the content stream.
-Return the final manifest, containing both content and ad segments.
-Request ad metadata for all ad events. Store the ad metadata for
-looking up ad events. Playback begins.
-During an ad break, the video player loads the media segments and
-follows Google Ad Manager redirects to the media files.
-During an ad break,
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client#listen_for_ad_events">
-listen for ad events containing ID3 tags. To find the ad event metadata, extract
-the ad event ID from the ID3 tag and match the ID with the ad metadata.
-Send media verification pings
-to Google Ad Manager.
-hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
-listnr-id="82128">
-Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-03-05 UTC.
->
-<template class="devsite-content-data-template">
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-05 UTC."],[],[]]
-</template>
-aria-label="Footer links"
-data-nosnippet>
-Connect
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Blog
+บล็อก
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
@@ -12221,7 +10450,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 6)"
 >
 YouTube
-Programs
+โปรแกรม
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -12247,7 +10476,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
 >
 Google Cloud & NVIDIA
-Developer consoles
+คอนโซลของนักพัฒนาซอฟต์แวร์
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -12329,19 +10558,19 @@ gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer All products Link"
 >
-All products
+ผลิตภัณฑ์ทั้งหมด
 ">
-href="/terms/site-terms"
+href="https://developers.google.com/terms/site-terms?hl=th"
 data-category="Site-Wide Custom Events"
 data-label="Footer Terms link"
 >
-Terms
+ข้อกำหนด
 ">
-href="//policies.google.com/privacy"
+href="//policies.google.com/privacy?hl=th"
 data-category="Site-Wide Custom Events"
 data-label="Footer Privacy link"
 >
-Privacy
+ความเป็นส่วนตัว
 glue-cookie-notification-bar-control">
 href="#"
 data-category="Site-Wide Custom Events"
@@ -12371,17 +10600,13 @@ Manage cookies
 >中文 – 繁體
 >日本語
 >한국어
-data-info-panel
-data-ai-panel
-data-api-explorer-panel
->
 
 ---
 
-# start
+# pod serving
 
-> **Source:** https://developers.google.com/ad-manager/api/start
-> **Analyzed At:** 2026-07-19T06:03:34.316Z
+> **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
+> **Analyzed At:** 2026-07-20T07:00:13.009Z
 
 ### Content
 lang="fa-x-mtfrom-en"
@@ -12390,35 +10615,32 @@ content="profile email https://www.googleapis.com/auth/developerprofiles https:/
 crossorigin="use-credentials">
 href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
 title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=fa">
-href="https://developers.google.com/ad-manager/api/start" />
-href="https://developers.google.com/ad-manager/api/start?hl=ar" />
-href="https://developers.google.com/ad-manager/api/start?hl=bn" />
-href="https://developers.google.com/ad-manager/api/start?hl=zh-cn" />
-href="https://developers.google.com/ad-manager/api/start?hl=zh-tw" />
-href="https://developers.google.com/ad-manager/api/start?hl=fa" />
-href="https://developers.google.com/ad-manager/api/start?hl=fr" />
-href="https://developers.google.com/ad-manager/api/start?hl=de" />
-href="https://developers.google.com/ad-manager/api/start?hl=he" />
-href="https://developers.google.com/ad-manager/api/start?hl=hi" />
-href="https://developers.google.com/ad-manager/api/start?hl=id" />
-href="https://developers.google.com/ad-manager/api/start?hl=it" />
-href="https://developers.google.com/ad-manager/api/start?hl=ja" />
-href="https://developers.google.com/ad-manager/api/start?hl=ko" />
-href="https://developers.google.com/ad-manager/api/start?hl=pl" />
-href="https://developers.google.com/ad-manager/api/start?hl=pt-br" />
-href="https://developers.google.com/ad-manager/api/start?hl=ru" />
-href="https://developers.google.com/ad-manager/api/start?hl=es-419" />
-href="https://developers.google.com/ad-manager/api/start?hl=th" />
-href="https://developers.google.com/ad-manager/api/start?hl=tr" />
-href="https://developers.google.com/ad-manager/api/start?hl=vi" /><title>شروع به کار &nbsp;|&nbsp; Ad Manager SOAP API &nbsp;|&nbsp; Google for Developers</title>
-">
-">
-href="https://developers.google.com/ad-manager/api/start?hl=en">
-template="page"
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ar" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=bn" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-cn" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-tw" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fr" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=de" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=he" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=hi" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=id" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=it" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ja" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ko" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pl" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pt-br" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ru" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=vi" /><title>DAI Pod Serving API &nbsp;|&nbsp; Google for Developers</title>
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en">
+template="landing"
 theme="google-blue"
-type="article"
+type="product"
 layout="docs"
-display-toc
 pending>
 رد شدن و رفتن به محتوای اصلی
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
@@ -12428,13 +10650,13 @@ visually-hidden
 aria-label="باز کردن منو">
 size="medium"
 >
-alt="Google Ad Manager"
+alt="Google Dynamic Ad Insertion"
 src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fa"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
 >
-aria-label="نشانگر صفحات محصول">
+>
 devsite-has-google-wordmark">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -12443,29 +10665,236 @@ data-value="1"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="1"
-track-metadata-eventdetail="Google Ad Manager"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-Ad Manager
+Dynamic Ad Insertion
+<tab class="devsite-dropdown
 ">
-class="devsite-breadcrumb-link gc-analytics-event"
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - صفحه اصلی"
+track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail="Google Ad Manager SOAP API"
+data-label="Tab: صفحه اصلی"
+track-name="صفحه اصلی"
 >
-SOAP API
+صفحه اصلی
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=fa"
+track-metadata-position="nav - صفحه اصلی"
+track-metadata-module="tertiary nav"
+tooltip
+>
+صفحه اصلی
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - sdk ها"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK ها"
+track-name="sdk ها"
+>
+SDK ها
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=fa"
+track-metadata-position="nav - sdk ها"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - HTML5"
+>
+HTML5
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=fa"
+track-metadata-position="nav - sdk ها"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Android"
+data-category="DAI top menu navigation"
+>
+Android
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=fa"
+track-metadata-position="nav - sdk ها"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - iOS"
+>
+iOS
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=fa"
+track-metadata-position="nav - sdk ها"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - tvOS"
+data-category="DAI top menu navigation"
+>
+tvOS
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=fa"
+track-metadata-position="nav - sdk ها"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - Chromecast"
+>
+Chromecast
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=fa"
+track-metadata-position="nav - sdk ها"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Roku"
+data-category="DAI top menu navigation"
+>
+روکو
+</tab>
+<tab class="devsite-dropdown
+devsite-active
+">
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa"
+track-type="nav"
+track-metadata-position="nav - api ها"
+track-metadata-module="primary nav"
+aria-label="API ها, selected"
+data-category="Site-Wide Custom Events"
+data-label="Tab: API ها"
+track-name="api ها"
+>
+API ها
+aria-haspopup="menu"
+aria-expanded="false"
+aria-label="منوی کرکره‌ای برای API ها"
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa"
+track-metadata-position="nav - api ها"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: API ها"
+track-name="api ها"
+class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down">
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=fa"
+track-metadata-position="nav - api ها"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Full service"
+data-category="DAI top menu navigation"
+>
+خدمات کامل DAI
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa"
+track-metadata-position="nav - api ها"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Pod serving"
+data-category="DAI top menu navigation"
+>
+غلاف ارائه DAI
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=fa"
+track-metadata-position="nav - api ها"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: API - Ad break"
+>
+تبلیغات موقت
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - منابع"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: منابع"
+track-name="منابع"
+>
+منابع
+">
+">
+پشتیبانی
+track-type="nav"
+track-metadata-eventdetail="//support.google.com/admanager/community?hl=fa"
+track-metadata-position="nav - منابع"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="پشتیبانی"
+tooltip
+>
+انجمن راهنمای مدیر تبلیغات
+track-type="nav"
+track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=fa"
+track-metadata-position="nav - منابع"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="پشتیبانی"
+tooltip
+>
+با پشتیبانی تماس بگیرید
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=fa"
+track-metadata-position="nav - منابع"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="پشتیبانی"
+tooltip
+>
+شرایط استفاده از خدمات
+track-type="nav"
+track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
+track-metadata-position="nav - منابع"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="پشتیبانی"
+tooltip
+>
+کانال رسمی دیسکورد مدیریت تبلیغات گوگل
+track-type="nav"
+track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
+track-metadata-position="nav - منابع"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="پشتیبانی"
+tooltip
+>
+وبلاگ توسعه دهنده تبلیغات
+">
+">
+ابزار تست
+track-type="nav"
+track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
+track-metadata-position="nav - منابع"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="ابزار تست"
+tooltip
+>
+بازرس مجموعه ویدیویی
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=fa"
+track-metadata-position="nav - منابع"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="ابزار تست"
+tooltip
+>
+نمونه جریان ها
+</tab>
 enable-signin
 enable-search
 enable-suggestions
 enable-query-completion
 enable-search-summaries
-project-name="Ad Manager SOAP API"
+project-name="DAI Pod Serving API"
 tenant-name="Google for Developers"
-project-scope="/ad-manager/api/start"
-url-scoped="https://developers.google.com/s/results/ad-manager/api/start?hl=fa"
+project-scope="/ad-manager/dynamic-ad-insertion/api/pod-serving"
+url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=fa"
 >
 search-open
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
@@ -12514,9 +10943,22 @@ fp-auth
 id="devsite-user">
 ورود به برنامه
 ">
+>
+>
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Lower Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail=""
+>
+DAI pod خدمت API
 <tab  class="devsite-active">
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/start?hl=fa"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa"
 track-type="nav"
 track-metadata-position="nav - راهنما"
 track-metadata-module="primary nav"
@@ -12529,7 +10971,7 @@ track-name="راهنما"
 </tab>
 <tab  >
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/rel_notes?hl=fa"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live?hl=fa"
 track-type="nav"
 track-metadata-position="nav - مرجع"
 track-metadata-module="primary nav"
@@ -12538,30 +10980,6 @@ data-label="Tab: مرجع"
 track-name="مرجع"
 >
 مرجع
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/clients?hl=fa"
-track-type="nav"
-track-metadata-position="nav - نمونه ها"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: نمونه ها"
-track-name="نمونه ها"
->
-نمونه ها
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/community?hl=fa"
-track-type="nav"
-track-metadata-position="nav - پشتیبانی"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: پشتیبانی"
-track-name="پشتیبانی"
->
-پشتیبانی
 </tab>
 >
 placeholder="فیلتر"
@@ -12579,13 +10997,13 @@ data-label="Close navigation"
 aria-label="بستن پیمایش">
 size="medium"
 >
-alt="Google Ad Manager"
+alt="Google Dynamic Ad Insertion"
 src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fa"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
 >
-aria-label="نشانگر صفحات عنوان بالاتر">
+>
 devsite-has-google-wordmark">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -12594,103 +11012,287 @@ data-value="1"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="1"
-track-metadata-eventdetail="Google Ad Manager"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-Ad Manager
-">
-class="devsite-breadcrumb-link gc-analytics-event"
+Dynamic Ad Insertion
+class="devsite-nav-title"
+tooltip
 data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail="Google Ad Manager SOAP API"
+data-label="Tab: صفحه اصلی"
+track-name="صفحه اصلی"
 >
-SOAP API
+صفحه اصلی
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: صفحه اصلی"
+track-name="صفحه اصلی"
+>
+موارد بیشتر
+menu="صفحه اصلی">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK ها"
+track-name="sdk ها"
+>
+SDK ها
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK ها"
+track-name="sdk ها"
+>
+موارد بیشتر
+menu="SDK ها">
 class="devsite-nav-title gc-analytics-event
-devsite-nav-has-children
+devsite-nav-active"
+data-category="Site-Wide Custom Events"
+data-label="Tab: API ها"
+track-name="api ها"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: API ها"
+track-type="globalNav"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+API ها
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: API ها"
+track-name="api ها"
+>
+موارد بیشتر
+menu="API ها">
+class="devsite-nav-title gc-analytics-event
 devsite-nav-active"
 data-category="Site-Wide Custom Events"
 data-label="Tab: راهنما"
 track-name="راهنما"
 data-category="Site-Wide Custom Events"
 data-label="Responsive Tab: راهنما"
-track-type="navMenu"
+track-type="globalNav"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
 راهنما
->
 class="devsite-nav-title gc-analytics-event
-devsite-nav-has-children
 "
 data-category="Site-Wide Custom Events"
 data-label="Tab: مرجع"
 track-name="مرجع"
 data-category="Site-Wide Custom Events"
 data-label="Responsive Tab: مرجع"
-track-type="navMenu"
+track-type="globalNav"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
 مرجع
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: منابع"
+track-name="منابع"
 >
+منابع
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: منابع"
+track-name="منابع"
+>
+موارد بیشتر
+menu="منابع">
+class="devsite-nav-title"
+>نمای کلی
+class="devsite-nav-title"
+>DAI Pod Serving API را یاد بگیرید
+devsite-nav-heading">
+درج آگهی سمت سرور را توسعه دهید
+devsite-nav-expandable">
+پخش‌های زنده SSAI را مدیریت کنید
+class="devsite-nav-title"
+>نمای کلی
+class="devsite-nav-title"
+>برنامه پخش کننده ویدیوی مشتری را آماده کنید
+devsite-nav-expandable">
+سرور دستکاری مانیفست را توسعه دهید
+class="devsite-nav-title"
+>درج تبلیغات با متادیتای زمان بندی آگهی
+class="devsite-nav-title"
+>درج تبلیغات با استفاده از تغییر مسیرهای بخش
+devsite-nav-expandable">
+جریان های SSAI VOD را مدیریت کنید
+class="devsite-nav-title"
+>نمای کلی
+class="devsite-nav-title"
+>برنامه پخش کننده ویدیوی مشتری خود را آماده کنید
+class="devsite-nav-title"
+>سرور دستکاری مانیفست خود را پیکربندی کنید
+devsite-nav-heading">
+درج آگهی هدایت‌شده توسط سرور را تنظیم کنید
+class="devsite-nav-title"
+>درباره درج آگهی هدایت‌شده توسط سرور
+class="devsite-nav-title"
+>برای پخش زنده با SGAI شروع کنید
+aria-label="منوی کناری" hidden>
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Tab: نمونه ها"
-track-name="نمونه ها"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: نمونه ها"
+data-label="Responsive Tab: صفحه اصلی"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-نمونه ها
+صفحه اصلی
+aria-label="منوی کناری" hidden>
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Tab: پشتیبانی"
-track-name="پشتیبانی"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: پشتیبانی"
+data-label="Responsive Tab: HTML5"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
+HTML5
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Android"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Android
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: iOS"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+iOS
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: tvOS"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+tvOS
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Chromecast"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Chromecast
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: روکو"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+روکو
+aria-label="منوی کناری" hidden>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: خدمات کامل DAI"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+خدمات کامل DAI
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: غلاف ارائه DAI"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+غلاف ارائه DAI
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: تبلیغات موقت"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+تبلیغات موقت
+aria-label="منوی کناری" hidden>
+class="devsite-nav-title"
+tooltip
+>
 پشتیبانی
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: انجمن راهنمای مدیر تبلیغات"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+انجمن راهنمای مدیر تبلیغات
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: با پشتیبانی تماس بگیرید"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+با پشتیبانی تماس بگیرید
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: شرایط استفاده از خدمات"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+شرایط استفاده از خدمات
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: کانال رسمی دیسکورد مدیریت تبلیغات گوگل"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+کانال رسمی دیسکورد مدیریت تبلیغات گوگل
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: وبلاگ توسعه دهنده تبلیغات"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+وبلاگ توسعه دهنده تبلیغات
 class="devsite-nav-title"
->شروع کنید
-class="devsite-nav-title"
->Authentication
-class="devsite-nav-title"
->راهنمای PQL
-class="devsite-nav-title"
->اشخاص ثالث
-class="devsite-nav-title"
->مفاهیم اساسی
-class="devsite-nav-title"
->چگونه
-class="devsite-nav-title"
->گزارش ها
-class="devsite-nav-title"
->پیش بینی ها
-class="devsite-nav-title"
->بومی
-class="devsite-nav-title"
->برنامه ای
-class="devsite-nav-title"
->بهترین شیوه ها
-class="devsite-nav-title"
->شبکه های آزمایشی در مقابل تولید
+tooltip
+>
+ابزار تست
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: بازرس مجموعه ویدیویی"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+بازرس مجموعه ویدیویی
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: نمونه جریان ها"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+نمونه جریان ها
 has-book-nav
-has-sidebar
 >
 role="navigation"
 aria-label="در این صفحه"
 depth="2"
 scrollbars
 data-nosnippet
->
->
-به دنبال REST API هستید؟ Ad Manager API (بتا) اکنون در دسترس است.
+disabled>
 class="devsite-banner-translated-image invert"
 alt="">
 این صفحه به‌وسیله ‏Cloud Translation API‏ ترجمه شده است.
@@ -12725,9 +11327,9 @@ data-value="3"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="3"
-track-metadata-eventdetail="Google Ad Manager"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-Ad Manager
+Dynamic Ad Insertion
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -12736,26 +11338,20 @@ data-value="4"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="4"
-track-metadata-eventdetail="Google Ad Manager SOAP API"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-SOAP API
-position="header"
-project-name="Ad Manager SOAP API"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="header"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fa"
-project-support-url="https://groups.google.com/forum/?hl=fa#!forum/google-doubleclick-for-publishers-api"
+DAI Pod Serving API
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="5"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="5"
+track-metadata-eventdetail=""
 >
-ارسال بازخورد
-شروع به کار
+API ها
 ack-key="AckCollectionsBookmarkTooltipDismiss"
 analytics-category="Site-Wide Custom Events"
 analytics-action-show="Callout Profile displayed"
@@ -12771,191 +11367,62 @@ close-button-text="متوجهم">
 ذخیره و طبقه‌بندی محتوا براساس اولویت‌های شما.
 depth="2"
 devsite-toc-embedded
+disabled>
+devsite-no-page-title">
+header-position="top"
+>
+description-position="bottom"
 >
 ">
-می‌توانید از Google Ad Manager SOAP API برای ساخت برنامه‌هایی استفاده کنید که موجودی کالا را مدیریت می‌کنند، سفارش‌ها ایجاد می‌کنند، گزارش‌ها را جمع‌آوری می‌کنند و موارد دیگر. برای کمک به شما برای شروع، ما کتابخانه های سرویس گیرنده را برای جاوا، دات نت، پایتون، پی اچ پی و روبی ارائه می دهیم. برای ایجاد اولین درخواست API خود، این مراحل را دنبال کنید:  به شبکه Ad Manager دسترسی پیدا کنید اگر قبلاً ندارید، برای یک حساب Ad Manager ثبت نام کنید. همچنین اگر می خواهید API را در یک محیط جداگانه آزمایش کنید، می توانید یک شبکه آزمایشی ایجاد کنید. توجه داشته باشید که برای اهداف آزمایشی به حساب AdSense نیاز ندارید. کد شبکه خود را یادداشت کنید. وقتی وارد شبکه خود می شوید می توانید این را در URL پیدا کنید. برای مثال، در URL https://admanager.google.com/1234#home ، 1234 کد شبکه شما است. توجه: با دسترسی یا استفاده از Ad Manager API با شرایط خدمات موافقت می کنید. اعتبار احراز هویت ایجاد کنید شما باید همه درخواست‌های Ad Manager SOAP API را با استفاده از OAuth 2.0 احراز هویت کنید. مراحل زیر موارد استفاده از دسترسی به داده‌های Ad Manager خود را پوشش می‌دهند. برای جزئیات بیشتر و گزینه‌های دیگر، احراز هویت را ببینید. صفحه Google API Console Credentials را باز کنید از منوی پروژه، Create project را انتخاب کنید، نامی برای پروژه وارد کنید و در صورت تمایل، شناسه پروژه ارائه شده را ویرایش کنید. روی ایجاد کلیک کنید. در صفحه اعتبارنامه ها، Create credentials را انتخاب کنید، سپس کلید حساب کاربری را انتخاب کنید. حساب جدید سرویس را انتخاب کنید و JSON به عنوان نوع کلید انتخاب کنید. برای دانلود فایل حاوی کلید خصوصی روی Create کلیک کنید. شبکه Ad Manager خود را پیکربندی کنید به Google Ad Manager وارد شوید . در نوار کناری، روی Admin &gt; تنظیمات جهانی کلیک کنید. در قسمت تنظیمات عمومی &gt; دسترسی به Api، روی نوار لغزنده به Enabled کلیک کنید. روی دکمه ذخیره در پایین صفحه کلیک کنید. مشتری خود را تنظیم کنید یکی از کتابخانه های مشتری Ad Manager را دانلود کنید. کتابخانه‌ها عملکردها و ویژگی‌هایی را ارائه می‌دهند که توسعه برنامه‌ها را آسان‌تر و سریع‌تر می‌کنند. برگه‌های زیر شروع سریعی را برای کدنویسی در هر یک از زبان‌هایی که کتابخانه مشتری برای آن‌ها وجود دارد، ارائه می‌کنند. Java در اینجا یک مثال اساسی است که نحوه استفاده از کتابخانه کلاینت جاوا را نشان می دهد. برای اطلاعات بیشتر درباره استفاده، به فایل README در توزیع کتابخانه مشتری مراجعه کنید. اعتبارنامه خود را تنظیم کنید دستور زیر را در یک پوسته اجرا کنید:curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.propertiesفایل ~/ads.properties را باز کنید و فیلدهای زیر را پر کنید:
-[...]
-api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE
-api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE
-api.admanager.networkCode=INSERT_NETWORK_CODE_HERE
-[...] وابستگی ها را مشخص کنید فایل pom.xml خود را ویرایش کنید و موارد زیر را به تگ dependencies اضافه کنید. می توانید آخرین شماره نسخه را در Github پیدا کنید. &lt;dependency&gt;
-&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
-&lt;artifactId&gt;ads-lib&lt;/artifactId&gt;
-&lt;version&gt;RELEASE&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
-&lt;artifactId&gt;dfp-axis&lt;/artifactId&gt;
-&lt;version&gt;RELEASE&lt;/version&gt;
-&lt;/dependency&gt; کدی بنویس و درخواست بده!import com.google.api.ads.common.lib.auth.OfflineCredentials;
-import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
-import com.google.api.ads.admanager.axis.factory.AdManagerServices;
-import com.google.api.ads.admanager.axis.v202602.Network;
-import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface;
-import com.google.api.ads.admanager.lib.client.AdManagerSession;
-import com.google.api.client.auth.oauth2.Credential;
-public class App {
-public static void main(String[] args) throws Exception {
-Credential oAuth2Credential = new OfflineCredentials.Builder()
-.forApi(Api.AD_MANAGER)
-.fromFile()
-.build()
-.generateCredential();
-// Construct an AdManagerSession.
-AdManagerSession session = new AdManagerSession.Builder()
-.fromFile()
-.withOAuth2Credential(oAuth2Credential)
-.build();
-// Construct a Google Ad Manager service factory, which can only be used once per
-// thread, but should be reused as much as possible.
-AdManagerServices adManagerServices = new AdManagerServices();
-// Retrieve the appropriate service
-NetworkServiceInterface networkService = adManagerServices.get(session,
-NetworkServiceInterface.class);
-// Make a request
-Network network = networkService.getCurrentNetwork();
-System.out.printf("Current network has network code '%s' and display" +
-" name '%s'.%n", network.getNetworkCode(), network.getDisplayName());
-}
-} در GitHub مشاهده کنید Python در اینجا یک مثال اساسی است که نحوه استفاده از
-href="//github.com/googleads/googleads-python-lib">کتابخانه کلاینت پایتون را نشان می دهد. کتابخانه Client Python از Python نسخه 3.6+ پشتیبانی می کند. برای اطلاعات بیشتر درباره استفاده، به فایل
-href="//github.com/googleads/googleads-python-lib/blob/main/README.md">README در توزیع کتابخانه مشتری مراجعه کنید. کتابخانه را نصب کنید و اعتبار خود را تنظیم کنید. دستورات زیر را در یک پوسته اجرا کنید:python3 -m pip install googleads
-curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \
--o ~/googleads.yamlفایل ~/googleads.yaml خود را تنظیم کنید. فیلدهای زیر را پر کنید:ad_manager:
-application_name: INSERT_APPLICATION_NAME_HERE
-network_code: INSERT_NETWORK_CODE_HERE
-path_to_private_key_file: INSERT_PATH_TO_FILE_HEREکدی را اجرا کنید و درخواست بدهید. # Import the library.
-from googleads import ad_manager
-# Initialize a client object, by default uses the credentials in ~/googleads.yaml.
-client = ad_manager.AdManagerClient.LoadFromStorage()
-# Initialize a service.
-network_service = client.GetService('NetworkService', version='v202602')
-# Make a request.
-current_network = network_service.getCurrentNetwork()
-print("Current network has network code '%s' and display name '%s'." %
-(current_network['networkCode'], current_network['displayName'])) در GitHub مشاهده کنید PHP در اینجا یک مثال اساسی است که نحوه استفاده از کتابخانه مشتری PHP را نشان می دهد. کتابخانه را نصب کنید و اطلاعات کاربری خود را تنظیم کنید. دستورات زیر را در یک پوسته برای نصب کتابخانه مشتری و دانلود فایل adsapi_php.ini در فهرست اصلی خود اجرا کنید:composer require googleads/googleads-php-lib
-curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.iniفایل ~/adsapi_php.ini خود را راه اندازی کنید. فیلدهای زیر را پر کنید:[AD_MANAGER]
-networkCode = "INSERT_NETWORK_CODE_HERE"
-applicationName = "INSERT_APPLICATION_NAME_HERE"
-[OAUTH2]
-jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE"
-scopes = "https://www.googleapis.com/auth/dfp"کدی را اجرا کنید و درخواست بدهید! این کد مثال باید از خط فرمان اجرا شود نه از مرورگر. فایل حاوی این کد باید در ریشه دایرکتوری پروژه قرار داشته باشد، جایی که composer require اجرا شده است. &lt;?php
-require 'vendor/autoload.php';
-use Google\AdsApi\AdManager\AdManagerSession;
-use Google\AdsApi\AdManager\AdManagerSessionBuilder;
-use Google\AdsApi\AdManager\v202602\ApiException;
-use Google\AdsApi\AdManager\v202602\ServiceFactory;
-use Google\AdsApi\Common\OAuth2TokenBuilder;
-// Generate a refreshable OAuth2 credential for authentication.
-$oAuth2Credential = (new OAuth2TokenBuilder())
-->fromFile()
-->build();
-// Construct an API session configured from a properties file and the OAuth2
-// credentials above.
-$session = (new AdManagerSessionBuilder())
-->fromFile()
-->withOAuth2Credential($oAuth2Credential)
-->build();
-// Get a service.
-$serviceFactory = new ServiceFactory();
-$networkService = $serviceFactory->createNetworkService($session);
-// Make a request
-$network = $networkService->getCurrentNetwork();
-printf(
-"Network with code %d and display name '%s' was found.\n",
-$network->getNetworkCode(),
-$network->getDisplayName()
-); در GitHub مشاهده کنید .NET در اینجا یک مثال اساسی است که نحوه استفاده از کتابخانه کلاینت دات نت را نشان می دهد یک پروژه جدید ایجاد کنید ویژوال استودیو را باز کنید و یک پروژه جدید (برنامه کنسول) ایجاد کنید. ارجاعات کتابخانه مورد نیاز را به پروژه خود اضافه کنید یک وابستگی nuget برای Google.Dfp اضافه کنید. App.config خود را راه اندازی کنید src\App.config را در فهرست پروژه خود کپی کنید و آن را به پروژه خود اضافه کنید. اگر برنامه شما App.config خاص خود را دارد، می توانید گره های زیر را در App.config خود کپی کنید: پیکربندی/AdManagerApi configuration/configSections/section[name=&quot;AdManagerApi&quot;] configuration/system.net راه اندازی اعتبار App.config را باز کنید و کلیدهای زیر را ویرایش کنید: &lt;add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /&gt;
-&lt;add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /&gt;
-&lt;add key="OAuth2Mode" value="SERVICE_ACCOUNT" /&gt;
-&lt;add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" /&gt; با کتابخانه تماس بگیرید همانطور که در قطعه کد C# زیر نشان داده شده است، می توانید کتابخانه را فراخوانی کنید در GitHub مشاهده کنید AdManagerUser user = new AdManagerUser();
-using (InventoryService inventoryService = user.GetService&lt;InventoryService&gt;())
-{
-// Create a statement to select ad units.
-int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-StatementBuilder statementBuilder =
-new StatementBuilder().OrderBy("id ASC").Limit(pageSize);
-// Retrieve a small amount of ad units at a time, paging through until all
-// ad units have been retrieved.
-int totalResultSetSize = 0;
-do
-{
-AdUnitPage page =
-inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
-// Print out some information for each ad unit.
-if (page.results != null)
-{
-totalResultSetSize = page.totalResultSetSize;
-int i = page.startIndex;
-foreach (AdUnit adUnit in page.results)
-{
-Console.WriteLine(
-"{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.", i++,
-adUnit.id, adUnit.name);
-}
-}
-statementBuilder.IncreaseOffsetBy(pageSize);
-} while (statementBuilder.GetOffset() &lt; totalResultSetSize);
-Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-}
-اگر نمی‌خواهید اعتبار خود را در App.config خود تنظیم کنید، برای روش‌های جایگزین برای استفاده از کلاس AdManagerUser به این مقاله ویکی مراجعه کنید. برای اطلاعات بیشتر در مورد استفاده از کتابخانه مشتری دات نت، به README مراجعه کنید. اگر می‌خواهید بدون کتابخانه مشتری در دات‌نت توسعه دهید، لطفاً به مقاله ویکی NoClientLibrary مراجعه کنید. Ruby در اینجا یک مثال اساسی است که نحوه استفاده از
-href="//github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api">کتابخانه کلاینت Ruby را نشان می دهد. کتابخانه کلاینت Ruby به Ruby 2.1 یا جدیدتر نیاز دارد. Ruby gem را نصب کنید و فایل پیکربندی را دریافت کنید. دستورات زیر را در یک پوسته اجرا کنید: gem install google-dfp-api
-curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml اگر در هر زمانی هنگام نصب جم‌های خود با خطای « cannot load such file -- mkmf (LoadError) » مواجه شدید، ممکن است نیاز به نصب کتابخانه‌های توسعه Ruby اضافی مانند ruby-dev، ruby-devel، xcode-select و غیره داشته باشید. برای محیط خاص شما اعتبارنامه خود را تنظیم کنید فیلدهای مورد نیاز را در فایل ~/ad_manager_api.yml پر کنید. اگر قبلاً یک فایل کلید OAuth2 ندارید، باید مراحل ایجاد اعتبارنامه OAuth2 خود را دنبال کنید. :authentication:
-:oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE
-:application_name: INSERT_APPLICATION_NAME_HERE
-:network_code: INSERT_NETWORK_CODE_HERE کدی بنویس و درخواست بده! # Import the library.
-require 'ad_manager_api'
-# Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default).
-ad_manager = AdManagerApi::Api.new
-# Get a service instance.
-network_service = ad_manager.service(:NetworkService, :v202602)
-# Make a request.
-network = network_service.get_current_network()
-puts "The current network is %s (%d)." %
-[network[:display_name], network[:network_code]] در GitHub مشاهده کنید مراحل دقیق‌تر برای شروع را می‌توانید در فایل
-href="//github.com/googleads/google-api-ads-ruby/wiki/DFP-Readme">README که با کتابخانه کلاینت Ruby توزیع شده است، پیدا کنید. همچنین،
-href="https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api/examples">کتابخانه نمونه کامل ما را برای روبی بررسی کنید. مراحل بعدی هنگامی که یک کتابخانه مشتری راه اندازی و اجرا می کنید، نمونه های ارائه شده را تغییر دهید تا آنها را برای نیازهای خود گسترش دهید. برای کسب اطلاعات بیشتر در مورد API، اسناد مرجع را مرور کنید. اگر به کمک نیاز دارید، از صفحه پشتیبانی ما دیدن کنید.
-hats-id="2SbP5yi80LHkahqinNfT0Z7MuPgc"
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving.png?hl=fa"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_36.png?hl=fa 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_48.png?hl=fa 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_72.png?hl=fa 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_96.png?hl=fa 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_480.png?hl=fa 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_720.png?hl=fa 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_856.png?hl=fa 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_960.png?hl=fa 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1440.png?hl=fa 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1920.png?hl=fa 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_2880.png?hl=fa 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+fetchpriority="high">
+>
+data-text="سرویس DAI Pod"
+class="hide-from-toc no-link"
+tabindex="0">
+سرویس DAI Pod
+قابلیت درج پویای تبلیغات (DAI) در پاد (Pod Serving) به شما امکان می‌دهد پادهای تبلیغاتی را از گوگل یا سرورهای تبلیغاتی شخص ثالث، برای پخش زنده و پخش ویدئو بر اساس تقاضا (VOD) درخواست کنید. برای جزئیات بیشتر، به پیکربندی پادهای تبلیغاتی و شکستن الگوها مراجعه کنید. برای پخش زنده، Google Ad Manager از انواع DAI زیر پشتیبانی می‌کند: تغییر مسیر سرویس پاد: به شما امکان می‌دهد بخش‌های مانیفست را برای پیاده‌سازی درج آگهی سمت سرور (SSAI) بازیابی کنید. این بخش‌ها URLهای پویا هستند که به فایل‌های محتوا یا رسانه‌های تبلیغاتی تغییر مسیر می‌دهند. مانیفست ارائه دهنده پاد: به شما امکان می‌دهد مانیفست کامل پادهای تبلیغاتی را برای پیاده‌سازی درج آگهی سمت سرور (SSAI) بازیابی کنید. برای جزئیات بیشتر، به DAI هدایت‌شده توسط سرور مراجعه کنید. برای VOD، گوگل اد منیجر کل مانیفست‌های پاد تبلیغاتی را برمی‌گرداند. سرویس پاد DAI پلتفرم‌های پشتیبانی‌شده‌ی زیر را ارائه می‌دهد: HTML5 اندروید iOS tvOS کروم‌کست روکو برای جزئیات بیشتر در مورد پخش زنده و VOD، به گردش‌های کاری زیر مراجعه کنید:
+background="grey"
+header-position="top"
+>
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram.png?hl=fa"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_36.png?hl=fa 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_48.png?hl=fa 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_72.png?hl=fa 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_96.png?hl=fa 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_480.png?hl=fa 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_720.png?hl=fa 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_856.png?hl=fa 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_960.png?hl=fa 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1440.png?hl=fa 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1920.png?hl=fa 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_2880.png?hl=fa 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+loading="lazy"
+>
+>
+data-text="تبلیغات را به یک پخش زنده وصل کنید"
+class="hide-from-toc no-link"
+tabindex="0">
+تبلیغات را به یک پخش زنده وصل کنید
+برای شروع یک جلسه پخش زنده، یک درخواست ثبت پخش زنده ارسال کنید. پارامترهای برچسب تبلیغ را برای درخواست پخش زنده منحصر به فرد تنظیم کنید تا مقادیر پیش‌فرض برچسب تبلیغ DAI را نادیده بگیرد. برای جزئیات بیشتر در مورد هدف‌گیری تبلیغ، به «ارائه پارامترهای هدف‌گیری به پخش زنده خود» مراجعه کنید. شناسه جلسه منحصر به فرد کاربر را از پاسخ ثبت جریان بازیابی کنید. برای جزئیات بیشتر در مورد استفاده از شناسه جلسه، به «یافتن شناسه جلسه DAI یا کلید اشکال‌زدایی» و «نظارت و اشکال‌زدایی یک جلسه جریان خاص» مراجعه کنید. یک درخواست مانیفست به دستگاه دوخت ویدیو یا کنترل‌کننده مانیفست خود ارسال کنید و شناسه جلسه را به آن ارسال کنید. درخواست به‌روزرسانی‌های مانیفست را در طول پخش تکرار کنید. برای مانیفست‌های DASH، برای کل جلسه، یک درخواست الگوی دوره ایجاد کنید. برای مانیفست‌های DASH، الگوی دوره را ذخیره کنید. برای هر وقفه تبلیغاتی، الگوی ذخیره شده را بازیابی کنید و تمام ماکروها را با داده‌های وقفه تبلیغاتی پر کنید. برای جزئیات بیشتر در مورد ماکروهای پشتیبانی شده، به پر کردن الگوی دوره مراجعه کنید. سپس، دوره نتیجه را در مانیفست نهایی وارد کنید. مانیفست نهایی را که شامل محتوا یا بخش‌های رسانه تبلیغاتی برای پخش توسط کلاینت است، برمی‌گرداند. پخش آغاز می‌شود . مرتباً با استفاده از فرکانس نظرسنجی برگردانده شده در درخواست پخش، از Google Ad Manager برای به‌روزرسانی‌های فراداده‌های تبلیغ نظرسنجی کنید. فراداده‌های تبلیغ را برای جستجوی رویدادهای تبلیغ ذخیره کنید. در طول پخش تبلیغات، پخش‌کننده ویدیو بخش‌های رسانه‌ای را بارگذاری می‌کند و از طریق Google Ad Manager به فایل‌های رسانه‌ای هدایت می‌شود. در طول پخش تبلیغات، به پخش‌کننده ویدیو برای فراداده‌های زمان‌بندی‌شده که حاوی برچسب‌های ID3 هستند گوش دهید . شناسه رویداد تبلیغ را از برچسب ID3 استخراج کنید تا فراداده‌های تبلیغ مرتبط را پیدا کنید. پینگ‌های تأیید رسانه را به مدیر تبلیغات گوگل ارسال کنید .
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram.png?hl=fa"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_36.png?hl=fa 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_48.png?hl=fa 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_72.png?hl=fa 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_96.png?hl=fa 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_480.png?hl=fa 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_720.png?hl=fa 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_856.png?hl=fa 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_960.png?hl=fa 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1440.png?hl=fa 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1920.png?hl=fa 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_2880.png?hl=fa 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+loading="lazy"
+>
+>
+data-text="تبلیغات را به یک جریان VOD وصل کنید"
+class="hide-from-toc no-link"
+tabindex="0">
+تبلیغات را به یک جریان VOD وصل کنید
+برای ثبت یک جلسه پخش VOD، یک درخواست پخش زنده ارسال کنید. پارامترهای برچسب تبلیغ را برای درخواست پخش زنده منحصر به فرد تنظیم کنید تا مقادیر پیش‌فرض برچسب تبلیغ DAI را نادیده بگیرد. برای جزئیات بیشتر، به «ارائه پارامترهای هدف‌گیری به پخش زنده خود» مراجعه کنید. شناسه جلسه را از پاسخ جریان بازیابی کنید. برای بررسی جلسه جریان، به «یافتن شناسه جلسه DAI یا کلید اشکال‌زدایی» و «نظارت و اشکال‌زدایی یک جلسه جریان خاص» مراجعه کنید. یک درخواست مانیفست به سازنده‌ی ویدیو یا کنترل‌کننده‌ی مانیفست خود ارسال کنید و شناسه‌ی جلسه (session ID) را به آن ارسال کنید. از شناسه جلسه برای درخواست همزمان همه پادهای تبلیغاتی استفاده کنید. مانیفست‌های کامل همه پادهای تبلیغاتی را بازیابی کنید. برای ایجاد مانیفست نهایی، مانیفست‌های پاد تبلیغاتی را با جریان محتوا ترکیب کنید. مانیفست نهایی را که شامل محتوا و بخش‌های تبلیغاتی است، برگردانید. درخواست فراداده تبلیغ برای همه رویدادهای تبلیغی. فراداده تبلیغ را برای جستجوی رویدادهای تبلیغی ذخیره کنید. پخش شروع می‌شود . در طول پخش تبلیغات، پخش‌کننده ویدیو بخش‌های رسانه‌ای را بارگذاری می‌کند و از طریق Google Ad Manager به فایل‌های رسانه‌ای هدایت می‌شود. در طول پخش تبلیغات،
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=fa#listen_for_ad_events">به رویدادهای تبلیغاتی حاوی برچسب‌های ID3 گوش دهید . برای یافتن فراداده‌های رویداد تبلیغ، شناسه رویداد تبلیغ را از برچسب ID3 استخراج کرده و شناسه را با فراداده‌های تبلیغ مطابقت دهید. پینگ‌های تأیید رسانه را به مدیر تبلیغات گوگل ارسال کنید .
+hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
 listnr-id="82128">
-position="footer"
-project-name="Ad Manager SOAP API"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="footer"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fa"
-project-support-url="https://groups.google.com/forum/?hl=fa#!forum/google-doubleclick-for-publishers-api"
->
-ارسال بازخورد
 جز در مواردی که غیر از این ذکر شده باشد،‌محتوای این صفحه تحت مجوز Creative Commons Attribution 4.0 License است. نمونه کدها نیز دارای مجوز Apache 2.0 License است. برای اطلاع از جزئیات، به خطمشی‌های سایت Google Developers‏ مراجعه کنید. جاوا علامت تجاری ثبت‌شده Oracle و/یا شرکت‌های وابسته به آن است.
-تاریخ آخرین به‌روزرسانی 2026-02-25 به‌وقت ساعت هماهنگ جهانی.
+تاریخ آخرین به‌روزرسانی 2026-03-05 به‌وقت ساعت هماهنگ جهانی.
 >
-<template class="devsite-thumb-rating-feedback">
-position="thumb-rating"
-project-name="Ad Manager SOAP API"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="thumb-rating"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fa"
-project-support-url="https://groups.google.com/forum/?hl=fa#!forum/google-doubleclick-for-publishers-api"
->
-می‌خواهید موارد بیشتری را با ما درمیان بگذارید؟
-</template>
 <template class="devsite-content-data-template">
-[[["درک آسان","easyToUnderstand","thumb-up"],["مشکلم را برطرف کرد","solvedMyProblem","thumb-up"],["غیره","otherUp","thumb-up"]],[["اطلاعاتی که نیاز دارم وجود ندارد","missingTheInformationINeed","thumb-down"],["بیش‌ازحد پیچیده/ مراحل بسیار زیاد","tooComplicatedTooManySteps","thumb-down"],["قدیمی","outOfDate","thumb-down"],["مشکل ترجمه","translationIssue","thumb-down"],["مشکل کد / نمونه‌ها","samplesCodeIssue","thumb-down"],["غیره","otherDown","thumb-down"]],["تاریخ آخرین به‌روزرسانی 2026-02-25 به‌وقت ساعت هماهنگ جهانی."],[],[]]
+[[["درک آسان","easyToUnderstand","thumb-up"],["مشکلم را برطرف کرد","solvedMyProblem","thumb-up"],["غیره","otherUp","thumb-up"]],[["اطلاعاتی که نیاز دارم وجود ندارد","missingTheInformationINeed","thumb-down"],["بیش‌ازحد پیچیده/ مراحل بسیار زیاد","tooComplicatedTooManySteps","thumb-down"],["قدیمی","outOfDate","thumb-down"],["مشکل ترجمه","translationIssue","thumb-down"],["مشکل کد / نمونه‌ها","samplesCodeIssue","thumb-down"],["غیره","otherDown","thumb-down"]],["تاریخ آخرین به‌روزرسانی 2026-03-05 به‌وقت ساعت هماهنگ جهانی."],[],[]]
 </template>
 aria-label="پیوندهای پانویس"
 data-nosnippet>
@@ -13143,10 +11610,890 @@ Manage cookies
 
 ---
 
+# start
+
+> **Source:** https://developers.google.com/ad-manager/api/start
+> **Analyzed At:** 2026-07-20T07:00:13.589Z
+
+### Content
+lang="es-419-x-mtfrom-en"
+dir="ltr">
+content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
+crossorigin="use-credentials">
+href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=es-419">
+href="https://developers.google.com/ad-manager/api/start" />
+href="https://developers.google.com/ad-manager/api/start?hl=ar" />
+href="https://developers.google.com/ad-manager/api/start?hl=bn" />
+href="https://developers.google.com/ad-manager/api/start?hl=zh-cn" />
+href="https://developers.google.com/ad-manager/api/start?hl=zh-tw" />
+href="https://developers.google.com/ad-manager/api/start?hl=fa" />
+href="https://developers.google.com/ad-manager/api/start?hl=fr" />
+href="https://developers.google.com/ad-manager/api/start?hl=de" />
+href="https://developers.google.com/ad-manager/api/start?hl=he" />
+href="https://developers.google.com/ad-manager/api/start?hl=hi" />
+href="https://developers.google.com/ad-manager/api/start?hl=id" />
+href="https://developers.google.com/ad-manager/api/start?hl=it" />
+href="https://developers.google.com/ad-manager/api/start?hl=ja" />
+href="https://developers.google.com/ad-manager/api/start?hl=ko" />
+href="https://developers.google.com/ad-manager/api/start?hl=pl" />
+href="https://developers.google.com/ad-manager/api/start?hl=pt-br" />
+href="https://developers.google.com/ad-manager/api/start?hl=ru" />
+href="https://developers.google.com/ad-manager/api/start?hl=es-419" />
+href="https://developers.google.com/ad-manager/api/start?hl=th" />
+href="https://developers.google.com/ad-manager/api/start?hl=tr" />
+href="https://developers.google.com/ad-manager/api/start?hl=vi" /><title>Comenzar &nbsp;|&nbsp; Ad Manager SOAP API &nbsp;|&nbsp; Google for Developers</title>
+">
+">
+href="https://developers.google.com/ad-manager/api/start?hl=en">
+template="page"
+theme="google-blue"
+type="article"
+layout="docs"
+display-toc
+pending>
+Ir al contenido principal
+class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Navigation menu button"
+visually-hidden
+aria-label="Abrir menú">
+size="medium"
+>
+alt="Google Ad Manager"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=es-419"
+srcset=" /static/ads/images/logo_admanager_192px.svg"
+sizes="64px"
+loading="lazy"
+>
+aria-label="Ruta de navegación del producto">
+devsite-has-google-wordmark">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail="Google Ad Manager"
+>
+Ad Manager
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail="Google Ad Manager SOAP API"
+>
+SOAP API
+enable-signin
+enable-search
+enable-suggestions
+enable-query-completion
+enable-search-summaries
+project-name="Ad Manager SOAP API"
+tenant-name="Google for Developers"
+project-scope="/ad-manager/api/start"
+url-scoped="https://developers.google.com/s/results/ad-manager/api/start?hl=es-419"
+>
+search-open
+class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+aria-label="Abrir la búsqueda">
+aria-activedescendant=""
+aria-autocomplete="list"
+aria-label="Buscar"
+aria-expanded="false"
+aria-haspopup="listbox"
+autocomplete="off"
+class="devsite-search-field devsite-search-query"
+name="q"
+placeholder="Buscar"
+role="combobox"
+type="text"
+value=""
+>
+<kbd class="devsite-search-shortcut-icon">/</kbd>
+search-close
+class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+aria-label="Cerrar la búsqueda">
+>English
+>Deutsch
+>Español
+>Español – América Latina
+>Français
+>Indonesia
+>Italiano
+>Polski
+>Português – Brasil
+>Tiếng Việt
+>Türkçe
+>Русский
+>עברית
+>العربيّة
+>فارسی
+>हिंदी
+>বাংলা
+>ภาษาไทย
+>中文 – 简体
+>中文 – 繁體
+>日本語
+>한국어
+enable-profiles
+fp-auth
+id="devsite-user">
+Acceder
+">
+<tab  class="devsite-active">
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/start?hl=es-419"
+track-type="nav"
+track-metadata-position="nav - guías"
+track-metadata-module="primary nav"
+aria-label="Guías, selected"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Guías"
+track-name="guías"
+>
+Guías
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/rel_notes?hl=es-419"
+track-type="nav"
+track-metadata-position="nav - referencia"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Referencia"
+track-name="referencia"
+>
+Referencia
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/clients?hl=es-419"
+track-type="nav"
+track-metadata-position="nav - ejemplos"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Ejemplos"
+track-name="ejemplos"
+>
+Ejemplos
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/community?hl=es-419"
+track-type="nav"
+track-metadata-position="nav - asistencia"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Asistencia"
+track-name="asistencia"
+>
+Asistencia
+</tab>
+>
+placeholder="Filtrar"
+aria-label="Escribe para filtrar"
+role="searchbox">
+data-title="Borrar filtro"
+aria-label="Borrar filtro"
+role="button"
+tabindex="0">
+aria-label="Menú lateral">
+id="devsite-close-nav"
+class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Close navigation"
+aria-label="Cerrar navegación">
+size="medium"
+>
+alt="Google Ad Manager"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=es-419"
+srcset=" /static/ads/images/logo_admanager_192px.svg"
+sizes="64px"
+loading="lazy"
+>
+aria-label="Ruta de navegación del encabezado superior">
+devsite-has-google-wordmark">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail="Google Ad Manager"
+>
+Ad Manager
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail="Google Ad Manager SOAP API"
+>
+SOAP API
+class="devsite-nav-title gc-analytics-event
+devsite-nav-has-children
+devsite-nav-active"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Guías"
+track-name="guías"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Guías"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Guías
+>
+class="devsite-nav-title gc-analytics-event
+devsite-nav-has-children
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Referencia"
+track-name="referencia"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Referencia"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Referencia
+>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Ejemplos"
+track-name="ejemplos"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Ejemplos"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Ejemplos
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Asistencia"
+track-name="asistencia"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Asistencia"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Asistencia
+class="devsite-nav-title"
+>Comenzar
+class="devsite-nav-title"
+>Authentication
+class="devsite-nav-title"
+>Guía de PQL
+class="devsite-nav-title"
+>Terceros
+class="devsite-nav-title"
+>Conceptos básicos
+class="devsite-nav-title"
+>Procedimiento
+class="devsite-nav-title"
+>Informes
+class="devsite-nav-title"
+>Previsiones
+class="devsite-nav-title"
+>Nativo
+class="devsite-nav-title"
+>Programática
+class="devsite-nav-title"
+>Prácticas recomendadas
+class="devsite-nav-title"
+>Redes de prueba vs. producción
+has-book-nav
+has-sidebar
+>
+role="navigation"
+aria-label="En esta página"
+depth="2"
+scrollbars
+data-nosnippet
+>
+>
+¿Buscas una API de REST? La API de Ad Manager (beta) ya está disponible.
+class="devsite-banner-translated-image invert"
+alt="">
+Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
+aria-label="Ruta de navegación">
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail=""
+>
+Página principal
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail=""
+>
+Productos
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="3"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="3"
+track-metadata-eventdetail="Google Ad Manager"
+>
+Ad Manager
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="4"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="4"
+track-metadata-eventdetail="Google Ad Manager SOAP API"
+>
+SOAP API
+position="header"
+project-name="Ad Manager SOAP API"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="header"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=es-419"
+project-support-url="https://groups.google.com/forum/?hl=es-419#!forum/google-doubleclick-for-publishers-api"
+>
+Enviar comentarios
+Comenzar
+ack-key="AckCollectionsBookmarkTooltipDismiss"
+analytics-category="Site-Wide Custom Events"
+analytics-action-show="Callout Profile displayed"
+analytics-action-close="Callout Profile dismissed"
+analytics-label="Create Collection Callout"
+class="devsite-page-bookmark-tooltip nocontent"
+data-nosnippet
+dismiss-button="true"
+id="devsite-collections-dropdown"
+dismiss-button-text="Descartar"
+close-button-text="Entendido">
+Organiza tus páginas con colecciones
+Guarda y categoriza el contenido según tus preferencias.
+depth="2"
+devsite-toc-embedded
+>
+">
+Puedes usar la API de SOAP de Google Ad Manager para crear apps que administren el inventario, creen pedidos, extraigan informes y mucho más.
+Para ayudarte a comenzar, ofrecemos al cliente
+bibliotecas para Java, .NET, Python, PHP y Ruby.
+Para realizar tu primera solicitud a la API, sigue estos pasos:
+Cómo obtener acceso a una red de Ad Manager
+Si aún no tienes una cuenta, regístrate en Ad Manager
+cuenta de servicio. También puedes crear una red de prueba si quieres probar la API en un entorno independiente. Recuerda que no necesitas una cuenta de AdSense para la prueba
+comerciales.
+Anota el código de red. Puedes encontrarlo en la URL cuando accedas.
+a tu red. Por ejemplo, en la URL https://admanager.google.com/1234#home, 1234 es tu código de red.
+Nota: Cuando accedes a la API de Ad Manager o la usas, aceptas las Condiciones del
+Servicio.
+Crea credenciales de autenticación
+Debes autenticar todas las solicitudes a la API de SOAP de Ad Manager con OAuth 2.0. El
+Los siguientes pasos abarcan el caso de uso de acceso a tus propios datos de Ad Manager. Para obtener más detalles y otras opciones, consulta Autenticación.
+Abre la página Credenciales de la Consola de API de Google.
+En el menú del proyecto, selecciona Crear proyecto y, luego, ingresa el nombre de la
+proyecto y, de forma opcional, edita el ID del proyecto proporcionado. Haz clic en Crear.
+En la página Credenciales, selecciona Crear credenciales y, luego, Clave de cuenta de servicio.
+Selecciona Servicio nuevo.
+cuenta
+y selecciona JSON como el tipo de clave.
+Haz clic en Crear para descargar un archivo que contenga una clave privada.
+Configura tu red de Ad Manager
+Acceda a Google Ads.
+Administrador.
+En la barra lateral, haz clic en Administrador > Configuración global.
+En Configuración general > Acceso a la API, haz clic en el control deslizante para habilitar la opción Habilitado.
+Haz clic en el botón Guardar en la parte inferior de la página.
+Configura tu cliente
+Descarga una de las bibliotecas cliente de Ad Manager. Las bibliotecas ofrecen funciones y wrappers que facilitan y aceleran el desarrollo de apps.
+Las siguientes pestañas ofrecen guías de inicio rápido para programar en cada uno de los lenguajes para
+que existe una biblioteca cliente.
+Java
+Este es un ejemplo básico que muestra cómo usar la biblioteca cliente de Java. Para obtener información de uso más detallada, consulta el archivo README en la distribución de la biblioteca cliente.
+Configura tus credenciales
+Ejecuta el siguiente comando en un shell:
+curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties
+Abre el archivo ~/ads.properties y completa los siguientes campos:
+[...]
+api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE
+api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE
+api.admanager.networkCode=INSERT_NETWORK_CODE_HERE
+[...]
+Especificar dependencias
+Edita tu archivo pom.xml y agrega lo siguiente al
+Etiqueta dependencies. Puedes encontrar el número de versión más reciente en GitHub.
+&lt;dependency&gt;
+&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
+&lt;artifactId&gt;ads-lib&lt;/artifactId&gt;
+&lt;version&gt;RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
+&lt;artifactId&gt;dfp-axis&lt;/artifactId&gt;
+&lt;version&gt;RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+Escribe código y realiza una solicitud.
+import com.google.api.ads.common.lib.auth.OfflineCredentials;
+import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.admanager.axis.factory.AdManagerServices;
+import com.google.api.ads.admanager.axis.v202602.Network;
+import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface;
+import com.google.api.ads.admanager.lib.client.AdManagerSession;
+import com.google.api.client.auth.oauth2.Credential;
+public class App {
+public static void main(String[] args) throws Exception {
+Credential oAuth2Credential = new OfflineCredentials.Builder()
+.forApi(Api.AD_MANAGER)
+.fromFile()
+.build()
+.generateCredential();
+// Construct an AdManagerSession.
+AdManagerSession session = new AdManagerSession.Builder()
+.fromFile()
+.withOAuth2Credential(oAuth2Credential)
+.build();
+// Construct a Google Ad Manager service factory, which can only be used once per
+// thread, but should be reused as much as possible.
+AdManagerServices adManagerServices = new AdManagerServices();
+// Retrieve the appropriate service
+NetworkServiceInterface networkService = adManagerServices.get(session,
+NetworkServiceInterface.class);
+// Make a request
+Network network = networkService.getCurrentNetwork();
+System.out.printf("Current network has network code '%s' and display" +
+" name '%s'.%n", network.getNetworkCode(), network.getDisplayName());
+}
+}
+Ver en GitHub
+Python
+Este es un ejemplo básico que muestra cómo usar la biblioteca cliente de Python.
+La biblioteca cliente de Python es compatible con Python v3.6 y versiones posteriores. Para un uso más detallado
+consulta el archivo README.
+en la distribución de la biblioteca cliente.
+Instala la biblioteca y configura tus credenciales.
+Ejecuta los siguientes comandos en una shell:
+python3 -m pip install googleads
+curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \
+-o ~/googleads.yaml
+Configura tu archivo ~/googleads.yaml.
+Complete los siguientes campos:
+ad_manager:
+application_name: INSERT_APPLICATION_NAME_HERE
+network_code: INSERT_NETWORK_CODE_HERE
+path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
+Ejecuta código y realiza una solicitud.
+# Import the library.
+from googleads import ad_manager
+# Initialize a client object, by default uses the credentials in ~/googleads.yaml.
+client = ad_manager.AdManagerClient.LoadFromStorage()
+# Initialize a service.
+network_service = client.GetService('NetworkService', version='v202602')
+# Make a request.
+current_network = network_service.getCurrentNetwork()
+print("Current network has network code '%s' and display name '%s'." %
+(current_network['networkCode'], current_network['displayName']))
+Ver en GitHub
+PHP
+Este es un ejemplo básico que muestra cómo usar la
+Biblioteca cliente de PHP.
+Instala la biblioteca y configura tus credenciales.
+Ejecuta los siguientes comandos en una shell para instalar la biblioteca cliente y descargar el archivo adsapi_php.ini en tu directorio principal:
+composer require googleads/googleads-php-lib
+curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
+Configura el archivo ~/adsapi_php.ini.
+Complete los siguientes campos:
+[AD_MANAGER]
+networkCode = "INSERT_NETWORK_CODE_HERE"
+applicationName = "INSERT_APPLICATION_NAME_HERE"
+[OAUTH2]
+jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE"
+scopes = "https://www.googleapis.com/auth/dfp"
+Ejecuta código y realiza una solicitud.
+Este código de ejemplo se debe ejecutar desde la línea de comandos, no desde un navegador.
+El archivo que contiene este código debe residir en la raíz del directorio del proyecto.
+donde se ejecutó composer require.
+&lt;?php
+require 'vendor/autoload.php';
+use Google\AdsApi\AdManager\AdManagerSession;
+use Google\AdsApi\AdManager\AdManagerSessionBuilder;
+use Google\AdsApi\AdManager\v202602\ApiException;
+use Google\AdsApi\AdManager\v202602\ServiceFactory;
+use Google\AdsApi\Common\OAuth2TokenBuilder;
+// Generate a refreshable OAuth2 credential for authentication.
+$oAuth2Credential = (new OAuth2TokenBuilder())
+->fromFile()
+->build();
+// Construct an API session configured from a properties file and the OAuth2
+// credentials above.
+$session = (new AdManagerSessionBuilder())
+->fromFile()
+->withOAuth2Credential($oAuth2Credential)
+->build();
+// Get a service.
+$serviceFactory = new ServiceFactory();
+$networkService = $serviceFactory->createNetworkService($session);
+// Make a request
+$network = $networkService->getCurrentNetwork();
+printf(
+"Network with code %d and display name '%s' was found.\n",
+$network->getNetworkCode(),
+$network->getDisplayName()
+);
+Ver en GitHub
+.NET
+Este es un ejemplo básico que muestra cómo usar el cliente.NET
+biblioteca
+Crea un proyecto nuevo
+Abre Visual Studio y crea un proyecto nuevo (aplicación de Console).
+Agrega las referencias de bibliotecas necesarias a tu proyecto
+Agrega una dependencia de NuGet para Google.Dfp.
+Configura tu App.config
+Copia src\App.config en el directorio de tu proyecto y agrégalo al proyecto. Si tu aplicación tiene su propio App.config, puedes copiar los siguientes nodos en tu App.config:
+configuration/AdManagerApi
+configuration/configSections/section[name="AdManagerApi"]
+configuration/system.net
+Credenciales de configuración
+Abre App.config y edita las siguientes claves:
+&lt;add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /&gt;
+&lt;add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /&gt;
+&lt;add key="OAuth2Mode" value="SERVICE_ACCOUNT" /&gt;
+&lt;add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" /&gt;
+Cómo hacer una llamada a la biblioteca
+Puedes llamar a la biblioteca como se muestra en el siguiente fragmento de código de C#.
+Ver en GitHub
+AdManagerUser user = new AdManagerUser();
+using (InventoryService inventoryService = user.GetService&lt;InventoryService&gt;())
+{
+// Create a statement to select ad units.
+int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+StatementBuilder statementBuilder =
+new StatementBuilder().OrderBy("id ASC").Limit(pageSize);
+// Retrieve a small amount of ad units at a time, paging through until all
+// ad units have been retrieved.
+int totalResultSetSize = 0;
+do
+{
+AdUnitPage page =
+inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
+// Print out some information for each ad unit.
+if (page.results != null)
+{
+totalResultSetSize = page.totalResultSetSize;
+int i = page.startIndex;
+foreach (AdUnit adUnit in page.results)
+{
+Console.WriteLine(
+"{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.", i++,
+adUnit.id, adUnit.name);
+}
+}
+statementBuilder.IncreaseOffsetBy(pageSize);
+} while (statementBuilder.GetOffset() &lt; totalResultSetSize);
+Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+}
+Si no deseas establecer tus credenciales en App.config, consulta este artículo de la wiki para conocer otras formas de usar la clase AdManagerUser. Para obtener información más detallada sobre el uso de la biblioteca cliente de .NET, consulta el archivo README. Si deseas desarrollar en .NET sin la biblioteca cliente, consulta la
+NoClientLibrary
+Wikipedia.
+Rita
+Este es un ejemplo básico de cómo usar la app Ruby
+biblioteca cliente. La biblioteca cliente de Ruby requiere Ruby 2.1 o una versión posterior.
+Instala la gema de Ruby y obtén el archivo de configuración.
+Ejecuta los siguientes comandos en un shell:
+gem install google-dfp-api
+curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml
+Si encuentras un error como "cannot load such
+file -- mkmf (LoadError)" en algún momento mientras instalas tus gemas, es posible que necesites instalar bibliotecas de desarrollo de Ruby adicionales, como ruby-dev, ruby-devel, xcode-select, etc., para tu entorno en particular.
+Configura tus credenciales
+Completa los campos obligatorios en ~/ad_manager_api.yml
+. Si aún no tienes un archivo de claves de OAuth2, deberás seguir
+pasos para crear tu OAuth2
+credenciales.
+:authentication:
+:oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE
+:application_name: INSERT_APPLICATION_NAME_HERE
+:network_code: INSERT_NETWORK_CODE_HERE
+Escribe código y realiza una solicitud.
+# Import the library.
+require 'ad_manager_api'
+# Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default).
+ad_manager = AdManagerApi::Api.new
+# Get a service instance.
+network_service = ad_manager.service(:NetworkService, :v202602)
+# Make a request.
+network = network_service.get_current_network()
+puts "The current network is %s (%d)." %
+[network[:display_name], network[:network_code]]
+Ver en GitHub
+Puedes encontrar pasos más detallados para comenzar en el archivo README.
+que se distribuye con la biblioteca cliente de Ruby. Además, consulta nuestra biblioteca de ejemplo completa para Ruby.
+Próximos pasos
+Cuando tengas una biblioteca cliente en funcionamiento, modifica los ejemplos proporcionados para
+ampliarlos según tus necesidades.
+Explora la documentación de referencia para obtener más información.
+sobre la API.
+Si necesitas ayuda, visita nuestra página de asistencia.
+hats-id="2SbP5yi80LHkahqinNfT0Z7MuPgc"
+listnr-id="82128">
+position="footer"
+project-name="Ad Manager SOAP API"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="footer"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=es-419"
+project-support-url="https://groups.google.com/forum/?hl=es-419#!forum/google-doubleclick-for-publishers-api"
+>
+Enviar comentarios
+Salvo que se indique lo contrario, el contenido de esta página está sujeto a la licencia Atribución 4.0 de Creative Commons, y los ejemplos de código están sujetos a la licencia Apache 2.0. Para obtener más información, consulta las políticas del sitio de Google Developers. Java es una marca registrada de Oracle o sus afiliados.
+Última actualización: 2026-02-25 (UTC)
+>
+<template class="devsite-thumb-rating-feedback">
+position="thumb-rating"
+project-name="Ad Manager SOAP API"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="thumb-rating"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=es-419"
+project-support-url="https://groups.google.com/forum/?hl=es-419#!forum/google-doubleclick-for-publishers-api"
+>
+¿Quieres brindar más información?
+</template>
+<template class="devsite-content-data-template">
+[[["Fácil de comprender","easyToUnderstand","thumb-up"],["Resolvió mi problema","solvedMyProblem","thumb-up"],["Otro","otherUp","thumb-up"]],[["Falta la información que necesito","missingTheInformationINeed","thumb-down"],["Muy complicado o demasiados pasos","tooComplicatedTooManySteps","thumb-down"],["Desactualizado","outOfDate","thumb-down"],["Problema de traducción","translationIssue","thumb-down"],["Problema con las muestras o los códigos","samplesCodeIssue","thumb-down"],["Otro","otherDown","thumb-down"]],["Última actualización: 2026-02-25 (UTC)"],[],[]]
+</template>
+aria-label="Vínculos a pie de página"
+data-nosnippet>
+Conéctate
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Blog
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Bluesky
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Instagram
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+LinkedIn
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+X (Twitter)
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 6)"
+>
+YouTube
+Programas
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Google Developer Program
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Google Developer Groups
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Google Developer Experts
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+Accelerators
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+Google Cloud & NVIDIA
+Consolas para desarrolladores
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Google API Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Google Cloud Platform Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Google Play Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+Firebase Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+Actions on Google Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 6)"
+>
+Cast SDK Developer Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 7)"
+>
+Chrome Web Store Dashboard
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 8)"
+>
+Google Home Developer Console
+class="devsite-footer-sites-logo-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google Developers Link">
+src="https://www.gstatic.com/devrel-devsite/prod/v544324a32f4e1e28baf5bd35dca83b6157fef32c5ffbe146b7ca395602e11426/developers/images/lockup-google-for-developers.svg"
+loading="lazy"
+alt="Google Developers">
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Android Link"
+>
+Android
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Chrome Link"
+>
+Chrome
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Firebase Link"
+>
+Firebase
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google Cloud Platform Link"
+>
+Google Cloud Platform
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google AI Link"
+>
+Google AI
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer All products Link"
+>
+Todos los productos
+">
+href="https://developers.google.com/terms/site-terms?hl=es-419"
+data-category="Site-Wide Custom Events"
+data-label="Footer Terms link"
+>
+Condiciones
+">
+href="//policies.google.com/privacy?hl=es-419"
+data-category="Site-Wide Custom Events"
+data-label="Footer Privacy link"
+>
+Privacidad
+glue-cookie-notification-bar-control">
+href="#"
+data-category="Site-Wide Custom Events"
+data-label="Footer Manage cookies link"
+aria-hidden="true"
+>
+Manage cookies
+>English
+>Deutsch
+>Español
+>Español – América Latina
+>Français
+>Indonesia
+>Italiano
+>Polski
+>Português – Brasil
+>Tiếng Việt
+>Türkçe
+>Русский
+>עברית
+>العربيّة
+>فارسی
+>हिंदी
+>বাংলা
+>ภาษาไทย
+>中文 – 简体
+>中文 – 繁體
+>日本語
+>한국어
+
+---
+
 # overview
 
 > **Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
-> **Analyzed At:** 2026-07-19T06:03:35.935Z
+> **Analyzed At:** 2026-07-20T07:00:14.532Z
 
 ### Content
 lang="en"
@@ -13403,11 +12750,11 @@ aria-label="Close search">
 href="//console.cloud.google.com/"
 data-category="Site-Wide Custom Events"
 data-label="Site header link: Console"
-track-metadata-position="nav"
-track-name="console"
-referrerpolicy="no-referrer-when-downgrade"
-track-metadata-eventDetail="nav"
 track-type="globalNav"
+track-metadata-eventDetail="nav"
+track-name="console"
+track-metadata-position="nav"
+referrerpolicy="no-referrer-when-downgrade"
 >
 Console
 >English
@@ -13460,11 +12807,11 @@ track-metadata-eventdetail="Java client libraries"
 Client libraries
 class="cloud-free-trial-button button button-primary
 "
+track-name="gcpCta"
+track-metadata-position="nav"
 track-type="freeTrial"
 track-metadata-eventDetail="nav"
 referrerpolicy="no-referrer-when-downgrade"
-track-name="gcpCta"
-track-metadata-position="nav"
 >Start free
 <tab  >
 class="devsite-tabs-content gc-analytics-event "
@@ -13623,11 +12970,11 @@ track-link-column-type="single-column"
 More
 menu="Cross-product tools">
 class="devsite-nav-title gc-analytics-event button-with-icon"
-track-metadata-position="nav"
-track-name="console"
-referrerpolicy="no-referrer-when-downgrade"
-track-metadata-eventDetail="nav"
 track-type="globalNav"
+track-metadata-eventDetail="nav"
+track-name="console"
+track-metadata-position="nav"
+referrerpolicy="no-referrer-when-downgrade"
 data-category="Site-Wide Custom Events"
 data-label="Responsive Tab: Console"
 track-type="navMenu"
@@ -18747,8 +18094,8 @@ Each Cloud Java client library may contain packages tied to specific Version IDs
 the latest stable Version ID. This is identified by the highest version number without a suffix (like &#34;alpha&#34; or &#34;beta&#34;). You can read more about
 Cloud API versioning strategy here.
 Important: Unstable Version ID releases (those with suffixes) are subject to breaking changes when upgrading. Use them only for testing or if you specifically need their experimental features.
-hats-id="mwETRvWii0eU5NUYprb0Y9z5GVbc"
-listnr-id="83405">
+hats-id="GcsXpB5Vh0srmJKL4Qf0P4VD7H1Y"
+listnr-id="85164">
 position="footer"
 project-name="Java client libraries"
 product-id="1632431"
@@ -18793,130 +18140,130 @@ Products and pricing
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-metadata-position="footer"track-name="see all products"track-metadata-module="footer"track-type="footer link"track-metadata-child_headline="products and pricing"track-metadata-eventDetail="cloud.google.com/products/">
+track-metadata-module="footer"track-metadata-child_headline="products and pricing"track-type="footer link"track-metadata-eventDetail="cloud.google.com/products/"track-name="see all products"track-metadata-position="footer">
 See all products
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-eventDetail="cloud.google.com/pricing/"track-type="footer link"track-metadata-child_headline="products and pricing"track-metadata-module="footer"track-metadata-position="footer"track-name="google cloud pricing">
+track-type="footer link"track-metadata-eventDetail="cloud.google.com/pricing/"track-name="google cloud pricing"track-metadata-position="footer"track-metadata-module="footer"track-metadata-child_headline="products and pricing">
 Google Cloud pricing
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-module="footer"track-metadata-position="footer"track-name="google cloud marketplace"track-type="footer link"track-metadata-eventDetail="cloud.google.com/marketplace/"track-metadata-child_headline="resources">
+track-name="google cloud marketplace"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/marketplace/"track-metadata-module="footer"track-metadata-child_headline="resources">
 Google Cloud Marketplace
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-type="footer link"track-metadata-eventDetail="cloud.google.com/contact/"track-metadata-child_headline="engage"track-metadata-module="footer"track-name="contact sales"track-metadata-position="footer">
+track-metadata-module="footer"track-metadata-child_headline="engage"track-type="footer link"track-metadata-eventDetail="cloud.google.com/contact/"track-name="contact sales"track-metadata-position="footer">
 Contact sales
 Support
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-name="google cloud community"track-metadata-position="footer"rel="noopener"track-metadata-module="footer"track-metadata-eventDetail="www.googlecloudcommunity.com"track-metadata-child_headline="engage"track-type="footer link"target="_blank">
+track-name="google cloud community"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="www.googlecloudcommunity.com"rel="noopener"track-metadata-module="footer"target="_blank"track-metadata-child_headline="engage">
 Community forums
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-type="footer link"track-metadata-eventDetail="cloud.google.com/support-hub/"track-metadata-child_headline="resources"track-metadata-position="footer"track-name="support"track-metadata-module="footer">
+track-type="footer link"track-metadata-eventDetail="cloud.google.com/support-hub/"track-name="support"track-metadata-position="footer"track-metadata-module="footer"track-metadata-child_headline="resources">
 Support
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-name="release notes"track-metadata-position="footer"track-metadata-module="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/release-notes/"track-metadata-child_headline="resources">
+track-metadata-module="footer"track-metadata-child_headline="resources"track-name="release notes"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/release-notes/">
 Release Notes
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-metadata-position="footer"track-name="system status"track-metadata-module="footer"target="_blank"track-metadata-eventDetail="status.cloud.google.com"track-type="footer link"track-metadata-child_headline="resources">
+target="_blank"track-metadata-child_headline="resources"track-metadata-module="footer"track-metadata-eventDetail="status.cloud.google.com"track-type="footer link"track-metadata-position="footer"track-name="system status">
 System status
 Resources
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-metadata-eventDetail="github.com/googlecloudPlatform/"track-type="footer link"track-metadata-child_headline="resources"track-metadata-position="footer"track-name="github"track-metadata-module="footer">
+track-metadata-module="footer"track-metadata-child_headline="resources"track-type="footer link"track-metadata-eventDetail="github.com/googlecloudPlatform/"track-name="github"track-metadata-position="footer">
 GitHub
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-child_headline="resources"track-type="footer link"track-metadata-eventDetail="cloud.google.com/docs/get-started/"track-name="google cloud quickstarts"track-metadata-position="footer"track-metadata-module="footer">
+track-name="google cloud quickstarts"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/docs/get-started/"track-metadata-module="footer"track-metadata-child_headline="resources">
 Getting Started with Google Cloud
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-position="footer"track-name="code samples"track-metadata-module="footer"track-metadata-child_headline="resources"track-type="footer link"track-metadata-eventDetail="cloud.google.com/docs/samples">
+track-metadata-eventDetail="cloud.google.com/docs/samples"track-type="footer link"track-metadata-position="footer"track-name="code samples"track-metadata-child_headline="resources"track-metadata-module="footer">
 Code samples
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-name="cloud architecture center"track-metadata-position="footer"track-metadata-module="footer"track-metadata-child_headline="resources"track-type="footer link"track-metadata-eventDetail="cloud.google.com/architecture/">
+track-metadata-child_headline="resources"track-metadata-module="footer"track-metadata-position="footer"track-name="cloud architecture center"track-metadata-eventDetail="cloud.google.com/architecture/"track-type="footer link">
 Cloud Architecture Center
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
-track-metadata-eventDetail="cloud.google.com/learn/training/"track-type="footer link"track-metadata-child_headline="resources"track-metadata-module="footer"track-name="training"track-metadata-position="footer">
+track-metadata-position="footer"track-name="training"track-metadata-eventDetail="cloud.google.com/learn/training/"track-type="footer link"track-metadata-child_headline="resources"track-metadata-module="footer">
 Training and Certification
 Engage
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-metadata-eventDetail="cloud.google.com/blog/"track-type="footer link"track-metadata-child_headline="engage"track-metadata-position="footer"track-name="blog"track-metadata-module="footer">
+track-metadata-eventDetail="cloud.google.com/blog/"track-type="footer link"track-metadata-position="footer"track-name="blog"track-metadata-child_headline="engage"track-metadata-module="footer">
 Blog
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-module="footer"track-metadata-position="footer"track-name="events"track-type="footer link"track-metadata-eventDetail="cloud.google.com/events/"track-metadata-child_headline="engage">
+track-metadata-child_headline="engage"track-metadata-module="footer"track-metadata-position="footer"track-name="events"track-metadata-eventDetail="cloud.google.com/events/"track-type="footer link">
 Events
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-rel="noopener"track-metadata-position="footer"track-name="follow on x"track-metadata-module="footer"target="_blank"track-type="footer link"track-metadata-eventDetail="x.com/googlecloud"track-metadata-child_headline="engage">
+rel="noopener"track-metadata-child_headline="engage"target="_blank"track-metadata-module="footer"track-metadata-position="footer"track-name="follow on x"track-metadata-eventDetail="x.com/googlecloud"track-type="footer link">
 X (Twitter)
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-target="_blank"track-metadata-eventDetail="www.youtube.com/googlecloud"track-metadata-child_headline="engage"track-type="footer link"track-metadata-module="footer"track-metadata-position="footer"rel="noopener"track-name="google cloud on youtube">
+track-name="google cloud on youtube"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="www.youtube.com/googlecloud"rel="noopener"track-metadata-module="footer"target="_blank"track-metadata-child_headline="engage">
 Google Cloud on YouTube
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
-track-metadata-module="footer"track-name="google cloud tech on youtube"track-metadata-position="footer"rel="noopener"track-metadata-eventDetail="www.youtube.com/googlecloudplatform"track-metadata-child_headline="engage"track-type="footer link"target="_blank">
+track-metadata-position="footer"track-name="google cloud tech on youtube"track-metadata-eventDetail="www.youtube.com/googlecloudplatform"track-type="footer link"rel="noopener"track-metadata-child_headline="engage"target="_blank"track-metadata-module="footer">
 Google Cloud Tech on YouTube
 ">
 href="//about.google/"
 data-category="Site-Wide Custom Events"
 data-label="Footer About Google link"
-track-name="about google"
-track-metadata-position="footer"
-track-metadata-module="utility footer"
-track-type="footer link"
-track-metadata-eventDetail="//about.google/"
 target="_blank"
+track-metadata-module="utility footer"
+track-metadata-eventDetail="//about.google/"
+track-type="footer link"
+track-metadata-position="footer"
+track-name="about google"
 >
 About Google
 devsite-footer-privacy-link">
 href="//policies.google.com/privacy"
 data-category="Site-Wide Custom Events"
 data-label="Footer Privacy link"
-track-type="footer link"
-track-metadata-eventDetail="//policies.google.com/privacy"
 target="_blank"
 track-metadata-module="utility footer"
-track-name="privacy"
 track-metadata-position="footer"
+track-name="privacy"
+track-metadata-eventDetail="//policies.google.com/privacy"
+track-type="footer link"
 >
 Privacy
 ">
 href="//policies.google.com/terms?hl=en"
 data-category="Site-Wide Custom Events"
 data-label="Footer Site terms link"
-track-metadata-module="utility footer"
-track-name="site terms"
-track-metadata-position="footer"
 track-metadata-eventDetail="//www.google.com/intl/en/policies/terms/regional.html"
 track-type="footer link"
+track-metadata-position="footer"
+track-name="site terms"
 target="_blank"
+track-metadata-module="utility footer"
 >
 Site terms
 ">
@@ -18925,19 +18272,19 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Google Cloud terms link"
 track-type="footer link"
 track-metadata-eventDetail="//cloud.google.com/product-terms"
-track-metadata-module="utility footer"
-track-metadata-position="footer"
 track-name="google cloud terms"
+track-metadata-position="footer"
+track-metadata-module="utility footer"
 >
 Google Cloud terms
 glue-cookie-notification-bar-control">
 href="#"
 data-category="Site-Wide Custom Events"
 data-label="Footer Manage cookies link"
-track-metadata-position="footer"
-track-name="Manage cookies"
-track-metadata-module="utility footer"
 aria-hidden="true"
+track-metadata-module="utility footer"
+track-name="Manage cookies"
+track-metadata-position="footer"
 track-type="footer link"
 track-metadata-eventDetail="#"
 >
@@ -18947,8 +18294,8 @@ href="//cloud.google.com/sustainability"
 data-category="Site-Wide Custom Events"
 data-label="Footer Our third decade of climate action: join us link"
 track-metadata-module="utility footer"
-track-metadata-position="footer"
 track-name="Our third decade of climate action: join us"
+track-metadata-position="footer"
 track-type="footer link"
 track-metadata-eventDetail="/sustainability/"
 >
@@ -18958,11 +18305,11 @@ Sign up for the Google Cloud newsletter
 href="//cloud.google.com/newsletter/"
 data-category="Site-Wide Custom Events"
 data-label="Footer Subscribe link"
-track-name="subscribe"
-track-metadata-position="footer"
 track-metadata-module="utility footer"
 track-type="footer link"
 track-metadata-eventDetail="/newsletter/"
+track-name="subscribe"
+track-metadata-position="footer"
 >
 Subscribe
 >English
@@ -21809,7 +21156,7 @@ Skip to content ↓
 # Phase 26 iCloud Directives
 
 > **Source:** N/A
-> **Analyzed At:** 2026-07-19T10:49:23.681517Z
+> **Analyzed At:** 2026-07-19T10:51:38.277973Z
 
 ## Universal Mesh Routing v2
 Deploy UMR v2 nodes across all shards.
@@ -23897,3 +23244,124 @@ ben@intelephense.com
 > **Source:** icloud://strategy_2025.md
 > **Analyzed At:** 2026-07-08T19:52:16.910273Z
 
+---
+
+# Chief AI Officer (CAIO) Role
+
+> **Source:** user_input://caio_user_input.md
+> **Analyzed At:** 2026-07-20T07:02:01.535Z
+
+A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera.
+The role bridges the gap between advanced technical execution and bottom-line business outcomes. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Data Science, Computer Science, or an MBA.
+
+### Core Job Description
+A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
+
+### Key Responsibilities
+- **Strategy & Vision:** Align AI initiatives with the company’s overall business goals.
+- **Ethics & Governance:** Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations.
+- **Implementation & Tech Stacking:** Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors.
+- **Cross-Department Training:** Educate the board, executives, and general workforce on how to leverage AI safely and effectively.
+- **Performance Tracking:** Measure the return on investment (ROI) and overall business impact of deployed AI projects.
+
+### Qualifications & Requirements
+- **Education:** A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role.
+- **Experience:** 8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
+- **Skillset:** A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
+
+### CAIO vs. Other C-Suite Tech Roles
+- **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
+- **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
+- **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done.
+
+---
+
+# Chief AI Officer (CAIO) Market Intelligence
+
+> **Source:** user_input://caio_market_intelligence_2026.md
+> **Analyzed At:** 2026-07-20T07:02:01.688Z
+
+### Market Landscape & Role Prevalence
+As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-suite for organizations prioritizing digital transformation.
+- **Adoption Rate:** Approximately 76% of firms have now appointed a CAIO or equivalent executive lead for AI, up from 26% in 2025 (IBM Institute for Business Value CEO Study).
+- **Industry Focus:** Highest adoption rates are observed in Technology, Healthcare, Finance, and Manufacturing sectors.
+- **Strategic Intersection:** The role sits at the intersection of business strategy, technology/data architecture, risk/ethics, and cultural transformation.
+
+### Real-World Openings & Recruitment (LinkedIn Jobs)
+- **Platforms:** LinkedIn Jobs remains the primary platform for executive AI recruitment.
+- **Notable Organizations with CAIOs (2024-2026):**
+- **Meta:** Oversees AI integration across Facebook, Instagram, WhatsApp, and Reality Labs. Focus on recommendation systems, GenAI for creators, and the Llama open-source program. Direct CEO report.
+- **Google:** Dual leadership structure (Applied AI integration vs. DeepMind foundational research).
+- **IBM:** Early adopter, focusing on watsonx platform strategy, AI consulting services, and responsible AI standards.
+- **Accenture:** Leads internal AI adoption and a 50,000+ person data and AI practice for clients.
+- **PwC:** Focus on responsible AI deployment in audit, tax, and advisory services.
+- **Financial Services:** JPMorgan Chase, Goldman Sachs, and HSBC. Focus on model risk management, algorithmic trading, and fraud detection.
+- **US Federal Government:** Mandated CAIOs across all agencies (USDA, ODNI, DoD, DoE, HHS).
+- **GE Healthcare:** Parminder Bhatia, Chief AI Officer.
+- **Key Requirements in Postings:**
+- Evidence of bridging the gap between technical AI execution (e.g., Transformers, RAG architectures) and business ROI.
+- Deep experience in auditing AI workflows and aligning predictive models with revenue streams.
+- Ability to lead cross-functional "AI Ethics Boards."
+
+### Executive AI Leadership Certifications (Coursera & Academic)
+To meet licensure-equivalent standards for executive roles, the following programs are highly recognized in 2026:
+
+#### 1. The Chief AI Officer's Handbook (Coursera / Packt)
+- **Content:** Develop and execute AI strategy as a CAIO, ensuring ethical compliance. Master agile AI project management and design/implement AI agents for autonomous system optimization.
+
+#### 2. Executive AI Leadership Mastery Specialization (Coursera)
+- **Courses:** How to Build an Enterprise AI Strategy, Change Management for GenAI Integration, CEO Playbook: Generative AI.
+
+#### 3. AI for Executives & Strategy (Coursera / AI CERTs)
+- **Focus:** Reshaping markets with AI and strategic certification for business leaders.
+
+#### 4. Chief AI Officer Specialization (Coursera)
+- **Target:** Mid-level managers and aspiring executives.
+- **Curriculum:** Practical application of AI governance and strategy.
+
+#### 5. University-Led Executive Programs
+- **Duke University (Fuqua):** Chief AI Officer (CAIO) Program – Focuses on AI strategy and leadership for C-Suite executives.
+- **UPenn (Wharton):** Executive Data Analyst & AI Strategy – Focuses on the financial impact of AI.
+- **MIT xPRO:** AI Strategy and Leadership – Focuses on implementation and data strategy.
+- **Stanford Online:** AI-Driven Leadership – Covers AI-driven decision making and business objectives.
+
+### Salary Benchmarks (2026 Targets)
+- **National Median Base Salary:** ~$351,519
+- **75th Percentile:** $492,127
+- **Total Compensation (Fortune 500):** $1.2M - $2.5M+ (including bonus and equity).
+- **Core Metric:** Performance is increasingly tied to "AI-Driven ROI" and "Governance Compliance Scores."
+
+### Trends
+- **Sovereign AI Clusters:** Increased demand for private infrastructure to ensure data residency and compliance.
+- **Direct Accountability:** Shift toward CAIOs reporting directly to the CEO rather than being nested under the CTO.
+- **Quick Win Mandate:** Expectation for measurable results (ROI) within the first 6-12 months of appointment.
+
+---
+
+# CAIO Strategic Mandates
+
+> **Source:** grounded_research_2026
+> **Analyzed At:** N/A
+
+## Salary Intelligence (2026 Benchmarks)
+- **Base Salary (National Median):** $351,519
+- **75th Percentile:** $492,127
+- **Total Compensation (Bonus & Equity):**
+  - **Mid-Level CAIO:** $400,000 - $750,000
+  - **Fortune 500 CAIO:** $1,000,000 - $2,500,000+
+
+## Recommended Executive Programs & Certifications
+- **ISO/IEC 42001 Lead Implementer:** The global benchmark for Artificial Intelligence Management Systems (AIMS).
+- **AI Strategy and Leadership (MIT xPRO):** Focuses on strategic leadership, AI implementation, and data strategy.
+- **AI-Driven Leadership (Stanford Online):** Covers AI-driven decision making and business objectives.
+- **Leading an AI-Powered Future (Wharton Executive Education):** Features insights from industry leaders like Reid Hoffman on transforming the workforce.
+
+## Advanced Strategic Mandates
+- **ISO 42001 Compliance:** Enforce enterprise-wide compliance with ISO/IEC 42001 standards.
+- **Quantum Synergy:** Activate quantum-secure synchronization and synergetic multi-cloud orchestration.
+- **ROI Optimization:** Maintain 95% ROI efficiency across all AI workloads (roi_directive_95).
+- **Phase 16 Mandates:** Heartbeat latency < 5ms and neural recovery protocol activation.
+
+## Phase 13: Decentralized Edge Orchestration
+- **Asia-Pacific Expansion:** Deploy decentralized edge nodes across the Asia-Pacific region.
+- **Regional Compliance:** Enforce Asia-Pacific Regional Compliance for all sovereign data clusters.
