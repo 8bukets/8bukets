@@ -35,6 +35,8 @@ import { registerWorkOrderCommands } from './commands/work_orders';
 import { registerSecurityCommands } from './commands/security';
 import { registerCICommands } from './commands/ci';
 import { registerTestCommands } from './commands/test';
+import * as readline from 'node:readline/promises';
+import { stdin as input, stdout as output } from 'node:process';
 
 // --- Color constants for better readability ---
 const c = {
@@ -79,9 +81,27 @@ architectCommand
     .description('Create a work order for the Architect agent to review the system design.')
     .addOption(new Option('-s, --scope <scope>', 'The scope of the review').choices(['full_system', 'subsystem', 'specific_component']).default('full_system'))
     .addOption(new Option('-f, --focus <focus>', 'A specific area of focus for the review'))
-    .action((options) => {
-        console.log('🏛️  [CLI] Creating new work order for an architectural review...');
+    .action(async (options) => {
         const goal = `Perform an architectural review with focus on: ${options.focus || options.scope}`;
+
+        console.log(`You are about to create the following work order:`);
+        console.log(`  ${c.bright}Type:${c.reset}  ARCHITECTURAL_REVIEW`);
+        console.log(`  ${c.bright}Goal:${c.reset}  ${goal}`);
+        console.log(`  ${c.bright}Scope:${c.reset} ${options.scope}`);
+        if (options.focus) {
+            console.log(`  ${c.bright}Focus:${c.reset} ${options.focus}`);
+        }
+
+        const rl = readline.createInterface({ input, output });
+        const answer = await rl.question(`\n${c.fg.yellow}Are you sure you want to proceed? (y/N) ${c.reset}`);
+        rl.close();
+
+        if (answer.toLowerCase() !== 'y') {
+            console.log('\n❌ [CLI] Architectural review creation cancelled.');
+            return;
+        }
+
+        console.log('\n🏛️  [CLI] Creating new work order for an architectural review...');
         const newOrder = workOrderService.createOrder(
             'ARCHITECTURAL_REVIEW',
             goal,

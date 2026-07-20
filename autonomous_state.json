@@ -16,47 +16,47 @@
     ],
     "directives": [
         {
-            "id": "dir_z2f93jcy2",
+            "id": "dir_m068og80c",
             "priority": "Critical",
             "domain": "Security",
             "intent": "Rotate all Phase 12 neural sync keys",
             "status": "Active",
             "synergyScore": 95,
-            "timestamp": "2026-07-20T08:23:02.190Z"
+            "timestamp": "2026-07-20T08:29:04.847Z"
         },
         {
-            "id": "dir_9sn3yv56e",
+            "id": "dir_17vzv1e68",
             "priority": "High",
             "domain": "AI Agents",
             "intent": "Implement Crystals-Kyber for CAIO Agent",
             "status": "Active",
             "synergyScore": 88,
-            "timestamp": "2026-07-20T08:23:02.190Z"
+            "timestamp": "2026-07-20T08:29:04.847Z"
         },
         {
-            "id": "dir_p5y097q69",
+            "id": "dir_tif684cmz",
             "priority": "Medium",
             "domain": "Services",
             "intent": "Optimize MongoDB sharding for APAC nodes",
             "status": "Active",
             "synergyScore": 72,
-            "timestamp": "2026-07-20T08:23:02.190Z"
+            "timestamp": "2026-07-20T08:29:04.847Z"
         },
         {
-            "id": "dir_fd5la71jz",
+            "id": "dir_w8s7zxaze",
             "priority": "Low",
             "domain": "General",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-07-20T08:23:02.190Z"
+            "timestamp": "2026-07-20T08:29:04.847Z"
         },
         {
-            "id": "dir_8ekeg5o9c",
+            "id": "dir_2ymywh1t6",
             "priority": "Medium",
             "domain": "Documentation",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-07-20T08:23:02.190Z"
+            "timestamp": "2026-07-20T08:29:04.847Z"
         }
     ],
     "docker": {
@@ -66,7 +66,7 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1784535683189,
+        "timestamp": 1784536062845,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
@@ -68022,7 +68022,7 @@
                 {
                     "name": "origin/palette-report-navigation-10113074298348902024",
                     "lastMessage": "Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-report-navigation-10113074298348902024",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -68580,7 +68580,7 @@
                 {
                     "name": "origin/palette-ux-report-navigation-9929514783226057505",
                     "lastMessage": "Merge branch 'scrape-oracle-news-9936778584663660002' into palette-ux-report-navigation-9929514783226057505",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 27 artifacts.",
@@ -71307,7 +71307,7 @@
                 {
                     "name": "origin/jules-9280679671880455309-d717a909",
                     "lastMessage": "scan https://software-online-review.com and improve merge integrate run workflow and observe knowledge literal insertion",
-                    "lastSeen": "28 hours ago",
+                    "lastSeen": "29 hours ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 6 artifacts.",
@@ -75525,7 +75525,7 @@
                 {
                     "name": "origin/jules-12283771268117181283-edfe42b2",
                     "lastMessage": "chore: add missing work:daily script to package.json and verify daily sync workflow",
-                    "lastSeen": "20 hours ago",
+                    "lastSeen": "21 hours ago",
                     "category": "maintenance",
                     "domain": "Services",
                     "knowledge": "",
@@ -75545,7 +75545,7 @@
                 {
                     "name": "origin/jules-caio-integration-13939543537108665408",
                     "lastMessage": "feat: integrate Chief AI Officer (CAIO) role parameters and strategic mandates into knowledge base",
-                    "lastSeen": "75 minutes ago",
+                    "lastSeen": "82 minutes ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -75575,7 +75575,7 @@
                 {
                     "name": "origin/antigravity-knowledge-integration-7660945893512698081",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "29 hours ago",
+                    "lastSeen": "30 hours ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -75897,7 +75897,7 @@
                 {
                     "name": "origin/intelephense-docs-update-17190911211980979020",
                     "lastMessage": "feat(knowledge): ingest and consolidate updated Intelephense documentation",
-                    "lastSeen": "45 minutes ago",
+                    "lastSeen": "51 minutes ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -77409,7 +77409,7 @@
                 {
                     "name": "origin/bolt/scraper-perf-boost-9671827754750526645",
                     "lastMessage": "Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt/scraper-perf-boost-9671827754750526645",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "performance",
                     "domain": "General",
                     "knowledge": "",
@@ -78123,7 +78123,7 @@
                 {
                     "name": "main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 440 issues",
-                    "lastSeen": "35 seconds ago",
+                    "lastSeen": "42 seconds ago",
                     "category": "other",
                     "domain": "General",
                     "knowledge": "",
@@ -79234,7 +79234,7 @@
                 {
                     "name": "origin/main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 440 issues",
-                    "lastSeen": "36 seconds ago",
+                    "lastSeen": "43 seconds ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -92946,7 +92946,7 @@
                 {
                     "name": "origin/bolt-performance-researcher-parallel-14083446913808093201",
                     "lastMessage": "Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt-performance-researcher-parallel-14083446913808093201",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96048,7 +96048,7 @@
                 {
                     "name": "origin/jules-1571033321239158606-dbf7ed9e",
                     "lastMessage": "Apply knowledge integration literal insertion and generate workflows",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -98248,7 +98248,7 @@
                 {
                     "name": "origin/palette-improve-report-ux-10661525199264285560",
                     "lastMessage": "Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-improve-report-ux-10661525199264285560",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -98974,7 +98974,7 @@
                 {
                     "name": "origin/palette-ux-report-improvements-9153668087964457098",
                     "lastMessage": "Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-ux-report-improvements-9153668087964457098",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -101912,7 +101912,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-07-20T08:23:02.171Z"
+            "timestamp": "2026-07-20T08:29:04.845Z"
         },
         "relayState": [
             {
@@ -101922,7 +101922,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-07-20T08:23:02.176Z",
+                "lastActivity": "2026-07-20T08:29:04.846Z",
                 "intensity": 0.85
             },
             {
@@ -101937,5 +101937,5 @@
             }
         ]
     },
-    "last_sync": "2026-07-20T08:23:04.310Z"
+    "last_sync": "2026-07-20T08:29:06.963Z"
 }
