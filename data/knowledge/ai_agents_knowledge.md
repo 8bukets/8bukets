@@ -1,13 +1,13 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-07-20T08:33:14.756Z
+**System Analysis:** 2026-07-20T08:35:36.994Z
 
 ---
 
 # unitedsports.news.blog
 
 > **Source:** https://unitedsports.news.blog/
-> **Analyzed At:** 2026-07-20T08:32:59.412Z
+> **Analyzed At:** 2026-07-20T08:35:14.477Z
 
 ### Content
 <title>e&amp;n &#8211; #entertainment #webshop #software #news</title>
@@ -1142,13 +1142,16 @@ itemscope
 itemtype="https://schema.org/ImageGallery">
 Loading Comments...
 You must be logged in to post a comment.
+generated in 1.580 seconds
+480092 bytes batcached for 300 seconds
+-->
 
 ---
 
 # software-online-review.com
 
 > **Source:** https://software-online-review.com
-> **Analyzed At:** 2026-07-20T08:33:00.943Z
+> **Analyzed At:** 2026-07-20T08:35:16.127Z
 
 ### Content
 <title>software info by fk &#8211; software-online-review &#8211; Filip Keser</title>
@@ -2791,7 +2794,7 @@ value="Post Comment" />
 # onlinereview.news.blog
 
 > **Source:** https://onlinereview.news.blog/
-> **Analyzed At:** 2026-07-20T08:33:00.318Z
+> **Analyzed At:** 2026-07-20T08:35:15.387Z
 
 ### Content
 <title>news</title>
@@ -3920,13 +3923,16 @@ class="jp-carousel-comment-form-button"
 id="jp-carousel-comment-form-button-submit"
 value="Post Comment" />
 Design a site like this with WordPress.comGet started
+generated in 1.525 seconds
+702638 bytes batcached for 300 seconds
+-->
 
 ---
 
 # companylink.business.blog
 
 > **Source:** https://companylink.business.blog/
-> **Analyzed At:** 2026-07-20T08:33:01.320Z
+> **Analyzed At:** 2026-07-20T08:35:16.592Z
 
 ### Content
 <title>Company &amp; news &#8211; #news</title>
@@ -5103,7 +5109,7 @@ value="Post Comment" />
 # gamezoneonlinegame.wordpress.com
 
 > **Source:** https://gamezoneonlinegame.wordpress.com/
-> **Analyzed At:** 2026-07-20T08:33:01.703Z
+> **Analyzed At:** 2026-07-20T08:35:17.159Z
 
 ### Content
 <title>game &#8211; online</title>
@@ -6356,16 +6362,13 @@ style="display: none"
 Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use.
 To find out more, including how to control cookies, see here:
 Cookie Policy
-generated in 1.818 seconds
-864904 bytes batcached for 300 seconds
--->
 
 ---
 
 # 2459326
 
 > **Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
-> **Analyzed At:** 2026-07-20T08:33:02.736Z
+> **Analyzed At:** 2026-07-20T08:35:18.253Z
 
 ### Content
 <title>Understanding bidding basics - Google Ads Help</title>       Skip to main content    Google Ads HelpHelp CenterCommunityAnnouncementsSign inGoogle HelpHelp CenterStart advertisingCampaignsExplore featuresOptimize performanceAccount &amp; billingFix issuesGoogle PartnersCommunityGoogle AdsPrivacy PolicyTerms of ServiceSubmit feedback   Send feedback on...This help content &amp; informationGeneral Help Center experienceNextHelp CenterCommunityAnnouncementsGoogle AdsStart advertisingYour guide to Google Ads8 steps to prepare your campaign for successChoose the right campaign typeDetermine your advertising goals How Google Ads can work for your industryGoogle Ads specs: ad formats, sizes, and best practicesMore advertising toolsGoogle Ads basicsGoogle Ads privacyGlossaryCampaignsPerformance MaxAI Max for Search campaignsAI Max for Shopping campaignsSearch campaignsDisplay campaignsSmart CampaignsApp campaignsShopping adsVideo campaignsHotel campaignsDemand Gen campaignsCall campaignsThings to doEvents ticketingExplore featuresAds, assets &amp; landing pagesAd groupsKeywordsBiddingTargetingMeasure resultsBulk uploads &amp; editsCampaign settingsOptimize performance12 tips to advertising with Google AdsGoogle Ads Best PracticesOptimization featuresCreate effective Search adsGenerative AI tools in Google AdsImprove with AI-powered SearchFinding success with Smart BiddingMeasure resultsOptimize performance with App ConnectGoogle Ads training on SkillshopThe Google Ads mobile appAccount &amp; billingBillingAccount settingsAccount accessManager accountsAccount security and safetyCancel or reactivate your accountWorking with client accountsUseful toolsFix issuesAd disapprovals and reviewsBilling &amp; paymentsCompromised account issuesPolicy issuesPerformance issuesAccount access issuesReporting issuesRequest implementation support for Google Ads and YouTube ReserveGoogle Ads APIGoogle PartnersGoogle Partners ProgramHelp Center TopicsCampaignsDisplay campaignsSetup &amp; managementBiddingUnderstanding bidding basics                                     Understanding bidding basics
@@ -6399,14 +6402,14 @@ About Target CPA bidding
 Determine a bid strategy based on your goals
 Was this helpful?How can we improve it?<textarea aria-label="Sorry about that, How can we improve it?" name="article_feedback_comment"></textarea>Submit                 Need more help? Try these next steps:                   Post to the help community    Get answers from community members                   Contact us  Tell us more and we’ll help you get there                     false     Bidding1 of 4About the Display Network ad auction2 of 4About bidding features in Display campaigns3 of 4Choose a bid for your Display Network campaign4 of 4Understanding bidding basics            Achieve your advertising goals today!  Attend our Performance Max Masterclass, a livestream workshop session bringing together industry and Google ads PMax experts.
 Register now
-©2026 Google     Privacy Policy     Terms of Service        Google Ads Advertising Policies      About the Help Center               Send feedback on... This help content &amp; information General Help Center experience           Enable Dark Mode       Language   català&lrm;dansk&lrm;Deutsch&lrm;eesti&lrm;English (Australia)&lrm;English (United Kingdom)&lrm;español&lrm;español (Latinoamérica)&lrm;Filipino&lrm;français&lrm;hrvatski&lrm;Indonesia&lrm;italiano&lrm;latviešu&lrm;lietuvių&lrm;magyar&lrm;Melayu&lrm;Nederlands&lrm;norsk&lrm;polski&lrm;português&lrm;português (Brasil)&lrm;română&lrm;slovenčina&lrm;slovenščina&lrm;suomi&lrm;svenska&lrm;Tiếng Việt&lrm;Türkçe&lrm;čeština&lrm;Ελληνικά&lrm;български&lrm;русский&lrm;српски&lrm;українська&lrm;&rlm;עברית&rlm;العربيةहिन्दी&lrm;ไทย&lrm;中文（简体）&lrm;中文（繁體）&lrm;中文（香港）&lrm;日本語&lrm;한국어&lrm; English&lrm;                     SearchClear searchClose searchGoogle appsMain menu     <textarea class="csi" name="csi"></textarea>           9000866763645369296                                                            true                                                      Search Help Center   true    true     true     true                                                                                       true   true   73067                                                                           false                                        false     true                                                                                                                                                                                          true   false                                                                      false
+©2026 Google     Privacy Policy     Terms of Service        Google Ads Advertising Policies      About the Help Center               Send feedback on... This help content &amp; information General Help Center experience           Enable Dark Mode       Language   català&lrm;dansk&lrm;Deutsch&lrm;eesti&lrm;English (Australia)&lrm;English (United Kingdom)&lrm;español&lrm;español (Latinoamérica)&lrm;Filipino&lrm;français&lrm;hrvatski&lrm;Indonesia&lrm;italiano&lrm;latviešu&lrm;lietuvių&lrm;magyar&lrm;Melayu&lrm;Nederlands&lrm;norsk&lrm;polski&lrm;português&lrm;português (Brasil)&lrm;română&lrm;slovenčina&lrm;slovenščina&lrm;suomi&lrm;svenska&lrm;Tiếng Việt&lrm;Türkçe&lrm;čeština&lrm;Ελληνικά&lrm;български&lrm;русский&lrm;српски&lrm;українська&lrm;&rlm;עברית&rlm;العربيةहिन्दी&lrm;ไทย&lrm;中文（简体）&lrm;中文（繁體）&lrm;中文（香港）&lrm;日本語&lrm;한국어&lrm; English&lrm;                     SearchClear searchClose searchGoogle appsMain menu     <textarea class="csi" name="csi"></textarea>           8910823441476296361                                                            true                                                      Search Help Center   true    true     true     true                                                                                       true   true   73067                                                                           false                                        false     true                                                                                                                                                                                          true   false                                                                      false
 
 ---
 
 # bidding
 
 > **Source:** https://business.google.com/uk/ad-tools/bidding/
-> **Analyzed At:** 2026-07-20T08:33:03.685Z
+> **Analyzed At:** 2026-07-20T08:35:19.387Z
 
 ### Content
 <title>Google Ads Smart Bidding - AI-Driven Bid Optimisations &amp; Ad Spend</title>
@@ -6843,1286 +6846,491 @@ Start now
 
 # resources
 
-> **Source:** https://admanager.google.com/home/resources/
-> **Analyzed At:** 2026-07-20T08:33:08.472Z
+> **Source:** https://business.google.com/uk/resources/
+> **Analyzed At:** 2026-07-20T08:35:20.059Z
 
 ### Content
-<title>Resources Overview - Google Ad Manager</title>
-data-g-event="resources"
-data-g-action="mobile: open global nav"
-data-g-label="global nav"
-class="h-js-header__hamburger-link h-c-header__hamburger-link"
-aria-controls="h-js-header__drawer"
-aria-expanded="false"
-aria-label="Open the navigation drawer">
-data-g-action="logo"
-data-g-label="global nav"
-href="/home/"
-class="h-c-header__company-logo-link" title="Google">
-data-g-action="logo"
-data-g-label="global nav"
-href="/home/"
-class="h-c-header__product-logo-link">
-Ad Manager
-class="h-js-header__hamburger-link h-c-header__hamburger-link"
-aria-controls="h-js-header__drawer"
-aria-expanded="false"
-aria-label="Open the navigation drawer">
-data-g-action="capabilities"
-data-g-label="global nav"
-href="/home/capabilities/"
-class="h-c-header__nav-li-link"
-target="_self"
->
-Capabilities
-data-g-action="partner solutions"
-data-g-label="global nav"
-href="/home/partner-solutions/"
-class="h-c-header__nav-li-link"
-target="_self"
->
-Partner Solutions
-data-g-action="success stories"
-data-g-label="global nav"
-href="/home/success-stories/"
-class="h-c-header__nav-li-link"
-target="_self"
->
-Success Stories
-data-g-action="resources"
-data-g-label="global nav"
-href="/home/resources/"
-class="h-c-header__nav-li-link h-is-active"
-target="_self"
->
-Resources
-data-g-action="blog"
-data-g-label="global nav"
-href="https://www.blog.google/products/admanager/"
-class="h-c-header__nav-li-link"
-target="_self"
->
-Blog
-data-g-action="support"
-data-g-label="global nav"
-href="https://support.google.com/admanager/?#topic=7505988&amp;utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Support"
-class="h-c-header__cta-li-link h-c-header__cta-li-link--secondary"
-target="_blank"
-rel="nofollow noopener noreferrer" >Support
-data-g-action="sign in cta"
-data-g-label="global nav"
-href="https://admanager.google.com?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Sign in"
-class="h-c-header__cta-li-link h-c-header__cta-li-link--secondary"
-target="_blank"
-rel="nofollow noopener noreferrer" >Sign in
-data-g-action="sign up cta"
-data-g-label="global nav"
-class="h-c-header__cta-li-link h-c-header__cta-li-link--primary"
-role="button" tabindex="0"
-ng-href="/home/contact-us/">
-Get started
-aria-label="Navigation drawer">
-data-g-action="logo"
-data-g-label="global nav"
-href="/home/"
-class="h-c-header__product-logo-link">
-Ad Manager
-data-g-action="capabilities"
-data-g-label="global nav"
-href="/home/capabilities/"
-title="Capabilities"
-class="h-c-header__drawer-nav-li-link"
-target="_self"
->Capabilities
-data-g-action="formats"
-data-g-label="global nav"
-href="/home/capabilities/formats/"
-title="Formats"
-class="h-c-header__drawer-nested-nav-li-link"
-target="_self"
->Formats
-data-g-action="video"
-data-g-label="global nav"
-href="/home/capabilities/video/"
-title="Video"
-class="h-c-header__drawer-nested-nav-li-link"
-target="_self"
->Video
-data-g-action="yield management"
-data-g-label="global nav"
-href="/home/capabilities/yield-management/"
-title="Yield Management"
-class="h-c-header__drawer-nested-nav-li-link"
-target="_self"
->Yield Management
-data-g-action="data and insights"
-data-g-label="global nav"
-href="/home/capabilities/data-insights/"
-title="Data &amp; Insights"
-class="h-c-header__drawer-nested-nav-li-link"
-target="_self"
->Data &amp; Insights
-data-g-action="brand safety"
-data-g-label="global nav"
-href="/home/capabilities/brand-safety/"
-title="Brand Safety"
-class="h-c-header__drawer-nested-nav-li-link"
-target="_self"
->Brand Safety
-data-g-action="partner solutions"
-data-g-label="global nav"
-href="/home/partner-solutions/"
-title="Partner Solutions"
-class="h-c-header__drawer-nav-li-link"
-target="_self"
->Partner Solutions
-data-g-action="apps"
-data-g-label="global nav"
-href="/home/partner-solutions/apps/"
-title="Apps"
-class="h-c-header__drawer-nested-nav-li-link"
-target="_self"
->Apps
-data-g-action="tv and broadcast"
-data-g-label="global nav"
-href="/home/partner-solutions/broadcast/"
-title="TV &amp; Broadcast"
-class="h-c-header__drawer-nested-nav-li-link"
-target="_self"
->TV &amp; Broadcast
-data-g-action="commerce"
-data-g-label="global nav"
-href="/home/partner-solutions/commerce/"
-title="Commerce"
-class="h-c-header__drawer-nested-nav-li-link"
-target="_self"
->Commerce
-data-g-action="news and publishing"
-data-g-label="global nav"
-href="/home/partner-solutions/news-publishing/"
-title="News &amp; Publishing"
-class="h-c-header__drawer-nested-nav-li-link"
-target="_self"
->News &amp; Publishing
-data-g-action="small business"
-data-g-label="global nav"
-href="/home/partner-solutions/small-business/"
-title="Small Business"
-class="h-c-header__drawer-nested-nav-li-link"
-target="_self"
->Small Business
-data-g-action="success stories"
-data-g-label="global nav"
-href="/home/success-stories/"
-title="Success Stories"
-class="h-c-header__drawer-nav-li-link"
-target="_self"
->Success Stories
-data-g-action="resources"
-data-g-label="global nav"
-href="/home/resources/"
-title="Resources"
-class="h-c-header__drawer-nav-li-link h-is-active"
-target="_self"
->Resources
-data-g-action="blog"
-data-g-label="global nav"
-href="https://www.blog.google/products/admanager/"
-title="Blog"
-class="h-c-header__drawer-nav-li-link"
-target="_self"
->Blog
-data-g-action="support"
-data-g-label="global nav"
-href="https://support.google.com/admanager/?#topic=7505988&amp;utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Support"
-class="h-c-header__drawer-cta-li-link h-c-header__drawer-cta-li-link--secondary"
-target="_blank"
-rel="nofollow noopener noreferrer">
-Support
-data-g-action="sign in cta"
-data-g-label="global nav"
-href="https://admanager.google.com?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Sign in"
-class="h-c-header__drawer-cta-li-link h-c-header__drawer-cta-li-link--secondary"
-target="_blank"
-rel="nofollow noopener noreferrer">
-Sign in
-tabindex="0"
-aria-controls="h-js-header__drawer"
-ng-href="/home/contact-us/">
-Get started
-&times;
->
-Tell us about your business
-Approximately how many monthly pageviews does your website have?
-class="gmp-formfield__radio__input"
-type="radio" name="step_1"
-value="step_2"
-ng-model="ctrl.treeFormData['step_1']"
-ng-change="ctrl.updateTree('step_2')"
-data-g-event="get started form"
-data-g-action="less than 1 million"
-data-g-label="monthly pageviews"
-required>
-Less than 1 million
-class="gmp-formfield__radio__input"
-type="radio" name="step_1"
-value="/home/contact-us/"
-ng-model="ctrl.treeFormData['step_1']"
-ng-change="ctrl.updateTree('/home/contact-us/')"
-data-g-event="get started form"
-data-g-action="1 million plus"
-data-g-label="monthly pageviews"
-required>
-1 million or more
-ng-show="ctrl.treeFormData['step_1'] == 'step_2'">
-Do you have a Google AdSense account?
-class="gmp-formfield__radio__input"
-type="radio" name="step_2"
-value="leaf_a"
-ng-model="ctrl.treeFormData['step_2']"
-ng-change="ctrl.updateTree('leaf_a')"
-data-g-event="get started form"
-data-g-action="yes"
-data-g-label="adsense account"
-required>
-Yes
-class="gmp-formfield__radio__input"
-type="radio" name="step_2"
-value="leaf_b"
-ng-model="ctrl.treeFormData['step_2']"
-ng-change="ctrl.updateTree('leaf_b')"
-data-g-event="get started form"
-data-g-action="no"
-data-g-label="adsense account"
-required>
-No
-type="submit"
-ng-disabled="!ctrl.decisionTree.submitUrl && !ctrl.decisionTree.nextLeaf">
-Continue
-Congratulations!
-Congratulations! You are qualified to sign up for Google Ad Manager.
-data-g-action="sign up cta"
-data-g-label="sign up for admanager"
-class="h-c-button h-c-button--primary" href="https://admanager.google.com/settings/signup/start?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en">
-Continue to sign up
-Sign Up for Google AdSense
-You need an AdSense account to work with Google Ad Manager. Sign up and come back after your application has been approved.
-data-g-action="sign up cta"
-data-g-label="sign up for adsense"
-class="h-c-button h-c-button--primary" href="https://www.google.com/adsense/signup?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en">
-Sign up
-Learn more, do more.
-Increase your revenue in browsers with limited signals
-Learn how global publishers are using publisher provided Identifiers to increase programmatic revenue in browsers that no longer support third-party cookies.
-data-g-action="resource featured: report"
-data-g-label="resource: increase your revenue in browsers with limited signals"
-data-g-restype="report"      data-g-resproduct="ad manager"
-href="/home/resources/increase-your-revenue-in-browsers-with-limited-signals/"
-title="Read Story"
-class="h-c-link h-c-link--internal gmp-link"
-target="_self"
->Read Story
-Get the latest, delivered.
-Our monthly newsletter puts the latest success stories, insights, and product news right into your inbox.
-data-g-action="newsletter subscribe cta"
-data-g-label="hero: get the latest delivered"
-href="https://signup.withgoogle.com/newsletter/googlepublisher/?utm_source=admanager.google.com&amp;utm_medium=et&amp;utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&amp;hl=en"
-class="h-c-button h-c-button--primary"
-title="Subscribe" target="_blank"
-rel="nofollow noopener noreferrer">
-Subscribe
-Filter by:
-id="resources-module__filter-id-topic"
-glue-zippy-expand>
-Topic
-name="Topic" id="filter__topic__ad-formats"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="ad formats"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'ad-formats')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'ad-formats',$event)">
-Ad Formats
-name="Topic" id="filter__topic__advanced-tv"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="advanced tv"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'advanced-tv')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'advanced-tv',$event)">
-Advanced TV
-name="Topic" id="filter__topic__brand-safety"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="brand safety"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'brand-safety')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'brand-safety',$event)">
-Brand Safety
-name="Topic" id="filter__topic__core-ad-serving"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="core ad serving"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'core-ad-serving')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'core-ad-serving',$event)">
-Core Ad Serving
-name="Topic" id="filter__topic__data-and-insights"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="data and insights"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'data-and-insights')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'data-and-insights',$event)">
-Data and Insights
-name="Topic" id="filter__topic__dynamic-ad-insertion"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="dynamic ad insertion"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'dynamic-ad-insertion')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'dynamic-ad-insertion',$event)">
-Dynamic Ad Insertion
-name="Topic" id="filter__topic__ecosystem"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="ecosystem"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'ecosystem')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'ecosystem',$event)">
-Ecosystem
-name="Topic" id="filter__topic__mobile-app"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="mobile app"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'mobile-app')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'mobile-app',$event)">
-Mobile App
-name="Topic" id="filter__topic__privacy"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="privacy"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'privacy')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'privacy',$event)">
-Privacy
-name="Topic" id="filter__topic__video"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="video"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'video')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'video',$event)">
-Video
-name="Topic" id="filter__topic__yield-management"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="yield management"
-data-g-label="filter: topic"
-ng-checked="filterDataCtrl.isCategoryChecked('topic', 'yield-management')"
-ng-click="filterDataCtrl.toggleSelection('topic', 'yield-management',$event)">
-Yield Management
-id="resources-module__filter-id-type"
-glue-zippy-expand>
-Type
-name="Type" id="filter__type__feature-brief"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="feature brief"
-data-g-label="filter: type"
-ng-checked="filterDataCtrl.isCategoryChecked('type', 'feature brief')"
-ng-click="filterDataCtrl.toggleSelection('type', 'feature brief', $event)">
-Feature Brief
-name="Type" id="filter__type__guide"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="guide"
-data-g-label="filter: type"
-ng-checked="filterDataCtrl.isCategoryChecked('type', 'guide')"
-ng-click="filterDataCtrl.toggleSelection('type', 'guide', $event)">
-Guide
-name="Type" id="filter__type__report"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="report"
-data-g-label="filter: type"
-ng-checked="filterDataCtrl.isCategoryChecked('type', 'report')"
-ng-click="filterDataCtrl.toggleSelection('type', 'report', $event)">
-Report
-name="Type" id="filter__type__white-paper"
-class="gmp-formfield__checkbox__input" type="checkbox"
-data-g-event="resources"
-data-g-action="white paper"
-data-g-label="filter: type"
-ng-checked="filterDataCtrl.isCategoryChecked('type', 'white paper')"
-ng-click="filterDataCtrl.toggleSelection('type', 'white paper', $event)">
-White Paper
-ng-disabled="filterDataCtrl.areFiltersClear()"
-ng-click="filterDataCtrl.clearFilters()"
-data-g-event="resources"
-data-g-action="clear filters"
-data-g-label="filter"
->Clear filters
-No matching results
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv', 'data-and-insights'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: publisher best practices for live sporting events"
-data-g-restype="guide"      data-g-resproduct="advanced tv, data and insights"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/publisher-best-practices-for-live-sporting-events/">
-Guide
-Publisher best practices for live sporting events
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['ecosystem', 'yield-management'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: powering direct transactions: investing in your growth"
-data-g-restype="feature brief"      data-g-resproduct="ecosystem, yield management"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/powering-direct-transactions-investing-in-your-growth/">
-Feature Brief
-Powering direct transactions: Investing in your growth
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv', 'data-and-insights'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: building the future of live monetization"
-data-g-restype="report"      data-g-resproduct="advanced tv, data and insights"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/building-the-future-of-live-monetization/">
-Report
-Building the future of live monetization
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['data-and-insights', 'privacy'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: increase your revenue in browsers with limited signals"
-data-g-restype="report"      data-g-resproduct="data and insights, privacy"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/increase-your-revenue-in-browsers-with-limited-signals/">
-Report
-Increase your revenue in browsers with limited signals
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['data-and-insights', 'ecosystem', 'privacy'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: the publishers playbook for navigating todays privacy environment"
-data-g-restype="guide"      data-g-resproduct="data and insights, ecosystem, privacy"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/publisher-privacy-playbook/">
-Guide
-The publisher’s playbook for navigating today’s privacy environment
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving', 'ecosystem'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: for e commerce the time for digital ads is now"
-data-g-restype="report"      data-g-resproduct="core ad serving, ecosystem"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/for-e-commerce-the-time-for-digital-ads-is-now/">
-Report
-For e-commerce, the time for digital ads is now
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving', 'data-and-insights', 'yield-management'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: how automation can help you manage and grow your business"
-data-g-restype="guide"      data-g-resproduct="core ad serving, data and insights, yield management"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/how-automation-can-help-you-manage-and-grow-your-business/">
-Guide
-How automation can help you manage and grow your business
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv', 'data-and-insights'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: 2020 advanced tv inventory report"
-data-g-restype="report"      data-g-resproduct="advanced tv, data and insights"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/2020-advanced-tv-inventory-report/">
-Report
-2020 advanced TV inventory report
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving', 'data-and-insights'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: building a retail media business with google"
-data-g-restype="guide"      data-g-resproduct="core ad serving, data and insights"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/building-retail-media-business-with-google-ad-manager/">
-Guide
-Building a Retail Media Business with Google
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: protecting your ad supported ctv experiences"
-data-g-restype="guide"      data-g-resproduct="advanced tv"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/protecting-ad-supported-ctv-experiences/">
-Guide
-Protecting your ad-supported CTV experiences
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv', 'video'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: getting started with dynamic ad insertion"
-data-g-restype="guide"      data-g-resproduct="advanced tv, video"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/getting-started-with-dynamic-ad-insertion/">
-Guide
-Getting started with Dynamic Ad Insertion
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv', 'video'],
-'type': ['white paper']
-}">
-data-g-action="resource tile: white paper"
-data-g-label="resource: the next generation telco bundle"
-data-g-restype="white paper"      data-g-resproduct="advanced tv, video"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/next-generation-telco-bundle-white-paper/">
-White Paper
-The Next-Generation Telco Bundle
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['yield-management', 'data-and-insights'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: maximize your revenue with opportunities and experiments"
-data-g-restype="feature brief"      data-g-resproduct="yield management, data and insights"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature_brief_opportunities_and_experiments/">
-Feature Brief
-Maximize your revenue with Opportunities and Experiments
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['data-and-insights', 'core-ad-serving'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: get customized insights with ad manager reporting"
-data-g-restype="feature brief"      data-g-resproduct="data and insights, core ad serving"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature_brief_reporting/">
-Feature Brief
-Get customized insights with Ad Manager reporting
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: how authorized buyers work with google ad manager"
-data-g-restype="feature brief"      data-g-resproduct="core ad serving"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/how_authorized_buyers_work_with_google/">
-Feature Brief
-How Authorized Buyers work with Google Ad Manager
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving', 'yield-management'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: use machine learning to manage and forecast inventory more effectively"
-data-g-restype="feature brief"      data-g-resproduct="core ad serving, yield management"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature_brief_inventory_management_and_forecasting/">
-Feature Brief
-Use machine learning to manage and forecast inventory more effectively
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['video', 'ad-formats'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: capture growing video budgets with out stream video ads"
-data-g-restype="feature brief"      data-g-resproduct="video, ad formats"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature_brief_outstream_video/">
-Feature Brief
-Capture growing video budgets with out-stream video ads
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv', 'video'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: streamlined and improved workflows for video content ingestion"
-data-g-restype="feature brief"      data-g-resproduct="advanced tv, video"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature_brief_video_content_ingestion/">
-Feature Brief
-Streamlined and improved workflows for video content ingestion
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv', 'video'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: reimagining the commercial break everywhere viewers are watching"
-data-g-restype="guide"      data-g-resproduct="advanced tv, video"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/2019-advanced-tv-guide/">
-Guide
-Reimagining the commercial break everywhere viewers are watching
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: 2019 advanced tv inventory report"
-data-g-restype="report"      data-g-resproduct="advanced tv"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/2019-advanced-tv-report/">
-Report
-2019 Advanced TV Inventory Report
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv', 'video'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: apacs changing digital landscape: how broadcast and video companies can keep up"
-data-g-restype="report"      data-g-resproduct="advanced tv, video"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/apacs-changing-broadcast-and-video-landscape/">
-Report
-APAC’s changing digital landscape: How broadcast and video companies can keep up
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['mobile-app', 'data-and-insights'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: save time and increase inventory value with open measurement for apps"
-data-g-restype="feature brief"      data-g-resproduct="mobile app, data and insights"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-open-measurement/">
-Feature Brief
-Save time and increase inventory value with Open Measurement for apps
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: modernize your direct deals with programmatic guaranteed"
-data-g-restype="feature brief"      data-g-resproduct="core ad serving"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-programmatic-guaranteed/">
-Feature Brief
-Modernize your direct deals with Programmatic Guaranteed
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['video', 'advanced-tv'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: seamlessly reach viewers everywhere with dynamic ad insertion"
-data-g-restype="feature brief"      data-g-resproduct="video, advanced tv"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-dynamic-ad-insertion/">
-Feature Brief
-Seamlessly reach viewers everywhere with Dynamic Ad Insertion
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv', 'video'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: earn more from your video content with smarter ad breaks"
-data-g-restype="feature brief"      data-g-resproduct="advanced tv, video"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-smarter-ad-breaks/">
-Feature Brief
-Earn more from your video content with Smarter Ad Breaks
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['brand-safety'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: monitor and manage ad exchange ads in the ad review center"
-data-g-restype="feature brief"      data-g-resproduct="brand safety"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-ad-review-center/">
-Feature Brief
-Monitor and manage ad exchange ads in the Ad review center
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['yield-management'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: get comprehensive yield management with google ad manager"
-data-g-restype="feature brief"      data-g-resproduct="yield management"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-yield-management/">
-Feature Brief
-Get comprehensive yield management with Google Ad Manager
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['mobile-app', 'yield-management'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: improve app revenue and fill rates with app mediation"
-data-g-restype="feature brief"      data-g-resproduct="mobile app, yield management"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-app-mediation/">
-Feature Brief
-Improve app revenue and fill rates with App Mediation
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['mobile-app'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: create a customized ad experience with native ads"
-data-g-restype="feature brief"      data-g-resproduct="mobile app"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-native-ads/">
-Feature Brief
-Create a customized ad experience with Native Ads
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['ecosystem', 'brand-safety'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: improving user experience with the better ads standards"
-data-g-restype="feature brief"      data-g-resproduct="ecosystem, brand safety"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-better-ads-standards/">
-Feature Brief
-Improving user experience with the Better Ads Standards
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['yield-management'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: bring more bids to the auction with open bidding"
-data-g-restype="feature brief"      data-g-resproduct="yield management"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-open-bidding/">
-Feature Brief
-Bring more bids to the auction with Open Bidding
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['ad-formats', 'mobile-app'],
-'type': ['feature brief']
-}">
-data-g-action="resource tile: feature brief"
-data-g-label="resource: create a better ad experience with rewarded ads"
-data-g-restype="feature brief"      data-g-resproduct="ad formats, mobile app"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/feature-brief-rewarded-ads/">
-Feature Brief
-Create a better ad experience with rewarded ads
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['video'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: video viewability best practices guide for publishers"
-data-g-restype="guide"      data-g-resproduct="video"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/video-viewability-best-practices-publishers/">
-Guide
-Video viewability best practices guide for publishers
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['yield-management', 'core-ad-serving'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: grow faster with a google certified publishing partner"
-data-g-restype="report"      data-g-resproduct="yield management, core ad serving"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/grow-faster-google-certified-publishing-partner/">
-Report
-Grow faster with a Google Certified Publishing Partner
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: rethink your ecommerce experience with google ad manager"
-data-g-restype="guide"      data-g-resproduct="core ad serving"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/ecommerce-guide/">
-Guide
-Rethink your eCommerce experience with Google Ad Manager
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv', 'video'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: the convergence of tv and digital: how broadcasters are building for success"
-data-g-restype="report"      data-g-resproduct="advanced tv, video"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/convergence-of-tv-and-digital-broadcasters-are-building-for-success/">
-Report
-The convergence of TV and digital: How broadcasters are building for success
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['ecosystem'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: taking a page from the sports playbook: engaging fans in the digital age"
-data-g-restype="guide"      data-g-resproduct="ecosystem"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/taking-page-sports-playbook-engaging-fans-digital-age/">
-Guide
-Taking a Page from the Sports Playbook: Engaging Fans in the Digital Age
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: digital trade marketing: delighting shoppers in the age of digital"
-data-g-restype="guide"      data-g-resproduct="core ad serving"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/digital-trade-marketing-guide/">
-Guide
-Digital Trade Marketing: Delighting Shoppers in the Age of Digital
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: publishers save 57 percent more time with programmatic guaranteed deals"
-data-g-restype="report"      data-g-resproduct="core ad serving"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/publishers-save-time-with-programmatic-guaranteed/">
-Report
-Publishers save 57% more time with Programmatic Guaranteed deals
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['video', 'ad-formats'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: capture growing video budgets with new out stream formats on google ad manager"
-data-g-restype="report"      data-g-resproduct="video, ad formats"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/capture-growing-video-budgets-new-out-stream-formats/">
-Report
-Capture growing video budgets with new out-stream formats on Google Ad Manager
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['data-and-insights'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: building for beyond with the insights engine project"
-data-g-restype="report"      data-g-resproduct="data and insights"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/building-beyond-insights-engine/">
-Report
-Building for beyond with the Insights Engine Project
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: digitizing supplier marketing: increasing sales of products and services"
-data-g-restype="report"      data-g-resproduct="core ad serving"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/digitizing-supplier-marketing/">
-Report
-Digitizing supplier marketing: Increasing sales of products and services
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['brand-safety', 'ecosystem'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: improving protections for publishers"
-data-g-restype="report"      data-g-resproduct="brand safety, ecosystem"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/improving-protections-publishers/">
-Report
-Improving protections for publishers
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: tv made smarter with google ad manager"
-data-g-restype="report"      data-g-resproduct="advanced tv"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/tv-made-smarter/">
-Report
-TV made smarter with Google Ad Manager
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['ecosystem', 'mobile-app'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: whats next for the mobile web"
-data-g-restype="report"      data-g-resproduct="ecosystem, mobile app"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/whats-next-mobile-web/">
-Report
-What’s next for the mobile web?
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['core-ad-serving', 'ad-formats'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: programmatic guaranteed with custom creatives delivers scale for vox media"
-data-g-restype="report"      data-g-resproduct="core ad serving, ad formats"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/article-programmatic-delivers-scale-vox-media/">
-Report
-Programmatic Guaranteed with custom creatives delivers scale for Vox Media
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['brand-safety'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: creating better ad experiences for everyone"
-data-g-restype="guide"      data-g-resproduct="brand safety"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/creating-better-ad-experiences-guide/">
-Guide
-Creating better ad experiences for everyone
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['ecosystem'],
-'type': ['guide']
-}">
-data-g-action="resource tile: guide"
-data-g-label="resource: how publishers can engage with people who use ad blockers"
-data-g-restype="guide"      data-g-resproduct="ecosystem"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/guide-how-publishers-engage-with-ad-blockers/">
-Guide
-How publishers can engage with people who use ad blockers
-Read more
-data-glue-filter-result-attrs="{
-'product': ['ad manager'],
-'topic': ['advanced-tv'],
-'type': ['report']
-}">
-data-g-action="resource tile: report"
-data-g-label="resource: programmatic tvs european evolution"
-data-g-restype="report"      data-g-resproduct="advanced tv"
-class="h-c-tile h-c-tile--border h-c-tile--hoverable"
-href="/home/resources/report-programmatic-tv-europe-evolution/">
-Report
-Programmatic TV’s European Evolution
-Read more
-data-g-action="show more"
-data-g-label="page bottom"
-class="h-c-link h-c-link--internal" ng-click="filterDataCtrl.showMore()" aria-controls="resource-card-list">
-Show more
-Hungry for more?
-Learn how global publishers are finding success using Ad Manager to power their ads businesses.
-data-g-action="success stories"
-data-g-label="hungry for more"
-href="/home/success-stories/"
-title="Success Stories"
-class="h-c-link h-c-link--internal gmp-link"
-target="_self"
-rel="nofollow noopener noreferrer" >Success Stories
-Follow us
-data-g-action="social follow us: blogger"
-data-g-label="global footer"
-class="h-c-social__link"
-href="https://www.blog.google/products/admanager/"
-aria-label="Share to Blogger"
-target="_blank"
-rel="nofollow noopener noreferrer">
-data-g-action="social follow us: twitter"
-data-g-label="global footer"
-class="h-c-social__link"
-href="https://x.com/GforPublishers"
-aria-label="Share to Twitter"
-target="_blank"
-rel="nofollow noopener noreferrer">
-data-g-action="social follow us: youtube"
-data-g-label="global footer"
-class="h-c-social__link"
-href="https://www.youtube.com/channel/UCgVqezTF0gqN_AI4y8TkkSg"
-aria-label="Share to YouTube"
-target="_blank"
-rel="nofollow noopener noreferrer">
-data-g-action="social follow us: linkedin"
-data-g-label="global footer"
-class="h-c-social__link"
-href="https://www.linkedin.com/showcase/google-for-publishers/?viewAsMember=true"
-aria-label="Share to LinkedIn"
-target="_blank"
-rel="nofollow noopener noreferrer">
-data-glue-responsive-accordion-static-breakpoints="'x-small'">
-About Google Ad Manager
-data-g-action="about google ad manager: overview"
-data-g-label="global footer"
-href="/home/"
-title="Overview"
-class="h-c-footer__link"
-target="_self"
->Overview
-data-g-action="about google ad manager: capabilities"
-data-g-label="global footer"
-href="/home/capabilities/"
-title="Capabilities"
-class="h-c-footer__link"
-target="_self"
->Capabilities
-data-g-action="about google ad manager: partner solutions"
-data-g-label="global footer"
-href="/home/partner-solutions/"
-title="Partner Solutions"
-class="h-c-footer__link"
-target="_self"
->Partner Solutions
-Learning &amp; support
-data-g-action="learning and support: support"
-data-g-label="global footer"
-href="https://support.google.com/admanager/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Support"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Support
-data-g-action="learning and support: blog"
-data-g-label="global footer"
-href="https://www.blog.google/products/admanager/"
-title="Blog"
-class="h-c-footer__link"
-target="_self"
->Blog
-data-g-action="learning and support: skillshop"
-data-g-label="global footer"
-href="https://skillshop.withgoogle.com/"
-title="Skillshop"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Skillshop
-Developers &amp; partners
-data-g-action="developers and partners: google developers site"
-data-g-label="global footer"
-href="https://developers.google.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Google developers site"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Google developers site
-data-g-action="developers and partners: ad manager for developers"
-data-g-label="global footer"
-href="https://developers.google.com/ad-manager/api/start?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Ad Manager for developers"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Ad Manager for developers
-data-g-action="developers and partners: certified publishing partners"
-data-g-label="global footer"
-href="https://www.google.com/ads/publisher/partners/find-a-partner/?utm_source=admanager&amp;utm_campaign=footer"
-title="Certified Publishing Partners"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Certified Publishing Partners
-Related products
-data-g-action="related products: google marketing platform"
-data-g-label="global footer"
-href="https://marketingplatform.google.com/about/"
-title="Google Marketing Platform"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Google Marketing Platform
-data-g-action="related products: google ads"
-data-g-label="global footer"
-href="https://ads.google.com/home/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Google Ads"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Google Ads
-data-g-action="related products: google adsense"
-data-g-label="global footer"
-href="https://www.google.com/adsense/start/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Google AdSense"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Google AdSense
-data-g-action="related products: google admob"
-data-g-label="global footer"
-href="https://www.google.com/admob/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Google AdMob"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Google AdMob
-data-g-action="related products: google cloud"
-data-g-label="global footer"
-href="https://cloud.google.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Google Cloud"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Google Cloud
-More from Google
-data-g-action="more from google: think with google"
-data-g-label="global footer"
-href="https://www.thinkwithgoogle.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Think with Google"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Think with Google
-data-g-action="more from google: google revenue solutions"
-data-g-label="global footer"
-href="https://www.google.com/ads/publisher/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Google Revenue Solutions"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Google Revenue Solutions
-data-g-action="more from google: business solutions"
-data-g-label="global footer"
-href="https://www.google.com/services/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Business Solutions"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Business Solutions
-data-g-action="more from google: google workspace"
-data-g-label="global footer"
-href="https://workspace.google.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
-title="Google Workspace"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Google Workspace
-data-g-event="resources"
-data-g-action="logo"
-data-g-label="global footer"
->
-data-g-action="privacy"
-data-g-label="global footer"
-href="https://www.google.com/intl/en/policies/privacy/"
-title="Privacy"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Privacy
-data-g-action="terms"
-data-g-label="global footer"
-href="https://www.google.com/intl/en/policies/terms/"
-title="Terms"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Terms
-data-g-action="about google"
-data-g-label="global footer"
-href="https://www.google.com/intl/en/about/"
-title="About Google"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >About Google
-data-g-action="google products"
-data-g-label="global footer"
-href="https://www.google.com/intl/en/about/products/"
-title="Google Products"
-class="h-c-footer__link"
-target="_blank"
-rel="nofollow noopener noreferrer" >Google Products
-Cookies management controls
-data-g-action="help"
-data-g-label="global footer"
-class="h-c-footer__link " href="https://support.google.com/?hl=en">
+<title>Tips &amp; Resources for Online Advertising – Google Ads</title>
+Skip to content
+person
+Hi,
+Manage your Google account
+Show more accounts   Hide more accounts
+add
+Add another account    logout
+Sign out of all accounts
+add
+Add account    logout
+Sign out
+add
+Create new Google Ads account
+More business products from Google
+Google Ads
+Merchant Center
+Google Business Profile
+Google Analytics
+Manage your site content preferences
+Marketing profile settings
+Privacy Policy
+·
+Terms of Service
+Access your Google accounts in one place.  Sign in with Google
+Want to create a new Google Ads account?
+You're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.
+Cancel   Create New Account
+Google Ads
+Overview
+Goals
+How it works
+Cost
+Articles &amp; case studies
+Expert support
+Where to start?
+Start with foundations
+Merchant Center Help shoppers discover and buy your products
+Google Business Profile List your business on Search and Maps
+Start advertising
+Overview Explore all that Google Ads has to offer
+How it works Create, set up, and launch a campaign
+Meet your goals Find solutions to meet your advertising goal
+Cost Get the most out of your budget
+Privacy Drive performance with privacy-centric solutions
+Solutions
+Create ads
+Performance Max Multiply conversions across Google channels
+YouTube Ads Reach and build connections with engaged viewers
+Search Reach people searching for the products or services you offer
+Demand Gen Create and convert new customer demand
+Display Promote your business where people browse online
+Local Services Ads Attract more local customers
+View all
+Ad tools
+Manager Accounts Manage multiple ads accounts
+Keyword Planner Optimise with the right keyword
+Google Ads Editor Quickly and easily edit campaigns at scale
+Google Ads Mobile App Track your campaign anywhere in real-time
+Reach Planner Customise your YouTube media strategy
+View all
+No-cost solutions
+Google Analytics Understand your website traffic
+Merchant Center Help shoppers discover and buy your product
+Google Business Profile Get your business on Google
+Learning &amp; insights
+Expertise
+Think with Google Explore the latest insights and marketing strategies
+Accelerate with Google Get a personalised marketing strategy and learning plan
+Get support
+Partners
+Become a partner Gain training, insights, and rewards
+Work with a partner Get expert guidance for your campaign
 Help
-Change language or region
-id="lang-selector"
-class="h-c-form__dropdown h-c-footer__lang-dropdown"
-onchange="var l10nPath=this[this.selectedIndex].value;if(l10nPath!=''){window.location.pathname=l10nPath};"
->
-简体中文DeutschEnglish (UK)English (US)EspañolFrançaisItaliano日本語한국어NederlandsPortuguês (Brasil)
+Get expert support Contact us for support with Google Ads
+Get help Browse help topics
+person
+Hi,
+Manage your Google account
+Show more accounts   Hide more accounts
+add
+Add another account    logout
+Sign out of all accounts
+add
+Add account    logout
+Sign out
+add
+Create new Google Ads account
+More business products from Google
+Google Ads
+Merchant Center
+Google Business Profile
+Google Analytics
+Manage your site content preferences
+Marketing profile settings
+Privacy Policy
+·
+Terms of Service
+Access your Google accounts in one place.  Sign in with Google
+Want to create a new Google Ads account?
+You're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.
+Cancel   Create New Account
+Start now  Sign in
+Schedule a meeting
+Sign in with Google
+Google Ads
+Google Ads
+Goals
+How it works
+Cost
+Articles &amp; case studies
+Expert support
+Schedule a meeting
+Sign in  Start now
+Overview
+Goals
+How it works
+Cost
+Articles &amp; case studies
+Expert support
+Start with foundations
+Merchant Center Help shoppers discover and buy your products
+Google Business Profile List your business on Search and Maps
+Start advertising
+Overview Explore all that Google Ads has to offer
+How it works Create, set up, and launch a campaign
+Meet your goals Find solutions to meet your advertising goal
+Cost Get the most out of your budget
+Privacy Drive performance with privacy-centric solutions
+Create ads
+Performance Max Multiply conversions across Google channels
+YouTube Ads Reach and build connections with engaged viewers
+Search Reach people searching for the products or services you offer
+Demand Gen Create and convert new customer demand
+Display Promote your business where people browse online
+Local Services Ads Attract more local customers
+View all
+Ad tools
+Manager Accounts Manage multiple ads accounts
+Keyword Planner Optimise with the right keyword
+Google Ads Editor Quickly and easily edit campaigns at scale
+Google Ads Mobile App Track your campaign anywhere in real-time
+Reach Planner Customise your YouTube media strategy
+View all
+No-cost solutions
+Google Analytics Understand your website traffic
+Merchant Center Help shoppers discover and buy your product
+Google Business Profile Get your business on Google
+Expertise
+Think with Google Explore the latest insights and marketing strategies
+Accelerate with Google Get a personalised marketing strategy and learning plan
+Partners
+Become a partner Gain training, insights, and rewards
+Work with a partner Get expert guidance for your campaign
+Help
+Get expert support Contact us for support with Google Ads
+Get help Browse help topics
+Find answers andinspiration
+Explore a library of resources to help you use Google Ads. From mastering the basics to industry best practices, learn how to best use the tools to help you reach your goals.
+Filter
+results
+Filter by:
+Product type
+Google Ads
+YouTube Ads
+Campaign type
+App
+Display
+Multiple campaigns
+Performance Max
+Search
+Video/YouTube
+Content type
+Article
+Success story
+Industry
+eCommerce
+Food &amp; beverage
+Wholesale retail
+Marketing level
+Beginner
+Expert
+Intermediate
+Marketing goal
+App
+Brand awareness
+Generate leads
+Increase website traffic
+Multiple marketing goals
+Offline sales
+Online sales
+Reset all filters   Show  results
+Google Ads
+The Best Paid SEO Strategies for Businesses
+Article
+YouTube Ads
+ABCDs of effective video ads
+Article
+Google Ads
+4:42
+Best Practices Guide: Reaching the right customers on Search
+Article
+Google Ads
+5 things to consider when optimising your mobile landing page
+Article
+Google Ads
+10 Google Ads features that will grow your business
+Article
+Google Ads
+10 tips for Google Ads budget management
+Article
+Google Ads
+What is paid search?
+Article
+Google Ads
+How to use the Keyword Planner tool effectively
+Article
+Google Ads
+Billing and payments in Google Ads
+Article
+Google Ads
+How assets can help you connect with valuable customers
+Article
+Google Ads
+4 Google Ads features to improve your keyword strategy
+Article
+Google Ads
+How to make your products stand out to shoppers on Google Ads
+Article
+Google Ads
+How to set up Google Ads: a checklist
+Article
+Google Ads
+Reach a larger or new audience with Google Display Network (GDN) targeting
+Article
+Google Ads
+What are people searching for online?
+Article
+Google Ads
+How can you write successful online ads with Google?
+Article
+Google Ads
+Analytics in Google Ads
+Article
+Google Ads
+6:24
+Best Practices Guide: Google AI for Video Advertising
+Article
+Google Ads
+Understand intent to place ads more effectively
+Article
+Google Ads
+5 ways to create better ad copy by utilising AI
+Article
+YouTube Ads
+Measure your results
+Article
+YouTube Ads
+Pringles masters tentpole marketing moments with TrueView for reach
+Success story
+YouTube Ads
+Adidas uses sequencing to move customers from awareness to consideration
+Success story
+Google Ads
+A beginners’ guide to YouTube video ads: Drive action with video advertising
+Article
+Google Ads
+A guide to App campaigns on Google Ads
+Article
+Google Ads
+Save time and drive efficiency with responsive display ads
+Article
+Google Ads
+The perfect fit: Farai London scales by 400% with Google Ads
+Success story
+Google Ads
+0:30
+LØCI achieves 500% ROAS with Google Ads
+Success story
+Google Ads
+Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads.
+Success story
+YouTube Ads
+BlendJet’s YouTube strategy led to 413% revenue growth
+Success story
+YouTube Ads
+Bellroy grows sales with shoppable Video action campaigns and value-based bidding
+Success story
+Google Ads
+How any business can grow online with Local Services Ads
+Article
+Google Ads
+00:30
+Currensea boosts customer acquisition 422%, with help of Google Search
+Success story
+Google Ads
+00:30
+Lucy &amp; Yak sees 233% increase in revenue through Google Ads
+Success story
+Google Ads
+How to unlock the value of your creative assets with Google Ads
+Article
+How optimisation helped PensionBee triple their customer base
+Success story
+YouTube Ads
+With help from TrueView for action, Nectar by Resident’s sales rise and shine
+Success story
+YouTube Ads
+Majestic Heli Ski get nearly half of their new skiers from YouTube
+Success story
+YouTube Ads
+Xfinity Mobile turns data into dollars
+Success story
+YouTube Ads
+Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA
+Success story
+Google Ads
+Get better results across all Google Ads channels with Performance Max campaigns
+Article
+Google Ads
+How to set up conversion measurement on your website
+Article
+Google Ads
+Build trust online: How the Google Guarantee works
+Article
+Google Ads
+A guide to keyword match types in Google Ads
+Article
+Google Ads
+Understanding demand: How search data can improve your marketing performance
+Article
+Google Ads
+00:30
+How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads
+Success story
+How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers
+Success story
+Google Ads
+00:30
+A strong brew: Bird &amp; Blend sees 439% ROAS through Google Ads
+Success story
+Google Ads
+What is Google Customer Match, and how can it help you reach valuable audiences online?
+Article
+Google Ads
+How to tailor your ads to reach customers at every stage of their purchase journey
+Article
+Google Ads
+Navigating the B2B marketing funnel with Google Ads
+Article
+Google Ads
+Simplifying multi-account management: Streamline your workflow with a Google Ads manager account
+Article
+Google Ads
+A foundation for success: How to structure your Google Ads account for growth on Search with AI
+Article
+Google Ads
+Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads
+Article
+Google Ads
+Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out?
+Article
+Google Ads
+How audience segments can help you find and reach the right customers at the right time
+Article
+Google Ads
+5 ways to use Google AI for more effective advertising
+Article
+Google Ads
+How to save time and boost results with automated bidding
+Article
+Google Ads
+Maximise your ROI: How to get started with value-based bidding on Google Ads
+Article
+Google Ads
+From browsing to buying: 7 Search strategies to win new customers
+Article
+Google Ads
+Discover Mobile Advertising with Google Ads
+Article
+Google Ads
+Enhanced conversions: Measure ad performance while protecting people’s privacy
+Article
+Google Ads
+How to increase website traffic and lead generation with Google Ads
+Article
+Google Ads
+Boost your business by advertising on Google Maps
+Article
+Google Ads
+Beyond the last click: Using attribution models to understand your Google Ads performance
+Article
+Google Ads
+Spark interest and inspire action: What are Demand Gen campaigns?
+Article
+Google Ads
+Get more leads with less effort: a guide to lead form assets
+Article
+Google Ads
+How to improve your Google Ads Quality Score
+Article
+Google Ads
+Best Practices Guide: AI Essentials in Google Ads
+Article
+Google Ads
+3 consumer shifts to influence your retail paid search strategy
+Article
+Load more
+Footer links
+Follow us
+Products
+Google Ads
+YouTube Ads
+Merchant Center
+Business Profile
+Google Analytics
+Manufacturer Center
+Learning and support
+Accelerate with Google
+Think with Google
+Google Ads Help Center
+Your guide to Merchant Center
+Your guide to Google Ads
+Google Advertiser Community
+Partners and developers
+Google Partners
+Google Developers site
+Google Ads Scripts
+Google Ads Remarketing Tags
+Google Ads API
+More solutions
+Workspace
+Chrome
+Google Cloud
+AdSense
+AdMob
+Actual results will vary by advertiser.
+About Google
+Google products
+Privacy
+Terms
+Help
+Australia and New Zealand - English Brasil - Português (Brasil) Canada - English Canada - Français Česká Republika - Čeština Deutschland - Deutsch English (Global) España - Español Español (Latinoamérica) France - Français India - English Indonesia - Bahasa Indonesia Italia - Italiano Nederland - Nederlands Polska - Polski Русский România - Română Sverige - Svenska Türkiye - Türkçe United Kingdom - English United States - English Việt Nam - Tiếng Việt ישראל - עברית العربية 简体中文 日本 - 日本語 대한민국 - 한국어 ไทย - ไทย Україна - Українська
+Australia and New Zealand - English
+Brasil - Português (Brasil)
+Canada - English
+Canada - Français
+Česká Republika - Čeština
+Deutschland - Deutsch
+English (Global)
+España - Español
+Español (Latinoamérica)
+France - Français
+India - English
+Indonesia - Bahasa Indonesia
+Italia - Italiano
+Nederland - Nederlands
+Polska - Polski
+Русский
+România - Română
+Sverige - Svenska
+Türkiye - Türkçe
+United Kingdom - English
+United States - English
+Việt Nam - Tiếng Việt
+ישראל - עברית
+العربية
+简体中文
+日本 - 日本語
+대한민국 - 한국어
+ไทย - ไทย
+Україна - Українська
+Start now
+&quot;hatsKey&quot; : &quot;AIzaSyAICuo5KlA6crkNZnkuPQTuRhMv5d-zTu0&quot;,
+&quot;productId&quot; : &quot;5303730&quot;
+}" survey-config="[ {
+&quot;urlPathRegex&quot; : &quot;/think/.*&quot;,
+&quot;trigger_id&quot; : &quot;W3tNSikv0HUimDGM5Tak0P19bw3X&quot;,
+&quot;urlLocales&quot; : [ &quot;en_us&quot; ],
+&quot;urlPathExcludes&quot; : [ ]
+} ]">
 
 ---
 
@@ -8659,7 +7867,7 @@ data-api-explorer-panel
 # dynamic ad insertion
 
 > **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion
-> **Analyzed At:** 2026-07-20T08:33:05.965Z
+> **Analyzed At:** 2026-07-20T08:35:21.046Z
 
 ### Content
 lang="en"
@@ -8762,8 +7970,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: SDK - HTML5"
 data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - HTML5"
 >
 HTML5
 track-type="nav"
@@ -8771,8 +7979,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: SDK - Android"
 data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - Android"
 >
 Android
 track-type="nav"
@@ -8807,8 +8015,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: SDK - Roku"
 data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - Roku"
 >
 Roku
 </tab>
@@ -9582,7 +8790,7 @@ data-api-explorer-panel
 # full service
 
 > **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
-> **Analyzed At:** 2026-07-20T08:33:07.001Z
+> **Analyzed At:** 2026-07-20T08:35:21.442Z
 
 ### Content
 lang="en"
@@ -9683,8 +8891,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: SDK - HTML5"
 data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - HTML5"
 >
 HTML5
 track-type="nav"
@@ -9692,8 +8900,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: SDK - Android"
 data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - Android"
 >
 Android
 track-type="nav"
@@ -9719,8 +8927,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: SDK - Chromecast"
 data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - Chromecast"
 >
 Chromecast
 track-type="nav"
@@ -9765,8 +8973,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - apis"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: API - Full service"
 data-category="DAI top menu navigation"
+data-label="Tab menu: API - Full service"
 >
 Full service DAI
 track-type="nav"
@@ -9774,8 +8982,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - apis"
 track-metadata-module="tertiary nav"
 tooltip
-data-label="Tab menu: API - Pod serving"
 data-category="DAI top menu navigation"
+data-label="Tab menu: API - Pod serving"
 >
 Pod serving DAI
 track-type="nav"
@@ -10618,15 +9826,15 @@ data-api-explorer-panel
 # pod serving
 
 > **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
-> **Analyzed At:** 2026-07-20T08:33:07.504Z
+> **Analyzed At:** 2026-07-20T08:35:22.742Z
 
 ### Content
-lang="en"
-dir="ltr">
+lang="fa-x-mtfrom-en"
+dir="rtl">
 content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
 crossorigin="use-credentials">
 href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=fa">
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving" />
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ar" />
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=bn" />
@@ -10648,22 +9856,23 @@ href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th" />
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr" />
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=vi" /><title>DAI Pod Serving API &nbsp;|&nbsp; Google for Developers</title>
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en">
 template="landing"
 theme="google-blue"
 type="product"
 layout="docs"
 concierge='hide'
 pending>
-Skip to main content
+رد شدن و رفتن به محتوای اصلی
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Navigation menu button"
 visually-hidden
-aria-label="Open menu">
+aria-label="باز کردن منو">
 size="medium"
 >
 alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fa"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
@@ -10684,57 +9893,57 @@ Dynamic Ad Insertion
 ">
 class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
 track-type="nav"
-track-metadata-position="nav - home"
+track-metadata-position="nav - صفحه اصلی"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Tab: Home"
-track-name="home"
+data-label="Tab: صفحه اصلی"
+track-name="صفحه اصلی"
 >
-Home
+صفحه اصلی
 ">
 ">
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion"
-track-metadata-position="nav - home"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=fa"
+track-metadata-position="nav - صفحه اصلی"
 track-metadata-module="tertiary nav"
 tooltip
 >
-Home
+صفحه اصلی
 </tab>
 <tab class="devsite-dropdown
 ">
 class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
 track-type="nav"
-track-metadata-position="nav - sdks"
+track-metadata-position="nav - sdk ها"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Tab: SDKs"
-track-name="sdks"
+data-label="Tab: SDK ها"
+track-name="sdk ها"
 >
-SDKs
+SDK ها
 ">
 ">
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5"
-track-metadata-position="nav - sdks"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=fa"
+track-metadata-position="nav - sdk ها"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: SDK - HTML5"
+data-category="DAI top menu navigation"
 >
 HTML5
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android"
-track-metadata-position="nav - sdks"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=fa"
+track-metadata-position="nav - sdk ها"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: SDK - Android"
+data-category="DAI top menu navigation"
 >
 Android
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios"
-track-metadata-position="nav - sdks"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=fa"
+track-metadata-position="nav - sdk ها"
 track-metadata-module="tertiary nav"
 tooltip
 data-label="Tab menu: SDK - iOS"
@@ -10742,161 +9951,161 @@ data-category="DAI top menu navigation"
 >
 iOS
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos"
-track-metadata-position="nav - sdks"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=fa"
+track-metadata-position="nav - sdk ها"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: SDK - tvOS"
+data-category="DAI top menu navigation"
 >
 tvOS
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast"
-track-metadata-position="nav - sdks"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=fa"
+track-metadata-position="nav - sdk ها"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: SDK - Chromecast"
+data-category="DAI top menu navigation"
 >
 Chromecast
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku"
-track-metadata-position="nav - sdks"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=fa"
+track-metadata-position="nav - sdk ها"
 track-metadata-module="tertiary nav"
 tooltip
 data-label="Tab menu: SDK - Roku"
 data-category="DAI top menu navigation"
 >
-Roku
+روکو
 </tab>
 <tab class="devsite-dropdown
 devsite-active
 ">
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa"
 track-type="nav"
-track-metadata-position="nav - apis"
+track-metadata-position="nav - api ها"
 track-metadata-module="primary nav"
-aria-label="APIs, selected"
+aria-label="API ها, selected"
 data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
+data-label="Tab: API ها"
+track-name="api ها"
 >
-APIs
+API ها
 aria-haspopup="menu"
 aria-expanded="false"
-aria-label="Dropdown menu for APIs"
+aria-label="منوی کرکره‌ای برای API ها"
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
-track-metadata-position="nav - apis"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa"
+track-metadata-position="nav - api ها"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
+data-label="Tab: API ها"
+track-name="api ها"
 class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down">
 ">
 ">
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
-track-metadata-position="nav - apis"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=fa"
+track-metadata-position="nav - api ها"
 track-metadata-module="tertiary nav"
 tooltip
 data-label="Tab menu: API - Full service"
 data-category="DAI top menu navigation"
 >
-Full service DAI
+خدمات کامل DAI
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
-track-metadata-position="nav - apis"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa"
+track-metadata-position="nav - api ها"
 track-metadata-module="tertiary nav"
 tooltip
 data-label="Tab menu: API - Pod serving"
 data-category="DAI top menu navigation"
 >
-Pod serving DAI
+غلاف ارائه DAI
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break"
-track-metadata-position="nav - apis"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=fa"
+track-metadata-position="nav - api ها"
 track-metadata-module="tertiary nav"
 tooltip
 data-label="Tab menu: API - Ad break"
 data-category="DAI top menu navigation"
 >
-Ad break
+تبلیغات موقت
 </tab>
 <tab class="devsite-dropdown
 ">
 class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
 track-type="nav"
-track-metadata-position="nav - resources"
+track-metadata-position="nav - منابع"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Tab: Resources"
-track-name="resources"
+data-label="Tab: منابع"
+track-name="منابع"
 >
-Resources
+منابع
 ">
 ">
-Support
+پشتیبانی
 track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/community"
-track-metadata-position="nav - resources"
+track-metadata-eventdetail="//support.google.com/admanager/community?hl=fa"
+track-metadata-position="nav - منابع"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
+track-metadata-module_headline="پشتیبانی"
 tooltip
 >
-Ad Manager Help Community
+انجمن راهنمای مدیر تبلیغات
 track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk"
-track-metadata-position="nav - resources"
+track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=fa"
+track-metadata-position="nav - منابع"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
+track-metadata-module_headline="پشتیبانی"
 tooltip
 >
-Contact support
+با پشتیبانی تماس بگیرید
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms"
-track-metadata-position="nav - resources"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=fa"
+track-metadata-position="nav - منابع"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
+track-metadata-module_headline="پشتیبانی"
 tooltip
 >
-Terms of service
+شرایط استفاده از خدمات
 track-type="nav"
 track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
-track-metadata-position="nav - resources"
+track-metadata-position="nav - منابع"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
+track-metadata-module_headline="پشتیبانی"
 tooltip
 >
-Official Google Ad Manager Discord channel
+کانال رسمی دیسکورد مدیریت تبلیغات گوگل
 track-type="nav"
 track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
-track-metadata-position="nav - resources"
+track-metadata-position="nav - منابع"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="support"
+track-metadata-module_headline="پشتیبانی"
 tooltip
 >
-Ads developer blog
+وبلاگ توسعه دهنده تبلیغات
 ">
 ">
-Test tools
+ابزار تست
 track-type="nav"
 track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
-track-metadata-position="nav - resources"
+track-metadata-position="nav - منابع"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="test tools"
+track-metadata-module_headline="ابزار تست"
 tooltip
 >
-Video Suite Inspector
+بازرس مجموعه ویدیویی
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams"
-track-metadata-position="nav - resources"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=fa"
+track-metadata-position="nav - منابع"
 track-metadata-module="tertiary nav"
-track-metadata-module_headline="test tools"
+track-metadata-module_headline="ابزار تست"
 tooltip
 >
-Sample streams
+نمونه جریان ها
 </tab>
 enable-signin
 enable-search
@@ -10906,20 +10115,20 @@ enable-search-summaries
 project-name="DAI Pod Serving API"
 tenant-name="Google for Developers"
 project-scope="/ad-manager/dynamic-ad-insertion/api/pod-serving"
-url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/pod-serving"
+url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=fa"
 >
 search-open
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Open search">
+aria-label="باز کردن جستجو">
 aria-activedescendant=""
 aria-autocomplete="list"
-aria-label="Search"
+aria-label="جستجو"
 aria-expanded="false"
 aria-haspopup="listbox"
 autocomplete="off"
 class="devsite-search-field devsite-search-query"
 name="q"
-placeholder="Search"
+placeholder="جستجو"
 role="combobox"
 type="text"
 value=""
@@ -10927,7 +10136,7 @@ value=""
 <kbd class="devsite-search-shortcut-icon">/</kbd>
 search-close
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Close search">
+aria-label="بستن جستجو">
 >English
 >Deutsch
 >Español
@@ -10953,7 +10162,7 @@ aria-label="Close search">
 enable-profiles
 fp-auth
 id="devsite-user">
-Sign in
+ورود به برنامه
 ">
 >
 >
@@ -10967,50 +10176,50 @@ track-name="breadcrumb"
 track-metadata-position="1"
 track-metadata-eventdetail=""
 >
-DAI pod serving API
+DAI pod خدمت API
 <tab  class="devsite-active">
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa"
 track-type="nav"
-track-metadata-position="nav - guides"
+track-metadata-position="nav - راهنما"
 track-metadata-module="primary nav"
-aria-label="Guides, selected"
+aria-label="راهنما, selected"
 data-category="Site-Wide Custom Events"
-data-label="Tab: Guides"
-track-name="guides"
+data-label="Tab: راهنما"
+track-name="راهنما"
 >
-Guides
+راهنما
 </tab>
 <tab  >
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live?hl=fa"
 track-type="nav"
-track-metadata-position="nav - reference"
+track-metadata-position="nav - مرجع"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Tab: Reference"
-track-name="reference"
+data-label="Tab: مرجع"
+track-name="مرجع"
 >
-Reference
+مرجع
 </tab>
 >
-placeholder="Filter"
-aria-label="Type to filter"
+placeholder="فیلتر"
+aria-label="تایپ برای فیلتر کردن"
 role="searchbox">
-data-title="Clear filter"
-aria-label="Clear filter"
+data-title="پاک کردن فیلتر"
+aria-label="پاک کردن فیلتر"
 role="button"
 tabindex="0">
-aria-label="Side menu">
+aria-label="منوی کناری">
 id="devsite-close-nav"
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Close navigation"
-aria-label="Close navigation">
+aria-label="بستن پیمایش">
 size="medium"
 >
 alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=fa"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
@@ -11030,155 +10239,135 @@ Dynamic Ad Insertion
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: Home"
-track-name="home"
+data-label="Tab: صفحه اصلی"
+track-name="صفحه اصلی"
 >
-Home
+صفحه اصلی
 ">
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: Home"
-track-name="home"
+data-label="Tab: صفحه اصلی"
+track-name="صفحه اصلی"
 >
-More
-menu="Home">
+موارد بیشتر
+menu="صفحه اصلی">
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: SDKs"
-track-name="sdks"
+data-label="Tab: SDK ها"
+track-name="sdk ها"
 >
-SDKs
+SDK ها
 ">
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: SDKs"
-track-name="sdks"
+data-label="Tab: SDK ها"
+track-name="sdk ها"
 >
-More
-menu="SDKs">
+موارد بیشتر
+menu="SDK ها">
 class="devsite-nav-title gc-analytics-event
 devsite-nav-active"
 data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
+data-label="Tab: API ها"
+track-name="api ها"
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: APIs"
+data-label="Responsive Tab: API ها"
 track-type="globalNav"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-APIs
+API ها
 ">
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: APIs"
-track-name="apis"
+data-label="Tab: API ها"
+track-name="api ها"
 >
-More
-menu="APIs">
+موارد بیشتر
+menu="API ها">
 class="devsite-nav-title gc-analytics-event
 devsite-nav-active"
 data-category="Site-Wide Custom Events"
-data-label="Tab: Guides"
-track-name="guides"
+data-label="Tab: راهنما"
+track-name="راهنما"
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Guides"
+data-label="Responsive Tab: راهنما"
 track-type="globalNav"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Guides
+راهنما
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Tab: Reference"
-track-name="reference"
+data-label="Tab: مرجع"
+track-name="مرجع"
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Reference"
+data-label="Responsive Tab: مرجع"
 track-type="globalNav"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Reference
+مرجع
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: Resources"
-track-name="resources"
+data-label="Tab: منابع"
+track-name="منابع"
 >
-Resources
+منابع
 ">
 class="devsite-nav-title"
 tooltip
 data-category="Site-Wide Custom Events"
-data-label="Tab: Resources"
-track-name="resources"
+data-label="Tab: منابع"
+track-name="منابع"
 >
-More
-menu="Resources">
+موارد بیشتر
+menu="منابع">
 class="devsite-nav-title"
->Overview
+>نمای کلی
 class="devsite-nav-title"
->Learn DAI Pod Serving API
-devsite-nav-expandable">
-Authenticate requests with HMAC token
-devsite-nav-expandable">
-Stream Session Requests
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Authenticate Stream Session Requests
-devsite-nav-expandable">
-Ad Pod Requests
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Authenticate Pod Segment Requests
-class="devsite-nav-title"
->Authenticate Pod Manifest Requests
-class="devsite-nav-title"
->Authenticate Ad Pod Timing Metadata Request
-class="devsite-nav-title"
->Token Generator
+>DAI Pod Serving API را یاد بگیرید
 devsite-nav-heading">
-Develop server-side ad insertion
+درج آگهی سمت سرور را توسعه دهید
 devsite-nav-expandable">
-Manage SSAI livestreams
+پخش‌های زنده SSAI را مدیریت کنید
 class="devsite-nav-title"
->Overview
+>نمای کلی
 class="devsite-nav-title"
->Prepare client video player app
+>برنامه پخش کننده ویدیوی مشتری را آماده کنید
 devsite-nav-expandable">
-Develop manifest manipulation server
+سرور دستکاری مانیفست را توسعه دهید
 class="devsite-nav-title"
->Insert ads with ad pod timing metadata
+>درج تبلیغات با متادیتای زمان بندی آگهی
 class="devsite-nav-title"
->Insert ads using segment redirects
+>درج تبلیغات با استفاده از تغییر مسیرهای بخش
 devsite-nav-expandable">
-Manage SSAI VOD streams
+جریان های SSAI VOD را مدیریت کنید
 class="devsite-nav-title"
->Overview
+>نمای کلی
 class="devsite-nav-title"
->Prepare your client video player app
+>برنامه پخش کننده ویدیوی مشتری خود را آماده کنید
 class="devsite-nav-title"
->Configure your manifest manipulation server
+>سرور دستکاری مانیفست خود را پیکربندی کنید
 devsite-nav-heading">
-Set up server-guided ad insertion
+درج آگهی هدایت‌شده توسط سرور را تنظیم کنید
 class="devsite-nav-title"
->About server-guided ad insertion
+>درباره درج آگهی هدایت‌شده توسط سرور
 class="devsite-nav-title"
->Get started with SGAI for livestream
-aria-label="Side menu" hidden>
+>برای پخش زنده با SGAI شروع کنید
+aria-label="منوی کناری" hidden>
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Home"
+data-label="Responsive Tab: صفحه اصلی"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Home
-aria-label="Side menu" hidden>
+صفحه اصلی
+aria-label="منوی کناری" hidden>
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
@@ -11222,110 +10411,113 @@ Chromecast
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Roku"
+data-label="Responsive Tab: روکو"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Roku
-aria-label="Side menu" hidden>
+روکو
+aria-label="منوی کناری" hidden>
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Full service DAI"
+data-label="Responsive Tab: خدمات کامل DAI"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Full service DAI
+خدمات کامل DAI
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Pod serving DAI"
+data-label="Responsive Tab: غلاف ارائه DAI"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Pod serving DAI
+غلاف ارائه DAI
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Ad break"
+data-label="Responsive Tab: تبلیغات موقت"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Ad break
-aria-label="Side menu" hidden>
+تبلیغات موقت
+aria-label="منوی کناری" hidden>
 class="devsite-nav-title"
 tooltip
 >
-Support
+پشتیبانی
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Ad Manager Help Community"
+data-label="Responsive Tab: انجمن راهنمای مدیر تبلیغات"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Ad Manager Help Community
+انجمن راهنمای مدیر تبلیغات
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Contact support"
+data-label="Responsive Tab: با پشتیبانی تماس بگیرید"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Contact support
+با پشتیبانی تماس بگیرید
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Terms of service"
+data-label="Responsive Tab: شرایط استفاده از خدمات"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Terms of service
+شرایط استفاده از خدمات
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Official Google Ad Manager Discord channel"
+data-label="Responsive Tab: کانال رسمی دیسکورد مدیریت تبلیغات گوگل"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Official Google Ad Manager Discord channel
+کانال رسمی دیسکورد مدیریت تبلیغات گوگل
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Ads developer blog"
+data-label="Responsive Tab: وبلاگ توسعه دهنده تبلیغات"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Ads developer blog
+وبلاگ توسعه دهنده تبلیغات
 class="devsite-nav-title"
 tooltip
 >
-Test tools
+ابزار تست
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Video Suite Inspector"
+data-label="Responsive Tab: بازرس مجموعه ویدیویی"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Video Suite Inspector
+بازرس مجموعه ویدیویی
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Sample streams"
+data-label="Responsive Tab: نمونه جریان ها"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-Sample streams
+نمونه جریان ها
 has-book-nav
 >
 role="navigation"
-aria-label="On this page"
+aria-label="در این صفحه"
 depth="2"
 scrollbars
 data-nosnippet
 disabled>
-aria-label="Breadcrumb">
+class="devsite-banner-translated-image invert"
+alt="">
+این صفحه به‌وسیله ‏Cloud Translation API‏ ترجمه شده است.
+aria-label="نشانگر صفحات">
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -11336,7 +10528,7 @@ track-name="breadcrumb"
 track-metadata-position="1"
 track-metadata-eventdetail=""
 >
-Home
+صفحه اصلی
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -11347,7 +10539,7 @@ track-name="breadcrumb"
 track-metadata-position="2"
 track-metadata-eventdetail=""
 >
-Products
+محصولات
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -11380,7 +10572,7 @@ track-name="breadcrumb"
 track-metadata-position="5"
 track-metadata-eventdetail=""
 >
-APIs
+API ها
 ack-key="AckCollectionsBookmarkTooltipDismiss"
 analytics-category="Site-Wide Custom Events"
 analytics-action-show="Callout Profile displayed"
@@ -11390,10 +10582,10 @@ class="devsite-page-bookmark-tooltip nocontent"
 data-nosnippet
 dismiss-button="true"
 id="devsite-collections-dropdown"
-dismiss-button-text="Dismiss"
-close-button-text="Got it">
-Stay organized with collections
-Save and categorize content based on your preferences.
+dismiss-button-text="بستن"
+close-button-text="متوجهم">
+با مجموعه‌ها، منظم بمانید
+ذخیره و طبقه‌بندی محتوا براساس اولویت‌های شما.
 depth="2"
 devsite-toc-embedded
 disabled>
@@ -11403,132 +10595,64 @@ header-position="top"
 description-position="bottom"
 >
 ">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_2880.png 2880w"
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving.png?hl=fa"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_36.png?hl=fa 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_48.png?hl=fa 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_72.png?hl=fa 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_96.png?hl=fa 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_480.png?hl=fa 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_720.png?hl=fa 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_856.png?hl=fa 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_960.png?hl=fa 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1440.png?hl=fa 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1920.png?hl=fa 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_2880.png?hl=fa 2880w"
 sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
 fetchpriority="high">
 >
-data-text="DAI Pod Serving"
+data-text="سرویس DAI Pod"
 class="hide-from-toc no-link"
 tabindex="0">
-DAI Pod Serving
-Dynamic Ad Insertion (DAI) Pod Serving lets you request ad pods, from Google or third-party ad servers, for live and video-on-demand (VOD) streams. For more details, see  Configure ad pods and break templates.
-For livestream, Google Ad Manager supports the following DAI types:
-Pod serving redirect: lets you retrieve manifest segments to implement
-Server-Side Ad Insertion (SSAI). The segments are dynamic URLs, redirecting to either
-content or ad media files.
-Pod serving manifest: lets you retrieve the complete manifest of the ad pods to
-implement Server-Side Ad Insertion (SSAI). For more details,
-see Server guided DAI.
-For VOD, Google Ad Manager returns the complete ad pod manifests.
-DAI Pod serving offers the following supported platforms:
-HTML5
-Android
-iOS
-tvOS
-Chromecast
-Roku
-For details on livestream and VOD, see the following workflows:
+سرویس DAI Pod
+قابلیت درج پویای تبلیغات (DAI) در پاد (Pod Serving) به شما امکان می‌دهد پادهای تبلیغاتی را از گوگل یا سرورهای تبلیغاتی شخص ثالث، برای پخش زنده و پخش ویدئو بر اساس تقاضا (VOD) درخواست کنید. برای جزئیات بیشتر، به پیکربندی پادهای تبلیغاتی و شکستن الگوها مراجعه کنید. برای پخش زنده، Google Ad Manager از انواع DAI زیر پشتیبانی می‌کند: تغییر مسیر سرویس پاد: به شما امکان می‌دهد بخش‌های مانیفست را برای پیاده‌سازی درج آگهی سمت سرور (SSAI) بازیابی کنید. این بخش‌ها URLهای پویا هستند که به فایل‌های محتوا یا رسانه‌های تبلیغاتی تغییر مسیر می‌دهند. مانیفست ارائه دهنده پاد: به شما امکان می‌دهد مانیفست کامل پادهای تبلیغاتی را برای پیاده‌سازی درج آگهی سمت سرور (SSAI) بازیابی کنید. برای جزئیات بیشتر، به DAI هدایت‌شده توسط سرور مراجعه کنید. برای VOD، گوگل اد منیجر کل مانیفست‌های پاد تبلیغاتی را برمی‌گرداند. سرویس پاد DAI پلتفرم‌های پشتیبانی‌شده‌ی زیر را ارائه می‌دهد: HTML5 اندروید iOS tvOS کروم‌کست روکو برای جزئیات بیشتر در مورد پخش زنده و VOD، به گردش‌های کاری زیر مراجعه کنید:
 background="grey"
 header-position="top"
 >
 description-position="bottom"
 >
 ">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_2880.png 2880w"
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram.png?hl=fa"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_36.png?hl=fa 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_48.png?hl=fa 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_72.png?hl=fa 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_96.png?hl=fa 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_480.png?hl=fa 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_720.png?hl=fa 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_856.png?hl=fa 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_960.png?hl=fa 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1440.png?hl=fa 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1920.png?hl=fa 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_2880.png?hl=fa 2880w"
 sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
 loading="lazy"
 >
 >
-data-text="Stitch ads into a livestream"
+data-text="تبلیغات را به یک پخش زنده وصل کنید"
 class="hide-from-toc no-link"
 tabindex="0">
-Stitch ads into a livestream
-To start a livestream session, make a stream registration request.
-Set ad tag parameters unique for the stream request to
-override the DAI ad tag's default values. For more details about
-ad targeting, see
-Supply targeting parameters to your stream.
-Retrieve the unique user session ID from the stream registration
-response. For more details about using the session ID, see
-Locate a DAI session ID or debug key and
-Monitor and debug a specific stream session.
-Make a manifest request to your video stitcher or manifest
-manipulator, passing the session ID. Repeat the request for
-manifest updates throughout playback.
-For DASH manifests, make one period template request for the entire session.
-For DASH manifests, cache the period template. For each ad break,
-retrieve the cached template and populate all macros with the ad break data.
-For more details about supported macros,
-see Populate the period template.
-Then, insert the result period into the final manifest.
-Return the final manifest that contains content or ad media segments for
-client playback.
-Playback begins.
-Regularly poll Google Ad Manager for updates of ad metadata using the polling frequency
-returned in the stream request.
-Store the ad metadata for looking up ad events.
-During an ad break, the video player loads the media segments and
-follows Google Ad Manager redirects to the media files.
-During an ad break,
-listen to the video player for timed metadata, containing ID3
-tags. Extract the ad event ID from the ID3 tag to find the
-associated ad metadata.
-Send media verification pings
-to Google Ad Manager.
+تبلیغات را به یک پخش زنده وصل کنید
+برای شروع یک جلسه پخش زنده، یک درخواست ثبت پخش زنده ارسال کنید. پارامترهای برچسب تبلیغ را برای درخواست پخش زنده منحصر به فرد تنظیم کنید تا مقادیر پیش‌فرض برچسب تبلیغ DAI را نادیده بگیرد. برای جزئیات بیشتر در مورد هدف‌گیری تبلیغ، به «ارائه پارامترهای هدف‌گیری به پخش زنده خود» مراجعه کنید. شناسه جلسه منحصر به فرد کاربر را از پاسخ ثبت جریان بازیابی کنید. برای جزئیات بیشتر در مورد استفاده از شناسه جلسه، به «یافتن شناسه جلسه DAI یا کلید اشکال‌زدایی» و «نظارت و اشکال‌زدایی یک جلسه جریان خاص» مراجعه کنید. یک درخواست مانیفست به دستگاه دوخت ویدیو یا کنترل‌کننده مانیفست خود ارسال کنید و شناسه جلسه را به آن ارسال کنید. درخواست به‌روزرسانی‌های مانیفست را در طول پخش تکرار کنید. برای مانیفست‌های DASH، برای کل جلسه، یک درخواست الگوی دوره ایجاد کنید. برای مانیفست‌های DASH، الگوی دوره را ذخیره کنید. برای هر وقفه تبلیغاتی، الگوی ذخیره شده را بازیابی کنید و تمام ماکروها را با داده‌های وقفه تبلیغاتی پر کنید. برای جزئیات بیشتر در مورد ماکروهای پشتیبانی شده، به پر کردن الگوی دوره مراجعه کنید. سپس، دوره نتیجه را در مانیفست نهایی وارد کنید. مانیفست نهایی را که شامل محتوا یا بخش‌های رسانه تبلیغاتی برای پخش توسط کلاینت است، برمی‌گرداند. پخش آغاز می‌شود . مرتباً با استفاده از فرکانس نظرسنجی برگردانده شده در درخواست پخش، از Google Ad Manager برای به‌روزرسانی‌های فراداده‌های تبلیغ نظرسنجی کنید. فراداده‌های تبلیغ را برای جستجوی رویدادهای تبلیغ ذخیره کنید. در طول پخش تبلیغات، پخش‌کننده ویدیو بخش‌های رسانه‌ای را بارگذاری می‌کند و از طریق Google Ad Manager به فایل‌های رسانه‌ای هدایت می‌شود. در طول پخش تبلیغات، به پخش‌کننده ویدیو برای فراداده‌های زمان‌بندی‌شده که حاوی برچسب‌های ID3 هستند گوش دهید . شناسه رویداد تبلیغ را از برچسب ID3 استخراج کنید تا فراداده‌های تبلیغ مرتبط را پیدا کنید. پینگ‌های تأیید رسانه را به مدیر تبلیغات گوگل ارسال کنید .
 description-position="bottom"
 >
 ">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_2880.png 2880w"
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram.png?hl=fa"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_36.png?hl=fa 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_48.png?hl=fa 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_72.png?hl=fa 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_96.png?hl=fa 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_480.png?hl=fa 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_720.png?hl=fa 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_856.png?hl=fa 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_960.png?hl=fa 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1440.png?hl=fa 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1920.png?hl=fa 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_2880.png?hl=fa 2880w"
 sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
 loading="lazy"
 >
 >
-data-text="Stitch ads into a VOD stream"
+data-text="تبلیغات را به یک جریان VOD وصل کنید"
 class="hide-from-toc no-link"
 tabindex="0">
-Stitch ads into a VOD stream
-Make a stream request to register a VOD stream
-session. Set ad tag parameters unique for the stream request to
-override the DAI ad tag's default values. For more details, see
-Supply targeting parameters to your stream.
-Retrieve the session ID from the stream response. To inspect the stream session, see
-Locate a DAI session ID or debug key and
-Monitor and debug a specific stream session.
-Make a manifest request to your video stitcher or manifest
-manipulator, passing the session ID.
-Use the session ID to request all ad pods at once.
-Retrieve complete manifests of all ad pods. To create the final manifest, stitch the ad
-pod manifests with the content stream.
-Return the final manifest, containing both content and ad segments.
-Request ad metadata for all ad events. Store the ad metadata for
-looking up ad events. Playback begins.
-During an ad break, the video player loads the media segments and
-follows Google Ad Manager redirects to the media files.
-During an ad break,
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client#listen_for_ad_events">
-listen for ad events containing ID3 tags. To find the ad event metadata, extract
-the ad event ID from the ID3 tag and match the ID with the ad metadata.
-Send media verification pings
-to Google Ad Manager.
+تبلیغات را به یک جریان VOD وصل کنید
+برای ثبت یک جلسه پخش VOD، یک درخواست پخش زنده ارسال کنید. پارامترهای برچسب تبلیغ را برای درخواست پخش زنده منحصر به فرد تنظیم کنید تا مقادیر پیش‌فرض برچسب تبلیغ DAI را نادیده بگیرد. برای جزئیات بیشتر، به «ارائه پارامترهای هدف‌گیری به پخش زنده خود» مراجعه کنید. شناسه جلسه را از پاسخ جریان بازیابی کنید. برای بررسی جلسه جریان، به «یافتن شناسه جلسه DAI یا کلید اشکال‌زدایی» و «نظارت و اشکال‌زدایی یک جلسه جریان خاص» مراجعه کنید. یک درخواست مانیفست به سازنده‌ی ویدیو یا کنترل‌کننده‌ی مانیفست خود ارسال کنید و شناسه‌ی جلسه (session ID) را به آن ارسال کنید. از شناسه جلسه برای درخواست همزمان همه پادهای تبلیغاتی استفاده کنید. مانیفست‌های کامل همه پادهای تبلیغاتی را بازیابی کنید. برای ایجاد مانیفست نهایی، مانیفست‌های پاد تبلیغاتی را با جریان محتوا ترکیب کنید. مانیفست نهایی را که شامل محتوا و بخش‌های تبلیغاتی است، برگردانید. درخواست فراداده تبلیغ برای همه رویدادهای تبلیغی. فراداده تبلیغ را برای جستجوی رویدادهای تبلیغی ذخیره کنید. پخش شروع می‌شود . در طول پخش تبلیغات، پخش‌کننده ویدیو بخش‌های رسانه‌ای را بارگذاری می‌کند و از طریق Google Ad Manager به فایل‌های رسانه‌ای هدایت می‌شود. در طول پخش تبلیغات،
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=fa#listen_for_ad_events">به رویدادهای تبلیغاتی حاوی برچسب‌های ID3 گوش دهید . برای یافتن فراداده‌های رویداد تبلیغ، شناسه رویداد تبلیغ را از برچسب ID3 استخراج کرده و شناسه را با فراداده‌های تبلیغ مطابقت دهید. پینگ‌های تأیید رسانه را به مدیر تبلیغات گوگل ارسال کنید .
 hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
 listnr-id="82128">
-Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-03-05 UTC.
+جز در مواردی که غیر از این ذکر شده باشد،‌محتوای این صفحه تحت مجوز Creative Commons Attribution 4.0 License است. نمونه کدها نیز دارای مجوز Apache 2.0 License است. برای اطلاع از جزئیات، به خطمشی‌های سایت Google Developers‏ مراجعه کنید. جاوا علامت تجاری ثبت‌شده Oracle و/یا شرکت‌های وابسته به آن است.
+تاریخ آخرین به‌روزرسانی 2026-03-05 به‌وقت ساعت هماهنگ جهانی.
 >
 <template class="devsite-content-data-template">
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-05 UTC."],[],[]]
+[[["درک آسان","easyToUnderstand","thumb-up"],["مشکلم را برطرف کرد","solvedMyProblem","thumb-up"],["غیره","otherUp","thumb-up"]],[["اطلاعاتی که نیاز دارم وجود ندارد","missingTheInformationINeed","thumb-down"],["بیش‌ازحد پیچیده/ مراحل بسیار زیاد","tooComplicatedTooManySteps","thumb-down"],["قدیمی","outOfDate","thumb-down"],["مشکل ترجمه","translationIssue","thumb-down"],["مشکل کد / نمونه‌ها","samplesCodeIssue","thumb-down"],["غیره","otherDown","thumb-down"]],["تاریخ آخرین به‌روزرسانی 2026-03-05 به‌وقت ساعت هماهنگ جهانی."],[],[]]
 </template>
-aria-label="Footer links"
+aria-label="پیوندهای پانویس"
 data-nosnippet>
-Connect
+متصل کردن
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
 >
-Blog
+وبلاگ
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
@@ -11548,13 +10672,13 @@ class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
 >
-X (Twitter)
+‫X (توییتر)
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 6)"
 >
 YouTube
-Programs
+برنامه‌ها
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -11580,7 +10704,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
 >
 Google Cloud & NVIDIA
-Developer consoles
+کنسول‌های برنامه‌نویس
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -11595,7 +10719,7 @@ class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
 >
-Google Play Console
+کنسول Google Play
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
@@ -11662,19 +10786,19 @@ gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer All products Link"
 >
-All products
+همه محصولات
 ">
-href="/terms/site-terms"
+href="https://developers.google.com/terms/site-terms?hl=fa"
 data-category="Site-Wide Custom Events"
 data-label="Footer Terms link"
 >
-Terms
+شرایط
 ">
-href="//policies.google.com/privacy"
+href="//policies.google.com/privacy?hl=fa"
 data-category="Site-Wide Custom Events"
 data-label="Footer Privacy link"
 >
-Privacy
+حریم خصوصی
 glue-cookie-notification-bar-control">
 href="#"
 data-category="Site-Wide Custom Events"
@@ -11714,7 +10838,7 @@ data-api-explorer-panel
 # start
 
 > **Source:** https://developers.google.com/ad-manager/api/start
-> **Analyzed At:** 2026-07-20T08:33:07.967Z
+> **Analyzed At:** 2026-07-20T08:35:23.333Z
 
 ### Content
 lang="en"
@@ -12618,7 +11742,7 @@ Manage cookies
 # overview
 
 > **Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
-> **Analyzed At:** 2026-07-20T08:33:09.576Z
+> **Analyzed At:** 2026-07-20T08:35:24.858Z
 
 ### Content
 lang="en"
@@ -12877,9 +12001,9 @@ data-category="Site-Wide Custom Events"
 data-label="Site header link: Console"
 track-metadata-position="nav"
 referrerpolicy="no-referrer-when-downgrade"
-track-metadata-eventDetail="nav"
 track-type="globalNav"
 track-name="console"
+track-metadata-eventDetail="nav"
 >
 Console
 >English
@@ -12932,11 +12056,11 @@ track-metadata-eventdetail="Java client libraries"
 Client libraries
 class="cloud-free-trial-button button button-primary
 "
-track-name="gcpCta"
-track-type="freeTrial"
-track-metadata-eventDetail="nav"
 referrerpolicy="no-referrer-when-downgrade"
 track-metadata-position="nav"
+track-name="gcpCta"
+track-metadata-eventDetail="nav"
+track-type="freeTrial"
 >Start free
 <tab  >
 class="devsite-tabs-content gc-analytics-event "
@@ -13097,9 +12221,9 @@ menu="Cross-product tools">
 class="devsite-nav-title gc-analytics-event button-with-icon"
 track-metadata-position="nav"
 referrerpolicy="no-referrer-when-downgrade"
-track-metadata-eventDetail="nav"
 track-type="globalNav"
 track-name="console"
+track-metadata-eventDetail="nav"
 data-category="Site-Wide Custom Events"
 data-label="Responsive Tab: Console"
 track-type="navMenu"
@@ -18219,8 +17343,8 @@ Each Cloud Java client library may contain packages tied to specific Version IDs
 the latest stable Version ID. This is identified by the highest version number without a suffix (like &#34;alpha&#34; or &#34;beta&#34;). You can read more about
 Cloud API versioning strategy here.
 Important: Unstable Version ID releases (those with suffixes) are subject to breaking changes when upgrading. Use them only for testing or if you specifically need their experimental features.
-hats-id="GcsXpB5Vh0srmJKL4Qf0P4VD7H1Y"
-listnr-id="85164">
+hats-id="mwETRvWii0eU5NUYprb0Y9z5GVbc"
+listnr-id="83405">
 position="footer"
 project-name="Java client libraries"
 product-id="1632431"
@@ -18265,153 +17389,153 @@ Products and pricing
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-metadata-position="footer"track-metadata-child_headline="products and pricing"track-metadata-eventDetail="cloud.google.com/products/"track-type="footer link"track-name="see all products"track-metadata-module="footer">
+track-metadata-module="footer"track-name="see all products"track-metadata-eventDetail="cloud.google.com/products/"track-metadata-child_headline="products and pricing"track-type="footer link"track-metadata-position="footer">
 See all products
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-name="google cloud pricing"track-metadata-child_headline="products and pricing"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/pricing/"track-metadata-module="footer">
+track-metadata-eventDetail="cloud.google.com/pricing/"track-metadata-module="footer"track-name="google cloud pricing"track-type="footer link"track-metadata-child_headline="products and pricing"track-metadata-position="footer">
 Google Cloud pricing
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-module="footer"track-metadata-child_headline="resources"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/marketplace/"track-name="google cloud marketplace">
+track-metadata-child_headline="resources"track-type="footer link"track-metadata-module="footer"track-name="google cloud marketplace"track-metadata-eventDetail="cloud.google.com/marketplace/"track-metadata-position="footer">
 Google Cloud Marketplace
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-metadata-module="footer"track-name="contact sales"track-metadata-eventDetail="cloud.google.com/contact/"track-type="footer link"track-metadata-position="footer"track-metadata-child_headline="engage">
+track-metadata-position="footer"track-name="contact sales"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/contact/"track-metadata-child_headline="engage"track-type="footer link">
 Contact sales
 Support
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-metadata-eventDetail="www.googlecloudcommunity.com"track-type="footer link"track-metadata-position="footer"track-metadata-child_headline="engage"track-name="google cloud community"track-metadata-module="footer"rel="noopener"target="_blank">
+track-metadata-position="footer"rel="noopener"track-type="footer link"track-metadata-child_headline="engage"track-name="google cloud community"track-metadata-module="footer"track-metadata-eventDetail="www.googlecloudcommunity.com"target="_blank">
 Community forums
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-module="footer"track-name="support"track-type="footer link"track-metadata-eventDetail="cloud.google.com/support-hub/"track-metadata-position="footer"track-metadata-child_headline="resources">
+track-name="support"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/support-hub/"track-type="footer link"track-metadata-child_headline="resources"track-metadata-position="footer">
 Support
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-module="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/release-notes/"track-metadata-child_headline="resources"track-metadata-position="footer"track-name="release notes">
+track-type="footer link"track-metadata-child_headline="resources"track-metadata-eventDetail="cloud.google.com/release-notes/"track-name="release notes"track-metadata-module="footer"track-metadata-position="footer">
 Release Notes
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-target="_blank"track-metadata-module="footer"track-name="system status"track-metadata-eventDetail="status.cloud.google.com"track-type="footer link"track-metadata-position="footer"track-metadata-child_headline="resources">
+track-metadata-position="footer"track-metadata-eventDetail="status.cloud.google.com"target="_blank"track-metadata-module="footer"track-name="system status"track-metadata-child_headline="resources"track-type="footer link">
 System status
 Resources
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-metadata-eventDetail="github.com/googlecloudPlatform/"track-type="footer link"track-metadata-position="footer"track-metadata-child_headline="resources"track-name="github"track-metadata-module="footer">
+track-metadata-position="footer"track-type="footer link"track-metadata-child_headline="resources"track-metadata-eventDetail="github.com/googlecloudPlatform/"track-metadata-module="footer"track-name="github">
 GitHub
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-name="google cloud quickstarts"track-metadata-child_headline="resources"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/docs/get-started/"track-metadata-module="footer">
+track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/docs/get-started/"track-name="google cloud quickstarts"track-metadata-module="footer"track-type="footer link"track-metadata-child_headline="resources">
 Getting Started with Google Cloud
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-module="footer"track-metadata-position="footer"track-metadata-child_headline="resources"track-metadata-eventDetail="cloud.google.com/docs/samples"track-type="footer link"track-name="code samples">
+track-metadata-module="footer"track-name="code samples"track-metadata-eventDetail="cloud.google.com/docs/samples"track-metadata-child_headline="resources"track-type="footer link"track-metadata-position="footer">
 Code samples
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-metadata-module="footer"track-name="cloud architecture center"track-metadata-position="footer"track-metadata-child_headline="resources"track-type="footer link"track-metadata-eventDetail="cloud.google.com/architecture/">
+track-metadata-position="footer"track-type="footer link"track-metadata-child_headline="resources"track-metadata-module="footer"track-name="cloud architecture center"track-metadata-eventDetail="cloud.google.com/architecture/">
 Cloud Architecture Center
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
-track-metadata-child_headline="resources"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/learn/training/"track-name="training"track-metadata-module="footer">
+track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/learn/training/"track-name="training"track-metadata-module="footer"track-metadata-child_headline="resources"track-type="footer link">
 Training and Certification
 Engage
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-name="blog"track-metadata-child_headline="engage"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/blog/"track-metadata-module="footer">
+track-metadata-child_headline="engage"track-type="footer link"track-metadata-eventDetail="cloud.google.com/blog/"track-metadata-module="footer"track-name="blog"track-metadata-position="footer">
 Blog
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-module="footer"track-metadata-child_headline="engage"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/events/"track-name="events">
+track-metadata-eventDetail="cloud.google.com/events/"track-metadata-module="footer"track-name="events"track-metadata-child_headline="engage"track-type="footer link"track-metadata-position="footer">
 Events
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-module="footer"target="_blank"rel="noopener"track-metadata-child_headline="engage"track-metadata-position="footer"track-type="footer link"track-metadata-eventDetail="x.com/googlecloud"track-name="follow on x">
+rel="noopener"track-metadata-position="footer"track-metadata-child_headline="engage"track-type="footer link"target="_blank"track-metadata-eventDetail="x.com/googlecloud"track-metadata-module="footer"track-name="follow on x">
 X (Twitter)
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-name="google cloud on youtube"track-metadata-child_headline="engage"track-metadata-position="footer"track-metadata-eventDetail="www.youtube.com/googlecloud"track-type="footer link"target="_blank"rel="noopener"track-metadata-module="footer">
+rel="noopener"track-metadata-position="footer"track-metadata-eventDetail="www.youtube.com/googlecloud"target="_blank"track-metadata-module="footer"track-name="google cloud on youtube"track-metadata-child_headline="engage"track-type="footer link">
 Google Cloud on YouTube
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
-track-metadata-position="footer"track-metadata-child_headline="engage"track-type="footer link"track-metadata-eventDetail="www.youtube.com/googlecloudplatform"track-name="google cloud tech on youtube"track-metadata-module="footer"rel="noopener"target="_blank">
+track-type="footer link"track-metadata-child_headline="engage"target="_blank"track-metadata-eventDetail="www.youtube.com/googlecloudplatform"track-name="google cloud tech on youtube"track-metadata-module="footer"track-metadata-position="footer"rel="noopener">
 Google Cloud Tech on YouTube
 ">
 href="//about.google/"
 data-category="Site-Wide Custom Events"
 data-label="Footer About Google link"
+track-metadata-position="footer"
+track-type="footer link"
+track-metadata-eventDetail="//about.google/"
 target="_blank"
 track-metadata-module="utility footer"
 track-name="about google"
-track-metadata-position="footer"
-track-metadata-eventDetail="//about.google/"
-track-type="footer link"
 >
 About Google
 devsite-footer-privacy-link">
 href="//policies.google.com/privacy"
 data-category="Site-Wide Custom Events"
 data-label="Footer Privacy link"
-track-metadata-module="utility footer"
-target="_blank"
-track-metadata-position="footer"
-track-type="footer link"
 track-metadata-eventDetail="//policies.google.com/privacy"
+target="_blank"
+track-metadata-module="utility footer"
 track-name="privacy"
+track-type="footer link"
+track-metadata-position="footer"
 >
 Privacy
 ">
 href="//policies.google.com/terms?hl=en"
 data-category="Site-Wide Custom Events"
 data-label="Footer Site terms link"
-track-name="site terms"
 track-type="footer link"
 track-metadata-eventDetail="//www.google.com/intl/en/policies/terms/regional.html"
-track-metadata-position="footer"
 target="_blank"
+track-name="site terms"
 track-metadata-module="utility footer"
+track-metadata-position="footer"
 >
 Site terms
 ">
 href="//cloud.google.com/product-terms"
 data-category="Site-Wide Custom Events"
 data-label="Footer Google Cloud terms link"
-track-metadata-eventDetail="//cloud.google.com/product-terms"
-track-type="footer link"
 track-metadata-position="footer"
+track-metadata-eventDetail="//cloud.google.com/product-terms"
 track-name="google cloud terms"
 track-metadata-module="utility footer"
+track-type="footer link"
 >
 Google Cloud terms
 glue-cookie-notification-bar-control">
 href="#"
 data-category="Site-Wide Custom Events"
 data-label="Footer Manage cookies link"
-track-metadata-module="utility footer"
-track-name="Manage cookies"
-track-metadata-eventDetail="#"
+track-metadata-position="footer"
 track-type="footer link"
 aria-hidden="true"
-track-metadata-position="footer"
+track-metadata-eventDetail="#"
+track-name="Manage cookies"
+track-metadata-module="utility footer"
 >
 Manage cookies
 devsite-footer-carbon-button">
@@ -18419,10 +17543,10 @@ href="//cloud.google.com/sustainability"
 data-category="Site-Wide Custom Events"
 data-label="Footer Our third decade of climate action: join us link"
 track-metadata-module="utility footer"
+track-name="Our third decade of climate action: join us"
 track-metadata-eventDetail="/sustainability/"
 track-type="footer link"
 track-metadata-position="footer"
-track-name="Our third decade of climate action: join us"
 >
 Our third decade of climate action: join us
 devsite-footer-utility-button">
@@ -18430,11 +17554,11 @@ Sign up for the Google Cloud newsletter
 href="//cloud.google.com/newsletter/"
 data-category="Site-Wide Custom Events"
 data-label="Footer Subscribe link"
-track-name="subscribe"
 track-type="footer link"
+track-metadata-module="utility footer"
+track-name="subscribe"
 track-metadata-eventDetail="/newsletter/"
 track-metadata-position="footer"
-track-metadata-module="utility footer"
 >
 Subscribe
 >English
@@ -21301,7 +20425,7 @@ Maintain threshold > 0.9999 for Phase 26 compliance.
 # Search Console Mastery: https://software-online-review.com
 
 > **Source:** google-search-console://https://software-online-review.com
-> **Analyzed At:** 2026-07-20T08:32:57.306Z
+> **Analyzed At:** 2026-07-20T08:35:13.855Z
 
 ## Search Performance Metrics
 **Total Clicks:** 1450
@@ -21324,7 +20448,7 @@ Increase content depth for high-impression, low-click queries to improve CTR. Mo
 # informaticmagazine.data.blog
 
 > **Source:** https://informaticmagazine.data.blog
-> **Analyzed At:** 2026-07-20T08:32:59.889Z
+> **Analyzed At:** 2026-07-20T08:35:15.007Z
 
 ### Content
 <title>informatic &#8211; online</title>
@@ -22560,13 +21684,16 @@ class="jp-carousel-comment-form-button"
 id="jp-carousel-comment-form-button-submit"
 value="Post Comment" />
 Design a site like this with WordPress.comGet started
+generated in 1.984 seconds
+803147 bytes batcached for 300 seconds
+-->
 
 ---
 
 # Intelephense Documentation
 
 > **Source:** https://github.com/bmewburn/intelephense-docs
-> **Analyzed At:** 2026-07-20T08:33:11.834Z
+> **Analyzed At:** 2026-07-20T08:35:26.087Z
 
 ## LICENSE
 Intelephense Licence
@@ -23786,7 +22913,7 @@ ben@intelephense.com
 # iCloud: 50ty.json
 
 > **Source:** icloud://50ty.json
-> **Analyzed At:** 2026-07-20T08:33:12.040Z
+> **Analyzed At:** 2026-07-20T08:35:26.742Z
 
 ## Content
 [
@@ -24097,7 +23224,7 @@ ben@intelephense.com
 # iCloud: 50ty.md
 
 > **Source:** icloud://50ty.md
-> **Analyzed At:** 2026-07-20T08:33:12.182Z
+> **Analyzed At:** 2026-07-20T08:35:27.413Z
 
 ## 50 Content Creation and Strategy Prompts
 Part 1: Content Creation (Prompts 1–10)
@@ -24786,7 +23913,7 @@ The real magic happens when you chain these prompts together. Use **Prompt 11 (C
 # iCloud: AGENTS.md
 
 > **Source:** icloud://AGENTS.md
-> **Analyzed At:** 2026-07-20T08:33:12.320Z
+> **Analyzed At:** 2026-07-20T08:35:27.935Z
 
 ### The Vision: Autonomous Intelligence
 The Antigravity ecosystem is designed to be **Self-Healing**, **Self-Validating**, and **Self-Orchestrating**. By leveraging Next.js 16 and a unified core, we eliminate architectural drift and manual synchronization overhead.
@@ -24868,7 +23995,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 # iCloud: CLAUDE.md
 
 > **Source:** icloud://CLAUDE.md
-> **Analyzed At:** 2026-07-20T08:33:12.597Z
+> **Analyzed At:** 2026-07-20T08:35:28.569Z
 
 ### Content
 @AGENTS.md
@@ -24878,7 +24005,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 # iCloud: CONSOLIDATED_INTELLIGENCE.md
 
 > **Source:** icloud://CONSOLIDATED_INTELLIGENCE.md
-> **Analyzed At:** 2026-07-20T08:33:12.819Z
+> **Analyzed At:** 2026-07-20T08:35:29.316Z
 
 ## CONSOLIDATED INTELLIGENCE REPORT
 *Generated: 2026-07-20T08:30:22.383Z*
@@ -29596,7 +28723,7 @@ Synergy achieved across 3236 branches. Detailed knowledge and results consolidat
 # iCloud: KNOWLEDGE_MERGE.md
 
 > **Source:** icloud://KNOWLEDGE_MERGE.md
-> **Analyzed At:** 2026-07-20T08:33:13.009Z
+> **Analyzed At:** 2026-07-20T08:35:29.895Z
 
 ### Autonomous Observation
 - **Date**: 2026-07-19T10:51:34.885Z
@@ -48120,7 +47247,7 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 # iCloud: MISSION_HANDOFF.md
 
 > **Source:** icloud://MISSION_HANDOFF.md
-> **Analyzed At:** 2026-07-20T08:33:13.151Z
+> **Analyzed At:** 2026-07-20T08:35:30.395Z
 
 ## Antigravity: Sovereign Mission Handoff (Consolidated v1.0)
 Your digital empire has evolved into a **Pure TypeScript/Next.js Autonomous Organism**. All legacy Python components have been deprecated and consolidated into the **Jules Cognitive Agent** and the **Unified Web Command Center**.
@@ -48163,7 +47290,7 @@ Monitor your conglomerate's growth via your unified dashboards:
 # iCloud: README.md
 
 > **Source:** icloud://README.md
-> **Analyzed At:** 2026-07-20T08:33:13.297Z
+> **Analyzed At:** 2026-07-20T08:35:30.824Z
 
 ### Content
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/8bukets/8bukets&fullConfiguration=true)
@@ -48236,7 +47363,7 @@ By default, the system syncs to `~/Library/Mobile Documents/com~apple~CloudDocs/
 # iCloud: USAGE.md
 
 > **Source:** icloud://USAGE.md
-> **Analyzed At:** 2026-07-20T08:33:13.455Z
+> **Analyzed At:** 2026-07-20T08:35:31.312Z
 
 ## Configuration Instructions
 Thank you for deploying this project! There are a couple of services you need to configure to get the application running properly.
@@ -48254,7 +47381,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
 # iCloud: ai_agents_knowledge.json
 
 > **Source:** icloud://ai_agents_knowledge.json
-> **Analyzed At:** 2026-07-20T08:33:13.585Z
+> **Analyzed At:** 2026-07-20T08:35:31.943Z
 
 ## Content
 {
@@ -50831,7 +49958,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
 # iCloud: caio_role_docs.md
 
 > **Source:** icloud://caio_role_docs.md
-> **Analyzed At:** 2026-07-20T08:33:13.874Z
+> **Analyzed At:** 2026-07-20T08:35:33.328Z
 
 ## Chief AI Officer (CAIO) Role Description
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera.
@@ -50862,7 +49989,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: intelephense.config.json
 
 > **Source:** icloud://intelephense.config.json
-> **Analyzed At:** 2026-07-20T08:33:14.000Z
+> **Analyzed At:** 2026-07-20T08:35:34.009Z
 
 ## Content
 {
@@ -50955,7 +50082,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: package-lock.json
 
 > **Source:** icloud://package-lock.json
-> **Analyzed At:** 2026-07-20T08:33:14.133Z
+> **Analyzed At:** 2026-07-20T08:35:34.444Z
 
 ## Content
 {
@@ -61635,7 +60762,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: package.json
 
 > **Source:** icloud://package.json
-> **Analyzed At:** 2026-07-20T08:33:14.390Z
+> **Analyzed At:** 2026-07-20T08:35:35.347Z
 
 ## Content
 {
@@ -61718,7 +60845,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: project_backlog.md
 
 > **Source:** icloud://project_backlog.md
-> **Analyzed At:** 2026-07-20T08:33:14.545Z
+> **Analyzed At:** 2026-07-20T08:35:36.086Z
 
 ## Antigravity Ecosystem - Structured Backlog
 Based on the local codebase health assessment, the following Work Items should be imported into GitLab. The local codebase is currently degraded due to Turbopack compilation failures, TypeScript issues, and missing credentials.
@@ -61773,7 +60900,7 @@ Based on the local codebase health assessment, the following Work Items should b
 # iCloud: tsconfig.json
 
 > **Source:** icloud://tsconfig.json
-> **Analyzed At:** 2026-07-20T08:33:14.675Z
+> **Analyzed At:** 2026-07-20T08:35:36.655Z
 
 ## Content
 {
@@ -61834,7 +60961,7 @@ Based on the local codebase health assessment, the following Work Items should b
 # iCloud: autonomous_state.json
 
 > **Source:** icloud://autonomous_state.json
-> **Analyzed At:** 2026-07-20T08:33:13.737Z
+> **Analyzed At:** 2026-07-20T08:35:32.622Z
 
 ## Content
 {

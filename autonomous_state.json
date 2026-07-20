@@ -16,47 +16,47 @@
     ],
     "directives": [
         {
-            "id": "dir_e1gdpr74y",
+            "id": "dir_b8n63x86u",
             "priority": "Critical",
             "domain": "Security",
             "intent": "Rotate all Phase 12 neural sync keys",
             "status": "Active",
             "synergyScore": 95,
-            "timestamp": "2026-07-20T08:34:39.532Z"
+            "timestamp": "2026-07-20T08:37:39.414Z"
         },
         {
-            "id": "dir_278vp5bcs",
+            "id": "dir_em3ysn2lv",
             "priority": "High",
             "domain": "AI Agents",
             "intent": "Implement Crystals-Kyber for CAIO Agent",
             "status": "Active",
             "synergyScore": 88,
-            "timestamp": "2026-07-20T08:34:39.532Z"
+            "timestamp": "2026-07-20T08:37:39.414Z"
         },
         {
-            "id": "dir_ykfmceccp",
+            "id": "dir_6dehj0inu",
             "priority": "Medium",
             "domain": "Services",
             "intent": "Optimize MongoDB sharding for APAC nodes",
             "status": "Active",
             "synergyScore": 72,
-            "timestamp": "2026-07-20T08:34:39.532Z"
+            "timestamp": "2026-07-20T08:37:39.414Z"
         },
         {
-            "id": "dir_wn3aa14yw",
+            "id": "dir_o0quecn2h",
             "priority": "Low",
             "domain": "General",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-07-20T08:34:39.532Z"
+            "timestamp": "2026-07-20T08:37:39.414Z"
         },
         {
-            "id": "dir_4gmtszr4o",
+            "id": "dir_31s4zgpxl",
             "priority": "Medium",
             "domain": "Documentation",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-07-20T08:34:39.532Z"
+            "timestamp": "2026-07-20T08:37:39.414Z"
         }
     ],
     "docker": {
@@ -66,7 +66,7 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1784536395311,
+        "timestamp": 1784536539392,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
@@ -3718,7 +3718,7 @@
                     "type": "Knowledge",
                     "name": "resources",
                     "status": "Ingested",
-                    "source": "https://admanager.google.com/home/resources/"
+                    "source": "https://business.google.com/uk/resources/"
                 },
                 {
                     "type": "Knowledge",
@@ -70006,7 +70006,7 @@
                 {
                     "name": "origin/sentinel-analytics-security-4671865652902331047",
                     "lastMessage": "Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel-analytics-security-4671865652902331047",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -71906,7 +71906,7 @@
                 {
                     "name": "origin/jules-11241585995546672753-dc35702f",
                     "lastMessage": "feat: support docker collaboration and caio work orders",
-                    "lastSeen": "34 hours ago",
+                    "lastSeen": "35 hours ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -75545,7 +75545,7 @@
                 {
                     "name": "origin/jules-caio-integration-13939543537108665408",
                     "lastMessage": "feat: integrate Chief AI Officer (CAIO) role parameters and strategic mandates into knowledge base",
-                    "lastSeen": "87 minutes ago",
+                    "lastSeen": "2 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -75897,7 +75897,7 @@
                 {
                     "name": "origin/intelephense-docs-update-17190911211980979020",
                     "lastMessage": "feat(knowledge): ingest and consolidate updated Intelephense documentation",
-                    "lastSeen": "56 minutes ago",
+                    "lastSeen": "59 minutes ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -78123,7 +78123,7 @@
                 {
                     "name": "main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 441 issues",
-                    "lastSeen": "30 seconds ago",
+                    "lastSeen": "37 seconds ago",
                     "category": "other",
                     "domain": "General",
                     "knowledge": "",
@@ -79234,7 +79234,7 @@
                 {
                     "name": "origin/main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 441 issues",
-                    "lastSeen": "31 seconds ago",
+                    "lastSeen": "38 seconds ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -97665,7 +97665,7 @@
                 {
                     "name": "origin/palette-analytics-ux-9649231222626251426",
                     "lastMessage": "Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-analytics-ux-9649231222626251426",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -101912,7 +101912,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-07-20T08:34:39.529Z"
+            "timestamp": "2026-07-20T08:37:39.386Z"
         },
         "relayState": [
             {
@@ -101922,7 +101922,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-07-20T08:34:39.530Z",
+                "lastActivity": "2026-07-20T08:37:39.393Z",
                 "intensity": 0.85
             },
             {
@@ -101937,5 +101937,5 @@
             }
         ]
     },
-    "last_sync": "2026-07-20T08:34:41.435Z"
+    "last_sync": "2026-07-20T08:37:46.016Z"
 }
