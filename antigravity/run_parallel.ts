@@ -11,7 +11,7 @@ async function acquireLock(agent: string): Promise<boolean> {
       try {
         fs.writeFileSync(LOCK_FILE, JSON.stringify({ agent, timestamp: new Date().toISOString() }), { flag: 'wx' });
         return true;
-      } catch (e) {
+      } catch {
         // file creation failed, lock was acquired concurrently
       }
     }
@@ -28,7 +28,7 @@ function releaseLock(agent: string) {
         fs.unlinkSync(LOCK_FILE);
       }
     }
-  } catch (e) {}
+  } catch {}
 }
 
 export async function runSequentialAgents() {
