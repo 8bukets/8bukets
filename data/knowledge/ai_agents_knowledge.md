@@ -1,13 +1,13 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-07-20T07:51:37.606Z
+**System Analysis:** 2026-07-20T07:56:32.859Z
 
 ---
 
 # unitedsports.news.blog
 
 > **Source:** https://unitedsports.news.blog/
-> **Analyzed At:** 2026-07-20T07:51:22.515Z
+> **Analyzed At:** 2026-07-20T07:56:21.150Z
 
 ### Content
 <title>e&amp;n &#8211; #entertainment #webshop #software #news</title>
@@ -1142,16 +1142,13 @@ itemscope
 itemtype="https://schema.org/ImageGallery">
 Loading Comments...
 You must be logged in to post a comment.
-generated in 1.215 seconds
-480092 bytes batcached for 300 seconds
--->
 
 ---
 
 # software-online-review.com
 
 > **Source:** https://software-online-review.com
-> **Analyzed At:** 2026-07-20T07:51:23.750Z
+> **Analyzed At:** 2026-07-20T07:56:21.905Z
 
 ### Content
 <title>software info by fk &#8211; software-online-review &#8211; Filip Keser</title>
@@ -2794,7 +2791,7 @@ value="Post Comment" />
 # onlinereview.news.blog
 
 > **Source:** https://onlinereview.news.blog/
-> **Analyzed At:** 2026-07-20T07:51:23.415Z
+> **Analyzed At:** 2026-07-20T07:56:21.620Z
 
 ### Content
 <title>news</title>
@@ -3923,16 +3920,13 @@ class="jp-carousel-comment-form-button"
 id="jp-carousel-comment-form-button-submit"
 value="Post Comment" />
 Design a site like this with WordPress.comGet started
-generated in 1.187 seconds
-734584 bytes batcached for 300 seconds
--->
 
 ---
 
 # companylink.business.blog
 
 > **Source:** https://companylink.business.blog/
-> **Analyzed At:** 2026-07-20T07:51:24.152Z
+> **Analyzed At:** 2026-07-20T07:56:22.164Z
 
 ### Content
 <title>Company &amp; news &#8211; #news</title>
@@ -5103,13 +5097,16 @@ name="submit"
 class="jp-carousel-comment-form-button"
 id="jp-carousel-comment-form-button-submit"
 value="Post Comment" />
+generated in 1.320 seconds
+766327 bytes batcached for 300 seconds
+-->
 
 ---
 
 # gamezoneonlinegame.wordpress.com
 
 > **Source:** https://gamezoneonlinegame.wordpress.com/
-> **Analyzed At:** 2026-07-20T07:51:24.586Z
+> **Analyzed At:** 2026-07-20T07:56:22.424Z
 
 ### Content
 <title>game &#8211; online</title>
@@ -6362,16 +6359,13 @@ style="display: none"
 Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use.
 To find out more, including how to control cookies, see here:
 Cookie Policy
-generated in 1.752 seconds
-854482 bytes batcached for 300 seconds
--->
 
 ---
 
 # 2459326
 
 > **Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
-> **Analyzed At:** 2026-07-20T07:51:25.546Z
+> **Analyzed At:** 2026-07-20T07:56:23.264Z
 
 ### Content
 <title>Understanding bidding basics - Google Ads Help</title>       Skip to main content    Google Ads HelpHelp CenterCommunityAnnouncementsSign inGoogle HelpHelp CenterStart advertisingCampaignsExplore featuresOptimize performanceAccount &amp; billingFix issuesGoogle PartnersCommunityGoogle AdsPrivacy PolicyTerms of ServiceSubmit feedback   Send feedback on...This help content &amp; informationGeneral Help Center experienceNextHelp CenterCommunityAnnouncementsGoogle AdsStart advertisingYour guide to Google Ads8 steps to prepare your campaign for successChoose the right campaign typeDetermine your advertising goals How Google Ads can work for your industryGoogle Ads specs: ad formats, sizes, and best practicesMore advertising toolsGoogle Ads basicsGoogle Ads privacyGlossaryCampaignsPerformance MaxAI Max for Search campaignsAI Max for Shopping campaignsSearch campaignsDisplay campaignsSmart CampaignsApp campaignsShopping adsVideo campaignsHotel campaignsDemand Gen campaignsCall campaignsThings to doEvents ticketingExplore featuresAds, assets &amp; landing pagesAd groupsKeywordsBiddingTargetingMeasure resultsBulk uploads &amp; editsCampaign settingsOptimize performance12 tips to advertising with Google AdsGoogle Ads Best PracticesOptimization featuresCreate effective Search adsGenerative AI tools in Google AdsImprove with AI-powered SearchFinding success with Smart BiddingMeasure resultsOptimize performance with App ConnectGoogle Ads training on SkillshopThe Google Ads mobile appAccount &amp; billingBillingAccount settingsAccount accessManager accountsAccount security and safetyCancel or reactivate your accountWorking with client accountsUseful toolsFix issuesAd disapprovals and reviewsBilling &amp; paymentsCompromised account issuesPolicy issuesPerformance issuesAccount access issuesReporting issuesRequest implementation support for Google Ads and YouTube ReserveGoogle Ads APIGoogle PartnersGoogle Partners ProgramHelp Center TopicsCampaignsDisplay campaignsSetup &amp; managementBiddingUnderstanding bidding basics                                     Understanding bidding basics
@@ -6405,14 +6399,14 @@ About Target CPA bidding
 Determine a bid strategy based on your goals
 Was this helpful?How can we improve it?<textarea aria-label="Sorry about that, How can we improve it?" name="article_feedback_comment"></textarea>Submit                 Need more help? Try these next steps:                   Post to the help community    Get answers from community members                   Contact us  Tell us more and we’ll help you get there                     false     Bidding1 of 4About the Display Network ad auction2 of 4About bidding features in Display campaigns3 of 4Choose a bid for your Display Network campaign4 of 4Understanding bidding basics            Achieve your advertising goals today!  Attend our Performance Max Masterclass, a livestream workshop session bringing together industry and Google ads PMax experts.
 Register now
-©2026 Google     Privacy Policy     Terms of Service        Google Ads Advertising Policies      About the Help Center               Send feedback on... This help content &amp; information General Help Center experience           Enable Dark Mode       Language   català&lrm;dansk&lrm;Deutsch&lrm;eesti&lrm;English (Australia)&lrm;English (United Kingdom)&lrm;español&lrm;español (Latinoamérica)&lrm;Filipino&lrm;français&lrm;hrvatski&lrm;Indonesia&lrm;italiano&lrm;latviešu&lrm;lietuvių&lrm;magyar&lrm;Melayu&lrm;Nederlands&lrm;norsk&lrm;polski&lrm;português&lrm;português (Brasil)&lrm;română&lrm;slovenčina&lrm;slovenščina&lrm;suomi&lrm;svenska&lrm;Tiếng Việt&lrm;Türkçe&lrm;čeština&lrm;Ελληνικά&lrm;български&lrm;русский&lrm;српски&lrm;українська&lrm;&rlm;עברית&rlm;العربيةहिन्दी&lrm;ไทย&lrm;中文（简体）&lrm;中文（繁體）&lrm;中文（香港）&lrm;日本語&lrm;한국어&lrm; English&lrm;                     SearchClear searchClose searchGoogle appsMain menu     <textarea class="csi" name="csi"></textarea>           7685514023559830720                                                            true                                                      Search Help Center   true    true     true     true                                                                                       true   true   73067                                                                           false                                        false     true                                                                                                                                                                                          true   false                                                                      false
+©2026 Google     Privacy Policy     Terms of Service        Google Ads Advertising Policies      About the Help Center               Send feedback on... This help content &amp; information General Help Center experience           Enable Dark Mode       Language   català&lrm;dansk&lrm;Deutsch&lrm;eesti&lrm;English (Australia)&lrm;English (United Kingdom)&lrm;español&lrm;español (Latinoamérica)&lrm;Filipino&lrm;français&lrm;hrvatski&lrm;Indonesia&lrm;italiano&lrm;latviešu&lrm;lietuvių&lrm;magyar&lrm;Melayu&lrm;Nederlands&lrm;norsk&lrm;polski&lrm;português&lrm;português (Brasil)&lrm;română&lrm;slovenčina&lrm;slovenščina&lrm;suomi&lrm;svenska&lrm;Tiếng Việt&lrm;Türkçe&lrm;čeština&lrm;Ελληνικά&lrm;български&lrm;русский&lrm;српски&lrm;українська&lrm;&rlm;עברית&rlm;العربيةहिन्दी&lrm;ไทย&lrm;中文（简体）&lrm;中文（繁體）&lrm;中文（香港）&lrm;日本語&lrm;한국어&lrm; English&lrm;                     SearchClear searchClose searchGoogle appsMain menu     <textarea class="csi" name="csi"></textarea>           17608705540133003132                                                            true                                                      Search Help Center   true    true     true     true                                                                                       true   true   73067                                                                           false                                        false     true                                                                                                                                                                                          true   false                                                                      false
 
 ---
 
 # bidding
 
 > **Source:** https://business.google.com/uk/ad-tools/bidding/
-> **Analyzed At:** 2026-07-20T07:51:26.514Z
+> **Analyzed At:** 2026-07-20T07:56:24.127Z
 
 ### Content
 <title>Google Ads Smart Bidding - AI-Driven Bid Optimisations &amp; Ad Spend</title>
@@ -6850,7 +6844,7 @@ Start now
 # resources
 
 > **Source:** https://admanager.google.com/home/resources/
-> **Analyzed At:** 2026-07-20T07:51:31.679Z
+> **Analyzed At:** 2026-07-20T07:56:28.633Z
 
 ### Content
 <title>Resources Overview - Google Ad Manager</title>
@@ -8135,15 +8129,15 @@ onchange="var l10nPath=this[this.selectedIndex].value;if(l10nPath!=''){window.lo
 # ad manager
 
 > **Source:** https://developers.google.com/ad-manager
-> **Analyzed At:** 2026-07-20T07:51:28.253Z
+> **Analyzed At:** 2026-07-20T07:56:25.259Z
 
 ### Content
-lang="tr-x-mtfrom-en"
+lang="en"
 dir="ltr">
 content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
 crossorigin="use-credentials">
 href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=tr">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml">
 href="https://developers.google.com/ad-manager" />
 href="https://developers.google.com/ad-manager?hl=ar" />
 href="https://developers.google.com/ad-manager?hl=bn" />
@@ -8167,23 +8161,22 @@ href="https://developers.google.com/ad-manager?hl=tr" />
 href="https://developers.google.com/ad-manager?hl=vi" /><title>Ad Manager &nbsp;|&nbsp; Google for Developers</title>
 ">
 ">
-href="https://developers.google.com/ad-manager?hl=en">
 template="landing"
 theme="google-blue"
 type="article"
 layout="full"
 concierge='hide'
 pending>
-Ana içeriğe atla
+Skip to main content
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Navigation menu button"
 visually-hidden
-aria-label="Menüyü aç">
+aria-label="Open menu">
 size="medium"
 >
 alt="Google Ad Manager"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=tr"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
@@ -8208,20 +8201,20 @@ enable-search-summaries
 project-name="Ad Manager"
 tenant-name="Google for Developers"
 project-scope="/ad-manager"
-url-scoped="https://developers.google.com/s/results/ad-manager?hl=tr"
+url-scoped="https://developers.google.com/s/results/ad-manager"
 >
 search-open
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Aramayı aç">
+aria-label="Open search">
 aria-activedescendant=""
 aria-autocomplete="list"
-aria-label="Arama"
+aria-label="Search"
 aria-expanded="false"
 aria-haspopup="listbox"
 autocomplete="off"
 class="devsite-search-field devsite-search-query"
 name="q"
-placeholder="Arama"
+placeholder="Search"
 role="combobox"
 type="text"
 value=""
@@ -8229,7 +8222,7 @@ value=""
 <kbd class="devsite-search-shortcut-icon">/</kbd>
 search-close
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="Aramayı kapat">
+aria-label="Close search">
 >English
 >Deutsch
 >Español
@@ -8255,27 +8248,27 @@ aria-label="Aramayı kapat">
 enable-profiles
 fp-auth
 id="devsite-user">
-Oturum aç
+Sign in
 devsite-header-no-lower-tabs
 ">
 hidden>
-placeholder="Filtre"
-aria-label="Filtrelemek için yazın"
+placeholder="Filter"
+aria-label="Type to filter"
 role="searchbox">
-data-title="Filtreyi temizle"
-aria-label="Filtreyi temizle"
+data-title="Clear filter"
+aria-label="Clear filter"
 role="button"
 tabindex="0">
-aria-label="Yan menü">
+aria-label="Side menu">
 id="devsite-close-nav"
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Close navigation"
-aria-label="Gezinmeyi kapat">
+aria-label="Close navigation">
 size="medium"
 >
 alt="Google Ad Manager"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=tr"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
@@ -8294,15 +8287,12 @@ track-metadata-eventdetail="Google Ad Manager"
 Ad Manager
 >
 role="navigation"
-aria-label="Bu sayfada"
+aria-label="On this page"
 depth="2"
 scrollbars
 data-nosnippet
 disabled>
-class="devsite-banner-translated-image invert"
-alt="">
-Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
-aria-label="İçerik haritası">
+aria-label="Breadcrumb">
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -8313,7 +8303,7 @@ track-name="breadcrumb"
 track-metadata-position="1"
 track-metadata-eventdetail=""
 >
-Ana Sayfa
+Home
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -8324,7 +8314,7 @@ track-name="breadcrumb"
 track-metadata-position="2"
 track-metadata-eventdetail=""
 >
-Ürünler
+Products
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -8348,10 +8338,10 @@ track-name="sendFeedbackLink"
 track-metadata-position="header"
 class="nocontent"
 data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=tr"
-project-support-url="https://groups.google.com/forum/?hl=tr#!forum/google-doubleclick-for-publishers-api"
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+project-support-url="https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api"
 >
-Geri bildirim gönderin
+Send feedback
 ack-key="AckCollectionsBookmarkTooltipDismiss"
 analytics-category="Site-Wide Custom Events"
 analytics-action-show="Callout Profile displayed"
@@ -8361,10 +8351,10 @@ class="devsite-page-bookmark-tooltip nocontent"
 data-nosnippet
 dismiss-button="true"
 id="devsite-collections-dropdown"
-dismiss-button-text="Kapat"
-close-button-text="Anladım">
-Koleksiyonlar ile düzeninizi koruyun
-İçeriği tercihlerinize göre kaydedin ve kategorilere ayırın.
+dismiss-button-text="Dismiss"
+close-button-text="Got it">
+Stay organized with collections
+Save and categorize content based on your preferences.
 depth="2"
 devsite-toc-embedded
 disabled>
@@ -8372,9 +8362,9 @@ devsite-no-page-title">
 header-position="top"
 >
 >
-data-text="Google Ad Manager hesaplarınızı ve kampanyalarınızı yönetmek için kullanabileceğiniz bir araç grubu."
+data-text="A set of tools to manage your Google Ad Manager accounts and campaigns."
 tabindex="0">
-Google Ad Manager hesaplarınızı ve kampanyalarınızı yönetmek için kullanabileceğiniz bir araç grubu.
+A set of tools to manage your Google Ad Manager accounts and campaigns.
 header-position="top"
 >
 description-position="bottom"
@@ -8388,10 +8378,10 @@ data-text="Ad Manager API (Beta)"
 class="hide-from-toc no-link"
 tabindex="0">
 Ad Manager API (Beta)
-Yayınlama ve envanter verilerini okuma, rapor çalıştırma ve daha pek çok işlem için yöntemler sağlayan REST API.
+A REST API that provides methods for reading delivery and inventory data, running reports, and more.
 class="button button-secondary
 "
->Başlama
+>Get started
 description-position="bottom"
 >
 icon-position="left"
@@ -8399,15 +8389,11 @@ icon-position="left"
 size="medium"
 >
 phone_iphone
-data-text="Mobile Ads SDK'sı"
+data-text="Mobile Ads SDK"
 class="hide-from-toc no-link"
 tabindex="0">
-Mobile Ads SDK'sı
-Reklamlarla Android, iOS, Unity ve Flutter uygulamalarından para kazanılmasını sağlar.
-class="button button-secondary
-"
->
-Android
+Mobile Ads SDK
+Enables monetization of Android, iOS, Unity, and Flutter apps with ads.
 class="button button-secondary
 "
 >Android
@@ -8420,6 +8406,9 @@ class="button button-secondary
 class="button button-secondary
 "
 >Flutter
+class="button button-secondary
+"
+>Android (Legacy)
 description-position="bottom"
 >
 icon-position="left"
@@ -8427,14 +8416,14 @@ icon-position="left"
 size="medium"
 >
 live_tv
-data-text="Dinamik Reklam Ekleme"
+data-text="Dynamic Ad Insertion"
 class="hide-from-toc no-link"
 tabindex="0">
-Dinamik Reklam Ekleme
-Video içeriğini ve reklamları, sayfadan veya uygulamadan bağımsız olarak tek bir akışa ekler.
+Dynamic Ad Insertion
+Stitches video content and ads into a single stream, independent of page or app.
 class="button button-secondary
 "
->Başlama
+>Get started
 description-position="bottom"
 >
 icon-position="left"
@@ -8442,14 +8431,14 @@ icon-position="left"
 size="medium"
 >
 track_changes
-data-text="Ad Manager SOAP API'sı"
+data-text="Ad Manager SOAP API"
 class="hide-from-toc no-link"
 tabindex="0">
-Ad Manager SOAP API'sı
-Reklam envanterini yönetme, sipariş oluşturma, rapor alma ve benzeri işlemler için yöntemler sunar.
+Ad Manager SOAP API
+Provides methods for managing ad inventory, creating orders, pulling reports, and more.
 class="button button-secondary
 "
->Başlama
+>Get started
 >
 <template class="devsite-thumb-rating-feedback">
 position="thumb-rating"
@@ -8464,17 +8453,17 @@ track-name="sendFeedbackLink"
 track-metadata-position="thumb-rating"
 class="nocontent"
 data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=tr"
-project-support-url="https://groups.google.com/forum/?hl=tr#!forum/google-doubleclick-for-publishers-api"
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+project-support-url="https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api"
 >
-Bize geri bildirimde bulunmak mı istiyorsunuz?
+Need to tell us more?
 </template>
 <template class="devsite-content-data-template">
-[[["Anlaması kolay","easyToUnderstand","thumb-up"],["Sorunumu çözdü","solvedMyProblem","thumb-up"],["Diğer","otherUp","thumb-up"]],[["İhtiyacım olan bilgiler yok","missingTheInformationINeed","thumb-down"],["Çok karmaşık / çok fazla adım var","tooComplicatedTooManySteps","thumb-down"],["Güncel değil","outOfDate","thumb-down"],["Çeviri sorunu","translationIssue","thumb-down"],["Örnek veya kod sorunu","samplesCodeIssue","thumb-down"],["Diğer","otherDown","thumb-down"]],[],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
 </template>
-aria-label="Altbilgi bağlantıları"
+aria-label="Footer links"
 data-nosnippet>
-Ağ
+Connect
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -8505,7 +8494,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 6)"
 >
 YouTube
-Programlar
+Programs
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -8531,7 +8520,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
 >
 Google Cloud & NVIDIA
-Geliştirici konsolları
+Developer consoles
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -8613,19 +8602,19 @@ gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer All products Link"
 >
-Tüm ürünler
+All products
 ">
-href="https://developers.google.com/terms/site-terms?hl=tr"
+href="/terms/site-terms"
 data-category="Site-Wide Custom Events"
 data-label="Footer Terms link"
 >
-Şartlar
+Terms
 ">
-href="//policies.google.com/privacy?hl=tr"
+href="//policies.google.com/privacy"
 data-category="Site-Wide Custom Events"
 data-label="Footer Privacy link"
 >
-Gizlilik
+Privacy
 glue-cookie-notification-bar-control">
 href="#"
 data-category="Site-Wide Custom Events"
@@ -8665,7 +8654,7 @@ data-api-explorer-panel
 # dynamic ad insertion
 
 > **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion
-> **Analyzed At:** 2026-07-20T07:51:28.667Z
+> **Analyzed At:** 2026-07-20T07:56:25.784Z
 
 ### Content
 lang="en"
@@ -8777,8 +8766,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: SDK - Android"
+data-category="DAI top menu navigation"
 >
 Android
 track-type="nav"
@@ -8786,8 +8775,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: SDK - iOS"
+data-category="DAI top menu navigation"
 >
 iOS
 track-type="nav"
@@ -8795,8 +8784,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: SDK - tvOS"
+data-category="DAI top menu navigation"
 >
 tvOS
 track-type="nav"
@@ -8813,8 +8802,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: SDK - Roku"
+data-category="DAI top menu navigation"
 >
 Roku
 </tab>
@@ -8845,8 +8834,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - apis"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: API - Pod serving"
+data-category="DAI top menu navigation"
 >
 Pod serving DAI
 track-type="nav"
@@ -9588,15 +9577,15 @@ data-api-explorer-panel
 # full service
 
 > **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
-> **Analyzed At:** 2026-07-20T07:51:29.852Z
+> **Analyzed At:** 2026-07-20T07:56:26.202Z
 
 ### Content
-lang="he-x-mtfrom-en"
-dir="rtl">
+lang="en"
+dir="ltr">
 content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
 crossorigin="use-credentials">
 href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=he">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml">
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service" />
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ar" />
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=bn" />
@@ -9618,1042 +9607,6 @@ href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=th" />
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=tr" />
 href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=vi" /><title>DAI Full Service API &nbsp;|&nbsp; Google for Developers</title>
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en">
-template="landing"
-theme="google-blue"
-type="product"
-layout="docs"
-concierge='hide'
-pending>
-דילוג לתוכן הראשי
-class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Navigation menu button"
-visually-hidden
-aria-label="פתיחת התפריט">
-size="medium"
->
-alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=he"
-srcset=" /static/ads/images/logo_admanager_192px.svg"
-sizes="64px"
-loading="lazy"
->
->
-devsite-has-google-wordmark">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - דף הבית"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: דף הבית"
-track-name="דף הבית"
->
-דף הבית
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=he"
-track-metadata-position="nav - דף הבית"
-track-metadata-module="tertiary nav"
-tooltip
->
-דף הבית
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - ערכות sdk"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: ערכות SDK"
-track-name="ערכות sdk"
->
-ערכות SDK
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=he"
-track-metadata-position="nav - ערכות sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: SDK - HTML5"
-data-category="DAI top menu navigation"
->
-HTML5
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=he"
-track-metadata-position="nav - ערכות sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - Android"
->
-Android
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=he"
-track-metadata-position="nav - ערכות sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - iOS"
->
-iOS
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=he"
-track-metadata-position="nav - ערכות sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - tvOS"
->
-tvOS
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=he"
-track-metadata-position="nav - ערכות sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - Chromecast"
->
-Chromecast
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=he"
-track-metadata-position="nav - ערכות sdk"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: SDK - Roku"
->
-Roku
-</tab>
-<tab class="devsite-dropdown
-devsite-active
-">
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=he"
-track-type="nav"
-track-metadata-position="nav - ממשקי api"
-track-metadata-module="primary nav"
-aria-label="ממשקי API, selected"
-data-category="Site-Wide Custom Events"
-data-label="Tab: ממשקי API"
-track-name="ממשקי api"
->
-ממשקי API
-aria-haspopup="menu"
-aria-expanded="false"
-aria-label="התפריט הנפתח של ממשקי API"
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=he"
-track-metadata-position="nav - ממשקי api"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: ממשקי API"
-track-name="ממשקי api"
-class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down">
-">
-">
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=he"
-track-metadata-position="nav - ממשקי api"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: API - Full service"
->
-DAI בשירות מלא
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=he"
-track-metadata-position="nav - ממשקי api"
-track-metadata-module="tertiary nav"
-tooltip
-data-label="Tab menu: API - Pod serving"
-data-category="DAI top menu navigation"
->
-הצגת DAI ב-Pod
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=he"
-track-metadata-position="nav - ממשקי api"
-track-metadata-module="tertiary nav"
-tooltip
-data-category="DAI top menu navigation"
-data-label="Tab menu: API - Ad break"
->
-הפסקה למודעה
-</tab>
-<tab class="devsite-dropdown
-">
-class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
-track-type="nav"
-track-metadata-position="nav - משאבים"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: משאבים"
-track-name="משאבים"
->
-משאבים
-">
-">
-תמיכה
-track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/community?hl=he"
-track-metadata-position="nav - משאבים"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="תמיכה"
-tooltip
->
-קהילת העזרה של Ad Manager
-track-type="nav"
-track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=he"
-track-metadata-position="nav - משאבים"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="תמיכה"
-tooltip
->
-פנייה לתמיכה
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=he"
-track-metadata-position="nav - משאבים"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="תמיכה"
-tooltip
->
-תנאים והגבלות
-track-type="nav"
-track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
-track-metadata-position="nav - משאבים"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="תמיכה"
-tooltip
->
-הערוץ הרשמי של Google Ad Manager ב-Discord
-track-type="nav"
-track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
-track-metadata-position="nav - משאבים"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="תמיכה"
-tooltip
->
-הבלוג של Ads Developer
-">
-">
-כלי בדיקה
-track-type="nav"
-track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
-track-metadata-position="nav - משאבים"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="כלי בדיקה"
-tooltip
->
-כלי לבדיקת חבילת הווידאו
-track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=he"
-track-metadata-position="nav - משאבים"
-track-metadata-module="tertiary nav"
-track-metadata-module_headline="כלי בדיקה"
-tooltip
->
-זרימות לדוגמה
-</tab>
-enable-signin
-enable-search
-enable-suggestions
-enable-query-completion
-enable-search-summaries
-project-name="DAI Full Service API"
-tenant-name="Google for Developers"
-project-scope="/ad-manager/dynamic-ad-insertion/api/full-service"
-url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/full-service?hl=he"
->
-search-open
-class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="פתיחת החיפוש">
-aria-activedescendant=""
-aria-autocomplete="list"
-aria-label="חיפוש"
-aria-expanded="false"
-aria-haspopup="listbox"
-autocomplete="off"
-class="devsite-search-field devsite-search-query"
-name="q"
-placeholder="חיפוש"
-role="combobox"
-type="text"
-value=""
->
-<kbd class="devsite-search-shortcut-icon">/</kbd>
-search-close
-class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="סגירת החיפוש">
->English
->Deutsch
->Español
->Español – América Latina
->Français
->Indonesia
->Italiano
->Polski
->Português – Brasil
->Tiếng Việt
->Türkçe
->Русский
->עברית
->العربيّة
->فارسی
->हिंदी
->বাংলা
->ภาษาไทย
->中文 – 简体
->中文 – 繁體
->日本語
->한국어
-enable-profiles
-fp-auth
-id="devsite-user">
-היכנס
-">
->
->
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Lower Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail=""
->
-DAI API בשירות מלא
-<tab  class="devsite-active">
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=he"
-track-type="nav"
-track-metadata-position="nav - מדריכים"
-track-metadata-module="primary nav"
-aria-label="מדריכים, selected"
-data-category="Site-Wide Custom Events"
-data-label="Tab: מדריכים"
-track-name="מדריכים"
->
-מדריכים
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/reference/live?hl=he"
-track-type="nav"
-track-metadata-position="nav - חומרי עזר"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: חומרי עזר"
-track-name="חומרי עזר"
->
-חומרי עזר
-</tab>
->
-placeholder="סינון"
-aria-label="כאן כותבים את הטקסט לסינון התוצאות"
-role="searchbox">
-data-title="ניקוי הסינון"
-aria-label="ניקוי הסינון"
-role="button"
-tabindex="0">
-aria-label="תפריט צד">
-id="devsite-close-nav"
-class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Close navigation"
-aria-label="סגירת הניווט">
-size="medium"
->
-alt="Google Dynamic Ad Insertion"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=he"
-srcset=" /static/ads/images/logo_admanager_192px.svg"
-sizes="64px"
-loading="lazy"
->
->
-devsite-has-google-wordmark">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: דף הבית"
-track-name="דף הבית"
->
-דף הבית
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: דף הבית"
-track-name="דף הבית"
->
-עוד
-menu="דף הבית">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: ערכות SDK"
-track-name="ערכות sdk"
->
-ערכות SDK
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: ערכות SDK"
-track-name="ערכות sdk"
->
-עוד
-menu="ערכות SDK">
-class="devsite-nav-title gc-analytics-event
-devsite-nav-active"
-data-category="Site-Wide Custom Events"
-data-label="Tab: ממשקי API"
-track-name="ממשקי api"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: ממשקי API"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-ממשקי API
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: ממשקי API"
-track-name="ממשקי api"
->
-עוד
-menu="ממשקי API">
-class="devsite-nav-title gc-analytics-event
-devsite-nav-active"
-data-category="Site-Wide Custom Events"
-data-label="Tab: מדריכים"
-track-name="מדריכים"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: מדריכים"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-מדריכים
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Tab: חומרי עזר"
-track-name="חומרי עזר"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: חומרי עזר"
-track-type="globalNav"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-חומרי עזר
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: משאבים"
-track-name="משאבים"
->
-משאבים
-">
-class="devsite-nav-title"
-tooltip
-data-category="Site-Wide Custom Events"
-data-label="Tab: משאבים"
-track-name="משאבים"
->
-עוד
-menu="משאבים">
-class="devsite-nav-title"
->סקירה כללית
-class="devsite-nav-title"
->מידע על DAI Full Service API
-devsite-nav-expandable">
-אימות בקשות באמצעות טוקן HMAC
-devsite-nav-expandable">
-בקשות להפעלת שידור
-class="devsite-nav-title"
->סקירה כללית
-class="devsite-nav-title"
->אימות בקשות להפעלת סשן ב-Stream
-devsite-nav-heading">
-פיתוח
-class="devsite-nav-title"
->ניהול שידורים חיים עם DAI
-class="devsite-nav-title"
->שליחת בקשה להפעלת מקורות VOD עם DAI
-class="devsite-nav-title"
->הטמעת AdChoices
-class="devsite-nav-title"
->הפעלת מודעות שניתן לדלג עליהן בסטרימינג של VOD
-aria-label="תפריט צד" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: דף הבית"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-דף הבית
-aria-label="תפריט צד" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: HTML5"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-HTML5
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Android"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Android
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: iOS"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-iOS
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: tvOS"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-tvOS
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Chromecast"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Chromecast
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: Roku"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-Roku
-aria-label="תפריט צד" hidden>
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: DAI בשירות מלא"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-DAI בשירות מלא
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: הצגת DAI ב-Pod"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-הצגת DAI ב-Pod
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: הפסקה למודעה"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-הפסקה למודעה
-aria-label="תפריט צד" hidden>
-class="devsite-nav-title"
-tooltip
->
-תמיכה
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: קהילת העזרה של Ad Manager"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-קהילת העזרה של Ad Manager
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: פנייה לתמיכה"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-פנייה לתמיכה
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: תנאים והגבלות"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-תנאים והגבלות
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: הערוץ הרשמי של Google Ad Manager ב-Discord"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-הערוץ הרשמי של Google Ad Manager ב-Discord
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: הבלוג של Ads Developer"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-הבלוג של Ads Developer
-class="devsite-nav-title"
-tooltip
->
-כלי בדיקה
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: כלי לבדיקת חבילת הווידאו"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-כלי לבדיקת חבילת הווידאו
-class="devsite-nav-title gc-analytics-event
-"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: זרימות לדוגמה"
-track-type="navMenu"
-track-metadata-eventDetail="globalMenu"
-track-metadata-position="nav">
-זרימות לדוגמה
-has-book-nav
->
-role="navigation"
-aria-label="בדף הזה"
-depth="2"
-scrollbars
-data-nosnippet
-disabled>
->
-DAI API הוא בגרסת בטא ויכול להיות שלא יהיה זמין ברשת שלכם. לקבלת מידע נוסף יש לפנות למנהל החשבון. מומלץ להשתמש ב-IMA SDK בפלטפורמות שבהן הוא זמין.
-class="devsite-banner-translated-image invert"
-alt="">
-Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
-aria-label="נתיב ניווט">
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="1"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="1"
-track-metadata-eventdetail=""
->
-דף הבית
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail=""
->
-מוצרים
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="3"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="3"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-Dynamic Ad Insertion
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="4"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="4"
-track-metadata-eventdetail="Google Dynamic Ad Insertion"
->
-DAI Full Service API
-">
-class="devsite-breadcrumb-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Breadcrumbs"
-data-value="5"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="5"
-track-metadata-eventdetail=""
->
-ממשקי API
-ack-key="AckCollectionsBookmarkTooltipDismiss"
-analytics-category="Site-Wide Custom Events"
-analytics-action-show="Callout Profile displayed"
-analytics-action-close="Callout Profile dismissed"
-analytics-label="Create Collection Callout"
-class="devsite-page-bookmark-tooltip nocontent"
-data-nosnippet
-dismiss-button="true"
-id="devsite-collections-dropdown"
-dismiss-button-text="סגירה"
-close-button-text="הבנתי">
-קל לארגן דפים בעזרת אוספים
-אפשר לשמור ולסווג תוכן על סמך ההעדפות שלך.
-depth="2"
-devsite-toc-embedded
-disabled>
-devsite-no-page-title">
-header-position="top"
->
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice.png?hl=he"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_36.png?hl=he 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_48.png?hl=he 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_72.png?hl=he 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_96.png?hl=he 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_480.png?hl=he 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_720.png?hl=he 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_856.png?hl=he 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_960.png?hl=he 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1440.png?hl=he 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1920.png?hl=he 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_2880.png?hl=he 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-fetchpriority="high">
->
-data-text="DAI בשירות מלא"
-class="hide-from-toc no-link"
-tabindex="0">
-DAI בשירות מלא
-הטמעת מודעות דינמיות (DAI) בשירות מלא היא ההטמעה מקצה לקצה של Google של הטמעת מודעות בצד השרת (SSAI). הוא מאפשר לבעלי תוכן דיגיטלי לספק סטרימינג של תוכן בפורמט HLS או MPEG DASH, ושרתי ה-DAI של Google יבחרו ויכניסו מודעות מתאימות לסטרימינג, משרתי מודעות של Google או של צד שלישי, לפני שהסטרימינג יוצג למשתמש.
-background="grey"
-header-position="top"
->
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram.png?hl=he"
-srcset="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_36.png?hl=he 36w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_48.png?hl=he 48w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_72.png?hl=he 72w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_96.png?hl=he 96w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_480.png?hl=he 480w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_720.png?hl=he 720w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_856.png?hl=he 856w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_960.png?hl=he 960w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1440.png?hl=he 1440w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1920.png?hl=he 1920w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_2880.png?hl=he 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-loading="lazy"
->
->
-data-text="בעזרת IMA DAI SDK"
-class="hide-from-toc no-link"
-tabindex="0">
-בעזרת IMA DAI SDK
-דף האינטרנט או האפליקציה טוענים את IMA DAI SDK באמצעות:
-תג סקריפט מוטמע עבור HTML5
-אפליקציה מקורית ל-Android, ל-Google Cast, ל-iOS, ל-tvOS או ל-Roku
-ה-SDK מבקש שידור VOD או שידור חי מ-Google Ad Manager 360.
-פלטפורמת Ad Manager 360 מגיבה לשידור הווידאו שכולל
-הפסקות למודעות שהוכנסו.
-ה-SDK מנתח את התגובה, קובע את סוג המדיה הנכון
-בהתאם לסביבה ומעביר את שידור הווידאו (והמודעות הנלוות
-במקרה הצורך) לדף האינטרנט או לאפליקציה.
-פרטי ההפעלה של הנגן מתנהלים במשא ומתן לגבי פרטי ההפעלה של נגן הווידאו עם ה-SDK
-ומפעיל את התוכן.
-נגן הווידאו מאזין למטא-נתונים של מודעות וידאו In-stream ומעביר אותם
-ל-SDK לעיבוד.
-ה-SDK מפעיל פינגים של חשיפות ואירועי מעקב לפי הצורך.
-כדי לקבל הוראות מפורטות להטמעת נגן וידאו של לקוח
-באמצעות IMA DAI SDK, אפשר לעיין במדריכים שלנו בנושא SDK:
-HTML5
-Android
-iOS
-tvOS
-Chromecast
-Roku
-description-position="bottom"
->
-">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api.png?hl=he"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_36.png?hl=he 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_48.png?hl=he 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_72.png?hl=he 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_96.png?hl=he 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_480.png?hl=he 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_720.png?hl=he 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_856.png?hl=he 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_960.png?hl=he 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1440.png?hl=he 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1920.png?hl=he 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_2880.png?hl=he 2880w"
-sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
-loading="lazy"
->
->
-data-text="בעזרת DAI API"
-class="hide-from-toc no-link"
-tabindex="0">
-בעזרת DAI API
-אפליקציית הנגן של הלקוח מבקשת שידור VOD או שידור חי מ-Google Ad Manager 360.
-מערכת Ad Manager 360 מגיבה עם וידאו בסטרימינג שכולל
-שהוכנסו הפסקות למודעות.
-אפליקציית הנגן של הלקוח מתחילה את הפעלת השידור, ואז
-מבקשת מטא-נתונים של מודעות פעם אחת (בשידורי VOD) או מתחילה באופן קבוע
-עריכת סקרים למטא-נתונים של מודעות (בשידורים חיים).
-אפליקציית הנגן של הלקוח מקשיבה למטא-נתונים של מודעות In-stream, מפענחת אותם ומשוותת אותם לערכים במטא-נתונים של המודעה כדי לזהות אירועי מודעות.
-אפליקציית נגן הווידאו של הלקוח מפעילה פינגים של חשיפות של מודעות
-אירועי מעקב לפי הצורך.
-לקבלת הוראות מפורטות להטמעה של נגן וידאו בחשבון הלקוח,
-באמצעות DAI REST API, תוכלו לעיין במדריכים שלנו ל-API:
-Live API
-VOD API
-hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
-listnr-id="82128">
-אלא אם צוין אחרת, התוכן של דף זה הוא ברישיון Creative Commons Attribution 4.0 ודוגמאות הקוד הן ברישיון Apache 2.0. לפרטים, ניתן לעיין במדיניות האתר Google Developers‏.‏ Java הוא סימן מסחרי רשום של חברת Oracle ו/או של השותפים העצמאיים שלה.
-עדכון אחרון: 2026-03-05 (שעון UTC).
->
-<template class="devsite-content-data-template">
-[[["התוכן קל להבנה","easyToUnderstand","thumb-up"],["התוכן עזר לי לפתור בעיה","solvedMyProblem","thumb-up"],["סיבה אחרת","otherUp","thumb-up"]],[["חסרים לי מידע או פרטים","missingTheInformationINeed","thumb-down"],["התוכן מורכב מדי או עם יותר מדי שלבים","tooComplicatedTooManySteps","thumb-down"],["התוכן לא עדכני","outOfDate","thumb-down"],["בעיה בתרגום","translationIssue","thumb-down"],["בעיה בדוגמאות/בקוד","samplesCodeIssue","thumb-down"],["סיבה אחרת","otherDown","thumb-down"]],["עדכון אחרון: 2026-03-05 (שעון UTC)."],[],[]]
-</template>
-aria-label="קישורים בכותרת התחתונה"
-data-nosnippet>
-המרכז
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-בלוג
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Bluesky
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Instagram
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-LinkedIn
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-‫X (טוויטר)
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 6)"
->
-YouTube
-תוכניות
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Google Developer Program
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Google Developer Groups
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Google Developer Experts
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-Accelerators
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-Google Cloud & NVIDIA
-Developer Consoles
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 1)"
->
-Google API Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 2)"
->
-Google Cloud Platform Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 3)"
->
-Google Play Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 4)"
->
-Firebase Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 5)"
->
-Actions on Google Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 6)"
->
-Cast SDK Developer Console
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 7)"
->
-Chrome Web Store Dashboard
-class="devsite-footer-linkbox-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Link (index 8)"
->
-Google Home Developer Console
-class="devsite-footer-sites-logo-link gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google Developers Link">
-src="https://www.gstatic.com/devrel-devsite/prod/v544324a32f4e1e28baf5bd35dca83b6157fef32c5ffbe146b7ca395602e11426/developers/images/lockup-google-for-developers.svg"
-loading="lazy"
-alt="Google Developers">
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Android Link"
->
-Android
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Chrome Link"
->
-Chrome
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Firebase Link"
->
-Firebase
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google Cloud Platform Link"
->
-Google Cloud Platform
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer Google AI Link"
->
-Google AI
-class="devsite-footer-sites-link
-gc-analytics-event"
-data-category="Site-Wide Custom Events"
-data-label="Footer All products Link"
->
-כל המוצרים
-">
-href="https://developers.google.com/terms/site-terms?hl=he"
-data-category="Site-Wide Custom Events"
-data-label="Footer Terms link"
->
-תנאים
-">
-href="//policies.google.com/privacy?hl=he"
-data-category="Site-Wide Custom Events"
-data-label="Footer Privacy link"
->
-פרטיות
-glue-cookie-notification-bar-control">
-href="#"
-data-category="Site-Wide Custom Events"
-data-label="Footer Manage cookies link"
-aria-hidden="true"
->
-Manage cookies
->English
->Deutsch
->Español
->Español – América Latina
->Français
->Indonesia
->Italiano
->Polski
->Português – Brasil
->Tiếng Việt
->Türkçe
->Русский
->עברית
->العربيّة
->فارسی
->हिंदी
->বাংলা
->ภาษาไทย
->中文 – 简体
->中文 – 繁體
->日本語
->한국어
-data-info-panel
-data-ai-panel
-data-api-explorer-panel
->
-
----
-
-# pod serving
-
-> **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
-> **Analyzed At:** 2026-07-20T07:51:30.188Z
-
-### Content
-lang="en"
-dir="ltr">
-content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
-crossorigin="use-credentials">
-href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml">
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ar" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=bn" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-cn" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-tw" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fr" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=de" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=he" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=hi" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=id" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=it" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ja" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ko" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pl" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pt-br" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ru" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr" />
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=vi" /><title>DAI Pod Serving API &nbsp;|&nbsp; Google for Developers</title>
 template="landing"
 theme="google-blue"
 type="product"
@@ -10734,8 +9687,8 @@ track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-
 track-metadata-position="nav - sdks"
 track-metadata-module="tertiary nav"
 tooltip
-data-category="DAI top menu navigation"
 data-label="Tab menu: SDK - Android"
+data-category="DAI top menu navigation"
 >
 Android
 track-type="nav"
@@ -10779,7 +9732,7 @@ Roku
 devsite-active
 ">
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
 track-type="nav"
 track-metadata-position="nav - apis"
 track-metadata-module="primary nav"
@@ -10793,7 +9746,7 @@ aria-haspopup="menu"
 aria-expanded="false"
 aria-label="Dropdown menu for APIs"
 track-type="nav"
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
 track-metadata-position="nav - apis"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
@@ -10909,10 +9862,10 @@ enable-search
 enable-suggestions
 enable-query-completion
 enable-search-summaries
-project-name="DAI Pod Serving API"
+project-name="DAI Full Service API"
 tenant-name="Google for Developers"
-project-scope="/ad-manager/dynamic-ad-insertion/api/pod-serving"
-url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/pod-serving"
+project-scope="/ad-manager/dynamic-ad-insertion/api/full-service"
+url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/full-service"
 >
 search-open
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
@@ -10973,10 +9926,10 @@ track-name="breadcrumb"
 track-metadata-position="1"
 track-metadata-eventdetail=""
 >
-DAI pod serving API
+Full service DAI API
 <tab  class="devsite-active">
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
 track-type="nav"
 track-metadata-position="nav - guides"
 track-metadata-module="primary nav"
@@ -10989,7 +9942,7 @@ Guides
 </tab>
 <tab  >
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/reference/live"
 track-type="nav"
 track-metadata-position="nav - reference"
 track-metadata-module="primary nav"
@@ -11126,7 +10079,7 @@ menu="Resources">
 class="devsite-nav-title"
 >Overview
 class="devsite-nav-title"
->Learn DAI Pod Serving API
+>Learn the DAI Full Service API
 devsite-nav-expandable">
 Authenticate requests with HMAC token
 devsite-nav-expandable">
@@ -11135,46 +10088,16 @@ class="devsite-nav-title"
 >Overview
 class="devsite-nav-title"
 >Authenticate Stream Session Requests
-devsite-nav-expandable">
-Ad Pod Requests
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Authenticate Pod Segment Requests
-class="devsite-nav-title"
->Authenticate Pod Manifest Requests
-class="devsite-nav-title"
->Authenticate Ad Pod Timing Metadata Request
-class="devsite-nav-title"
->Token Generator
 devsite-nav-heading">
-Develop server-side ad insertion
-devsite-nav-expandable">
-Manage SSAI livestreams
+Develop
 class="devsite-nav-title"
->Overview
+>Manage DAI livestreams
 class="devsite-nav-title"
->Prepare client video player app
-devsite-nav-expandable">
-Develop manifest manipulation server
+>Request DAI VOD streams
 class="devsite-nav-title"
->Insert ads with ad pod timing metadata
+>Implement AdChoices
 class="devsite-nav-title"
->Insert ads using segment redirects
-devsite-nav-expandable">
-Manage SSAI VOD streams
-class="devsite-nav-title"
->Overview
-class="devsite-nav-title"
->Prepare your client video player app
-class="devsite-nav-title"
->Configure your manifest manipulation server
-devsite-nav-heading">
-Set up server-guided ad insertion
-class="devsite-nav-title"
->About server-guided ad insertion
-class="devsite-nav-title"
->Get started with SGAI for livestream
+>Enable skippable ads in VOD streams
 aria-label="Side menu" hidden>
 class="devsite-nav-title gc-analytics-event
 "
@@ -11331,6 +10254,8 @@ depth="2"
 scrollbars
 data-nosnippet
 disabled>
+>
+The DAI API is in Beta and might not be available in your network. Contact your account manager for more information. The IMA SDK is recommended for platforms where it is available.
 aria-label="Breadcrumb">
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
@@ -11375,7 +10300,7 @@ track-name="breadcrumb"
 track-metadata-position="4"
 track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-DAI Pod Serving API
+DAI Full Service API
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -11409,116 +10334,84 @@ header-position="top"
 description-position="bottom"
 >
 ">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_2880.png 2880w"
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice.png"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-fullservice_2880.png 2880w"
 sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
 fetchpriority="high">
 >
-data-text="DAI Pod Serving"
+data-text="Full service DAI"
 class="hide-from-toc no-link"
 tabindex="0">
-DAI Pod Serving
-Dynamic Ad Insertion (DAI) Pod Serving lets you request ad pods, from Google or third-party ad servers, for live and video-on-demand (VOD) streams. For more details, see  Configure ad pods and break templates.
-For livestream, Google Ad Manager supports the following DAI types:
-Pod serving redirect: lets you retrieve manifest segments to implement
-Server-Side Ad Insertion (SSAI). The segments are dynamic URLs, redirecting to either
-content or ad media files.
-Pod serving manifest: lets you retrieve the complete manifest of the ad pods to
-implement Server-Side Ad Insertion (SSAI). For more details,
-see Server guided DAI.
-For VOD, Google Ad Manager returns the complete ad pod manifests.
-DAI Pod serving offers the following supported platforms:
-HTML5
-Android
-iOS
-tvOS
-Chromecast
-Roku
-For details on livestream and VOD, see the following workflows:
+Full service DAI
+Full service Dynamic Ad Insertion (DAI) is Google's end-to-end implementation of server-side ad insertion (SSAI). It allows publishers to provide a content stream in either HLS or MPEG DASH format, and Google's DAI servers will select and insert appropriate advertisements into the stream, from Google or third-party ad servers, before presenting it to the user.
 background="grey"
 header-position="top"
 >
 description-position="bottom"
 >
 ">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_2880.png 2880w"
+src="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram.png"
+srcset="https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_36.png 36w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_48.png 48w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_72.png 72w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_96.png 96w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_480.png 480w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_720.png 720w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_856.png 856w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_960.png 960w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1440.png 1440w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_1920.png 1920w,https://developers.google.com/static/interactive-media-ads/images/dai-architecture-diagram_2880.png 2880w"
 sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
 loading="lazy"
 >
 >
-data-text="Stitch ads into a livestream"
+data-text="With the IMA DAI SDK"
 class="hide-from-toc no-link"
 tabindex="0">
-Stitch ads into a livestream
-To start a livestream session, make a stream registration request.
-Set ad tag parameters unique for the stream request to
-override the DAI ad tag's default values. For more details about
-ad targeting, see
-Supply targeting parameters to your stream.
-Retrieve the unique user session ID from the stream registration
-response. For more details about using the session ID, see
-Locate a DAI session ID or debug key and
-Monitor and debug a specific stream session.
-Make a manifest request to your video stitcher or manifest
-manipulator, passing the session ID. Repeat the request for
-manifest updates throughout playback.
-For DASH manifests, make one period template request for the entire session.
-For DASH manifests, cache the period template. For each ad break,
-retrieve the cached template and populate all macros with the ad break data.
-For more details about supported macros,
-see Populate the period template.
-Then, insert the result period into the final manifest.
-Return the final manifest that contains content or ad media segments for
-client playback.
-Playback begins.
-Regularly poll Google Ad Manager for updates of ad metadata using the polling frequency
-returned in the stream request.
-Store the ad metadata for looking up ad events.
-During an ad break, the video player loads the media segments and
-follows Google Ad Manager redirects to the media files.
-During an ad break,
-listen to the video player for timed metadata, containing ID3
-tags. Extract the ad event ID from the ID3 tag to find the
-associated ad metadata.
-Send media verification pings
-to Google Ad Manager.
+With the IMA DAI SDK
+The web page or app loads the IMA DAI SDK through:
+an embedded script tag for HTML5
+a native app for Android, Google Cast, iOS, tvOS, or Roku
+The SDK requests either a VOD stream or live stream from Google Ad
+Manager 360.
+Ad Manager 360 responds with the video stream that includes
+inserted ad breaks.
+The SDK parses the response, determines the correct media type
+based on environment, and delivers the video stream (and companion
+ads if needed) to the web page or app.
+The video player negotiates the playback details with the SDK and
+plays the content.
+The video player listens for instream metadata and passes it to the
+SDK for processing.
+The SDK fires impression pings and tracking events as needed.
+For detailed instructions on how to implement a client video player
+using the IMA DAI SDK, check out our SDK guides:
+HTML5
+Android
+iOS
+tvOS
+Chromecast
+Roku
 description-position="bottom"
 >
 ">
-src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram.png"
-srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_2880.png 2880w"
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api.png"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_36.png 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_48.png 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_72.png 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_96.png 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_480.png 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_720.png 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_856.png 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_960.png 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1440.png 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_1920.png 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-full-service-api_2880.png 2880w"
 sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
 loading="lazy"
 >
 >
-data-text="Stitch ads into a VOD stream"
+data-text="With the DAI API"
 class="hide-from-toc no-link"
 tabindex="0">
-Stitch ads into a VOD stream
-Make a stream request to register a VOD stream
-session. Set ad tag parameters unique for the stream request to
-override the DAI ad tag's default values. For more details, see
-Supply targeting parameters to your stream.
-Retrieve the session ID from the stream response. To inspect the stream session, see
-Locate a DAI session ID or debug key and
-Monitor and debug a specific stream session.
-Make a manifest request to your video stitcher or manifest
-manipulator, passing the session ID.
-Use the session ID to request all ad pods at once.
-Retrieve complete manifests of all ad pods. To create the final manifest, stitch the ad
-pod manifests with the content stream.
-Return the final manifest, containing both content and ad segments.
-Request ad metadata for all ad events. Store the ad metadata for
-looking up ad events. Playback begins.
-During an ad break, the video player loads the media segments and
-follows Google Ad Manager redirects to the media files.
-During an ad break,
-href="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client#listen_for_ad_events">
-listen for ad events containing ID3 tags. To find the ad event metadata, extract
-the ad event ID from the ID3 tag and match the ID with the ad metadata.
-Send media verification pings
-to Google Ad Manager.
+With the DAI API
+The client's player app requests either a VOD stream or live stream
+from Google Ad Manager 360.
+Ad Manager 360 responds with the video stream that includes
+inserted ad breaks.
+The client's player app begins playback of the stream, and either
+requests ad metadata once (for VOD streams) OR begins regularly
+polling for ad metadata (for live streams).
+The client's player app listens for instream metadata, parses it,
+and compares it to the values in the ad metadata to identify ad
+events.
+The client's video player app fires ad impression pings and
+tracking events as needed.
+For detailed instructions on how to implement a client video player,
+using the DAI REST API, check out our API guides:
+Live API
+VOD API
 hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
 listnr-id="82128">
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
@@ -11717,63 +10610,61 @@ data-api-explorer-panel
 
 ---
 
-# start
+# pod serving
 
-> **Source:** https://developers.google.com/ad-manager/api/start
-> **Analyzed At:** 2026-07-20T07:51:31.214Z
+> **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
+> **Analyzed At:** 2026-07-20T07:56:27.527Z
 
 ### Content
-lang="zh-TW-x-mtfrom-en"
+lang="tr-x-mtfrom-en"
 dir="ltr">
 content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
 crossorigin="use-credentials">
 href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
-title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=zh-tw">
-href="https://developers.google.com/ad-manager/api/start" />
-href="https://developers.google.com/ad-manager/api/start?hl=ar" />
-href="https://developers.google.com/ad-manager/api/start?hl=bn" />
-href="https://developers.google.com/ad-manager/api/start?hl=zh-cn" />
-href="https://developers.google.com/ad-manager/api/start?hl=zh-tw" />
-href="https://developers.google.com/ad-manager/api/start?hl=fa" />
-href="https://developers.google.com/ad-manager/api/start?hl=fr" />
-href="https://developers.google.com/ad-manager/api/start?hl=de" />
-href="https://developers.google.com/ad-manager/api/start?hl=he" />
-href="https://developers.google.com/ad-manager/api/start?hl=hi" />
-href="https://developers.google.com/ad-manager/api/start?hl=id" />
-href="https://developers.google.com/ad-manager/api/start?hl=it" />
-href="https://developers.google.com/ad-manager/api/start?hl=ja" />
-href="https://developers.google.com/ad-manager/api/start?hl=ko" />
-href="https://developers.google.com/ad-manager/api/start?hl=pl" />
-href="https://developers.google.com/ad-manager/api/start?hl=pt-br" />
-href="https://developers.google.com/ad-manager/api/start?hl=ru" />
-href="https://developers.google.com/ad-manager/api/start?hl=es-419" />
-href="https://developers.google.com/ad-manager/api/start?hl=th" />
-href="https://developers.google.com/ad-manager/api/start?hl=tr" />
-href="https://developers.google.com/ad-manager/api/start?hl=vi" /><title>開始使用 &nbsp;|&nbsp; Ad Manager SOAP API &nbsp;|&nbsp; Google for Developers</title>
-">
-">
-href="https://developers.google.com/ad-manager/api/start?hl=en">
-template="page"
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml?hl=tr">
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ar" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=bn" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-cn" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=zh-tw" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fr" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=de" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=he" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=hi" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=id" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=it" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ja" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ko" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pl" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=pt-br" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ru" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr" />
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=vi" /><title>DAI Pod Serving API &nbsp;|&nbsp; Google for Developers</title>
+href="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en">
+template="landing"
 theme="google-blue"
-type="article"
+type="product"
 layout="docs"
-display-toc
+concierge='hide'
 pending>
-跳至主要內容
+Ana içeriğe atla
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Navigation menu button"
 visually-hidden
-aria-label="開啟選單">
+aria-label="Menüyü aç">
 size="medium"
 >
-alt="Google Ad Manager"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=zh-tw"
+alt="Google Dynamic Ad Insertion"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=tr"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
 >
-aria-label="產品導覽標記">
+>
 devsite-has-google-wordmark">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -11782,42 +10673,249 @@ data-value="1"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="1"
-track-metadata-eventdetail="Google Ad Manager"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-Ad Manager
+Dynamic Ad Insertion
+<tab class="devsite-dropdown
 ">
-class="devsite-breadcrumb-link gc-analytics-event"
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - ana sayfa"
+track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail="Google Ad Manager SOAP API"
+data-label="Tab: Ana Sayfa"
+track-name="ana sayfa"
 >
-SOAP API
+Ana Sayfa
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=tr"
+track-metadata-position="nav - ana sayfa"
+track-metadata-module="tertiary nav"
+tooltip
+>
+Ana Sayfa
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK&#39;lar"
+track-name="sdk&#39;lar"
+>
+SDK&#39;lar
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - HTML5"
+data-category="DAI top menu navigation"
+>
+HTML5
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - Android"
+data-category="DAI top menu navigation"
+>
+Android
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: SDK - iOS"
+data-category="DAI top menu navigation"
+>
+iOS
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - tvOS"
+>
+tvOS
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - Chromecast"
+>
+Chromecast
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=tr"
+track-metadata-position="nav - sdk&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: SDK - Roku"
+>
+Roku
+</tab>
+<tab class="devsite-dropdown
+devsite-active
+">
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr"
+track-type="nav"
+track-metadata-position="nav - api&#39;lar"
+track-metadata-module="primary nav"
+aria-label="API&#39;lar, selected"
+data-category="Site-Wide Custom Events"
+data-label="Tab: API&#39;lar"
+track-name="api&#39;lar"
+>
+API&#39;lar
+aria-haspopup="menu"
+aria-expanded="false"
+aria-label="İlgili açılır menüsü: API&#39;lar"
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr"
+track-metadata-position="nav - api&#39;lar"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: API&#39;lar"
+track-name="api&#39;lar"
+class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down">
+">
+">
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=tr"
+track-metadata-position="nav - api&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: API - Full service"
+>
+Tam hizmet DAI
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr"
+track-metadata-position="nav - api&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-category="DAI top menu navigation"
+data-label="Tab menu: API - Pod serving"
+>
+DAI yayınlayan kapsül
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=tr"
+track-metadata-position="nav - api&#39;lar"
+track-metadata-module="tertiary nav"
+tooltip
+data-label="Tab menu: API - Ad break"
+data-category="DAI top menu navigation"
+>
+Reklam arası
+</tab>
+<tab class="devsite-dropdown
+">
+class="devsite-tabs-content devsite-tabs-dropdown-only gc-analytics-event  devsite-icon devsite-icon-arrow-drop-down"
+track-type="nav"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Kaynaklar"
+track-name="kaynaklar"
+>
+Kaynaklar
+">
+">
+Destek
+track-type="nav"
+track-metadata-eventdetail="//support.google.com/admanager/community?hl=tr"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="destek"
+tooltip
+>
+Ad Manager Yardım Topluluğu
+track-type="nav"
+track-metadata-eventdetail="//support.google.com/admanager/contact/contact_us_ima_sdk?hl=tr"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="destek"
+tooltip
+>
+Destek ekibiyle iletişime geçme
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=tr"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="destek"
+tooltip
+>
+Hizmet şartları
+track-type="nav"
+track-metadata-eventdetail="//goo.gle/google-ad-manager-discord"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="destek"
+tooltip
+>
+Resmi Google Ad Manager Discord kanalı
+track-type="nav"
+track-metadata-eventdetail="//ads-developers.googleblog.com/search/label/ima_sdk"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="destek"
+tooltip
+>
+Reklam geliştirici blogu
+">
+">
+Test araçları
+track-type="nav"
+track-metadata-eventdetail="//googleads.github.io/googleads-ima-html5-dai/vsi/"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="test araçları"
+tooltip
+>
+Video Ürün Paketi Denetleyicisi
+track-type="nav"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=tr"
+track-metadata-position="nav - kaynaklar"
+track-metadata-module="tertiary nav"
+track-metadata-module_headline="test araçları"
+tooltip
+>
+Örnek yayınlar
+</tab>
 enable-signin
 enable-search
 enable-suggestions
 enable-query-completion
 enable-search-summaries
-project-name="Ad Manager SOAP API"
+project-name="DAI Pod Serving API"
 tenant-name="Google for Developers"
-project-scope="/ad-manager/api/start"
-url-scoped="https://developers.google.com/s/results/ad-manager/api/start?hl=zh-tw"
+project-scope="/ad-manager/dynamic-ad-insertion/api/pod-serving"
+url-scoped="https://developers.google.com/s/results/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=tr"
 >
 search-open
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="開啟搜尋">
+aria-label="Aramayı aç">
 aria-activedescendant=""
 aria-autocomplete="list"
-aria-label="搜尋結果"
+aria-label="Arama"
 aria-expanded="false"
 aria-haspopup="listbox"
 autocomplete="off"
 class="devsite-search-field devsite-search-query"
 name="q"
-placeholder="搜尋結果"
+placeholder="Arama"
 role="combobox"
 type="text"
 value=""
@@ -11825,7 +10923,7 @@ value=""
 <kbd class="devsite-search-shortcut-icon">/</kbd>
 search-close
 class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-aria-label="關閉搜尋">
+aria-label="Aramayı kapat">
 >English
 >Deutsch
 >Español
@@ -11851,80 +10949,69 @@ aria-label="關閉搜尋">
 enable-profiles
 fp-auth
 id="devsite-user">
-登入
+Oturum aç
 ">
+>
+>
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Lower Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail=""
+>
+DAI kapsülü yayınlama API&#39;si
 <tab  class="devsite-active">
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/start?hl=zh-tw"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr"
 track-type="nav"
-track-metadata-position="nav - 指南"
+track-metadata-position="nav - rehberler"
 track-metadata-module="primary nav"
-aria-label="指南, selected"
+aria-label="Rehberler, selected"
 data-category="Site-Wide Custom Events"
-data-label="Tab: 指南"
-track-name="指南"
+data-label="Tab: Rehberler"
+track-name="rehberler"
 >
-指南
+Rehberler
 </tab>
 <tab  >
 class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/rel_notes?hl=zh-tw"
+track-metadata-eventdetail="https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live?hl=tr"
 track-type="nav"
-track-metadata-position="nav - 參考資料"
+track-metadata-position="nav - başvuru kaynakları"
 track-metadata-module="primary nav"
 data-category="Site-Wide Custom Events"
-data-label="Tab: 參考資料"
-track-name="參考資料"
+data-label="Tab: Başvuru Kaynakları"
+track-name="başvuru kaynakları"
 >
-參考資料
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/clients?hl=zh-tw"
-track-type="nav"
-track-metadata-position="nav - 範例"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: 範例"
-track-name="範例"
->
-範例
-</tab>
-<tab  >
-class="devsite-tabs-content gc-analytics-event "
-track-metadata-eventdetail="https://developers.google.com/ad-manager/api/community?hl=zh-tw"
-track-type="nav"
-track-metadata-position="nav - 支援"
-track-metadata-module="primary nav"
-data-category="Site-Wide Custom Events"
-data-label="Tab: 支援"
-track-name="支援"
->
-支援
+Başvuru Kaynakları
 </tab>
 >
-placeholder="篩選器"
-aria-label="篩選類型"
+placeholder="Filtre"
+aria-label="Filtrelemek için yazın"
 role="searchbox">
-data-title="清除篩選器"
-aria-label="清除篩選器"
+data-title="Filtreyi temizle"
+aria-label="Filtreyi temizle"
 role="button"
 tabindex="0">
-aria-label="側邊選單">
+aria-label="Yan menü">
 id="devsite-close-nav"
 class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Close navigation"
-aria-label="關閉導覽列">
+aria-label="Gezinmeyi kapat">
 size="medium"
 >
-alt="Google Ad Manager"
-src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=zh-tw"
+alt="Google Dynamic Ad Insertion"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=tr"
 srcset=" /static/ads/images/logo_admanager_192px.svg"
 sizes="64px"
 loading="lazy"
 >
-aria-label="上層標頭導覽標記">
+>
 devsite-has-google-wordmark">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -11933,107 +11020,291 @@ data-value="1"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="1"
-track-metadata-eventdetail="Google Ad Manager"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-Ad Manager
-">
-class="devsite-breadcrumb-link gc-analytics-event"
+Dynamic Ad Insertion
+class="devsite-nav-title"
+tooltip
 data-category="Site-Wide Custom Events"
-data-label="Upper Header"
-data-value="2"
-track-type="globalNav"
-track-name="breadcrumb"
-track-metadata-position="2"
-track-metadata-eventdetail="Google Ad Manager SOAP API"
+data-label="Tab: Ana Sayfa"
+track-name="ana sayfa"
 >
-SOAP API
+Ana Sayfa
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: Ana Sayfa"
+track-name="ana sayfa"
+>
+Diğer
+menu="Ana Sayfa">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK&#39;lar"
+track-name="sdk&#39;lar"
+>
+SDK&#39;lar
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: SDK&#39;lar"
+track-name="sdk&#39;lar"
+>
+Diğer
+menu="SDK&#39;lar">
 class="devsite-nav-title gc-analytics-event
-devsite-nav-has-children
 devsite-nav-active"
 data-category="Site-Wide Custom Events"
-data-label="Tab: 指南"
-track-name="指南"
+data-label="Tab: API&#39;lar"
+track-name="api&#39;lar"
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 指南"
-track-type="navMenu"
+data-label="Responsive Tab: API&#39;lar"
+track-type="globalNav"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-指南
+API&#39;lar
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: API&#39;lar"
+track-name="api&#39;lar"
 >
+Diğer
+menu="API&#39;lar">
 class="devsite-nav-title gc-analytics-event
-devsite-nav-has-children
-"
+devsite-nav-active"
 data-category="Site-Wide Custom Events"
-data-label="Tab: 參考資料"
-track-name="參考資料"
+data-label="Tab: Rehberler"
+track-name="rehberler"
 data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 參考資料"
-track-type="navMenu"
+data-label="Responsive Tab: Rehberler"
+track-type="globalNav"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-參考資料
+Rehberler
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Başvuru Kaynakları"
+track-name="başvuru kaynakları"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Başvuru Kaynakları"
+track-type="globalNav"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Başvuru Kaynakları
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: Kaynaklar"
+track-name="kaynaklar"
 >
+Kaynaklar
+">
+class="devsite-nav-title"
+tooltip
+data-category="Site-Wide Custom Events"
+data-label="Tab: Kaynaklar"
+track-name="kaynaklar"
+>
+Diğer
+menu="Kaynaklar">
+class="devsite-nav-title"
+>Genel bakış
+class="devsite-nav-title"
+>DAI Kapsül Yayınlama API&#39;si hakkında bilgi edinme
+devsite-nav-heading">
+Sunucu tarafı reklam ekleme geliştirme
+devsite-nav-expandable">
+SSAI canlı yayınlarını yönetme
+class="devsite-nav-title"
+>Genel bakış
+class="devsite-nav-title"
+>İstemci video oynatıcı uygulamasını hazırlama
+devsite-nav-expandable">
+Manifest işleme sunucusu geliştirme
+class="devsite-nav-title"
+>Reklam kapsülü zamanlama meta verileri içeren reklamlar ekleme
+class="devsite-nav-title"
+>Segment yönlendirmelerini kullanarak reklam ekleme
+devsite-nav-expandable">
+SSAI seç-izle akışlarını yönetme
+class="devsite-nav-title"
+>Genel bakış
+class="devsite-nav-title"
+>İstemci video oynatıcı uygulamanızı hazırlama
+class="devsite-nav-title"
+>Manifest düzenleme sunucunuzu yapılandırma
+devsite-nav-heading">
+Sunucu yönlendirmeli reklam eklemeyi ayarlama
+class="devsite-nav-title"
+>Sunucu tarafından yönlendirilen reklam ekleme hakkında
+class="devsite-nav-title"
+>Canlı yayın için SGAI&#39;yi kullanmaya başlama
+aria-label="Yan menü" hidden>
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Tab: 範例"
-track-name="範例"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 範例"
+data-label="Responsive Tab: Ana Sayfa"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-範例
+Ana Sayfa
+aria-label="Yan menü" hidden>
 class="devsite-nav-title gc-analytics-event
 "
 data-category="Site-Wide Custom Events"
-data-label="Tab: 支援"
-track-name="支援"
-data-category="Site-Wide Custom Events"
-data-label="Responsive Tab: 支援"
+data-label="Responsive Tab: HTML5"
 track-type="navMenu"
 track-metadata-eventDetail="globalMenu"
 track-metadata-position="nav">
-支援
+HTML5
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Android"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Android
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: iOS"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+iOS
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: tvOS"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+tvOS
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Chromecast"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Chromecast
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Roku"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Roku
+aria-label="Yan menü" hidden>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Tam hizmet DAI"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Tam hizmet DAI
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: DAI yayınlayan kapsül"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+DAI yayınlayan kapsül
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Reklam arası"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Reklam arası
+aria-label="Yan menü" hidden>
 class="devsite-nav-title"
->開始使用
+tooltip
+>
+Destek
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Ad Manager Yardım Topluluğu"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Ad Manager Yardım Topluluğu
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Destek ekibiyle iletişime geçme"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Destek ekibiyle iletişime geçme
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Hizmet şartları"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Hizmet şartları
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Resmi Google Ad Manager Discord kanalı"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Resmi Google Ad Manager Discord kanalı
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Reklam geliştirici blogu"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Reklam geliştirici blogu
 class="devsite-nav-title"
->Authentication
-class="devsite-nav-title"
->PQL 指南
-class="devsite-nav-title"
->第三方
-class="devsite-nav-title"
->基本概念
-class="devsite-nav-title"
->操作說明
-class="devsite-nav-title"
->報表
-class="devsite-nav-title"
->預測
-class="devsite-nav-title"
->原生
-class="devsite-nav-title"
->程式輔助
-class="devsite-nav-title"
->最佳做法
-class="devsite-nav-title"
->測試網路與正式環境
+tooltip
+>
+Test araçları
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Video Ürün Paketi Denetleyicisi"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Video Ürün Paketi Denetleyicisi
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Örnek yayınlar"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Örnek yayınlar
 has-book-nav
-has-sidebar
 >
 role="navigation"
-aria-label="這個頁面中的內容"
+aria-label="Bu sayfada"
 depth="2"
 scrollbars
 data-nosnippet
->
->
-想找 REST API？現已推出 Ad Manager API (Beta 版)。
+disabled>
 class="devsite-banner-translated-image invert"
 alt="">
 Google uses AI technology to translate content into your preferred language. AI translations can contain errors.
-aria-label="導覽標記">
+aria-label="İçerik haritası">
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -12044,7 +11315,7 @@ track-name="breadcrumb"
 track-metadata-position="1"
 track-metadata-eventdetail=""
 >
-首頁
+Ana Sayfa
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -12055,7 +11326,7 @@ track-name="breadcrumb"
 track-metadata-position="2"
 track-metadata-eventdetail=""
 >
-產品
+Ürünler
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -12064,9 +11335,9 @@ data-value="3"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="3"
-track-metadata-eventdetail="Google Ad Manager"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-Ad Manager
+Dynamic Ad Insertion
 ">
 class="devsite-breadcrumb-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
@@ -12075,26 +11346,20 @@ data-value="4"
 track-type="globalNav"
 track-name="breadcrumb"
 track-metadata-position="4"
-track-metadata-eventdetail="Google Ad Manager SOAP API"
+track-metadata-eventdetail="Google Dynamic Ad Insertion"
 >
-SOAP API
-position="header"
-project-name="Ad Manager SOAP API"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="header"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=zh-tw"
-project-support-url="https://groups.google.com/forum/?hl=zh-tw#!forum/google-doubleclick-for-publishers-api"
+DAI Pod Serving API
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="5"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="5"
+track-metadata-eventdetail=""
 >
-提供意見
-開始使用
+API&#39;lar
 ack-key="AckCollectionsBookmarkTooltipDismiss"
 analytics-category="Site-Wide Custom Events"
 analytics-action-show="Callout Profile displayed"
@@ -12104,311 +11369,123 @@ class="devsite-page-bookmark-tooltip nocontent"
 data-nosnippet
 dismiss-button="true"
 id="devsite-collections-dropdown"
-dismiss-button-text="關閉"
-close-button-text="我知道了">
-透過集合功能整理內容
-你可以依據偏好儲存及分類內容。
+dismiss-button-text="Kapat"
+close-button-text="Anladım">
+Koleksiyonlar ile düzeninizi koruyun
+İçeriği tercihlerinize göre kaydedin ve kategorilere ayırın.
 depth="2"
 devsite-toc-embedded
+disabled>
+devsite-no-page-title">
+header-position="top"
+>
+description-position="bottom"
 >
 ">
-您可以使用 Google Ad Manager SOAP API 建構應用程式，用於管理廣告空間、建立訂單、提取報表等。
-為協助您開始使用，我們提供 Java、.NET、Python、PHP 和 Ruby 的用戶端程式庫。
-如要發出第一個 API 要求，請按照下列步驟操作：
-取得 Ad Manager 聯播網的存取權
-如果您還沒有 Ad Manager 帳戶，請申請一個
-帳戶。如要在個別環境中測試 API，您也可以建立測試網路。請注意，您不需要 AdSense 帳戶就能進行測試。
-記下您的聯播網代碼。您可在登入後看到這個網址
-傳送至您的網路例如，在網址中
-https://admanager.google.com/1234#home，1234 是你的聯播網代碼。
-注意：存取或使用 Ad Manager API 即表示您同意《服務條款》。建立驗證憑證
-您必須使用 OAuth 2.0 驗證所有 Ad Manager SOAP API 請求。以下步驟說明如何存取自己的 Ad Manager 資料。適用對象
-驗證：
-開啟 Google API 控制台憑證頁面
-從專案選單中選擇「Create project」(建立專案)，輸入專案名稱，並視需要編輯提供的專案 ID。點選「Create」(建立)。
-在「憑證」頁面中，依序選取「建立憑證」和「服務帳戶金鑰」。
-選取「New service account」(新增服務帳戶)，然後選取「JSON」做為金鑰類型。
-按一下「建立」，下載內含私密金鑰的檔案。
-設定 Ad Manager 聯播網
-登入 Google Ads
-經理。
-按一下側欄中的「管理員」「管理員」>通用設定：
-在「一般設定」下 > API 存取權按一下滑桿即可啟用。
-按一下頁面底部的「儲存」按鈕。
-設定用戶端
-下載任一 Ad Manager 用戶端程式庫。這些程式庫提供包裝函式和功能，可讓您更輕鬆快速地開發應用程式。
-以下分頁提供使用各種程式語言編寫程式的快速入門導覽課程
-其中包含用戶端程式庫
-Java
-以下這個基本範例說明如何使用 Java 用戶端
-程式庫。如要進一步瞭解使用資訊，請參閱
-README
-檔案。
-設定憑證
-在 Shell 中執行下列指令：
-curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties
-開啟 ~/ads.properties 檔案並填入下列欄位：
-[...]
-api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE
-api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE
-api.admanager.networkCode=INSERT_NETWORK_CODE_HERE
-[...]
-指定依附元件
-編輯 pom.xml 檔案，並將下列內容新增至
-dependencies 標記。您可以在 GitHub 上找到最新版本號碼。&lt;dependency&gt;
-&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
-&lt;artifactId&gt;ads-lib&lt;/artifactId&gt;
-&lt;version&gt;RELEASE&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
-&lt;artifactId&gt;dfp-axis&lt;/artifactId&gt;
-&lt;version&gt;RELEASE&lt;/version&gt;
-&lt;/dependency&gt;
-撰寫程式碼並提出要求！
-import com.google.api.ads.common.lib.auth.OfflineCredentials;
-import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
-import com.google.api.ads.admanager.axis.factory.AdManagerServices;
-import com.google.api.ads.admanager.axis.v202602.Network;
-import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface;
-import com.google.api.ads.admanager.lib.client.AdManagerSession;
-import com.google.api.client.auth.oauth2.Credential;
-public class App {
-public static void main(String[] args) throws Exception {
-Credential oAuth2Credential = new OfflineCredentials.Builder()
-.forApi(Api.AD_MANAGER)
-.fromFile()
-.build()
-.generateCredential();
-// Construct an AdManagerSession.
-AdManagerSession session = new AdManagerSession.Builder()
-.fromFile()
-.withOAuth2Credential(oAuth2Credential)
-.build();
-// Construct a Google Ad Manager service factory, which can only be used once per
-// thread, but should be reused as much as possible.
-AdManagerServices adManagerServices = new AdManagerServices();
-// Retrieve the appropriate service
-NetworkServiceInterface networkService = adManagerServices.get(session,
-NetworkServiceInterface.class);
-// Make a request
-Network network = networkService.getCurrentNetwork();
-System.out.printf("Current network has network code '%s' and display" +
-" name '%s'.%n", network.getNetworkCode(), network.getDisplayName());
-}
-}
-前往 GitHub 查看
-Python
-以下為說明如何使用 Python 用戶端程式庫的基本範例。
-Python 用戶端程式庫支援 Python v3.6+。如需用量詳細資料
-請參閱 README
-檔案。
-安裝程式庫並設定憑證。
-在殼層中執行下列指令：
-python3 -m pip install googleads
-curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \
--o ~/googleads.yaml
-設定 ~/googleads.yaml 檔案。
-填妥以下欄位：
-ad_manager:
-application_name: INSERT_APPLICATION_NAME_HERE
-network_code: INSERT_NETWORK_CODE_HERE
-path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
-執行程式碼並發出要求。
-# Import the library.
-from googleads import ad_manager
-# Initialize a client object, by default uses the credentials in ~/googleads.yaml.
-client = ad_manager.AdManagerClient.LoadFromStorage()
-# Initialize a service.
-network_service = client.GetService('NetworkService', version='v202602')
-# Make a request.
-current_network = network_service.getCurrentNetwork()
-print("Current network has network code '%s' and display name '%s'." %
-(current_network['networkCode'], current_network['displayName']))
-前往 GitHub 查看
-PHP
-這個基本範例說明如何使用
-PHP 用戶端程式庫。
-安裝程式庫並設定憑證。
-在 Shell 中執行下列指令，安裝用戶端程式庫，並將 adsapi_php.ini 檔案下載至您的主目錄：
-composer require googleads/googleads-php-lib
-curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
-設定您的 ~/adsapi_php.ini 檔案。
-填妥以下欄位：
-[AD_MANAGER]
-networkCode = "INSERT_NETWORK_CODE_HERE"
-applicationName = "INSERT_APPLICATION_NAME_HERE"
-[OAUTH2]
-jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE"
-scopes = "https://www.googleapis.com/auth/dfp"
-執行程式碼並提出要求！
-このサンプルコードは、ブラウザではなくコマンドラインから実行してください。包含此程式碼的檔案必須位於專案目錄的根目錄中，也就是執行 composer require 的位置。
-&lt;?php
-require 'vendor/autoload.php';
-use Google\AdsApi\AdManager\AdManagerSession;
-use Google\AdsApi\AdManager\AdManagerSessionBuilder;
-use Google\AdsApi\AdManager\v202602\ApiException;
-use Google\AdsApi\AdManager\v202602\ServiceFactory;
-use Google\AdsApi\Common\OAuth2TokenBuilder;
-// Generate a refreshable OAuth2 credential for authentication.
-$oAuth2Credential = (new OAuth2TokenBuilder())
-->fromFile()
-->build();
-// Construct an API session configured from a properties file and the OAuth2
-// credentials above.
-$session = (new AdManagerSessionBuilder())
-->fromFile()
-->withOAuth2Credential($oAuth2Credential)
-->build();
-// Get a service.
-$serviceFactory = new ServiceFactory();
-$networkService = $serviceFactory->createNetworkService($session);
-// Make a request
-$network = $networkService->getCurrentNetwork();
-printf(
-"Network with code %d and display name '%s' was found.\n",
-$network->getNetworkCode(),
-$network->getDisplayName()
-);
-前往 GitHub 查看
-.NET
-以下是基本範例，說明如何使用 .NET 用戶端程式庫
-建立新專案
-開啟 Visual Studio，並建立新專案 (控制台應用程式)。
-在專案中加入必要的程式庫參考資料
-為 Google.Dfp 新增 NuGet 依附元件。
-設定 App.config
-將 src\App.config 複製到專案目錄，然後新增至專案。如果您的應用程式有自己的 App.config，您可以將下列節點複製到 App.config 中：
-configuration/AdManagerApi
-configuration/configSections/section[name="AdManagerApi"]
-configuration/system.net
-設定憑證
-開啟 App.config，然後編輯下列鍵：&lt;add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /&gt;
-&lt;add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /&gt;
-&lt;add key="OAuth2Mode" value="SERVICE_ACCOUNT" /&gt;
-&lt;add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" /&gt;
-呼叫程式庫
-您可以呼叫程式庫，如以下 C# 程式碼片段所示
-前往 GitHub 查看
-AdManagerUser user = new AdManagerUser();
-using (InventoryService inventoryService = user.GetService&lt;InventoryService&gt;())
-{
-// Create a statement to select ad units.
-int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-StatementBuilder statementBuilder =
-new StatementBuilder().OrderBy("id ASC").Limit(pageSize);
-// Retrieve a small amount of ad units at a time, paging through until all
-// ad units have been retrieved.
-int totalResultSetSize = 0;
-do
-{
-AdUnitPage page =
-inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
-// Print out some information for each ad unit.
-if (page.results != null)
-{
-totalResultSetSize = page.totalResultSetSize;
-int i = page.startIndex;
-foreach (AdUnit adUnit in page.results)
-{
-Console.WriteLine(
-"{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.", i++,
-adUnit.id, adUnit.name);
-}
-}
-statementBuilder.IncreaseOffsetBy(pageSize);
-} while (statementBuilder.GetOffset() &lt; totalResultSetSize);
-Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-}
-如果您不想在 App.config 中設定憑證，請參閱這篇維基百科文章，瞭解使用 AdManagerUser 類別的其他方法。如要進一步瞭解如何使用 .NET 用戶端程式庫，請參閱
-給 README
-。如果您想在 .NET 中開發，但不使用用戶端程式庫，請參閱 NoClientLibrary 維基文章。
-小茹
-以下是基本範例，說明如何使用 Ruby 用戶端程式庫。Ruby 用戶端程式庫需要 Ruby 2.1 以上版本。
-安裝 Ruby gem 並取得設定檔。
-在殼層中執行下列指令：
-gem install google-dfp-api
-curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml
-如果發生「cannot load such
-file -- mkmf (LoadError)」等錯誤安裝寶石時
-您可能需要安裝額外的 Ruby 開發程式庫，例如 ruby-dev
-ruby-devel、xcode-select 等特定環境適用的 ID。
-設定憑證
-填入 ~/ad_manager_api.yml 中的必填欄位
-檔案。如果您還沒有 OAuth2 金鑰檔案，請按照這篇文章中的步驟建立 OAuth2 憑證。
-:authentication:
-:oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE
-:application_name: INSERT_APPLICATION_NAME_HERE
-:network_code: INSERT_NETWORK_CODE_HERE
-撰寫程式碼並提出要求！
-# Import the library.
-require 'ad_manager_api'
-# Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default).
-ad_manager = AdManagerApi::Api.new
-# Get a service instance.
-network_service = ad_manager.service(:NetworkService, :v202602)
-# Make a request.
-network = network_service.get_current_network()
-puts "The current network is %s (%d)." %
-[network[:display_name], network[:network_code]]
-前往 GitHub 查看
-如需詳細的入門步驟，請參閱 README
-檔案。另外，您也可以參閱我們的完整
-Ruby 適用的範例程式庫
-後續步驟
-用戶端程式庫啟動並運作後，請修改提供的範例，以便根據需求擴充範例。
-請參閱參考資料說明文件，進一步瞭解 API。
-如需協助，請前往支援頁面。
-hats-id="2SbP5yi80LHkahqinNfT0Z7MuPgc"
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving.png?hl=tr"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_36.png?hl=tr 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_48.png?hl=tr 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_72.png?hl=tr 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_96.png?hl=tr 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_480.png?hl=tr 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_720.png?hl=tr 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_856.png?hl=tr 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_960.png?hl=tr 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1440.png?hl=tr 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_1920.png?hl=tr 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-podserving_2880.png?hl=tr 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+fetchpriority="high">
+>
+data-text="DAI Kapsül Yayınlama"
+class="hide-from-toc no-link"
+tabindex="0">
+DAI Kapsül Yayınlama
+Dinamik Reklam Ekleme (DAI) Kapsül Sunumu, canlı ve seç-izle video (VOD) akışları için Google'dan veya üçüncü taraf reklam sunucularından reklam kapsülleri istemenize olanak tanır. Daha fazla bilgi için  Reklam kapsüllerini ve reklam arası şablonlarını yapılandırma başlıklı makaleyi inceleyin.
+Google Ad Manager, canlı yayın için aşağıdaki DAI türlerini destekler:
+Kapsül yayınlama yönlendirmesi: Sunucu tarafı reklam ekleme (SSAI) uygulamak için manifest segmentlerini almanıza olanak tanır. Segmentler, içerik veya reklam medya dosyalarına yönlendiren dinamik URL'lerdir.
+Kapsül yayınlama manifesti: Sunucu tarafı reklam ekleme (SSAI) uygulamak için reklam kapsüllerinin tam manifestini almanızı sağlar. Daha fazla bilgi için Sunucu yönlendirmeli DAI başlıklı makaleyi inceleyin.
+VOD için Google Ad Manager, reklam kapsülü manifestlerinin tamamını döndürür.
+DAI kapsül yayınlama aşağıdaki desteklenen platformları sunar:
+HTML5
+Android
+iOS
+tvOS
+Chromecast
+Roku
+Canlı yayın ve VOD ile ilgili ayrıntılar için aşağıdaki iş akışlarına bakın:
+background="grey"
+header-position="top"
+>
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram.png?hl=tr"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_36.png?hl=tr 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_48.png?hl=tr 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_72.png?hl=tr 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_96.png?hl=tr 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_480.png?hl=tr 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_720.png?hl=tr 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_856.png?hl=tr 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_960.png?hl=tr 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1440.png?hl=tr 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_1920.png?hl=tr 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-live-diagram_2880.png?hl=tr 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+loading="lazy"
+>
+>
+data-text="Canlı yayına reklam ekleme
+"
+class="hide-from-toc no-link"
+tabindex="0">
+Canlı yayına reklam ekleme
+Canlı yayın oturumu başlatmak için yayın kaydı isteğinde bulunun.
+Akış isteğine özgü reklam etiketi parametrelerini, DAI reklam etiketinin varsayılan değerlerini geçersiz kılacak şekilde ayarlayın. Reklam hedefleme hakkında daha fazla bilgi için
+Akışınıza hedefleme parametreleri sağlama başlıklı makaleyi inceleyin.
+Akış kaydı yanıtından benzersiz kullanıcı oturumu kimliğini alın. Oturum kimliğini kullanma hakkında daha fazla bilgi için
+DAI oturum kimliğini veya hata ayıklama anahtarını bulma ve
+Belirli bir akış oturumunu izleme ve hata ayıklama başlıklı makalelere bakın.
+Oturum kimliğini ileterek video birleştiricinize veya manifest manipülatörünüze bir manifest isteğinde bulunun. Oynatma boyunca manifest güncellemeleri için isteği tekrarlayın.
+DASH manifestleri için oturumun tamamı için tek bir dönem şablonu isteğinde bulunun.
+DASH manifestleri için dönem şablonunu önbelleğe alın. Her reklam arası için,
+önbelleğe alınmış şablonu alıp tüm makroları reklam arası verileriyle doldurun.
+Desteklenen makrolar hakkında daha fazla bilgi için Dönem şablonunu doldurma başlıklı makaleyi inceleyin.
+Ardından, sonuç dönemini nihai manifeste ekleyin.
+İstemci oynatımı için içerik veya reklam medya segmentlerini içeren nihai manifesti döndürün.
+Oynatma başlar.
+Yayın isteğinde döndürülen anket sıklığını kullanarak reklam meta verilerindeki güncellemeler için Google Ad Manager'ı düzenli olarak yoklayın.
+Reklam etkinliklerini aramak için reklam meta verilerini saklayın.
+Reklam arasında video oynatıcı, medya segmentlerini yükler ve medya dosyalarına yönlendirmek için Google Ad Manager'ı takip eder.
+Reklam arası sırasında,
+ID3 etiketleri içeren zamanlanmış meta veriler için video oynatıcıyı dinleyin. İlişkili reklam meta verilerini bulmak için reklam etkinliği kimliğini ID3 etiketinden çıkarın.
+Google Ad Manager'a medya doğrulama ping'leri gönderin.
+description-position="bottom"
+>
+">
+src="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram.png?hl=tr"
+srcset="https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_36.png?hl=tr 36w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_48.png?hl=tr 48w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_72.png?hl=tr 72w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_96.png?hl=tr 96w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_480.png?hl=tr 480w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_720.png?hl=tr 720w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_856.png?hl=tr 856w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_960.png?hl=tr 960w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1440.png?hl=tr 1440w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_1920.png?hl=tr 1920w,https://developers.google.com/static/ad-manager/dynamic-ad-insertion/images/dai-pod-serving-vod-diagram_2880.png?hl=tr 2880w"
+sizes="(max-width: 600px) 100vw, (max-width: 840px) 50vw, 708px"
+loading="lazy"
+>
+>
+data-text="
+Reklamları VOD yayınına ekleme
+"
+class="hide-from-toc no-link"
+tabindex="0">
+Reklamları VOD yayınına ekleme
+VOD akışı oturumu kaydetmek için akış isteğinde bulunun. Akış isteğine özgü reklam etiketi parametrelerini, DAI reklam etiketinin varsayılan değerlerini geçersiz kılacak şekilde ayarlayın. Daha fazla bilgi için
+Akışınıza hedefleme parametreleri sağlama başlıklı makaleyi inceleyin.
+Oturum kimliğini akış yanıtından alın. Akış oturumunu incelemek için
+DAI oturum kimliğini veya hata ayıklama anahtarını bulma ve
+Belirli bir akış oturumunu izleme ve bu oturumda hata ayıklama başlıklı makalelere bakın.
+Oturum kimliğini ileterek video birleştiricinize veya manifest manipülatörünüze bir manifest isteğinde bulunun.
+Tüm reklam kapsüllerini aynı anda istemek için oturum kimliğini kullanın.
+Tüm reklam kapsüllerinin eksiksiz manifestlerini alın. Nihai manifesti oluşturmak için reklam kapsülü manifestlerini içerik akışıyla birleştirin.
+Hem içerik hem de reklam segmentlerini içeren nihai manifesti döndürün.
+Tüm reklam etkinlikleri için reklam meta verilerini isteyin. Reklam etkinliklerini aramak için reklam meta verilerini saklayın. Oynatma başlar.
+Reklam arasında video oynatıcı, medya segmentlerini yükler ve medya dosyalarına yönlendirmek için Google Ad Manager'ı takip eder.
+Reklam arasında,
+ID3 etiketleri içeren reklam etkinliklerini dinleyin. Reklam etkinliği meta verilerini bulmak için ID3 etiketinden reklam etkinliği kimliğini çıkarın ve kimliği reklam meta verileriyle eşleştirin.
+Google Ad Manager'a medya doğrulama ping'leri gönderin.
+hats-id="t8gKjvEN0LHkahqinNfT0Vdn1yMm"
 listnr-id="82128">
-position="footer"
-project-name="Ad Manager SOAP API"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="footer"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=zh-tw"
-project-support-url="https://groups.google.com/forum/?hl=zh-tw#!forum/google-doubleclick-for-publishers-api"
+Aksi belirtilmediği sürece bu sayfanın içeriği Creative Commons Atıf 4.0 Lisansı altında ve kod örnekleri Apache 2.0 Lisansı altında lisanslanmıştır. Ayrıntılı bilgi için Google Developers Site Politikaları'na göz atın. Java, Oracle ve/veya satış ortaklarının tescilli ticari markasıdır.
+Son güncelleme tarihi: 2026-03-05 UTC.
 >
-提供意見
-除非另有註明，否則本頁面中的內容是採用創用 CC 姓名標示 4.0 授權，程式碼範例則為阿帕契 2.0 授權。詳情請參閱《Google Developers 網站政策》。Java 是 Oracle 和/或其關聯企業的註冊商標。
-上次更新時間：2026-02-25 (世界標準時間)。
->
-<template class="devsite-thumb-rating-feedback">
-position="thumb-rating"
-project-name="Ad Manager SOAP API"
-product-id="82128"
-bucket="doubleclick-publishers"
-context=""
-version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
-data-label="Send Feedback Button"
-track-type="feedback"
-track-name="sendFeedbackLink"
-track-metadata-position="thumb-rating"
-class="nocontent"
-data-nosnippet
-project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg?hl=zh-tw"
-project-support-url="https://groups.google.com/forum/?hl=zh-tw#!forum/google-doubleclick-for-publishers-api"
->
-想進一步說明嗎？
-</template>
 <template class="devsite-content-data-template">
-[[["容易理解","easyToUnderstand","thumb-up"],["確實解決了我的問題","solvedMyProblem","thumb-up"],["其他","otherUp","thumb-up"]],[["缺少我需要的資訊","missingTheInformationINeed","thumb-down"],["過於複雜/步驟過多","tooComplicatedTooManySteps","thumb-down"],["過時","outOfDate","thumb-down"],["翻譯問題","translationIssue","thumb-down"],["示例/程式碼問題","samplesCodeIssue","thumb-down"],["其他","otherDown","thumb-down"]],["上次更新時間：2026-02-25 (世界標準時間)。"],[],[]]
+[[["Anlaması kolay","easyToUnderstand","thumb-up"],["Sorunumu çözdü","solvedMyProblem","thumb-up"],["Diğer","otherUp","thumb-up"]],[["İhtiyacım olan bilgiler yok","missingTheInformationINeed","thumb-down"],["Çok karmaşık / çok fazla adım var","tooComplicatedTooManySteps","thumb-down"],["Güncel değil","outOfDate","thumb-down"],["Çeviri sorunu","translationIssue","thumb-down"],["Örnek veya kod sorunu","samplesCodeIssue","thumb-down"],["Diğer","otherDown","thumb-down"]],["Son güncelleme tarihi: 2026-03-05 UTC."],[],[]]
 </template>
-aria-label="頁尾連結"
+aria-label="Altbilgi bağlantıları"
 data-nosnippet>
-論壇
+Ağ
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
 >
-網誌
+Blog
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
@@ -12434,7 +11511,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 6)"
 >
 YouTube
-計劃
+Programlar
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -12460,7 +11537,7 @@ data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
 >
 Google Cloud & NVIDIA
-開發人員控制台
+Geliştirici konsolları
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
@@ -12475,7 +11552,7 @@ class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
 >
-Google Play 管理中心
+Google Play Console
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
@@ -12542,19 +11619,927 @@ gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer All products Link"
 >
-所有產品
+Tüm ürünler
 ">
-href="https://developers.google.com/terms/site-terms?hl=zh-tw"
+href="https://developers.google.com/terms/site-terms?hl=tr"
 data-category="Site-Wide Custom Events"
 data-label="Footer Terms link"
 >
-條款
+Şartlar
 ">
-href="//policies.google.com/privacy?hl=zh-tw"
+href="//policies.google.com/privacy?hl=tr"
 data-category="Site-Wide Custom Events"
 data-label="Footer Privacy link"
 >
-隱私權
+Gizlilik
+glue-cookie-notification-bar-control">
+href="#"
+data-category="Site-Wide Custom Events"
+data-label="Footer Manage cookies link"
+aria-hidden="true"
+>
+Manage cookies
+>English
+>Deutsch
+>Español
+>Español – América Latina
+>Français
+>Indonesia
+>Italiano
+>Polski
+>Português – Brasil
+>Tiếng Việt
+>Türkçe
+>Русский
+>עברית
+>العربيّة
+>فارسی
+>हिंदी
+>বাংলা
+>ภาษาไทย
+>中文 – 简体
+>中文 – 繁體
+>日本語
+>한국어
+data-info-panel
+data-ai-panel
+data-api-explorer-panel
+>
+
+---
+
+# start
+
+> **Source:** https://developers.google.com/ad-manager/api/start
+> **Analyzed At:** 2026-07-20T07:56:28.235Z
+
+### Content
+lang="en"
+dir="ltr">
+content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty">
+crossorigin="use-credentials">
+href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block">
+title="Google for Developers" href="https://developers.google.com/s/opensearch.xml">
+href="https://developers.google.com/ad-manager/api/start" />
+href="https://developers.google.com/ad-manager/api/start?hl=ar" />
+href="https://developers.google.com/ad-manager/api/start?hl=bn" />
+href="https://developers.google.com/ad-manager/api/start?hl=zh-cn" />
+href="https://developers.google.com/ad-manager/api/start?hl=zh-tw" />
+href="https://developers.google.com/ad-manager/api/start?hl=fa" />
+href="https://developers.google.com/ad-manager/api/start?hl=fr" />
+href="https://developers.google.com/ad-manager/api/start?hl=de" />
+href="https://developers.google.com/ad-manager/api/start?hl=he" />
+href="https://developers.google.com/ad-manager/api/start?hl=hi" />
+href="https://developers.google.com/ad-manager/api/start?hl=id" />
+href="https://developers.google.com/ad-manager/api/start?hl=it" />
+href="https://developers.google.com/ad-manager/api/start?hl=ja" />
+href="https://developers.google.com/ad-manager/api/start?hl=ko" />
+href="https://developers.google.com/ad-manager/api/start?hl=pl" />
+href="https://developers.google.com/ad-manager/api/start?hl=pt-br" />
+href="https://developers.google.com/ad-manager/api/start?hl=ru" />
+href="https://developers.google.com/ad-manager/api/start?hl=es-419" />
+href="https://developers.google.com/ad-manager/api/start?hl=th" />
+href="https://developers.google.com/ad-manager/api/start?hl=tr" />
+href="https://developers.google.com/ad-manager/api/start?hl=vi" /><title>Get started &nbsp;|&nbsp; Ad Manager SOAP API &nbsp;|&nbsp; Google for Developers</title>
+">
+">
+template="page"
+theme="google-blue"
+type="article"
+layout="docs"
+display-toc
+pending>
+Skip to main content
+class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Navigation menu button"
+visually-hidden
+aria-label="Open menu">
+size="medium"
+>
+alt="Google Ad Manager"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+srcset=" /static/ads/images/logo_admanager_192px.svg"
+sizes="64px"
+loading="lazy"
+>
+aria-label="Product breadcrumb">
+devsite-has-google-wordmark">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail="Google Ad Manager"
+>
+Ad Manager
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail="Google Ad Manager SOAP API"
+>
+SOAP API
+enable-signin
+enable-search
+enable-suggestions
+enable-query-completion
+enable-search-summaries
+project-name="Ad Manager SOAP API"
+tenant-name="Google for Developers"
+project-scope="/ad-manager/api/start"
+url-scoped="https://developers.google.com/s/results/ad-manager/api/start"
+>
+search-open
+class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+aria-label="Open search">
+aria-activedescendant=""
+aria-autocomplete="list"
+aria-label="Search"
+aria-expanded="false"
+aria-haspopup="listbox"
+autocomplete="off"
+class="devsite-search-field devsite-search-query"
+name="q"
+placeholder="Search"
+role="combobox"
+type="text"
+value=""
+>
+<kbd class="devsite-search-shortcut-icon">/</kbd>
+search-close
+class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+aria-label="Close search">
+>English
+>Deutsch
+>Español
+>Español – América Latina
+>Français
+>Indonesia
+>Italiano
+>Polski
+>Português – Brasil
+>Tiếng Việt
+>Türkçe
+>Русский
+>עברית
+>العربيّة
+>فارسی
+>हिंदी
+>বাংলা
+>ภาษาไทย
+>中文 – 简体
+>中文 – 繁體
+>日本語
+>한국어
+enable-profiles
+fp-auth
+id="devsite-user">
+Sign in
+">
+<tab  class="devsite-active">
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/start"
+track-type="nav"
+track-metadata-position="nav - guides"
+track-metadata-module="primary nav"
+aria-label="Guides, selected"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Guides"
+track-name="guides"
+>
+Guides
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/rel_notes"
+track-type="nav"
+track-metadata-position="nav - reference"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Reference"
+track-name="reference"
+>
+Reference
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/clients"
+track-type="nav"
+track-metadata-position="nav - samples"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Samples"
+track-name="samples"
+>
+Samples
+</tab>
+<tab  >
+class="devsite-tabs-content gc-analytics-event "
+track-metadata-eventdetail="https://developers.google.com/ad-manager/api/community"
+track-type="nav"
+track-metadata-position="nav - support"
+track-metadata-module="primary nav"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Support"
+track-name="support"
+>
+Support
+</tab>
+>
+placeholder="Filter"
+aria-label="Type to filter"
+role="searchbox">
+data-title="Clear filter"
+aria-label="Clear filter"
+role="button"
+tabindex="0">
+aria-label="Side menu">
+id="devsite-close-nav"
+class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Close navigation"
+aria-label="Close navigation">
+size="medium"
+>
+alt="Google Ad Manager"
+src="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+srcset=" /static/ads/images/logo_admanager_192px.svg"
+sizes="64px"
+loading="lazy"
+>
+aria-label="Upper header breadcrumb">
+devsite-has-google-wordmark">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail="Google Ad Manager"
+>
+Ad Manager
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Upper Header"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail="Google Ad Manager SOAP API"
+>
+SOAP API
+class="devsite-nav-title gc-analytics-event
+devsite-nav-has-children
+devsite-nav-active"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Guides"
+track-name="guides"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Guides"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Guides
+>
+class="devsite-nav-title gc-analytics-event
+devsite-nav-has-children
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Reference"
+track-name="reference"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Reference"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Reference
+>
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Samples"
+track-name="samples"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Samples"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Samples
+class="devsite-nav-title gc-analytics-event
+"
+data-category="Site-Wide Custom Events"
+data-label="Tab: Support"
+track-name="support"
+data-category="Site-Wide Custom Events"
+data-label="Responsive Tab: Support"
+track-type="navMenu"
+track-metadata-eventDetail="globalMenu"
+track-metadata-position="nav">
+Support
+class="devsite-nav-title"
+>Get Started
+class="devsite-nav-title"
+>Authentication
+class="devsite-nav-title"
+>PQL Guide
+class="devsite-nav-title"
+>Third Parties
+class="devsite-nav-title"
+>Basic Concepts
+class="devsite-nav-title"
+>How To
+class="devsite-nav-title"
+>Reports
+class="devsite-nav-title"
+>Forecasts
+class="devsite-nav-title"
+>Native
+class="devsite-nav-title"
+>Programmatic
+class="devsite-nav-title"
+>Best Practices
+class="devsite-nav-title"
+>Test Networks vs. Production
+has-book-nav
+has-sidebar
+>
+role="navigation"
+aria-label="On this page"
+depth="2"
+scrollbars
+data-nosnippet
+>
+>
+Looking for a REST API? The Ad Manager API (Beta) is now available.
+aria-label="Breadcrumb">
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="1"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="1"
+track-metadata-eventdetail=""
+>
+Home
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="2"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="2"
+track-metadata-eventdetail=""
+>
+Products
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="3"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="3"
+track-metadata-eventdetail="Google Ad Manager"
+>
+Ad Manager
+">
+class="devsite-breadcrumb-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Breadcrumbs"
+data-value="4"
+track-type="globalNav"
+track-name="breadcrumb"
+track-metadata-position="4"
+track-metadata-eventdetail="Google Ad Manager SOAP API"
+>
+SOAP API
+position="header"
+project-name="Ad Manager SOAP API"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="header"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+project-support-url="https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api"
+>
+Send feedback
+Get started
+ack-key="AckCollectionsBookmarkTooltipDismiss"
+analytics-category="Site-Wide Custom Events"
+analytics-action-show="Callout Profile displayed"
+analytics-action-close="Callout Profile dismissed"
+analytics-label="Create Collection Callout"
+class="devsite-page-bookmark-tooltip nocontent"
+data-nosnippet
+dismiss-button="true"
+id="devsite-collections-dropdown"
+dismiss-button-text="Dismiss"
+close-button-text="Got it">
+Stay organized with collections
+Save and categorize content based on your preferences.
+depth="2"
+devsite-toc-embedded
+>
+">
+You can use the Google Ad Manager SOAP API to build apps that manage inventory,
+create orders, pull reports, and more.
+To help you get started, we offer client
+libraries for Java, .NET, Python, PHP, and Ruby.
+To make your first API request, follow these steps:
+Get access to an Ad Manager network
+If you don&#39;t already have one, sign up for an Ad Manager
+account. You can also create a
+test network if you want to test the API in a
+separate environment. Note that you don&#39;t need an AdSense account for test
+purposes.
+Make a note of your network code. You can find this in the URL when you sign in
+to your network. For example, in the URL
+https://admanager.google.com/1234#home, 1234 is your network code.
+Note: By accessing or using the Ad Manager API you agree to the Terms of
+Service.
+Create authentication credentials
+You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The
+following steps cover the use case of accessing your own Ad Manager data. For
+more details and other options, see
+Authentication.
+Open the Google API Console
+Credentials page
+From the project menu, choose Create project, enter a name for the
+project, and optionally, edit the provided Project ID. Click Create.
+On the Credentials page, select Create credentials, then select
+Service account key.
+Select New service
+account
+and select JSON as the key type.
+Click Create to download a file containing a private key.
+Configure your Ad Manager network
+Sign in to Google Ad
+Manager.
+In the sidebar, click Admin &gt; Global settings.
+Under General settings &gt; Api access click the slider to Enabled.
+Click the Save button at the bottom of the page.
+Set up your client
+Download one of the Ad Manager client libraries. The
+libraries offer wrapper functions and features that make it easier and faster to
+develop apps.
+The following tabs provide quickstarts for coding in each of the languages for
+which there is a client library.
+Java
+Here is a basic example that shows how to use the Java client
+library. For more detailed usage information, refer to
+the README
+file in the client library distribution.
+Setup your credentials
+Run the following command in a shell:
+curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties
+Open the ~/ads.properties file and populate the following fields:
+[...]
+api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE
+api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE
+api.admanager.networkCode=INSERT_NETWORK_CODE_HERE
+[...]
+Specify dependencies
+Edit your pom.xml file and add the following to the
+dependencies tag. You can find the latest version number on
+Github.
+&lt;dependency&gt;
+&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
+&lt;artifactId&gt;ads-lib&lt;/artifactId&gt;
+&lt;version&gt;RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;com.google.api-ads&lt;/groupId&gt;
+&lt;artifactId&gt;dfp-axis&lt;/artifactId&gt;
+&lt;version&gt;RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+Write some code and make a request!
+import com.google.api.ads.common.lib.auth.OfflineCredentials;
+import com.google.api.ads.common.lib.auth.OfflineCredentials.Api;
+import com.google.api.ads.admanager.axis.factory.AdManagerServices;
+import com.google.api.ads.admanager.axis.v202602.Network;
+import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface;
+import com.google.api.ads.admanager.lib.client.AdManagerSession;
+import com.google.api.client.auth.oauth2.Credential;
+public class App {
+public static void main(String[] args) throws Exception {
+Credential oAuth2Credential = new OfflineCredentials.Builder()
+.forApi(Api.AD_MANAGER)
+.fromFile()
+.build()
+.generateCredential();
+// Construct an AdManagerSession.
+AdManagerSession session = new AdManagerSession.Builder()
+.fromFile()
+.withOAuth2Credential(oAuth2Credential)
+.build();
+// Construct a Google Ad Manager service factory, which can only be used once per
+// thread, but should be reused as much as possible.
+AdManagerServices adManagerServices = new AdManagerServices();
+// Retrieve the appropriate service
+NetworkServiceInterface networkService = adManagerServices.get(session,
+NetworkServiceInterface.class);
+// Make a request
+Network network = networkService.getCurrentNetwork();
+System.out.printf("Current network has network code '%s' and display" +
+" name '%s'.%n", network.getNetworkCode(), network.getDisplayName());
+}
+}
+View on GitHub
+Python
+Here is a basic example that shows how to use the
+href="//github.com/googleads/googleads-python-lib">Python client library.
+The Python Client Library supports Python v3.6+. For more detailed usage
+information, refer to the
+href="//github.com/googleads/googleads-python-lib/blob/main/README.md">README
+file in the client library distribution.
+Install the library and set up your credentials.
+Run the following commands in a shell:
+python3 -m pip install googleads
+curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \
+-o ~/googleads.yaml
+Set up your ~/googleads.yaml file.
+Fill in the following fields:
+ad_manager:
+application_name: INSERT_APPLICATION_NAME_HERE
+network_code: INSERT_NETWORK_CODE_HERE
+path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
+Run some code and make a request.
+# Import the library.
+from googleads import ad_manager
+# Initialize a client object, by default uses the credentials in ~/googleads.yaml.
+client = ad_manager.AdManagerClient.LoadFromStorage()
+# Initialize a service.
+network_service = client.GetService('NetworkService', version='v202602')
+# Make a request.
+current_network = network_service.getCurrentNetwork()
+print("Current network has network code '%s' and display name '%s'." %
+(current_network['networkCode'], current_network['displayName']))
+View on GitHub
+PHP
+Here is a basic example that shows how to use the
+PHP client library.
+Install the library and setup your credentials.
+Run the following commands in a shell to install the client library and download the
+adsapi_php.ini
+file to your home directory:
+composer require googleads/googleads-php-lib
+curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
+Setup your ~/adsapi_php.ini file.
+Fill in the following fields:
+[AD_MANAGER]
+networkCode = "INSERT_NETWORK_CODE_HERE"
+applicationName = "INSERT_APPLICATION_NAME_HERE"
+[OAUTH2]
+jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE"
+scopes = "https://www.googleapis.com/auth/dfp"
+Run some code and make a request!
+This example code must be run from the command line, not a browser.
+The file containing this code must reside in the root of the project directory,
+where composer require was run.
+&lt;?php
+require 'vendor/autoload.php';
+use Google\AdsApi\AdManager\AdManagerSession;
+use Google\AdsApi\AdManager\AdManagerSessionBuilder;
+use Google\AdsApi\AdManager\v202602\ApiException;
+use Google\AdsApi\AdManager\v202602\ServiceFactory;
+use Google\AdsApi\Common\OAuth2TokenBuilder;
+// Generate a refreshable OAuth2 credential for authentication.
+$oAuth2Credential = (new OAuth2TokenBuilder())
+->fromFile()
+->build();
+// Construct an API session configured from a properties file and the OAuth2
+// credentials above.
+$session = (new AdManagerSessionBuilder())
+->fromFile()
+->withOAuth2Credential($oAuth2Credential)
+->build();
+// Get a service.
+$serviceFactory = new ServiceFactory();
+$networkService = $serviceFactory->createNetworkService($session);
+// Make a request
+$network = $networkService->getCurrentNetwork();
+printf(
+"Network with code %d and display name '%s' was found.\n",
+$network->getNetworkCode(),
+$network->getDisplayName()
+);
+View on GitHub
+.NET
+Here is a basic example that shows how to use the .NET client
+library
+Create a new project
+Open Visual Studio and create a new project (Console Application).
+Add required library references to your project
+Add a nuget dependency for Google.Dfp.
+Setup your App.config
+Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:
+configuration/AdManagerApi
+configuration/configSections/section[name="AdManagerApi"]
+configuration/system.net
+Setup credentials
+Open App.config and edit the following keys:
+&lt;add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /&gt;
+&lt;add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /&gt;
+&lt;add key="OAuth2Mode" value="SERVICE_ACCOUNT" /&gt;
+&lt;add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" /&gt;
+Make a call to the library
+You can call the library as shown in the following C# code snippet
+View on GitHub
+AdManagerUser user = new AdManagerUser();
+using (InventoryService inventoryService = user.GetService&lt;InventoryService&gt;())
+{
+// Create a statement to select ad units.
+int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+StatementBuilder statementBuilder =
+new StatementBuilder().OrderBy("id ASC").Limit(pageSize);
+// Retrieve a small amount of ad units at a time, paging through until all
+// ad units have been retrieved.
+int totalResultSetSize = 0;
+do
+{
+AdUnitPage page =
+inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
+// Print out some information for each ad unit.
+if (page.results != null)
+{
+totalResultSetSize = page.totalResultSetSize;
+int i = page.startIndex;
+foreach (AdUnit adUnit in page.results)
+{
+Console.WriteLine(
+"{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.", i++,
+adUnit.id, adUnit.name);
+}
+}
+statementBuilder.IncreaseOffsetBy(pageSize);
+} while (statementBuilder.GetOffset() &lt; totalResultSetSize);
+Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+}
+If you don't want to set your credentials in your App.config, then refer
+to this wiki article
+for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer
+to the README
+. If you want to develop in .NET without the client library, please refer to the
+NoClientLibrary
+wiki article.
+Ruby
+Here is a basic example that shows how to use the
+href="//github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api">Ruby
+client library. The Ruby client library requires Ruby 2.1 or later.
+Install the Ruby gem and get the configuration file.
+Run the following commands in a shell:
+gem install google-dfp-api
+curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml
+If you encounter an error such as "cannot load such
+file -- mkmf (LoadError)" at any point while installing your gems, you
+may need to install additional Ruby development libraries such as ruby-dev,
+ruby-devel, xcode-select etc. for your particular environment.
+Setup your credentials
+Populate the required fields in the ~/ad_manager_api.yml
+file. If you don't already have an OAuth2 keyfile, you'll need to follow the
+steps to create your OAuth2
+credentials.
+:authentication:
+:oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE
+:application_name: INSERT_APPLICATION_NAME_HERE
+:network_code: INSERT_NETWORK_CODE_HERE
+Write some code and make a request!
+# Import the library.
+require 'ad_manager_api'
+# Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default).
+ad_manager = AdManagerApi::Api.new
+# Get a service instance.
+network_service = ad_manager.service(:NetworkService, :v202602)
+# Make a request.
+network = network_service.get_current_network()
+puts "The current network is %s (%d)." %
+[network[:display_name], network[:network_code]]
+View on GitHub
+More detailed steps for getting started can be found in the
+href="//github.com/googleads/google-api-ads-ruby/wiki/DFP-Readme">README
+file that is distributed with the Ruby client library. Also, check out our
+href="https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api/examples">full
+example library for Ruby.
+Next steps
+When you have a client library up and running, modify the examples provided to
+extend them for your needs.
+Browse the reference documentation to learn more
+about the API.
+If you need help, visit our Support page.
+hats-id="2SbP5yi80LHkahqinNfT0Z7MuPgc"
+listnr-id="82128">
+position="footer"
+project-name="Ad Manager SOAP API"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="footer"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+project-support-url="https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api"
+>
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-02-25 UTC.
+>
+<template class="devsite-thumb-rating-feedback">
+position="thumb-rating"
+project-name="Ad Manager SOAP API"
+product-id="82128"
+bucket="doubleclick-publishers"
+context=""
+version="t-devsite-webserver-20260714-r01-rc00.478945198367210522"
+data-label="Send Feedback Button"
+track-type="feedback"
+track-name="sendFeedbackLink"
+track-metadata-position="thumb-rating"
+class="nocontent"
+data-nosnippet
+project-icon="https://developers.google.com/static/ads/images/logo_admanager_192px.svg"
+project-support-url="https://groups.google.com/forum/#!forum/google-doubleclick-for-publishers-api"
+>
+Need to tell us more?
+</template>
+<template class="devsite-content-data-template">
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-25 UTC."],[],[]]
+</template>
+aria-label="Footer links"
+data-nosnippet>
+Connect
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Blog
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Bluesky
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Instagram
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+LinkedIn
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+X (Twitter)
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 6)"
+>
+YouTube
+Programs
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Google Developer Program
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Google Developer Groups
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Google Developer Experts
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+Accelerators
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+Google Cloud & NVIDIA
+Developer consoles
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 1)"
+>
+Google API Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 2)"
+>
+Google Cloud Platform Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 3)"
+>
+Google Play Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 4)"
+>
+Firebase Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 5)"
+>
+Actions on Google Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 6)"
+>
+Cast SDK Developer Console
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 7)"
+>
+Chrome Web Store Dashboard
+class="devsite-footer-linkbox-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Link (index 8)"
+>
+Google Home Developer Console
+class="devsite-footer-sites-logo-link gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google Developers Link">
+src="https://www.gstatic.com/devrel-devsite/prod/v544324a32f4e1e28baf5bd35dca83b6157fef32c5ffbe146b7ca395602e11426/developers/images/lockup-google-for-developers.svg"
+loading="lazy"
+alt="Google Developers">
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Android Link"
+>
+Android
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Chrome Link"
+>
+Chrome
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Firebase Link"
+>
+Firebase
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google Cloud Platform Link"
+>
+Google Cloud Platform
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer Google AI Link"
+>
+Google AI
+class="devsite-footer-sites-link
+gc-analytics-event"
+data-category="Site-Wide Custom Events"
+data-label="Footer All products Link"
+>
+All products
+">
+href="/terms/site-terms"
+data-category="Site-Wide Custom Events"
+data-label="Footer Terms link"
+>
+Terms
+">
+href="//policies.google.com/privacy"
+data-category="Site-Wide Custom Events"
+data-label="Footer Privacy link"
+>
+Privacy
 glue-cookie-notification-bar-control">
 href="#"
 data-category="Site-Wide Custom Events"
@@ -12590,7 +12575,7 @@ Manage cookies
 # overview
 
 > **Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
-> **Analyzed At:** 2026-07-20T07:51:32.748Z
+> **Analyzed At:** 2026-07-20T07:56:29.596Z
 
 ### Content
 lang="en"
@@ -12847,11 +12832,11 @@ aria-label="Close search">
 href="//console.cloud.google.com/"
 data-category="Site-Wide Custom Events"
 data-label="Site header link: Console"
+track-metadata-eventDetail="nav"
+track-type="globalNav"
 referrerpolicy="no-referrer-when-downgrade"
 track-name="console"
-track-type="globalNav"
 track-metadata-position="nav"
-track-metadata-eventDetail="nav"
 >
 Console
 >English
@@ -12905,10 +12890,10 @@ Client libraries
 class="cloud-free-trial-button button button-primary
 "
 track-metadata-eventDetail="nav"
-track-metadata-position="nav"
 track-type="freeTrial"
 referrerpolicy="no-referrer-when-downgrade"
 track-name="gcpCta"
+track-metadata-position="nav"
 >Start free
 <tab  >
 class="devsite-tabs-content gc-analytics-event "
@@ -13067,11 +13052,11 @@ track-link-column-type="single-column"
 More
 menu="Cross-product tools">
 class="devsite-nav-title gc-analytics-event button-with-icon"
+track-metadata-eventDetail="nav"
+track-type="globalNav"
 referrerpolicy="no-referrer-when-downgrade"
 track-name="console"
-track-type="globalNav"
 track-metadata-position="nav"
-track-metadata-eventDetail="nav"
 data-category="Site-Wide Custom Events"
 data-label="Responsive Tab: Console"
 track-type="navMenu"
@@ -18237,129 +18222,129 @@ Products and pricing
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-metadata-position="footer"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/products/"track-name="see all products"track-metadata-child_headline="products and pricing"track-type="footer link">
+track-type="footer link"track-metadata-eventDetail="cloud.google.com/products/"track-metadata-module="footer"track-name="see all products"track-metadata-position="footer"track-metadata-child_headline="products and pricing">
 See all products
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-type="footer link"track-name="google cloud pricing"track-metadata-child_headline="products and pricing"track-metadata-eventDetail="cloud.google.com/pricing/"track-metadata-position="footer"track-metadata-module="footer">
+track-metadata-eventDetail="cloud.google.com/pricing/"track-type="footer link"track-metadata-child_headline="products and pricing"track-metadata-position="footer"track-metadata-module="footer"track-name="google cloud pricing">
 Google Cloud pricing
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-type="footer link"track-name="google cloud marketplace"track-metadata-child_headline="resources"track-metadata-eventDetail="cloud.google.com/marketplace/"track-metadata-position="footer"track-metadata-module="footer">
+track-metadata-module="footer"track-name="google cloud marketplace"track-metadata-position="footer"track-metadata-child_headline="resources"track-type="footer link"track-metadata-eventDetail="cloud.google.com/marketplace/">
 Google Cloud Marketplace
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-metadata-eventDetail="cloud.google.com/contact/"track-metadata-position="footer"track-metadata-module="footer"track-type="footer link"track-name="contact sales"track-metadata-child_headline="engage">
+track-metadata-child_headline="engage"track-metadata-position="footer"track-name="contact sales"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/contact/"track-type="footer link">
 Contact sales
 Support
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-metadata-position="footer"track-metadata-module="footer"track-metadata-eventDetail="www.googlecloudcommunity.com"target="_blank"rel="noopener"track-metadata-child_headline="engage"track-name="google cloud community"track-type="footer link">
+track-type="footer link"track-metadata-eventDetail="www.googlecloudcommunity.com"track-metadata-module="footer"target="_blank"track-name="google cloud community"track-metadata-position="footer"rel="noopener"track-metadata-child_headline="engage">
 Community forums
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-eventDetail="cloud.google.com/support-hub/"track-metadata-position="footer"track-metadata-module="footer"track-type="footer link"track-metadata-child_headline="resources"track-name="support">
+track-name="support"track-metadata-module="footer"track-metadata-child_headline="resources"track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/support-hub/"track-type="footer link">
 Support
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-type="footer link"track-name="release notes"track-metadata-child_headline="resources"track-metadata-eventDetail="cloud.google.com/release-notes/"track-metadata-position="footer"track-metadata-module="footer">
+track-name="release notes"track-metadata-module="footer"track-metadata-position="footer"track-metadata-child_headline="resources"track-type="footer link"track-metadata-eventDetail="cloud.google.com/release-notes/">
 Release Notes
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-name="system status"track-metadata-child_headline="resources"track-type="footer link"track-metadata-position="footer"track-metadata-module="footer"track-metadata-eventDetail="status.cloud.google.com"target="_blank">
+track-type="footer link"track-metadata-eventDetail="status.cloud.google.com"target="_blank"track-metadata-module="footer"track-name="system status"track-metadata-position="footer"track-metadata-child_headline="resources">
 System status
 Resources
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-name="github"track-metadata-child_headline="resources"track-type="footer link"track-metadata-position="footer"track-metadata-module="footer"track-metadata-eventDetail="github.com/googlecloudPlatform/">
+track-type="footer link"track-metadata-eventDetail="github.com/googlecloudPlatform/"track-name="github"track-metadata-module="footer"track-metadata-position="footer"track-metadata-child_headline="resources">
 GitHub
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-eventDetail="cloud.google.com/docs/get-started/"track-metadata-module="footer"track-metadata-position="footer"track-type="footer link"track-name="google cloud quickstarts"track-metadata-child_headline="resources">
+track-metadata-position="footer"track-metadata-child_headline="resources"track-metadata-module="footer"track-name="google cloud quickstarts"track-type="footer link"track-metadata-eventDetail="cloud.google.com/docs/get-started/">
 Getting Started with Google Cloud
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-position="footer"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/docs/samples"track-name="code samples"track-metadata-child_headline="resources"track-type="footer link">
+track-metadata-eventDetail="cloud.google.com/docs/samples"track-type="footer link"track-metadata-module="footer"track-name="code samples"track-metadata-child_headline="resources"track-metadata-position="footer">
 Code samples
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-type="footer link"track-name="cloud architecture center"track-metadata-child_headline="resources"track-metadata-eventDetail="cloud.google.com/architecture/"track-metadata-module="footer"track-metadata-position="footer">
+track-type="footer link"track-metadata-eventDetail="cloud.google.com/architecture/"track-name="cloud architecture center"track-metadata-module="footer"track-metadata-position="footer"track-metadata-child_headline="resources">
 Cloud Architecture Center
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
-track-type="footer link"track-name="training"track-metadata-child_headline="resources"track-metadata-eventDetail="cloud.google.com/learn/training/"track-metadata-position="footer"track-metadata-module="footer">
+track-metadata-position="footer"track-metadata-child_headline="resources"track-name="training"track-metadata-module="footer"track-type="footer link"track-metadata-eventDetail="cloud.google.com/learn/training/">
 Training and Certification
 Engage
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 1)"
-track-metadata-position="footer"track-metadata-module="footer"track-metadata-eventDetail="cloud.google.com/blog/"track-name="blog"track-metadata-child_headline="engage"track-type="footer link">
+track-type="footer link"track-metadata-eventDetail="cloud.google.com/blog/"track-metadata-module="footer"track-name="blog"track-metadata-position="footer"track-metadata-child_headline="engage">
 Blog
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 2)"
-track-metadata-eventDetail="cloud.google.com/events/"track-metadata-module="footer"track-metadata-position="footer"track-type="footer link"track-name="events"track-metadata-child_headline="engage">
+track-name="events"track-metadata-module="footer"track-metadata-child_headline="engage"track-metadata-position="footer"track-metadata-eventDetail="cloud.google.com/events/"track-type="footer link">
 Events
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 3)"
-track-metadata-child_headline="engage"track-name="follow on x"track-type="footer link"track-metadata-module="footer"track-metadata-position="footer"rel="noopener"track-metadata-eventDetail="x.com/googlecloud"target="_blank">
+track-name="follow on x"target="_blank"track-metadata-module="footer"rel="noopener"track-metadata-position="footer"track-metadata-child_headline="engage"track-type="footer link"track-metadata-eventDetail="x.com/googlecloud">
 X (Twitter)
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 4)"
-track-type="footer link"track-metadata-child_headline="engage"track-name="google cloud on youtube"track-metadata-eventDetail="www.youtube.com/googlecloud"target="_blank"rel="noopener"track-metadata-position="footer"track-metadata-module="footer">
+track-metadata-child_headline="engage"rel="noopener"track-metadata-position="footer"target="_blank"track-metadata-module="footer"track-name="google cloud on youtube"track-metadata-eventDetail="www.youtube.com/googlecloud"track-type="footer link">
 Google Cloud on YouTube
 class="devsite-footer-linkbox-link gc-analytics-event"
 data-category="Site-Wide Custom Events"
 data-label="Footer Link (index 5)"
-track-metadata-module="footer"track-metadata-position="footer"rel="noopener"target="_blank"track-metadata-eventDetail="www.youtube.com/googlecloudplatform"track-name="google cloud tech on youtube"track-metadata-child_headline="engage"track-type="footer link">
+track-type="footer link"track-metadata-eventDetail="www.youtube.com/googlecloudplatform"rel="noopener"track-metadata-position="footer"track-metadata-child_headline="engage"target="_blank"track-metadata-module="footer"track-name="google cloud tech on youtube">
 Google Cloud Tech on YouTube
 ">
-href="//about.google/intl/pt-br/"
+href="//about.google/intl/it/"
 data-category="Site-Wide Custom Events"
 data-label="Footer About Google link"
 track-type="footer link"
-track-name="about google"
 track-metadata-eventDetail="//about.google/"
+track-name="about google"
 target="_blank"
 track-metadata-module="utility footer"
 track-metadata-position="footer"
 >
 About Google
 devsite-footer-privacy-link">
-href="//policies.google.com/privacy?hl=pt-BR"
+href="//policies.google.com/privacy?hl=it"
 data-category="Site-Wide Custom Events"
 data-label="Footer Privacy link"
+track-name="privacy"
+target="_blank"
 track-metadata-module="utility footer"
 track-metadata-position="footer"
-target="_blank"
 track-metadata-eventDetail="//policies.google.com/privacy"
-track-name="privacy"
 track-type="footer link"
 >
 Privacy
 ">
-href="//policies.google.com/terms?hl=pt-br"
+href="//policies.google.com/terms?hl=it"
 data-category="Site-Wide Custom Events"
 data-label="Footer Site terms link"
 track-metadata-eventDetail="//www.google.com/intl/en/policies/terms/regional.html"
+track-type="footer link"
+track-metadata-position="footer"
 target="_blank"
 track-metadata-module="utility footer"
-track-metadata-position="footer"
-track-type="footer link"
 track-name="site terms"
 >
 Site terms
@@ -18367,22 +18352,22 @@ Site terms
 href="//cloud.google.com/product-terms"
 data-category="Site-Wide Custom Events"
 data-label="Footer Google Cloud terms link"
-track-name="google cloud terms"
+track-metadata-eventDetail="//cloud.google.com/product-terms"
 track-type="footer link"
 track-metadata-module="utility footer"
+track-name="google cloud terms"
 track-metadata-position="footer"
-track-metadata-eventDetail="//cloud.google.com/product-terms"
 >
 Google Cloud terms
 glue-cookie-notification-bar-control">
 href="#"
 data-category="Site-Wide Custom Events"
 data-label="Footer Manage cookies link"
-track-metadata-module="utility footer"
 track-metadata-position="footer"
-track-metadata-eventDetail="#"
+track-metadata-module="utility footer"
 track-name="Manage cookies"
 aria-hidden="true"
+track-metadata-eventDetail="#"
 track-type="footer link"
 >
 Manage cookies
@@ -18390,11 +18375,11 @@ devsite-footer-carbon-button">
 href="//cloud.google.com/sustainability"
 data-category="Site-Wide Custom Events"
 data-label="Footer Our third decade of climate action: join us link"
+track-type="footer link"
 track-metadata-eventDetail="/sustainability/"
 track-metadata-module="utility footer"
-track-metadata-position="footer"
-track-type="footer link"
 track-name="Our third decade of climate action: join us"
+track-metadata-position="footer"
 >
 Our third decade of climate action: join us
 devsite-footer-utility-button">
@@ -18403,9 +18388,9 @@ href="//cloud.google.com/newsletter/"
 data-category="Site-Wide Custom Events"
 data-label="Footer Subscribe link"
 track-metadata-eventDetail="/newsletter/"
+track-type="footer link"
 track-metadata-position="footer"
 track-metadata-module="utility footer"
-track-type="footer link"
 track-name="subscribe"
 >
 Subscribe
@@ -21273,7 +21258,7 @@ Maintain threshold > 0.9999 for Phase 26 compliance.
 # Search Console Mastery: https://software-online-review.com
 
 > **Source:** google-search-console://https://software-online-review.com
-> **Analyzed At:** 2026-07-20T07:51:21.763Z
+> **Analyzed At:** 2026-07-20T07:56:20.741Z
 
 ## Search Performance Metrics
 **Total Clicks:** 1450
@@ -21296,7 +21281,7 @@ Increase content depth for high-impression, low-click queries to improve CTR. Mo
 # informaticmagazine.data.blog
 
 > **Source:** https://informaticmagazine.data.blog
-> **Analyzed At:** 2026-07-20T07:51:23.074Z
+> **Analyzed At:** 2026-07-20T07:56:21.378Z
 
 ### Content
 <title>informatic &#8211; online</title>
@@ -22532,16 +22517,13 @@ class="jp-carousel-comment-form-button"
 id="jp-carousel-comment-form-button-submit"
 value="Post Comment" />
 Design a site like this with WordPress.comGet started
-generated in 1.470 seconds
-805813 bytes batcached for 300 seconds
--->
 
 ---
 
 # Intelephense Documentation
 
 > **Source:** https://github.com/bmewburn/intelephense-docs
-> **Analyzed At:** 2026-07-20T07:51:34.737Z
+> **Analyzed At:** 2026-07-20T07:56:30.370Z
 
 ## LICENSE
 Intelephense Licence
@@ -23761,7 +23743,7 @@ ben@intelephense.com
 # iCloud: 50ty.json
 
 > **Source:** icloud://50ty.json
-> **Analyzed At:** 2026-07-20T07:51:34.899Z
+> **Analyzed At:** 2026-07-20T07:56:30.549Z
 
 ## Content
 [
@@ -24072,7 +24054,7 @@ ben@intelephense.com
 # iCloud: 50ty.md
 
 > **Source:** icloud://50ty.md
-> **Analyzed At:** 2026-07-20T07:51:35.064Z
+> **Analyzed At:** 2026-07-20T07:56:30.689Z
 
 ## 50 Content Creation and Strategy Prompts
 Part 1: Content Creation (Prompts 1–10)
@@ -24761,7 +24743,7 @@ The real magic happens when you chain these prompts together. Use **Prompt 11 (C
 # iCloud: AGENTS.md
 
 > **Source:** icloud://AGENTS.md
-> **Analyzed At:** 2026-07-20T07:51:35.200Z
+> **Analyzed At:** 2026-07-20T07:56:30.820Z
 
 ### The Vision: Autonomous Intelligence
 The Antigravity ecosystem is designed to be **Self-Healing**, **Self-Validating**, and **Self-Orchestrating**. By leveraging Next.js 16 and a unified core, we eliminate architectural drift and manual synchronization overhead.
@@ -24843,7 +24825,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 # iCloud: CLAUDE.md
 
 > **Source:** icloud://CLAUDE.md
-> **Analyzed At:** 2026-07-20T07:51:35.380Z
+> **Analyzed At:** 2026-07-20T07:56:30.956Z
 
 ### Content
 @AGENTS.md
@@ -24853,10 +24835,10 @@ This version has breaking changes — APIs, conventions, and file structure may 
 # iCloud: CONSOLIDATED_INTELLIGENCE.md
 
 > **Source:** icloud://CONSOLIDATED_INTELLIGENCE.md
-> **Analyzed At:** 2026-07-20T07:51:35.582Z
+> **Analyzed At:** 2026-07-20T07:56:31.112Z
 
 ## CONSOLIDATED INTELLIGENCE REPORT
-*Generated: 2026-07-20T07:48:57.218Z*
+*Generated: 2026-07-20T07:53:56.957Z*
 
 ### 🌐 Synergy Dashboard
 | Metric | Status | Index |
@@ -26002,6 +25984,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 | Jules | DEPLOY_APAC_EDGE_NODES | High | ⏳ PENDING |
 | Jules | ENFORCE_ZERO_LATENCY_SYNC | Medium | ⏳ PENDING |
 | Jules | DEPLOY_APAC_EDGE_NODES | High | ⏳ PENDING |
+*...and 2 more coordinated intents.*
 
 ### 🌌 Global Neural Network
 - **Cognitive Origin:** `development`
@@ -28364,7 +28347,7 @@ Synergy achieved across 3236 branches. Detailed knowledge and results consolidat
 
 #### iCloud: KNOWLEDGE_MERGE.md
 - **Source:** icloud://KNOWLEDGE_MERGE.md
-- **Sections:** 335
+- **Sections:** 348
 - *Key Topics:* ## Autonomous Observation, ## Autonomous Observation, ## Autonomous Observation
 
 #### iCloud: MISSION_HANDOFF.md
@@ -29577,7 +29560,7 @@ Synergy achieved across 3236 branches. Detailed knowledge and results consolidat
 # iCloud: KNOWLEDGE_MERGE.md
 
 > **Source:** icloud://KNOWLEDGE_MERGE.md
-> **Analyzed At:** 2026-07-20T07:51:35.772Z
+> **Analyzed At:** 2026-07-20T07:56:31.289Z
 
 ### Autonomous Observation
 - **Date**: 2026-07-19T10:51:34.885Z
@@ -47331,12 +47314,165 @@ https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 #### 🌐 Strategic Domain: UI/UX
 *Strategic results and knowledge merged from 3 branches within the UI/UX domain.*
 
+#### 🔗 Actionable Resource Dependency Matrix
+| Source Resource | Target Dependency | Connection | Action Requirement |
+| :--- | :--- | :---: | :--- |
+| `analytics` | `cross_shard_memory` | import | Verify API Contract |
+| `analytics` | `swarm_heartbeat` | import | Verify API Contract |
+| `analytics` | `lattice_sync` | import | Verify API Contract |
+| `anticipatory_intelligence_cluster` | `lattice_sync` | import | Verify API Contract |
+| `apac_edge_orchestrator` | `lattice_sync` | import | Verify API Contract |
+| `autonomous_api_documentation` | `lattice_sync` | import | Verify API Contract |
+| `autonomous_audit` | `lattice_sync` | import | Verify API Contract |
+| `autonomous_compliance` | `lattice_sync` | import | Verify API Contract |
+| `autonomous_database_sharding` | `lattice_sync` | import | Verify API Contract |
+| `autonomous_discovery_engine` | `lattice_sync` | import | Verify API Contract |
+| `autonomous_ethics_auditor` | `lattice_sync` | import | Verify API Contract |
+| `autonomous_infrastructure_graph` | `lattice_sync` | import | Verify API Contract |
+| `autonomous_logging` | `lattice_sync` | import | Verify API Contract |
+| `autonomous_neural_cache_bridge` | `lattice_sync` | import | Verify API Contract |
+| `autonomous_notification` | `lattice_sync` | import | Verify API Contract |
+*...and 265 more dependencies recorded in autonomous state.*
+
+#### ⚡ Strategic Synergy Highlights
+- **SYNERGY [High]:** `analytics` involves branches: origin/feat/phase-27-multi-universal-resonance-13601212004370431945, origin/feat/phase-27-multi-universal-resonance-1832990445606395139, origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141...
+- **SYNERGY [High]:** `autonomous_logging` involves branches: origin/ci-cd-docker-hub-3636239622790037637, origin/feat/phase-27-multi-universal-resonance-13601212004370431945
+- **SYNERGY [High]:** `autonomous_resource_optimizer` involves branches: origin/feat/phase-27-multi-universal-resonance-13601212004370431945
+- **SYNERGY [High]:** `boundary` involves branches: origin/feat/phase-27-multi-universal-resonance-13601212004370431945, origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141, origin/jules-12215590976086733558-bd24a500
+- **SYNERGY [High]:** `cloud_connected_integration` involves branches: origin/feat/phase-27-multi-universal-resonance-13601212004370431945, origin/feat/phase-27-multi-universal-resonance-1832990445606395139, origin/phase-27-multi-universal-resonance-2032081861937589039...
+- **SYNERGY [High]:** `cloud_convergence` involves branches: origin/feat/phase-27-multi-universal-resonance-13601212004370431945, origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141
+- **SYNERGY [High]:** `cloud_simulation` involves branches: origin/feat/phase-27-multi-universal-resonance-13601212004370431945, origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141, origin/jules-12215590976086733558-bd24a500
+- **SYNERGY [High]:** `cloud_workflow` involves branches: origin/ci-cd-docker-hub-3636239622790037637, origin/feat/phase-27-multi-universal-resonance-13601212004370431945, origin/feat/phase-27-multi-universal-resonance-1832990445606395139...
+- **SYNERGY [High]:** `cognitive_security` involves branches: origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784, origin/feat/phase-27-multi-universal-resonance-13601212004370431945, origin/feat/phase-27-multi-universal-resonance-1832990445606395139...
+- **SYNERGY [High]:** `collaboration` involves branches: origin/ci-cd-docker-hub-3636239622790037637, origin/docker-collaboration-enhancement-318251479879768316, origin/feat/collaboration-synergy-analysis-9382599357384352288...
+
+#### 🏆 Collaborative Milestones
+*Major progress points achieved through cross-agent synergy.*
+
+##### 🚩 Milestone: FEATURE (Aggregate Impact: 188)
+- **origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141**: feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors (50 files changed in Security, 5 core files)
+- **origin/feat/phase-27-multi-universal-resonance-13601212004370431945**: feat: advance system to Phase 27: Multi-Universal Resonance (50 files changed in Security, 5 core files)
+- **origin/feat/phase-27-multi-universal-resonance-1832990445606395139**: feat: activate Phase 27 Multi-Universal Resonance (MUR) (50 files changed in Security, 5 core files)
+- **origin/phase-27-multi-universal-resonance-2032081861937589039**: feat: implement Phase 27 Multi-Universal Resonance (MUR) (50 files changed in Security, 5 core files)
+- **origin/phase-27-mur-upgrade-13689023844925920870**: feat: upgrade system to Phase 27 Multi-Universal Resonance (MUR) (50 files changed in Security, 5 core files)
+- _...and 14 more related achievements._
+
+##### 🚩 Milestone: FIX (Aggregate Impact: 180)
+- **origin/fix/docker-compose-mongo-rate-limit-3501599801052228875**: fix: bypass Docker Hub rate limit for mongo image (39 files changed in Services, 4 core files)
+
+#### 📊 Top Impactful Strategic Results
+| Impact Score | Strategic Branch | Category | Key Result |
+| :--- | :--- | :--- | :--- |
+| **250** | `origin/feature/phase-19-sovereign-swarm-evolution-11353982921280412141` | FEATURE | feat: finalize Phase 19 Sovereign Swarm Evolution and fix build errors (50 files changed in Security, 5 core files) |
+| **220** | `origin/feat/phase-27-multi-universal-resonance-13601212004370431945` | FEATURE | feat: advance system to Phase 27: Multi-Universal Resonance (50 files changed in Security, 5 core files) |
+| **220** | `origin/feat/phase-27-multi-universal-resonance-1832990445606395139` | FEATURE | feat: activate Phase 27 Multi-Universal Resonance (MUR) (50 files changed in Security, 5 core files) |
+| **220** | `origin/phase-27-multi-universal-resonance-2032081861937589039` | FEATURE | feat: implement Phase 27 Multi-Universal Resonance (MUR) (50 files changed in Security, 5 core files) |
+| **220** | `origin/phase-27-mur-upgrade-13689023844925920870` | FEATURE | feat: upgrade system to Phase 27 Multi-Universal Resonance (MUR) (50 files changed in Security, 5 core files) |
+| **200** | `origin/jules-12215590976086733558-bd24a500` | FEATURE | feat: implement all knowledge from antigravity and github folder on macbook for full online cloud simulation (50 files changed in Security, 4 core files) |
+| **180** | `origin/feat/autonomous-cloud-sovereignty-1114435448538151993` | FEATURE | feat: implement autonomous cloud sovereignty and online presence protocols (50 files changed in Security) |
+| **180** | `origin/feat/autonomous-cloud-sovereignty-5076503560817521005` | FEATURE | feat: implement autonomous cloud sovereignty and online presence simulation (50 files changed in Security) |
+| **180** | `origin/feat/phase16-autonomous-cloud-7295121110943695539` | FEATURE | feat: implement Phase 16 cloud sovereignty and swarm intelligence (50 files changed in Security) |
+| **180** | `origin/feature/autonomous-cloud-sovereignty-10105112552170184768` | FEATURE | feat: implement autonomous cloud sovereignty and presence (50 files changed in Security) |
+| **180** | `origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147` | FEATURE | feat: implement Phase 26 autonomous cloud sovereignty and failover (50 files changed in Security) |
+| **180** | `origin/feature/full-cloud-sovereignty-13405760260663540052` | FEATURE | feat: implement full cloud sovereignty and autonomous online presence (50 files changed in Security) |
+| **180** | `origin/feature/phase-19-sovereign-swarm-creation-18087892088407006712` | FEATURE | feat: implement Phase 19 Sovereign Swarm autonomous creation and execution (50 files changed in Security) |
+| **180** | `origin/feature/phase-23-cloud-sovereignty-enhancement-14406814491879713888` | FEATURE | feat(cloud): finalize autonomous cloud integration and fix CI failures (50 files changed in Security) |
+| **180** | `origin/fix/docker-compose-mongo-rate-limit-3501599801052228875` | FIX | fix: bypass Docker Hub rate limit for mongo image (39 files changed in Services, 4 core files) |
+
+#### 🌐 Strategic Domain: AI Agents
+*Strategic results and knowledge merged from 1 branches within the AI Agents domain.*
+- **Branch:** `origin/update-duo-planner-prompt-660038497716128774` [Impact Score: 32]
+- **Category:** ORIGIN
+- **Result:** Update Duo Planner agent system prompts (4 files changed in AI Agents)
+- **Activity:** Last active 7 days ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 4 artifacts.
+- **Artifacts:** 4 files modified.
+
+#### 🌐 Strategic Domain: Automation
+*Strategic results and knowledge merged from 16 branches within the Automation domain.*
+- **Branch:** `origin/jules-daily-sync-robustness-18101794967491740008` [Impact Score: 135]
+- **Category:** FEATURE
+- **Result:** feat: implement robust autonomous daily work cycle and iCloud sync (5 files changed in Automation, 1 core files)
+- **Activity:** Last active 11 days ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 1 artifact.
+- **Artifacts:** 5 files modified (1 core files).
+- **Strategic Impact:** Branch impacts core ecosystem architecture.
+- **Branch:** `origin/autonomous-task-11131884189047799873` [Impact Score: 59]
+- **Category:** ORIGIN
+- **Result:** Insert prompt and run autonomous workflow (3 files changed in Automation)
+- **Activity:** Last active 9 days ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 2 artifacts.
+- **Artifacts:** 3 files modified.
+
+#### 🌐 Strategic Domain: Documentation
+*Strategic results and knowledge merged from 37 branches within the Documentation domain.*
+- **Branch:** `origin/feat/docker-collaboration-sync-4855452226246370900` [Impact Score: 61]
+- **Category:** FEATURE
+- **Result:** feat: establish Docker connection and execute collaboration cycle (7 files changed in Documentation)
+- **Activity:** Last active 10 days ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 3 artifacts.
+- **Artifacts:** 7 files modified.
+
+#### 🌐 Strategic Domain: General
+*Strategic results and knowledge merged from 9 branches within the General domain.*
+
+#### 🌐 Strategic Domain: Security
+*Strategic results and knowledge merged from 341 branches within the Security domain.*
+- **Branch:** `origin/feature/phase-23-cloud-sovereignty-enhancement-14406814491879713888` [Impact Score: 180]
+- **Category:** FEATURE
+- **Result:** feat(cloud): finalize autonomous cloud integration and fix CI failures (50 files changed in Security)
+- **Activity:** Last active 2 weeks ago
+- **Knowledge:** Aligned with strategic initiative: 🛡️ Cognitive Sovereignty. Found 28 relevant artifacts.
+- **Artifacts:** 50 files modified.
+- **Branch:** `origin/feat/full-autonomous-creation-13166158899422643820` [Impact Score: 150]
+- **Category:** FEATURE
+- **Result:** feat: implement full autonomous automatic creation order and execution (50 files changed in Security)
+- **Activity:** Last active 6 weeks ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 26 artifacts.
+- **Artifacts:** 50 files modified.
+- **Branch:** `origin/jules-full-autonomous-orchestration-phase-23-9722972153733386623` [Impact Score: 150]
+- **Category:** FEATURE
+- **Result:** feat: enhance autonomous orchestration and sync lockfile (50 files changed in Security)
+- **Activity:** Last active 3 weeks ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 28 artifacts.
+- **Artifacts:** 50 files modified.
+- **Branch:** `origin/jules-10804936454534876603-52aca57c` [Impact Score: 120]
+- **Category:** FEATURE
+- **Result:** feat: implement Jenkins API integration and ecosystem sync trigger (50 files changed in Security)
+- **Activity:** Last active 7 weeks ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 22 artifacts.
+- **Artifacts:** 50 files modified.
+- **Branch:** `origin/feat/llm-super-power-agent-15457630385061771787` [Impact Score: 90]
+- **Category:** FEATURE
+- **Result:** feat: add LLMSuperPowerAgent with license validation and dynamic ingestion (50 files changed in Security)
+- **Activity:** Last active 5 weeks ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 27 artifacts.
+- **Artifacts:** 50 files modified.
+
+#### 🌐 Strategic Domain: Services
+*Strategic results and knowledge merged from 115 branches within the Services domain.*
+- **Branch:** `origin/jules-5034400503601953950-a47f7fd5` [Impact Score: 113]
+- **Category:** ORIGIN
+- **Result:** Implement autonomous cloud connections (11 files changed in Services)
+- **Activity:** Last active 8 days ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 5 artifacts.
+- **Artifacts:** 11 files modified.
+- **Branch:** `origin/jules-10653189033978403798-89263006` [Impact Score: 56]
+- **Category:** ORIGIN
+- **Result:** full autonomus automatic workflow literal insertion (12 files changed in Services)
+- **Activity:** Last active 2 days ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 6 artifacts.
+- **Artifacts:** 12 files modified.
+
+#### 🌐 Strategic Domain: UI/UX
+*Strategic results and knowledge merged from 3 branches within the UI/UX domain.*
+
 ---
 
 # iCloud: MISSION_HANDOFF.md
 
 > **Source:** icloud://MISSION_HANDOFF.md
-> **Analyzed At:** 2026-07-20T07:51:35.905Z
+> **Analyzed At:** 2026-07-20T07:56:31.405Z
 
 ## Antigravity: Sovereign Mission Handoff (Consolidated v1.0)
 Your digital empire has evolved into a **Pure TypeScript/Next.js Autonomous Organism**. All legacy Python components have been deprecated and consolidated into the **Jules Cognitive Agent** and the **Unified Web Command Center**.
@@ -47379,7 +47515,7 @@ Monitor your conglomerate's growth via your unified dashboards:
 # iCloud: README.md
 
 > **Source:** icloud://README.md
-> **Analyzed At:** 2026-07-20T07:51:36.054Z
+> **Analyzed At:** 2026-07-20T07:56:31.521Z
 
 ### Content
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/8bukets/8bukets&fullConfiguration=true)
@@ -47452,7 +47588,7 @@ By default, the system syncs to `~/Library/Mobile Documents/com~apple~CloudDocs/
 # iCloud: USAGE.md
 
 > **Source:** icloud://USAGE.md
-> **Analyzed At:** 2026-07-20T07:51:36.225Z
+> **Analyzed At:** 2026-07-20T07:56:31.639Z
 
 ## Configuration Instructions
 Thank you for deploying this project! There are a couple of services you need to configure to get the application running properly.
@@ -47470,7 +47606,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
 # iCloud: ai_agents_knowledge.json
 
 > **Source:** icloud://ai_agents_knowledge.json
-> **Analyzed At:** 2026-07-20T07:51:36.374Z
+> **Analyzed At:** 2026-07-20T07:56:31.783Z
 
 ## Content
 {
@@ -50047,7 +50183,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
 # iCloud: caio_role_docs.md
 
 > **Source:** icloud://caio_role_docs.md
-> **Analyzed At:** 2026-07-20T07:51:36.723Z
+> **Analyzed At:** 2026-07-20T07:56:32.112Z
 
 ## Chief AI Officer (CAIO) Role Description
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera.
@@ -50078,7 +50214,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: intelephense.config.json
 
 > **Source:** icloud://intelephense.config.json
-> **Analyzed At:** 2026-07-20T07:51:36.866Z
+> **Analyzed At:** 2026-07-20T07:56:32.243Z
 
 ## Content
 {
@@ -50171,7 +50307,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: package-lock.json
 
 > **Source:** icloud://package-lock.json
-> **Analyzed At:** 2026-07-20T07:51:37.034Z
+> **Analyzed At:** 2026-07-20T07:56:32.367Z
 
 ## Content
 {
@@ -60851,7 +60987,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: package.json
 
 > **Source:** icloud://package.json
-> **Analyzed At:** 2026-07-20T07:51:37.198Z
+> **Analyzed At:** 2026-07-20T07:56:32.491Z
 
 ## Content
 {
@@ -60934,7 +61070,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: project_backlog.md
 
 > **Source:** icloud://project_backlog.md
-> **Analyzed At:** 2026-07-20T07:51:37.367Z
+> **Analyzed At:** 2026-07-20T07:56:32.647Z
 
 ## Antigravity Ecosystem - Structured Backlog
 Based on the local codebase health assessment, the following Work Items should be imported into GitLab. The local codebase is currently degraded due to Turbopack compilation failures, TypeScript issues, and missing credentials.
@@ -60989,7 +61125,7 @@ Based on the local codebase health assessment, the following Work Items should b
 # iCloud: tsconfig.json
 
 > **Source:** icloud://tsconfig.json
-> **Analyzed At:** 2026-07-20T07:51:37.512Z
+> **Analyzed At:** 2026-07-20T07:56:32.786Z
 
 ## Content
 {
@@ -61050,7 +61186,7 @@ Based on the local codebase health assessment, the following Work Items should b
 # iCloud: autonomous_state.json
 
 > **Source:** icloud://autonomous_state.json
-> **Analyzed At:** 2026-07-20T07:51:36.541Z
+> **Analyzed At:** 2026-07-20T07:56:31.959Z
 
 ## Content
 {
@@ -61071,47 +61207,47 @@ Based on the local codebase health assessment, the following Work Items should b
   ],
   "directives": [
     {
-      "id": "dir_xqso4r8te",
+      "id": "dir_tdkv69zxv",
       "priority": "Critical",
       "domain": "Security",
       "intent": "Rotate all Phase 12 neural sync keys",
       "status": "Active",
       "synergyScore": 95,
-      "timestamp": "2026-07-20T07:47:45.108Z"
+      "timestamp": "2026-07-20T07:52:47.946Z"
     },
     {
-      "id": "dir_hsplgqdha",
+      "id": "dir_cmp9ajkns",
       "priority": "High",
       "domain": "AI Agents",
       "intent": "Implement Crystals-Kyber for CAIO Agent",
       "status": "Active",
       "synergyScore": 88,
-      "timestamp": "2026-07-20T07:47:45.108Z"
+      "timestamp": "2026-07-20T07:52:47.946Z"
     },
     {
-      "id": "dir_nmi9gef3u",
+      "id": "dir_7vy3siu60",
       "priority": "Medium",
       "domain": "Services",
       "intent": "Optimize MongoDB sharding for APAC nodes",
       "status": "Active",
       "synergyScore": 72,
-      "timestamp": "2026-07-20T07:47:45.108Z"
+      "timestamp": "2026-07-20T07:52:47.946Z"
     },
     {
-      "id": "dir_cy3mtkdmn",
+      "id": "dir_8afip2lxk",
       "priority": "Low",
       "domain": "General",
       "intent": "Maintain 99.9% system uptime",
       "status": "Active",
-      "timestamp": "2026-07-20T07:47:45.108Z"
+      "timestamp": "2026-07-20T07:52:47.946Z"
     },
     {
-      "id": "dir_y2zbbfwbr",
+      "id": "dir_uvb87exp3",
       "priority": "Medium",
       "domain": "Documentation",
       "intent": "Consolidate all branch knowledge daily",
       "status": "Active",
-      "timestamp": "2026-07-20T07:47:45.108Z"
+      "timestamp": "2026-07-20T07:52:47.946Z"
     }
   ],
   "docker": {
@@ -61121,7 +61257,7 @@ Based on the local codebase health assessment, the following Work Items should b
   "jenkins": {
     "status": "SUCCESS",
     "number": 42,
-    "timestamp": 1784533598159,
+    "timestamp": 1784533898047,
     "url": "http://localhost:8080/job/antigravity-pipeline/42/"
   },
   "intelligence": {
@@ -133936,7 +134072,7 @@ Based on the local codebase health assessment, the following Work Items should b
         {
           "name": "origin/jules-literal-insertion-4462718186042639428",
           "lastMessage": "Literal Insertion Task",
-          "lastSeen": "28 hours ago",
+          "lastSeen": "29 hours ago",
           "category": "origin",
           "domain": "Services",
           "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -136600,7 +136736,7 @@ Based on the local codebase health assessment, the following Work Items should b
         {
           "name": "origin/jules-caio-integration-13939543537108665408",
           "lastMessage": "feat: integrate Chief AI Officer (CAIO) role parameters and strategic mandates into knowledge base",
-          "lastSeen": "41 minutes ago",
+          "lastSeen": "46 minutes ago",
           "category": "feature",
           "domain": "Documentation",
           "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -136952,7 +137088,7 @@ Based on the local codebase health assessment, the following Work Items should b
         {
           "name": "origin/intelephense-docs-update-17190911211980979020",
           "lastMessage": "feat(knowledge): ingest and consolidate updated Intelephense documentation",
-          "lastSeen": "10 minutes ago",
+          "lastSeen": "15 minutes ago",
           "category": "feature",
           "domain": "Documentation",
           "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -140289,7 +140425,7 @@ Based on the local codebase health assessment, the following Work Items should b
         {
           "name": "origin/main",
           "lastMessage": "🤖 fix: autonomous self-repair of 437 issues",
-          "lastSeen": "39 seconds ago",
+          "lastSeen": "38 seconds ago",
           "category": "origin",
           "domain": "General",
           "knowledge": "",
@@ -162967,7 +163103,7 @@ Based on the local codebase health assessment, the following Work Items should b
       "origin": "development",
       "health": "degraded",
       "volatilityTags": 0,
-      "timestamp": "2026-07-20T07:47:45.100Z"
+      "timestamp": "2026-07-20T07:52:47.930Z"
     },
     "relayState": [
       {
@@ -162977,7 +163113,7 @@ Based on the local codebase health assessment, the following Work Items should b
           "Command Center",
           "Store"
         ],
-        "lastActivity": "2026-07-20T07:47:45.107Z",
+        "lastActivity": "2026-07-20T07:52:47.945Z",
         "intensity": 0.85
       },
       {
@@ -162992,6 +163128,6 @@ Based on the local codebase health assessment, the following Work Items should b
       }
     ]
   },
-  "last_sync": "2026-07-20T07:47:47.058Z"
+  "last_sync": "2026-07-20T07:52:49.614Z"
 }
 
