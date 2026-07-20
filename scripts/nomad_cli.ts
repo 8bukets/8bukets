@@ -1,3 +1,4 @@
+#!/usr/bin/env ts-node
 /** PHASE 24 COMPLIANCE: NEURAL_MESH_INTEGRATION (enabled) **/
 /** PHASE 24 COMPLIANCE: DISTRIBUTED_CONSENSUS (active) **/
 /** PHASE 24 COMPLIANCE: MESH_AWARE_ROUTING (enabled) **/
@@ -19,7 +20,7 @@
 import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
 import { latticeSync } from '@/antigravity/services/lattice_sync'
-#!/usr/bin/env ts-node
+
 
 import * as fs from 'fs';
 import * as path from 'path';

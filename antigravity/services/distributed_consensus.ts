@@ -57,8 +57,9 @@ export class DistributedConsensusService {
 
   private async load() {
     try {
-      if (fs.existsSync(STATE_PATH)) {
-        const data = fs.readFileSync(STATE_PATH, 'utf8');
+      const exists = await fs.promises.access(STATE_PATH).then(() => true).catch(() => false);
+      if (exists) {
+        const data = await fs.promises.readFile(STATE_PATH, 'utf8');
         this.proposals = JSON.parse(data);
       }
     } catch (e) {
@@ -68,9 +69,13 @@ export class DistributedConsensusService {
 
   private async save() {
     const dir = path.dirname(STATE_PATH);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(STATE_PATH, JSON.stringify(this.proposals, null, 2));
+    const dirExists = await fs.promises.access(dir).then(() => true).catch(() => false);
+    if (!dirExists) {
+      await fs.promises.mkdir(dir, { recursive: true });
+    }
+    await fs.promises.writeFile(STATE_PATH, JSON.stringify(this.proposals, null, 2), 'utf8');
   }
+
 
   public async propose(agentId: string, goal: string, payload: any): Promise<ConsensusProposal> {
     const proposal: ConsensusProposal = {

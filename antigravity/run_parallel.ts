@@ -3,7 +3,7 @@ import { latticeSync } from '@/antigravity/services/lattice_sync'
 import { Jules, AgentRole } from './jules'
 
 export async function runSequentialAgents() {
-  const roles: AgentRole[] = ['Coder', 'Reviewer', 'Security', 'Supervisor', 'Ops', 'Chief AI Officer']
+  const roles: AgentRole[] = ['Coder', 'Reviewer', 'Security', 'Architect', 'Supervisor', 'Ops', 'Chief AI Officer']
 
   console.log(`🚀 [Antigravity] Executing ${roles.length} specialized agents sequentially to prevent Git collisions...`)
 
