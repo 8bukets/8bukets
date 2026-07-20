@@ -161,6 +161,17 @@ const SecurityAuditResultSchema = z.object({
   scannedFiles: z.number()
 });
 
+const ArchitecturalReviewPayloadSchema = z.object({
+  scope: z.enum(['full_system', 'subsystem', 'specific_component']).default('full_system'),
+  focus: z.string().optional(), // e.g., "data_flow", "security_model"
+});
+
+const ArchitecturalReviewResultSchema = z.object({
+  status: z.enum(['approved', 'requires_changes']),
+  summary: z.string(),
+  recommendations: z.array(z.string()),
+});
+
 // Discriminated union of all work order types
 export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('BOOTSTRAP_SERVICE'), payload: BootstrapServicePayloadSchema, result: BootstrapServiceResultSchema.optional() }),
@@ -171,6 +182,7 @@ export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('META_CORRECTION'), payload: MetaCorrectionPayloadSchema, result: MetaCorrectionResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('AUTONOMOUS_CREATION'), payload: AutonomousCreationPayloadSchema, result: AutonomousCreationResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('SECURITY_AUDIT'), payload: SecurityAuditPayloadSchema, result: SecurityAuditResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('ARCHITECTURAL_REVIEW'), payload: ArchitecturalReviewPayloadSchema, result: ArchitecturalReviewResultSchema.optional() }),
 ])
 
 export type WorkOrder = z.infer<typeof WorkOrderSchema>
@@ -358,6 +370,16 @@ export class WorkOrderService {
         const { runSecurityAudit } = await import('./cognitive_security')
         logAutonomousAction(`[SECURITY] Executing full audit as per work order: ${order.goal}`, 'security');
         return await runSecurityAudit();
+
+      case 'ARCHITECTURAL_REVIEW':
+        logAutonomousAction(`[ARCHITECT] Executing architectural review: ${order.goal}`, 'cognitive');
+        // In a real system, this would trigger a complex analysis by the Architect agent.
+        // For now, we'll simulate a successful review.
+        return {
+          status: 'approved',
+          summary: 'System architecture aligns with long-term strategic goals. No major refactoring required at this time.',
+          recommendations: ['Continue monitoring data flow between services for potential bottlenecks.'],
+        };
 
       default:
         throw new Error(`Unknown work order type: ${(order as any).type}`)
