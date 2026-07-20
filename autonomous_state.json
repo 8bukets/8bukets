@@ -16,47 +16,47 @@
     ],
     "directives": [
         {
-            "id": "dir_rsmyptmof",
+            "id": "dir_lsllq2jep",
             "priority": "Critical",
             "domain": "Security",
             "intent": "Rotate all Phase 12 neural sync keys",
             "status": "Active",
             "synergyScore": 95,
-            "timestamp": "2026-07-20T17:32:07.866Z"
+            "timestamp": "2026-07-20T22:34:53.807Z"
         },
         {
-            "id": "dir_h1e23btp2",
+            "id": "dir_ghgz9v53w",
             "priority": "High",
             "domain": "AI Agents",
             "intent": "Implement Crystals-Kyber for CAIO Agent",
             "status": "Active",
             "synergyScore": 88,
-            "timestamp": "2026-07-20T17:32:07.866Z"
+            "timestamp": "2026-07-20T22:34:53.807Z"
         },
         {
-            "id": "dir_cpzlmw1vc",
+            "id": "dir_prluku96c",
             "priority": "Medium",
             "domain": "Services",
             "intent": "Optimize MongoDB sharding for APAC nodes",
             "status": "Active",
             "synergyScore": 72,
-            "timestamp": "2026-07-20T17:32:07.866Z"
+            "timestamp": "2026-07-20T22:34:53.807Z"
         },
         {
-            "id": "dir_u9yv88bun",
+            "id": "dir_di02xh44k",
             "priority": "Low",
             "domain": "General",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-07-20T17:32:07.866Z"
+            "timestamp": "2026-07-20T22:34:53.807Z"
         },
         {
-            "id": "dir_krrj93vov",
+            "id": "dir_pzxvs1ubx",
             "priority": "Medium",
             "domain": "Documentation",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-07-20T17:32:07.866Z"
+            "timestamp": "2026-07-20T22:34:53.807Z"
         }
     ],
     "docker": {
@@ -66,7 +66,7 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1784568620965,
+        "timestamp": 1784580333497,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
@@ -47803,7 +47803,7 @@
                 {
                     "name": "origin/jules-18100476245265483259-e268bd0e",
                     "lastMessage": "feat: implement branch scan collaboration with communication matrix",
-                    "lastSeen": "9 hours ago",
+                    "lastSeen": "12 hours ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -47922,7 +47922,7 @@
                 {
                     "name": "origin/phase-27-mur-upgrade-14866843451793717230",
                     "lastMessage": "feat: implement Phase 27 Multi-Universal Resonance (MUR) and UMR v3.0",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -48177,7 +48177,7 @@
                 {
                     "name": "origin/feature/phase-27-mur-cloud-sovereignty-4085512424906799950",
                     "lastMessage": "evolve: implement Phase 27 Multi-Universal Resonance (MUR)",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty. Found 28 relevant artifacts.",
@@ -48301,7 +48301,7 @@
                 {
                     "name": "origin/jules-1099150487201846169-8bc65dec",
                     "lastMessage": "feat: scan all branches, merge knowledge/results, and create communication matrix",
-                    "lastSeen": "34 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -49980,7 +49980,7 @@
                 {
                     "name": "origin/implement-ai-agents-discovery-knowledge-8640269164146604288",
                     "lastMessage": "feat: implement AI agents knowledge from GCP discovery",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -50166,7 +50166,7 @@
                 {
                     "name": "origin/implement-gcp-ai-agents-knowledge-4390656146738210584",
                     "lastMessage": "feat: implement AI agent knowledge from GCP Discovery",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -50814,7 +50814,7 @@
                 {
                     "name": "origin/phase-27-mur-upgrade-9983683132161497572",
                     "lastMessage": "feat: upgrade system engine and agents to Phase 27 MUR",
-                    "lastSeen": "31 hours ago",
+                    "lastSeen": "34 hours ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -51267,7 +51267,7 @@
                 {
                     "name": "origin/perf-hoL-blocking-17109811534537381218",
                     "lastMessage": "perf: eliminate head-of-line blocking in scraping batch execution",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "performance",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -51453,7 +51453,7 @@
                 {
                     "name": "origin/perf-soup-strainer-6341082592320040633",
                     "lastMessage": "perf: optimize HTML parser with SoupStrainer",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "performance",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -51558,7 +51558,7 @@
                 {
                     "name": "origin/feature/autonomous-creation-order-10844685011060014017",
                     "lastMessage": "feat: add AUTONOMOUS_CREATION, SYSTEM_SYNC, and STRATEGIC_CONSULTATION work orders",
-                    "lastSeen": "33 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -51940,7 +51940,7 @@
                 {
                     "name": "origin/Implement-remote-subagents-knowledge-7200393788553345218",
                     "lastMessage": "Implement remote subagents knowledge",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -52761,7 +52761,7 @@
                 {
                     "name": "origin/implement-google-ai-agents-knowledge-11069397709856625374",
                     "lastMessage": "Update AI agents knowledge base from Google Cloud discovery page",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -54558,7 +54558,7 @@
                 {
                     "name": "origin/ingest-subagents-knowledge-3401617007249931861",
                     "lastMessage": "feat: ingest subagents documentation into knowledge base",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 22 artifacts.",
@@ -54992,7 +54992,7 @@
                 {
                     "name": "origin/jules-data-agent-kit-ingestion-17234985599070969726",
                     "lastMessage": "feat: ingest Data Agent Kit knowledge and refactor scripts to use fs/promises\\n\\n- Created data/knowledge/data_agent_kit.md with the provided text.\\n- Updated system_knowledge.json, CONSOLIDATED_INTELLIGENCE.md, and KNOWLEDGE_MERGE.md to include and reference the new data agent kit information.\\n- Refactored multiple scripts in the `scripts/` directory to replace synchronous fs operations (`fs.readFileSync`, `fs.writeFileSync`, `fs.existsSync`, `fs.readdirSync`, `fs.mkdirSync`) with their asynchronous, Promise-based counterparts to evolve the system.",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -57956,7 +57956,7 @@
                 {
                     "name": "origin/add-remote-subagents-docs-8490820424403848020",
                     "lastMessage": "Add Remote Subagents documentation to KNOWLEDGE_INTEGRATION.md",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -60488,7 +60488,7 @@
                 {
                     "name": "origin/insert-compile-definition-10143702412231999519",
                     "lastMessage": "Insert prompt text as HTML comment",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -61046,7 +61046,7 @@
                 {
                     "name": "origin/insert-subagent-docs-6889488241925592859",
                     "lastMessage": "Insert subagents documentation into KNOWLEDGE_INTEGRATION.md",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -61356,7 +61356,7 @@
                 {
                     "name": "origin/insert-subagents-docs-4082805429906134407",
                     "lastMessage": "Insert Subagents documentation into KNOWLEDGE_INTEGRATION.md",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -62359,7 +62359,7 @@
                 {
                     "name": "origin/jules-10618587410669253814-6a6fbda0",
                     "lastMessage": "Optimize scraper.py with asyncio.wait to eliminate head-of-line blocking",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -62483,7 +62483,7 @@
                 {
                     "name": "origin/jules-1153181674222718141-95aad4aa",
                     "lastMessage": "🤖 chore: integrate markposition into automated knowledge observer",
-                    "lastSeen": "25 hours ago",
+                    "lastSeen": "28 hours ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -62917,7 +62917,7 @@
                 {
                     "name": "origin/jules-14236148872684582304-23a6f8f7",
                     "lastMessage": "⚡ Performance Optimization Task",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -63165,7 +63165,7 @@
                 {
                     "name": "origin/jules-15796532722831458905-62380e96",
                     "lastMessage": "Insert Subagents documentation",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -63537,7 +63537,7 @@
                 {
                     "name": "origin/jules-17969449142281212120-e3a1adcd",
                     "lastMessage": "Insert Remote Subagents documentation into KNOWLEDGE_INTEGRATION.md",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -63723,7 +63723,7 @@
                 {
                     "name": "origin/jules-18442391600670394064-59972734",
                     "lastMessage": "Add Remote Subagents documentation",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -64343,7 +64343,7 @@
                 {
                     "name": "origin/jules-496929391610872058-b1a665f3",
                     "lastMessage": "Insert Remote Subagents documentation",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -64653,7 +64653,7 @@
                 {
                     "name": "origin/jules-6454188848313001317-89a76302",
                     "lastMessage": "Insert subagents documentation",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -65459,7 +65459,7 @@
                 {
                     "name": "origin/jules-9391058026848266881-a3119f5d",
                     "lastMessage": "Insert literal prompt text for synthetic benchmark",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -65893,7 +65893,7 @@
                 {
                     "name": "origin/jules-intelephense-premium-integration-12020942749536762935",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-intelephense-premium-integration-12020942749536762935",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -69427,7 +69427,7 @@
                 {
                     "name": "origin/perf-improve-regex-scraper-8373910078017227002",
                     "lastMessage": "Optimize clean_text with compiled regex",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -69613,7 +69613,7 @@
                 {
                     "name": "origin/perf/async-sliding-window-18292323195636915097",
                     "lastMessage": "Optimize scraper with non-blocking sliding window",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -71473,7 +71473,7 @@
                 {
                     "name": "origin/subagents-markdown-docs-15530493948799438450",
                     "lastMessage": "Add subagents markdown documentation",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -71659,7 +71659,7 @@
                 {
                     "name": "origin/jules-9931620671926595621-e8ed84c2",
                     "lastMessage": "chore: integrate Intelephense documentation and upgrade to Phase 27 MUR",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "maintenance",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -72264,7 +72264,7 @@
                 {
                     "name": "origin/jules-14814609483017393300-2c40c4ba",
                     "lastMessage": "Tutorial: Create and run your first GitLab CI/CD pipeline literal insertion",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 6 artifacts.",
@@ -72601,7 +72601,7 @@
                 {
                     "name": "origin/jules-1926826933088263009-fd417c4e",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -72998,7 +72998,7 @@
                 {
                     "name": "origin/jules-16961103798662613410-c039457e",
                     "lastMessage": "fix: sanitize system knowledge json to prevent syntax error in CAIO validations",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "fix",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -73057,7 +73057,7 @@
                 {
                     "name": "origin/jules-17486286584208727171-079d77a9",
                     "lastMessage": "Insert benchmark prompt into authorized syntactic adjustment placeholders",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73172,7 +73172,7 @@
                 {
                     "name": "origin/jules-2841593871670870348-5764e3a1",
                     "lastMessage": "scan https://software-online-review.com and improve merge integrate run workflow and observe knowledge",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73195,7 +73195,7 @@
                 {
                     "name": "origin/jules-3905177569317626488-0b6748f2",
                     "lastMessage": "Complete literal insertion task and generate workflows",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -74203,7 +74203,7 @@
                 {
                     "name": "origin/feat/enhanced-collaboration-v26-knowledge-merge-v2-17711038057555899737",
                     "lastMessage": "feat: enhance unified collaboration and communication protocols (Phase 26)",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -75006,7 +75006,7 @@
                 {
                     "name": "origin/implement-ai-agent-knowledge-21882567880054537",
                     "lastMessage": "feat: implement AI agent knowledge from Google Cloud Discover",
-                    "lastSeen": "2 months ago",
+                    "lastSeen": "3 months ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -75369,7 +75369,7 @@
                 {
                     "name": "origin/jules-phase-26-evolution-and-icloud-integration-13725884928664929962",
                     "lastMessage": "feat: integrate Phase 26 iCloud knowledge and evolve system engine",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -75468,7 +75468,7 @@
                 {
                     "name": "origin/literal-insertion-task-tutorial-gitlab-8650994113658614246",
                     "lastMessage": "Tutorial: Create and run your first GitLab CI/CD pipeline literal insertion task",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -75974,7 +75974,7 @@
                 {
                     "name": "origin/v0/8bukets-bd43e85b",
                     "lastMessage": "feat: implement AI agent knowledge from Google Cloud Discover (#1529)",
-                    "lastSeen": "2 months ago",
+                    "lastSeen": "3 months ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -75985,7 +75985,7 @@
                 {
                     "name": "origin/feat/integrate-intelephense-documentation-9646679079205342745",
                     "lastMessage": "feat: integrate full Intelephense documentation into knowledge base",
-                    "lastSeen": "35 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76000,7 +76000,7 @@
                 {
                     "name": "origin/jules-12283771268117181283-edfe42b2",
                     "lastMessage": "chore: add missing work:daily script to package.json and verify daily sync workflow",
-                    "lastSeen": "30 hours ago",
+                    "lastSeen": "33 hours ago",
                     "category": "maintenance",
                     "domain": "Services",
                     "knowledge": "",
@@ -76020,7 +76020,7 @@
                 {
                     "name": "origin/jules-caio-integration-13939543537108665408",
                     "lastMessage": "feat: integrate Chief AI Officer (CAIO) role parameters and strategic mandates into knowledge base",
-                    "lastSeen": "10 hours ago",
+                    "lastSeen": "14 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76197,7 +76197,7 @@
                 {
                     "name": "origin/jules-6355788946159984395-57f1e85e",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "35 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -76372,7 +76372,7 @@
                 {
                     "name": "origin/intelephense-docs-update-17190911211980979020",
                     "lastMessage": "feat(knowledge): ingest and consolidate updated Intelephense documentation",
-                    "lastSeen": "10 hours ago",
+                    "lastSeen": "13 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76386,7 +76386,7 @@
                 {
                     "name": "origin/jules-10186218497185708882-e883fcb9",
                     "lastMessage": "feat(knowledge): Ingest Intelephense docs",
-                    "lastSeen": "34 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76428,7 +76428,7 @@
                 {
                     "name": "origin/jules-17301196829596262073-f30b716d",
                     "lastMessage": "feat: integrate complete Intelephense documentation into knowledge base",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76639,7 +76639,7 @@
                 {
                     "name": "origin/intelephence-integration-5138358171380186974",
                     "lastMessage": "docs: integrate intelephence with google jules knowledge base",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "documentation",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -77224,7 +77224,7 @@
                 {
                     "name": "origin/bolt-soupstrainer-optimization-4709552410441311430",
                     "lastMessage": "perf: Use SoupStrainer to optimize HTML parsing in scraper",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "performance",
                     "domain": "General",
                     "knowledge": "",
@@ -77774,7 +77774,7 @@
                 {
                     "name": "origin/bolt/optimize-url-parsing-2495547858907129194",
                     "lastMessage": "Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt/optimize-url-parsing-2495547858907129194",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "performance",
                     "domain": "General",
                     "knowledge": "",
@@ -78139,7 +78139,7 @@
                 {
                     "name": "origin/jules-3840851023832077809-231ee6df",
                     "lastMessage": "docs(caio): ingest and consolidate Chief AI Officer (CAIO) role specifications into system knowledge base",
-                    "lastSeen": "27 hours ago",
+                    "lastSeen": "30 hours ago",
                     "category": "documentation",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -78259,7 +78259,7 @@
                 {
                     "name": "origin/chore/autonomous-evolution-update-18136705694323907139",
                     "lastMessage": "chore: update daily autonomous evolution script comment",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "maintenance",
                     "domain": "Automation",
                     "knowledge": "",
@@ -78403,7 +78403,7 @@
                 {
                     "name": "origin/jules-autonomous-evolution-15263469635356956693",
                     "lastMessage": "chore: daily autonomous session analysis and system engine evolution",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -78598,7 +78598,7 @@
                 {
                     "name": "main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 445 issues",
-                    "lastSeen": "58 minutes ago",
+                    "lastSeen": "85 minutes ago",
                     "category": "other",
                     "domain": "General",
                     "knowledge": "",
@@ -78631,7 +78631,7 @@
                 {
                     "name": "origin/autonomous-cloud-integration-v2-7175106802837350237",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into autonomous-cloud-integration-v2-7175106802837350237",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -78961,7 +78961,7 @@
                 {
                     "name": "origin/fix-package-json-duplicate-deps-10439884539185109676",
                     "lastMessage": "Fix syntax and linting errors in frontend route",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "fix",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -79258,7 +79258,7 @@
                 {
                     "name": "origin/fix/knowledge-observation-workflow-458143035147139751",
                     "lastMessage": "Merge branch 'main' into fix/knowledge-observation-workflow-458143035147139751",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "fix",
                     "domain": "Automation",
                     "knowledge": "",
@@ -79280,7 +79280,7 @@
                 {
                     "name": "origin/fix/observe-knowledge-formatting-12359111499191722507",
                     "lastMessage": "Merge branch 'main' into fix/observe-knowledge-formatting (Resolved conflicts by favoring PR changes)",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "fix",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -79423,7 +79423,7 @@
                 {
                     "name": "origin/integrate-markposition-knowledge-merge-3452272022805466987",
                     "lastMessage": "Fix CI failures due to missing pythonpath in pytest",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -79456,7 +79456,7 @@
                 {
                     "name": "origin/jules-12068094866033928135-39e1b280",
                     "lastMessage": "Fix Duo Planner system prompt trailing spaces and grammar",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -79709,7 +79709,7 @@
                 {
                     "name": "origin/main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 445 issues",
-                    "lastSeen": "58 minutes ago",
+                    "lastSeen": "4 hours ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -80468,7 +80468,7 @@
                 {
                     "name": "origin/sentinel-fix-csv-injection-11077555139908489589",
                     "lastMessage": "fix(scraper): prevent CSV injection in scraper output",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -80556,7 +80556,7 @@
                 {
                     "name": "origin/sentinel-fix-csv-injection-17518560069698695789",
                     "lastMessage": "Fix CSV injection vulnerability in scraper",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -80787,7 +80787,7 @@
                 {
                     "name": "origin/sentinel-fix-markdown-injection-4574407536048453465",
                     "lastMessage": "Fix: Sanitize input in analytics report to prevent Markdown Injection and XSS",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -81260,7 +81260,7 @@
                 {
                     "name": "origin/sentinel/fix-csv-injection-5760919047341012368",
                     "lastMessage": "Fix CSV injection vulnerability in scraper export",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -81304,7 +81304,7 @@
                 {
                     "name": "origin/sentinel/fix-markdown-injection-18346561083266000842",
                     "lastMessage": "Fix Markdown and HTML injection in analytics report",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -81451,7 +81451,7 @@
                 {
                     "name": "origin/jules-18275485639999344919-65a5a93d",
                     "lastMessage": "Insert Agent - Logika ponašanja knowledge",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -81510,7 +81510,7 @@
                 {
                     "name": "origin/jules-1058171743764716088-7852788d",
                     "lastMessage": "feat: add .gitlab-ci.yml and fix bandit security audit",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "",
@@ -82097,7 +82097,7 @@
                 {
                     "name": "origin/bolt/optimize-analytics-domain-parsing-13885933983785398642",
                     "lastMessage": "feat(analytics): Optimize domain extraction using pre-computed field",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -82284,7 +82284,7 @@
                 {
                     "name": "origin/feat/ai-agents-knowledge-integration-10133877583552684442",
                     "lastMessage": "feat: integrate AI agent knowledge from Google Cloud",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -82350,7 +82350,7 @@
                 {
                     "name": "origin/feat/caio-integration-enhancement-12997886670436036730",
                     "lastMessage": "feat: enhance Chief AI Officer (CAIO) integration",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -82361,7 +82361,7 @@
                 {
                     "name": "origin/feat/caio-research-and-agent-enhancement-2026-8330313146925585723",
                     "lastMessage": "feat: integrate 2026 CAIO research and enhance agent strategic recognition",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -82647,7 +82647,7 @@
                 {
                     "name": "origin/feat/data-agent-kit-intelligence-11472823746485531376",
                     "lastMessage": "docs: integrate Data Agent Kit intelligence",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -82702,7 +82702,7 @@
                 {
                     "name": "origin/feat/docker-collaboration-sync-16687311699313336221",
                     "lastMessage": "Merge branch 'main' into feat/docker-collaboration-sync (Resolved conflicts by favoring PR changes)",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83637,7 +83637,7 @@
                 {
                     "name": "origin/feat/integrate-gamezone-intelligence-2649330849741750293",
                     "lastMessage": "Merge branch 'main' into feat/integrate-gamezone-intelligence-2649330849741750293",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -83934,7 +83934,7 @@
                 {
                     "name": "origin/feat/integrate-unitedsports-knowledge-11664168314292939731",
                     "lastMessage": "Merge branch 'main' into feat/integrate-unitedsports-knowledge-11664168314292939731",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -84066,7 +84066,7 @@
                 {
                     "name": "origin/feat/intelephense-docs-sync-3894921985645154105",
                     "lastMessage": "feat: update Intelephense documentation in knowledge base",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -84121,7 +84121,7 @@
                 {
                     "name": "origin/feat/intelephense-integration-7602330974725353866",
                     "lastMessage": "feat: integrate Intelephense Premium for Antigravity IDE and agents",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -84297,7 +84297,7 @@
                 {
                     "name": "origin/feat/mokapokacool-knowledge-integration-v2-4624601213708015965",
                     "lastMessage": "Merge branch 'main' into feat/mokapokacool-knowledge-integration-v2-4624601213708015965",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -84341,7 +84341,7 @@
                 {
                     "name": "origin/feat/opentelemetry-scraper-16848949473178496467",
                     "lastMessage": "fix: resolve CI failures by fixing tests and updating requirements",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -84495,7 +84495,7 @@
                 {
                     "name": "origin/feat/smarter-cloud-workflow-7992378765049941579",
                     "lastMessage": "feat: make multi-cloud workflow processing smarter and always available",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "",
@@ -85320,7 +85320,7 @@
                 {
                     "name": "origin/jules-10065781265649358564-e3f3d60f",
                     "lastMessage": "feat: integrate Google Innovation & AI knowledge and updates",
-                    "lastSeen": "18 hours ago",
+                    "lastSeen": "21 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85485,7 +85485,7 @@
                 {
                     "name": "origin/jules-4218664248837075517-97620320",
                     "lastMessage": "feat: create AgentRole type including Chief AI Officer",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -85595,7 +85595,7 @@
                 {
                     "name": "origin/jules-8078978277823891916-7b57ee0b",
                     "lastMessage": "feat: connect with docker and collaborate",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85903,7 +85903,7 @@
                 {
                     "name": "origin/palette-add-report-percentages-11439172869140532830",
                     "lastMessage": "feat: Add percentages to analytics report tables",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -86343,7 +86343,7 @@
                 {
                     "name": "origin/palette-analytics-report-ux-699851267367900614",
                     "lastMessage": "feat: improve analytics report UX with emojis and visual bars",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -86431,7 +86431,7 @@
                 {
                     "name": "origin/palette-analytics-summary-8453671355123458848",
                     "lastMessage": "feat(analytics): add cli summary output",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -86541,7 +86541,7 @@
                 {
                     "name": "origin/palette-analytics-ux-9149291915820024140",
                     "lastMessage": "feat(analytics): enhance CLI output and report formatting",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -86585,7 +86585,7 @@
                 {
                     "name": "origin/palette-analytics-visual-polish-4470200487089544601",
                     "lastMessage": "feat: add ASCII charts and emojis to analytics report",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -86640,7 +86640,7 @@
                 {
                     "name": "origin/palette-ascii-bar-chart-4704095013089866243",
                     "lastMessage": "feat(ux): Add ASCII bar chart to keyword trends report",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "feature",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -88301,7 +88301,7 @@
                 {
                     "name": "origin/palette-ux-analytics-report-14597730770972952440",
                     "lastMessage": "feat: improve analytics report readability and cli feedback",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -89269,7 +89269,7 @@
                 {
                     "name": "origin/sentinel-csv-injection-fix-7577014728470115311",
                     "lastMessage": "feat: mitigate CSV injection vulnerability in scraper",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -89995,7 +89995,7 @@
                 {
                     "name": "origin/sentinel-xss-fix-4307107486313997364",
                     "lastMessage": "feat: Fix Stored XSS in Markdown reports",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -90149,7 +90149,7 @@
                 {
                     "name": "origin/update-remote-subagents-8216224045262465071",
                     "lastMessage": "feat: configure and document Gemini CLI remote subagents",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -90542,7 +90542,7 @@
                 {
                     "name": "origin/jules-remote-subagents-docs-1653073469927459457",
                     "lastMessage": "docs: verify remote subagents documentation",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "documentation",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -90836,7 +90836,7 @@
                 {
                     "name": "origin/jules-gitlab-tutorial-ci-4111694628214868400",
                     "lastMessage": "chore(ci): Create first GitLab CI/CD pipeline from tutorial",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -91160,7 +91160,7 @@
                 {
                     "name": "origin/jules-1717717407806782090-cbdd5077",
                     "lastMessage": "chore: verify initial GitLab CI/CD pipeline configuration (#1520)",
-                    "lastSeen": "2 months ago",
+                    "lastSeen": "3 months ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -91237,7 +91237,7 @@
                 {
                     "name": "origin/jules-2972003787421929179-9c7a00e4",
                     "lastMessage": "chore: connect with docker and collaborate",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "maintenance",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -91655,7 +91655,7 @@
                 {
                     "name": "origin/verify-ai-agent-architecture-7604816856702925706",
                     "lastMessage": "chore: verify AI agent architecture knowledge",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "maintenance",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -91677,7 +91677,7 @@
                 {
                     "name": "origin/gitlab-ci-tutorial-16957303411954970641",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -91703,7 +91703,7 @@
                 {
                     "name": "origin/tutorial-gitlab-ci-13797151436381089667",
                     "lastMessage": "Update .gitlab-ci.yml to match beginner tutorial",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -92970,7 +92970,7 @@
                 {
                     "name": "origin/bolt-optimize-scraper-parsing-3242610597383996985",
                     "lastMessage": "⚡ Bolt: optimize scraper parsing with regex",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -94202,7 +94202,7 @@
                 {
                     "name": "origin/bolt-scraper-optimization-18327449327189613971",
                     "lastMessage": "Optimize scraper.py parsing performance",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -94939,7 +94939,7 @@
                 {
                     "name": "origin/bolt-soupstrainer-optimization-2852490476869068237",
                     "lastMessage": "⚡ Bolt: Optimize parsing with SoupStrainer",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -94950,7 +94950,7 @@
                 {
                     "name": "origin/bolt-soupstrainer-optimization-379676222241574445",
                     "lastMessage": "⚡ Bolt: Use SoupStrainer to optimize HTML parsing",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -95038,7 +95038,7 @@
                 {
                     "name": "origin/bolt-soupstrainer-optimization-9740380276744464742",
                     "lastMessage": "⚡ Bolt: Optimize scraper with SoupStrainer",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -95687,7 +95687,7 @@
                 {
                     "name": "origin/gitlab-ci-setup-7034996381689423929",
                     "lastMessage": "Keep .gitlab-ci.yml intact",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -95731,7 +95731,7 @@
                 {
                     "name": "origin/gitlab-ci-tutorial-insertion-1087699777348551594",
                     "lastMessage": "Insert GitLab CI/CD tutorial into placeholders and generate workflows",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -96105,7 +96105,7 @@
                 {
                     "name": "origin/jules-10462678771824447121-7450baaa",
                     "lastMessage": "Insert prompt and run workflow generation",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -96204,7 +96204,7 @@
                 {
                     "name": "origin/jules-11420111997571579513-03ba896a",
                     "lastMessage": "Update .gitlab-ci.yml",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96281,7 +96281,7 @@
                 {
                     "name": "origin/jules-12230830432573922947-de68fe09",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96446,7 +96446,7 @@
                 {
                     "name": "origin/jules-1431929627940016568-a27acab1",
                     "lastMessage": "Insert prompt and update workflows",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -96809,7 +96809,7 @@
                 {
                     "name": "origin/jules-4009805131825770379-ae1417d3",
                     "lastMessage": "Update gitlab-ci.yml with trailing newline",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -97007,7 +97007,7 @@
                 {
                     "name": "origin/jules-7491470721819584241-d21de88c",
                     "lastMessage": "Update gitlab security agent documentation",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -97249,7 +97249,7 @@
                 {
                     "name": "origin/jules-gitlab-ci-setup-9784633430379048042",
                     "lastMessage": "Add .gitlab-ci.yml",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -97656,7 +97656,7 @@
                 {
                     "name": "origin/palette-analytics-polish-7750837360671891751",
                     "lastMessage": "🎨 Palette: Enhance analytics report with visuals",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -98404,7 +98404,7 @@
                 {
                     "name": "origin/palette-cli-ux-17758522128434594634",
                     "lastMessage": "Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-cli-ux-17758522128434594634",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -98910,7 +98910,7 @@
                 {
                     "name": "origin/palette-report-ux-16950258538465395817",
                     "lastMessage": "Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-report-ux-16950258538465395817",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -99570,7 +99570,7 @@
                 {
                     "name": "origin/palette/analytics-console-summary-16842850884408171374",
                     "lastMessage": "🎨 Palette: Add colorful console summary to analytics",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "ux",
                     "domain": "General",
                     "knowledge": "",
@@ -99636,7 +99636,7 @@
                 {
                     "name": "origin/palette/ascii-bars-report-13186514826592072461",
                     "lastMessage": "🎨 Palette: Add ASCII distribution bars to analytics report",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "ux",
                     "domain": "General",
                     "knowledge": "",
@@ -100230,7 +100230,7 @@
                 {
                     "name": "origin/sentinel-csv-injection-fix-4282466816023869874",
                     "lastMessage": "🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -100263,7 +100263,7 @@
                 {
                     "name": "origin/sentinel-csv-injection-fix-4827530763294816913",
                     "lastMessage": "🛡️ Sentinel: [MEDIUM] Fix CSV Injection vulnerability in scraper",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -100406,7 +100406,7 @@
                 {
                     "name": "origin/sentinel-csv-injection-fix-8672779981271268413",
                     "lastMessage": "🛡️ Sentinel: [MEDIUM] Fix CSV Injection vulnerability",
-                    "lastSeen": "5 months ago",
+                    "lastSeen": "6 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -101154,7 +101154,7 @@
                 {
                     "name": "origin/sentinel-markdown-injection-fix-5071286642658606448",
                     "lastMessage": "Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-markdown-injection-fix-5071286642658606448",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -101781,7 +101781,7 @@
                 {
                     "name": "origin/update-gitlab-ci-10608443242192192598",
                     "lastMessage": "Update .gitlab-ci.yml",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -101792,7 +101792,7 @@
                 {
                     "name": "origin/update-gitlab-ci-12171348221424730714",
                     "lastMessage": "Update .gitlab-ci.yml",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -101803,7 +101803,7 @@
                 {
                     "name": "origin/update-gitlab-ci-16514789415966148778",
                     "lastMessage": "Update .gitlab-ci.yml with tutorial pipeline",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -102387,7 +102387,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-07-20T17:32:07.858Z"
+            "timestamp": "2026-07-20T22:34:53.798Z"
         },
         "relayState": [
             {
@@ -102397,7 +102397,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-07-20T17:32:07.864Z",
+                "lastActivity": "2026-07-20T22:34:53.803Z",
                 "intensity": 0.85
             },
             {
@@ -102412,5 +102412,5 @@
             }
         ]
     },
-    "last_sync": "2026-07-20T17:32:11.307Z"
+    "last_sync": "2026-07-20T22:47:11.799Z"
 }
