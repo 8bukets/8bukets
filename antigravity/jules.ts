@@ -46,7 +46,7 @@ interface JulesMemory {
 
 const MEMORY_PATH = path.join(process.cwd(), 'antigravity/.jules_memory.json')
 
-export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'Chief AI Officer' | 'Architect' | 'Observer';
+export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'Chief AI Officer' | 'Architect' | 'Observer' | 'Security' | 'Supervisor';
 
 export class Jules {
   public role: AgentRole;
