@@ -16,47 +16,47 @@
     ],
     "directives": [
         {
-            "id": "dir_jg3qlwjss",
+            "id": "dir_rsmyptmof",
             "priority": "Critical",
             "domain": "Security",
             "intent": "Rotate all Phase 12 neural sync keys",
             "status": "Active",
             "synergyScore": 95,
-            "timestamp": "2026-07-20T14:53:40.273Z"
+            "timestamp": "2026-07-20T17:32:07.866Z"
         },
         {
-            "id": "dir_t88a3x4ot",
+            "id": "dir_h1e23btp2",
             "priority": "High",
             "domain": "AI Agents",
             "intent": "Implement Crystals-Kyber for CAIO Agent",
             "status": "Active",
             "synergyScore": 88,
-            "timestamp": "2026-07-20T14:53:40.274Z"
+            "timestamp": "2026-07-20T17:32:07.866Z"
         },
         {
-            "id": "dir_pajvde9nq",
+            "id": "dir_cpzlmw1vc",
             "priority": "Medium",
             "domain": "Services",
             "intent": "Optimize MongoDB sharding for APAC nodes",
             "status": "Active",
             "synergyScore": 72,
-            "timestamp": "2026-07-20T14:53:40.274Z"
+            "timestamp": "2026-07-20T17:32:07.866Z"
         },
         {
-            "id": "dir_cg68qi9qb",
+            "id": "dir_u9yv88bun",
             "priority": "Low",
             "domain": "General",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-07-20T14:53:40.274Z"
+            "timestamp": "2026-07-20T17:32:07.866Z"
         },
         {
-            "id": "dir_d5hbn6chp",
+            "id": "dir_krrj93vov",
             "priority": "Medium",
             "domain": "Documentation",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-07-20T14:53:40.274Z"
+            "timestamp": "2026-07-20T17:32:07.866Z"
         }
     ],
     "docker": {
@@ -66,7 +66,7 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1784559137898,
+        "timestamp": 1784568620965,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
@@ -45338,7 +45338,7 @@
                 {
                     "name": "origin/feat/phase-27-multi-universal-resonance-13601212004370431945",
                     "lastMessage": "feat: advance system to Phase 27: Multi-Universal Resonance",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -45586,7 +45586,7 @@
                 {
                     "name": "origin/jules-12215590976086733558-bd24a500",
                     "lastMessage": "feat: implement all knowledge from antigravity and github folder on macbook for full online cloud simulation",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -46307,7 +46307,7 @@
                 {
                     "name": "origin/feat/unified-collaboration-communication-matrix-5189882089896855879",
                     "lastMessage": "feat: implement communication matrix and strategic reporting signatures",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -47761,7 +47761,7 @@
                 {
                     "name": "origin/feat/enhanced-ecosystem-collaboration-v26-2004445629561293060",
                     "lastMessage": "feat: enhance ecosystem collaboration merge and mesh communication (Phase 26)",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -47782,7 +47782,7 @@
                 {
                     "name": "origin/feat/phase-27-multi-universal-resonance-10059472121016495386",
                     "lastMessage": "feat: implement Phase 27 Multi-Universal Resonance (MUR)",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -47803,7 +47803,7 @@
                 {
                     "name": "origin/jules-18100476245265483259-e268bd0e",
                     "lastMessage": "feat: implement branch scan collaboration with communication matrix",
-                    "lastSeen": "6 hours ago",
+                    "lastSeen": "9 hours ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -47882,7 +47882,7 @@
                 {
                     "name": "origin/feat/unified-collaboration-intelligence-v27-resonance-communication-matrix-9699284890558814299-3722539379635636073",
                     "lastMessage": "feat: implement unified collaboration scan and communication matrix",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -47902,7 +47902,7 @@
                 {
                     "name": "origin/feat/unified-collaboration-phase-26-11587055089269260833",
                     "lastMessage": "feat: implement Phase 26 unified collaboration and communication matrix",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -47961,7 +47961,7 @@
                 {
                     "name": "origin/feat/unified-collaboration-intelligence-v27-resonance-communication-matrix-9699284890558814299",
                     "lastMessage": "feat: enhance unified collaboration and communication matrix (Phase 27)",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -48301,7 +48301,7 @@
                 {
                     "name": "origin/jules-1099150487201846169-8bc65dec",
                     "lastMessage": "feat: scan all branches, merge knowledge/results, and create communication matrix",
-                    "lastSeen": "31 hours ago",
+                    "lastSeen": "34 hours ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -48492,7 +48492,7 @@
                 {
                     "name": "origin/feat/ai-agent-dream-builder-1878824709716227975",
                     "lastMessage": "Implement AI Agent Dream Builder and enhance Blackboard system",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 27 artifacts.",
@@ -50774,7 +50774,7 @@
                 {
                     "name": "origin/feat/phase-26-icloud-engine-evolution-1728349930804503718",
                     "lastMessage": "feat: implement Phase 26 engine evolution and recursive iCloud knowledge integration",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Aligned with strategic initiative: 🔄 Self-Improvement. Found 4 relevant artifacts.",
@@ -50814,7 +50814,7 @@
                 {
                     "name": "origin/phase-27-mur-upgrade-9983683132161497572",
                     "lastMessage": "feat: upgrade system engine and agents to Phase 27 MUR",
-                    "lastSeen": "29 hours ago",
+                    "lastSeen": "31 hours ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -50857,7 +50857,7 @@
                 {
                     "name": "origin/feat/unified-collaboration-v26-6107415703204722107",
                     "lastMessage": "feat: implement unified collaboration and communication matrix (Phase 26)",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -51329,7 +51329,7 @@
                 {
                     "name": "origin/perf-optimize-analytics-domain-10591863732234671341",
                     "lastMessage": "perf: Optimize URL parsing by utilizing existing `domain` field",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "performance",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -51558,7 +51558,7 @@
                 {
                     "name": "origin/feature/autonomous-creation-order-10844685011060014017",
                     "lastMessage": "feat: add AUTONOMOUS_CREATION, SYSTEM_SYNC, and STRATEGIC_CONSULTATION work orders",
-                    "lastSeen": "30 hours ago",
+                    "lastSeen": "33 hours ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -51658,7 +51658,7 @@
                 {
                     "name": "origin/dependabot/npm_and_yarn/npm_and_yarn-f44cc39d45",
                     "lastMessage": "chore(deps): bump the npm_and_yarn group across 2 directories with 1 update",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "maintenance",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -51799,7 +51799,7 @@
                 {
                     "name": "origin/feat/docker-collaboration-integration-7386073686217533934",
                     "lastMessage": "Merge branch 'main' into feat/docker-collaboration-integration-7386073686217533934",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -52035,7 +52035,7 @@
                 {
                     "name": "origin/feat/daily-automation-and-icloud-sync-v12-13623861503531250231",
                     "lastMessage": "feat: implement daily automation and iCloud sync scripts",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -52057,7 +52057,7 @@
                 {
                     "name": "origin/feat/phase14-knowledge-integration-sovereignty-audit-15362902986675468031",
                     "lastMessage": "feat: integrate Phase 14 strategic knowledge and implement Cognitive Sovereignty Audit",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty.",
@@ -53584,7 +53584,7 @@
                 {
                     "name": "origin/accelerate-dream-loop-optimization-10366329041600205699",
                     "lastMessage": "feat: accelerate project development via Dream Build Loop optimization",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 27 artifacts.",
@@ -55290,7 +55290,7 @@
                 {
                     "name": "origin/jules-8062863481763878079-0f82b28f",
                     "lastMessage": "Insert requested prompt across codebase and generate workflows",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -55383,7 +55383,7 @@
                 {
                     "name": "origin/unified-collaboration-merge-11766796686498738735",
                     "lastMessage": "feat: enhance unified collaboration and ecosystem knowledge merge",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -56460,7 +56460,7 @@
                 {
                     "name": "origin/unified-collaboration-and-communication-matrix-356388213538572226",
                     "lastMessage": "feat: scan all branches and generate standalone communication matrix",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -57608,7 +57608,7 @@
                 {
                     "name": "origin/fix/npm-audit-vulnerabilities-17082437904060311474",
                     "lastMessage": "Merge branch 'main' into fix/npm-audit-vulnerabilities-17082437904060311474",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "fix",
                     "domain": "UI/UX",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -57760,7 +57760,7 @@
                 {
                     "name": "origin/jules-2762356203604364268-1133f6c3",
                     "lastMessage": "feat: literal insertion of prompt text",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -57829,7 +57829,7 @@
                 {
                     "name": "origin/jules-9628789763520051630-3316c02b",
                     "lastMessage": "feat: Insert Agent - Logika ponašanja context",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -57852,7 +57852,7 @@
                 {
                     "name": "origin/jules-synthetic-agent-logika-8037850056136932894",
                     "lastMessage": "feat: literal text insertion for Agent - Logika ponašanja",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -59784,7 +59784,7 @@
                 {
                     "name": "origin/fix-scraper-regex-performance-2444246686669996975",
                     "lastMessage": "Refactor clean_text to use native string methods for whitespace normalization",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -62297,7 +62297,7 @@
                 {
                     "name": "origin/jules-1047389081702965377-8897136e",
                     "lastMessage": "⚡ Optimize scraper with asyncio FIRST_COMPLETED worker pool",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -62483,7 +62483,7 @@
                 {
                     "name": "origin/jules-1153181674222718141-95aad4aa",
                     "lastMessage": "🤖 chore: integrate markposition into automated knowledge observer",
-                    "lastSeen": "22 hours ago",
+                    "lastSeen": "25 hours ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -63909,7 +63909,7 @@
                 {
                     "name": "origin/jules-3182257471588529401-ec31cc75",
                     "lastMessage": "Insert benchmark prompt URLs",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -65273,7 +65273,7 @@
                 {
                     "name": "origin/jules-8182660603000694139-070e89ed",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-8182660603000694139-070e89ed",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -65831,7 +65831,7 @@
                 {
                     "name": "origin/jules-insert-prompt-10213724841538599534",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-insert-prompt-10213724841538599534",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -69861,7 +69861,7 @@
                 {
                     "name": "origin/performance-optimization-bypass-8727075079148951357",
                     "lastMessage": "⚡ Performance Optimization Task",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -71782,7 +71782,7 @@
                 {
                     "name": "origin/jules-9280679671880455309-d717a909",
                     "lastMessage": "scan https://software-online-review.com and improve merge integrate run workflow and observe knowledge literal insertion",
-                    "lastSeen": "35 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 6 artifacts.",
@@ -72314,7 +72314,7 @@
                 {
                     "name": "origin/chore/daily-work-cycle-protocol-15762540416367524815",
                     "lastMessage": "chore: document and verify daily autonomous work cycle protocol",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "maintenance",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -72422,7 +72422,7 @@
                 {
                     "name": "origin/jules-13973253168356344390-ec2ee070",
                     "lastMessage": "feat: literal insertion and workflow generation",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -72529,7 +72529,7 @@
                 {
                     "name": "origin/jules-1360090876633007512-5c697e27",
                     "lastMessage": "scan https://software-online-review.com and improve merge integrate run workflow and observe knowledge literal insertion",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 6 artifacts.",
@@ -72553,7 +72553,7 @@
                 {
                     "name": "origin/jules-1636507608386536303-74f0d62d",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -72883,7 +72883,7 @@
                 {
                     "name": "origin/jules-10148622280023065292-e29bd0f9",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -72906,7 +72906,7 @@
                 {
                     "name": "origin/jules-11036931633384246240-42972b3d",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -72929,7 +72929,7 @@
                 {
                     "name": "origin/jules-11603548166204429434-f713fc51",
                     "lastMessage": "Literal insertion completed",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -72952,7 +72952,7 @@
                 {
                     "name": "origin/jules-12217136301763844247-5a9d25f1",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -72975,7 +72975,7 @@
                 {
                     "name": "origin/jules-14501757934328553895-0f9a0a9d",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73011,7 +73011,7 @@
                 {
                     "name": "origin/jules-17017179750391608782-12a2a27e",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73149,7 +73149,7 @@
                 {
                     "name": "origin/jules-2411422773557197007-949fbde7",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73264,7 +73264,7 @@
                 {
                     "name": "origin/jules-9273442630307439603-2d44be50",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "33 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73310,7 +73310,7 @@
                 {
                     "name": "origin/jules-9943325006962660646-30c16856",
                     "lastMessage": "Apply literal text insertions for Agent logic behavior",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73502,7 +73502,7 @@
                 {
                     "name": "origin/feat/improve-merge-integrate-run-workflow-14706080362549883607",
                     "lastMessage": "feat: improve merge integrate run workflow and observe knowledge",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -74192,7 +74192,7 @@
                 {
                     "name": "origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607-final-1111222233334444555566667777888899990000-6627201860355673710",
                     "lastMessage": "feat: enhance ecosystem collaboration merge and communication (Phase 12)",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -74357,7 +74357,7 @@
                 {
                     "name": "origin/feat/implement-antigravity-knowledge-13360376207603801963",
                     "lastMessage": "feat: implement all knowledge from antigravity and github folder on macbook for cloud connected online presence with docker, github, gitkraken, supabase, mongodb and gitlab",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -74676,7 +74676,7 @@
                 {
                     "name": "origin/feat/unified-autonomous-execution-engine-12129098689674624370",
                     "lastMessage": "feat: Unify Work Order system and enhance autonomous execution engine",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -74742,7 +74742,7 @@
                 {
                     "name": "origin/feat/unified-collaboration-intelligence-v12-final-17564530872616543141",
                     "lastMessage": "feat: implement Phase 12 Unified Collaboration and Strategic Communication",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -74995,7 +74995,7 @@
                 {
                     "name": "origin/fix/daily-work-sync-13583971229598544377",
                     "lastMessage": "feat: implement streamlined daily work and icloud sync cycle",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -75446,7 +75446,7 @@
                 {
                     "name": "origin/literal-insertion-task-16804705194448920145",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -75952,7 +75952,7 @@
                 {
                     "name": "origin/unified-collaboration-intelligence-12081311259895722633",
                     "lastMessage": "feat: implement unified collaboration and strategic communication",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -75985,7 +75985,7 @@
                 {
                     "name": "origin/feat/integrate-intelephense-documentation-9646679079205342745",
                     "lastMessage": "feat: integrate full Intelephense documentation into knowledge base",
-                    "lastSeen": "32 hours ago",
+                    "lastSeen": "35 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76000,7 +76000,7 @@
                 {
                     "name": "origin/jules-12283771268117181283-edfe42b2",
                     "lastMessage": "chore: add missing work:daily script to package.json and verify daily sync workflow",
-                    "lastSeen": "27 hours ago",
+                    "lastSeen": "30 hours ago",
                     "category": "maintenance",
                     "domain": "Services",
                     "knowledge": "",
@@ -76020,7 +76020,7 @@
                 {
                     "name": "origin/jules-caio-integration-13939543537108665408",
                     "lastMessage": "feat: integrate Chief AI Officer (CAIO) role parameters and strategic mandates into knowledge base",
-                    "lastSeen": "8 hours ago",
+                    "lastSeen": "10 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76092,7 +76092,7 @@
                 {
                     "name": "origin/create-chief-ai-officer-1064648480425050096",
                     "lastMessage": "create agent Chief AI Officer literal insertion",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -76197,7 +76197,7 @@
                 {
                     "name": "origin/jules-6355788946159984395-57f1e85e",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "32 hours ago",
+                    "lastSeen": "35 hours ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -76281,7 +76281,7 @@
                 {
                     "name": "origin/utonomus-automatic-task-3481601568955005843",
                     "lastMessage": "every day do utonomus automatic task when you check out all recent sessions and improve them to higher scale and better funcionality to evolve and do automatic autonomus  with selfcorrectio and do the improvement to system engine and project",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -76372,7 +76372,7 @@
                 {
                     "name": "origin/intelephense-docs-update-17190911211980979020",
                     "lastMessage": "feat(knowledge): ingest and consolidate updated Intelephense documentation",
-                    "lastSeen": "7 hours ago",
+                    "lastSeen": "10 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76386,7 +76386,7 @@
                 {
                     "name": "origin/jules-10186218497185708882-e883fcb9",
                     "lastMessage": "feat(knowledge): Ingest Intelephense docs",
-                    "lastSeen": "31 hours ago",
+                    "lastSeen": "34 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76502,7 +76502,7 @@
                 {
                     "name": "origin/jules-11073667561860786611-3cf0024d",
                     "lastMessage": "Insert Agent logic text into codebase files",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76522,7 +76522,7 @@
                 {
                     "name": "origin/jules-17624214453960230513-01709105",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -78139,7 +78139,7 @@
                 {
                     "name": "origin/jules-3840851023832077809-231ee6df",
                     "lastMessage": "docs(caio): ingest and consolidate Chief AI Officer (CAIO) role specifications into system knowledge base",
-                    "lastSeen": "24 hours ago",
+                    "lastSeen": "27 hours ago",
                     "category": "documentation",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -78181,7 +78181,7 @@
                 {
                     "name": "origin/autonomous-daily-setup-4660499035144226143",
                     "lastMessage": "chore: execute daily work cycle and configure automation",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "maintenance",
                     "domain": "Automation",
                     "knowledge": "",
@@ -78248,7 +78248,7 @@
                 {
                     "name": "origin/chore/autonomous-daily-work-11199523788106632759",
                     "lastMessage": "chore: execute and verify daily work cycle sequence",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -78497,7 +78497,7 @@
                 {
                     "name": "origin/jules/daily-work-cycle-setup-17048370151221913351",
                     "lastMessage": "chore: verify and configure autonomous daily work cycle",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -78598,7 +78598,7 @@
                 {
                     "name": "main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 445 issues",
-                    "lastSeen": "3 minutes ago",
+                    "lastSeen": "58 minutes ago",
                     "category": "other",
                     "domain": "General",
                     "knowledge": "",
@@ -78807,7 +78807,7 @@
                 {
                     "name": "origin/feature/google-ai-agent-knowledge-13116341653253101712",
                     "lastMessage": "Fix and complete Google Cloud AI Agent knowledge integration",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "fix",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -78895,7 +78895,7 @@
                 {
                     "name": "origin/fix-daily-sync-recursion-2513362835835522754",
                     "lastMessage": "fix: daily routine robustness and recursion in optimization engine",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -79379,7 +79379,7 @@
                 {
                     "name": "origin/insert-benchmark-prompt-6367251325404209466",
                     "lastMessage": "Insert requested prompt across codebase and generate workflows",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -79709,7 +79709,7 @@
                 {
                     "name": "origin/main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 445 issues",
-                    "lastSeen": "3 minutes ago",
+                    "lastSeen": "58 minutes ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -81466,7 +81466,7 @@
                 {
                     "name": "origin/jules-2344388176169738034-8f498a90",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -82482,7 +82482,7 @@
                 {
                     "name": "origin/feat/connect-docker-collaborate-14034870400743437540",
                     "lastMessage": "Merge branch 'main' into feat/connect-docker-collaborate-14034870400743437540",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -82669,7 +82669,7 @@
                 {
                     "name": "origin/feat/deploy-react-agents-logic-12098199206590490844",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/deploy-react-agents-logic-12098199206590490844",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -82691,7 +82691,7 @@
                 {
                     "name": "origin/feat/docker-collaboration-scale-fix-12248709556243193254",
                     "lastMessage": "Security: Resolve Dependabot alerts by pinning Python deps, overriding postcss, and tidying Go modules",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "",
@@ -82911,7 +82911,7 @@
                 {
                     "name": "origin/feat/gemini-cli-security-hook-12046243673500680117",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/gemini-cli-security-hook-12046243673500680117",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "",
@@ -83428,7 +83428,7 @@
                 {
                     "name": "origin/feat/improve-sor-ingestion-792283284991180038",
                     "lastMessage": "feat: improve merge integrate run workflow and observe knowledge for software-online-review.com",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "",
@@ -83626,7 +83626,7 @@
                 {
                     "name": "origin/feat/instrument-gemini-telemetry-2423728923945984767",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/instrument-gemini-telemetry-2423728923945984767",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -83923,7 +83923,7 @@
                 {
                     "name": "origin/feat/integrate-react-knowledge-1014096584960652610",
                     "lastMessage": "feat(react-agents): integrate knowledge extraction for deployment",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -84000,7 +84000,7 @@
                 {
                     "name": "origin/feat/intelephense-docs-consolidation-v3-robust-dedup-regeneration-18438715533600734828-10929988283441599673",
                     "lastMessage": "feat: enhance Intelephense docs consolidation and refactor ingestion script",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "",
@@ -84352,7 +84352,7 @@
                 {
                     "name": "origin/feat/oracle-ai-knowledge-integration-15680791915741879380",
                     "lastMessage": "Merge branch 'oracle-google-cloud-agents-15432798509012982749' into feat/oracle-ai-knowledge-integration-15680791915741879380",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -84363,7 +84363,7 @@
                 {
                     "name": "origin/feat/otel-genai-semantics-11295433924323540657",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/otel-genai-semantics-11295433924323540657",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -84726,7 +84726,7 @@
                 {
                     "name": "origin/feat/update-intelephense-knowledge-v3-10649927759915972956",
                     "lastMessage": "feat: update Intelephense documentation in knowledge base",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85320,7 +85320,7 @@
                 {
                     "name": "origin/jules-10065781265649358564-e3f3d60f",
                     "lastMessage": "feat: integrate Google Innovation & AI knowledge and updates",
-                    "lastSeen": "15 hours ago",
+                    "lastSeen": "18 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85375,7 +85375,7 @@
                 {
                     "name": "origin/jules-16831708183348293512-c2d55e96",
                     "lastMessage": "feat(knowledge): Ingest Google Ads and Ad Manager documentation urls",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85474,7 +85474,7 @@
                 {
                     "name": "origin/jules-4039569702954338871-6dfc0852",
                     "lastMessage": "feat: improve merge integrate run workflow and observe knowledge",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "",
@@ -85551,7 +85551,7 @@
                 {
                     "name": "origin/jules-6745395260079567545-81305e67",
                     "lastMessage": "feat: connect with docker and collaborate",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85661,7 +85661,7 @@
                 {
                     "name": "origin/jules-create-caio-agent-6458675343117660936",
                     "lastMessage": "feat: verify existing Chief AI Officer agent",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -90885,7 +90885,7 @@
                 {
                     "name": "origin/chore/create-agent-chief-ai-officer-9628397174735826027",
                     "lastMessage": "chore: create agent Chief AI Officer",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "maintenance",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -91749,7 +91749,7 @@
                 {
                     "name": "origin/add-compile-definition-8931819634976410807",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-8931819634976410807",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -91771,7 +91771,7 @@
                 {
                     "name": "origin/add-gemini-ide-docs-5507798578309108991",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into add-gemini-ide-docs-5507798578309108991",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -91815,7 +91815,7 @@
                 {
                     "name": "origin/add-google-edge-agent-9371392929328195231",
                     "lastMessage": "Merge pull request #3087 from 8bukets/feat/integrate-google-innovation-ai-14083467611814416619",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -91826,7 +91826,7 @@
                 {
                     "name": "origin/add-jules-cli-7658708591293792322",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into add-jules-cli-7658708591293792322",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -91947,7 +91947,7 @@
                 {
                     "name": "origin/automate-intelephense-docs-sync-12135685512033520108",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into automate-intelephense-docs-sync-12135685512033520108",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -95401,7 +95401,7 @@
                 {
                     "name": "origin/feature/add-rag-agent-389407236128300017",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/add-rag-agent-389407236128300017",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -95522,7 +95522,7 @@
                 {
                     "name": "origin/feature/smarter-cloud-workflow-13558470471841766440",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/smarter-cloud-workflow-13558470471841766440",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -96424,7 +96424,7 @@
                 {
                     "name": "origin/jules-14193608750031090149-06bee460",
                     "lastMessage": "Insert benchmark prompt text",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96567,7 +96567,7 @@
                 {
                     "name": "origin/jules-17119447832888608159-41c9dad8",
                     "lastMessage": "Merge branch 'main' into jules-17119447832888608159-41c9dad8",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96787,7 +96787,7 @@
                 {
                     "name": "origin/jules-3873979156430146089-72171c25",
                     "lastMessage": "Insert URLs for literal insertion benchmark",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96985,7 +96985,7 @@
                 {
                     "name": "origin/jules-7199130010577973866-a070be8f",
                     "lastMessage": "Insert 'Agent - Logika ponašanja' prompt correctly into relevant files and generate workflows.",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -97590,7 +97590,7 @@
                 {
                     "name": "origin/no-op-8170347812880220977",
                     "lastMessage": "No file modifications required",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -101902,7 +101902,7 @@
                 {
                     "name": "origin/update-gitlab-security-agent-prompt-10087093437802479843",
                     "lastMessage": "Update gitlab_security_agent prompt",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -101990,7 +101990,7 @@
                 {
                     "name": "origin/update-gitlab-security-agent-prompt-3078419918001483693",
                     "lastMessage": "Update gitlab_security_agent prompt",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -102078,7 +102078,7 @@
                 {
                     "name": "origin/update-ingest-ads-knowledge-8788914163895205305",
                     "lastMessage": "Update ingest ads knowledge urls",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -102387,7 +102387,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-07-20T14:53:40.265Z"
+            "timestamp": "2026-07-20T17:32:07.858Z"
         },
         "relayState": [
             {
@@ -102397,7 +102397,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-07-20T14:53:40.271Z",
+                "lastActivity": "2026-07-20T17:32:07.864Z",
                 "intensity": 0.85
             },
             {
@@ -102412,5 +102412,5 @@
             }
         ]
     },
-    "last_sync": "2026-07-20T14:53:42.577Z"
+    "last_sync": "2026-07-20T17:32:11.307Z"
 }
