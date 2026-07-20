@@ -1,411 +1,244 @@
-# AI Agents Knowledge Repository
+# What are AI Agents?
 
-Synthesized from Google Innovation & AI Blog
+Scraped from [https://cloud.google.com/discover/what-are-ai-agents](https://cloud.google.com/discover/what-are-ai-agents)
 
-## [test](test)
+## What is an AI agent?
 
-### Definitions
-- **General summary**: test content
+Last Updated: 04/02/2026
+
+AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They show reasoning, planning, and memory and have a level of autonomy to make decisions, learn, and adapt.
+
+Their capabilities are made possible in large part by the multimodal capacity of generative AI and AI foundation models. AI agents can process multimodal information like text, voice, video, audio, code, and more simultaneously; can converse, reason, learn, and make decisions. They can learn over time and facilitate transactions and business processes. Agents can work with other agents to coordinate and perform more complex workflows.
+
+## Key features of an AI agent
+
+As explained above, while the key features of an AI agent are reasoning and acting (as described in ReAct Framework) more features have evolved over time.
+
+- Reasoning: This core cognitive process involves using logic and available information to draw conclusions, make inferences, and solve problems. AI agents with strong reasoning capabilities can analyze data, identify patterns, and make informed decisions based on evidence and context.
+- Acting: The ability to take action or perform tasks based on decisions, plans, or external input is crucial for AI agents to interact with their environment and achieve goals. This can include physical actions in the case of embodied AI, or digital actions like sending messages, updating data, or triggering other processes.
+- Observing: Gathering information about the environment or situation through perception or sensing is essential for AI agents to understand their context and make informed decisions. This can involve various forms of perception, such as computer vision, natural language processing, or sensor data analysis.
+- Planning: Developing a strategic plan to achieve goals is a key aspect of intelligent behavior. AI agents with planning capabilities can identify the necessary steps, evaluate potential actions, and choose the best course of action based on available information and desired outcomes. This often involves anticipating future states and considering potential obstacles.
+- Collaborating: Working effectively with others, whether humans or other AI agents, to achieve a common goal is increasingly important in complex and dynamic environments. Collaboration requires communication, coordination, and the ability to understand and respect the perspectives of others.
+- Self-refining: The capacity for self-improvement and adaptation is a hallmark of advanced AI systems. AI agents with self-refining capabilities can learn from experience, adjust their behavior based on feedback, and continuously enhance their performance and capabilities over time. This can involve machine learning techniques, optimization algorithms, or other forms of self-modification.
+
+## What is the difference between AI agents, AI assistants, and bots?
+
+AI assistants are AI agents designed as applications or products to collaborate directly with users and perform tasks by understanding and responding to natural human language and inputs. They can reason and take action on the users' behalf with their supervision.
+
+AI assistants are often embedded in the product being used. A key characteristic is the interaction between the assistant and user through the different steps of the task. The assistant responds to requests or prompts from the user, and can recommend actions but decision-making is done by the user.
+
+ | AI agent | AI assistant | Bot
+--- | --- | --- | ---
+Purpose | Autonomously and proactively perform tasks | Assisting users with tasks | Automating simple tasks or conversations
+Capabilities | Can perform complex, multi-step actions; learns and adapts; can make decisions independently | Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions | Follows pre-defined rules; limited learning; basic interactions
+Interaction | Proactive; goal-oriented | Reactive; responds to user requests | Reactive; responds to triggers or commands
+
+AI agent
+
+AI assistant
+
+Bot
+
+Purpose
+
+Autonomously and proactively perform tasks
+
+Assisting users with tasks
+
+Automating simple tasks or conversations
+
+Capabilities
+
+Can perform complex, multi-step actions; learns and adapts; can make decisions independently
+
+Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions
+
+Follows pre-defined rules; limited learning; basic interactions
+
+Interaction
+
+Proactive; goal-oriented
+
+Reactive; responds to user requests
+
+Reactive; responds to triggers or commands
+
+AI agent
+
+AI assistant
+
+Bot
+
+Purpose
+
+Autonomously and proactively perform tasks
+
+Assisting users with tasks
+
+Automating simple tasks or conversations
+
+Capabilities
+
+Can perform complex, multi-step actions; learns and adapts; can make decisions independently
+
+Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions
+
+Follows pre-defined rules; limited learning; basic interactions
+
+Interaction
+
+Proactive; goal-oriented
+
+Reactive; responds to user requests
+
+Reactive; responds to triggers or commands
+
+## Key differences
+
+- Autonomy: AI agents have the highest degree of autonomy, able to operate and make decisions independently to achieve a goal. AI assistants are less autonomous, requiring user input and direction. Bots are the least autonomous, typically following pre-programmed rules.
+- Complexity: AI agents are designed to handle complex tasks and workflows, while AI assistants and bots are better suited for simpler tasks and interactions.
+- Learning: AI agents often employ machine learning to adapt and improve their performance over time. AI assistants may have some learning capabilities, while bots typically have limited or no learning.
+
+## How do AI agents work?
+
+Every agent defines its role, personality, and communication style, including specific instructions and descriptions of available tools.
+
+- Persona: A well defined persona allows an agent to maintain a consistent character and behave in a manner appropriate to its assigned role, evolving as the agent gains experience and interacts with its environment.
+- Memory: The agent is equipped in general with short term, long term, consensus, and episodic memory. Short term memory for immediate interactions, long-term memory for historical data and conversations, episodic memory for past interactions, and consensus memory for shared information among agents. The agent can maintain context, learn from experiences, and improve performance by recalling past interactions and adapting to new situations.
+- Tools: Tools are functions or external resources that an agent can utilize to interact with its environment and enhance its capabilities. They allow agents to perform complex tasks by accessing information, manipulating data, or controlling external systems, and can be categorized based on their user interface, including physical, graphical, and program-based interfaces. Tool learning involves teaching agents how to effectively use these tools by understanding their functionalities and the context in which they should be applied.
+- Model: Large language models (LLMs) serve as the foundation for building AI agents, providing them with the ability to understand, reason, and act. LLMs act as the "brain" of an agent, enabling them to process and generate language, while other components facilitate reason and action.
+
+## What are the types of agents in AI?
+
+AI agents can be categorized in various ways based on their capabilities, roles, and environments. Here are some key categories of agents:
+
+There are different definitions of agent types and agent categories.
+
+## Based on interaction
+
+One way to categorize agents is by how they interact with users. Some agents engage in direct conversation, while others operate in the background, performing tasks without direct user input:
+
+- Interactive partners (also known as, surface agents): Assisting us with tasks like customer service, healthcare, education, and scientific discovery, providing personalized and intelligent support. Conversational agents include Q&A, chit chat, and world knowledge interactions with humans. They are generally user query triggered and fulfill user queries or transactions.
+- Autonomous background processes (also known as, background agents): Working behind the scenes to automate routine tasks, analyze data for insights, optimize processes for efficiency, and proactively identify and address potential issues. They include workflow agents. They have limited or no human interaction and are generally driven by events and fulfill queued tasks or chains of tasks.
+
+## Based on number of agents
+
+- Single agent: Operate independently to achieve a specific goal. They utilize external tools and resources to accomplish tasks, enhancing their functional capabilities in diverse environments. They are best suited for well defined tasks that do not require collaboration with other AI agents. Can only handle one foundation model for its processing.
+- Multi-agent: Multiple AI agents that collaborate or compete to achieve a common objective or individual goals. These systems leverage the diverse capabilities and roles of individual agents to tackle complex tasks. Multi-agent systems can simulate human behaviors, such as interpersonal communication, in interactive scenarios. Each agent can have different foundation models that best fit their needs.
+
+## Benefits of using AI agents
+
+AI agents can enhance the capabilities of language models by providing autonomy, task automation, and the ability to interact with the real world through tools and embodiment.
+
+## Efficiency and productivity
+
+Increased output: Agents divide tasks like specialized workers, getting more done overall
+
+Simultaneous execution: Agents can work on different things at the same time without getting in each other's way
+
+Automation: Agents take care of repetitive tasks, freeing up humans for more creative work
+
+## Improved decision-making
+
+Collaboration: Agents work together, debate ideas, and learn from each other, leading to better decisions
+
+Adaptability: Agents can adjust their plans and strategies as situations change
+
+Robust reasoning: Through discussion and feedback, agents can refine their reasoning and avoid errors
+
+## Enhanced capabilities
+
+Complex problem-solving: Agents can tackle challenging real-world problems by combining their strengths
+
+Natural language communication: Agents can understand and use human language to interact with people and each other
+
+Tool use: Agents can interact with the external world by using tools and accessing information
+
+Learning and self-improvement: Agents learn from their experiences and get better over time
+
+## Social interaction and simulation
+
+Realistic simulations: Agents can model human-like social behaviors, such as forming relationships and sharing information
+
+Emergent behavior: Complex social interactions can arise organically from the interactions of individual agents
+
+## Challenges with using AI agents
+
+While AI agents offer many benefits, there are also some challenges associated with their use:
+
+Tasks requiring deep empathy / emotional intelligence or requiring complex human interaction and social dynamics – AI agents can struggle with nuanced human emotions. Tasks like therapy, social work, or conflict resolution require a level of emotional understanding and empathy that AI currently lacks. They may falter in complex social situations that require understanding unspoken cues.
+
+Situations with high ethical stakes – AI agents can make decisions based on data, but they lack the moral compass and judgment needed for ethically complex situations. This includes areas like law enforcement, healthcare (diagnosis and treatment), and judicial decision-making.
+
+Domains with unpredictable physical environments – AI agents can struggle in highly dynamic and unpredictable physical environments where real-time adaptation and complex motor skills are essential. This includes tasks like surgery, certain types of construction work, and disaster response.
+
+Resource-intensive applications – Developing and deploying sophisticated AI agents can be computationally expensive and require significant resources, potentially making them unsuitable for smaller projects or organizations with limited budgets.
+
+## Deploy AI agents for scale and efficiency with Cloud Run
+
+AI agents, with their inherent need for flexible compute power to handle reasoning, planning, and tool use, can be an excellent fit for Cloud Run. This fully managed serverless platform allows you to deploy your agent's code—often packaged within a container—as a scalable, reliable service or job. This approach abstracts away infrastructure management, letting developers concentrate on refining the agent's logic.
+
+Cloud Run offers several features that directly support the architecture and demands of sophisticated AI agents:
+
+- Scalability and cost-efficiency: Cloud Run automatically scales the number of container instances up to meet peak demand and, crucially, can scale down to zero when the agent is idle. This means you only pay for the exact compute resources consumed during the agent's active execution, making it cost-effective for goal-oriented, intermittent workloads.
+- Agent orchestration and serving: The core agent logic—which manages the model calls, tool selection, and reasoning process—runs as a Cloud Run service. This service provides a stable HTTPS endpoint, making the agent easily accessible via an API for user-facing applications or for communication with other agents
+- Agent-to-Agent, or A2A: Frameworks like the Agent Development Kit (ADK) are designed to integrate seamlessly with Cloud Run for easy deployment.
+
+By leveraging Cloud Run's secure, auto-scaling, and flexible environment, organizations can operationalize complex single- or multi-agent systems efficiently.
+
+## Use cases for AI agents
+
+Organizations have been deploying agents to address a variety use cases, which we group into six key broader categories:
+
+## Customer agents
+
+Customer agents
+
+Customer agents deliver personalized customer experiences by understanding customer needs, answering questions, resolving customer issues, or recommending the right products and services. They work seamlessly across multiple channels including the web, mobile, or point of sale, and can be integrated into product experiences with voice or video.
+
+## Employee agents
+
+Employee agents
+
+Employee agents boost productivity by streamlining processes, managing repetitive tasks, answering employee questions, as well as editing and translating critical content and communications.
+
+## Creative agents
+
+Creative agents
+
+Creative agents supercharge the design and creative process by generating content, images, and ideas, assisting with design, writing, personalization, and campaigns.
+
+## Data agents
+
+Data agents
+
+Data agents are built for complex data analysis. They have the potential to find and act on meaningful insights from data, all while ensuring the factual integrity of their results.
+
+## Code agents
+
+Code agents
+
+Code agents accelerate software development with AI-enabled code generation and coding assistance, and to ramp up on new languages and code bases. Many organizations are seeing significant gains in productivity, leading to faster deployment and cleaner, clearer code.
+
+## Security agents
+
+Security agents
+
+Security agents strengthen security posture by mitigating attacks or increasing the speed of investigations. They can oversee security across various surfaces and stages of the security life cycle: prevention, detection, and response.
+
+## Google Cloud and AI agents
+
+Google Cloud provides a portfolio of products and solutions in the AI agent space. These include integrated AI assistants, pre-built AI agents, AI applications, and a platform of agent and developer tools to build custom AI agents.
+
+- Gemini Enterprise AppSecure platform to discover, create, run, and govern AI agents across your organization.
+- Gemini Enterprise Agent PlatformCreate AI agents and applications using natural language or a code-first approach. Easily ground your agents or apps in enterprise data with a range of options.
+- Customer Experience Agent StudioBuild hybrid conversational agents with both deterministic and generative AI functionality.
+- Agent GardenCurated collection of pre-built agent samples, solutions, tools, and frameworks to accelerate the development and deployment of AI agents.
+- Agent Development Kit (ADK)Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.
+- A2A ProtocolAn open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.
+- Cloud RunA fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
 
 ---
 
-## [Innovation & AI](https://blog.google/innovation-and-ai/)
+# Manual Knowledge Additions
 
-### Google Cloud Tools
-- Infrastructure & cloud
-- Gemini
-- Gemma
-
----
-
-## [Infrastructure & Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)
-
-### Google Cloud Tools
-- 7 highlights from Google Cloud Next ‘26
-- Google Cloud Next ‘26
-- Gemini
-- Gemini Enterprise Agent Platform
-
----
-
-## [Global Network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Google expands Alabama data center campus, funds community efforts](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)
-
-### Google Cloud Tools
-- 7 highlights from Google Cloud Next ‘26
-- Google Cloud Next ‘26
-- Gemini
-- Gemini Enterprise Agent Platform
-
----
-
-## [Cloud Next ‘26: Momentum and innovation at Google scale](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/)
-
-### Definitions
-- **Basic explainer**: Google is growing its cloud business fast by helping companies build and manage thousands of AI agents. They’re launching new, powerful computer chips to handle all this extra work and keep systems secure from hackers. Google also uses its own AI tools to write code and fix security bugs much faster than before. These updates help businesses get more done with less effort.
-- **3. Introducing our eighth-generation TPUs**: In the era of AI agents, infrastructure needs to evolve to take on the most demanding AI workloads. This year, we’re bringing the eighth generation of our Tensor Processing Units with a dual chip approach: TPU 8t , optimized for training, scales up to 9,600 TPUs and 2 petabytes of shared, high-bandwidth memory in a single superpod. It achieves three times the processing power of Ironwood and delivers up to 2x more performance/watt. TPU 8i , optimized for inference, connects 1,152 TPUs in a single pod, dramatically reducing latency, with 3x more on-chip SRAM, to deliver the massive throughput and low latency needed to concurrently run millions of agents cost-effectively. We’ll offer these to Cloud customers as a core part of our selection of compute processors, along with a portfolio of NVIDIA GPU instances. Read more in our blog post .
-
-### Google Cloud Tools
-- Gemini
-- Gemini Enterprise Agent Platform
-
----
-
-## [7 highlights from Google Cloud Next ‘26](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-cloud-next-26-recap/)
-
-### Definitions
-- **Basic explainer**: Google is moving into the "agentic era," where AI acts as a partner that can actually do work for you. They launched new tools that let anyone build these AI helpers without needing to know how to code. They also upgraded their massive computer chips and data systems to make sure these agents run faster and stay secure. Big companies are already using this tech to handle everything from customer orders to complex research.
-
-### Google Cloud Tools
-- Gemini
-- Nano Banana
-- Gemini Enterprise App
-- Gemini Enterprise Agent Platform
-
----
-
-## [How Google Does It: An inside look at cybersecurity](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/how-google-does-it-security-series/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Google Cloud Next ‘26](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/next-2026/)
-
-### Google Cloud Tools
-- Gemini
-- Gemini Enterprise Agent Platform
-
----
-
-## [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/rss/)
-
-### Google Cloud Tools
-- Gemini
-- Kaggle
-- Gemini Enterprise Agent Platform
-
----
-
-## [Models & research](https://blog.google/innovation-and-ai/models-and-research/)
-
-### Google Cloud Tools
-- Gemini
-- Google Flow
-
----
-
-## [Gemini Models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Fluid, natural voice translation with Gemini 3.5 Live Translate](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/)
-
-### Google Cloud Tools
-- Gemini
-- SynthID
-
----
-
-## [Introducing Gemini Omni](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)
-
-### Use Cases
-- **Edit your videos through conversation**: Gemini Omni gives you an easier way to edit video — with natural language. Every instruction builds on the last. Your characters stay consistent, the physics hold up and the scene remembers what came before. Transform the world around you. Change specific things, or change everything. Your video becomes the starting point for something you never could have filmed yourself.
-- **Bring ideas to life, grounded in Gemini’s world knowledge**: Gemini Omni doesn't just build scenes that look real, it reasons about what should happen next. It combines an intuitive understanding of physics with Gemini's knowledge of history, science and cultural context, bridging the gap from photorealism to meaningful storytelling. Create visuals with more accurate physics. Omni has an improved intuitive understanding of forces like gravity, kinetic energy and fluid dynamics, allowing you to create more realistic scenes.
-- **Create videos from any combination of inputs**: Reference anything. Omni turns any reference — image, text, video or audio — into a single, cohesive output. While only voice references will be supported for audio to start, we’ll roll out other types of audio inputs soon.
-- **Create videos with your own digital avatar**: We're committed to developing AI responsibly and we have clear policies to protect users from harm and governing the use of our AI tools. To start, you can create videos with your own voice by using Avatars , which create a digital version of yourself so you can generate videos that look and sound like you. Beyond the avatar feature, in terms of editing videos to change audio and speech, we are still working to test this and better understand how we can bring this capability to users responsibly. All videos created with Omni include our imperceptible SynthID digital watermark. You can easily verify that videos were generated with Gemini Omni through the Gemini app, Gemini in Chrome and Google Search. You can find out more about how we're expanding our content transparency and verification tools to help you understand how content was created and edited across the web in our blog post .
-
-### Google Cloud Tools
-- Gemini
-- Nano Banana
-- Google Flow
-- YouTube Shorts
-- YouTube Create App
-- SynthID
-- Avatars
-
----
-
-## [Deep Research Max: a step change for autonomous research agents](https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/)
-
-### Definitions
-- **Basic explainer**: Google just released two new AI research agents that can dig through massive amounts of data to write professional reports. One version is built for speed, while the other, called Deep Research Max, handles complex, deep-dive projects. These tools can even create their own charts and connect to your private files to find specific answers. It’s a huge upgrade that helps people get expert-level analysis done much faster than before.
-- **Choose a research configuration that fits your workflow**: Building upon our initial release of Gemini Deep Research, we’re introducing two distinct agents designed to match your needs ranging from direct user assistance to large-scale, offline research processes: Deep Research: Optimized for speed and efficiency, this new agent replaces our preview release from December and delivers significantly reduced latency and cost at higher quality levels. It is the ideal agent for research experiences integrated directly into interactive user surfaces where lower latency is desired. Deep Research Max: Designed for maximum comprehensiveness and highest-quality synthesis, Max leverages extended test-time compute to iteratively reason, search and refine the final report. It is the perfect engine for asynchronous, background workflows such as a nightly cron job triggering the generation of exhaustive due diligence reports for an analyst team by morning.
-
-### Use Cases
-- **Drive real-world results with expert-grade analysis**: Deep Research Max delivers highly comprehensive reports, rigorous factuality and expert-grade analysis cheaper and more efficiently than ever before. Compared to our December release, Deep Research Max consults significantly more sources and identifies critical nuances the older release frequently overlooked. We have also focused on teaching Deep Research to consult a diverse array of sources and carefully weighing conflicting evidence against each other. The result is a nuanced report that draws from authoritative sources like SEC filings and open-access peer-reviewed journals, lays out information well and transforms dense technical data into actionable, stakeholder-ready formats.
-
-### Benefits
-- **Bullet points**: Google’s "Deep Research Max" article introduces powerful new autonomous agents for advanced data analysis. Choose between the fast Deep Research agent or the comprehensive Deep Research Max model. These agents now securely connect to your private data using the Model Context Protocol. The system creates professional charts and infographics to help you visualize complex research findings. You can now guide the agent's research plan to ensure you get exactly what's needed.
-- **Unlock proprietary data and rich native visuals**: Deep Research can now search the web, arbitrary remote MCPs, file uploads and connected file stores — or any subset of them — introducing capabilities designed to handle the complex, gated data universes that professionals rely on daily. Model Context Protocol (MCP) support: You can now seamlessly connect Deep Research to your custom data and specialized professional data streams (such as financial or market data providers) securely via MCP. Deep Research supports arbitrary tool definitions which transforms it from a web searcher into an autonomous agent capable of navigating any specialized data repositories. Native charts and infographics: A first for Deep Research in the Gemini API, our agent no longer just creates text; it natively generates high-quality charts and infographics in-line with HTML or Nano Banana , dynamically visualizing complex data sets to enrich analytical reports.
-- **Take advantage of proven Google scale performance**: When you build with the Deep Research agent, you are tapping into the same autonomous research infrastructure that powers research capabilities within some of Google’s most popular products like Gemini App , NotebookLM , Google Search and Google Finance .
-
-### Google Cloud Tools
-- Gemini models
-- Gemini
-- Gemma
-- Model Context Protocol
-- MCP
-- Interactions API
-- Nano Banana
-
----
-
-## [Gemini Models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/rss/)
-
-### Google Cloud Tools
-- Gemini
-- Gemma
-- Vertex AI
-- Kaggle
-- Nano Banana
-
----
-
-## [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/)
-
-### Google Cloud Tools
-- Gemini
-- Kaggle
-- Nano Banana
-
----
-
-## [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Meet Dreambeans, an app that connects you with what matters](https://blog.google/innovation-and-ai/models-and-research/google-labs/dreambeans/)
-
-### Google Cloud Tools
-- Gemini
-- Nano Banana
-
----
-
-## [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/rss/)
-
-### Google Cloud Tools
-- Gemini
-- Nano Banana
-- Google Flow
-
----
-
-## [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Google advances its AMIE research medical AI from diagnosis to treatment](https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/rss/)
-
-### Google Cloud Tools
-- Gemini
-- Nano Banana
-
----
-
-## [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/rss/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Products](https://blog.google/innovation-and-ai/products/)
-
-### Google Cloud Tools
-- Gemini
-- Gemma
-
----
-
-## [Gemini App](https://blog.google/innovation-and-ai/products/gemini-app/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Save time and grow your business with new Gemini tools](https://blog.google/innovation-and-ai/products/gemini-app/gemini-features-for-businesses/)
-
-### Definitions
-- **General summary**: You can now connect your Google Business Profile to Gemini to get a personalized AI assistant that understands your brand and customer data. Use the new Business notebooks feature to organize your workflows, track critical tasks, and generate content based on your specific business context. Look for these updates rolling out globally this month to help you save time and manage your operations more effectively.
-- **Basic explainer**: Google is adding new features to Gemini to help small business owners save time. You can now connect your business profile so the AI understands your brand and helps you reply to customers. It also includes a new notebook tool to keep your projects and data organized in one place. These updates make Gemini act like a smart assistant that knows exactly how to help your business grow.
-
-### Benefits
-- **Bullet points**: "Save time and grow your business with new Gemini tools" helps entrepreneurs work smarter. Connect your Google Business Profile to Gemini for a smarter, personalized AI assistant. Use Gemini to analyze performance data and draft quick responses to customer reviews. Organize your workflows and business data in one place with new Business notebooks. These tools help you manage daily tasks and grow your business more efficiently.
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Technology](https://blog.google/innovation-and-ai/technology/)
-
-### Google Cloud Tools
-- Gemini
-- Gemma
-
----
-
-## [AI](https://blog.google/innovation-and-ai/technology/ai/)
-
-### Google Cloud Tools
-- Gemini
-- Gemma
-
----
-
-## [The latest AI news we announced in May 2026](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/)
-
-### Definitions
-- **General summary**: Google’s May 2026 updates center on the new "agentic" era, featuring the Gemini 3.5 model and Gemini Omni for advanced reasoning and creation. You can now use proactive tools like the updated Gemini app, Universal Cart for shopping, and the new Google Health app to manage your daily tasks more efficiently. Explore these features across new hardware, including the Googlebook and Fitbit Air, to see how these intelligent systems can simplify your workflow and personal wellness.
-
-### Google Cloud Tools
-- Gemini
-- Google Flow
-
----
-
-## [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)
-
-### Google Cloud Tools
-- Gemini
-- Gemma
-
----
-
-## [DiffusionGemma: 4x faster text generation](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/)
-
-### Use Cases
-- **Unlocking new value for developers**: Developers building real-time interactive AI applications often struggle with the latency bottlenecks of local inference. DiffusionGemma addresses these challenges directly, with some key trade-offs: Blazing fast inference: By shifting the decode bottleneck from memory-bandwidth to compute, DiffusionGemma generates up to 4x faster token output on dedicated GPUs. (1000+ tokens per second on a single NVIDIA H100, 700+ tokens per second on NVIDIA GeForce RTX 5090). 1 Accessible hardware footprint: Operating as a 26B total Mixture of Experts (MoE) model that activates only 3.8B parameters during inference, DiffusionGemma fits comfortably within 18GB VRAM limits of high-end dedicated consumer GPUs when quantized. Bi-directional attention : Generating 256 tokens in parallel with each forward pass allows every token to attend to all others. This provides significant advantages for non-linear domains such as in-line editing, code infilling, amino acid sequences or mathematical graphs. Intelligent self-correction: The model iteratively refines its own output, allowing it to evaluate the entire text block at once to fix mistakes in real-time. Experimental status & production recommendations: Because it prioritizes speed and parallel layout generation, DiffusionGemma’s overall output quality is lower than standard Gemma 4. For applications that demand maximum quality, we recommend deploying standard Gemma 4.
-
-### Benefits
-- **Why diffusion for text?**: While the AI research community has explored diffusion-based text generation for years, applying it to large models has remained a challenge. DiffusionGemma changes this by shifting how models use hardware.
-
-### Google Cloud Tools
-- Gemini
-- Gemma
-- Hugging Face
-- Kaggle
-- vLLM
-- MLX
-- Gemini Enterprise Agent Platform
-
----
-
-## [See what 3 builders are making with Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/)
-
-### Google Cloud Tools
-- Gemini
-- Gemma
-- Kaggle
-
----
-
-## [Health](https://blog.google/innovation-and-ai/technology/health/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Research](https://blog.google/innovation-and-ai/technology/research/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [4 ways researchers are collaborating with Co-Scientist to solve big problems](https://blog.google/innovation-and-ai/technology/research/co-scientist-research-problems/)
-
-### Definitions
-- **General summary**: Researchers are now using Co-Scientist, an artificial intelligence system designed to help solve complex problems in the life sciences. The tool uses specialized agents to generate, debate, and refine new hypotheses, acting as a virtual partner for scientific discovery. You can explore how this technology accelerates research by visiting the Google DeepMind blog or testing the new experimental tool.
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Gemini for Science: AI experiments and tools for a new era of discovery](https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/)
-
-### Google Cloud Tools
-- Gemini
-- Gemma
-
----
-
-## [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [Quantum frontiers may be closer than they appear](https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-## [XREAL AURA and more Android XR news from AWE 2026](https://blog.google/innovation-and-ai/technology/xr-ar/awe-2026/)
-
-### Google Cloud Tools
-- Gemini
-
----
-
-
-All the best - https://markposition.wordpress.com
