@@ -58,7 +58,7 @@ async function main() {
 
     // 2. Deep Branch Scan
     console.log('🔍 Scanning all ecosystem branches for knowledge and results...')
-    const branches = await jules.scanAllBranches(true)
+    const branches = (await jules.scanAllBranches(true)) as any[]
     console.log(`✅ Found ${branches.length} branches.`)
 
     // 3. State Sync & Knowledge Merge

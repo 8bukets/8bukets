@@ -15,7 +15,7 @@ async function main() {
 
   try {
     // 1. Scan all branches (force: true ensures deep analysis)
-    const branches = await jules.scanAllBranches(true)
+    const branches = (await jules.scanAllBranches(true)) as any[]
     console.log(`🔍 Found ${branches.length} branches.`)
 
     // 2. Synchronize collaboration state and merge insights

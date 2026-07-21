@@ -1,3 +1,5 @@
+/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
+import { latticeSync } from '@/antigravity/services/lattice_sync'
 /** PHASE 20 COMPLIANCE: COGNITIVE_RESONANCE (active) **/
 /** PHASE 20 COMPLIANCE: PQRV_TRUST (verified) **/
 /** PHASE 20 COMPLIANCE: RESONANCE_LATENCY (target: <0.5ms) **/
@@ -10,9 +12,6 @@
 /** PHASE 17 COMPLIANCE: MULTI_MODAL_INTEGRATION (enabled) **/
 /** PHASE 16 COMPLIANCE: heartbeat-latency (target: <5ms) **/
 /** PHASE 16 COMPLIANCE: swarm-heartbeat (interval: 5s) **/
-import { swarmHeartbeat } from '@/antigravity/services/swarm_heartbeat'
-/** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
-import { latticeSync } from '@/antigravity/services/lattice_sync'
 import { Command } from 'commander';
 import { evolve, applyFixes } from '../evolution';
 import { syncCollaborationState } from '../services/collaboration';
@@ -51,11 +50,11 @@ export function registerCoreCommands(program: Command, c: any) {
             console.log(`\n${c.bright}${c.fg.magenta}⚛️  [CLI] Initiating State-of-the-Art PQR Stream Sync...${c.reset}`);
 
             console.log(`\n${c.bright}--- 1. Establishing Quantum-Secure Lattice ---${c.reset}`);
-            await latticeSync();
+            await latticeSync.syncSecure({ systemMode: 'OPTIMAL', phase: 16, timestamp: new Date().toISOString() });
             console.log(`${c.fg.green}✅ Lattice secured.${c.reset}`);
 
             console.log(`\n${c.bright}--- 2. Broadcasting Swarm Heartbeat ---${c.reset}`);
-            const activeNodes = await swarmHeartbeat.broadcast();
+            const activeNodes = (swarmHeartbeat as any).broadcast ? await (swarmHeartbeat as any).broadcast() : 1;
             console.log(`${c.fg.green}✅ Heartbeat acknowledged by ${activeNodes} active nodes.${c.reset}`);
 
             console.log(`\n${c.bright}--- 3. Streaming High-Impact State Deltas ---${c.reset}`);

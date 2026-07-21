@@ -265,6 +265,11 @@ export class WorkOrderService {
     return this.orders.filter(o => o.status === 'pending')
   }
 
+  public clearPendingOrders(): void {
+    this.orders = this.orders.filter(o => o.status !== 'pending')
+    this.save()
+  }
+
   public async updateOrderStatus(id: string, status: WorkOrder['status'], result?: any, error?: string) {
     const order = this.orders.find(o => o.id === id)
     if (order) {

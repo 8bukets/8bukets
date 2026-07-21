@@ -57,6 +57,10 @@ export class Jules {
     return new Jules(role);
   }
 
+  public getMemory(): JulesMemory {
+    return this.memory;
+  }
+
   constructor(role: AgentRole = 'Coder') {
     this.role = role;
     if (fs.existsSync(MEMORY_PATH)) {

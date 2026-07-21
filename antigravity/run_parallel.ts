@@ -40,7 +40,7 @@ async function acquireLock(agent: string): Promise<boolean> {
   return false;
 }
 
-function releaseLock(agent: string) {
+async function releaseLock(agent: string) {
   try {
     if (await fs.promises.access(LOCK_FILE).then(() => true).catch(() => false)) {
       const lockData = JSON.parse(await fs.promises.readFile(LOCK_FILE, 'utf8'));
@@ -82,7 +82,7 @@ export async function runSequentialAgents() {
         console.error(`❌ [Jules-${role}] Parallel pulse failed:`, err);
         metrics.failed++;
       } finally {
-        releaseLock(role);
+        await releaseLock(role);
         console.log(`--- [Jules-${role}] Parallel Pulse Finished ---\n`);
       }
     });

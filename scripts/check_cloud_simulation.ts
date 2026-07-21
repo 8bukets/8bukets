@@ -17,8 +17,8 @@ async function main() {
 
   console.log('\n[3] Cloud Workflow Agent Telemetry:');
   const telemetry = await cloudWorkflowAgent.evaluateTelemetry();
-  console.log('Docker fullyOnline:', telemetry.docker?.fullyOnline);
-  console.log('GitLab fullyOnline:', telemetry.gitlab?.fullyOnline);
+  console.log('Docker fullyOnline:', typeof telemetry.docker === 'object' && telemetry.docker && 'fullyOnline' in telemetry.docker ? (telemetry.docker as any).fullyOnline : false);
+  console.log('GitLab fullyOnline:', typeof telemetry.gitlab === 'object' && telemetry.gitlab && 'fullyOnline' in telemetry.gitlab ? (telemetry.gitlab as any).fullyOnline : false);
 
   console.log('\n[4] ReAct Service (Simulation mode exit check):');
   const steps = await reactService.executeCycle('Test Simulation', {

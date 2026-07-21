@@ -59,7 +59,7 @@ export function loadMemory(): AgentMemory {
       return JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8')) as AgentMemory;
     }
   } catch (err: unknown) {
-    logger.warn(`Memory load failed, using defaults: ${err.message}`);
+    logger.warn(`Memory load failed, using defaults: ${err instanceof Error ? err.message : String(err)}`);
   }
   return { ...DEFAULT_MEMORY, lastOptimization: new Date().toISOString() };
 }
@@ -68,7 +68,7 @@ export function saveMemory(memory: AgentMemory): void {
   try {
     fs.writeFileSync(MEMORY_PATH, JSON.stringify(memory, null, 2), 'utf8');
   } catch (err: unknown) {
-    logger.warn(`Memory save failed: ${err.message}`);
+    logger.warn(`Memory save failed: ${err instanceof Error ? err.message : String(err)}`);
   }
 }
 

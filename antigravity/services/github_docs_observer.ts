@@ -30,7 +30,7 @@ export class GithubDocsObserver {
       throw new Error(`Failed to fetch ${file}: ${response.statusText}`)
     }
     const markdown = await response.text()
-    const sections: { title: string; content: string }[] = []
+    const sections: { title: string; content: string; level?: number }[] = []
 
     // Split by markdown headers
     const parts = markdown.split(/^(?=#+\s+)/m)

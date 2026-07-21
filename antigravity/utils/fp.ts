@@ -22,6 +22,7 @@ export function pipe<A, B>(value: A, fn1: Func<A, B>): B;
 export function pipe<A, B, C>(value: A, fn1: Func<A, B>, fn2: Func<B, C>): C;
 export function pipe<A, B, C, D>(value: A, fn1: Func<A, B>, fn2: Func<B, C>, fn3: Func<C, D>): D;
 export function pipe<A, B, C, D, E>(value: A, fn1: Func<A, B>, fn2: Func<B, C>, fn3: Func<C, D>, fn4: Func<D, E>): E;
+export function pipe<A, B, C, D, E, F>(value: A, fn1: Func<A, B>, fn2: Func<B, C>, fn3: Func<C, D>, fn4: Func<D, E>, fn5: Func<E, F>): F;
 export function pipe(value: any, ...fns: Function[]): any {
   return fns.reduce((acc, fn) => fn(acc), value);
 }
@@ -34,6 +35,7 @@ export async function asyncPipe<A, B>(value: A | Promise<A>, fn1: Func<A, B | Pr
 export async function asyncPipe<A, B, C>(value: A | Promise<A>, fn1: Func<A, B | Promise<B>>, fn2: Func<B, C | Promise<C>>): Promise<C>;
 export async function asyncPipe<A, B, C, D>(value: A | Promise<A>, fn1: Func<A, B | Promise<B>>, fn2: Func<B, C | Promise<C>>, fn3: Func<C, D | Promise<D>>): Promise<D>;
 export async function asyncPipe<A, B, C, D, E>(value: A | Promise<A>, fn1: Func<A, B | Promise<B>>, fn2: Func<B, C | Promise<C>>, fn3: Func<C, D | Promise<D>>, fn4: Func<D, E | Promise<E>>): Promise<E>;
+export async function asyncPipe<A, B, C, D, E, F>(value: A | Promise<A>, fn1: Func<A, B | Promise<B>>, fn2: Func<B, C | Promise<C>>, fn3: Func<C, D | Promise<D>>, fn4: Func<D, E | Promise<E>>, fn5: Func<E, F | Promise<F>>): Promise<F>;
 export async function asyncPipe(value: any, ...fns: Function[]): Promise<any> {
   return fns.reduce(async (accPromise, fn) => {
     const acc = await accPromise;

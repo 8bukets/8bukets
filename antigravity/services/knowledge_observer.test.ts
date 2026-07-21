@@ -51,20 +51,20 @@ describe('KnowledgeObserver', () => {
     const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
 
     expect(result.title).toBe('Test Title')
-    expect(result.sections).toHaveLength(2)
-    expect(result.sections[0].header).toBe('# Header 1')
-    expect(result.sections[0].content).toBe('Content 1 is long enough to pass filter')
-    expect(result.sections[1].header).toBe('# Header 2')
-    expect(result.sections[1].content).toBe('Content 2 is also long enough')
+    expect(result.sections!).toHaveLength(2)
+    expect(result.sections![0].header).toBe('# Header 1')
+    expect(result.sections![0].content).toBe('Content 1 is long enough to pass filter')
+    expect(result.sections![1].header).toBe('# Header 2')
+    expect(result.sections![1].content).toBe('Content 2 is also long enough')
   })
 
   it('should handle Title Case headers', () => {
     const raw = '# Introduction\nThis is the intro and it is long enough.\n# Getting Started\nStep 1 is also long enough.'
     const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
 
-    expect(result.sections).toHaveLength(2)
-    expect(result.sections[0].header).toBe('# Introduction')
-    expect(result.sections[1].header).toBe('# Getting Started')
+    expect(result.sections!).toHaveLength(2)
+    expect(result.sections![0].header).toBe('# Introduction')
+    expect(result.sections![1].header).toBe('# Getting Started')
   })
 
   it('should handle uppercase headers and skip code blocks', () => {
@@ -77,11 +77,11 @@ class SkipMe {}
 Some details here.`
     const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
 
-    expect(result.sections).toHaveLength(2)
-    expect(result.sections[0].header).toBe('# INTRODUCTION')
-    expect(result.sections[1].header).toBe('# DETAILS')
+    expect(result.sections!).toHaveLength(2)
+    expect(result.sections![0].header).toBe('# INTRODUCTION')
+    expect(result.sections![1].header).toBe('# DETAILS')
     // Ensure the PHP class didn't become a header
-    expect(result.sections.find(s => s.header === 'class SkipMe {}')).toBeUndefined()
+    expect(result.sections!.find(s => s.header === 'class SkipMe {}')).toBeUndefined()
   })
 
   it('should persist knowledge to custom directory', async () => {
@@ -107,7 +107,7 @@ But <script>alert('bad')</script> and <div class="hidden">secret</div> should be
 `
     const result = KnowledgeObserver.processContent('Symbols Test', raw, 'test-source')
 
-    const content = result.sections[0].content
+    const content = result.sections![0].content
 
     // Should preserve these
     expect(content).toContain('< 20ms')

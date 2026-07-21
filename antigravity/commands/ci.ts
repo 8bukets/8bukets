@@ -62,8 +62,8 @@ export function registerCICommands(program: Command, c: any) {
             try {
                 const result = await triggerBuild();
                 console.log(`${c.fg.green}✅ Build successfully triggered.${c.reset}`);
-                if (result && result.url) {
-                    console.log(`  View queue item at: ${c.fg.blue}${result.url}${c.reset}`);
+                if (result && (result as any).url) {
+                    console.log(`  View queue item at: ${c.fg.blue}${(result as any).url}${c.reset}`);
                 }
             } catch (error: any) {
                 console.error(`${c.fg.red}Failed to trigger CI/CD build: ${error.message}${c.reset}`);

@@ -2390,7 +2390,7 @@ Use the default keyword to specify additional configurations that are applied to
                    document.body;
 
         let elements = main.querySelectorAll('h1, h2, h3, p, li');
-        let textArr = [];
+        let textArr: string[] = [];
 
         elements.forEach(el => {
             // Very basic filtering to ignore short menu links
@@ -2453,7 +2453,7 @@ Use the default keyword to specify additional configurations that are applied to
 
   // Write JSON
   const jsonPath = path.join(process.cwd(), 'data', 'knowledge', 'system_knowledge.json');
-  let sysKnowledge = {};
+  let sysKnowledge: Record<string, any> = {};
   if (await fs.promises.access(jsonPath).then(() => true).catch(() => false)) {
       sysKnowledge = JSON.parse(await fs.promises.readFile(jsonPath, 'utf8'));
   }

@@ -1,7 +1,7 @@
 import { Command } from 'commander';
 import { workOrderService } from '../services/work_order';
 
-export function registerDeploymentCommands(program: Command, c: unknown) {
+export function registerDeploymentCommands(program: Command, c: any) {
     const deploymentCommand = program.command('deployment').description('Manage deployments.');
 
     deploymentCommand
@@ -10,8 +10,8 @@ export function registerDeploymentCommands(program: Command, c: unknown) {
         .action(() => {
             console.log('🛰️  [CLI] Fetching status of most recent deployment...');
 
-            const deploymentOrders = workOrderService.getOrders({ type: 'DEPLOYMENT' })
-                .filter(o => o.status === 'completed' || o.status === 'failed');
+            const deploymentOrders = ((workOrderService as any).orders || [])
+                .filter((o: any) => o.type === 'DEPLOYMENT' && (o.status === 'completed' || o.status === 'failed'));
 
             if (deploymentOrders.length === 0) {
                 console.log(`${c.dim}No deployment attempts found.${c.reset}`);
@@ -19,7 +19,7 @@ export function registerDeploymentCommands(program: Command, c: unknown) {
             }
 
             // Sort by completed_at date to find the most recent one
-            deploymentOrders.sort((a, b) => {
+            deploymentOrders.sort((a: any, b: any) => {
                 if (!a.completed_at || !b.completed_at) return 0;
                 return new Date(b.completed_at).getTime() - new Date(a.completed_at).getTime();
             });

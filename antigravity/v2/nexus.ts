@@ -41,7 +41,7 @@ interface NexusPullRequest {
 
 class Nexus {
   private genAI: GoogleGenerativeAI | null = null;
-  private model: unknown | null = null;
+  private model: any = null;
   private modelName = "gemini-1.5-flash";
 
   constructor() {
@@ -66,8 +66,9 @@ class Nexus {
       const response = await result.response;
       return response.text();
     } catch (e: unknown) {
-      console.error("❌ [Nexus] Error querying Google AI:", e.message);
-      return `Error: ${e.message}`;
+      const msg = e instanceof Error ? e.message : String(e);
+      console.error("❌ [Nexus] Error querying Google AI:", msg);
+      return `Error: ${msg}`;
     }
   }
 
@@ -153,7 +154,8 @@ ${diff}
         console.log(`   - Posting AI-generated review...`);
         await execAsync(`gh pr comment ${pr.number} --body "${review.replace(/"/g, '\\"')}"`);
       } catch (e: unknown) {
-        console.error(`❌ [Nexus] Failed to review PR #${pr.number}:`, e.message);
+        const msg = e instanceof Error ? e.message : String(e);
+        console.error(`❌ [Nexus] Failed to review PR #${pr.number}:`, msg);
       }
     }
   }
@@ -230,6 +232,11 @@ Respond in a JSON format with keys: "title", "body".`;
     await execAsync(`gh pr create --title "${prDetails.title}" --body "${prDetails.body}"`);
 
     return { action: 'create_pr', reason: `Successfully created PR for branch ${currentBranch.trim()}.` };
+  }
+
+  async executeNexusCycle(): Promise<void> {
+    console.log("🌌 [Nexus] Executing Nexus sync cycle...");
+    await this.reviewAllOpenPRs();
   }
 }
 

@@ -42,8 +42,9 @@ async function stepGitPull(): Promise<CycleStepResult> {
     await j.gitPull();
     return { step: 'git_pull', success: true };
   } catch (err: unknown) {
-    logger.error(`Git pull failed: ${err.message}`);
-    return { step: 'git_pull', success: false, detail: err.message };
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error(`Git pull failed: ${msg}`);
+    return { step: 'git_pull', success: false, detail: msg };
   }
 }
 
@@ -54,8 +55,9 @@ async function stepExploreAndRepair(): Promise<CycleStepResult> {
     await explore();
     return { step: 'explore', success: true };
   } catch (err: unknown) {
-    logger.error(`Explore failed: ${err.message}`);
-    return { step: 'explore', success: false, detail: err.message };
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error(`Explore failed: ${msg}`);
+    return { step: 'explore', success: false, detail: msg };
   }
 }
 
@@ -66,8 +68,9 @@ async function stepWorkOrders(): Promise<CycleStepResult> {
     await workOrderSvc.executePendingOrders();
     return { step: 'work_orders', success: true };
   } catch (err: unknown) {
-    logger.error(`Work orders failed: ${err.message}`);
-    return { step: 'work_orders', success: false, detail: err.message };
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error(`Work orders failed: ${msg}`);
+    return { step: 'work_orders', success: false, detail: msg };
   }
 }
 
@@ -83,8 +86,9 @@ async function stepSynthesisAndCreation(): Promise<CycleStepResult> {
     }
     return { step: 'synthesis', success: true, detail: `${ideas.length} ideas` };
   } catch (err: unknown) {
-    logger.error(`Synthesis failed: ${err.message}`);
-    return { step: 'synthesis', success: false, detail: err.message };
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error(`Synthesis failed: ${msg}`);
+    return { step: 'synthesis', success: false, detail: msg };
   }
 }
 
@@ -113,7 +117,8 @@ async function stepKnowledgeObservation(): Promise<CycleStepResult> {
         observed++;
       }
     } catch (err: unknown) {
-      logger.warn(`Knowledge observation failed for ${url}: ${err.message}`);
+      const msg = err instanceof Error ? err.message : String(err);
+      logger.warn(`Knowledge observation failed for ${url}: ${msg}`);
     }
   }
   return { step: 'knowledge', success: true, detail: `${observed}/${urlsToObserve.length} URLs observed` };
@@ -126,8 +131,9 @@ async function stepSEOAudit(): Promise<CycleStepResult> {
     await auditor.runAudit();
     return { step: 'seo', success: true };
   } catch (err: unknown) {
-    logger.error(`SEO audit failed: ${err.message}`);
-    return { step: 'seo', success: false, detail: err.message };
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error(`SEO audit failed: ${msg}`);
+    return { step: 'seo', success: false, detail: msg };
   }
 }
 
@@ -144,8 +150,9 @@ async function stepICloudScan(): Promise<CycleStepResult> {
     }
     return { step: 'icloud_scan', success: true, detail: `${ingested.length} files` };
   } catch (err: unknown) {
-    logger.error(`iCloud scan failed: ${err.message}`);
-    return { step: 'icloud_scan', success: false, detail: err.message };
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error(`iCloud scan failed: ${msg}`);
+    return { step: 'icloud_scan', success: false, detail: msg };
   }
 }
 
@@ -157,8 +164,9 @@ async function stepCollaborationSync(): Promise<CycleStepResult> {
     await j.syncCollaboration();
     return { step: 'collaboration', success: true };
   } catch (err: unknown) {
-    logger.error(`Collaboration sync failed: ${err.message}`);
-    return { step: 'collaboration', success: false, detail: err.message };
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error(`Collaboration sync failed: ${msg}`);
+    return { step: 'collaboration', success: false, detail: msg };
   }
 }
 
@@ -168,8 +176,9 @@ async function stepNexus(): Promise<CycleStepResult> {
     await nexus.executeNexusCycle();
     return { step: 'nexus', success: true };
   } catch (err: unknown) {
-    logger.error(`Nexus cycle failed: ${err.message}`);
-    return { step: 'nexus', success: false, detail: err.message };
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error(`Nexus cycle failed: ${msg}`);
+    return { step: 'nexus', success: false, detail: msg };
   }
 }
 
@@ -181,8 +190,9 @@ async function stepGitSync(): Promise<CycleStepResult> {
     await j.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`);
     return { step: 'git_sync', success: true };
   } catch (err: unknown) {
-    logger.error(`Git sync failed: ${err.message}`);
-    return { step: 'git_sync', success: false, detail: err.message };
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error(`Git sync failed: ${msg}`);
+    return { step: 'git_sync', success: false, detail: msg };
   }
 }
 
@@ -193,8 +203,9 @@ async function stepICloudSync(): Promise<CycleStepResult> {
     await syncToICloud();
     return { step: 'icloud_sync', success: true };
   } catch (err: unknown) {
-    logger.error(`iCloud sync failed: ${err.message}`);
-    return { step: 'icloud_sync', success: false, detail: err.message };
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error(`iCloud sync failed: ${msg}`);
+    return { step: 'icloud_sync', success: false, detail: msg };
   }
 }
 

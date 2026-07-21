@@ -87,7 +87,7 @@ export class Agent {
         logger.info(`💤 Cycle complete. Next pulse in ${CYCLE_INTERVAL_MS / 60000}min...`);
         await sleep(CYCLE_INTERVAL_MS);
       } catch (err: unknown) {
-        logger.error(`Loop error, restarting in ${ERROR_RETRY_MS / 1000}s... ${err.message}`);
+        logger.error(`Loop error, restarting in ${ERROR_RETRY_MS / 1000}s... ${err instanceof Error ? err.message : String(err)}`);
         await sleep(ERROR_RETRY_MS);
       }
     }
