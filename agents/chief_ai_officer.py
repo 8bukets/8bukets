@@ -106,7 +106,17 @@ class ChiefAIOfficerAgent(BaseAgent):
             sections_str = json.dumps(sections_list).lower()
 
             # Extract content from sections into a single searchable string
-            sections_content = " ".join([s.get("content", "").lower() for s in sections_list])
+            content_items = []
+            for s in sections_list:
+                raw_content = s.get("content", "")
+                if isinstance(raw_content, list):
+                    normalized = " ".join([str(item) for item in raw_content]).lower()
+                elif isinstance(raw_content, dict):
+                    normalized = json.dumps(raw_content).lower()
+                else:
+                    normalized = str(raw_content).lower()
+                content_items.append(normalized)
+            sections_content = " ".join(content_items)
 
             # Normalized checks for Phase detection
             has_phase_14 = "phase 14" in title_lower or "phase 14" in sections_str or "phase_14" in title_lower
