@@ -1,5 +1,4 @@
 /** PHASE 15 COMPLIANCE: quantum-secure (Dilithium/Kyber) **/
-import { latticeSync } from '@/antigravity/services/lattice_sync'
 /** PHASE 20 COMPLIANCE: COGNITIVE_RESONANCE (active) **/
 /** PHASE 20 COMPLIANCE: PQRV_TRUST (verified) **/
 /** PHASE 20 COMPLIANCE: RESONANCE_LATENCY (target: <0.5ms) **/
