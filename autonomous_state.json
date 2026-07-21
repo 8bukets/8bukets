@@ -16,47 +16,47 @@
     ],
     "directives": [
         {
-            "id": "dir_84dsqg7ho",
+            "id": "dir_kycihczo8",
             "priority": "Critical",
             "domain": "Security",
             "intent": "Rotate all Phase 12 neural sync keys",
             "status": "Active",
             "synergyScore": 95,
-            "timestamp": "2026-07-21T08:10:56.089Z"
+            "timestamp": "2026-07-21T12:25:57.465Z"
         },
         {
-            "id": "dir_bfj4jrvrm",
+            "id": "dir_eyom3fc0p",
             "priority": "High",
             "domain": "AI Agents",
             "intent": "Implement Crystals-Kyber for CAIO Agent",
             "status": "Active",
             "synergyScore": 88,
-            "timestamp": "2026-07-21T08:10:56.089Z"
+            "timestamp": "2026-07-21T12:25:57.465Z"
         },
         {
-            "id": "dir_32j329mtd",
+            "id": "dir_b1ivm0r6h",
             "priority": "Medium",
             "domain": "Services",
             "intent": "Optimize MongoDB sharding for APAC nodes",
             "status": "Active",
             "synergyScore": 72,
-            "timestamp": "2026-07-21T08:10:56.089Z"
+            "timestamp": "2026-07-21T12:25:57.465Z"
         },
         {
-            "id": "dir_3eg6gkfvv",
+            "id": "dir_w6u01sdo0",
             "priority": "Low",
             "domain": "General",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-07-21T08:10:56.089Z"
+            "timestamp": "2026-07-21T12:25:57.465Z"
         },
         {
-            "id": "dir_h8ze028g8",
+            "id": "dir_ho45lh4yn",
             "priority": "Medium",
             "domain": "Documentation",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-07-21T08:10:56.089Z"
+            "timestamp": "2026-07-21T12:25:57.465Z"
         }
     ],
     "docker": {
@@ -66,7 +66,7 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1784616778520,
+        "timestamp": 1784633068193,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
@@ -45648,7 +45648,7 @@
                 {
                     "name": "origin/feat/autonomous-cloud-sovereignty-1114435448538151993",
                     "lastMessage": "feat: implement autonomous cloud sovereignty and online presence protocols",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty. Found 28 relevant artifacts.",
@@ -47803,7 +47803,7 @@
                 {
                     "name": "origin/jules-18100476245265483259-e268bd0e",
                     "lastMessage": "feat: implement branch scan collaboration with communication matrix",
-                    "lastSeen": "22 hours ago",
+                    "lastSeen": "26 hours ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -48410,7 +48410,7 @@
                 {
                     "name": "origin/feat/docker-collaboration-integration-9536206781039101862",
                     "lastMessage": "feat: integrate Docker monitoring and collaboration services",
-                    "lastSeen": "2 months ago",
+                    "lastSeen": "3 months ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -50228,7 +50228,7 @@
                 {
                     "name": "origin/integrate-markposition-autonomous-4118623662316980039",
                     "lastMessage": "feat: integrate Markposition knowledge and automate autonomous merge",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -50662,7 +50662,7 @@
                 {
                     "name": "origin/feat/connect-docker-collaboration-6033606454460470488",
                     "lastMessage": "feat: implement autonomous docker connectivity and collaboration sync",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "",
@@ -50680,7 +50680,7 @@
                 {
                     "name": "origin/feat/docker-collaboration-sync-v27-final-resonance-2145827361737044709",
                     "lastMessage": "feat: implement autonomous docker connection and unified collaboration sync",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -51515,7 +51515,7 @@
                 {
                     "name": "origin/feat/icloud-knowledge-integration-v26-514500411839476662",
                     "lastMessage": "feat: integrate iCloud knowledge and enhance autonomous engine",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 7 artifacts.",
@@ -54536,7 +54536,7 @@
                 {
                     "name": "origin/fix/autonomous-evolution-1779502182555",
                     "lastMessage": "Enforce cloud simulation flags across all execution paths (#1967)",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -55153,7 +55153,7 @@
                 {
                     "name": "origin/feat/docker-collaboration-mur-14034100753230212214",
                     "lastMessage": "feat: implement high-resonance Docker connection and collaboration",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -55189,7 +55189,7 @@
                 {
                     "name": "origin/jules-12426175938359051978-77ebca43",
                     "lastMessage": "chore: add daily autonomous task schedule instruction",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "maintenance",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -57714,7 +57714,7 @@
                 {
                     "name": "origin/jules-14603833112414351908-c4558085",
                     "lastMessage": "feat: connect with docker and collaborate",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 8 artifacts.",
@@ -57806,7 +57806,7 @@
                 {
                     "name": "origin/jules-9496862441133058035-b5b86df5",
                     "lastMessage": "feat: connect with docker and collaborate",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -57894,7 +57894,7 @@
                 {
                     "name": "origin",
                     "lastMessage": "Update AI agents knowledge base from Google Cloud discovery page (#3099)",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "other",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -62607,7 +62607,7 @@
                 {
                     "name": "origin/jules-12004252693438871361-a290625e",
                     "lastMessage": "Literal insertion for synthetic benchmark",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -62731,7 +62731,7 @@
                 {
                     "name": "origin/jules-13167959293201287380-5e2f3e4e",
                     "lastMessage": "Literal insertion task for oracle AI",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -65025,7 +65025,7 @@
                 {
                     "name": "origin/jules-7164890127138125168-85e9d433",
                     "lastMessage": "literal insertion",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -65521,7 +65521,7 @@
                 {
                     "name": "origin/jules-9830650449315625710-553ad8a7",
                     "lastMessage": "Literal insertion of prompt",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -66637,7 +66637,7 @@
                 {
                     "name": "origin/jules/scraper-markposition-17752547678215960211",
                     "lastMessage": "Update AI agents knowledge base from Google Cloud discovery page (#3099)",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -67133,7 +67133,7 @@
                 {
                     "name": "origin/make-processing-easier-and-smarter-5877208880550594987",
                     "lastMessage": "Insert prompt as HTML comment",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -67381,7 +67381,7 @@
                 {
                     "name": "origin/oracle-ai-integration-1026548957062912430",
                     "lastMessage": "Literal insertion of Oracle AI prompt",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -70419,7 +70419,7 @@
                 {
                     "name": "origin/scrape-oracle-news-9936778584663660002",
                     "lastMessage": "Resolved conflicts by taking theirs",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 27 artifacts.",
@@ -71715,7 +71715,7 @@
                 {
                     "name": "origin/feat/docker-collaboration-1620258447180530858",
                     "lastMessage": "feat: connect with docker and collaborate",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -71808,7 +71808,7 @@
                 {
                     "name": "origin/feat/docker-collaboration-sync-4855452226246370900",
                     "lastMessage": "feat: establish Docker connection and execute collaboration cycle",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -72289,7 +72289,7 @@
                 {
                     "name": "origin/jules-docker-collaboration-sync-20260708-3533835847997402247",
                     "lastMessage": "Enable Docker Mesh collaboration and fix Cloudflare Worker CI failures",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -72345,7 +72345,7 @@
                 {
                     "name": "origin/feat/docker-collaboration-integration-12565559051351910193",
                     "lastMessage": "feat: establish Docker connection and activate collaboration",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -72363,7 +72363,7 @@
                 {
                     "name": "origin/feat/docker-collaboration-resonance-11303474562730580989",
                     "lastMessage": "feat: establish Docker resonance and execute unified collaboration",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -72381,7 +72381,7 @@
                 {
                     "name": "origin/jules-11241585995546672753-dc35702f",
                     "lastMessage": "feat: support docker collaboration and caio work orders",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -72505,7 +72505,7 @@
                 {
                     "name": "origin/jules-11072469783575680654-15223f85",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -72820,7 +72820,7 @@
                 {
                     "name": "origin/jules-4014514285054535464-260d98eb",
                     "lastMessage": "feat: connect with docker and collaborate",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -72837,7 +72837,7 @@
                 {
                     "name": "origin/connect-docker-5249874864801896485",
                     "lastMessage": "connect with docker and collaborate",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73333,7 +73333,7 @@
                 {
                     "name": "origin/jules-connect-with-docker-15766488869563479016",
                     "lastMessage": "connect with docker and collaborate",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73402,7 +73402,7 @@
                 {
                     "name": "origin/jules/connect-docker-collaborate-fix-8904002840072766087",
                     "lastMessage": "fix: resolve knowledge base corruption and execute collaboration cycle",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "fix",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -73796,7 +73796,7 @@
                 {
                     "name": "origin/feat/autonomous-cloud-presence-978332573715716812",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-presence-978332573715716812",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -74027,7 +74027,7 @@
                 {
                     "name": "origin/feat/connect-and-collaborate-10869785352580861022",
                     "lastMessage": "chore: execute autonomous connection and collaboration sync",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -74104,7 +74104,7 @@
                 {
                     "name": "origin/feat/connect-docker-collaboration-sync-final-6753111079424335435",
                     "lastMessage": "feat: synchronize autonomous state and collaborate with stakeholders",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -74918,7 +74918,7 @@
                 {
                     "name": "origin/feature/markposition-autonomous-integration-5824578537508195574",
                     "lastMessage": "feat: deep autonomous integration of markposition intelligence",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -76020,7 +76020,7 @@
                 {
                     "name": "origin/jules-caio-integration-13939543537108665408",
                     "lastMessage": "feat: integrate Chief AI Officer (CAIO) role parameters and strategic mandates into knowledge base",
-                    "lastSeen": "24 hours ago",
+                    "lastSeen": "28 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76134,7 +76134,7 @@
                 {
                     "name": "origin/jules-15083426960312768421-95423b6c",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -76218,7 +76218,7 @@
                 {
                     "name": "origin/jules-7210821383768991985-7b07c54d",
                     "lastMessage": "connect with docker and collaborate",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -76344,7 +76344,7 @@
                 {
                     "name": "origin/feat/update-intelephense-knowledge-bmewburn-13622372331048323374",
                     "lastMessage": "feat: update Intelephense documentation from bmewburn/intelephense-docs",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76372,7 +76372,7 @@
                 {
                     "name": "origin/intelephense-docs-update-17190911211980979020",
                     "lastMessage": "feat(knowledge): ingest and consolidate updated Intelephense documentation",
-                    "lastSeen": "23 hours ago",
+                    "lastSeen": "28 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76462,7 +76462,7 @@
                 {
                     "name": "origin/jules-10663569384364746240-69edb2b0",
                     "lastMessage": "Insert prompt string and generate workflows",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76621,7 +76621,7 @@
                 {
                     "name": "origin/jules-11789095643649413028-7f47bae6",
                     "lastMessage": "chore: sanitize system knowledge base and verify docker connection",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "maintenance",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -77917,7 +77917,7 @@
                 {
                     "name": "origin/feat/docker-swarm-collaboration-13926482618051788925",
                     "lastMessage": "feat: establish real Docker connection and Swarm collaboration",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "Aligned with strategic initiative: 🐝 Swarm Intelligence.",
@@ -77961,7 +77961,7 @@
                 {
                     "name": "origin/feature/integrate-oracle-ai-knowledge-6095839206286019467",
                     "lastMessage": "Feat: Integrate Oracle AI scraper into Python orchestrator swarm",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "Aligned with strategic initiative: 🐝 Swarm Intelligence.",
@@ -78057,7 +78057,7 @@
                 {
                     "name": "origin/connect-docker-collaborate-13991532233166045837",
                     "lastMessage": "connect with docker and collaborate",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -78281,7 +78281,7 @@
                 {
                     "name": "origin/cloud-autonomous-stabilization-11787002344957414636",
                     "lastMessage": "chore: finalize autonomous cloud integration and stabilize agents",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "maintenance",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -78521,7 +78521,7 @@
                 {
                     "name": "origin/update-duo-planner-prompt-13838548475697526700",
                     "lastMessage": "docs(agents): update duo planner agent system prompt",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "documentation",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -78550,7 +78550,7 @@
                 {
                     "name": "origin/jules-update-duo-planner-prompt-15007704529156935977",
                     "lastMessage": "Update Duo Planner system prompt",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -78566,7 +78566,7 @@
                 {
                     "name": "origin/update-duo-planner-prompt-10112152755642634410",
                     "lastMessage": "Update Duo Planner system prompt",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -78582,7 +78582,7 @@
                 {
                     "name": "origin/update-duo-planner-prompt-660038497716128774",
                     "lastMessage": "Update Duo Planner agent system prompts",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -78796,7 +78796,7 @@
                 {
                     "name": "origin/feature/cloud-workflow-fluent-availability-1140691908336489716",
                     "lastMessage": "Fix scraper and intelligence tests for python CI checks",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -79060,7 +79060,7 @@
                 {
                     "name": "origin/fix/docker-simulate-fallback-790646999147421628",
                     "lastMessage": "fix(docker): respect cloud simulation flags before executing docker commands",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "fix",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -79104,7 +79104,7 @@
                 {
                     "name": "origin/fix/gitlab-security-analyst-agent-prompt-11288639631625011620",
                     "lastMessage": "Update GitLab Security Analyst Agent system prompt",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "fix",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -79445,7 +79445,7 @@
                 {
                     "name": "origin/jules-11867509925832320780-8aa8894a",
                     "lastMessage": "fix: automatically append english locale parameter for Google Ads/Ad Manager docs",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "fix",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -79511,7 +79511,7 @@
                 {
                     "name": "origin/jules-1401381832535268992-101c53a9",
                     "lastMessage": "fix(scraper): import re module in scraper.py",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -79588,7 +79588,7 @@
                 {
                     "name": "origin/jules-cloud-simulation-enforcement-7338891043576217515",
                     "lastMessage": "Enforce cloud simulation flags across all execution paths",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -79709,7 +79709,7 @@
                 {
                     "name": "origin/main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 445 issues",
-                    "lastSeen": "14 hours ago",
+                    "lastSeen": "19 hours ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -81524,7 +81524,7 @@
                 {
                     "name": "origin/jules-11150010769577917402-5ec290b7",
                     "lastMessage": "Update Duo Planner agent system prompt",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -82174,7 +82174,7 @@
                 {
                     "name": "origin/dynamic-cloud-workflow-agents-4167178583632810604",
                     "lastMessage": "feat: Make cloud workflow and evolution agents dynamic",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "",
@@ -82240,7 +82240,7 @@
                 {
                     "name": "origin/feat/add-subagents-docs-1971776765739377795",
                     "lastMessage": "chore: remove compiled pyc files and fix CI failures",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -82515,7 +82515,7 @@
                 {
                     "name": "origin/feat/connect-docker-collaborate-final-6795447533738586308",
                     "lastMessage": "feat: enhance Docker connection and stakeholder collaboration",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -82548,7 +82548,7 @@
                 {
                     "name": "origin/feat/connect-docker-collaboration-sync-v12-15268919459233727210",
                     "lastMessage": "feat: enhance docker integration and mission parsing",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83054,7 +83054,7 @@
                 {
                     "name": "origin/feat/google-innovation-ai-knowledge-integration-2508984454520338148",
                     "lastMessage": "Integrate knowledge from Google Innovation & AI blog",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83076,7 +83076,7 @@
                 {
                     "name": "origin/feat/google-innovation-ai-knowledge-integration-6498111601029160093",
                     "lastMessage": "feat: integrate Google Innovation & AI blog knowledge",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83153,7 +83153,7 @@
                 {
                     "name": "origin/feat/google-innovation-knowledge-integration-17079602277466744244",
                     "lastMessage": "feat: integrate latest knowledge from Google Innovation & AI blog",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83186,7 +83186,7 @@
                 {
                     "name": "origin/feat/google-innovation-knowledge-integration-6794887600436846347",
                     "lastMessage": "feat: integrate latest Google Innovation & AI knowledge",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83197,7 +83197,7 @@
                 {
                     "name": "origin/feat/google-innovation-knowledge-integration-7613120709513586391",
                     "lastMessage": "feat: integrate latest Google Innovation & AI blog knowledge",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83659,7 +83659,7 @@
                 {
                     "name": "origin/feat/integrate-google-ai-knowledge-1914861070610569858",
                     "lastMessage": "Integrate latest knowledge from Google Innovation & AI Blog",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83681,7 +83681,7 @@
                 {
                     "name": "origin/feat/integrate-google-innovation-ai-14083467611814416619",
                     "lastMessage": "feat: integrate knowledge from Google Innovation & AI Blog",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83714,7 +83714,7 @@
                 {
                     "name": "origin/feat/integrate-google-innovation-knowledge-14044925782123281352",
                     "lastMessage": "feat: integrate Google Innovation & AI blog knowledge",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83769,7 +83769,7 @@
                 {
                     "name": "origin/feat/integrate-google-innovation-knowledge-2590325206961785938",
                     "lastMessage": "feat: integrate latest Google Innovation & AI blog knowledge",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83780,7 +83780,7 @@
                 {
                     "name": "origin/feat/integrate-google-innovation-knowledge-3776231679848805647",
                     "lastMessage": "feat: integrate latest knowledge from Google Innovation & AI blog",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83802,7 +83802,7 @@
                 {
                     "name": "origin/feat/integrate-google-innovation-knowledge-4453269566957682121",
                     "lastMessage": "feat: integrate knowledge from Google Innovation & AI blog",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83813,7 +83813,7 @@
                 {
                     "name": "origin/feat/integrate-google-innovation-knowledge-4940171211967250498",
                     "lastMessage": "fix: resolve CI failures and integrate Google Innovation knowledge",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83835,7 +83835,7 @@
                 {
                     "name": "origin/feat/integrate-google-innovation-knowledge-8264648405365547571",
                     "lastMessage": "feat: integrate knowledge from Google Innovation & AI blog",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83846,7 +83846,7 @@
                 {
                     "name": "origin/feat/integrate-google-innovation-knowledge-9056664793366318906",
                     "lastMessage": "feat: integrate latest Google Innovation & AI knowledge",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -83901,7 +83901,7 @@
                 {
                     "name": "origin/feat/integrate-oracle-ai-knowledge-3394848601696333844",
                     "lastMessage": "feat: integrate oracle ai knowledge",
-                    "lastSeen": "2 months ago",
+                    "lastSeen": "3 months ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -84231,7 +84231,7 @@
                 {
                     "name": "origin/feat/jenkins-integration-8889480307913922372",
                     "lastMessage": "feat(ci): integrate jenkins configuration parsing into cognitive engine",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -84902,7 +84902,7 @@
                 {
                     "name": "origin/feature/integrate-google-innovation-knowledge-668312116212957224",
                     "lastMessage": "feat: integrate latest Google Innovation & AI knowledge",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85298,7 +85298,7 @@
                 {
                     "name": "origin/jenkins-pipeline-integration-7872982211767864585",
                     "lastMessage": "feat: integrate jenkins pipeline into engine system and ci/cd",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -85320,7 +85320,7 @@
                 {
                     "name": "origin/jules-10065781265649358564-e3f3d60f",
                     "lastMessage": "feat: integrate Google Innovation & AI knowledge and updates",
-                    "lastSeen": "32 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85342,7 +85342,7 @@
                 {
                     "name": "origin/jules-10832275694582510054-e5600783",
                     "lastMessage": "feat: integrate google innovation and ai blog knowledge and fix test mocking",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85496,7 +85496,7 @@
                 {
                     "name": "origin/jules-4419163302563977256-a9d3bdf2",
                     "lastMessage": "feat: connect with docker and collaborate",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85573,7 +85573,7 @@
                 {
                     "name": "origin/jules-6934533624181303887-6d0ef469",
                     "lastMessage": "feat: integrate Google Innovation & AI knowledge into unified system base",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85782,7 +85782,7 @@
                 {
                     "name": "origin/jules-knowledge-merge-markposition-11506824174069569507",
                     "lastMessage": "feat: append markposition signature to KNOWLEDGE_MERGE.md",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -90344,7 +90344,7 @@
                 {
                     "name": "origin/fix-duo-planner-agent-grammar-16202583331211122411",
                     "lastMessage": "docs: Fix grammar and Yoda-speak in Duo Planner agent",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "documentation",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -90498,7 +90498,7 @@
                 {
                     "name": "origin/jules-3846281635572638748-a6322919",
                     "lastMessage": "docs: update gitlab_security_agent.md with exact text",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "documentation",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -90608,7 +90608,7 @@
                 {
                     "name": "origin/update-duo-planner-2171143688304515845",
                     "lastMessage": "docs: update duo planner system prompt",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "documentation",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -90619,7 +90619,7 @@
                 {
                     "name": "origin/update-duo-planner-system-prompt-7747836995487209053",
                     "lastMessage": "docs: update Duo Planner agent system prompt",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "documentation",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -90696,7 +90696,7 @@
                 {
                     "name": "origin/update-gitlab-security-agent-prompt-963009201759407232",
                     "lastMessage": "docs: update gitlab_security_agent system prompt exactly as specified",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "documentation",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -91303,7 +91303,7 @@
                 {
                     "name": "origin/jules-483395533739227086-9852c05c",
                     "lastMessage": "chore: verify daily work cycle and iCloud synchronization protocols",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -91490,7 +91490,7 @@
                 {
                     "name": "origin/jules/connect-docker-collaborate-11639225190852212326-12266854426214340534-6433073805637161365",
                     "lastMessage": "chore: execute Antigravity connect and collaborate workflow",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "maintenance",
                     "domain": "Automation",
                     "knowledge": "",
@@ -91611,7 +91611,7 @@
                 {
                     "name": "origin/update-gitlab-security-agent-prompt-16782650584692900444",
                     "lastMessage": "chore: Verify gitlab_security_agent.md prompt",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "maintenance",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -91633,7 +91633,7 @@
                 {
                     "name": "origin/update-gitlab-security-agent-prompt-9385198721633097408",
                     "lastMessage": "chore(agents): update gitlab security agent system prompt",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "maintenance",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -95302,7 +95302,7 @@
                 {
                     "name": "origin/connect-with-docker-and-collaborate-163445282680926663",
                     "lastMessage": "Connect with Docker and collaborate",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -95940,7 +95940,7 @@
                 {
                     "name": "origin/integrate-google-ai-knowledge-1959220735285178548",
                     "lastMessage": "Integrate cumulative knowledge from Google Innovation & AI",
-                    "lastSeen": "2 months ago",
+                    "lastSeen": "3 months ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -96083,7 +96083,7 @@
                 {
                     "name": "origin/investopedia-puppeteer-ingestion-5835022978805247653",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into investopedia-puppeteer-ingestion-5835022978805247653",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96259,7 +96259,7 @@
                 {
                     "name": "origin/jules-11957966982244277798-5a01db14",
                     "lastMessage": "Update gitlab security agent prompts",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -96314,7 +96314,7 @@
                 {
                     "name": "origin/jules-13287705642708759285-a7a51e72",
                     "lastMessage": "Add Duo Planner GitLab PM AI Agent to system knowledge",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -96380,7 +96380,7 @@
                 {
                     "name": "origin/jules-13771634100940547607-ac5b9499",
                     "lastMessage": "Literal Replacement Task",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96391,7 +96391,7 @@
                 {
                     "name": "origin/jules-13937114701961374051-ab2804e4",
                     "lastMessage": "Update GitLab Security Agent system prompt",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -96501,7 +96501,7 @@
                 {
                     "name": "origin/jules-15108000764196153485-65104842",
                     "lastMessage": "Update GitLab Security Analyst Agent system prompt",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -96523,7 +96523,7 @@
                 {
                     "name": "origin/jules-1571033321239158606-dbf7ed9e",
                     "lastMessage": "Apply knowledge integration literal insertion and generate workflows",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -96534,7 +96534,7 @@
                 {
                     "name": "origin/jules-16459465869868084221-09ffc83e",
                     "lastMessage": "connect with docker and collaborate",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -96545,7 +96545,7 @@
                 {
                     "name": "origin/jules-1672363007269135115-03d336c1",
                     "lastMessage": "Update Duo Planner agent system prompt",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -96721,7 +96721,7 @@
                 {
                     "name": "origin/jules-2665072131920744059-18c49b12",
                     "lastMessage": "Update GitLab Security Agent documentation",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -101660,7 +101660,7 @@
                 {
                     "name": "origin/update-duo-planner-prompt-17013393574094072727",
                     "lastMessage": "Update Duo Planner agent system prompt",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -101704,7 +101704,7 @@
                 {
                     "name": "origin/update-duo-planner-prompt-3916153360372611286",
                     "lastMessage": "Update Duo Planner system prompt to exact user specification",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -101847,7 +101847,7 @@
                 {
                     "name": "origin/update-gitlab-security-agent-12797744090691269007",
                     "lastMessage": "Update gitlab security agent markdown docs",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -101924,7 +101924,7 @@
                 {
                     "name": "origin/update-gitlab-security-agent-prompt-1244713267422706255",
                     "lastMessage": "Update GitLab Security Analyst Agent system prompt",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -102045,7 +102045,7 @@
                 {
                     "name": "origin/update-gitlab-security-agent-prompt-7032826209474311431",
                     "lastMessage": "Update gitlab security agent prompt",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -102067,7 +102067,7 @@
                 {
                     "name": "origin/update-gitlab-security-agent-prompt-9333680288612190106",
                     "lastMessage": "Update GitLab Security Analyst Agent system prompt with extensive details",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -102387,7 +102387,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-07-21T08:10:56.051Z"
+            "timestamp": "2026-07-21T12:25:57.459Z"
         },
         "relayState": [
             {
@@ -102397,7 +102397,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-07-21T08:10:56.074Z",
+                "lastActivity": "2026-07-21T12:25:57.464Z",
                 "intensity": 0.85
             },
             {
@@ -102412,5 +102412,5 @@
             }
         ]
     },
-    "last_sync": "2026-07-21T08:10:58.202Z"
+    "last_sync": "2026-07-21T12:43:38.032Z"
 }
