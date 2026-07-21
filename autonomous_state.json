@@ -16,47 +16,47 @@
     ],
     "directives": [
         {
-            "id": "dir_lsllq2jep",
+            "id": "dir_h6n9rtsfp",
             "priority": "Critical",
             "domain": "Security",
             "intent": "Rotate all Phase 12 neural sync keys",
             "status": "Active",
             "synergyScore": 95,
-            "timestamp": "2026-07-20T22:34:53.807Z"
+            "timestamp": "2026-07-21T03:07:19.429Z"
         },
         {
-            "id": "dir_ghgz9v53w",
+            "id": "dir_nblhfm7xg",
             "priority": "High",
             "domain": "AI Agents",
             "intent": "Implement Crystals-Kyber for CAIO Agent",
             "status": "Active",
             "synergyScore": 88,
-            "timestamp": "2026-07-20T22:34:53.807Z"
+            "timestamp": "2026-07-21T03:07:19.429Z"
         },
         {
-            "id": "dir_prluku96c",
+            "id": "dir_byuspa3gm",
             "priority": "Medium",
             "domain": "Services",
             "intent": "Optimize MongoDB sharding for APAC nodes",
             "status": "Active",
             "synergyScore": 72,
-            "timestamp": "2026-07-20T22:34:53.807Z"
+            "timestamp": "2026-07-21T03:07:19.429Z"
         },
         {
-            "id": "dir_di02xh44k",
+            "id": "dir_yg8d33kud",
             "priority": "Low",
             "domain": "General",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-07-20T22:34:53.807Z"
+            "timestamp": "2026-07-21T03:07:19.429Z"
         },
         {
-            "id": "dir_pzxvs1ubx",
+            "id": "dir_s4aysl8w2",
             "priority": "Medium",
             "domain": "Documentation",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-07-20T22:34:53.807Z"
+            "timestamp": "2026-07-21T03:07:19.429Z"
         }
     ],
     "docker": {
@@ -66,7 +66,7 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1784580333497,
+        "timestamp": 1784598626746,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
@@ -47032,7 +47032,7 @@
                 {
                     "name": "origin/feat/phase-16-autonomous-orchestration-16474240444277557624",
                     "lastMessage": "Implement Phase 16 Unified Autonomous Creation Lifecycle",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -47740,7 +47740,7 @@
                 {
                     "name": "origin/feat/caio-phase-27-15579122317054106332",
                     "lastMessage": "feat: integrate Chief AI Officer (CAIO) role and Phase 27 Multi-Universal Resonance",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -47803,7 +47803,7 @@
                 {
                     "name": "origin/jules-18100476245265483259-e268bd0e",
                     "lastMessage": "feat: implement branch scan collaboration with communication matrix",
-                    "lastSeen": "12 hours ago",
+                    "lastSeen": "17 hours ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -47845,7 +47845,7 @@
                 {
                     "name": "origin/jules-daily-sync-robustness-18101794967491740008",
                     "lastMessage": "feat: implement robust autonomous daily work cycle and iCloud sync",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -48115,7 +48115,7 @@
                 {
                     "name": "origin/feature/autonomous-workflow-pipeline-1359283664930221721",
                     "lastMessage": "fix: resolve python pip dependency resolution conflict and downgrade node warning",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "fix",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 22 artifacts.",
@@ -48239,7 +48239,7 @@
                 {
                     "name": "origin/full-autonomous-workflow-5987290875344719095",
                     "lastMessage": "Implement full autonomous automatic workflow",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -49360,7 +49360,7 @@
                 {
                     "name": "origin/feat/implement-ai-agents-knowledge-16793181359834219969",
                     "lastMessage": "Implement AI agent knowledge from Google Cloud and fix CI failures",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -49422,7 +49422,7 @@
                 {
                     "name": "origin/feat/implement-google-ai-agents-knowledge-9440069588057424051",
                     "lastMessage": "Implement GCP AI agents knowledge and fix CI build failures",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -49856,7 +49856,7 @@
                 {
                     "name": "origin/feature/phase-27-mur-integration-13828761492594925144",
                     "lastMessage": "feat: implement Phase 27 Multi-Universal Resonance (MUR)",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -50414,7 +50414,7 @@
                 {
                     "name": "origin/jules-3360692145458523639-8aef9501",
                     "lastMessage": "feat: integrate Phase 27 Multi-Universal Resonance knowledge and engines",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 6 artifacts.",
@@ -50794,7 +50794,7 @@
                 {
                     "name": "origin/jules-12845985365201945533-113d7ef8",
                     "lastMessage": "feat: implement STRATEGIC_CONSULTATION and standalone communication matrix",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -50814,7 +50814,7 @@
                 {
                     "name": "origin/phase-27-mur-upgrade-9983683132161497572",
                     "lastMessage": "feat: upgrade system engine and agents to Phase 27 MUR",
-                    "lastSeen": "34 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -50834,7 +50834,7 @@
                 {
                     "name": "origin/jules-5034400503601953950-a47f7fd5",
                     "lastMessage": "Implement autonomous cloud connections",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -51540,7 +51540,7 @@
                 {
                     "name": "origin/feat/caio-role-phase-27-resonance-4704509558716619118",
                     "lastMessage": "feat: enhance CAIO role and upgrade to Phase 27",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -51582,7 +51582,7 @@
                 {
                     "name": "origin/feature/backup-agent-11331906079381269962",
                     "lastMessage": "feat: implement autonomous backup agent system",
-                    "lastSeen": "2 months ago",
+                    "lastSeen": "3 months ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -51885,7 +51885,7 @@
                 {
                     "name": "origin/jules-6555493983727562929-cd52dacc",
                     "lastMessage": "feat: implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -51908,7 +51908,7 @@
                 {
                     "name": "origin/feature/phase26-expansion-integration-7423129812629428344",
                     "lastMessage": "feat: integrate Phase 26 iCloud knowledge and improve system engine",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -52513,7 +52513,7 @@
                 {
                     "name": "origin/full-autonomous-automatic-workflow-13691277307478214724",
                     "lastMessage": "ci: fix CodeQL workflow and Node.js 20 deprecation warnings",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -53227,7 +53227,7 @@
                 {
                     "name": "origin/literal-insertion-full-autonomous-8965461597183786787",
                     "lastMessage": "literal insertion",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -53452,7 +53452,7 @@
                 {
                     "name": "origin/intelephense-phase-27-mur-16314431847866092266",
                     "lastMessage": "Add Intelephense documentation and upgrade to Phase 27 MUR",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -54744,7 +54744,7 @@
                 {
                     "name": "origin/jules-1161081367633686083-4a91c89c",
                     "lastMessage": "feat: update scripts/ingest_ads_knowledge.ts",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -55054,7 +55054,7 @@
                 {
                     "name": "origin/jules-6209981968810134357-bfa313da",
                     "lastMessage": "Implement autonomous task",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -55171,7 +55171,7 @@
                 {
                     "name": "origin/feat/enhanced-collaboration-v26-6747205150360071",
                     "lastMessage": "feat: enhance collaboration merge and mesh communication (Phase 26)",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -55754,7 +55754,7 @@
                 {
                     "name": "origin/feat/icloud-sync-duration-13760368430856556808",
                     "lastMessage": "feat(icloud): implement sync duration tracking for autonomous backup metrics",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -57668,7 +57668,7 @@
                 {
                     "name": "origin/feat/automate-daily-work-and-icloud-sync-16993665508215750949",
                     "lastMessage": "feat: automate daily work cycle and iCloud project synchronization",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -59919,7 +59919,7 @@
                 {
                     "name": "origin/full-autonomus-automatic-workflow-5220413815109299258",
                     "lastMessage": "Insert prompt into knowledge integration files",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -60922,7 +60922,7 @@
                 {
                     "name": "origin/insert-remote-subagents-docs-10959285580158352746",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into insert-remote-subagents-docs-10959285580158352746",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -61294,7 +61294,7 @@
                 {
                     "name": "origin/insert-subagents-docs-10327581699969961597",
                     "lastMessage": "Insert Subagents documentation",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -61480,7 +61480,7 @@
                 {
                     "name": "origin/insert-subagents-markdown-5460203558883374325",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into insert-subagents-markdown-5460203558883374325",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -62049,7 +62049,7 @@
                 {
                     "name": "origin/investopedia-integration-16576553611238989164",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into investopedia-integration-16576553611238989164",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -62483,7 +62483,7 @@
                 {
                     "name": "origin/jules-1153181674222718141-95aad4aa",
                     "lastMessage": "🤖 chore: integrate markposition into automated knowledge observer",
-                    "lastSeen": "28 hours ago",
+                    "lastSeen": "33 hours ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -62979,7 +62979,7 @@
                 {
                     "name": "origin/jules-14267523321008193888-cebc1662",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-14267523321008193888-cebc1662",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -63351,7 +63351,7 @@
                 {
                     "name": "origin/jules-16848761649879220258-3053d33e",
                     "lastMessage": "Insert prompt and trigger workflow",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -63475,7 +63475,7 @@
                 {
                     "name": "origin/jules-17669626093863475518-84e4792f",
                     "lastMessage": "Insert jenkins prompt as HTML comment",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -64157,7 +64157,7 @@
                 {
                     "name": "origin/jules-4106578645819909519-6157149b",
                     "lastMessage": "full autonomus automatic workflow literal insertion",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -65211,7 +65211,7 @@
                 {
                     "name": "origin/jules-8163381552883451210-814bc164",
                     "lastMessage": "Insert Google Ads links and generate workflows",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -66079,7 +66079,7 @@
                 {
                     "name": "origin/jules-literal-investopedia-2469331259969765040",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -66203,7 +66203,7 @@
                 {
                     "name": "origin/jules-oracle-ai-integration-14010475435622443311",
                     "lastMessage": "Integrate Oracle AI literal replacement",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -69799,7 +69799,7 @@
                 {
                     "name": "origin/performance-optimization-635177775755227711",
                     "lastMessage": "⚡ Performance Optimization Task",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -69923,7 +69923,7 @@
                 {
                     "name": "origin/performance-optimization-ho-line-blocking-10259673398511849365",
                     "lastMessage": "⚡ Optimized Async Scraper",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -71766,7 +71766,7 @@
                 {
                     "name": "origin/feat/caio-agent-phase-26-8258895362649071211",
                     "lastMessage": "feat: implement Phase 26 strategic directives and fix Cloudflare Worker CI failures",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -71926,7 +71926,7 @@
                 {
                     "name": "origin/fix-autonomous-workflow-git-add-16103849688586949052",
                     "lastMessage": "fix: allow data folder in gitignore for autonomous workflow to commit",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "fix",
                     "domain": "Automation",
                     "knowledge": "",
@@ -72047,7 +72047,7 @@
                 {
                     "name": "origin/fix/autonomous-system-syntax-16085505803900570829",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-system-syntax-16085505803900570829",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "fix",
                     "domain": "General",
                     "knowledge": "",
@@ -72327,7 +72327,7 @@
                 {
                     "name": "origin/enhance-caio-agent-logic-and-knowledge-12422474597627915497",
                     "lastMessage": "feat: enhance Chief AI Officer (CAIO) agent and integrate grounded knowledge",
-                    "lastSeen": "9 days ago",
+                    "lastSeen": "10 days ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -72440,7 +72440,7 @@
                 {
                     "name": "origin/jules-6719120977303479439-f87c3e49",
                     "lastMessage": "chore: insert google ads knowledge",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "maintenance",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -72649,7 +72649,7 @@
                 {
                     "name": "origin/jules-9730117575726159967-8a423937",
                     "lastMessage": "full autonomus automatic workflow literal insertion",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 6 artifacts.",
@@ -72775,7 +72775,7 @@
                 {
                     "name": "origin/feat/intelephense-knowledge-sync-v26-11440261265650229332",
                     "lastMessage": "feat: synchronize Intelephense docs and fix Cloudflare Worker CI names",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -73103,7 +73103,7 @@
                 {
                     "name": "origin/jules-224867264195195937-d097b39c",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73218,7 +73218,7 @@
                 {
                     "name": "origin/jules-4758720131194254473-f48e7ccb",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73566,7 +73566,7 @@
                 {
                     "name": "origin/integrate-caio-intelligence-and-agent-refinement-17097398867290456118",
                     "lastMessage": "feat: integrate Chief AI Officer intelligence and operationalize agent logic",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -73939,7 +73939,7 @@
                 {
                     "name": "origin/feat/autonomous-protocol-jules-16130780090107402276",
                     "lastMessage": "feat: autonomous PR management and protocolization in Jules",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -75204,7 +75204,7 @@
                 {
                     "name": "origin/jules-16860668332970372755-0ceb8fb0",
                     "lastMessage": "feat: implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -75743,7 +75743,7 @@
                 {
                     "name": "origin/sentinel/fix-csv-injection-2739836513252277633",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into sentinel/fix-csv-injection-2739836513252277633",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "security",
                     "domain": "General",
                     "knowledge": "",
@@ -75853,7 +75853,7 @@
                 {
                     "name": "origin/sentinel/fix-path-traversal-5310615808568024057",
                     "lastMessage": "Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel/fix-path-traversal-5310615808568024057",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "security",
                     "domain": "General",
                     "knowledge": "",
@@ -75875,7 +75875,7 @@
                 {
                     "name": "origin/sentinel/fix-path-traversal-9909177477694886926",
                     "lastMessage": "Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel/fix-path-traversal-9909177477694886926",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "security",
                     "domain": "General",
                     "knowledge": "",
@@ -76000,7 +76000,7 @@
                 {
                     "name": "origin/jules-12283771268117181283-edfe42b2",
                     "lastMessage": "chore: add missing work:daily script to package.json and verify daily sync workflow",
-                    "lastSeen": "33 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "maintenance",
                     "domain": "Services",
                     "knowledge": "",
@@ -76020,7 +76020,7 @@
                 {
                     "name": "origin/jules-caio-integration-13939543537108665408",
                     "lastMessage": "feat: integrate Chief AI Officer (CAIO) role parameters and strategic mandates into knowledge base",
-                    "lastSeen": "14 hours ago",
+                    "lastSeen": "19 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76372,7 +76372,7 @@
                 {
                     "name": "origin/intelephense-docs-update-17190911211980979020",
                     "lastMessage": "feat(knowledge): ingest and consolidate updated Intelephense documentation",
-                    "lastSeen": "13 hours ago",
+                    "lastSeen": "18 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76400,7 +76400,7 @@
                 {
                     "name": "origin/jules-11419116379931411654-b2e335a2",
                     "lastMessage": "feat(knowledge): ingest latest Intelephense docs and sanitize system knowledge",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76655,7 +76655,7 @@
                 {
                     "name": "origin/optimize-intelephense-config-16113554392423851005",
                     "lastMessage": "Optimize Intelephense configuration and documentation, fix CI",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -77301,7 +77301,7 @@
                 {
                     "name": "origin/bolt/debounce-search-12191973509104557966",
                     "lastMessage": "Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt/debounce-search-12191973509104557966",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "performance",
                     "domain": "General",
                     "knowledge": "",
@@ -77323,7 +77323,7 @@
                 {
                     "name": "origin/bolt/debounce-search-15326880572680328137",
                     "lastMessage": "Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt/debounce-search-15326880572680328137",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "performance",
                     "domain": "General",
                     "knowledge": "",
@@ -77642,7 +77642,7 @@
                 {
                     "name": "origin/bolt/optimize-scraper-parsing-7966402303171106171",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt/optimize-scraper-parsing-7966402303171106171",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "performance",
                     "domain": "General",
                     "knowledge": "",
@@ -77818,7 +77818,7 @@
                 {
                     "name": "origin/bolt/parallel-researcher-3732082642823576207",
                     "lastMessage": "Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt/parallel-researcher-3732082642823576207",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "performance",
                     "domain": "General",
                     "knowledge": "",
@@ -77851,7 +77851,7 @@
                 {
                     "name": "origin/bolt/scraper-optimization-5038895935936123886",
                     "lastMessage": "Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt/scraper-optimization-5038895935936123886",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "performance",
                     "domain": "General",
                     "knowledge": "",
@@ -77950,7 +77950,7 @@
                 {
                     "name": "origin/feat/integrate-oracle-ai-10269913553901722650",
                     "lastMessage": "feat: integrate Oracle AI knowledge into agent swarm",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "Aligned with strategic initiative: 🐝 Swarm Intelligence.",
@@ -78093,7 +78093,7 @@
                 {
                     "name": "origin/jules-13141015306021008891-7963bfdf",
                     "lastMessage": "scan https://software-online-review.com and improve merge integrate run workflow and observe knowledge",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -78139,7 +78139,7 @@
                 {
                     "name": "origin/jules-3840851023832077809-231ee6df",
                     "lastMessage": "docs(caio): ingest and consolidate Chief AI Officer (CAIO) role specifications into system knowledge base",
-                    "lastSeen": "30 hours ago",
+                    "lastSeen": "35 hours ago",
                     "category": "documentation",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -78214,7 +78214,7 @@
                 {
                     "name": "origin/caio-intelligence-integration-810695453119160900",
                     "lastMessage": "integrate chief ai officer role research and agent logic",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -78469,7 +78469,7 @@
                 {
                     "name": "origin/jules-daily-automation-setup-12940918621151622186",
                     "lastMessage": "chore: activate daily autonomous work cycle and iCloud synchronization",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -78598,7 +78598,7 @@
                 {
                     "name": "main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 445 issues",
-                    "lastSeen": "85 minutes ago",
+                    "lastSeen": "2 hours ago",
                     "category": "other",
                     "domain": "General",
                     "knowledge": "",
@@ -79709,7 +79709,7 @@
                 {
                     "name": "origin/main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 445 issues",
-                    "lastSeen": "4 hours ago",
+                    "lastSeen": "9 hours ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -81496,7 +81496,7 @@
                 {
                     "name": "origin/jules-10514181528635215156-67545cc7",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -81552,7 +81552,7 @@
                 {
                     "name": "origin/jules-3451625196449793818-24bcb519",
                     "lastMessage": "create agent Chief AI Officer literal insertion",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -81594,7 +81594,7 @@
                 {
                     "name": "origin/add-duo-planner-agent-config-16696385487941017117",
                     "lastMessage": "Add Duo Planner AI Agent configuration",
-                    "lastSeen": "2 months ago",
+                    "lastSeen": "3 months ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -82141,7 +82141,7 @@
                 {
                     "name": "origin/daily-work-automation-16215825859515454705",
                     "lastMessage": "feat: automate daily work cycle with pull, work, push, and iCloud sync",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -82339,7 +82339,7 @@
                 {
                     "name": "origin/feat/caio-executive-intelligence-integration-8809529010570193553",
                     "lastMessage": "feat: integrate consolidated CAIO executive intelligence",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -84550,7 +84550,7 @@
                 {
                     "name": "origin/feat/unified-collaboration-and-strategic-communication-v15-4357140190256322963",
                     "lastMessage": "feat: enhance unified collaboration and strategic communication",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -84858,7 +84858,7 @@
                 {
                     "name": "origin/feature/icloud-knowledge-engine-improvements-13516138989655533197",
                     "lastMessage": "feat: integrate iCloud knowledge scan and improve system engine governance",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85320,7 +85320,7 @@
                 {
                     "name": "origin/jules-10065781265649358564-e3f3d60f",
                     "lastMessage": "feat: integrate Google Innovation & AI knowledge and updates",
-                    "lastSeen": "21 hours ago",
+                    "lastSeen": "26 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -90094,7 +90094,7 @@
                 {
                     "name": "origin/subagent-configuration-update-7123065298896349124",
                     "lastMessage": "feat: create collaborator subagent and update existing agent configurations",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -90810,7 +90810,7 @@
                 {
                     "name": "origin/enable-gitlab-security-scanners-17254273171421596517",
                     "lastMessage": "chore: add gitlab security scanner templates to ci/cd config",
-                    "lastSeen": "2 months ago",
+                    "lastSeen": "3 months ago",
                     "category": "maintenance",
                     "domain": "Security",
                     "knowledge": "",
@@ -91226,7 +91226,7 @@
                 {
                     "name": "origin/jules-2698346249493992391-ad66fb4e",
                     "lastMessage": "chore: trivial overwrite to trigger workflow generation for synthetic benchmark",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "maintenance",
                     "domain": "Automation",
                     "knowledge": "",
@@ -91314,7 +91314,7 @@
                 {
                     "name": "origin/jules-5156499950924136716-0a8b4fc3",
                     "lastMessage": "chore: full autonomus automatic workflow creation",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "maintenance",
                     "domain": "Automation",
                     "knowledge": "",
@@ -92849,7 +92849,7 @@
                 {
                     "name": "origin/bolt-optimize-scraper-12240886470808254228",
                     "lastMessage": "Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into bolt-optimize-scraper-12240886470808254228",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -92904,7 +92904,7 @@
                 {
                     "name": "origin/bolt-optimize-scraper-parsing-11280633053696081598",
                     "lastMessage": "Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-optimize-scraper-parsing-11280633053696081598",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -92926,7 +92926,7 @@
                 {
                     "name": "origin/bolt-optimize-scraper-parsing-11919903531879906039",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt-optimize-scraper-parsing-11919903531879906039",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -93036,7 +93036,7 @@
                 {
                     "name": "origin/bolt-optimize-scraper-regex-8246851219936015522",
                     "lastMessage": "Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-optimize-scraper-regex-8246851219936015522",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -93135,7 +93135,7 @@
                 {
                     "name": "origin/bolt-optimize-sqlite-connection-8016425655735798810",
                     "lastMessage": "Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-optimize-sqlite-connection-8016425655735798810",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -93300,7 +93300,7 @@
                 {
                     "name": "origin/bolt-perf-scraper-db-reuse-17434795129379709",
                     "lastMessage": "Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-perf-scraper-db-reuse-17434795129379709",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -93388,7 +93388,7 @@
                 {
                     "name": "origin/bolt-performance-orchestrator-parallelization-17677536977170965399",
                     "lastMessage": "Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-performance-orchestrator-parallelization-17677536977170965399",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -93509,7 +93509,7 @@
                 {
                     "name": "origin/bolt-regex-optimization-1111975510194507736",
                     "lastMessage": "Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt-regex-optimization-1111975510194507736",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -94422,7 +94422,7 @@
                 {
                     "name": "origin/bolt-scraper-optimization-7413329541638180653",
                     "lastMessage": "Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-scraper-optimization-7413329541638180653",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -94499,7 +94499,7 @@
                 {
                     "name": "origin/bolt-scraper-optimization-8033040251280167060",
                     "lastMessage": "Merge branch 'analytics-single-pass-optimization-8605272393071134080' into bolt-scraper-optimization-8033040251280167060",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -94873,7 +94873,7 @@
                 {
                     "name": "origin/bolt-soupstrainer-optimization-12556546636567708746",
                     "lastMessage": "Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-soupstrainer-optimization-12556546636567708746",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -94983,7 +94983,7 @@
                 {
                     "name": "origin/bolt-soupstrainer-optimization-6141461123016257145",
                     "lastMessage": "Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt-soupstrainer-optimization-6141461123016257145",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96116,7 +96116,7 @@
                 {
                     "name": "origin/jules-10526457463197469345-79e89e42",
                     "lastMessage": "Insert agent behavioral logic",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -96413,7 +96413,7 @@
                 {
                     "name": "origin/jules-14123990848911460001-966bb110",
                     "lastMessage": "ci: append trivial comment to trigger clean commit",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96820,7 +96820,7 @@
                 {
                     "name": "origin/jules-4057047207718045647-9cc7ded0",
                     "lastMessage": "Insert GitLab CI/CD tutorial",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96853,7 +96853,7 @@
                 {
                     "name": "origin/jules-4235818784127697179-d4e8db41",
                     "lastMessage": "Literal Replacement Task",
-                    "lastSeen": "3 days ago",
+                    "lastSeen": "4 days ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -97315,7 +97315,7 @@
                 {
                     "name": "origin/jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604",
                     "lastMessage": "Merge branch 'main' into jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "origin",
                     "domain": "Automation",
                     "knowledge": "",
@@ -97722,7 +97722,7 @@
                 {
                     "name": "origin/palette-analytics-report-ux-1529011215089105936",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-analytics-report-ux-1529011215089105936",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -97744,7 +97744,7 @@
                 {
                     "name": "origin/palette-analytics-report-ux-2082125199399639839",
                     "lastMessage": "Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-analytics-report-ux-2082125199399639839",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -98063,7 +98063,7 @@
                 {
                     "name": "origin/palette-analytics-ux-7505744370262329436",
                     "lastMessage": "Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-analytics-ux-7505744370262329436",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -98195,7 +98195,7 @@
                 {
                     "name": "origin/palette-ascii-analytics-11257540586507137065",
                     "lastMessage": "Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-ascii-analytics-11257540586507137065",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -98833,7 +98833,7 @@
                 {
                     "name": "origin/palette-report-navigation-14321694259906240108",
                     "lastMessage": "Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-report-navigation-14321694259906240108",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -98855,7 +98855,7 @@
                 {
                     "name": "origin/palette-report-navigation-4012184559007289296",
                     "lastMessage": "Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-report-navigation-4012184559007289296",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -98998,7 +98998,7 @@
                 {
                     "name": "origin/palette-report-ux-improvement-16505406583261696285",
                     "lastMessage": "Merge branch 'artmusicpage-scraper-13642650452924627148' into palette-report-ux-improvement-16505406583261696285",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -99361,7 +99361,7 @@
                 {
                     "name": "origin/palette-ux-report-enhancement-15716276225370499430",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-ux-report-enhancement-15716276225370499430",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -99405,7 +99405,7 @@
                 {
                     "name": "origin/palette-ux-report-improvements-10452147171217744669",
                     "lastMessage": "Merge branch 'optimize-scraper-lxml-10625319758147758999' into palette-ux-report-improvements-10452147171217744669",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -99416,7 +99416,7 @@
                 {
                     "name": "origin/palette-ux-report-improvements-139991485792048228",
                     "lastMessage": "Merge branch 'scrape-oracle-news-9936778584663660002' into palette-ux-report-improvements-139991485792048228",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -99438,7 +99438,7 @@
                 {
                     "name": "origin/palette-ux-report-improvements-3538068568817014543",
                     "lastMessage": "Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-ux-report-improvements-3538068568817014543",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -99460,7 +99460,7 @@
                 {
                     "name": "origin/palette-ux-report-improvements-9630359626298714094",
                     "lastMessage": "Merge branch 'artmusicpage-scraper-13642650452924627148' into palette-ux-report-improvements-9630359626298714094",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -99581,7 +99581,7 @@
                 {
                     "name": "origin/palette/analytics-report-ux-1743774692152261155",
                     "lastMessage": "Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette/analytics-report-ux-1743774692152261155",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "ux",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -99647,7 +99647,7 @@
                 {
                     "name": "origin/palette/ascii-charts-ux-7109884184344478551",
                     "lastMessage": "Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette/ascii-charts-ux-7109884184344478551",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "ux",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -99724,7 +99724,7 @@
                 {
                     "name": "origin/palette/report-ux-improvements-14310325021165239369",
                     "lastMessage": "Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette/report-ux-improvements-14310325021165239369",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "ux",
                     "domain": "UI/UX",
                     "knowledge": "",
@@ -100065,7 +100065,7 @@
                 {
                     "name": "origin/sentinel-csv-injection-fix-15311644006132140553",
                     "lastMessage": "Merge branch 'optimize-scraper-lxml-10625319758147758999' into sentinel-csv-injection-fix-15311644006132140553",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -100692,7 +100692,7 @@
                 {
                     "name": "origin/sentinel-fix-csv-path-traversal-17631474637171594831",
                     "lastMessage": "Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-fix-csv-path-traversal-17631474637171594831",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -100813,7 +100813,7 @@
                 {
                     "name": "origin/sentinel-fix-path-traversal-10143509999486515676",
                     "lastMessage": "Merge branch 'optimize-scraper-lxml-10625319758147758999' into sentinel-fix-path-traversal-10143509999486515676",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -100879,7 +100879,7 @@
                 {
                     "name": "origin/sentinel-fix-path-traversal-15680085493985051693",
                     "lastMessage": "Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-fix-path-traversal-15680085493985051693",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -100912,7 +100912,7 @@
                 {
                     "name": "origin/sentinel-fix-path-traversal-scraper-13213867928439084408",
                     "lastMessage": "Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-path-traversal-scraper-13213867928439084408",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -100989,7 +100989,7 @@
                 {
                     "name": "origin/sentinel-fix-ssrf-robottxt-10466184040354898507",
                     "lastMessage": "Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-fix-ssrf-robottxt-10466184040354898507",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -101099,7 +101099,7 @@
                 {
                     "name": "origin/sentinel-fix-xss-report-generator-15539437928159722919",
                     "lastMessage": "Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-fix-xss-report-generator-15539437928159722919",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -101198,7 +101198,7 @@
                 {
                     "name": "origin/sentinel-path-traversal-fix-11594538796228867279",
                     "lastMessage": "Merge branch 'jules-scrape-informatic-6598290821327070927' into sentinel-path-traversal-fix-11594538796228867279",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -101231,7 +101231,7 @@
                 {
                     "name": "origin/sentinel-path-traversal-fix-13129809503624389550",
                     "lastMessage": "Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-path-traversal-fix-13129809503624389550",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -101385,7 +101385,7 @@
                 {
                     "name": "origin/sentinel-security-fix-8692130279913781488",
                     "lastMessage": "Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-security-fix-8692130279913781488",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "",
@@ -101594,7 +101594,7 @@
                 {
                     "name": "origin/update-duo-planner-1908212358068428684",
                     "lastMessage": "Update Duo Planner agent documentation",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -102387,7 +102387,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-07-20T22:34:53.798Z"
+            "timestamp": "2026-07-21T03:07:19.408Z"
         },
         "relayState": [
             {
@@ -102397,7 +102397,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-07-20T22:34:53.803Z",
+                "lastActivity": "2026-07-21T03:07:19.418Z",
                 "intensity": 0.85
             },
             {
@@ -102412,5 +102412,5 @@
             }
         ]
     },
-    "last_sync": "2026-07-20T22:47:11.799Z"
+    "last_sync": "2026-07-21T03:07:22.234Z"
 }
