@@ -24,7 +24,6 @@ export class EdgeToCloudBridge {
   }
 
   public async getEdgetoCloudBridgeData() {
-    'use cache'
     return autonomousFetch(EdgetoCloudBridgeSchema, async () => {
       return {
         status: 'active',

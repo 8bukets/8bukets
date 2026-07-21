@@ -60,7 +60,6 @@ export class CloudConvergenceService {
 
   public async getCloudConvergenceServiceData() {
     try {
-      'use cache'
       return autonomousFetch(CloudConvergenceServiceSchema, async () => {
         return {
           status: 'active',
