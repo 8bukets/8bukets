@@ -16,47 +16,47 @@
     ],
     "directives": [
         {
-            "id": "dir_h6n9rtsfp",
+            "id": "dir_84dsqg7ho",
             "priority": "Critical",
             "domain": "Security",
             "intent": "Rotate all Phase 12 neural sync keys",
             "status": "Active",
             "synergyScore": 95,
-            "timestamp": "2026-07-21T03:07:19.429Z"
+            "timestamp": "2026-07-21T08:10:56.089Z"
         },
         {
-            "id": "dir_nblhfm7xg",
+            "id": "dir_bfj4jrvrm",
             "priority": "High",
             "domain": "AI Agents",
             "intent": "Implement Crystals-Kyber for CAIO Agent",
             "status": "Active",
             "synergyScore": 88,
-            "timestamp": "2026-07-21T03:07:19.429Z"
+            "timestamp": "2026-07-21T08:10:56.089Z"
         },
         {
-            "id": "dir_byuspa3gm",
+            "id": "dir_32j329mtd",
             "priority": "Medium",
             "domain": "Services",
             "intent": "Optimize MongoDB sharding for APAC nodes",
             "status": "Active",
             "synergyScore": 72,
-            "timestamp": "2026-07-21T03:07:19.429Z"
+            "timestamp": "2026-07-21T08:10:56.089Z"
         },
         {
-            "id": "dir_yg8d33kud",
+            "id": "dir_3eg6gkfvv",
             "priority": "Low",
             "domain": "General",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-07-21T03:07:19.429Z"
+            "timestamp": "2026-07-21T08:10:56.089Z"
         },
         {
-            "id": "dir_s4aysl8w2",
+            "id": "dir_h8ze028g8",
             "priority": "Medium",
             "domain": "Documentation",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-07-21T03:07:19.429Z"
+            "timestamp": "2026-07-21T08:10:56.089Z"
         }
     ],
     "docker": {
@@ -66,7 +66,7 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1784598626746,
+        "timestamp": 1784616778520,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
@@ -45896,7 +45896,7 @@
                 {
                     "name": "origin/feature/autonomous-cloud-sovereignty-phase-26-16723524157379587147",
                     "lastMessage": "feat: implement Phase 26 autonomous cloud sovereignty and failover",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty. Found 28 relevant artifacts.",
@@ -46474,7 +46474,7 @@
                 {
                     "name": "origin/feat/autonomous-cloud-evolution-14156064890207356187",
                     "lastMessage": "feat: implement robust autonomous cloud takeover and online presence",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -46908,7 +46908,7 @@
                 {
                     "name": "origin/feat/cloud-presence-13706315460514423185",
                     "lastMessage": "feat: implement ignite-cloud-presence command for autonomous cloud operation",
-                    "lastSeen": "6 weeks ago",
+                    "lastSeen": "7 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -47094,7 +47094,7 @@
                 {
                     "name": "origin/feat/phase-26-cloud-sovereignty-pulse-7695760109387866291",
                     "lastMessage": "feat: implement Phase 26 Cloud Sovereign Work Pulse",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty. Found 28 relevant artifacts.",
@@ -47803,7 +47803,7 @@
                 {
                     "name": "origin/jules-18100476245265483259-e268bd0e",
                     "lastMessage": "feat: implement branch scan collaboration with communication matrix",
-                    "lastSeen": "17 hours ago",
+                    "lastSeen": "22 hours ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -47824,7 +47824,7 @@
                 {
                     "name": "origin/phase-27-mur-upgrade-13880150790934707385",
                     "lastMessage": "feat: upgrade system to Phase 27 Multi-Universal Resonance (MUR)",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -47862,7 +47862,7 @@
                 {
                     "name": "origin/feat/enhanced-collaboration-phase-26-umr-metrics-9753372127180154187",
                     "lastMessage": "feat: enhance ecosystem collaboration and Phase 26 communication protocols",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 3 artifacts.",
@@ -48053,7 +48053,7 @@
                 {
                     "name": "origin/feature/autonomous-cloud-sovereignty-14505526596431700594",
                     "lastMessage": "evolve: enhance autonomous cloud sovereignty and merge-and-work cycle",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Aligned with strategic initiative: 🛡️ Cognitive Sovereignty. Found 28 relevant artifacts.",
@@ -48678,7 +48678,7 @@
                 {
                     "name": "origin/feat/autonomous-cloud-continuity-7259514487637520921",
                     "lastMessage": "fix: resolve multi-stack CI failures and secure cloud takeover",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 22 artifacts.",
@@ -48926,7 +48926,7 @@
                 {
                     "name": "origin/feat/autonomous-knowledge-integration-8581673978329557220",
                     "lastMessage": "feat: integrate markposition knowledge and automate merge (fixed CI)",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -49112,7 +49112,7 @@
                 {
                     "name": "origin/feat/enhance-autonomous-cloud-presence-10530074476743667535",
                     "lastMessage": "Enhance autonomous cloud presence and workflows",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 22 artifacts.",
@@ -49174,7 +49174,7 @@
                 {
                     "name": "origin/feat/google-ai-agents-knowledge-10042262486432059909",
                     "lastMessage": "Autonomous Evolution v2.0 - Final State",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 26 artifacts.",
@@ -49670,7 +49670,7 @@
                 {
                     "name": "origin/feature/phase-27-multi-universal-resonance-3848704773036101267",
                     "lastMessage": "feat: evolve system to Phase 27 Multi-Universal Resonance (MUR)",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -49732,7 +49732,7 @@
                 {
                     "name": "origin/feature/phase-27-mur-cloud-autonomy-15811397964163452",
                     "lastMessage": "feat: upgrade to Phase 27 Multi-Universal Resonance (MUR) for full cloud autonomy",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -50436,7 +50436,7 @@
                 {
                     "name": "origin/phase-27-mur-upgrade-14360769460668599338",
                     "lastMessage": "feat: implement Phase 27 Multi-Universal Resonance (MUR) upgrade",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -52024,7 +52024,7 @@
                 {
                     "name": "origin/feat/cloud-native-convergence-16112457665657205536",
                     "lastMessage": "feat: implement cloud-native autonomous convergence and online presence",
-                    "lastSeen": "8 weeks ago",
+                    "lastSeen": "9 weeks ago",
                     "category": "feature",
                     "domain": "Services",
                     "knowledge": "Aligned with strategic initiative: ☁️ Cloud-Native Sovereignty.",
@@ -52823,7 +52823,7 @@
                 {
                     "name": "origin/improve-system-and-agents-phase-13-10575203672361965802",
                     "lastMessage": "Synchronized Phase 13 with AI Knowledge - conflict resolution",
-                    "lastSeen": "5 weeks ago",
+                    "lastSeen": "6 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 25 artifacts.",
@@ -53832,7 +53832,7 @@
                 {
                     "name": "origin/feat/ingest-knowledge-merge-1247852778853905654",
                     "lastMessage": "test: exclude backend subproject from root vitest config",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 22 artifacts.",
@@ -53894,7 +53894,7 @@
                 {
                     "name": "origin/feat/integrate-markposition-knowledge-13432287944335096697",
                     "lastMessage": "feat: integrate markposition.wordpress.com knowledge",
-                    "lastSeen": "4 days ago",
+                    "lastSeen": "5 days ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -54080,7 +54080,7 @@
                 {
                     "name": "origin/feat/markposition-knowledge-merge-automation-4258587857979472884",
                     "lastMessage": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/markposition-knowledge-merge-automation-4258587857979472884",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "feature",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 22 artifacts.",
@@ -55112,7 +55112,7 @@
                 {
                     "name": "origin/chore/full-autonomous-workflow-6628725737379915686",
                     "lastMessage": "chore: full autonomus automatic workflow creation",
-                    "lastSeen": "8 days ago",
+                    "lastSeen": "9 days ago",
                     "category": "maintenance",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -55974,7 +55974,7 @@
                 {
                     "name": "origin/ingest-remote-subagents-docs-1111005450111027953",
                     "lastMessage": "docs: ingest Gemini CLI Remote Subagents documentation and fix CI",
-                    "lastSeen": "7 weeks ago",
+                    "lastSeen": "8 weeks ago",
                     "category": "documentation",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 22 artifacts.",
@@ -62483,7 +62483,7 @@
                 {
                     "name": "origin/jules-1153181674222718141-95aad4aa",
                     "lastMessage": "🤖 chore: integrate markposition into automated knowledge observer",
-                    "lastSeen": "33 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -62855,7 +62855,7 @@
                 {
                     "name": "origin/jules-14144710875774207495-4683bf66",
                     "lastMessage": "Insert required text as HTML comments",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -64033,7 +64033,7 @@
                 {
                     "name": "origin/jules-330977738345133988-4d77992c",
                     "lastMessage": "Insert Subagents documentation",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -64591,7 +64591,7 @@
                 {
                     "name": "origin/jules-6204427867194980826-e4cf1c95",
                     "lastMessage": "Literal Insertion Task",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -65149,7 +65149,7 @@
                 {
                     "name": "origin/jules-8001411967302401645-e636f0f4",
                     "lastMessage": "Insert requested prompt text and generated workflows",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -66575,7 +66575,7 @@
                 {
                     "name": "origin/jules-synthetic-remote-subagents-8680424287848645473",
                     "lastMessage": "Insert remote subagent text into KNOWLEDGE_INTEGRATION.md",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -66823,7 +66823,7 @@
                 {
                     "name": "origin/knowledge-merge-integration-16212546385788620620",
                     "lastMessage": "Insert knowledge merge benchmark prompt",
-                    "lastSeen": "2 weeks ago",
+                    "lastSeen": "3 weeks ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -66885,7 +66885,7 @@
                 {
                     "name": "origin/literal-insertion-markposition-10884481410924873236",
                     "lastMessage": "integrate knowledge merge and all the best - https://markposition.wordpress.com literal insertion task",
-                    "lastSeen": "7 days ago",
+                    "lastSeen": "8 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -69737,7 +69737,7 @@
                 {
                     "name": "origin/performance-optimization-12909921922374102600",
                     "lastMessage": "⚡ Performance Optimization Task",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "origin",
                     "domain": "Security",
                     "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
@@ -72249,7 +72249,7 @@
                 {
                     "name": "origin/fix-intelephense-docs-ingestion-5358231456896558062",
                     "lastMessage": "fix: resolve Intelephense docs ingestion and enhance GitHub observer",
-                    "lastSeen": "6 days ago",
+                    "lastSeen": "7 days ago",
                     "category": "fix",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -72481,7 +72481,7 @@
                 {
                     "name": "origin/jules-10653189033978403798-89263006",
                     "lastMessage": "full autonomus automatic workflow literal insertion",
-                    "lastSeen": "2 days ago",
+                    "lastSeen": "3 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 6 artifacts.",
@@ -73126,7 +73126,7 @@
                 {
                     "name": "origin/jules-2313342365879673914-b4eeacde",
                     "lastMessage": "Insert workflow creation prompt and generate workflows",
-                    "lastSeen": "11 days ago",
+                    "lastSeen": "12 days ago",
                     "category": "origin",
                     "domain": "Services",
                     "knowledge": "Enhanced ecosystem knowledge base via 5 artifacts.",
@@ -73518,7 +73518,7 @@
                 {
                     "name": "origin/feat/intelephense-knowledge-integration-fix-8315712093546989833",
                     "lastMessage": "feat: integrate Intelephense documentation and fix knowledge JSON corruption",
-                    "lastSeen": "10 days ago",
+                    "lastSeen": "11 days ago",
                     "category": "feature",
                     "domain": "Automation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -74698,7 +74698,7 @@
                 {
                     "name": "origin/feat/unified-cloud-autonomy-6168364407996649590",
                     "lastMessage": "feat: unify autonomous orchestration for cloud persistence",
-                    "lastSeen": "9 weeks ago",
+                    "lastSeen": "10 weeks ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -76020,7 +76020,7 @@
                 {
                     "name": "origin/jules-caio-integration-13939543537108665408",
                     "lastMessage": "feat: integrate Chief AI Officer (CAIO) role parameters and strategic mandates into knowledge base",
-                    "lastSeen": "19 hours ago",
+                    "lastSeen": "24 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76372,7 +76372,7 @@
                 {
                     "name": "origin/intelephense-docs-update-17190911211980979020",
                     "lastMessage": "feat(knowledge): ingest and consolidate updated Intelephense documentation",
-                    "lastSeen": "18 hours ago",
+                    "lastSeen": "23 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -76562,7 +76562,7 @@
                 {
                     "name": "origin/update-caio-knowledge-and-agent-logic-18095929260299055621",
                     "lastMessage": "Update CAIO knowledge and resolve Cloudflare Worker CI build failures",
-                    "lastSeen": "13 days ago",
+                    "lastSeen": "2 weeks ago",
                     "category": "origin",
                     "domain": "UI/UX",
                     "knowledge": "Enhanced ecosystem knowledge base via 4 artifacts.",
@@ -78139,7 +78139,7 @@
                 {
                     "name": "origin/jules-3840851023832077809-231ee6df",
                     "lastMessage": "docs(caio): ingest and consolidate Chief AI Officer (CAIO) role specifications into system knowledge base",
-                    "lastSeen": "35 hours ago",
+                    "lastSeen": "2 days ago",
                     "category": "documentation",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 1 artifact.",
@@ -78153,7 +78153,7 @@
                 {
                     "name": "origin/jules-intelephense-docs-update-2847462233682907277",
                     "lastMessage": "docs: update Intelephense documentation in knowledge base",
-                    "lastSeen": "5 days ago",
+                    "lastSeen": "6 days ago",
                     "category": "documentation",
                     "domain": "Documentation",
                     "knowledge": "Enhanced ecosystem knowledge base via 2 artifacts.",
@@ -79709,7 +79709,7 @@
                 {
                     "name": "origin/main",
                     "lastMessage": "🤖 fix: autonomous self-repair of 445 issues",
-                    "lastSeen": "9 hours ago",
+                    "lastSeen": "14 hours ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -80479,7 +80479,7 @@
                 {
                     "name": "origin/sentinel-fix-csv-injection-11369382377147325845",
                     "lastMessage": "Implement bi-weekly scheduler",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -82251,7 +82251,7 @@
                 {
                     "name": "origin/feat/add-vscode-intelephense-scraper-14077541109460571924",
                     "lastMessage": "feat: add scraper to fetch vscode-intelephense repository docs",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -85320,7 +85320,7 @@
                 {
                     "name": "origin/jules-10065781265649358564-e3f3d60f",
                     "lastMessage": "feat: integrate Google Innovation & AI knowledge and updates",
-                    "lastSeen": "26 hours ago",
+                    "lastSeen": "32 hours ago",
                     "category": "feature",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -86563,7 +86563,7 @@
                 {
                     "name": "origin/palette-analytics-ux-improvement-10522861074342822232",
                     "lastMessage": "feat: Update system schedule to run bi-weekly",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -87553,7 +87553,7 @@
                 {
                     "name": "origin/palette-improve-cli-logging-2441580921908599501",
                     "lastMessage": "feat: change job schedule from daily to every two weeks",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -88851,7 +88851,7 @@
                 {
                     "name": "origin/sentinel-csv-injection-fix-10823602123792792122",
                     "lastMessage": "feat: add CSV injection protection, URL validation and update schedule",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -89412,7 +89412,7 @@
                 {
                     "name": "origin/sentinel-fix-csv-injection-11316363243497310988",
                     "lastMessage": "feat: update schedule to bi-weekly",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "feature",
                     "domain": "General",
                     "knowledge": "",
@@ -90333,7 +90333,7 @@
                 {
                     "name": "origin/fix-docs-json-errors-7026823761144797836",
                     "lastMessage": "docs: update Gemini remote agent documentation and fix JSON files",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "documentation",
                     "domain": "AI Agents",
                     "knowledge": "",
@@ -90929,7 +90929,7 @@
                 {
                     "name": "origin/daily-work-automation-setup-16331620852581161197",
                     "lastMessage": "chore: initialize and automate daily work cycle",
-                    "lastSeen": "3 weeks ago",
+                    "lastSeen": "4 weeks ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -91380,7 +91380,7 @@
                 {
                     "name": "origin/jules-first-gitlab-ci-pipeline-4067550674868737956",
                     "lastMessage": "chore: update .gitlab-ci.yml to match tutorial sample code",
-                    "lastSeen": "4 weeks ago",
+                    "lastSeen": "5 weeks ago",
                     "category": "maintenance",
                     "domain": "General",
                     "knowledge": "",
@@ -93784,7 +93784,7 @@
                 {
                     "name": "origin/bolt-scraper-optimization-10767670900848312598",
                     "lastMessage": "⚡ Bolt: Optimize scraper I/O and networking & Update Schedule",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -93927,7 +93927,7 @@
                 {
                     "name": "origin/bolt-scraper-optimization-14036897471248962634",
                     "lastMessage": "⚡ Bolt: Update report schedule to Bi-weekly and optimize scraper",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -94235,7 +94235,7 @@
                 {
                     "name": "origin/bolt-scraper-optimization-1855974392204699120",
                     "lastMessage": "Update default daemon interval to 2 weeks",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -94994,7 +94994,7 @@
                 {
                     "name": "origin/bolt-soupstrainer-optimization-6334610650336767217",
                     "lastMessage": "⚡ Bolt: Reduce schedule frequency to bi-weekly",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -96039,7 +96039,7 @@
                 {
                     "name": "origin/integrate-knowledge-automation-1699996833713122125",
                     "lastMessage": "Integrate and automate technical knowledge ingestion and merging",
-                    "lastSeen": "10 weeks ago",
+                    "lastSeen": "2 months ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -99317,7 +99317,7 @@
                 {
                     "name": "origin/palette-ux-improvements-3106649119335658863",
                     "lastMessage": "🎨 Palette: Switch to Bi-Weekly Schedule",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -101319,7 +101319,7 @@
                 {
                     "name": "origin/sentinel-path-traversal-fix-6759279909173799446",
                     "lastMessage": "Update job schedule to run every two weeks",
-                    "lastSeen": "6 months ago",
+                    "lastSeen": "7 months ago",
                     "category": "origin",
                     "domain": "General",
                     "knowledge": "",
@@ -102144,7 +102144,7 @@
                 {
                     "name": "origin/update-intelephense-knowledge-769359551389800474",
                     "lastMessage": "Update Intelephense documentation and enhance deduplication",
-                    "lastSeen": "12 days ago",
+                    "lastSeen": "13 days ago",
                     "category": "origin",
                     "domain": "Documentation",
                     "knowledge": "",
@@ -102387,7 +102387,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-07-21T03:07:19.408Z"
+            "timestamp": "2026-07-21T08:10:56.051Z"
         },
         "relayState": [
             {
@@ -102397,7 +102397,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-07-21T03:07:19.418Z",
+                "lastActivity": "2026-07-21T08:10:56.074Z",
                 "intensity": 0.85
             },
             {
@@ -102412,5 +102412,5 @@
             }
         ]
     },
-    "last_sync": "2026-07-21T03:07:22.234Z"
+    "last_sync": "2026-07-21T08:10:58.202Z"
 }
