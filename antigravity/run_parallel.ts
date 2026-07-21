@@ -52,6 +52,7 @@ function releaseLock(agent: string) {
 }
 
 export async function runSequentialAgents() {
+  'use cache'
   const roles: AgentRole[] = ['Coder', 'Reviewer', 'Security', 'Architect', 'Supervisor', 'Ops', 'Chief AI Officer'];
   const metrics = { executed: 0, successful: 0, failed: 0, roles: [] as string[] };
 
