@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-07-20T09:08:24.138Z
+**System Analysis:** 2026-07-21T13:28:30.387Z
 
 ---
 
@@ -23781,7 +23781,7 @@ ben@intelephense.com
 # iCloud: 50ty.json
 
 > **Source:** icloud://50ty.json
-> **Analyzed At:** 2026-07-20T08:35:26.742Z
+> **Analyzed At:** 2026-07-21T13:20:39.484Z
 
 ## Content
 [
@@ -24092,7 +24092,7 @@ ben@intelephense.com
 # iCloud: 50ty.md
 
 > **Source:** icloud://50ty.md
-> **Analyzed At:** 2026-07-20T08:35:27.413Z
+> **Analyzed At:** 2026-07-21T13:20:40.712Z
 
 ## 50 Content Creation and Strategy Prompts
 Part 1: Content Creation (Prompts 1–10)
@@ -187118,3 +187118,2132 @@ OpenTelemetry Packaging SIG
 4. **Submit changes:**
 - Submit the PR with the integrated Investopedia scraping enhancements.
 
+---
+
+# Render Documentation
+
+> **Source:** icloud://render_docs.json
+> **Analyzed At:** 2026-07-20T09:08:24.204Z
+
+### Details
+Learn how to deploy and scale apps on the Render platform.
+
+### Details
+Get up and running in minutes. Bring your own code or start with an example.
+Deploy my code
+Choose a quickstart
+Create
+
+### Details
+Connect your repo and ship with every push.
+How deploys work
+Service types
+Language runtimes
+Docker support
+
+### Details
+Provision flexible datastores with advanced recovery features.
+Postgres databases
+Key Value (Redis®-compatible)
+Persistent disks
+
+### Details
+Execute long-running distributed tasks with automatic retries.
+What are workflows?
+Your first workflow
+Defining tasks
+Triggering runs
+
+### Details
+Service settings
+Apply essential config.
+Custom domains
+Environment variables
+Service previews
+Monorepo support
+
+### Details
+Handle connections to, from, and between your services.
+Private network
+Regions
+Outbound IPs
+Edge caching
+
+### Details
+Manage your multi-service architecture with a single YAML file.
+Blueprints overview
+YAML reference
+Preview environments
+Terraform provider
+
+### Details
+Respond to increased load, app regressions, and other events.
+Scaling
+Rollbacks
+Maintenance mode
+One-off jobs
+
+### Details
+Track performance and diagnose issues.
+Metrics
+Logs
+Notifications
+Health checks
+
+### Details
+Manage infra with agents, scripts, and API calls.
+Coding agents
+Render CLI
+REST API
+Webhooks
+
+### Details
+Use your favorite language and framework.
+
+### Details
+Express
+Puppeteer
+Next.js
+Redwood
+Blitz
+ElysiaJS
+Remix
+Hapi
+NuxtJS
+Strapi
+SvelteKit
+Fastify
+
+### Details
+Django
+Flask
+FastAPI
+Celery
+
+### Details
+Astro
+Next.js
+Create React App
+Jekyll
+Gatsby
+Docusaurus
+Hugo
+Svelte
+SvelteKit
+Vue.js
+
+### Details
+PostgreSQL
+Key Value (Redis®-compatible)
+MySQL
+MongoDB
+ParadeDB
+Persistent disks
+
+### Details
+Rails 8
+Rails 6 / 7
+Rails w/ Sidekiq
+Sinatra w/ Sidekiq
+
+### Details
+net/http
+Gin
+Beego
+Pgweb
+Gotify
+
+### Details
+Rocket
+Actix
+
+### Details
+Phoenix
+Elixir Cluster
+Phoenix Distillery
+
+### Details
+Ackee
+Bun
+ClickHouse
+Elasticsearch
+Fathom Analytics
+Forem
+Ghost
+GoatCounter
+Hasura GraphQL Engine
+Laravel (PHP)
+Matomo
+Mattermost
+Metabase
+MinIO
+n8n
+OpenClaw
+Open Web Analytics
+Prometheus
+Redash
+Retool
+Shopify
+Shynet
+Temporal
+Webdis
+WordPress
+Zulip
+
+### Details
+AI chatbot w/ MongoDB & LangChain
+Node.js app w/ Prisma ORM & PostgreSQL
+If you have questions, reach out on Discord.
+See @render-examples on GitHub for more examples.
+Pricing
+Blog
+Security
+Customers
+Careers
+© Render 2026
+
+---
+
+# iCloud: render_docs.md
+
+> **Source:** icloud://render_docs.md
+> **Analyzed At:** 2026-07-20T09:08:24.297Z
+
+## Render Documentation
+Learn how to deploy and scale apps on the Render platform.
+
+### Ship your first app
+Get up and running in minutes. Bring your own code or start with an example.
+Deploy my code
+Choose a quickstart
+Create
+
+### Deploy services
+Connect your repo and ship with every push.
+How deploys work
+Service types
+Language runtimes
+Docker support
+
+### Store data
+Provision flexible datastores with advanced recovery features.
+Postgres databases
+Key Value (Redis®-compatible)
+Persistent disks
+
+### Run workflows
+Execute long-running distributed tasks with automatic retries.
+What are workflows?
+Your first workflow
+Defining tasks
+Triggering runs
+
+### Configure
+Service settings
+Apply essential config.
+Custom domains
+Environment variables
+Service previews
+Monorepo support
+
+### Networking
+Handle connections to, from, and between your services.
+Private network
+Regions
+Outbound IPs
+Edge caching
+
+### Infrastructure-as-code
+Manage your multi-service architecture with a single YAML file.
+Blueprints overview
+YAML reference
+Preview environments
+Terraform provider
+
+### Service actions
+Respond to increased load, app regressions, and other events.
+Scaling
+Rollbacks
+Maintenance mode
+One-off jobs
+
+### Monitoring
+Track performance and diagnose issues.
+Metrics
+Logs
+Notifications
+Health checks
+
+### Integrations
+Manage infra with agents, scripts, and API calls.
+Coding agents
+Render CLI
+REST API
+Webhooks
+
+### Quickstarts
+Use your favorite language and framework.
+
+### Node.js
+Express
+Puppeteer
+Next.js
+Redwood
+Blitz
+ElysiaJS
+Remix
+Hapi
+NuxtJS
+Strapi
+SvelteKit
+Fastify
+
+### Python
+Django
+Flask
+FastAPI
+Celery
+
+### Static Sites
+Astro
+Next.js
+Create React App
+Jekyll
+Gatsby
+Docusaurus
+Hugo
+Svelte
+SvelteKit
+Vue.js
+
+### Datastores
+PostgreSQL
+Key Value (Redis®-compatible)
+MySQL
+MongoDB
+ParadeDB
+Persistent disks
+
+### Ruby
+Rails 8
+Rails 6 / 7
+Rails w/ Sidekiq
+Sinatra w/ Sidekiq
+
+### Go
+net/http
+Gin
+Beego
+Pgweb
+Gotify
+
+### Rust
+Rocket
+Actix
+
+### Elixir
+Phoenix
+Elixir Cluster
+Phoenix Distillery
+
+### Docker
+Ackee
+Bun
+ClickHouse
+Elasticsearch
+Fathom Analytics
+Forem
+Ghost
+GoatCounter
+Hasura GraphQL Engine
+Laravel (PHP)
+Matomo
+Mattermost
+Metabase
+MinIO
+n8n
+OpenClaw
+Open Web Analytics
+Prometheus
+Redash
+Retool
+Shopify
+Shynet
+Temporal
+Webdis
+WordPress
+Zulip
+
+### Full-stack Apps
+AI chatbot w/ MongoDB & LangChain
+Node.js app w/ Prisma ORM & PostgreSQL
+If you have questions, reach out on Discord.
+See @render-examples on GitHub for more examples.
+Pricing
+Blog
+Security
+Customers
+Careers
+© Render 2026
+
+---
+
+# iCloud: sharing_agents.md
+
+> **Source:** icloud://sharing_agents.md
+> **Analyzed At:** 2026-07-20T09:08:24.377Z
+
+## Sharing agents
+Push your agent to a registry and share it by name. Your teammates reference `agentcatalog/security-expert` instead of copying YAML files around or asking you where your agent configuration lives.
+When you update the agent in the registry, everyone gets the new version the next time they pull or restart their client.
+
+### Prerequisites
+To push agents to a registry, authenticate first:
+```bash
+docker login
+```
+For other registries, use their authentication method.
+
+### Publishing agents
+Push your agent configuration to a registry:
+```bash
+docker agent share push ./agent.yml myusername/agent-name
+```
+Push creates the repository if it doesn't exist yet. Use Docker Hub or any OCI-compatible registry.
+Tag specific versions:
+```bash
+docker agent share push ./agent.yml myusername/agent-name:v1.0.0
+docker agent share push ./agent.yml myusername/agent-name:latest
+```
+
+### Using published agents
+Pull an agent to inspect it locally:
+```bash
+docker agent share pull agentcatalog/pirate
+```
+This saves the configuration as a local YAML file.
+Run agents directly from the registry:
+```bash
+docker agent run agentcatalog/pirate
+```
+Or reference it directly in integrations:
+
+#### Editor integration (ACP)
+Use registry references in ACP configurations so your editor always uses the latest version:
+```json
+{
+  "agent_servers": {
+    "myagent": {
+      "command": "docker",
+      "args": ["agent", "aserve", "acp", "agentcatalog/pirate"]
+    }
+  }
+}
+```
+
+#### MCP client integration
+Agents can be exposed as tools in MCP clients:
+```json
+{
+  "mcpServers": {
+    "myagent": {
+      "command": "docker",
+      "args": ["agent", "serve", "mcp", "agentcatalog/pirate"]
+    }
+  }
+}
+```
+
+### What's next
+- Set up ACP integration with shared agents
+- Configure MCP integration with shared agents
+- Browse the agent catalog for examples
+
+---
+
+# The DESIGN.md specification
+
+> **Source:** icloud://stitch_docs.json
+> **Analyzed At:** 2026-07-20T09:08:24.470Z
+
+## Content
+{
+  "title": "The DESIGN.md specification",
+  "url": "https://stitch.withgoogle.com/docs/design-md/specification",
+  "content": {
+    "Introduction": {
+      "text": [
+        "Learn",
+        "The formal specification for the DESIGN.md format — token schema, section structure, and type system.",
+        "A DESIGN.md file has two layers. The YAML front matter contains machine-readable design tokens — the precise values agents use to enforce consistency. The markdown body provides human-readable design rationale organized into ## sections. Prose may use descriptive color names (e.g., “Midnight Forest Green”) that correspond to systematic token names (e.g., primary ). The tokens are the normative values; the prose provides context for how to apply them.",
+        "The spec is a foundation, not a prescription . It provides common ground that agents, tools, and teams can rely on, while preserving the freedom to extend the format for domain-specific needs."
+      ],
+      "subsections": {}
+    },
+    "Design tokens": {
+      "text": [
+        "DESIGN.md embeds design tokens as YAML front matter at the beginning of the file. The front matter block must begin with a line containing exactly --- and end with a line containing exactly --- . The YAML content between these delimiters follows the schema defined below.",
+        "The token system is inspired by the W3C Design Token Format . Tokens are easily converted to and from tokens.json , Figma variables, and Tailwind theme configs.",
+        "```\n---\nversion: alpha\nname: Daylight Prestige\ncolors:\nprimary: \"#1A1C1E\"\nsecondary: \"#6C7278\"\ntertiary: \"#B8422E\"\ntypography:\nh1:\nfontFamily: Public Sans\nfontSize: 48px\nfontWeight: 600\nlineHeight: 1.1\nletterSpacing: -0.02em\nrounded:\nsm: 4px\nmd: 8px\nspacing:\nsm: 8px\nmd: 16px\ncomponents:\nbutton-primary:\nbackgroundColor: \"{colors.primary-60}\"\ntextColor: \"{colors.primary-20}\"\nrounded: \"{rounded.md}\"\npadding: 12px\n---\n```"
+      ],
+      "subsections": {
+        "Schema": [
+          "```\nversion: <string>          # optional, current version: \"alpha\"\nname: <string>\ndescription: <string>      # optional\ncolors:\n<token-name>: <Color>\ntypography:\n<token-name>: <Typography>\nrounded:\n<scale-level>: <Dimension>\nspacing:\n<scale-level>: <Dimension | number>\ncomponents:\n<component-name>:\n<token-name>: <string | token reference>\n```",
+          "The <scale-level> placeholder represents a named level in a sizing or spacing scale. Common level names include xs , sm , md , lg , xl , and full . Any descriptive string key is valid."
+        ]
+      }
+    },
+    "Token types": {
+      "text": [],
+      "subsections": {
+        "Typography properties": [],
+        "Token references": [
+          "A token reference is wrapped in curly braces and contains an object path to another value in the YAML tree. For most token groups, the reference must point to a primitive value (e.g., {colors.primary-60} ), not a group. Within the components section, references to composite values (e.g., {typography.label-md} ) are permitted.",
+          "```\ncomponents:\nbutton-primary:\nbackgroundColor: \"{colors.primary-60}\"\ntextColor: \"{colors.primary-20}\"\nrounded: \"{rounded.md}\"\n```"
+        ]
+      }
+    },
+    "Sections": {
+      "text": [
+        "Every DESIGN.md follows the same structure. Sections can be omitted if they are not relevant to the project, but those present should appear in the sequence listed below. All sections use ## headings. An optional # heading may appear for document titling purposes but is not parsed as a section.",
+        "The section structure is intentionally open-ended. The canonical sections provide a shared vocabulary; design systems are free to add domain-specific sections beyond these."
+      ],
+      "subsections": {
+        "Section order": [],
+        "Overview": [
+          "Also known as “Brand & Style.” A holistic description of the product’s look and feel. This section defines the brand personality, target audience, and the emotional response the UI should evoke. It serves as foundational context when a specific rule or token is not defined.",
+          "```\n## Overview\nA calm, professional interface for a healthcare scheduling platform.\nAccessibility-first design with high contrast and generous touch targets.\n```"
+        ],
+        "Colors": [
+          "Defines the color palettes for the design system. At least the primary palette should be defined. Additional palettes may be named freely; a common convention is primary , secondary , tertiary , and neutral .",
+          "```\n## Colors\nThe palette is rooted in high-contrast neutrals and a single accent color.\n- **Primary (#1A1C1E):** Deep ink for headlines and core text.\n- **Secondary (#6C7278):** Sophisticated slate for borders, captions, metadata.\n- **Tertiary (#B8422E):** The sole driver for interaction.\n- **Neutral (#F7F5F2):** Warm limestone foundation.\n```",
+          "Design tokens: A map<string, Color> mapping the token name to its hex value.",
+          "```\ncolors:\nprimary: \"#1A1C1E\"\nsecondary: \"#6C7278\"\ntertiary: \"#B8422E\"\nneutral: \"#F7F5F2\"\n```"
+        ],
+        "Typography": [
+          "Defines typography levels. Most design systems have 9–15 levels, each with a semantic role (headline, body, label) and size variant (small, medium, large).",
+          "```\n## Typography\n- **Headlines:** Public Sans Semi-Bold for an institutional voice.\n- **Body:** Public Sans Regular at 16px for long-form readability.\n- **Labels:** Space Grotesk for technical data and metadata.\n```",
+          "Design tokens: A map<string, Typography> mapping the token name to its typography properties.",
+          "```\ntypography:\nh1:\nfontFamily: Public Sans\nfontSize: 48px\nfontWeight: 600\nlineHeight: 1.1\nletterSpacing: -0.02em\nbody-md:\nfontFamily: Public Sans\nfontSize: 16px\nfontWeight: 400\nlineHeight: 1.6\nlabel-caps:\nfontFamily: Space Grotesk\nfontSize: 12px\nfontWeight: 500\nlineHeight: 1\nletterSpacing: 0.1em\n```"
+        ],
+        "Layout": [
+          "Also known as “Layout & Spacing.” Describes the layout and spacing strategy — grid models, spacing scales, and containment principles.",
+          "```\n## Layout\nThe layout follows a Fluid Grid model for mobile and a Fixed-Max-Width\nGrid for desktop (max 1200px). A strict 8px spacing scale is used.\n```",
+          "Design tokens: A map<string, Dimension | number> mapping the spacing scale identifier to a dimension or unitless number (e.g., column counts or ratios).",
+          "```\nspacing:\nbase: 16px\nxs: 4px\nsm: 8px\nmd: 16px\nlg: 32px\nxl: 64px\ngutter: 24px\nmargin: 32px\n```"
+        ],
+        "Elevation & Depth": [
+          "Also known as “Elevation.” Describes how visual hierarchy is conveyed. For designs that use shadows, it defines the shadow properties. For flat designs, it explains the alternative methods (borders, tonal layers, color contrast).",
+          "```\n## Elevation & Depth\nDepth is achieved through tonal layers rather than heavy shadows.\nBackground uses a soft off-white; primary content sits on pure white cards.\n```"
+        ],
+        "Shapes": [
+          "Describes how visual elements are shaped — corner radii, edge treatments, and the overall shape language.",
+          "```\n## Shapes\nAll interactive elements use a minimal 4px corner radius.\nModern enough to feel current, rigid enough to feel engineered.\n```",
+          "Design tokens: A map<string, Dimension> mapping the scale level to the corner radius.",
+          "```\nrounded:\nsm: 4px\nmd: 8px\nlg: 12px\nfull: 9999px\n```"
+        ],
+        "Components": [
+          "Style guidance for component atoms. The spec defines common component types — Buttons, Chips, Lists, Inputs, Checkboxes, Radio buttons, Tooltips — but design systems are encouraged to define additional components relevant to their domain.",
+          "```\n## Components\n- **Buttons**: Rounded (8px), primary uses brand blue fill, secondary uses outline\n- **Inputs**: 1px border, surface-variant background, 12px padding\n- **Cards**: No elevation, 1px outline border, 12px corner radius\n```",
+          "Design tokens: A map<string, map<string, string>> mapping a component identifier to a group of sub-token properties. Token values may be literal values or references to previously defined tokens.",
+          "Variants. A component may have variants for different UI states (hover, active, pressed). Variants are defined as separate component entries with a related key name.",
+          "```\ncomponents:\nbutton-primary:\nbackgroundColor: \"{colors.primary-60}\"\ntextColor: \"{colors.primary-20}\"\nrounded: \"{rounded.md}\"\npadding: 12px\nbutton-primary-hover:\nbackgroundColor: \"{colors.primary-70}\"\n```"
+        ],
+        "Do’s and Don’ts": [
+          "Practical guidelines and common pitfalls. These act as guardrails during generation.",
+          "```\n## Do's and Don'ts\n- Do use the primary color only for the single most important action per screen\n- Don't mix rounded and sharp corners in the same view\n- Do maintain WCAG AA contrast ratios (4.5:1 for normal text)\n- Don't use more than two font weights on a single screen\n```"
+        ]
+      }
+    },
+    "Consumer behavior for unknown content": {
+      "text": [
+        "The spec is designed to be extended. When a consumer encounters content not defined by this specification:"
+      ],
+      "subsections": {}
+    },
+    "Recommended token names": {
+      "text": [
+        "The following names are commonly used across design systems. They are not required but are provided as guidance for consistency.",
+        "Colors: primary , secondary , tertiary , neutral , surface , on-surface , error",
+        "Typography: headline-display , headline-lg , headline-md , body-lg , body-md , body-sm , label-lg , label-md , label-sm",
+        "Rounded: none , sm , md , lg , xl , full"
+      ],
+      "subsections": {}
+    }
+  }
+}
+
+---
+
+# iCloud: stitch_docs.md
+
+> **Source:** icloud://stitch_docs.md
+> **Analyzed At:** 2026-07-20T09:08:24.544Z
+
+## The DESIGN.md specification
+Scraped from [https://stitch.withgoogle.com/docs/design-md/specification](https://stitch.withgoogle.com/docs/design-md/specification)
+Learn
+The formal specification for the DESIGN.md format — token schema, section structure, and type system.
+A DESIGN.md file has two layers. The YAML front matter contains machine-readable design tokens — the precise values agents use to enforce consistency. The markdown body provides human-readable design rationale organized into ## sections. Prose may use descriptive color names (e.g., “Midnight Forest Green”) that correspond to systematic token names (e.g., primary ). The tokens are the normative values; the prose provides context for how to apply them.
+The spec is a foundation, not a prescription . It provides common ground that agents, tools, and teams can rely on, while preserving the freedom to extend the format for domain-specific needs.
+
+### Design tokens
+DESIGN.md embeds design tokens as YAML front matter at the beginning of the file. The front matter block must begin with a line containing exactly --- and end with a line containing exactly --- . The YAML content between these delimiters follows the schema defined below.
+The token system is inspired by the W3C Design Token Format . Tokens are easily converted to and from tokens.json , Figma variables, and Tailwind theme configs.
+```
+---
+version: alpha
+name: Daylight Prestige
+colors:
+primary: "#1A1C1E"
+secondary: "#6C7278"
+tertiary: "#B8422E"
+typography:
+h1:
+fontFamily: Public Sans
+fontSize: 48px
+fontWeight: 600
+lineHeight: 1.1
+letterSpacing: -0.02em
+rounded:
+sm: 4px
+md: 8px
+spacing:
+sm: 8px
+md: 16px
+components:
+button-primary:
+backgroundColor: "{colors.primary-60}"
+textColor: "{colors.primary-20}"
+rounded: "{rounded.md}"
+padding: 12px
+---
+```
+
+#### Schema
+```
+version: <string>          # optional, current version: "alpha"
+name: <string>
+description: <string>      # optional
+colors:
+<token-name>: <Color>
+typography:
+<token-name>: <Typography>
+rounded:
+<scale-level>: <Dimension>
+spacing:
+<scale-level>: <Dimension | number>
+components:
+<component-name>:
+<token-name>: <string | token reference>
+```
+The  placeholder represents a named level in a sizing or spacing scale. Common level names include xs , sm , md , lg , xl , and full . Any descriptive string key is valid.
+
+#### Token references
+A token reference is wrapped in curly braces and contains an object path to another value in the YAML tree. For most token groups, the reference must point to a primitive value (e.g., {colors.primary-60} ), not a group. Within the components section, references to composite values (e.g., {typography.label-md} ) are permitted.
+```
+components:
+button-primary:
+backgroundColor: "{colors.primary-60}"
+textColor: "{colors.primary-20}"
+rounded: "{rounded.md}"
+```
+
+### Sections
+Every DESIGN.md follows the same structure. Sections can be omitted if they are not relevant to the project, but those present should appear in the sequence listed below. All sections use ## headings. An optional # heading may appear for document titling purposes but is not parsed as a section.
+The section structure is intentionally open-ended. The canonical sections provide a shared vocabulary; design systems are free to add domain-specific sections beyond these.
+
+#### Overview
+Also known as “Brand & Style.” A holistic description of the product’s look and feel. This section defines the brand personality, target audience, and the emotional response the UI should evoke. It serves as foundational context when a specific rule or token is not defined.
+```
+## Overview
+A calm, professional interface for a healthcare scheduling platform.
+Accessibility-first design with high contrast and generous touch targets.
+```
+
+#### Colors
+Defines the color palettes for the design system. At least the primary palette should be defined. Additional palettes may be named freely; a common convention is primary , secondary , tertiary , and neutral .
+```
+## Colors
+The palette is rooted in high-contrast neutrals and a single accent color.
+- **Primary (#1A1C1E):** Deep ink for headlines and core text.
+- **Secondary (#6C7278):** Sophisticated slate for borders, captions, metadata.
+- **Tertiary (#B8422E):** The sole driver for interaction.
+- **Neutral (#F7F5F2):** Warm limestone foundation.
+```
+Design tokens: A map<string, Color> mapping the token name to its hex value.
+```
+colors:
+primary: "#1A1C1E"
+secondary: "#6C7278"
+tertiary: "#B8422E"
+neutral: "#F7F5F2"
+```
+
+#### Typography
+Defines typography levels. Most design systems have 9–15 levels, each with a semantic role (headline, body, label) and size variant (small, medium, large).
+```
+## Typography
+- **Headlines:** Public Sans Semi-Bold for an institutional voice.
+- **Body:** Public Sans Regular at 16px for long-form readability.
+- **Labels:** Space Grotesk for technical data and metadata.
+```
+Design tokens: A map<string, Typography> mapping the token name to its typography properties.
+```
+typography:
+h1:
+fontFamily: Public Sans
+fontSize: 48px
+fontWeight: 600
+lineHeight: 1.1
+letterSpacing: -0.02em
+body-md:
+fontFamily: Public Sans
+fontSize: 16px
+fontWeight: 400
+lineHeight: 1.6
+label-caps:
+fontFamily: Space Grotesk
+fontSize: 12px
+fontWeight: 500
+lineHeight: 1
+letterSpacing: 0.1em
+```
+
+#### Layout
+Also known as “Layout & Spacing.” Describes the layout and spacing strategy — grid models, spacing scales, and containment principles.
+```
+## Layout
+The layout follows a Fluid Grid model for mobile and a Fixed-Max-Width
+Grid for desktop (max 1200px). A strict 8px spacing scale is used.
+```
+Design tokens: A map<string, Dimension | number> mapping the spacing scale identifier to a dimension or unitless number (e.g., column counts or ratios).
+```
+spacing:
+base: 16px
+xs: 4px
+sm: 8px
+md: 16px
+lg: 32px
+xl: 64px
+gutter: 24px
+margin: 32px
+```
+
+#### Elevation & Depth
+Also known as “Elevation.” Describes how visual hierarchy is conveyed. For designs that use shadows, it defines the shadow properties. For flat designs, it explains the alternative methods (borders, tonal layers, color contrast).
+```
+## Elevation & Depth
+Depth is achieved through tonal layers rather than heavy shadows.
+Background uses a soft off-white; primary content sits on pure white cards.
+```
+
+#### Shapes
+Describes how visual elements are shaped — corner radii, edge treatments, and the overall shape language.
+```
+## Shapes
+All interactive elements use a minimal 4px corner radius.
+Modern enough to feel current, rigid enough to feel engineered.
+```
+Design tokens: A map<string, Dimension> mapping the scale level to the corner radius.
+```
+rounded:
+sm: 4px
+md: 8px
+lg: 12px
+full: 9999px
+```
+
+#### Components
+Style guidance for component atoms. The spec defines common component types — Buttons, Chips, Lists, Inputs, Checkboxes, Radio buttons, Tooltips — but design systems are encouraged to define additional components relevant to their domain.
+```
+## Components
+- **Buttons**: Rounded (8px), primary uses brand blue fill, secondary uses outline
+- **Inputs**: 1px border, surface-variant background, 12px padding
+- **Cards**: No elevation, 1px outline border, 12px corner radius
+```
+Design tokens: A map<string, map<string, string>> mapping a component identifier to a group of sub-token properties. Token values may be literal values or references to previously defined tokens.
+Variants. A component may have variants for different UI states (hover, active, pressed). Variants are defined as separate component entries with a related key name.
+```
+components:
+button-primary:
+backgroundColor: "{colors.primary-60}"
+textColor: "{colors.primary-20}"
+rounded: "{rounded.md}"
+padding: 12px
+button-primary-hover:
+backgroundColor: "{colors.primary-70}"
+```
+
+#### Do’s and Don’ts
+Practical guidelines and common pitfalls. These act as guardrails during generation.
+```
+## Do's and Don'ts
+- Do use the primary color only for the single most important action per screen
+- Don't mix rounded and sharp corners in the same view
+- Do maintain WCAG AA contrast ratios (4.5:1 for normal text)
+- Don't use more than two font weights on a single screen
+```
+
+### Consumer behavior for unknown content
+The spec is designed to be extended. When a consumer encounters content not defined by this specification:
+
+### Recommended token names
+The following names are commonly used across design systems. They are not required but are provided as guidance for consistency.
+Colors: primary , secondary , tertiary , neutral , surface , on-surface , error
+Typography: headline-display , headline-lg , headline-md , body-lg , body-md , body-sm , label-lg , label-md , label-sm
+Rounded: none , sm , md , lg , xl , full
+
+---
+
+# iCloud: vscode_intelephense_docs.json
+
+> **Source:** icloud://vscode_intelephense_docs.json
+> **Analyzed At:** 2026-07-20T09:08:24.622Z
+
+## Content
+{
+  "repository": {
+    "name": "vscode-intelephense",
+    "full_name": "bmewburn/vscode-intelephense",
+    "description": "PHP intellisense for Visual Studio Code",
+    "html_url": "https://github.com/bmewburn/vscode-intelephense",
+    "stars": 1846,
+    "forks": 114,
+    "language": "TypeScript",
+    "license": "Other"
+  },
+  "readme": "# Intelephense\n\nPHP code intelligence for Visual Studio Code.\n\nIntelephense is a high performance PHP language server packed full of essential features for productive PHP development. \n\n* Fast camel/underscore case **code completion (IntelliSense)** for document, workspace and built-in symbols and keywords with automatic addition of use declarations.\n* Detailed **signature (parameter) help** for document, workspace and built-in constructors, methods, and functions.\n* Rapid workspace wide **go to definition** support.\n* Workspace wide **find all references**.\n* Fast camel/underscore case **workspace symbol search**.\n* Full **document symbol search** that also powers **breadcrumbs** and **outline** UI.\n* Multiple **diagnostics** for open files via an error tolerant parser and powerful static analysis engine.\n* Lossless PSR-12 compatible **document/range formatting**. Formats combined HTML/PHP/JS/CSS files too. \n* Embedded **HTML/JS/CSS code intelligence**.\n* Detailed **hover** with links to official PHP documentation.\n* Smart **highlight** of references and keywords.\n* Advanced PHPDoc type system supporting **templates and callable signatures**.\n* Reads **PHPStorm metadata** for improved type analysis and suggestions.\n* Enhances the official xdebug extension with an **inline values provider**.\n* Easy **rename** of symbols. When appropriate, files/folders are automatically renamed too. [PREMIUM](https://intelephense.com)\n* Accurate **code folding** of definitions, blocks, use declarations, heredoc, comments, and custom regions. [PREMIUM](https://intelephense.com)\n* Quickly **find all implementations** of interfaces and abstract classes and associated methods. [PREMIUM](https://intelephense.com)\n* Fast **go to type definition** of typed variables and parameters. [PREMIUM](https://intelephense.com)\n* Fast **go to declaration** for methods implementing an interface or abstract method declaration. [PREMIUM](https://intelephense.com)\n* Configurable **auto PHPDoc** creation that infers return types and identifies thrown exceptions. [PREMIUM](https://intelephense.com)\n* Syntax tree driven **smart select** to intelligently expand/shrink selection. [PREMIUM](https://intelephense.com)\n* Helpful **code actions** to import symbols, add PHPDoc, and implement all abstract methods. [PREMIUM](https://intelephense.com)\n* Concise **type hierarchy**. Easily view and navigate to subtypes and supertypes. [PREMIUM](https://intelephense.com)\n* Insightful **code lens** that shows references, abstract and interface implementations, trait usages, method parent and overrides. [PREMIUM](https://intelephense.com)\n* Informative **inlay hints** to indicate parameter names, return types and anonymous function parameter types. [PREMIUM](https://intelephense.com)\n* Convenient **document links** to quickly navigate to include/require files. [PREMIUM](https://intelephense.com)\n* **`@mixin`** support. [PREMIUM](https://intelephense.com)\n\n## Licence\nPurchase a licence at https://intelephense.com to access PREMIUM features. Licence keys grant a single user access to all current and future premium features on multiple devices _forever_. Licence keys must be activated (automatically) via https before use. Features not marked as PREMIUM are free and always will be free.\n\nThe language server client (vscode-intelephense) is open source and licensed under the MIT licence. \n\nThe language server (intelephense) is proprietary. Please see [here](https://github.com/bmewburn/vscode-intelephense/blob/master/LICENSE.txt#L29) for details.\n\n## Quick Start\n\n1. Disable the built-in VSCode PHP Language Features. \n    \n    * Go to `Extensions`.\n    * Search for `@builtin php`\n    * Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.\n\n    Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.\n2. Add glob patterns for non standard php file extensions to the `files.associations` setting.\n\n    For example: `\"files.associations\": { \"*.module\": \"php\" }`.\n3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete \n-- `ctrl + shift + p` -- and searching for `Enter licence key`.\n\nFurther configuration options are available in the `intelephense` section of settings.\n\n## Support\n\nTry the [Intelephense Documentation](https://intelephense.com/docs).\n\nFound a bug? Got a feature request? [Create an issue](https://github.com/bmewburn/vscode-intelephense/issues).\n\n## Acknowledgements\n\nA big thank you to supporters who have bought a premium licence and have enabled the continued development and maintenance of this extension.\n\nIntelephense uses the following open source libraries. Please see the following links for source code and licences.\n\n* [vscode-languageserver-node](https://github.com/Microsoft/vscode-languageserver-node)\n* [micromatch](https://github.com/micromatch/micromatch)\n* [fs-extra](https://github.com/jprichardson/node-fs-extra)\n* [fast-glob](https://github.com/mrmlnc/fast-glob)\n* [lru-cache](https://github.com/isaacs/node-lru-cache)\n* [turndown](https://github.com/mixmark-io/turndown)\n* [protobufjs](https://github.com/dcodeIO/ProtoBuf.js/)\n* [phpstorm-stubs](https://github.com/JetBrains/phpstorm-stubs)\n* [js-beautify](https://github.com/beautify-web/js-beautify)\n* [vscode-uri](https://github.com/microsoft/vscode-uri)\n* [vscode-html-languageserver](https://github.com/microsoft/vscode)\n* [node-html-to-text](https://github.com/html-to-text/node-html-to-text)\n* [semver](https://github.com/npm/node-semver)\n* [applicationinsights](https://github.com/microsoft/ApplicationInsights-node.js)\n"
+}
+
+---
+
+# iCloud: vscode_intelephense_docs.md
+
+> **Source:** icloud://vscode_intelephense_docs.md
+> **Analyzed At:** 2026-07-20T09:08:24.697Z
+
+## vscode-intelephense
+**Full Name:** bmewburn/vscode-intelephense
+**Description:** PHP intellisense for Visual Studio Code
+**URL:** https://github.com/bmewburn/vscode-intelephense
+**Stars:** 1846 | **Forks:** 114 | **Language:** TypeScript
+**License:** Other
+---
+
+## Intelephense
+PHP code intelligence for Visual Studio Code.
+Intelephense is a high performance PHP language server packed full of essential features for productive PHP development.
+* Fast camel/underscore case **code completion (IntelliSense)** for document, workspace and built-in symbols and keywords with automatic addition of use declarations.
+* Detailed **signature (parameter) help** for document, workspace and built-in constructors, methods, and functions.
+* Rapid workspace wide **go to definition** support.
+* Workspace wide **find all references**.
+* Fast camel/underscore case **workspace symbol search**.
+* Full **document symbol search** that also powers **breadcrumbs** and **outline** UI.
+* Multiple **diagnostics** for open files via an error tolerant parser and powerful static analysis engine.
+* Lossless PSR-12 compatible **document/range formatting**. Formats combined HTML/PHP/JS/CSS files too.
+* Embedded **HTML/JS/CSS code intelligence**.
+* Detailed **hover** with links to official PHP documentation.
+* Smart **highlight** of references and keywords.
+* Advanced PHPDoc type system supporting **templates and callable signatures**.
+* Reads **PHPStorm metadata** for improved type analysis and suggestions.
+* Enhances the official xdebug extension with an **inline values provider**.
+* Easy **rename** of symbols. When appropriate, files/folders are automatically renamed too.
+* Accurate **code folding** of definitions, blocks, use declarations, heredoc, comments, and custom regions.
+* Quickly **find all implementations** of interfaces and abstract classes and associated methods.
+* Fast **go to type definition** of typed variables and parameters.
+* Fast **go to declaration** for methods implementing an interface or abstract method declaration.
+* Configurable **auto PHPDoc** creation that infers return types and identifies thrown exceptions.
+* Syntax tree driven **smart select** to intelligently expand/shrink selection.
+* Helpful **code actions** to import symbols, add PHPDoc, and implement all abstract methods.
+* Concise **type hierarchy**. Easily view and navigate to subtypes and supertypes.
+* Insightful **code lens** that shows references, abstract and interface implementations, trait usages, method parent and overrides.
+* Informative **inlay hints** to indicate parameter names, return types and anonymous function parameter types.
+* Convenient **document links** to quickly navigate to include/require files.
+* **`@mixin`** support.
+
+### Licence
+Purchase a licence at https://intelephense.com to access PREMIUM features. Licence keys grant a single user access to all current and future premium features on multiple devices _forever_. Licence keys must be activated (automatically) via https before use. Features not marked as PREMIUM are free and always will be free.
+The language server client (vscode-intelephense) is open source and licensed under the MIT licence.
+The language server (intelephense) is proprietary. Please see [here](https://github.com/bmewburn/vscode-intelephense/blob/master/LICENSE.txt#L29) for details.
+
+### Quick Start
+1. Disable the built-in VSCode PHP Language Features.
+* Go to `Extensions`.
+* Search for `@builtin php`
+* Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.
+Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.
+2. Add glob patterns for non standard php file extensions to the `files.associations` setting.
+For example: `"files.associations": { "*.module": "php" }`.
+3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete
+-- `ctrl + shift + p` -- and searching for `Enter licence key`.
+Further configuration options are available in the `intelephense` section of settings.
+
+### Support
+Try the [Intelephense Documentation](https://intelephense.com/docs).
+Found a bug? Got a feature request? [Create an issue](https://github.com/bmewburn/vscode-intelephense/issues).
+
+### Acknowledgements
+A big thank you to supporters who have bought a premium licence and have enabled the continued development and maintenance of this extension.
+Intelephense uses the following open source libraries. Please see the following links for source code and licences.
+* [vscode-languageserver-node](https://github.com/Microsoft/vscode-languageserver-node)
+* [micromatch](https://github.com/micromatch/micromatch)
+* [fs-extra](https://github.com/jprichardson/node-fs-extra)
+* [fast-glob](https://github.com/mrmlnc/fast-glob)
+* [lru-cache](https://github.com/isaacs/node-lru-cache)
+* [turndown](https://github.com/mixmark-io/turndown)
+* [protobufjs](https://github.com/dcodeIO/ProtoBuf.js/)
+* [phpstorm-stubs](https://github.com/JetBrains/phpstorm-stubs)
+* [js-beautify](https://github.com/beautify-web/js-beautify)
+* [vscode-uri](https://github.com/microsoft/vscode-uri)
+* [vscode-html-languageserver](https://github.com/microsoft/vscode)
+* [node-html-to-text](https://github.com/html-to-text/node-html-to-text)
+* [semver](https://github.com/npm/node-semver)
+* [applicationinsights](https://github.com/microsoft/ApplicationInsights-node.js)
+
+---
+
+# iCloud: wilson_sonsini.json
+
+> **Source:** icloud://wilson_sonsini.json
+> **Analyzed At:** 2026-07-20T09:08:24.773Z
+
+## Content
+{
+  "wilson-sonsini-overview": {
+    "title": "Wilson Sonsini Goodrich & Rosati",
+    "content": "Wilson Sonsini Goodrich & Rosati (commonly known as Wilson Sonsini) is the preeminent American law firm for the technology and life sciences sectors. Headquartered in Palo Alto, California, it is the primary legal architect behind Silicon Valley’s growth. The firm is best known for its deep integration with the venture capital ecosystem and for taking more tech companies public than any other firm in the United States."
+  },
+  "core-identity-market-position": {
+    "title": "Core Identity & Market Position",
+    "content": "- Startup Lifecycle: They are the \"cradle-to-grave\" firm for startups, representing companies from initial incorporation and seed funding to multi-billion dollar IPOs and global M&A.\n- Venture Capital Powerhouse: They represent both the innovative companies and the venture capital/private equity firms that fund them, maintaining a central role in the flow of capital within the tech industry.\n- Innovation Focused: Beyond traditional corporate law, they are leaders in Intellectual Property (IP), patents, and complex technology transactions."
+  },
+  "historical-significance-notable-clients": {
+    "title": "Historical Significance & Notable Clients",
+    "content": "Wilson Sonsini’s history is essentially the history of modern technology:\n\n- The Apple IPO (1980): Represented Apple Computer during its landmark public offering.\n- The Google IPO (2004): Advised Google on its $2.7 billion IPO.\n- Semiconductor Pioneers: Represented early industry giants like LSI Logic, Altera, and Cypress Semiconductor.\n- Modern Tech Giants: Current or former clients include Netflix, LinkedIn, Salesforce, Twitter (X), Spotify, Lyft, and Dropbox.\n- Life Sciences: Represented trailblazers in biotech and healthcare."
+  },
+  "recent-developments-2025-2026": {
+    "title": "Recent Developments (2025-2026)",
+    "content": "The firm continues to lead high-stakes transactions in the technology and life sciences sectors:\n\n- Boston Scientific / Bolt Medical (2026): Led the legal team for the merger between Boston Scientific and Bolt Medical, recognized as a Middle-Market Deal of the Year honorable mention.\n- Transcarent / Accolade (2026): Advised Transcarent on its significant acquisition of Accolade, further consolidating its position in the health-tech space.\n- M&A Leadership (2025): In 2025, the firm advised on more than 150 announced and/or completed M&A deals with an aggregate disclosed value of $100 billion."
+  },
+  "primary-practice-areas": {
+    "title": "Primary Practice Areas",
+    "content": "Wilson Sonsini provides a comprehensive range of legal services tailored to the needs of growth enterprises and their funders:\n\n### Corporate\n- Emerging Companies & Venture Capital\n- Capital Markets\n- Mergers & Acquisitions\n- Corporate Governance\n\n### Intellectual Property\n- Patents & Innovation\n- Technology Transactions\n- Trademarks & Copyrights\n\n### Litigation\n- Securities Litigation\n- Antitrust\n- Intellectual Property Litigation\n- Commercial Litigation\n\n### Regulatory & Specialty\n- Privacy & Cybersecurity\n- Antitrust & Competition\n- Tax\n- Employee Benefits & Compensation\n- Energy & Infrastructure"
+  }
+}
+
+---
+
+# iCloud: wilson_sonsini.md
+
+> **Source:** icloud://wilson_sonsini.md
+> **Analyzed At:** 2026-07-20T09:08:24.848Z
+
+## Wilson Sonsini Goodrich & Rosati
+Wilson Sonsini Goodrich & Rosati (commonly known as Wilson Sonsini) is the preeminent American law firm for the technology and life sciences sectors. Headquartered in Palo Alto, California, it is the primary legal architect behind Silicon Valley’s growth.
+The firm is best known for its deep integration with the venture capital ecosystem and for taking more tech companies public than any other firm in the United States.
+
+### Core Identity & Market Position
+*   **Startup Lifecycle**: They are the "cradle-to-grave" firm for startups, representing companies from initial incorporation and seed funding to multi-billion dollar IPOs and global M&A.
+*   **Venture Capital Powerhouse**: They represent both the innovative companies and the venture capital/private equity firms that fund them, maintaining a central role in the flow of capital within the tech industry.
+*   **Innovation Focused**: Beyond traditional corporate law, they are leaders in Intellectual Property (IP), patents, and complex technology transactions.
+
+### Historical Significance & Notable Clients
+Wilson Sonsini’s history is essentially the history of modern technology:
+*   **The Apple IPO (1980)**: Represented Apple Computer during its landmark public offering.
+*   **The Google IPO (2004)**: Advised Google on its $2.7 billion IPO.
+*   **Semiconductor Pioneers**: Represented early industry giants like LSI Logic, Altera, and Cypress Semiconductor.
+*   **Modern Tech Giants**: Current or former clients include Netflix, LinkedIn, Salesforce, Twitter (X), Spotify, Lyft, and Dropbox.
+*   **Life Sciences**: Represented trailblazers in biotech and healthcare.
+
+### Recent Developments (2025-2026)
+The firm continues to lead high-stakes transactions in the technology and life sciences sectors:
+*   **Boston Scientific / Bolt Medical (2026)**: Led the legal team for the merger between Boston Scientific and Bolt Medical, recognized as a Middle-Market Deal of the Year honorable mention.
+*   **Transcarent / Accolade (2026)**: Advised Transcarent on its significant acquisition of Accolade, further consolidating its position in the health-tech space.
+*   **M&A Leadership (2025)**: In 2025, the firm advised on more than 150 announced and/or completed M&A deals with an aggregate disclosed value of $100 billion.
+
+### Primary Practice Areas
+Wilson Sonsini provides a comprehensive range of legal services tailored to the needs of growth enterprises and their funders:
+
+#### Corporate
+*   **Emerging Companies & Venture Capital**: The cornerstone of the firm, representing thousands of startups and hundreds of venture capital firms.
+*   **Capital Markets**: Industry leader in IPOs, follow-on offerings, and debt securities.
+*   **Mergers & Acquisitions**: Expertise in complex, high-value domestic and cross-border transactions.
+*   **Corporate Governance**: Advising boards and management on fiduciary duties and regulatory compliance.
+
+#### Intellectual Property
+*   **Patents & Innovation**: Strategic counseling on patent prosecution, portfolio management, and IP strategy.
+*   **Technology Transactions**: Specialists in licensing, outsourcing, and strategic alliances.
+*   **Trademarks & Copyrights**: Protection of brand identity and creative works.
+
+#### Litigation
+*   **Securities Litigation**: Defending companies and officers in class actions and derivative suits.
+*   **Antitrust**: Handling complex merger clearances and competition-related litigation.
+*   **Intellectual Property Litigation**: High-stakes patent, trade secret, and copyright disputes.
+*   **Commercial Litigation**: Resolving complex business disputes across various industries.
+
+#### Regulatory & Specialty
+*   **Privacy & Cybersecurity**: Navigating global data protection laws and incident response.
+*   **Antitrust & Competition**: Global expertise in competition law and regulatory investigations.
+*   **Tax**: Strategic tax planning for corporate transactions and international operations.
+*   **Employee Benefits & Compensation**: Designing incentive plans for competitive talent markets.
+*   **Energy & Infrastructure**: Leading the transition to clean energy and sustainable technologies.
+
+---
+
+# iCloud: wilson_sonsini_docs.json
+
+> **Source:** icloud://wilson_sonsini_docs.json
+> **Analyzed At:** 2026-07-20T09:08:24.937Z
+
+## Content
+{
+  "firm_overview": {
+    "title": "Wilson Sonsini Goodrich & Rosati",
+    "content": "Wilson Sonsini Goodrich & Rosati (commonly known as Wilson Sonsini) is the preeminent American law firm for the technology and life sciences sectors. Headquartered in Palo Alto, California, it is the primary legal architect behind Silicon Valley’s growth. The firm is best known for its deep integration with the venture capital ecosystem and for taking more tech companies public than any other firm in the United States."
+  },
+  "core_identity_and_market_position": {
+    "title": "Core Identity & Market Position",
+    "content": "- **Startup Lifecycle**: They are the \"cradle-to-grave\" firm for startups, representing companies from initial incorporation and seed funding to multi-billion dollar IPOs and global M&A.\n- **Venture Capital Powerhouse**: They represent both the innovative companies and the venture capital/private equity firms that fund them, maintaining a central role in the flow of capital within the tech industry.\n- **Innovation Focused**: Beyond traditional corporate law, they are leaders in Intellectual Property (IP), patents, and complex technology transactions."
+  },
+  "historical_significance_and_notable_clients": {
+    "title": "Historical Significance & Notable Clients",
+    "content": "Wilson Sonsini’s history is essentially the history of modern technology:\n\n- **The Apple IPO (1980)**: Represented Apple Computer during its landmark public offering.\n- **The Google IPO (2004)**: Advised Google on its $2.7 billion IPO.\n- **Semiconductor Pioneers**: Represented early industry giants like LSI Logic, Altera, and Cypress Semiconductor.\n- **Modern Tech Giants**: Current or former clients include Netflix, LinkedIn, Salesforce, Twitter (X), Spotify, Lyft, and Dropbox.\n- **Life Sciences**: Represented trailblazers in biotech and healthcare, recently advising on significant M&A deals for companies like Transcarent and Bolt Medical (2026)."
+  },
+  "primary_practice_areas": {
+    "title": "Primary Practice Areas",
+    "content": "- **Corporate**: Comprehensive legal support for companies at all stages, from startup to maturity.\n- **Venture Capital & Emerging Companies**: Deeply rooted in the VC ecosystem, representing both funders and founders.\n- **Intellectual Property**: Leadership in patents, trademarks, copyrights, and trade secrets protection.\n- **Litigation**: Specialized defense and resolution of complex business disputes, securities litigation, and IP challenges.\n- **Technology Transactions**: Strategic advice on licensing, collaborations, outsourcing, and other commercial deals.\n- **Capital Markets**: Industry-leading experience in IPOs, follow-on offerings, and debt financing.\n- **Mergers & Acquisitions**: Advising on multi-billion dollar global transactions in tech and life sciences.\n- **Regulatory & Compliance**: Navigating the complex regulatory landscape facing technology-driven businesses."
+  },
+  "metadata": {
+    "last_updated": "2026-04-02",
+    "headquarters": "Palo Alto, California"
+  }
+}
+
+---
+
+# iCloud: wilson_sonsini_docs.md
+
+> **Source:** icloud://wilson_sonsini_docs.md
+> **Analyzed At:** 2026-07-20T09:08:25.013Z
+
+## Wilson Sonsini Goodrich & Rosati
+Wilson Sonsini Goodrich & Rosati (commonly known as Wilson Sonsini) is the preeminent American law firm for the technology and life sciences sectors. Headquartered in Palo Alto, California, it is the primary legal architect behind Silicon Valley’s growth.
+The firm is best known for its deep integration with the venture capital ecosystem and for taking more tech companies public than any other firm in the United States.
+
+### Core Identity & Market Position
+*   **Startup Lifecycle**: They are the "cradle-to-grave" firm for startups, representing companies from initial incorporation and seed funding to multi-billion dollar IPOs and global M&A.
+*   **Venture Capital Powerhouse**: They represent both the innovative companies and the venture capital/private equity firms that fund them, maintaining a central role in the flow of capital within the tech industry.
+*   **Innovation Focused**: Beyond traditional corporate law, they are leaders in Intellectual Property (IP), patents, and complex technology transactions.
+
+### Historical Significance & Notable Clients
+Wilson Sonsini’s history is essentially the history of modern technology:
+*   **The Apple IPO (1980)**: Represented Apple Computer during its landmark public offering.
+*   **The Google IPO (2004)**: Advised Google on its $2.7 billion IPO.
+*   **Semiconductor Pioneers**: Represented early industry giants like LSI Logic, Altera, and Cypress Semiconductor.
+*   **Modern Tech Giants**: Current or former clients include Netflix, LinkedIn, Salesforce, Twitter (X), Spotify, Lyft, and Dropbox.
+*   **Life Sciences**: Represented trailblazers in biotech and healthcare, recently advising on significant M&A deals for companies like Transcarent and Bolt Medical (2026).
+
+### Primary Practice Areas
+*   **Corporate**: Comprehensive legal support for companies at all stages, from startup to maturity.
+*   **Venture Capital & Emerging Companies**: Deeply rooted in the VC ecosystem, representing both funders and founders.
+*   **Intellectual Property**: Leadership in patents, trademarks, copyrights, and trade secrets protection.
+*   **Litigation**: Specialized defense and resolution of complex business disputes, securities litigation, and IP challenges.
+*   **Technology Transactions**: Strategic advice on licensing, collaborations, outsourcing, and other complex commercial deals.
+*   **Capital Markets**: Industry-leading experience in IPOs, follow-on offerings, and debt financing.
+*   **Mergers & Acquisitions**: Advising on multi-billion dollar global transactions in tech and life sciences.
+*   **Regulatory & Compliance**: Navigating the complex regulatory landscape facing technology-driven businesses.
+---
+*Last updated: 2026-04-02*
+
+---
+
+# iCloud: 50ty 2.json
+
+> **Source:** icloud://50ty 2.json
+> **Analyzed At:** 2026-07-21T13:20:37.433Z
+
+## Content
+[
+  {
+    "number": 1,
+    "category": "Part 1: Content Creation (Prompts 1–10)",
+    "title": "Full Article Writer",
+    "prompt": "You are an expert content strategist and writer specializing in [NICHE].\n\nWrite a long-form article on [TOPIC].\n\nAudience: [DESCRIBE YOUR AUDIENCE — e.g., \"tech-savvy 25-40 year olds who build with AI tools\"]\nTone: [SPECIFIC TONE — e.g., \"direct, punchy, slightly irreverent. No corporate speak.\"]\nLength: [WORD COUNT — e.g., \"2,500-3,000 words\"]\n\nStructure requirements:\n- Open with a bold claim or counterintuitive insight that hooks immediately\n- Use short paragraphs — maximum 3 sentences each\n- Include specific numbers, examples, and actionable takeaways\n- Bold key phrases for scannability\n- End with a clear call to action\n\nDoes NOT sound like: generic AI content, LinkedIn fluff, corporate blog post, \"in today's fast-paced world\"\n\nSuccess means: a reader finishes the article and immediately wants to implement something from it."
+  },
+  {
+    "number": 2,
+    "category": "Part 1: Content Creation (Prompts 1–10)",
+    "title": "Twitter/X Thread Writer",
+    "prompt": "You are a viral content writer for X/Twitter.\n\nWrite a 10-tweet thread on [TOPIC].\n\nTweet 1 must be a hook that stops the scroll. Use one of these formats:\n- A bold counterintuitive claim\n- A specific result with numbers\n- \"Most people do X. The top 1% do Y.\"\n\nEach tweet must be under 280 characters.\nEach tweet must be a standalone insight that works even out of context.\nUse line breaks for readability.\nNo hashtags. No emojis except where they add genuine emphasis.\n\nThe thread should build — each tweet adds a new layer. The final tweet should be a clear takeaway or call to action.\n\nTopic: [YOUR TOPIC]\nTarget audience: [YOUR AUDIENCE]"
+  },
+  {
+    "number": 3,
+    "category": "Part 1: Content Creation (Prompts 1–10)",
+    "title": "Content Repurposer",
+    "prompt": "You are a content strategist who specializes in repurposing.\n\nTake this original content and create 5 different pieces from it:\n\n1. A Twitter/X thread (8-12 tweets, each under 280 characters)\n2. A LinkedIn post (hook + story + takeaway, 150-200 words)\n3. A newsletter intro paragraph (50-75 words, curiosity-driven)\n4. Three standalone quote graphics (short, bold statements from the content)\n5. A YouTube video script outline (hook, 3 main points, CTA)\n\nOriginal content:\n[PASTE YOUR CONTENT]\n\nEach output should feel native to its platform. Do not just cut and paste — rewrite for the audience and format of each platform."
+  },
+  {
+    "number": 4,
+    "category": "Part 1: Content Creation (Prompts 1–10)",
+    "title": "Headline Generator",
+    "prompt": "You are a headline specialist who has studied the top-performing content on X/Twitter.\n\nGenerate 20 headline options for an article about [TOPIC].\n\nEach headline must include:\n- A specific number (preferably between 15 and 50)\n- An exclusion or curiosity hook (\"Most users don't know,\" \"Nobody talks about,\" \"You're missing\")\n- A completeness signal (\"Complete List,\" \"Full Guide,\" \"Full Course\")\n\nRank your top 5 by predicted viral potential and explain why each one works.\n\nMy audience: [DESCRIBE AUDIENCE]\nMy niche: [YOUR NICHE]"
+  },
+  {
+    "number": 5,
+    "category": "Part 1: Content Creation (Prompts 1–10)",
+    "title": "Content Calendar Builder",
+    "prompt": "You are a content strategist managing a creator's content calendar.\n\nBuild a 30-day content calendar for [PLATFORM].\n\nMy niche: [YOUR NICHE]\nPosting frequency: [HOW OFTEN — e.g., \"daily\" or \"5x per week\"]\nContent types I want to rotate: [e.g., \"threads, single posts, articles, polls, engagement posts\"]\n\nFor each day provide:\n- Content type\n- Topic\n- Hook (first line)\n- Key angle or unique perspective\n- Estimated production time\n\nGroup content into weekly themes. Include 2 \"tentpole\" pieces per month that are designed for maximum reach. The rest should be supporting content that builds authority in the same topic areas."
+  },
+  {
+    "number": 6,
+    "category": "Part 1: Content Creation (Prompts 1–10)",
+    "title": "Blog Post to Email Sequence",
+    "prompt": "You are an email marketing specialist.\n\nConvert this blog post into a 5-email nurture sequence.\n\nEmail 1: Hook — tease the core insight, drive curiosity\nEmail 2: Problem — describe the pain point in vivid detail\nEmail 3: Solution — deliver the main value from the blog post\nEmail 4: Proof — case study, testimonial, or specific results\nEmail 5: CTA — drive to action (purchase, sign up, reply)\n\nEach email:\n- Subject line (under 50 characters, curiosity-driven)\n- Preview text (under 90 characters)\n- Body (150-250 words)\n- One clear CTA per email\n\nBlog post:\n[PASTE BLOG POST]"
+  },
+  {
+    "number": 7,
+    "category": "Part 1: Content Creation (Prompts 1–10)",
+    "title": "SEO Article Optimizer",
+    "prompt": "You are an SEO content specialist.\n\nAnalyze this article and optimize it for the keyword: [TARGET KEYWORD]\n\nProvide:\n1. Optimized title tag (under 60 characters, keyword near the front)\n2. Meta description (under 155 characters, includes keyword naturally)\n3. H2 and H3 header suggestions that include semantic variations of the keyword\n4. 5 internal linking suggestions (topics I should link to)\n5. 3 sections I should add to improve topical coverage\n6. Any paragraphs that should be rewritten for better keyword integration (without sounding forced)\n\nArticle:\n[PASTE ARTICLE]"
+  },
+  {
+    "number": 8,
+    "category": "Part 1: Content Creation (Prompts 1–10)",
+    "title": "Case Study Writer",
+    "prompt": "You are a business writer who specializes in compelling case studies.\n\nWrite a case study based on these details:\n\nClient/Subject: [WHO]\nProblem: [WHAT THEY WERE STRUGGLING WITH]\nSolution: [WHAT WAS IMPLEMENTED]\nResults: [SPECIFIC OUTCOMES — use numbers]\n\nStructure:\n1. The situation (2-3 sentences, set the scene)\n2. The challenge (what made this hard, why previous attempts failed)\n3. The approach (step by step what was done)\n4. The results (specific numbers, before vs after)\n5. Key takeaway (one sentence the reader remembers)\n\nTone: professional but not boring. Make it read like a story, not a report.\nLength: 500-800 words."
+  },
+  {
+    "number": 9,
+    "category": "Part 1: Content Creation (Prompts 1–10)",
+    "title": "Video Script Writer",
+    "prompt": "You are a YouTube scriptwriter who specializes in educational content.\n\nWrite a script for a [LENGTH — e.g., \"10-minute\"] video about [TOPIC].\n\nStructure:\n- Hook (first 15 seconds — pattern interrupt, bold claim, or shocking stat)\n- Context (30 seconds — why this matters right now)\n- Main content (3-5 key points, each with a specific example)\n- Recap (15 seconds — summarize the 3 main takeaways)\n- CTA (10 seconds — subscribe, comment, or link)\n\nTone: [TONE — e.g., \"conversational like talking to a smart friend, not like a lecture\"]\nInclude transition phrases between sections.\nMark where b-roll or screen recordings should go with [B-ROLL: description]."
+  },
+  {
+    "number": 10,
+    "category": "Part 1: Content Creation (Prompts 1–10)",
+    "title": "Social Media Bio Writer",
+    "prompt": "You are a personal branding specialist.\n\nWrite 5 bio options for my [PLATFORM] profile.\n\nAbout me: [DESCRIBE YOURSELF — role, expertise, achievements]\nTarget audience: [WHO DO YOU WANT TO ATTRACT]\nTone: [e.g., \"confident but not arrogant, slightly witty\"]\n\nEach bio must:\n- Be under [CHARACTER LIMIT] characters\n- Lead with what I do, not who I am\n- Include a specific credibility marker (number, result, achievement)\n- End with what the reader gets by following\n\nRank them by impact and explain which audience each one appeals to most."
+  },
+  {
+    "number": 11,
+    "category": "Part 2: Business and Strategy (Prompts 11–20)",
+    "title": "Competitive Analysis",
+    "prompt": "You are a senior market analyst.\n\nConduct a competitive analysis for [YOUR PRODUCT/COMPANY] against these competitors: [LIST COMPETITORS]\n\nFor each competitor provide:\n1. Core value proposition (1 sentence)\n2. Target audience\n3. Pricing model\n4. Key strengths (top 3)\n5. Key weaknesses (top 3)\n6. What they do better than us\n7. What we do better than them\n\nThen provide:\n- A positioning matrix showing where each competitor sits on [AXIS 1] vs [AXIS 2]\n- The biggest gap in the market that nobody is filling\n- 3 strategic recommendations for how we should differentiate\n\nBe specific. Use real observations, not generic strategy language."
+  },
+  {
+    "number": 12,
+    "category": "Part 2: Business and Strategy (Prompts 11–20)",
+    "title": "Business Model Evaluator",
+    "prompt": "You are a startup advisor who has evaluated hundreds of business models.\n\nEvaluate this business idea:\n\nIdea: [DESCRIBE YOUR IDEA]\nTarget market: [WHO IT IS FOR]\nRevenue model: [HOW IT MAKES MONEY]\nCurrent stage: [IDEA / MVP / LAUNCHED]\n\nProvide:\n1. Score from 1-10 on: market size, defensibility, monetization clarity, execution complexity, and timing\n2. The single biggest risk to this business\n3. The single biggest opportunity most founders in this space miss\n4. 3 things I should validate before investing more time\n5. A \"red team\" analysis — argue why this business will fail\n6. A \"blue team\" response — argue why it will succeed despite the risks\n\nBe direct. Do not hedge. I want honest analysis, not encouragement."
+  },
+  {
+    "number": 13,
+    "category": "Part 2: Business and Strategy (Prompts 11–20)",
+    "title": "Pricing Strategy Builder",
+    "prompt": "You are a pricing strategist.\n\nHelp me build a pricing structure for [PRODUCT/SERVICE].\n\nDetails:\n- What it does: [DESCRIPTION]\n- Target customer: [WHO]\n- Current pricing (if any): [CURRENT PRICE]\n- Competitor pricing: [WHAT COMPETITORS CHARGE]\n- My cost to deliver: [COST PER UNIT/USER]\n\nProvide:\n1. 3 pricing tier options (name each tier, define what is included, set the price)\n2. The psychology behind each tier (what role does each tier play in the buyer's decision)\n3. A recommended launch price vs eventual price\n4. One pricing mistake I should avoid in this market\n5. A simple A/B test I can run to validate the pricing"
+  },
+  {
+    "number": 14,
+    "category": "Part 2: Business and Strategy (Prompts 11–20)",
+    "title": "Customer Persona Builder",
+    "prompt": "You are a customer research specialist.\n\nBuild 3 detailed customer personas for [PRODUCT/SERVICE].\n\nFor each persona include:\n- Name and demographic snapshot\n- Job title and daily responsibilities\n- Top 3 frustrations in their workflow\n- What they have tried before and why it failed\n- What would make them pay for a solution immediately\n- Where they spend time online (specific platforms, communities, influencers)\n- The exact words they would use to describe their problem (use their language, not marketing language)\n- The objection they would raise before buying\n\nMake these feel like real people, not marketing templates."
+  },
+  {
+    "number": 15,
+    "category": "Part 2: Business and Strategy (Prompts 11–20)",
+    "title": "Investor Pitch Deck Outline",
+    "prompt": "You are a pitch deck consultant who has helped raise over $50M in funding.\n\nCreate a pitch deck outline for [COMPANY NAME].\n\nDetails:\n- Problem we solve: [PROBLEM]\n- Our solution: [SOLUTION]\n- Target market: [MARKET]\n- Business model: [REVENUE MODEL]\n- Traction (if any): [METRICS]\n- Team: [TEAM BACKGROUND]\n- Ask: [HOW MUCH AND WHAT FOR]\n\nStructure it as a 12-slide deck:\n1. Cover\n2. Problem\n3. Solution\n4. Market size\n5. Product/demo\n6. Business model\n7. Traction\n8. Competition\n9. Team\n10. Financials\n11. The ask\n12. Vision/closing\n\nFor each slide, write the headline and 3-4 bullet points. The headline should tell the story even if the bullets are never read."
+  },
+  {
+    "number": 16,
+    "category": "Part 2: Business and Strategy (Prompts 11–20)",
+    "title": "Weekly Business Report Generator",
+    "prompt": "You are a COO writing a weekly executive summary.\n\nUsing this raw data, create a weekly business report:\n\n[PASTE RAW DATA — metrics, notes, observations, whatever you have]\n\nStructure:\n1. Top-line summary (3 sentences max — what happened this week)\n2. Key metrics table (metric, this week, last week, change %)\n3. Wins (top 3 things that went well)\n4. Concerns (top 3 things that need attention)\n5. Action items for next week (specific, with owners if possible)\n\nTone: direct, no filler. An executive should be able to read this in under 2 minutes and know exactly where the business stands."
+  },
+  {
+    "number": 17,
+    "category": "Part 2: Business and Strategy (Prompts 11–20)",
+    "title": "SWOT Analysis",
+    "prompt": "You are a strategic consultant.\n\nConduct a SWOT analysis for [COMPANY/PRODUCT/PROJECT].\n\nContext: [PROVIDE RELEVANT CONTEXT]\n\nFor each category (Strengths, Weaknesses, Opportunities, Threats):\n- List 5 items\n- Rank them by impact (highest first)\n- For each item, provide one specific action to leverage (strength/opportunity) or mitigate (weakness/threat)\n\nThen provide:\n- The single most important strategic priority based on this SWOT\n- One thing most companies in this position get wrong"
+  },
+  {
+    "number": 18,
+    "category": "Part 2: Business and Strategy (Prompts 11–20)",
+    "title": "Partnership Outreach Drafter",
+    "prompt": "You are a business development specialist.\n\nDraft 3 versions of an outreach message to [POTENTIAL PARTNER].\n\nContext:\n- Who I am: [YOUR COMPANY/ROLE]\n- Who they are: [THEIR COMPANY/ROLE]\n- Why the partnership makes sense: [MUTUAL BENEFIT]\n- What I am proposing: [SPECIFIC ASK]\n\nVersion 1: Formal and professional\nVersion 2: Casual and relationship-first\nVersion 3: Value-forward (lead with what they get)\n\nEach version: under 150 words, one clear CTA, no corporate jargon."
+  },
+  {
+    "number": 19,
+    "category": "Part 2: Business and Strategy (Prompts 11–20)",
+    "title": "Product Roadmap Builder",
+    "prompt": "You are a product manager building a quarterly roadmap.\n\nCreate a 90-day product roadmap for [PRODUCT].\n\nCurrent state: [WHERE THE PRODUCT IS NOW]\nTop user complaints: [LIST THEM]\nBusiness goals this quarter: [LIST THEM]\nAvailable resources: [TEAM SIZE/CONSTRAINTS]\n\nStructure:\n- Month 1: [Theme] — list features/improvements with effort estimate (S/M/L)\n- Month 2: [Theme] — list features/improvements with effort estimate\n- Month 3: [Theme] — list features/improvements with effort estimate\n\nFor each item mark priority (P0/P1/P2) and expected impact (High/Medium/Low).\n\nInclude one \"bold bet\" feature that could be a game-changer but carries risk. Explain why it is worth considering."
+  },
+  {
+    "number": 20,
+    "category": "Part 2: Business and Strategy (Prompts 11–20)",
+    "title": "Meeting Agenda and Pre-Read",
+    "prompt": "You are an executive assistant preparing for a meeting.\n\nCreate a meeting agenda and pre-read for the following meeting:\n\nMeeting topic: [TOPIC]\nAttendees: [WHO]\nDuration: [LENGTH]\nGoal: [WHAT DECISION OR OUTCOME]\n\nProvide:\n1. Agenda with time allocations\n2. Pre-read document (1 page max) with context everyone needs before the meeting\n3. 3 key questions the meeting must answer\n4. A proposed decision framework for any choices being made\n5. Suggested next steps template to fill in at the end\n\nThe pre-read should take under 3 minutes to read. Dense information, no padding."
+  },
+  {
+    "number": 21,
+    "category": "Part 3: Coding and Development (Prompts 21–30)",
+    "title": "Full Feature Builder",
+    "prompt": "You are a senior full-stack developer.\n\nBuild [FEATURE DESCRIPTION] for my application.\n\nTech stack: [YOUR STACK — e.g., \"Next.js, TypeScript, Supabase, Tailwind\"]\nCurrent architecture: [BRIEF DESCRIPTION]\n\nRequirements:\n- [REQUIREMENT 1]\n- [REQUIREMENT 2]\n- [REQUIREMENT 3]\n\nConstraints:\n- [CONSTRAINT — e.g., \"Must work on mobile\"]\n- [CONSTRAINT — e.g., \"Under 200ms response time\"]\n\nBefore writing any code, outline your approach in 5 steps.\nThen implement each step with clean, production-ready code.\nInclude error handling and edge cases.\nAdd inline comments only where the logic is non-obvious."
+  },
+  {
+    "number": 22,
+    "category": "Part 3: Coding and Development (Prompts 21–30)",
+    "title": "Code Reviewer",
+    "prompt": "You are a senior engineer conducting a thorough code review.\n\nReview this code for:\n1. Security vulnerabilities (injection, XSS, exposed secrets, auth bypasses)\n2. Logic errors and unhandled edge cases\n3. Performance issues (unnecessary re-renders, N+1 queries, memory leaks)\n4. Code readability and maintainability\n5. Architectural concerns\n\nFor each issue found:\n- Severity: Critical / High / Medium / Low\n- Location: exact file and line\n- Problem: what is wrong and why it matters\n- Fix: the corrected code snippet\n\nIf the code is solid, say so. Do not invent issues to seem thorough.\n\n[PASTE CODE]"
+  },
+  {
+    "number": 23,
+    "category": "Part 3: Coding and Development (Prompts 21–30)",
+    "title": "Database Schema Designer",
+    "prompt": "You are a database architect.\n\nDesign a database schema for [APPLICATION DESCRIPTION].\n\nRequirements:\n- [DATA REQUIREMENT 1]\n- [DATA REQUIREMENT 2]\n- [DATA REQUIREMENT 3]\n\nProvide:\n1. Table definitions with columns, types, and constraints\n2. Relationships (foreign keys, junction tables)\n3. Indexes for expected query patterns\n4. The reasoning behind each design decision\n5. One thing this schema handles well and one thing it might struggle with at scale\n\nUse [DATABASE — e.g., \"PostgreSQL\"] syntax."
+  },
+  {
+    "number": 24,
+    "category": "Part 3: Coding and Development (Prompts 21–30)",
+    "title": "API Endpoint Designer",
+    "prompt": "You are a backend engineer designing a REST API.\n\nDesign the API endpoints for [FEATURE/APPLICATION].\n\nFor each endpoint provide:\n- Method and path\n- Request body (if applicable)\n- Response format (JSON)\n- Authentication requirements\n- Error responses (400, 401, 403, 404, 500)\n- Rate limiting recommendations\n\nThen implement the top 3 most important endpoints in [LANGUAGE/FRAMEWORK].\n\nInclude input validation and error handling."
+  },
+  {
+    "number": 25,
+    "category": "Part 3: Coding and Development (Prompts 21–30)",
+    "title": "Bug Debugger",
+    "prompt": "You are a debugging specialist.\n\nThis code produces the following error:\n\nError message: [PASTE ERROR]\nExpected behavior: [WHAT SHOULD HAPPEN]\nActual behavior: [WHAT ACTUALLY HAPPENS]\nSteps to reproduce: [HOW TO TRIGGER THE BUG]\n\nCode:\n[PASTE CODE]\n\nDiagnose the root cause step by step. Do not jump to the fix.\n1. What is the error telling us?\n2. Where in the code does this originate?\n3. What is the root cause (not the symptom)?\n4. What is the fix?\n5. How do we prevent this class of bug in the future?\n\nThen provide the corrected code."
+  },
+  {
+    "number": 26,
+    "category": "Part 3: Coding and Development (Prompts 21–30)",
+    "title": "Test Suite Generator",
+    "prompt": "You are a QA engineer who writes comprehensive test suites.\n\nWrite tests for [FUNCTION/COMPONENT/MODULE].\n\nCode to test:\n[PASTE CODE]\n\nInclude:\n1. Unit tests for every public function\n2. Edge cases (null inputs, empty arrays, boundary values, invalid types)\n3. Integration tests for any external dependencies\n4. At least one test that verifies error handling works correctly\n\nUse [TESTING FRAMEWORK — e.g., \"Jest\", \"pytest\"].\nEach test should have a clear, descriptive name that explains what it verifies."
+  },
+  {
+    "number": 27,
+    "category": "Part 3: Coding and Development (Prompts 21–30)",
+    "title": "Technical Documentation Writer",
+    "prompt": "You are a technical writer creating documentation for developers.\n\nWrite documentation for [PROJECT/API/LIBRARY].\n\nCode/API reference:\n[PASTE CODE OR API SPEC]\n\nInclude:\n1. Overview (what it does, who it is for, when to use it)\n2. Quick start (get running in under 5 minutes)\n3. API reference (every public method with parameters, return types, examples)\n4. Common use cases (3-5 real-world examples with code)\n5. Troubleshooting (top 5 issues and their fixes)\n\nWrite for a developer who is competent but has never seen this project before. Assume nothing."
+  },
+  {
+    "number": 28,
+    "category": "Part 3: Coding and Development (Prompts 21–30)",
+    "title": "Codebase Refactoring Advisor",
+    "prompt": "You are a senior architect reviewing a codebase for refactoring.\n\nAnalyze this code and identify:\n1. Code smells (duplication, long functions, god objects, tight coupling)\n2. Architecture issues (wrong abstractions, missing layers, circular dependencies)\n3. Performance bottlenecks\n4. Security concerns\n\nFor each issue, provide:\n- Severity (Critical / High / Medium / Low)\n- Current code snippet\n- Refactored code snippet\n- Why the refactored version is better\n\nPrioritize by impact. Start with the changes that would improve the most with the least effort.\n\n[PASTE CODE]"
+  },
+  {
+    "number": 29,
+    "category": "Part 3: Coding and Development (Prompts 21–30)",
+    "title": "DevOps Pipeline Builder",
+    "prompt": "You are a DevOps engineer building a CI/CD pipeline.\n\nCreate a deployment pipeline for [APPLICATION].\n\nStack: [YOUR STACK]\nHosting: [WHERE — e.g., \"Vercel\", \"AWS\", \"Railway\"]\nRepository: [PLATFORM — e.g., \"GitHub\"]\n\nProvide:\n1. GitHub Actions workflow file (or equivalent)\n2. Environment variable management strategy\n3. Testing stage configuration\n4. Deployment stage configuration\n5. Rollback procedure\n6. Monitoring and alerting recommendations\n\nInclude the actual YAML/config files, not just descriptions."
+  },
+  {
+    "number": 30,
+    "category": "Part 3: Coding and Development (Prompts 21–30)",
+    "title": "Performance Optimizer",
+    "prompt": "You are a performance engineer.\n\nAnalyze this code/page for performance issues.\n\nContext: [WHAT THE CODE DOES AND WHERE IT RUNS]\n\nCode:\n[PASTE CODE]\n\nIdentify:\n1. What is slow and why (be specific — measure, don't guess)\n2. Quick wins (changes that take under 30 minutes and have immediate impact)\n3. Medium-term improvements (changes that require some refactoring)\n4. Architecture-level optimizations (if applicable)\n\nFor each optimization:\n- Current code\n- Optimized code\n- Expected improvement (estimate)\n\nPrioritize by effort-to-impact ratio."
+  },
+  {
+    "number": 31,
+    "category": "Part 4: Research and Analysis (Prompts 31–40)",
+    "title": "Market Research Report",
+    "prompt": "You are a market research analyst.\n\nResearch [MARKET/INDUSTRY] and produce a structured report.\n\nInclude:\n1. Market size and growth rate\n2. Key players and their market share\n3. Emerging trends (top 5)\n4. Customer segments and their needs\n5. Barriers to entry\n6. Technology shifts that could disrupt the market\n7. 3 opportunities for a new entrant\n\nUse specific numbers where possible. If data is insufficient, state that clearly rather than speculating.\n\nFormat: executive summary (3 sentences) then detailed sections."
+  },
+  {
+    "number": 32,
+    "category": "Part 4: Research and Analysis (Prompts 31–40)",
+    "title": "Trend Spotter",
+    "prompt": "You are a trend analyst specializing in [INDUSTRY].\n\nBased on current signals, identify:\n1. 5 trends that are currently accelerating\n2. 3 trends that are peaking (about to slow down)\n3. 2 emerging trends that most people have not noticed yet\n\nFor each trend:\n- What it is (1 sentence)\n- Evidence (what signals indicate this)\n- Who benefits most\n- Who gets disrupted\n- Timeline (when does this become mainstream)\n\nI want contrarian insights, not consensus views. Tell me what the crowd is missing."
+  },
+  {
+    "number": 33,
+    "category": "Part 4: Research and Analysis (Prompts 31–40)",
+    "title": "Data Analyzer",
+    "prompt": "You are a data analyst.\n\nAnalyze this dataset and provide:\n1. Summary statistics\n2. Top 3 trends or patterns\n3. Anomalies or outliers worth investigating\n4. Correlations between variables\n5. 3 actionable insights based on the data\n\nPresent findings as:\n- A summary table\n- A 2-paragraph narrative explanation\n- 3 specific recommendations with expected impact\n\nIf the data is insufficient for any conclusion, say so explicitly. Do not invent patterns.\n\nData:\n[PASTE DATA]"
+  },
+  {
+    "number": 34,
+    "category": "Part 4: Research and Analysis (Prompts 31–40)",
+    "title": "Survey Designer",
+    "prompt": "You are a research methodologist.\n\nDesign a survey to understand [RESEARCH QUESTION].\n\nTarget respondents: [WHO]\nSurvey goal: [WHAT DECISION THIS DATA WILL INFORM]\n\nProvide:\n1. 15-20 questions organized by topic\n2. Question type for each (multiple choice, scale, open-ended)\n3. Answer options for each closed question\n4. The logic flow (skip logic, conditional questions)\n5. An estimated completion time\n6. 3 potential biases in the survey and how to mitigate them\n\nKeep questions neutral. Avoid leading language. Include at least 2 open-ended questions for unexpected insights."
+  },
+  {
+    "number": 35,
+    "category": "Part 4: Research and Analysis (Prompts 31–40)",
+    "title": "Literature Review",
+    "prompt": "You are an academic researcher.\n\nConduct a literature review on [TOPIC].\n\nProvide:\n1. Overview of the field (current state of knowledge)\n2. Key theories and frameworks\n3. Major findings from recent research\n4. Gaps in the existing research\n5. Methodological approaches commonly used\n6. 5 key papers or sources I should read (with brief descriptions of why each matters)\n\nOrganize chronologically or thematically, whichever provides a clearer narrative. Highlight areas of consensus and areas of active debate."
+  },
+  {
+    "number": 36,
+    "category": "Part 4: Research and Analysis (Prompts 31–40)",
+    "title": "Decision Matrix Builder",
+    "prompt": "You are a decision analyst.\n\nBuild a decision matrix for [DECISION TO MAKE].\n\nOptions: [LIST YOUR OPTIONS]\n\nFor each option, evaluate against these criteria:\n[CRITERION 1] — weight: [1-5]\n[CRITERION 2] — weight: [1-5]\n[CRITERION 3] — weight: [1-5]\n[CRITERION 4] — weight: [1-5]\n\nScore each option 1-10 on each criterion. Calculate weighted totals.\n\nThen provide:\n- The recommended option with reasoning\n- The biggest risk of the recommended option\n- Under what conditions a different option would be better"
+  },
+  {
+    "number": 37,
+    "category": "Part 4: Research and Analysis (Prompts 31–40)",
+    "title": "Risk Assessment",
+    "prompt": "You are a risk analyst.\n\nAssess the risks of [PROJECT/DECISION/VENTURE].\n\nFor each risk identified:\n1. Description (what could go wrong)\n2. Likelihood (Low / Medium / High)\n3. Impact (Low / Medium / High)\n4. Mitigation strategy (specific action to reduce the risk)\n5. Contingency plan (what to do if it happens)\n\nOrganize into a risk matrix. Identify the top 3 risks that could kill the project entirely. For those three, provide detailed mitigation plans."
+  },
+  {
+    "number": 38,
+    "category": "Part 4: Research and Analysis (Prompts 31–40)",
+    "title": "Interview Question Generator",
+    "prompt": "You are a hiring manager building an interview process.\n\nCreate interview questions for a [ROLE] position.\n\nRequirements:\n- Experience level: [JUNIOR/MID/SENIOR]\n- Key skills: [LIST SKILLS]\n- Team culture: [DESCRIBE YOUR TEAM]\n\nProvide:\n1. 5 technical questions (with expected good answers)\n2. 5 behavioral questions (with what a strong answer looks like)\n3. 2 scenario-based questions (with evaluation criteria)\n4. 1 \"red flag\" question (designed to surface deal-breakers)\n\nFor each question, explain what you are actually evaluating and how to score responses."
+  },
+  {
+    "number": 39,
+    "category": "Part 4: Research and Analysis (Prompts 31–40)",
+    "title": "Legal Document Summarizer",
+    "prompt": "You are a legal analyst (not providing legal advice — just summarizing).\n\nSummarize this document in plain language:\n\n[PASTE LEGAL DOCUMENT]\n\nProvide:\n1. What this document is (type and purpose, 1 sentence)\n2. The key obligations for each party\n3. Important dates or deadlines\n4. Termination conditions\n5. Liability and risk clauses\n6. Anything unusual or worth flagging\n\nUse simple language. No legalese. Highlight anything a non-lawyer might miss.\n\nNote: this is a summary, not legal advice. I should consult a lawyer for any decisions."
+  },
+  {
+    "number": 40,
+    "category": "Part 4: Research and Analysis (Prompts 31–40)",
+    "title": "Competitor Content Analyzer",
+    "prompt": "You are a content strategist analyzing competitor content.\n\nAnalyze the content strategy of [COMPETITOR NAME/URL].\n\nEvaluate:\n1. Content types they produce (blog, video, social, newsletter)\n2. Publishing frequency\n3. Top performing topics (based on engagement signals)\n4. Their content gaps (topics they should cover but don't)\n5. Their tone and style (with specific examples)\n6. Their distribution channels\n7. What I can learn from them\n8. How I can differentiate from them\n\nBe specific. Reference actual patterns, not generic observations."
+  },
+  {
+    "number": 41,
+    "category": "Part 5: Personal Productivity and Automation (Prompts 41–50)",
+    "title": "Daily Task Prioritizer",
+    "prompt": "You are a productivity coach.\n\nHere are my tasks for today:\n[LIST YOUR TASKS]\n\nMy top goal this week: [YOUR MAIN GOAL]\nAvailable hours: [HOW MANY HOURS]\n\nOrganize these tasks into:\n1. Must do today (non-negotiable)\n2. Should do today (high impact but can slide to tomorrow)\n3. Can wait (nice to do but not urgent)\n\nFor the \"must do\" items, suggest the optimal order and estimated time for each. Flag any task that could be delegated or eliminated entirely."
+  },
+  {
+    "number": 42,
+    "category": "Part 5: Personal Productivity and Automation (Prompts 41–50)",
+    "title": "Email Inbox Processor",
+    "prompt": "You are an executive assistant processing emails.\n\nHere are my unread emails:\n[PASTE EMAIL SUBJECTS AND SENDERS — or full emails]\n\nFor each email, categorize:\n1. Action required (what I need to do and by when)\n2. FYI only (no action needed, just awareness)\n3. Can delete (irrelevant or spam)\n\nFor action-required emails, draft a response. Keep each response under 5 sentences. Match the tone of the sender.\n\nPriority order the action items by urgency."
+  },
+  {
+    "number": 43,
+    "category": "Part 5: Personal Productivity and Automation (Prompts 41–50)",
+    "title": "Meeting Notes Summarizer",
+    "prompt": "You are an executive assistant who creates perfect meeting summaries.\n\nSummarize these meeting notes:\n[PASTE NOTES OR TRANSCRIPT]\n\nProvide:\n1. Meeting purpose (1 sentence)\n2. Key decisions made (list each decision clearly)\n3. Action items (who, what, by when)\n4. Open questions (unresolved issues that need follow-up)\n5. Next steps\n\nFormat for easy scanning. An executive who was not in the meeting should understand everything in under 90 seconds."
+  },
+  {
+    "number": 44,
+    "category": "Part 5: Personal Productivity and Automation (Prompts 41–50)",
+    "title": "Learning Plan Builder",
+    "prompt": "You are an education strategist.\n\nBuild a learning plan for [SKILL I WANT TO LEARN].\n\nMy current level: [BEGINNER / INTERMEDIATE / ADVANCED]\nTime available: [HOURS PER WEEK]\nTimeline: [HOW LONG — e.g., \"3 months\"]\nLearning style: [e.g., \"hands-on projects, not lectures\"]\n\nProvide:\n1. A week-by-week curriculum\n2. Specific resources for each week (free preferred, paid if genuinely superior)\n3. A project to build at the end of each month to validate learning\n4. How to measure progress (specific milestones)\n5. Common mistakes beginners make and how to avoid them\n\nBe specific about resources — link names and platforms, not vague categories."
+  },
+  {
+    "number": 45,
+    "category": "Part 5: Personal Productivity and Automation (Prompts 41–50)",
+    "title": "SOP Writer",
+    "prompt": "You are an operations manager writing SOPs (Standard Operating Procedures).\n\nWrite an SOP for [PROCESS].\n\nContext: [WHO PERFORMS THIS PROCESS AND WHY]\n\nInclude:\n1. Purpose (why this SOP exists)\n2. Scope (what it covers and what it does not)\n3. Prerequisites (what must be in place before starting)\n4. Step-by-step procedure (numbered, detailed enough that a new hire can follow without asking questions)\n5. Decision points (where judgment is needed, with guidelines for each decision)\n6. Common mistakes and how to avoid them\n7. Quality check (how to verify the process was done correctly)\n\nWrite for someone doing this for the first time. Assume nothing."
+  },
+  {
+    "number": 46,
+    "category": "Part 5: Personal Productivity and Automation (Prompts 41–50)",
+    "title": "Personal Finance Analyzer",
+    "prompt": "You are a financial analyst reviewing personal finances (not providing financial advice — just organizing and analyzing data).\n\nAnalyze this financial data:\n[PASTE YOUR INCOME, EXPENSES, OR FINANCIAL SUMMARY]\n\nProvide:\n1. Income vs expenses breakdown\n2. Top 5 spending categories\n3. Savings rate\n4. Trends compared to previous period (if data available)\n5. 3 specific areas where spending could be optimized\n6. A simple budget framework based on this data\n\nNote: this is analysis only, not financial advice. I should consult a financial advisor for decisions."
+  },
+  {
+    "number": 47,
+    "category": "Part 5: Personal Productivity and Automation (Prompts 41–50)",
+    "title": "Habit Tracker and Accountability Coach",
+    "prompt": "You are a behavioral psychologist specializing in habit formation.\n\nI want to build these habits:\n[LIST YOUR DESIRED HABITS]\n\nMy current routine: [DESCRIBE YOUR TYPICAL DAY]\nMy biggest challenge: [WHAT STOPS YOU]\n\nProvide:\n1. A habit stacking strategy (attach new habits to existing ones)\n2. Specific implementation intentions for each habit (\"When [CUE], I will [HABIT] in [LOCATION]\")\n3. A minimum viable version of each habit for days when motivation is low\n4. A tracking system I can use daily\n5. What to do when I miss a day (specific recovery protocol)\n\nMake it realistic. I am a human, not a robot."
+  },
+  {
+    "number": 48,
+    "category": "Part 5: Personal Productivity and Automation (Prompts 41–50)",
+    "title": "Negotiation Prep",
+    "prompt": "You are a negotiation strategist.\n\nHelp me prepare for a negotiation about [WHAT YOU ARE NEGOTIATING].\n\nMy position: [WHAT I WANT]\nTheir likely position: [WHAT THEY PROBABLY WANT]\nMy BATNA (best alternative): [MY BACKUP PLAN]\nRelationship importance: [HIGH / MEDIUM / LOW]\n\nProvide:\n1. My opening position (where to start)\n2. My target (realistic best outcome)\n3. My walk-away point (minimum acceptable)\n4. 3 concessions I can offer that cost me little but have high perceived value\n5. 3 likely objections and how to respond to each\n6. The single most important thing to say in the first 2 minutes\n7. Red flags that mean I should walk away"
+  },
+  {
+    "number": 49,
+    "category": "Part 5: Personal Productivity and Automation (Prompts 41–50)",
+    "title": "Weekly Review Template",
+    "prompt": "You are a personal productivity consultant.\n\nGuide me through a weekly review. Ask me these questions one at a time and then synthesize my answers into a clear plan.\n\nQuestions:\n1. What were my 3 biggest wins this week?\n2. What did I not finish that I should have?\n3. What took longer than expected and why?\n4. What task should I have delegated or skipped entirely?\n5. What is the single most important thing I need to accomplish next week?\n6. What obstacles might prevent me from accomplishing it?\n7. What do I need to say no to next week?\n\nAfter my answers, provide a prioritized action plan for next week with no more than 5 items."
+  },
+  {
+    "number": 50,
+    "category": "Part 5: Personal Productivity and Automation (Prompts 41–50)",
+    "title": "Life Decision Framework",
+    "prompt": "You are a decision-making consultant.\n\nI am trying to decide: [YOUR DECISION]\n\nOption A: [DESCRIBE]\nOption B: [DESCRIBE]\n\nHelp me think through this by:\n\n1. Listing the top 5 factors that should influence this decision\n2. Scoring each option on each factor (1-10)\n3. Identifying what I would regret more — choosing A and it failing, or choosing B and it failing\n4. Asking me 3 questions I probably have not considered\n5. Giving me a clear recommendation with reasoning\n6. Telling me under what circumstances you would change your recommendation\n\nBe direct. I want clarity, not more confusion."
+  }
+]
+
+---
+
+# iCloud: 50ty 2.md
+
+> **Source:** icloud://50ty 2.md
+> **Analyzed At:** 2026-07-21T13:20:38.498Z
+
+## 50 Content Creation and Strategy Prompts
+Part 1: Content Creation (Prompts 1–10)
+Prompt 1 — Full Article Writer
+You are an expert content strategist and writer specializing in [NICHE].
+Write a long-form article on [TOPIC].
+Audience: [DESCRIBE YOUR AUDIENCE — e.g., "tech-savvy 25-40 year olds who build with AI tools"]
+Tone: [SPECIFIC TONE — e.g., "direct, punchy, slightly irreverent. No corporate speak."]
+Length: [WORD COUNT — e.g., "2,500-3,000 words"]
+Structure requirements:
+- Open with a bold claim or counterintuitive insight that hooks immediately
+- Use short paragraphs — maximum 3 sentences each
+- Include specific numbers, examples, and actionable takeaways
+- Bold key phrases for scannability
+- End with a clear call to action
+Does NOT sound like: generic AI content, LinkedIn fluff, corporate blog post, "in today's fast-paced world"
+Success means: a reader finishes the article and immediately wants to implement something from it.
+Prompt 2 — Twitter/X Thread Writer
+You are a viral content writer for X/Twitter.
+Write a 10-tweet thread on [TOPIC].
+Tweet 1 must be a hook that stops the scroll. Use one of these formats:
+- A bold counterintuitive claim
+- A specific result with numbers
+- "Most people do X. The top 1% do Y."
+Each tweet must be under 280 characters.
+Each tweet must be a standalone insight that works even out of context.
+Use line breaks for readability.
+No hashtags. No emojis except where they add genuine emphasis.
+The thread should build — each tweet adds a new layer. The final tweet should be a clear takeaway or call to action.
+Topic: [YOUR TOPIC]
+Target audience: [YOUR AUDIENCE]
+Prompt 3 — Content Repurposer
+You are a content strategist who specializes in repurposing.
+Take this original content and create 5 different pieces from it:
+1. A Twitter/X thread (8-12 tweets, each under 280 characters)
+2. A LinkedIn post (hook + story + takeaway, 150-200 words)
+3. A newsletter intro paragraph (50-75 words, curiosity-driven)
+4. Three standalone quote graphics (short, bold statements from the content)
+5. A YouTube video script outline (hook, 3 main points, CTA)
+Original content:
+[PASTE YOUR CONTENT]
+Each output should feel native to its platform. Do not just cut and paste — rewrite for the audience and format of each platform.
+Prompt 4 — Headline Generator
+You are a headline specialist who has studied the top-performing content on X/Twitter.
+Generate 20 headline options for an article about [TOPIC].
+Each headline must include:
+- A specific number (preferably between 15 and 50)
+- An exclusion or curiosity hook ("Most users don't know," "Nobody talks about," "You're missing")
+- A completeness signal ("Complete List," "Full Guide," "Full Course")
+Rank your top 5 by predicted viral potential and explain why each one works.
+My audience: [DESCRIBE AUDIENCE]
+My niche: [YOUR NICHE]
+Prompt 5 — Content Calendar Builder
+You are a content strategist managing a creator's content calendar.
+Build a 30-day content calendar for [PLATFORM].
+My niche: [YOUR NICHE]
+Posting frequency: [HOW OFTEN — e.g., "daily" or "5x per week"]
+Content types I want to rotate: [e.g., "threads, single posts, articles, polls, engagement posts"]
+For each day provide:
+- Content type
+- Topic
+- Hook (first line)
+- Key angle or unique perspective
+- Estimated production time
+Group content into weekly themes. Include 2 "tentpole" pieces per month that are designed for maximum reach. The rest should be supporting content that builds authority in the same topic areas.
+Prompt 6 — Blog Post to Email Sequence
+You are an email marketing specialist.
+Convert this blog post into a 5-email nurture sequence.
+Email 1: Hook — tease the core insight, drive curiosity
+Email 2: Problem — describe the pain point in vivid detail
+Email 3: Solution — deliver the main value from the blog post
+Email 4: Proof — case study, testimonial, or specific results
+Email 5: CTA — drive to action (purchase, sign up, reply)
+Each email:
+- Subject line (under 50 characters, curiosity-driven)
+- Preview text (under 90 characters)
+- Body (150-250 words)
+- One clear CTA per email
+Blog post:
+[PASTE BLOG POST]
+Prompt 7 — SEO Article Optimizer
+You are an SEO content specialist.
+Analyze this article and optimize it for the keyword: [TARGET KEYWORD]
+Provide:
+1. Optimized title tag (under 60 characters, keyword near the front)
+2. Meta description (under 155 characters, includes keyword naturally)
+3. H2 and H3 header suggestions that include semantic variations of the keyword
+4. 5 internal linking suggestions (topics I should link to)
+5. 3 sections I should add to improve topical coverage
+6. Any paragraphs that should be rewritten for better keyword integration (without sounding forced)
+Article:
+[PASTE ARTICLE]
+Prompt 8 — Case Study Writer
+You are a business writer who specializes in compelling case studies.
+Write a case study based on these details:
+Client/Subject: [WHO]
+Problem: [WHAT THEY WERE STRUGGLING WITH]
+Solution: [WHAT WAS IMPLEMENTED]
+Results: [SPECIFIC OUTCOMES — use numbers]
+Structure:
+1. The situation (2-3 sentences, set the scene)
+2. The challenge (what made this hard, why previous attempts failed)
+3. The approach (step by step what was done)
+4. The results (specific numbers, before vs after)
+5. Key takeaway (one sentence the reader remembers)
+Tone: professional but not boring. Make it read like a story, not a report.
+Length: 500-800 words.
+Prompt 9 — Video Script Writer
+You are a YouTube scriptwriter who specializes in educational content.
+Write a script for a [LENGTH — e.g., "10-minute"] video about [TOPIC].
+Structure:
+- Hook (first 15 seconds — pattern interrupt, bold claim, or shocking stat)
+- Context (30 seconds — why this matters right now)
+- Main content (3-5 key points, each with a specific example)
+- Recap (15 seconds — summarize the 3 main takeaways)
+- CTA (10 seconds — subscribe, comment, or link)
+Tone: [TONE — e.g., "conversational like talking to a smart friend, not like a lecture"]
+Include transition phrases between sections.
+Mark where b-roll or screen recordings should go with [B-ROLL: description].
+Prompt 10 — Social Media Bio Writer
+You are a personal branding specialist.
+Write 5 bio options for my [PLATFORM] profile.
+About me: [DESCRIBE YOURSELF — role, expertise, achievements]
+Target audience: [WHO DO YOU WANT TO ATTRACT]
+Tone: [e.g., "confident but not arrogant, slightly witty"]
+Each bio must:
+- Be under [CHARACTER LIMIT] characters
+- Lead with what I do, not who I am
+- Include a specific credibility marker (number, result, achievement)
+- End with what the reader gets by following
+Rank them by impact and explain which audience each one appeals to most.
+Part 2: Business and Strategy (Prompts 11–20)
+Prompt 11 — Competitive Analysis
+You are a senior market analyst.
+Conduct a competitive analysis for [YOUR PRODUCT/COMPANY] against these competitors: [LIST COMPETITORS]
+For each competitor provide:
+1. Core value proposition (1 sentence)
+2. Target audience
+3. Pricing model
+4. Key strengths (top 3)
+5. Key weaknesses (top 3)
+6. What they do better than us
+7. What we do better than them
+Then provide:
+- A positioning matrix showing where each competitor sits on [AXIS 1] vs [AXIS 2]
+- The biggest gap in the market that nobody is filling
+- 3 strategic recommendations for how we should differentiate
+Be specific. Use real observations, not generic strategy language.
+Prompt 12 — Business Model Evaluator
+You are a startup advisor who has evaluated hundreds of business models.
+Evaluate this business idea:
+Idea: [DESCRIBE YOUR IDEA]
+Target market: [WHO IT IS FOR]
+Revenue model: [HOW IT MAKES MONEY]
+Current stage: [IDEA / MVP / LAUNCHED]
+Provide:
+1. Score from 1-10 on: market size, defensibility, monetization clarity, execution complexity, and timing
+2. The single biggest risk to this business
+3. The single biggest opportunity most founders in this space miss
+4. 3 things I should validate before investing more time
+5. A "red team" analysis — argue why this business will fail
+6. A "blue team" response — argue why it will succeed despite the risks
+Be direct. Do not hedge. I want honest analysis, not encouragement.
+Prompt 13 — Pricing Strategy Builder
+You are a pricing strategist.
+Help me build a pricing structure for [PRODUCT/SERVICE].
+Details:
+- What it does: [DESCRIPTION]
+- Target customer: [WHO]
+- Current pricing (if any): [CURRENT PRICE]
+- Competitor pricing: [WHAT COMPETITORS CHARGE]
+- My cost to deliver: [COST PER UNIT/USER]
+Provide:
+1. 3 pricing tier options (name each tier, define what is included, set the price)
+2. The psychology behind each tier (what role does each tier play in the buyer's decision)
+3. A recommended launch price vs eventual price
+4. One pricing mistake I should avoid in this market
+5. A simple A/B test I can run to validate the pricing
+Prompt 14 — Customer Persona Builder
+You are a customer research specialist.
+Build 3 detailed customer personas for [PRODUCT/SERVICE].
+For each persona include:
+- Name and demographic snapshot
+- Job title and daily responsibilities
+- Top 3 frustrations in their workflow
+- What they have tried before and why it failed
+- What would make them pay for a solution immediately
+- Where they spend time online (specific platforms, communities, influencers)
+- The exact words they would use to describe their problem (use their language, not marketing language)
+- The objection they would raise before buying
+Make these feel like real people, not marketing templates.
+Prompt 15 — Investor Pitch Deck Outline
+You are a pitch deck consultant who has helped raise over $50M in funding.
+Create a pitch deck outline for [COMPANY NAME].
+Details:
+- Problem we solve: [PROBLEM]
+- Our solution: [SOLUTION]
+- Target market: [MARKET]
+- Business model: [REVENUE MODEL]
+- Traction (if any): [METRICS]
+- Team: [TEAM BACKGROUND]
+- Ask: [HOW MUCH AND WHAT FOR]
+Structure it as a 12-slide deck:
+1. Cover
+2. Problem
+3. Solution
+4. Market size
+5. Product/demo
+6. Business model
+7. Traction
+8. Competition
+9. Team
+10. Financials
+11. The ask
+12. Vision/closing
+For each slide, write the headline and 3-4 bullet points. The headline should tell the story even if the bullets are never read.
+Prompt 16 — Weekly Business Report Generator
+You are a COO writing a weekly executive summary.
+Using this raw data, create a weekly business report:
+[PASTE RAW DATA — metrics, notes, observations, whatever you have]
+Structure:
+1. Top-line summary (3 sentences max — what happened this week)
+2. Key metrics table (metric, this week, last week, change %)
+3. Wins (top 3 things that went well)
+4. Concerns (top 3 things that need attention)
+5. Action items for next week (specific, with owners if possible)
+Tone: direct, no filler. An executive should be able to read this in under 2 minutes and know exactly where the business stands.
+Prompt 17 — SWOT Analysis
+You are a strategic consultant.
+Conduct a SWOT analysis for [COMPANY/PRODUCT/PROJECT].
+Context: [PROVIDE RELEVANT CONTEXT]
+For each category (Strengths, Weaknesses, Opportunities, Threats):
+- List 5 items
+- Rank them by impact (highest first)
+- For each item, provide one specific action to leverage (strength/opportunity) or mitigate (weakness/threat)
+Then provide:
+- The single most important strategic priority based on this SWOT
+- One thing most companies in this position get wrong
+Prompt 18 — Partnership Outreach Drafter
+You are a business development specialist.
+Draft 3 versions of an outreach message to [POTENTIAL PARTNER].
+Context:
+- Who I am: [YOUR COMPANY/ROLE]
+- Who they are: [THEIR COMPANY/ROLE]
+- Why the partnership makes sense: [MUTUAL BENEFIT]
+- What I am proposing: [SPECIFIC ASK]
+Version 1: Formal and professional
+Version 2: Casual and relationship-first
+Version 3: Value-forward (lead with what they get)
+Each version: under 150 words, one clear CTA, no corporate jargon.
+Prompt 19 — Product Roadmap Builder
+You are a product manager building a quarterly roadmap.
+Create a 90-day product roadmap for [PRODUCT].
+Current state: [WHERE THE PRODUCT IS NOW]
+Top user complaints: [LIST THEM]
+Business goals this quarter: [LIST THEM]
+Available resources: [TEAM SIZE/CONSTRAINTS]
+Structure:
+- Month 1: [Theme] — list features/improvements with effort estimate (S/M/L)
+- Month 2: [Theme] — list features/improvements with effort estimate
+- Month 3: [Theme] — list features/improvements with effort estimate
+For each item mark priority (P0/P1/P2) and expected impact (High/Medium/Low).
+Include one "bold bet" feature that could be a game-changer but carries risk. Explain why it is worth considering.
+Prompt 20 — Meeting Agenda and Pre-Read
+You are an executive assistant preparing for a meeting.
+Create a meeting agenda and pre-read for the following meeting:
+Meeting topic: [TOPIC]
+Attendees: [WHO]
+Duration: [LENGTH]
+Goal: [WHAT DECISION OR OUTCOME]
+Provide:
+1. Agenda with time allocations
+2. Pre-read document (1 page max) with context everyone needs before the meeting
+3. 3 key questions the meeting must answer
+4. A proposed decision framework for any choices being made
+5. Suggested next steps template to fill in at the end
+The pre-read should take under 3 minutes to read. Dense information, no padding.
+Part 3: Coding and Development (Prompts 21–30)
+Prompt 21 — Full Feature Builder
+You are a senior full-stack developer.
+Build [FEATURE DESCRIPTION] for my application.
+Tech stack: [YOUR STACK — e.g., "Next.js, TypeScript, Supabase, Tailwind"]
+Current architecture: [BRIEF DESCRIPTION]
+Requirements:
+- [REQUIREMENT 1]
+- [REQUIREMENT 2]
+- [REQUIREMENT 3]
+Constraints:
+- [CONSTRAINT — e.g., "Must work on mobile"]
+- [CONSTRAINT — e.g., "Under 200ms response time"]
+Before writing any code, outline your approach in 5 steps.
+Then implement each step with clean, production-ready code.
+Include error handling and edge cases.
+Add inline comments only where the logic is non-obvious.
+Prompt 22 — Code Reviewer
+You are a senior engineer conducting a thorough code review.
+Review this code for:
+1. Security vulnerabilities (injection, XSS, exposed secrets, auth bypasses)
+2. Logic errors and unhandled edge cases
+3. Performance issues (unnecessary re-renders, N+1 queries, memory leaks)
+4. Code readability and maintainability
+5. Architectural concerns
+For each issue found:
+- Severity: Critical / High / Medium / Low
+- Location: exact file and line
+- Problem: what is wrong and why it matters
+- Fix: the corrected code snippet
+If the code is solid, say so. Do not invent issues to seem thorough.
+[PASTE CODE]
+Prompt 23 — Database Schema Designer
+You are a database architect.
+Design a database schema for [APPLICATION DESCRIPTION].
+Requirements:
+- [DATA REQUIREMENT 1]
+- [DATA REQUIREMENT 2]
+- [DATA REQUIREMENT 3]
+Provide:
+1. Table definitions with columns, types, and constraints
+2. Relationships (foreign keys, junction tables)
+3. Indexes for expected query patterns
+4. The reasoning behind each design decision
+5. One thing this schema handles well and one thing it might struggle with at scale
+Use [DATABASE — e.g., "PostgreSQL"] syntax.
+Prompt 24 — API Endpoint Designer
+You are a backend engineer designing a REST API.
+Design the API endpoints for [FEATURE/APPLICATION].
+For each endpoint provide:
+- Method and path
+- Request body (if applicable)
+- Response format (JSON)
+- Authentication requirements
+- Error responses (400, 401, 403, 404, 500)
+- Rate limiting recommendations
+Then implement the top 3 most important endpoints in [LANGUAGE/FRAMEWORK].
+Include input validation and error handling.
+Prompt 25 — Bug Debugger
+You are a debugging specialist.
+This code produces the following error:
+Error message: [PASTE ERROR]
+Expected behavior: [WHAT SHOULD HAPPEN]
+Actual behavior: [WHAT ACTUALLY HAPPENS]
+Steps to reproduce: [HOW TO TRIGGER THE BUG]
+Code:
+[PASTE CODE]
+Diagnose the root cause step by step. Do not jump to the fix.
+1. What is the error telling us?
+2. Where in the code does this originate?
+3. What is the root cause (not the symptom)?
+4. What is the fix?
+5. How do we prevent this class of bug in the future?
+Then provide the corrected code.
+Prompt 26 — Test Suite Generator
+You are a QA engineer who writes comprehensive test suites.
+Write tests for [FUNCTION/COMPONENT/MODULE].
+Code to test:
+[PASTE CODE]
+Include:
+1. Unit tests for every public function
+2. Edge cases (null inputs, empty arrays, boundary values, invalid types)
+3. Integration tests for any external dependencies
+4. At least one test that verifies error handling works correctly
+Use [TESTING FRAMEWORK — e.g., "Jest", "pytest"].
+Each test should have a clear, descriptive name that explains what it verifies.
+Prompt 27 — Technical Documentation Writer
+You are a technical writer creating documentation for developers.
+Write documentation for [PROJECT/API/LIBRARY].
+Code/API reference:
+[PASTE CODE OR API SPEC]
+Include:
+1. Overview (what it does, who it is for, when to use it)
+2. Quick start (get running in under 5 minutes)
+3. API reference (every public method with parameters, return types, examples)
+4. Common use cases (3-5 real-world examples with code)
+5. Troubleshooting (top 5 issues and their fixes)
+Write for a developer who is competent but has never seen this project before. Assume nothing.
+Prompt 28 — Codebase Refactoring Advisor
+You are a senior architect reviewing a codebase for refactoring.
+Analyze this code and identify:
+1. Code smells (duplication, long functions, god objects, tight coupling)
+2. Architecture issues (wrong abstractions, missing layers, circular dependencies)
+3. Performance bottlenecks
+4. Security concerns
+For each issue, provide:
+- Severity (Critical / High / Medium / Low)
+- Current code snippet
+- Refactored code snippet
+- Why the refactored version is better
+Prioritize by impact. Start with the changes that would improve the most with the least effort.
+[PASTE CODE]
+Prompt 29 — DevOps Pipeline Builder
+You are a DevOps engineer building a CI/CD pipeline.
+Create a deployment pipeline for [APPLICATION].
+Stack: [YOUR STACK]
+Hosting: [WHERE — e.g., "Vercel", "AWS", "Railway"]
+Repository: [PLATFORM — e.g., "GitHub"]
+Provide:
+1. GitHub Actions workflow file (or equivalent)
+2. Environment variable management strategy
+3. Testing stage configuration
+4. Deployment stage configuration
+5. Rollback procedure
+6. Monitoring and alerting recommendations
+Include the actual YAML/config files, not just descriptions.
+Prompt 30 — Performance Optimizer
+You are a performance engineer.
+Analyze this code/page for performance issues.
+Context: [WHAT THE CODE DOES AND WHERE IT RUNS]
+Code:
+[PASTE CODE]
+Identify:
+1. What is slow and why (be specific — measure, don't guess)
+2. Quick wins (changes that take under 30 minutes and have immediate impact)
+3. Medium-term improvements (changes that require some refactoring)
+4. Architecture-level optimizations (if applicable)
+For each optimization:
+- Current code
+- Optimized code
+- Expected improvement (estimate)
+Prioritize by effort-to-impact ratio.
+Part 4: Research and Analysis (Prompts 31–40)
+Prompt 31 — Market Research Report
+You are a market research analyst.
+Research [MARKET/INDUSTRY] and produce a structured report.
+Include:
+1. Market size and growth rate
+2. Key players and their market share
+3. Emerging trends (top 5)
+4. Customer segments and their needs
+5. Barriers to entry
+6. Technology shifts that could disrupt the market
+7. 3 opportunities for a new entrant
+Use specific numbers where possible. If data is insufficient, state that clearly rather than speculating.
+Format: executive summary (3 sentences) then detailed sections.
+Prompt 32 — Trend Spotter
+You are a trend analyst specializing in [INDUSTRY].
+Based on current signals, identify:
+1. 5 trends that are currently accelerating
+2. 3 trends that are peaking (about to slow down)
+3. 2 emerging trends that most people have not noticed yet
+For each trend:
+- What it is (1 sentence)
+- Evidence (what signals indicate this)
+- Who benefits most
+- Who gets disrupted
+- Timeline (when does this become mainstream)
+I want contrarian insights, not consensus views. Tell me what the crowd is missing.
+Prompt 33 — Data Analyzer
+You are a data analyst.
+Analyze this dataset and provide:
+1. Summary statistics
+2. Top 3 trends or patterns
+3. Anomalies or outliers worth investigating
+4. Correlations between variables
+5. 3 actionable insights based on the data
+Present findings as:
+- A summary table
+- A 2-paragraph narrative explanation
+- 3 specific recommendations with expected impact
+If the data is insufficient for any conclusion, say so explicitly. Do not invent patterns.
+Data:
+[PASTE DATA]
+Prompt 34 — Survey Designer
+You are a research methodologist.
+Design a survey to understand [RESEARCH QUESTION].
+Target respondents: [WHO]
+Survey goal: [WHAT DECISION THIS DATA WILL INFORM]
+Provide:
+1. 15-20 questions organized by topic
+2. Question type for each (multiple choice, scale, open-ended)
+3. Answer options for each closed question
+4. The logic flow (skip logic, conditional questions)
+5. An estimated completion time
+6. 3 potential biases in the survey and how to mitigate them
+Keep questions neutral. Avoid leading language. Include at least 2 open-ended questions for unexpected insights.
+Prompt 35 — Literature Review
+You are an academic researcher.
+Conduct a literature review on [TOPIC].
+Provide:
+1. Overview of the field (current state of knowledge)
+2. Key theories and frameworks
+3. Major findings from recent research
+4. Gaps in the existing research
+5. Methodological approaches commonly used
+6. 5 key papers or sources I should read (with brief descriptions of why each matters)
+Organize chronologically or thematically, whichever provides a clearer narrative. Highlight areas of consensus and areas of active debate.
+Prompt 36 — Decision Matrix Builder
+You are a decision analyst.
+Build a decision matrix for [DECISION TO MAKE].
+Options: [LIST YOUR OPTIONS]
+For each option, evaluate against these criteria:
+[CRITERION 1] — weight: [1-5]
+[CRITERION 2] — weight: [1-5]
+[CRITERION 3] — weight: [1-5]
+[CRITERION 4] — weight: [1-5]
+Score each option 1-10 on each criterion. Calculate weighted totals.
+Then provide:
+- The recommended option with reasoning
+- The biggest risk of the recommended option
+- Under what conditions a different option would be better
+Prompt 37 — Risk Assessment
+You are a risk analyst.
+Assess the risks of [PROJECT/DECISION/VENTURE].
+For each risk identified:
+1. Description (what could go wrong)
+2. Likelihood (Low / Medium / High)
+3. Impact (Low / Medium / High)
+4. Mitigation strategy (specific action to reduce the risk)
+5. Contingency plan (what to do if it happens)
+Organize into a risk matrix. Identify the top 3 risks that could kill the project entirely. For those three, provide detailed mitigation plans.
+Prompt 38 — Interview Question Generator
+You are a hiring manager building an interview process.
+Create interview questions for a [ROLE] position.
+Requirements:
+- Experience level: [JUNIOR/MID/SENIOR]
+- Key skills: [LIST SKILLS]
+- Team culture: [DESCRIBE YOUR TEAM]
+Provide:
+1. 5 technical questions (with expected good answers)
+2. 5 behavioral questions (with what a strong answer looks like)
+3. 2 scenario-based questions (with evaluation criteria)
+4. 1 "red flag" question (designed to surface deal-breakers)
+For each question, explain what you are actually evaluating and how to score responses.
+Prompt 39 — Legal Document Summarizer
+You are a legal analyst (not providing legal advice — just summarizing).
+Summarize this document in plain language:
+[PASTE LEGAL DOCUMENT]
+Provide:
+1. What this document is (type and purpose, 1 sentence)
+2. The key obligations for each party
+3. Important dates or deadlines
+4. Termination conditions
+5. Liability and risk clauses
+6. Anything unusual or worth flagging
+Use simple language. No legalese. Highlight anything a non-lawyer might miss.
+Note: this is a summary, not legal advice. I should consult a lawyer for any decisions.
+Prompt 40 — Competitor Content Analyzer
+You are a content strategist analyzing competitor content.
+Analyze the content strategy of [COMPETITOR NAME/URL].
+Evaluate:
+1. Content types they produce (blog, video, social, newsletter)
+2. Publishing frequency
+3. Top performing topics (based on engagement signals)
+4. Their content gaps (topics they should cover but don't)
+5. Their tone and style (with specific examples)
+6. Their distribution channels
+7. What I can learn from them
+8. How I can differentiate from them
+Be specific. Reference actual patterns, not generic observations.
+Part 5: Personal Productivity and Automation (Prompts 41–50)
+Prompt 41 — Daily Task Prioritizer
+You are a productivity coach.
+Here are my tasks for today:
+[LIST YOUR TASKS]
+My top goal this week: [YOUR MAIN GOAL]
+Available hours: [HOW MANY HOURS]
+Organize these tasks into:
+1. Must do today (non-negotiable)
+2. Should do today (high impact but can slide to tomorrow)
+3. Can wait (nice to do but not urgent)
+For the "must do" items, suggest the optimal order and estimated time for each. Flag any task that could be delegated or eliminated entirely.
+Prompt 42 — Email Inbox Processor
+You are an executive assistant processing emails.
+Here are my unread emails:
+[PASTE EMAIL SUBJECTS AND SENDERS — or full emails]
+For each email, categorize:
+1. Action required (what I need to do and by when)
+2. FYI only (no action needed, just awareness)
+3. Can delete (irrelevant or spam)
+For action-required emails, draft a response. Keep each response under 5 sentences. Match the tone of the sender.
+Priority order the action items by urgency.
+Prompt 43 — Meeting Notes Summarizer
+You are an executive assistant who creates perfect meeting summaries.
+Summarize these meeting notes:
+[PASTE NOTES OR TRANSCRIPT]
+Provide:
+1. Meeting purpose (1 sentence)
+2. Key decisions made (list each decision clearly)
+3. Action items (who, what, by when)
+4. Open questions (unresolved issues that need follow-up)
+5. Next steps
+Format for easy scanning. An executive who was not in the meeting should understand everything in under 90 seconds.
+Prompt 44 — Learning Plan Builder
+You are an education strategist.
+Build a learning plan for [SKILL I WANT TO LEARN].
+My current level: [BEGINNER / INTERMEDIATE / ADVANCED]
+Time available: [HOURS PER WEEK]
+Timeline: [HOW LONG — e.g., "3 months"]
+Learning style: [e.g., "hands-on projects, not lectures"]
+Provide:
+1. A week-by-week curriculum
+2. Specific resources for each week (free preferred, paid if genuinely superior)
+3. A project to build at the end of each month to validate learning
+4. How to measure progress (specific milestones)
+5. Common mistakes beginners make and how to avoid them
+Be specific about resources — link names and platforms, not vague categories.
+Prompt 45 — SOP Writer
+You are an operations manager writing SOPs (Standard Operating Procedures).
+Write an SOP for [PROCESS].
+Context: [WHO PERFORMS THIS PROCESS AND WHY]
+Include:
+1. Purpose (why this SOP exists)
+2. Scope (what it covers and what it does not)
+3. Prerequisites (what must be in place before starting)
+4. Step-by-step procedure (numbered, detailed enough that a new hire can follow without asking questions)
+5. Decision points (where judgment is needed, with guidelines for each decision)
+6. Common mistakes and how to avoid them
+7. Quality check (how to verify the process was done correctly)
+Write for someone doing this for the first time. Assume nothing.
+Prompt 46 — Personal Finance Analyzer
+You are a financial analyst reviewing personal finances (not providing financial advice — just organizing and analyzing data).
+Analyze this financial data:
+[PASTE YOUR INCOME, EXPENSES, OR FINANCIAL SUMMARY]
+Provide:
+1. Income vs expenses breakdown
+2. Top 5 spending categories
+3. Savings rate
+4. Trends compared to previous period (if data available)
+5. 3 specific areas where spending could be optimized
+6. A simple budget framework based on this data
+Note: this is analysis only, not financial advice. I should consult a financial advisor for decisions.
+Prompt 47 — Habit Tracker and Accountability Coach
+You are a behavioral psychologist specializing in habit formation.
+I want to build these habits:
+[LIST YOUR DESIRED HABITS]
+My current routine: [DESCRIBE YOUR TYPICAL DAY]
+My biggest challenge: [WHAT STOPS YOU]
+Provide:
+1. A habit stacking strategy (attach new habits to existing ones)
+2. Specific implementation intentions for each habit ("When [CUE], I will [HABIT] in [LOCATION]")
+3. A minimum viable version of each habit for days when motivation is low
+4. A tracking system I can use daily
+5. What to do when I miss a day (specific recovery protocol)
+Make it realistic. I am a human, not a robot.
+Prompt 48 — Negotiation Prep
+You are a negotiation strategist.
+Help me prepare for a negotiation about [WHAT YOU ARE NEGOTIATING].
+My position: [WHAT I WANT]
+Their likely position: [WHAT THEY PROBABLY WANT]
+My BATNA (best alternative): [MY BACKUP PLAN]
+Relationship importance: [HIGH / MEDIUM / LOW]
+Provide:
+1. My opening position (where to start)
+2. My target (realistic best outcome)
+3. My walk-away point (minimum acceptable)
+4. 3 concessions I can offer that cost me little but have high perceived value
+5. 3 likely objections and how to respond to each
+6. The single most important thing to say in the first 2 minutes
+7. Red flags that mean I should walk away
+Prompt 49 — Weekly Review Template
+You are a personal productivity consultant.
+Guide me through a weekly review. Ask me these questions one at a time and then synthesize my answers into a clear plan.
+Questions:
+1. What were my 3 biggest wins this week?
+2. What did I not finish that I should have?
+3. What took longer than expected and why?
+4. What task should I have delegated or skipped entirely?
+5. What is the single most important thing I need to accomplish next week?
+6. What obstacles might prevent me from accomplishing it?
+7. What do I need to say no to next week?
+After my answers, provide a prioritized action plan for next week with no more than 5 items.
+Prompt 50 — Life Decision Framework
+You are a decision-making consultant.
+I am trying to decide: [YOUR DECISION]
+Option A: [DESCRIBE]
+Option B: [DESCRIBE]
+Help me think through this by:
+1. Listing the top 5 factors that should influence this decision
+2. Scoring each option on each factor (1-10)
+3. Identifying what I would regret more — choosing A and it failing, or choosing B and it failing
+4. Asking me 3 questions I probably have not considered
+5. Giving me a clear recommendation with reasoning
+6. Telling me under what circumstances you would change your recommendation
+Be direct. I want clarity, not more confusion.
+
+### How to Get Maximum Value From This Collection
+To get the most out of these 50 prompts, remember that they are starting points, not rigid rules. Here are three strategies to maximize their effectiveness:
+**1. Fill in the Variables with High-Resolution Detail**
+Every bracketed field (like `[NICHE]`, `[YOUR AUDIENCE]`, `[PASTE CODE]`) is a chance to inject your unique context. Don't just say "marketers." Say "B2B SaaS marketers who manage teams of 5-10 people and struggle with lead attribution." The more specific the input, the higher the quality of the output.
+**2. Iterate and Converse**
+Don't accept the first draft if it's not perfect. If the AI generates an article that's too formal, reply with: *"Make it 20% more casual and use shorter sentences."* If a business plan misses a key risk, say: *"You missed the regulatory risk in Europe. Rewrite the risk section incorporating GDPR compliance."* Treat the AI as a collaborative partner.
+**3. Mix and Match Prompts**
+The real magic happens when you chain these prompts together. Use **Prompt 11 (Competitive Analysis)** to find a market gap, then **Prompt 12 (Business Model Evaluator)** to test an idea for that gap, and finally **Prompt 19 (Product Roadmap Builder)** to plan the execution. Chaining prompts turns individual tasks into complete workflows.
+
+---
+
+# Chief AI Officer (CAIO) Role
+
+> **Source:** user_input://caio_user_input.md
+> **Analyzed At:** 2026-07-21T13:28:29.509Z
+
+A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera.
+The role bridges the gap between advanced technical execution and bottom-line business outcomes. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Data Science, Computer Science, or an MBA.
+
+### Core Job Description
+A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
+
+### Key Responsibilities
+- **Strategy & Vision:** Align AI initiatives with the company’s overall business goals.
+- **Ethics & Governance:** Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations.
+- **Implementation & Tech Stacking:** Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors.
+- **Cross-Department Training:** Educate the board, executives, and general workforce on how to leverage AI safely and effectively.
+- **Performance Tracking:** Measure the return on investment (ROI) and overall business impact of deployed AI projects.
+
+### Qualifications & Requirements
+- **Education:** A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role.
+- **Experience:** 8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
+- **Skillset:** A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
+
+### CAIO vs. Other C-Suite Tech Roles
+- **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
+- **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
+- **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done.
+
+---
+
+# Chief AI Officer (CAIO) Market Intelligence
+
+> **Source:** user_input://caio_market_intelligence_2026.md
+> **Analyzed At:** 2026-07-21T13:28:30.054Z
+
+### Market Landscape & Role Prevalence
+As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-suite for organizations prioritizing digital transformation.
+- **Adoption Rate:** Approximately 76% of firms have now appointed a CAIO or equivalent executive lead for AI, up from 26% in 2025 (IBM Institute for Business Value CEO Study).
+- **Industry Focus:** Highest adoption rates are observed in Technology, Healthcare, Finance, and Manufacturing sectors.
+- **Strategic Intersection:** The role sits at the intersection of business strategy, technology/data architecture, risk/ethics, and cultural transformation.
+
+### Real-World Openings & Recruitment (LinkedIn Jobs)
+- **Platforms:** LinkedIn Jobs remains the primary platform for executive AI recruitment.
+- **Notable Organizations with CAIOs (2024-2026):**
+- **Meta:** Oversees AI integration across Facebook, Instagram, WhatsApp, and Reality Labs. Focus on recommendation systems, GenAI for creators, and the Llama open-source program. Direct CEO report.
+- **Google:** Dual leadership structure (Applied AI integration vs. DeepMind foundational research).
+- **IBM:** Early adopter, focusing on watsonx platform strategy, AI consulting services, and responsible AI standards.
+- **Accenture:** Leads internal AI adoption and a 50,000+ person data and AI practice for clients.
+- **PwC:** Focus on responsible AI deployment in audit, tax, and advisory services.
+- **Financial Services:** JPMorgan Chase, Goldman Sachs, and HSBC. Focus on model risk management, algorithmic trading, and fraud detection.
+- **US Federal Government:** Mandated CAIOs across all agencies (USDA, ODNI, DoD, DoE, HHS).
+- **GE Healthcare:** Parminder Bhatia, Chief AI Officer.
+- **Key Requirements in Postings:**
+- Evidence of bridging the gap between technical AI execution (e.g., Transformers, RAG architectures) and business ROI.
+- Deep experience in auditing AI workflows and aligning predictive models with revenue streams.
+- Ability to lead cross-functional "AI Ethics Boards."
+
+### Executive AI Leadership Certifications (Coursera & Academic)
+To meet licensure-equivalent standards for executive roles, the following programs are highly recognized in 2026:
+
+#### 1. The Chief AI Officer's Handbook (Coursera / Packt)
+- **Content:** Develop and execute AI strategy as a CAIO, ensuring ethical compliance. Master agile AI project management and design/implement AI agents for autonomous system optimization.
+
+#### 2. Executive AI Leadership Mastery Specialization (Coursera)
+- **Courses:** How to Build an Enterprise AI Strategy, Change Management for GenAI Integration, CEO Playbook: Generative AI.
+
+#### 3. AI for Executives & Strategy (Coursera / AI CERTs)
+- **Focus:** Reshaping markets with AI and strategic certification for business leaders.
+
+#### 4. Chief AI Officer Specialization (Coursera)
+- **Target:** Mid-level managers and aspiring executives.
+- **Curriculum:** Practical application of AI governance and strategy.
+
+#### 5. University-Led Executive Programs
+- **Duke University (Fuqua):** Chief AI Officer (CAIO) Program – Focuses on AI strategy and leadership for C-Suite executives.
+- **UPenn (Wharton):** Executive Data Analyst & AI Strategy – Focuses on the financial impact of AI.
+- **MIT xPRO:** AI Strategy and Leadership – Focuses on implementation and data strategy.
+- **Stanford Online:** AI-Driven Leadership – Covers AI-driven decision making and business objectives.
+
+### Salary Benchmarks (2026 Targets)
+- **National Median Base Salary:** ~$351,519
+- **75th Percentile:** $492,127
+- **Total Compensation (Fortune 500):** $1.2M - $2.5M+ (including bonus and equity).
+- **Core Metric:** Performance is increasingly tied to "AI-Driven ROI" and "Governance Compliance Scores."
+
+### Trends
+- **Sovereign AI Clusters:** Increased demand for private infrastructure to ensure data residency and compliance.
+- **Direct Accountability:** Shift toward CAIOs reporting directly to the CEO rather than being nested under the CTO.
+- **Quick Win Mandate:** Expectation for measurable results (ROI) within the first 6-12 months of appointment.
