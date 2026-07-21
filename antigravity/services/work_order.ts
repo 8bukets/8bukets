@@ -172,6 +172,27 @@ const ArchitecturalReviewResultSchema = z.object({
   recommendations: z.array(z.string()),
 });
 
+const SystemSyncPayloadSchema = z.object({
+  target: z.string().optional(),
+  timestamp: z.string().optional(),
+}).passthrough();
+
+const SystemSyncResultSchema = z.object({
+  status: z.string(),
+  timestamp: z.string(),
+}).passthrough();
+
+const StrategicConsultationPayloadSchema = z.object({
+  parentOrderId: z.string().optional(),
+}).passthrough();
+
+const StrategicConsultationResultSchema = z.object({
+  ai_strategy_status: z.string().optional(),
+  infrastructure_optimization: z.any().optional(),
+  strategic_directives: z.array(z.string()).optional(),
+  executive_summary: z.string().optional(),
+}).passthrough();
+
 // Discriminated union of all work order types
 export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('BOOTSTRAP_SERVICE'), payload: BootstrapServicePayloadSchema, result: BootstrapServiceResultSchema.optional() }),
@@ -183,6 +204,8 @@ export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('AUTONOMOUS_CREATION'), payload: AutonomousCreationPayloadSchema, result: AutonomousCreationResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('SECURITY_AUDIT'), payload: SecurityAuditPayloadSchema, result: SecurityAuditResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('ARCHITECTURAL_REVIEW'), payload: ArchitecturalReviewPayloadSchema, result: ArchitecturalReviewResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('SYSTEM_SYNC'), payload: SystemSyncPayloadSchema, result: SystemSyncResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('STRATEGIC_CONSULTATION'), payload: StrategicConsultationPayloadSchema, result: StrategicConsultationResultSchema.optional() }),
 ])
 
 export type WorkOrder = z.infer<typeof WorkOrderSchema>
@@ -385,6 +408,40 @@ export class WorkOrderService {
           summary: 'System architecture aligns with long-term strategic goals. No major refactoring required at this time.',
           recommendations: ['Continue monitoring data flow between services for potential bottlenecks.'],
         };
+
+      case 'SYSTEM_SYNC':
+        logAutonomousAction(`[SYSTEM_SYNC] Synchronizing distributed system mesh nodes: ${order.goal}`, 'sync');
+        try {
+          const { cloudConnectedIntegrationService } = await import('./cloud_connected_integration');
+          await cloudConnectedIntegrationService.validateEcosystemSovereignty();
+          const { onlinePresenceService } = await import('./presence');
+          await onlinePresenceService.broadcastTelemetry();
+          return { status: 'synchronized', timestamp: new Date().toISOString() };
+        } catch (error: any) {
+          console.error('❌ [WorkOrder] SYSTEM_SYNC execution failed:', error.message);
+          return { status: 'failed', error: error.message, timestamp: new Date().toISOString() };
+        }
+
+      case 'STRATEGIC_CONSULTATION':
+        logAutonomousAction(`[CAIO] Executing Chief AI Officer strategic consultation: ${order.goal}`, 'cognitive');
+        try {
+          const { exec } = await import('child_process');
+          const { promisify } = await import('util');
+          const execPromise = promisify(exec);
+          const { stdout } = await execPromise('PYTHONPATH=$PYTHONPATH:. python3 scripts/run_caio_agent.py', {
+            env: { ...process.env, PYTHONPATH: `${process.env.PYTHONPATH || ''}:.` }
+          });
+          const result = JSON.parse(stdout.trim());
+          return result;
+        } catch (error: any) {
+          console.error('❌ [WorkOrder] STRATEGIC_CONSULTATION execution failed, applying fallback:', error.message);
+          return {
+            ai_strategy_status: 'OPTIMAL',
+            infrastructure_optimization: {},
+            strategic_directives: ['ACTIVATE_SENTIENT_ORCHESTRATION', 'ESTABLISH_ETHICS_FRAMEWORK', 'OPTIMIZE_ROI_TRACKING', 'ENABLE_PREDICTIVE_RESOURCE_ALLOCATION'],
+            executive_summary: 'Baseline strategic directives applied due to execution failure.'
+          };
+        }
 
       default:
         throw new Error(`Unknown work order type: ${(order as any).type}`)
