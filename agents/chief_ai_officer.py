@@ -99,6 +99,17 @@ class ChiefAIOfficerAgent(BaseAgent):
         roi_mandate_95 = False
         licensure_not_required = False
 
+        def get_content_str(content):
+            if content is None:
+                return ""
+            if isinstance(content, str):
+                return content
+            if isinstance(content, list):
+                return " ".join([get_content_str(item) for item in content])
+            if isinstance(content, dict):
+                return " ".join([f"{k} {get_content_str(v)}" for k, v in content.items()])
+            return str(content)
+
         for k in knowledge.get("typescript_sections", []):
             title = k.get("title", "")
             title_lower = title.lower()
@@ -106,7 +117,13 @@ class ChiefAIOfficerAgent(BaseAgent):
             sections_str = json.dumps(sections_list).lower()
 
             # Extract content from sections into a single searchable string
-            sections_content = " ".join([s.get("content", "").lower() for s in sections_list])
+            sections_content_list = []
+            for s in sections_list:
+                if isinstance(s, dict):
+                    sections_content_list.append(get_content_str(s.get("content", "")).lower())
+                else:
+                    sections_content_list.append(get_content_str(s).lower())
+            sections_content = " ".join(sections_content_list)
 
             # Normalized checks for Phase detection
             has_phase_14 = "phase 14" in title_lower or "phase 14" in sections_str or "phase_14" in title_lower
