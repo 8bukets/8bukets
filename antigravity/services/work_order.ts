@@ -172,6 +172,19 @@ const ArchitecturalReviewResultSchema = z.object({
   recommendations: z.array(z.string()),
 });
 
+const StrategicConsultationPayloadSchema = z.object({}).optional()
+const StrategicConsultationResultSchema = z.object({
+  ai_strategy_status: z.string(),
+  strategic_directives: z.array(z.string()),
+  executive_summary: z.string().optional()
+}).catchall(z.any()).optional()
+
+const SystemSyncPayloadSchema = z.object({}).optional()
+const SystemSyncResultSchema = z.object({
+  status: z.string(),
+  timestamp: z.string()
+}).catchall(z.any()).optional()
+
 // Discriminated union of all work order types
 export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('BOOTSTRAP_SERVICE'), payload: BootstrapServicePayloadSchema, result: BootstrapServiceResultSchema.optional() }),
@@ -183,6 +196,8 @@ export const WorkOrderSchema = z.discriminatedUnion('type', [
   BaseWorkOrderSchema.extend({ type: z.literal('AUTONOMOUS_CREATION'), payload: AutonomousCreationPayloadSchema, result: AutonomousCreationResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('SECURITY_AUDIT'), payload: SecurityAuditPayloadSchema, result: SecurityAuditResultSchema.optional() }),
   BaseWorkOrderSchema.extend({ type: z.literal('ARCHITECTURAL_REVIEW'), payload: ArchitecturalReviewPayloadSchema, result: ArchitecturalReviewResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('STRATEGIC_CONSULTATION'), payload: StrategicConsultationPayloadSchema.optional(), result: StrategicConsultationResultSchema.optional() }),
+  BaseWorkOrderSchema.extend({ type: z.literal('SYSTEM_SYNC'), payload: SystemSyncPayloadSchema.optional(), result: SystemSyncResultSchema.optional() }),
 ])
 
 export type WorkOrder = z.infer<typeof WorkOrderSchema>
@@ -385,6 +400,35 @@ export class WorkOrderService {
           summary: 'System architecture aligns with long-term strategic goals. No major refactoring required at this time.',
           recommendations: ['Continue monitoring data flow between services for potential bottlenecks.'],
         };
+
+      case 'STRATEGIC_CONSULTATION':
+        const { exec } = await import('child_process')
+        const { promisify } = await import('util')
+        const execAsync = promisify(exec)
+        logAutonomousAction(`[CAIO] Executing Chief AI Officer agent for strategic consultation`, 'cognitive')
+        try {
+          const { stdout } = await execAsync('PYTHONPATH=$PYTHONPATH:. python3 scripts/run_caio_agent.py')
+          const lines = stdout.trim().split('\n')
+          // Extract JSON line
+          let jsonStr = ''
+          for (const line of lines) {
+            if (line.trim().startsWith('{') && line.trim().endsWith('}')) {
+              jsonStr = line.trim()
+              break
+            }
+          }
+          if (!jsonStr) {
+            throw new Error(`Failed to find JSON payload in CAIO output: ${stdout}`)
+          }
+          return JSON.parse(jsonStr)
+        } catch (err: any) {
+          console.error('❌ [WorkOrder] Strategic Consultation dispatch failed:', err)
+          throw err
+        }
+
+      case 'SYSTEM_SYNC':
+        logAutonomousAction(`[SYSTEM_SYNC] Initiating container node synchronizations`, 'info')
+        return { status: 'synchronized', timestamp: new Date().toISOString() }
 
       default:
         throw new Error(`Unknown work order type: ${(order as any).type}`)

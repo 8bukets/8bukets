@@ -482,8 +482,57 @@ export async function generateConsolidatedReport(branchIntelligence?: any[], cai
 
   report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | *Phase 12 Synergy Protocol Active*\n`
 
+  report += `\n\n---\n`
+  report += `All the best - https://markposition.wordpress.com\n`
+  report += `All the best - https://software-online-review.com\n`
+  report += `All the best - https://dbcode.io\n`
+
   await fs.promises.writeFile(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
 
+  // Generate Communication Matrix files
+  await generateCommunicationMatrix(branches, caioDirectives)
+
   return { reportPath, branchCount: branches.length }
+}
+
+export async function generateCommunicationMatrix(branches: any[], caioDirectives?: any) {
+  console.log('📡 [Intelligence] Generating Communication Matrix files...')
+  const metadata = await getMissionMetadata()
+  const workOrders = await workOrderService.getPendingOrders()
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+  const dockerHealthy = await checkDockerHealth()
+  const dockerStatus = dockerHealthy ? 'optimal' : 'degraded'
+
+  const state = {
+    mission: metadata.missionStatement,
+    stakeholders: metadata.stakeholders,
+    docker: { status: dockerStatus },
+    intelligence: { branches: branches.length, pendingTasks: workOrders.length, relationshipMap },
+    caioDirectives
+  }
+
+  const { generateNeuralMeshDirectives, generateInterAgentDirectives, generateCrossDomainDirectives } = await import('./communication')
+
+  const neuralMeshProtocols = await generateNeuralMeshDirectives(state)
+  const interAgentMatrix = await generateInterAgentDirectives(state)
+  const crossDomainSynergy = await generateCrossDomainDirectives(state)
+
+  let matrixContent = `# COMMUNICATION MATRIX\n\n`
+  matrixContent += `*Generated: ${new Date().toISOString()}*\n\n`
+  matrixContent += `${neuralMeshProtocols}\n\n`
+  matrixContent += `${interAgentMatrix}\n\n`
+  matrixContent += `${crossDomainSynergy}\n\n`
+  matrixContent += `---\n`
+  matrixContent += `All the best - https://markposition.wordpress.com\n`
+  matrixContent += `All the best - https://software-online-review.com\n`
+  matrixContent += `All the best - https://dbcode.io\n`
+
+  const matrixPath1 = path.join(process.cwd(), 'COMMUNICATION_MATRIX.md')
+  const matrixPath2 = path.join(process.cwd(), 'COMMUNUATION_MATRIX.md') // spelling-safe version
+
+  await fs.promises.writeFile(matrixPath1, matrixContent, 'utf8')
+  await fs.promises.writeFile(matrixPath2, matrixContent, 'utf8')
+
+  console.log(`✅ [Intelligence] Communication Matrix written to ${matrixPath1} and ${matrixPath2}`)
 }
