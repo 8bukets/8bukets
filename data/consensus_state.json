@@ -410,5 +410,35 @@
     },
     "status": "pending",
     "timestamp": "2026-07-19T10:51:37.390Z"
+  },
+  {
+    "id": "prop_pta3v9dap",
+    "proposer": "Jules",
+    "goal": "INITIATE_MESH_COLLABORATION",
+    "payload": {
+      "target": "Docker Swarm",
+      "timestamp": "2026-07-22T21:04:16.291Z"
+    },
+    "votes": {
+      "Jules": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-22T21:04:16.291Z"
+  },
+  {
+    "id": "prop_bp9bfjq2a",
+    "proposer": "Jules",
+    "goal": "INITIATE_MESH_COLLABORATION",
+    "payload": {
+      "target": "Docker Swarm",
+      "timestamp": "2026-07-22T21:23:16.845Z"
+    },
+    "votes": {
+      "Jules": true,
+      "macbook-primary-01": true
+    },
+    "status": "accepted",
+    "timestamp": "2026-07-22T21:23:16.846Z"
   }
 ]
