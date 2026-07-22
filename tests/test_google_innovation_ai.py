@@ -1,8 +1,34 @@
 import pytest
-import asyncio
-from aioresponses import aioresponses
+from unittest.mock import patch
 from agents.google_innovation_ai_agent import GoogleInnovationAIAgent
 from agents.base_agent import Blackboard
+
+class MockResponse:
+    def __init__(self, text_data, status=200):
+        self._text = text_data
+        self.status = status
+
+    async def text(self):
+        return self._text
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc, tb):
+        pass
+
+class MockSession:
+    def __init__(self, mock_response):
+        self.mock_response = mock_response
+
+    def get(self, url):
+        return self.mock_response
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc, tb):
+        pass
 
 @pytest.mark.asyncio
 async def test_google_innovation_ai_agent_run():
@@ -21,9 +47,10 @@ async def test_google_innovation_ai_agent_run():
     </html>
     """
 
-    with aioresponses() as m:
-        m.get(url, body=mock_html, status=200)
+    mock_resp = MockResponse(mock_html, 200)
+    mock_session = MockSession(mock_resp)
 
+    with patch('aiohttp.ClientSession', return_value=mock_session):
         # Run the agent
         result = await agent.run([], blackboard)
 
