@@ -33,6 +33,23 @@ import { ConflictResolver } from './utils/conflict_resolver'
 const execFileAsync = promisify(execFile)
 const execAsync = promisify(exec)
 
+function getContentStr(content: any): string {
+  if (typeof content === 'string') {
+    return content;
+  }
+  if (Array.isArray(content)) {
+    return content.map(item => getContentStr(item)).join('\n');
+  }
+  if (content && typeof content === 'object') {
+    try {
+      return JSON.stringify(content);
+    } catch (e) {
+      return '';
+    }
+  }
+  return '';
+}
+
 /**
  * JULES: THE COGNITIVE AGENT LAYER
  */
@@ -98,7 +115,7 @@ export class Jules {
 
       const checkKnowledge = (query: string) => sections.some((s: any) =>
         s.title.toLowerCase().includes(query.toLowerCase()) ||
-        s.sections?.some((sec: any) => sec.content.toLowerCase().includes(query.toLowerCase()))
+        s.sections?.some((sec: any) => getContentStr(sec.content).toLowerCase().includes(query.toLowerCase()))
       )
 
       const hasQuantum = checkKnowledge('quantum')
@@ -211,7 +228,7 @@ export class Jules {
     const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
     const results = (knowledge.typescript_sections || []).filter((s: any) => {
        const inTitle = s.title.toLowerCase().includes(query.toLowerCase())
-       const inContent = s.sections?.some((sec: any) => sec.content.toLowerCase().includes(query.toLowerCase()))
+       const inContent = s.sections?.some((sec: any) => getContentStr(sec.content).toLowerCase().includes(query.toLowerCase()))
        return inTitle || inContent
     })
 

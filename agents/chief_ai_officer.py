@@ -4,6 +4,18 @@ import re
 from .base_agent import BaseAgent, Blackboard
 # CAIO Agent
 
+def get_content_str(content):
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        return "\n".join([get_content_str(item) for item in content])
+    if isinstance(content, dict):
+        try:
+            return json.dumps(content)
+        except Exception:
+            return ""
+    return str(content) if content is not None else ""
+
 class ChiefAIOfficerAgent(BaseAgent):
     """
     Chief AI Officer (CAIO) Agent
@@ -106,7 +118,7 @@ class ChiefAIOfficerAgent(BaseAgent):
             sections_str = json.dumps(sections_list).lower()
 
             # Extract content from sections into a single searchable string
-            sections_content = " ".join([s.get("content", "").lower() for s in sections_list])
+            sections_content = " ".join([get_content_str(s.get("content", "")).lower() for s in sections_list])
 
             # Normalized checks for Phase detection
             has_phase_14 = "phase 14" in title_lower or "phase 14" in sections_str or "phase_14" in title_lower

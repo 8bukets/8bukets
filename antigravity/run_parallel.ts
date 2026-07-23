@@ -41,6 +41,7 @@ async function acquireLock(agent: string): Promise<boolean> {
 }
 
 async function releaseLock(agent: string) {
+  'use cache'
   try {
     if (await fs.promises.access(LOCK_FILE).then(() => true).catch(() => false)) {
       const lockData = JSON.parse(await fs.promises.readFile(LOCK_FILE, 'utf8'));

@@ -76,5 +76,6 @@ export const cloudConvergence = new CloudConvergenceService()
 
 // Backward Compatibility
 export async function getCloudConvergenceServiceData() {
+  'use cache'
   return cloudConvergence.getCloudConvergenceServiceData()
 }

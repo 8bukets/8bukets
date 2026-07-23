@@ -9,6 +9,23 @@
 import fs from 'fs-extra'
 import path from 'path'
 
+function getContentStr(content: any): string {
+  if (typeof content === 'string') {
+    return content;
+  }
+  if (Array.isArray(content)) {
+    return content.map(item => getContentStr(item)).join('\n');
+  }
+  if (content && typeof content === 'object') {
+    try {
+      return JSON.stringify(content);
+    } catch (e) {
+      return '';
+    }
+  }
+  return '';
+}
+
 async function cleanup() {
   'use cache'
   console.log('🧹 Starting Knowledge Base Cleanup...')
@@ -55,8 +72,9 @@ async function cleanup() {
     mdContent += `**Ingested At:** ${k.metadata.ingestedAt}\n\n`
 
     for (const section of k.sections) {
-      if (section.content.trim() || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
-        mdContent += `### ${section.header}\n${section.content.trim()}\n\n`
+      const contentStr = getContentStr(section.content).trim();
+      if (contentStr || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
+        mdContent += `### ${section.header}\n${contentStr}\n\n`
       }
     }
     mdContent += `---\n\n`
