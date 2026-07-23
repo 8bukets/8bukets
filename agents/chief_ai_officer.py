@@ -99,6 +99,17 @@ class ChiefAIOfficerAgent(BaseAgent):
         roi_mandate_95 = False
         licensure_not_required = False
 
+        def get_content_str(content):
+            if content is None:
+                return ""
+            if isinstance(content, str):
+                return content
+            if isinstance(content, list):
+                return " ".join([get_content_str(item) for item in content])
+            if isinstance(content, dict):
+                return json.dumps(content)
+            return str(content)
+
         for k in knowledge.get("typescript_sections", []):
             title = k.get("title", "")
             title_lower = title.lower()
@@ -106,7 +117,16 @@ class ChiefAIOfficerAgent(BaseAgent):
             sections_str = json.dumps(sections_list).lower()
 
             # Extract content from sections into a single searchable string
-            sections_content = " ".join([s.get("content", "").lower() for s in sections_list])
+            sections_content_list = []
+            for s in sections_list:
+                if isinstance(s, dict):
+                    content_val = s.get("content", "")
+                    sections_content_list.append(get_content_str(content_val).lower())
+                elif isinstance(s, str):
+                    sections_content_list.append(s.lower())
+                else:
+                    sections_content_list.append(get_content_str(s).lower())
+            sections_content = " ".join(sections_content_list)
 
             # Normalized checks for Phase detection
             has_phase_14 = "phase 14" in title_lower or "phase 14" in sections_str or "phase_14" in title_lower
@@ -332,7 +352,7 @@ class ChiefAIOfficerAgent(BaseAgent):
                         strategic_directives.append("OPTIMIZE_FOR_SINGULARITY_READINESS_PHASE_26")
 
             # Role Alignment Check
-            if "Chief AI Officer (CAIO) Role" in title:
+            if "Chief AI Officer (CAIO) Role" in title or "caio_role" in title_lower:
                 role_alignment_verified = True
 
                 if "bottom-line business outcomes" in sections_str:
