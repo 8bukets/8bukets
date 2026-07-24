@@ -29,5 +29,20 @@ class CreativityAgent(BaseAgent):
         for vision in visions:
             ideas.append(f"Content Strategy for: {vision['title']}")
 
-        self.log(f"Generated {len(ideas)} ideas.")
-        return {"creative_ideas": ideas}
+        # AI Agent Taxonomy / Creative Concepts
+        taxonomy = blackboard.get("MockKnowledge", {}).get("agent_taxonomy", {})
+        if not taxonomy:
+            taxonomy = blackboard.get("KnowledgeAgent", {}).get("agent_taxonomy", {})
+
+        creative_concepts = []
+        if isinstance(taxonomy, dict):
+            if "background_processes" in taxonomy:
+                creative_concepts.append("Unlocking Efficiency: Specialized Background Agents for automated enterprise workflows.")
+            if "interactive_partners" in taxonomy:
+                creative_concepts.append("Human-in-the-Loop: Conversational Interactive Partners for advanced customer experience.")
+
+        self.log(f"Generated {len(ideas)} ideas and {len(creative_concepts)} concepts.")
+        return {
+            "creative_ideas": ideas,
+            "creative_concepts": creative_concepts
+        }
