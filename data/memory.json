@@ -198,16 +198,39 @@
                 "timestamp": "2026-05-26T08:44:04.827086",
                 "event": "episodic_event",
                 "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-07-24T08:41:06.665670",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-07-24T08:42:52.444302",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-07-24T08:43:21.524577",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-07-24T08:46:36.729445",
+                "event": "episodic_event",
+                "data": "episodic_data"
             }
-        ]
+        ],
+        "long_key": "long_value"
     },
     "TargetingAgent": {
-        "last_primary_persona": "AdTech Professional",
+        "last_primary_persona": "General Tech Enthusiast",
         "long_term": {
             "new_key": "new_val",
             "test_compatibility_persona": "Compatibility Enthusiast",
-            "last_primary_persona": "AdTech Professional"
-        }
+            "last_primary_persona": "General Tech Enthusiast"
+        },
+        "test_compatibility_persona": "Compatibility Enthusiast",
+        "new_key": "new_val"
     },
     "RobotTxtAgent": {
         "long_term": {
