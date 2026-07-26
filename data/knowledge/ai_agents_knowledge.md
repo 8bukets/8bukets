@@ -38861,6 +38861,7 @@ Tutorial: Create and run your first GitLab CI/CD pipeline Tier: Free, Premium, U
 - **Branch:** `origin/cloud-workflow-adjustment-5939480137317015972`
 - **Category:** ORIGIN
 - **Result:** Commit: Authorized syntactic adjustment to trigger clean commit
+<!-- connect with docker and collaborate  -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
