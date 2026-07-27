@@ -11,5 +11,6 @@
     "skipLibCheck": true,
     "strict": false,
     "allowJs": true
-  }
+  },
+  "exclude": ["frontend", "node_modules", "dist"]
 }

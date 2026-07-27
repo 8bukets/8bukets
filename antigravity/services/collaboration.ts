@@ -1,3 +1,4 @@
+import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
@@ -71,7 +72,7 @@ export async function getMissionMetadata(): Promise<MissionMetadata> {
 
 export async function exportEcosystemMetadata() {
   const metadata = await getMissionMetadata()
-  console.log('🌐 [Collaboration] Exporting ecosystem metadata for global sync...')
+  logAutonomousAction('🌐 [Collaboration] Exporting ecosystem metadata for global sync...', 'info')
   return {
     ...metadata,
     systemId: 'antigravity-alpha-01',
@@ -80,7 +81,7 @@ export async function exportEcosystemMetadata() {
 }
 
 export async function syncCollaborationState(branchIntelligence?: any[]) {
-  console.log('🔄 [Collaboration] Synchronizing autonomous state...')
+  logAutonomousAction('🔄 [Collaboration] Synchronizing autonomous state...', 'info')
   const metadata = await getMissionMetadata()
   const dockerHealth = await checkDockerHealth()
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
@@ -123,7 +124,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
       { $set: newState },
       { upsert: true }
     )
-    console.log('✅ [Collaboration] Autonomous state synchronized to MongoDB.')
+    logAutonomousAction('✅ [Collaboration] Autonomous state synchronized to MongoDB.', 'info')
   } catch (e) {
     console.error('❌ [Collaboration] Failed to sync state to MongoDB:', e)
   }
@@ -133,7 +134,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
 
 export async function mergeEcosystemInsights(branchIntelligence: any[], workOrders: any[]) {
   const metadata = await getMissionMetadata()
-  console.log('🧠 [Collaboration] Merging ecosystem insights...')
+  logAutonomousAction('🧠 [Collaboration] Merging ecosystem insights...', 'info')
 
   return {
     mission: metadata.missionStatement,

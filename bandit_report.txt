@@ -1,0 +1,1212 @@
+Run started:2026-06-27 20:22:20.207699
+
+Test results:
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./agents/cloud_workflow_agent.py:1:0
+1	import subprocess
+2	from .base_agent import BaseAgent, Blackboard
+3	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/cloud_workflow_agent.py:62:20
+61	                try:
+62	                    subprocess.run(["git", "merge", "--abort"], check=False)
+63	                except Exception as e:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/cloud_workflow_agent.py:62:20
+61	                try:
+62	                    subprocess.run(["git", "merge", "--abort"], check=False)
+63	                except Exception as e:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/cloud_workflow_agent.py:78:20
+77	                try:
+78	                    subprocess.run(
+79	                        ["docker-compose", "up", "-d", "--build"], check=False
+80	                    )
+81	                except Exception as e:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/cloud_workflow_agent.py:78:20
+77	                try:
+78	                    subprocess.run(
+79	                        ["docker-compose", "up", "-d", "--build"], check=False
+80	                    )
+81	                except Exception as e:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./agents/docker_evolution_agent.py:2:0
+1	import os
+2	import subprocess
+3	from .base_agent import BaseAgent, Blackboard
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/docker_evolution_agent.py:30:16
+29	            try:
+30	                subprocess.run(["docker-compose", "up", "-d"], check=False)
+31	                runtime_stability = "RECOVERING"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/docker_evolution_agent.py:30:16
+29	            try:
+30	                subprocess.run(["docker-compose", "up", "-d"], check=False)
+31	                runtime_stability = "RECOVERING"
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./agents/github_evolution_agent.py:2:0
+1	import os
+2	import subprocess
+3	from .base_agent import BaseAgent, Blackboard
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/github_evolution_agent.py:52:12
+51	            # 1. Stage changes (Sanitized config, memory, and results)
+52	            subprocess.run(
+53	                [
+54	                    "git",
+55	                    "add",
+56	                    "config/evolution_params.json",
+57	                    "config/owner_info.json",
+58	                    "data/",
+59	                    "results/",
+60	                    "links.json",
+61	                    "links.csv",
+62	                    "unique_links.txt",
+63	                ],
+64	                check=True,
+65	            )
+66	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/github_evolution_agent.py:52:12
+51	            # 1. Stage changes (Sanitized config, memory, and results)
+52	            subprocess.run(
+53	                [
+54	                    "git",
+55	                    "add",
+56	                    "config/evolution_params.json",
+57	                    "config/owner_info.json",
+58	                    "data/",
+59	                    "results/",
+60	                    "links.json",
+61	                    "links.csv",
+62	                    "unique_links.txt",
+63	                ],
+64	                check=True,
+65	            )
+66	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/github_evolution_agent.py:68:21
+67	            # Check for changes before committing
+68	            status = subprocess.run(
+69	                ["git", "status", "--porcelain"], capture_output=True, text=True
+70	            ).stdout.strip()
+71	            if not status:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/github_evolution_agent.py:68:21
+67	            # Check for changes before committing
+68	            status = subprocess.run(
+69	                ["git", "status", "--porcelain"], capture_output=True, text=True
+70	            ).stdout.strip()
+71	            if not status:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/github_evolution_agent.py:94:12
+93	            )
+94	            subprocess.run(["git", "commit", "-m", commit_msg], check=True)
+95	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/github_evolution_agent.py:94:12
+93	            )
+94	            subprocess.run(["git", "commit", "-m", commit_msg], check=True)
+95	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/github_evolution_agent.py:102:30
+101	                )
+102	                pull_result = subprocess.run(
+103	                    ["git", "pull", "--rebase", "origin", "main"], check=False
+104	                )
+105	                if pull_result.returncode != 0:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/github_evolution_agent.py:102:30
+101	                )
+102	                pull_result = subprocess.run(
+103	                    ["git", "pull", "--rebase", "origin", "main"], check=False
+104	                )
+105	                if pull_result.returncode != 0:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/github_evolution_agent.py:109:20
+108	                    )
+109	                    subprocess.run(["git", "rebase", "--abort"], check=False)
+110	                    vcs_status = "COMMITTED_LOCAL"  # Prevent push from failing
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/github_evolution_agent.py:109:20
+108	                    )
+109	                    subprocess.run(["git", "rebase", "--abort"], check=False)
+110	                    vcs_status = "COMMITTED_LOCAL"  # Prevent push from failing
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/github_evolution_agent.py:114:24
+113	                    try:
+114	                        subprocess.run(["git", "push"], check=True)
+115	                        vcs_status = "COMMITTED_AND_PUSHED"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/github_evolution_agent.py:114:24
+113	                    try:
+114	                        subprocess.run(["git", "push"], check=True)
+115	                        vcs_status = "COMMITTED_AND_PUSHED"
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/github_evolution_agent.py:130:20
+129	                    self.logger.info("Synchronizing with remote to avoid conflicts...")
+130	                    subprocess.run(
+131	                        ["git", "pull", "--rebase", "origin", "main"], check=True
+132	                    )
+133	                except subprocess.CalledProcessError as pull_e:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/github_evolution_agent.py:130:20
+129	                    self.logger.info("Synchronizing with remote to avoid conflicts...")
+130	                    subprocess.run(
+131	                        ["git", "pull", "--rebase", "origin", "main"], check=True
+132	                    )
+133	                except subprocess.CalledProcessError as pull_e:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./agents/gitkraken_evolution_agent.py:1:0
+1	import subprocess
+2	from .base_agent import BaseAgent, Blackboard
+3	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/gitkraken_evolution_agent.py:28:21
+27	        try:
+28	            result = subprocess.run(
+29	                ["git", "branch", "-a"], capture_output=True, text=True
+30	            )
+31	            if result.returncode == 0:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/gitkraken_evolution_agent.py:28:21
+27	        try:
+28	            result = subprocess.run(
+29	                ["git", "branch", "-a"], capture_output=True, text=True
+30	            )
+31	            if result.returncode == 0:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/gitkraken_evolution_agent.py:46:16
+45	            branches_res = (
+46	                subprocess.run(["git", "branch", "-r"], capture_output=True, text=True)
+47	                .stdout.strip()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/gitkraken_evolution_agent.py:46:16
+45	            branches_res = (
+46	                subprocess.run(["git", "branch", "-r"], capture_output=True, text=True)
+47	                .stdout.strip()
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/gitkraken_evolution_agent.py:52:26
+51	
+52	            commits_res = subprocess.run(
+53	                ["git", "rev-list", "--all", "--count"], capture_output=True, text=True
+54	            ).stdout.strip()
+55	            if commits_res.isdigit():
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/gitkraken_evolution_agent.py:52:26
+51	
+52	            commits_res = subprocess.run(
+53	                ["git", "rev-list", "--all", "--count"], capture_output=True, text=True
+54	            ).stdout.strip()
+55	            if commits_res.isdigit():
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./agents/gitkraken_evolution_agent.py:62:22
+61	        try:
+62	            log_res = subprocess.run(
+63	                ["git", "log", "--oneline", "-n", "20"], capture_output=True, text=True
+64	            ).stdout.lower()
+65	            if any(
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./agents/gitkraken_evolution_agent.py:62:22
+61	        try:
+62	            log_res = subprocess.run(
+63	                ["git", "log", "--oneline", "-n", "20"], capture_output=True, text=True
+64	            ).stdout.lower()
+65	            if any(
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_calls.html#b311-random
+   Location: ./agents/swarm_agent.py:27:15
+26	    async def run(self, data: list, blackboard: Blackboard) -> dict:
+27	        task = random.choice(self.tasks)
+28	        self.logger.info(f"[{self.phase}] Executing SEO Micro-task: {task}")
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_calls.html#b311-random
+   Location: ./agents/swarm_agent.py:31:17
+30	        # Self-Optimization: Check if task impact is low
+31	        impact = random.uniform(0.1, 0.9)
+32	        threshold = self.config.get("seo_impact_threshold", 0.5)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./autonomous_audit.py:2:0
+1	import os
+2	import subprocess
+3	import sys
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./autonomous_audit.py:26:17
+25	        env["PYTHONPATH"] = "."
+26	        result = subprocess.run(
+27	            ["python3", "-m", "pytest", "tests/"],
+28	            env=env,
+29	            capture_output=True,
+30	            text=True,
+31	        )
+32	        if result.returncode == 0:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./autonomous_audit.py:26:17
+25	        env["PYTHONPATH"] = "."
+26	        result = subprocess.run(
+27	            ["python3", "-m", "pytest", "tests/"],
+28	            env=env,
+29	            capture_output=True,
+30	            text=True,
+31	        )
+32	        if result.returncode == 0:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./autonomous_engine.py:7:0
+6	import json
+7	import subprocess
+8	from datetime import datetime
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./autonomous_engine.py:74:8
+73	        # Use npx tsx to ensure it's available
+74	        subprocess.run(["npx", "tsx", "scripts/run_daily.ts"], check=True)
+75	        logger.info("✅ TypeScript Cycle complete.")
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./autonomous_engine.py:74:8
+73	        # Use npx tsx to ensure it's available
+74	        subprocess.run(["npx", "tsx", "scripts/run_daily.ts"], check=True)
+75	        logger.info("✅ TypeScript Cycle complete.")
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./autonomous_engine.py:215:20
+214	                    # Execute the rollout script
+215	                    subprocess.run(
+216	                        ["python3", "scripts/rollout_executor.py"], check=True
+217	                    )
+218	                    order["status"] = "completed"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./autonomous_engine.py:215:20
+214	                    # Execute the rollout script
+215	                    subprocess.run(
+216	                        ["python3", "scripts/rollout_executor.py"], check=True
+217	                    )
+218	                    order["status"] = "completed"
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./autonomous_engine.py:229:20
+228	                try:
+229	                    subprocess.run(["pytest"], check=True)
+230	                    order["status"] = "completed"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./autonomous_engine.py:229:20
+228	                try:
+229	                    subprocess.run(["pytest"], check=True)
+230	                    order["status"] = "completed"
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./autonomous_engine.py:241:20
+240	                try:
+241	                    subprocess.run(
+242	                        [
+243	                            "python3",
+244	                            "scripts/execute_content_creation.py",
+245	                            order["id"],
+246	                            order.get("description", ""),
+247	                        ],
+248	                        check=True,
+249	                    )
+250	                    order["status"] = "completed"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./autonomous_engine.py:241:20
+240	                try:
+241	                    subprocess.run(
+242	                        [
+243	                            "python3",
+244	                            "scripts/execute_content_creation.py",
+245	                            order["id"],
+246	                            order.get("description", ""),
+247	                        ],
+248	                        check=True,
+249	                    )
+250	                    order["status"] = "completed"
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html
+   Location: ./gemmafour_scraper.py:10:15
+9	    try:
+10	        resp = requests.get(url)
+11	        resp.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html
+   Location: ./intelephense_scraper.py:21:19
+20	        try:
+21	            resp = requests.get(url)
+22	            resp.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html
+   Location: ./litert_scraper.py:15:15
+14	    try:
+15	        resp = requests.get(url, headers=headers)
+16	        resp.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html
+   Location: ./opentelemetry_scraper.py:36:23
+35	        try:
+36	            response = requests.get(url, headers=headers)
+37	            response.raise_for_status()
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./run_system.py:4:0
+3	import os
+4	import subprocess
+5	import logging
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html
+   Location: ./run_system.py:71:17
+70	        # Standard Market Scraper
+71	        result = subprocess.run(
+72	            ["python3", "scraper.py", "--limit", "1"], capture_output=True, text=True
+73	        )
+74	        if result.returncode != 0:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./run_system.py:71:17
+70	        # Standard Market Scraper
+71	        result = subprocess.run(
+72	            ["python3", "scraper.py", "--limit", "1"], capture_output=True, text=True
+73	        )
+74	        if result.returncode != 0:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./scripts/rollout_executor.py:2:0
+1	import os
+2	import subprocess
+3	import logging
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./scripts/rollout_executor.py:18:17
+17	            return "Skipped"
+18	        result = subprocess.run(
+19	            command, cwd=cwd, check=True, capture_output=True, text=True
+20	        )
+21	        return result.stdout
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b108_hardcoded_tmp_directory.html
+   Location: ./test_scraper_security.py:43:12
+42	            "../../etc/passwd",
+43	            "/tmp/evil.json",
+44	            "/etc/shadow",
+45	            "subdir/../../outside.txt",
+46	        ]
+47	
+48	        for path in invalid_paths:
+49	            with self.assertRaises(ValueError, msg=f"Path '{path}' should have failed"):
+50	                validate_output_path(path)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:21:4
+20	    # Verify Persona
+21	    assert agent.persona["role"] == "TestAgent"
+22	    assert "Professional" in agent.persona["personality"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:22:4
+21	    assert agent.persona["role"] == "TestAgent"
+22	    assert "Professional" in agent.persona["personality"]
+23	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:26:4
+25	    agent.update_agent_memory("context_key", "context_value", memory_type="short_term")
+26	    assert (
+27	        agent.get_agent_memory("context_key", memory_type="short_term")
+28	        == "context_value"
+29	    )
+30	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:33:4
+32	    agent.update_agent_memory("long_key", "long_value", memory_type="long_term")
+33	    assert agent.get_agent_memory("long_key", memory_type="long_term") == "long_value"
+34	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:38:4
+37	    episodes = agent.get_agent_memory(None, memory_type="episodic")
+38	    assert len(episodes) > 0
+39	    assert episodes[-1]["event"] == "episodic_event"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:39:4
+38	    assert len(episodes) > 0
+39	    assert episodes[-1]["event"] == "episodic_event"
+40	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:44:4
+43	    await blackboard.update_consensus("shared_info", "shared_value")
+44	    assert blackboard.get_consensus("shared_info") == "shared_value"
+45	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:53:4
+52	    val = agent.get_agent_memory("test_compatibility_persona")
+53	    assert val == "Compatibility Enthusiast"
+54	    # Existing data in data/memory.json: "TargetingAgent": {"last_primary_persona": "General Tech Enthusiast"}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:58:4
+57	    val = agent.get_agent_memory("last_primary_persona")
+58	    assert val == "General Tech Enthusiast"
+59	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:62:4
+61	    agent.update_agent_memory("new_key", "new_val")
+62	    assert agent.get_agent_memory("new_key") == "new_val"
+63	    assert (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:63:4
+62	    assert agent.get_agent_memory("new_key") == "new_val"
+63	    assert (
+64	        agent.get_agent_memory("test_compatibility_persona")
+65	        == "Compatibility Enthusiast"
+66	    )
+67	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:123:4
+122	
+123	    assert "challenges" in k_result["ai_agents_definitions"]
+124	    assert "deployment" in k_result["ai_agents_definitions"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:124:4
+123	    assert "challenges" in k_result["ai_agents_definitions"]
+124	    assert "deployment" in k_result["ai_agents_definitions"]
+125	    assert any("Cloud Run" in bp for bp in k_result["agent_best_practices"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:125:4
+124	    assert "deployment" in k_result["ai_agents_definitions"]
+125	    assert any("Cloud Run" in bp for bp in k_result["agent_best_practices"])
+126	    assert "customer" in k_result["agent_use_cases"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:126:4
+125	    assert any("Cloud Run" in bp for bp in k_result["agent_best_practices"])
+126	    assert "customer" in k_result["agent_use_cases"]
+127	    assert len(k_result["google_cloud_tools_list"]) > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:127:4
+126	    assert "customer" in k_result["agent_use_cases"]
+127	    assert len(k_result["google_cloud_tools_list"]) > 0
+128	    assert "agent_taxonomy" in k_result
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:128:4
+127	    assert len(k_result["google_cloud_tools_list"]) > 0
+128	    assert "agent_taxonomy" in k_result
+129	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:139:4
+138	
+139	    assert any(
+140	        "multi-agent collaboration" in insight
+141	        for insight in i_result["intelligence_insights"]
+142	    )
+143	    assert any(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:143:4
+142	    )
+143	    assert any(
+144	        "self-improvement" in insight for insight in i_result["intelligence_insights"]
+145	    )
+146	    assert any(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:146:4
+145	    )
+146	    assert any(
+147	        "Taxonomy Alignment" in insight for insight in i_result["intelligence_insights"]
+148	    )
+149	    assert any(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:149:4
+148	    )
+149	    assert any(
+150	        "Strategic Distinction" in insight
+151	        for insight in i_result["intelligence_insights"]
+152	    )
+153	    assert len(i_result["strategic_risk_assessment"]) > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:153:4
+152	    )
+153	    assert len(i_result["strategic_risk_assessment"]) > 0
+154	    assert any(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:154:4
+153	    assert len(i_result["strategic_risk_assessment"]) > 0
+154	    assert any(
+155	        "emotional intelligence" in risk
+156	        for risk in i_result["strategic_risk_assessment"]
+157	    )
+158	    assert len(i_result["strategic_outlook"]) > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:158:4
+157	    )
+158	    assert len(i_result["strategic_outlook"]) > 0
+159	    assert "Models" in i_result["categorized_knowledge"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:159:4
+158	    assert len(i_result["strategic_outlook"]) > 0
+159	    assert "Models" in i_result["categorized_knowledge"]
+160	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:165:4
+164	
+165	    assert any(
+166	        "Background Agents" in concept for concept in c_result["creative_concepts"]
+167	    )
+168	    assert any(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_ai_agents_knowledge_implementation.py:168:4
+167	    )
+168	    assert any(
+169	        "Interactive Partner" in concept for concept in c_result["creative_concepts"]
+170	    )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_collaboration.py:23:4
+22	    context = result.get("antigravity_context", {})
+23	    assert context["platform"] == "Antigravity"
+24	    assert context["system_version"] == 1.18
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_collaboration.py:24:4
+23	    assert context["platform"] == "Antigravity"
+24	    assert context["system_version"] == 1.18
+25	    assert context["sigma_status"] == 0.85
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_collaboration.py:25:4
+24	    assert context["system_version"] == 1.18
+25	    assert context["sigma_status"] == 0.85
+26	    assert "keser.filip@gmail.com" in context["stakeholders"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_collaboration.py:26:4
+25	    assert context["sigma_status"] == 0.85
+26	    assert "keser.filip@gmail.com" in context["stakeholders"]
+27	    assert "8bukets@gmail.com" in context["stakeholders"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_collaboration.py:27:4
+26	    assert "keser.filip@gmail.com" in context["stakeholders"]
+27	    assert "8bukets@gmail.com" in context["stakeholders"]
+28	    assert context["status"] == "SYNCED"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_collaboration.py:28:4
+27	    assert "8bukets@gmail.com" in context["stakeholders"]
+28	    assert context["status"] == "SYNCED"
+29	    assert "Antigravity Mission" in context["mission_statement"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_collaboration.py:29:4
+28	    assert context["status"] == "SYNCED"
+29	    assert "Antigravity Mission" in context["mission_statement"]
+30	    assert "Integration Rules" in context["integration_rules"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_collaboration.py:30:4
+29	    assert "Antigravity Mission" in context["mission_statement"]
+30	    assert "Integration Rules" in context["integration_rules"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_connectivity.py:17:16
+16	                is_reachable = response.status < 400 or response.status == 429
+17	                assert (
+18	                    is_reachable
+19	                ), f"Failed to reach {domain}, status: {response.status}"
+20	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_connectivity.py:35:4
+34	    research_data = result.get("research_data", {})
+35	    assert research_data["synchronization_status"] == "REAL_TIME_SYNC"
+36	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_connectivity.py:38:4
+37	    investigations = research_data["external_investigations"]
+38	    assert len(investigations) >= 2
+39	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_connectivity.py:42:4
+41	    google_res = next((i for i in investigations if i["domain"] == "google.com"), None)
+42	    assert google_res is not None
+43	    assert google_res["status"] == "ACCESSIBLE"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_connectivity.py:43:4
+42	    assert google_res is not None
+43	    assert google_res["status"] == "ACCESSIBLE"
+44	    assert "http_code" in google_res
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_connectivity.py:44:4
+43	    assert google_res["status"] == "ACCESSIBLE"
+44	    assert "http_code" in google_res
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_knowledge_flow.py:38:4
+37	    # Assertions for KnowledgeAgent
+38	    assert "ai_agent" in knowledge_results["ai_agents_definitions"]
+39	    assert len(knowledge_results["google_cloud_tools_list"]) > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_knowledge_flow.py:39:4
+38	    assert "ai_agent" in knowledge_results["ai_agents_definitions"]
+39	    assert len(knowledge_results["google_cloud_tools_list"]) > 0
+40	    assert (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_knowledge_flow.py:40:4
+39	    assert len(knowledge_results["google_cloud_tools_list"]) > 0
+40	    assert (
+41	        "Gemini Enterprise Agent Platform"
+42	        in knowledge_results["google_cloud_tools_list"]
+43	    )
+44	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_knowledge_flow.py:55:4
+54	    insights = intelligence_results["intelligence_insights"]
+55	    assert any("Deep reasoning verified" in i for i in insights)
+56	    assert any("Strategic planning confirmed" in i for i in insights)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_knowledge_flow.py:56:4
+55	    assert any("Deep reasoning verified" in i for i in insights)
+56	    assert any("Strategic planning confirmed" in i for i in insights)
+57	    assert any("Google Cloud AI Agent definitions" in i for i in insights)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_knowledge_flow.py:57:4
+56	    assert any("Strategic planning confirmed" in i for i in insights)
+57	    assert any("Google Cloud AI Agent definitions" in i for i in insights)
+58	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_orchestrator.py:19:4
+18	    await bb.update("AgentA", {"key": "value"})
+19	    assert bb.get("key") == "value"
+20	    assert len(bb.get_history()) == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_orchestrator.py:20:4
+19	    assert bb.get("key") == "value"
+20	    assert len(bb.get_history()) == 1
+21	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_orchestrator.py:31:4
+30	
+31	    assert results["data1"] == 1
+32	    assert results["data2"] == 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: ./tests/test_orchestrator.py:32:4
+31	    assert results["data1"] == 1
+32	    assert results["data2"] == 2
+33	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 5441
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 102
+		Medium: 5
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 4
+		Medium: 1
+		High: 102
+Files skipped (0):

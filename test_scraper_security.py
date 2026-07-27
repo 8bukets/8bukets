@@ -7,7 +7,7 @@ from utils import validate_output_path
 class TestSecurity(unittest.TestCase):
     def setUp(self):
         # Create a temporary directory for testing
-        self.test_dir = tempfile.mkdtemp()
+        self.test_dir = os.path.realpath(tempfile.mkdtemp())
         self.original_cwd = os.getcwd()
         os.chdir(self.test_dir)
 

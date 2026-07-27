@@ -1,3 +1,4 @@
+import { logAutonomousAction } from './core'
 import fs from 'fs'
 import path from 'path'
 import { jules } from './jules'
@@ -7,7 +8,7 @@ import { jules } from './jules'
  * Ensures safe, timestamped persistence of core state files.
  */
 export async function runBackup() {
-  console.log('🛡️ [Backup Agent] Initiating autonomous system backup...')
+  logAutonomousAction('🛡️ [Backup Agent] Initiating autonomous system backup...', 'info')
 
   const rootDir = process.cwd()
   const backupDir = path.join(rootDir, 'backups')
@@ -15,7 +16,7 @@ export async function runBackup() {
   // Ensure backups directory exists
   if (!fs.existsSync(backupDir)) {
     fs.mkdirSync(backupDir, { recursive: true })
-    console.log(`🛡️ [Backup Agent] Created backup directory at: ${backupDir}`)
+    logAutonomousAction(`🛡️ [Backup Agent] Created backup directory at: ${backupDir}`, 'info')
   }
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
@@ -32,7 +33,7 @@ export async function runBackup() {
       if (parsed && typeof parsed === 'object') {
         const backupMemoryPath = path.join(backupDir, `jules_memory_${timestamp}.json`)
         fs.writeFileSync(backupMemoryPath, memoryContent)
-        console.log(`✅ [Backup Agent] Archived Jules Memory to ${backupMemoryPath}`)
+        logAutonomousAction(`✅ [Backup Agent] Archived Jules Memory to ${backupMemoryPath}`, 'info')
         backupCount++
       }
     } catch (e) {
@@ -52,7 +53,7 @@ export async function runBackup() {
       if (parsed && typeof parsed === 'object') {
         const backupStatePath = path.join(backupDir, `autonomous_state_${timestamp}.json`)
         fs.writeFileSync(backupStatePath, stateContent)
-        console.log(`✅ [Backup Agent] Archived Autonomous State to ${backupStatePath}`)
+        logAutonomousAction(`✅ [Backup Agent] Archived Autonomous State to ${backupStatePath}`, 'info')
         backupCount++
       }
     } catch (e) {
@@ -63,7 +64,7 @@ export async function runBackup() {
   // Record task in cognitive memory
   if (backupCount > 0) {
      jules.recordTask(`Autonomous backup completed successfully. Archived ${backupCount} core state files.`)
-     console.log(`🛡️ [Backup Agent] Backup complete. Logged to Jules Memory.`)
+     logAutonomousAction(`🛡️ [Backup Agent] Backup complete. Logged to Jules Memory.`, 'info')
   } else {
      console.warn(`🛡️ [Backup Agent] Backup cycle completed, but no files were archived.`)
   }

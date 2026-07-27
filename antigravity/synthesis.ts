@@ -1,3 +1,4 @@
+import { logAutonomousAction } from './core'
 import fs from 'fs'
 import path from 'path'
 
@@ -13,7 +14,7 @@ interface SynthesizedIdea {
 }
 
 export async function synthesize(): Promise<SynthesizedIdea[]> {
-  console.log('🔮 [Antigravity Synthesis] Ideating new architectural features...')
+  logAutonomousAction('🔮 [Antigravity Synthesis] Ideating new architectural features...', 'info')
 
   const ideas: SynthesizedIdea[] = []
   const servicesDir = path.join(process.cwd(), 'antigravity/services')

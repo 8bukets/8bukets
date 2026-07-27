@@ -1,22 +1,30 @@
 import { MongoClient } from 'mongodb'
 import { createClient } from '@supabase/supabase-js'
 import { z } from 'zod'
+import type React from 'react'
 
 /**
  * Safer import for Next.js cache/server APIs to support CLI execution.
  */
-let cacheLife: any = () => {},
-    cacheTag: any = () => {},
-    revalidateTag: any = () => {},
-    updateTag: any = () => {},
-    connection: any = async () => {};
+let cacheLife: any = () => { },
+  cacheTag: any = () => { },
+  revalidateTag: any = () => { },
+  updateTag: any = () => { },
+  connection: any = async () => { };
 
 try {
   // Use dynamic require/import for Next.js internal modules if available
   // This prevents SyntaxErrors in non-Next environments
+  const nextCache = require('next/cache');
+  const nextServer = require('next/server');
+  cacheLife = nextCache.unstable_cache;
+  revalidateTag = cacheTag = updateTag = nextCache.revalidateTag;
+  connection = nextServer.unstable_noStore;
 } catch (e) {
   // Fallback to no-op for CLI
 }
+
+export function refresh() { updateTag('global') }
 
 export { cacheLife, cacheTag, revalidateTag, updateTag, connection }
 
@@ -69,7 +77,7 @@ export async function getMongoClient(): Promise<MongoClient> {
   // Circuit Breaker Logic
   if (circuitBreaker.mongodb.state === 'open') {
     if (Date.now() - circuitBreaker.mongodb.lastFailure > RECOVERY_TIMEOUT) {
-      console.log('🔄 [Autonomous Core] Attempting MongoDB self-healing...')
+      logAutonomousAction('🔄 [Autonomous Core] Attempting MongoDB self-healing...', 'info')
       circuitBreaker.mongodb.state = 'half-open'
     } else {
       throw new Error('Circuit Breaker: MongoDB is in recovery mode.')
@@ -77,6 +85,11 @@ export async function getMongoClient(): Promise<MongoClient> {
   }
 
   if (_mongoClientPromise) return _mongoClientPromise
+
+  if (!MONGODB_URI) {
+    circuitBreaker.mongodb.state = 'open';
+    throw new Error('CRITICAL: MONGODB_URI is not defined. Cannot connect to database.');
+  }
 
   try {
     if (process.env.NODE_ENV === 'development') {
@@ -176,11 +189,6 @@ export function logAutonomousAction(msg: string, type: string = 'info') {
 }
 
 export async function getSystemInsights() {
-  // Phase 12: Safeguard against CLI-mode execution
-  // Only use cache if we are in a recognized Next.js request context
-  const isServerRequest = !!process.env.NEXT_RUNTIME
-
-
   const { synthesize } = await import('./synthesis')
   const { getPersistenceHealth } = await import('./services/persistence')
   const { getNetworkState } = await import('./services/neural')
@@ -247,21 +255,23 @@ export async function autonomousFetch<T>(
   config: { tags?: string[]; life?: string } = {}
 ): Promise<T> {
   try {
-    const data = await fetcher()
-
+    const data = await fetcher();
 
     const result = schema.safeParse(data)
     if (!result.success) {
-      console.error('[Autonomous Core] Validation Failure:', result.error.format())
-      throw new Error('Autonomous validation failed')
+      const errorMessage = `[Autonomous Core] Zod validation failed for schema: ${schema.description || 'N/A'}`;
+      console.error(errorMessage, result.error.format());
+      logAutonomousAction(errorMessage, 'error');
+      throw new Error('Autonomous validation failed');
     }
     return result.data
   } catch (err) {
-    console.warn('[Autonomous Core] Primary fetch failed. Attempting Graceful Degradation...', err)
-
-    // the stale-while-revalidate behavior if a previous entry exists.
-    // If we throw here, Next.js will often serve the stale content if available.
-    throw err
+    // The fetcher itself failed. Log it and re-throw.
+    // In a Next.js environment, throwing here allows the framework's cache
+    // to potentially serve stale data if available (stale-while-revalidate),
+    // providing graceful degradation.
+    console.warn(`[Autonomous Core] Fetcher failed. Re-throwing.`, err);
+    throw err;
   }
 }
 
@@ -285,8 +295,8 @@ export async function healthCheck() {
 
   try {
     const { error } = await supabase.from('_health').select('id').limit(1)
-    // If table doesn't exist, it's still "connected" if no network error
-    results.supabase = error && error.code === 'PGRST116' ? 'healthy' : 'connected'
+    // If no error or table doesn't exist, Supabase connection is healthy
+    results.supabase = !error || error.code === 'PGRST116' || error.code === '42P01' ? 'healthy' : 'connected'
   } catch (e) {
     results.supabase = 'error'
   }

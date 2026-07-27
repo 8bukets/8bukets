@@ -1,3 +1,4 @@
+import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
@@ -145,6 +146,6 @@ export class KnowledgeObserver {
     }
 
     fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
-    console.log(`✅ [KnowledgeObserver] Persisted "${knowledge.title}" to unified store at ${jsonStore}`)
+    logAutonomousAction(`✅ [KnowledgeObserver] Persisted "${knowledge.title}" to unified store at ${jsonStore}`, 'info')
   }
 }

@@ -1,8 +1,9 @@
-import { jules } from './jules.ts';
+import { Jules } from './jules';
 
 const isContinuous = process.argv.includes('--continuous');
 
 async function run() {
+  const jules = await Jules.create('General');
   if (isContinuous) {
     await jules.startConsciousnessLoop();
   } else {

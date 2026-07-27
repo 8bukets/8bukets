@@ -8,7 +8,7 @@ import * as cheerio from 'cheerio'
  * Fetches basic metadata from a target URL and records relationship intelligence.
  */
 export async function observeKnowledge(url: string) {
-  console.log(`🧠 [Knowledge Observer] Scanning ${url} for market intelligence...`)
+  logAutonomousAction(`🧠 [Knowledge Observer] Scanning ${url} for market intelligence...`, 'info')
 
   try {
     const response = await fetch(url)
@@ -35,7 +35,7 @@ export async function observeKnowledge(url: string) {
       fs.writeFileSync(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
     }
 
-    console.log(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`)
+    logAutonomousAction(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`, 'info')
     return { status: 'observed', url, title }
   } catch (error) {
     console.error(`⚠️ [Knowledge Observer] Failed to scan ${url}:`, error)

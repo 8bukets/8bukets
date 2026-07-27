@@ -8,7 +8,7 @@ import { logAutonomousAction } from '../core'
  */
 
 export async function generateContent(payload: { title: string, content: string, filename: string }) {
-  console.log(`📝 [Content] Generating content: ${payload.title}...`)
+  logAutonomousAction(`📝 [Content] Generating content: ${payload.title}...`, 'info')
 
   const filePath = path.join(process.cwd(), 'data', payload.filename)
 

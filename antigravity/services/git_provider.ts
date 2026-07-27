@@ -1,4 +1,5 @@
-import { execSync } from 'child_process'
+import { logAutonomousAction } from '../core'
+import { execSync, execFileSync } from 'child_process'
 import * as github from '@actions/github'
 
 /**
@@ -28,23 +29,22 @@ export class GitProviderService {
    * Performs an autonomous commit with GitKraken-optimized formatting.
    */
   public async commit(options: CommitOptions) {
-    console.log(`🌿 [GitProvider] Commencing autonomous commit for ${options.provider || 'default'}...`)
+    logAutonomousAction(`🌿 [GitProvider] Commencing autonomous commit for ${options.provider || 'default'}...`, 'info')
 
     try {
       // 1. Stage files
-      const filesToStage = options.files.join(' ')
-      execSync(`git add -f ${filesToStage}`)
+      execFileSync('git', ['add', ...options.files])
 
       // 2. Verify changes
       const status = execSync('git status --porcelain').toString().trim()
       if (!status) {
-        console.log('✨ [GitProvider] No changes detected. Skipping commit.')
+        logAutonomousAction('✨ [GitProvider] No changes detected. Skipping commit.', 'info')
         return { status: 'skipped', reason: 'no_changes' }
       }
 
       // 3. Commit
-      execSync(`git commit -m "${options.message}"`)
-      console.log('✅ [GitProvider] Changes committed locally.')
+      execFileSync('git', ['commit', '-m', options.message])
+      logAutonomousAction('✅ [GitProvider] Changes committed locally.', 'info')
 
       // 4. Push if requested
       if (options.push) {
@@ -66,18 +66,18 @@ export class GitProviderService {
     }
 
     try {
-      console.log(`🔄 [GitProvider] Synchronizing with remote (${branch})...`)
+      logAutonomousAction(`🔄 [GitProvider] Synchronizing with remote (${branch})...`, 'info')
       if (branch === 'main') {
-        execSync('git pull --rebase origin main')
-        execSync('git push origin main')
+        execFileSync('git', ['pull', '--rebase', 'origin', 'main'])
+        execFileSync('git', ['push', 'origin', 'main'])
       } else {
-        execSync(`git push origin ${branch}`)
+        execFileSync('git', ['push', 'origin', branch])
       }
-      console.log(`🚀 [GitProvider] Changes pushed to origin/${branch}.`)
+      logAutonomousAction(`🚀 [GitProvider] Changes pushed to origin/${branch}.`, 'info')
     } catch (err: any) {
       console.error('❌ [GitProvider] Push failed:', err.message)
       if (branch === 'main') {
-        try { execSync('git rebase --abort') } catch (e) {}
+        try { execFileSync('git', ['rebase', '--abort']) } catch (e) { }
       }
     }
   }
@@ -86,7 +86,7 @@ export class GitProviderService {
    * Autonomously creates a Pull Request or Merge Request.
    */
   public async createPullRequest(title: string, body: string, head: string, base: string = 'main') {
-    console.log(`PR [GitProvider] Creating autonomous PR/MR: ${title}...`)
+    logAutonomousAction(`PR [GitProvider] Creating autonomous PR/MR: ${title}...`, 'info')
 
     // 1. GitHub
     if (process.env.GITHUB_TOKEN) {
@@ -100,7 +100,7 @@ export class GitProviderService {
           head,
           base
         })
-        console.log(`✅ [GitProvider] GitHub PR created: ${pr.html_url}`)
+        logAutonomousAction(`✅ [GitProvider] GitHub PR created: ${pr.html_url}`, 'info')
         return pr.number
       } catch (err: any) {
         console.error('❌ [GitProvider] GitHub PR creation failed:', err.message)
@@ -110,8 +110,16 @@ export class GitProviderService {
     // GitLab (via glab CLI or REST API fallback)
     if (process.env.GITLAB_TOKEN) {
       try {
-        execSync(`glab mr create --title "${title}" --description "${body}" --source-branch "${head}" --target-branch "${base}" --yes`)
-        console.log('✅ [GitProvider] GitLab MR created via glab.')
+        execFileSync('glab', [
+          'mr',
+          'create',
+          '--title', title,
+          '--description', body,
+          '--source-branch', head,
+          '--target-branch', base,
+          '--yes'
+        ])
+        logAutonomousAction('✅ [GitProvider] GitLab MR created via glab.', 'info')
         return 'gitlab-mr'
       } catch (err: any) {
         console.warn('⚠️ [GitProvider] GitLab MR creation via glab failed. Attempting REST API fallback...')
@@ -133,7 +141,7 @@ export class GitProviderService {
             })
             const data = await response.json()
             if (response.ok) {
-              console.log(`✅ [GitProvider] GitLab MR created via API: ${data.web_url}`)
+              logAutonomousAction(`✅ [GitProvider] GitLab MR created via API: ${data.web_url}`, 'info')
               return data.iid
             } else {
               console.error('❌ [GitProvider] GitLab API MR creation failed:', data.message)
@@ -196,7 +204,9 @@ export class GitProviderService {
           status: 'open' as const,
           provider: 'github' as const
         })))
-      } catch (err) {}
+      } catch (err: any) {
+        console.error('❌ [GitProvider] Failed to list GitHub PRs:', err.message)
+      }
     }
 
     // GitLab
@@ -230,7 +240,9 @@ export class GitProviderService {
                 provider: 'gitlab' as const
               })))
             }
-          } catch (e) {}
+          } catch (e: any) {
+            console.error('❌ [GitProvider] Failed to list GitLab MRs via API:', e.message)
+          }
         }
       }
     }
@@ -258,15 +270,15 @@ export class GitProviderService {
           pull_number: Number(prId),
           merge_method: 'squash'
         })
-        console.log(`✅ [GitProvider] GitHub PR #${prId} merged.`)
+        logAutonomousAction(`✅ [GitProvider] GitHub PR #${prId} merged.`, 'info')
         return true
       } catch (err: any) {
         console.error(`❌ [GitProvider] GitHub Merge failed for PR #${prId}:`, err.message)
       }
     } else if (provider === 'gitlab' && process.env.GITLAB_TOKEN) {
       try {
-        execSync(`glab mr merge ${prId} --squash --remove-source-branch`)
-        console.log(`✅ [GitProvider] GitLab MR !${prId} merged via glab.`)
+        execFileSync('glab', ['mr', 'merge', String(prId), '--squash', '--remove-source-branch'])
+        logAutonomousAction(`✅ [GitProvider] GitLab MR !${prId} merged via glab.`, 'info')
         return true
       } catch (err: any) {
         console.warn(`⚠️ [GitProvider] GitLab Merge via glab failed for MR !${prId}. Attempting API fallback...`)
@@ -279,7 +291,7 @@ export class GitProviderService {
               body: JSON.stringify({ squash: true, should_remove_source_branch: true })
             })
             if (response.ok) {
-              console.log(`✅ [GitProvider] GitLab MR !${prId} merged via API.`)
+              logAutonomousAction(`✅ [GitProvider] GitLab MR !${prId} merged via API.`, 'info')
               return true
             } else {
               const data = await response.json()
@@ -294,6 +306,62 @@ export class GitProviderService {
 
     return false
   }
+
+  /**
+   * Posts a comment/note on a Pull Request or Merge Request.
+   */
+  public async createComment(prId: number | string, body: string, provider: 'github' | 'gitlab' = 'github') {
+    const token = process.env.GITHUB_TOKEN || process.env.GITLAB_TOKEN
+    if (!token) {
+      console.warn(`⚠️ [GitProvider] Cannot comment on ${provider} PR/MR #${prId} without authentication token.`)
+      return false
+    }
+
+    if (provider === 'github' && process.env.GITHUB_TOKEN) {
+      try {
+        const octokit = github.getOctokit(process.env.GITHUB_TOKEN)
+        const context = github.context
+        await octokit.rest.issues.createComment({
+          ...context.repo,
+          issue_number: Number(prId),
+          body
+        })
+        logAutonomousAction(`💬 [GitProvider] Created comment on GitHub PR #${prId}`, 'info')
+        return true
+      } catch (err: any) {
+        console.error(`❌ [GitProvider] GitHub comment creation failed for PR #${prId}:`, err.message)
+      }
+    } else if (provider === 'gitlab' && process.env.GITLAB_TOKEN) {
+      try {
+        execFileSync('glab', ['mr', 'note', String(prId), '--message', body])
+        logAutonomousAction(`💬 [GitProvider] Created note on GitLab MR !${prId}`, 'info')
+        return true
+      } catch (err: any) {
+        console.warn(`⚠️ [GitProvider] GitLab comment via glab failed for MR !${prId}. Attempting API fallback...`)
+        const projectId = process.env.CI_PROJECT_ID
+        if (projectId) {
+          try {
+            const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests/${prId}/notes`, {
+              method: 'POST',
+              headers: {
+                'PRIVATE-TOKEN': process.env.GITLAB_TOKEN,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ body })
+            })
+            if (response.ok) {
+              logAutonomousAction(`💬 [GitProvider] Created note on GitLab MR !${prId} via API.`, 'info')
+              return true
+            }
+          } catch (apiErr: any) {
+            console.error(`❌ [GitProvider] GitLab API fallback failed:`, apiErr.message)
+          }
+        }
+      }
+    }
+    return false
+  }
+
 
   /**
    * Formats a commit message with GitKraken roadmap tags.

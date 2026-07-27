@@ -22,7 +22,7 @@ def run_audit():
         # Run tests with PYTHONPATH set to current directory
         env = os.environ.copy()
         env["PYTHONPATH"] = "."
-        result = subprocess.run(["python3", "-m", "pytest", "tests/"], env=env, capture_output=True, text=True)
+        result = subprocess.run([sys.executable, "-m", "pytest", "tests/"], env=env, capture_output=True, text=True)
         if result.returncode == 0:
             print("[✅] All core tests passed.")
         else:

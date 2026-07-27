@@ -1,0 +1,66 @@
+./agents/analysis_agent.py:6:1: E402 module level import not at top of file
+./agents/analysis_agent.py:7:1: E402 module level import not at top of file
+./agents/architect_agent.py:3:1: F401 'os' imported but unused
+./agents/base_agent.py:7:1: F401 'typing.Set' imported but unused
+./agents/base_agent.py:95:9: E722 do not use bare 'except'
+./agents/content_agent.py:21:20: F541 f-string is missing placeholders
+./agents/gitkraken_evolution_agent.py:39:9: F841 local variable 'kraken_score' is assigned to but never used
+./agents/gitlab_evolution_agent.py:32:25: F841 local variable 'has_security_or_test' is assigned to but never used
+./agents/intelligence_agent.py:3:1: F401 'os' imported but unused
+./agents/intelligence_agent.py:4:1: F401 'json' imported but unused
+./agents/jenkins_agent.py:32:25: F841 local variable 'has_security_or_test' is assigned to but never used
+./agents/jules_evolution_agent.py:19:9: F841 local variable 'meta' is assigned to but never used
+./agents/knowledge_merge_agent.py:5:1: F401 'typing.Dict' imported but unused
+./agents/knowledge_merge_agent.py:5:1: F401 'typing.Any' imported but unused
+./agents/knowledge_merge_agent.py:134:25: F541 f-string is missing placeholders
+./agents/meta_coding_agent.py:1:1: F401 'os' imported but unused
+./agents/meta_coding_agent.py:2:1: F401 'json' imported but unused
+./agents/meta_coding_agent.py:3:1: F401 'asyncio' imported but unused
+./agents/meta_coding_agent.py:26:9: F841 local variable 'evolution' is assigned to but never used
+./agents/orchestrator.py:3:1: F401 'typing.Dict' imported but unused
+./agents/performance_optimization_agent.py:1:1: F401 'random' imported but unused
+./agents/rag_agent.py:2:1: F401 'uuid' imported but unused
+./agents/rag_agent.py:4:1: F401 'typing.Dict' imported but unused
+./agents/rag_agent.py:4:1: F401 'typing.Any' imported but unused
+./agents/sandbox_agent.py:3:1: F401 'json' imported but unused
+./agents/sandbox_agent.py:4:1: F401 'logging' imported but unused
+./agents/sandbox_agent.py:5:1: F401 'typing.Any' imported but unused
+./agents/sandbox_agent.py:5:1: F401 'typing.Dict' imported but unused
+./agents/system_audit_agent.py:2:1: F401 'json' imported but unused
+./agents/work_order_agent.py:3:1: F401 'asyncio' imported but unused
+./agents/work_order_agent.py:32:9: F841 local variable 'antigravity' is assigned to but never used
+./analytics.py:40:5: E722 do not use bare 'except'
+./autonomous_audit.py:71:9: F401 'agents.base_agent.BaseAgent' imported but unused
+./autonomous_engine.py:92:9: E722 do not use bare 'except'
+./autonomous_engine.py:134:5: E722 do not use bare 'except'
+./autonomous_engine.py:203:5: E722 do not use bare 'except'
+./gemmafour_scraper.py:4:1: F401 'os' imported but unused
+./intelephense_scraper.py:3:1: F401 'os' imported but unused
+./litert_scraper.py:4:1: F401 'os' imported but unused
+./opentelemetry_scraper.py:3:1: F401 'os' imported but unused
+./opentelemetry_scraper.py:82:17: F541 f-string is missing placeholders
+./opentelemetry_scraper.py:84:13: F541 f-string is missing placeholders
+./run_system.py:2:1: F401 'time' imported but unused
+./run_system.py:128:21: F541 f-string is missing placeholders
+./scraper.py:5:1: F811 redefinition of unused 're' from line 1
+./scraper.py:6:1: F811 redefinition of unused 'BeautifulSoup' from line 4
+./scraper.py:11:1: F401 'time' imported but unused
+./scraper.py:61:5: F811 redefinition of unused 'is_url' from line 54
+./scraper.py:83:9: E722 do not use bare 'except'
+./scripts/execute_content_creation.py:1:1: F401 'json' imported but unused
+./scripts/rollout_executor.py:4:1: F401 'sys' imported but unused
+./stitch_scraper.py:2:1: F401 'os' imported but unused
+./test_scraper.py:43:1: F811 redefinition of unused 'MarkPositionScraperAsync' from line 3
+./test_scraper.py:43:1: E402 module level import not at top of file
+./tests/test_collaboration.py:2:1: F401 'asyncio' imported but unused
+./tests/test_knowledge_flow.py:2:1: F401 'json' imported but unused
+./tests/test_knowledge_flow.py:10:1: E402 module level import not at top of file
+./tests/test_knowledge_flow.py:11:1: E402 module level import not at top of file
+./tests/test_knowledge_flow.py:12:1: E402 module level import not at top of file
+./tests/test_orchestrator.py:2:1: F401 'asyncio' imported but unused
+./verify_collaboration.py:39:5: F841 local variable 'github' is assigned to but never used
+./verify_upgrade.py:3:1: F401 'json' imported but unused
+./verify_upgrade.py:4:1: F401 'os' imported but unused
+./verify_upgrade.py:79:5: F841 local variable 'context' is assigned to but never used
+./vscode_intelephense_scraper.py:68:21: F541 f-string is missing placeholders
+./vscode_intelephense_scraper.py:69:21: F541 f-string is missing placeholders

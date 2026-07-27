@@ -1,0 +1,50 @@
+intelephense_scraper.py:1: error: Library stubs not installed for "requests"  [import-untyped]
+vscode_intelephense_scraper.py:1: error: Library stubs not installed for "requests"  [import-untyped]
+agents/base_agent.py:17: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+agents/base_agent.py:18: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+agents/base_agent.py:19: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+agents/base_agent.py:20: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+agents/base_agent.py:68: error: Incompatible default for argument "dependencies" (default has type "None", argument has type "list[str]")  [assignment]
+agents/base_agent.py:68: note: PEP 484 prohibits implicit Optional. Accordingly, mypy has changed its default to no_implicit_optional=True
+agents/base_agent.py:68: note: Use https://github.com/hauntsaninja/no_implicit_optional to automatically upgrade your codebase
+agents/base_agent.py:68: error: Incompatible default for argument "provides" (default has type "None", argument has type "list[str]")  [assignment]
+agents/backup_agent.py:9: error: Incompatible default for argument "dependencies" (default has type "None", argument has type "list[Any]")  [assignment]
+agents/backup_agent.py:9: note: PEP 484 prohibits implicit Optional. Accordingly, mypy has changed its default to no_implicit_optional=True
+agents/backup_agent.py:9: note: Use https://github.com/hauntsaninja/no_implicit_optional to automatically upgrade your codebase
+agents/backup_agent.py:9: error: Incompatible default for argument "provides" (default has type "None", argument has type "list[Any]")  [assignment]
+agents/sandbox_agent.py:33: error: Incompatible return value type (got "tuple[Optional[int], str, str]", expected "tuple[int, str, str]")  [return-value]
+agents/system_audit_agent.py:53: error: Incompatible types in assignment (expression has type "str", variable has type "TextIOWrapper[_WrappedBuffer]")  [assignment]
+agents/system_audit_agent.py:54: error: Argument 1 to "exists" has incompatible type "TextIOWrapper[_WrappedBuffer]"; expected "Union[int, Union[str, bytes, PathLike[str], PathLike[bytes]]]"  [arg-type]
+agents/mysql_agent.py:7: error: Skipping analyzing "aiomysql": module is installed, but missing library stubs or py.typed marker  [import-untyped]
+agents/docker_evolution_agent.py:78: error: Dict entry 4 has incompatible type "str": "bool"; expected "str": "str"  [dict-item]
+agents/docker_evolution_agent.py:79: error: Dict entry 5 has incompatible type "str": "bool"; expected "str": "str"  [dict-item]
+agents/architect_agent.py:43: error: Unsupported target for indexed assignment ("object")  [index]
+agents/architect_agent.py:46: error: Unsupported target for indexed assignment ("object")  [index]
+agents/architect_agent.py:60: error: Unsupported target for indexed assignment ("object")  [index]
+agents/architect_agent.py:64: error: Unsupported target for indexed assignment ("object")  [index]
+agents/architect_agent.py:76: error: Unsupported target for indexed assignment ("object")  [index]
+agents/architect_agent.py:80: error: Unsupported target for indexed assignment ("object")  [index]
+agents/telemetry_agent.py:36: error: Unsupported target for indexed assignment ("object")  [index]
+agents/telemetry_agent.py:37: error: "object" has no attribute "get"  [attr-defined]
+agents/telemetry_agent.py:41: error: Unsupported target for indexed assignment ("object")  [index]
+agents/telemetry_agent.py:42: error: "object" has no attribute "get"  [attr-defined]
+agents/robot_txt_agent.py:10: error: Library stubs not installed for "requests"  [import-untyped]
+agents/robot_txt_agent.py:10: note: Hint: "python3 -m pip install types-requests"
+agents/robot_txt_agent.py:10: note: (or run "mypy --install-types" to install all missing stub packages)
+agents/robot_txt_agent.py:10: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+agents/health_check_agent.py:15: error: "Sequence[str]" has no attribute "append"  [attr-defined]
+agents/health_check_agent.py:17: error: "Sequence[str]" has no attribute "append"  [attr-defined]
+agents/health_check_agent.py:26: error: "Sequence[str]" has no attribute "append"  [attr-defined]
+agents/health_check_agent.py:29: error: "Sequence[str]" has no attribute "append"  [attr-defined]
+ai_agents_knowledge_scraper.py:1: error: Library stubs not installed for "requests"  [import-untyped]
+agents/telemetry.py:15: error: "TracerProvider" has no attribute "add_span_processor"  [attr-defined]
+agents/telemetry.py:27: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+agents/research_agent.py:45: error: "Collection[str]" has no attribute "append"  [attr-defined]
+agents/research_agent.py:55: error: Unsupported target for indexed assignment ("Collection[str]")  [index]
+agents/research_agent.py:58: error: "Collection[str]" has no attribute "append"  [attr-defined]
+agents/mongodb_agent.py:40: error: Need type annotation for "client"  [var-annotated]
+agents/rag_agent.py:88: error: "LlmAgent" has no attribute "run"  [attr-defined]
+run_system.py:198: error: Incompatible default for argument "auth_token" (default has type "None", argument has type "str")  [assignment]
+run_system.py:198: note: PEP 484 prohibits implicit Optional. Accordingly, mypy has changed its default to no_implicit_optional=True
+run_system.py:198: note: Use https://github.com/hauntsaninja/no_implicit_optional to automatically upgrade your codebase
+Found 35 errors in 18 files (checked 2 source files)

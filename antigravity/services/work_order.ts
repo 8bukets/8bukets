@@ -38,7 +38,7 @@ export class WorkOrderService {
         const result = z.array(WorkOrderSchema).safeParse(mongoOrders)
         if (result.success) {
           this.orders = result.data
-          console.log(`✅ [WorkOrder] Loaded ${this.orders.length} orders from MongoDB.`)
+          logAutonomousAction(`✅ [WorkOrder] Loaded ${this.orders.length} orders from MongoDB.`, 'info')
           this.saveLocal() // Sync local for fallback
           return
         }
@@ -55,7 +55,7 @@ export class WorkOrderService {
         const result = z.array(WorkOrderSchema).safeParse(parsed)
         if (result.success) {
           this.orders = result.data
-          console.log(`✅ [WorkOrder] Loaded ${this.orders.length} orders from local fallback.`)
+          logAutonomousAction(`✅ [WorkOrder] Loaded ${this.orders.length} orders from local fallback.`, 'info')
         } else {
           console.error('❌ [WorkOrder] Local data validation failed:', result.error.format())
         }
@@ -141,7 +141,7 @@ export class WorkOrderService {
     const pending = await this.getPendingOrders()
     if (pending.length === 0) return
 
-    console.log(`⚡ [WorkOrder] Executing ${pending.length} pending orders...`)
+    logAutonomousAction(`⚡ [WorkOrder] Executing ${pending.length} pending orders...`, 'info')
 
     for (const order of pending) {
       await this.updateOrderStatus(order.id, 'executing')
@@ -158,7 +158,7 @@ export class WorkOrderService {
   }
 
   private async dispatch(order: WorkOrder) {
-    console.log(`🎬 [WorkOrder] Dispatching ${order.type}: ${order.goal || order.description}`)
+    logAutonomousAction(`🎬 [WorkOrder] Dispatching ${order.type}: ${order.goal || order.description}`, 'info')
 
     switch (order.type) {
       case 'BOOTSTRAP_SERVICE':
@@ -178,7 +178,7 @@ export class WorkOrderService {
         return { appliedFixes: suggestions.length }
 
       default:
-        console.log(`ℹ️ [WorkOrder] Skipping unknown or external order type: ${order.type}`)
+        logAutonomousAction(`ℹ️ [WorkOrder] Skipping unknown or external order type: ${order.type}`, 'info')
         return { skipped: true, reason: 'external_type' }
     }
   }

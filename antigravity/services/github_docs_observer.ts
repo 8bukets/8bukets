@@ -1,3 +1,4 @@
+import { logAutonomousAction } from '../core'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
 
@@ -30,7 +31,7 @@ export class GithubDocsObserver {
     const rawUrl = `${this.baseUrl}/${owner}/${repo}/${branch}/${path}`
 
     return autonomousFetch(GithubDocsSchema, async () => {
-      console.log(`📡 [GithubDocsObserver] Fetching: ${owner}/${repo}/${path}...`)
+      logAutonomousAction(`📡 [GithubDocsObserver] Fetching: ${owner}/${repo}/${path}...`, 'info')
       const response = await fetch(rawUrl)
 
       if (!response.ok) {
