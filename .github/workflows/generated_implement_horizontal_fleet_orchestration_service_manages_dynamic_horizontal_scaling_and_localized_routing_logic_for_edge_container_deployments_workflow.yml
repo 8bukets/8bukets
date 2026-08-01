@@ -1,0 +1,46 @@
+name: Implement Horizontal Fleet Orchestration Service Manages Dynamic Horizontal Scaling And Localized Routing Logic For Edge Container Deployments  Workflow
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  run-task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Execute Task
+        run: npx tsx antigravity/workflows/implement_horizontal_fleet_orchestration_service_manages_dynamic_horizontal_scaling_and_localized_routing_logic_for_edge_container_deployments__workflow.ts
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN }}
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "chore: automated updates from Implement Horizontal Fleet Orchestration Service Manages Dynamic Horizontal Scaling And Localized Routing Logic For Edge Container Deployments  Workflow" || true
+          git push origin HEAD:${{ github.ref }}
