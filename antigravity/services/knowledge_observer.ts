@@ -131,7 +131,15 @@ export class KnowledgeObserver {
           const headerLevelMatch = rawHeader.match(/^(#+)/);
           const level = headerLevelMatch ? headerLevelMatch[1].length : 2;
 
-          const cleanContent = (s.content || '').trim();
+          let rawContent = '';
+          if (Array.isArray(s.content)) {
+            rawContent = s.content.map((item: any) => typeof item === 'object' ? JSON.stringify(item) : String(item)).join('\n');
+          } else if (typeof s.content === 'object' && s.content !== null) {
+            rawContent = JSON.stringify(s.content);
+          } else {
+            rawContent = String(s.content || '');
+          }
+          const cleanContent = rawContent.trim();
 
           if (cleanContent.length > 5) {
             // Avoid redundant headers if the section title matches the topic title
