@@ -101,12 +101,24 @@ class ChiefAIOfficerAgent(BaseAgent):
 
         for k in knowledge.get("typescript_sections", []):
             title = k.get("title", "")
-            title_lower = title.lower()
+            title_lower = title.lower() if isinstance(title, str) else str(title).lower()
             sections_list = k.get("sections", [])
             sections_str = json.dumps(sections_list).lower()
 
             # Extract content from sections into a single searchable string
-            sections_content = " ".join([s.get("content", "").lower() for s in sections_list])
+            sections_content_list = []
+            for s in sections_list:
+                content_val = s.get("content", "")
+                if isinstance(content_val, list):
+                    normalized = " ".join([str(item) for item in content_val if item is not None])
+                elif isinstance(content_val, dict):
+                    normalized = json.dumps(content_val)
+                elif content_val is None:
+                    normalized = ""
+                else:
+                    normalized = str(content_val)
+                sections_content_list.append(normalized.lower())
+            sections_content = " ".join(sections_content_list)
 
             # Normalized checks for Phase detection
             has_phase_14 = "phase 14" in title_lower or "phase 14" in sections_str or "phase_14" in title_lower
