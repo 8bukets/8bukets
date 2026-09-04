@@ -126,12 +126,21 @@ export class KnowledgeObserver {
         }
 
         k.sections.forEach((s: any) => {
-          const rawHeader = s.header || '## Details';
+          const rawHeader = s.header || s.heading || '## Details';
           const cleanHeader = rawHeader.replace(/^#+\s*/, '').trim();
           const headerLevelMatch = rawHeader.match(/^(#+)/);
           const level = headerLevelMatch ? headerLevelMatch[1].length : 2;
 
-          const cleanContent = (s.content || '').trim();
+          let cleanContent = '';
+          if (s.content) {
+            if (Array.isArray(s.content)) {
+              cleanContent = s.content.map((item: any) => String(item)).join('\n').trim();
+            } else if (typeof s.content === 'object') {
+              cleanContent = JSON.stringify(s.content).trim();
+            } else {
+              cleanContent = String(s.content).trim();
+            }
+          }
 
           if (cleanContent.length > 5) {
             // Avoid redundant headers if the section title matches the topic title

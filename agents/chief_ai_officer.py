@@ -59,6 +59,18 @@ class ChiefAIOfficerAgent(BaseAgent):
         market_intel = blackboard.get("market_intelligence", {})
         resource_alloc = blackboard.get("resource_allocation", {})
 
+        def _normalize_content(s):
+            if not s or not isinstance(s, dict):
+                return ""
+            content = s.get("content", "")
+            if content is None:
+                return ""
+            if isinstance(content, list):
+                return " ".join([str(item) for item in content])
+            elif isinstance(content, dict):
+                return " ".join([f"{k} {v}" for k, v in content.items()])
+            return str(content)
+
         self.logger.info("CAIO [EXEC]: Commencing evaluation of system telemetry, market intelligence, and multi-agent synthesis matrices...")
 
         strategy_status = "OPTIMAL"
@@ -106,7 +118,7 @@ class ChiefAIOfficerAgent(BaseAgent):
             sections_str = json.dumps(sections_list).lower()
 
             # Extract content from sections into a single searchable string
-            sections_content = " ".join([s.get("content", "").lower() for s in sections_list])
+            sections_content = " ".join([_normalize_content(s).lower() for s in sections_list])
 
             # Normalized checks for Phase detection
             has_phase_14 = "phase 14" in title_lower or "phase 14" in sections_str or "phase_14" in title_lower
@@ -564,7 +576,7 @@ class ChiefAIOfficerAgent(BaseAgent):
                     # Check for "Trends" header, accommodating markdown characters
                     header = section.get("header", "")
                     if header == "Trends" or header.strip("# ").strip() == "Trends":
-                        market_trends += f" {section.get('content')}"
+                        market_trends += f" {_normalize_content(section)}"
 
         summary = ""
         if role_alignment_verified:

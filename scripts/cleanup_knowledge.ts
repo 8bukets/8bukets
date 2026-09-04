@@ -49,14 +49,29 @@ async function cleanup() {
   // Rebuild Markdown from cleaned JSON
   let mdContent = `# ANTIGRAVITY AI AGENTS KNOWLEDGE BASE\n\n*Last Updated: ${new Date().toISOString()}*\n\n`
 
+  const normalizeContent = (content: any): string => {
+    if (!content) return '';
+    if (Array.isArray(content)) {
+      return content.map(item => String(item)).join('\n');
+    }
+    if (typeof content === 'object') {
+      return JSON.stringify(content);
+    }
+    return String(content);
+  };
+
   for (const k of systemKnowledge.typescript_sections) {
     mdContent += `## DOCUMENT: ${k.title}\n`
-    mdContent += `**Source:** ${k.metadata.source.trim()}  \n`
-    mdContent += `**Ingested At:** ${k.metadata.ingestedAt}\n\n`
+    const sourceStr = k.metadata && k.metadata.source ? k.metadata.source.trim() : 'Unknown';
+    const ingestedAtStr = k.metadata && k.metadata.ingestedAt ? k.metadata.ingestedAt : new Date().toISOString();
+    mdContent += `**Source:** ${sourceStr}  \n`
+    mdContent += `**Ingested At:** ${ingestedAtStr}\n\n`
 
     for (const section of k.sections) {
-      if (section.content.trim() || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
-        mdContent += `### ${section.header}\n${section.content.trim()}\n\n`
+      const heading = section.header || section.heading || 'Details';
+      const normContent = normalizeContent(section.content);
+      if (normContent.trim() || ['Getting Started', 'Features', 'Installation'].includes(heading)) {
+        mdContent += `### ${heading}\n${normContent.trim()}\n\n`
       }
     }
     mdContent += `---\n\n`
