@@ -38861,6 +38861,7 @@ Tutorial: Create and run your first GitLab CI/CD pipeline Tier: Free, Premium, U
 - **Branch:** `origin/cloud-workflow-adjustment-5939480137317015972`
 - **Category:** ORIGIN
 - **Result:** Commit: Authorized syntactic adjustment to trigger clean commit
+<!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale -->
 Agent - Logika ponašanja
 Agent odlučuje:
 * što napraviti,
@@ -123855,11 +123856,13 @@ Based on the local codebase health assessment, the following Work Items should b
         {
           "name": "origin/cloud-workflow-adjustment-5939480137317015972",
           "lastMessage": "Authorized syntactic adjustment to trigger clean commit",
+          <!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale -->
           "lastSeen": "4 weeks ago",
           "category": "origin",
           "domain": "Security",
           "knowledge": "Enhanced ecosystem knowledge base via 28 artifacts.",
           "results": "Authorized syntactic adjustment to trigger clean commit (50 files changed in Security)",
+          <!-- implement all knowledge from antigravity folder and github folder on macbook that you can work in cloud and connected in cloud online and online presence with docker, github, gitkraken, supabase, mongodb and gitlab in case that is full online and not local and in sandbox ,to proceed coding automatic autonomus online and colaborate and merge with other specified tools to proceed improve engine and evolving on higher scale -->
           "changedFiles": [
             ".antigravity/directives.md",
             ".antigravity/mission.md",
