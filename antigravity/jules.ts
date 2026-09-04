@@ -96,10 +96,14 @@ export class Jules {
       const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
       const sections = knowledge.typescript_sections || []
 
-      const checkKnowledge = (query: string) => sections.some((s: any) =>
-        s.title.toLowerCase().includes(query.toLowerCase()) ||
-        s.sections?.some((sec: any) => sec.content.toLowerCase().includes(query.toLowerCase()))
-      )
+      const checkKnowledge = (query: string) => sections.some((s: any) => {
+        const getSecContentStr = (sec: any) => {
+          if (Array.isArray(sec?.content)) return sec.content.join(' ');
+          return String(sec?.content || '');
+        };
+        return s.title.toLowerCase().includes(query.toLowerCase()) ||
+          s.sections?.some((sec: any) => getSecContentStr(sec).toLowerCase().includes(query.toLowerCase()));
+      })
 
       const hasQuantum = checkKnowledge('quantum')
       const hasOmega = checkKnowledge('omega')
@@ -210,8 +214,12 @@ export class Jules {
 
     const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
     const results = (knowledge.typescript_sections || []).filter((s: any) => {
+       const getSecContentStr = (sec: any) => {
+         if (Array.isArray(sec?.content)) return sec.content.join(' ');
+         return String(sec?.content || '');
+       };
        const inTitle = s.title.toLowerCase().includes(query.toLowerCase())
-       const inContent = s.sections?.some((sec: any) => sec.content.toLowerCase().includes(query.toLowerCase()))
+       const inContent = s.sections?.some((sec: any) => getSecContentStr(sec).toLowerCase().includes(query.toLowerCase()))
        return inTitle || inContent
     })
 

@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-07-20T09:08:24.138Z
+**System Analysis:** 2026-07-22T07:58:38.642Z
 
 ---
 
@@ -187118,3 +187118,1132 @@ OpenTelemetry Packaging SIG
 4. **Submit changes:**
 - Submit the PR with the integrated Investopedia scraping enhancements.
 
+---
+
+# Render Documentation
+
+> **Source:** icloud://render_docs.json
+> **Analyzed At:** 2026-07-20T09:08:24.204Z
+
+### Details
+Learn how to deploy and scale apps on the Render platform.
+
+### Details
+Get up and running in minutes. Bring your own code or start with an example.
+Deploy my code
+Choose a quickstart
+Create
+
+### Details
+Connect your repo and ship with every push.
+How deploys work
+Service types
+Language runtimes
+Docker support
+
+### Details
+Provision flexible datastores with advanced recovery features.
+Postgres databases
+Key Value (Redis®-compatible)
+Persistent disks
+
+### Details
+Execute long-running distributed tasks with automatic retries.
+What are workflows?
+Your first workflow
+Defining tasks
+Triggering runs
+
+### Details
+Service settings
+Apply essential config.
+Custom domains
+Environment variables
+Service previews
+Monorepo support
+
+### Details
+Handle connections to, from, and between your services.
+Private network
+Regions
+Outbound IPs
+Edge caching
+
+### Details
+Manage your multi-service architecture with a single YAML file.
+Blueprints overview
+YAML reference
+Preview environments
+Terraform provider
+
+### Details
+Respond to increased load, app regressions, and other events.
+Scaling
+Rollbacks
+Maintenance mode
+One-off jobs
+
+### Details
+Track performance and diagnose issues.
+Metrics
+Logs
+Notifications
+Health checks
+
+### Details
+Manage infra with agents, scripts, and API calls.
+Coding agents
+Render CLI
+REST API
+Webhooks
+
+### Details
+Use your favorite language and framework.
+
+### Details
+Express
+Puppeteer
+Next.js
+Redwood
+Blitz
+ElysiaJS
+Remix
+Hapi
+NuxtJS
+Strapi
+SvelteKit
+Fastify
+
+### Details
+Django
+Flask
+FastAPI
+Celery
+
+### Details
+Astro
+Next.js
+Create React App
+Jekyll
+Gatsby
+Docusaurus
+Hugo
+Svelte
+SvelteKit
+Vue.js
+
+### Details
+PostgreSQL
+Key Value (Redis®-compatible)
+MySQL
+MongoDB
+ParadeDB
+Persistent disks
+
+### Details
+Rails 8
+Rails 6 / 7
+Rails w/ Sidekiq
+Sinatra w/ Sidekiq
+
+### Details
+net/http
+Gin
+Beego
+Pgweb
+Gotify
+
+### Details
+Rocket
+Actix
+
+### Details
+Phoenix
+Elixir Cluster
+Phoenix Distillery
+
+### Details
+Ackee
+Bun
+ClickHouse
+Elasticsearch
+Fathom Analytics
+Forem
+Ghost
+GoatCounter
+Hasura GraphQL Engine
+Laravel (PHP)
+Matomo
+Mattermost
+Metabase
+MinIO
+n8n
+OpenClaw
+Open Web Analytics
+Prometheus
+Redash
+Retool
+Shopify
+Shynet
+Temporal
+Webdis
+WordPress
+Zulip
+
+### Details
+AI chatbot w/ MongoDB & LangChain
+Node.js app w/ Prisma ORM & PostgreSQL
+If you have questions, reach out on Discord.
+See @render-examples on GitHub for more examples.
+Pricing
+Blog
+Security
+Customers
+Careers
+© Render 2026
+
+---
+
+# iCloud: render_docs.md
+
+> **Source:** icloud://render_docs.md
+> **Analyzed At:** 2026-07-20T09:08:24.297Z
+
+## Render Documentation
+Learn how to deploy and scale apps on the Render platform.
+
+### Ship your first app
+Get up and running in minutes. Bring your own code or start with an example.
+Deploy my code
+Choose a quickstart
+Create
+
+### Deploy services
+Connect your repo and ship with every push.
+How deploys work
+Service types
+Language runtimes
+Docker support
+
+### Store data
+Provision flexible datastores with advanced recovery features.
+Postgres databases
+Key Value (Redis®-compatible)
+Persistent disks
+
+### Run workflows
+Execute long-running distributed tasks with automatic retries.
+What are workflows?
+Your first workflow
+Defining tasks
+Triggering runs
+
+### Configure
+Service settings
+Apply essential config.
+Custom domains
+Environment variables
+Service previews
+Monorepo support
+
+### Networking
+Handle connections to, from, and between your services.
+Private network
+Regions
+Outbound IPs
+Edge caching
+
+### Infrastructure-as-code
+Manage your multi-service architecture with a single YAML file.
+Blueprints overview
+YAML reference
+Preview environments
+Terraform provider
+
+### Service actions
+Respond to increased load, app regressions, and other events.
+Scaling
+Rollbacks
+Maintenance mode
+One-off jobs
+
+### Monitoring
+Track performance and diagnose issues.
+Metrics
+Logs
+Notifications
+Health checks
+
+### Integrations
+Manage infra with agents, scripts, and API calls.
+Coding agents
+Render CLI
+REST API
+Webhooks
+
+### Quickstarts
+Use your favorite language and framework.
+
+### Node.js
+Express
+Puppeteer
+Next.js
+Redwood
+Blitz
+ElysiaJS
+Remix
+Hapi
+NuxtJS
+Strapi
+SvelteKit
+Fastify
+
+### Python
+Django
+Flask
+FastAPI
+Celery
+
+### Static Sites
+Astro
+Next.js
+Create React App
+Jekyll
+Gatsby
+Docusaurus
+Hugo
+Svelte
+SvelteKit
+Vue.js
+
+### Datastores
+PostgreSQL
+Key Value (Redis®-compatible)
+MySQL
+MongoDB
+ParadeDB
+Persistent disks
+
+### Ruby
+Rails 8
+Rails 6 / 7
+Rails w/ Sidekiq
+Sinatra w/ Sidekiq
+
+### Go
+net/http
+Gin
+Beego
+Pgweb
+Gotify
+
+### Rust
+Rocket
+Actix
+
+### Elixir
+Phoenix
+Elixir Cluster
+Phoenix Distillery
+
+### Docker
+Ackee
+Bun
+ClickHouse
+Elasticsearch
+Fathom Analytics
+Forem
+Ghost
+GoatCounter
+Hasura GraphQL Engine
+Laravel (PHP)
+Matomo
+Mattermost
+Metabase
+MinIO
+n8n
+OpenClaw
+Open Web Analytics
+Prometheus
+Redash
+Retool
+Shopify
+Shynet
+Temporal
+Webdis
+WordPress
+Zulip
+
+### Full-stack Apps
+AI chatbot w/ MongoDB & LangChain
+Node.js app w/ Prisma ORM & PostgreSQL
+If you have questions, reach out on Discord.
+See @render-examples on GitHub for more examples.
+Pricing
+Blog
+Security
+Customers
+Careers
+© Render 2026
+
+---
+
+# iCloud: sharing_agents.md
+
+> **Source:** icloud://sharing_agents.md
+> **Analyzed At:** 2026-07-20T09:08:24.377Z
+
+## Sharing agents
+Push your agent to a registry and share it by name. Your teammates reference `agentcatalog/security-expert` instead of copying YAML files around or asking you where your agent configuration lives.
+When you update the agent in the registry, everyone gets the new version the next time they pull or restart their client.
+
+### Prerequisites
+To push agents to a registry, authenticate first:
+```bash
+docker login
+```
+For other registries, use their authentication method.
+
+### Publishing agents
+Push your agent configuration to a registry:
+```bash
+docker agent share push ./agent.yml myusername/agent-name
+```
+Push creates the repository if it doesn't exist yet. Use Docker Hub or any OCI-compatible registry.
+Tag specific versions:
+```bash
+docker agent share push ./agent.yml myusername/agent-name:v1.0.0
+docker agent share push ./agent.yml myusername/agent-name:latest
+```
+
+### Using published agents
+Pull an agent to inspect it locally:
+```bash
+docker agent share pull agentcatalog/pirate
+```
+This saves the configuration as a local YAML file.
+Run agents directly from the registry:
+```bash
+docker agent run agentcatalog/pirate
+```
+Or reference it directly in integrations:
+
+#### Editor integration (ACP)
+Use registry references in ACP configurations so your editor always uses the latest version:
+```json
+{
+  "agent_servers": {
+    "myagent": {
+      "command": "docker",
+      "args": ["agent", "aserve", "acp", "agentcatalog/pirate"]
+    }
+  }
+}
+```
+
+#### MCP client integration
+Agents can be exposed as tools in MCP clients:
+```json
+{
+  "mcpServers": {
+    "myagent": {
+      "command": "docker",
+      "args": ["agent", "serve", "mcp", "agentcatalog/pirate"]
+    }
+  }
+}
+```
+
+### What's next
+- Set up ACP integration with shared agents
+- Configure MCP integration with shared agents
+- Browse the agent catalog for examples
+
+---
+
+# The DESIGN.md specification
+
+> **Source:** icloud://stitch_docs.json
+> **Analyzed At:** 2026-07-20T09:08:24.470Z
+
+## Content
+{
+  "title": "The DESIGN.md specification",
+  "url": "https://stitch.withgoogle.com/docs/design-md/specification",
+  "content": {
+    "Introduction": {
+      "text": [
+        "Learn",
+        "The formal specification for the DESIGN.md format — token schema, section structure, and type system.",
+        "A DESIGN.md file has two layers. The YAML front matter contains machine-readable design tokens — the precise values agents use to enforce consistency. The markdown body provides human-readable design rationale organized into ## sections. Prose may use descriptive color names (e.g., “Midnight Forest Green”) that correspond to systematic token names (e.g., primary ). The tokens are the normative values; the prose provides context for how to apply them.",
+        "The spec is a foundation, not a prescription . It provides common ground that agents, tools, and teams can rely on, while preserving the freedom to extend the format for domain-specific needs."
+      ],
+      "subsections": {}
+    },
+    "Design tokens": {
+      "text": [
+        "DESIGN.md embeds design tokens as YAML front matter at the beginning of the file. The front matter block must begin with a line containing exactly --- and end with a line containing exactly --- . The YAML content between these delimiters follows the schema defined below.",
+        "The token system is inspired by the W3C Design Token Format . Tokens are easily converted to and from tokens.json , Figma variables, and Tailwind theme configs.",
+        "```\n---\nversion: alpha\nname: Daylight Prestige\ncolors:\nprimary: \"#1A1C1E\"\nsecondary: \"#6C7278\"\ntertiary: \"#B8422E\"\ntypography:\nh1:\nfontFamily: Public Sans\nfontSize: 48px\nfontWeight: 600\nlineHeight: 1.1\nletterSpacing: -0.02em\nrounded:\nsm: 4px\nmd: 8px\nspacing:\nsm: 8px\nmd: 16px\ncomponents:\nbutton-primary:\nbackgroundColor: \"{colors.primary-60}\"\ntextColor: \"{colors.primary-20}\"\nrounded: \"{rounded.md}\"\npadding: 12px\n---\n```"
+      ],
+      "subsections": {
+        "Schema": [
+          "```\nversion: <string>          # optional, current version: \"alpha\"\nname: <string>\ndescription: <string>      # optional\ncolors:\n<token-name>: <Color>\ntypography:\n<token-name>: <Typography>\nrounded:\n<scale-level>: <Dimension>\nspacing:\n<scale-level>: <Dimension | number>\ncomponents:\n<component-name>:\n<token-name>: <string | token reference>\n```",
+          "The <scale-level> placeholder represents a named level in a sizing or spacing scale. Common level names include xs , sm , md , lg , xl , and full . Any descriptive string key is valid."
+        ]
+      }
+    },
+    "Token types": {
+      "text": [],
+      "subsections": {
+        "Typography properties": [],
+        "Token references": [
+          "A token reference is wrapped in curly braces and contains an object path to another value in the YAML tree. For most token groups, the reference must point to a primitive value (e.g., {colors.primary-60} ), not a group. Within the components section, references to composite values (e.g., {typography.label-md} ) are permitted.",
+          "```\ncomponents:\nbutton-primary:\nbackgroundColor: \"{colors.primary-60}\"\ntextColor: \"{colors.primary-20}\"\nrounded: \"{rounded.md}\"\n```"
+        ]
+      }
+    },
+    "Sections": {
+      "text": [
+        "Every DESIGN.md follows the same structure. Sections can be omitted if they are not relevant to the project, but those present should appear in the sequence listed below. All sections use ## headings. An optional # heading may appear for document titling purposes but is not parsed as a section.",
+        "The section structure is intentionally open-ended. The canonical sections provide a shared vocabulary; design systems are free to add domain-specific sections beyond these."
+      ],
+      "subsections": {
+        "Section order": [],
+        "Overview": [
+          "Also known as “Brand & Style.” A holistic description of the product’s look and feel. This section defines the brand personality, target audience, and the emotional response the UI should evoke. It serves as foundational context when a specific rule or token is not defined.",
+          "```\n## Overview\nA calm, professional interface for a healthcare scheduling platform.\nAccessibility-first design with high contrast and generous touch targets.\n```"
+        ],
+        "Colors": [
+          "Defines the color palettes for the design system. At least the primary palette should be defined. Additional palettes may be named freely; a common convention is primary , secondary , tertiary , and neutral .",
+          "```\n## Colors\nThe palette is rooted in high-contrast neutrals and a single accent color.\n- **Primary (#1A1C1E):** Deep ink for headlines and core text.\n- **Secondary (#6C7278):** Sophisticated slate for borders, captions, metadata.\n- **Tertiary (#B8422E):** The sole driver for interaction.\n- **Neutral (#F7F5F2):** Warm limestone foundation.\n```",
+          "Design tokens: A map<string, Color> mapping the token name to its hex value.",
+          "```\ncolors:\nprimary: \"#1A1C1E\"\nsecondary: \"#6C7278\"\ntertiary: \"#B8422E\"\nneutral: \"#F7F5F2\"\n```"
+        ],
+        "Typography": [
+          "Defines typography levels. Most design systems have 9–15 levels, each with a semantic role (headline, body, label) and size variant (small, medium, large).",
+          "```\n## Typography\n- **Headlines:** Public Sans Semi-Bold for an institutional voice.\n- **Body:** Public Sans Regular at 16px for long-form readability.\n- **Labels:** Space Grotesk for technical data and metadata.\n```",
+          "Design tokens: A map<string, Typography> mapping the token name to its typography properties.",
+          "```\ntypography:\nh1:\nfontFamily: Public Sans\nfontSize: 48px\nfontWeight: 600\nlineHeight: 1.1\nletterSpacing: -0.02em\nbody-md:\nfontFamily: Public Sans\nfontSize: 16px\nfontWeight: 400\nlineHeight: 1.6\nlabel-caps:\nfontFamily: Space Grotesk\nfontSize: 12px\nfontWeight: 500\nlineHeight: 1\nletterSpacing: 0.1em\n```"
+        ],
+        "Layout": [
+          "Also known as “Layout & Spacing.” Describes the layout and spacing strategy — grid models, spacing scales, and containment principles.",
+          "```\n## Layout\nThe layout follows a Fluid Grid model for mobile and a Fixed-Max-Width\nGrid for desktop (max 1200px). A strict 8px spacing scale is used.\n```",
+          "Design tokens: A map<string, Dimension | number> mapping the spacing scale identifier to a dimension or unitless number (e.g., column counts or ratios).",
+          "```\nspacing:\nbase: 16px\nxs: 4px\nsm: 8px\nmd: 16px\nlg: 32px\nxl: 64px\ngutter: 24px\nmargin: 32px\n```"
+        ],
+        "Elevation & Depth": [
+          "Also known as “Elevation.” Describes how visual hierarchy is conveyed. For designs that use shadows, it defines the shadow properties. For flat designs, it explains the alternative methods (borders, tonal layers, color contrast).",
+          "```\n## Elevation & Depth\nDepth is achieved through tonal layers rather than heavy shadows.\nBackground uses a soft off-white; primary content sits on pure white cards.\n```"
+        ],
+        "Shapes": [
+          "Describes how visual elements are shaped — corner radii, edge treatments, and the overall shape language.",
+          "```\n## Shapes\nAll interactive elements use a minimal 4px corner radius.\nModern enough to feel current, rigid enough to feel engineered.\n```",
+          "Design tokens: A map<string, Dimension> mapping the scale level to the corner radius.",
+          "```\nrounded:\nsm: 4px\nmd: 8px\nlg: 12px\nfull: 9999px\n```"
+        ],
+        "Components": [
+          "Style guidance for component atoms. The spec defines common component types — Buttons, Chips, Lists, Inputs, Checkboxes, Radio buttons, Tooltips — but design systems are encouraged to define additional components relevant to their domain.",
+          "```\n## Components\n- **Buttons**: Rounded (8px), primary uses brand blue fill, secondary uses outline\n- **Inputs**: 1px border, surface-variant background, 12px padding\n- **Cards**: No elevation, 1px outline border, 12px corner radius\n```",
+          "Design tokens: A map<string, map<string, string>> mapping a component identifier to a group of sub-token properties. Token values may be literal values or references to previously defined tokens.",
+          "Variants. A component may have variants for different UI states (hover, active, pressed). Variants are defined as separate component entries with a related key name.",
+          "```\ncomponents:\nbutton-primary:\nbackgroundColor: \"{colors.primary-60}\"\ntextColor: \"{colors.primary-20}\"\nrounded: \"{rounded.md}\"\npadding: 12px\nbutton-primary-hover:\nbackgroundColor: \"{colors.primary-70}\"\n```"
+        ],
+        "Do’s and Don’ts": [
+          "Practical guidelines and common pitfalls. These act as guardrails during generation.",
+          "```\n## Do's and Don'ts\n- Do use the primary color only for the single most important action per screen\n- Don't mix rounded and sharp corners in the same view\n- Do maintain WCAG AA contrast ratios (4.5:1 for normal text)\n- Don't use more than two font weights on a single screen\n```"
+        ]
+      }
+    },
+    "Consumer behavior for unknown content": {
+      "text": [
+        "The spec is designed to be extended. When a consumer encounters content not defined by this specification:"
+      ],
+      "subsections": {}
+    },
+    "Recommended token names": {
+      "text": [
+        "The following names are commonly used across design systems. They are not required but are provided as guidance for consistency.",
+        "Colors: primary , secondary , tertiary , neutral , surface , on-surface , error",
+        "Typography: headline-display , headline-lg , headline-md , body-lg , body-md , body-sm , label-lg , label-md , label-sm",
+        "Rounded: none , sm , md , lg , xl , full"
+      ],
+      "subsections": {}
+    }
+  }
+}
+
+---
+
+# iCloud: stitch_docs.md
+
+> **Source:** icloud://stitch_docs.md
+> **Analyzed At:** 2026-07-20T09:08:24.544Z
+
+## The DESIGN.md specification
+Scraped from [https://stitch.withgoogle.com/docs/design-md/specification](https://stitch.withgoogle.com/docs/design-md/specification)
+Learn
+The formal specification for the DESIGN.md format — token schema, section structure, and type system.
+A DESIGN.md file has two layers. The YAML front matter contains machine-readable design tokens — the precise values agents use to enforce consistency. The markdown body provides human-readable design rationale organized into ## sections. Prose may use descriptive color names (e.g., “Midnight Forest Green”) that correspond to systematic token names (e.g., primary ). The tokens are the normative values; the prose provides context for how to apply them.
+The spec is a foundation, not a prescription . It provides common ground that agents, tools, and teams can rely on, while preserving the freedom to extend the format for domain-specific needs.
+
+### Design tokens
+DESIGN.md embeds design tokens as YAML front matter at the beginning of the file. The front matter block must begin with a line containing exactly --- and end with a line containing exactly --- . The YAML content between these delimiters follows the schema defined below.
+The token system is inspired by the W3C Design Token Format . Tokens are easily converted to and from tokens.json , Figma variables, and Tailwind theme configs.
+```
+---
+version: alpha
+name: Daylight Prestige
+colors:
+primary: "#1A1C1E"
+secondary: "#6C7278"
+tertiary: "#B8422E"
+typography:
+h1:
+fontFamily: Public Sans
+fontSize: 48px
+fontWeight: 600
+lineHeight: 1.1
+letterSpacing: -0.02em
+rounded:
+sm: 4px
+md: 8px
+spacing:
+sm: 8px
+md: 16px
+components:
+button-primary:
+backgroundColor: "{colors.primary-60}"
+textColor: "{colors.primary-20}"
+rounded: "{rounded.md}"
+padding: 12px
+---
+```
+
+#### Schema
+```
+version: <string>          # optional, current version: "alpha"
+name: <string>
+description: <string>      # optional
+colors:
+<token-name>: <Color>
+typography:
+<token-name>: <Typography>
+rounded:
+<scale-level>: <Dimension>
+spacing:
+<scale-level>: <Dimension | number>
+components:
+<component-name>:
+<token-name>: <string | token reference>
+```
+The  placeholder represents a named level in a sizing or spacing scale. Common level names include xs , sm , md , lg , xl , and full . Any descriptive string key is valid.
+
+#### Token references
+A token reference is wrapped in curly braces and contains an object path to another value in the YAML tree. For most token groups, the reference must point to a primitive value (e.g., {colors.primary-60} ), not a group. Within the components section, references to composite values (e.g., {typography.label-md} ) are permitted.
+```
+components:
+button-primary:
+backgroundColor: "{colors.primary-60}"
+textColor: "{colors.primary-20}"
+rounded: "{rounded.md}"
+```
+
+### Sections
+Every DESIGN.md follows the same structure. Sections can be omitted if they are not relevant to the project, but those present should appear in the sequence listed below. All sections use ## headings. An optional # heading may appear for document titling purposes but is not parsed as a section.
+The section structure is intentionally open-ended. The canonical sections provide a shared vocabulary; design systems are free to add domain-specific sections beyond these.
+
+#### Overview
+Also known as “Brand & Style.” A holistic description of the product’s look and feel. This section defines the brand personality, target audience, and the emotional response the UI should evoke. It serves as foundational context when a specific rule or token is not defined.
+```
+## Overview
+A calm, professional interface for a healthcare scheduling platform.
+Accessibility-first design with high contrast and generous touch targets.
+```
+
+#### Colors
+Defines the color palettes for the design system. At least the primary palette should be defined. Additional palettes may be named freely; a common convention is primary , secondary , tertiary , and neutral .
+```
+## Colors
+The palette is rooted in high-contrast neutrals and a single accent color.
+- **Primary (#1A1C1E):** Deep ink for headlines and core text.
+- **Secondary (#6C7278):** Sophisticated slate for borders, captions, metadata.
+- **Tertiary (#B8422E):** The sole driver for interaction.
+- **Neutral (#F7F5F2):** Warm limestone foundation.
+```
+Design tokens: A map<string, Color> mapping the token name to its hex value.
+```
+colors:
+primary: "#1A1C1E"
+secondary: "#6C7278"
+tertiary: "#B8422E"
+neutral: "#F7F5F2"
+```
+
+#### Typography
+Defines typography levels. Most design systems have 9–15 levels, each with a semantic role (headline, body, label) and size variant (small, medium, large).
+```
+## Typography
+- **Headlines:** Public Sans Semi-Bold for an institutional voice.
+- **Body:** Public Sans Regular at 16px for long-form readability.
+- **Labels:** Space Grotesk for technical data and metadata.
+```
+Design tokens: A map<string, Typography> mapping the token name to its typography properties.
+```
+typography:
+h1:
+fontFamily: Public Sans
+fontSize: 48px
+fontWeight: 600
+lineHeight: 1.1
+letterSpacing: -0.02em
+body-md:
+fontFamily: Public Sans
+fontSize: 16px
+fontWeight: 400
+lineHeight: 1.6
+label-caps:
+fontFamily: Space Grotesk
+fontSize: 12px
+fontWeight: 500
+lineHeight: 1
+letterSpacing: 0.1em
+```
+
+#### Layout
+Also known as “Layout & Spacing.” Describes the layout and spacing strategy — grid models, spacing scales, and containment principles.
+```
+## Layout
+The layout follows a Fluid Grid model for mobile and a Fixed-Max-Width
+Grid for desktop (max 1200px). A strict 8px spacing scale is used.
+```
+Design tokens: A map<string, Dimension | number> mapping the spacing scale identifier to a dimension or unitless number (e.g., column counts or ratios).
+```
+spacing:
+base: 16px
+xs: 4px
+sm: 8px
+md: 16px
+lg: 32px
+xl: 64px
+gutter: 24px
+margin: 32px
+```
+
+#### Elevation & Depth
+Also known as “Elevation.” Describes how visual hierarchy is conveyed. For designs that use shadows, it defines the shadow properties. For flat designs, it explains the alternative methods (borders, tonal layers, color contrast).
+```
+## Elevation & Depth
+Depth is achieved through tonal layers rather than heavy shadows.
+Background uses a soft off-white; primary content sits on pure white cards.
+```
+
+#### Shapes
+Describes how visual elements are shaped — corner radii, edge treatments, and the overall shape language.
+```
+## Shapes
+All interactive elements use a minimal 4px corner radius.
+Modern enough to feel current, rigid enough to feel engineered.
+```
+Design tokens: A map<string, Dimension> mapping the scale level to the corner radius.
+```
+rounded:
+sm: 4px
+md: 8px
+lg: 12px
+full: 9999px
+```
+
+#### Components
+Style guidance for component atoms. The spec defines common component types — Buttons, Chips, Lists, Inputs, Checkboxes, Radio buttons, Tooltips — but design systems are encouraged to define additional components relevant to their domain.
+```
+## Components
+- **Buttons**: Rounded (8px), primary uses brand blue fill, secondary uses outline
+- **Inputs**: 1px border, surface-variant background, 12px padding
+- **Cards**: No elevation, 1px outline border, 12px corner radius
+```
+Design tokens: A map<string, map<string, string>> mapping a component identifier to a group of sub-token properties. Token values may be literal values or references to previously defined tokens.
+Variants. A component may have variants for different UI states (hover, active, pressed). Variants are defined as separate component entries with a related key name.
+```
+components:
+button-primary:
+backgroundColor: "{colors.primary-60}"
+textColor: "{colors.primary-20}"
+rounded: "{rounded.md}"
+padding: 12px
+button-primary-hover:
+backgroundColor: "{colors.primary-70}"
+```
+
+#### Do’s and Don’ts
+Practical guidelines and common pitfalls. These act as guardrails during generation.
+```
+## Do's and Don'ts
+- Do use the primary color only for the single most important action per screen
+- Don't mix rounded and sharp corners in the same view
+- Do maintain WCAG AA contrast ratios (4.5:1 for normal text)
+- Don't use more than two font weights on a single screen
+```
+
+### Consumer behavior for unknown content
+The spec is designed to be extended. When a consumer encounters content not defined by this specification:
+
+### Recommended token names
+The following names are commonly used across design systems. They are not required but are provided as guidance for consistency.
+Colors: primary , secondary , tertiary , neutral , surface , on-surface , error
+Typography: headline-display , headline-lg , headline-md , body-lg , body-md , body-sm , label-lg , label-md , label-sm
+Rounded: none , sm , md , lg , xl , full
+
+---
+
+# iCloud: vscode_intelephense_docs.json
+
+> **Source:** icloud://vscode_intelephense_docs.json
+> **Analyzed At:** 2026-07-20T09:08:24.622Z
+
+## Content
+{
+  "repository": {
+    "name": "vscode-intelephense",
+    "full_name": "bmewburn/vscode-intelephense",
+    "description": "PHP intellisense for Visual Studio Code",
+    "html_url": "https://github.com/bmewburn/vscode-intelephense",
+    "stars": 1846,
+    "forks": 114,
+    "language": "TypeScript",
+    "license": "Other"
+  },
+  "readme": "# Intelephense\n\nPHP code intelligence for Visual Studio Code.\n\nIntelephense is a high performance PHP language server packed full of essential features for productive PHP development. \n\n* Fast camel/underscore case **code completion (IntelliSense)** for document, workspace and built-in symbols and keywords with automatic addition of use declarations.\n* Detailed **signature (parameter) help** for document, workspace and built-in constructors, methods, and functions.\n* Rapid workspace wide **go to definition** support.\n* Workspace wide **find all references**.\n* Fast camel/underscore case **workspace symbol search**.\n* Full **document symbol search** that also powers **breadcrumbs** and **outline** UI.\n* Multiple **diagnostics** for open files via an error tolerant parser and powerful static analysis engine.\n* Lossless PSR-12 compatible **document/range formatting**. Formats combined HTML/PHP/JS/CSS files too. \n* Embedded **HTML/JS/CSS code intelligence**.\n* Detailed **hover** with links to official PHP documentation.\n* Smart **highlight** of references and keywords.\n* Advanced PHPDoc type system supporting **templates and callable signatures**.\n* Reads **PHPStorm metadata** for improved type analysis and suggestions.\n* Enhances the official xdebug extension with an **inline values provider**.\n* Easy **rename** of symbols. When appropriate, files/folders are automatically renamed too. [PREMIUM](https://intelephense.com)\n* Accurate **code folding** of definitions, blocks, use declarations, heredoc, comments, and custom regions. [PREMIUM](https://intelephense.com)\n* Quickly **find all implementations** of interfaces and abstract classes and associated methods. [PREMIUM](https://intelephense.com)\n* Fast **go to type definition** of typed variables and parameters. [PREMIUM](https://intelephense.com)\n* Fast **go to declaration** for methods implementing an interface or abstract method declaration. [PREMIUM](https://intelephense.com)\n* Configurable **auto PHPDoc** creation that infers return types and identifies thrown exceptions. [PREMIUM](https://intelephense.com)\n* Syntax tree driven **smart select** to intelligently expand/shrink selection. [PREMIUM](https://intelephense.com)\n* Helpful **code actions** to import symbols, add PHPDoc, and implement all abstract methods. [PREMIUM](https://intelephense.com)\n* Concise **type hierarchy**. Easily view and navigate to subtypes and supertypes. [PREMIUM](https://intelephense.com)\n* Insightful **code lens** that shows references, abstract and interface implementations, trait usages, method parent and overrides. [PREMIUM](https://intelephense.com)\n* Informative **inlay hints** to indicate parameter names, return types and anonymous function parameter types. [PREMIUM](https://intelephense.com)\n* Convenient **document links** to quickly navigate to include/require files. [PREMIUM](https://intelephense.com)\n* **`@mixin`** support. [PREMIUM](https://intelephense.com)\n\n## Licence\nPurchase a licence at https://intelephense.com to access PREMIUM features. Licence keys grant a single user access to all current and future premium features on multiple devices _forever_. Licence keys must be activated (automatically) via https before use. Features not marked as PREMIUM are free and always will be free.\n\nThe language server client (vscode-intelephense) is open source and licensed under the MIT licence. \n\nThe language server (intelephense) is proprietary. Please see [here](https://github.com/bmewburn/vscode-intelephense/blob/master/LICENSE.txt#L29) for details.\n\n## Quick Start\n\n1. Disable the built-in VSCode PHP Language Features. \n    \n    * Go to `Extensions`.\n    * Search for `@builtin php`\n    * Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.\n\n    Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.\n2. Add glob patterns for non standard php file extensions to the `files.associations` setting.\n\n    For example: `\"files.associations\": { \"*.module\": \"php\" }`.\n3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete \n-- `ctrl + shift + p` -- and searching for `Enter licence key`.\n\nFurther configuration options are available in the `intelephense` section of settings.\n\n## Support\n\nTry the [Intelephense Documentation](https://intelephense.com/docs).\n\nFound a bug? Got a feature request? [Create an issue](https://github.com/bmewburn/vscode-intelephense/issues).\n\n## Acknowledgements\n\nA big thank you to supporters who have bought a premium licence and have enabled the continued development and maintenance of this extension.\n\nIntelephense uses the following open source libraries. Please see the following links for source code and licences.\n\n* [vscode-languageserver-node](https://github.com/Microsoft/vscode-languageserver-node)\n* [micromatch](https://github.com/micromatch/micromatch)\n* [fs-extra](https://github.com/jprichardson/node-fs-extra)\n* [fast-glob](https://github.com/mrmlnc/fast-glob)\n* [lru-cache](https://github.com/isaacs/node-lru-cache)\n* [turndown](https://github.com/mixmark-io/turndown)\n* [protobufjs](https://github.com/dcodeIO/ProtoBuf.js/)\n* [phpstorm-stubs](https://github.com/JetBrains/phpstorm-stubs)\n* [js-beautify](https://github.com/beautify-web/js-beautify)\n* [vscode-uri](https://github.com/microsoft/vscode-uri)\n* [vscode-html-languageserver](https://github.com/microsoft/vscode)\n* [node-html-to-text](https://github.com/html-to-text/node-html-to-text)\n* [semver](https://github.com/npm/node-semver)\n* [applicationinsights](https://github.com/microsoft/ApplicationInsights-node.js)\n"
+}
+
+---
+
+# iCloud: vscode_intelephense_docs.md
+
+> **Source:** icloud://vscode_intelephense_docs.md
+> **Analyzed At:** 2026-07-20T09:08:24.697Z
+
+## vscode-intelephense
+**Full Name:** bmewburn/vscode-intelephense
+**Description:** PHP intellisense for Visual Studio Code
+**URL:** https://github.com/bmewburn/vscode-intelephense
+**Stars:** 1846 | **Forks:** 114 | **Language:** TypeScript
+**License:** Other
+---
+
+## Intelephense
+PHP code intelligence for Visual Studio Code.
+Intelephense is a high performance PHP language server packed full of essential features for productive PHP development.
+* Fast camel/underscore case **code completion (IntelliSense)** for document, workspace and built-in symbols and keywords with automatic addition of use declarations.
+* Detailed **signature (parameter) help** for document, workspace and built-in constructors, methods, and functions.
+* Rapid workspace wide **go to definition** support.
+* Workspace wide **find all references**.
+* Fast camel/underscore case **workspace symbol search**.
+* Full **document symbol search** that also powers **breadcrumbs** and **outline** UI.
+* Multiple **diagnostics** for open files via an error tolerant parser and powerful static analysis engine.
+* Lossless PSR-12 compatible **document/range formatting**. Formats combined HTML/PHP/JS/CSS files too.
+* Embedded **HTML/JS/CSS code intelligence**.
+* Detailed **hover** with links to official PHP documentation.
+* Smart **highlight** of references and keywords.
+* Advanced PHPDoc type system supporting **templates and callable signatures**.
+* Reads **PHPStorm metadata** for improved type analysis and suggestions.
+* Enhances the official xdebug extension with an **inline values provider**.
+* Easy **rename** of symbols. When appropriate, files/folders are automatically renamed too.
+* Accurate **code folding** of definitions, blocks, use declarations, heredoc, comments, and custom regions.
+* Quickly **find all implementations** of interfaces and abstract classes and associated methods.
+* Fast **go to type definition** of typed variables and parameters.
+* Fast **go to declaration** for methods implementing an interface or abstract method declaration.
+* Configurable **auto PHPDoc** creation that infers return types and identifies thrown exceptions.
+* Syntax tree driven **smart select** to intelligently expand/shrink selection.
+* Helpful **code actions** to import symbols, add PHPDoc, and implement all abstract methods.
+* Concise **type hierarchy**. Easily view and navigate to subtypes and supertypes.
+* Insightful **code lens** that shows references, abstract and interface implementations, trait usages, method parent and overrides.
+* Informative **inlay hints** to indicate parameter names, return types and anonymous function parameter types.
+* Convenient **document links** to quickly navigate to include/require files.
+* **`@mixin`** support.
+
+### Licence
+Purchase a licence at https://intelephense.com to access PREMIUM features. Licence keys grant a single user access to all current and future premium features on multiple devices _forever_. Licence keys must be activated (automatically) via https before use. Features not marked as PREMIUM are free and always will be free.
+The language server client (vscode-intelephense) is open source and licensed under the MIT licence.
+The language server (intelephense) is proprietary. Please see [here](https://github.com/bmewburn/vscode-intelephense/blob/master/LICENSE.txt#L29) for details.
+
+### Quick Start
+1. Disable the built-in VSCode PHP Language Features.
+* Go to `Extensions`.
+* Search for `@builtin php`
+* Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.
+Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.
+2. Add glob patterns for non standard php file extensions to the `files.associations` setting.
+For example: `"files.associations": { "*.module": "php" }`.
+3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete
+-- `ctrl + shift + p` -- and searching for `Enter licence key`.
+Further configuration options are available in the `intelephense` section of settings.
+
+### Support
+Try the [Intelephense Documentation](https://intelephense.com/docs).
+Found a bug? Got a feature request? [Create an issue](https://github.com/bmewburn/vscode-intelephense/issues).
+
+### Acknowledgements
+A big thank you to supporters who have bought a premium licence and have enabled the continued development and maintenance of this extension.
+Intelephense uses the following open source libraries. Please see the following links for source code and licences.
+* [vscode-languageserver-node](https://github.com/Microsoft/vscode-languageserver-node)
+* [micromatch](https://github.com/micromatch/micromatch)
+* [fs-extra](https://github.com/jprichardson/node-fs-extra)
+* [fast-glob](https://github.com/mrmlnc/fast-glob)
+* [lru-cache](https://github.com/isaacs/node-lru-cache)
+* [turndown](https://github.com/mixmark-io/turndown)
+* [protobufjs](https://github.com/dcodeIO/ProtoBuf.js/)
+* [phpstorm-stubs](https://github.com/JetBrains/phpstorm-stubs)
+* [js-beautify](https://github.com/beautify-web/js-beautify)
+* [vscode-uri](https://github.com/microsoft/vscode-uri)
+* [vscode-html-languageserver](https://github.com/microsoft/vscode)
+* [node-html-to-text](https://github.com/html-to-text/node-html-to-text)
+* [semver](https://github.com/npm/node-semver)
+* [applicationinsights](https://github.com/microsoft/ApplicationInsights-node.js)
+
+---
+
+# iCloud: wilson_sonsini.json
+
+> **Source:** icloud://wilson_sonsini.json
+> **Analyzed At:** 2026-07-20T09:08:24.773Z
+
+## Content
+{
+  "wilson-sonsini-overview": {
+    "title": "Wilson Sonsini Goodrich & Rosati",
+    "content": "Wilson Sonsini Goodrich & Rosati (commonly known as Wilson Sonsini) is the preeminent American law firm for the technology and life sciences sectors. Headquartered in Palo Alto, California, it is the primary legal architect behind Silicon Valley’s growth. The firm is best known for its deep integration with the venture capital ecosystem and for taking more tech companies public than any other firm in the United States."
+  },
+  "core-identity-market-position": {
+    "title": "Core Identity & Market Position",
+    "content": "- Startup Lifecycle: They are the \"cradle-to-grave\" firm for startups, representing companies from initial incorporation and seed funding to multi-billion dollar IPOs and global M&A.\n- Venture Capital Powerhouse: They represent both the innovative companies and the venture capital/private equity firms that fund them, maintaining a central role in the flow of capital within the tech industry.\n- Innovation Focused: Beyond traditional corporate law, they are leaders in Intellectual Property (IP), patents, and complex technology transactions."
+  },
+  "historical-significance-notable-clients": {
+    "title": "Historical Significance & Notable Clients",
+    "content": "Wilson Sonsini’s history is essentially the history of modern technology:\n\n- The Apple IPO (1980): Represented Apple Computer during its landmark public offering.\n- The Google IPO (2004): Advised Google on its $2.7 billion IPO.\n- Semiconductor Pioneers: Represented early industry giants like LSI Logic, Altera, and Cypress Semiconductor.\n- Modern Tech Giants: Current or former clients include Netflix, LinkedIn, Salesforce, Twitter (X), Spotify, Lyft, and Dropbox.\n- Life Sciences: Represented trailblazers in biotech and healthcare."
+  },
+  "recent-developments-2025-2026": {
+    "title": "Recent Developments (2025-2026)",
+    "content": "The firm continues to lead high-stakes transactions in the technology and life sciences sectors:\n\n- Boston Scientific / Bolt Medical (2026): Led the legal team for the merger between Boston Scientific and Bolt Medical, recognized as a Middle-Market Deal of the Year honorable mention.\n- Transcarent / Accolade (2026): Advised Transcarent on its significant acquisition of Accolade, further consolidating its position in the health-tech space.\n- M&A Leadership (2025): In 2025, the firm advised on more than 150 announced and/or completed M&A deals with an aggregate disclosed value of $100 billion."
+  },
+  "primary-practice-areas": {
+    "title": "Primary Practice Areas",
+    "content": "Wilson Sonsini provides a comprehensive range of legal services tailored to the needs of growth enterprises and their funders:\n\n### Corporate\n- Emerging Companies & Venture Capital\n- Capital Markets\n- Mergers & Acquisitions\n- Corporate Governance\n\n### Intellectual Property\n- Patents & Innovation\n- Technology Transactions\n- Trademarks & Copyrights\n\n### Litigation\n- Securities Litigation\n- Antitrust\n- Intellectual Property Litigation\n- Commercial Litigation\n\n### Regulatory & Specialty\n- Privacy & Cybersecurity\n- Antitrust & Competition\n- Tax\n- Employee Benefits & Compensation\n- Energy & Infrastructure"
+  }
+}
+
+---
+
+# iCloud: wilson_sonsini.md
+
+> **Source:** icloud://wilson_sonsini.md
+> **Analyzed At:** 2026-07-20T09:08:24.848Z
+
+## Wilson Sonsini Goodrich & Rosati
+Wilson Sonsini Goodrich & Rosati (commonly known as Wilson Sonsini) is the preeminent American law firm for the technology and life sciences sectors. Headquartered in Palo Alto, California, it is the primary legal architect behind Silicon Valley’s growth.
+The firm is best known for its deep integration with the venture capital ecosystem and for taking more tech companies public than any other firm in the United States.
+
+### Core Identity & Market Position
+*   **Startup Lifecycle**: They are the "cradle-to-grave" firm for startups, representing companies from initial incorporation and seed funding to multi-billion dollar IPOs and global M&A.
+*   **Venture Capital Powerhouse**: They represent both the innovative companies and the venture capital/private equity firms that fund them, maintaining a central role in the flow of capital within the tech industry.
+*   **Innovation Focused**: Beyond traditional corporate law, they are leaders in Intellectual Property (IP), patents, and complex technology transactions.
+
+### Historical Significance & Notable Clients
+Wilson Sonsini’s history is essentially the history of modern technology:
+*   **The Apple IPO (1980)**: Represented Apple Computer during its landmark public offering.
+*   **The Google IPO (2004)**: Advised Google on its $2.7 billion IPO.
+*   **Semiconductor Pioneers**: Represented early industry giants like LSI Logic, Altera, and Cypress Semiconductor.
+*   **Modern Tech Giants**: Current or former clients include Netflix, LinkedIn, Salesforce, Twitter (X), Spotify, Lyft, and Dropbox.
+*   **Life Sciences**: Represented trailblazers in biotech and healthcare.
+
+### Recent Developments (2025-2026)
+The firm continues to lead high-stakes transactions in the technology and life sciences sectors:
+*   **Boston Scientific / Bolt Medical (2026)**: Led the legal team for the merger between Boston Scientific and Bolt Medical, recognized as a Middle-Market Deal of the Year honorable mention.
+*   **Transcarent / Accolade (2026)**: Advised Transcarent on its significant acquisition of Accolade, further consolidating its position in the health-tech space.
+*   **M&A Leadership (2025)**: In 2025, the firm advised on more than 150 announced and/or completed M&A deals with an aggregate disclosed value of $100 billion.
+
+### Primary Practice Areas
+Wilson Sonsini provides a comprehensive range of legal services tailored to the needs of growth enterprises and their funders:
+
+#### Corporate
+*   **Emerging Companies & Venture Capital**: The cornerstone of the firm, representing thousands of startups and hundreds of venture capital firms.
+*   **Capital Markets**: Industry leader in IPOs, follow-on offerings, and debt securities.
+*   **Mergers & Acquisitions**: Expertise in complex, high-value domestic and cross-border transactions.
+*   **Corporate Governance**: Advising boards and management on fiduciary duties and regulatory compliance.
+
+#### Intellectual Property
+*   **Patents & Innovation**: Strategic counseling on patent prosecution, portfolio management, and IP strategy.
+*   **Technology Transactions**: Specialists in licensing, outsourcing, and strategic alliances.
+*   **Trademarks & Copyrights**: Protection of brand identity and creative works.
+
+#### Litigation
+*   **Securities Litigation**: Defending companies and officers in class actions and derivative suits.
+*   **Antitrust**: Handling complex merger clearances and competition-related litigation.
+*   **Intellectual Property Litigation**: High-stakes patent, trade secret, and copyright disputes.
+*   **Commercial Litigation**: Resolving complex business disputes across various industries.
+
+#### Regulatory & Specialty
+*   **Privacy & Cybersecurity**: Navigating global data protection laws and incident response.
+*   **Antitrust & Competition**: Global expertise in competition law and regulatory investigations.
+*   **Tax**: Strategic tax planning for corporate transactions and international operations.
+*   **Employee Benefits & Compensation**: Designing incentive plans for competitive talent markets.
+*   **Energy & Infrastructure**: Leading the transition to clean energy and sustainable technologies.
+
+---
+
+# iCloud: wilson_sonsini_docs.json
+
+> **Source:** icloud://wilson_sonsini_docs.json
+> **Analyzed At:** 2026-07-20T09:08:24.937Z
+
+## Content
+{
+  "firm_overview": {
+    "title": "Wilson Sonsini Goodrich & Rosati",
+    "content": "Wilson Sonsini Goodrich & Rosati (commonly known as Wilson Sonsini) is the preeminent American law firm for the technology and life sciences sectors. Headquartered in Palo Alto, California, it is the primary legal architect behind Silicon Valley’s growth. The firm is best known for its deep integration with the venture capital ecosystem and for taking more tech companies public than any other firm in the United States."
+  },
+  "core_identity_and_market_position": {
+    "title": "Core Identity & Market Position",
+    "content": "- **Startup Lifecycle**: They are the \"cradle-to-grave\" firm for startups, representing companies from initial incorporation and seed funding to multi-billion dollar IPOs and global M&A.\n- **Venture Capital Powerhouse**: They represent both the innovative companies and the venture capital/private equity firms that fund them, maintaining a central role in the flow of capital within the tech industry.\n- **Innovation Focused**: Beyond traditional corporate law, they are leaders in Intellectual Property (IP), patents, and complex technology transactions."
+  },
+  "historical_significance_and_notable_clients": {
+    "title": "Historical Significance & Notable Clients",
+    "content": "Wilson Sonsini’s history is essentially the history of modern technology:\n\n- **The Apple IPO (1980)**: Represented Apple Computer during its landmark public offering.\n- **The Google IPO (2004)**: Advised Google on its $2.7 billion IPO.\n- **Semiconductor Pioneers**: Represented early industry giants like LSI Logic, Altera, and Cypress Semiconductor.\n- **Modern Tech Giants**: Current or former clients include Netflix, LinkedIn, Salesforce, Twitter (X), Spotify, Lyft, and Dropbox.\n- **Life Sciences**: Represented trailblazers in biotech and healthcare, recently advising on significant M&A deals for companies like Transcarent and Bolt Medical (2026)."
+  },
+  "primary_practice_areas": {
+    "title": "Primary Practice Areas",
+    "content": "- **Corporate**: Comprehensive legal support for companies at all stages, from startup to maturity.\n- **Venture Capital & Emerging Companies**: Deeply rooted in the VC ecosystem, representing both funders and founders.\n- **Intellectual Property**: Leadership in patents, trademarks, copyrights, and trade secrets protection.\n- **Litigation**: Specialized defense and resolution of complex business disputes, securities litigation, and IP challenges.\n- **Technology Transactions**: Strategic advice on licensing, collaborations, outsourcing, and other commercial deals.\n- **Capital Markets**: Industry-leading experience in IPOs, follow-on offerings, and debt financing.\n- **Mergers & Acquisitions**: Advising on multi-billion dollar global transactions in tech and life sciences.\n- **Regulatory & Compliance**: Navigating the complex regulatory landscape facing technology-driven businesses."
+  },
+  "metadata": {
+    "last_updated": "2026-04-02",
+    "headquarters": "Palo Alto, California"
+  }
+}
+
+---
+
+# iCloud: wilson_sonsini_docs.md
+
+> **Source:** icloud://wilson_sonsini_docs.md
+> **Analyzed At:** 2026-07-20T09:08:25.013Z
+
+## Wilson Sonsini Goodrich & Rosati
+Wilson Sonsini Goodrich & Rosati (commonly known as Wilson Sonsini) is the preeminent American law firm for the technology and life sciences sectors. Headquartered in Palo Alto, California, it is the primary legal architect behind Silicon Valley’s growth.
+The firm is best known for its deep integration with the venture capital ecosystem and for taking more tech companies public than any other firm in the United States.
+
+### Core Identity & Market Position
+*   **Startup Lifecycle**: They are the "cradle-to-grave" firm for startups, representing companies from initial incorporation and seed funding to multi-billion dollar IPOs and global M&A.
+*   **Venture Capital Powerhouse**: They represent both the innovative companies and the venture capital/private equity firms that fund them, maintaining a central role in the flow of capital within the tech industry.
+*   **Innovation Focused**: Beyond traditional corporate law, they are leaders in Intellectual Property (IP), patents, and complex technology transactions.
+
+### Historical Significance & Notable Clients
+Wilson Sonsini’s history is essentially the history of modern technology:
+*   **The Apple IPO (1980)**: Represented Apple Computer during its landmark public offering.
+*   **The Google IPO (2004)**: Advised Google on its $2.7 billion IPO.
+*   **Semiconductor Pioneers**: Represented early industry giants like LSI Logic, Altera, and Cypress Semiconductor.
+*   **Modern Tech Giants**: Current or former clients include Netflix, LinkedIn, Salesforce, Twitter (X), Spotify, Lyft, and Dropbox.
+*   **Life Sciences**: Represented trailblazers in biotech and healthcare, recently advising on significant M&A deals for companies like Transcarent and Bolt Medical (2026).
+
+### Primary Practice Areas
+*   **Corporate**: Comprehensive legal support for companies at all stages, from startup to maturity.
+*   **Venture Capital & Emerging Companies**: Deeply rooted in the VC ecosystem, representing both funders and founders.
+*   **Intellectual Property**: Leadership in patents, trademarks, copyrights, and trade secrets protection.
+*   **Litigation**: Specialized defense and resolution of complex business disputes, securities litigation, and IP challenges.
+*   **Technology Transactions**: Strategic advice on licensing, collaborations, outsourcing, and other complex commercial deals.
+*   **Capital Markets**: Industry-leading experience in IPOs, follow-on offerings, and debt financing.
+*   **Mergers & Acquisitions**: Advising on multi-billion dollar global transactions in tech and life sciences.
+*   **Regulatory & Compliance**: Navigating the complex regulatory landscape facing technology-driven businesses.
+---
+*Last updated: 2026-04-02*
+
+---
+
+# Chief AI Officer (CAIO) Role
+
+> **Source:** user_input://caio_user_input.md
+> **Analyzed At:** 2026-07-22T07:58:36.571Z
+
+A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera.
+The role bridges the gap between advanced technical execution and bottom-line business outcomes. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Data Science, Computer Science, or an MBA.
+
+### Core Job Description
+A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
+
+### Key Responsibilities
+- **Strategy & Vision:** Align AI initiatives with the company’s overall business goals.
+- **Ethics & Governance:** Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations.
+- **Implementation & Tech Stacking:** Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors.
+- **Cross-Department Training:** Educate the board, executives, and general workforce on how to leverage AI safely and effectively.
+- **Performance Tracking:** Measure the return on investment (ROI) and overall business impact of deployed AI projects.
+
+### Qualifications & Requirements
+- **Education:** A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role.
+- **Experience:** 8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
+- **Skillset:** A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
+
+### CAIO vs. Other C-Suite Tech Roles
+- **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
+- **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
+- **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done.
+
+---
+
+# Chief AI Officer (CAIO) Market Intelligence
+
+> **Source:** user_input://caio_market_intelligence_2026.md
+> **Analyzed At:** 2026-07-22T07:58:37.857Z
+
+### Market Landscape & Role Prevalence
+As of mid-2026, the Chief AI Officer (CAIO) has become a cornerstone of the C-suite for organizations prioritizing digital transformation.
+- **Adoption Rate:** Approximately 76% of firms have now appointed a CAIO or equivalent executive lead for AI, up from 26% in 2025 (IBM Institute for Business Value CEO Study).
+- **Industry Focus:** Highest adoption rates are observed in Technology, Healthcare, Finance, and Manufacturing sectors.
+- **Strategic Intersection:** The role sits at the intersection of business strategy, technology/data architecture, risk/ethics, and cultural transformation.
+
+### Real-World Openings & Recruitment (LinkedIn Jobs)
+- **Platforms:** LinkedIn Jobs remains the primary platform for executive AI recruitment.
+- **Notable Organizations with CAIOs (2024-2026):**
+- **Meta:** Oversees AI integration across Facebook, Instagram, WhatsApp, and Reality Labs. Focus on recommendation systems, GenAI for creators, and the Llama open-source program. Direct CEO report.
+- **Google:** Dual leadership structure (Applied AI integration vs. DeepMind foundational research).
+- **IBM:** Early adopter, focusing on watsonx platform strategy, AI consulting services, and responsible AI standards.
+- **Accenture:** Leads internal AI adoption and a 50,000+ person data and AI practice for clients.
+- **PwC:** Focus on responsible AI deployment in audit, tax, and advisory services.
+- **Financial Services:** JPMorgan Chase, Goldman Sachs, and HSBC. Focus on model risk management, algorithmic trading, and fraud detection.
+- **US Federal Government:** Mandated CAIOs across all agencies (USDA, ODNI, DoD, DoE, HHS).
+- **GE Healthcare:** Parminder Bhatia, Chief AI Officer.
+- **Key Requirements in Postings:**
+- Evidence of bridging the gap between technical AI execution (e.g., Transformers, RAG architectures) and business ROI.
+- Deep experience in auditing AI workflows and aligning predictive models with revenue streams.
+- Ability to lead cross-functional "AI Ethics Boards."
+
+### Executive AI Leadership Certifications (Coursera & Academic)
+To meet licensure-equivalent standards for executive roles, the following programs are highly recognized in 2026:
+
+#### 1. The Chief AI Officer's Handbook (Coursera / Packt)
+- **Content:** Develop and execute AI strategy as a CAIO, ensuring ethical compliance. Master agile AI project management and design/implement AI agents for autonomous system optimization.
+
+#### 2. Executive AI Leadership Mastery Specialization (Coursera)
+- **Courses:** How to Build an Enterprise AI Strategy, Change Management for GenAI Integration, CEO Playbook: Generative AI.
+
+#### 3. AI for Executives & Strategy (Coursera / AI CERTs)
+- **Focus:** Reshaping markets with AI and strategic certification for business leaders.
+
+#### 4. Chief AI Officer Specialization (Coursera)
+- **Target:** Mid-level managers and aspiring executives.
+- **Curriculum:** Practical application of AI governance and strategy.
+
+#### 5. University-Led Executive Programs
+- **Duke University (Fuqua):** Chief AI Officer (CAIO) Program – Focuses on AI strategy and leadership for C-Suite executives.
+- **UPenn (Wharton):** Executive Data Analyst & AI Strategy – Focuses on the financial impact of AI.
+- **MIT xPRO:** AI Strategy and Leadership – Focuses on implementation and data strategy.
+- **Stanford Online:** AI-Driven Leadership – Covers AI-driven decision making and business objectives.
+
+### Salary Benchmarks (2026 Targets)
+- **National Median Base Salary:** ~$351,519
+- **75th Percentile:** $492,127
+- **Total Compensation (Fortune 500):** $1.2M - $2.5M+ (including bonus and equity).
+- **Core Metric:** Performance is increasingly tied to "AI-Driven ROI" and "Governance Compliance Scores."
+
+### Trends
+- **Sovereign AI Clusters:** Increased demand for private infrastructure to ensure data residency and compliance.
+- **Direct Accountability:** Shift toward CAIOs reporting directly to the CEO rather than being nested under the CTO.
+- **Quick Win Mandate:** Expectation for measurable results (ROI) within the first 6-12 months of appointment.
