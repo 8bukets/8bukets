@@ -131,7 +131,15 @@ export class KnowledgeObserver {
           const headerLevelMatch = rawHeader.match(/^(#+)/);
           const level = headerLevelMatch ? headerLevelMatch[1].length : 2;
 
-          const cleanContent = (s.content || '').trim();
+          let contentStr = '';
+          if (Array.isArray(s.content)) {
+            contentStr = s.content.join('\n');
+          } else if (typeof s.content === 'string') {
+            contentStr = s.content;
+          } else if (s.content !== undefined && s.content !== null) {
+            contentStr = String(s.content);
+          }
+          const cleanContent = contentStr.trim();
 
           if (cleanContent.length > 5) {
             // Avoid redundant headers if the section title matches the topic title
