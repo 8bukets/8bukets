@@ -51,7 +51,11 @@ We use **Vitest** for unit and integration tests.
 - All autonomous core changes MUST pass validation before being merged.
 
 ## Synchronization Protocols (Update)
-- **Daily Work:** Use `npm run daily` for the full autonomous cycle (pull, repair, sync, push).
+- **Daily Work Cycle:** Use `npm run work:daily` (or `npm run daily`) for the full autonomous sequence:
+  1. **pluu**: `git pull --rebase` to synchronize with remote state.
+  2. **work**: Autonomous cognitive cycle (self-repair, task processing, and improvements).
+  3. **upload**: `git push` to publish autonomous updates.
+  4. **sync:icloud**: Project backup to the designated iCloud folder.
 - **Manual Tasks:**
   - `npm run pluu`: Pull changes (rebase).
   - `npm run upload`: Push changes.
