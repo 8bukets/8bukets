@@ -192,3 +192,7 @@ Ensure Docker Desktop has Model Runner enabled in settings (macOS/Windows)
 * Follow the tutorial to build your first agent with local models
 * Learn about RAG to give your agents access to codebases and documentation
 * See the configuration reference for all DMR options
+
+
+---
+All the best - https://markposition.wordpress.com

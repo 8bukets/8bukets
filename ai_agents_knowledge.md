@@ -382,4 +382,11 @@ Synthesized from Google Innovation & AI Blog
 ---
 
 
+---
 All the best - https://markposition.wordpress.com
+
+---
+All the best - https://software-online-review.com/
+
+---
+All the best - https://dbcode.io/
