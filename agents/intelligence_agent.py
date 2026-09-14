@@ -1,34 +1,91 @@
-from agents.base_agent import BaseAgent
+from agents.base_agent import BaseAgent, Blackboard
+
 
 class IntelligenceAgent(BaseAgent):
-    def __init__(self):
-        super().__init__("Intelligence")
+    """
+    Synthesizes insights from the data other agents have already placed on the
+    shared Blackboard: scraped-content analysis, live research findings, and
+    the ecosystem's AI-agent knowledge base.
+    """
 
-    async def run(self, context: dict):
+    def __init__(self):
+        super().__init__(
+            "Intelligence",
+            dependencies=[],
+            provides=["intelligence_insights", "strategic_outlook", "categorized_knowledge"],
+        )
+
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.log("Generating intelligence insights...")
-        analysis = context.get("analysis", {})
+
+        analysis = blackboard.get("analysis_stats", {}) or {}
+        research = blackboard.get("research_data", {}) or {}
+        edge_knowledge = blackboard.get("google_edge_knowledge", {}) or {}
+        innovation_knowledge = blackboard.get("google_innovation_ai_knowledge", {}) or {}
+        models_knowledge = blackboard.get("google_models_research_knowledge", {}) or {}
+        definitions = blackboard.get("ai_agents_definitions", {}) or {}
+        react_details = blackboard.get("react_framework_details", {}) or {}
+        tools_list = blackboard.get("google_cloud_tools_list", []) or []
 
         insights = []
 
-        # Dominance checks
-        if analysis.get("top_domains"):
-            top_domain = analysis["top_domains"][0]
-            insights.append(f"Domain Dominance: '{top_domain[0]}' accounts for {top_domain[1]} links.")
+        # Dominance / content-focus checks from the scraped-content analysis.
+        top_domains = analysis.get("top_domains") or {}
+        if top_domains:
+            top_domain = max(top_domains, key=top_domains.get)
+            insights.append(f"Domain Dominance: '{top_domain}' accounts for {top_domains[top_domain]} links.")
 
-        if analysis.get("top_categories"):
-            top_cat = analysis["top_categories"][0]
-            insights.append(f"Content Focus: The primary category is '{top_cat[0]}' ({top_cat[1]} posts).")
+        top_categories = analysis.get("top_categories") or {}
+        if top_categories:
+            top_category = max(top_categories, key=top_categories.get)
+            insights.append(f"Content Focus: The primary category is '{top_category}' ({top_categories[top_category]} posts).")
+            if any("ad" in str(cat).lower() for cat in top_categories):
+                insights.append("High concentration of advertising-related content.")
 
-        # Author checks
-        if analysis.get("top_authors"):
-            top_author = analysis["top_authors"][0]
-            insights.append(f"Key Contributor: {top_author[0]} is the most active author.")
+        # Live research findings synchronized from the ResearchAgent.
+        for trend in research.get("market_trends", []):
+            insights.append(f"Synchronized Trend: {trend}")
 
-        # Temporal Intelligence
-        date_stats = analysis.get("date_stats", {})
-        if date_stats.get("year_counts"):
-            latest_year = date_stats["year_counts"][0]
-            insights.append(f"Activity Trend: Peak activity observed in {latest_year[0]}.")
+        # External knowledge integration.
+        if edge_knowledge.get("sections"):
+            insights.append("Google Edge Knowledge Integrated")
+        if innovation_knowledge.get("articles"):
+            insights.append(f"Google Innovation AI Knowledge Integrated ({len(innovation_knowledge['articles'])} articles).")
+        if models_knowledge.get("articles"):
+            insights.append(f"Google Models Research Knowledge Integrated ({len(models_knowledge['articles'])} articles).")
 
-        context["intelligence_insights"] = insights
+        # Ecosystem architecture insights derived from the AI-agent knowledge base.
+        react_content = react_details.get("react-agent-deployment-logic") or definitions.get("react-agent-deployment-logic")
+        if react_content:
+            insights.append("Ecosystem architecture aligns with ReAct framework for reasoning and acting.")
+
+        if definitions.get("memory_definition"):
+            insights.append("Verified Multi-tiered Memory across short-term, long-term, episodic and consensus stores.")
+
+        if tools_list:
+            insights.append(f"Google Cloud AI Agent definitions synchronized across {len(tools_list)} cataloged tools.")
+
+        strategic_outlook = {
+            "top_domain": next(iter(top_domains), None),
+            "top_category": next(iter(top_categories), None),
+            "market_trends": research.get("market_trends", []),
+        }
+
+        categorized_knowledge = {
+            "analysis": analysis,
+            "research": research,
+            "external_knowledge": {
+                "google_edge": edge_knowledge,
+                "google_innovation_ai": innovation_knowledge,
+                "google_models_research": models_knowledge,
+            },
+            "ai_agent_definitions": definitions,
+        }
+
         self.log("Intelligence generation complete.")
+
+        return {
+            "intelligence_insights": insights,
+            "strategic_outlook": strategic_outlook,
+            "categorized_knowledge": categorized_knowledge,
+        }
