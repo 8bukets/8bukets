@@ -1,3 +1,4 @@
+import html
 import json
 import os
 import argparse
@@ -16,10 +17,17 @@ def create_ascii_bar(count, max_count, bar_length=20):
     return bar
 
 def escape_markdown(text):
-    """Escape pipes to prevent breaking Markdown tables."""
+    """Escape untrusted text for safe embedding in the Markdown report.
+
+    HTML-escapes the text (scraped author/category/domain values could
+    contain markup, which some Markdown renderers pass through raw) and
+    backslash-escapes pipe characters so they can't break out of a table
+    cell and inject extra columns/rows.
+    """
     if text is None:
         return ""
-    return str(text).replace('|', '&#124;')
+    escaped = html.escape(str(text))
+    return escaped.replace('|', '\\|')
 
 def load_data(filepath):
     try:
@@ -80,11 +88,15 @@ def generate_report(data, output_file):
         if dt is None:
             date_str = p.get('date')
             if date_str:
-                try:
-                    # e.g., "October 5, 2022"
-                    dt = datetime.strptime(date_str, "%B %d, %Y")
-                except ValueError:
-                    pass
+                for parse_date in (
+                    datetime.fromisoformat,  # e.g., "2023-01-01"
+                    lambda s: datetime.strptime(s, "%B %d, %Y"),  # e.g., "October 5, 2022"
+                ):
+                    try:
+                        dt = parse_date(date_str)
+                        break
+                    except ValueError:
+                        continue
 
         if dt:
             dates.append(dt)
@@ -157,7 +169,7 @@ def generate_report(data, output_file):
     md.append("| :--- | :---: | :--- |")
     for cat, count in category_counts:
         bar = create_ascii_bar(count, max_category_count)
-        md.append(f"| {cat} | {count} | {bar} |")
+        md.append(f"| {escape_markdown(cat)} | {count} | {bar} |")
     md.append("\n[Back to Top](#table-of-contents)")
 
     md.append("\n<a name='posts-by-year'></a>")
@@ -172,7 +184,7 @@ def generate_report(data, output_file):
     md.append("\n<a name='authors'></a>")
     md.append("## ✍️ Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {escape_markdown(author)}: {count} posts")
     md.append("\n[Back to Top](#table-of-contents)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
