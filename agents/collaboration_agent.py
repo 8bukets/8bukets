@@ -1,4 +1,5 @@
 import os
+import re
 from .base_agent import BaseAgent, Blackboard
 
 class CollaborationAgent(BaseAgent):
@@ -44,14 +45,17 @@ class CollaborationAgent(BaseAgent):
             self.logger.error(f"Failed to read {filepath}: {e}")
             return "ERROR"
 
+    EMAIL_PATTERN = re.compile(r'[\w.+-]+@[\w-]+\.[\w.-]+')
+
     def _extract_stakeholders(self, mission_content: str) -> list:
         stakeholders = []
-        if "Stakeholder List" in mission_content:
+        if "Stakeholders" in mission_content:
             lines = mission_content.split('\n')
             for line in lines:
                 if '@' in line:
-                    # Extracts the email address part from a line like "- user@example.com (Role)"
-                    parts = line.strip('- ').split()
-                    if parts:
-                        stakeholders.append(parts[0])
+                    # Extracts the email address regardless of surrounding format,
+                    # e.g. "- user@example.com (Role)" or "- Name <user@example.com>"
+                    match = self.EMAIL_PATTERN.search(line)
+                    if match:
+                        stakeholders.append(match.group(0))
         return stakeholders
