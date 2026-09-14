@@ -78,10 +78,22 @@ and dbcode.io.
 5. **Update `LAUNCH_CHECKLIST.md`**: move items between Open/In Progress/Done,
    add anything newly discovered, with today's date.
 6. **Ship it**: create a branch named `daily-launch-prep/YYYY-MM-DD` off the
-   current `main`, commit (small, well-described commits), push, and open a
-   PR against `main` yourself (don't rely on anyone else to create it) with a
-   summary of what changed and why, and what's still open on the checklist.
-   End the PR body with:
+   current `main`, commit (small, well-described commits), and `git push
+   origin <branch>` using the environment's `GITHUB_TOKEN` (already wired
+   into git's credential helper in this environment — plain `git push` just
+   works). This environment has no GitHub MCP connector or `gh` CLI
+   attached, so open the PR yourself via a direct REST API call instead:
+   ```bash
+   curl -s -X POST \
+     -H "Authorization: Bearer $GITHUB_TOKEN" \
+     -H "Accept: application/vnd.github+json" \
+     https://api.github.com/repos/8bukets/8bukets/pulls \
+     -d '{"title":"...", "head":"daily-launch-prep/YYYY-MM-DD", "base":"main", "body":"..."}'
+   ```
+   Build the JSON body properly (e.g. write it to a temp file with a tool
+   that JSON-encodes strings, or use `jq -n --arg ...`, rather than hand-
+   quoting a multi-line body into shell). Summarize what changed and why,
+   and what's still open on the checklist. End the PR body with:
    ```
    🤖 Generated with [Claude Code](https://claude.com/claude-code)
    ```
