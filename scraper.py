@@ -12,6 +12,8 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 from concurrent.futures import ProcessPoolExecutor
 
+from utils import is_safe_url, validate_output_path
+
 URL_REGEX = re.compile(r'^https?://')
 
 class UXFormatter(logging.Formatter):
@@ -365,11 +367,24 @@ def main():
 
     args = parser.parse_args()
 
+    if not is_safe_url(args.url):
+        print(f"Security Error: Refusing to scrape unsafe URL '{args.url}' "
+              "(must be http/https and not point at localhost or a private/loopback address).")
+        sys.exit(1)
+
+    try:
+        output_json = validate_output_path(args.json)
+        output_csv = validate_output_path(args.csv)
+        output_txt = validate_output_path(args.txt)
+    except ValueError as e:
+        print(str(e))
+        sys.exit(1)
+
     scraper = WordpressScraperAsync(
         base_url=args.url,
-        output_json=args.json,
-        output_csv=args.csv,
-        output_txt=args.txt,
+        output_json=output_json,
+        output_csv=output_csv,
+        output_txt=output_txt,
         max_pages=args.limit,
         concurrency=args.concurrency
     )

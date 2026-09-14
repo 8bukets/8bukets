@@ -1,4 +1,43 @@
+import ipaddress
 import os
+from urllib.parse import urlparse
+
+
+def is_safe_url(url: str) -> bool:
+    """
+    Validate a URL before the scraper is allowed to fetch it, to prevent SSRF.
+
+    Blocks anything that isn't plain http(s), 'localhost', and any hostname
+    that is a literal loopback/private/unspecified IP address. Deliberately
+    does NOT resolve DNS for hostnames that aren't IP literals -- doing that
+    here and then fetching separately would be a TOCTOU/DNS-rebinding gap
+    (the name could resolve to a private IP by the time aiohttp connects),
+    and closing that properly needs a custom connector, not a pre-check.
+    """
+    try:
+        parsed = urlparse(url)
+    except ValueError:
+        return False
+
+    if parsed.scheme not in ('http', 'https'):
+        return False
+
+    hostname = parsed.hostname
+    if not hostname:
+        return False
+
+    if hostname == 'localhost':
+        return False
+
+    try:
+        ip = ipaddress.ip_address(hostname)
+        if ip.is_private or ip.is_loopback or ip.is_unspecified or ip.is_link_local:
+            return False
+    except ValueError:
+        pass  # Not an IP literal -- it's a domain name, handled by the note above.
+
+    return True
+
 
 def validate_output_path(path: str) -> str:
     """
