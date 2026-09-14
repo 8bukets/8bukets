@@ -16,6 +16,7 @@
     "autonomous-creation": "tsx --env-file=.env scripts/full_autonomous_automatic_creation.ts",
     "full-autonomous-automatic-creation-order-and-execution": "tsx --env-file=.env scripts/full_autonomous_automatic_creation_order_and_execution.ts",
     "ingest:sor": "(node scripts/ingest_software_online_review.js || tsx --env-file=.env scripts/ingest_software_online_review.ts || true)",
+    "ingest:forbes": "tsx --env-file=.env scripts/ingest_forbes.ts",
     "ingest:dbcode": "(node scripts/ingest_dbcode.js || python3 scripts/ingest_dbcode.py || tsx --env-file=.env scripts/ingest_dbcode.ts || true)",
     "ingest:terraform": "(node scripts/ingest_terraform_knowledge.js || tsx --env-file=.env scripts/ingest_terraform_knowledge.ts || true)",
     "ingest:notebooklm": "(node scripts/ingest_notebooklm_knowledge.js || tsx --env-file=.env scripts/ingest_notebooklm_knowledge.ts || true)",
