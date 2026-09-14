@@ -77,12 +77,6 @@ deploy-prod:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
 
-test-testservice:
-  stage: test
-  script:
-    - npm ci
-    - npx vitest run antigravity/services/testservice.test.ts
-
 test-autonomous_resource_optimizer:
   stage: test
   script:
@@ -157,3 +151,39 @@ test-test_autonomous:
   script:
     - npm ci
     - npx vitest run antigravity/services/test_autonomous.test.ts
+
+test-collaboration:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/collaboration.test.ts
+
+test-feedback_analysis:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/feedback_analysis.test.ts
+
+test-knowledge_observer:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/knowledge_observer.test.ts
+
+test-multi-service_orchestration_workflow:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/multi-service_orchestration_workflow.test.ts
+
+test-performance_monitoring:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/performance_monitoring.test.ts
+
+test-presence:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/presence.test.ts
