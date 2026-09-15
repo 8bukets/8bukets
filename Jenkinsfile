@@ -47,13 +47,6 @@ pipeline {
             }
         }
 
-        stage('Test testservice') {
-            steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/testservice.test.ts'
-            }
-        }
-
         stage('Test autonomous_resource_optimizer') {
             steps {
                 sh 'npm ci'
@@ -114,6 +107,48 @@ pipeline {
             steps {
                 sh 'npm ci'
                 sh 'npx vitest run antigravity/services/test_autonomous.test.ts'
+            }
+        }
+
+        stage('Test collaboration') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/collaboration.test.ts'
+            }
+        }
+
+        stage('Test feedback_analysis') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/feedback_analysis.test.ts'
+            }
+        }
+
+        stage('Test knowledge_observer') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/knowledge_observer.test.ts'
+            }
+        }
+
+        stage('Test multi-service_orchestration_workflow') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/multi-service_orchestration_workflow.test.ts'
+            }
+        }
+
+        stage('Test performance_monitoring') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/performance_monitoring.test.ts'
+            }
+        }
+
+        stage('Test presence') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/presence.test.ts'
             }
         }
 
