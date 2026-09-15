@@ -9,9 +9,18 @@ class Blackboard(dict):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._proposals = []
+        self._history = []
 
-    async def async_update(self, key, value):
-        self[key] = value
+    async def update(self, source, value):
+        """Merge `value`'s keys into the shared blackboard state.
+
+        `source` names the agent/caller responsible for the update and is
+        recorded in the update history (see get_history()); it is not used
+        as a nesting key, so downstream agents can read merged keys directly
+        via blackboard.get(...).
+        """
+        self._history.append({"source": source, "data": value})
+        dict.update(self, value)
 
     async def propose_improvement(self, proposer, improvement):
         self._proposals.append({
@@ -21,6 +30,9 @@ class Blackboard(dict):
 
     def get_proposals(self):
         return self._proposals
+
+    def get_history(self):
+        return self._history
 
     def get_all(self):
         return dict(self)

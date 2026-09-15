@@ -2,7 +2,7 @@ import unittest
 import os
 import shutil
 import tempfile
-from utils import validate_output_path
+from utils import validate_output_path, is_safe_url
 
 class TestSecurity(unittest.TestCase):
     def setUp(self):
@@ -47,6 +47,45 @@ class TestSecurity(unittest.TestCase):
         for path in invalid_paths:
             with self.assertRaises(ValueError, msg=f"Path '{path}' should have failed"):
                 validate_output_path(path)
+
+class TestSSRFProtection(unittest.TestCase):
+    def test_safe_urls_allowed(self):
+        safe_urls = [
+            "https://artmusicpage.wordpress.com/",
+            "http://example.com/page/2/",
+            "https://93.184.216.34/blog",  # public IP literal, not private/loopback
+        ]
+        for url in safe_urls:
+            self.assertTrue(is_safe_url(url), f"Expected '{url}' to be considered safe")
+
+    def test_unsafe_schemes_rejected(self):
+        unsafe = ["file:///etc/passwd", "ftp://example.com", "javascript:alert(1)", "gopher://x"]
+        for url in unsafe:
+            self.assertFalse(is_safe_url(url), f"Expected '{url}' to be rejected (bad scheme)")
+
+    def test_localhost_and_loopback_rejected(self):
+        unsafe = [
+            "http://localhost/",
+            "http://127.0.0.1/",
+            "https://127.0.0.1:8080/admin",
+            "http://[::1]/",
+        ]
+        for url in unsafe:
+            self.assertFalse(is_safe_url(url), f"Expected '{url}' to be rejected (loopback)")
+
+    def test_private_and_link_local_ips_rejected(self):
+        unsafe = [
+            "http://10.0.0.5/",
+            "http://192.168.1.1/",
+            "http://169.254.169.254/latest/meta-data/",  # cloud metadata endpoint
+        ]
+        for url in unsafe:
+            self.assertFalse(is_safe_url(url), f"Expected '{url}' to be rejected (private/link-local)")
+
+    def test_malformed_url_rejected(self):
+        self.assertFalse(is_safe_url(""))
+        self.assertFalse(is_safe_url("not a url"))
+
 
 if __name__ == '__main__':
     unittest.main()

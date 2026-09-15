@@ -1,5 +1,6 @@
-from agents.base_agent import BaseAgent
+from agents.base_agent import BaseAgent, Blackboard
 from scraper import WordpressScraperAsync, DEFAULT_BASE_URL
+import json
 import os
 
 class ResearchAgent(BaseAgent):
@@ -8,13 +9,13 @@ class ResearchAgent(BaseAgent):
     of external domains identified during analysis.
     """
     def __init__(self):
-        super().__init__("Research")
+        super().__init__("Research", dependencies=[], provides=["data_files", "raw_data"])
 
-    async def run(self, context: dict):
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.log("Starting research...")
 
-        url = context.get("url", DEFAULT_BASE_URL)
-        limit = context.get("limit", 5) # Default limit for testing
+        url = blackboard.get("url", DEFAULT_BASE_URL)
+        limit = blackboard.get("limit", 5) # Default limit for testing
         json_file = "links.json"
         csv_file = "links.csv"
         txt_file = "unique_links.txt"
@@ -29,7 +30,7 @@ class ResearchAgent(BaseAgent):
         )
 
         # Apply compliance rules if available
-        compliance = context.get("compliance", {})
+        compliance = blackboard.get("compliance", {})
         disallowed = compliance.get("disallowed_paths", [])
         if disallowed:
             self.log(f"Applying {len(disallowed)} disallowed paths from compliance check.")
@@ -38,21 +39,22 @@ class ResearchAgent(BaseAgent):
         # Run the scrape
         await scraper.scrape()
 
-        # Update context with file paths
-        context["data_files"] = {
-            "json": json_file,
-            "csv": csv_file,
-            "txt": txt_file
+        result = {
+            "data_files": {
+                "json": json_file,
+                "csv": csv_file,
+                "txt": txt_file
+            }
         }
 
-        # Load raw data into context for other agents
+        # Load raw data into the result for other agents
         try:
-            import json
             with open(json_file, 'r', encoding='utf-8') as f:
-                context["raw_data"] = json.load(f)
-            self.log(f"Scraped {len(context['raw_data'])} items.")
+                result["raw_data"] = json.load(f)
+            self.log(f"Scraped {len(result['raw_data'])} items.")
         except Exception as e:
             self.log(f"Failed to load scraped data: {e}")
-            context["raw_data"] = []
+            result["raw_data"] = []
 
         self.log("Research complete.")
+        return result

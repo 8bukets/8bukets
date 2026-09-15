@@ -371,7 +371,7 @@ Other configuration settings that allow you to further define the PHP environmen
 </details>
 
 <details>
-<summary>intelephense.environment.includePaths</summary>
+<summary>intelephense.environment.includePaths</summary> 
 
 ```json
 {
@@ -430,7 +430,7 @@ class MyClass
     public function withTypeDeclarations(string $param): int { }
 
     /**
-     * @param string $param
+     * @param string $param 
      * @return int
      */
     public function withTypeAnnotations($param) { }
@@ -461,7 +461,7 @@ Union (`TypeA|TypeB`) and intersection (`TypeA&TypeB`) types are supported. Wher
 Sometimes there may be type annotations in libraries or project files that do not accurately reflect the desired type. Intelephense offers compatibility settings to handle some common cases.
 
 <details>
-<summary>intelephense.compatibility.correctForBaseClassStaticUnionTypes</summary>
+<summary>intelephense.compatibility.correctForBaseClassStaticUnionTypes</summary> 
 
 ```json
 {
@@ -513,8 +513,8 @@ Packages can be found online that aim to workaround these issues by providing st
 
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).
 
-1. Disable the built-in VSCode PHP Language Features.
-
+1. Disable the built-in VSCode PHP Language Features. 
+    
     * Go to `Extensions`.
     * Search for `@builtin php`
     * Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.
@@ -523,7 +523,7 @@ Visual Studio Code users should install the Intelephense extension from within t
 2. Add glob patterns for non standard php file extensions to the `files.associations` setting.
 
     For example: `"files.associations": { "*.module": "php" }`.
-3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete
+3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete 
 -- `ctrl + shift + p` -- and searching for `Enter licence key`.
 
 Further configuration options are available in the `intelephense` section of settings.
@@ -547,8 +547,8 @@ Please follow the setup guide of the relevant tool. The Information below may he
 #### Run
 ```
 intelephense {transport}
-```
-Where `{transport}` is one of:
+```  
+Where `{transport}` is one of: 
 * `--node-ipc`
 * `--stdio`
 * `--socket={number}`
@@ -560,15 +560,15 @@ Where `{transport}` is one of:
 interface InitialisationOptions {
     //Optional absolute path to storage dir. Defaults to os.tmpdir().
     storagePath?: string;
-
+    
     //Optional absolute path to a global storage dir. Defaults to os.homedir().
     globalStoragePath?: string;
-
+    
     //Optional licence key or absolute path to a text file containing the licence key.
-    //{os.homedir()}/intelephense/licence.txt will also be checked by
+    //{os.homedir()}/intelephense/licence.txt will also be checked by 
     //default if initializationOptions are not exposed by client.
     licenceKey?: string;
-
+    
     //Optional flag to clear server state.
     //State can also be cleared by deleting {storagePath}/intelephense
     clearCache?: boolean;
@@ -578,7 +578,7 @@ interface InitialisationOptions {
 #### Capabilities
 <details>
 	<summary>Server capabilities JSON returned from `initialize` request.</summary>
-
+	
 ```javascript
 {
 	textDocumentSync: TextDocumentSyncKind.Incremental,
@@ -603,7 +603,7 @@ interface InitialisationOptions {
 	hoverProvider: true,
 	documentFormattingProvider: true,	    //Dynamic registration if available.
     documentRangeFormattingProvider: true,  //Dynamic registration if available.
-	documentHighlightProvider: true,
+	documentHighlightProvider: true,	
 	workspace: {
 		workspaceFolders: {
 			supported: true,
@@ -614,7 +614,7 @@ interface InitialisationOptions {
 	implementationProvider: true,	//With licence key only.
 	declarationProvider: true,		//With licence key only.
 	renameProvider: { 			    //With licence key only.
-		prepareProvider: true
+		prepareProvider: true 
 	},
 	typeDefinitionProvider: true,	//With licence key only.
     selectionRangeProvider: true    //With licence key only.
@@ -625,7 +625,7 @@ interface InitialisationOptions {
 #### Configuration Options
 <details>
 	<summary>JSON schema for `workspace/configuration` request data</summary>
-
+	
 ```json
 {
     "intelephense.compatibility.correctForBaseClassStaticUnionTypes": {

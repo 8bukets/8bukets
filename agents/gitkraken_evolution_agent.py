@@ -16,20 +16,6 @@ class GitKrakenEvolutionAgent(BaseAgent):
         self.logger.info("Evaluating repository structure for GitKraken professional visualization...")
 
         branch_count = 1
-        try:
-            process = await asyncio.create_subprocess_exec("git", "branch", "-a", stdout=asyncio.subprocess.PIPE)
-            stdout, _ = await process.communicate()
-            if process.returncode == 0:
-                branches = [b for b in stdout.decode().split('\n') if b.strip()]
-                branch_count = len(branches)
-        except Exception as e:
-            self.logger.error(f"Error checking git branches: {e}")
-
-        # The more branches, the more complex the visual graph depth
-        graph_depth = "EXTENDED" if branch_count > 3 else "STANDARD"
-        kraken_score = min(0.99, 0.80 + (branch_count * 0.05))
-
-        branch_count = 1
         commit_count = 1
 
         try:

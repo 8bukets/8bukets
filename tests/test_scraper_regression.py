@@ -8,11 +8,11 @@ from unittest.mock import MagicMock, AsyncMock, patch
 # Add root directory to path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from scraper import MarkPositionScraperAsync
+from scraper import WordpressScraperAsync
 
 class TestScraperRegression(unittest.TestCase):
     def setUp(self):
-        self.scraper = MarkPositionScraperAsync("test.json", "test.csv", "test.txt")
+        self.scraper = WordpressScraperAsync("https://markposition.wordpress.com/", "test.json", "test.csv", "test.txt")
         self.html = """
         <html>
         <body>
@@ -42,8 +42,8 @@ class TestScraperRegression(unittest.TestCase):
         """
 
     def test_parse_page(self):
-        # Check if parse_page returns list directly (sync)
-        results = self.scraper.parse_page(self.html)
+        # parse_page is async in the current implementation
+        results = asyncio.run(self.scraper.parse_page(self.html))
 
         self.assertTrue(len(results) > 0, "Should find posts")
         self.assertEqual(len(results), 2, f"Expected 2 posts, got {len(results)}")
