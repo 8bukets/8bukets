@@ -78,17 +78,23 @@ and dbcode.io.
 5. **Update `LAUNCH_CHECKLIST.md`**: move items between Open/In Progress/Done,
    add anything newly discovered, with today's date.
 6. **Ship it**: create a branch named `daily-launch-prep/YYYY-MM-DD` off the
-   current `main`, commit (small, well-described commits), and `git push
-   origin <branch>` using the environment's `GITHUB_TOKEN` (already wired
-   into git's credential helper in this environment — plain `git push` just
-   works). This environment has no GitHub MCP connector or `gh` CLI
-   attached, so open the PR yourself via a direct REST API call instead:
+   current default branch, commit (small, well-described commits), and
+   `git push origin <branch>` using the environment's `GITHUB_TOKEN`
+   (already wired into git's credential helper in this environment —
+   plain `git push` just works). This environment has no GitHub MCP
+   connector or `gh` CLI attached, so open the PR yourself via a direct
+   REST API call instead. **Important**: this repo's default branch is
+   `jules/scraper-markposition-17752547678215960211`, not `main` — a
+   branch literally named `main` also exists but is a separate, less-
+   current branch (recent real PRs target the jules branch). Confirm the
+   current default via `GET /repos/8bukets/8bukets` (`default_branch`
+   field) rather than hardcoding either name, since it can change:
    ```bash
    curl -s -X POST \
      -H "Authorization: Bearer $GITHUB_TOKEN" \
      -H "Accept: application/vnd.github+json" \
      https://api.github.com/repos/8bukets/8bukets/pulls \
-     -d '{"title":"...", "head":"daily-launch-prep/YYYY-MM-DD", "base":"main", "body":"..."}'
+     -d '{"title":"...", "head":"daily-launch-prep/YYYY-MM-DD", "base":"<default_branch>", "body":"..."}'
    ```
    Build the JSON body properly (e.g. write it to a temp file with a tool
    that JSON-encodes strings, or use `jq -n --arg ...`, rather than hand-
